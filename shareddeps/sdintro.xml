@@ -14,21 +14,6 @@
     This chapter covers dependencies that both Steam and Wine depend on.
   </para>
 
-  <!-- SECURITY -->
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/secdummy.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/dbus-pass1.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/linux-pam.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/shadow.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/elogind.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/duktape.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/pcre2.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/glib2.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/icu.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/libxml2.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/shared-mime-info.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/desktop-file-utils.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/polkit.xml"/>
-
   <!-- NETWORKING -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/netdummy.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/netconnect.xml"/>
@@ -43,6 +28,21 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/curl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/wget.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/git.xml"/>
+
+  <!-- SECURITY -->
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/secdummy.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/dbus-pass1.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/linux-pam.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/shadow.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/elogind.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/duktape.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/pcre2.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/glib2.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/icu.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/libxml2.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/shared-mime-info.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/desktop-file-utils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/polkit.xml"/>
 
   <!-- AUDIO -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/audiodummy.xml"/>
