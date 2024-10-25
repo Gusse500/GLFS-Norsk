@@ -16,6 +16,25 @@
 <!ENTITY curl-version                 "8.10.1">
 <!ENTITY wget-version                 "1.24.5">
 <!ENTITY git-version                  "2.47.0">
+<!-- Security -->
+<!ENTITY dbus-version                 "1.14.10">   <!-- Even minors only -->
+<!ENTITY linux-pam-version            "1.6.1">
+<!ENTITY linux-pam-docs-version       "&linux-pam-version;">
+<!ENTITY shadow-version               "4.16.0">
+<!ENTITY elogind-version              "255.5">
+<!ENTITY duktape-version              "2.7.0">
+<!ENTITY pcre2-version                "10.44">
+<!ENTITY glib2-minor                  "2.82">
+<!ENTITY glib2-version                "&glib2-minor;.2">
+<!ENTITY gobject-introspection-version "1.82.0">
+<!ENTITY icu-major                    "75">
+<!ENTITY icu-minor                    "1">
+<!ENTITY icu-patch                    "0">
+<!ENTITY icu-version                  "&icu-major;.&icu-minor;">
+<!ENTITY libxml2-version              "2.13.4">
+<!ENTITY shared-mime-info-version     "2.4">
+<!ENTITY desktop-file-utils-version   "0.27">
+<!ENTITY polkit-version               "125">
 <!-- Audio -->
 <!ENTITY alsa-download-http           "https://www.alsa-project.org/files/pub">
 <!ENTITY alsa-download-ftp            "ftp://ftp.alsa-project.org/pub">
@@ -90,30 +109,10 @@
 <!ENTITY cmake-major-version          "3.30">
 <!ENTITY cmake-minor-version          "5">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
-<!-- extra-cmake-modules version is the same as kf6-frameworks -->
-<!ENTITY dbus-version                 "1.14.10">   <!-- Even minors only -->
 <!ENTITY libunwind-version            "1.8.1">
 <!ENTITY nettle-version               "3.10">
 <!ENTITY gnutls-version               "3.8.7.1">
-<!-- The line below has two extra spaces at the end in BLFS, matching it here. -->
 <!ENTITY pixman-version               "0.43.4">
-<!ENTITY icu-major                    "75">
-<!ENTITY icu-minor                    "1">
-<!ENTITY icu-patch                    "0">
-<!ENTITY icu-version                  "&icu-major;.&icu-minor;">
-<!ENTITY libxml2-version              "2.13.4">
-<!ENTITY linux-pam-version            "1.6.1">
-<!ENTITY linux-pam-docs-version       "&linux-pam-version;">
-<!ENTITY shadow-version               "4.16.0">
-<!ENTITY elogind-version              "255.5">
-<!ENTITY duktape-version              "2.7.0">
-<!ENTITY pcre2-version                "10.44">
-<!ENTITY glib2-minor                  "2.82">
-<!ENTITY glib2-version                "&glib2-minor;.2">
-<!ENTITY gobject-introspection-version "1.82.0">
-<!ENTITY shared-mime-info-version     "2.4">
-<!ENTITY desktop-file-utils-version   "0.27">
-<!ENTITY polkit-version               "125">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.23.1">
 <!ENTITY wayland-protocols-version    "1.38">
