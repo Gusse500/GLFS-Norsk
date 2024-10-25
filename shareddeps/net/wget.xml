@@ -56,13 +56,13 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="&blfs-svn;/postlfs/gnutls.html">GnuTLS</ulink>,
+      <xref linkend="gnutls"/>,
       <ulink url="&blfs-svn;/general/perl-modules.html#perl-http-daemon">
       HTTP-Daemon</ulink> (for the test suite),
       <ulink url="&blfs-svn;/general/perl-modules.html#perl-io-socket-ssl">
       IO-Socket-SSL</ulink> (for the test suite),
       <xref linkend="libidn2"/>,
-      <ulink url="&blfs-svn;/general/pcre2.html">pcre2</ulink>, and
+      <xref linkend="pcre2"/>, and
       <ulink url="&blfs-svn;/general/valgrind.html">Valgrind</ulink> (for the test suite)
     </para>
 
