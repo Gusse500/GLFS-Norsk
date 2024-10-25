@@ -74,9 +74,14 @@
     </para>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
-    <para role="required">
+    <para role="recommended">
       <xref linkend="pcre2"/> (if not built, Meson will try to fetch a tarball
       of PCRE2 source code from the internet)
+  </para>
+
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/libxslt.html">libxslt</ulink> (for man-pages)
     </para>
 
     <bridgehead renderas="sect4">Additional Runtime Dependencies</bridgehead>
@@ -142,6 +147,7 @@ meson setup ..                  \
       -D introspection=disabled \
       -D glib_debug=disabled    \
       -D man-pages=disabled     \
+      -D tests=disabled         \
       -D sysprof=disabled       &amp;&amp;
 
 ninja</userinput></screen>
@@ -209,6 +215,7 @@ ninja</userinput></screen>
       -D introspection=disabled \
       -D glib_debug=disabled    \
       -D man-pages=disabled     \
+      -D tests=disabled         \
       -D sysprof=disabled       &amp;&amp;
 
 ninja</userinput></screen>
@@ -233,6 +240,14 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D man-pages=disabled</parameter>: This switch causes the
       build to create and install the package man pages.
+    </para>
+
+    <para>
+      <parameter>-D tests=disabled</parameter>: This switch causes tests
+      to be built. It is disabled because it is beyond the scope of GLFS.
+      If you'd like to test glib, reference
+      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/glib2.html">
+      BLFS's glib page</ulink>.
     </para>
 
     <para>
