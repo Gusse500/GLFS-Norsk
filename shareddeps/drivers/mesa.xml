@@ -282,16 +282,6 @@ ldconfig</userinput></screen>
   <sect2 role="installation">
     <title>32-bit Installation of NVK and Vulkan Swrast</title>
 
-    <important>
-      <para>Building for NVK 32-bit right now is borked. The cause is unclear,
-      but what does happen is a file full of bindings is not properly generated
-      for 32-bit, causing an overflow error. This was the case before the
-      driver could be built, but now it is once again borked and cannot be
-      built. You may follow these instructions if you wish, but for now, it is
-      recommened to use <xref linkend="nvidia"/> instead if you have a nVidia
-      card.</para>
-    </important>
-
     <note>
       <para>
         Feel free to skip this section if you don't want to install the
@@ -305,10 +295,13 @@ ldconfig</userinput></screen>
       few paths in a personality
       file used by <application>Pkgconf</application>, as it searches in
       <filename>/usr</filename> rather than 
-      <envar>$XORG_PREFIX</envar>. If the expanded
-      path is <filename>/usr</filename>, skip to the compilation
-      instructions. 
+      <envar>$XORG_PREFIX</envar>.
     </para>
+
+    <note>
+      <para>If the expanded path is <filename>/usr</filename>, skip to cleaning
+      the build directory.</para>
+    </note>
 
     <para>
       Change the paths in the <application>Pkgconf</application> personality
