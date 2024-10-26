@@ -43,6 +43,9 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - desktop-file-utils: 0.27 -&gt; 0.28.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Vulkan-{Headers,Loader}: 1.3.299 -&gt;
           1.3.300.</para>
         <listitem>
