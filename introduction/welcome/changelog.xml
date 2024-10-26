@@ -43,6 +43,15 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - icu: Remove Clang note in 32-bit.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>October 25th, 2024</para>
+      <itemizedlist>
+        <listitem>
           <para>[Zeckmathederg] - Fix rendering failure.</para>
         </listitem>
         <listitem>
