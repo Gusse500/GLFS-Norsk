@@ -43,7 +43,13 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
-          <para>[Zeckmathederg] - rust-bindgen: 0.70.1 -&gt; 0.69.4.<para>
+          <para>[Toxikuu] - NSS: Fixed a build issue if SQLite
+          is not completely installed. PR 
+          <ulink url="https://github.com/Zeckmathederg/glfs/pull/30">(#30)</ulink>
+          </para>
+        </listitem>
+        <listitem>
+          <para>[Zeckmathederg] - rust-bindgen: 0.70.1 -&gt; 0.69.4.</para>
         </listitem>
         <listitem>
           <para>[Toxikuu] - GLib2: Disabled tests and added libxslt as an
