@@ -80,6 +80,28 @@ make</userinput></screen>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
+    <para>
+      Now build the winpthreads library after installing the bulk of MinGW-w64
+      to prevent the build from linking against libraries that weren't
+      installed but now are (this library enables POSIX thread support):
+    </para>
+
+<screen><userinput>cd ..                                 &amp;&amp;
+mkdir -v build-x86_64-winpthreads     &amp;&amp;
+cd       build-x86_64-winpthreads     &amp;&amp;
+
+../mingw-w64-libraries/winpthreads/configure \
+            --prefix=/usr/x86_64-w64-mingw32 \
+            --host=x86_64-w64-mingw32 &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      Now install the winpthreads library as the &root; user:
+    </para>
+
+    <screen role="root"><userinput>make install</userinput></screen>
+
   </sect3>
 
   <sect3>
@@ -105,6 +127,28 @@ make</userinput></screen>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
+    <para>
+      Now build the winpthreads library after installing the bulk of MinGW-w64
+      to prevent the build from linking against libraries that weren't
+      installed but now are (this library enables POSIX thread support):
+    </para>
+
+<screen><userinput>cd ..                               &amp;&amp;
+mkdir -v build-i686-winpthreads     &amp;&amp;
+cd       build-i686-winpthreads     &amp;&amp;
+
+../mingw-w64-libraries/winpthreads/configure \
+            --prefix=/usr/i686-w64-mingw32 \
+            --host=i686-w64-mingw32 &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      Now install the winpthreads library as the &root; user:
+    </para>
+
+    <screen role="root"><userinput>make install</userinput></screen>
+
     </sect3>
 
   </sect2>
@@ -121,14 +165,6 @@ make</userinput></screen>
     <para>
 	<parameter>--host=*</parameter>: This option builds files for
 	the architecture passed to it.
-    </para>
-
-    <para>
-      <parameter>--with-libraries=winpthreads</parameter>: This option
-      builds the winpthreads library, which can enable posix threading.
-      Use it after you have built <xref linkend="mingw-w64-gcc"/> and
-      rebuild that package afterwards with <parameter>
-      --enable-threads=posix</parameter>.
     </para>
 
     <para>

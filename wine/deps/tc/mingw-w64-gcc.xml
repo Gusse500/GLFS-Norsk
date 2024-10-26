@@ -88,6 +88,7 @@ cd    build-x86_64-mingw-w64 &amp;&amp;
 ../configure                             \
     --prefix=/usr                        \
     --target=x86_64-w64-mingw32          \
+    --enable-threads=posix               \
     --enable-shared                      \
     --disable-multilib                   \
     --enable-languages=c,c++ &amp;&amp;
@@ -144,6 +145,7 @@ cd    build-i686-mingw-w64 &amp;&amp;
     --prefix=/usr                        \
     --target=i686-w64-mingw32            \
     --enable-shared                      \
+    --enable-threads=posix               \
     --disable-multilib                   \
     --enable-languages=c,c++ &amp;&amp;
 
@@ -303,15 +305,13 @@ rm -v a.exe main.{c,cpp}</userinput></screen>
     </para>
 
     <para>
-      <parameter>--disable-multilib</parameter>: This option ensures
-      that files are created for the specific architecture of your computer.
+	<parameter>--enable-threads=posix</parameter>: This option enables
+	support for POSIX threads via the winpthreads library.
     </para>
 
     <para>
-	<parameter>--enable-threads=posix</parameter>: This option enables
-	support for POSIX threads via the winpthreads library. Invoke it if
-	you have built <xref linkend="mingw-w64"/> with <parameter>
-	--with-libraries=winpthreads</parameter>.
+      <parameter>--disable-multilib</parameter>: This option ensures
+      that files are created for the specific architecture of your computer.
     </para>
 
     <para>
