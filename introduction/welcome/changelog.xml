@@ -43,6 +43,10 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Static MinGW-w64-GCC: Fixed introduction typo
+          and explained what the static build is for.</para>
+        </listitem>
+        <listitem>
           <para>[Toxikuu] - Python: 3.12 -&gt; 3.13. PR
           <ulink url="https://github.com/Zeckmathederg/glfs/pull/31">(#31)</ulink>
           </para>
