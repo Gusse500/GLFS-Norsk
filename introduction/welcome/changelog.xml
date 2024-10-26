@@ -43,6 +43,9 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Removed a stale file in book source.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Static MinGW-w64-GCC: Fixed introduction typo
           and explained what the static build is for.</para>
         </listitem>
