@@ -43,6 +43,9 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Fix rendering failure.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - NSS: 3.105 -&gt; 3.106.</para>
         </listitem>
         <listitem>
@@ -51,7 +54,7 @@
         <listitem>
           <para>[Zeckmathederg] - Vulkan-{Headers,Loader}: 1.3.299 -&gt;
           1.3.300.</para>
-        <listitem>
+	</listitem>
         <listitem>
           <para>[Zeckmathederg] - icu: Removed outdated Clang note.</para>
         </listitem>
