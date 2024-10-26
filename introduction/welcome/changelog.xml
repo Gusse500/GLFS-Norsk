@@ -43,6 +43,11 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Toxikuu] - Python: 3.12 -&gt; 3.13. PR
+          <ulink url="https://github.com/Zeckmathederg/glfs/pull/31">(#31)</ulink>
+          </para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - MinGW-w64*: Enabled winpthreads.</para>
         </listitem>
         <listitem>
