@@ -99,6 +99,20 @@
 patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></screen>
 
 -->
+
+    <important>
+      <para>
+        If you're rebuilding NSS and you have not installed SQLite, run the
+        following command to remove a problematic library:
+      </para>
+
+<screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
+if [ -f /usr/lib/libsqlite3.so ]; then
+  rm -vf /usr/lib/libsqlite3.so
+fi</userinput></screen>
+
+    </important>
+
     <para>
       Install <application>NSS</application> by running the following commands:
     </para>
@@ -211,6 +225,19 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
       again as detailed in the normal installation, then change directory into
       <filename>nss</filename>.
     </para></note>
+
+    <important>
+      <para>
+        If you're rebuilding NSS and you have not installed SQLite, run the
+        following command to remove a problematic library:
+      </para>
+
+<screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
+if [ -f /usr/lib32/libsqlite3.so ]; then
+  rm -vf /usr/lib32/libsqlite3.so
+fi</userinput></screen>
+
+    </important>
 
     <para>
 	Install <application>lib32-NSS</application> by running the following commands:
