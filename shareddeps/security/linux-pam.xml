@@ -7,15 +7,11 @@
   <!ENTITY linux-pam-download-http "https://github.com/linux-pam/linux-pam/releases/download/v&linux-pam-version;/Linux-PAM-&linux-pam-version;.tar.xz">
   <!ENTITY linux-pam-download-ftp  " ">
 
-  <!ENTITY linux-pam-docs-download "https://github.com/linux-pam/linux-pam/releases/download/v&linux-pam-version;/Linux-PAM-&linux-pam-docs-version;-docs.tar.xz">
-  <!--
-  <!ENTITY debian-pam-docs         "http://debian.securedservers.com/kernel/pub/linux/libs/pam">
-  -->
+  <!ENTITY linux-pam-docs-download "&sources-anduin-http;/Linux-PAM/Linux-PAM-&linux-pam-docs-version;-docs.tar.xz">
 ]>
 
 <sect1 id="linux-pam" xreflabel="Linux-PAM-&linux-pam-version;">
   <?dbhtml filename="linux-pam.html"?>
-
 
   <title>Linux-PAM-&linux-pam-version;</title>
 
@@ -84,52 +80,19 @@
     <title>Installation of Linux PAM</title>
 
     <para>
-      First, prevent the installation of an unneeded systemd file:
-    </para>
-
-<screen><userinput>sed -e /service_DATA/d \
-    -i modules/pam_namespace/Makefile.am</userinput></screen>
-
-    <!-- https://github.com/linux-pam/linux-pam/issues/809 -->
-    <para>
-      The shipped <filename>libtool.m4</filename> file has a configuration
-      inconsistent with LFS <filename class='directory'>/usr</filename>
-      hierarchy.  This issue would cause
-      <filename class='libraryfile'>libpam_misc.so</filename> linked with
-      an rpath flag which may sometimes cause troubles or even security
-      issues.  Regenerate the building system to fix the inconsistency:
-    </para>
-
-<screen><userinput>autoreconf -fi</userinput></screen>
-
-    <para>
-      If you downloaded the documentation, unpack the tarball by issuing
-      the following command.
-    </para>
-
-<screen><userinput>tar -xf ../Linux-PAM-&linux-pam-docs-version;-docs.tar.xz --strip-components=1</userinput></screen>
-<!--
-    <para>
-      If you want to regenerate the documentation yourself, fix the
-      <command>configure</command> script so it will detect lynx:
-    </para>
-
-<screen><userinput>sed -e 's/dummy elinks/dummy lynx/'                                    \
-    -e 's/-no-numbering -no-references/-force-html -nonumbers -stdin/' \
-    -i configure</userinput></screen>
--->
-    <para>
       Compile and link <application>Linux PAM</application> by
       running the following commands:
     </para>
 
-<screen><userinput>./configure --prefix=/usr                        \
-            --sbindir=/usr/sbin                  \
-            --sysconfdir=/etc                    \
-            --libdir=/usr/lib                    \
-            --enable-securedir=/usr/lib/security \
-            --docdir=/usr/share/doc/Linux-PAM-&linux-pam-version; &amp;&amp;
-make</userinput></screen>
+<screen><userinput>mkdir -v build        &amp;&amp;
+cd       build        &amp;&amp;
+
+meson setup ..        \
+  --prefix=/usr       \
+  --buildtype=release \
+  -D docs=disabled    &amp;&amp;
+
+ninja</userinput></screen>
 
     <para>
       To test the results, a suitable <filename>/etc/pam.d/other</filename>
@@ -148,7 +111,7 @@ make</userinput></screen>
       </para>
 
       <para>
-         You should also be aware that <command>make install</command>
+         You should also be aware that <command>ninja install</command>
          overwrites the configuration files in
          <filename class="directory">/etc/security</filename> as well as
          <filename>/etc/environment</filename>. If you
@@ -172,27 +135,38 @@ session  required       pam_deny.so</literal>
 EOF</userinput></screen>
 
     <para>
-      Now run the tests by issuing <command>make check</command>.
+      Now run the tests by issuing <command>ninja test</command>.
       Be sure the tests produced no errors before continuing the
-      installation. Note that the tests are very long.
-      Redirect the output to a log file, so you can inspect it thoroughly.
+      installation.
     </para>
 
     <para>
       For a first-time installation, remove the configuration file
       created earlier by issuing the following command as the
-      <systemitem class="username">root</systemitem> user:
+      &root; user:
     </para>
 
 <screen role="root"><userinput>rm -fv /etc/pam.d/other</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem>
-      user:
+      Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>make install &amp;&amp;
+<screen role="root"><userinput>ninja install &amp;&amp;
 chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
+
+    <para>
+      Now remove an unneeded directory as the &root; user:
+    </para>
+
+    <screen role="root"><userinput>rm -rf /usr/lib/systemd</userinput></screen>
+
+    <para>
+      If you downloaded the optional documentation, run the following command
+      as the &root; user:
+    </para>
+
+<screen role="root"><userinput>tar -C / -xvf ../../Linux-PAM-&linux-pam-docs-version;-docs.tar.xz</userinput></screen>
 
   </sect2>
 
@@ -200,66 +174,35 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
     <title>32-bit Installation of Linux PAM</title>
 
     <para>
-      First clean the directory:
+      First clean the build directory:
     </para>
 
-    <screen><userinput>make distclean</userinput></screen>
+    <screen><userinput>rm -rf *</userinput></screen>
 
     <para>
       Now install lib32-<application>Linux-PAM</application> by
       running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                     \
-PKG_CONFIG_PATH="/usr/lib32/pkgconfig"           \
-./configure --prefix=/usr                        \
-            --libdir=/usr/lib32                  \
-            --sbindir=/usr/sbin                  \
-            --sysconfdir=/etc                    \
-            --host=i686-pc-linux-gnu             \
-            --enable-securedir=/usr/lib/security &amp;&amp;
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"            \
+PKG_CONFIG_PATH="/usr/lib32/pkgconfig"  \
+meson setup ..                          \
+  --prefix=/usr                         \
+  --libdir=/usr/lib32                   \
+  --buildtype=release                   \
+  -D docs=disabled                      &amp;&amp;
 
-make</userinput></screen>
+ninja</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem>
       user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
 cp -vR DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
-cp -vR DESTDIR/usr/lib/*   /usr/lib32 &amp;&amp;
 rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
-
-  </sect2>
-
-  <sect2 role="commands">
-    <title>Command Explanations</title>
-
-    <para>
-      <parameter>--enable-securedir=/usr/lib/security</parameter>:
-      This switch sets the installation location for the
-      <application>PAM</application> modules.
-    </para>
-<!--
-    <para>
-      <option>- -disable-regenerate-docu</option> : If the needed dependencies
-      (<xref linkend="DocBook"/>, <xref linkend="docbook-xsl"/>, <xref
-      linkend="libxslt"/>, and <xref linkend="lynx"/> or <ulink
-      url="&w3m-url;">W3m</ulink>) are installed, the manual pages, and the
-      html and text documentation files, are generated and installed.
-      Furthermore, if <xref linkend="fop"/> is installed, the PDF
-      documentation is generated and installed. Use this switch if you do not
-      want to rebuild the documentation.
-    </para>
--->
-    <para>
-      <command>chmod -v 4755 /usr/sbin/unix_chkpwd</command>:
-      The setuid bit for the <command>unix_chkpwd</command> helper program must be
-      turned on, so that non-<systemitem class="username">root</systemitem>
-      processes can access the shadow file.
-    </para>
 
   </sect2>
 
@@ -369,13 +312,10 @@ EOF</userinput></screen>
       <para>
         The <application>PAM</application> man page (<command>man
         pam</command>) provides a good starting point to learn
-        about the several fields, and allowable entries.
-        <!-- not accessible 2022-09-08 -->
-        <!-- it's available at a different address 2022-10-23-->
-        The
-        <ulink url="https://www.docs4dev.com/docs/en/linux-pam/1.1.2/reference/Linux-PAM_SAG.html">
-          Linux-PAM System Administrators' Guide
-        </ulink> is recommended for additional information.
+        about the several fields, and allowable entries. The
+	Linux-PAM System Administrators' Guide at
+        <filename>/usr/share/doc/Linux-PAM-1.7.0/Linux-PAM_SAG.txt</filename>
+        is recommended for additional information.
       </para>
 
       <important>

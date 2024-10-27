@@ -18,7 +18,7 @@
 <!ENTITY git-version                  "2.47.0">
 <!-- Security -->
 <!ENTITY dbus-version                 "1.14.10">   <!-- Even minors only -->
-<!ENTITY linux-pam-version            "1.6.1">
+<!ENTITY linux-pam-version            "1.7.0">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY shadow-version               "4.16.0">
 <!ENTITY elogind-version              "255.5">
