@@ -43,6 +43,9 @@
       <para>October 25th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - NSS: Work around make clean not working.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Removed a stale file in book source.</para>
         </listitem>
         <listitem>

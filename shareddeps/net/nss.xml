@@ -103,7 +103,7 @@ patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></scre
     <important>
       <para>
         If you're rebuilding NSS and you have not installed SQLite, run the
-        following command to remove a problematic library:
+        following command to remove a problematic library as the &root; user:
       </para>
 
 <screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
@@ -219,17 +219,18 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
   <sect2 role="installation">
     <title>32-bit Installation of NSS</title>
 
-    <note><para>
-      Cleaning the directory doesn't work with NSS, so you will need to delete
-      the extracted folder from the tarball, extract it again, apply the patch
-      again as detailed in the normal installation, then change directory into
-      <filename>nss</filename>.
-    </para></note>
+    <para>
+      First clean directories in the source tree:
+    </para>
+
+<screen><userinput>cd ../nss                                         &amp;&amp;
+find -name "Linux*.OBJ" -type d -exec rm -rf {} + &amp;&amp;
+rm -rf ../dist</userinput></screen>
 
     <important>
       <para>
         If you're rebuilding NSS and you have not installed SQLite, run the
-        following command to remove a problematic library:
+        following command to remove a problematic library as the &root; user:
       </para>
 
 <screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
@@ -240,7 +241,7 @@ fi</userinput></screen>
     </important>
 
     <para>
-	Install <application>lib32-NSS</application> by running the following commands:
+      Now install <application>lib32-NSS</application> by running the following commands:
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"	  \
