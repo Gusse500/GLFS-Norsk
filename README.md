@@ -1,8 +1,3 @@
-# NOTICE
-
-Development will eventually switch to https://github.com/glfs-book/glfs.
-Please read the announcement in the Bulletin section of the book.
-
 # Gaming Linux From Scatch (GLFS)
 
 Gaming Linux From Scratch is a book that covers how to install packages
@@ -10,7 +5,7 @@ like Steam and Wine after the Linux From Scratch book.
 
 # Where to Read
 
-Go to https://zeckmathederg.github.io/glfs/ and start going through the book!
+Go to https://glfs-book.github.io/glfs/ and start going through the book!
 
 # Installation
 
