@@ -26,7 +26,21 @@
       <para>- Name</para>
     </sect3>
     -->
-    
+ 
+    <sect3>
+      <title>~ Migration Done</title>
+      <para>October 27th, 2024</para>
+
+      <para>The book has officially migrated to the new Github repo
+      and its pages are now hosted on this site.</para>
+
+      <para>While the old site and repo will stay up, they will be grossly
+      outdated down the line. Please make new issues and PRs on <ulink
+      url="https://github.com/glfs-book/glfs"/>.</para>
+
+      <para>- Zeckma</para>
+    </sect3>
+   
     <sect3>
       <title>~ Planned Site and Repo Switch</title>
       <para>September 6th, 2024</para>
