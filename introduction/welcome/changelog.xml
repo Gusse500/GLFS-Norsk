@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>October 28th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Zeckmathederg] - GLib2: tests switch move from disabled to
+          false.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>October 27th, 2024</para>
       <itemizedlist>
         <listitem>

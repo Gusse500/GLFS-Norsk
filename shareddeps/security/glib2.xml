@@ -147,7 +147,7 @@ meson setup ..                  \
       -D introspection=disabled \
       -D glib_debug=disabled    \
       -D man-pages=disabled     \
-      -D tests=disabled         \
+      -D tests=false            \
       -D sysprof=disabled       &amp;&amp;
 
 ninja</userinput></screen>
@@ -215,7 +215,7 @@ ninja</userinput></screen>
       -D introspection=disabled \
       -D glib_debug=disabled    \
       -D man-pages=disabled     \
-      -D tests=disabled         \
+      -D tests=false            \
       -D sysprof=disabled       &amp;&amp;
 
 ninja</userinput></screen>
@@ -243,7 +243,7 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <parameter>-D tests=disabled</parameter>: This switch causes tests
+      <parameter>-D tests=false</parameter>: This switch causes tests
       to be built. It is disabled because it is beyond the scope of GLFS.
       If you'd like to test glib, reference
       <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/glib2.html">
