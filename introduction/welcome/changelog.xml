@@ -43,6 +43,9 @@
       <para>October 28th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - rust-bindgen: 0.69.4 -&gt; 0.69.5.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - GLib2: tests switch move from disabled to
           false.</para>
         </listitem>
