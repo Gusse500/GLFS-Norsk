@@ -308,7 +308,7 @@ ldconfig</userinput></screen>
       file as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen><userinput>sed -i 's/\/usr/\$XORG_PREFIX/g' \
+<screen role="root"><userinput>sed -i 's/\/usr/\$XORG_PREFIX/g' \
     /usr/share/pkgconfig/personality.d/i686-pc-linux-gnu.personality</userinput></screen>
 
     <para>
@@ -438,8 +438,10 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             <literal>zink</literal> (a driver converting Vulkan calls to OpenGL;
-            it is maturing and becoming more useful and performant and can be used
-	    as a replacement for dri drivers like <literal>nouveau</literal>)
+            if the Vulkan driver is performant, this driver can also be
+            performant; can be used as a replacement for dri drivers like
+            <literal>nouveau</literal> as detailed in
+            <xref linkend="whatnow"/>)
           </para>
         </listitem>
         <listitem>
@@ -507,8 +509,9 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             <literal>nouveau</literal> (for GTX 16XX, RTX 20XX, or newer NVIDIA GPUs;
-            this driver is maturing so performance isn't the best but is fairly
-	    usable)
+            this driver is maturing and is already quite performant, although less so
+            than the <xref linkend="nvidia"/> driver; however, it is a good replacement,
+            especially when used with Gallium3D <literal>zink</literal>)
           </para>
         </listitem>
         <listitem>
