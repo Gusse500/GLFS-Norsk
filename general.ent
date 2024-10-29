@@ -105,6 +105,9 @@
 <!ENTITY sysprof-url          "https://wiki.gnome.org/Apps/Sysprof">
 <!ENTITY man                  "https://man.archlinux.org/man/">
 
+<!ENTITY glfs-repo            "https://github.com/glfs-book/glfs">
+<!ENTITY glfs-issues          "&glfs-repo;/issues">
+
 <!-- Convenience entities -->
 <!ENTITY root                 "<systemitem class='username'>root</systemitem>">
 <!ENTITY gi-docgen-url        "https://gnome.pages.gitlab.gnome.org/gi-docgen/">
