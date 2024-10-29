@@ -105,6 +105,26 @@
     </sect3>
 
     <sect3>
+      <title>Using Zink</title>
+
+      <para>
+        If you compiled Zink in <xref linkend="mesa"/>, chances are X11 or
+	any Wayland compositors will use the Gallium3D driver meant for your
+        GPU specifically, like Nouveau for NVIDIA GPUs. You can override this
+        by setting the following variable:
+      </para>
+
+      <screen><userinput>export MESA_LOADER_DRIVER_OVERRIDE=zink</userinput></screen>
+
+      <para>
+        This could be considered unstable, so if you experience crashes, the
+        Zink driver could be the issue and you should use the Gallium3D driver
+        meant for your GPU instead.
+      </para>
+
+    </sect3>
+
+    <sect3>
       <title>X11 Components</title>
 
       <para>

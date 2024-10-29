@@ -107,11 +107,7 @@
       proprietary driver is easier and doesn't require installing
       lib32-<application>mesa</application> for multilib. There is another
       driver called <emphasis>Zink</emphasis> which translates Vulkan
-      calls to OpenGL calls, and performance between <emphasis>Nouveau
-      </emphasis> and <emphasis>Zink</emphasis> varies. It isn't NVIDIA
-      specific but performance will probably improve. It is a Gallium3D
-      driver in <xref linkend="mesa"/> and doesn't require extra kernel
-      options enabled.
+      calls to OpenGL calls.
     </para>
 
     <para>
@@ -121,7 +117,7 @@
       Mesa Vulkan driver, although they have different parts and the
       Vulkan driver is often referred to as <emphasis>NVK</emphasis>,
       depsite being referred to as nouveau in Mesa's <parameter>
-      -Dvulkan-drivers=</parameter> option.
+      -D vulkan-drivers=</parameter> option.
     </para>
 
     <para>
@@ -133,6 +129,16 @@
       going to need Rust, and if you are doing multilib, are going
       to need the i686-unknown-linux-gnu target. Also make sure to install
       <emphasis>Nouveau</emphasis> if you want to install this driver.
+    </para>
+
+    <para>
+      <emphasis>Zink</emphasis>: this driver is a Gallium3D driver in
+      <xref linkend="mesa"/>, converting OpenGL calls to Vulkan calls,
+      drastically improving performance. It isn't specifically related
+      to <emphasis>Nouveau</emphasis> but as performance with
+      <emphasis>Nouveau</emphasis> is not the best,
+      using the <emphasis>Zink</emphasis> driver with
+      <emphasis>NVK</emphasis> is a great idea.
     </para>
 
     <para>
@@ -153,8 +159,9 @@
       use cases, install <emphasis>NVIDIA</emphasis>. If you only use
       OpenGL applications and don't want the proprietary NVIDIA driver,
       use <emphasis>Nouveau</emphasis>. If you use a variety of
-      applications and play games that utilize DirectX and Vulkan, install
-      both <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>.
+      applications and play games that utilize Direct3D and Vulkan, install
+      both <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>. Installing
+      <emphasis>Zink</emphasis> is a good idea, too.
     </para>
 
   </sect2>

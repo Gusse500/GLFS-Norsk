@@ -54,14 +54,13 @@
   <para>
     The next chapter is Steam, which covers all the packages,
     patches, configuration, and setup necessary to get
-    <application>Steam</application>
-    working and capable of the playing the following: Linux games,
-    Windows games via Proton, games using OpenGL, games using
-    Vulkan, games using D3D, and games using OpenXR. It covers
-    both regular compilation of packages and lib32 compilation of
-    some of the same packages. If you read the multilib section
-    and decided that you desire NOT to go with multilib (despite
-    any warnings), you can ignore the lib32 variants of packages).
+    <application>Steam</application> working and capable of the
+    playing the following: Linux games, Windows games via Proton,
+    and games using OpenGL, Vulkan, and Direct3D. It covers both
+    regular compilation of packages and lib32 compilation of some
+    of the same packages. If you read the multilib section and
+    decided that you desire NOT to go with multilib (despite any
+    warnings), you can ignore the lib32 variants of packages).
     Otherwise, follow every step unless told otherwise in the
     respective sections or are presented with options.
   </para>
