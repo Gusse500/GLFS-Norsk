@@ -131,13 +131,13 @@ ldconfig</userinput></screen>
         <seg>
           libunwind.so,
           libunwind-coredump.so,
-          libunwind-generic.so,
+          libunwind-generic.so (symlink to libunwind-x86*.so),
           libunwind-ptrace.so,
           libunwind-setjmp.so, and
           libunwind-x86_64.so (libunwind-x86.so on i686)
         </seg>
         <seg>
-          None
+          /usr/libexec/libunwind
         </seg>
       </seglistitem>
     </segmentedlist>
