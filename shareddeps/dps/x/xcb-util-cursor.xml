@@ -11,7 +11,6 @@
 <sect1 id="xcb-util-cursor" xreflabel="xcb-util-cursor-&xcb-util-cursor-version;">
   <?dbhtml filename="xcb-util-cursor.html"?>
 
-
   <title>xcb-util-cursor-&xcb-util-cursor-version;</title>
 
   <indexterm zone="xcb-util-cursor">
@@ -26,8 +25,6 @@
       that implements the XCB cursor library.  It is the
       <application>XCB</application> replacement for libXcursor.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

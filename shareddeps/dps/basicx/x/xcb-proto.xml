@@ -27,8 +27,6 @@
       uses to generate the majority of its code and API.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -42,7 +40,6 @@
       </listitem>
     </itemizedlist>
 
-
     <bridgehead renderas="sect3">xcb-proto Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
@@ -55,7 +52,6 @@
       <ulink url="&blfs-svn;/general/libxml2.html">libxml2</ulink>
       (required to run the tests)
     </para>
-
 
   </sect2>
 

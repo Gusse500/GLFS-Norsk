@@ -11,7 +11,6 @@
 <sect1 id="xcb-util-errors" xreflabel="xcb-util-errors-&xcb-util-errors-version;">
   <?dbhtml filename="xcb-util-errors.html"?>
 
-
   <title>xcb-util-errors-&xcb-util-errors-version;</title>
 
   <indexterm zone="xcb-util-errors">
@@ -26,8 +25,6 @@
       human-readable names for errors, events, and request codes. Not needed
       by any packages in this book but may be useful for packages elsewhere.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

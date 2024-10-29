@@ -11,7 +11,6 @@
 <sect1 id="mingw-w64-headers" xreflabel="MinGW-w64-headers-&mingw-w64-version;">
   <?dbhtml filename="mingw-w64-headers.html"?>
 
-
   <title>MinGW-w64-headers-&mingw-w64-version;</title>
 
   <indexterm zone="mingw-w64-headers">
@@ -25,8 +24,6 @@
       MinGW-w64-headers provides header files for Windows. The rest of the
       MinGW-w64 will be compiled later.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -55,7 +52,7 @@
     </para>
 
 <screen><userinput>mkdir build-x86_64-headers &amp;&amp;
-cd build-x86_64-headers
+cd build-x86_64-headers    &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/x86_64-w64-mingw32 \
 			       --enable-sdk=all                 \
@@ -78,12 +75,11 @@ cd build-x86_64-headers
     </para>
 
 <screen><userinput>mkdir build-i686-headers &amp;&amp;
-cd build-i686-headers
+cd build-i686-headers    &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/i686-w64-mingw32 \
 			       --enable-sdk=all               \
-			       --host=i686-w64-mingw32
-</userinput></screen>
+			       --host=i686-w64-mingw32</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
@@ -91,7 +87,8 @@ cd build-i686-headers
 
 <screen role="root"><userinput>make install</userinput></screen>
 
-  </sect3>
+    </sect3>
+
   </sect2>
 
   <sect2 role="commands">

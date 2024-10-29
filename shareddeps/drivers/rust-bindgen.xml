@@ -11,7 +11,6 @@
 <sect1 id="rust-bindgen" xreflabel="rust-bindgen-&rust-bindgen-version;">
   <?dbhtml filename="rust-bindgen.html"?>
 
-
   <title>rust-bindgen-&rust-bindgen-version;</title>
 
   <indexterm zone="rust-bindgen">
@@ -25,8 +24,6 @@
       Automatically generates <application>Rust</application> FFI
       bindings to C (and some C++) libraries.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

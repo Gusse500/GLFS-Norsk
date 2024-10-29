@@ -25,8 +25,6 @@
       for bi-directional translation between SPIR-V and LLVM IR.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -124,9 +122,9 @@ ninja</userinput></screen>
       Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

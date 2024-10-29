@@ -11,7 +11,6 @@
 <sect1 id="mingw-w64-gcc-static" xreflabel="Static MinGW-w64-GCC-&mingw-w64-gcc-version;">
   <?dbhtml filename="mingw-w64-gcc-static.html"?>
 
-
   <title>Static MinGW-w64-GCC-&mingw-w64-gcc-version;</title>
 
   <indexterm zone="mingw-w64-gcc-static">

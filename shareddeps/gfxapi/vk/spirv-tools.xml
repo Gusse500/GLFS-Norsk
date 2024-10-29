@@ -25,8 +25,6 @@
       and utilities for processing SPIR-V modules.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -77,6 +75,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
       -D SPIRV_TOOLS_BUILD_STATIC=OFF  \
       -D SPIRV-Headers_SOURCE_DIR=/usr \
       -G Ninja .. &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -122,9 +121,9 @@ ninja</userinput></screen>
       Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

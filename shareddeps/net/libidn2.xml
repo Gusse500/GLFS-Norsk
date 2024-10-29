@@ -29,8 +29,6 @@
       internationalized domain names.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -74,16 +72,6 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
-  </sect2>
-
-  <sect2 role="commands">
-    <title>Command Explanations</title>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/gtk-doc-rebuild.xml"/>
 
   </sect2>
 
@@ -114,10 +102,21 @@ make</userinput></screen>
 	Now as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/static-libraries.xml"/>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/gtk-doc-rebuild.xml"/>
 
   </sect2>
 

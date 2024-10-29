@@ -11,7 +11,6 @@
 <sect1 id="xdg-user-dirs" xreflabel="Xdg-user-dirs-&xdg-user-dirs-version;">
   <?dbhtml filename="xdg-user-dirs.html"?>
 
-
   <!-- No other tags inside any title.
        Use Title Case in All Titles -->
   <title>Xdg-user-dirs-&xdg-user-dirs-version;</title>
@@ -29,8 +28,6 @@
       known</quote> user directories like the desktop folder and the music folder.
       It also handles localization (i.e. translation) of the filenames.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

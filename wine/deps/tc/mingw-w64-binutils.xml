@@ -11,7 +11,6 @@
 <sect1 id="mingw-w64-binutils" xreflabel="MinGW-w64-binutils-&binutils-version;">
   <?dbhtml filename="mingw-w64-binutils.html"?>
 
-
   <title>MinGW-w64-binutils-&binutils-version;</title>
 
   <indexterm zone="mingw-w64-binutils">
@@ -34,8 +33,6 @@
         build it again after building <xref linkend="mingw-w64-gcc"/>.
       </para>
     </note>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -67,14 +64,14 @@
     </para>
 
 <screen><userinput>mkdir build-x86_64 &amp;&amp;
-cd build-x86_64
+cd build-x86_64    &amp;&amp;
 
 ../configure --prefix=/usr                                \
 	     --target=x86_64-w64-mingw32                  \
 	     --infodir=/usr/share/info/x86_64-w64-mingw32 \
 	     --disable-multilib				  \
 	     --disable-nls				  \
-	     --disable-werror
+	     --disable-werror &amp;&amp;
 
 make</userinput></screen>
 
@@ -82,9 +79,8 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make install
-rm -v /usr/lib/bfd-plugins/libdep.so
-</userinput></screen>
+<screen role="root"><userinput>make install &amp;&amp;
+rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
 
   </sect3>
 
@@ -97,14 +93,14 @@ rm -v /usr/lib/bfd-plugins/libdep.so
     </para>
 
 <screen><userinput>mkdir build-i686 &amp;&amp;
-cd build-i686
+cd build-i686    &amp;&amp;
 
 ../configure --prefix=/usr                                \
 	     --target=i686-w64-mingw32                    \
 	     --infodir=/usr/share/info/i686-w64-mingw32   \
 	     --disable-multilib				  \
 	     --disable-nls				  \
-	     --disable-werror
+	     --disable-werror &amp;&amp;
 
 make</userinput></screen>
 
@@ -112,11 +108,11 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make install
-rm -v /usr/lib/bfd-plugins/libdep.so
-</userinput></screen>
+<screen role="root"><userinput>make install &amp;&amp;
+rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
 
-  </sect3>
+    </sect3>
+
   </sect2>
 
   <sect2 role="commands">

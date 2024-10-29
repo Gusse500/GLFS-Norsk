@@ -28,8 +28,6 @@
       interface.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -162,19 +160,18 @@ install -v -m644 doc/doxygen/html/search/* \
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
 ./configure --prefix=/usr            \
-	    --libdir=/usr/lib32      \
-            --host=i686-pc-linux-gnu
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu &amp;&amp;
 
 make</userinput></screen>
-
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

@@ -27,8 +27,6 @@
       non-interactive downloading of files from the Web.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -78,6 +76,7 @@
 <screen><userinput>./configure --prefix=/usr      \
             --sysconfdir=/etc  \
             --with-ssl=openssl &amp;&amp;
+
 make</userinput></screen>
 
     <para>

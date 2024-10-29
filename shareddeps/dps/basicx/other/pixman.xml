@@ -11,7 +11,6 @@
 <sect1 id="pixman" xreflabel="Pixman-&pixman-version;">
   <?dbhtml filename="pixman.html"?>
 
-
   <title>Pixman-&pixman-version;</title>
 
   <indexterm zone="pixman">
@@ -26,8 +25,6 @@
       provides low-level pixel manipulation features such as image
       compositing and trapezoid rasterization.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

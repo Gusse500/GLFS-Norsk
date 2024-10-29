@@ -27,8 +27,6 @@
       communicate with privileged processes.
     </para>
 
-    
-
     <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -127,13 +125,9 @@ meson setup ..                    \
       --buildtype=release         \
       -D man=false                \
       -D session_tracking=elogind \
-      -D tests=false</userinput></screen>
+      -D tests=false &amp;&amp;
 
-    <para>
-      Build the package:
-    </para>
-
-<screen><userinput>ninja</userinput></screen>
+ninja</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:

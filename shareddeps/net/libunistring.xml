@@ -27,8 +27,6 @@
       strings according to the Unicode standard.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -55,6 +53,7 @@
 <screen><userinput>./configure --prefix=/usr    \
             --disable-static \
             --docdir=/usr/share/doc/libunistring-&libunistring-version; &amp;&amp;
+
 make</userinput></screen>
 
     <para>
@@ -69,19 +68,11 @@ make</userinput></screen>
 
   </sect2>
 
-  <sect2 role="commands">
-    <title>Command Explanations</title>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
-
-  </sect2>
-
   <sect2>
     <title>32-bit Installation of lib32-libunistring</title>
 
     <para>
-	First clean the directory by running the following command:
+      First clean the directory by running the following command:
     </para>
 
     <screen><userinput>make distclean</userinput></screen>
@@ -104,10 +95,18 @@ make</userinput></screen>
 	Now as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/static-libraries.xml"/>
 
   </sect2>
 

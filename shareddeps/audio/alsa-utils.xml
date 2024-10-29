@@ -27,8 +27,6 @@
       card.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -88,6 +86,7 @@
             --disable-bat      \
             --disable-xmlto    \
             --with-curses=ncursesw &amp;&amp;
+
 make</userinput></screen>
 
     <para>

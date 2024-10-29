@@ -11,7 +11,6 @@
 <sect1 id="gnutls" xreflabel="GnuTLS-&gnutls-version;">
   <?dbhtml filename="gnutls.html"?>
 
-
   <title>GnuTLS-&gnutls-version;</title>
 
   <indexterm zone="gnutls">
@@ -48,8 +47,6 @@
       Pre-Shared-Keys (PSK) extension, the Inner Application (TLS/IA)
       extension, and X.509 and OpenPGP certificate handling.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

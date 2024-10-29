@@ -29,8 +29,6 @@
       local (same-process) and remote (across-process) operation.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -87,7 +85,6 @@ make</userinput></screen>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                     \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
-CFLAGS+=" -Wno-error=incompatible-pointer-types" \
 ./configure --prefix=/usr                        \
             --libdir=/usr/lib32                  \
             --host=i686-pc-linux-gnu             \
@@ -99,10 +96,10 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-cp -v DESTDIR/usr/include/libunwind-x86.h /usr/include
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install                      &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
+cp -v DESTDIR/usr/include/libunwind-x86.h /usr/include &amp;&amp;
+rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

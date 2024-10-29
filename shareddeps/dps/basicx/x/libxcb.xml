@@ -28,8 +28,6 @@
       requests and receive responses with both.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -69,6 +67,7 @@
 <screen><userinput>./configure $XORG_CONFIG      \
             --without-doxygen \
             --docdir='${datadir}'/doc/libxcb-&libxcb-version; &amp;&amp;
+
 make</userinput></screen>
 
     <para>
@@ -113,9 +112,9 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install                      &amp;&amp;
+cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

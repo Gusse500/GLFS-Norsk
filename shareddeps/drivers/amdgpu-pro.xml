@@ -23,8 +23,6 @@
       EGL, OpenGL, GLES, and Vulkan support.
     </para>
 
-    
-
     <bridgehead renderas="sect3">AMDGPU PRO Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
@@ -76,35 +74,35 @@ EOF</userinput></screen>
       Download and unpack the drivers by following the instructions below:
     </para>
 
-<screen><userinput>mkdir -pv x86_64-amdgpu-pro
-cd x86_64-amdgpu-pro
+<screen><userinput>mkdir -pv x86_64-amdgpu-pro                                                        &amp;&amp;
+cd        x86_64-amdgpu-pro                                                        &amp;&amp;
 
-wget --continue --input-file=../x86_64-amdgpu-pro-wget-list
+wget --continue --input-file=../x86_64-amdgpu-pro-wget-list                        &amp;&amp;
 for deb in *.deb; do
-  ar x $deb
-  tar -xf data.tar.xz
+  ar x $deb                                                                        &amp;&amp;
+  tar -xf data.tar.xz                                                              &amp;&amp;
   rm -rf *.tar.xz debian-binary dists
-done
+done                                                                               &amp;&amp;
 
-install -d usr/lib/amdgpu-pro
-install -d usr/share/drirc.d
-cp -r opt/amdgpu-pro/lib/x86_64-linux-gnu/* usr/lib
-cp -r usr/lib/x86_64-linux-gnu/* usr/lib
-cp -r opt/amdgpu-pro/lib/x86_64-linux-gnu/* usr/lib/amdgpu-pro
-mv opt/amdgpu-pro/lib/xorg usr/lib/amdgpu-pro
-cp -r opt/amdgpu/share/drirc.d/* usr/share/drirc.d
-cp -r usr/lib/amdgpu-pro/* usr/lib
-cp -r opt/amdgpu-pro/etc/vulkan usr/share
-mv usr/share/vulkan/icd.d/amd_icd64.json usr/share/vulkan/icd.d/amd_pro_icd64.json
-mv usr/lib/amdvlk64.so usr/lib/amdvlkpro64.so
+install -d usr/lib/amdgpu-pro                                                      &amp;&amp;
+install -d usr/share/drirc.d                                                       &amp;&amp;
+cp -r opt/amdgpu-pro/lib/x86_64-linux-gnu/* usr/lib                                &amp;&amp;
+cp -r usr/lib/x86_64-linux-gnu/* usr/lib                                           &amp;&amp;
+cp -r opt/amdgpu-pro/lib/x86_64-linux-gnu/* usr/lib/amdgpu-pro                     &amp;&amp;
+mv opt/amdgpu-pro/lib/xorg usr/lib/amdgpu-pro                                      &amp;&amp;
+cp -r opt/amdgpu/share/drirc.d/* usr/share/drirc.d                                 &amp;&amp;
+cp -r usr/lib/amdgpu-pro/* usr/lib                                                 &amp;&amp;
+cp -r opt/amdgpu-pro/etc/vulkan usr/share                                          &amp;&amp;
+mv usr/share/vulkan/icd.d/amd_icd64.json usr/share/vulkan/icd.d/amd_pro_icd64.json &amp;&amp;
+mv usr/lib/amdvlk64.so usr/lib/amdvlkpro64.so                                      &amp;&amp;
 sed -i "s#/opt/amdgpu-pro/lib/x86_64-linux-gnu/amdvlk64.so#/usr/lib/amdvlkpro64.so#" \
-  usr/share/vulkan/icd.d/amd_pro_icd64.json
-rm -rf opt/amdgpu-pro/lib/x86_64-linux-gnu
-rm -rf usr/lib/x86_64-linux-gnu
-rm -rf opt/amdgpu-pro/lib/x86_64-linux-gnu
-rm -rf opt/amdgpu-pro/share/drirc.d
-rm -rf usr/lib/amdgpu-pro
-rm -rf opt/amdgpu-pro/etc/vulkan
+  usr/share/vulkan/icd.d/amd_pro_icd64.json                                        &amp;&amp;
+rm -rf opt/amdgpu-pro/lib/x86_64-linux-gnu                                         &amp;&amp;
+rm -rf usr/lib/x86_64-linux-gnu                                                    &amp;&amp;
+rm -rf opt/amdgpu-pro/lib/x86_64-linux-gnu                                         &amp;&amp;
+rm -rf opt/amdgpu-pro/share/drirc.d                                                &amp;&amp;
+rm -rf usr/lib/amdgpu-pro                                                          &amp;&amp;
+rm -rf opt/amdgpu-pro/etc/vulkan                                                   &amp;&amp;
 rm -rf etc opt</userinput></screen>
 
   <para>
@@ -112,7 +110,7 @@ rm -rf etc opt</userinput></screen>
     <systemitem class="username">root</systemitem> user:
   </para>
 
-<screen role="root"><userinput>cp -Rv usr/* /usr
+<screen role="root"><userinput>cp -Rv usr/* /usr &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
@@ -146,31 +144,31 @@ EOF</userinput></screen>
       Download and unpack the drivers by following the instructions below:
     </para>
 
-<screen><userinput>mkdir -pv i386-amdgpu-pro
-cd i386-amdgpu-pro
+<screen><userinput>mkdir -pv i386-amdgpu-pro                                                          &amp;&amp;
+cd        i386-amdgpu-pro                                                          &amp;&amp;
 
-wget --continue --input-file=../i386-amdgpu-pro-wget-list
+wget --continue --input-file=../i386-amdgpu-pro-wget-list                          &amp;&amp;
 for deb in *.deb; do
-  ar x $deb
-  tar -xf data.tar.xz
+  ar x $deb                                                                        &amp;&amp;
+  tar -xf data.tar.xz                                                              &amp;&amp;
   rm -rf *.tar.xz debian-binary dists
-done
+done                                                                               &amp;&amp;
 
-install -d usr/lib32/amdgpu-pro
-install -d usr/share/drirc.d
-cp -r opt/amdgpu-pro/lib/i386-linux-gnu/* usr/lib32
-cp -r usr/lib/i386-linux-gnu/* usr/lib32
-cp -r opt/amdgpu-pro/lib/i386-linux-gnu/* usr/lib32/amdgpu-pro
-cp -r opt/amdgpu/share/drirc.d/* usr/share/drirc.d
-cp -r usr/lib32/amdgpu-pro/* usr/lib32
-cp -r opt/amdgpu-pro/etc/vulkan usr/share
-mv usr/share/vulkan/icd.d/amd_icd32.json usr/share/vulkan/icd.d/amd_pro_icd32.json
-mv usr/lib32/amdvlk32.so usr/lib32/amdvlkpro32.so
+install -d usr/lib32/amdgpu-pro                                                    &amp;&amp;
+install -d usr/share/drirc.d                                                       &amp;&amp;
+cp -r opt/amdgpu-pro/lib/i386-linux-gnu/* usr/lib32                                &amp;&amp;
+cp -r usr/lib/i386-linux-gnu/* usr/lib32                                           &amp;&amp;
+cp -r opt/amdgpu-pro/lib/i386-linux-gnu/* usr/lib32/amdgpu-pro                     &amp;&amp;
+cp -r opt/amdgpu/share/drirc.d/* usr/share/drirc.d                                 &amp;&amp;
+cp -r usr/lib32/amdgpu-pro/* usr/lib32                                             &amp;&amp;
+cp -r opt/amdgpu-pro/etc/vulkan usr/share                                          &amp;&amp;
+mv usr/share/vulkan/icd.d/amd_icd32.json usr/share/vulkan/icd.d/amd_pro_icd32.json &amp;&amp;
+mv usr/lib32/amdvlk32.so usr/lib32/amdvlkpro32.so                                  &amp;&amp;
 sed -i "s#/opt/amdgpu-pro/lib/i386-linux-gnu/amdvlk32.so#/usr/lib32/amdvlkpro32.so#" \
-  usr/share/vulkan/icd.d/amd_pro_icd32.json
-rm -rf usr/lib
-rm -rf usr/lib32/amdgpu-pro
-rm -rf etc opt
+  usr/share/vulkan/icd.d/amd_pro_icd32.json                                        &amp;&amp;
+rm -rf usr/lib                                                                     &amp;&amp;
+rm -rf usr/lib32/amdgpu-pro                                                        &amp;&amp;
+rm -rf etc opt                                                                     &amp;&amp;
 
 case $(uname -m) in
   i686)
@@ -183,7 +181,7 @@ esac</userinput></screen>
     <systemitem class="username">root</systemitem> user:
   </para>
 
-<screen role="root"><userinput>cp -Rv usr/* /usr
+<screen role="root"><userinput>cp -Rv usr/* /usr &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

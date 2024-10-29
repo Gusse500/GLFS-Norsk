@@ -12,7 +12,6 @@
 <sect1 id="pulseaudio" xreflabel="PulseAudio-&pulseaudio-version;">
   <?dbhtml filename="pulseaudio.html"?>
 
-
   <title>PulseAudio-&pulseaudio-version;</title>
 
   <indexterm zone="pulseaudio">
@@ -30,8 +29,6 @@
       different machine, changing the sample format or channel count and mixing
       several sounds into one are easily achieved using a sound server.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -110,6 +107,7 @@ meson setup --prefix=/usr       \
             -D doxygen=false    \
             -D bluez5=disabled  \
             .. &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -162,9 +160,9 @@ make</userinput></screen>
         Now as the <systemitem class="username">root</systemitem> user:
       </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -Rv DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
     </note>
@@ -187,7 +185,7 @@ ldconfig</userinput></screen>
             -D database=gdbm         \
             -D doxygen=false         \
             -D bluez5=disabled       \
-            ..
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -195,9 +193,9 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
   
   </sect2>

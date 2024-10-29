@@ -11,7 +11,6 @@
 <sect1 id="gnat" xreflabel="GNAT-&gcc-version;">
   <?dbhtml filename="gnat.html"?>
 
-
   <title>GNAT-&gcc-version;</title>
 
   <indexterm zone="gnat">
@@ -29,8 +28,6 @@
 	<xref linkend="wine"/>, although some packages
 	optionally depend on it.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -120,7 +117,7 @@
     sed -e '/m64=/s/lib64/lib/' \
         -i.orig gcc/config/i386/t-linux64
   ;;
-esac
+esac &amp;&amp;
 
 mkdir build &amp;&amp;
 cd    build &amp;&amp;
@@ -132,7 +129,7 @@ cd    build &amp;&amp;
     --enable-default-pie   \
     --enable-default-ssp   \
     --disable-fixincludes  \
-    --enable-languages=ada,c,c++
+    --enable-languages=ada,c,c++ &amp;&amp;
 
 make</userinput></screen>
 
@@ -140,9 +137,9 @@ make</userinput></screen>
         If running tests, as in LFS, remove/fix several known test failures:
     </para>
 
-<screen><userinput>sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
-sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c
-sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c
+<screen><userinput>sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp &amp;&amp;
+sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c &amp;&amp;
+sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c &amp;&amp;
 sed -e 's/{ target nonpic } //' \
     -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c</userinput></screen>
 
@@ -180,7 +177,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib    &amp;&amp;
 
 chown -v -R root:root \
     /usr/lib/gcc/*linux-gnu/&gcc-version;/include{,-fixed} \
-    /usr/lib/gcc/*linux-gnu/&gcc-version;/ada{lib,include}
+    /usr/lib/gcc/*linux-gnu/&gcc-version;/ada{lib,include} &amp;&amp;
 
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
         /usr/lib/bfd-plugins/</userinput></screen>
@@ -208,7 +205,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
     sed -e '/m64=/s/lib64/lib/' \
         -i.orig gcc/config/i386/t-linux64
   ;;
-esac
+esac &amp;&amp;
 
 mkdir build &amp;&amp;
 cd    build &amp;&amp;
@@ -221,7 +218,7 @@ cd    build &amp;&amp;
     --enable-default-pie         \
     --enable-default-ssp         \
     --disable-fixincludes        \
-    --enable-languages=ada,c,c++
+    --enable-languages=ada,c,c++ &amp;&amp;
 
 make</userinput></screen>
 
@@ -229,9 +226,9 @@ make</userinput></screen>
         If running tests, as in LFS, remove/fix several known test failures:
     </para>
 
-<screen><userinput>sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp
-sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c
-sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c
+<screen><userinput>sed -e '/cpython/d'               -i ../gcc/testsuite/gcc.dg/plugin/plugin.exp &amp;&amp;
+sed -e 's/no-pic /&amp;-no-pie /'     -i ../gcc/testsuite/gcc.target/i386/pr113689-1.c &amp;&amp;
+sed -e 's/300000/(1|300000)/'     -i ../libgomp/testsuite/libgomp.c-c++-common/pr109062.c &amp;&amp;
 sed -e 's/{ target nonpic } //' \
     -e '/GOTPCREL/d'              -i ../gcc/testsuite/gcc.target/i386/fentryname3.c</userinput></screen>
 
@@ -269,7 +266,7 @@ mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib    &amp;&amp;
 
 chown -v -R root:root \
     /usr/lib/gcc/*linux-gnu/&gcc-version;/include{,-fixed} \
-    /usr/lib/gcc/*linux-gnu/&gcc-version;/ada{lib,include}
+    /usr/lib/gcc/*linux-gnu/&gcc-version;/ada{lib,include} &amp;&amp;
 
 ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
         /usr/lib/bfd-plugins/</userinput></screen>
@@ -310,11 +307,11 @@ unset PATH_HOLD</userinput></screen>
 <screen><userinput>echo "int main(){}" >> main.c &amp;&amp;
 cp -v main.c main.cpp &amp;&amp;
 gcc main.c            &amp;&amp;
-./a.out
+./a.out               &amp;&amp;
 
 rm -v a.out           &amp;&amp;
 g++ main.cpp          &amp;&amp;
-./a.out
+./a.out               &amp;&amp;
 
 rm -v a.out main.{c,cpp}</userinput></screen>
 
@@ -324,12 +321,12 @@ rm -v a.out main.{c,cpp}</userinput></screen>
 
 <screen><userinput>echo "int main(){}" >> main.c &amp;&amp;
 cp -v main.c main.cpp &amp;&amp;
-gcc -m32 main.c            &amp;&amp;
-./a.out
+gcc -m32 main.c       &amp;&amp;
+./a.out               &amp;&amp;
 
 rm -v a.out           &amp;&amp;
-g++ -m32 main.cpp          &amp;&amp;
-./a.out
+g++ -m32 main.cpp     &amp;&amp;
+./a.out               &amp;&amp;
 
 rm -v a.out main.{c,cpp}</userinput></screen>
 
@@ -337,7 +334,7 @@ rm -v a.out main.{c,cpp}</userinput></screen>
 	And finally, test the GNAT compiler:
     </para>
 
-<screen><userinput>cat &gt;&gt; testgnat.adb &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; testgnat.adb &lt;&lt; "EOF" &amp;&amp;
 <literal>with Ada.Text_IO; use Ada.Text_IO;
 procedure Testgnat is
 begin
@@ -345,8 +342,8 @@ begin
 end Testgnat;</literal>
 EOF
 
-gnatmake testgnat.adb &amp;&amp;
-./testgnat
+gnatmake testgnat.adb                    &amp;&amp;
+./testgnat                               &amp;&amp;
 
 rm -v testgnat*</userinput></screen>
 

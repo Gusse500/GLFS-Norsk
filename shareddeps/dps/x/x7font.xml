@@ -11,7 +11,6 @@
 <sect1 id="xorg7-font" xreflabel="Xorg Fonts">
   <?dbhtml filename="x7font.html"?>
 
-
   <title>Xorg Fonts</title>
 
   <indexterm zone="xorg7-font">
@@ -28,8 +27,6 @@
       addition to, or instead of, these. Some are listed at <ulink
       url="&blfs-svn;/x/TTF-and-OTF-fonts">TTF-and-OTF-fonts</ulink>.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

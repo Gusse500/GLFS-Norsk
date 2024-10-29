@@ -11,7 +11,6 @@
 <sect1 id="xorg7-app" xreflabel="Xorg Applications">
   <?dbhtml filename="x7app.html"?>
 
-
   <title>Xorg Applications</title>
 
   <indexterm zone="xorg7-app">
@@ -25,8 +24,6 @@
       The <application>Xorg</application> applications provide the
       expected applications available in previous X Window implementations.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

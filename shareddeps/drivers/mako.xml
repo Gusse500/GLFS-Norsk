@@ -11,7 +11,6 @@
 <sect1 id="mako" xreflabel="mako-&mako-version;">
   <?dbhtml filename="mako.html"?>
 
-
   <title>Mako-&mako-version;</title>
 
   <indexterm zone="mako">
@@ -25,8 +24,6 @@
       <application>Mako</application> is a Python module that implements hyperfast
       and lightweight templating for the Python platform.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

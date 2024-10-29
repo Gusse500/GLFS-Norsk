@@ -11,7 +11,6 @@
 <sect1 id="mingw-w64-gcc" xreflabel="MinGW-w64-GCC-&mingw-w64-gcc-version;">
   <?dbhtml filename="mingw-w64-gcc.html"?>
 
-
   <title>MinGW-w64-GCC-&mingw-w64-gcc-version;</title>
 
   <indexterm zone="mingw-w64-gcc">
@@ -26,8 +25,6 @@
 	beforehand, and it should be rebuilt to ensure robustness. This section
 	will be dedicated to finishing the MinGW-w64 toolchain.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -205,11 +202,11 @@ strip /usr/libexec/gcc/i686-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,l
 <screen><userinput>echo "int main(){}" >> main.c &amp;&amp;
 cp -v main.c main.cpp &amp;&amp;
 gcc main.c            &amp;&amp;
-./a.out
+./a.out               &amp;&amp;
 
 rm -v a.out           &amp;&amp;
 g++ main.cpp          &amp;&amp;
-./a.out
+./a.out               &amp;&amp;
 
 rm -v a.out main.{c,cpp}</userinput></screen>
 
@@ -220,11 +217,11 @@ rm -v a.out main.{c,cpp}</userinput></screen>
 <screen><userinput>echo "int main(){}" >> main.c &amp;&amp;
 cp -v main.c main.cpp &amp;&amp;
 gcc -m32 main.c       &amp;&amp;
-./a.out
+./a.out               &amp;&amp;
 
 rm -v a.out           &amp;&amp;
 g++ -m32 main.cpp     &amp;&amp;
-./a.out
+./a.out               &amp;&amp;
 
 rm -v a.out main.{c,cpp}</userinput></screen>
 
@@ -232,7 +229,7 @@ rm -v a.out main.{c,cpp}</userinput></screen>
 	Test the GNAT compiler:
     </para>
 
-<screen><userinput>cat &gt;&gt; testgnat.adb &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; testgnat.adb &lt;&lt; "EOF" &amp;&amp;
 <literal>with Ada.Text_IO; use Ada.Text_IO;
 procedure Testgnat is
 begin
@@ -241,7 +238,7 @@ end Testgnat;</literal>
 EOF
 
 gnatmake testgnat.adb &amp;&amp;
-./testgnat
+./testgnat            &amp;&amp;
 
 rm -v testgnat*</userinput></screen>
 
@@ -253,13 +250,13 @@ rm -v testgnat*</userinput></screen>
 	For x86_64:
     </para>
 
-<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF"     &amp;&amp;
 <literal>#include &lt;stdio.h&gt;
 int main(){}
 </literal>EOF
 
-cp main.{c,cpp} &amp;&amp;
-sed -i 's/stdio.h/iostream/g' main.cpp
+cp main.{c,cpp}                        &amp;&amp;
+sed -i 's/stdio.h/iostream/g' main.cpp &amp;&amp;
 
 x86_64-w64-mingw32-gcc main.c   &amp;&amp;
 rm -v a.exe                     &amp;&amp;
@@ -270,17 +267,17 @@ rm -v a.exe main.{c,cpp}</userinput></screen>
 	For i686:
     </para>
 
-<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF"     &amp;&amp;
 <literal>#include &lt;stdio.h&gt;
 int main(){}
 </literal>EOF
 
-cp main.{c,cpp}               &amp;&amp;
-sed -i 's/stdio.h/iostream/g' main.cpp
+cp main.{c,cpp}                        &amp;&amp;
+sed -i 's/stdio.h/iostream/g' main.cpp &amp;&amp;
 
-i686-w64-mingw32-gcc main.c   &amp;&amp;
-rm -v a.exe                   &amp;&amp;
-i686-w64-mingw32-g++ main.cpp &amp;&amp;
+i686-w64-mingw32-gcc main.c            &amp;&amp;
+rm -v a.exe                            &amp;&amp;
+i686-w64-mingw32-g++ main.cpp          &amp;&amp;
 rm -v a.exe main.{c,cpp}</userinput></screen>
 
     <para>

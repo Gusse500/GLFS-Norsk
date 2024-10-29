@@ -26,10 +26,6 @@
       engine, with a focus on portability and compact footprint.
     </para>
 
-    <!-- To editors: make sure polkit works with duktape before
-         tagging duktape.  -->
-    
-
     <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -44,7 +40,6 @@
       </listitem>
     </itemizedlist>
 
-
   </sect2>
 
   <sect2 role="installation">
@@ -55,7 +50,7 @@
       following commands:
     </para>
 
-<screen><userinput>sed -i 's/-Os/-O2/' Makefile.sharedlibrary
+<screen><userinput>sed -i 's/-Os/-O2/' Makefile.sharedlibrary &amp;&amp;
 make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr</userinput></screen>
 
     <para>

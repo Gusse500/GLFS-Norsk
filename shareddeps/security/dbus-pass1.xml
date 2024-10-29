@@ -74,6 +74,7 @@
             --with-systemdsystemunitdir=no       \
             --docdir=/usr/share/doc/dbus-&dbus-version;  \
             --with-system-socket=/run/dbus/system_bus_socket &amp;&amp;
+
 make</userinput></screen>
 
     <para>
@@ -158,15 +159,16 @@ PKG_CONFIG_PATH="/usr/lib32/pkgconfig"           \
             --with-systemduserunitdir=no         \
             --with-systemdsystemunitdir=no       \
             --with-system-socket=/run/dbus/system_bus_socket &amp;&amp;
+
 make</userinput></screen>
 
     <para>
       Now as the &root; user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vR DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vR DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

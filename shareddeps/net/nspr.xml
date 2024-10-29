@@ -26,8 +26,6 @@
       platform-neutral API for system level and libc like functions.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -96,15 +94,16 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 	    --with-mozilla	     \
             --with-pthreads	     \
             --disable-64bit &amp;&amp;
+
 make</userinput></screen>
 
     <para>
 	Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

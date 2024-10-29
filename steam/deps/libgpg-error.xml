@@ -11,7 +11,6 @@
 <sect1 id="libgpg-error" xreflabel="libgpg-error-&libgpg-error-version;">
   <?dbhtml filename="libgpg-error.html"?>
 
-
   <title>libgpg-error-&libgpg-error-version;</title>
 
   <indexterm zone="libgpg-error">
@@ -26,8 +25,6 @@
       library that defines common error values for all
       <application>GnuPG</application> components.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

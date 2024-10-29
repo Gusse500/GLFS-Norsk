@@ -12,7 +12,6 @@
 <sect1 id="xkeyboard-config" xreflabel="xkeyboard-config-&xkeyboard-config-version;">
   <?dbhtml filename="xkeyboard-config.html"?>
 
-
   <title>XKeyboardConfig-&xkeyboard-config-version;</title>
 
   <indexterm zone="xkeyboard-config">
@@ -26,8 +25,6 @@
       The <application>XKeyboardConfig</application> package contains
       the keyboard configuration database for the X Window System.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

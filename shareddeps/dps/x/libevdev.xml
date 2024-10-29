@@ -29,8 +29,6 @@
         functions for Xorg input drivers.
       </para>
 
-      
-
       <itemizedlist spacing="compact">
         <listitem>
           <para>
@@ -77,6 +75,7 @@ meson setup ..                 \
       --prefix=$XORG_PREFIX    \
       --buildtype=release      \
       -D documentation=disabled &amp;&amp;
+
 ninja</userinput></screen>
 
       <para>

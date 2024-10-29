@@ -12,7 +12,6 @@
 <sect1 id="xcb-util-wm" xreflabel="xcb-util-wm-&xcb-util-wm-version;">
   <?dbhtml filename="xcb-util-wm.html"?>
 
-
   <title>xcb-util-wm-&xcb-util-wm-version;</title>
 
   <indexterm zone="xcb-util-wm">
@@ -26,8 +25,6 @@
       The <application>xcb-util-wm</application> package contains libraries
       which provide client and window-manager helpers for EWMH and ICCCM.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

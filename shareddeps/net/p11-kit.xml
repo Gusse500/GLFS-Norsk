@@ -26,8 +26,6 @@
       enumerate PKCS #11 (a Cryptographic Token Interface Standard) modules.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -92,6 +90,7 @@ meson setup ..            \
       --prefix=/usr       \
       --buildtype=release \
       -D trust_paths=/etc/pki/anchors &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -105,31 +104,6 @@ ninja</userinput></screen>
 <screen role="root"><userinput>ninja install &amp;&amp;
 ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
         /usr/bin/update-ca-certificates</userinput></screen>
-
-  </sect2>
-
-  <sect2 role="commands">
-    <title>Command Explanations</title>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-buildtype-release.xml"/>
-
-    <para>
-      <parameter>-D trust_paths=/etc/pki/anchors</parameter>: this switch
-      sets the location of trusted certificates used by libp11-kit.so.
-    </para>
-
-    <para>
-      <option>-D hash_impl=freebl</option>: Use this switch if you want to
-      use the Freebl library from <application>NSS</application> for SHA1 and
-      MD5 hashing.
-    </para>
-
-    <para>
-      <option>-D gtk_doc=true</option>: Use this switch if you have installed
-      <!-- xref linkend="gtk-doc"/ --> and <!-- xref linkend="libxslt"/ --> and wish to
-      rebuild the documentation and generate manual pages.
-    </para>
 
   </sect2>
 
@@ -162,10 +136,35 @@ ninja</userinput></screen>
 	Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/meson-buildtype-release.xml"/>
+
+    <para>
+      <parameter>-D trust_paths=/etc/pki/anchors</parameter>: this switch
+      sets the location of trusted certificates used by libp11-kit.so.
+    </para>
+
+    <para>
+      <option>-D hash_impl=freebl</option>: Use this switch if you want to
+      use the Freebl library from <application>NSS</application> for SHA1 and
+      MD5 hashing.
+    </para>
+
+    <para>
+      <option>-D gtk_doc=true</option>: Use this switch if you have installed
+      <!-- xref linkend="gtk-doc"/ --> and <!-- xref linkend="libxslt"/ --> and wish to
+      rebuild the documentation and generate manual pages.
+    </para>
 
   </sect2>
 
@@ -178,7 +177,7 @@ ldconfig</userinput></screen>
 	<systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+<screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so &amp;&amp;
 ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib32/libnssckbi.so</userinput></screen>
 
   </sect2>

@@ -11,7 +11,6 @@
 <sect1 id="xcb-util-renderutil" xreflabel="xcb-util-renderutil-&xcb-util-renderutil-version;">
   <?dbhtml filename="xcb-util-renderutil.html"?>
 
-
   <title>xcb-util-renderutil-&xcb-util-renderutil-version;</title>
 
   <indexterm zone="xcb-util-renderutil">
@@ -25,8 +24,6 @@
       The <application>xcb-util-renderutil</application> package provides additional
       extensions to the <application>XCB</application> library.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

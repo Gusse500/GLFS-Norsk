@@ -11,7 +11,6 @@
 <sect1 id="wayland" xreflabel="Wayland-&wayland-version;">
   <?dbhtml filename="wayland.html"?>
 
-
   <title>Wayland-&wayland-version;</title>
 
   <indexterm zone="wayland">
@@ -26,8 +25,6 @@
       for a compositor to talk to its clients as well as a library
       implementation of the protocol.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -66,6 +63,7 @@ meson setup ..            \
       --prefix=/usr       \
       --buildtype=release \
       -D documentation=false &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -106,6 +104,7 @@ meson setup ..                       \
       --libdir=/usr/lib32            \
       --buildtype=release            \
       -D documentation=false &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -121,9 +120,9 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -Rv DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

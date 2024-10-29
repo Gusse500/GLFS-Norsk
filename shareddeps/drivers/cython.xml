@@ -11,7 +11,6 @@
 <sect1 id="cython" xreflabel="Cython-&cython-version;">
   <?dbhtml filename="cython.html"?>
 
-
   <title>Cython-&cython-version;</title>
 
   <indexterm zone="cython">
@@ -25,8 +24,6 @@
       The <application>Cython</application> package provides a compiler for
       writing C extensions for the <application>Python</application> language.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

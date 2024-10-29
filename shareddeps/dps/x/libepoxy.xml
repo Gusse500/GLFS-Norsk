@@ -11,7 +11,6 @@
 <sect1 id="libepoxy" xreflabel="libepoxy-&libepoxy-version;">
   <?dbhtml filename="libepoxy.html"?>
 
-
   <title>libepoxy-&libepoxy-version;</title>
 
   <indexterm zone="libepoxy">
@@ -25,8 +24,6 @@
       <application>libepoxy</application> is a library for handling OpenGL
       function pointer management.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -83,7 +80,7 @@ ninja</userinput></screen>
       href="../../../xincludes/meson-buildtype-release.xml"/>
 
     <para>
-      <option>-Ddocs=true</option>: If you have Doxygen
+      <option>-D docs=true</option>: If you have Doxygen
       installed, add this option to generate additional documentation.
     </para>
 

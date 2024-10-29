@@ -11,7 +11,6 @@
 <sect1 id="xcb-util" xreflabel="xcb-util-&xcb-util-version;">
   <?dbhtml filename="xcb-util.html"?>
 
-
   <title>xcb-util-&xcb-util-version;</title>
 
   <indexterm zone="xcb-util">
@@ -27,8 +26,6 @@
       previously found in <application>Xlib</application>, but are not part of
       core X protocol.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

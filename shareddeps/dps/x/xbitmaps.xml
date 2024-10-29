@@ -11,7 +11,6 @@
 <sect1 id="xbitmaps" xreflabel="xbitmaps-&xbitmaps-version;">
   <?dbhtml filename="xbitmaps.html"?>
 
-
   <title>xbitmaps-&xbitmaps-version;</title>
 
   <indexterm zone="xbitmaps">
@@ -25,8 +24,6 @@
       The <application>xbitmaps</application> package contains bitmap
       images used by multiple applications built in Xorg chapter.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

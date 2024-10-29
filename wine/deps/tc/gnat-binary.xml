@@ -14,7 +14,6 @@
 <sect1 id="gnat-binary" xreflabel="Binary GNAT">
   <?dbhtml filename="gnat-binary.html"?>
 
-
   <title>Binary GNAT</title>
 
   <indexterm zone="gnat-binary">
@@ -42,8 +41,6 @@
 	<application>GNAT</application> tools. The next section covers how to
 	build GNAT once the circular dependency is satisfied.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -103,13 +100,13 @@
 	while still in the directory the tarball is in:
     </para>
 
-<screen role="root"><userinput>export GNATTBPATH=$PWD &amp;&amp;
-cd /opt 	       &amp;&amp;
-tar -xpvf "$GNATTBPATH"/gnat-x86_64-linux-&gcc-version;-1.tar.gz
+<screen role="root"><userinput>export GNATTBPATH=$PWD                                           &amp;&amp;
+cd /opt 	                                                 &amp;&amp;
+tar -xpvf "$GNATTBPATH"/gnat-x86_64-linux-&gcc-version;-1.tar.gz &amp;&amp;
 
-ln -sv gnat-x86_64-linux-&gcc-version;-1 gnat &amp;&amp;
-chown -R root:root gnat                &amp;&amp;
-cd $GNATTBPATH
+ln -sv gnat-x86_64-linux-&gcc-version;-1 gnat                    &amp;&amp;
+chown -R root:root gnat                                          &amp;&amp;
+cd $GNATTBPATH                                                   &amp;&amp;
 
 unset GNATTBPATH</userinput></screen>
 
@@ -120,13 +117,13 @@ unset GNATTBPATH</userinput></screen>
 	while still in the directory the tarball is in:
     </para>
 
-<screen role="root"><userinput>export GNATTBPATH=$PWD &amp;&amp;
-cd /opt 	       &amp;&amp;
-tar xpvf "$GNATTBPATH"/gnat-gpl-2014-x86-linux-bin.tar.gz
+<screen role="root"><userinput>export GNATTBPATH=$PWD                                    &amp;&amp;
+cd /opt 	                                          &amp;&amp;
+tar xpvf "$GNATTBPATH"/gnat-gpl-2014-x86-linux-bin.tar.gz &amp;&amp;
 
-ln -sv gnat-gpl-2014-x86-linux-bin gnat &amp;&amp;
-chown -R root:root gnat			&amp;&amp;
-cd $GNATTBPATH
+ln -sv gnat-gpl-2014-x86-linux-bin gnat                   &amp;&amp;
+chown -R root:root gnat			                  &amp;&amp;
+cd $GNATTBPATH                                            &amp;&amp;
 
 unset GNATTBPATH</userinput></screen>
 
@@ -147,7 +144,7 @@ export PATH=/opt/gnat/bin:$PATH_HOLD</userinput></screen>
 	</systemitem> user:
     </para>
 
-<screen><userinput>find /opt/gnat -name ld -exec mv -v {} {}.old \;
+<screen><userinput>find /opt/gnat -name ld -exec mv -v {} {}.old \; &amp;&amp;
 find /opt/gnat -name as -exec mv -v {} {}.old \;</userinput></screen>
 
   </sect2>

@@ -12,7 +12,6 @@
 <sect1 id="rust" xreflabel="rustc-&rust-version;">
   <?dbhtml filename="rust.html"?>
 
-
   <title>Rustc-&rust-version;</title>
 
   <indexterm zone="rust">
@@ -212,7 +211,7 @@ ln -svfn rustc-&rust-version; /opt/rustc</userinput></screen>
       configure the build.
     </para>
 
-<screen><userinput>cat &gt; config.toml &lt;&lt; "EOF"
+<screen><userinput>cat &gt; config.toml &lt;&lt; "EOF" &amp;&amp;
 <literal># see config.toml.example for more possible options.
 # Tell x.py the editors have reviewed the content of this file
 # and updated it to follow the major changes of the building system,
@@ -226,8 +225,8 @@ cat &gt;&gt; config.toml &lt;&lt; "EOF"
 <literal>targets = "X86"
 </literal>
 EOF
-fi
-cat &gt;&gt; config.toml &lt;&lt; "EOF"
+fi &amp;&amp;
+cat &gt;&gt; config.toml &lt;&lt; "EOF" &amp;&amp;
 <literal># When using system llvm prefer shared libraries
 link-shared = true
 </literal>
@@ -241,8 +240,8 @@ target = [
 ]
 </literal>
 EOF
-fi
-cat &gt;&gt; config.toml &lt;&lt; "EOF"
+fi &amp;&amp;
+cat &gt;&gt; config.toml &lt;&lt; "EOF" &amp;&amp;
 <literal># omit docs to save time and space (default is to build them)
 docs = false
 

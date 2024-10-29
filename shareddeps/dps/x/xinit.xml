@@ -11,7 +11,6 @@
 <sect1 id="xinit" xreflabel="xinit-&xinit-version;">
   <?dbhtml filename="xinit.html"?>
 
-
   <title>xinit-&xinit-version;</title>
 
   <indexterm zone="xinit">
@@ -25,8 +24,6 @@
       The <application>xinit</application> package contains a usable script
       to start the xserver.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -72,7 +69,7 @@ make</userinput></screen>
 <screen role="root"><userinput>make install &amp;&amp;
 ldconfig</userinput></screen>
 
-    <note revision='sysv'>
+    <note>
 
       <para>
         If starting Xorg from the command line, the default instructions

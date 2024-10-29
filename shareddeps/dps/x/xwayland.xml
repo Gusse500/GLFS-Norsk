@@ -11,7 +11,6 @@
 <sect1 id="xwayland" xreflabel="Xwayland-&xwayland-version;">
   <?dbhtml filename="xwayland.html"?>
 
-
   <title>Xwayland-&xwayland-version;</title>
 
   <indexterm zone="xwayland">
@@ -27,8 +26,6 @@
       main Xorg server package. It allows running X clients inside a
       wayland session.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

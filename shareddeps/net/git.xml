@@ -13,7 +13,6 @@
 <sect1 id="git" xreflabel="git-&git-version;">
   <?dbhtml filename="git.html"?>
 
-
   <title>Git-&git-version;</title>
 
   <indexterm zone="git">
@@ -37,8 +36,6 @@
       <application>Perforce</application>, and
       <application>Team Foundation Server</application>.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

@@ -11,7 +11,6 @@
 <sect1 id="seatd" xreflabel="seatd-&seatd-version;">
   <?dbhtml filename="seatd.html"?>
 
-
   <title>seatd-&seatd-version;</title>
 
   <indexterm zone="seatd">
@@ -26,8 +25,6 @@
       library. It is what a lot of Wayland compositors use to manage
       seats, a session for a user in which applications can interact with.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

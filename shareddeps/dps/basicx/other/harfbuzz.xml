@@ -12,7 +12,6 @@
 <sect1 id="harfbuzz" xreflabel="HarfBuzz-&harfbuzz-version;">
   <?dbhtml filename="harfbuzz.html"?>
 
-
   <title>HarfBuzz-&harfbuzz-version;</title>
 
   <indexterm zone="harfbuzz">
@@ -67,7 +66,7 @@ cd    build &amp;&amp;
 meson setup ..            \
       --prefix=/usr       \
       --buildtype=release \
-      -D graphite2=disabled
+      -D graphite2=disabled &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -110,9 +109,9 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

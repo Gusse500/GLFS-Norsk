@@ -11,7 +11,6 @@
 <sect1 id="mtdev" xreflabel="mtdev-&mtdev-version;">
   <?dbhtml filename="mtdev.html"?>
 
-
   <title>mtdev-&mtdev-version;</title>
 
   <indexterm zone="mtdev">
@@ -27,8 +26,6 @@
       variants of kernel MT (Multitouch) events to the slotted type B
       protocol.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

@@ -11,7 +11,6 @@
 <sect1 id="ply" xreflabel="ply-&ply-version;">
   <?dbhtml filename="ply.html"?>
 
-
   <title>ply-&ply-version;</title>
 
   <indexterm zone="ply">
@@ -25,8 +24,6 @@
       The <application>ply</application> is a zero-dependency Python implementation
       of the traditional parsing tools lex and yacc.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

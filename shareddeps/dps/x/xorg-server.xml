@@ -15,7 +15,6 @@
 <sect1 id="xorg-server" xreflabel="Xorg-Server-&xorg-server-version;">
   <?dbhtml filename="xorg-server.html"?>
 
-
   <title>Xorg-Server-&xorg-server-version;</title>
 
   <indexterm zone="xorg-server">
@@ -29,8 +28,6 @@
       The <application>Xorg</application> Server is the core
       of the X Window system.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -195,6 +192,7 @@ meson setup ..              \
       -D glamor=true        \
       -D secure-rpc=false   \
       -D xkb_output_dir=/var/lib/xkb &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>

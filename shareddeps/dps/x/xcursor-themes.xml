@@ -11,7 +11,6 @@
 <sect1 id="xcursor-themes" xreflabel="xcursor-themes-&xcursor-themes-version;">
   <?dbhtml filename="xcursor-themes.html"?>
 
-
   <title>xcursor-themes-&xcursor-themes-version;</title>
 
   <indexterm zone="xcursor-themes">
@@ -25,8 +24,6 @@
       The <application>xcursor-themes</application> package contains the
       redglass and whiteglass animated cursor themes.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

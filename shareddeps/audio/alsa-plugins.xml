@@ -26,8 +26,6 @@
       plugins for various audio libraries and sound servers.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -106,7 +104,7 @@ make</userinput></screen>
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                  \
 ./configure --prefix=/usr --libdir=/usr/lib32 \
 	    --sysconfdir=/etc --disable-libav \
-            --host=i686-pc-linux-gnu
+            --host=i686-pc-linux-gnu &amp;&amp;
 
 make</userinput></screen>
 
@@ -114,9 +112,9 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

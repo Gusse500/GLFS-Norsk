@@ -55,8 +55,6 @@
       <application>Clang</application> and <application>LLVM</application>.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -229,7 +227,7 @@ cp bin/FileCheck /usr/bin</userinput></screen>
       32-bit runtime libraries. Install them by doing the following:
     </para>
 
-<screen><userinput>rm -rf *
+<screen><userinput>rm -rf * &amp;&amp;
 
 CC=gcc CXX=g++                                          \
 cmake -D CMAKE_INSTALL_PREFIX=/usr                      \
@@ -259,9 +257,9 @@ ninja</userinput></screen>
       user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

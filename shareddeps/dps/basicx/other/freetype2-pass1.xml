@@ -15,7 +15,6 @@
 <sect1 id="freetype2-pass1" xreflabel="FreeType-&freetype2-version; - Pass 1">
   <?dbhtml filename="freetype2-pass1.html"?>
 
-
   <title>FreeType-&freetype2-version; - Pass 1</title>
 
   <indexterm zone="freetype2-pass1">
@@ -37,8 +36,6 @@
       <application>harfBuzz</application> second, then lastly this
       package again. This is the first pass.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -138,10 +135,10 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 ./configure --prefix=/usr            \
-	    --libdir=/usr/lib32	     \
+            --libdir=/usr/lib32	     \
             --host=i686-pc-linux-gnu \
-	    --enable-freetype-config \
-	    --disable-static
+            --enable-freetype-config \
+            --disable-static &amp;&amp;
 
 make</userinput></screen>
 
@@ -149,9 +146,9 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

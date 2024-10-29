@@ -11,7 +11,6 @@
 <sect1 id="libxkbcommon" xreflabel="libxkbcommon-&libxkbcommon-version;">
   <?dbhtml filename="libxkbcommon.html"?>
 
-
   <title>libxkbcommon-&libxkbcommon-version;</title>
 
   <indexterm zone="libxkbcommon">
@@ -26,8 +25,6 @@
       support library which processes a reduced subset of keymaps as
       defined by the XKB specification.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -80,6 +77,7 @@ meson setup ..            \
       --prefix=/usr       \
       --buildtype=release \
       -Denable-docs=false &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -124,9 +122,9 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

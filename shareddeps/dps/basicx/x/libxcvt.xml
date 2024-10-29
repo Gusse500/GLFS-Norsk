@@ -11,7 +11,6 @@
 <sect1 id="libxcvt" xreflabel="libxcvt-&libxcvt-version;">
   <?dbhtml filename="libxcvt.html"?>
 
-
   <title>libxcvt-&libxcvt-version;</title>
 
   <indexterm zone="libxcvt">
@@ -27,8 +26,6 @@
       modelines generator. It is meant to be a direct replacement to the
       version formerly provided by the Xorg server.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -97,16 +94,17 @@ ninja</userinput></screen>
 PKG_CONFIG_PATH=$XORG_PREFIX/lib32      \
 meson setup --prefix=$XORG_PREFIX       \
             --libdir=$XORG_PREFIX/lib32 \
-	    --buildtype=release ..      &amp;&amp;
+            --buildtype=release ..      &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
+cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

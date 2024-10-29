@@ -12,7 +12,6 @@
 <sect1 id="wine" xreflabel="Wine-&wine-version;">
   <?dbhtml filename="wine.html"?>
 
-
   <title>Wine-&wine-version;</title>
 
   <indexterm zone="wine">
@@ -25,8 +24,6 @@
     <para>
 	Wine is a compatibility layer for running Windows programs.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -70,9 +67,9 @@
 	</para>
 
 <screen><userinput>mkdir build &amp;&amp;
-cd    build
+cd    build &amp;&amp;
 
-../configure --prefix=/usr --enable-win64
+../configure --prefix=/usr --enable-win64 &amp;&amp;
 
 make</userinput></screen>
 
@@ -102,9 +99,9 @@ make</userinput></screen>
 	</para>
 
 <screen><userinput>mkdir build &amp;&amp;
-cd    build
+cd    build &amp;&amp;
 
-../configure --prefix=/usr
+../configure --prefix=/usr &amp;&amp;
 
 make</userinput></screen>
 
@@ -125,11 +122,11 @@ make</userinput></screen>
 	</para>
 
 <screen><userinput>mkdir build-win64 &amp;&amp;
-cd    build-win64
+cd    build-win64 &amp;&amp;
 
-../configure --prefix=/usr --enable-win64
+../configure --prefix=/usr --enable-win64 &amp;&amp;
 
-make
+make              &amp;&amp;
 
 cd ..             &amp;&amp;
 mkdir build-win32 &amp;&amp;
@@ -137,7 +134,7 @@ cd    build-win32 &amp;&amp;
 
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
 ../configure --prefix=/usr	          \
-             --with-wine64=../build-win64
+             --with-wine64=../build-win64 &amp;&amp;
 
 make</userinput></screen>
 

@@ -41,9 +41,7 @@
       is taken from the Mozilla Foundation, who have established very strict
       inclusion policies described <ulink
         url="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">here</ulink>.
-    </para>
-
-    
+    </para>   
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -165,6 +163,7 @@ install -vdm755 /etc/ssl/local</userinput></screen>
 <literal>#!/bin/bash
 /usr/sbin/make-ca -g</literal>
 EOF
+
 chmod 754 /etc/cron.weekly/update-pki.sh</userinput></screen>
 
 <screen role="root" revision="systemd"><userinput>systemctl enable update-pki.timer</userinput></screen>
@@ -250,6 +249,7 @@ openssl x509 -in root.crt -text -fingerprint -setalias "CAcert Class 1 root" \
 openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
         -addtrust serverAuth -addtrust emailProtection -addtrust codeSigning \
         > /etc/ssl/local/CAcert_Class_3_root.pem &amp;&amp;
+
 /usr/sbin/make-ca -r</userinput></screen>
 
     <bridgehead renderas="sect3">Overriding Mozilla Trust</bridgehead>
@@ -271,7 +271,8 @@ openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
              -addreject serverAuth \
              -addreject emailProtection \
              -addreject codeSigning \
-       > /etc/ssl/local/Disabled_Makebelieve_CA_Root.pem &amp;&amp;
+             > /etc/ssl/local/Disabled_Makebelieve_CA_Root.pem &amp;&amp;
+
 /usr/sbin/make-ca -r</userinput></screen>
 
   </sect2>

@@ -11,7 +11,6 @@
 <sect1 id="pyyaml" xreflabel="PyYAML-&pyyaml-version;">
   <?dbhtml filename="pyyaml.html"?>
 
-
   <title>PyYAML-&pyyaml-version;</title>
 
   <indexterm zone="pyyaml">
@@ -25,8 +24,6 @@
       <application>PyYAML</application> is a Python module that implements the
       next generation YAML parser and emitter.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>

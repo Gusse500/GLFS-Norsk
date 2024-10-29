@@ -11,7 +11,6 @@
 <sect1 id="libdrm" xreflabel="libdrm-&libdrm-version;">
   <?dbhtml filename="libdrm.html"?>
 
-
   <title>Libdrm-&libdrm-version;</title>
 
   <indexterm zone="libdrm">
@@ -28,8 +27,6 @@
       by graphics drivers such as the Mesa DRI drivers, the X drivers, libva and
       similar projects.
     </para>
-
-    
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -123,9 +120,9 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
+cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

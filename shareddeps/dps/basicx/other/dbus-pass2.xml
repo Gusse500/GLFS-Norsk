@@ -11,7 +11,6 @@
 <sect1 id="dbus-pass2" xreflabel="dbus-&dbus-version; - Pass 2">
   <?dbhtml filename="dbus-pass2.html"?>
 
-
   <title>dbus-&dbus-version; - Pass 2</title>
 
   <indexterm zone="dbus-pass2">
@@ -76,6 +75,7 @@
             --with-systemdsystemunitdir=no       \
             --docdir=/usr/share/doc/dbus-&dbus-version;  \
             --with-system-socket=/run/dbus/system_bus_socket &amp;&amp;
+
 make</userinput></screen>
 
     <para>

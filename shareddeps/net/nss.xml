@@ -134,8 +134,8 @@ make BUILD_OPT=1                      \
       To run the tests, execute the following commands<!--(1 test is known to fail)-->:
     </para>
 
-<screen remap="test"><userinput>cd tests &amp;&amp;
-HOST=localhost DOMSUF=localdomain ./all.sh
+<screen remap="test"><userinput>cd tests                                   &amp;&amp;
+HOST=localhost DOMSUF=localdomain ./all.sh &amp;&amp;
 cd ../</userinput></screen>
 
     <note>
@@ -261,12 +261,13 @@ $([ -f /usr/lib32/libsqlite3.so ] &amp;&amp; echo NSS_USE_SYSTEM_SQLITE=1)</user
 install -v -m755 Linux*/lib/*.so              /usr/lib32              &amp;&amp;
 install -v -m644 Linux*/lib/{*.chk,libcrmf.a} /usr/lib32              &amp;&amp;
 sed -i 's/lib/lib32/g' Linux*/lib/pkgconfig/nss.pc		      &amp;&amp;
-install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib32/pkgconfig</userinput></screen>
+install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib32/pkgconfig    &amp;&amp;
+ldconfig</userinput></screen>
 
   </sect2>
 
   <sect2 role="possible">
-    <title>Possible Parameter</title>
+    <title>Possible Parameters</title>
 
     <note>
       <para>

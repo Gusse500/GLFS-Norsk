@@ -26,8 +26,6 @@
       drivers for Vulkan.
     </para>
 
-    
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -80,7 +78,7 @@ cd    build &amp;&amp;
 cmake -D CMAKE_INSTALL_PREFIX=/usr     \
       -D CMAKE_BUILD_TYPE=Release      \
       -D CMAKE_SKIP_INSTALL_RPATH=ON   \
-      -G Ninja ..
+      -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -93,19 +91,6 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
-
-  </sect2>
-
-  <sect2>
-    <title>Command Explanations</title>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../xincludes/cmake-skip-install-rpath.xml"/>
-
-    <para>
-      <parameter>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</parameter>: This
-      option allows building the library without Wayland.
-    </para>
 
   </sect2>
 
@@ -129,7 +114,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
       -D CMAKE_INSTALL_LIBDIR=lib32    \
       -D CMAKE_BUILD_TYPE=Release      \
       -D CMAKE_SKIP_INSTALL_RPATH=ON   \
-      -G Ninja ..
+      -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -137,10 +122,23 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2>
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../../xincludes/cmake-skip-install-rpath.xml"/>
+
+    <para>
+      <parameter>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</parameter>: This
+      option allows building the library without Wayland.
+    </para>
 
   </sect2>
 
