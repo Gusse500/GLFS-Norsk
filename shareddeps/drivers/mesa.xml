@@ -267,8 +267,7 @@ ninja</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>
-DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
 cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
 if [ -d DESTDIR/$XORG_PREFIX/share/vulkan ]; then
      cp -vR DESTDIR/$XORG_PREFIX/share/vulkan $XORG_PREFIX/share

@@ -43,6 +43,9 @@
       <para>October 29th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Mesa: Fixed command block render.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - *: Added &amp;&amp; after every command.
           Fixes issue <ulink url="&glfs-issues;/3">#3.</ulink></para>
         </listitem>
