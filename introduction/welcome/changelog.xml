@@ -43,6 +43,9 @@
       <para>October 30th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Xorg Wacom Driver: 1.2.2 -&gt; 1.2.3.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Polkit: Adjust how the package is built.</para>
         </listitem>
       </itemizedlist>
