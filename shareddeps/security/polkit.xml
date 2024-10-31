@@ -107,12 +107,6 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
         -g polkitd -s /bin/false polkitd</userinput></screen>
 
     <para>
-      First fix a build problem for sysV based systems:
-    </para>
-
-<screen><userinput>sed -i '/systemd_sysusers_dir/s/^/#/' meson.build</userinput></screen>
-
-    <para>
       Install <application>Polkit</application> by running the following
       commands:
     </para>
@@ -120,20 +114,29 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                    \
-      --prefix=/usr               \
-      --buildtype=release         \
-      -D man=false                \
-      -D session_tracking=elogind \
+meson setup ..                     \
+      --prefix=/usr                \
+      --buildtype=release          \
+      -D os_type=lfs               \
+      -D man=false                 \
+      -D session_tracking=elogind  \
+      -D systemdsystemunitdir=/tmp \
       -D tests=false &amp;&amp;
 
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
+
+    <para>
+      Remove some files that aren't useful on a SysV system as the &root; user:
+    </para>
+
+<screen role="root"><userinput>rm -v /tmp/*.service &amp;&amp;
+rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
 
   </sect2>
 
@@ -144,10 +147,9 @@ ninja</userinput></screen>
       href="../../xincludes/meson-buildtype-release.xml"/>
 
     <para>
-      <option>-D os_type=lfs</option>: Use this switch if you did not create
-      the <filename>/etc/lfs-release</filename> file or distribution auto
-      detection will fail and you will be unable to use
-      <application>Polkit</application>.
+      <parameter>-D os_type=lfs</parameter>: This switch ensures that
+      even if distribution auto detection fails, the distribution/OS type
+      will be hardcoded in <application>Polkit</application>.
     </para>
 
     <para>

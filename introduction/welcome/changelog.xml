@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>October 30th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Zeckmathederg] - Polkit: Adjust how the package is built.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>October 29th, 2024</para>
       <itemizedlist>
         <listitem>
