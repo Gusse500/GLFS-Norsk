@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>November 3rd, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Toxikuu] - XKeyboard-Config: Fixed naming inconsistency. PR
+          <ulink url="&glfs-issues;/6">(#6).</ulink></para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 2nd, 2024</para>
       <itemizedlist>
         <listitem>
