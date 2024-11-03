@@ -12,17 +12,17 @@
 <sect1 id="xkeyboard-config" xreflabel="xkeyboard-config-&xkeyboard-config-version;">
   <?dbhtml filename="xkeyboard-config.html"?>
 
-  <title>XKeyboardConfig-&xkeyboard-config-version;</title>
+  <title>XKeyboard-Config-&xkeyboard-config-version;</title>
 
   <indexterm zone="xkeyboard-config">
-    <primary sortas="a-XKeyboardConfig">XKeyboardConfig</primary>
+    <primary sortas="a-XKeyboard-Config">XKeyboard-Config</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to XKeyboardConfig</title>
+    <title>Introduction to XKeyboard-Config</title>
 
     <para>
-      The <application>XKeyboardConfig</application> package contains
+      The <application>XKeyboard-Config</application> package contains
       the keyboard configuration database for the X Window System.
     </para>
 
@@ -39,7 +39,7 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">XKeyboardConfig Dependencies</bridgehead>
+    <bridgehead renderas="sect3">XKeyboard-Config Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
@@ -49,10 +49,10 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of XKeyboardConfig</title>
+    <title>Installation of XKeyboard-Config</title>
 
     <para>
-      Install <application>XKeyboardConfig</application> by running the
+      Install <application>XKeyboard-Config</application> by running the
       following commands:
     </para>
 
