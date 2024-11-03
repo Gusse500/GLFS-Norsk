@@ -43,8 +43,12 @@
       <para>November 3rd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Added another GLFS convenience entity and
+          make the last changelog entry use it.</para>
+        </listitem>
+        <listitem>
           <para>[Toxikuu] - XKeyboard-Config: Fixed naming inconsistency. PR
-          <ulink url="&glfs-issues;/6">(#6).</ulink></para>
+          <ulink url="&glfs-pull;/6">(#6).</ulink></para>
         </listitem>
       </itemizedlist>
     </listitem>

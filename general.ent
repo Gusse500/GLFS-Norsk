@@ -107,6 +107,7 @@
 
 <!ENTITY glfs-repo            "https://github.com/glfs-book/glfs">
 <!ENTITY glfs-issues          "&glfs-repo;/issues">
+<!ENTITY glfs-pull            "&glfs-repo;/pull">
 
 <!-- Convenience entities -->
 <!ENTITY root                 "<systemitem class='username'>root</systemitem>">
