@@ -43,6 +43,16 @@
       <para>November 3rd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>
+            [Zeckmathederg] -	  
+            Downgraded <envar>XORG_PREFIX</envar> to only be used for
+            compatibility in BLFS as the Xorg stack is installed in
+            <filename>/usr</filename>. This allows the Meson cross file
+            to be used in the 32-bit installation of Mesa. Fixes issue
+            <ulink url="&glfs-issues;/7">#7.</ulink>
+          </para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Added another GLFS convenience entity and
           make the last changelog entry use it.</para>
         </listitem>

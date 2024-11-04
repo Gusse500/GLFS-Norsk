@@ -103,8 +103,11 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="mesonfiles"/> (required for multilib 32-bit Nouveau and
-            Swrast Vulkan)
+            <xref linkend="mesonfiles"/> (required for multilib 32-bit Nouveau
+            and Swrast Vulkan; if the recommended dependencies are met, setting
+	    <parameter>auto</parameter> or <parameter>all</parameter> for
+	    <parameter>vulkan-drivers=</parameter> will build them by default,
+            which is set for the 32-bit build down below)
           </para>
         </listitem>
         <listitem>
@@ -189,7 +192,7 @@
 cd    build &amp;&amp;
 
 meson setup                    \
-      --prefix=$XORG_PREFIX    \
+      --prefix=/usr            \
       --buildtype=release      \
       -D osmesa=true           \
       -D platforms=x11,wayland \
@@ -244,11 +247,10 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                 \
-PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
-meson setup                                  \
-      --prefix=$XORG_PREFIX                  \
-      --libdir=$XORG_PREFIX/lib32            \
+<screen><userinput>meson setup                                  \
+      --cross-file lib32                     \
+      --prefix=/usr                          \
+      --libdir=/usr/lib32                    \
       --buildtype=release                    \
       -D osmesa=true                         \
       -D platforms=x11,wayland               \
@@ -268,95 +270,12 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
-if [ -d DESTDIR/$XORG_PREFIX/share/vulkan ]; then
-     cp -vR DESTDIR/$XORG_PREFIX/share/vulkan $XORG_PREFIX/share
+cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
+if [ -d DESTDIR/usr/share/vulkan ]; then
+    cp -vR DESTDIR/usr/share/vulkan /usr/share
 fi                                                     &amp;&amp;
 rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
-
-  </sect2>
-
-  <sect2 role="installation">
-    <title>32-bit Installation of NVK and Vulkan Swrast</title>
-
-    <note>
-      <para>
-        Feel free to skip this section if you don't want to install the
-	Nouveau Vulkan driver (NVK) or Vulkan swrast.
-      </para>
-    </note>
-
-    <para>
-      NVK and Vulkan swrast have special requirements to be configured and
-      compiled, requiring extra steps. You are going to need to modify a
-      few paths in a personality
-      file used by <application>Pkgconf</application>, as it searches in
-      <filename>/usr</filename> rather than 
-      <envar>$XORG_PREFIX</envar>.
-    </para>
-
-    <note>
-      <para>If the expanded path is <filename>/usr</filename>, skip to cleaning
-      the build directory.</para>
-    </note>
-
-    <para>
-      Change the paths in the <application>Pkgconf</application> personality
-      file as the <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen role="root"><userinput>sed -i 's/\/usr/\$XORG_PREFIX/g' \
-    /usr/share/pkgconfig/personality.d/i686-pc-linux-gnu.personality</userinput></screen>
-
-    <para>
-      Now clean the build directory:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
-      Install lib32-NVK and/or Vulkan swrast by following the commands:
-    </para>
-
-<screen><userinput>meson setup                                      \
-            --cross-file lib32                   \
-            --prefix=$XORG_PREFIX	         \
-            --libdir=$XORG_PREFIX/lib32          \
-            --buildtype=release                  \
-            -D platforms=x11,wayland             \
-            -D gallium-drivers=softpipe,llvmpipe \
-            -D vulkan-drivers=nouveau,swrast     \
-            -D glx=disabled                      \
-            -D egl=disabled                      \
-            -D opengl=false                      \
-            -D gles1=disabled                    \
-            -D gles2=disabled                    \
-            -D valgrind=disabled                 \
-            -D libunwind=disabled                \
-            .. &amp;&amp;
-            sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
-
-ninja</userinput></screen>
-
-    <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen><userinput>DESTDIR=$PWD/DESTDIR ninja install                          &amp;&amp;
-cp -vR DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32      &amp;&amp;
-cp -vR DESTDIR/$XORG_PREFIX/share/vulkan $XORG_PREFIX/share &amp;&amp;
-rm -rf DESTDIR                                              &amp;&amp;
-ldconfig</userinput></screen>
-
-    <para>
-      If you modified the <application>Pkgconf</application> personality,
-      you can change it back by doing the following command as the
-      <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen><userinput>sed -i 's/\$XORG_PREFIX/\/usr/g' \
-    /usr/share/pkgconfig/personality.d/i686-pc-linux-gnu.personality</userinput></screen>
 
   </sect2>
 
@@ -647,12 +566,12 @@ ldconfig</userinput></screen>
           libvulkan_radeon.so
         </seg>
         <seg>
-          <!-- $XORG_PREFIX/include/GL is installed by xorg-protos -->
-          $XORG_PREFIX/{include/{EGL,GLES,GLES2,GLES3,KHR},
-          $XORG_PREFIX/lib/{dri,vdpau}},
-          $XORG_PREFIX/share/drirc.d (contains workarounds for various applications,
+          <!-- /usr/include/GL is installed by xorg-protos -->
+          /usr/{include/{EGL,GLES,GLES2,GLES3,KHR},
+          /usr/lib/{dri,vdpau}},
+          /usr/share/drirc.d (contains workarounds for various applications,
           particularly browsers and games),
-          $XORG_PREFIX/share/vulkan,
+          /usr/share/vulkan,
           and /usr/share/doc/mesa-&mesa-version;
         </seg>
       </seglistitem>

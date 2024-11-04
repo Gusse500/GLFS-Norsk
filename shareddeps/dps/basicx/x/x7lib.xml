@@ -159,7 +159,7 @@ do
 
   tar -xf $package
   pushd $packagedir
-  docdir="--docdir=$XORG_PREFIX/share/doc/$packagedir"
+  docdir="--docdir=/usr/share/doc/$packagedir"
   
   case $packagedir in
     libXfont2-[0-9]* )
@@ -178,7 +178,7 @@ do
     libpciaccess* )
       mkdir build
       cd    build
-        meson setup --prefix=$XORG_PREFIX --buildtype=release ..
+        meson setup --prefix=/usr --buildtype=release ..
         ninja
         #ninja test
         as_root ninja install
@@ -212,36 +212,36 @@ do
 
   tar -xf $package
   pushd $packagedir
-  libdir="--libdir=$XORG_PREFIX/lib32"
-  docdir="--docdir=$XORG_PREFIX/share/doc/$packagedir"
+  libdir="--libdir=/usr/lib32"
+  docdir="--docdir=/usr/share/doc/$packagedir"
   host="--host=i686-pc-linux-gnu"
   
   case $packagedir in
     libXfont2-[0-9]* )
-      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig  \
+      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
       ./configure $XORG_CONFIG $libdir $host $docdir --disable-devel-docs
     ;;
 
     libXt-[0-9]* )
-      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
+      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
       ./configure $XORG_CONFIG $libdir $host $docdir                    \
                   --with-appdefaultdir=/etc/X11/app-defaults
     ;;
 
     libXpm-[0-9]* )
-      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig  \
+      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
       ./configure $XORG_CONFIG $libdir $host $docdir --disable-open-zfile
     ;;
   
     libpciaccess* )
       mkdir build
       cd    build
-        CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
-        meson setup --prefix=$XORG_PREFIX $libdir --buildtype=release ..
+        CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+        meson setup --prefix=/usr $libdir --buildtype=release ..
         ninja
         #ninja test
         DESTDIR=$PWD/DESTDIR ninja install
-        as_root cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32
+        as_root cp -vr DESTDIR/usr/lib32/* /usr/lib32
         rm -rf DESTDIR
         as_root /sbin/ldconfig
       popd     # $packagedir
@@ -250,11 +250,11 @@ do
     ;;
 
     xtrans* )
-        CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
+        CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
         ./configure $XORG_CONFIG $libdir $host $docdir
         make
         make DESTDIR=$PWD/DESTDIR install
-        as_root cp -vr DESTDIR/$XORG_PREFIX/share/pkgconfig/* $XORG_PREFIX/lib32/pkgconfig
+        as_root cp -vr DESTDIR/usr/share/pkgconfig/* /usr/lib32/pkgconfig
         rm -rf DESTDIR
       popd
       rm -rf $packagedir
@@ -263,7 +263,7 @@ do
 
     * )
       CC="gcc -m32" CXX="g++ -m32"                   \
-      PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig   \
+      PKG_CONFIG_PATH=/usr/lib32/pkgconfig   \
       ./configure $XORG_CONFIG $libdir $host $docdir
     ;;
   esac
@@ -271,7 +271,7 @@ do
   make
   #make check 2>&amp;1 | tee ../$packagedir-make_check.log
   make DESTDIR=$PWD/DESTDIR install
-  as_root cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32
+  as_root cp -vr DESTDIR/usr/lib32/* /usr/lib32
   rm -rf DESTDIR
   popd
   rm -rf $packagedir
@@ -316,31 +316,6 @@ done</userinput></screen>
 
   </sect2>
 
-  <sect2 role="configuration">
-    <title>Configuration of Xorg Libraries</title>
-
-    <para>
-      If you've chosen to install <application>Xorg</application> into
-      <filename class="directory">/usr</filename>, then no further
-      configuration is necessary and you can skip the rest of this section.
-      If you've opted for an alternate prefix, you should create two symlinks
-      to satisfy the expected environment of several packages.
-      Execute the following commands as the <systemitem class="username">root
-      </systemitem> user:
-    </para>
-
-<screen role="root"><userinput>ln -sv $XORG_PREFIX/lib/X11 /usr/lib/X11 &amp;&amp;
-ln -sv $XORG_PREFIX/include/X11 /usr/include/X11</userinput></screen>
-
-    <para>
-      If you are doing multilib, create another symlink as the <systemitem
-      class="username">root</systemitem> user:
-    </para>
-
-<screen role="root"><userinput>ln -sv $XORG_PREFIX/lib32/X11 /usr/lib32/X11</userinput></screen>
-
-  </sect2>
-
   <sect2 role="content">
     <title>Contents</title>
 
@@ -366,25 +341,25 @@ ln -sv $XORG_PREFIX/include/X11 /usr/include/X11</userinput></screen>
           libXxf86vm.so
         </seg>
         <seg>
-          <envar>$XORG_PREFIX</envar>/include/X11/fonts,
-          <envar>$XORG_PREFIX</envar>/include/X11/ICE,
-          <envar>$XORG_PREFIX</envar>/include/X11/SM,
-          <envar>$XORG_PREFIX</envar>/include/X11/Xmu,
-          <envar>$XORG_PREFIX</envar>/include/X11/Xtrans,
-          <envar>$XORG_PREFIX</envar>/share/doc/libFS,
-          <envar>$XORG_PREFIX</envar>/share/doc/libICE-&libICE-version;,
-          <envar>$XORG_PREFIX</envar>/share/doc/libSM-&libSM-version;,
-          <envar>$XORG_PREFIX</envar>/share/doc/libX11-&libX11-version;,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXaw,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXext,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXi,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXmu-&libXmu-version;,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXrender,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXt,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXtst,
-          <envar>$XORG_PREFIX</envar>/share/doc/libXvMC,
-          <envar>$XORG_PREFIX</envar>/share/doc/xtrans and
-          <envar>$XORG_PREFIX</envar>/share/X11/locale
+          /usr/include/X11/fonts,
+          /usr/include/X11/ICE,
+          /usr/include/X11/SM,
+          /usr/include/X11/Xmu,
+          /usr/include/X11/Xtrans,
+          /usr/share/doc/libFS,
+          /usr/share/doc/libICE-&libICE-version;,
+          /usr/share/doc/libSM-&libSM-version;,
+          /usr/share/doc/libX11-&libX11-version;,
+          /usr/share/doc/libXaw,
+          /usr/share/doc/libXext,
+          /usr/share/doc/libXi,
+          /usr/share/doc/libXmu-&libXmu-version;,
+          /usr/share/doc/libXrender,
+          /usr/share/doc/libXt,
+          /usr/share/doc/libXtst,
+          /usr/share/doc/libXvMC,
+          /usr/share/doc/xtrans and
+          /usr/share/X11/locale
         </seg>
       </seglistitem>
     </segmentedlist>

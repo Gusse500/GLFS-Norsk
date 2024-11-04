@@ -187,7 +187,7 @@
 cd    build &amp;&amp;
 
 meson setup ..              \
-      --prefix=$XORG_PREFIX \
+      --prefix=/usr         \
       --localstatedir=/var  \
       -D glamor=true        \
       -D secure-rpc=false   \
@@ -287,14 +287,14 @@ EOF</userinput></screen>
           gtf, X, Xnest, Xorg, Xvfb, and optionally Xephyr
         </seg>
         <seg>
-          several under $XORG_PREFIX/lib/xorg/modules/ including the
+          several under /usr/lib/xorg/modules/ including the
           &modesetting_drv; driver
         </seg>
         <seg>
           /etc/X11/xorg.conf.d,
-          $XORG_PREFIX/include/xorg,
-          $XORG_PREFIX/lib/xorg, and
-          $XORG_PREFIX/share/X11/xorg.conf.d
+          /usr/include/xorg,
+          /usr/lib/xorg, and
+          /usr/share/X11/xorg.conf.d
         </seg>
 
       </seglistitem>

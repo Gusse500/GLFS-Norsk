@@ -81,7 +81,7 @@
       <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="nodump"><userinput>rm -f $XORG_PREFIX/lib/pkgconfig/xcb-proto.pc</userinput></screen>
+<screen role="nodump"><userinput>rm -f /usr/lib/pkgconfig/xcb-proto.pc</userinput></screen>
 
   </sect2>
 
@@ -96,8 +96,8 @@
       <seglistitem>
         <seg>None</seg>
         <seg>None</seg>
-        <seg><envar>$XORG_PREFIX</envar>/share/xcb and
-             <envar>$XORG_PREFIX</envar>/lib/python&python3-majorver;/site-packages/xcbgen</seg>
+        <seg>/usr/share/xcb and
+             /usr/lib/python&python3-majorver;/site-packages/xcbgen</seg>
       </seglistitem>
     </segmentedlist>
 

@@ -86,8 +86,8 @@ make</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
-./configure $XORG_CONFIG --libdir=$XORG_PREFIX/lib32 &amp;&amp;
+<screen><userinput>CC="gcc -m32" CXX="g++" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+./configure $XORG_CONFIG --libdir=/usr/lib32 &amp;&amp;
 make</userinput></screen>
 
     <para>
@@ -95,7 +95,7 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install                      &amp;&amp;
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
 rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
@@ -112,7 +112,7 @@ ldconfig</userinput></screen>
       <seglistitem>
         <seg>None</seg>
         <seg>libXdmcp.so</seg>
-        <seg><envar>$XORG_PREFIX</envar>/share/doc/libXdmcp-&libXdmcp-version;</seg>
+        <seg>/usr/share/doc/libXdmcp-&libXdmcp-version;</seg>
       </seglistitem>
     </segmentedlist>
 

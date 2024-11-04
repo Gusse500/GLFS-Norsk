@@ -153,7 +153,7 @@ done</userinput></screen>
       provided by the <application>xrandr</application> package).
     </para>
 
-<screen><userinput>as_root rm -f $XORG_PREFIX/bin/xkeystone</userinput></screen>
+    <screen><userinput>as_root rm -f /usr/bin/xkeystone</userinput></screen>
 
   </sect2>
 <!--

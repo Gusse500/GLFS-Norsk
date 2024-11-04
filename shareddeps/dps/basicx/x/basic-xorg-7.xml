@@ -99,32 +99,19 @@
     <title>Setting up the Xorg Build Environment</title>
 
     <para>
-      As with previous releases of the X Window System, it may be
-      desirable to install <application>Xorg</application> into an alternate
-      prefix.  This is no longer common practice among Linux distributions.
-      The common installation prefix for <application>Xorg</application> on
-      Linux is <filename class="directory">/usr</filename>.  There is no
-      standard alternate prefix, nor is there any exception in the current
-      revision of the Filesystem Hierarchy Standard for Release 7 of the X
-      Window System.  Alan Coopersmith of Sun Microsystems, once
-      stated "At Sun, we were using
-      <filename class="directory">/usr/X11</filename> and plan to stick with
-      it."  Only the <filename class="directory">/opt/*</filename> prefix or
-      the <filename class="directory">/usr</filename> prefix adhere to the
-      current FHS guidelines.
+      Set the <envar>XORG_PREFIX</envar> variable for compatibility with BLFS
+      with the following command:
     </para>
 
-    <para>
-      The GLFS editors recommend using the <filename class="directory">/usr</filename>
-      prefix.
-    </para>
+    <screen><userinput>export XORG_PREFIX="/usr"</userinput></screen>
 
-    <para>
-      Choose your installation prefix, and set the <envar>XORG_PREFIX</envar>
-      variable with the following command:
-    </para>
-
-<screen><userinput>export XORG_PREFIX="<replaceable>&lt;PREFIX&gt;</replaceable>"</userinput></screen>
+    <note>
+      <para>The <envar>XORG_PREFIX</envar> variable will not be used in this
+      book, but it is a necessary variable to set if you intend to follow
+      certain BLFS instructions. If you aren't just copy and pasting BLFS
+      instructions, you may do without the variable but be sure to replace
+      the variable in the instructions with <filename>/usr</filename>.</para>
+    </note>
 
     <para>
       Throughout these instructions, you will use the following
@@ -133,7 +120,7 @@
       substitution:
     </para>
 
-<screen><userinput>export XORG_CONFIG="--prefix=$XORG_PREFIX --sysconfdir=/etc \
+<screen><userinput>export XORG_CONFIG="--prefix=/usr --sysconfdir=/etc \
     --localstatedir=/var --disable-static"</userinput></screen>
 
     <note>
@@ -149,143 +136,24 @@
     </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/xorg.sh &lt;&lt; EOF
-<literal>XORG_PREFIX="$XORG_PREFIX"
-XORG_CONFIG="--prefix=\$XORG_PREFIX --sysconfdir=/etc --localstatedir=/var --disable-static"
+<literal>XORG_PREFIX="/usr"
+XORG_CONFIG="--prefix=/usr --sysconfdir=/etc --localstatedir=/var --disable-static"
 export XORG_PREFIX XORG_CONFIG</literal>
 EOF
 chmod 644 /etc/profile.d/xorg.sh</userinput></screen>
 
-    <note>
-      <para>
-        There is some confusion about the above 'here' document.
-        The backslash in front of the dollar sign is correct.  Bash
-        will remove it when creating /etc/profile.d/xorg.sh.  However, if
-        you are creating the file with an editor, a copy and paste operation
-        will not remove the backslash.  It must then be removed manually.
-      </para>
-    </note>
-
     <para>
       If you've installed <application>sudo</application>, ensure that
-      <envar>XORG_PREFIX</envar> and <envar>XORG_CONFIG</envar> are available
+      <envar>XORG_CONFIG</envar> is available
       in the <application>sudo</application> environment. As the
       <systemitem class="username">root</systemitem> user, run the following
       command:
     </para>
 
 <screen role="root"><userinput>cat &gt; /etc/sudoers.d/xorg &lt;&lt; EOF
-<literal>Defaults env_keep += XORG_PREFIX
-Defaults env_keep += XORG_CONFIG</literal>
+<literal>Defaults env_keep += XORG_CONFIG</literal>
 EOF</userinput></screen>
 
-<bridgehead renderas="sect2">If you are not using the standard Xorg prefix...</bridgehead>
-
-    <warning>
-      <para>
-        If you've decided to use the standard <filename
-        class="directory">/usr</filename> prefix, you must omit the remainder of
-        this page and continue at <xref linkend='util-macros'/>.
-      </para>
-    </warning>
-
-    <para>
-      If you've decided to <emphasis>not</emphasis> use the standard
-      prefix, be sure to add <filename
-      class="directory">$XORG_PREFIX/bin</filename> to your <envar>PATH</envar>
-      environment variable, and <filename class="directory">
-      $XORG_PREFIX/lib/pkgconfig</filename> and <filename class="directory">
-      $XORG_PREFIX/share/pkgconfig</filename> to your
-      <envar>PKG_CONFIG_PATH</envar> variable. It is also helpful to specify
-      additional search paths for <command>gcc</command> and an include
-      directory for the <command>aclocal</command> program.  Issue the
-      following commands as the <systemitem class="username">root</systemitem>
-      user:
-    </para>
-
-<screen role="nodump"><userinput>cat &gt;&gt; /etc/profile.d/xorg.sh &lt;&lt; "EOF"
-<literal>
-pathappend $XORG_PREFIX/bin             PATH
-pathappend $XORG_PREFIX/lib/pkgconfig   PKG_CONFIG_PATH
-pathappend $XORG_PREFIX/share/pkgconfig PKG_CONFIG_PATH
-
-pathappend $XORG_PREFIX/lib             LIBRARY_PATH
-
-# Uncomment the line below for multilib
-#pathappend $XORG_PREFIX/lib32           LIBRARY_PATH
-	
-pathappend $XORG_PREFIX/include         C_INCLUDE_PATH
-pathappend $XORG_PREFIX/include         CPLUS_INCLUDE_PATH
-
-ACLOCAL="aclocal -I $XORG_PREFIX/share/aclocal"
-
-export PATH PKG_CONFIG_PATH ACLOCAL LIBRARY_PATH C_INCLUDE_PATH CPLUS_INCLUDE_PATH</literal>
-EOF</userinput></screen>
-
-    <para>
-      The script above needs to be activated.  Normally it will be
-      automatic at login, but to activate it now, run:
-    </para>
-
-<screen role="nodump"><userinput>source /etc/profile.d/xorg.sh</userinput></screen>
-
-    <para>
-      You should also add
-      <filename class="directory"> $XORG_PREFIX/lib</filename> to the
-      <filename>/etc/ld.so.conf</filename> file. As the
-      <systemitem class="username">root</systemitem> user, issue the following
-      command:
-    </para>
-
-<screen role="nodump"><userinput>echo "$XORG_PREFIX/lib" >> /etc/ld.so.conf</userinput></screen>
-
-    <para>
-	If you're doing multilib, issue the following command as the
-	<systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen role="nodump"><userinput>echo "$XORG_PREFIX/lib32" >> /etc/ld.so.conf</userinput></screen>
-
-    <para>
-      You should also modify
-      <filename>/etc/man_db.conf</filename>, adding appropriate
-      MANDATORY_MANPATH, MANPATH_MAP, and MANDB_MAP entries following the
-      examples for <filename class="directory">/usr/X11R6</filename>. Issue the
-      following command as the <systemitem class="username">root</systemitem>
-      user:
-    </para>
-
-<screen role="nodump"><userinput>sed -e "s@<replaceable>X11R6/man</replaceable>@X11R6/share/man@g" \
-    -e "s@<replaceable>/usr/X11R6</replaceable>@$XORG_PREFIX@g"   \
-    -i /etc/man_db.conf</userinput></screen>
-
-    <para>
-      Some applications look for shared files in <filename
-      class="directory">/usr/share/X11</filename>.  Create a symbolic link to
-      the proper location as the <systemitem class="username">root</systemitem>
-      user:
-    </para>
-
-<screen role="nodump"><userinput>ln -svf $XORG_PREFIX/share/X11 /usr/share/X11</userinput></screen>
-
-    <para>
-      If building KDE, some cmake files look for Xorg in places other than
-      $XORG_PREFIX.  Allow cmake to find Xorg with:
-    </para>
-
-<screen role="nodump"><userinput>ln -svf $XORG_PREFIX /usr/X11R6</userinput></screen>
-<!--
-    <para>
-      Finally, if building on x86_64, you will need to create the
-      <filename class="directory">$XORG_PREFIX/lib</filename> directory and the
-      <filename>$XORG_PREFIX/lib64</filename> symlink. Again, as the
-      <systemitem class="username">root</systemitem> user, issue the following
-      commands:
-    </para>
-
-<screen role="root"><userinput>install -v -m755 -d $XORG_PREFIX &amp;&amp;
-install -v -m755 -d $XORG_PREFIX/lib &amp;&amp;
-ln -sf lib $XORG_PREFIX/lib64</userinput></screen>
--->
   </sect2>
 
 </sect1>

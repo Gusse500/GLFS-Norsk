@@ -80,7 +80,7 @@
       <seglistitem>
         <seg>None</seg>
         <seg>None</seg>
-        <seg><envar>$XORG_PREFIX</envar>/include/X11/bitmaps</seg>
+        <seg>/usr/include/X11/bitmaps</seg>
       </seglistitem>
     </segmentedlist>
 

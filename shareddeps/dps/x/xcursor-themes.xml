@@ -50,14 +50,6 @@
   <sect2 role="installation">
     <title>Installation of xcursor-themes</title>
 
-    <note>
-      <para>
-        We explicitly install the cursor themes in /usr instead
-        of <envar>$XORG_PREFIX</envar> so non-Xorg desktop environments can
-        find them.
-      </para>
-    </note>
-
     <para>
       Install <application>xcursor-themes</application> by running the
       following commands:

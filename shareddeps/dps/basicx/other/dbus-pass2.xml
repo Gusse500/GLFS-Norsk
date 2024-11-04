@@ -63,7 +63,8 @@
       <command>configure</command> command shown below):
     </para>
 
-<screen><userinput>make distclean                                               &amp;&amp;
+<screen><userinput>make distclean &amp;&amp;
+
 ./configure --prefix=/usr                        \
             --sysconfdir=/etc                    \
             --localstatedir=/var                 \

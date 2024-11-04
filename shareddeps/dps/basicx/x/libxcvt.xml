@@ -61,7 +61,7 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=$XORG_PREFIX --buildtype=release .. &amp;&amp;
+meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
@@ -90,11 +90,11 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"            \
-PKG_CONFIG_PATH=$XORG_PREFIX/lib32      \
-meson setup --prefix=$XORG_PREFIX       \
-            --libdir=$XORG_PREFIX/lib32 \
-            --buildtype=release ..      &amp;&amp;
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"    \
+PKG_CONFIG_PATH=/usr/lib32      \
+meson setup --prefix=/usr       \
+            --libdir=/usr/lib32 \
+            --buildtype=release .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -103,7 +103,7 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
 rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
@@ -132,7 +132,7 @@ ldconfig</userinput></screen>
           libxcvt.so
         </seg>
         <seg>
-          $XORG_PREFIX/include/libxcvt
+          /usr/include/libxcvt
         </seg>
       </seglistitem>
     </segmentedlist>

@@ -72,7 +72,7 @@
 cd    build &amp;&amp;
 
 meson setup ..                 \
-      --prefix=$XORG_PREFIX    \
+      --prefix=/usr            \
       --buildtype=release      \
       -D documentation=disabled &amp;&amp;
 
@@ -114,7 +114,7 @@ ninja</userinput></screen>
             libevdev.so
           </seg>
           <seg>
-            $XORG_PREFIX/include/libevdev-1.0
+            /usr/include/libevdev-1.0
           </seg>
         </seglistitem>
       </segmentedlist>

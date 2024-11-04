@@ -86,7 +86,7 @@ make</userinput></screen>
       fix the ownership:
     </para>
 
-<screen role="root"><userinput>chown -Rv root:root $XORG_PREFIX/share/doc/libxcb-&libxcb-version;</userinput></screen>
+<screen role="root"><userinput>chown -Rv root:root /usr/share/doc/libxcb-&libxcb-version;</userinput></screen>
 
   </sect2>
 
@@ -104,8 +104,8 @@ make</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++" PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
-./configure $XORG_CONFIG --libdir=$XORG_PREFIX/lib32 &amp;&amp;
+<screen><userinput>CC="gcc -m32" CXX="g++" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+./configure $XORG_CONFIG --libdir=/usr/lib32 &amp;&amp;
 make</userinput></screen>
 
     <para>
@@ -113,7 +113,7 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install                      &amp;&amp;
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
 rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
@@ -162,8 +162,8 @@ ldconfig</userinput></screen>
           libxcb-xkb.so, libxcb-xtest.so, libxcb-xvmc.so, and libxcb-xv.so
         </seg>
         <seg>
-          <envar>$XORG_PREFIX</envar>/include/xcb and
-          <envar>$XORG_PREFIX</envar>/share/doc/libxcb-&libxcb-version;
+          /usr/include/xcb and
+          /usr/share/doc/libxcb-&libxcb-version;
         </seg>
       </seglistitem>
     </segmentedlist>

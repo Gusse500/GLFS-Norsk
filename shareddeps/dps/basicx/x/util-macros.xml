@@ -89,8 +89,8 @@
           None
         </seg>
         <seg>
-          <envar>$XORG_PREFIX</envar>/share/pkgconfig and
-          <envar>$XORG_PREFIX</envar>/share/util-macros
+          /usr/share/pkgconfig and
+          /usr/share/util-macros
         </seg>
       </seglistitem>
     </segmentedlist>

@@ -60,7 +60,7 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=$XORG_PREFIX .. &amp;&amp;
+meson setup --prefix=/usr .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
@@ -72,10 +72,10 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
-mv -v $XORG_PREFIX/share/doc/xorgproto{,-&xorgproto-version;}</userinput></screen>
+mv -v /usr/share/doc/xorgproto{,-&xorgproto-version;}</userinput></screen>
 <!--
-install -vdm 755 $XORG_PREFIX/share/doc/xorgproto-&xorgproto-version; &amp;&amp;
-install -vm 644 ../[^m]*.txt ../PM_spec $XORG_PREFIX/share/doc/xorgproto-&xorgproto-version;</userinput></screen>-->
+install -vdm 755 /usr/share/doc/xorgproto-&xorgproto-version; &amp;&amp;
+install -vm 644 ../[^m]*.txt ../PM_spec /usr/share/doc/xorgproto-&xorgproto-version;</userinput></screen>-->
 
   </sect2>
 
@@ -102,9 +102,9 @@ install -vm 644 ../[^m]*.txt ../PM_spec $XORG_PREFIX/share/doc/xorgproto-&xorgpr
         <seg>None</seg>
         <seg>None</seg>
         <seg>
-          <envar>$XORG_PREFIX</envar>/include/GL,
-          <envar>$XORG_PREFIX</envar>/include/X11, and
-          <envar>$XORG_PREFIX</envar>/share/doc/xorgproto-&xorgproto-version;
+          /usr/include/GL,
+          /usr/include/X11, and
+          /usr/share/doc/xorgproto-&xorgproto-version;
         </seg>
       </seglistitem>
     </segmentedlist>

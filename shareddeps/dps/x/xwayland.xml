@@ -72,7 +72,7 @@
 mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=$XORG_PREFIX          \
+meson setup --prefix=/usr                  \
             --buildtype=release            \
             -D xkb_output_dir=/var/lib/xkb \
             -D secure-rpc=false            \

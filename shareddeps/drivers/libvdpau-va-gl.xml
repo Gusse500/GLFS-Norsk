@@ -69,7 +69,10 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=$XORG_PREFIX .. &amp;&amp;
+cmake -D CMAKE_BUILD_TYPE=Release  \
+      -D CMAKE_INSTALL_PREFIX=/usr \
+      .. &amp;&amp;
+
 make</userinput></screen>
 
       <para>
@@ -100,9 +103,9 @@ make</userinput></screen>
       </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                 \
-PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig         \
 cmake -D CMAKE_BUILD_TYPE=Release            \
-      -D CMAKE_INSTALL_PREFIX=$XORG_PREFIX   \
+      -D CMAKE_INSTALL_PREFIX=/usr           \
       .. &amp;&amp;
 
 make</userinput></screen>
@@ -112,7 +115,7 @@ make</userinput></screen>
       </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install                    &amp;&amp;
-cp -vr DESTDIR/$XORG_PREFIX/lib/* $XORG_PREFIX/lib32 &amp;&amp;
+cp -vr DESTDIR/usr/lib/* /usr/lib32                  &amp;&amp;
 rm -rf DESTDIR                                       &amp;&amp;
 ldconfig</userinput></screen>
 

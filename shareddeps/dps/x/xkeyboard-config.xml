@@ -59,7 +59,8 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=$XORG_PREFIX --buildtype=release .. &amp;&amp;
+meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -100,9 +101,7 @@ ninja</userinput></screen>
       <seglistitem>
         <seg>None</seg>
         <seg>None</seg>
-        <seg>
-          <envar>$XORG_PREFIX</envar>/share/X11/xkb
-        </seg>
+        <seg>/usr/share/X11/xkb</seg>
       </seglistitem>
     </segmentedlist>
 

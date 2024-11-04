@@ -75,7 +75,7 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=$XORG_PREFIX \
+meson setup --prefix=/usr         \
             --buildtype=release   \
             -D udev=true          \
             -D valgrind=disabled  \
@@ -106,10 +106,10 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                 \
-PKG_CONFIG_PATH=$XORG_PREFIX/lib32/pkgconfig \
-meson setup --prefix=$XORG_PREFIX            \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig         \
+meson setup --prefix=/usr                    \
 	    --buildtype=release              \
-            --libdir=$XORG_PREFIX/lib32      \
+            --libdir=/usr/lib32              \
             -D udev=true                     \
             -D valgrind=disabled             \
             .. &amp;&amp;
@@ -121,7 +121,7 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
-cp -vr DESTDIR/$XORG_PREFIX/lib32/* $XORG_PREFIX/lib32 &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
 rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
 
