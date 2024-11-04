@@ -43,6 +43,9 @@
       <para>November 3rd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Fontconfig: Fixed file link.</para>
+        </listitem>
+        <listitem>
           <para>
             [Zeckmathederg] -	  
             Downgraded <envar>XORG_PREFIX</envar> to only be used for
