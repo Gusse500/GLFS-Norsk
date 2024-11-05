@@ -72,6 +72,8 @@
     <title>Recommended</title>
 
     <para>
+      <xref linkend="glibc"/> (if you are doing multilib, ensures compatibility
+      with 32-bit Windows applications),
       <ulink url="&blfs-svn;/multimedia/gstreamer10.html">gstreamer</ulink>
       (gstreamer is not included in this book yet due to its wide variety of
       recommended dependencies. If you are on multilib and want a 32-bit or WoW64

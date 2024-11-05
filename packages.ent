@@ -1,3 +1,6 @@
+<!-- CHAPTER II - MULTILIB -->
+<!ENTITY glibc-version                "2.40">
+
 <!-- CHAPTER III - SHARED DEPENDENCIES -->
 
 <!-- Networking -->

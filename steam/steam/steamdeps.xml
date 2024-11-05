@@ -32,6 +32,7 @@
 	<xref linkend="dbus-pass2"/>,
 	Display server (<xref linkend="xorg-server"/> or
 	<xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
+	<xref linkend="glibc"/> (or <xref linkend="steamtrblshoot"/>),
 	<xref linkend="libglvnd"/> (32-bit is required for multilib),
 	<xref linkend="make-ca"/>,
 	<xref linkend="mesa"/> w/ the <parameter>-Dglvnd=enabled

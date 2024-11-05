@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+
+  <!ENTITY glibc-download-http "https://ftp.gnu.org/gnu/glibc/glibc-&glibc-version;.tar.xz">
+  <!ENTITY glibc-download-ftp  " ">
+]>
+
+<sect1 id="glibc" xreflabel="glibc-&glibc-version;">
+  <?dbhtml filename="glibc.html"?>
+
+  <title>glibc-&glibc-version;</title>
+
+  <indexterm zone="glibc">
+    <primary sortas="a-glibc">glibc</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to glibc</title>
+
+    <para>
+      The glibc package has already been compiled in LFS Multilib, both the
+      64-bit and 32-bit versions. However, the LFS Multilib book does not
+      add <command>"-mstackrealign"</command> to the <envar>CC</envar> and
+      <envar>CXX</envar> variables when configuring and compiling lib32-glibc.
+      This flag realigns the stack if necessary which can help prevent
+      segmentation faults for binary only applications, such as
+      <xref linkend="steam"/> and some Windows applications via
+      <xref linkend="wine"/>. Trying to run any app through Steam will
+      crash the launch process. This can be fixed by setting
+      <computeroutput>LD_PRELOAD="" %command%</computeroutput>
+      under each app's manual launch options, or as this section will do, will
+      compile glibc in a certain way for the 32-bit version. The 64-bit version
+      of glibc does not need to be modified. Only the 32-bit version does.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&glibc-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&glibc-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Required patch:
+          <ulink url="https://www.linuxfromscratch.org/patches/lfs/development/glibc-&glibc-version;-fhs-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>32-bit Installation of glibc</title>
+
+    <para>
+      Install lib32-<application>glibc</application> by running the following commands:
+    </para>
+
+<screen><userinput>patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch &amp;&amp;
+
+mkdir -v build &amp;&amp;
+cd       build &amp;&amp;
+
+CC="gcc -m32 -mstackrealign"             \
+CXX="g++ -m32 -mstackrealign"            \
+../configure                             \
+      --prefix=/usr                      \
+      --host=i686-pc-linux-gnu           \
+      --build=$(../scripts/config.guess) \
+      --enable-kernel=4.19               \
+      --disable-nscd                     \
+      --libdir=/usr/lib32                \
+      --libexecdir=/usr/lib32            \
+      libc_cv_slibdir=/usr/lib32 &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -a DESTDIR/usr/lib32/* /usr/lib32/ &amp;&amp;
+install -vm644 DESTDIR/usr/include/gnu/{lib-names,stubs}-32.h \
+               /usr/include/gnu/      &amp;&amp;
+ldconfig</userinput></screen>
+
+    <important>
+
+      <para>
+        Now check that the multilib toolchain is still functional:
+      </para>
+
+<screen><userinput>echo 'int main(){}' > dummy.c       &amp;&amp;
+gcc -m32 dummy.c                    &amp;&amp;
+readelf -l a.out | grep '/ld-linux'</userinput></screen>
+
+      <para>
+        There should be no errors and the output should be:
+      </para>
+
+<screen><computeroutput>[Requesting program interpreter: /lib/ld-linux.so.2]</computeroutput></screen>
+
+      <para>
+        If you do not see that result and are met with errors, then something
+        went wrong. Go back and double check the commands you ran were correct.
+      </para>
+
+      <para>
+        Once all is well, clean up the test files:
+      </para>
+
+      <screen><userinput>rm -v dummy.c a.out</userinput></screen>
+
+    </important>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <para>
+      For a complete list of glibc's contents, see
+      <ulink url="https://linuxfromscratch.org/~thomas/multilib/chapter08/glibc.html"/>.
+    </para>
+
+  </sect2>
+
+</sect1>
