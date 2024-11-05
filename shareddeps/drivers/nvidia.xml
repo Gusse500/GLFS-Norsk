@@ -58,7 +58,8 @@
       <para>
   Though NVIDIA-565.57.01 exists, the open drivers do not build for 6.11
   kernels. The proprietary ones build, but the process requires extracting
-  the .run and applying a sed.
+  the .run and applying a sed. For this reason, 560.35.03 is the version
+  GLFS currently documents.
       </para>
     </note>
 
