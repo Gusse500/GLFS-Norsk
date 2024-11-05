@@ -10,6 +10,7 @@
   <!ENTITY nvidia-lib32-download-ftp  " ">
 ]>
 
+
 <sect1 id="nvidia" xreflabel="NVIDIA-&nvidia-version;">
   <?dbhtml filename="nvidia.html"?>
 
@@ -55,6 +56,14 @@
 
     <note>
       <para>
+  Though NVIDIA-565.57.01 exists, the open drivers do not build for 6.11
+  kernels. The proprietary ones build, but the process requires extracting
+  the .run and applying a sed.
+      </para>
+    </note>
+
+    <note>
+      <para>
 	If you are doing multilib, install the x86_64 driver as it includes
 	32-bit libraries along with the 64-bit libraries.
       </para>
@@ -81,9 +90,13 @@
 
     <note>
       <para>
-	Make sure to follow the following command when an <application>Xorg
+	Make sure to execute the following command when an <application>Xorg
 	</application> instance isn't running, or else the driver will
-	complain and quit.
+  complain and quit. Alternatively, you can pass <parameter>
+  --allow-installation-with-running-driver --no-x-check</parameter> to
+  override NVIDIA's warnings. This is not recommended as it skips
+  sanity checks, but is generally safe. If you do this, you should
+  reboot afterwards.
       </para>
 
       <para>
@@ -94,29 +107,36 @@
 	--kernel-source-path=&lt;path&gt;</parameter>. If you don't have
 	the source tree on your system, the driver will fail to install.
       </para>
+
+      <para>
+  For a complete list of flags, pass <parameter>-A</parameter>.
+      </para>
     </note>
 
     <para>
       First enable XFree86 DRI support in the kernel and recompile if necessary.
-    </para>
+</para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-kernel.xml"/>
 
     <para>
-      Install x86 <application>NVIDIA</application> by running the following
+      Install x86_64 <application>NVIDIA</application> by running the following
+      commands as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run \
+  --no-systemd          \
+  --no-abi-note         \
+  --install-compat32-libs
+</userinput></screen>
+
+    <para>
+      If you are only interested in the 32-bit driver, install x86
+      <application>NVIDIA</application> by running the following
       commands as the <systemitem class="username">root</systemitem> user:
     </para>
 
 <screen role="root"><userinput>sh NVIDIA-Linux-x86-390.157.run
-</userinput></screen>
-
-    <para>
-      Or install x86_64 <application>NVIDIA</application> by running the
-      following commands as the <systemitem class="username">root</systemitem>
-      user:
-    </para>
-
-<screen role="root"><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run
 </userinput></screen>
 
     <para>
@@ -181,6 +201,22 @@
       if you want to use Mesa's Nouveau down the road.
     </para>
 
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <para>
+      <parameter>--no-systemd</parameter>: Disables systemd support.
+    </para>
+
+    <para>
+      <parameter>--no-abi-note</parameter>: Deletes a mostly useless note about a minimum kernel version for NVIDIA OpenGL libraries.
+    </para>
+
+    <para>
+      <parameter>--install-compat32-libs</parameter>: Enables the installation of 32-bit libraries.
+    </para>
   </sect2>
 
   <sect2 role="content">
