@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY wireplumber-download-http "https://gitlab.freedesktop.org/pipewire/wireplumber/-/archive/&wireplumber-version;/wireplumber-&wireplumber-version;.tar.bz2">
+  <!ENTITY wireplumber-download-ftp  " ">
+]>
+
+<sect1 id="wireplumber" xreflabel="Wireplumber-&wireplumber-version;">
+  <?dbhtml filename="wireplumber.html"?>
+
+  <title>Wireplumber-&wireplumber-version;</title>
+
+  <indexterm zone="wireplumber">
+    <primary sortas="a-wireplumber">Wireplumber</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to Wireplumber</title>
+
+    <para>
+      The <application>Wireplumber</application> package contains a session and
+      policy manager for <application>Pipewire</application>.
+    </para>
+
+    <bridgehead renderas="sect3">Package Information</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&wireplumber-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&wireplumber-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">Wireplumber Dependencies</bridgehead>
+
+    <bridgehead renderas="sect4">Required</bridgehead>
+    <para role="required">
+      <xref linkend="elogind"/>,
+      <xref linkend="glib2"/>, and
+      <xref linkend="pipewire"/>
+    </para>
+
+    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <para role="recommended">
+      <ulink url="&blfs-svn;/general/lua.html">Lua</ulink>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Wireplumber</title>
+
+    <para>
+      Install <application>Wireplumber</application> by running the following
+      commands:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      To test the results, issue: <command>ninja test</command>.
+    </para>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/meson-buildtype-release.xml"/>
+
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Configuring Wireplumber</title>
+
+    <sect3><title>Configuration Information</title>
+
+      <para>
+        In order for Wireplumber to be used by Pipewire, Wireplumber must be
+        configured to start when a desktop environment is started.
+      </para>
+
+      <para>
+        First, create a shell script that will start Wireplumber and Pipewire
+        in the correct order as the &root; user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/bin/pipewire-launcher.sh &lt;&lt; "EOF"
+<literal>#!/bin/sh
+# Begin /usr/bin/pipewire-launcher.sh
+
+# Start Pipewire first.
+exec /usr/bin/pipewire &amp;
+
+# Wait for a second for Pipewire to launch.
+sleep 1
+
+# Start Wireplumber now that Pipewire has been started.
+exec /usr/bin/wireplumber &amp;
+# End /usr/bin/pipewire-launcher.sh</literal>
+EOF</userinput></screen>
+
+    <para>
+      Next, make this shell script executable as the &root; user:
+    </para>
+
+<screen role="root"><userinput>chmod +x /usr/bin/pipewire-launcher.sh</userinput></screen>
+
+    <para>
+      Finally, create an XDG Autostart file that will run
+      <command>/usr/bin/pipewire-launcher.sh</command> when a desktop
+      environment is started, as the &root; user:
+    </para>
+    
+<screen role="root"><userinput>cat &gt; /etc/xdg/autostart/pipewire.desktop &lt;&lt; "EOF"
+<literal>[Desktop Entry]
+Version=1.0
+Name=Pipewire
+Comment=Starts the Pipewire and Wireplumber daemons
+Exec=/usr/bin/pipewire-launcher.sh
+Terminal=false
+Type=Application</literal>
+EOF</userinput></screen>
+
+    <para>
+      Now that Wireplumber is configured to start when a desktop environment is
+      started, it is recommended that you log out of your session and log back
+      in again.
+    </para>
+    
+    </sect3>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          wireplumber,
+          wpctl, and
+          wpexec
+        </seg>
+        <seg>
+          libwireplumber-0.5.so
+        </seg>
+        <seg>
+          /usr/include/wireplumber-0.5,
+          /usr/lib/wireplumber-0.5, and
+          /usr/share/wireplumber
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="wireplumber-prog">
+        <term><command>wireplumber</command></term>
+        <listitem>
+          <para>
+            is a session and policy manager for Pipewire
+          </para>
+          <indexterm zone="wireplumber wireplumber-prog">
+            <primary sortas="b-wireplumber">wireplumber</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="wpctl">
+        <term><command>wpctl</command></term>
+        <listitem>
+          <para>
+            controls and queries information from Wireplumber
+          </para>
+          <indexterm zone="wireplumber wpctl">
+            <primary sortas="b-wpctl">wpctl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="wpexec">
+        <term><command>wpexec</command></term>
+        <listitem>
+          <para>
+            executes Wireplumber scripts, which are often written in Lua
+          </para>
+          <indexterm zone="wireplumber wpexec">
+            <primary sortas="b-wpexec">wpexec</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+      
+      <varlistentry id="libwireplumber">
+        <term><filename class="libraryfile">libwireplumber-0.5.so</filename></term>
+        <listitem>
+          <para>
+            contains functions that allow other programs to control Wireplumber
+          </para>
+          <indexterm zone="wireplumber libwireplumber">
+            <primary sortas="c-libwireplumber">libwireplumber-0.5.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+  </sect2>
+</sect1>

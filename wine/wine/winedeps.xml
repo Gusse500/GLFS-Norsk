@@ -71,20 +71,38 @@
   <sect2>
     <title>Recommended</title>
 
-    <para>
-      <xref linkend="glibc"/> (if you are doing multilib, ensures compatibility
-      with 32-bit Windows applications),
-      <ulink url="&blfs-svn;/multimedia/gstreamer10.html">gstreamer</ulink>
-      (gstreamer is not included in this book yet due to its wide variety of
-      recommended dependencies. If you are on multilib and want a 32-bit or WoW64
-      build, you must install 32-bit variants of the dependencies if they provide
-      a library, and when compiling gstreamer, use the native toolchain file from
-      <xref linkend="mesonfiles"/>. Do this this for the Base and
-      Good plugins as well),
-      OSMesa from <xref linkend="mesa"/> (compiled using the <parameter>
-      -Dosmesa=true</parameter> option),
-      <xref linkend="sdl2"/>, and <xref linkend="libvk"/>
-    </para>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          <xref linkend="glibc"/>: ensures compatibility with 32-bit Windows
+          applications if you are building WoW64.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="gstreamer10"/>: allows consuming and working with
+          multimedia such as music and videos. Most games and some software
+          work without it. Please install base and plugins of your choice as
+          well.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          OSMesa from <xref linkend="mesa"/>: for bitmap support. It is
+          compiled using the <parameter>-D osmesa=true</parameter> option.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="sdl2"/>: for input and other neat stuff.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="libvk"/>: for Vulkan support.
+        </para>
+      </listitem>
+    </itemizedlist>
 
   </sect2>
 

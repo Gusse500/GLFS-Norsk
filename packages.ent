@@ -234,7 +234,14 @@
 <!ENTITY xorg-wacom-driver-version    "1.2.3">
 <!-- END X7DRIVER -->
 <!ENTITY xinit-version                "1.4.2">
-
+<!-- MULTIMEDIA -->
+<!ENTITY gstreamer10-version          "1.24.9">  <!-- Even minors only -->
+<!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
+<!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
+<!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
+<!ENTITY gst10-plugins-ugly-version   "&gstreamer10-version;">
+<!ENTITY pipewire-version             "1.2.6">
+<!ENTITY wireplumber-version          "0.5.6">
 
 
 <!-- CHAPTER IV - STEAM -->

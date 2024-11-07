@@ -35,7 +35,7 @@
 	<xref linkend="glibc"/> (or <xref linkend="steamtrblshoot"/>),
 	<xref linkend="libglvnd"/> (32-bit is required for multilib),
 	<xref linkend="make-ca"/>,
-	<xref linkend="mesa"/> w/ the <parameter>-Dglvnd=enabled
+	<xref linkend="mesa"/> w/ the <parameter>-D glvnd=enabled
 	</parameter> option (32-bit mesa is not required for multilib
 	<emphasis>IF</emphasis> you are using <xref linkend="nvidia"/>), and
 	<xref linkend="whatnow"/>

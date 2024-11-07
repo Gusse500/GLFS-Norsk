@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-  <!ENTITY % general-entities SYSTEM "../../../general.ent">
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
   <!ENTITY pipewire-download-http "https://gitlab.freedesktop.org/pipewire/pipewire/-/archive/&pipewire-version;/pipewire-&pipewire-version;.tar.bz2">
   <!ENTITY pipewire-download-ftp  " ">
-  <!ENTITY pipewire-md5sum        "c60c630dd31d0213a78bcebf06dfc6ed">
-  <!ENTITY pipewire-size          "1.6 MB">
-  <!ENTITY pipewire-buildsize     "75 MB (with tests)">
-  <!ENTITY pipewire-time          "0.6 SBU (with tests, both using parallelism=4)">
 ]>
 
 <sect1 id="pipewire" xreflabel="pipewire-&pipewire-version;">
   <?dbhtml filename="pipewire.html"?>
-
 
   <title>Pipewire-&pipewire-version;</title>
 
@@ -32,8 +27,6 @@
       files between applications.
     </para>
 
-    
-
     <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -44,26 +37,6 @@
       <listitem>
         <para>
           Download (FTP): <ulink url="&pipewire-download-ftp;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download MD5 sum: &pipewire-md5sum;
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download size: &pipewire-size;
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Estimated disk space required: &pipewire-buildsize;
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Estimated build time: &pipewire-time;
         </para>
       </listitem>
     </itemizedlist>
@@ -86,45 +59,34 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="bluez"/>,
-      <phrase revision="sysv"><xref linkend="dbus"/>,</phrase>
+      <ulink url="&blfs-svn;/general/bluez.html">BlueZ</ulink>,
+      <xref linkend="dbus-pass2"/>,
       <xref linkend="gstreamer10"/>,
       <xref linkend="gst10-plugins-base"/>,
       <xref linkend="pulseaudio"/>,
-      <xref linkend="sbc"/>,
-      <xref linkend="v4l-utils"/>, and
+      <ulink url="&blfs-svn;/multimedia/sbc.html">SBC</ulink>,
+      <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>, and
       <xref role="runtime" linkend="wireplumber"/> (runtime)
     </para>
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       <xref linkend="alsa-lib"/>,
-      <xref linkend="avahi"/>,
-      <xref linkend="fdk-aac"/>,
-      <xref linkend="ffmpeg"/>,
-      <xref linkend="libcanberra"/>,
       <xref linkend="libdrm"/> (for one example and libcamera support),
       <xref linkend="libxcb"/>,
       <xref linkend="libsndfile"/>,
-      <xref linkend="libusb"/>,
       <xref linkend="opus"/>,
       <xref linkend="sdl2"/> (for some examples),
-      <xref linkend="valgrind"/>,
-      <xref linkend="vulkan-loader"/>,
-      <xref linkend="xorg7-lib"/>,
-      <xref linkend="doxygen"/> and
-      <xref linkend="graphviz"/> (for documentation),
-      <ulink url="https://jackaudio.org/">JACK</ulink>,
-      <ulink url="https://github.com/EHfive/ldacBT">ldacBT</ulink>,
-      <ulink url="https://libcamera.org/">libcamera</ulink>,
-      <ulink url="https://github.com/hoene/libmysofa">libmysofa</ulink>, and
-      <!--<ulink url="https://vulkan.lunarg.com/sdk/home/">Vulkan</ulink>, and-->
-      <ulink url="https://sourceforge.net/projects/xmltoman/">xmltoman</ulink>
+      <xref linkend="libvk"/>, and
+      <xref linkend="xorg7-lib"/>
     </para>
 
-    <para condition="html" role="usernotes">
-      Editor Notes: <ulink url="&blfs-wiki;/pipewire"/>
-    </para>
+    <note>
+      <para>
+        These are not the only optional dependencies. Check <ulink url="&blfs-svn;/multimedia/pipewire.html">
+        BLFS' Pipewire</ulink> for a complete list.
+      </para>
+    </note>
 
   </sect2>
 
@@ -149,10 +111,11 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                \
-      --prefix=/usr           \
-      --buildtype=release     \
-      -Dsession-managers="[]" &amp;&amp;
+meson setup ..                 \
+      --prefix=/usr            \
+      --buildtype=release      \
+      -D session-managers="[]" &amp;&amp;
+
 ninja</userinput></screen>
 
     <para>
@@ -181,36 +144,23 @@ ninja</userinput></screen>
       href="../../xincludes/meson-buildtype-release.xml"/>
 
     <para>
-      <parameter>-Dsession-managers="[]"</parameter>: This switch
+      <parameter>-D session-managers="[]"</parameter>: This switch
       allows specifying the session managers to build as subprojects.
       We specify an empty list to prevent <command>meson</command> from
       downloading any external copy of the session managers. A Pipewire
       session manager recommended by the PipeWire developers for general
       use, <xref linkend="wireplumber" role="nodep"/>, is available as a
-      separate BLFS package.  Build it after installing Pipewire if you
-      need to run the Pipewire daemon (for example in order to support
-      <xref linkend="snapshot" role="nodep"/>).
+      separate GLFS package.  Build it after installing Pipewire if you
+      need to run the Pipewire daemon.
     </para>
 
     <para>
-      <option>-Ddocs=true</option>: This switch enables the generation of HTML
-      documentation. The optional dependencies for documentation need to be
-      installed for this to work.
-    </para>
-
-    <para>
-      <option>-Dman=true</option>: This switch enables the generation of manual
-      pages. The optional dependencies for documentation need to be installed
-      for this to work.
-    </para>
-
-    <para>
-      <option>-Dffmpeg=enabled</option>: This switch enables using ffmpeg for
+      <option>-D ffmpeg=enabled</option>: This switch enables using ffmpeg for
       audio conversion as a SPA backend.
     </para>
 
     <para>
-      <option>-Dvulkan=enabled</option>: This switch enables using Vulkan for
+      <option>-D vulkan=enabled</option>: This switch enables using Vulkan for
       video rendering as a SPA backend.
     </para>
 
@@ -511,7 +461,7 @@ ninja</userinput></screen>
         <term><command>spa-json-dump</command></term>
         <listitem>
           <para>
-            dumps the current pipewire configuration in JSON format.
+            dumps the current pipewire configuration in JSON format
           </para>
           <indexterm zone="pipewire spa-json-dump">
             <primary sortas="b-spa-json-dump">spa-json-dump</primary>
