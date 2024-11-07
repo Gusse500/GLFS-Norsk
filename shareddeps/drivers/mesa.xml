@@ -247,7 +247,9 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>meson setup                                  \
+<screen><userinput>CFLAGS="-mstackrealign"                      \
+CXXFLAGS="-mstackrealign"                    \
+meson setup                                  \
       --cross-file lib32                     \
       --prefix=/usr                          \
       --libdir=/usr/lib32                    \
@@ -281,6 +283,12 @@ ldconfig</userinput></screen>
 
   <sect2 role="commands">
     <title>Command Explanations</title>
+
+    <para>
+      <command>C{,XX}FLAGS="-mstackrealign"<command>: Adding these flags
+      in the lib32 build ensures that the Steam webhelper does not crash
+      when overriding the Mesa driver to Zink.
+    </para>
 
     <para>
       <parameter>--buildtype=release</parameter>: This switch ensures a

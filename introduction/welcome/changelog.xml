@@ -43,6 +43,10 @@
       <para>November 6th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - Mesa: Fixed an issue with Steam crashing with
+          lib32-Zink.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - glibc: Fixed typo in NVIDIA xref.</para>
         </listitem>
         <listitem>
