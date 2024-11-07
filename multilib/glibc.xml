@@ -36,6 +36,12 @@
       of glibc does not need to be modified. Only the 32-bit version does.
     </para>
 
+    <para>
+      There will be added flags as well to prevent Steam crashes on launch with
+      <xref linkend="nvida"/> due to frame pointers, which do not play well
+      with 32-bit.
+    </para>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -73,8 +79,8 @@
 mkdir -v build &amp;&amp;
 cd       build &amp;&amp;
 
-CC="gcc -m32 -mstackrealign"             \
-CXX="g++ -m32 -mstackrealign"            \
+CC="gcc -m32 -mstackrealign -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer"  \
+CXX="g++ -m32 -mstackrealign -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer" \
 ../configure                             \
       --prefix=/usr                      \
       --host=i686-pc-linux-gnu           \

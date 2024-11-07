@@ -43,6 +43,10 @@
       <para>November 6th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - glibc: Applied the same fix Arch does on
+          lib32-glibc.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - gst-plugins-ugly: Fixed external links.</para>
         </listitem>
         <listitem>
