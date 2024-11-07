@@ -43,6 +43,9 @@
       <para>November 6th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - gst-plugins-ugly: Fixed external links.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Gstreamer; Pipewire: Added. Fixes issue
           <ulink url="&glfs-issues;/4">#4.</ulink></para>
         </listitem>

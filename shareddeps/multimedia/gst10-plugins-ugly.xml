@@ -64,9 +64,9 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="&blfs-svn;/multimedia/libmpeg2.html"></ulink>,
-      <ulink url="&blfs-svn;/multimedia/libcdio.html"></ulink> (for CD-ROM drive access),
-      <ulink url="&blfs-svn;/general/valgrind.html"></ulink>,
+      <ulink url="&blfs-svn;/multimedia/libmpeg2.html">libmpeg2</ulink>,
+      <ulink url="&blfs-svn;/multimedia/libcdio.html">libcdio</ulink> (for CD-ROM drive access),
+      <ulink url="&blfs-svn;/general/valgrind.html">Valgrind</ulink>,
       <ulink url="https://pypi.org/project/hotdoc/">hotdoc</ulink>,
       <ulink url="https://packages.debian.org/source/sid/libsidplay">libsidplay</ulink>, and
       <ulink url="https://gstreamer.freedesktop.org/src/orc/">Orc</ulink>
