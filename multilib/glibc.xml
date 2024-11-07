@@ -38,7 +38,7 @@
 
     <para>
       There will be added flags as well to prevent Steam crashes on launch with
-      <xref linkend="nvida"/> due to frame pointers, which do not play well
+      <xref linkend="nvidia"/> due to frame pointers, which do not play well
       with 32-bit.
     </para>
 

@@ -43,6 +43,9 @@
       <para>November 6th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - glibc: Fixed typo in NVIDIA xref.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - glibc: Applied the same fix Arch does on
           lib32-glibc.</para>
         </listitem>
