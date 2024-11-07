@@ -285,7 +285,7 @@ ldconfig</userinput></screen>
     <title>Command Explanations</title>
 
     <para>
-      <command>C{,XX}FLAGS="-mstackrealign"<command>: Adding these flags
+      <command>C{,XX}FLAGS="-mstackrealign"</command>: Adding these flags
       in the lib32 build ensures that the Steam webhelper does not crash
       when overriding the Mesa driver to Zink.
     </para>
