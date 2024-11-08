@@ -114,7 +114,7 @@
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY libunwind-version            "1.8.1">
 <!ENTITY nettle-version               "3.10">
-<!ENTITY gnutls-version               "3.8.7.1">
+<!ENTITY gnutls-version               "3.8.8">
 <!ENTITY pixman-version               "0.44.0">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.23.1">

@@ -43,6 +43,9 @@
       <para>November 7th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Zeckmathederg] - GnuTLS: 3.8.7.1 -&gt; 3.8.8.</para>
+        </listitem>
+        <listitem>
           <para>[Zeckmathederg] - Pixman: 0.43.4 -&gt; 0.44.0.</para>
         </listitem>
         <listitem>
