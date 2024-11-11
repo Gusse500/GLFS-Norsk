@@ -43,6 +43,9 @@
       <para>November 11th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Adjusted -D osmesa explanation.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mako: Fixed download link.</para>
         </listitem>
         <listitem>

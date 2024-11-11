@@ -399,7 +399,7 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D osmesa=true</parameter>: This switch enables building
       the <filename class="libraryfile">libOSMesa</filename> library and
-      provides Gallium3D support in it. It requires the swrast gallium driver.
+      provides Gallium3D support in it. It requires the softpipe gallium driver.
     </para>
 
     <para>
