@@ -132,7 +132,8 @@ EOF</userinput></screen>
       environment is started, as the &root; user:
     </para>
     
-<screen role="root"><userinput>cat &gt; /etc/xdg/autostart/pipewire.desktop &lt;&lt; "EOF"
+<screen role="root"><userinput>mkdir -pv /etc/xdg/autostart/                 &amp;&amp;
+cat &gt;  /etc/xdg/autostart/pipewire.desktop &lt;&lt; "EOF"
 <literal>[Desktop Entry]
 Version=1.0
 Name=Pipewire
