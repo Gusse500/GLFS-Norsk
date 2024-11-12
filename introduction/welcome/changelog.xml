@@ -43,6 +43,9 @@
       <para>November 11th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - GNAT: Fix mismatched tags issue.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Anticipate ml-tweak-gcc merge into lfs:multilib.</para>
         </listitem>
         <listitem>
