@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>November 12th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Toxikuu] - libgpg-error: 1.50 -> 1.51. PR
+          <ulink url="&glfs-pull;/20">(#20)</ulink></para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 11th, 2024</para>
       <itemizedlist>
         <listitem>
