@@ -246,7 +246,7 @@
 <!-- CHAPTER IV - STEAM -->
 
 <!ENTITY xdg-user-dirs-version        "0.18">
-<!ENTITY libgpg-error-version         "1.50">
+<!ENTITY libgpg-error-version         "1.51">
 <!ENTITY steam-version                "1.0.0.82">
 
 
