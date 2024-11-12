@@ -196,6 +196,13 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
     </para>
 
     <para>
+      Make <literal>-mstackrealign<literal> a default for 32-bit objects:
+    </para>
+
+<screen><userinput>sed '/STACK_REALIGN_DEFAULT/s/0/(!TARGET_64BIT \&amp;\&amp; TARGET_SSE)/' \
+      -i gcc/config/i386/i386.h</userinput></screen>
+
+    <para>
 	Install Multilib <application>GNAT</application> by running the
 	following commands:
     </para>
