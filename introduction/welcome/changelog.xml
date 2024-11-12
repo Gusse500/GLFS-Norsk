@@ -43,6 +43,9 @@
       <para>November 12th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - alsa-{lib,utils}: 1.2.12 -&gt; 1.2.13.</para>
+        </listitem>
+        <listitem>
           <para>[Toxikuu] - libgpg-error: 1.50 -> 1.51. PR
           <ulink url="&glfs-pull;/20">(#20)</ulink></para>
         </listitem>
