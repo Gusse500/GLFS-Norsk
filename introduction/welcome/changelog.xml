@@ -43,6 +43,9 @@
       <para>November 12th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - achievingml: Link to multilib-m32.</para>
+        </listitem>
+        <listitem>
           <para>[Toxikuu] - libxml2: 2.13.4 -&gt; 2.13.5. PR
           <ulink url="&glfs-pull;/21">(#21)</ulink></para>
         </listitem>

@@ -23,15 +23,10 @@
 
   <para>
     Such a guide is maintained by Thomas Trepl at
+    <ulink url="https://www.&lfs-domainname;/~thomas/multilib-m32/"/>.
+    This only covers installing 32-bit support along with 64-bit. If you
+    want x32-bit support, which is not needed for this book, follow
     <ulink url="https://www.&lfs-domainname;/~thomas/multilib/"/>.
-    It is very comprehensive and also covers how to get x32-bit
-    support, a format that can run 64-bit code with 32-bit registers.
-    That format is unnecessary. Most applications that are covered here
-    either don't: support it, require it, or is simply not necessary
-    to compile for any sort of interest. Therefore, any mention
-    of x32-bit, x32, mx32, and x32-bit instructions can be skipped.
-    Most users will not need it and the extra support in compilers
-    and libraries on the system will be useless, taking up disk space.
   </para>
 
   <para>
