@@ -43,6 +43,10 @@
       <para>MMMM DD{nd,st,th}, YYYY</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - gpuconfig: Document Ada firmware and WHENCE
+          (thanks Xi Ruoyao for bringing this to my attention).</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: 24.2.6 -&gt; 24.2.7.</para>
         </listitem>
       </itemizedlist>

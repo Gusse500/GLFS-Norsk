@@ -170,7 +170,7 @@ cp -v &lt;YOUR_BLOBS&gt; /lib/firmware/amdgpu</userinput></screen>
       <para>
 	Nvidia GPUs from Kepler onwards require signed firmware, otherwise
 	the nouveau driver is unable to provide hardware acceleration.
-	Nvidia has now released firmware up to Ampere (GeForce30 series) to
+	Nvidia has now released firmware up to Ada (40xx) to
 	<application>linux-firmware</application>. Note that faster clocks
 	than the default are not enabled by the released firmware.
       </para>
@@ -189,10 +189,15 @@ cp -d nv* vuc-* /lib/firmware/nouveau/</userinput></screen>
 
       <para>
         For newer chips, the nouveau driver searches in multiple paths,
-	and simply grabbing firmware you find in the linux-firmware repository
-	won't do any good probably. There are plenty of symlinks that need to
-	be made. Follow the instructions below in order to install the newer
-	firmware properly:
+        and simply grabbing firmware you find in the linux-firmware repository
+        won't do any good. There are symlinks that need to be made.
+        The <filename>WHENCE</filename>	file in the <filename class="directory">
+        linux-firmware</filename> directory documents all the firmware files
+        and potential symlinks. Once you found what you need, look it up in
+        <filename>WHENCE</filename> and make the necessary symlinks. If you
+        don't want to bother and would rather install all the drivers and
+        symlinks, follow the instructions below in order to install the newer
+        firmware properly automatically:
       </para>
 
 <screen><userinput>git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git  &amp;&amp;
