@@ -43,6 +43,9 @@
       <para>November 13th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Fixed incorrect info about Zink.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: Removed -mstackrealign.</para>
         </listitem>
         <listitem>

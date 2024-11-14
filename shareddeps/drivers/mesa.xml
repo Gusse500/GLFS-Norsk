@@ -354,9 +354,9 @@ ldconfig</userinput></screen>
 	</listitem>
         <listitem>
           <para>
-            <literal>zink</literal> (a driver converting Vulkan calls to OpenGL;
+            <literal>zink</literal> (a driver converting OpenGL calls to Vulkan;
             if the Vulkan driver is performant, this driver can also be
-            performant; can be used as a replacement for dri drivers like
+            performant; can be used as a replacement for Gallium3D drivers like
             <literal>nouveau</literal> as detailed in
             <xref linkend="whatnow"/>)
           </para>
