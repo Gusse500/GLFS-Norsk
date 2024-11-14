@@ -43,6 +43,9 @@
       <para>November 13th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Removed -mstackrealign.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - gpuconfig: Document Ada firmware and WHENCE
           (thanks Xi Ruoyao for bringing this to my attention).</para>
         </listitem>
