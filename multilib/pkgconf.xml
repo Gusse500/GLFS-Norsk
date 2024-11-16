@@ -14,9 +14,7 @@
   <para>
     The <command>pkgconf</command> compilation in the multilib
     mirror does not cover <command>pkgconf</command> personalities
-    which are needed for some lib32 variants of packages such as
-    Gstreamer. This part is not necessary if you only intend to
-    follow the Steam chapter and not the Wine chapter.
+    which are needed for <xref linkend="mesonfiles"/>.
   </para>
 
   <para>
@@ -94,6 +92,5 @@ SystemIncludePaths: /usr/include
 SystemLibraryPaths: /usr/lib32</computeroutput></screen>
 
   </sect2>
-
 
 </sect1>
