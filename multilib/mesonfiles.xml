@@ -26,12 +26,9 @@
       </application> toolchain files. They specify compilers,
       options that should be invoked, the <application>pkg-conf</application>
       binary (or rather symlink that uses a certain personality file) to use,
-      <command>llvm-config</command> to use, etc. This is required for Mesa's
-      Nouveau and/or Swrast Vulkan drivers. It is also needed for Gstreamer
-      (not in the book), which is a recommended dependency of
-      <xref linkend="wine"/>. It can also turn into a requirement for various
-      packages if you are wanting to upgrade packages using Meson and you are
-      wanting to install 32-bit versions of those packages.
+      <command>llvm-config</command> to use, etc. This is required for many
+      Meson projects, especially if you have followed BLFS before this book.
+      Therefore, this section should be considered a requirement.
     </para>
 
     <para>
