@@ -170,7 +170,7 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
       <para>
         Some NVIDIA GPUs from Kepler onwards, including RTX and GTX 9xx series
         onwards, require firmware signed by NVIDIA to work.
-        Nvidia has now released firmware up to Ada (40xx) to
+        NVIDIA has now released firmware up to Ada (40xx) to
         <application>linux-firmware</application>. Read
         <ulink url='https://nouveau.freedesktop.org/CodeNames.html'>the
         CodeNames page of the Nouveau wiki</ulink> to figure out the code
