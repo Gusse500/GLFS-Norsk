@@ -14,11 +14,14 @@ installed that deal with these conversions. Please read the `INSTALL.md` file to
 determine what programs you need to install and where to get instructions to
 install that software.
 
-After that, you can build the html with a simple **make** command.
+After that, you can build the html with a simple `make` command.
 The default target builds the html in `$(HOME)/public_html/glfs.`
+It will by default make each package and section its own page then link
+everything together for a smooth experience.
 
-The dark theme is the default, but you can switch the theme by
-running `switch-theme.sh` with the parameter `light` or `dark`.
+The dark theme is also the default, but you can switch the theme by
+running `switch-theme.sh` with the parameter `light` or `dark` before running
+`make`.
 
 Makefile targets are: `pdf`, `nochunks`, `validate`, and `glfs-patch-list`.
 

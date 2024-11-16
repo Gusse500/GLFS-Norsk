@@ -37,7 +37,7 @@ help:
 	@echo "Parameters:"
 	@echo ""
 	@echo "  BASEDIR=<dir>        Put the output in directory <dir>."
-	@echo "                       Defaults to HOME/public_html/glfs"
+	@echo "                       Defaults to '$(HOME)/public_html/glfs'"
 	@echo ""
 	@echo "  V=<val>              If <val> is a non-empty value, all"
 	@echo "                       steps to produce the output is shown."
