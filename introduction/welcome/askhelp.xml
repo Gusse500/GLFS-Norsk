@@ -12,15 +12,15 @@
   <title>Asking for Help</title>
 
   <para>
-    Make an issue on <ulink url="https://github.com/Zeckmathederg/glfs"/>,
-    and responses will be swift. Making repeat issues or asking questions
-    that have already been answered is alright, but doing some research
-    beforehand is appreciated.
+    If you have an issue or need some help, don't be afraid to make	  
+    an issue on <ulink url="https://github.com/glfs-book/glfs/issues"/>.
+    Making repeat issues or asking questions that have already been
+    answered is alright, but doing some research beforehand is appreciated.
   </para>
 
   <para>
     GLFS also does not have any mailing lists so making issues is the best
-    way to get support or report issues with the book's instructions.
+    way to get support or reporting issues with the book.
   </para>
 
 </sect1>
