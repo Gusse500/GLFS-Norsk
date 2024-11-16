@@ -20,34 +20,13 @@ else
   Q = @
 endif
 
-ifndef REV
-  REV = sysv
-endif
-
-ifneq ($(REV), sysv)
-  ifneq ($(REV), systemd)
-    $(error REV must be 'sysv' (default) or 'systemd'.)
-  endif
-endif
-
-ifeq ($(REV), sysv)
-  BASEDIR         ?= $(HOME)/public_html/glfs
-  PDF_OUTPUT      ?= glfs.pdf
-  NOCHUNKS_OUTPUT ?= glfs.html
-  DUMPDIR         ?= ~/glfs-commands
-  GLFSHTML        ?= glfs-html.xml
-  GLFSHTML2       ?= glfs-html2.xml
-  GLFSFULL        ?= glfs-full.xml
-else
-  BASEDIR         ?= $(HOME)/public_html/glfs-systemd
-  PDF_OUTPUT      ?= glfs-sysd.pdf
-  NOCHUNKS_OUTPUT ?= glfs-sysd.html
-  DUMPDIR         ?= ~/glfs-sysd-commands
-  GLFSHTML        ?= glfs-systemd-html.xml
-  GLFSHTML2       ?= glfs-systemd-html2.xml
-  GLFSFULL        ?= glfs-systemd-full.xml
-
-endif
+BASEDIR         ?= $(HOME)/public_html/glfs
+PDF_OUTPUT      ?= glfs.pdf
+NOCHUNKS_OUTPUT ?= glfs.html
+DUMPDIR         ?= ~/glfs-commands
+GLFSHTML        ?= glfs-html.xml
+GLFSHTML2       ?= glfs-html2.xml
+GLFSFULL        ?= glfs-full.xml
 
 glfs: html wget-list
 
@@ -56,17 +35,9 @@ help:
 	@echo "make <parameters> <targets>"
 	@echo ""
 	@echo "Parameters:"
-	@echo "  REV=<rev>            Build variation of book"
-	@echo "                       Valid values for REV are:"
-	@echo "                       * sysv    - Build book for SysV"
-	@echo "                       * systemd - Build book for systemd"
-	@echo "                       Defaults to 'sysv'"
 	@echo ""
 	@echo "  BASEDIR=<dir>        Put the output in directory <dir>."
-	@echo "                       Defaults to"
-	@echo "                       'HOME/public_html/glfs' if REV=sysv (or unset)"
-	@echo "                       or to"
-	@echo "                       'HOME/public_html/glfs-systemd' if REV=systemd"
+	@echo "                       Defaults to HOME/public_html/glfs"
 	@echo ""
 	@echo "  V=<val>              If <val> is a non-empty value, all"
 	@echo "                       steps to produce the output is shown."
@@ -193,11 +164,11 @@ validate: $(RENDERTMP)/$(GLFSFULL)
 $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
 	$(Q)[ -d $(RENDERTMP) ] || mkdir -p $(RENDERTMP)
 
-	@echo "Adjusting for revision $(REV)..."
+	@echo "Rendering the book..."
 	$(Q)xsltproc --nonet                               \
                 --xinclude                            \
                 --output $(RENDERTMP)/$(GLFSHTML2)    \
-                --stringparam profile.revision $(REV) \
+                --stringparam profile.revision sysv   \
                 stylesheets/lfs-xsl/profile.xsl       \
                 index.xml
 
@@ -231,7 +202,7 @@ glfs-patches.sh: $(RENDERTMP)/$(GLFSFULL) version
 
 wget-list: $(BASEDIR)/wget-list
 $(BASEDIR)/wget-list: $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Generating wget list for $(REV) at $(BASEDIR)/wget-list ..."
+	@echo "Generating wget list at $(BASEDIR)/wget-list ..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --nonet                       \
                 --output $(BASEDIR)/wget-list \
@@ -280,16 +251,6 @@ bootscripts:
      tar  -cJhf $$BOOTSCRIPTS.tar.xz -C $(RENDERTMP) $$BOOTSCRIPTS;   \
    fi
 
-systemd-units:
-	@VERSION=`grep "systemd-units-version " general.ent | cut -d\" -f2`; \
-   UNITS="glfs-systemd-units-$$VERSION";                                \
-   if [ ! -e $$UNITS.tar.xz ]; then                                     \
-     rm -rf $(RENDERTMP)/$$UNITS;                                       \
-     mkdir $(RENDERTMP)/$$UNITS;                                        \
-     cp -a ../systemd-units/* $(RENDERTMP)/$$UNITS;                     \
-     tar -cJhf $$UNITS.tar.xz -C $(RENDERTMP) $$UNITS;                  \
-   fi
-
 test-options:
 	$(Q)xsltproc --xinclude --nonet stylesheets/test-options.xsl index.xml
 
@@ -303,7 +264,7 @@ $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
 
 .PHONY: glfs all world html nochunks tmpdir clean             \
    validate profile-html glfs-patch-list wget-list test-links \
-   dump-commands  bootscripts systemd-units version test-options
+   dump-commands  bootscripts version test-options
 
 version:
-	$(Q)./git-version.sh $(REV)
+	$(Q)./git-version.sh sysv

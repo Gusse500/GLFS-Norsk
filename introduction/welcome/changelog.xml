@@ -43,6 +43,10 @@
       <para>November 15th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Remove unneeded references to Systemd in the
+          installation instructions of the book.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Bulletin: Removed, not needed anymore.</para>
         </listitem>
         <listitem>
