@@ -183,8 +183,8 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
 wget https://us.download.nvidia.com/XFree86/Linux-x86/340.32/NVIDIA-Linux-x86-340.32.run &amp;&amp;
 sh NVIDIA-Linux-x86-340.32.run --extract-only                                            &amp;&amp;
 python3 extract_firmware.py                                                              &amp;&amp;
-mkdir -p /lib/firmware/nouveau                                                           &amp;&amp;
-cp -d nv* vuc-* /lib/firmware/nouveau/</userinput></screen>
+mkdir -p /usr/lib/firmware/nouveau                                                       &amp;&amp;
+cp -d nv* vuc-* /usr/lib/firmware/nouveau/</userinput></screen>
 
       <para>
         For newer chips, the nouveau driver searches in multiple paths,
