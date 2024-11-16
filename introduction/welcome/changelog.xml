@@ -43,6 +43,10 @@
       <para>November 15th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - gpuconfig: Updated outdated info about firmware.
+          Fixes <ulink url="&glfs-issues;/22">#22.</ulink></para>
+        </listitem>
+        <listitem>
           <para>[Toxikuu] - util-macros: 1.20.1 -> 1.20.2. PR
           <ulink url="&glfs-pull;/24">(#24)</ulink></para>
         </listitem>

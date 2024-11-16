@@ -55,7 +55,9 @@
     <para>
       For <literal>LLVMPipe</literal> or <literal>LLVMPipe</literal>,
       <option>CONFIG_DRM_VGEM</option> is required or Xorg clients will
-      probably fail. While this can be compiled as a module, it is more
+      probably fail with a cryptic message <computeroutput>
+      Error: couldn't get an RGB, Double-buffered visual</computeroutput>.
+      While this can be compiled as a module, it is more
       convenient to just build it into the kernel, otherwise the module
       will not be loaded automatically.
     </para>
@@ -74,11 +76,9 @@
       <title>ATI Firmware</title>
 
       <para>
-	ATI Radeon GPUs require firmware to be able to use KMS (kernel
-	modesetting - the preferred option) as well as for Xorg. For
-	older Radeon chips before r600, the firmware is in the kernel
-	source. Later GPUs have their firmware in <application>
-	linux-firmware</application>.
+        ATI Radeon GPUs require firmware to be able to use KMS (kernel
+        modesetting - the preferred option) as well as for Xorg. The firmware
+        is in <application>linux-firmware</application>.
       </para>
 
       <para>
@@ -105,8 +105,8 @@
 	then install them:
       </para>
 
-<screen><userinput>mkdir -pv /lib/firmware/radeon &amp;&amp;
-cp -v &lt;YOUR_BLOBS&gt; /lib/firmware/radeon</userinput></screen>
+<screen><userinput>mkdir -pv /usr/lib/firmware/radeon &amp;&amp;
+cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/radeon</userinput></screen>
 
     </sect3>
 
@@ -136,8 +136,8 @@ cp -v &lt;YOUR_BLOBS&gt; /lib/firmware/radeon</userinput></screen>
 	APU now has a 13th file, raven_ta.bin).
       </para>
 
-<screen><userinput>mkdir -pv /lib/firmware/amdgpu &amp;&amp;
-cp -v &lt;YOUR_BLOBS&gt; /lib/firmware/amdgpu</userinput></screen>
+<screen><userinput>mkdir -pv /usr/lib/firmware/amdgpu &amp;&amp;
+cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
 
       <para>
         If disk space is not a problem, you could install all the current
@@ -171,8 +171,7 @@ cp -v &lt;YOUR_BLOBS&gt; /lib/firmware/amdgpu</userinput></screen>
 	Nvidia GPUs from Kepler onwards require signed firmware, otherwise
 	the nouveau driver is unable to provide hardware acceleration.
 	Nvidia has now released firmware up to Ada (40xx) to
-	<application>linux-firmware</application>. Note that faster clocks
-	than the default are not enabled by the released firmware.
+	<application>linux-firmware</application>.
       </para>
 
       <para>
@@ -202,10 +201,10 @@ cp -d nv* vuc-* /lib/firmware/nouveau/</userinput></screen>
 
 <screen><userinput>git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git  &amp;&amp;
 cd linux-firmware                                                                      &amp;&amp;
-mkdir -pv /lib/firmware/nvidia                                                         &amp;&amp;
-mkdir -pv DESTDIR/lib/firmware                                                         &amp;&amp;
-sh copy-firmware.sh --ignore-duplicates DESTDIR/lib/firmware                           &amp;&amp;
-cp -vr DESTDIR/lib/firmware/nvidia/* /lib/firmware/nvidia                              &amp;&amp;
+mkdir -pv /usr/lib/firmware/nvidia                                                     &amp;&amp;
+mkdir -pv DESTDIR/usr/lib/firmware                                                     &amp;&amp;
+sh copy-firmware.sh --ignore-duplicates DESTDIR/usr/lib/firmware                       &amp;&amp;
+cp -vr DESTDIR/usr/lib/firmware/nvidia/* /usr/lib/firmware/nvidia                      &amp;&amp;
 rm -rf DESTDIR</userinput></screen>
 
     </sect3>
