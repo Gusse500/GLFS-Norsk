@@ -43,6 +43,14 @@
       <para>November 15th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[Toxikuu] - util-macros: 1.20.1 -> 1.20.2. PR
+          <ulink url="&glfs-pull;/24">(#24)</ulink></para>
+        </listitem>
+        <listitem>
+          <para>[Toxikuu] - xprop: 1.2.7 -> 1.2.8. PR
+	  <ulink url="&glfs-pull;/23">(#23)</ulink></para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - askhelp: Update GLFS issues link.</para>
         </listitem>
       </itemizedlist>
