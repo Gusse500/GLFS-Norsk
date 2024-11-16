@@ -50,11 +50,11 @@
           Fixes <ulink url="&glfs-issues;/22">#22.</ulink></para>
         </listitem>
         <listitem>
-          <para>[Toxikuu] - util-macros: 1.20.1 -> 1.20.2. PR
+          <para>[Toxikuu] - util-macros: 1.20.1 -&gt; 1.20.2. PR
           <ulink url="&glfs-pull;/24">(#24)</ulink></para>
         </listitem>
         <listitem>
-          <para>[Toxikuu] - xprop: 1.2.7 -> 1.2.8. PR
+          <para>[Toxikuu] - xprop: 1.2.7 -&gt; 1.2.8. PR
 	  <ulink url="&glfs-pull;/23">(#23)</ulink></para>
         </listitem>
         <listitem>
