@@ -40,7 +40,16 @@
     -->
 
     <listitem>
-      <para>MMMM DD{nd,st,th}, YYYY</para>
+      <para>November 20th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libinput: 1.26.2 -&gt; 1.27.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>November 19th, 2024</para>
       <itemizedlist>
         <listitem>
           <para>[Toxikuu] - Steam: Fixed doc versioning inconsistency. PR
