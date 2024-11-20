@@ -68,7 +68,7 @@
     </para>
 
   <screen role="root"><userinput>make install   &amp;&amp;
-mv -vf /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
+ln -sfv steam /usr/share/doc/steam-&steam-version;</userinput></screen>
 
   </sect2>
 
