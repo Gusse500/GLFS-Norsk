@@ -43,7 +43,8 @@
       <para>November 23rd, 2024</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - NSS: 3.106 -&gt; 3.107.</para>
+          <para>[zeckma] - NSS: 3.106 -&gt; 3.107. Fixes
+          <ulink url="&glfs-issues;/31">#31</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
