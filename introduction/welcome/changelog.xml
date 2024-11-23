@@ -43,6 +43,10 @@
       <para>November 23rd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wine: 9.21 -&gt; 9.22. Fixes
+          <ulink url="&glfs-issues;/34">#34</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.106 -&gt; 3.107. Fixes
           <ulink url="&glfs-issues;/31">#31</ulink>.</para>
         </listitem>
