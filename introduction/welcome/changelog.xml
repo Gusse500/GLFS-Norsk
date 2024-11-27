@@ -43,6 +43,9 @@
       <para>November 27th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Git: 2.47.0 -&gt; 2.47.1.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - xcb-utils: Merged all utils into one page.</para>
         </listitem>
       </itemizedlist>
