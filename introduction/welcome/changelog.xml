@@ -43,6 +43,9 @@
       <para>November 27th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - CMake: 3.31.0 -&gt; 3.31.1.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Git: 2.47.0 -&gt; 2.47.1.</para>
         </listitem>
         <listitem>
