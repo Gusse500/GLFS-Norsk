@@ -45,7 +45,7 @@
       <xref linkend="libpng"/>,
       <xref linkend="mesa"/>,
       <xref linkend="xbitmaps"/>, and
-      <xref linkend="xcb-util"/>
+      <xref linkend="xcb-utils"/>
     </para>
 
   </sect2>
@@ -54,8 +54,7 @@
     <title>Downloading Xorg Applications</title>
 
     <para>
-      First, create a list of files to be downloaded. This file will also
-      be used to verify the integrity of the downloads when complete:
+      First, create a list of files to be downloaded:
     </para>
 
 <screen><userinput>cat &gt; app-&xorg-version;-list &lt;&lt; "EOF"
