@@ -43,6 +43,10 @@
       <para>November 28th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - MinGW-w64*: invoke cd .. after x86_64 make
+          install.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GNAT: Just have one set of installation
           instructions.</para>
         </listitem>

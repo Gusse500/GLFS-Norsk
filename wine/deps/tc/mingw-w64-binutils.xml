@@ -80,6 +80,7 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
+cd ..        &amp;&amp;
 rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
 
   </sect3>

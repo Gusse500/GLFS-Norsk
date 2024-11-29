@@ -101,7 +101,7 @@ make all-gcc</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make install-gcc</userinput></screen>
+<screen role="root"><userinput>make install-gcc &amp;&amp; cd ..</userinput></screen>
 
   </sect3>
 

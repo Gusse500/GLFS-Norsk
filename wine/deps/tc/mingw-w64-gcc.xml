@@ -121,6 +121,7 @@ make -k check</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
+cd ..        &amp;&amp;
 
 ln -sfv x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-cc &amp;&amp;
 strip /usr/libexec/gcc/x86_64-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,lto*}</userinput></screen>
