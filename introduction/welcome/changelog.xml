@@ -43,6 +43,10 @@
       <para>November 28th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Removed Possible Paramters. Closing
+          <ulink url="&glfs-issues;/2">#2</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - MinGW-w64*: invoke cd .. after x86_64 make
           install.</para>
         </listitem>

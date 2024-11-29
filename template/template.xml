@@ -214,19 +214,13 @@ make</userinput></screen>
 mv doc/* /usr/share/doc/template-&template-version;</userinput></screen>
   </sect2>
 
-  <sect2 role="possible">
-    <title>Possible Parameters</title>
-
-    <para>
-      <option>--PARAMETER</option>: This parameter is optional and may be
-      something the reader will want to set.
-    </para>
-
-  </sect2>
-
   <!--Optional section-->
   <sect2 role="commands">
     <title>Command Explanations</title>
+
+    <note><para>
+      Invoke <userinput>command</userinput> for a full list of options.
+    </para></note>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../xincludes/static-libraries.xml"/>

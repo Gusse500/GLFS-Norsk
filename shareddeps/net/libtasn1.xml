@@ -107,118 +107,14 @@ rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
-
-  <sect2 role="possible">
-    <title>Possible Parameters</title>
-
-    <para>
-      <option>--{en,dis}able-silent-rules</option>: This option changes
-      verbosity in the build output.
-    </para>
-
-    <para>
-      <option>--{en,dis}able-dependency-tracking</option>: This option
-      changes whether to accept slow dependency extractors.
-    </para>
-
-    <para>
-      <option>--disable-largefile</option>: This option disables support
-      for large files.
-    </para>
-
-    <para>
-      <option>--disable-year2038</option>: This option disables support
-      for timestamps beyond the year 2038.
-    </para>
-
-    <para>
-      <option>--disable-doc</option>: This option disables building
-      documentation.
-    </para>
-
-    <para>
-      <option>--{en,dis}able-shared</option>: This option toggles
-      building shared libraries (enabled by default).
-    </para>
-
-    <para>
-      <option>--{en,dis}able-static</option>: This option toggles
-      building static libraries (enabled by default).
-    </para>
-
-    <para>
-      <option>--enable-fast-install</option>: This option optimizes for
-      a faster installation (enabled by default).
-    </para>
-
-    <para>
-      <option>--disable-libtool-lock</option>: This option <quote>avoids
-      locking</quote> which can break building this package with multiple jobs.
-    </para>
-
-    <para>
-      <option>--enable-gtk-doc</option>: This option enables the use of
-      <command>gtk-doc</command> to build documentation (it is broken and
-      disabled by default).
-    </para>
-
-    <para>
-      <option>--enable-gtk-doc-html</option>: This option builds HTML
-      documentation (enabled by default).
-    </para>
-
-    <para>
-      <option>--enable-gtk-doc-pdf</option>: Same as <option>
-      --enable-gtk-doc-html</option> but builds as a PDF (disabled by
-      default).
-    </para>
-
-    <para>
-      <option>--enable-cross-guesses={conservative,risky}</option>: This
-      option changes the policy for cross-compilation guesses. It is
-      recommended to leave this alone unless you know what you're doing.
-    </para>
-
-    <para>
-      <option>--enable-ld-version-script</option>: This option enables
-      the linker version script (enabled by default if available).
-    </para>
-
-    <para>
-      <option>--disable-valgrind-tests</option>: This option disables
-      running tests with <application>Valgrind</application>.
-    </para>
-
-    <para>
-      <option>--enable-code-coverage</option>: This option enables
-      code coverage support.
-    </para>
-
-    <para>
-      <option>--disable-gcc-warnings</option>: This option disables GCC
-      warnings.
-    </para>
-
-    <para>
-      <option>--enable-fuzzing</option>: This option turns on fuzzing
-      for the building process.
-    </para>
-
-    <para>
-      <option>--with-aix-soname={aix,svr4,both}</option>: This option
-      changes the soname variant (default is aix).
-    </para>
-
-    <para>
-      <option>--with-gnu-ld</option>: This option assumes that the C
-      compiler uses GNU ld (disabled by default but will be automatically
-      detected).
-    </para>
-
-  </sect2>
-
+  
   <sect2 role="commands">
     <title>Command Explanations</title>
+
+    <note><para>
+      Invoke <userinput>./configure --help</userinput> for a full list of
+      options.
+    </para></note>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../xincludes/static-libraries.xml"/>

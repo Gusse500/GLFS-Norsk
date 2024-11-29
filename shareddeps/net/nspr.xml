@@ -108,78 +108,13 @@ ldconfig</userinput></screen>
 
   </sect2>
 
-  <sect2 role="possible">
-    <title>Possible Parameters</title>
-
-    <para>
-      <option>--disable-option-checking</option>: This parameter ignores
-      incorrect parameters.
-    </para>
-
-    <para>
-      <option>--enable-x32</option>: This parameter enables x32-bit
-      support, not to be confused with 32-bit. Meant for 64-bit systems.
-    </para>
-
-    <para>
-      <option>--enable-64bit</option>: This parameter enables 64-bit
-      support, meant for and needed by 64-bit systems.
-    </para>
-
-    <para>
-      <option>--enable-mdupdate</option>: This parameter enables some
-      compilers' mdupdate feature.
-    </para>
-
-    <para>
-      <option>--enable-cplus</option>: This parameter enables some of
-      the C++ API routines.
-    </para>
-
-    <para>
-      <option>--enable-strip</option>: This parameter enables stripping
-      the built libraries and programs of debug symbols.
-    </para>
-
-    <para>
-      <option>--enable-user-pthreads</option>: This parameter enables
-      the use of pthreads.
-    </para>
-
-    <para>
-      <option>--enable-nspr-threads</option>: This parameter enables
-      building the classic NSPR threads.
-    </para>
-
-    <para>
-      <option>--enable-ipv6</option>: This parameter enables building in
-      ipv6 support.
-    </para>
-
-    <para>
-      <option>--enable-wrap-malloc</option>: This parameter enables
-      wrapping malloc calls (meant to be used when linking via the GNU linker).
-    </para>
-
-    <para>
-      <option>--with-mozilla</option>: This option enables building with
-      Mozilla support.
-    </para>
-
-    <para>
-      <option>--with-ccache=<replaceable>&lt;PATH&gt;</replaceable></option>:
-      This parameter enables compiling with ccache.
-    </para>
-
-    <para>
-      <option>--with-pthreads</option>: This parameter uses the system
-      pthreads library.
-    </para>
-
-  </sect2>
-
   <sect2 role="commands">
     <title>Command Explanations</title>
+
+    <note><para>
+      Invoke <userinput>./configure --help</userinput> for a full list of
+      options.
+    </para></note>
 
     <para>
       <command>sed -ri '/^RELEASE/s/^/#/' pr/src/misc/Makefile.in</command>:
