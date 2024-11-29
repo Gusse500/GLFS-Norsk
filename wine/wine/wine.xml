@@ -4,7 +4,6 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-
   <!ENTITY wine-download-http "https://dl.winehq.org/wine/source/&wine-major-version;.x/wine-&wine-version;.tar.xz">
   <!ENTITY wine-download-ftp  " ">
 ]>
@@ -157,6 +156,24 @@ make install</userinput></screen>
 	<parameter>--with-wine64=../build-win64</parameter>: This option
 	allows Wine during the compilation stage to use files built in
 	the wine64 stage to enable support for both 32-bit and 64-bit.
+    </para>
+
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Configuring Wine</title>
+    
+    <para>
+      This installation should be good enough for most people but there may be
+      a few things that you wish to change or do in relation to this package.
+      The <ulink url="https://wiki.archlinux.org/title/Wine">Arch wiki page<ulink>
+      for Wine covers most of the things you may wish to do. In relation to
+      gaming and Vulkan, don't forget to check the DXVK and VKD3D-Proton
+      sections as it is possible Wine will use WineD3D out of the box. WineD3D
+      is much slower than DXVK and VKD3D-Proton. For AUR listings, check the
+      PKGBUILD files and use the scripts as shown in the wiki page to ensure
+      Wine will use DXVK/VKD3D-Proton. It is worth noting that this installion
+      built simple Direct3D libraries but may not be usable.
     </para>
 
   </sect2>
