@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>December 1st, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GNAT: Archived. Fixes
+          <ulink url="&glfs-issues;/36">#36</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 30th, 2024</para>
       <itemizedlist>
         <listitem>

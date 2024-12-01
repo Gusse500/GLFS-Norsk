@@ -30,7 +30,7 @@
 
   <para>
     As <application>Wine</application> deals with a foreign format,
-    it is to be expected that it depends on extra toolchains as well as
+    it is to be expected that it depends on an extra toolchain as well as
     other dependencies. Please check <xref linkend="winedeps"/> before
     continuing with this chapter.
   </para>

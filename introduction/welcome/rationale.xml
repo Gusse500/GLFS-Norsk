@@ -75,10 +75,7 @@
       that. A lot of the tests as well aren't involved with critical
       components of the system but rather graphical binaries. If you
       wish to do test suites, BLFS has good instructions for them and
-      covers all the required dependencies. However, some packages
-      such as <xref linkend="gnat"/> have test suite instructions due
-      to their system critical nature and if things go wrong can render
-      your system unusable in some cases.
+      covers all the required dependencies.
     </para>
 
   </sect2>

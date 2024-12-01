@@ -70,8 +70,8 @@
     with the Steam chapter, users should follow every step in this
     chapter if they want to install <application>Wine</application>
     and use it. The Wine chapter at the moment does not consider
-    retrofitting and will handle it in a similar manner to Arch: get
-    toolchains, install audio and video components, then finally
+    retrofitting and will handle it in a similar manner to Arch: build the
+    MinGW-w64 toolchain, install the audio and video components, then finally
     <application>Wine</application> itself. This chapter will depend
     on packages listed in the Shared Dependencies section, so when
     prompted, go to the package it lists, then go back. This is done
