@@ -6,7 +6,7 @@
 
   <!ENTITY rust-download-http "https://static.rust-lang.org/dist/rustc-&rust-version;-src.tar.xz">
   <!ENTITY rust-download-ftp  " ">
-  <!ENTITY change-id          "129295">
+  <!ENTITY change-id          "131075">
 ]>
 
 <sect1 id="rust" xreflabel="rustc-&rust-version;">
@@ -64,7 +64,7 @@
       However it can be mostly limited to a specified number of processors by
       a combination of adding the switch <literal>--jobs &lt;N&gt;</literal>
       (e.g. '--jobs 4' to limit to 4 processors) on each invocation of
-      <command>python3 x.py</command> <emphasis>and</emphasis> using an
+      <command>./x.py</command> <emphasis>and</emphasis> using an
       environment variable <envar>CARGO_BUILD_JOBS=&lt;N&gt;</envar>. At the
       moment this is not effective when some of the rustc tests are run.
     </para>
@@ -218,19 +218,23 @@ ln -svfn rustc-&rust-version; /opt/rustc</userinput></screen>
 # so x.py will not warn us to do such a review.
 change-id = &change-id;
 
-[llvm]</literal>
+[llvm]
+# When using system llvm prefer shared libraries
+link-shared = true
+
+# Do not download pre-built LLVM, instead either use the system
+# LLVM or build LLVM from the shipped source.
+download-ci-llvm = false
+</literal>
 EOF
 if [ ! -f /usr/lib32/libc.so.6 ]; then
 cat &gt;&gt; config.toml &lt;&lt; "EOF"
-<literal>targets = "X86"
+<literal># If building the shipped LLVM source, only enable the x86 target
+# instead of all the targets supported by LLVM.
+targets = "X86"
 </literal>
 EOF
-fi &amp;&amp;
-cat &gt;&gt; config.toml &lt;&lt; "EOF" &amp;&amp;
-<literal># When using system llvm prefer shared libraries
-link-shared = true
-</literal>
-EOF
+fi
 if [ -f /usr/lib32/libc.so.6 ]; then
 cat &gt;&gt; config.toml &lt;&lt; "EOF"
 <literal>[build]
@@ -309,7 +313,7 @@ fi</userinput></screen>
 
     <note>
       <para>
-        The <command>python3 x.py</command> commands may output a warning
+        The <command>./x.py</command> commands may output a warning
         message complaining <quote><computeroutput>no codegen-backends
         config matched the requested path to build a codegen
         backend</computeroutput></quote>. And the provided
@@ -331,14 +335,14 @@ fi</userinput></screen>
        -e '/^curl-sys /s/0.4.48/0.4.50/' \
        src/tools/cargo/Cargo.toml &amp;&amp; -->
 
-<screen><userinput>python3 x.py build</userinput></screen>
+<screen><userinput>./x.py build</userinput></screen>
 
     <para>
       Now, as the &root; user, install the package:
     </para>
 
-<screen role='root'><userinput>python3 x.py install rustc std &amp;&amp;
-python3 x.py install --stage=1 cargo clippy rustfmt</userinput></screen>
+<screen role='root'><userinput>./x.py install rustc std &amp;&amp;
+./x.py install --stage=1 cargo clippy rustfmt</userinput></screen>
 
     <para>
       Still as the &root; user, fix the installation of the documentation
@@ -373,7 +377,7 @@ mv -v /etc/bash_completion.d/cargo \
 
     <para>
       <literal>targets = [...]</literal>: this builds the targets that will
-      be necessary for NVK from <xref linkend="mesa"/>.
+      be necessary for 32-bit Rust projects.
     </para>
 
     <para>

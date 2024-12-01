@@ -166,7 +166,7 @@ make install</userinput></screen>
     <para>
       This installation should be good enough for most people but there may be
       a few things that you wish to change or do in relation to this package.
-      The <ulink url="https://wiki.archlinux.org/title/Wine">Arch Wiki page<ulink>
+      The <ulink url="https://wiki.archlinux.org/title/Wine">Arch Wiki page</ulink>
       for Wine covers most of the things you may wish to do. In relation to
       gaming and Vulkan, don't forget to check the DXVK and VKD3D-Proton
       sections as Wine will use WineD3D out of the box. WineD3D is much slower

@@ -40,6 +40,17 @@
     -->
 
     <listitem>
+      <para>November 30th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.82.0 -&gt; 1.83.0. Fixes
+          <ulink url="&glfs-issues;/35">#35</ulink>;
+          Wine: Fixed rendering failure.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>November 29th, 2024</para>
       <itemizedlist>
         <listitem>
