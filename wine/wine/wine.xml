@@ -172,7 +172,7 @@ make install</userinput></screen>
       sections as Wine will use WineD3D out of the box. WineD3D is much slower
       than DXVK and VKD3D-Proton. For AUR listings, check the PKGBUILD files
       and use the scripts as shown in the wiki page to ensure Wine will use
-      DXVK/VKD3D-Proton. It is worth noting that this installion
+      DXVK/VKD3D-Proton. It is worth noting that this installation
       built simple Direct3D libraries but they invoke WineD3D.
     </para>
 
