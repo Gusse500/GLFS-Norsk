@@ -195,7 +195,7 @@
         source tree) as the modules are updated at the same time the kernel is.
         At that point, there is new glue holding them together. However, when
         it comes to third party modules, they aren't updated when the kernel
-        updates, so this glue the third party modules had on the kernel breaks,
+        updates, so this glue the third party modules had on the kernel breaks.
         This leads to broken kernel modules. This also applies if you stay on
         the same kernel verion but change some options, this can also break
         the glue.
