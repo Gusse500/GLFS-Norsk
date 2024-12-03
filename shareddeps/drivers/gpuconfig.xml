@@ -183,7 +183,7 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
       </para>
 
       <para>
-        The <filename>WHENCE</filename>	file in the <filename class="directory">
+        The <filename>WHENCE</filename> file in the <filename class="directory">
         linux-firmware</filename> directory documents all the firmware files
         and potential symlinks. Once you found what you need, look it up in
         <filename>WHENCE</filename> and make the necessary symlinks. If you

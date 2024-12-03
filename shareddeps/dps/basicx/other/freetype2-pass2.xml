@@ -57,7 +57,7 @@
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
       <xref linkend="freetype2-pass1"/>,
-      <xref linkend="harfbuzz"/>,	    
+      <xref linkend="harfbuzz"/>,
       <xref linkend="libpng"/>, and
       <xref linkend="which"/>
     </para>
@@ -106,7 +106,7 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
     <title>32-bit Installation of FreeType2 - Pass 2</title>
 
     <para>
-	First clean the directory:
+      First clean the directory:
     </para>
 
     <screen><userinput>make distclean</userinput></screen>
@@ -119,7 +119,7 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 ./configure --prefix=/usr            \
-            --libdir=/usr/lib32	     \
+            --libdir=/usr/lib32      \
             --host=i686-pc-linux-gnu \
             --enable-freetype-config \
             --disable-static &amp;&amp;

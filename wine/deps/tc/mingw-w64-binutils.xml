@@ -21,10 +21,10 @@
     <title>Introduction to MinGW-w64-binutils</title>
 
     <para>
-	MinGW-w64-binutils is a collection of software that can change
-	the state of Windows binaries or make them executable. These
-	binutils are specific to MinGW-w64, and using regular binutils
-	will not work for the proceeding packages.
+      MinGW-w64-binutils is a collection of software that can change
+      the state of Windows binaries or make them executable. These
+      binutils are specific to MinGW-w64, and using regular binutils
+      will not work for the proceeding packages.
     </para>
 
     <note>
@@ -59,19 +59,19 @@
     <title>x86_64 MinGW-w64-binutils</title>
     
     <para>
-	Install x86_64 <application>MinGW-w64-binutils</application>
-	by running the following commands:
+      Install x86_64 <application>MinGW-w64-binutils</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>mkdir build-x86_64 &amp;&amp;
 cd build-x86_64    &amp;&amp;
 
 ../configure --prefix=/usr                                \
-	     --target=x86_64-w64-mingw32                  \
-	     --infodir=/usr/share/info/x86_64-w64-mingw32 \
-	     --disable-multilib				  \
-	     --disable-nls				  \
-	     --disable-werror &amp;&amp;
+             --target=x86_64-w64-mingw32                  \
+             --infodir=/usr/share/info/x86_64-w64-mingw32 \
+             --disable-multilib                           \
+             --disable-nls                                \
+             --disable-werror &amp;&amp;
 
 make</userinput></screen>
 
@@ -89,19 +89,19 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
     <title>i686 MinGW-w64-binutils</title>
 
     <para>
-	Install i686 <application>MinGW-w64-binutils</application>
-	by running the following commands:
+      Install i686 <application>MinGW-w64-binutils</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>mkdir build-i686 &amp;&amp;
 cd build-i686    &amp;&amp;
 
-../configure --prefix=/usr                                \
-	     --target=i686-w64-mingw32                    \
-	     --infodir=/usr/share/info/i686-w64-mingw32   \
-	     --disable-multilib				  \
-	     --disable-nls				  \
-	     --disable-werror &amp;&amp;
+../configure --prefix=/usr                              \
+             --target=i686-w64-mingw32                  \
+             --infodir=/usr/share/info/i686-w64-mingw32 \
+             --disable-multilib                         \
+             --disable-nls                              \
+             --disable-werror &amp;&amp;
 
 make</userinput></screen>
 
@@ -120,34 +120,34 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
     <title>Command Explanations</title>
 
     <para>
-	<parameter>--disable-multilib</parameter>: This option disables
-	multilib support in each architecture. It is not needed and doing
-	a <application>Wine</application> WoW64 build just uses the
-	binaries from each architecture. Do not set <parameter>
-	--enable-multilib</parameter> for any <application>MinGW-w64
-	</application> package or else problems will occur.
+      <parameter>--disable-multilib</parameter>: This option disables
+      multilib support in each architecture. It is not needed and doing
+      a <application>Wine</application> WoW64 build just uses the
+      binaries from each architecture. Do not set <parameter>
+      --enable-multilib</parameter> for any <application>MinGW-w64
+      </application> package or else problems may occur.
     </para>
 
     <para>
-	<parameter>--disable-nls</parameter>: This option disables
-	nls support, disabling output diagnostics in languages other than
-	American English. Omit <parameter>--disable-nls</parameter> and
-	invoke <parameter>--enable-nls</parameter> to enable nls support.
+      <parameter>--disable-nls</parameter>: This option disables
+      nls support, disabling output diagnostics in languages other than
+      American English. Omit <parameter>--disable-nls</parameter> and
+      invoke <parameter>--enable-nls</parameter> to enable nls support.
     </para>
 
     <para>
-	<parameter>--disable-werror</parameter>: This option makes it so
-	warnings won't be considered errors.
+      <parameter>--disable-werror</parameter>: This option makes it so
+      warnings won't be considered errors.
     </para>
 
     <para>
-	<parameter>--target=*</parameter>: This option builds files for
-	the architecture passed to it.
+      <parameter>--target=*</parameter>: This option builds files for
+      the architecture passed to it.
     </para>
 
     <para>
-	<command>rm -v /usr/lib/bfd-plugins/libdep.so</command>:
-	This command removes an unnecessary library.
+      <command>rm -v /usr/lib/bfd-plugins/libdep.so</command>:
+      This command removes an unnecessary library.
     </para>
 
   </sect2>
@@ -162,93 +162,93 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
 
       <seglistitem>
         <seg>
-	  {i686,x86_64}-w64-mingw32-addr2line,
-	  {i686,x86_64}-w64-mingw32-c++filt,
-	  {i686,x86_64}-w64-mingw32-dllwrap,
-	  {i686,x86_64}-w64-mingw32-elfedit,
-	  {i686,x86_64}-w64-mingw32-gprof,
-	  {i686,x86_64}-w64-mingw32-size,
-	  {i686,x86_64}-w64-mingw32-strings,
-	  {i686,x86_64}-w64-mingw32-windmc,
-	  {i686,x86_64}-w64-mingw32-windres,
-	  ar, as, dlltool, ld, ld.bfd, nm, objcopy, ranlib,
-	  readelf, and strip (<application>MinGW-w64</application>
-	  specific binaries besides formatting include:
-	  {i686,x86_64}-w64-mingw32-dllwrap,
-	  {i686,x86_64}-w64-mingw32-windmc,
-	  {i686,x86_64}-w64-mingw32-windres,
-	  and dlltool)
-	</seg>
+          {i686,x86_64}-w64-mingw32-addr2line,
+          {i686,x86_64}-w64-mingw32-c++filt,
+          {i686,x86_64}-w64-mingw32-dllwrap,
+          {i686,x86_64}-w64-mingw32-elfedit,
+          {i686,x86_64}-w64-mingw32-gprof,
+          {i686,x86_64}-w64-mingw32-size,
+          {i686,x86_64}-w64-mingw32-strings,
+          {i686,x86_64}-w64-mingw32-windmc,
+          {i686,x86_64}-w64-mingw32-windres,
+          ar, as, dlltool, ld, ld.bfd, nm, objcopy, ranlib,
+          readelf, and strip (<application>MinGW-w64</application>
+          specific binaries besides formatting include:
+          {i686,x86_64}-w64-mingw32-dllwrap,
+          {i686,x86_64}-w64-mingw32-windmc,
+          {i686,x86_64}-w64-mingw32-windres,
+          and dlltool)
+        </seg>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
-	  /usr/{i686,x86_64}-w64-mingw32/bin,	
-	  /usr/{i686,x86_64}-w64-mingw32/lib/ldscripts, and
-	  /usr/share/info/{i686,x86_64}-w64-mingw32
-	</seg>
+          /usr/{i686,x86_64}-w64-mingw32/bin,
+          /usr/{i686,x86_64}-w64-mingw32/lib/ldscripts, and
+          /usr/share/info/{i686,x86_64}-w64-mingw32
+        </seg>
       </seglistitem>
     </segmentedlist>
 
     <para>
-	Only binutils specific to <application>MinGW-w64</application>
-	will be explained. For the rest, see
-	<ulink url="https://www.linuxfromscratch.org/~thomas/multilib/chapter08/binutils.html">
-	binutils-&binutils-version;</ulink>.
+      Only binutils specific to <application>MinGW-w64</application>
+      will be explained. For the rest, see
+      <ulink url="https://www.linuxfromscratch.org/~thomas/multilib/chapter08/binutils.html">
+      binutils-&binutils-version;</ulink>.
     </para>
 
     <variablelist>
-	<bridgehead renderas="sect3">Short Descriptions</bridgehead>
-	<?dbfo list-presentation="list"?>
-	<?dbhtml list-presentation="table"?>
-	
-	<varlistentry id="dllwrap">
-	<term><command>{i686,x86_64}-w64-mingw32-dllwrap</command></term>
-	  <listitem>
-	    <para>
-		ancient tool for generating PE style DLLs
-	    </para>
-	    <indexterm zone="mingw-w64-binutils dllwrap">
-	      <primary sortas="b-dllwrap">dllwrap</primary>
-	    </indexterm>
-	  </listitem>
-	</varlistentry>
-			
-	<varlistentry id="windmc">
-	<term><command>{i686,x86_64}-w64-mingw32-windmc</command></term>
-	  <listitem>
-	    <para>
-		generates Windows message resources
-	    </para>
-	    <indexterm zone="mingw-w64-binutils windmc">
-	      <primary sortas="b-windmc">windmc</primary>
-	    </indexterm>
-	  </listitem>
-	</varlistentry>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
 
-	<varlistentry id="windres">
-	<term><command>{i686,x86_64}-w64-mingw32-windres</command></term>
-	  <listitem>
-	    <para>
-		manipulates Windows resources
-	    </para>
-	    <indexterm zone="mingw-w64-binutils windres">
-	      <primary sortas="b-windres">windres</primary>
-	    </indexterm>
-	  </listitem>
-	</varlistentry>
+      <varlistentry id="dllwrap">
+      <term><command>{i686,x86_64}-w64-mingw32-dllwrap</command></term>
+        <listitem>
+          <para>
+            ancient tool for generating PE style DLLs
+          </para>
+          <indexterm zone="mingw-w64-binutils dllwrap">
+            <primary sortas="b-dllwrap">dllwrap</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
 
-	<varlistentry id="dlltool">
-	<term><command>dlltool</command></term>
-	  <listitem>
-	    <para>
-		creates files needed to build and use DLLs
-	    </para>
-	    <indexterm zone="mingw-w64-binutils dlltool">
-	      <primary sortas="b-dlltool">dlltool</primary>
-	    </indexterm>
-	  </listitem>
-	</varlistentry>
+      <varlistentry id="windmc">
+      <term><command>{i686,x86_64}-w64-mingw32-windmc</command></term>
+        <listitem>
+          <para>
+            generates Windows message resources
+          </para>
+          <indexterm zone="mingw-w64-binutils windmc">
+            <primary sortas="b-windmc">windmc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="windres">
+      <term><command>{i686,x86_64}-w64-mingw32-windres</command></term>
+        <listitem>
+          <para>
+            manipulates Windows resources
+          </para>
+          <indexterm zone="mingw-w64-binutils windres">
+            <primary sortas="b-windres">windres</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="dlltool">
+      <term><command>dlltool</command></term>
+        <listitem>
+          <para>
+            creates files needed to build and use DLLs
+          </para>
+          <indexterm zone="mingw-w64-binutils dlltool">
+            <primary sortas="b-dlltool">dlltool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
 
     </variablelist>
 

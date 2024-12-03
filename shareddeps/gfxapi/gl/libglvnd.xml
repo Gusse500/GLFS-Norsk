@@ -21,11 +21,11 @@
     <title>Introduction to libglvnd</title>
 
     <para>
-	libglvnd is a vendor-neutral dispatch layer for arbitrating
-	OpenGL API calls between multiple vendors. It allows multiple
-	drivers from different vendors to coexist on the same filesystem,
-	and determines which vendor to dispatch each API call to at
-	runtime.
+      libglvnd is a vendor-neutral dispatch layer for arbitrating
+      OpenGL API calls between multiple vendors. It allows multiple
+      drivers from different vendors to coexist on the same filesystem,
+      and determines which vendor to dispatch each API call to at
+      runtime.
     </para>
 
     <itemizedlist spacing="compact">
@@ -37,7 +37,7 @@
       <listitem>
         <para>
           Download (FTP): <ulink url="&libglvnd-download-ftp;"/>
-	</para>
+        </para>
       </listitem>
     </itemizedlist>
 
@@ -77,7 +77,7 @@ ninja</userinput></screen>
     <title>32-bit Installation of libglvnd</title>
 
     <para>
-	First clean the build directory:
+      First clean the build directory:
     </para>
 
     <screen><userinput>rm -rf *</userinput></screen>
@@ -114,7 +114,7 @@ ldconfig</userinput></screen>
       <segtitle>Installed Directories</segtitle>
 
       <seglistitem>
-	<seg>None</seg>
+        <seg>None</seg>
         <seg>
           libEGL.so,
           libGL.so,
@@ -123,10 +123,10 @@ ldconfig</userinput></screen>
           libGLX.so,
           libGLdispatch.so, and
           libOpenGL.so
-	</seg>
-	<seg>
-	  /usr/include/{EGL,GL,GLES2,KHR,glvnd}
-	</seg>
+        </seg>
+        <seg>
+          /usr/include/{EGL,GL,GLES2,KHR,glvnd}
+        </seg>
       </seglistitem>
     </segmentedlist>
 
@@ -136,93 +136,93 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="glvnd-libEGL">
-	<term><filename class="libraryfile">libEGL.so</filename></term>
-	<listitem>
-	  <para>
-	    contains EGL window-system API functions
+        <term><filename class="libraryfile">libEGL.so</filename></term>
+        <listitem>
+          <para>
+            contains EGL window-system API functions
           </para>
-	  <indexterm zone="libglvnd glvnd-libEGL">
-	    <primary sortas="b-glvnd-libEGL">libEGL.so</primary>
+          <indexterm zone="libglvnd glvnd-libEGL">
+            <primary sortas="b-glvnd-libEGL">libEGL.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="glvnd-libGL">
-	<term><filename class="libraryfile">libGL.so</filename></term>
-	<listitem>
-	  <para>
+        <term><filename class="libraryfile">libGL.so</filename></term>
+        <listitem>
+          <para>
             is a wrapper library to <filename class="libraryfile">libGLdispatch.so
             </filename> and <filename class="libraryfile">libGLX.so</filename>
           </para>
-	  <indexterm zone="libglvnd glvnd-libGL">
-	    <primary sortas="b-glvnd-libGL">libGL.so</primary>
+          <indexterm zone="libglvnd glvnd-libGL">
+            <primary sortas="b-glvnd-libGL">libGL.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="glvnd-libGLESv1_CM">
-	<term><filename class="libraryfile">libGLESv1_CM.so</filename></term>
-	<listitem>
-	  <para>
+        <term><filename class="libraryfile">libGLESv1_CM.so</filename></term>
+        <listitem>
+          <para>
             is a wrapper library to <filename class="libraryfile">libGLdispatch.so
             </filename> which expose OpenGL ES entrypoints
           </para>
-	  <indexterm zone="libglvnd glvnd-libGLESv1_CM">
-	    <primary sortas="b-glvnd-libGLESv1_CM">libGLESv1_CM.so</primary>
+          <indexterm zone="libglvnd glvnd-libGLESv1_CM">
+            <primary sortas="b-glvnd-libGLESv1_CM">libGLESv1_CM.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="glvnd-libGLESv2">
-	<term><filename class="libraryfile">libGLESv2.so</filename></term>
-	<listitem>
-	  <para>
+        <term><filename class="libraryfile">libGLESv2.so</filename></term>
+        <listitem>
+          <para>
             is a wrapper library to <filename class="libraryfile">libGLdispatch.so
             </filename> which expose OpenGL ES entrypoints
           </para>
-	  <indexterm zone="libglvnd glvnd-libGLESv2">
-	    <primary sortas="b-glvnd-libGLESv2">libGLESv2.so</primary>
+          <indexterm zone="libglvnd glvnd-libGLESv2">
+            <primary sortas="b-glvnd-libGLESv2">libGLESv2.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="glvnd-libGLX">
-	<term><filename class="libraryfile">libGLX.so</filename></term>
-	<listitem>
-	  <para>
+        <term><filename class="libraryfile">libGLX.so</filename></term>
+        <listitem>
+          <para>
             manages loading GLX vendor libraries and dispatching GLX core
             and extension functions to the right vendor
           </para>
-	  <indexterm zone="libglvnd glvnd-libGLX">
-	    <primary sortas="b-glvnd-libGLX">libGLX.so</primary>
+          <indexterm zone="libglvnd glvnd-libGLX">
+            <primary sortas="b-glvnd-libGLX">libGLX.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="glvnd-libGLdispatch">
-	<term><filename class="libraryfile">libGLdispatch.so</filename></term>
-	<listitem>
-	  <para>
-	    implements core GL dispatching and TLS
+        <term><filename class="libraryfile">libGLdispatch.so</filename></term>
+        <listitem>
+          <para>
+            implements core GL dispatching and TLS
           </para>
-	  <indexterm zone="libglvnd glvnd-libGLdispatch">
-	    <primary sortas="b-glvnd-libGLdispatch">libGLdispatch.so</primary>
+          <indexterm zone="libglvnd glvnd-libGLdispatch">
+            <primary sortas="b-glvnd-libGLdispatch">libGLdispatch.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="glvnd-libOpenGL">
-	<term><filename class="libraryfile">libOpenGL.so</filename></term>
-	<listitem>
-	  <para>
+        <term><filename class="libraryfile">libOpenGL.so</filename></term>
+        <listitem>
+          <para>
             is a wrapper library to <filename class="libraryfile">
             libGLdispatch.so</filename> which exposes OpenGL 4.5 core and
-	    compatibility entry points
+            compatibility entry points
           </para>
-	  <indexterm zone="libglvnd glvnd-libOpenGL">
-	    <primary sortas="b-glvnd-libOpenGL">libOpenGL.so</primary>
+          <indexterm zone="libglvnd glvnd-libOpenGL">
+            <primary sortas="b-glvnd-libOpenGL">libOpenGL.so</primary>
           </indexterm>
-	</listitem>
+        </listitem>
       </varlistentry>
 
     </variablelist>

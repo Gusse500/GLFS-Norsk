@@ -142,7 +142,7 @@ ninja</userinput></screen>
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \
-	    .. &amp;&amp;
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 

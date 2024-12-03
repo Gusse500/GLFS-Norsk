@@ -22,8 +22,8 @@
 
       <para>
         The <application>libclc</application> package contains library requirements
-	of the OpenCL C programming language (provides header files but no
-	libraries itself).
+        of the OpenCL C programming language (provides header files but no
+        libraries itself).
       </para>
 
       <itemizedlist spacing="compact">
@@ -43,8 +43,8 @@
 
       <bridgehead renderas="sect4">Required</bridgehead>
       <para role="required">
-	<xref linkend="llvm"/> (with Clang) and
-	<xref linkend="spirv-llvm-translator"/>
+        <xref linkend="llvm"/> (with Clang) and
+        <xref linkend="spirv-llvm-translator"/>
       </para>
 
     </sect2>
@@ -91,8 +91,8 @@ ninja</userinput></screen>
             None
           </seg>
           <seg>
-	    None
-	  </seg>
+            None
+          </seg>
           <seg>
             /usr/{include,share}/clc
           </seg>

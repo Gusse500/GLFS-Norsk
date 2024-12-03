@@ -70,11 +70,11 @@
           mako-render
         </seg>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
-           /usr/lib/python&python3-majorver;/site-packages/mako and
-	   /usr/lib/python&python3-majorver;/site-packages/Mako-&mako-version;.dist-info
+          /usr/lib/python&python3-majorver;/site-packages/mako and
+          /usr/lib/python&python3-majorver;/site-packages/Mako-&mako-version;.dist-info
         </seg>
       </seglistitem>
     </segmentedlist>

@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>December 2nd, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - *.xml: Removed all tabs. Fixes
+          <ulink url="&glfs-issues;/37">#37</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 1st, 2024</para>
       <itemizedlist>
         <listitem>
@@ -187,7 +197,7 @@
         </listitem>
         <listitem>
           <para>[Toxikuu] - xprop: 1.2.7 -&gt; 1.2.8. PR
-	  <ulink url="&glfs-pull;/23">(#23)</ulink></para>
+          <ulink url="&glfs-pull;/23">(#23)</ulink></para>
         </listitem>
         <listitem>
           <para>[zeckma] - askhelp: Update GLFS issues link.</para>
@@ -257,11 +267,11 @@
         </listitem>
         <listitem>
           <para>[Toxikuu] - Wget: 1.24.5 -> 1.25.0. PR
-	  <ulink url="&glfs-pull;/19">(#19)</ulink></para>
+          <ulink url="&glfs-pull;/19">(#19)</ulink></para>
         </listitem>
         <listitem>
           <para>[Toxikuu] - xtrans: 1.5.1 -> 1.5.2. PR
-	  <ulink url="&glfs-pull;/18">(#18)</ulink></para>
+          <ulink url="&glfs-pull;/18">(#18)</ulink></para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -376,7 +386,7 @@
         </listitem>
         <listitem>
           <para>
-            [zeckma] -	  
+            [zeckma] -
             Downgraded <envar>XORG_PREFIX</envar> to only be used for
             compatibility in BLFS as the Xorg stack is installed in
             <filename>/usr</filename>. This allows the Meson cross file

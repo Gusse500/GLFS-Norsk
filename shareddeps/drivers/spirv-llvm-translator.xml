@@ -56,10 +56,10 @@
 
     <note>
       <para>
-	This tarball is <filename>v&spirv-llvm-translator-version;.tar.gz</filename>.
+        This tarball is <filename>v&spirv-llvm-translator-version;.tar.gz</filename>.
         <filename>v&spirv-llvm-translator-version;.tar.gz</filename> will
         extract to the directory <filename class="directory">
-	SPIRV-LLVM-Translator-&spirv-llvm-translator-version;</filename>.
+        SPIRV-LLVM-Translator-&spirv-llvm-translator-version;</filename>.
       </para>
     </note>
 

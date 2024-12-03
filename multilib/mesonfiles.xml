@@ -49,9 +49,9 @@
     <title>Creating the Cross Toolchain File</title>
 
     <para>
-	Create the following toolchain file by running the following
-	commands as the <systemitem class="username">root</systemitem>
-	user:
+      Create the following toolchain file by running the following
+      commands as the <systemitem class="username">root</systemitem>
+      user:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/meson/cross
@@ -87,9 +87,9 @@ EOF</userinput></screen>
     <title>Creating the Native Toolchain File</title>
 
     <para>
-	Create the following toolchain file by running the following
-	commands as the <systemitem class="username">root</systemitem>
-	user:
+      Create the following toolchain file by running the following
+      commands as the <systemitem class="username">root</systemitem>
+      user:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/meson/native
@@ -125,8 +125,8 @@ EOF</userinput></screen>
     <title>How to Use the File</title>
 
     <para>
-	Instead of setting environment variables before invoking
-	<userinput>meson setup ..</userinput>, you can simply do:
+      Instead of setting environment variables before invoking
+      <userinput>meson setup ..</userinput>, you can simply do:
     </para>
 
 <screen><userinput>meson setup .. --cross-file lib32 &lt;other-options&gt;</userinput></screen>

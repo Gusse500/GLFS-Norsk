@@ -43,7 +43,7 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-	<xref linkend="cmake"/>
+        <xref linkend="cmake"/>
     </para>
 
   </sect2>

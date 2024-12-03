@@ -53,17 +53,16 @@
     <title>Required</title>
 
     <para>
-	Audio (<xref linkend="alsa-plugins"/> and/or
-	<xref linkend="pulseaudio"/>), <xref linkend="dbus-pass2"/>,
-	Display server (<xref linkend="xorg-server"/> or
-	<xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
-	<xref linkend="fontconfig"/>,
-	<xref linkend="freetype2-pass2"/>,
-	<xref linkend="gnutls"/>,
-	<xref linkend="libunwind"/> (if 64-bit),
-	<xref linkend="mingw-w64-gcc"/>, OpenGL (<xref linkend="libglvnd"/> and/or
-	<xref linkend="mesa"/>), and
-	<xref linkend="whatnow"/>
+      Audio (<xref linkend="alsa-plugins"/> and/or
+      <xref linkend="pulseaudio"/>), <xref linkend="dbus-pass2"/>,
+      Display server (<xref linkend="xorg-server"/> or
+      <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
+      <xref linkend="fontconfig"/>,
+      <xref linkend="freetype2-pass2"/>,
+      <xref linkend="gnutls"/>,
+      <xref linkend="libunwind"/> (if 64-bit),
+      <xref linkend="mingw-w64-gcc"/>, and OpenGL (<xref linkend="libglvnd"/>
+      and/or <xref linkend="mesa"/>)
     </para>
 
   </sect2>
@@ -104,21 +103,21 @@
     <title>Optional</title>
 
     <para>
-	<ulink url="https://aur.archlinux.org/packages/libcapi/">
-	libcapi</ulink>,
-	<ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>,
-	<ulink url="https://archlinux.org/packages/extra/x86_64/gphoto2/">
-	gphoto2</ulink>,
-	<ulink url="&blfs-svn;/pst/sane.html">SANE</ulink>,
-	<ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
-	<ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
-	smbclient</ulink>,
-	<ulink
-	url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
-	OpenCL</ulink>,
-	<ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
-	<ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, and
-	<ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
+      <ulink url="https://aur.archlinux.org/packages/libcapi/">
+      libcapi</ulink>,
+      <ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>,
+      <ulink url="https://archlinux.org/packages/extra/x86_64/gphoto2/">
+      gphoto2</ulink>,
+      <ulink url="&blfs-svn;/pst/sane.html">SANE</ulink>,
+      <ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
+      <ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
+      smbclient</ulink>,
+      <ulink
+      url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
+      OpenCL</ulink>,
+      <ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
+      <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, and
+      <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
     </para>
 
   </sect2>

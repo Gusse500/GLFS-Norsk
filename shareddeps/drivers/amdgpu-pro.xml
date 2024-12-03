@@ -35,9 +35,9 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-	<xref linkend="libglvnd"/>,
-	<xref linkend="libvk"/>,
-	and <xref linkend="wayland"/>
+      <xref linkend="libglvnd"/>,
+      <xref linkend="libvk"/>,
+      and <xref linkend="wayland"/>
     </para>
 
     <note>
@@ -218,7 +218,7 @@ ldconfig</userinput></screen>
           /usr/share/doc/{libegl1-amdgpu-pro-oglp,libgl1-amdgpu-pro-oglp-glx,libgles2-amdgpu-pro-oglp,libgl1-amdgpu-pro-oglp-dri,libgles1-amdgpu-pro-oglp,vulkan-amdgpu-pro},
           /usr/share/drirc.d, and
           /usr/share/vulkan/icd.d
-	</seg>
+        </seg>
       </seglistitem>
     </segmentedlist>
 

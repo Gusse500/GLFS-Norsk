@@ -79,14 +79,14 @@ make</userinput></screen>
     <title>32-bit Installation of lib32-libidn2</title>
 
     <para>
-	First clean the directory by running the following command:
+      First clean the directory by running the following command:
     </para>
 
     <screen><userinput>make distclean</userinput></screen>
 
     <para>
-	Install <application>lib32-libidn2</application>
-	by running the following commands:
+      Install <application>lib32-libidn2</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
@@ -99,7 +99,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-	Now as the <systemitem class="username">root</systemitem> user:
+      Now as the <systemitem class="username">root</systemitem> user:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;

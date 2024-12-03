@@ -360,7 +360,7 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <listitem>
           <para>
             is a graphical <application>Git</application> repository browser
-	    (needs <ulink url="&blfs-svn;/general/tk.html">Tk</ulink>)
+            (needs <ulink url="&blfs-svn;/general/tk.html">Tk</ulink>)
           </para>
           <indexterm zone="git gitk">
             <primary sortas="b-gitk">gitk</primary>

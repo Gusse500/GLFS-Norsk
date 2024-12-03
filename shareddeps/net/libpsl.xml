@@ -79,14 +79,14 @@ ninja</userinput></screen>
     <title>32-bit Installation of libpsl</title>
 
     <para>
-	First clean the directory by running the following command:
+      First clean the directory by running the following command:
     </para>
 
 <screen><userinput>rm -rf *</userinput></screen>
 
     <para>
-	Install <application>lib32-libpsl</application>
-	by running the following commands:
+      Install <application>lib32-libpsl</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
@@ -99,7 +99,7 @@ meson setup ..                       \
 ninja</userinput></screen>
 
     <para>
-	Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;

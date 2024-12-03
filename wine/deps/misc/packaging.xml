@@ -72,11 +72,11 @@
           packaging-render
         </seg>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
            /usr/lib/python3.12/site-packages/packaging and
-	   /usr/lib/python3.12/site-packages/packaging-&packaging-version;.dist-info
+           /usr/lib/python3.12/site-packages/packaging-&packaging-version;.dist-info
         </seg>
       </seglistitem>
     </segmentedlist>

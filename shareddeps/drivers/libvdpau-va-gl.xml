@@ -53,7 +53,7 @@
         <xref linkend="cmake"/>,
         <xref linkend="libvdpau"/>,
         <xref linkend="libva"/>, and
-	<xref linkend="mesa"/>
+        <xref linkend="mesa"/>
       </para>
 
     </sect2>
@@ -98,8 +98,8 @@ make</userinput></screen>
       <screen><userinput>rm -rf *</userinput></screen>
 
       <para>
-	Install lib32-<application>libvdpau-va-gl</application> by running the
-	following commands:
+        Install lib32-<application>libvdpau-va-gl</application> by running the
+        following commands:
       </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                 \

@@ -258,7 +258,7 @@ ldconfig</userinput></screen>
       <para>
         More information about configuring <application>Fontconfig</application>
         can be found in the user's manual in <ulink
-	url="file:///usr/share/doc/fontconfig-&fontconfig-version;/fontconfig-user.html"/>.
+        url="file:///usr/share/doc/fontconfig-&fontconfig-version;/fontconfig-user.html"/>.
       </para>
 
     </sect3>

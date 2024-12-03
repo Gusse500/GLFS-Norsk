@@ -23,24 +23,24 @@
 
   <sect2>
 
-  <title>How Does it Work?</title>	
-	  
+  <title>How Does it Work?</title>  
+
     <para>
-	Multilib can be achieved firstmost by having the hardware
-	capable of x86 emulation, then having libraries built for x86.
-	We will get into how to compile x86 libraries and software and
-	their execution later, but know the general process for LFS
-	and BLFS is to almost always compile software and that's what
-	we'll be doing.
+      Multilib can be achieved firstmost by having the hardware
+      capable of x86 emulation, then having libraries built for x86.
+      We will get into how to compile x86 libraries and software and
+      their execution later, but know the general process for LFS
+      and BLFS is to almost always compile software and that's what
+      we'll be doing.
     </para>
 
     <note>
-	<para>
-	It is worth noting that when the term multilib is used throughout
-	this book, it is referring to running i686 instructions on an x86_64
-	host.  This does not cover running other 32 bit architectures on their
-	64 bit extensions, like armhf on arm64.
-	</para>
+      <para>
+        It is worth noting that when the term multilib is used throughout
+        this book, it is referring to running i686 instructions on an x86_64
+        host.  This does not cover running other 32 bit architectures on their
+        64 bit extensions, like armhf on arm64.
+      </para>
     </note>
 
   </sect2>
@@ -50,15 +50,16 @@
   <title>Am I Capable of Multilib?</title>
 
     <para>
-	If you are on a 32-bit CPU, you are not capable of multilib.
-	If you are on a 64-bit CPU, and are capable of 32-bit emulation,
-	then you are capable of multilib.
+      If you are on a 32-bit CPU, you are not capable of multilib.
+      If you are on a 64-bit CPU, and are capable of 32-bit emulation,
+      then you are capable of multilib.
     </para>
 
     <para>
-	Run <command>uname -m</command> to find out if you are on a
-	capable CPU.
+      Run <command>uname -m</command> to find out if you are on a
+      capable CPU.
     </para>
+
   </sect2>
 
 </sect1>

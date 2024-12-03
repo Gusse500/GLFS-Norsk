@@ -50,8 +50,8 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="runtime">
-	<xref linkend="mesa"/> (runtime: for Vulkan drivers) and
-	<xref linkend="wayland"/>
+      <xref linkend="mesa"/> (runtime: for Vulkan drivers) and
+      <xref linkend="wayland"/>
     </para>
 
   </sect2>
@@ -98,14 +98,14 @@ ninja</userinput></screen>
     <title>32-bit Installation of Vulkan-Loader</title>
 
     <para>
-	First clean the build directory:
+      First clean the build directory:
     </para>
 
 <screen><userinput>rm -rf *</userinput></screen>
 
     <para>
-	Install lib32-<application>Vulkan-Loader</application> by running
-	the following commands:
+      Install lib32-<application>Vulkan-Loader</application> by running
+      the following commands:
     </para>
 
 <screen><userinput>ASFLAGS=--32 CFLAGS=-m32 CXXFLAGS=-m32 \

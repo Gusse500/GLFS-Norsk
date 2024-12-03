@@ -56,116 +56,121 @@
   </sect2>
 
   <sect2>
-
     <title>Building software</title>
 
+    <para>
+      Building software on GLFS is identical to how it's done in the
+      BLFS books, along with having lib32 compilation instructions. It
+      goes without saying firstmost that you should have <envar>MAKEFLAGS</envar>
+      set to save yourself a lot of time. This is useful for the <command>make
+      </command> utility to use the amount of threads that you both want
+      and have.
+    </para>
+
+<screen><userinput>export MAKEFLAGS='-jx'</userinput></screen>
+
+    <para>
+      Replace <option>x</option> with the amount of threads you have.
+      You can check the amount of threads you have with:
+    </para>
+
+<screen><userinput>grep processor /proc/cpuinfo</userinput></screen>
+
+    <important>
       <para>
-	Building software on GLFS is identical to how it's done in the
-	BLFS books, along with having lib32 compilation instructions. It
-	goes without saying firstmost that you should have <envar>MAKEFLAGS</envar>
-	set to save yourself a lot of time. This is useful for the <command>make
-	</command> utility to use the amount of threads that you both want
-	and have.
+        Make sure that you have enough RAM for your system!
+        A general method is having 2.5G per thread that is thrown at
+        <command>make</command>. For instance, if you want to use 6 threads,
+        multiply 6 by 2.5 (which is 15), then make sure you have 15G of RAM.
+        If you don't have that RAM, try and limit the threads you throw at
+        <command>make</command>.
       </para>
+    </important>
 
-      <screen><userinput>export MAKEFLAGS='-jx'</userinput></screen>
+    <para>
+      Next is compiling for 32-bit. There are many packages which will have
+      a lib32 counterpart. If you just got done with a normal compilation
+      of a package and wish to do a 32-bit compilation of that same package,
+      make sure to clean the directory first:
+    </para>
 
-      <para>
-	Replace <option>x</option> with the amount of threads you have.
-	You can check the amount of threads you have with:
-      </para>
+<screen><userinput>make distclean</userinput></screen>
 
-      <screen><userinput>grep processor /proc/cpuinfo</userinput></screen>
+    <para>Or, if you made a build directory, do this in the build
+    directory:</para>
 
-      <important><para>
-	Make sure that you have enough RAM for your system!
-	A general method is having 2.5G per thread that is thrown at
-	<command>make</command>. For instance, if you want to use 6 threads,
-	multiply 6 by 2.5 (which is 15), then make sure you have 15G of RAM.
-	If you don't have that RAM, try and limit the threads you throw at
-	<command>make</command>.
-      </para></important>
+    <screen><userinput>rm -rf *</userinput></screen>
 
-      <para>
-	Next is compiling for 32-bit. There are many packages which will have
-	a lib32 counterpart. If you just got done with a normal compilation
-	of a package and wish to do a 32-bit compilation of that same package,
-	make sure to clean the directory first:
-      </para>
+    <para>Then proceed with the 32-bit compilation instructions.</para>
 
-      <screen><userinput>make distclean</userinput></screen>
+    <para>
+      Generally, the format of targetting 32-bit goes like this:
+    </para>
 
-      <para>Or, if you made a build directory:</para>
-      
-      <screen><userinput>rm -rf build</userinput></screen>
+    <para>For <command>./configure</command>:</para>
 
-      <para>Then proceed with the 32-bit compilation instructions.</para>
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                  \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig          \
+./configure --prefix=/usr --libdir=/usr/lib32 \
+            --host=i686-pc-linux-gnu &amp;&amp;
 
-      <para>
-	Generally, the format of targetting 32-bit goes like this:
-      </para>
+make &amp;&amp;
 
-      <para>For <command>./configure</command>:</para>
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-	./configure --prefix=/usr --libdir=/usr/lib32             \
-	--host=i686-pc-linux-gnu
-make
-
-make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
-ldconfig
-</userinput></screen>
-
-      <para>For <command>meson</command>:</para>
-<screen><userinput>mkdir -v build
-cd build
-
-CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-	meson setup .. --prefix=/usr --libdir=/usr/lib32
-ninja
-
-DESTDIR=$PWD/DESTDIR ninja install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
+make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
-      <para>For <command>cmake</command>:</para>
-<screen><userinput>export CFLAGS="-m32"
-export CXXFLAGS="-m32"
-export ASFLAGS="--32"
-export PKG_CONFIG_PATH="/usr/lib32/pkgconfig"
+    <para>For <command>meson</command>:</para>
 
-mkdir -v build
-cd build
+<screen><userinput>mkdir -v build &amp;&amp;
+cd       build &amp;&amp;
 
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr  \
-	 -DCMAKE_INSTALL_LIBDIR=lib32
-make
+CC="gcc -m32" CXX="g++ -m32"                     \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
+meson setup .. --prefix=/usr --libdir=/usr/lib32 &amp;&amp;
 
-make DESTDIR=$PWD/DESTDIR install
-cp -vr DESTDIR/usr/lib32/* /usr/lib32
-rm -rf DESTDIR
-ldconfig
-unset CFLAGS CXXFLAGS ASFLAGS PKG_CONFIG_PATH</userinput></screen>
+ninja &amp;&amp;
 
-  <note>
-    <para>
-	After you do a DESTDIR installation, it is recommended to
-	to use <command>file</command> on one of the libraries in
-	<filename>DESTDIR/usr/lib32</filename>. An output of such
-	a command for a 32-bit build of a library should be
-	comparable to the following:
-    </para>
+DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
 
-    <screen><computeroutput>ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked</computeroutput></screen>
+    <para>For <command>cmake</command>:</para>
 
-    <para>
-	Note the <computeroutput>32-bit LSB shared object</computeroutput> part.
-	A 64-bit library would show as a <computeroutput>64-bit LSB shared
-	object</computeroutput>.
-    </para>
-  </note>
+<screen><userinput>mkdir -v build &amp;&amp;
+cd       build &amp;&amp;
+
+CC="gcc -m32" CXX="g++ -m32"           \
+PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr   \
+         -DCMAKE_INSTALL_LIBDIR=lib32 &amp;&amp;
+
+make &amp;&amp;
+
+make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+    <note>
+      <para>
+        After you do a DESTDIR installation, it is recommended to
+        to use <command>file</command> on one of the libraries in
+        <filename>DESTDIR/usr/lib32</filename>. An output of such
+        a command for a 32-bit build of a library should be
+        comparable to the following:
+      </para>
+
+<screen><computeroutput>ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked</computeroutput></screen>
+
+      <para>
+        Note the <computeroutput>32-bit LSB shared object</computeroutput> part.
+        A 64-bit library would show as a <computeroutput>64-bit LSB shared
+        object</computeroutput>.
+      </para>
+    </note>
 
   </sect2>
 

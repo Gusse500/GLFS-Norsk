@@ -242,24 +242,24 @@ fi</userinput></screen>
       Now install <application>lib32-NSS</application> by running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"	  \
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"   \
 make BUILD_OPT=1                      \
-  NSPR_INCLUDE_DIR=/usr/include/nspr  \
+NSPR_INCLUDE_DIR=/usr/include/nspr  \
   USE_SYSTEM_ZLIB=1                   \
   ZLIB_LIBS=-lz                       \
   NSS_ENABLE_WERROR=0                 \
 $([ -f /usr/lib32/libsqlite3.so ] &amp;&amp; echo NSS_USE_SYSTEM_SQLITE=1)</userinput></screen>
 
     <para>
-	Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
 <screen role="root"><userinput>cd ../dist &amp;&amp;
 
-install -v -m755 Linux*/lib/*.so              /usr/lib32              &amp;&amp;
-install -v -m644 Linux*/lib/{*.chk,libcrmf.a} /usr/lib32              &amp;&amp;
-sed -i 's/lib/lib32/g' Linux*/lib/pkgconfig/nss.pc		      &amp;&amp;
-install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib32/pkgconfig    &amp;&amp;
+install -v -m755 Linux*/lib/*.so              /usr/lib32           &amp;&amp;
+install -v -m644 Linux*/lib/{*.chk,libcrmf.a} /usr/lib32           &amp;&amp;
+sed -i 's/lib/lib32/g' Linux*/lib/pkgconfig/nss.pc                 &amp;&amp;
+install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib32/pkgconfig &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>

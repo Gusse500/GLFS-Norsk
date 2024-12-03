@@ -70,8 +70,8 @@
           cydbg, cython, and cythonize
         </seg>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
           /usr/lib/python&python3-majorver;/site-packages/Cython,
           /usr/lib/python&python3-majorver;/site-packages/Cython-&cython-version;.dist-info,
@@ -102,7 +102,7 @@
         <listitem>
           <para>
             is a compiler for code written in the <application>Cython
-	    </application> language. It outputs a C/C++ program which can be
+            </application> language. It outputs a C/C++ program which can be
             compiled with a C/C++ compiler
           </para>
           <indexterm zone="cython cython-bin">

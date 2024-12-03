@@ -29,12 +29,12 @@
       <listitem>
         <para>
           Download (HTTP): <ulink url="&ply-download-http;"/>
-	</para>
+        </para>
       </listitem>
       <listitem>
         <para>
           Download (FTP): <ulink url="&ply-download-ftp;"/>
-	</para>
+        </para>
       </listitem>
     </itemizedlist>
 
@@ -71,11 +71,11 @@
           None
         </seg>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
-           /usr/lib/python3.12/site-packages/ply and
-	   /usr/lib/python3.12/site-packages/ply-&ply-version;.dist-info
+          /usr/lib/python3.12/site-packages/ply and
+          /usr/lib/python3.12/site-packages/ply-&ply-version;.dist-info
         </seg>
       </seglistitem>
     </segmentedlist>

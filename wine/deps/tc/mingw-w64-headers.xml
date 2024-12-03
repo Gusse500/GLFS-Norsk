@@ -64,15 +64,15 @@
     <title>x86_64 MinGW-w64-headers</title>
     
     <para>
-	Install x86_64 <application>MinGW-w64-headers</application>
-	by running the following commands:
+      Install x86_64 <application>MinGW-w64-headers</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>mkdir build-x86_64-headers &amp;&amp;
 cd build-x86_64-headers    &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/x86_64-w64-mingw32 \
-			       --enable-sdk=all                 \
+                               --enable-sdk=all                 \
                                --host=x86_64-w64-mingw32</userinput></screen>
 
     <para>
@@ -87,16 +87,16 @@ cd build-x86_64-headers    &amp;&amp;
     <title>i686 MinGW-w64-headers</title>
 
     <para>
-	Install i686 <application>MinGW-w64-headers</application>
-	by running the following commands:
+      Install i686 <application>MinGW-w64-headers</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>mkdir build-i686-headers &amp;&amp;
 cd build-i686-headers    &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/i686-w64-mingw32 \
-			       --enable-sdk=all               \
-			       --host=i686-w64-mingw32</userinput></screen>
+                               --enable-sdk=all               \
+                               --host=i686-w64-mingw32</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
@@ -139,14 +139,14 @@ cd build-i686-headers    &amp;&amp;
 
       <seglistitem>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
-	  None
-	</seg>
+          None
+        </seg>
         <seg>
-	  /usr/{i686,x86_64}-w64-mingw32/include
-	</seg>
+          /usr/{i686,x86_64}-w64-mingw32/include
+        </seg>
       </seglistitem>
     </segmentedlist>
 

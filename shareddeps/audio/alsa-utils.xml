@@ -228,8 +228,8 @@ EOF</userinput></screen>
         To automatically store and restore volume settings (if the udev rule
         doesn't work for you) when the system is rebooted, install the
         <filename>/etc/rc.d/init.d/alsa</filename> boot script from the
-	<ulink url="&blfs-svn;/introduction/bootscripts.html"
-	revision="sysv">blfs-bootscripts</ulink> package.
+        <ulink url="&blfs-svn;/introduction/bootscripts.html">
+        blfs-bootscripts</ulink> package.
       </para>
 
 <screen role="root"><userinput>make install-alsa</userinput></screen>

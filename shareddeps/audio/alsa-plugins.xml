@@ -11,7 +11,6 @@
 <sect1 id="alsa-plugins" xreflabel="alsa-plugins-&alsa-plugins-version;">
   <?dbhtml filename="alsa-plugins.html"?>
 
-
   <title>alsa-plugins-&alsa-plugins-version;</title>
 
   <indexterm zone="alsa-plugins">
@@ -48,7 +47,7 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      	    
+
       <ulink url="&lfs-website;/blfs/view/svn/multimedia/ffmpeg.html">
       FFmpeg</ulink>,
       <ulink url="&lfs-website;/blfs/view/svn/multimedia/libsamplerate.html">
@@ -103,7 +102,7 @@ make</userinput></screen>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                  \
 ./configure --prefix=/usr --libdir=/usr/lib32 \
-	    --sysconfdir=/etc --disable-libav \
+            --sysconfdir=/etc --disable-libav \
             --host=i686-pc-linux-gnu &amp;&amp;
 
 make</userinput></screen>

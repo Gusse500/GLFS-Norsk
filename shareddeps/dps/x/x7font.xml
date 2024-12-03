@@ -128,7 +128,7 @@ done</userinput></screen>
       <seglistitem>
         <seg>bdftruncate and ucs2any</seg>
         <seg>None</seg>
-	<seg>/usr/share/fonts</seg>
+        <seg>/usr/share/fonts</seg>
       </seglistitem>
     </segmentedlist>
 

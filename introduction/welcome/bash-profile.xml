@@ -261,8 +261,8 @@ EOF</userinput></screen>
         This script sets an environment variable necessary for
         native language support. A full discussion on determining this
         variable can be found on the <ulink
-	url="&lfs-website;/~thomas/multilib/chapter09/locale.html">
-	Configuring the System Locale</ulink> page.
+        url="&lfs-website;/~thomas/multilib/chapter09/locale.html">
+        Configuring the System Locale</ulink> page.
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/i18n.sh &lt;&lt; "EOF"

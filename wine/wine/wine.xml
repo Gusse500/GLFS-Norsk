@@ -21,7 +21,7 @@
     <title>Introduction to Wine</title>
 
     <para>
-	Wine is a compatibility layer for running Windows programs.
+      Wine is a compatibility layer for running Windows programs.
     </para>
 
     <itemizedlist spacing="compact">
@@ -40,7 +40,7 @@
     <bridgehead renderas="sect3">Wine Dependencies</bridgehead>
 
     <para>
-	<xref linkend="winedeps"/>
+      <xref linkend="winedeps"/>
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -52,18 +52,18 @@
     <title>Installation of Wine</title>
 
     <para>
-	Wine has three build types. Scroll down to the build type you want.
-	Visit <xref linkend="winedeps"/> for more information about each
-	build type.
+      Wine has three build types. Scroll down to the build type you want.
+      Visit <xref linkend="winedeps"/> for more information about each
+      build type.
     </para>
 
     <sect3>
-	<title>64-bit Only</title>
+      <title>64-bit Only</title>
 
-	<para>
-	  Install 64-bit only <application>Wine</application> by running
-	  the following commands:
-	</para>
+      <para>
+        Install 64-bit only <application>Wine</application> by running
+        the following commands:
+      </para>
 
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
@@ -72,30 +72,30 @@ cd    build &amp;&amp;
 
 make</userinput></screen>
 
-	<para>
-	  Now, as the <systemitem class="username">root</systemitem> user:
-	</para>
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     </sect3>
 
     <sect3>
-	<title>32-bit Only</title>
+      <title>32-bit Only</title>
 
-	<note>
-	<para>
-	  If you're on 64-bit, invoke <userinput>
-	  PKG_CONFIG_PATH=/usr/lib32/pkgconfig</userinput>
-	  at the beginning of the following command to build for
-	  32-bit.
-	</para>
-	</note>
+      <note>
+        <para>
+          If you're on 64-bit, invoke <userinput>
+          PKG_CONFIG_PATH=/usr/lib32/pkgconfig</userinput>
+          at the beginning of the following command to build for
+          32-bit.
+        </para>
+      </note>
 
-	<para>
-	  Install 32-bit only <application>Wine</application> by running
-	  the following commands:
-	</para>
+      <para>
+        Install 32-bit only <application>Wine</application> by running
+        the following commands:
+      </para>
 
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
@@ -104,21 +104,21 @@ cd    build &amp;&amp;
 
 make</userinput></screen>
 
-	<para>
-	  Now, as the <systemitem class="username">root</systemitem> user:
-	</para>
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
-  </sect3>
+    </sect3>
 
     <sect3>
-	<title>WoW64</title>
+      <title>WoW64</title>
 
-	<para>
-	  Install WoW64 <application>Wine</application> by running
-	  the following commands:
-	</para>
+      <para>
+        Install WoW64 <application>Wine</application> by running
+        the following commands:
+      </para>
 
 <screen><userinput>mkdir build-win64 &amp;&amp;
 cd    build-win64 &amp;&amp;
@@ -132,14 +132,14 @@ mkdir build-win32 &amp;&amp;
 cd    build-win32 &amp;&amp;
 
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
-../configure --prefix=/usr	          \
+../configure --prefix=/usr                \
              --with-wine64=../build-win64 &amp;&amp;
 
 make</userinput></screen>
 
-	<para>
-	  Now, as the <systemitem class="username">root</systemitem> user:
-	</para>
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
 
 <screen role="root"><userinput>make install      &amp;&amp;
 cd ../build-win64 &amp;&amp;
@@ -153,9 +153,9 @@ make install</userinput></screen>
     <title>Command Explanations</title>
 
     <para>
-	<parameter>--with-wine64=../build-win64</parameter>: This option
-	allows Wine during the compilation stage to use files built in
-	the wine64 stage to enable support for both 32-bit and 64-bit.
+      <parameter>--with-wine64=../build-win64</parameter>: This option
+      allows Wine during the compilation stage to use files built in
+      the wine64 stage to enable support for both 32-bit and 64-bit.
     </para>
 
   </sect2>
@@ -187,17 +187,19 @@ make install</userinput></screen>
       <segtitle>Installed Directories</segtitle>
 
       <seglistitem>
-	<seg>
-	  msidb, msiexec, notepad, regedit, regsvr32, widl, wine,
-	  wine-preloader, wine64, wine64-preloader, wineboot, winebuild,
-	  winecfg, wineconsole, winecpp, winedbg, winedump, winefile,
-	  wineg++, winegcc, winemaker, winemine, winepath, wineserver,
-	  wmc, and wrc
-	</seg>
+        <seg>
+          msidb, msiexec, notepad, regedit, regsvr32, widl, wine,
+          wine-preloader, wine64, wine64-preloader, wineboot, winebuild,
+          winecfg, wineconsole, winecpp, winedbg, winedump, winefile,
+          wineg++, winegcc, winemaker, winemine, winepath, wineserver,
+          wmc, and wrc
+        </seg>
+
         <seg>Various dynamic and static libraries</seg>
-	<seg>
-	  /usr/include/wine/windows, /usr/lib/wine/x86_64-windows,
-	  /usr/lib32/wine/i686-unix, and /usr/share/wine
+
+        <seg>
+          /usr/include/wine/windows, /usr/lib/wine/x86_64-windows,
+          /usr/lib32/wine/i686-unix, and /usr/share/wine
         </seg>
       </seglistitem>
     </segmentedlist>
@@ -212,11 +214,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             handles MSI databases
-	  </para>
-	  <indexterm zone="wine msidb">
+          </para>
+          <indexterm zone="wine msidb">
             <primary sortas="b-msidb">msidb</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="msiexec">
@@ -224,11 +226,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> MSI installer
-	  </para>
-	  <indexterm zone="wine msiexec">
+          </para>
+          <indexterm zone="wine msiexec">
             <primary sortas="b-msiexec">msiexec</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="notepad">
@@ -236,11 +238,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> text editor
-	  </para>
-	  <indexterm zone="wine notepad">
+          </para>
+          <indexterm zone="wine notepad">
             <primary sortas="b-notepad">notepad</primary>
-	  </indexterm>
-	</listitem>
+         </indexterm>
+       </listitem>
       </varlistentry>
 
       <varlistentry id="regedit">
@@ -248,11 +250,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> registry editor
-	  </para>
-	  <indexterm zone="wine regedit">
+          </para>
+          <indexterm zone="wine regedit">
             <primary sortas="b-regedit">regedit</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="regsvr32">
@@ -260,11 +262,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> DLL Registration Server
-	  </para>
-	  <indexterm zone="wine regsvr32">
+          </para>
+          <indexterm zone="wine regsvr32">
             <primary sortas="b-regsvr32">regsvr32</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="widl">
@@ -273,11 +275,11 @@ make install</userinput></screen>
           <para>
             is the <application>Wine</application> Interface Definition
             Language (IDL) compiler
-	  </para>
-	  <indexterm zone="wine widl">
+          </para>
+          <indexterm zone="wine widl">
             <primary sortas="b-widl">widl</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wine-bin">
@@ -285,11 +287,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             runs Windows programs on Unix
-	  </para>
-	  <indexterm zone="wine wine-bin">
+          </para>
+          <indexterm zone="wine wine-bin">
             <primary sortas="b-wine-bin">wine-bin</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wine-preloader">
@@ -297,11 +299,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             preloads Win32 binaries
-	  </para>
-	  <indexterm zone="wine wine-preloader">
+          </para>
+          <indexterm zone="wine wine-preloader">
             <primary sortas="b-wine-preloader">wine-preloader</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wine64">
@@ -309,11 +311,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             runs 64-bit Windows programs on Unix
-	  </para>
-	  <indexterm zone="wine wine64">
+          </para>
+          <indexterm zone="wine wine64">
             <primary sortas="b-wine64">wine64</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wine64-preloader">
@@ -321,11 +323,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             preloads 64-bit Windows binaries
-	  </para>
-	  <indexterm zone="wine wine64-preloader">
+          </para>
+          <indexterm zone="wine wine64-preloader">
             <primary sortas="b-wine64-preloader">wine64-preloader</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wineboot">
@@ -334,11 +336,11 @@ make install</userinput></screen>
           <para>
             performs <application>Wine</application> initialization, startup,
             and shutdown tasks
-	  </para>
-	  <indexterm zone="wine wineboot">
+          </para>
+          <indexterm zone="wine wineboot">
             <primary sortas="b-wineboot">wineboot</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winebuild">
@@ -346,11 +348,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> dll builder
-	  </para>
-	  <indexterm zone="wine winebuild">
+          </para>
+          <indexterm zone="wine winebuild">
             <primary sortas="b-winebuild">winebuild</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winecfg">
@@ -358,11 +360,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> Configuration Editor
-	  </para>
-	  <indexterm zone="wine winecfg">
+          </para>
+          <indexterm zone="wine winecfg">
             <primary sortas="b-winecfg">winecfg</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wineconsole">
@@ -370,24 +372,24 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> console
-	  </para>
-	  <indexterm zone="wine wineconsole">
+          </para>
+          <indexterm zone="wine wineconsole">
             <primary sortas="b-wineconsole">wineconsole</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winecompilers">
-	<term><command>wine{cpp,g++,gcc}</command></term>
+        <term><command>wine{cpp,g++,gcc}</command></term>
         <listitem>
           <para>
             is the <application>Wine</application> C and C++
             <application>MinGW-w64</application> Compatible Compiler
-	  </para>
-	  <indexterm zone="wine winecompilers">
+          </para>
+          <indexterm zone="wine winecompilers">
             <primary sortas="b-winecompilers">winecompilers</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winedbg">
@@ -395,11 +397,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> debugger
-	  </para>
-	  <indexterm zone="wine winedbg">
+          </para>
+          <indexterm zone="wine winedbg">
             <primary sortas="b-winedbg">winedbg</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winedump">
@@ -407,11 +409,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is a <application>Wine</application> DLL tool
-	  </para>
-	  <indexterm zone="wine winedump">
+          </para>
+          <indexterm zone="wine winedump">
             <primary sortas="b-winedump">winedump</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winefile">
@@ -419,11 +421,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is a <application>Wine</application> File Manager
-	  </para>
-	  <indexterm zone="wine winefile">
+          </para>
+          <indexterm zone="wine winefile">
             <primary sortas="b-winefile">winefile</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winemaker">
@@ -432,11 +434,11 @@ make install</userinput></screen>
           <para>
             generates a build infrastructure for compililing Windows programs
             on Unix
-	  </para>
-	  <indexterm zone="wine winemaker">
+          </para>
+          <indexterm zone="wine winemaker">
             <primary sortas="b-winemaker">winemaker</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winemine">
@@ -445,11 +447,11 @@ make install</userinput></screen>
           <para>
             is the <application>Wine</application> <application>Minesweeper
             </application> game.
-	  </para>
-	  <indexterm zone="wine winemine">
+          </para>
+          <indexterm zone="wine winemine">
             <primary sortas="b-winemine">winemine</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="winepath">
@@ -457,11 +459,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is a tool to convert Unix paths to/from Win32 paths
-	  </para>
-	  <indexterm zone="wine winepath">
+          </para>
+          <indexterm zone="wine winepath">
             <primary sortas="b-winepath">winepath</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wineserver">
@@ -469,11 +471,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> server
-	  </para>
-	  <indexterm zone="wine wineserver">
+          </para>
+          <indexterm zone="wine wineserver">
             <primary sortas="b-wineserver">wineserver</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wmc">
@@ -481,11 +483,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> Message Compiler
-	  </para>
-	  <indexterm zone="wine wmc">
+          </para>
+          <indexterm zone="wine wmc">
             <primary sortas="b-wmc">wmc</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
       <varlistentry id="wrc">
@@ -493,11 +495,11 @@ make install</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> Resource Compiler
-	  </para>
-	  <indexterm zone="wine wrc">
+          </para>
+          <indexterm zone="wine wrc">
             <primary sortas="b-wrc">wrc</primary>
-	  </indexterm>
-	</listitem>
+          </indexterm>
+        </listitem>
       </varlistentry>
 
     </variablelist>

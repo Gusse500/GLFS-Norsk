@@ -111,29 +111,29 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
     <title>32-bit Installation of p11-kit</title>
 
     <para>
-	First clean the directory by running the following command:
+      First clean the directory by running the following command:
     </para>
 
     <screen><userinput>rm -rf *</userinput></screen>
 
     <para>
-	Install <application>lib32-p11-kit</application>
-	by running the following commands:
+      Install <application>lib32-p11-kit</application>
+      by running the following commands:
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"                     \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
 CFLAGS+=" -Wno-error=incompatible-pointer-types" \
-meson setup ..			                 \
-      --prefix=/usr		                 \
-      --libdir=/usr/lib32	                 \
-      --buildtype=release	                 \
+meson setup ..                                   \
+      --prefix=/usr                              \
+      --libdir=/usr/lib32                        \
+      --buildtype=release                        \
       -Dtrust_paths=/etc/pki/anchors &amp;&amp;
 
 ninja</userinput></screen>
 
     <para>
-	Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -172,9 +172,9 @@ ldconfig</userinput></screen>
     <title>Configuring p11-kit</title>
 
     <para>
-	Make system CAs available transparently to NSS aware
-	applications by running the following commands as the
-	<systemitem class="username">root</systemitem> user:
+      Make system CAs available transparently to NSS aware
+      applications by running the following commands as the
+      <systemitem class="username">root</systemitem> user:
     </para>
 
 <screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so &amp;&amp;

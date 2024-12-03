@@ -98,7 +98,7 @@
         <listitem>
           <para>
             generates <application>Rust</application> FFI bindings to
-	    C (and some C++) libraries
+            C (and some C++) libraries
           </para>
           <indexterm zone="rust-bindgen bindgen">
             <primary sortas="b-bindgen">bindgen</primary>

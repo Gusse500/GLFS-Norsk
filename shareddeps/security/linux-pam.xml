@@ -313,7 +313,7 @@ EOF</userinput></screen>
         The <application>PAM</application> man page (<command>man
         pam</command>) provides a good starting point to learn
         about the several fields, and allowable entries. The
-	Linux-PAM System Administrators' Guide at
+        Linux-PAM System Administrators' Guide at
         <filename>/usr/share/doc/Linux-PAM-1.7.0/Linux-PAM_SAG.txt</filename>
         is recommended for additional information.
       </para>

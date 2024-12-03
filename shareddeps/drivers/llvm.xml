@@ -365,7 +365,7 @@ ldconfig</userinput></screen>
         files to make <xref linkend='gSSP'/> enabled by default for
         <command>clang</command> and <command>clang++</command>, so
         the default configuration of their SSP feature will be consistent
-	with <application>GCC</application>:
+        with <application>GCC</application>:
       </para>
 
 <screen role='root'><userinput>mkdir -pv /etc/clang &amp;&amp;
@@ -1523,8 +1523,8 @@ done</userinput></screen>
         <listitem>
           <para>
             lists NVIDIA GPUs installed; at runtime it needs
-	    <filename>libcuda.so</filename> which is installed
-	    by <xref linkend="nvidia"/>.
+            <filename>libcuda.so</filename> which is installed
+            by <xref linkend="nvidia"/>.
           </para>
           <indexterm zone="llvm nvptx-arch">
             <primary sortas="b-nvptx-arch">nvptx-arch</primary>

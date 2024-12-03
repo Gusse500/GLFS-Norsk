@@ -109,7 +109,7 @@
 
       <para>
         If you compiled Zink in <xref linkend="mesa"/>, chances are X11 or
-	any Wayland compositors will use the Gallium3D driver meant for your
+        any Wayland compositors will use the Gallium3D driver meant for your
         GPU specifically, like Nouveau for NVIDIA GPUs. You can override this
         by setting the following variable:
       </para>
@@ -289,50 +289,50 @@ EOF</userinput></screen>
 
       <para>
         Unlike <application>X11</application> where components were more
-	seperated, especially when using a window manager, this is not the
-	case for <application>Wayland</application>. The window manager
-	and compositor will always be combined. Desktop environments will
-	combine both. This leaves the only things that need to be installed are
-	a terminal and perhaps a launcher. The minimal graphical environments
-	are called compositors instead of window managers, but desktop
-	environments are still called desktop environments.
+        separated, especially when using a window manager, this is not the
+        case for <application>Wayland</application>. The window manager
+        and compositor will always be combined. Desktop environments will
+        combine both. This leaves the only things that need to be installed are
+        a terminal and perhaps a launcher. The minimal graphical environments
+        are called compositors instead of window managers, but desktop
+        environments are still called desktop environments.
       </para>
 
       <sect4>
         <title>Compositors</title>
-	
-	<para>
+
+        <para>
           Many <application>X11</application> window managers do not have
-	  <application>Wayland</application> support. There are some
-	  unofficial ports that use certain reusable frameworks which would
-	  be called an <application>X11</application> compositor, like
-	  <ulink url="https://gitlab.freedesktop.org/wlroots/wlroots/">
+          <application>Wayland</application> support. There are some
+          unofficial ports that use certain reusable frameworks which would
+          be called an <application>X11</application> compositor, like
+          <ulink url="https://gitlab.freedesktop.org/wlroots/wlroots/">
           wlroots</ulink> (these are called compositor libraries). You can
           try some ports if you wish but some of them do their own thing
-	  which you may not agree with.
+          which you may not agree with.
         </para>
 
-	<para>
+        <para>
           Native <application>Wayland</application> compositors include
-	  <ulink url="https://hyprland.org/">Hyprland</ulink>,
-	  <ulink url="https://github.com/swaywm/sway">Sway</ulink>, and
-	  <ulink url="https://github.com/WayfireWM/wayfire">Wayfire</ulink>.
-	  In order to start these compositors, you can start them by using
-	  a display manager or simply run the binary that is of the compositor
-	  name. The choice is up to you how you wish to approach it.
-	</para>
+          <ulink url="https://hyprland.org/">Hyprland</ulink>,
+          <ulink url="https://github.com/swaywm/sway">Sway</ulink>, and
+          <ulink url="https://github.com/WayfireWM/wayfire">Wayfire</ulink>.
+          In order to start these compositors, you can start them by using
+          a display manager or simply run the binary that is of the compositor
+          name. The choice is up to you how you wish to approach it.
+        </para>
 
       </sect4>
 
       <sect4>
         <title>Desktop Environments</title>
 
-	<para>
+        <para>
           Go with <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink> or
           <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. They have
-	  good <application>Wayland</application> support. Like with <application>
+          good <application>Wayland</application> support. Like with <application>
           X11</application>, you can launch these using a display manager.
-	</para>
+        </para>
 
       </sect4>
 

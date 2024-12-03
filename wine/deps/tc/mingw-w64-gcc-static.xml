@@ -21,13 +21,13 @@
     <title>Introduction to Static MinGW-w64-GCC</title>
 
     <para>
-	<application>MinGW-w64-GCC</application> provides
-	<application>GCC</application> compilers for MinGW-w64,
-	allowing users and applications to compile code targetting
-	Windows. This will be done in steps to avoid the need for
-	already present binaries. This is the static build, which
-	will have limited support but will be able to compile software
-	better for the MinGW-w64 targets.
+      <application>MinGW-w64-GCC</application> provides
+      <application>GCC</application> compilers for MinGW-w64,
+      allowing users and applications to compile code targetting
+      Windows. This will be done in steps to avoid the need for
+      already present binaries. This is the static build, which
+      will have limited support but will be able to compile software
+      better for the MinGW-w64 targets.
     </para>
 
     <itemizedlist spacing="compact">
@@ -47,16 +47,16 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-	<xref linkend="mingw-w64-binutils"/> and
-	<xref linkend="mingw-w64-headers"/>
+        <xref linkend="mingw-w64-binutils"/> and
+        <xref linkend="mingw-w64-headers"/>
     </para>
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-	<ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
-	GDB</ulink> and
-	<ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/valgrind.html">
-	Valgrind</ulink> (for tests)
+        <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
+        GDB</ulink> and
+        <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/valgrind.html">
+        Valgrind</ulink> (for tests)
     </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -68,20 +68,20 @@
     <title>Installation of Static MinGW-w64-GCC</title>
 
     <important>
-    <para>
-	Although you are compiling for another host and running
-	<command>make install</command> is generally safe, it is
-	recommended to not run <command>make install</command>
-	until you are confident the build was successful.
-    </para>
+      <para>
+        Although you are compiling for another host and running
+        <command>make install</command> is generally safe, it is
+        recommended to not run <command>make install</command>
+        until you are confident the build was successful.
+      </para>
     </important>
 
   <sect3>
     <title>x86_64 Installation of Static MinGW-w64-GCC</title>
 
     <para>
-        Install x86_64 Static <application>MinGW-w64-GCC</application> by
-        running the following commands:
+      Install x86_64 Static <application>MinGW-w64-GCC</application> by
+      running the following commands:
     </para>
 
 <screen><userinput>mkdir build-x86_64-mingw-w64-static &amp;&amp;
@@ -109,8 +109,8 @@ make all-gcc</userinput></screen>
     <title>i686 Installation of Static MinGW-w64-GCC</title>
 
     <para>
-        Install i686 Static <application>MinGW-w64-GCC</application> by running
-        the following commands:
+      Install i686 Static <application>MinGW-w64-GCC</application> by running
+      the following commands:
     </para>
 
 <screen><userinput>mkdir build-i686-mingw-w64-static &amp;&amp;
@@ -146,8 +146,8 @@ make all-gcc</userinput></screen>
     </para>
 
     <para>
-	<parameter>--disable-shared</parameter>: This option disables building
-	shared libraries. They will be built later.
+      <parameter>--disable-shared</parameter>: This option disables building
+      shared libraries. They will be built later.
     </para>
 
     <para>
@@ -156,9 +156,9 @@ make all-gcc</userinput></screen>
     </para>
 
     <para>
-	<parameter>--disable-threads</parameter>: This option disables
-	thread support due to building errors in GCC. This support will be
-	built in later.
+      <parameter>--disable-threads</parameter>: This option disables
+      thread support due to building errors in GCC. This support will be
+      built in later.
     </para>
     
     <para>
