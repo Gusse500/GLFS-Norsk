@@ -43,6 +43,9 @@
       <para>December 2nd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA: This page is unmaintained.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - *.xml: Removed all tabs. Fixes
           <ulink url="&glfs-issues;/37">#37</ulink>.</para>
         </listitem>

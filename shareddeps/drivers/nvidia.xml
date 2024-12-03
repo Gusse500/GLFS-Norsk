@@ -29,6 +29,15 @@
       Vulkan, and hardware acceleration, and provides useful utilites.
     </para>
 
+    <note>
+      <para>
+        The page for this package is not actively maintained as none of the
+        GLFS editors use this package, and instead use <xref linkend="mesa"/>.
+	It is recommended to use that instead. If you follow this page, you may
+        encounter errors.
+      </para>
+    </note>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -162,6 +171,15 @@
         For the notice above, NVIDIA Proprietary is
         <parameter>proprietary</parameter> and MIT/GPL is
         <parameter>open</parameter>.
+      </para>
+
+      <para>
+        You may also encounter an error saying the the driver failed to build
+        a kernel module. This is usually because the kernel version you are
+        using is <quote>too high.</quote> If this happens, it may be necessary
+        to downgrade the kernel to a lower version. When a new driver release
+        happens, the driver will then most likely support the kernel version at
+        the time.
       </para>
     </note>
 
