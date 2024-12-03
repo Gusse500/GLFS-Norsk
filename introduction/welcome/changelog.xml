@@ -43,6 +43,9 @@
       <para>December 2nd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 19.1.1 -&gt; 19.1.2.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA: This page is unmaintained.</para>
         </listitem>
         <listitem>
