@@ -43,6 +43,9 @@
       <para>December 3rd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - rationale.xml: Moved before changelog.xml.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Pixman: 0.44.0 -&gt; 0.44.2.</para>
         </listitem>
       </itemizedlist>
