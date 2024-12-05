@@ -80,6 +80,13 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
+    <para>
+      Finally, rename the documentation directory to a versioned directory as
+      the &root; user:
+    </para>
+
+<screen role="root"><userinput>mv -v /usr/share/doc/wireplumber{,-&wireplumber-version;}</userinput></screen>
+
   </sect2>
 
   <sect2 role="commands">
@@ -173,7 +180,8 @@ EOF</userinput></screen>
         <seg>
           /usr/include/wireplumber-0.5,
           /usr/lib/wireplumber-0.5, and
-          /usr/share/wireplumber
+          /usr/share/wireplumber, and
+          /usr/share/doc/wireplumber-&wireplumber-version;
         </seg>
       </seglistitem>
     </segmentedlist>
