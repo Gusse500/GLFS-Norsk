@@ -43,8 +43,8 @@
       <para>December 4th, 2024</para>
       <itemizedlist>
         <listitem>
-          <para>Gstreamer; gst-plugins-{base,good,bad,ugly}: 1.24.9 -&gt;
-          1.24.10 (Security update). Fixes
+          <para>[zeckma] - Gstreamer; gst-plugins-{base,good,bad,ugly}: 1.24.9
+          -&gt; 1.24.10 (Security update). Fixes
           <ulink url="&glfs-issues;/38">#38</ulink>.</para>
         </listitem>
         <listitem>
