@@ -234,7 +234,7 @@
 <!-- END X7DRIVER -->
 <!ENTITY xinit-version                "1.4.2">
 <!-- MULTIMEDIA -->
-<!ENTITY gstreamer10-version          "1.24.9">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.24.10">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
