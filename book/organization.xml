@@ -52,11 +52,10 @@
   <bridgehead renderas="sect2">Part V - Wine</bridgehead>
 
   <para>
-    This section goes over installing toolchains like <application>
-    MinGW-w64</application> and <application>GNAT</application>, some
-    of the packages necessary to both compile <application>Wine
-    </application> and use it, and lastly how to compile <application>
-    Wine</application> and configure it.
+    This section goes over installing a toolchain called <application>
+    MinGW-w64</application>, some of the packages necessary to both compile
+    <application>Wine</application> and use it, and lastly how to compile
+    <application>Wine</application> and configure it.
   </para>
 
   <bridgehead renderas="sect2">Part VI - Quality of Life</bridgehead>
