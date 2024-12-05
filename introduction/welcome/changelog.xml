@@ -43,6 +43,9 @@
       <para>December 4th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - hwdata: 0.389 -&gt; 0.390.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SA: Added. Fixes
           <ulink url="&glfs-issues;/39">#39</ulink>.</para>
         </listitem>
