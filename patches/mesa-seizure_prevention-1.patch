@@ -1,0 +1,34 @@
+Submitted By:            Zeckma <zeckma_DOT_tech_AT_gmail_DOT_com>
+Date:                    2024-12-05
+Initial Package Version: 24.3.1
+Upstream Status:         Not applicable
+Origin:                  Self, edits Mesa-24.3.1
+Description:             This patch is for Mesa which fixes Gallium3D Zink
+                         behavior when in use with NVK. This prevents flashing
+                         in many applications, like Firefox and Thunderbird.
+                         Without this patch, the flashing may cause seizures.
+
+diff --color -Naur mesa-24.3.1.orig/src/egl/drivers/dri2/platform_x11.c mesa-24.3.1/src/egl/drivers/dri2/platform_x11.c
+--- mesa-24.3.1.orig/src/egl/drivers/dri2/platform_x11.c	2024-12-04 15:13:54.000000000 -0700
++++ mesa-24.3.1/src/egl/drivers/dri2/platform_x11.c	2024-12-05 19:05:25.792458514 -0700
+@@ -1841,7 +1841,7 @@
+    if (!dri2_create_screen(disp))
+       goto cleanup;
+ 
+-   if (!dri2_setup_device(disp, disp->Options.ForceSoftware || dri2_dpy->kopper_without_modifiers)) {
++   if (!dri2_setup_device(disp, true || dri2_dpy->kopper_without_modifiers)) {
+       _eglError(EGL_NOT_INITIALIZED, "DRI2: failed to setup EGLDevice");
+       goto cleanup;
+    }
+diff --color -Naur mesa-24.3.1.orig/src/egl/drivers/dri2/platform_x11.c mesa-24.3.1/src/egl/drivers/dri2/platform_x11.c
+--- mesa-24.3.1.orig/src/egl/drivers/dri2/platform_wayland.c	2024-12-04 15:13:54.000000000 -0700
++++ mesa-24.3.1/src/egl/drivers/dri2/platform_wayland.c	2024-12-05 19:14:11.361442930 -0700
+@@ -3037,7 +3037,7 @@
+    if (!dri2_create_screen(disp))
+       goto cleanup;
+ 
+-   if (!dri2_setup_device(disp, disp->Options.ForceSoftware)) {
++   if (!dri2_setup_device(disp, true)) {
+       _eglError(EGL_NOT_INITIALIZED, "DRI2: failed to setup EGLDevice");
+       goto cleanup;
+    }

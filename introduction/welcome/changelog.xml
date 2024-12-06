@@ -43,6 +43,10 @@
       <para>December 5th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: 24.2.7 -&gt; 24.3.1. Fixes
+          <ulink url="&glfs-issues;/30">#30</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Copied BLFS patches to GLFS. Fixes
           <ulink url="&glfs-issues;/43">#43</ulink>.</para>
         </listitem>
