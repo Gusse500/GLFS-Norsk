@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>December 5th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libdrm: 2.4.123 -&gt; 2.4.124. Fixes
+          <ulink url="&glfs-issues;/41">#41</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 4th, 2024</para>
       <itemizedlist>
         <listitem>
