@@ -83,7 +83,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
                 stylesheets/glfs-chunked.xsl               \
                 $(RENDERTMP)/$(GLFSHTML)
 
-	@echo "Copying CSS code and images..."
+	@echo "Copying CSS code, images, and patches..."
 	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
       mkdir -p $(BASEDIR)/stylesheets;          \
    fi;
@@ -98,6 +98,11 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
 
 	$(Q)cd $(BASEDIR)/; sed -e "s@../images@images@g"           \
                            -i *.html
+
+	$(Q)if [ ! -e $(BASEDIR)/patches ]; then \
+		mkdir -p $(BASEDIR)/patches;          \
+   fi;
+	$(Q)cp patches/*.patch $(BASEDIR)/patches
 
 	@echo "Running Tidy and obfuscate.sh on chunked XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \
