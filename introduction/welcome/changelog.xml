@@ -43,6 +43,10 @@
       <para>December 5th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Xorg-Server: Ensure the right patches directory is
+          used.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Using patch-root entity is a good idea.</para>
         </listitem>
         <listitem>
