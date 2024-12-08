@@ -69,7 +69,11 @@
         kernels. The proprietary ones build, but the process requires
         extracting the runfile and applying a <command>sed</command> command.
         For this reason, &nvidia-version; is the version
-        GLFS currently documents.
+        GLFS currently documents. The newer version, 565.77, also requires more
+        work to set up and has issues of its own, like requiring a display
+	manager, shows a blank TTY, and demands a kernel option be disabled.
+        It's a good idea to use <xref linkend="mesa"/> instead as the future
+        of the NVIDIA driver is unclear.
       </para>
     </note>
 
