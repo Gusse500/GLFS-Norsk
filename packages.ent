@@ -110,7 +110,7 @@
 <!-- END X7LIB -->
 <!ENTITY libxcvt-version              "0.1.2">
 <!ENTITY cmake-major-version          "3.31">
-<!ENTITY cmake-minor-version          "1">
+<!ENTITY cmake-minor-version          "2">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY libunwind-version            "1.8.1">
 <!ENTITY nettle-version               "3.10">
@@ -258,6 +258,6 @@
 <!ENTITY mingw-w64-version            "12.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 <!ENTITY libxkbcommon-version         "1.7.0">
-<!ENTITY sdl2-version                 "2.30.9">
+<!ENTITY sdl2-version                 "2.30.10">
 <!ENTITY wine-major-version           "9">
 <!ENTITY wine-version		      "&wine-major-version;.22">
