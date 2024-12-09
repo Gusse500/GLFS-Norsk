@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="binary" xreflabel="Binary Support">
+  <?dbhtml filename="binary.html"?>
+
+
+  <title>Binary Support</title>
+
+  <para>
+    Now that have <application>Steam</application> and/or
+    <application>Wine</application>, you now have decent support for running
+    binary only applications. However, there are AppImages and Flatpaks. This
+    book does not and will not go over how to get that support. However, you
+    can figure out how to get that support by looking at another project the
+    GLFS development team works on:
+    <ulink url="https://github.com/glfs-book/lfs-qol">lfs-qol</ulink>. The
+    specific folder you will want to see to get that support is
+    <ulink url="https://github.com/glfs-book/lfs-qol/tree/trunk/binary">binary/</ulink>.
+  </para>
+
+  <para>
+    After following the instructions, you should be able to run AppImages and
+    use Flatpak. You can even use Flatpak to install
+    <application>Steam</application> if you wish. That method will not be
+    covered in this book.
+  </para>
+
+</sect1>

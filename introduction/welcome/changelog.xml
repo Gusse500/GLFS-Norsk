@@ -43,6 +43,9 @@
       <para>December 8th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Binary Support: Added.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: Documented libOSMesa.so.</para>
         </listitem>
         <listitem>
