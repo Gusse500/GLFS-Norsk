@@ -125,7 +125,7 @@ ldconfig</userinput></screen>
           libOpenGL.so
         </seg>
         <seg>
-          /usr/include/{EGL,GL,GLES2,KHR,glvnd}
+          /usr/include/{EGL,GLES{,2,3},glvnd,KHR}
         </seg>
       </seglistitem>
     </segmentedlist>

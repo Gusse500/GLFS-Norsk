@@ -85,7 +85,7 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libclc"/> (required for Intel Iris Gallium)
+            <xref linkend="libclc"/> (required for the Intel Iris Gallium3D)
           </para>
         </listitem>
         <listitem>
@@ -512,6 +512,12 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
+      <option>-D legacy-x11="..."</option> This parameter controls which legacy
+      X11 features get built-in support. Available linux options are none
+      (default) and dri2. These features are rarely needed anymore.
+    </para>
+
+    <para>
       <command>sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja</command>:
       This package is stubborn and likes to link against LLVM libraries in
       <filename>/lib</filename>, even on a multilib installation, so this command
@@ -528,6 +534,7 @@ ldconfig</userinput></screen>
       <segtitle>Installed Libraries</segtitle><!-- in /usr/lib -->
       <segtitle>Installed DRI Driver Stubs</segtitle><!-- in /usr/lib/dri -->
       <segtitle>Installed VA-API Drivers</segtitle><!-- in /usr/lib/dri -->
+      <segtitle>Installed GBM Backends</segtitle><!-- in /usr/lib/gbm -->
       <segtitle>Installed VDPAU Drivers</segtitle><!-- in /usr/lib/vdpau -->
       <segtitle>Installed Vulkan Drivers</segtitle><!-- in /usr/lib -->
       <segtitle>Installed Directories</segtitle>
@@ -537,13 +544,11 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libEGL.so,
-          libGL.so,
-          libGLESv1_CM.so,
-          libGLESv2.so,
+          libEGL_mesa.so,
           libgallium-&mesa-version;.so,
           libgbm.so,
           libglapi.so,
+          libGLX_mesa.so,
           libOSMesa.so, and
           libxatracker.so
         </seg>
@@ -573,6 +578,11 @@ ldconfig</userinput></screen>
           <!-- End VA-API Drivers -->
         </seg>
         <seg>
+          <!-- Begin GBM backends -->
+          dri_gbm.so
+          <!-- End GBM backends -->
+        </seg>
+        <seg>
           <!-- Begin VDPAU Drivers -->
           libvdpau_nouveau.so,
           libvdpau_r300.so
@@ -591,10 +601,11 @@ ldconfig</userinput></screen>
         </seg>
         <seg>
           <!-- /usr/include/GL is installed by xorg-protos -->
-          /usr/{include/{EGL,GLES,GLES2,GLES3,KHR},
-          /usr/lib/{dri,vdpau}},
+          /usr/include/EGL,
+          /usr/lib/{dri,vdpau},
           /usr/share/drirc.d (contains workarounds for various applications,
           particularly browsers and games),
+          /usr/share/glvnd,
           /usr/share/vulkan,
           and /usr/share/doc/mesa-&mesa-version;
         </seg>
@@ -606,15 +617,38 @@ ldconfig</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="libEGL">
-        <term><filename class="libraryfile">libEGL.so</filename></term>
+      <varlistentry id="dri_gbm">
+        <term><filename class='libraryfile'>dri_gbm.so</filename></term>
         <listitem>
           <para>
-            provides a native platform graphics interface as
+            implements Graphics Buffer Management functions needed by
+            <systemitem class='library'>libgbm</systemitem> on top of
+            <systemitem class='library'>libdrm</systemitem>
+          </para>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libEGL_mesa">
+        <term><filename class="libraryfile">libEGL_mesa.so</filename></term>
+        <listitem>
+          <para>
+            provides the Mesa platform graphics interface as
             defined by the EGL-1.4 specification
           </para>
-          <indexterm zone="mesa libEGL">
-            <primary sortas="c-libGL">libEGL.so</primary>
+          <indexterm zone="mesa libEGL_mesa">
+            <primary sortas="c-libEGL_mesa">libEGL_mesa.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgallium">
+        <term><filename class='libraryfile'>libgallium-&mesa-version;.so</filename></term>
+        <listitem>
+          <para>
+            contains all the Gallium3D drivers
+          </para>
+          <indexterm zone="mesa libgallium">
+            <primary sortas="c-libgallium">libgallium-&mesa-version;.so</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -632,38 +666,40 @@ ldconfig</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libGLESv1_CM">
-        <term><filename class="libraryfile">libGLESv1_CM.so</filename></term>
+      <varlistentry id="libglapi">
+        <term><filename class="libraryfile">libglapi.so</filename></term>
         <listitem>
           <para>
-            is the <application>Mesa</application> OpenGL ES 1.1 library
+            is the <application>Mesa</application> implementation of the OpenGL
+            API
           </para>
-          <indexterm zone="mesa libGLESv1_CM">
-            <primary sortas="c-libGLESv1_CM">libGLESv1_CM.so</primary>
+          <indexterm zone="mesa libglapi">
+            <primary sortas="c-libglapi">libglapi.so</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libGLES2">
-        <term><filename class="libraryfile">libGLES2.so</filename></term>
+      <varlistentry id="libGLX_mesa">
+        <term><filename class="libraryfile">libGLX_mesa.so</filename></term>
         <listitem>
           <para>
-            is the <application>Mesa</application> OpenGL ES 2.0 library
+            is the <application>Mesa</application> OpenGL X window extension
+            library.
           </para>
-          <indexterm zone="mesa libGLES2">
-            <primary sortas="c-libGLES2">libGLES2.so</primary>
+          <indexterm zone="mesa libGLX_mesa">
+            <primary sortas="c-libGLX_mesa">libGLX_mesa.so</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libGL">
-        <term><filename class="libraryfile">libGL.so</filename></term>
+      <varlistentry id="libxatracker">
+        <term><filename class="libraryfile">libxatracker.so</filename></term>
         <listitem>
           <para>
-            is the main <application>Mesa</application> OpenGL library
+            is the XA state tracker for the VMWare vmwgfx driver
           </para>
-          <indexterm zone="mesa libGL">
-            <primary sortas="c-libGL">libGL.so</primary>
+          <indexterm zone="mesa libxatracker">
+            <primary sortas="c-libxatracker">libxatracker.so</primary>
           </indexterm>
         </listitem>
       </varlistentry>
