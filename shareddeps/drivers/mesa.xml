@@ -692,6 +692,20 @@ ldconfig</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="libOSMesa">
+        <term><filename class="libraryfile">libOSMesa.so</filename></term>
+        <listitem>
+          <para>
+            allows applications to render into user-allocated memory
+            without any windowing or operating system dependencies, ie.
+            off-screen rendering
+          </para>
+          <indexterm zone="mesa libOSMesa">
+            <primary sortas="c-libOSMesa">libOSMesa.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libxatracker">
         <term><filename class="libraryfile">libxatracker.so</filename></term>
         <listitem>

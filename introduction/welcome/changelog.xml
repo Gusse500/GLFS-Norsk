@@ -43,6 +43,9 @@
       <para>December 8th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Documented libOSMesa.so.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libglvnd; Mesa: Updated info. Fixes
           <ulink url="&glfs-issues;/44">#44</ulink>.</para>
         </listitem>
