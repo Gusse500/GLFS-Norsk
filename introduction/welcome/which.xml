@@ -60,7 +60,7 @@
     regular compilation of packages and lib32 compilation of some
     of the same packages. If you read the multilib section and
     decided that you desire NOT to go with multilib (despite any
-    warnings), you can ignore the lib32 variants of packages).
+    warnings), you can ignore the lib32 variants of packages.
     Otherwise, follow every step unless told otherwise in the
     respective sections or are presented with options.
   </para>
