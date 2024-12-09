@@ -43,6 +43,9 @@
       <para>December 8th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Added back patch instructions.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 3.31.1 -&gt; 3.31.2; SDL2: 2.30.9 -&gt;
           2.30.10.</para>
         </listitem>
