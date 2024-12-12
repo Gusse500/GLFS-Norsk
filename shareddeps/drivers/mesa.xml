@@ -271,19 +271,20 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>meson setup                                  \
-      --cross-file lib32                     \
-      --prefix=/usr                          \
-      --libdir=/usr/lib32                    \
-      --buildtype=release                    \
-      -D osmesa=true                         \
-      -D platforms=x11,wayland               \
-      -D gallium-drivers=auto                \
-      -D vulkan-drivers=auto                 \
-      -D valgrind=disabled                   \
-      -D video-codecs=all                    \
-      -D libunwind=disabled                  \
-      -D glvnd=enabled                       \
+<screen><userinput>BINDGEN_EXTRA_CLANG_ARGS="-m32" \
+meson setup                     \
+      --cross-file lib32        \
+      --prefix=/usr             \
+      --libdir=/usr/lib32       \
+      --buildtype=release       \
+      -D osmesa=true            \
+      -D platforms=x11,wayland  \
+      -D gallium-drivers=auto   \
+      -D vulkan-drivers=auto    \
+      -D valgrind=disabled      \
+      -D video-codecs=all       \
+      -D libunwind=disabled     \
+      -D glvnd=enabled          \
       .. &amp;&amp;
       sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
 
@@ -515,6 +516,12 @@ ldconfig</userinput></screen>
       <option>-D legacy-x11="..."</option> This parameter controls which legacy
       X11 features get built-in support. Available linux options are none
       (default) and dri2. These features are rarely needed anymore.
+    </para>
+
+    <para>
+      <computeroutput>BINDGEN_EXTRA_CLANG_ARGS="-m32"</computeroutput>: This
+      variable ensures that <xref linkend="rust-bindgen"/> generates bindings
+      that don't go out of bounds when compiling lib32-NVK.
     </para>
 
     <para>

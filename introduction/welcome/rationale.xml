@@ -67,14 +67,6 @@
       now and is recommended to use those drivers instead.
     </para>
 
-    <para>
-      <xref linkend="rust-bindgen"/>: Newer versions of <application>
-      rust-bindgen</application> cause lib32-Mesa's NVK to FTBFS as the
-      generated bindings have out of bounds data and invoke
-      <computeroutput>E0080</computeroutput>. The 0.69 series on the otherhand
-      does not cause Mesa to FTBFS in general.
-    </para>
-
   </sect2>
 
   <sect2>
