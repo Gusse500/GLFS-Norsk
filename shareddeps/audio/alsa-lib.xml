@@ -146,7 +146,7 @@ install -v -m644 doc/doxygen/html/search/* \
   </sect2>
 
   <sect2 role="installation">
-     <title>32-bit Installation of ALSA Library</title>
+     <title>lib32 Installation of ALSA Library</title>
 
      <para>
        First clean the directory:

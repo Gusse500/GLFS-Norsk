@@ -131,7 +131,7 @@ cp -Rv  docs/output/html/* /usr/share/doc/SDL2-&sdl2-version;/html</userinput></
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of SDL2</title>
+    <title>lib32 Installation of SDL2</title>
 
     <para>
       First clean the directory:

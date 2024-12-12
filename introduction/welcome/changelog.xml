@@ -43,6 +43,10 @@
       <para>December 11th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - *: 32-bit Installation -&gt; lib32 Installation.
+          Fixes <ulink url="&glfs-issues;/47">#47</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - rust-bindgen: 0.69.5 -&gt; 0.71.1. Fixes
           <ulink url="&glfs-issues;/46">#46</ulink>.</para>
         </listitem>

@@ -84,7 +84,7 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of libxml2</title>
+    <title>lib32 Installation of libxml2</title>
 
     <para>
       First clean the directory:

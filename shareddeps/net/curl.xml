@@ -160,7 +160,7 @@ cp -v -R docs -T /usr/share/doc/curl-&curl-version;</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>32-bit Installation of cURL</title>
+    <title>lib32 Installation of cURL</title>
     
     <para>
       First clean the build directory:

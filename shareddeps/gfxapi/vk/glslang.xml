@@ -81,7 +81,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of Glslang</title>
+    <title>lib32 Installation of Glslang</title>
 
     <para>
       First clean the build directory:

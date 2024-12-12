@@ -171,7 +171,7 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of Linux PAM</title>
+    <title>lib32 Installation of Linux PAM</title>
 
     <para>
       First clean the build directory:

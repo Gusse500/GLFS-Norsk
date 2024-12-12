@@ -105,7 +105,7 @@ ln -sfvn elogind /usr/include/systemd</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of elogind</title>
+    <title>lib32 Installation of elogind</title>
 
     <para>
       First clean the build directory:

@@ -27,7 +27,7 @@
 
   <para>
     If you are on 32-bit, follow the instructions normally for each dependency,
-    and when you reach the <application>MinGW-w64</application> section of this
+    and for the <application>MinGW-w64</application> section of this
     chapter, follow the i686 instructions.
   </para>
 
@@ -60,7 +60,7 @@
       <xref linkend="fontconfig"/>,
       <xref linkend="freetype2-pass2"/>,
       <xref linkend="gnutls"/>,
-      <xref linkend="libunwind"/> (if 64-bit),
+      <xref linkend="libunwind"/> (if 64-bit; not used by Wine 32-bit),
       <xref linkend="mingw-w64-gcc"/>, and OpenGL (<xref linkend="libglvnd"/>
       and/or <xref linkend="mesa"/>)
     </para>

@@ -93,7 +93,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of SPIRV-LLVM-Translator</title>
+    <title>lib32 Installation of SPIRV-LLVM-Translator</title>
 
     <para>
       First clean the build directory:

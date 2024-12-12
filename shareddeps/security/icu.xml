@@ -135,7 +135,7 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of ICU</title>
+    <title>lib32 Installation of ICU</title>
 
     <para>
       First clean the directory:

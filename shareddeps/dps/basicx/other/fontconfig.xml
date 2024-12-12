@@ -128,7 +128,7 @@ install -v -m644 doc/*.{pdf,sgml,txt,html} \
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of Fontconfig</title>
+    <title>lib32 Installation of Fontconfig</title>
 
     <para>
       First clean the directory:

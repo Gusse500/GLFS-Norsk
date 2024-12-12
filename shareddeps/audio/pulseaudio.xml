@@ -137,7 +137,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of PulseAudio</title>
+    <title>lib32 Installation of PulseAudio</title>
 
     <note>
       <para>

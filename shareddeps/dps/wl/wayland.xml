@@ -84,7 +84,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of Wayland</title>
+    <title>lib32 Installation of Wayland</title>
 
     <para>
       First clean the build directory:

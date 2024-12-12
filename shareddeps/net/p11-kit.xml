@@ -108,7 +108,7 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
   </sect2>
 
   <sect2>
-    <title>32-bit Installation of p11-kit</title>
+    <title>lib32 Installation of p11-kit</title>
 
     <para>
       First clean the directory by running the following command:

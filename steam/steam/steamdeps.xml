@@ -17,7 +17,7 @@
     who do use Steam are on a 64-bit computer. Thus, users will
     need the ability to run 32-bit software. Read up on
     <xref linkend="multilib"/> and see if that's you. If so,
-    you must also follow the 32-bit/lib32 instructions of each
+    you must also follow the lib32 instructions of each
     dependency listed unless the section doesn't have those
     instructions or were told it is not needed.
   </para>
@@ -31,10 +31,10 @@
       <xref linkend="dbus-pass2"/>,
       Display server (<xref linkend="xorg-server"/> or
       <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
-      <xref linkend="libglvnd"/> (32-bit is required for multilib),
+      <xref linkend="libglvnd"/>,
       <xref linkend="make-ca"/>, and
       <xref linkend="mesa"/> w/ the <parameter>-D glvnd=enabled
-      </parameter> option (32-bit mesa is not required for multilib
+      </parameter> option (lib32 mesa is not required for multilib
       <emphasis>IF</emphasis> you are using <xref linkend="nvidia"/>)
     </para>
 

@@ -34,8 +34,8 @@
 
     <para>
       This is the first pass. A useful program, <command>dbus-launch</command>,
-      will be compiled later, but is not needed now. It depends on Xorg
-      libraries being installed beforehand.
+      will be compiled later, but is not needed now. It depends on
+      <xref linkend="x7lib"/> being installed beforehand.
     </para>
 
     <itemizedlist spacing="compact">
@@ -125,12 +125,12 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
   </sect2>
 
   <sect2>
-    <title>32-bit Installation of D-Bus</title>
+    <title>lib32 Installation of D-Bus</title>
 
     <note>
       <para>
         The program <command>dbus-launch</command> will not need to have a
-        32-bit version, so this 32-bit compilation will be the first and only
+        lib32 version, so this lib32 compilation will be the first and only
         needed pass unless you are upgrading D-Bus.
       </para>
     </note>

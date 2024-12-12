@@ -215,7 +215,7 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of NSS</title>
+    <title>lib32 Installation of NSS</title>
 
     <para>
       First clean directories in the source tree:

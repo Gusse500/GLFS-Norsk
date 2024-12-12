@@ -134,7 +134,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of GStreamer Good Plug-ins</title>
+    <title>lib32 Installation of GStreamer Good Plug-ins</title>
 
     <para>
       First clean the build directory:

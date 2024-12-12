@@ -68,7 +68,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of glibc</title>
+    <title>lib32 Installation of glibc</title>
 
     <para>
       Install lib32-<application>glibc</application> by running the following commands:

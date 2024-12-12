@@ -103,7 +103,7 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of FreeType2 - Pass 2</title>
+    <title>lib32 Installation of FreeType2 - Pass 2</title>
 
     <para>
       First clean the directory:

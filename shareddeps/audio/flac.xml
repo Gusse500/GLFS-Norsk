@@ -97,7 +97,7 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of FLAC</title>
+    <title>lib32 Installation of FLAC</title>
 
     <para>
       First clean the directory:

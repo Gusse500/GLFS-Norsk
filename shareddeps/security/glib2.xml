@@ -195,7 +195,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>32-bit Installation of GLib</title>
+    <title>lib32 Installation of GLib</title>
 
     <para>
       First clean the build directory:

@@ -76,7 +76,7 @@ make</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>32-bit Installation of lib32-libidn2</title>
+    <title>lib32 Installation of lib32-libidn2</title>
 
     <para>
       First clean the directory by running the following command:

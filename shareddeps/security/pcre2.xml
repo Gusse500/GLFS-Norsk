@@ -74,7 +74,7 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>32-bit Installation of PCRE2</title>
+    <title>lib32 Installation of PCRE2</title>
 
     <para>
       First clean the directory:
