@@ -35,7 +35,7 @@
     <para>
       This is the first pass. A useful program, <command>dbus-launch</command>,
       will be compiled later, but is not needed now. It depends on
-      <xref linkend="x7lib"/> being installed beforehand.
+      <xref linkend="xorg7-lib"/> being installed beforehand.
     </para>
 
     <itemizedlist spacing="compact">
