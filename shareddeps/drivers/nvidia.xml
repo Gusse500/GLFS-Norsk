@@ -33,8 +33,10 @@
       <para>
         The page for this package is not actively maintained as none of the
         GLFS editors use this package, and instead use <xref linkend="mesa"/>.
-	It is recommended to use that instead. If you follow this page, you may
-        encounter errors.
+        It is recommended to use that instead. If you follow this page, you may
+        encounter errors. Newer versions of this driver also cause headaches,
+        so the future of this driver is unclear. This driver may be archived in
+        the future.
       </para>
     </note>
 
@@ -62,20 +64,6 @@
         </para>
       </listitem>
     </itemizedlist>
-
-    <note>
-      <para>
-        Though NVIDIA-565.57.01 exists, the open drivers do not build for 6.11
-        kernels. The proprietary ones build, but the process requires
-        extracting the runfile and applying a <command>sed</command> command.
-        For this reason, &nvidia-version; is the version
-        GLFS currently documents. The newer version, 565.77, also requires more
-        work to set up and has issues of its own, like requiring a display
-	manager, shows a blank TTY, and demands a kernel option be disabled.
-        It's a good idea to use <xref linkend="mesa"/> instead as the future
-        of the NVIDIA driver is unclear.
-      </para>
-    </note>
 
     <note>
       <para>

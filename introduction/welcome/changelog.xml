@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>December 11th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - rationale: Add NVIDIA and rust-bindgen to
+          outdated.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 8th, 2024</para>
       <itemizedlist>
         <listitem>

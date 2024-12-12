@@ -56,7 +56,23 @@
     <title>Packages That Are Outdated and Why</title>
 
     <para>
-      No packages are currently outdated.
+      <xref linkend="nvidia"/>: Newer versions of <application>NVIDIA
+      </application> have many issues. For example, the newest version demands
+      that users disable framebuffer emulation support in the kernel in order
+      to install and use the driver. The one before that requires a
+      <command>sed</command> command after extraction of the runfile.
+      <xref linkend="nvidia"/> does not have these issues. Do note that none of
+      the GLFS editors use this driver anymore and instead use Nouveau Vulkan
+      and Zink Gallium3D from <xref linkend="mesa"/>. It is pretty competent
+      now and is recommended to use those drivers instead.
+    </para>
+
+    <para>
+      <xref linkend="rust-bindgen"/>: Newer versions of <application>
+      rust-bindgen</application> cause lib32-Mesa's NVK to FTBFS as the
+      generated bindings have out of bounds data and invoke
+      <computeroutput>E0080</computeroutput>. The 0.69 series on the otherhand
+      does not cause Mesa to FTBFS in general.
     </para>
 
   </sect2>
