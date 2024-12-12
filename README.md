@@ -7,6 +7,16 @@ like Steam and Wine after the Linux From Scratch book.
 
 Go to https://glfs-book.github.io/glfs/ and start going through the book!
 
+The book online is rolling release but there is a stable version in the GLFS
+source via the `stable` branch.
+
+You can switch to it by running the following command:
+```Bash
+git checkout stable
+```
+
+Then render the book.
+
 # Installation
 
 How do I convert these XML files to HTML myself? You need to have some software
