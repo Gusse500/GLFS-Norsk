@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>December 13th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - cURL: 8.11.0 -&gt; 8.11.1 (Security update). Fixes
+          <ulink url="&glfs-issues;/45">#45</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 12th, 2024</para>
       <itemizedlist>
         <listitem>
