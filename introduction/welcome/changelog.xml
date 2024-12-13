@@ -43,6 +43,10 @@
       <para>December 13th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libICE: 1.1.1 -&gt; 1.1.2; libSM: 1.2.4 -&gt; 1.2.5;
+          libXrender: 0.9.11 -&gt; 0.9.12.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GLib: 2.82.2 -&gt; 2.82.4.</para>
         </listitem>
         <listitem>
