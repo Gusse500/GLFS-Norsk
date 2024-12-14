@@ -108,6 +108,7 @@
       <ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>,
       <ulink url="https://archlinux.org/packages/extra/x86_64/gphoto2/">
       gphoto2</ulink>,
+      <ulink url="&blfs-svn;/basicnet/samba.html">Samba</ulink>,
       <ulink url="&blfs-svn;/pst/sane.html">SANE</ulink>,
       <ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
       <ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
