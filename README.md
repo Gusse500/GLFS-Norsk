@@ -30,8 +30,9 @@ It will by default make each package and section its own page then link
 everything together for a smooth experience.
 
 The dark theme is also the default, but you can switch the theme by
-running `switch-theme.sh` with the parameter `light` or `dark` before running
-`make`.
+running `make GLFS_THEME=<theme>`. `<theme>` can equal:
+- light
+- dark
 
 Makefile targets are: `pdf`, `nochunks`, `validate`, and `glfs-patch-list`.
 

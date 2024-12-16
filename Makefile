@@ -21,6 +21,7 @@ else
 endif
 
 BASEDIR         ?= $(HOME)/public_html/glfs
+GLFS_THEME      ?= dark
 PDF_OUTPUT      ?= glfs.pdf
 NOCHUNKS_OUTPUT ?= glfs.html
 DUMPDIR         ?= ~/glfs-commands
@@ -42,6 +43,9 @@ help:
 	@echo "  V=<val>              If <val> is a non-empty value, all"
 	@echo "                       steps to produce the output is shown."
 	@echo "                       Default is unset."
+	@echo ""
+	@echo "  GLFS_THEME=<theme>   Sets the theme of the book, ie. light/dark."
+	@echo "                       The dark theme is the default."
 	@echo ""
 	@echo "Targets:"
 	@echo "  help                 Show this help text."
@@ -83,6 +87,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
                 stylesheets/glfs-chunked.xsl               \
                 $(RENDERTMP)/$(GLFSHTML)
 
+	$(Q)./switch-theme.sh $(GLFS_THEME)
 	@echo "Copying CSS code, images, and patches..."
 	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
       mkdir -p $(BASEDIR)/stylesheets;          \
@@ -103,6 +108,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
 		mkdir -p $(BASEDIR)/patches;          \
    fi;
 	$(Q)cp patches/*.patch $(BASEDIR)/patches
+	$(Q)./switch-theme.sh dark
 
 	@echo "Running Tidy and obfuscate.sh on chunked XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \
