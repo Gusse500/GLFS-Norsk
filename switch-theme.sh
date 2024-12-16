@@ -1,8 +1,13 @@
 #!/bin/sh
-if [ "$1" == "light" ]; then
-  ln -svf light.lfs.css stylesheets/lfs-xsl/lfs.css
-elif [ "$1" == "dark" ]; then
-  ln -svf dark.lfs.css stylesheets/lfs-xsl/lfs.css
+
+available_themes=$(ls stylesheets/lfs-xsl/*.lfs.css | sed 's|stylesheets/lfs-xsl/\(.*\)\.lfs.css|\1|')
+
+if echo "$available_themes" | grep -q -w "$1"; then
+  ln -sfv "$1.lfs.css" stylesheets/lfs-xsl/lfs.css
 else
-  echo '"'"$1"'" is not "light" or "dark"'
+  echo 'Invalid theme!' >&2
+  echo
+  echo 'Available themes:'
+  echo "$available_themes"
+  exit 1
 fi
