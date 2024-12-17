@@ -59,7 +59,7 @@
     <para role="recommended">
       <ulink url="&blfs-svn;/multimedia/liba52.html">liba53</ulink> (needed to play DVD's),
       <ulink url="&blfs-svn;/multimedia/libdvdread.html">libdvdread</ulink>, and
-      <ulink url="&blfs-svn;/multimedia/x264.html">x264</ulink>
+      <xref linkend="x264"/>
     </para>
 
     <bridgehead renderas="sect4">Optional</bridgehead>

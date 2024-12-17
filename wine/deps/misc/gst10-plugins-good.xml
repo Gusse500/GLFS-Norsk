@@ -60,12 +60,12 @@
       <ulink url="&blfs-svn;/x/cairo.html">Cairo</ulink>,
       <xref linkend="flac"/>,
       <ulink url="&blfs-svn;/x/gdk-pixbuf.html">gdk-pixbuf</ulink>,
-      <ulink url="&blfs-svn;/multimedia/lame.html">LAME</ulink>,
+      <xref linkend="lame"/>,
       <ulink url="&blfs-svn;/basicnet/libsoup.html">libsoup-2</ulink>,
       <ulink url="&blfs-svn;/basicnet/libsoup3.html">libsoup-3</ulink>,
-      <ulink url="&blfs-svn;/multimedia/libvpx.html">libvpx</ulink>,
+      <xref linkend="libvpx"/>,
       <ulink url="&blfs-svn;/multimedia/mpg123.html">mpg123</ulink>,
-      <ulink url="&blfs-svn;/general/nasm.html">NASM</ulink>, and
+      <xref linkend="nasm"/>, and
       <xref linkend="pulseaudio"/>
     </para>
 

@@ -43,6 +43,10 @@
       <para>December 16th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - gst*: Linked to in-book dependencies. Part of
+          <ulink url="&glfs-issues;/50">#50</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - FFmpeg: Added. Part of
           <ulink url="&glfs-issues;/50">#50</ulink>.</para>
         </listitem>
