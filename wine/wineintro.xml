@@ -36,6 +36,16 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/pipewire.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/wireplumber.xml"/>
   -->
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/nasm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libaom.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/fdk-aac.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/lame.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libvpx.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x264.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x265.xml"/>
+  <!--
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/ffmpeg.xml"/>
+  -->
 
   <!-- WINE -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine/wine.xml"/>
