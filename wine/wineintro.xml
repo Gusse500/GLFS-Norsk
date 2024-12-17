@@ -27,6 +27,15 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/tc/mingw-w64-gcc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libxkbcommon.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/sdl2.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gstreamer10.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-base.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-good.xml"/> 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-bad.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-ugly.xml"/>
+  <!--
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/pipewire.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/wireplumber.xml"/>
+  -->
 
   <!-- WINE -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine/wine.xml"/>

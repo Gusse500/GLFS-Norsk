@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
   <!ENTITY gst10-plugins-ugly-download-http
@@ -78,10 +78,10 @@
     <title>Installation of GStreamer Ugly Plug-ins</title>
     <!--
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/gst10-objc-error.xml"/>
+      href="../../../xincludes/gst10-objc-error.xml"/>
     -->
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/gst10-plugins.xml"/>
+      href="../../../xincludes/gst10-plugins.xml"/>
 
     <para>
       Install <application>GStreamer Ugly Plug-ins</application> by running the following
@@ -148,7 +148,7 @@ ldconfig</userinput></screen>
     <title>Command Explanations</title>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-buildtype-release.xml"/>
+      href="../../../xincludes/meson-buildtype-release.xml"/>
 
     <para>
       <parameter>-D gpl=enabled</parameter>: Without this switch, plugins with

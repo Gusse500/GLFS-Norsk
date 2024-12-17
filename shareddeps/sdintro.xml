@@ -139,16 +139,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/x/x7driver.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/x/xinit.xml"/>
 
-  <!-- MULTIMEDIA -->
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/multimediadummy.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/gstreamer10.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/gst10-plugins-base.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/gst10-plugins-good.xml"/> 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/gst10-plugins-bad.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/gst10-plugins-ugly.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/pipewire.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="multimedia/wireplumber.xml"/>
-
   <!-- CHECKPOINT -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="checkpoint/checkpointdummy.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="checkpoint/whatnow.xml"/>
