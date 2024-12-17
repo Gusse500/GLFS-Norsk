@@ -46,6 +46,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x264.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x265.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/ffmpeg.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-libav.xml"/>
 
   <!-- WINE -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine/wine.xml"/>

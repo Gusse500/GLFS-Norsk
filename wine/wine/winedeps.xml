@@ -75,8 +75,9 @@
         <para>
           <xref linkend="gstreamer10"/>: allows consuming and working with
           multimedia such as music and videos. Most games and some software
-          work without it. Please install base and plugins of your choice as
-          well.
+          work without it, although some will need
+          <xref linkend="gst10-libav"/> for WMA decoding. Please install the
+          base and plugins of your choice as well as Gstreamer.
         </para>
       </listitem>
       <listitem>
