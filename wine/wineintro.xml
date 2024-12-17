@@ -25,6 +25,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/tc/mingw-w64-gcc-static.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/tc/mingw-w64.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/tc/mingw-w64-gcc.xml"/>
+
+  <!-- MISC -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libxkbcommon.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/sdl2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gstreamer10.xml"/>
@@ -43,9 +45,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libvpx.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x264.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x265.xml"/>
-  <!--
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/ffmpeg.xml"/>
-  -->
 
   <!-- WINE -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine/wine.xml"/>
