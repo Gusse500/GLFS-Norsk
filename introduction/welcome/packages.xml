@@ -52,9 +52,9 @@
       the packages and patches by doing the following:
     </para>
 
-<screen><userinput>wget -N --input-file=wget-list --continue
-ln -sv v&rust-bindgen-version;.tar.gz rust-bindgen-&rust-bindgen-version;.tar.gz
-ln -sv v&spirv-llvm-translator-version;.tar.gz SPIRV-LLVM-Translator-&spirv-llvm-translator-version;.tar.gz
+<screen><userinput>wget -N --input-file=wget-list --continue &amp;&amp;
+ln -sv v&rust-bindgen-version;.tar.gz rust-bindgen-&rust-bindgen-version;.tar.gz &amp;&amp;
+ln -sv v&spirv-llvm-translator-version;.tar.gz SPIRV-LLVM-Translator-&spirv-llvm-translator-version;.tar.gz &amp;&amp;
 ln -sv &seatd-version;.tar.gz seatd-&seatd-version;.tar.gz</userinput></screen>
 
   </sect2>
