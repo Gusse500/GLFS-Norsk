@@ -43,6 +43,10 @@
       <para>December 19th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: 24.3.1 -&gt; 24.3.2. Fixes
+          <ulink url="&glfs-issues;/51">#51</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: Move *BINDGEN* var to ninja command.</para>
         </listitem>
       </itemizedlist>
