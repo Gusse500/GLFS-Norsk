@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>December 19th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Mesa: Move *BINDGEN* var to ninja command.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 16th, 2024</para>
       <itemizedlist>
         <listitem>

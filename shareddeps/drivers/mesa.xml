@@ -271,24 +271,23 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>BINDGEN_EXTRA_CLANG_ARGS="-m32" \
-meson setup                     \
-      --cross-file lib32        \
-      --prefix=/usr             \
-      --libdir=/usr/lib32       \
-      --buildtype=release       \
-      -D osmesa=true            \
-      -D platforms=x11,wayland  \
-      -D gallium-drivers=auto   \
-      -D vulkan-drivers=auto    \
-      -D valgrind=disabled      \
-      -D video-codecs=all       \
-      -D libunwind=disabled     \
-      -D glvnd=enabled          \
+<screen><userinput>meson setup                    \
+      --cross-file lib32       \
+      --prefix=/usr            \
+      --libdir=/usr/lib32      \
+      --buildtype=release      \
+      -D osmesa=true           \
+      -D platforms=x11,wayland \
+      -D gallium-drivers=auto  \
+      -D vulkan-drivers=auto   \
+      -D valgrind=disabled     \
+      -D video-codecs=all      \
+      -D libunwind=disabled    \
+      -D glvnd=enabled         \
       .. &amp;&amp;
       sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
 
-ninja</userinput></screen>
+BINDGEN_EXTRA_CLANG_ARGS="-m32" ninja</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
