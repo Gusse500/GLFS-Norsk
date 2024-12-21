@@ -141,7 +141,7 @@
 <!ENTITY amdgpu-pro-libamdenc-version "1.0">
 <!ENTITY nvidia-version               "560.35.03">
 <!ENTITY llvm-maj-version             "19">
-<!ENTITY llvm-point-version           "0">
+<!ENTITY llvm-point-version           "6">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
 <!ENTITY rust-version                 "1.83.0">
 <!ENTITY cbindgen-version             "0.27.0">

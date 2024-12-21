@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>December 20th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - LLVM; libclc: 19.1.0 -&gt; 19.1.6. Fixes
+          <ulink url="&glfs-issues;/40">#40</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 19th, 2024</para>
       <itemizedlist>
         <listitem>
