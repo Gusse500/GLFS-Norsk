@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>December 24th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Xorg-Server: 21.1.14 -&gt; 21.1.15.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>December 20th, 2024</para>
       <itemizedlist>
         <listitem>
