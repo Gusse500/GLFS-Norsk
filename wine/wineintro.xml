@@ -17,7 +17,7 @@
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatiswine.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine/winedeps.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="winedeps.xml"/>
   
   <!-- TOOLCHAINS -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/tc/mingw-w64-headers.xml"/>
@@ -29,15 +29,6 @@
   <!-- MISC -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libxkbcommon.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/sdl2.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gstreamer10.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-base.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-good.xml"/> 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-bad.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-ugly.xml"/>
-  <!--
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/pipewire.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/wireplumber.xml"/>
-  -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/nasm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/libaom.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/fdk-aac.xml"/>
@@ -46,7 +37,16 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x264.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/x265.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/ffmpeg.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gstreamer10.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-base.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-good.xml"/> 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-bad.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-plugins-ugly.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/gst10-libav.xml"/>
+  <!--
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/pipewire.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="deps/misc/wireplumber.xml"/>
+  -->
 
   <!-- WINE -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine/wine.xml"/>

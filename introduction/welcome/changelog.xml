@@ -43,6 +43,9 @@
       <para>December 24th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wine: Move Gst* to after FFmpeg.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Xorg-Server: 21.1.14 -&gt; 21.1.15.</para>
         </listitem>
       </itemizedlist>
