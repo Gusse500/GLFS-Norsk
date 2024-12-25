@@ -43,6 +43,9 @@
       <para>December 24th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.38 -&gt; 1.39.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 3.31.2 -&gt; 3.31.3.</para>
         </listitem>
         <listitem>
