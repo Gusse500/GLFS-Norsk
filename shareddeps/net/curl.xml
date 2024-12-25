@@ -42,17 +42,17 @@
         </para>
       </listitem>
     </itemizedlist>
-<!--
+
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
           Required patch:
-          <ulink url="&patch-root;/curl-&curl-version;-function_naming-1.patch"/>
+          <ulink url="&patch-root;/curl-eventfd_regression-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
--->
+
 
     <bridgehead renderas="sect3">cURL Dependencies</bridgehead>
 
@@ -76,7 +76,14 @@
     <title>Installation of cURL</title>
 
     <para>
-      Install <application>cURL</application> by running the following
+      First apply a patch to fix a regression involving eventfd where eventfd
+      would be closed twice and could cause fd corruption:
+    </para>
+
+<screen><userinput>patch -Np1 -i ../curl-eventfd_regression-1.patch</userinput></screen>
+
+    <para>
+      Now install <application>cURL</application> by running the following
       commands:
     </para>
 
@@ -87,6 +94,7 @@ cd       build                             &amp;&amp;
              --disable-static              \
              --with-openssl                \
              --with-ca-path=/etc/ssl/certs &amp;&amp;
+
 make</userinput></screen>
 
 <!--

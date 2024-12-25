@@ -43,6 +43,9 @@
       <para>December 24th, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - cURL: Include patch to fix eventfd regression.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Wayland-Protocols: 1.38 -&gt; 1.39.</para>
         </listitem>
         <listitem>
