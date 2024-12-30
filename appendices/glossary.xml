@@ -841,6 +841,17 @@
       </glossdef>
     </glossentry>
 
+    <glossentry id="gGLFS">
+      <glossterm>
+        <acronym>GLFS</acronym>
+      </glossterm>
+      <glossdef>
+        <para>
+          Gaming Linux From Scratch
+        </para>
+      </glossdef>
+    </glossentry>
+
     <glossentry id="gGLUT">
       <glossterm>
         <acronym>GLUT</acronym>
@@ -1331,6 +1342,17 @@
       </glossdef>
     </glossentry>
 
+    <glossentry id="gLFS-QOL">
+      <glossterm>
+        <acronym>LFS-QOL</acronym>
+      </glossterm>
+      <glossdef>
+        <para>
+          Linux From Scratch - Quality of Life
+        </para>
+      </glossdef>
+    </glossentry>
+
     <glossentry id="gLGPL">
       <glossterm>
         <acronym>LGPL</acronym>
@@ -1492,6 +1514,17 @@
       <glossdef>
         <para>
           Massachusetts Institute of Technology
+        </para>
+      </glossdef>
+    </glossentry>
+
+    <glossentry id="gMLFS">
+      <glossterm>
+        <acronym>MLFS</acronym>
+      </glossterm>
+      <glossdef>
+        <para>
+          Multilib Linux From Scratch
         </para>
       </glossdef>
     </glossentry>
