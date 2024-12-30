@@ -1,5 +1,5 @@
 # based on https://github.com/actions/starter-workflows/blob/main/pages/hugo.yml
-name: Deploy site to Pages
+name: (Stable) Deploy site to Pages
 
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -57,3 +57,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          destination_dir: glfs-stable
