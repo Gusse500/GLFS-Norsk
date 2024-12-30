@@ -26,4 +26,6 @@ $Date$
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="appendices/mit-lic.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="appendices/glossary.xml"/>
 
+  <index/>
+
 </book>
