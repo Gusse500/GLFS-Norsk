@@ -198,7 +198,8 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
 cd linux-firmware                                                                      &amp;&amp;
 mkdir -pv /usr/lib/firmware/nvidia                                                     &amp;&amp;
 mkdir -pv DESTDIR/usr/lib/firmware                                                     &amp;&amp;
-sh copy-firmware.sh --ignore-duplicates DESTDIR/usr/lib/firmware                       &amp;&amp;
+sed -i 's@^destdir=$@destdir=DESTDIR/usr/lib/firmware@' copy-firmware.sh               &amp;&amp;
+sh copy-firmware.sh                                                                    &amp;&amp;
 cp -vr DESTDIR/usr/lib/firmware/nvidia/* /usr/lib/firmware/nvidia                      &amp;&amp;
 rm -rf DESTDIR</userinput></screen>
 
