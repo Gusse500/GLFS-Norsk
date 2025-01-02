@@ -137,7 +137,7 @@ grep -v '^#' ../llvm-&llvm-version;-list | wget -i- -c \
 
 <screen><userinput>tar -xf ../cmake-&llvm-version;.src.tar.xz &amp;&amp;
 tar -xf ../third-party-&llvm-version;.src.tar.xz &amp;&amp;
-sed '/LLVM_COMMON_CMAKE_UTILS/s@../cmake@llvm-&llvm-version;.src@' \
+sed '/LLVM_COMMON_CMAKE_UTILS/s@../cmake@cmake-&llvm-version;.src@' \
     -i CMakeLists.txt &amp;&amp;
 sed '/LLVM_THIRD_PARTY_DIR/s@../third-party@third-party-&llvm-version;.src@' \
     -i cmake/modules/HandleLLVMOptions.cmake</userinput></screen>
