@@ -43,6 +43,10 @@
       <para>January 2nd, 2024</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - D-Bus: 1.14.10 -&gt; 1.16.0. Fixes
+          <ulink url="&glfs-issues;/54">#54</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - FFmpeg: Fix doc generation issue with Texinfo.</para>
         </listitem>
         <listitem>

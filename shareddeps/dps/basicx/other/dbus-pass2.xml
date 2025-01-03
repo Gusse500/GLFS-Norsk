@@ -58,32 +58,28 @@
 
     <para>
       Install <application>D-Bus</application> by running the following
-      commands (you may wish to review the output from <command>./configure
-      --help</command> first and add any desired parameters to the
-      <command>configure</command> command shown below):
+      commands (you may wish to review the
+      <filename>meson_options.txt</filename> file first and add any desired
+      parameters to the <command>meson</command> command shown below):
     </para>
 
-<screen><userinput>make distclean &amp;&amp;
+<screen><userinput>rm -rf build &amp;&amp;
+mkdir  build &amp;&amp;
+cd     build &amp;&amp;
 
-./configure --prefix=/usr                        \
-            --sysconfdir=/etc                    \
-            --localstatedir=/var                 \
-            --runstatedir=/run                   \
-            --disable-doxygen-docs               \
-            --disable-xml-docs                   \
-            --disable-static                     \
-            --with-systemduserunitdir=no         \
-            --with-systemdsystemunitdir=no       \
-            --docdir=/usr/share/doc/dbus-&dbus-version;  \
-            --with-system-socket=/run/dbus/system_bus_socket &amp;&amp;
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --wrap-mode=nofallback \
+            -D systemd=disabled    \
+            .. &amp;&amp;
 
-make</userinput></screen>
+ninja</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make install</userinput></screen>
+<screen role="root"><userinput>ninja install</userinput></screen>
 
 <!-- FIXME: No longer needed with usr merge
     <para>
@@ -114,51 +110,13 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
   <sect2 role="commands">
     <title>Command Explanations</title>
 
-    <para>
-      <parameter>--disable-doxygen-docs</parameter>: This switch disables
-      doxygen documentation build and install, if you have
-      <application>doxygen</application> installed. If
-      <application>doxygen</application> is installed, and you wish to build
-      them, remove this parameter.
-    </para>
-
-    <para>
-      <parameter>--disable-xml-docs</parameter>: This switch disables html
-      documentation build and install, if you have
-      <application>xmlto</application> installed. If
-      <application>xmlto</application> is installed, and you wish to build
-      them, remove this parameter.
-    </para>
-
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/static-libraries.xml"/>
+      href="../../../../xincludes/meson-wrap-nofallback.xml"/>
 
     <para>
-      <parameter>--with-systemd{user,system}unitdir=no</parameter>: These
-      switches disable installation of systemd units on elogind based systems.
-    </para>
-   
-    <para>
-      <parameter>--with-system-socket=/run/dbus/system_bus_socket</parameter>:
-      This parameter specifies the location of the system bus socket.
-    </para>
-
-    <para>
-      <parameter>--enable-tests</parameter>: Builds extra parts of the code to
-      support all tests. Do not use on a production build.
-    </para>
-
-    <para>
-      <option>--enable-embedded-tests</option>: Builds extra parts of the
-      code to support only unit tests. Do not use on a production build.
-    </para>
-
-    <para>
-      <parameter>--enable-asserts</parameter>: Enables debugging code to run
-      assertions for statements normally assumed to be true. This prevents a
-      warning that '<parameter>--enable-tests</parameter>' on its own is only
-      useful for profiling and might not give true results for all tests, but
-      adds its own NOTE that this should not be used in a production build.
+      <parameter>-D systemd=disabled</parameter>: Don't install systemd support
+      files even if <filename class="libraryfile">libsystemd</filename> exists
+      (i.e. the <xref linkend="elogind"/> package is installed).
     </para>
 
   </sect2>
