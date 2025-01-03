@@ -52,7 +52,8 @@
           <para>[zeckma] - GLib2: Promote pcre2 to required.</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - Shadow: 4.16.0 -&gt; 4.17.1.</para>
+          <para>[zeckma] - Shadow: 4.16.0 -&gt; 4.17.1. Fixes
+          <ulink url="&glfs-issues;/53">#53</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
