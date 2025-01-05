@@ -43,6 +43,9 @@
       <para>January 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libglvnd: Add --buildtype=release.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Python: 3.13.0 -&gt; 3.13.1.</para>
         </listitem>
       </itemizedlist>

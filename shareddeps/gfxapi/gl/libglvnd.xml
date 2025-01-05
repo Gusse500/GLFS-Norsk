@@ -61,7 +61,7 @@
 <screen><userinput>mkdir -v build &amp;&amp;
 cd       build &amp;&amp;
 
-meson setup .. --prefix=/usr &amp;&amp;
+meson setup .. --prefix=/usr --buildtype=release &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -90,6 +90,7 @@ ninja</userinput></screen>
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \
+            --buildtype=release      \
             .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -102,6 +103,14 @@ ninja</userinput></screen>
 cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
 rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/meson-buildtype-release.xml"/>
 
   </sect2>
 
