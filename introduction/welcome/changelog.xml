@@ -43,6 +43,10 @@
       <para>January 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: 24.3.2 -&gt; 24.3.3. Fixes
+          <ulink url="&glfs-issues;/57">#57</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libglvnd: Add --buildtype=release.</para>
         </listitem>
         <listitem>
