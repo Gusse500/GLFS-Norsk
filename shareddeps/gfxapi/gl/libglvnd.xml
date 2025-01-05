@@ -110,7 +110,7 @@ ldconfig</userinput></screen>
     <title>Command Explanations</title>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-buildtype-release.xml"/>
+      href="../../../xincludes/meson-buildtype-release.xml"/>
 
   </sect2>
 
