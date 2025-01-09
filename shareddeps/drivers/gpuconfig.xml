@@ -105,7 +105,7 @@
         then install them:
       </para>
 
-<screen><userinput>mkdir -pv /usr/lib/firmware/radeon &amp;&amp;
+<screen role="root"><userinput>mkdir -pv /usr/lib/firmware/radeon &amp;&amp;
 cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/radeon</userinput></screen>
 
     </sect3>
@@ -136,7 +136,7 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/radeon</userinput></screen>
         APU now has a 13th file, raven_ta.bin).
       </para>
 
-<screen><userinput>mkdir -pv /usr/lib/firmware/amdgpu &amp;&amp;
+<screen role="root"><userinput>mkdir -pv /usr/lib/firmware/amdgpu &amp;&amp;
 cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
 
       <para>
@@ -194,7 +194,7 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
         install the newer firmware properly automatically:
       </para>
 
-<screen><userinput>git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git  &amp;&amp;
+<screen role="root"><userinput>git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git  &amp;&amp;
 cd linux-firmware                                                                      &amp;&amp;
 mkdir -pv /usr/lib/firmware/nvidia                                                     &amp;&amp;
 mkdir -pv DESTDIR/usr/lib/firmware                                                     &amp;&amp;
@@ -210,7 +210,7 @@ rm -rf DESTDIR</userinput></screen>
         NVIDIA runfile:
       </para>
 
-<screen><userinput>wget https://anduin.linuxfromscratch.org/BLFS/nvidia-firmware/extract_firmware.py        &amp;&amp;
+<screen role="root"><userinput>wget https://anduin.linuxfromscratch.org/BLFS/nvidia-firmware/extract_firmware.py        &amp;&amp;
 wget https://us.download.nvidia.com/XFree86/Linux-x86/340.32/NVIDIA-Linux-x86-340.32.run &amp;&amp;
 sh NVIDIA-Linux-x86-340.32.run --extract-only                                            &amp;&amp;
 python3 extract_firmware.py                                                              &amp;&amp;
