@@ -227,12 +227,12 @@
 <!-- BEGIN X7DRIVER -->
 <!ENTITY libevdev-version             "1.13.3">
 <!ENTITY xorg-evdev-driver-version    "2.11.0">
-<!ENTITY libinput-version             "1.27.0">
+<!ENTITY libinput-version             "1.27.1">
 <!ENTITY xorg-libinput-driver-version "1.5.0">
-<!ENTITY xorg-synaptics-driver-version "1.9.2">
+<!ENTITY xorg-synaptics-driver-version "1.10.0">
 <!ENTITY xorg-wacom-driver-version    "1.2.3">
 <!-- END X7DRIVER -->
-<!ENTITY xinit-version                "1.4.2">
+<!ENTITY xinit-version                "1.4.3">
 
 
 
@@ -252,7 +252,7 @@
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 <!ENTITY libxkbcommon-version         "1.7.0">
 <!ENTITY sdl2-version                 "2.30.11">
-<!ENTITY gstreamer10-version          "1.24.10">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.24.11">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">

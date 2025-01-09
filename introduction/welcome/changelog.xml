@@ -40,6 +40,18 @@
     -->
 
     <listitem>
+      <para>January 8th, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libinput: 1.27.0 -&gt; 1.27.1;
+          xorg-synaptics-driver: 1.9.2 -&gt; 1.10.0;
+          xinit: 1.4.2 -&gt; 1.4.3;
+          gst*: 1.24.10 -&gt; 1.24.11.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>January 4th, 2025</para>
       <itemizedlist>
         <listitem>
