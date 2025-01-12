@@ -29,12 +29,15 @@
     <ulink url="https://www.&lfs-domainname;/~thomas/multilib/"/>.
   </para>
 
-  <phrase revision="systemd">
-    <para>
-      Such a guide is maintained by Thomas Trepl. However, the only official
-      render that can be read online is the Sysv version, meaning in order to
-      read the Systemd version, you will need to render it yourself.
-    </para>
+  <para revision="systemd">
+    Such a guide is maintained by Thomas Trepl, called MLFS (Multilib-LFS).
+    However, the only official render that can be read online is the Sysv
+    version, meaning in order to read the Systemd version, you will need to
+    render it yourself.
+  </para>
+
+  <sect2 revision="systemd">
+    <title>Rendering MLFS</title>
 
     <para>
       First, install <xref linkend="git"/>, then clone the LFS repo and switch
@@ -69,9 +72,10 @@ git checkout multilib</userinput></screen>
 
     <para>
       For <application>Firefox</application>, type in the search bar:
-      <computeroutput>
-file:///home/<replaceable>&gt;username&lt;</replaceable>/public_html/lfs-systemd/index.html
-      </computeroutput>, and replace <replaceable>&gt;username&lt;</replaceable>
+
+<computeroutput>file:///home/<replaceable>&lt;username&gt;</replaceable>/public_html/lfs-systemd/index.html</computeroutput>,
+
+      and replace <replaceable>&lt;username&gt;</replaceable>
       with the name of the username you rendered the book with.
     </para>
 
@@ -81,19 +85,24 @@ file:///home/<replaceable>&gt;username&lt;</replaceable>/public_html/lfs-systemd
 
 <screen><userinput>lynx ~/public_html/lfs-systemd/index.html</userinput></screen>
 
-  </phrase>
+  </sect2>
 
-  <para>
-    The same principles of compiling for 32-bit in that book will also
-    apply to this book as well. If you haven't already, read
-    <xref linkend="important"/>
-    to check what basic principles still apply in this book when targeting
-    32-bit.
-  </para>
+  <sect2>
+    <title>More Info</title>
 
-  <para>
-    Furthermore, read <xref linkend="which-instructions"/> to find out which
-    instructions to follow.
-  </para>
+    <para>
+      The same principles of compiling for 32-bit in that book will also
+      apply to this book as well. If you haven't already, read
+      <xref linkend="important"/>
+      to check what basic principles still apply in this book when targeting
+      32-bit.
+    </para>
+
+    <para>
+      Furthermore, read <xref linkend="which-instructions"/> to find out which
+      instructions to follow.
+    </para>
+
+  </sect2>
 
 </sect1>

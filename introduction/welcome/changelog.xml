@@ -43,6 +43,10 @@
       <para>January 11th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Systemd Revision: Fixed rendering failures. Part of
+          <ulink url="&glfs-issues;/58">#58</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Systemd Revision: Added, although does not render.
           Part of <ulink url="&glfs-issues;/58">#58</ulink>.</para>
         </listitem>
