@@ -25,7 +25,16 @@ determine what programs you need to install and where to get instructions to
 install that software.
 
 After that, you can build the html with a simple `make` command.
-The default target builds the html in `$(HOME)/public_html/glfs.`
+You can change the revision, ie. systemd vs sysv by adding `REV=<rev>` to the
+`make` command. `<rev>` can be:
+- `sysv` (default)
+- `systemd`
+
+Example: `make REV=systemd`.
+
+The default target (sysv) builds the html in `$(HOME)/public_html/glfs`,
+whereas for systemd, it would be in `$(HOME)/public_html/glfs-systemd`.
+
 It will by default make each package and section its own page then link
 everything together for a smooth experience.
 

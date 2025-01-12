@@ -126,7 +126,12 @@
 <!ENTITY systemd-units-version        "20240205">
 
 <!ENTITY blfs-wiki                    "https://wiki.&lfs-domainname;/blfs/wiki">
+<![ %sysv; [
 <!ENTITY blfs-svn		      "https://&lfs-domainname;/blfs/view/svn">
+]]>
+<![ %systemd; [
+<!ENTITY blfs-svn                     "https://&lfs-domainname;/blfs/view/systemd">
+]]>
 
 <!ENTITY as_root "<note><para>When installing multiple packages in a script,
   the installation needs to be done as the root user. There are three general

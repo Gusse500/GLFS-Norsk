@@ -11,6 +11,8 @@
 
   <title>
     Gaming Linux<superscript>&reg;</superscript> From Scratch
+    <phrase revision="systemd">(systemd</phrase>
+    <phrase revision="sysv">(System V</phrase> Edition)
   </title>
   <subtitle>Version &version;</subtitle>
   <subtitle>Published &releasedate;</subtitle>

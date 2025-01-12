@@ -69,21 +69,26 @@
   <sect2>
     <title>Init System</title>
 
-    <para>
-      This book doesn't have instructions for Systemd. It is meant for SysV
+    <para revision="sysv">
+      This version of this book is meant for SysV
       LFS systems, but if you find or make your own bootscripts, you can
       use the instructions in this book on a system that has Runit or
-      OpenRC. Systemd will take more work and the process involves checking
-      <ulink url="https://&lfs-domainname;/blfs/view/systemd"/> and compare the
-      instructions for each package. There aren't many packages that require
-      this process except ones that may need to be started as a service.
-      The <quote>Security</quote> subsection of the Shared Dependencies chapter
-      is especially different so watch out for it if you are using Systemd. The
-      reason for not using Systemd is that it makes things more complicated,
-      a lot of users use more simplistic init systems like SysVinit for their
-      LFS system, and including instructions for both can result in two book
-      versions which would be rather inconvenient.
+      OpenRC. The Systemd version of the book is not rendered anywhere by
+      &copyholder; due to Github Pages restraints. Thus you will need to render
+      it yourself. Follow the <ulink url="&glfs-repo;">GLFS rendering
+      instructions</ulink> in order to render the book yourself. You will need
+      <xref linkend="git"/> to clone the repository.
     </para>
+
+    <para revision="systemd">
+      This version of this book is meant for Systemd LFS systems. You probably
+      have rendered this version of the book yourself.
+    </para>
+
+    <important><para>
+      The Systemd version of this book may not even render or may have many
+      issues that have not been addressed yet as it is in a work in progress.
+    </para></important>
 
   </sect2>
 
