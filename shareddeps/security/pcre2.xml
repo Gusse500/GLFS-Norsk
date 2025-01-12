@@ -42,8 +42,6 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">PCRE2 Dependencies</bridgehead>
-
   </sect2>
 
   <sect2 role="installation">

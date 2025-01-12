@@ -69,18 +69,26 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="linux-pam"/> and <xref linkend="elogind"/>
+      <xref linkend="linux-pam"/><phrase revision="sysv"> and
+      <xref linkend="elogind"/></phrase>
     </para>
 
     <note>
       <para>
-        Since <command>elogind</command>
+        Since <phrase revision="sysv"><command>elogind</command></phrase>
+        <phrase revision="systemd"><command>systemd-logind</command></phrase>
         uses PAM to register user sessions, it is a good idea to build
         <application>Polkit</application> with PAM support so
-        <command>elogind</command>
+        <phrase revision="sysv"><command>elogind</command></phrase>
+        <phrase revision="systemd"><command>systemd-logind</command></phrase>
         can track <application>Polkit</application> sessions.
       </para>
     </note>
+
+    <bridgehead renderas="sect4" revision="systemd">Required Runtime Dependencies</bridgehead>
+    <para role="required" revision="systemd">
+      <xref role="runtime" linkend="systemd"/>
+    </para>
 
     <bridgehead renderas="sect4" id="polkit-agent" xreflabel="Polkit Authentication Agent">
       Optional Runtime Dependencies
@@ -111,7 +119,18 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
       commands:
     </para>
 
-<screen><userinput>mkdir build &amp;&amp;
+<screen revision="systemd"><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup ..                   \
+      --prefix=/usr              \
+      --buildtype=release        \
+      -D os_type=lfs             \
+      -D man=true                \
+      -D session_tracking=logind \
+      -D tests=false</userinput></screen>
+
+<screen revision="sysv"><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
 meson setup ..                     \
@@ -131,11 +150,11 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
-    <para>
+    <para revision="sysv">
       Remove some files that aren't useful on a SysV system as the &root; user:
     </para>
 
-<screen role="root"><userinput>rm -v /tmp/*.service &amp;&amp;
+<screen role="root" revision="sysv"><userinput>rm -v /tmp/*.service &amp;&amp;
 rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
 
   </sect2>

@@ -8,7 +8,7 @@
   <!ENTITY dbus-download-ftp  " ">
 ]>
 
-<sect1 id="dbus-pass1" xreflabel="dbus-&dbus-version; - Pass 1">
+<sect1 id="dbus-pass1" xreflabel="dbus-&dbus-version; - Pass 1" revision="sysv">
   <?dbhtml filename="dbus-pass1.html"?>
 
   <title>dbus-&dbus-version; - Pass 1</title>
@@ -179,7 +179,7 @@ ldconfig</userinput></screen>
     <title>Contents</title>
 
     <para>
-      See the full list of contents at <xref linkend="dbus-pass2"/>.
+      See the full list of contents at <xref linkend="dbus"/>.
     </para>
 
   </sect2>

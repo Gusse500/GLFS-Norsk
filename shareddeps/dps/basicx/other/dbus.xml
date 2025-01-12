@@ -8,19 +8,25 @@
   <!ENTITY dbus-download-ftp  " ">
 ]>
 
-<sect1 id="dbus-pass2" xreflabel="dbus-&dbus-version; - Pass 2">
-  <?dbhtml filename="dbus-pass2.html"?>
+<sect1 id="dbus" xreflabel="dbus-&dbus-version;">
+  <?dbhtml filename="dbus.html"?>
 
-  <title>dbus-&dbus-version; - Pass 2</title>
+  <title>dbus-&dbus-version;</title>
 
-  <indexterm zone="dbus-pass2">
-    <primary sortas="a-D-Bus-Pass2">D-Bus-Pass2</primary>
+  <indexterm zone="dbus">
+    <primary sortas="a-D-Bus">D-Bus</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to D-Bus - Pass 2</title>
+    <title>Introduction to D-Bus</title>
 
-    <para>
+    <para revision="systemd">
+      Even though <application>D-Bus</application> was built in LFS, there are
+      some features provided by the package that other GLFS packages need, but
+      their dependencies didn't fit into LFS.
+    </para>
+
+    <para revision="sysv">
       D-Bus was already compiled before, but not a useful program,
       <command>dbus-launch</command>. This pass will cover it, and some setup
       required.
@@ -51,10 +57,17 @@
       both packages are installed.)</phrase>-->
     </para>
 
+    <bridgehead renderas="sect4" revision="systemd">Optional</bridgehead>
+    <para role="optional" revision="systemd">
+      <phrase revision="systemd"><xref role="runtime" linkend="systemd"/>
+      (runtime, for registering services launched by D-Bus session daemon as
+      systemd user services)</phrase>
+    </para>
+
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of D-Bus - Pass 2</title>
+    <title>Installation of D-Bus</title>
 
     <para>
       Install <application>D-Bus</application> by running the following
@@ -69,31 +82,17 @@ cd     build &amp;&amp;
 
 meson setup --prefix=/usr          \
             --buildtype=release    \
-            --wrap-mode=nofallback \
-            -D systemd=disabled    \
+            --wrap-mode=nofallback \</userinput><userinput revision='sysv'>
+            -D systemd=disabled    \</userinput><userinput>
             .. &amp;&amp;
 
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
-
-<!-- FIXME: No longer needed with usr merge
-    <para>
-      The shared library needs to be moved to
-      <filename class="directory">/lib</filename>, and as a result the
-      <filename class="extension">.so</filename> file in
-      <filename class="directory">/usr/lib</filename> will need to be
-      recreated. Run the following command as the
-      <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen role="root"><userinput>mv -v /usr/lib/libdbus-1.so.* /lib &amp;&amp;
-ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</userinput></screen>
--->
 
     <para>
       If you are using a DESTDIR install,
@@ -107,13 +106,46 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
 
   </sect2>
 
+  <sect2 revision="systemd">
+    <title>lib32 Installation of D-Bus</title>
+
+    <para>
+      First clean the build directory:
+    </para>
+
+<screen><userinput>rm -rf *</userinput></screen>
+
+    <para>
+      Now install lib32-D-Bus by running the following commands:
+    </para>
+
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"           \
+PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+meson setup --prefix=/usr              \
+            --libdir=/usr/lib32        \
+            -D wrap-mode=nofallback    \
+            .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Now as the &root; user:
+    </para>
+
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vR DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
   <sect2 role="commands">
     <title>Command Explanations</title>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../../xincludes/meson-wrap-nofallback.xml"/>
 
-    <para>
+    <para revision="sysv">
       <parameter>-D systemd=disabled</parameter>: Don't install systemd support
       files even if <filename class="libraryfile">libsystemd</filename> exists
       (i.e. the <xref linkend="elogind"/> package is installed).
@@ -133,15 +165,15 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
         <filename>/etc/dbus-1/system.d/*</filename>
       </para>
 
-      <indexterm zone="dbus-pass2 dbus-config">
+      <indexterm zone="dbus dbus-config">
         <primary sortas="e-etc-dbus-1-session.conf">/etc/dbus-1/session.conf</primary>
       </indexterm>
 
-      <indexterm zone="dbus-pass2 dbus-config">
+      <indexterm zone="dbus dbus-config">
         <primary sortas="e-etc-dbus-1/system.conf">/etc/dbus-1/system.conf</primary>
       </indexterm>
 
-      <indexterm zone="dbus-pass2 dbus-config">
+      <indexterm zone="dbus dbus-config">
         <primary sortas="e-etc-dbus-1-system.d-star">/etc/dbus-1/system.d/*</primary>
       </indexterm>
 
@@ -187,28 +219,21 @@ EOF</userinput></screen>
     <sect3  id="dbus-session">
       <title>D-Bus Session Daemon</title>
 
-      <para>
+      <para revision="sysv">
         To automatically start <command>dbus-daemon</command> when the
         system is rebooted, install the
         <filename>/etc/rc.d/init.d/dbus</filename> bootscript from the
-        <ulink url="&blfs-svn;/introduction/bootscripts.html"
-        revision="sysv">blfs-bootscripts</ulink> package.
+        <ulink url="&blfs-svn;/introduction/bootscripts.html">
+        blfs-bootscripts</ulink> package.
       </para>
 
-      <indexterm zone="dbus-pass2 dbus-session">
-        <primary sortas="f-dbus-pass2">dbus-pass2</primary>
+      <indexterm zone="dbus dbus-session" revision="sysv">
+        <primary sortas="f-dbus">dbus</primary>
       </indexterm>
 
-<screen role="root"><userinput>make install-dbus</userinput></screen>
+<screen role="root" revision="sysv"><userinput>make install-dbus</userinput></screen>
 
-      <para>
-        Now would be a good idea to reboot and test to see if D-Bus,
-        elogind, etc. works, and you can login. Run the command
-        <command>loginctl</command> after ensuring D-Bus is running. The result
-        should indicate that a SESSION and a SEAT have been created.
-      </para>
-
-      <para>
+      <para revision="sysv">
         Note that this boot script only starts the system-wide
         <application>D-Bus</application> daemon. Each user requiring access to
         <application>D-Bus</application> services will also need to run a
@@ -217,6 +242,67 @@ EOF</userinput></screen>
         the <command>dbus-launch</command> man page for details about the
         available parameters and options. Here are some suggestions and
         examples:
+      </para>
+
+      <para revision="systemd">
+        There are many methods you can use to start a session daemon
+        using the <command>dbus-launch</command> command. Review the
+        <command>dbus-launch</command> man page for details about the
+        available parameters and options. Here are some suggestions and
+        examples:
+      </para>
+
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            Add <command>dbus-launch</command> to the line in the
+            <filename>~/.xinitrc</filename> file that starts your graphical
+            desktop environment.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            If you use <command>gdm</command> or some other display manager
+            that calls the <filename>~/.xsession</filename> file, you can add
+            <command>dbus-launch</command> to the line in your
+            <filename>~/.xsession</filename> file that starts your graphical
+            desktop environment. The syntax would be similar to the example in
+            the <filename>~/.xinitrc</filename> file.
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            The examples shown previously use
+            <command>dbus-launch</command> to specify a program to be run. This
+            has the benefit (when also using the
+            <parameter>--exit-with-x11</parameter> parameter) of stopping the
+            session daemon when the specified program is stopped. You can also
+            start the session daemon in your system or personal startup scripts
+            by adding the following lines:
+          </para>
+
+<screen role="nodump"><userinput><literal># Start the D-Bus session daemon
+eval `dbus-launch`
+export DBUS_SESSION_BUS_ADDRESS</literal></userinput></screen>
+
+          <para>
+            This method will not stop the session daemon when you exit
+            your shell, therefore you should add the following line to your
+            <filename>~/.bash_logout</filename> file:
+          </para>
+
+<screen role="nodump"><userinput><literal># Kill the D-Bus session daemon
+kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
+        </listitem>
+
+      </itemizedlist>
+
+      <para>
+        Now would be a good idea to reboot and test to see if D-Bus,
+        <phrase revision="sysv">e</phrase>logind, etc. works, and you can
+        login. Run the command <command>loginctl</command> after ensuring
+        D-Bus is running. The result should indicate that a SESSION and a SEAT
+        have been created.
       </para>
 
     </sect3>
@@ -263,7 +349,7 @@ EOF</userinput></screen>
           <para>
             is used to clean up leftover sockets in a directory
           </para>
-          <indexterm zone="dbus-pass2 dbus-cleanup-sockets">
+          <indexterm zone="dbus dbus-cleanup-sockets">
             <primary sortas="b-dbus-cleanup-sockets">dbus-cleanup-sockets</primary>
           </indexterm>
         </listitem>
@@ -275,7 +361,7 @@ EOF</userinput></screen>
           <para>
             is the <application>D-Bus</application> message bus daemon
           </para>
-          <indexterm zone="dbus-pass2 dbus-daemon">
+          <indexterm zone="dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
           </indexterm>
         </listitem>
@@ -289,7 +375,7 @@ EOF</userinput></screen>
             script. It  would  normally be called from a user's login
             scripts
           </para>
-          <indexterm zone="dbus-pass2 dbus-launch">
+          <indexterm zone="dbus dbus-launch">
             <primary sortas="b-dbus-launch">dbus-launch</primary>
           </indexterm>
         </listitem>
@@ -302,7 +388,7 @@ EOF</userinput></screen>
             is used to monitor messages going through a
             <application>D-Bus</application> message bus
           </para>
-          <indexterm zone="dbus-pass2 dbus-monitor">
+          <indexterm zone="dbus dbus-monitor">
             <primary sortas="b-dbus-monitor">dbus-monitor</primary>
           </indexterm>
         </listitem>
@@ -314,7 +400,7 @@ EOF</userinput></screen>
           <para>
             starts a process as a new <application>D-Bus</application> session
           </para>
-          <indexterm zone="dbus-pass2 dbus-run-session">
+          <indexterm zone="dbus dbus-run-session">
             <primary sortas="b-dbus-run-session">dbus-run-session</primary>
           </indexterm>
         </listitem>
@@ -327,7 +413,7 @@ EOF</userinput></screen>
             is used to send a message to a <application>D-Bus</application>
             message bus
           </para>
-          <indexterm zone="dbus-pass2 dbus-send">
+          <indexterm zone="dbus dbus-send">
             <primary sortas="b-dbus-send">dbus-send</primary>
           </indexterm>
         </listitem>
@@ -341,7 +427,7 @@ EOF</userinput></screen>
             tool; it is a multi-purpose tool for debugging and profiling
             <application>D-Bus</application>
           </para>
-          <indexterm zone="dbus-pass2 dbus-test-tool">
+          <indexterm zone="dbus dbus-test-tool">
             <primary sortas="b-dbus-test-tool">dbus-test-tool</primary>
           </indexterm>
         </listitem>
@@ -357,7 +443,7 @@ EOF</userinput></screen>
             <command>dbus-daemon --session</command> when it activates session
             services without using systemd
           </para>
-          <indexterm zone="dbus-pass2 dbus-update-activation-environment">
+          <indexterm zone="dbus dbus-update-activation-environment">
             <primary sortas="b-dbus-update-activation-environment">
             dbus-update-activation-environment</primary>
           </indexterm>
@@ -370,7 +456,7 @@ EOF</userinput></screen>
           <para>
             is used to generate a universally unique ID
           </para>
-          <indexterm zone="dbus-pass2 dbus-uuidgen">
+          <indexterm zone="dbus dbus-uuidgen">
             <primary sortas="b-dbus-uuidgen">dbus-uuidgen</primary>
           </indexterm>
         </listitem>
@@ -387,7 +473,7 @@ EOF</userinput></screen>
             <command>dbus-daemon</command> is an application that uses this
             library to implement a message bus daemon
           </para>
-          <indexterm zone="dbus-pass2 libdbus-1">
+          <indexterm zone="dbus libdbus-1">
             <primary sortas="c-libdbus-1">libdbus-1.so</primary>
           </indexterm>
         </listitem>

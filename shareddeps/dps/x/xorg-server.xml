@@ -72,11 +72,13 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend='dbus-pass2'/>,
+      <xref linkend='dbus'/>,
+      <phrase revision="sysv">
       <xref role="runtime" linkend="elogind"/> (runtime;
       <systemitem class='library'>libelogind</systemitem> also referred
-      at build time but it's not really useful),
+      at build time but it's not really useful),</phrase>
       <xref linkend="libepoxy"/> (needed for glamor),
+      <phrase revision="systemd"><xref linkend="systemd"/>,</phrase>
       and <xref role='runtime' linkend='xorg-libinput-driver'/> (runtime)
     </para>
 

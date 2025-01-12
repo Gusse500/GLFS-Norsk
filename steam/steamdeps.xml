@@ -28,7 +28,7 @@
     <para>
       <xref linkend="alsa-plugins"/>,
       <xref linkend="curl"/>,
-      <xref linkend="dbus-pass2"/>,
+      <xref linkend="dbus"/>,
       Display server (<xref linkend="xorg-server"/> or
       <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
       <xref linkend="libglvnd"/>,

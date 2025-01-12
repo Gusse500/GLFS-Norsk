@@ -54,8 +54,8 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref role="runtime" linkend="dbus-pass1"/> (runtime),
-      <xref linkend="linux-pam"/>, and
+      <xref role="runtime" revision="sysv" linkend="dbus-pass1"/> (runtime),
+      <xref linkend="linux-pam"/><phrase revision="sysv">,</phrase> and
       <xref role="runtime" linkend="polkit"/> (runtime)
     </para>
 
@@ -267,7 +267,7 @@ password required    pam_deny.so
 EOF</userinput></screen>
 
     <note>
-      <para>Now continue on until you reach <xref linkend="dbus-pass2"/>,
+      <para>Now continue on until you reach <xref linkend="dbus"/>,
       install it, and follow the configuration instructions on that page to see
       if elogind is working properly.</para>
     </note>

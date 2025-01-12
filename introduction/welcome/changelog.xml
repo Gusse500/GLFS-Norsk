@@ -43,6 +43,10 @@
       <para>January 12th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - D-Bus: Adjusted for Systemd Edition. Part of
+          <ulink url="&glfs-issues;/58">#58</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Systemd: Added. Part of
           <ulink url="&glfs-issues;/58">#58</ulink>.</para>
         </listitem>

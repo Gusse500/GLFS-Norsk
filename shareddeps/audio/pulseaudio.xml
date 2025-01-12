@@ -53,10 +53,14 @@
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
       <xref linkend="alsa-lib"/>,
-      <xref linkend="dbus-pass1"/> or <xref linkend="dbus-pass2"/>,
-      <xref linkend="elogind"/>
+      <phrase revision="sysv">
+      <xref linkend="dbus-pass1"/> or
+      </phrase>
+      <xref linkend="dbus"/>,
+      <phrase revision="sysv"><xref linkend="elogind"/></phrase>
       <xref linkend="glib2"/>,
-      <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>, and
+      <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>,
+      <phrase revision="systemd"><xref linkend="systemd"/>,</phrase> and
       <xref linkend="xorg7-lib"/>
     </para>
 
