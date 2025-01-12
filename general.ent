@@ -78,7 +78,8 @@
 <!ENTITY errata               "https://www.&lfs-domainname;/blfs/errata/&blfs-version;/">
 <!ENTITY blfs-ticket-root     "https://wiki.&lfs-domainname;/blfs/ticket/">
 
-<!ENTITY lfs-root             "../../../../lfs/view/&lfs-version;">
+<!ENTITY lfs-root             "&lfs-website;/lfs/view/development">
+<!ENTITY lfs-ml-root          "&lfs-website;/~thomas/multilib-m32">
 <!ENTITY lfs-dev              "../../../../lfs/view/development">
 <!ENTITY lfs-ticket-root      "https://wiki.&lfs-domainname;/lfs/ticket/">
 <!ENTITY gnu-http             "https://ftp.gnu.org/gnu">

@@ -155,11 +155,11 @@ EOF</userinput></screen>
 <screen role="root"><userinput>ninja install &amp;&amp;
 chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
 
-    <para>
+    <para revision="sysv">
       Now remove an unneeded directory as the &root; user:
     </para>
 
-    <screen role="root"><userinput>rm -rf /usr/lib/systemd</userinput></screen>
+<screen role="root" revision="sysv"><userinput>rm -rf /usr/lib/systemd</userinput></screen>
 
     <para>
       If you downloaded the optional documentation, run the following command
@@ -321,7 +321,9 @@ EOF</userinput></screen>
       <important>
         <para>
           You should now reinstall the <xref linkend="shadow"/>
-          package.
+          <phrase revision="sysv">package.</phrase>
+          <phrase revision="systemd"> and <xref linkend="systemd"/>
+          packages.</phrase>
         </para>
       </important>
 

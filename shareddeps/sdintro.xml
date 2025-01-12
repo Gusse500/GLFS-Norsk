@@ -35,6 +35,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/linux-pam.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/shadow.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/elogind.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/systemd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/duktape.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/pcre2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/glib2.xml"/>

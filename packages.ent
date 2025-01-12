@@ -25,6 +25,7 @@
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY shadow-version               "4.17.1">
 <!ENTITY elogind-version              "255.5">
+<!ENTITY systemd-version              "257">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY pcre2-version                "10.44">
 <!ENTITY glib2-minor                  "2.82">
