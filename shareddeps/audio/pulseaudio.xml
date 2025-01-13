@@ -287,9 +287,11 @@ ldconfig</userinput></screen>
       </para>
 
       <para>
-        If you did not build this package with <xref linkend="elogind"/>
-        support, you will also need to add any non-root users to the
-        <systemitem class="groupname">audio</systemitem> group as the
+        Furthermore, if this package was not built with
+        <phrase revision="sysv"><xref linkend="elogind"/> support,</phrase>
+        <phrase revision="systemd">
+        <xref linkend="systemd"/>,</phrase> add any non-root users to the
+        <systemitem class='groupname'>audio</systemitem> group as the
         <systemitem class="username">root</systemitem> user:
       </para>
 

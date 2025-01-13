@@ -43,23 +43,29 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="elogind"/> (this package needs a backend to properly
-      create a seat, <application>elogind</application> being a suitable one)
+      <phrase revision="sysv"><xref linkend="elogind"/></phrase>
+      <phrase revision="systemd"><xref linkend="systemd"/></phrase>
+      (this package needs a backend to properly
+      create a seat, <phrase revision="sysv">e</phrase>logind being a suitable
+      one)
     </para>
 
   </sect2>
  
   <sect2 role="installation">
     <title>Installation of seatd</title>
+    
     <para>
       Install <application>seatd</application> by running the following
       commands:
     </para>
 
-<screen><userinput>mkdir build                  &amp;&amp;
-cd    build                  &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
-meson setup --prefix=/usr .. &amp;&amp;
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -68,6 +74,14 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../../xincludes/meson-buildtype-release.xml"/>
 
   </sect2>
 

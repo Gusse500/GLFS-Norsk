@@ -262,11 +262,13 @@ EOF</userinput></screen>
     <title>Configuring Xorg Server</title>
 
     <para>
-      If you did not build this package with <xref linkend="elogind"/> support,
-      you will need to add any non-root users to the
+      Furthermore, if this package was not built with
+      <phrase revision="sysv"><xref linkend="elogind"/> support,</phrase>
+      <phrase revision="systemd">
+      <xref linkend="systemd"/>,</phrase> add any non-root users to the
       <systemitem class="groupname">input</systemitem> and
       <systemitem class="groupname">video</systemitem> groups as the
-      <systemitem class="username">root</systemitem> user:
+      &root; user:  
     </para>
 
 <screen role="root"><userinput>usermod -a -G input,video <replaceable>&lt;username&gt;</replaceable></userinput></screen>
