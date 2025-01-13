@@ -10,15 +10,13 @@
 # Adjust these to suit your installation, or include the variables
 # you wish to change in local.mk, which must be created manually.
 GLFS_THEME  ?= dark
+RENDERTMP   := $(shell mktemp -d)
 HTML_ROOT   ?= $(HOME)/public_html
-DUMP_ROOT   ?= $(HTML_ROOT)
+DUMP_ROOT   ?= $(HOME)
 CHUNK_QUIET ?= 1
 ROOT_ID      =
 SHELL        = /bin/bash
 
-# RENDERTMP if changed will need to be manually created beforehand, and will be
-# deleted every run. Therefore, you probably should not change it.
-RENDERTMP   := $(shell mktemp -d)
 ALLXML := $(filter-out $(RENDERTMP)/%, \
 	$(wildcard *.xml */*.xml */*/*.xml */*/*/*.xml */*/*/*/*.xml))
 ALLXSL := $(filter-out $(RENDERTMP)/%, \
