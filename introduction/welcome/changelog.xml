@@ -43,6 +43,9 @@
       <para>January 13th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - CMake: 3.31.3 -&gt; 3.31.4.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - HarfBuzz: 10.1.0 -&gt; 10.2.0.</para>
         </listitem>
       </itemizedlist>
