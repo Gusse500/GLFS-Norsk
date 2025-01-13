@@ -43,6 +43,10 @@
       <para>January 12th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Systemd Edition: Finised rough draft. Fixes
+          <ulink url="&glfs-issues;/58">#58</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - elogind: Masked out of Systemd Edition. Part of
           <ulink url="&glfs-issues;/58">#58</ulink>.</para>
         </listitem>

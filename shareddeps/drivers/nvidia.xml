@@ -127,8 +127,8 @@
       commands as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run \
-  --no-systemd          \
+<screen role="root"><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run \</userinput><userinput revision='sysv'>
+  --no-systemd          \</userinput><userinput>
   --no-abi-note         \
   --install-compat32-libs</userinput></screen>
 
@@ -216,8 +216,8 @@
   <sect2 role="commands">
     <title>Command Explanations</title>
 
-    <para>
-      <parameter>--no-systemd</parameter>: This parameter disables systemd
+    <para revision="sysv">
+      <parameter>--no-systemd</parameter>: This parameter disables Systemd
       support.
     </para>
 
@@ -251,10 +251,12 @@
           nvidia-installer,
           nvidia-modprobe,
           nvidia-ngx-updater,
+          <phrase revision="systemd">
           nvidia-persistenced,
-          nvidia-powerd,
+          nvidia-powerd,</phrase>
           nvidia-settings,
-          nvidia-sleep.sh,
+          <phrase revision="systemd">
+          nvidia-sleep.sh,</phrase>
           nvidia-smi,
           nvidia-uninstall, and
           nvidia-xconfig
@@ -310,15 +312,15 @@
           /usr/lib/modules-load.d,
           /usr/lib/nvidia/wine,
           /usr/lib/nvidia/xorg,
-          if on Systemd
-          (/usr/lib/systemd/system-sleep and
-          /usr/lib/systemd/system),
+          <phrase revision="systemd">
+          /usr/lib/systemd/system-sleep,
+          /usr/lib/systemd/system,</phrase>
           /usr/lib/sysusers.d,
           /usr/lib/vdpau,
           /usr/lib/xorg/modules/drivers,
           /usr/share/X11/xorg.conf.d,
-          if on Systemd
-          (/usr/share/dbus-1/system.d),
+          <phrase revision="systemd">
+          /usr/share/dbus-1/system.d,</phrase>
           /usr/share/egl/egl_external_platform.d,
           /usr/share/nvidia,
           /etc/share/vulkan/icd.d,
@@ -421,7 +423,7 @@
         </listitem>
       </varlistentry>
 
-      <varlistentry id="nvidia-persistenced">
+      <varlistentry id="nvidia-persistenced" revision="systemd">
         <term><command>nvidia-persistenced</command></term>
         <listitem>
           <para>
@@ -433,7 +435,7 @@
         </listitem>
       </varlistentry>
 
-      <varlistentry id="nvidia-powerd">
+      <varlistentry id="nvidia-powerd" revision="systemd">
         <term><command>nvidia-powerd</command></term>
         <listitem>
           <para>
@@ -459,7 +461,7 @@
         </listitem>
       </varlistentry>
 
-      <varlistentry id="nvidia-sleep.sh">
+      <varlistentry id="nvidia-sleep.sh" revision="systemd">
         <term><command>nvidia-sleep.sh</command></term>
         <listitem>
           <para>
