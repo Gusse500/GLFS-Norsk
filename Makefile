@@ -115,13 +115,12 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
                 stylesheets/glfs-chunked.xsl               \
                 $(RENDERTMP)/$(GLFSHTML)
 
-	$(Q)./switch-theme.sh $(GLFS_THEME)
 	@echo "Copying CSS code, images, and patches..."
 	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
       mkdir -p $(BASEDIR)/stylesheets;          \
    fi;
 
-	$(Q)cp stylesheets/lfs-xsl/*.css $(BASEDIR)/stylesheets
+	$(Q)cp stylesheets/lfs-xsl/$(GLFS_THEME).lfs.css $(BASEDIR)/stylesheets/lfs.css
 	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
 
 	$(Q)if [ ! -e $(BASEDIR)/images ]; then \
@@ -136,7 +135,6 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
 		mkdir -p $(BASEDIR)/patches;          \
    fi;
 	$(Q)cp patches/*.patch $(BASEDIR)/patches
-	$(Q)./switch-theme.sh dark
 
 	@echo "Running Tidy and obfuscate.sh on chunked XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \
