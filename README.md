@@ -32,8 +32,8 @@ You can change the revision, ie. systemd vs sysv by adding `REV=<rev>` to the
 
 Example: `make REV=systemd`.
 
-The default target (sysv) builds the html in `$(HOME)/public_html/glfs`,
-whereas for systemd, it would be in `$(HOME)/public_html/glfs-systemd`.
+The default target (sysv) builds the html in `~/public_html/glfs`,
+whereas for systemd, it would be in `~/public_html/glfs-systemd`.
 
 It will by default make each package and section its own page then link
 everything together for a smooth experience.
@@ -42,6 +42,10 @@ The dark theme is also the default, but you can switch the theme by
 running `make GLFS_THEME=<theme>`. `<theme>` can equal:
 - light
 - dark
+
+Defaults can be changed in a file that isn't tracked (`local.mk`) by declaring
+variables found in `Makefile` in `local.mk`, such as `REV` and `GLFS_THEME`.
+This file must be created manually.
 
 Makefile targets are: `pdf`, `nochunks`, `validate`, and `glfs-patch-list`.
 

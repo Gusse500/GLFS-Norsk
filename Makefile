@@ -2,13 +2,23 @@
 # Makefile for GLFS Book generation.
 # By Tushar Teredesai <tushar@linuxfromscratch.org>
 # 2004-01-31
+# Edited by Zeckma    <zeckma.tech@gmail.com>
+# 2025-01-12
 
-# Adjust these to suit your installation
-RENDERTMP   ?= $(HOME)/tmp
-CHUNK_QUIET  = 1
+-include local.mk
+
+# Adjust these to suit your installation, or include the variables
+# you wish to change in local.mk, which must be created manually.
+GLFS_THEME  ?= dark
+HTML_ROOT   ?= $(HOME)/public_html
+DUMP_ROOT   ?= $(HTML_ROOT)
+CHUNK_QUIET ?= 1
 ROOT_ID      =
 SHELL        = /bin/bash
 
+# RENDERTMP if changed will need to be manually created beforehand, and will be
+# deleted every run. Therefore, you probably should not change it.
+RENDERTMP   := $(shell mktemp -d)
 ALLXML := $(filter-out $(RENDERTMP)/%, \
 	$(wildcard *.xml */*.xml */*/*.xml */*/*/*.xml */*/*/*/*.xml))
 ALLXSL := $(filter-out $(RENDERTMP)/%, \
@@ -29,20 +39,19 @@ ifneq ($(REV), sysv)
 	endif
 endif
 
-GLFS_THEME      ?= dark
 ifeq ($(REV), sysv)
-	BASEDIR         ?= $(HOME)/public_html/glfs
+	BASEDIR         ?= $(HTML_ROOT)/glfs
 	PDF_OUTPUT      ?= glfs.pdf
 	NOCHUNKS_OUTPUT ?= glfs.html
-	DUMPDIR         ?= ~/glfs-commands
+	DUMPDIR         ?= $(DUMP_ROOT)/glfs-commands
 	GLFSHTML        ?= glfs-html.xml
 	GLFSHTML2       ?= glfs-html2.xml
 	GLFSFULL        ?= glfs-full.xml
 else
-	BASEDIR         ?= $(HOME)/public_html/glfs-systemd
+	BASEDIR         ?= $(HTML_ROOT)/glfs-systemd
 	PDF_OUTPUT      ?= glfs-sysd.pdf
 	NOCHUNKS_OUTPUT ?= glfs-sysd.html
-	DUMPDIR         ?= ~/glfs-sysd-commands
+	DUMPDIR         ?= $(DUMP_ROOT)/glfs-sysd-commands
 	GLFSHTML        ?= glfs-systemd-html.xml
 	GLFSHTML2       ?= glfs-systemd-html2.xml
 	GLFSFULL        ?= glfs-systemd-full.xml
@@ -64,9 +73,9 @@ help:
 	@echo ""
 	@echo "  BASEDIR=<dir>        Put the output in directory <dir>."
 	@echo "                       Defaults to"
-	@echo "                       '$(HOME)/public_html/glfs' if REV=sysv (or unset)"
+	@echo "                       '$(HTML_ROOT)/glfs' if REV=sysv (or unset)"
 	@echo "                       or to"
-	@echo "                       '$(HOME)/public_html/glfs-systemd' if REV=systemd"
+	@echo "                       '$(HTML_ROOT)/glfs-systemd' if REV=systemd"
 	@echo ""
 	@echo "  V=<val>              If <val> is a non-empty value, all"
 	@echo "                       steps to produce the output is shown."
@@ -78,11 +87,11 @@ help:
 	@echo "Targets:"
 	@echo "  help                 Show this help text."
 	@echo ""
-	@echo "  glfs            Builds targets 'html' and 'wget-list'."
+	@echo "  glfs                 Builds targets 'html' and 'wget-list'."
 	@echo ""
 	@echo "  html                 Builds the HTML pages of the book."
 	@echo ""
-	@echo "	pdf						Builds the book as a PDF file."
+	@echo "  pdf                  Builds the book as a PDF file."
 	@echo ""
 	@echo "  wget-list            Produces a list of all packages to download."
 	@echo "                       Output is BASEDIR/wget-list"
@@ -109,11 +118,11 @@ html: $(BASEDIR)/index.html
 $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
 	@echo "Generating chunked XHTML files..."
 	$(Q)xsltproc --nonet                                    \
-                --stringparam chunk.quietly $(CHUNK_QUIET) \
-                --stringparam rootid "$(ROOT_ID)"          \
-                --stringparam base.dir $(BASEDIR)/         \
-                stylesheets/glfs-chunked.xsl               \
-                $(RENDERTMP)/$(GLFSHTML)
+					--stringparam chunk.quietly $(CHUNK_QUIET) \
+					--stringparam rootid "$(ROOT_ID)"          \
+					--stringparam base.dir $(BASEDIR)/         \
+					stylesheets/glfs-chunked.xsl               \
+					$(RENDERTMP)/$(GLFSHTML)
 
 	@echo "Copying CSS code, images, and patches..."
 	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
@@ -144,6 +153,8 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
 
+	$(Q)rm -rf $(RENDERTMP)
+
 pdf: validate
 	@echo "Generating profiled XML for PDF..."
 	$(Q)xsltproc --nonet \
@@ -173,6 +184,7 @@ pdf: validate
 	@echo "fop.log created"
 	$(Q)rm fop.log
 	@echo "fop.log destroyed"
+	$(Q)rm -rf $(RENDERTMP)
 
 nochunks: $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 $(BASEDIR)/$(NOCHUNKS_OUTPUT): $(RENDERTMP)/$(GLFSHTML) version
@@ -187,15 +199,8 @@ $(BASEDIR)/$(NOCHUNKS_OUTPUT): $(RENDERTMP)/$(GLFSHTML) version
 	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
 	$(Q)bash obfuscate.sh $(BASEDIR)/$(NOCHUNKS_OUTPUT)
 	$(Q)sed -i -e "1,20s@text/html@application/xhtml+xml@g" $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-
-tmpdir: $(RENDERTMP)
-$(RENDERTMP):
-	@echo "Creating $(RENDERTMP)"
-	$(Q)[ -d $(RENDERTMP) ] || mkdir -p $(RENDERTMP)
-
-clean:
-	@echo "Cleaning $(RENDERTMP)"
-	$(Q)rm -f $(RENDERTMP)/glfs*
+	@echo "Removing $(RENDERTMP)..."
+	$(Q)rm -rf $(RENDERTMP)
 
 validate: $(RENDERTMP)/$(GLFSFULL)
 $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
@@ -303,11 +308,12 @@ test-options:
 
 dump-commands: $(DUMPDIR)
 $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Dumping book commands..."
+	@echo "Dumping book commands at $(DUMPDIR)..."
 	$(Q)xsltproc --output $(DUMPDIR)/          \
                 stylesheets/dump-commands.xsl \
                 $(RENDERTMP)/$(GLFSFULL)
 	$(Q)touch $(DUMPDIR)
+	$(Q)rm -rf $(RENDERTMP)
 
 .PHONY: glfs all world html nochunks tmpdir clean             \
    validate profile-html glfs-patch-list wget-list test-links \
