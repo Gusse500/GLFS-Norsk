@@ -43,6 +43,9 @@
       <para>January 13th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - bash-profile: Make i18n.sh Systemd version.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - D-Bus; Systemd: Adjust more for Systemd
           Edition.</para>
         </listitem>
