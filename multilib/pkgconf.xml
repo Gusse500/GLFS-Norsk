@@ -32,9 +32,9 @@
       user:
     </para>
 
-<screen role="root"><userinput>mkdir -pv /usr/share/pkgconfig/personality.d
+<screen role="root"><userinput>mkdir -pv /usr/share/pkgconfig/personality.d &amp;&amp;
 
-cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnu.personality &lt;&lt; "EOF"
+cat &gt; /usr/share/pkgconfig/personality.d/x86_64-pc-linux-gnu.personality &lt;&lt; "EOF" &amp;&amp;
 <literal>Triplet: x86_64-pc-linux-gnu
 SysrootDir: /
 DefaultSearchPaths: /usr/lib/pkgconfig:/usr/share/pkgconfig
@@ -55,7 +55,7 @@ EOF</userinput></screen>
       create the symlinks that enable pkgconf to find the personalites:
     </para>
 
-<screen role="root"><userinput>ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnu-pkg-config
+<screen role="root"><userinput>ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnu-pkg-config &amp;&amp;
 ln -sv pkgconf /usr/bin/i686-pc-linux-gnu-pkg-config</userinput></screen>
     
     <para>

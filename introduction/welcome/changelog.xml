@@ -43,6 +43,10 @@
       <para>January 13th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - pkgconfig; mesonfiles: Add &amp;&amp; after each
+          command.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 3.31.3 -&gt; 3.31.4.</para>
         </listitem>
         <listitem>
