@@ -8,7 +8,7 @@
   <!ENTITY dbus-download-ftp  " ">
 ]>
 
-<sect1 id="dbus-pass1" xreflabel="dbus-&dbus-version; - Pass 1" revision="sysv">
+<sect1 id="dbus-pass1" xreflabel="dbus-&dbus-version; - Pass 1">
   <?dbhtml filename="dbus-pass1.html"?>
 
   <title>dbus-&dbus-version; - Pass 1</title>
@@ -32,10 +32,18 @@
       message bus daemon).
     </para>
 
-    <para>
+    <para revision="sysv">
       This is the first pass. A useful program, <command>dbus-launch</command>,
       will be compiled later, but is not needed now. It depends on
       <xref linkend="xorg7-lib"/> being installed beforehand.
+    </para>
+
+    <para revision="systemd">
+      This is the first pass. A useful program, <command>dbus-launch</command>,
+      will be compiled later, but is not needed now. It depends on
+      <xref linkend="xorg7-lib"/> being installed beforehand. This package also
+      has already been installed in LFS but the lib32 installation was not
+      included which is needed by packages in GLFS. This pass installs it.
     </para>
 
     <itemizedlist spacing="compact">
@@ -53,7 +61,7 @@
 
   </sect2>
 
-  <sect2 role="installation">
+  <sect2 role="installation" revision="sysv">
     <title>Installation of D-Bus - Pass 1</title>
 
     <para>
@@ -130,11 +138,18 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
       </para>
     </note>
 
-    <para>
+    <para revision="sysv">
       First clean the build directory:
     </para>
 
-<screen><userinput>rm -rf *</userinput></screen>
+<screen revision="sysv"><userinput>rm -rf *</userinput></screen>
+
+    <para revision="systemd">
+      First create the build directory:
+    </para>
+
+<screen revision="systemd"><userinput>mkdir build &amp;&amp;
+cd    build</userinput></screen>
 
     <para>
       Now install lib32-D-Bus by running the following commands:
@@ -144,8 +159,8 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
 PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
 meson setup --prefix=/usr              \
             --libdir=/usr/lib32        \
-            -D wrap-mode=nofallback    \
-            -D systemd=disabled        \
+            --wrap-mode=nofallback     \</userinput><userinput revision='sysv'>
+            -D systemd=disabled        \</userinput><userinput>
             .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -167,7 +182,7 @@ ldconfig</userinput></screen>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../xincludes/meson-wrap-nofallback.xml"/>
 
-    <para>
+    <para revision="sysv">
       <parameter>-D systemd=disabled</parameter>: Don't install systemd support
       files even if <filename class="libraryfile">libsystemd</filename> exists
       (i.e. the <xref linkend="elogind"/> package is installed). 

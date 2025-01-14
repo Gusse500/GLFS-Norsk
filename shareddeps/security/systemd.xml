@@ -63,6 +63,7 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="recommended">
+      <xref linkend="dbus-pass1"/> and
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
@@ -198,8 +199,8 @@ LANG=en_US.UTF-8 ninja</userinput></screen>
 
 <screen role="root"><userinput>LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install          &amp;&amp;
 cp -vR DESTDIR/usr/lib32/security       /usr/lib32           &amp;&amp;
-cp -v  DESTDIR/usr/lib32/libsystemd.so* /usr/lib32           &amp;&amp;
-cp -v  DESTDIR/usr/lib32/libudev.so*    /usr/lib32           &amp;&amp;
+cp -va DESTDIR/usr/lib32/libsystemd.so* /usr/lib32           &amp;&amp;
+cp -va DESTDIR/usr/lib32/libudev.so*    /usr/lib32           &amp;&amp;
 cp -v  DESTDIR/usr/lib32/pkgconfig/*    /usr/lib32/pkgconfig &amp;&amp;
 rm -rf DESTDIR</userinput></screen>
 
