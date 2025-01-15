@@ -113,7 +113,7 @@ all: glfs nochunks
 world: all glfs-patch-list dump-commands test-links
 
 html: $(BASEDIR)/index.html
-$(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
+$(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	@echo "Generating chunked XHTML files..."
 	$(Q)xsltproc --nonet                                    \
 					--stringparam chunk.quietly $(CHUNK_QUIET) \
@@ -153,7 +153,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version
 
 	$(Q)rm -rf $(RENDERTMP)
 
-pdf: validate
+pdf: validate wget-list
 	@echo "Generating profiled XML for PDF..."
 	$(Q)xsltproc --nonet \
 						--stringparam profile.condition pdf \
