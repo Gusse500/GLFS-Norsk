@@ -141,7 +141,8 @@ ldconfig</userinput></screen>
         as the &root; user:
       </para>
 
-<screen role="root"><userinput>echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh</userinput></screen>
+<screen role="root"><userinput>export VDPAU_DRIVER=va_gl &amp;&amp;
+echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh</userinput></screen>
 
     </sect2>
 

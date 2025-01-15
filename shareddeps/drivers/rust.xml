@@ -6,7 +6,10 @@
 
   <!ENTITY rust-download-http "https://static.rust-lang.org/dist/rustc-&rust-version;-src.tar.xz">
   <!ENTITY rust-download-ftp  " ">
-  <!ENTITY change-id          "131075">
+
+  <!-- change-id can be found in src/bootstrap/src/utils/change_tracker.rs
+       at the very bottom: change_id. -->
+  <!ENTITY change-id          "133207">
 ]>
 
 <sect1 id="rust" xreflabel="rustc-&rust-version;">
@@ -271,6 +274,10 @@ docdir = "share/doc/rustc-&rust-version;"
 channel = "stable"
 description = "for GLFS &version;"
 
+# Disable downloading from the CI build if any components are hacked on for the
+# purposes of GLFS, we want to build everything from source.
+download-rustc = false
+
 # Uncomment if FileCheck has been installed.
 #codegen-tests = false
 
@@ -311,6 +318,7 @@ fi</userinput></screen>
       </para>
     </note>
 
+<!--
     <note>
       <para>
         The <command>./x.py</command> commands may output a warning
@@ -324,6 +332,7 @@ fi</userinput></screen>
         and it should be ignored.
       </para>
     </note>
+-->
 
     <para>
       Compile <application>Rust</application> by running the following
@@ -352,14 +361,14 @@ fi</userinput></screen>
       completion maintainers:
     </para>
 
-    <screen role='root'><userinput>rm -fv /opt/rustc-&rust-version;/share/doc/rustc-&rust-version;/*.old   &amp;&amp;
+<screen role='root'><userinput>rm -fv /opt/rustc-&rust-version;/share/doc/rustc-&rust-version;/*.old   &amp;&amp;
 install -vm644 README.md                                \
                /opt/rustc-&rust-version;/share/doc/rustc-&rust-version; &amp;&amp;
 
 install -vdm755 /usr/share/zsh/site-functions      &amp;&amp;
 ln -sfv /opt/rustc/share/zsh/site-functions/_cargo \
-        /usr/share/zsh/site-functions
-    
+        /usr/share/zsh/site-functions              &amp;&amp;
+
 mv -v /etc/bash_completion.d/cargo \
       /usr/share/bash-completion/completions</userinput></screen>
 

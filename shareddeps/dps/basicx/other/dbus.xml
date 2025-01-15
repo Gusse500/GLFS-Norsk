@@ -76,8 +76,8 @@
       parameters to the <command>meson</command> command shown below):
     </para>
 
-<screen><userinput>rm -rf build &amp;&amp;
-mkdir  build &amp;&amp;
+<screen><userinput revision="sysv">rm -rf build &amp;&amp;
+</userinput><userinput>mkdir  build &amp;&amp;
 cd     build &amp;&amp;
 
 meson setup --prefix=/usr          \

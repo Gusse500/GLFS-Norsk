@@ -51,7 +51,7 @@
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       <xref linkend="alsa-lib"/>,
-      <ulink url="&blfs-svn;/multimedia/lame.html">LAME</ulink>,
+      <xref linkend="lame"/>,
       <ulink url="&blfs-svn;/multimedia/mpg123.html">mgp123</ulink>,
       <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>, and
       <ulink url="&blfs-svn;/server/sqlite.html">SQLite</ulink>

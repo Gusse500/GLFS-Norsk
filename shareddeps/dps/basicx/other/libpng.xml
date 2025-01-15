@@ -7,8 +7,6 @@
   <!ENTITY libpng-download-http "&sourceforge-dl;/libpng/libpng-&libpng-version;.tar.xz">
   <!ENTITY libpng-download-ftp  " ">
 
-  <!ENTITY apng-version "1.6.43">
-
   <!ENTITY apng-patch
         "&sourceforge-dl;/sourceforge/libpng-apng/libpng-&apng-version;-apng.patch.gz">
 ]>

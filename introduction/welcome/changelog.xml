@@ -43,6 +43,13 @@
       <para>January 14th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - *: Multiple fixes, mostly updates and fixes for
+          Systemd. Fixes <ulink url="&glfs-issues;/59">#59</ulink>,
+          <ulink url="&glfs-issues;/62">#62</ulink>,
+          <ulink url="&glfs-issues;/63">#63</ulink>, and
+          <ulink url="&glfs-issues;/64">#64</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Xorg: Mask out createfiles for Systemd.</para>
         </listitem>
       </itemizedlist>

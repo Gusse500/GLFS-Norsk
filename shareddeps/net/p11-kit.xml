@@ -43,10 +43,13 @@
 
     <!-- There is a check for libsystemd. It seems to install a systemd service
     in /usr/lib/systemd/user.-->
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Required (for <xref linkend="steam"/>, otherwise recommended)</bridgehead>
     <para role="required">
        <xref linkend="libtasn1"/> and <xref role="runtime" linkend="nss"/>
     </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
 
   </sect2>
 

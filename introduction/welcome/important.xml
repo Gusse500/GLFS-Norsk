@@ -85,12 +85,6 @@
       have rendered this version of the book yourself.
     </para>
 
-    <important><para>
-      The Systemd version of this book may have many issues that have not been
-      addressed yet as the current instructions have not been thoroughly tested
-      at this point.
-    </para></important>
-
   </sect2>
 
   <sect2>

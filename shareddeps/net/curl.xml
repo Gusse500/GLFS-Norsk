@@ -43,17 +43,6 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Required patch:
-          <ulink url="&patch-root;/curl-eventfd_regression-1.patch"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
-
     <bridgehead renderas="sect3">cURL Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
@@ -64,9 +53,9 @@
     <note>
       <para>
         While there is an option to build the package without libpsl, both
-        the upstream developers, the BLFS, and GLFS editors alike highly
-        recommend not disabling support for libpsl due to severe security
-        implications.
+        the upstream developers, the BLFS and GLFS editors alike highly
+        recommend not disabling support for libpsl to prevent sites from using
+        super cookies which poses security risks.
       </para>
     </note>
 
@@ -76,11 +65,11 @@
     <title>Installation of cURL</title>
 
     <para>
-      First apply a patch to fix a regression involving eventfd where eventfd
+      First fix a regression involving eventfd where eventfd
       would be closed twice and could cause fd corruption:
     </para>
 
-<screen><userinput>patch -Np1 -i ../curl-eventfd_regression-1.patch</userinput></screen>
+<screen><userinput remap="pre">sed -i '198,200d' lib/asyn-thread.c</userinput></screen>
 
     <para>
       Now install <application>cURL</application> by running the following
@@ -205,6 +194,14 @@ ldconfig</userinput></screen>
 
   <sect2 role="commands">
     <title>Command Explanations</title>
+
+    <para>
+      <command>mkdir build &amp;&amp; cd build</command>: This is not necessary
+      for just the normal installation, but cleaning the directory leads to the
+      documentation in the source being wiped and this package tries to rebuild
+      it for the lib32 installation, so building in a build directory allows
+      for deleting just the build artifacts.
+    </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../xincludes/static-libraries.xml"/>

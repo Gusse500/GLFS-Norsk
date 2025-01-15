@@ -63,7 +63,6 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="recommended">
-      <xref linkend="dbus-pass1"/> and
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 

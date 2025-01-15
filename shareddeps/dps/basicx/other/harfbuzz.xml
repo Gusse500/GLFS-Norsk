@@ -71,7 +71,7 @@ meson setup ..            \
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.
+      
     </para>
 
     <para>
@@ -123,7 +123,7 @@ ldconfig</userinput></screen>
       href="../../../../xincludes/meson-buildtype-release.xml"/>
     
     <para>
-      <parameter>-Dgraphite2=disabled</parameter>: This switch disables
+      <parameter>-D graphite2=disabled</parameter>: This switch disables
       <application>Graphite2</application> support, which isn't in GLFS.
     </para>
 

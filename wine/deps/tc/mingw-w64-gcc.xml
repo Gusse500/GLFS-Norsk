@@ -43,19 +43,19 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-        <xref linkend="mingw-w64"/>
+      <xref linkend="mingw-w64"/>
     </para>
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-        <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
-        GDB</ulink> and
-        <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/valgrind.html">
-        Valgrind</ulink> (for tests)
+      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
+      GDB</ulink> and
+      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/valgrind.html">
+      Valgrind</ulink> (for tests)
     </para>
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="../../../xincludes/long-build-time.xml"/>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../../xincludes/long-build-time.xml"/>
 
   </sect2>
 

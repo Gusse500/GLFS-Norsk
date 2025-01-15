@@ -104,7 +104,7 @@ make</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 ./configure $XORG_CONFIG --libdir=/usr/lib32 &amp;&amp;
 make</userinput></screen>
 

@@ -126,7 +126,7 @@ meson setup ..                   \
       --prefix=/usr              \
       --buildtype=release        \
       -D os_type=lfs             \
-      -D man=true                \
+      -D man=false               \
       -D session_tracking=logind \
       -D tests=false</userinput></screen>
 
