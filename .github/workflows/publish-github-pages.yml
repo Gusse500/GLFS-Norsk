@@ -40,7 +40,7 @@ jobs:
         run: |
           pwd
           echo $default-branch
-          make
+          make RENDERTMP=~/tmp
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
