@@ -43,6 +43,9 @@
       <para>January 15th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Comment out patch.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Cbindgen: 0.27.0 -&gt; 0.28.0.</para>
         </listitem>
         <listitem>

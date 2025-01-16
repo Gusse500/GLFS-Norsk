@@ -45,7 +45,7 @@
         </para>
       </listitem>
     </itemizedlist>
-
+<!--
     <para>
       <emphasis role="strong">Patch for Seizure Prevention (Recommended)</emphasis>
     </para>
@@ -57,7 +57,7 @@
         </para>
       </listitem>
     </itemizedlist>
-
+-->
     <bridgehead renderas="sect3">Mesa Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
@@ -195,6 +195,7 @@
       </para>
     </note>
 
+<!--
     <para>
       The recommended patch fixes behavior in the Gallium3D Zink driver when
       the active Vulkan driver is NVK. Otherwise, many apps flash pretty badly,
@@ -206,7 +207,7 @@
     </para>
 
 <screen><userinput>patch -Np1 -i ../mesa-seizure_prevention-2.patch</userinput></screen>
-
+-->
     <para>
       Install <application>Mesa</application> by running the following
       commands:
