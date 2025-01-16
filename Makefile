@@ -159,7 +159,7 @@ pdf: validate wget-list
 						--stringparam profile.condition pdf \
 						--output $(RENDERTMP)/glfs-pdf.xml  \
 						stylesheets/lfs-xsl/profile.xsl     \
-						$(RENDERTMP)/glfs-full.xml
+						$(RENDERTMP)/$(GLFSFULL)
 
 	@echo "Generating FO file..."
 	$(Q)xsltproc --nonet										\
