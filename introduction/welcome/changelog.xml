@@ -43,6 +43,9 @@
       <para>January 15th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Shadow: 4.17.1 -&gt; 4.17.2.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: Comment out patch.</para>
         </listitem>
         <listitem>
