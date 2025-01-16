@@ -40,6 +40,20 @@
     -->
 
     <listitem>
+      <para>January 15th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - elogind: 255.5 -&gt; 255.17;
+          polkit: 125 -&gt; 126; Vulkan-*: 1.3.301 -&gt; 1.4.304;
+          SPIRV-{Headers,Tools}: 1.3.296.0 -&gt; 1.4.304.0;
+          Glslang: 15.0.0 -&gt; 15.1.0. Fixes
+          <ulink url="&glfs-issues;/32">#32</ulink> and
+          <ulink url="&glfs-issues;/48">#48</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>January 14th, 2025</para>
       <itemizedlist>
         <listitem>
