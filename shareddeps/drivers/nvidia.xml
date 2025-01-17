@@ -43,6 +43,11 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
+          Recommended kernel version to use: linux-&nvidia-linux-version;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           x86_64 Download (HTTP): <ulink url="&nvidia-lib64-download-http;"/>
         </para>
       </listitem>
@@ -51,8 +56,6 @@
           x86_64 Download (FTP): <ulink url="&nvidia-lib64-download-ftp;"/>
         </para>
       </listitem>
-    </itemizedlist>
-    <itemizedlist spacing="compact">
       <listitem>
         <para>
           x86 Download (HTTP): <ulink url="&nvidia-lib32-download-http;"/>
@@ -138,8 +141,7 @@
       commands as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>sh NVIDIA-Linux-x86-390.157.run
-</userinput></screen>
+<screen role="root"><userinput>sh NVIDIA-Linux-x86-390.157.run</userinput></screen>
 
     <para>
       And just follow the prompts. It will first ask if you wish to install
@@ -171,7 +173,10 @@
         using is <quote>too high.</quote> If this happens, it may be necessary
         to downgrade the kernel to a lower version. When a new driver release
         happens, the driver will then most likely support the kernel version at
-        the time.
+        the time. At the top of this section, the recommended kernel version
+        to use with this driver is mentioned to ensure that a build failure
+        does not occur. However, the current kernel version used for kernel
+        parameters and such in this book is linux-&linux-version;.
       </para>
     </note>
 
