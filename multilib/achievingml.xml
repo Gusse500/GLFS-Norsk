@@ -29,6 +29,13 @@
     <ulink url="https://www.&lfs-domainname;/~thomas/multilib/"/>.
   </para>
 
+  &multilib-rendering1;
+
+  <sect2 revision="sysv">
+    <title>Rendering MLFS</title>
+    &multilib-rendering2;
+  </sect2>
+
   <para revision="systemd">
     Such a guide is maintained by Thomas Trepl, called MLFS (Multilib-LFS).
     However, the only official render that can be read online is the Sysv
@@ -47,6 +54,8 @@
 <screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
 cd mlfs &amp;&amp;
 git checkout multilib</userinput></screen>
+
+    &multilib-rendering2;
 
     <para>
       Now inspect the <filename>INSTALL</filename> file to check for the needed

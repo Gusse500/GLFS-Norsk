@@ -164,7 +164,7 @@ make all-gcc</userinput></screen>
     <para>
       <parameter>--enable-languages=c,c++</parameter>:
       This command builds support for C and C++. Refer to <ulink
-      url="https://www.linuxfromscratch.org/blfs/view/svn/general/gcc.html"/>
+      url="&blfs-svn;/general/gcc.html"/>
       to find what other languages are supported.
     </para>
 
@@ -176,7 +176,7 @@ make all-gcc</userinput></screen>
     <para>
       There are no binaries specific to this package besides the format
       the compilers are targetting. For in-depth descriptions, read <ulink
-      url="&lfs-website;/lfs/view/stable/chapter08/gcc.html#contents-gcc"/>
+      url="&lfs-root;/chapter08/gcc.html#contents-gcc"/>
     </para>
 
   </sect2>

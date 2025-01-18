@@ -5,6 +5,9 @@
 # Edited by Zeckma    <zeckma.tech@gmail.com>
 # 2025-01-12
 
+# When rendering for the stable release from the stable branch, invoke
+# STAB=release to make.
+
 -include local.mk
 
 # Adjust these to suit your installation, or include the variables
@@ -34,6 +37,17 @@ endif
 ifneq ($(REV), sysv)
 	ifneq ($(REV), systemd)
 		$(error REV must be 'sysv' (default) or 'systemd'.)
+	endif
+endif
+
+# Used in the book, does not actually change if the book will render for the
+# stable git hash, just changes if text for stable release is rendered or not.
+ifndef STAB
+	STAB = development
+endif
+ifneq ($(STAB), development)
+	ifneq ($(STAB), release)
+		$(error STAB must be 'development' (default) or 'release'.)
 	endif
 endif
 
@@ -318,4 +332,4 @@ $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
    dump-commands bootscripts systemd-units version test-options
 
 version:
-	$(Q)./git-version.sh $(REV)
+	$(Q)REV=$(REV) STAB=$(STAB) ./git-version.sh
