@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [[ $REV == "sysv" ]]; then
+if test $REV == "sysv"; then
     SYSV="INCLUDE"
     SYSTEMD="IGNORE"
-elif [[ $REV == "systemd" ]]; then
+elif test $REV == "systemd"; then
     SYSV="IGNORE"
     SYSTEMD="INCLUDE"
 else
@@ -12,10 +12,10 @@ else
     exit 1
 fi
 
-if [[ $STAB == "development" ]]; then
+if test $STAB == "development"; then
     DEVELOPMENT="INCLUDE"
     RELEASE="IGNORE"
-elif [[ $STAB == "release" ]]; then
+elif $STAB == "release"; then
     DEVELOPMENT="IGNORE"
     RELEASE="INCLUDE"
 else
