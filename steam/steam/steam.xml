@@ -67,8 +67,8 @@
       </systemitem> user:
     </para>
 
-  <screen role="root"><userinput>make install   &amp;&amp;
-ln -sfv steam /usr/share/doc/steam-&steam-version;</userinput></screen>
+<screen role="root"><userinput>make install &amp;&amp;
+mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
 
   </sect2>
 
@@ -81,6 +81,12 @@ ln -sfv steam /usr/share/doc/steam-&steam-version;</userinput></screen>
       </application> script blank as it uses APT and its <application>
       Python</application> module, which isn't installed in LFS and
       probably shouldn't be.
+    </para>
+
+    <para>
+      <command>mv -v /usr/share/doc/steam{,-&steam-version;}</command>: This
+      command ensures the doc folder for this package is consistent with the
+      other packages.
     </para>
 
   </sect2>
