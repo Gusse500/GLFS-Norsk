@@ -43,6 +43,9 @@
       <para>January 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Better document stability.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Steam: ln -&gt; mv (for docs).</para>
         </listitem>
       </itemizedlist>

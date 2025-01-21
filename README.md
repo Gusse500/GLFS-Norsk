@@ -15,7 +15,7 @@ You can switch to it by running the following command:
 git checkout stable
 ```
 
-Then render the book.
+Then render the book by running `make STAB=release`.
 
 # Installation
 

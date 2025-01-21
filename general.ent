@@ -136,9 +136,10 @@
   <!ENTITY important-stability "<para>
   This book is in a constant flux of updates, including packages and can
   be akin to the BLFS Git version. Right now, there is no stable
-  version of GLFS. This may cause problems when you wish to continue onto
-  BLFS. Sometimes, packages in this book will have newer versions than even
-  BLFS development pages. It is recommended to remember what versions of
+  version of GLFS rendered online, but you can render it yourself by following
+  <ulink url='&glfs-repo;'/>. This may cause problems when you wish to continue
+  onto BLFS. Sometimes, packages in this book will have newer versions than
+  even BLFS development pages. It is recommended to remember what versions of
   packages you have on your system because of this. Expect build failures
   at some point, although we try to limit that possibility.
   </para>">
@@ -150,8 +151,8 @@
   that point to MLFS is problematic as MLFS is rolling release, not stable,
   so information there may be ahead of the results that appear from this
   book, and instructions in the newer version of the book may lead to broken
-  instructions in this one. However, in the Multilib chapter, it will show you
-  how to render a stable release of MLFS.
+  instructions in this one. However, in <xref linkend='achievingml'/>, it will
+  show you how to render a stable release of MLFS.
 </para>">
 ]]>
 <![ %development; [
@@ -164,7 +165,8 @@
 git checkout multilib &amp;&amp;
 make -j1 ARCH=ml_32</userinput></screen>
 <para>
-  The rendered files will be in <filename>~/public_html/lfs-book</filename>.
+  The rendered files will be in
+  <filename class='directory'>~/public_html/lfs-book</filename>.
 </para>">
 ]]>
 <![ %systemd; [
@@ -183,7 +185,8 @@ git checkout multilib &amp;&amp;
 git checkout &mlfs-stable; &amp;&amp;
 make -j1 ARCH=ml_32</userinput></screen>
 <para>
-  The rendered files will be in <filename>~/public_html/lfs-book</filename>.
+  The rendered files will be in
+  <filename class='directory'>~/public_html/lfs-book</filename>.
 </para>">
 ]]>
 <![ %systemd; [
