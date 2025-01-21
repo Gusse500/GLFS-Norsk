@@ -108,7 +108,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         </seg>
         <seg>
           /usr/lib/steam and
-          /usr/share/doc/steam
+          /usr/share/doc/steam-&steam-version;
         </seg>
       </seglistitem>
     </segmentedlist>
