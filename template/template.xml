@@ -320,9 +320,9 @@ EOF</userinput></screen>
     <title>Contents</title>
 
     <segmentedlist>
-      <segtitle>Installed Program(s)</segtitle>
-      <segtitle>Installed Librar(y,ies)</segtitle>
-      <segtitle>Installed Director(y,ies)</segtitle>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
 
       <!-- If there were no programs, libraries, or directories created, then
            we would list the section as "None". However, a decision must have
