@@ -130,12 +130,7 @@
 <!ENTITY systemd-units-version        "20240205">
 
 <!ENTITY blfs-wiki                    "https://wiki.&lfs-domainname;/blfs/wiki">
-<![ %sysv; [
-<!ENTITY blfs-svn		      "https://&lfs-domainname;/blfs/view/&blfs-version;">
-]]>
-<![ %systemd; [
 <!ENTITY blfs-svn                     "https://&lfs-domainname;/blfs/view/&blfs-version;">
-]]>
 
 <![ %development; [
   <!ENTITY important-stability "<para>
