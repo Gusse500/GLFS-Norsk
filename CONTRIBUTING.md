@@ -54,7 +54,7 @@ updating.
 This directory contains XML files that are no longer considered needed or
 useful to be included in the book, but are moved there in case they need to be
 brought back or for the sake of study. Files that don't conform to new
-standards don't need to be updated unless that are being brought back into the
+standards don't need to be updated unless they are being brought back into the
 book.
 #### 3.1.1.3. `images/`
 This directory contains images used by the book, ie. for the note, important,
@@ -80,7 +80,7 @@ want and don't want. May need to get updated if standards change.
 #### 3.1.1.8. `xincludes/`
 This directory contains XML files that are included by several XML files to
 save repeating text. Same idea as C header files, except these XML files also
-define the what text is to be included. Update as needed.
+define what text is to be included. Update as needed.
 #### 3.1.1.9. `.gitattributes`
 This file is a standard git file that gives attributes to matching files.
 Rarely needs to get updated.
@@ -125,6 +125,8 @@ Rarely needs to get updated.
 #### 3.1.1.20. `tidy.conf`
 This file is a configuration file used by **tidy**. Rarely needs to get
 updated.
+
+***
 
 ### 3.1.2. Book files and directories
 Now that the internals are covered, it's time to cover the files that have a
@@ -186,6 +188,8 @@ as updates that need to have a changelog entry).
 This file is an XML file that determines which main XML files to include for
 rendering. Think of it as the master XML file, or your `int main(), but for
 XML. Rarely needs changing unless a new section is added.
+
+***
 
 ### 3.1.3. Standards
 Beyond knowing where files are, the text inside those files also counts, and
