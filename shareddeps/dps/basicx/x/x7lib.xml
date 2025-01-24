@@ -207,6 +207,10 @@ done</userinput></screen>
 
 <screen><userinput>for package in $(grep -v '^#' ../lib-&xorg-version;-list)
 do
+  case $package in xtrans* )
+    continue
+  ;;
+  esac
   packagedir=${package%.tar.?z*}
   echo "Building lib32-$packagedir"
 
@@ -247,18 +251,6 @@ do
       popd     # $packagedir
       rm -rf $packagedir
       continue # for loop
-    ;;
-
-    xtrans* )
-        CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-        ./configure $XORG_CONFIG $libdir $host $docdir
-        make
-        make DESTDIR=$PWD/DESTDIR install
-        as_root cp -vr DESTDIR/usr/share/pkgconfig/* /usr/lib32/pkgconfig
-        rm -rf DESTDIR
-      popd
-      rm -rf $packagedir
-      continue
     ;;
 
     * )

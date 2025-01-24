@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>January 23rd, 2024</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - x7lib: Skip over xtrans for lib32.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>January 22nd, 2025</para>
       <itemizedlist>
         <listitem>
