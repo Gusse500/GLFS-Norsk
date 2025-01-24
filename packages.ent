@@ -69,7 +69,7 @@
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
 <!ENTITY xcb-proto-version            "1.17.0">
 <!ENTITY libxcb-version               "1.17.0">
-<!ENTITY which-version                "2.21">
+<!ENTITY which-version                "2.22">
 <!ENTITY libpng-version               "1.6.45">
 <!ENTITY apng-version                 "&libpng-version;">
 <!ENTITY freetype2-version            "2.13.3">
