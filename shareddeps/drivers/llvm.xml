@@ -49,6 +49,9 @@
       wish to skip installing some of the optional packages.
     </para>
 
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -107,9 +110,6 @@ grep -v '^#' ../llvm-&llvm-version;-list | wget -i- -c \
 
   <sect2 role="installation">
     <title>Installation of LLVM</title>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/long-build-time.xml"/>
 
     <para>
       Extract the <filename>llvm-&llvm-version;.src.tar.xz</filename> tarball

@@ -27,6 +27,8 @@
       and of the next-generation VP9 Codec.
     </para>
 
+    &test-use-internet;
+
     <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -53,8 +55,6 @@
     <para role="optional">
       <xref linkend="curl"/> (to download test files)
     </para>
-
-    &test-use-internet;
 
   </sect2>
 

@@ -34,6 +34,9 @@
       </para>
     </note>
 
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../../xincludes/long-build-time.xml"/>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -46,9 +49,6 @@
         </para>
       </listitem>
     </itemizedlist>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../xincludes/long-build-time.xml"/>
 
   </sect2>
 

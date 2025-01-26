@@ -25,6 +25,8 @@
       <application>Rust</application> code.
     </para>
 
+    &build-use-internet;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -44,8 +46,6 @@
     <para role="required">
       <xref linkend="rust"/>
     </para>
-
-    &build-use-internet;
 
   </sect2>
 

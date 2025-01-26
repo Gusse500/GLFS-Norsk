@@ -25,6 +25,8 @@
       bindings to C (and some C++) libraries.
     </para>
 
+    &build-use-internet;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -45,8 +47,6 @@
       <xref linkend="llvm"/> with <application>Clang</application> and
       <xref linkend="rust"/>
     </para>
-
-    &build-use-internet;
 
   </sect2>
 

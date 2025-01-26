@@ -28,6 +28,9 @@
       event loop, threads, dynamic loading and an object system.
     </para>
 
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
     <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -89,9 +92,6 @@
       <xref role="runtime" linkend="shared-mime-info"/> and
       <xref role="runtime" linkend="desktop-file-utils"/>
     </para>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/long-build-time.xml"/>
 
   </sect2>
 

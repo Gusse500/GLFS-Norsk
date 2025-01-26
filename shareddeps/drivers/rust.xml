@@ -102,6 +102,11 @@
       </para>
     </note>
 
+    &build-use-internet;
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -136,8 +141,6 @@
       <xref linkend="curl"/>
     </para>
 
-    &build-use-internet;
-
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
       <ulink url="&blfs-svn;/general/libssh2.html">libssh2</ulink>,
@@ -153,9 +156,6 @@
         Rustc source tarball will be built and used.
       </para>
     </note>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/long-build-time.xml"/>
 
   </sect2>
 

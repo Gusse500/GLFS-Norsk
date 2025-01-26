@@ -43,6 +43,9 @@
       <para>January 25th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - *: Readjust note locations.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Wine: 9.22 -&gt; 10.0; DXVK: Added. Fixes
           <ulink url="&glfs-issues;/69">#69</ulink>.</para>
         </listitem>

@@ -33,6 +33,15 @@
       </para>
     </note>
 
+    <note>
+      <para>
+        An Internet connection is needed for building the Nouveau Vulkan driver.
+      </para>
+    </note>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -168,12 +177,6 @@
       </para>
     </note>
 -->
-
-    <note>
-      <para>
-        An Internet connection is needed for building the Nouveau Vulkan driver.
-      </para>
-    </note>
 
   </sect2>
 

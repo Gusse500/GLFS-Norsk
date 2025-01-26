@@ -29,6 +29,9 @@
       since version 4.
     </para>
 
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../../../xincludes/long-build-time.xml"/>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -66,9 +69,6 @@
       <ulink url="&lfs-website;/blfs/view/svn/basicnet/nghttp2.html">
       nghttp2</ulink>
     </para>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/long-build-time.xml"/>
 
   </sect2>
 

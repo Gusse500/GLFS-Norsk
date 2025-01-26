@@ -30,6 +30,8 @@
       the internet.
     </para>
 
+    &test-use-internet;
+
     <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -50,8 +52,6 @@
     <para role="recommended">
       <xref linkend="nasm"/>
     </para>
-
-    &test-use-internet;
 
   </sect2>
 

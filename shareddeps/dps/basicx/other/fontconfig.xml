@@ -27,6 +27,8 @@
       customizing font access.
     </para>
 
+    &test-use-internet;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -65,8 +67,6 @@
       <ulink url="&blfs-svn;/general/unzip.html">unzip</ulink>
       (both used by some tests for downloading and extracting test files)
     </para>
-
-    &test-use-internet;
 
   </sect2>
 

@@ -28,6 +28,9 @@
       many people install this package.
     </para>
 
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -56,9 +59,6 @@
 
   <sect2 role="installation">
     <title>Installation of DXVK</title>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/long-build-time.xml"/>
 
     <para>
       First clone the repository using <xref linkend="git"/> as this project
