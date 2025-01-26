@@ -143,12 +143,11 @@ ninja install &amp;&amp;
 cd ..         &amp;&amp;
 
 for DLL_FILE in build-win32/DESTDIR/bin/*.dll; do
-    case $(uname -m) in
-        i?86)   cp -v $DLL_FILE ~/.wine/drive_c/windows/system32
-        ;;
-        x86_64) cp -v $DLL_FILE ~/.wine/drive_c/windows/syswow64
-        ;;
-    esac
+    if [ ! -d ~/.wine/drive_c/windows/syswow64 ]; then
+        cp -v $DLL_FILE ~/.wine/drive_c/windows/system32
+    else
+        cp -v $DLL_FILE ~/.wine/drive_c/windows/syswow64
+    fi
     DLL_FILE=$(basename $DLL_FILE | sed s/.dll//g)   &amp;&amp;
     wine reg add \
         'HKEY_CURRENT_USER\Software\Wine\DllOverrides' \
