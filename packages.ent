@@ -278,3 +278,4 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 <!ENTITY wine-major-version           "10">
 <!ENTITY wine-version                 "&wine-major-version;.0">
+<!ENTITY dxvk-version                 "2.5.3">
