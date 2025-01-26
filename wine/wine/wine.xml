@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY wine-download-http "https://dl.winehq.org/wine/source/&wine-major-version;.x/wine-&wine-version;.tar.xz">
+  <!ENTITY wine-download-http "https://dl.winehq.org/wine/source/&wine-version;/wine-&wine-version;.tar.xz">
   <!ENTITY wine-download-ftp  " ">
 ]>
 
@@ -58,61 +58,6 @@
     </para>
 
     <sect3>
-      <title>64-bit Only</title>
-
-      <para>
-        Install 64-bit only <application>Wine</application> by running
-        the following commands:
-      </para>
-
-<screen><userinput>mkdir build &amp;&amp;
-cd    build &amp;&amp;
-
-../configure --prefix=/usr --enable-win64 &amp;&amp;
-
-make</userinput></screen>
-
-      <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
-      </para>
-
-<screen role="root"><userinput>make install</userinput></screen>
-
-    </sect3>
-
-    <sect3>
-      <title>32-bit Only</title>
-
-      <note>
-        <para>
-          If you're on 64-bit, invoke <userinput>
-          PKG_CONFIG_PATH=/usr/lib32/pkgconfig</userinput>
-          at the beginning of the following command to build for
-          32-bit.
-        </para>
-      </note>
-
-      <para>
-        Install 32-bit only <application>Wine</application> by running
-        the following commands:
-      </para>
-
-<screen><userinput>mkdir build &amp;&amp;
-cd    build &amp;&amp;
-
-../configure --prefix=/usr &amp;&amp;
-
-make</userinput></screen>
-
-      <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
-      </para>
-
-<screen role="root"><userinput>make install</userinput></screen>
-
-    </sect3>
-
-    <sect3>
       <title>WoW64</title>
 
       <para>
@@ -146,6 +91,59 @@ cd ../build-win64 &amp;&amp;
 make install</userinput></screen>
 
     </sect3>
+
+    <sect3>
+      <title>64-bit Only</title>
+
+      <para>
+        Install 64-bit only <application>Wine</application> by running
+        the following commands:
+      </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+../configure --prefix=/usr --enable-win64 &amp;&amp;
+
+make</userinput></screen>
+
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+    </sect3>
+
+    <sect3>
+      <title>32-bit Only</title>
+
+      <note><para>
+        If you're on 64-bit, invoke
+        <userinput>PKG_CONFIG_PATH=/usr/lib32/pkgconfig</userinput> at the
+        beginning of the <command>../configure</command> command to build for
+        32-bit.
+      </para></note>
+
+      <para>
+        Install 32-bit only <application>Wine</application> by running
+        the following commands:
+      </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+../configure --prefix=/usr &amp;&amp;
+
+make</userinput></screen>
+
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+    </sect3>
   
   </sect2>
 
@@ -168,12 +166,11 @@ make install</userinput></screen>
       a few things that you wish to change or do in relation to this package.
       The <ulink url="https://wiki.archlinux.org/title/Wine">Arch Wiki page</ulink>
       for Wine covers most of the things you may wish to do. In relation to
-      gaming and Vulkan, don't forget to check the DXVK and VKD3D-Proton
-      sections as Wine will use WineD3D out of the box. WineD3D is much slower
-      than DXVK and VKD3D-Proton. For AUR listings, check the PKGBUILD files
-      and use the scripts as shown in the wiki page to ensure Wine will use
-      DXVK/VKD3D-Proton. It is worth noting that this installation
-      built simple Direct3D libraries but they invoke WineD3D.
+      gaming and Vulkan, you may wish to install <xref linkend="dxvk"/> which
+      converts Direct3D 8-11 calls to Vulkan, unlike WineD3D which converts
+      Direct3D calls to OpenGL in a poor manner and is much slower.
+      As for Direct3D 12, VKD3D exists which converts Direct3D to Vulkan. It is
+      shipped with this package and has been built.
     </para>
 
   </sect2>

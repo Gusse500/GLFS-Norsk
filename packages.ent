@@ -276,5 +276,5 @@
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "7.1">
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
-<!ENTITY wine-major-version           "9">
-<!ENTITY wine-version                 "&wine-major-version;.22">
+<!ENTITY wine-major-version           "10">
+<!ENTITY wine-version                 "&wine-major-version;.0">
