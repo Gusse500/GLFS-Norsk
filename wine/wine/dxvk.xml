@@ -14,7 +14,7 @@
   <title>DXVK</title>
 
   <indexterm zone="dxvk">
-    <primary sortas="a-dxvk">dxvk</primary>
+    <primary sortas="a-dxvk">DXVK</primary>
   </indexterm>
 
   <sect2 role="package">
@@ -72,9 +72,9 @@
     </para>
 
     <note><para>
-      As there are several 32-bit Direct3D applications, it is recommended to
-      install 32-bit <application>DXVK</application>, even if you are on
-      64-bit. If you are 64-bit, be sure to also install the 64-bit version.
+      If you are doing multilib, it is recommended to install 32-bit along with
+      64-bit <application>DXVK</application> as there are plenty of 32-bit
+      Direct3D applications.
     </para></note>
 
     <important><para>
@@ -131,7 +131,6 @@ meson setup .. --cross-file ../build-win32.txt \
 
 ninja             &amp;&amp;
 ninja install     &amp;&amp;
-
 cd ..             &amp;&amp;
 
 WINEPREFIX=~/.wine wineboot -u &amp;&amp;
