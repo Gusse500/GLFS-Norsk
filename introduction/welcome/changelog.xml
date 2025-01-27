@@ -43,6 +43,10 @@
       <para>January 26th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - DXVK: Allow building as &root;. Fixes
+          <ulink url="&glfs-issues;/70">#70</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - DXVK: Properly handle different
           archetectures.</para>
         </listitem>

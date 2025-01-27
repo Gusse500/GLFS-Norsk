@@ -522,6 +522,17 @@
       </glossdef>
     </glossentry>
 
+    <glossentry id="gDLL">
+      <glossterm>
+        <acronym>DLL</acronym>
+      </glossterm>
+      <glossdef>
+        <para>
+          Dynamic Link Library (for DOS and Windows)
+        </para>
+      </glossdef>
+    </glossentry>
+
     <glossentry id="gDNS">
       <glossterm>
         <acronym>DNS</acronym>

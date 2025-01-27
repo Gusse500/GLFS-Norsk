@@ -61,20 +61,7 @@
     <title>Installation of DXVK</title>
 
     <para>
-      First create the <application>Wine</application> prefix:
-    </para>
-
-    <screen><userinput>WINEPREFIX=~/.wine wineboot -u</userinput></screen>
-
-    <note><para>
-      <command>wineboot</command> may report an error in the output, but this
-      is normal and frequent. Usually, these errors are non-fatal and you won't
-      need to typically worry about them. <application>Wine</application> is
-      very verbose.
-    </para></note>
-
-    <para>
-      Next, clone the repository using <xref linkend="git"/> as this project
+      Clone the repository using <xref linkend="git"/> as this project
       depends on submodules, even if they are installed on the system:
     </para>
 
@@ -88,14 +75,8 @@ git checkout v&dxvk-version;</userinput></screen>
       Direct3D applications.
     </para></note>
 
-    <important><para>
-      This installation affects the regular user's
-      <application>Wine</application> prefix! <emphasis>DO NOT</emphasis> build
-      and install this package as the &root; user.
-    </para></important>
-
     <sect3>
-      <title>64-bit</title>
+      <title>64-bit Installation</title>
 
       <para>
         Install 64-bit <application>DXVK</application> by running
@@ -109,22 +90,21 @@ meson setup .. --cross-file ../build-win64.txt \
                --buildtype=release             \
                --prefix=$PWD/DESTDIR &amp;&amp;
 
-ninja         &amp;&amp;
-ninja install &amp;&amp;
+ninja</userinput></screen>
+
+      <para>Now as the &root; user:</para>
+
+<screen role="root"><userinput>ninja install &amp;&amp;
 cd ..         &amp;&amp;
 
-for DLL_FILE in build-win64/DESTDIR/bin/*.dll; do
-    cp -v $DLL_FILE ~/.wine/drive_c/windows/system32 &amp;&amp;
-    DLL_FILE=$(basename $DLL_FILE | sed s/.dll//g)   &amp;&amp;
-    wine64 reg add \
-        'HKEY_CURRENT_USER\Software\Wine\DllOverrides' \
-        /v "$DLL_FILE" /d native /f
-done</userinput></screen>
+mkdir   -pv     /usr/lib/dxvk/win64 &amp;&amp;
+install -vDm644 build-win64/DESTDIR/bin/*.dll \
+                /usr/lib/dxvk/win64</userinput></screen>
 
     </sect3>
 
     <sect3>
-      <title>32-bit</title>
+      <title>32-bit Installation</title>
 
       <para>
         Install 32-bit <application>DXVK</application> by running
@@ -138,17 +118,72 @@ meson setup .. --cross-file ../build-win32.txt \
                --buildtype=release             \
                --prefix=$PWD/DESTDIR &amp;&amp;
 
-ninja         &amp;&amp;
-ninja install &amp;&amp;
+ninja</userinput></screen>
+
+      <para>Now as the &root; user:</para>
+
+<screen role="root"><userinput>ninja install &amp;&amp;
 cd ..         &amp;&amp;
 
-for DLL_FILE in build-win32/DESTDIR/bin/*.dll; do
+mkdir   -pv     /usr/lib/dxvk/win32 &amp;&amp;
+install -vDm644 build-win32/DESTDIR/bin/*.dll \
+                /usr/lib/dxvk/win32</userinput></screen>
+
+    </sect3>
+
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Setting Up DXVK</title>
+
+    <para>
+      First, create the <application>Wine</application> prefix if it is not
+      already made:
+    </para>
+
+    <screen><userinput>WINEPREFIX=~/.wine wineboot -u</userinput></screen>
+
+    <note><para>
+      <command>wineboot</command> may report an error in the output, but this
+      is normal and frequent. Usually, these errors are non-fatal and you won't
+      need to typically worry about them. <application>Wine</application> is
+      very verbose.
+    </para></note>
+
+    <para>While the DXVK DLL files have been installed, they are not yet in the
+    <application>Wine</application> prefix. Create symlinks so that they can be
+    found by <application>Wine</application>, whilst allowing updating of this
+    package without having to copy everything over again. Along with this, the
+    registry must be updated to use the new DLLs. Do this for each
+    archetecture you have installed.</para>
+
+    <sect3>
+      <title>64-bit Setup</title>
+
+      <para>For 64-bit:</para>
+
+<screen><userinput>for DLL_FILE in /usr/lib/dxvk/win64/*.dll; do
+    ln -sfv $DLL_FILE ~/.wine/drive_c/windows/system32/$(basename $DLL_FILE) &amp;&amp;
+    DLL_FILE=$(basename $DLL_FILE | sed s/.dll//g) &amp;&amp;
+    wine reg add \
+        'HKEY_CURRENT_USER\Software\Wine\DllOverrides' \
+        /v "$DLL_FILE" /d native /f
+done</userinput></screen>
+
+    </sect3>
+
+    <sect3>
+      <title>32-bit Setup</title>
+
+      <para>For 32-bit:</para>
+
+<screen><userinput>for DLL_FILE in /usr/lib/dxvk/win32/*.dll; do
     if [ ! -d ~/.wine/drive_c/windows/syswow64 ]; then
-        cp -v $DLL_FILE ~/.wine/drive_c/windows/system32
+        ln -sfv $DLL_FILE ~/.wine/drive_c/windows/system32/$(basename $DLL_FILE)
     else
-        cp -v $DLL_FILE ~/.wine/drive_c/windows/syswow64
+        ln -sfv $DLL_FILE ~/.wine/drive_c/windows/syswow64/$(basename $DLL_FILE)
     fi
-    DLL_FILE=$(basename $DLL_FILE | sed s/.dll//g)   &amp;&amp;
+    DLL_FILE=$(basename $DLL_FILE | sed s/.dll//g) &amp;&amp;
     wine reg add \
         'HKEY_CURRENT_USER\Software\Wine\DllOverrides' \
         /v "$DLL_FILE" /d native /f
@@ -167,12 +202,6 @@ done</userinput></screen>
     </para>
 
     <para>
-      <command>WINEPREFIX=~/.wine wineboot -u</command>: This command creates a
-      <application>Wine</application> prefix and copies over any missing files
-      to it. It will not reset an existing prefix.
-    </para>
-
-    <para>
       <parameter>--cross-file=../build-win{32,64}.txt</parameter>: This
       parameter changes what Win archetecture to build for.
     </para>
@@ -181,7 +210,13 @@ done</userinput></screen>
       href="../../xincludes/meson-buildtype-release.xml"/>
 
     <para>
-      <command>wine{,64} reg add...</command>: This command overrides the
+      <command>WINEPREFIX=~/.wine wineboot -u</command>: This command creates a
+      <application>Wine</application> prefix and copies over any missing files
+      to it. It will not reset an existing prefix.
+    </para>
+
+    <para>
+      <command>wine{,64} reg add ...</command>: This command overrides the
       registry so that <application>Wine</application> will use the new DLL
       files instead of the old ones.
     </para>
@@ -208,7 +243,7 @@ done</userinput></screen>
           dxgi.dll
         </seg>
         <seg>
-          None
+          /usr/lib/dxvk/{win32,win64}
         </seg>
       </seglistitem>
     </segmentedlist>
