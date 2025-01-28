@@ -55,6 +55,11 @@
       <xref linkend="wine"/>
     </para>
 
+    <bridgehead renderas="sect4">Required (Runtime)</bridgehead>
+    <para role="runtime">
+      <xref linkend="libvk"/>
+    </para>
+
   </sect2>
 
   <sect2 role="installation">

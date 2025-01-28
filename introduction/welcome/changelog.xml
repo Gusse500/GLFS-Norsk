@@ -43,6 +43,10 @@
       <para>January 27th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - DXVK: Add Vulkan-Loader to Required
+          Runtime.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Allow linking to MLFS Systemd online.</para>
         </listitem>
         <listitem>
