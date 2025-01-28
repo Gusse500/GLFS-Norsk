@@ -279,3 +279,4 @@
 <!ENTITY wine-major-version           "10">
 <!ENTITY wine-version                 "&wine-major-version;.0">
 <!ENTITY dxvk-version                 "2.5.3">
+<!ENTITY vkd3d-proton-version         "2.14.1">

@@ -164,13 +164,27 @@ make</userinput></screen>
     <para>
       This installation should be good enough for most people but there may be
       a few things that you wish to change or do in relation to this package.
-      The <ulink url="https://wiki.archlinux.org/title/Wine">Arch Wiki page</ulink>
-      for Wine covers most of the things you may wish to do. In relation to
-      gaming and Vulkan, you may wish to install <xref linkend="dxvk"/> which
-      converts Direct3D 8-11 calls to Vulkan, unlike WineD3D which converts
-      Direct3D calls to OpenGL in a poor manner and is much slower.
-      As for Direct3D 12, VKD3D exists which converts Direct3D to Vulkan. It is
-      shipped with this package and has been built.
+      The <ulink url="https://wiki.archlinux.org/title/Wine">Arch Wiki
+      page</ulink> for Wine covers most of the things you may wish to do. In
+      relation to gaming and Vulkan, you may wish to install
+      <xref linkend="dxvk"/> which converts Direct3D 8-11 calls to Vulkan,
+      unlike WineD3D which converts Direct3D calls to OpenGL in a poor manner
+      and is much slower.
+    </para>
+
+    <para>
+      As for Direct3D 12, you may also wish to install
+      <xref linkend="vkd3d-proton"/> which replaces
+      <application>VKD3D</application> provided by
+      <application>Wine</application>. <application>VKD3D</application> is less
+      aggressive with optimizations and is geared for general use, whereas
+      <application>VKD3D-Proton</application> has aggressive optimizations and
+      is geared towards gaming. Despite the name, it can be used with
+      <application>Wine</application> and works quite well.
+    </para>
+
+    <para>
+      The choice of what to install is up to you.
     </para>
 
   </sect2>
