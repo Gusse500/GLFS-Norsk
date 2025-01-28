@@ -21,12 +21,12 @@
     and Wine chapters.
   </para>
 
-  <para revision="sysv">
+  <para>
     Such a guide is maintained by Thomas Trepl at
-    <ulink url="https://www.&lfs-domainname;/~thomas/multilib-m32/"/>.
+    <ulink url="&mlfs-m32-root;"/>.
     This only covers installing 32-bit support along with 64-bit. If you
     want x32-bit support, which is not needed for this book, follow
-    <ulink url="https://www.&lfs-domainname;/~thomas/multilib/"/>.
+    <ulink url="&mlfs-root;"/>.
   </para>
 
   &multilib-rendering1;
@@ -35,13 +35,6 @@
     <title>Rendering MLFS</title>
     &multilib-rendering2;
   </sect2>
-
-  <para revision="systemd">
-    Such a guide is maintained by Thomas Trepl, called MLFS (Multilib-LFS).
-    However, the only official render that can be read online is the Sysv
-    version, meaning in order to read the Systemd version, you will need to
-    render it yourself.
-  </para>
 
   <sect2 revision="systemd">
     <title>Rendering MLFS</title>

@@ -43,6 +43,9 @@
       <para>January 27th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Allow linking to MLFS Systemd online.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libpng: 1.6.45 -&gt; 1.6.46.</para>
         </listitem>
       </itemizedlist>

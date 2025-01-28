@@ -75,10 +75,18 @@
 <!ENTITY patch-root           "&glfs-website;/patches">
 <!ENTITY errata               "https://www.&lfs-domainname;/blfs/errata/&blfs-version;/">
 <!ENTITY blfs-ticket-root     "https://wiki.&lfs-domainname;/blfs/ticket/">
-
 <!ENTITY lfs-root             "&lfs-website;/lfs/view/&lfs-version;">
-<!ENTITY lfs-ml-root          "&lfs-website;/~thomas/multilib-m32">
-<!ENTITY lfs-dev              "../../../../lfs/view/development">
+
+<!ENTITY mlfs-base            "&lfs-website;/~thomas/multilib">
+<![ %sysv; [
+<!ENTITY mlfs-root            "&mlfs-base;">
+]]>
+<![ %systemd; [
+<!ENTITY mlfs-root            "&mlfs-base;-systemd">
+]]>
+<!ENTITY mlfs-m32-root        "&mlfs-root;-m32">
+
+<!ENTITY lfs-dev              "&lfs-website;/lfs/view/development">
 <!ENTITY lfs-ticket-root      "https://wiki.&lfs-domainname;/lfs/ticket/">
 <!ENTITY gnu-http             "https://ftp.gnu.org/gnu">
 <!ENTITY gnu-ftp              "ftp://ftp.gnu.org/gnu">
@@ -151,14 +159,21 @@
 </para>">
 ]]>
 <![ %development; [
-  <!ENTITY multilib-rendering1 " ">
+  <!ENTITY multilib-rendering1 "<para>You can render MLFS if you wish.</para>">
 <![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>
-  You can render the book yourself if you wish:
+  <!ENTITY multilib-rendering2 "<para>First, install <xref linkend='git'/>, then
+  clone the LFS repo and switch to the
+  <computeroutput>multilib</computeroutput> branch:
 </para>
 <screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
-git checkout multilib &amp;&amp;
-make -j1 ARCH=ml_32</userinput></screen>
+cd mlfs &amp;&amp;
+git checkout multilib</userinput></screen>
+<para>
+  Now inspect the <filename>INSTALL</filename> file to check for the needed
+  dependencies in order to render the book. Once you have ensured you have
+  installed everything, render the book: 
+</para>
+<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>
 <para>
   The rendered files will be in
   <filename class='directory'>~/public_html/lfs-book</filename>.
@@ -169,23 +184,33 @@ make -j1 ARCH=ml_32</userinput></screen>
 ]]>
 ]]>
 <![ %release; [
-<![ %sysv; [
   <!ENTITY multilib-rendering1 "<para>
   The links above, however, are rolling release and are rendered frequently.
   The known version of MLFS to work with this version of GLFS is
-  &mlfs-stable;. You can render it by following the instructions below:
+  &mlfs-stable;. You can render it by following the instructions below.
 </para>">
-  <!ENTITY multilib-rendering2 "<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs-stable &amp;&amp;
+<![ %sysv; [
+  <!ENTITY multilib-rendering2 "<para>First, install <xref linkend='git'/>, then
+  clone the LFS repo, switch to the
+  <computeroutput>multilib</computeroutput> branch, then switch to the stable
+  version:
+</para>
+<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs-stable &amp;&amp;
+cd mlfs-stable &amp;&amp;
 git checkout multilib &amp;&amp;
-git checkout &mlfs-stable; &amp;&amp;
-make -j1 ARCH=ml_32</userinput></screen>
+git checkout &mlfs-stable;</userinput></screen>
+<para>
+  Now inspect the <filename>INSTALL</filename> file to check for the needed
+  dependencies in order to render the book. Once you have ensured you have
+  installed everything, render the book: 
+</para>
+<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>
 <para>
   The rendered files will be in
   <filename class='directory'>~/public_html/lfs-book</filename>.
 </para>">
 ]]>
 <![ %systemd; [
-  <!ENTITY multilib-rendering1 " ">
   <!ENTITY multilib-rendering2 "<para>
   Now switch to the stable git hash:
 </para>

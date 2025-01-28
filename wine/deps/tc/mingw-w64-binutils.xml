@@ -193,7 +193,7 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
     <para>
       Only binutils specific to <application>MinGW-w64</application>
       will be explained. For the rest, see
-      <ulink url="https://www.linuxfromscratch.org/~thomas/multilib/chapter08/binutils.html">
+      <ulink url="&mlfs-m32-root;/chapter08/binutils.html">
       binutils-&binutils-version;</ulink>.
     </para>
 
