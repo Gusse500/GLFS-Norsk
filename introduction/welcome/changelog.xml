@@ -43,6 +43,9 @@
       <para>January 28th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - duktape: Properly sort duktape in index.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - VKD3D-Proton: Added.</para>
         </listitem>
       </itemizedlist>
