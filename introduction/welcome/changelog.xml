@@ -43,6 +43,13 @@
       <para>January 28th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Pulseaudio: Add gst-plugins-base as optional.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - duktape: Document <filename
+          class="libraryfile">libduktaped.so</filename>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - duktape: Properly sort duktape in index.</para>
         </listitem>
         <listitem>
