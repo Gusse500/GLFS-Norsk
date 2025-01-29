@@ -39,7 +39,7 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Wayland-protocols Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Wayland-Protocols Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
@@ -49,10 +49,10 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Wayland-protocols</title>
+    <title>Installation of Wayland-Protocols</title>
 
     <para>
-      Install <application>Wayland-protocols</application> by running the following
+      Install <application>Wayland-Protocols</application> by running the following
       commands:
     </para>
 
