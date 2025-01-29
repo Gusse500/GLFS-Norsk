@@ -43,6 +43,10 @@
       <para>January 28th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - *: GTK+-3 -&gt; GTK-3. Fixes
+          <ulink url="&glfs-issues;/71">#71</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 3.31.4 -&gt; 3.31.5.</para>
         </listitem>
         <listitem>

@@ -72,7 +72,7 @@
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/aalib.html">AAlib</ulink>,
-      <ulink url="&blfs-svn;/x/gtk3.html">GTK+-3</ulink> (for examples),
+      <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for examples),
       <ulink url="&blfs-svn;/multimedia/libdv.html">libdv</ulink>,
       <ulink url="&blfs-svn;/x/qt6.html">Qt-6</ulink>,
       <ulink url="https://&lfs-domainname;/blfs/view/12.1/x/qt5.html">Qt-5</ulink>,
