@@ -43,6 +43,9 @@
       <para>January 28th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - CMake: 3.31.4 -&gt; 3.31.5.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Pulseaudio: Add gst-plugins-base as optional.</para>
         </listitem>
         <listitem>
