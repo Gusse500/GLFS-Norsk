@@ -21,8 +21,8 @@
     <title>Introduction to seatd</title>
 
     <para>
-      A minimal seat management daemon, and a universal seat management
-      library. It is what a lot of Wayland compositors use to manage
+      The <application>seatd</application> package provides a universal seat
+      management library. It is what a lot of Wayland compositors use to manage
       seats, a session for a user in which applications can interact with.
     </para>
 
@@ -63,8 +63,10 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=/usr       \
-            --buildtype=release \
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            -D server=disabled        \
+            -D libseat-seatd=disabled \
             .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -83,19 +85,31 @@ ninja</userinput></screen>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../xincludes/meson-buildtype-release.xml"/>
 
+    <para>
+      <parameter>-D server=disabled</parameter>: Disables building the
+      <application>seatd</application> daemon.
+    </para>
+
+    <para>
+      <parameter>-D libseat-seatd=disabled</parameter>: This parameter disables
+      building support for the in-house logind daemon in
+      <filename class="libraryfile">libseat.so</filename> and instead relies on
+      the system-installed <phrase revision="sysv">e</phrase>logind instead.
+    </para>
+
   </sect2>
 
   <sect2 role="content">
     <title>Contents</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
+      <segtitle>Installed Programs</segtitle>
       <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installed Directories</segtitle>
 
       <seglistitem>
         <seg>
-          seatd and seatd-launch
+          None
         </seg>
         <seg>
           libseat.so
@@ -110,30 +124,6 @@ ninja</userinput></screen>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
-
-      <varlistentry id="seatd-bin">
-        <term><command>seatd</command></term>
-        <listitem>
-          <para>
-            is a seat management daemon
-          </para>
-          <indexterm zone="seatd seatd-bin">
-            <primary sortas="b-seatd-bin">seatd-bin</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="seatd-launch">
-        <term><command>seatd-launch</command></term>
-        <listitem>
-          <para>
-            handles <application>seatd</application> processes
-          </para>
-          <indexterm zone="seatd seatd-launch">
-            <primary sortas="b-seatd-launch">seatd-launch</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
 
       <varlistentry id="libseatd">
         <term><filename class="libraryfile">libseatd.so</filename></term>
