@@ -218,6 +218,8 @@ EOF</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-meson;
+
     <para>
       <parameter>-D glamor=true</parameter>: Ensure building the Glamor
       module. It's needed to build the &modesetting_drv; driver

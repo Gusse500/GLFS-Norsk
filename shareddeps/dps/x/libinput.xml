@@ -99,6 +99,8 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
     <sect3 role="commands">
       <title>Command Explanations</title>
 
+      &options-meson;
+
       <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
         href="../../../xincludes/meson-buildtype-release.xml"/>
 

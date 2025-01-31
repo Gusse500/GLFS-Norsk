@@ -82,6 +82,8 @@ install -vm 644 ../[^m]*.txt ../PM_spec /usr/share/doc/xorgproto-&xorgproto-vers
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <option>-D legacy=true</option>: Installs legacy headers needed
       by old programs (such as <ulink

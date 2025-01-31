@@ -102,6 +102,8 @@ EOF</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-meson;
+
     <para>
       <command>sed -i '/install_man/,$d' meson.build</command>: Prevents
       installing a manual page for <command>Xserver</command>,

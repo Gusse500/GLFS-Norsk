@@ -139,6 +139,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--disable-docs</parameter>: This switch avoids building the
       documentation (the release tarball includes pre-generated

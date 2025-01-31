@@ -120,6 +120,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-cmake;
+
     <para>
       <parameter>-D ALLOW_EXTERNAL_SPIRV_TOOLS=ON</parameter>: This switch allows
       the build system to use the system-installed copy of

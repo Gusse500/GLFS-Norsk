@@ -121,17 +121,12 @@ ldconfig</userinput></screen>
 
     </sect2>
 
-<!--
     <sect2 role="commands">
       <title>Command Explanations</title>
 
-      <para>
-        <command>sed -e '/#include &lt;stdlib.h&gt;/a #include &lt;string&gt;' ...</command>:
-        fix the build for the C++ Standard Library header changes in gcc-13.
-      </para>
+      &options-cmake;
 
     </sect2>
--->
 
     <sect2 role="configuration">
       <title>Configuration</title>

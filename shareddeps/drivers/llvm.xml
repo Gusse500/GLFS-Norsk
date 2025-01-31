@@ -257,6 +257,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-cmake;
+
     <para>
       <parameter>-D LLVM_ENABLE_FFI=ON</parameter>: This switch allows
       <application>LLVM</application> to use

@@ -310,6 +310,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-meson;
+
     <para>
       <parameter>--buildtype=release</parameter>: This switch ensures a
       fully-optimized build, and disables debug assertions which will

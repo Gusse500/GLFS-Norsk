@@ -132,6 +132,8 @@ ldconfig</userinput></screen>
   <sect2>
     <title>Command Explanations</title>
 
+    &options-cmake;
+
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../xincludes/cmake-skip-install-rpath.xml"/>
 

@@ -140,6 +140,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--enable-freetype-config</parameter>: This switch
       ensure that the man page for freetype-config is installed.

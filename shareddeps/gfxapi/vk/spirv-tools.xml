@@ -131,6 +131,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-cmake;
+
     <para>
       <parameter>-D SPIRV_WERROR=OFF</parameter>: This switch stops the build
       system from treating warnings as errors.

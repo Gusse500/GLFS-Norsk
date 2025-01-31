@@ -130,6 +130,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-meson;
+
     <para>
       <parameter>-D documentation=false</parameter>: This switch is used to
       disable building of the API documentation.

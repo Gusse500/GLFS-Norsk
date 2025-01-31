@@ -85,6 +85,13 @@
 
   </sect2>
 
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    &options-configure;
+
+  </sect2>
+
   <sect2 role="content">
     <title>Contents</title>
 

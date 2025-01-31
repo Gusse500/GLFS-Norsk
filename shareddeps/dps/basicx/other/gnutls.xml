@@ -131,6 +131,8 @@ make</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--with-default-trust-store-pkcs11="pkcs11:"</parameter>: This
       switch tells gnutls to use the PKCS #11 trust store as the default trust.

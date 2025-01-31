@@ -280,6 +280,7 @@ done</userinput></screen>
 
   <sect2 role="commands">
     <title>Command Explanations</title>
+
 <!--
     <para>
       <command>./configure $XORG_CONFIG - -disable-thread-safety-constructor</command>:

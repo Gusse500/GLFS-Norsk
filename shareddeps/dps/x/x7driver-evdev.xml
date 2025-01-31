@@ -102,6 +102,13 @@ make</userinput></screen>
 <screen role="root"><userinput>make install</userinput></screen>
     </sect3>
 
+    <sect3 role="commands">
+      <title>Command Explanations</title>
+
+      &options-configure;
+
+    </sect3>
+
     <sect3 role="content">
       <title>Contents</title>
 

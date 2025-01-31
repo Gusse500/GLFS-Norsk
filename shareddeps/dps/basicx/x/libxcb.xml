@@ -122,6 +122,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <!-- https://gitlab.freedesktop.org/xorg/lib/libxcb/-/issues/72
     <para>
       <envar>LC_ALL=en_US.UTF-8</envar>: Some Python 3 script in the

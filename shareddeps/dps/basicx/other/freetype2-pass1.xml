@@ -156,6 +156,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <command>sed -ri ...</command>: First command enables GX/AAT and OpenType
       table validation and second command enables Subpixel Rendering. Note that
