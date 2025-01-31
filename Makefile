@@ -155,7 +155,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	$(Q)if [ ! -e $(BASEDIR)/patches ]; then \
 		mkdir -p $(BASEDIR)/patches;          \
    fi;
-	$(Q)cp patches/*.patch $(BASEDIR)/patches
+	$(Q)cp -R patches/* $(BASEDIR)/patches
 
 	@echo "Running Tidy and obfuscate.sh on chunked XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \

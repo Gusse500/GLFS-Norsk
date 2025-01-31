@@ -62,7 +62,7 @@
       <listitem>
         <para>
           Recommended patch:
-          <ulink url="&patch-root;/mesa-seizure_prevention-2.patch"/>
+          <ulink url="&patch-root;/mesa/mesa-seizure_prevention-2.patch"/>
         </para>
       </listitem>
     </itemizedlist>

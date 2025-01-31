@@ -55,7 +55,7 @@
         </para>
         <para>
           Optional patch:
-          <ulink url="&patch-root;/xorg-server-tearfree_backport-2.patch"/>
+          <ulink url="&patch-root;/xorg-server/xorg-server-tearfree_backport-2.patch"/>
         </para>
       </listitem>
     </itemizedlist>
