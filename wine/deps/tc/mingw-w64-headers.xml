@@ -111,6 +111,11 @@ cd build-i686-headers    &amp;&amp;
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    <note><para>
+      Run <command>../mingw-w64-headers/configure --help</command> for a full
+      list of options.
+    </para></note>
+
     <para>
       <parameter>--prefix=/usr/*</parameter>: This option installs
       the files to their respective architecture for better separation

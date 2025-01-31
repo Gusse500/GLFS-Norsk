@@ -150,6 +150,8 @@ make</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-subconfigure;
+
     <para>
       <parameter>--with-wine64=../build-win64</parameter>: This option
       allows Wine during the compilation stage to use files built in

@@ -272,6 +272,8 @@ rm -v a.exe main.{c,cpp}</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-subconfigure;
+
     <para>
       <command>mkdir build; cd build</command>: The
       <application>GCC</application> documentation recommends

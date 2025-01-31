@@ -136,6 +136,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-subconfigure;
+
     <para>
       <command>sed ... </command>: This command
       corrects the ownership and permissions of installed files.

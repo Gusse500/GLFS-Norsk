@@ -155,6 +155,12 @@ make</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    <note><para>
+      Run <command>../configure --help</command> and
+      <command>../mingw-w64-libraries/winpthreads/configure --help</command>
+      respectively for a full list of options.
+    </para></note>
+
     <para>
       <parameter>--prefix=/usr/*</parameter>: This option installs
       the files to their respective architecture for better separation

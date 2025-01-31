@@ -201,6 +201,8 @@ done</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-meson;
+
     <para>
       <command>git checkout v&dxvk-version;</command>: This command switches to
       a stable release in the commit history.

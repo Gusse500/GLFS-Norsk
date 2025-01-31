@@ -221,6 +221,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <command>find ... ;</command>: Fixes permissions of documentation files
       and directories.

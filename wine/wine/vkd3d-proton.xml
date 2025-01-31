@@ -189,6 +189,8 @@ done</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-meson;
+
     <para>
       <command>git checkout v&vkd3d-proton-version;</command>: This command switches to
       a stable release in the commit history.

@@ -160,6 +160,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-cmake;
+
     <para>
       <parameter>-W no-dev</parameter>: This switch is used to suppress warnings
       intended for the package developers.

@@ -130,6 +130,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--enable-mp3rtp</parameter>: This switch enables building
       the encode-to-RTP program.

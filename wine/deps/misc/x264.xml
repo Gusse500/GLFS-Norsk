@@ -133,6 +133,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--disable-cli</parameter>: This switch disables building the
       command-line encoder which is redundant since it requires FFmpeg for

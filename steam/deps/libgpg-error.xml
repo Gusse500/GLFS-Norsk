@@ -65,6 +65,13 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
 
   </sect2>
 
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    &options-configure;
+
+  </sect2>
+
   <sect2 role="content">
     <title>Contents</title>
 

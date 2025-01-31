@@ -119,6 +119,8 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-subconfigure;
+
     <para>
       <parameter>--disable-multilib</parameter>: This option disables
       multilib support in each architecture. It is not needed and doing

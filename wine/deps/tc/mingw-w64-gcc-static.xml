@@ -139,6 +139,8 @@ make all-gcc</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-subconfigure;
+
     <para>
       <command>mkdir build; cd build</command>: The
       <application>GCC</application> documentation recommends

@@ -131,6 +131,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-cmake;
+
     <para>
       <parameter>-D BUILD_SHARED_LIBS=1</parameter>: This switch builds shared
       versions of the libraries.
