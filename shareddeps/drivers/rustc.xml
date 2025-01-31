@@ -257,8 +257,6 @@ description = "for GLFS &version;"
 # Disable building and downloading components that shouldn't as a part of
 # Rustc on a GLFS system.
 download-rustc = false
-lld = false
-llvm-bitcode-linker = false
 
 # Uncomment if FileCheck has been installed.
 #codegen-tests = false
