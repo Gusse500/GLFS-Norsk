@@ -43,6 +43,10 @@
       <para>January 30th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Polkit: Improved documentation of user and group
+          creation.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - seatd: Disable building the seatd daemon.</para>
         </listitem>
       </itemizedlist>

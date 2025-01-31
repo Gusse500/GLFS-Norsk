@@ -106,7 +106,9 @@
     <para>
       There should be a dedicated user and group to take control
       of the <command>polkitd</command> daemon after it is
-      started. Issue the following commands as the
+      started. <emphasis>IF</emphasis> you have not already created a
+      dedicated user and group for <command>polkitd</command>,
+      issue the following commands as the
       <systemitem class="username">root</systemitem> user:
     </para>
 
