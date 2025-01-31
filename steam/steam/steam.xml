@@ -21,7 +21,8 @@
     <title>Introduction to Steam</title>
 
     <para>
-      Valve's digital software delivery system.
+      The <application>Steam</application> package provides a digital software
+      delivery system, store, and launcher through VALVe's proprietary runtime.
     </para>
 
     <itemizedlist spacing="compact">
@@ -161,7 +162,8 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <listitem>
           <para>
             is symlink to <filename>/usr/bin/true</filename>, making the file
-            basically empty
+            report <computeroutput>true</computeroutput>, or exit code 0 when
+            ran
           </para>
           <indexterm zone="steam steam-steamdeps">
             <primary sortas="c-steam-steamdeps">steamdeps</primary>
