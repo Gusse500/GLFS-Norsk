@@ -4,36 +4,36 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY rust-download-http "https://static.rust-lang.org/dist/rustc-&rust-version;-src.tar.xz">
-  <!ENTITY rust-download-ftp  " ">
+  <!ENTITY rustc-download-http "https://static.rust-lang.org/dist/rustc-&rustc-version;-src.tar.xz">
+  <!ENTITY rustc-download-ftp  " ">
 
   <!-- change-id can be found in src/bootstrap/src/utils/change_tracker.rs
        at the very bottom: change_id. -->
   <!ENTITY change-id          "133207">
 ]>
 
-<sect1 id="rust" xreflabel="rustc-&rust-version;">
-  <?dbhtml filename="rust.html"?>
+<sect1 id="rustc" xreflabel="rustc-&rustc-version;">
+  <?dbhtml filename="rustc.html"?>
 
-  <title>Rustc-&rust-version;</title>
+  <title>Rustc-&rustc-version;</title>
 
-  <indexterm zone="rust">
-    <primary sortas="a-rust">Rust</primary>
+  <indexterm zone="rustc">
+    <primary sortas="a-rustc">Rustc</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Rust</title>
+    <title>Introduction to Rustc</title>
 
     <para>
-      The <application>Rust</application> programming language is designed
-      to be a safe, concurrent, practical language.
+      The Rust programming language is designed to be a safe, concurrent,
+      practical language.
     </para>
 
     <para>
-      As with many other programming languages, rustc (the rust compiler)
-      needs a binary from which to bootstrap. It will download a stage0
-      binary at the start of the build, so you cannot compile it without an
-      Internet connection.
+      As with many other programming languages,
+      <application>Rustc</application> (the Rust compiler) needs a binary from
+      which to bootstrap. It will download a stage0 binary at the start of the
+      build, so you cannot compile it without an Internet connection.
     </para>
 
     <note>
@@ -51,7 +51,7 @@
         it is possible for the install to leave a broken
         <command>cargo</command> program. In such a situation, either remove
         the existing installation first, or use a different prefix such as
-        /opt/rustc-&rust-version;-build2.
+        /opt/rustc-&rustc-version;-build2.
       </para>
 
       <para>
@@ -83,16 +83,15 @@
     </para>
 
     <para>
-      At the moment <application>Rust</application> does not provide any
-      guarantees of a stable ABI.
+      At the moment Rust does not provide any guarantees of a stable ABI.
     </para>
 
     <note>
       <para>
-        Rustc defaults to building for ALL supported architectures, using a
-        shipped copy of LLVM. In GLFS the build is only for the X86
-        architecture.
-        If you intend to develop rust crates, this build may not be good
+        <application>Rustc</application> defaults to building for ALL supported
+        architectures, using a shipped copy of <application>LLVM</application>.
+        In GLFS the build is only for the X86 architecture family.
+        If you intend to develop Rust crates, this build may not be good
         enough for your purposes.
       </para>
       <para>
@@ -110,12 +109,12 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&rust-download-http;"/>
+          Download (HTTP): <ulink url="&rustc-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&rust-download-ftp;"/>
+          Download (FTP): <ulink url="&rustc-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -125,12 +124,12 @@
       <listitem>
         <para>
           Optional patch (recommended if running the test suite):
-          <ulink url="&patch-root;/rustc-&rust-version;-testsuite_fix-1.patch"/>
+          <ulink url="&patch-root;/rustc-&rustc-version;-testsuite_fix-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
     -->
-    <bridgehead renderas="sect3">Rust Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Rustc Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
@@ -143,49 +142,30 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <ulink url="&blfs-svn;/general/libssh2.html">libssh2</ulink>,
       <xref linkend="llvm"/>
-      (built with -DLLVM_LINK_LLVM_DYLIB=ON so that rust can link to
-      system LLVM instead of building its shipped version), and
+      (built with -DLLVM_LINK_LLVM_DYLIB=ON so that
+      <application>Rustc</application> can link to the system-installed
+      <application>LLVM</application> instead of building its shipped version)
+    </para>
+
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/libssh2.html">libssh2</ulink> and
       <ulink url="&blfs-svn;/server/sqlite.html">SQLite</ulink>
     </para>
 
     <note>
       <para>
-        If a recommended dependency is not installed, a shipped copy in the
-        Rustc source tarball will be built and used.
+        If a recommended or optional dependency is not installed, a shipped
+        copy in the <application>Rustc</application> source tarball will be
+        built and used.
       </para>
     </note>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Rust</title>
-
-    <note>
-      <para>
-        Currently the rust compiler produces SSE2 instructions for 32-bit x86,
-        causing the generated code to be broken on 32-bit systems without a
-        SSE2-capable processor.  All x86 processor models released after
-        2004 should be SSE2-capable.  Run
-        <command>lscpu | grep sse2</command> as a test.  If it outputs
-        anything, your CPU is SSE2-capable and OK.  Otherwise you may try
-        to build this package <emphasis>on a SSE2-capable system</emphasis>
-        with the following fix applied:
-      </para>
-
-      <!-- computeroutput used deliberately to stop anyone from copying
-           blindly -->
-<screen role="nodump"><computeroutput>sed 's@pentium4@pentiumpro@' -i \
-  compiler/rustc_target/src/spec/targets/i686_unknown_linux_gnu.rs</computeroutput></screen>
-
-      <para>
-        And copy the resulting
-        <filename class="directory">/opt/rustc-&rust-version;</filename>
-        to the system without SSE2 capability. But this change is still
-        under upstream review and not tested by GLFS editors.
-      </para>
-    </note>
+    <title>Installation of Rustc</title>
 
     <para>
       To install into the
@@ -197,12 +177,12 @@
       user:
     </para>
 
-<screen role="root"><userinput>mkdir -pv /opt/rustc-&rust-version;      &amp;&amp;
-ln -svfn rustc-&rust-version; /opt/rustc</userinput></screen>
+<screen role="root"><userinput>mkdir -pv /opt/rustc-&rustc-version; &amp;&amp;
+ln -svfn rustc-&rustc-version; /opt/rustc</userinput></screen>
 
     <note>
       <para>
-        If multiple versions of <application>Rust</application> are installed
+        If multiple versions of <application>Rustc</application> are installed
         in <filename class="directory">/opt</filename>, changing to another
         version only requires changing the <filename> /opt/rustc</filename>
         symbolic link and then running <command>ldconfig</command>.
@@ -267,8 +247,8 @@ tools = ["cargo", "clippy", "rustdoc", "rustfmt"]
 vendor = true
 
 [install]
-prefix = "/opt/rustc-&rust-version;"
-docdir = "share/doc/rustc-&rust-version;"
+prefix = "/opt/rustc-&rustc-version;"
+docdir = "share/doc/rustc-&rustc-version;"
 
 [rust]
 channel = "stable"
@@ -361,9 +341,9 @@ fi</userinput></screen>
       completion maintainers:
     </para>
 
-<screen role='root'><userinput>rm -fv /opt/rustc-&rust-version;/share/doc/rustc-&rust-version;/*.old   &amp;&amp;
+<screen role='root'><userinput>rm -fv /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version;/*.old   &amp;&amp;
 install -vm644 README.md                                \
-               /opt/rustc-&rust-version;/share/doc/rustc-&rust-version; &amp;&amp;
+               /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version; &amp;&amp;
 
 install -vdm755 /usr/share/zsh/site-functions      &amp;&amp;
 ln -sfv /opt/rustc/share/zsh/site-functions/_cargo \
@@ -378,7 +358,7 @@ mv -v /etc/bash_completion.d/cargo \
     <title>Command Explanations</title>
 
     <para>
-      <command>ln -svfn rustc-&rust-version; /opt/rustc</command>: if this is
+      <command>ln -svfn rustc-&rustc-version; /opt/rustc</command>: if this is
       not the first use of the <filename class="directory">/opt/rustc</filename>
       symlink, overwrite it by forcing, and use the '-n' flag to avoid getting
       confusing results from e.g. <command>ls -l</command>.
@@ -423,15 +403,15 @@ mv -v /etc/bash_completion.d/cargo \
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Rust</title>
+    <title>Configuring Rustc</title>
 
     <sect3 id="rustc-config">
       <title>Configuration Information</title>
 
       <para>
-        If you installed <application>rustc</application> in
+        If you installed <application>Rustc</application> in
         <filename class="directory">/opt</filename>, you need to update the
-        following configuration files so that <application>rustc</application>
+        following configuration files so that <application>Rustc</application>
         is correctly found by other packages and system processes.
       </para>
 
@@ -487,7 +467,7 @@ EOF</userinput></screen>
         <seg>
           ~/.cargo,
           /opt/rustc, symbolic link to
-          /opt/rustc-&rust-version;
+          /opt/rustc-&rustc-version;
         </seg>
       </seglistitem>
     </segmentedlist>
@@ -503,7 +483,7 @@ EOF</userinput></screen>
           <para>
             provides lint checks for a cargo package
           </para>
-          <indexterm zone="rust cargo-clippy">
+          <indexterm zone="rustc cargo-clippy">
             <primary sortas="b-cargo-clippy">cargo-clippy</primary>
           </indexterm>
         </listitem>
@@ -516,7 +496,7 @@ EOF</userinput></screen>
             formats all bin and lib files of the current crate using
             rustfmt
           </para>
-          <indexterm zone="rust cargo-fmt">
+          <indexterm zone="rustc cargo-fmt">
             <primary sortas="b-cargo-fmt">cargo-fmt</primary>
           </indexterm>
         </listitem>
@@ -541,7 +521,7 @@ EOF</userinput></screen>
           <para>
             is the Package Manager for Rust
           </para>
-          <indexterm zone="rust cargo">
+          <indexterm zone="rustc cargo">
             <primary sortas="b-cargo">cargo</primary>
           </indexterm>
         </listitem>
@@ -553,7 +533,7 @@ EOF</userinput></screen>
           <para>
             provides lint checks for Rust
           </para>
-          <indexterm zone="rust clippy-driver">
+          <indexterm zone="rustc clippy-driver">
             <primary sortas="b-clippy-driver">clippy-driver</primary>
           </indexterm>
         </listitem>
@@ -618,9 +598,9 @@ EOF</userinput></screen>
           <para>
             is a wrapper script for gdb, pulling in Python pretty-printing
             modules installed in
-            <filename class="directory">/opt/rustc-&rust-version;/lib/rustlib/etc</filename>
+            <filename class="directory">/opt/rustc-&rustc-version;/lib/rustlib/etc</filename>
           </para>
-          <indexterm zone="rust rust-gdb">
+          <indexterm zone="rustc rust-gdb">
             <primary sortas="b-rust-gdb">rust-gdb</primary>
           </indexterm>
         </listitem>
@@ -633,7 +613,7 @@ EOF</userinput></screen>
             is a wrapper script for a graphical front end to gdb that runs in a
             browser
           </para>
-          <indexterm zone="rust rust-gdbgui">
+          <indexterm zone="rustc rust-gdbgui">
             <primary sortas="b-rust-gdbgui">rust-gdbgui</primary>
           </indexterm>
         </listitem>
@@ -646,20 +626,20 @@ EOF</userinput></screen>
             is a wrapper script for LLDB (the LLVM debugger)
             pulling in the Python pretty-printing modules
           </para>
-          <indexterm zone="rust rust-lldb">
-            <primary sortas="b-rust-lldb">rust=lldb</primary>
+          <indexterm zone="rustc rust-lldb">
+            <primary sortas="b-rust-lldb">rust-lldb</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="rustc">
+      <varlistentry id="rustc-bin">
         <term><command>rustc</command></term>
         <listitem>
           <para>
-            is the rust compiler
+            is the Rust compiler
           </para>
-          <indexterm zone="rust rustc">
-            <primary sortas="b-rustc">rustc</primary>
+          <indexterm zone="rustc rustc-bin">
+            <primary sortas="b-rustc-bin">rustc</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -668,9 +648,9 @@ EOF</userinput></screen>
         <term><command>rustdoc</command></term>
         <listitem>
           <para>
-            generates documentation from rust source code
+            generates documentation from Rust source code
           </para>
-          <indexterm zone="rust rustdoc">
+          <indexterm zone="rustc rustdoc">
             <primary sortas="b-rustdoc">rustdoc</primary>
           </indexterm>
         </listitem>
@@ -680,9 +660,9 @@ EOF</userinput></screen>
         <term><command>rustfmt</command></term>
         <listitem>
           <para>
-            formats rust code
+            formats Rust code
           </para>
-          <indexterm zone="rust rustfmt">
+          <indexterm zone="rustc rustfmt">
             <primary sortas="b-rustfmt">rustfmt</primary>
           </indexterm>
         </listitem>
@@ -694,7 +674,7 @@ EOF</userinput></screen>
           <para>
             is the Rust Standard Library, the foundation of portable Rust software
           </para>
-          <indexterm zone="rust libstd">
+          <indexterm zone="rustc libstd">
             <primary sortas="c-libstd">libstd-&lt;16-byte-hash&gt;.so</primary>
           </indexterm>
         </listitem>

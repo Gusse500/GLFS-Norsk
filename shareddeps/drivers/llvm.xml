@@ -170,7 +170,7 @@ mv projects/compiler-rt-&llvm-version;.src projects/compiler-rt</userinput></scr
     <para>
       Ensure installing the <command>FileCheck</command> program which is
       needed by the test suite of some packages (for example
-      rustc-&rust-version;): 
+      <xref linkend="rustc"/>): 
     </para>
 
     <screen><userinput>sed 's/utility/tool/' -i utils/FileCheck/CMakeLists.txt</userinput></screen>

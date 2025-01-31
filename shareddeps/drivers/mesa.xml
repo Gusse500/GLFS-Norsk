@@ -84,7 +84,7 @@
         <listitem>
           <para>
             <xref linkend="cbindgen"/>, <xref linkend="rust-bindgen"/>,
-            and <xref linkend="rust"/> (required for NVK and Vulkan swrast)
+            and <xref linkend="rustc"/> (required for NVK and Vulkan swrast)
           </para>
         </listitem>
         <listitem>

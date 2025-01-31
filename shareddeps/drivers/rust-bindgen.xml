@@ -21,8 +21,7 @@
     <title>Introduction to rust-bindgen</title>
 
     <para>
-      Automatically generates <application>Rust</application> FFI
-      bindings to C (and some C++) libraries.
+      Automatically generates Rust FFI bindings to C (and some C++) libraries.
     </para>
 
     &build-use-internet;
@@ -45,7 +44,7 @@
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
       <xref linkend="llvm"/> with <application>Clang</application> and
-      <xref linkend="rust"/>
+      <xref linkend="rustc"/>
     </para>
 
   </sect2>

@@ -22,7 +22,7 @@
 
     <para>
       <application>Cbindgen</application> can be used to generate C bindings for
-      <application>Rust</application> code.
+      Rust code.
     </para>
 
     &build-use-internet;
@@ -44,7 +44,7 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      <xref linkend="rust"/>
+      <xref linkend="rustc"/>
     </para>
 
   </sect2>
