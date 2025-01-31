@@ -110,10 +110,7 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
-    <note><para>
-      Invoke <userinput>./configure --help</userinput> for a full list of
-      options.
-    </para></note>
+    &options-configure;
 
     <para>
       <command>sed -ri '/^RELEASE/s/^/#/' pr/src/misc/Makefile.in</command>:

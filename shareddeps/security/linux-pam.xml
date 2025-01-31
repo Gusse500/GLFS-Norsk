@@ -208,6 +208,13 @@ ldconfig</userinput></screen>
 
   </sect2>
 
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    &options-meson;
+
+  </sect2>
+
   <sect2 role="configuration">
     <title>Configuring Linux-PAM</title>
 

@@ -133,6 +133,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--disable-thorough-tests</parameter>: This parameter is
       used so that the test suite will complete in a reasonable amount of time.

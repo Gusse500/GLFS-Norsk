@@ -143,6 +143,9 @@ ldconfig</userinput></screen>
 
   <sect2 role="commands">
     <title>Command Explanations</title>
+
+    &options-meson;
+
     <!--
     <para>
       <command>sed ... meson.build</command>: This change allows the

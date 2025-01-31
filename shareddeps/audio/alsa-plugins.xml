@@ -121,6 +121,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <option>--disable-libav</option>: Disable FFMpeg support as the
       package does not build when FFmpeg is installed.

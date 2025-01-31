@@ -195,6 +195,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-subconfigure;
+
     <para>
       <command>mkdir build &amp;&amp; cd build</command>: This is not necessary
       for just the normal installation, but cleaning the directory leads to the

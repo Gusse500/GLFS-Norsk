@@ -234,6 +234,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--with-gitconfig=/etc/gitconfig</parameter>: This sets
       <filename>/etc/gitconfig</filename> as the file that stores

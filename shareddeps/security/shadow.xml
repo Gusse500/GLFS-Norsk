@@ -131,6 +131,8 @@ make</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <command>sed -i 's/groups$(EXEEXT) //' src/Makefile.in</command>: This sed
       is used to suppress the installation of the <command>groups</command>

@@ -102,6 +102,8 @@ make</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--disable-alsaconf</parameter>: This switch disables building
       the <command>alsaconf</command> configuration tool which is incompatible

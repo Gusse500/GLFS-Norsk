@@ -113,6 +113,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
+    &options-configure;
+
     <para>
       <parameter>--enable-unicode</parameter>: This switch enables Unicode
       support and includes the functions for handling UTF-8/16/32 character
