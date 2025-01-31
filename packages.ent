@@ -55,6 +55,7 @@
 <!ENTITY flac-version                 "1.4.3">
 <!ENTITY opus-version                 "1.5.2">
 <!ENTITY libsndfile-version           "1.2.2">
+<!ENTITY check-version                "0.15.2">
 <!ENTITY pulseaudio-major-version     "17.0">
 <!ENTITY pulseaudio-version           "&pulseaudio-major-version;">
 <!-- Basic X11 Software -->

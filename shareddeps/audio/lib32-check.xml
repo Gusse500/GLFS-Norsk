@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY lib32-check-download-http
+           "https://github.com/libcheck/check/releases/download/&check-version;/check-&check-version;.tar.gz">
+  <!ENTITY lib32-check-download-ftp  " ">
+]>
+
+<sect1 id="lib32-check" xreflabel="lib32-Check-&check-version;">
+  <?dbhtml filename="lib32-check.html"?>
+
+  <title>lib32-Check-&check-version;</title>
+
+  <indexterm zone="lib32-check">
+    <primary sortas="a-lib32-check">lib32-Check</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to lib32-Check</title>
+
+    <para>
+      The <application>Check</application> package was already installed in
+      LFS, but the lib32 instructions are missing from MLFS which is needed for
+      lib32-<xref linkend="pulseaudio"/>. If you are doing multilib, install
+      this.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&lib32-check-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&lib32-check-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installation of Check</title>
+    
+    <para>
+      Install lib32-<application>Check</application> by running the following
+      commands:
+    </para>
+
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+./configure --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu \
+            --disable-static &amp;&amp;
+
+make</userinput></screen>
+    
+    <para>
+      Now as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          None
+        </seg>
+        <seg>
+          libcheck.so
+        </seg>
+        <seg>
+          None
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libcheck">
+        <term><filename class="libraryfile">libcheck.so</filename></term>
+        <listitem>
+          <para>
+            contains functions that allow <application>Check</application> to
+            be called from a test program 
+          </para>
+          <indexterm zone="lib32-check libcheck">
+            <primary sortas="c-libcheck">libcheck.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

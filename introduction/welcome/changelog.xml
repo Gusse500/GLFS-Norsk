@@ -43,6 +43,9 @@
       <para>January 31st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - lib32-Check: Added.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Rustc: 1.84.0 -&gt; 1.84.1. Fixes
           <ulink url="&glfs-issues;/77">#77</ulink>.</para>
         </listitem>
