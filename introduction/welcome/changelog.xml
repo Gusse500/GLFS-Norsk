@@ -43,6 +43,10 @@
       <para>January 30th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.39 -&gt; 1.40. Fixes
+          <ulink url="&glfs-issues;/76">#76</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Artwork: Added. Fixes
           <ulink url="&glfs-issues;/80">#80</ulink>.</para>
         </listitem>
