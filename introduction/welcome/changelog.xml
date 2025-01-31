@@ -43,6 +43,10 @@
       <para>January 30th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - whatnow: Link to LFS QOL instructions for i3 and
+          Hyprland.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Polkit: Improved documentation of user and group
           creation.</para>
         </listitem>
