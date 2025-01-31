@@ -147,7 +147,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	$(Q)if [ ! -e $(BASEDIR)/images ]; then \
       mkdir -p $(BASEDIR)/images;          \
    fi;
-	$(Q)cp images/*.{png,ico} $(BASEDIR)/images
+	$(Q)cp -R images/* $(BASEDIR)/images
 
 	$(Q)cd $(BASEDIR)/; sed -e "s@../images@images@g"           \
                            -i *.html
@@ -187,7 +187,7 @@ pdf: validate wget-list
 
 	@echo "Generating PDF file..."
 	$(Q)mkdir -p $(RENDERTMP)/images
-	$(Q)cp images/*.png $(RENDERTMP)/images
+	$(Q)cp -R images/* $(RENDERTMP)/images
 
 	$(Q)mkdir -p $(BASEDIR)
 

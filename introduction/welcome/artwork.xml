@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="artwork">
+  <?dbhtml filename="artwork.html"?>
+
+  <title>Artwork</title>
+
+  <sect2>
+    <title>Introduction to GLFS artwork</title>
+
+    <para>
+      There is iconography in this book and it has had some history. This page
+      is dedicated to showing all of the older and newer artwork that has been
+      in GLFS and explains the background behind each image.
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>All artwork</title>
+
+    <para>Below contains every image that has been used in this book.</para>
+
+    <sect3>
+      <title>Legacy - tip.png</title>
+      
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/legacy/tip.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Used from April 4th, 2024 to May 14th, 2024.
+      </para>
+
+      <para>
+        Added by Larry Lawrence on May 7th, 2004 and still used in BLFS, this
+        image was meant for Tip boxes, like so:
+      </para>
+
+      <tip><para>Example tip.</para></tip>
+
+      <para>
+        It has been scrapped in GLFS because of the low quality and has no
+        transparent background. This is the same reason as a number of
+        different legacy images for boxes. Those images were all added and
+        scrapped the same day, they just have different purposes and will be
+        noted as such.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Legacy - note.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/legacy/note.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Used from April 4th, 2024 to May 14th, 2024.
+      </para>
+
+      <para>
+        Added by Larry Lawrence on May 7th, 2004 and still used in BLFS, this
+        image was meant for Note boxes, like so:
+      </para>
+
+      <note><para>Example note.</para></note>
+
+    </sect3>
+
+    <sect3>
+      <title>Legacy - important.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/legacy/important.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Used from April 4th, 2024 to May 14th, 2024.
+      </para>
+
+      <para>
+        Added by Larry Lawrence on May 7th, 2004 and still used in BLFS, this
+        image was meant for Important boxes, like so:
+      </para>
+
+      <important><para>Example important.</para></important>
+
+    </sect3>
+
+    <sect3>
+      <title>Legacy - caution.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/legacy/caution.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Used from April 4th, 2024 to May 14th, 2024.
+      </para>
+
+      <para>
+        Added by Larry Lawrence on May 7th, 2004 and still used in BLFS, this
+        image was meant for Caution boxes, like so:
+      </para>
+
+      <caution><para>Example caution.</para></caution>
+
+    </sect3>
+
+    <sect3>
+      <title>Legacy - warning.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/legacy/warning.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Used from April 4th, 2024 to May 14th, 2024.
+      </para>
+
+      <para>
+        Added by Larry Lawrence on May 7th, 2004 and still used in BLFS, this
+        image was meant for Warning boxes, like so:
+      </para>
+
+      <warning><para>Example warning.</para></warning>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - tip.png</title>
+      
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/tip.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on May 14th, 2024, this image is meant for Tip boxes,
+        like so:
+      </para>
+
+      <tip><para>Example tip.</para></tip>
+
+      <para>
+        It follows the same design as the old one, just in higher quality with
+        a transparent background.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - note.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/note.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on May 14th, 2024, this image is meant for Note boxes,
+        like so:
+      </para>
+
+      <note><para>Example note.</para></note>
+
+      <para>
+        This one strays from the old design as trying to replicate the hand
+        design would prove difficult. Thus, the speech bubble design was
+        decided instead. Beyond that, nothing special of note.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - important.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/important.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on May 14th, 2024, this image is meant for Important
+        boxes, like so:
+      </para>
+
+      <important><para>Example important.</para></important>
+
+      <para>
+        It follows the same design as the old one, just in higher quality with
+        a transparent background.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - caution.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/caution.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on May 14th, 2024, this image is meant for Caution
+        boxes, like so:
+      </para>
+
+      <caution><para>Example caution.</para></caution>
+
+      <para>
+        It follows the same design as the old one, just in higher quality with
+        a transparent background.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - warning.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/warning.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on May 14th, 2024, this image is meant for Warning
+        boxes, like so:
+      </para>
+
+      <warning><para>Example warning.</para></warning>
+
+      <para>
+        It follows the same design as the old one, just in higher quality with
+        a transparent background.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Legacy - glfs-logo.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/legacy/glfs-logo.png" format="PNG"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Used from June 6th, 2024 to June 25th, 2024.
+      </para>
+
+      <para>
+        Added by Zeckma on June 6th, 2024, it was the main logo used to
+        represent GLFS for a little over two weeks.
+      </para>
+
+      <para>
+        The main idea behind the design is that the base LFS packages are on
+        the gaming computer, and the <quote>G</quote> that sits on top of the
+        LFS packages enabled gaming support. The <quote>G</quote> box is much
+        bigger than the LFS boxes because it takes a decent amount of packages
+        to get gaming support on LFS.
+      </para>
+
+      <para>
+        Another part of the design was to get away from the puzzle piece
+        symbol for different reasons.
+      </para>
+
+      <para>
+        The creation of this icon was painful and clumsy, but it was to be the
+        favicon for the site. It was later replaced by a better logo on June
+        25th, 2024 due to how it was simply not an ideal favicon and was hard
+        to make out any important details, whereas using the main
+        <quote>G</quote> box as the favicon would be painfully plain due to the
+        dull colors.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - glfs-logo.png</title>
+        
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/glfs-logo.png" format="PNG" scale="300"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on June 25th, 2024, it is the current logo used to
+        represent GLFS.
+      </para>
+
+      <para>
+        It was made to replace the old logo but still have one or two elements
+        come over from the old design, the main one being the <quote>G</quote>
+        box, although much more stylized. It no longer acts as the favicon for
+        the site but shows up at the top of the home page.
+      </para>
+
+      <para>
+        There isn't much meaning within the logo, although there is some.
+        Namely, the dragon and tech elements of the design is meant to convey
+        the general theme of gaming. The dragon itself as depicted has its
+        gender ambiguous, but nonetheless stoic and focused to better represent
+        the wide variety of people that may wish to follow this book.
+      </para>
+
+      <para>
+        The dragon, or GLFS mascot, does not actually have a name (yet), but
+        may recieve one in the future and may recieve more art depicting the
+        character.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Current - favicon-high.ico</title>
+
+      <mediaobject>
+        <imageobject>
+          <imagedata fileref="../images/favicon-high.ico" format="BMP"/>
+        </imageobject>
+      </mediaobject>
+
+      <para>
+        Added by Zeckma on June 25th, 2024, it is the high quality version of
+        the current favicon used for the site.
+      </para>
+
+      <para>
+        It is the <quote>G</quote> taken from
+        <filename>glfs-logo.png</filename>.
+      </para>
+
+    </sect3>
+
+  </sect2>
+
+</sect1>

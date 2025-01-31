@@ -36,6 +36,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="changelog.xml"/>
   <!--   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="newsserver.xml"/> -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="askhelp.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="artwork.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="credits.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="contact.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="important.xml"/>
