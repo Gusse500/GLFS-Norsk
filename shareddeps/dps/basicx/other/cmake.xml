@@ -61,12 +61,16 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="curl"/>,
-      <ulink url="&lfs-website;/blfs/view/svn/general/libarchive.html">
+      <xref linkend="curl"/>
+    </para>
+
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/libarchive.html">
       libarchive</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/general/libuv.html">
+      <ulink url="&blfs-svn;/general/libuv.html">
       libuv</ulink>, and
-      <ulink url="&lfs-website;/blfs/view/svn/basicnet/nghttp2.html">
+      <ulink url="&blfs-svn;/basicnet/nghttp2.html">
       nghttp2</ulink>
     </para>
 

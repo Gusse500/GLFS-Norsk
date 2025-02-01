@@ -124,11 +124,11 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="mesonfiles"/> (required for multilib 32-bit Nouveau
+            <xref linkend="mesonfiles"/> (required for lib32 Nouveau
             and Swrast Vulkan; if the recommended dependencies are met, setting
             <parameter>auto</parameter> or <parameter>all</parameter> for
             <parameter>vulkan-drivers=</parameter> will build them by default,
-            which is set for the 32-bit build down below)
+            which is set for the lib32 build down below)
           </para>
         </listitem>
         <listitem>
@@ -193,7 +193,7 @@
         gallium driver for this package to compile. Set the option
         <parameter>-D gallium-drivers=nouveau</parameter> to get this
         package over and done with as then you can move on. The
-        32-bit version of this package is not necessary if you are doing
+        lib32 version of this package is not necessary if you are doing
         this.
       </para>
     </note>

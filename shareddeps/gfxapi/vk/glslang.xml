@@ -126,7 +126,7 @@ ldconfig</userinput></screen>
       <parameter>-D ALLOW_EXTERNAL_SPIRV_TOOLS=ON</parameter>: This switch allows
       the build system to use the system-installed copy of
       <xref linkend="spirv-tools" role="nodep"/>, instead of downloading and
-      installing it's own copy.
+      installing its own copy.
     </para>
 
     <para>

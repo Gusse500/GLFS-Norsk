@@ -251,7 +251,7 @@ ldconfig</userinput></screen>
       <parameter>-D tests=false</parameter>: This switch causes tests
       to be built. It is disabled because it is beyond the scope of GLFS.
       If you'd like to test glib, reference
-      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/glib2.html">
+      <ulink url="&blfs-svn;/general/glib2.html">
       BLFS's glib page</ulink>.
     </para>
 

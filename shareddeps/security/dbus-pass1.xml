@@ -64,7 +64,10 @@
       <command>meson</command> command shown below):
     </para>
 
-<screen><userinput>meson setup --prefix=/usr          \
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr          \
             --buildtype=release    \
             --wrap-mode=nofallback \
             -D systemd=disabled    \
@@ -120,7 +123,7 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
   </sect2>
 
   <sect2>
-    <title>lib32 Installation of D-Bus - Pass 1</title>
+    <title>lib32 Installation of D-Bus</title>
 
     <note>
       <para>

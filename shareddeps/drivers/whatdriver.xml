@@ -29,7 +29,7 @@
 
     <para>
       <emphasis>AMDGPU</emphasis>:
-      this driver is for AMD GPUs that are Southern Island Cards or
+      This driver is for AMD GPUs that are Southern Island Cards or
       later. It is open source and is the most standard AMD GPU driver.
       This driver is in the Linux kernel and has two Mesa dri drivers:
       Gallium driver - <emphasis>radeonsi</emphasis> and Vulkan driver -
@@ -38,7 +38,7 @@
 
     <para>
       <emphasis>ATI</emphasis>:
-      this driver is for the ATI AMD GPUs which precede GCN GPUs.
+      This driver is for the ATI AMD GPUs which precede GCN GPUs.
       It is open source and targets older GPUs. The driver is in the Linux
       kernel and has three Mesa dri drivers: Gallium drivers - <emphasis>
       r300</emphasis> and <emphasis>r600</emphasis>; and Vulkan driver -
@@ -47,7 +47,7 @@
 
     <para>
       <emphasis>AMDGPU PRO</emphasis>:
-      this driver is proprietary. Most users don't install this driver
+      This driver is proprietary. Most users don't install this driver
       as the open source drivers are already well off. However, it is
       needed for hardware acceleration encoding, useful for those who
       wish to record and edit videos. Performance in games varies between
@@ -76,7 +76,7 @@
     </para>
 
     <para>
-      <emphasis>i915</emphasis>: this driver, or rather collection of drivers,
+      <emphasis>i915</emphasis>: This driver, or rather collection of drivers,
       is for most Intel integrated and discrete GPUs. It is a single option
       in the Linux kernel but has various Mesa Gallium3D and Vulkan dri drivers.
       There is a good list on the MESA page under Command Explanations that
@@ -84,7 +84,7 @@
     </para>
 
     <para>
-      <emphasis>uvesafb</emphasis>: this driver is for the Intel GMA 3600
+      <emphasis>uvesafb</emphasis>: This driver is for the Intel GMA 3600
       series, a family of integrated video adapters based on the PowerVR
       SGX 545 graphics core. This driver was in the kernel since 3.5 but
       no longer since 4.15. This driver is not included in the book
@@ -103,59 +103,61 @@
       support open source drivers besides their own open source kernel
       modules. Therefore performance with the open source drivers,
       <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>, are
-      worse than NVIDIA's proprietary driver, although installing the
-      proprietary driver is easier and doesn't require installing
-      lib32-<application>mesa</application> for multilib. There is another
+      slightly worse than NVIDIA's proprietary driver. Installing the
+      proprietary driver can be easier and doesn't require installing
+      lib32-<xref linkend="mesa"/> for multilib. There is another
       driver called <emphasis>Zink</emphasis> which translates Vulkan
-      calls to OpenGL calls.
+      calls to OpenGL calls which can replace <emphasis>Nouveau</emphasis>.
     </para>
 
     <para>
-      <emphasis>Nouveau</emphasis>: this driver is open source and
+      <emphasis>Nouveau</emphasis>: This driver is open source and
       has worse performance than <emphasis>NVIDIA</emphasis>. It is
-      technically all a kernel driver, a Mesa Gallium3D driver, and
+      technically a kernel driver, a Mesa Gallium3D driver, and
       Mesa Vulkan driver, although they have different parts and the
       Vulkan driver is often referred to as <emphasis>NVK</emphasis>,
-      depsite being referred to as nouveau in Mesa's <parameter>
-      -D vulkan-drivers=</parameter> option.
+      depsite being referred to as nouveau in <xref linkend="mesa"/>'s
+      <parameter>-D vulkan-drivers</parameter> parameter.
     </para>
 
     <para>
-      <emphasis>NVK</emphasis>: this driver is a new Mesa dri driver
+      <emphasis>NVK</emphasis>: This driver is a new Mesa Vulkan driver
       and in its production, involved several kernel patches. It is
       a Vulkan driver targetting Turing and later NVIDIA GPUs. It does
       provide better performance than <emphasis>Nouveau</emphasis> and
       is still improving. If you want to compile this driver, you are
-      going to need Rust, and if you are doing multilib, are going
-      to need the i686-unknown-linux-gnu target. Also make sure to install
-      <emphasis>Nouveau</emphasis> if you want to install this driver.
+      going to need <xref linkend="rustc"/>, and if you are doing multilib,
+      are going to need the i686-unknown-linux-gnu target. Also make sure to
+      install <emphasis>Nouveau</emphasis> if you want to install this driver.
     </para>
 
     <para>
-      <emphasis>Zink</emphasis>: this driver is a Gallium3D driver in
+      <emphasis>Zink</emphasis>: This driver is a Gallium3D driver in
       <xref linkend="mesa"/>, converting OpenGL calls to Vulkan calls,
       drastically improving performance. It isn't specifically related
       to <emphasis>Nouveau</emphasis> but as performance with
       <emphasis>Nouveau</emphasis> is not the best,
       using the <emphasis>Zink</emphasis> driver with
-      <emphasis>NVK</emphasis> is a great idea.
+      <emphasis>NVK</emphasis> is a great idea. You can find out how to use
+      <emphasis>Zink</emphasis> instead in <xref linkend="whatnow"/>.
     </para>
 
     <para>
       <emphasis>NVIDIA</emphasis>: This is the proprietary driver and
       the most often recommended for NVIDIA GPU owners using Linux.
       The performance of this driver exceeds the open source alternatives
-      and allows the use of NVIDIA's CUDA project, useful for hardware
+      and allows the use of NVIDIA's CUDA project which is useful for hardware
       acceleration, improving performance of games and workstation
       applications. This driver has a lot of issues to this day but
       still provides better performance, thus its installation is
       provided in this book. Installing this driver also prevents the
-      need to install lib32-Mesa and lib32-LLVM if you are doing multilib.
+      need to install lib32-<xref linkend="llvm"/> and
+      lib32-<xref linkend="mesa"/> if you are doing multilib.
       Firmware also isn't needed as it is provided by this driver.
     </para>
 
     <para>
-      Summary: if you want good performance and care about workstation
+      Summary: If you want good performance and care about workstation
       use cases, install <emphasis>NVIDIA</emphasis>. If you only use
       OpenGL applications and don't want the proprietary NVIDIA driver,
       use <emphasis>Nouveau</emphasis>. If you use a variety of

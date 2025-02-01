@@ -31,18 +31,18 @@
 
     <para>
       In order to use DHCP, you will need a DHCP client,
-      <ulink url="&lfs-website;/blfs/view/svn/basicnet/dhcpcd.html">
+      <ulink url="&blfs-svn;/basicnet/dhcpcd.html">
       dhcpcd</ulink>. You may also be wanting to connect to the
       internet wirelessly. In order to do that, you should first
       configure the kernel to support that, the instructions for
       that being at
-      <ulink url="&lfs-website;/blfs/view/svn/basicnet/wireless-kernel.html"/>.
+      <ulink url="&blfs-svn;/basicnet/wireless-kernel.html"/>.
       After that, you will need a tool to connect to the internet, suitable
       ones being
-      <ulink url="&lfs-website;/blfs/view/svn/basicnet/iw.html">iw</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/basicnet/wireless_tools.html">
+      <ulink url="&blfs-svn;/basicnet/iw.html">iw</ulink>,
+      <ulink url="&blfs-svn;/basicnet/wireless_tools.html">
       Wireless Tools</ulink>, and
-      <ulink url="&lfs-website;/blfs/view/svn/basicnet/wpa_supplicant.html">
+      <ulink url="&blfs-svn;/basicnet/wpa_supplicant.html">
       wpa_supplicant</ulink>.
       You will only need one of those, whichever one is up to you.
     </para>

@@ -64,7 +64,7 @@
     </para>
 
 <screen><userinput>mkdir build-x86_64 &amp;&amp;
-cd build-x86_64    &amp;&amp;
+cd    build-x86_64 &amp;&amp;
 
 ../configure --prefix=/usr                                \
              --target=x86_64-w64-mingw32                  \
@@ -94,7 +94,7 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
     </para>
 
 <screen><userinput>mkdir build-i686 &amp;&amp;
-cd build-i686    &amp;&amp;
+cd    build-i686 &amp;&amp;
 
 ../configure --prefix=/usr                              \
              --target=i686-w64-mingw32                  \
@@ -132,9 +132,9 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
 
     <para>
       <parameter>--disable-nls</parameter>: This option disables
-      nls support, disabling output diagnostics in languages other than
+      NLS support, disabling output diagnostics in languages other than
       American English. Omit <parameter>--disable-nls</parameter> and
-      invoke <parameter>--enable-nls</parameter> to enable nls support.
+      invoke <option>--enable-nls</option> to enable NLS support.
     </para>
 
     <para>

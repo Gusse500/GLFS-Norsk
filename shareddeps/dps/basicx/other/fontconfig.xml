@@ -63,8 +63,8 @@
     <para role="optional">
       <ulink url="&blfs-svn;/general/bubblewrap.html">bubblewrap</ulink>
       (used by some tests),
-      <xref linkend="curl"/> and
-      <ulink url="&blfs-svn;/general/unzip.html">unzip</ulink>
+      <xref linkend="curl"/>, and
+      &unzip;
       (both used by some tests for downloading and extracting test files)
     </para>
 

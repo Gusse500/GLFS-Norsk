@@ -42,7 +42,7 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      <xref linkend="mesa"/>
+      OpenGL (<xref linkend="libglvnd"/> and/or <xref linkend="mesa"/>)
     </para>
 
   </sect2>
@@ -80,11 +80,6 @@ ninja</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../xincludes/meson-buildtype-release.xml"/>
-
-    <para>
-      <option>-D docs=true</option>: If you have Doxygen
-      installed, add this option to generate additional documentation.
-    </para>
 
   </sect2>
 

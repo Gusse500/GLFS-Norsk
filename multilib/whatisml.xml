@@ -57,7 +57,9 @@
 
     <para>
       Run <command>uname -m</command> to find out if you are on a
-      capable CPU.
+      capable CPU. If the output is
+      <computeroutput>x86_64</computeroutput>, you should be capable of
+      multilib.
     </para>
 
   </sect2>

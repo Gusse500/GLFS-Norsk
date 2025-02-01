@@ -69,7 +69,7 @@
     </para>
 
 <screen><userinput>mkdir build-x86_64-headers &amp;&amp;
-cd build-x86_64-headers    &amp;&amp;
+cd    build-x86_64-headers &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/x86_64-w64-mingw32 \
                                --enable-sdk=all                 \
@@ -92,7 +92,7 @@ cd build-x86_64-headers    &amp;&amp;
     </para>
 
 <screen><userinput>mkdir build-i686-headers &amp;&amp;
-cd build-i686-headers    &amp;&amp;
+cd    build-i686-headers &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/i686-w64-mingw32 \
                                --enable-sdk=all               \

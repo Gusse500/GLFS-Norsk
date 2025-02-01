@@ -49,7 +49,7 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="&blfs-svn;/general/libxml2.html">libxml2</ulink>
+      <xref linkend="libxml2"/>
       (required to run the tests)
     </para>
 

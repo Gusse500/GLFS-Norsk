@@ -48,13 +48,11 @@
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
 
-      <ulink url="&lfs-website;/blfs/view/svn/multimedia/ffmpeg.html">
-      FFmpeg</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/multimedia/libsamplerate.html">
+      <xref linkend="ffmpeg"/>,
+      <ulink url="&blfs-svn;/multimedia/libsamplerate.html">
       libsamplerate</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/multimedia/pulseaudio.html">
-      PulseAudio</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/multimedia/speex.html">
+      <xref linkend="pulseaudio"/>,
+      <ulink url="&blfs-svn;/multimedia/speex.html">
       Speex</ulink>,
       <ulink url="https://jackaudio.org/">JACK</ulink>,
       <ulink url="https://github.com/AVnu/libavtp/">libavtp</ulink>, and

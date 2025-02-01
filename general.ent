@@ -118,7 +118,7 @@
 <!ENTITY systemd-units-version        "20240205">
 
 <!ENTITY blfs-wiki                    "https://wiki.&lfs-domainname;/blfs/wiki">
-<!ENTITY blfs-svn                     "https://&lfs-domainname;/blfs/view/&blfs-version;">
+<!ENTITY blfs-svn                     "&lfs-website;/blfs/view/&blfs-version;">
 
 <![ %development; [
   <!ENTITY important-stability "<para>
@@ -280,6 +280,9 @@ export -f as_root</userinput></screen>
 <!ENTITY install-wheel "pip3 install --no-index --find-links=dist --no-cache-dir --no-user">
 
 <!ENTITY berkeley-db "<ulink url='https://anduin.linuxfromscratch.org/BLFS/bdb/db-5.3.28.tar.gz'>Berkeley DB</ulink> (deprecated)">
+
+<!-- TODO: Replace link with libarchive when BLFS switches over. -->
+<!ENTITY unzip "<ulink url='&blfs-svn;/general/unzip.html'>UnZip</ulink>">
 
 <!ENTITY gobject-introspection "<xref linkend='glib2'/> (with GObject Introspection)">
 

@@ -74,8 +74,8 @@ EOF</userinput></screen>
       Download and unpack the drivers by following the instructions below:
     </para>
 
-<screen><userinput>mkdir -pv x86_64-amdgpu-pro                                                        &amp;&amp;
-cd        x86_64-amdgpu-pro                                                        &amp;&amp;
+<screen><userinput>mkdir x86_64-amdgpu-pro                                                            &amp;&amp;
+cd    x86_64-amdgpu-pro                                                            &amp;&amp;
 
 wget --continue --input-file=../x86_64-amdgpu-pro-wget-list                        &amp;&amp;
 for deb in *.deb; do
@@ -144,8 +144,8 @@ EOF</userinput></screen>
       Download and unpack the drivers by following the instructions below:
     </para>
 
-<screen><userinput>mkdir -pv i386-amdgpu-pro                                                          &amp;&amp;
-cd        i386-amdgpu-pro                                                          &amp;&amp;
+<screen><userinput>mkdir i386-amdgpu-pro                                                              &amp;&amp;
+cd    i386-amdgpu-pro                                                              &amp;&amp;
 
 wget --continue --input-file=../i386-amdgpu-pro-wget-list                          &amp;&amp;
 for deb in *.deb; do

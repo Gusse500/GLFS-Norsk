@@ -65,7 +65,7 @@
     </para>
 
 <screen><userinput>mkdir build-x86_64 &amp;&amp;
-cd build-x86_64    &amp;&amp;
+cd    build-x86_64 &amp;&amp;
 
 ../configure --prefix=/usr/x86_64-w64-mingw32 \
              --host=x86_64-w64-mingw32        \
@@ -85,9 +85,9 @@ make</userinput></screen>
       installed but now are (this library enables POSIX thread support):
     </para>
 
-<screen><userinput>cd ..                                 &amp;&amp;
-mkdir -v build-x86_64-winpthreads     &amp;&amp;
-cd       build-x86_64-winpthreads     &amp;&amp;
+<screen><userinput>cd ..                          &amp;&amp;
+mkdir build-x86_64-winpthreads &amp;&amp;
+cd    build-x86_64-winpthreads &amp;&amp;
 
 ../mingw-w64-libraries/winpthreads/configure \
             --prefix=/usr/x86_64-w64-mingw32 \
@@ -112,7 +112,7 @@ make</userinput></screen>
     </para>
 
 <screen><userinput>mkdir build-i686 &amp;&amp;
-cd build-i686    &amp;&amp;
+cd    build-i686 &amp;&amp;
 
 ../configure --prefix=/usr/i686-w64-mingw32 \
              --host=i686-w64-mingw32        \
@@ -132,9 +132,9 @@ make</userinput></screen>
       installed but now are (this library enables POSIX thread support):
     </para>
 
-<screen><userinput>cd ..                               &amp;&amp;
-mkdir -v build-i686-winpthreads     &amp;&amp;
-cd       build-i686-winpthreads     &amp;&amp;
+<screen><userinput>cd ..                        &amp;&amp;
+mkdir build-i686-winpthreads &amp;&amp;
+cd    build-i686-winpthreads &amp;&amp;
 
 ../mingw-w64-libraries/winpthreads/configure \
             --prefix=/usr/i686-w64-mingw32 \

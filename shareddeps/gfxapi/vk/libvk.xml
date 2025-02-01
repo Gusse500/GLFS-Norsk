@@ -62,7 +62,7 @@
     <note>
       <para>
         If this package is being installed on a system where Mesa has already
-        been installed previously, please rebuild <!--xref linkend="mesa"/--> Mesa after
+        been installed previously, please rebuild <xref linkend="mesa"/> after
         this package to install Vulkan graphics drivers.
       </para>
     </note>
@@ -138,7 +138,7 @@ ldconfig</userinput></screen>
       href="../../../xincludes/cmake-skip-install-rpath.xml"/>
 
     <para>
-      <parameter>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</parameter>: This
+      <option>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</option>: This
       option allows building the library without Wayland.
     </para>
 

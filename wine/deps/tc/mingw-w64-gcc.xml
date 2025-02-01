@@ -51,9 +51,9 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
+      <ulink url="&blfs-svn;/general/gdb.html">
       GDB</ulink> and
-      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/valgrind.html">
+      <ulink url="&blfs-svn;/general/valgrind.html">
       Valgrind</ulink> (for tests)
     </para>
 
@@ -82,13 +82,12 @@
 <screen><userinput>mkdir build-x86_64-mingw-w64 &amp;&amp;
 cd    build-x86_64-mingw-w64 &amp;&amp;
 
-../configure                             \
-    --prefix=/usr                        \
-    --target=x86_64-w64-mingw32          \
-    --enable-threads=posix               \
-    --enable-shared                      \
-    --disable-multilib                   \
-    --enable-languages=c,c++ &amp;&amp;
+../configure --prefix=/usr               \
+             --target=x86_64-w64-mingw32 \
+             --enable-threads=posix      \
+             --enable-shared             \
+             --disable-multilib          \
+             --enable-languages=c,c++ &amp;&amp;
 
 make</userinput></screen>
 
@@ -138,13 +137,12 @@ strip /usr/libexec/gcc/x86_64-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2
 <screen><userinput>mkdir build-i686-mingw-w64 &amp;&amp;
 cd    build-i686-mingw-w64 &amp;&amp;
 
-../configure                             \
-    --prefix=/usr                        \
-    --target=i686-w64-mingw32            \
-    --enable-shared                      \
-    --enable-threads=posix               \
-    --disable-multilib                   \
-    --enable-languages=c,c++ &amp;&amp;
+../configure --prefix=/usr             \
+             --target=i686-w64-mingw32 \
+             --enable-shared           \
+             --enable-threads=posix    \
+             --disable-multilib        \
+             --enable-languages=c,c++ &amp;&amp;
 
 make</userinput></screen>
 
@@ -232,7 +230,7 @@ rm -v a.out main.{c,cpp}</userinput></screen>
       For x86_64:
     </para>
 
-<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF"     &amp;&amp;
+<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF" &amp;&amp;
 <literal>#include &lt;stdio.h&gt;
 int main(){}
 </literal>EOF
@@ -249,7 +247,7 @@ rm -v a.exe main.{c,cpp}</userinput></screen>
       For i686:
     </para>
 
-<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF"     &amp;&amp;
+<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF" &amp;&amp;
 <literal>#include &lt;stdio.h&gt;
 int main(){}
 </literal>EOF
@@ -257,9 +255,9 @@ int main(){}
 cp main.{c,cpp}                        &amp;&amp;
 sed -i 's/stdio.h/iostream/g' main.cpp &amp;&amp;
 
-i686-w64-mingw32-gcc main.c            &amp;&amp;
-rm -v a.exe                            &amp;&amp;
-i686-w64-mingw32-g++ main.cpp          &amp;&amp;
+i686-w64-mingw32-gcc main.c   &amp;&amp;
+rm -v a.exe                   &amp;&amp;
+i686-w64-mingw32-g++ main.cpp &amp;&amp;
 rm -v a.exe main.{c,cpp}</userinput></screen>
 
     <para>

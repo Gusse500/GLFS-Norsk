@@ -12,7 +12,7 @@
 
   <para>
     This chapter is dedicated to covering all the dependencies
-    (both 64-bit and 32-bit compilation instructions),
+    (both normal and lib32 compilation instructions),
     configuration of those dependencies, and troubleshooting
     that is required to get Steam working on a LFS platform.
   </para>

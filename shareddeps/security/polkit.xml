@@ -176,6 +176,11 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
     </para>
 
     <para>
+      <parameter>-D man=false</parameter>: This option disables generating and
+      installing manual pages.
+    </para>
+
+    <para>
       <option>-D authfw=shadow</option>: This switch enables the
       package to use the <application>Shadow</application> rather than the
       <application>Linux PAM</application> Authentication framework. Use it
@@ -185,11 +190,6 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
     <para>
       <option>-D introspection=false</option>: This option disables GObject
       Introspection support if you are sure you don't need it.
-    </para>
-
-    <para>
-      <option>-D man=false</option>: This option disables generating and
-      installing manual pages.
     </para>
 
   </sect2>

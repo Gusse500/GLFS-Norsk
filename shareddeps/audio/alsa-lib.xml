@@ -61,7 +61,7 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="&lfs-website;/blfs/view/svn/general/doxygen.html">
+      <ulink url="&blfs-svn;/general/doxygen.html">
       Doxygen</ulink>,
       <ulink url="&lfs-website;/blfs/view/12.1/general/python2.html">
       Python2</ulink>, and

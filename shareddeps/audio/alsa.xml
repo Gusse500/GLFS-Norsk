@@ -21,7 +21,7 @@
     applications need to interface to that capability. The following three
     sections of the book deal with the separate components of ALSA.
     More Alsa packages if needed have installation instructions at
-    <ulink url="https://&lfs-domainname;/blfs/view/svn/multimedia/libdriv.html"/>.
+    <ulink url="&blfs-svn;/multimedia/libdriv.html"/>.
   </para>
 
 </sect1>

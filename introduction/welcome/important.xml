@@ -112,9 +112,9 @@
     </important>
 
     <para>
-      Next is compiling for 32-bit. There are many packages which will have
+      Next is compiling for lib32. There are many packages which will have
       a lib32 counterpart. If you just got done with a normal compilation
-      of a package and wish to do a 32-bit compilation of that same package,
+      of a package and wish to do a lib32 compilation of that same package,
       make sure to clean the directory first:
     </para>
 
@@ -125,10 +125,10 @@
 
     <screen><userinput>rm -rf *</userinput></screen>
 
-    <para>Then proceed with the 32-bit compilation instructions.</para>
+    <para>Then proceed with the lib32 compilation instructions.</para>
 
     <para>
-      Generally, the format of targetting 32-bit goes like this:
+      Generally, the format of targetting lib32 goes like this:
     </para>
 
     <para>For <command>./configure</command>:</para>
@@ -183,7 +183,7 @@ ldconfig</userinput></screen>
         After you do a DESTDIR installation, it is recommended to
         to use <command>file</command> on one of the libraries in
         <filename>DESTDIR/usr/lib32</filename>. An output of such
-        a command for a 32-bit build of a library should be
+        a command for a lib32 build of a library should be
         comparable to the following:
       </para>
 

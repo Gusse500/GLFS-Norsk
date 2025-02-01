@@ -50,13 +50,13 @@
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       
-      <ulink url="&lfs-website;/blfs/view/svn/general/python-modules.html#docutils">
+      <ulink url="&blfs-svn;/general/python-modules.html#docutils">
       docutils</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/general/fftw.html">
+      <ulink url="&blfs-svn;/general/fftw.html">
       fftw</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/multimedia/libsamplerate.html">
+      <ulink url="&blfs-svn;/multimedia/libsamplerate.html">
       libsamplerate</ulink>,
-      <ulink url="&lfs-website;/blfs/view/svn/pst/xmlto.html">
+      <ulink url="&blfs-svn;/pst/xmlto.html">
       xmlto</ulink>, and
       <ulink url="https://hightek.org/projects/dialog/">Dialog</ulink>
     </para>

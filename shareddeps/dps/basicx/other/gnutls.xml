@@ -153,28 +153,25 @@ make</userinput></screen>
       by default. Use this if <xref linkend="p11-kit"/> is not installed.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/gtk-doc-rebuild.xml"/>
-
     <para>
       <option>--enable-openssl-compatibility</option>:
       Use this switch if you wish to build the OpenSSL compatibility library.
     </para>
 
     <para>
-      <option>--without-p11-kit</option>: use this switch if you have not
-      installed <application>p11-kit</application>.
+      <option>--without-p11-kit</option>: Use this switch if you have not
+      installed <xref linkend="p11-kit"/>.
     </para>
 
     <para>
-      <option>--with-included-unistring</option>: uses the bundled version of
-      libunistring, instead of the system one. Use this switch if you have not
-      installed <xref linkend="libunistring"/>.
+      <option>--with-included-unistring</option>: This switch uses the bundled
+      version of libunistring, instead of the system one. Use this switch if
+      you have not installed <xref linkend="libunistring"/>.
     </para>
 
     <para>
-      <option>--disable-dsa</option>: completely disables DSA algorithm
-      support.
+      <option>--disable-dsa</option>: This option completely disables DSA
+      algorithm support.
     </para>
 
   </sect2>

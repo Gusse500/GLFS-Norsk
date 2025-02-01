@@ -33,8 +33,9 @@
     <para>
       <application>Clang</application> provides new C, C++, Objective C
       and Objective C++ front-ends for <application>LLVM</application> and is
-      required by some desktop packages such as <application>Firefox</application>
-      and for <application>Rustc</application> if that is built using the system
+      required by some desktop packages such as
+      <ulink url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>
+      and for <xref linkend="rustc"/> if that is built using the system
       <application>LLVM</application>.
     </para>
 
@@ -284,10 +285,10 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU"</parameter>: This
       switch enables building for x86, the same target as the host, and also for
-      the r600 AMD GPU used by the Mesa r600 and radeonsi drivers.
-      The default is
-      all of the targets. You can use a semicolon separated list. Valid targets
-      are: host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch,
+      the r600 AMD GPU used by the <xref linkend="mesa"/> r600 and radeonsi
+      drivers. The default is all of the targets. You can use a semicolon
+      separated list. Valid targets are:
+      host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch,
       Mips, MSP430, NVPTX, PowerPC, RISCV, Sparc, SystemZ, SystemZ, VE,
       WebAssembly, X86, XCore, or all.
     </para>
@@ -303,7 +304,7 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D LLVM_ENABLE_RTTI=ON</parameter>: This switch is used to
       build LLVM with run-time type information. This is required for building
-      MESA.
+      <xref linkend="mesa"/>.
     </para>
 
     <para>
@@ -385,7 +386,8 @@ done</userinput></screen>
           clang-offload-bundler, clang-offload-packager,
           clang-refactor, clang-rename, clang-repl, clang-scan-deps,
           clang-tblgen,
-          diagtool, dsymutil, FileCheck, git-clang-format, hmaptool, intercept-build, llc, lli,
+          diagtool, dsymutil, FileCheck, git-clang-format, hmaptool, intercept-build,
+          llc, lli,
           llvm-addr2line (symlink to llvm-symbolizer),
           llvm-ar, llvm-as, llvm-bcanalyzer,
           llvm-bitcode-strip (symlink to llvm-objcopy), llvm-cat,

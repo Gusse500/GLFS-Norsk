@@ -62,7 +62,7 @@
       subsection of this chapter. Feel free to skip to the Vulkan installation
       or the Graphics Driver subsection if you want to compile Mesa's OpenGL
       libraries. To compile Mesa's OpenGL libraries, compile it normally without
-      setting <parameter>-Dglvnd=true</parameter>.
+      setting <parameter>-D glvnd=true</parameter>.
     </para>
 
   </sect2>

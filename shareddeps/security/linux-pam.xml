@@ -86,13 +86,13 @@
       running the following commands:
     </para>
 
-<screen><userinput>mkdir -v build        &amp;&amp;
-cd       build        &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
 meson setup ..        \
   --prefix=/usr       \
   --buildtype=release \
-  -D docs=disabled    &amp;&amp;
+  -D docs=disabled &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -186,13 +186,13 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
       running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"            \
-PKG_CONFIG_PATH="/usr/lib32/pkgconfig"  \
-meson setup ..                          \
-  --prefix=/usr                         \
-  --libdir=/usr/lib32                   \
-  --buildtype=release                   \
-  -D docs=disabled                      &amp;&amp;
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"           \
+PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
+meson setup ..                         \
+  --prefix=/usr                        \
+  --libdir=/usr/lib32                  \
+  --buildtype=release                  \
+  -D docs=disabled &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -212,6 +212,11 @@ ldconfig</userinput></screen>
     <title>Command Explanations</title>
 
     &options-meson;
+
+    <para>
+      <parameter>-D docs=disabled</parameter>: This options disables building
+      documentation that requires Docbook XML and XSLT packages.
+    </para>
 
   </sect2>
 

@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>February 1st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Fixed several typos book-wide. Fixes
+          <ulink url="&glfs-issues;/79">#79</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>January 31st, 2025</para>
       <itemizedlist>
         <listitem>

@@ -165,12 +165,6 @@ ldconfig</userinput></screen>
       MD5 hashing.
     </para>
 
-    <para>
-      <option>-D gtk_doc=true</option>: Use this switch if you have installed
-      <!-- xref linkend="gtk-doc"/ --> and <!-- xref linkend="libxslt"/ --> and wish to
-      rebuild the documentation and generate manual pages.
-    </para>
-
   </sect2>
 
   <sect2 role="configuration">
@@ -206,8 +200,7 @@ ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib32/libnssckbi.so</userinput></screen>
           /etc/pkcs11,
           /usr/include/p11-kit-1,
           /usr/lib/pkcs11,
-          /usr/libexec/p11-kit,
-          /usr/share/gtk-doc/html/p11-kit, and
+          /usr/libexec/p11-kit, and
           /usr/share/p11-kit
         </seg>
       </seglistitem>

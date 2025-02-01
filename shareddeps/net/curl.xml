@@ -76,8 +76,8 @@
       commands:
     </para>
 
-<screen><userinput>mkdir -v build                             &amp;&amp;
-cd       build                             &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
 ../configure --prefix=/usr                 \
              --disable-static              \

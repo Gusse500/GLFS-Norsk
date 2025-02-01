@@ -56,9 +56,9 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
+      <ulink url="&blfs-svn;/general/gdb.html">
       GDB</ulink> and
-      <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/valgrind.html">
+      <ulink url="&blfs-svn;/general/valgrind.html">
       Valgrind</ulink> (for tests)
     </para>
 
@@ -87,13 +87,12 @@
 <screen><userinput>mkdir build-x86_64-mingw-w64-static &amp;&amp;
 cd    build-x86_64-mingw-w64-static &amp;&amp;
 
-../configure                             \
-    --prefix=/usr                        \
-    --target=x86_64-w64-mingw32          \
-    --disable-shared                     \
-    --disable-multilib                   \
-    --disable-threads                    \
-    --enable-languages=c,c++ &amp;&amp;
+../configure --prefix=/usr               \
+             --target=x86_64-w64-mingw32 \
+             --disable-shared            \
+             --disable-multilib          \
+             --disable-threads           \
+             --enable-languages=c,c++ &amp;&amp;
 
 make all-gcc</userinput></screen>
 
@@ -116,13 +115,12 @@ make all-gcc</userinput></screen>
 <screen><userinput>mkdir build-i686-mingw-w64-static &amp;&amp;
 cd    build-i686-mingw-w64-static &amp;&amp;
 
-../configure                             \
-    --prefix=/usr                        \
-    --target=i686-w64-mingw32            \
-    --disable-shared                     \
-    --disable-multilib                   \
-    --disable-threads                    \
-    --enable-languages=c,c++ &amp;&amp;
+../configure --prefix=/usr             \
+             --target=i686-w64-mingw32 \
+             --disable-shared          \
+             --disable-multilib        \
+             --disable-threads         \
+             --enable-languages=c,c++ &amp;&amp;
 
 make all-gcc</userinput></screen>
 

@@ -567,7 +567,7 @@ done</userinput></screen>
     <para>
       A list of the installed files, along with their short descriptions can be
       found at
-      <ulink url="&lfs-website;/~thomas/multilib/chapter08/shadow.html#contents-shadow"/>.
+      <ulink url="&mlfs-m32-root;/chapter08/shadow.html#contents-shadow"/>.
     </para>
 
   </sect2>

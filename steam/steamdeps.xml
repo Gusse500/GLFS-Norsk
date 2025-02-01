@@ -34,7 +34,7 @@
       <xref linkend="libglvnd"/>,
       <xref linkend="make-ca"/>, and
       <xref linkend="mesa"/> w/ the <parameter>-D glvnd=enabled
-      </parameter> option (lib32 mesa is not required for multilib
+      </parameter> option (lib32 Mesa is not required for multilib
       <emphasis>IF</emphasis> you are using <xref linkend="nvidia"/>)
     </para>
 
