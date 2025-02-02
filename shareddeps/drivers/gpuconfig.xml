@@ -190,7 +190,7 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
         cannot find your GPU listed in <filename>WHENCE</filename>, it means
         your GPU either doesn't need firmware or the firmware has not been
         released yet. If you don't want to bother and would rather install all
-        the drivers and symlinks, follow the instructions below in order to
+        the firmware and symlinks, follow the instructions below in order to
         install the newer firmware properly automatically:
       </para>
 
