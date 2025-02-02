@@ -107,8 +107,7 @@ make</userinput></screen>
 <screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
 rm -v  DESTDIR/usr/lib/bfd-plugins/libdep.so &amp;&amp;
 cp -Rv DESTDIR/usr/* /usr                    &amp;&amp;
-rm -rf DESTDIR                               &amp;&amp;
-cd ..</userinput></screen>
+rm -rf DESTDIR</userinput></screen>
 
     </sect3>
 
