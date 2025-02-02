@@ -261,7 +261,7 @@
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 <!ENTITY libxkbcommon-version         "1.7.0">
 <!ENTITY sdl2-version                 "2.30.11">
-<!ENTITY gstreamer10-version          "1.24.11">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.24.12">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
