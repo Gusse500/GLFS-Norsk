@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>February 2nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Which: 2.22 -&gt; 2.23. Fixes
+          <ulink url="&glfs-issues;/83">#83</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 1st, 2025</para>
       <itemizedlist>
         <listitem>
