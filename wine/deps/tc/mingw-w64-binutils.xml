@@ -8,22 +8,22 @@
   <!ENTITY mingw-w64-binutils-download-ftp  " ">
 ]>
 
-<sect1 id="mingw-w64-binutils" xreflabel="MinGW-w64-binutils-&binutils-version;">
+<sect1 id="mingw-w64-binutils" xreflabel="MinGW-w64-Binutils-&binutils-version;">
   <?dbhtml filename="mingw-w64-binutils.html"?>
 
-  <title>MinGW-w64-binutils-&binutils-version;</title>
+  <title>MinGW-w64-Binutils-&binutils-version;</title>
 
   <indexterm zone="mingw-w64-binutils">
-    <primary sortas="a-mingw-w64-binutils">mingw-w64-binutils</primary>
+    <primary sortas="a-mingw-w64-binutils">MinGW-w64-Binutils</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to MinGW-w64-binutils</title>
+    <title>Introduction to MinGW-w64-Binutils</title>
 
     <para>
-      MinGW-w64-binutils is a collection of software that can change
+      MinGW-w64-Binutils is a collection of software that can change
       the state of Windows binaries or make them executable. These
-      binutils are specific to MinGW-w64, and using regular binutils
+      Binutils are specific to MinGW-w64, and using regular Binutils
       will not work for the proceeding packages.
     </para>
 
@@ -46,13 +46,13 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of MinGW-w64-binutils</title>
+    <title>Installation of MinGW-w64-Binutils</title>
 
   <sect3>
-    <title>x86_64 MinGW-w64-binutils</title>
+    <title>x86_64 MinGW-w64-Binutils</title>
     
     <para>
-      Install x86_64 <application>MinGW-w64-binutils</application>
+      Install x86_64 <application>MinGW-w64-Binutils</application>
       by running the following commands:
     </para>
 
@@ -72,17 +72,19 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make install &amp;&amp;
-cd ..        &amp;&amp;
-rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
+<screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
+rm -v  DESTDIR/usr/lib/bfd-plugins/libdep.so &amp;&amp;
+cp -Rv DESTDIR/usr/* /usr                    &amp;&amp;
+rm -rf DESTDIR                               &amp;&amp;
+cd ..</userinput></screen>
 
   </sect3>
 
   <sect3>
-    <title>i686 MinGW-w64-binutils</title>
+    <title>i686 MinGW-w64-Binutils</title>
 
     <para>
-      Install i686 <application>MinGW-w64-binutils</application>
+      Install i686 <application>MinGW-w64-Binutils</application>
       by running the following commands:
     </para>
 
@@ -102,8 +104,11 @@ make</userinput></screen>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>make install &amp;&amp;
-rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
+<screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
+rm -v  DESTDIR/usr/lib/bfd-plugins/libdep.so &amp;&amp;
+cp -Rv DESTDIR/usr/* /usr                    &amp;&amp;
+rm -rf DESTDIR                               &amp;&amp;
+cd ..</userinput></screen>
 
     </sect3>
 
@@ -141,8 +146,10 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
     </para>
 
     <para>
-      <command>rm -v /usr/lib/bfd-plugins/libdep.so</command>:
-      This command removes an unnecessary library.
+      <command>rm -v DESTDIR/usr/lib/bfd-plugins/libdep.so</command>:
+      This command removes an libary that conflicts with the original library
+      provided by the original compilation of
+      <ulink url="&mlfs-m32-root;/chapter08/binutils.html">Binutils</ulink>.
     </para>
 
   </sect2>
@@ -189,7 +196,7 @@ rm -v /usr/lib/bfd-plugins/libdep.so</userinput></screen>
       Only binutils specific to <application>MinGW-w64</application>
       will be explained. For the rest, see
       <ulink url="&mlfs-m32-root;/chapter08/binutils.html">
-      binutils-&binutils-version;</ulink>.
+      Binutils</ulink>.
     </para>
 
     <variablelist>

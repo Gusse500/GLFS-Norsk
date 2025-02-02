@@ -43,7 +43,11 @@
       <para>February 2nd, 2025</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - MinGW-w64-binutils: Remove note about rebuild.</para>
+          <para>[zeckma] - MinGW-w64-Binutils: Remove <filename
+          class="libraryfile">libdep.so</filename> in DESTDIR install.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: Remove note about rebuild.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - Which: 2.22 -&gt; 2.23. Fixes
