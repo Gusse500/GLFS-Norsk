@@ -265,10 +265,10 @@
       <para>
         Unlike X11, Wayland requires that the nvidia_drm module has the modeset
         option set to true, which is not by default. Do so by creating the
-        following folder and file, then reboot:
+        following folder and file as the &root; user, then reboot:
       </para>
 
-<screen><userinput>mkdir -pv /etc/modprobe.d &amp;&amp;
+<screen role="root"><userinput>mkdir -pv /etc/modprobe.d &amp;&amp;
 cat &gt; /etc/modprobe.d/nvidia.conf &lt;&lt; "EOF"
 <literal>options nvidia_drm modeset=1</literal>
 EOF</userinput></screen>
