@@ -102,11 +102,13 @@ rm -v /usr/lib/libaom.a</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>cmake -D CMAKE_INSTALL_PREFIX=/usr  \
-      -D CMAKE_INSTALL_LIBDIR=lib32 \
-      -D CMAKE_BUILD_TYPE=Release   \
-      -D BUILD_SHARED_LIBS=1        \
-      -D ENABLE_DOCS=no             \
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+cmake -D CMAKE_INSTALL_PREFIX=/usr   \
+      -D CMAKE_INSTALL_LIBDIR=lib32  \
+      -D CMAKE_BUILD_TYPE=Release    \
+      -D BUILD_SHARED_LIBS=1         \
+      -D ENABLE_DOCS=no              \
       -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>

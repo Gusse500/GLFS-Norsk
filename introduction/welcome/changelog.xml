@@ -43,6 +43,10 @@
       <para>February 3rd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - libaom: fix building the 32-bit libraries. Fixes
+          <ulink url="&glfs-issues;/89">#89</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - linux: 6.12.8 -&gt; 6.13.1.</para>
         </listitem>
         <listitem>
