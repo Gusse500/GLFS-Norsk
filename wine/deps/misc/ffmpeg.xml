@@ -195,6 +195,7 @@ install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-&ffmpeg-version;</userinput>
             --disable-static                          \
             --enable-shared                           \
             --disable-debug                           \
+            --enable-libaom                           \
             --enable-libfdk-aac                       \
             --enable-libfreetype                      \
             --enable-libmp3lame                       \

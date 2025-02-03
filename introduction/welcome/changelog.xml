@@ -43,6 +43,10 @@
       <para>February 3rd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - FFmpeg: Add <parameter>--enable-libaom</parameter>
+          to lib32 build.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - libaom: fix building the 32-bit libraries. Fixes
           <ulink url="&glfs-issues;/89">#89</ulink>.</para>
         </listitem>
