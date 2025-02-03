@@ -40,6 +40,18 @@
     -->
 
     <listitem>
+      <para>February 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libX11: 1.8.10 -&gt; 1.8.11;
+          xhost: 1.0.9 -&gt; 1.0.10. Fixes
+          <ulink url="&glfs-issues;/86">#86</ulink> and
+          <ulink url="&glfs-issues;/87">#87</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 2nd, 2025</para>
       <itemizedlist>
         <listitem>
