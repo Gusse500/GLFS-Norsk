@@ -43,6 +43,10 @@
       <para>February 2nd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: 2.43.1 -&gt; 2.44. Fixes
+          <ulink url="&glfs-issues;/72">#72</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - MinGW-w64-Binutils: Remove <filename
           class="libraryfile">libdep.so</filename> in DESTDIR install.</para>
         </listitem>
