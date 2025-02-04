@@ -6,4 +6,6 @@
 <screen><emphasis role='blue'>D</emphasis>evice Drivers ---&gt;
   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
     &lt;*/M&gt; <emphasis role='blue'>D</emphasis>irect Rendering Manager (XFree86 4.1.0 and higher DRI support) ---&gt;
-                                                                      ...  [DRM]</screen>
+                                                                      ...  [DRM]
+    <emphasis role='blue'>F</emphasis>rame buffer Devices ---&gt;
+      &lt;*/M&gt; n<emphasis role='blue'>V</emphasis>idia Framebuffer Support                               [FB_NVIDIA]</screen>
