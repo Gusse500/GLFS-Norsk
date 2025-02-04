@@ -58,8 +58,8 @@
       Install libglvnd by running the following commands:
     </para>
 
-<screen><userinput>mkdir -v build &amp;&amp;
-cd       build &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
 meson setup .. --prefix=/usr --buildtype=release &amp;&amp;
 
