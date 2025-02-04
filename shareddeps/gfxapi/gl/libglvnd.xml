@@ -176,7 +176,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             is a wrapper library to <filename class="libraryfile">libGLdispatch.so
-            </filename> which expose OpenGL ES entrypoints
+            </filename> which exposes OpenGL ES entrypoints
           </para>
           <indexterm zone="libglvnd glvnd-libGLESv1_CM">
             <primary sortas="b-glvnd-libGLESv1_CM">libGLESv1_CM.so</primary>
@@ -189,7 +189,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             is a wrapper library to <filename class="libraryfile">libGLdispatch.so
-            </filename> which expose OpenGL ES entrypoints
+            </filename> which exposes OpenGL ES entrypoints
           </para>
           <indexterm zone="libglvnd glvnd-libGLESv2">
             <primary sortas="b-glvnd-libGLESv2">libGLESv2.so</primary>
