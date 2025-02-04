@@ -56,6 +56,11 @@
     <title>Packages That Are Outdated and Why</title>
 
     <para>
+      No packages are currently outdated at time of release.
+    </para>
+
+<!--
+    <para>
       <xref linkend="nvidia"/>: Newer versions of <application>NVIDIA
       </application> have many issues. For example, the newest version demands
       that users disable framebuffer emulation support in the kernel in order
@@ -66,6 +71,7 @@
       and Zink Gallium3D from <xref linkend="mesa"/>. It is pretty competent
       now and is recommended to use those drivers instead.
     </para>
+-->
 
   </sect2>
 

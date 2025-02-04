@@ -184,21 +184,6 @@
   <sect2 role="installation">
     <title>Installation of Mesa</title>
     
-    <note>
-      <para>
-        If you are using <xref linkend="nvidia"/> and wish to use
-        <xref linkend="steam"/>, this package is still a requirement
-        as <application>Steam</application> depends on Mesa's GBM,
-        or else the webhelper will repeatedly launch and crash.
-        You will need to have at least one
-        gallium driver for this package to compile. Set the option
-        <parameter>-D gallium-drivers=nouveau</parameter> to get this
-        package over and done with as then you can move on. The
-        lib32 version of this package is not necessary if you are doing
-        this.
-      </para>
-    </note>
-
 <!--
     <para>
       The recommended patch fixes behavior in the Gallium3D Zink driver when
@@ -458,8 +443,8 @@ ldconfig</userinput></screen>
           <para>
             <literal>nouveau</literal> (for GTX 16XX, RTX 20XX, or newer NVIDIA GPUs;
             this driver is maturing and is already quite performant, although less so
-            than the <xref linkend="nvidia"/> driver; however, it is a good replacement,
-            especially when used with Gallium3D <literal>zink</literal>)
+            than the <application>NVIDIA</application> driver; however, it is a good
+            replacement, especially when used with Gallium3D <literal>zink</literal>)
           </para>
         </listitem>
         <listitem>

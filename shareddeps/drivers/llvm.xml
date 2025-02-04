@@ -1518,7 +1518,7 @@ done</userinput></screen>
           <para>
             lists NVIDIA GPUs installed; at runtime it needs
             <filename>libcuda.so</filename> which is installed
-            by <xref linkend="nvidia"/>.
+            by <application>NVIDIA</application> (not in this book)
           </para>
           <indexterm zone="llvm nvptx-arch">
             <primary sortas="b-nvptx-arch">nvptx-arch</primary>

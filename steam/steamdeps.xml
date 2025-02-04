@@ -33,9 +33,8 @@
       <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
       <xref linkend="libglvnd"/>,
       <xref linkend="make-ca"/>, and
-      <xref linkend="mesa"/> w/ the <parameter>-D glvnd=enabled
-      </parameter> option (lib32 Mesa is not required for multilib
-      <emphasis>IF</emphasis> you are using <xref linkend="nvidia"/>)
+      <xref linkend="mesa"/> (w/ the <parameter>-D glvnd=enabled
+      </parameter> option)
     </para>
 
   </sect2>
