@@ -115,8 +115,11 @@ grep -v '^#' ../llvm-&llvm-version;-list | wget -i- -c \
     <para>
       Extract the <filename>llvm-&llvm-version;.src.tar.xz</filename> tarball
       and navigate to the extracted
-      <filename class="directory">llvm-&llvm-version;.src</filename> directory.
+      <filename class="directory">llvm-&llvm-version;.src</filename> directory:
     </para>
+
+<screen><userinput>tar -xf llvm-&llvm-version;.src.tar.xz &amp;&amp;
+cd llvm-&llvm-version;.src</userinput></screen>
 
     <para>
       The <filename>cmake-&llvm-version;.src.tar.xz</filename> and
