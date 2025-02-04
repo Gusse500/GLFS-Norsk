@@ -43,6 +43,10 @@
       <para>February 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: Add make-ca as Recommended (Required for NVK
+          and Vulkan swrast).</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: Add SQLite to Optional.</para>
         </listitem>
       </itemizedlist>

@@ -83,8 +83,9 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            <xref linkend="cbindgen"/>, <xref linkend="rust-bindgen"/>,
-            and <xref linkend="rustc"/> (required for NVK and Vulkan swrast)
+            <xref linkend="cbindgen"/>, <xref linkend="make-ca"/>,
+            <xref linkend="rust-bindgen"/>, and <xref linkend="rustc"/>
+            (required for NVK and Vulkan swrast)
           </para>
         </listitem>
         <listitem>
