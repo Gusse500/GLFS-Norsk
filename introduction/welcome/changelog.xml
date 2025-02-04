@@ -43,6 +43,9 @@
       <para>February 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Glslang: Add long build time note.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SPIRV-Tools: Add long build time note.</para>
         </listitem>
         <listitem>
