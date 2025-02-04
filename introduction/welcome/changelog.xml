@@ -43,6 +43,9 @@
       <para>February 3rd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - credits: Add Douglas Reno to contributors.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - FFmpeg: Add <parameter>--enable-libaom</parameter>
           to lib32 build.</para>
         </listitem>
