@@ -181,8 +181,8 @@ mv projects/compiler-rt-&llvm-version;.src projects/compiler-rt</userinput></scr
       commands:
     </para>
 
-<screen><userinput>mkdir -v build &amp;&amp;
-cd       build &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
 CC=gcc CXX=g++                                   \
 cmake -D CMAKE_INSTALL_PREFIX=/usr               \
