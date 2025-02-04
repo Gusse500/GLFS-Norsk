@@ -58,5 +58,3 @@ Makefile targets are: `pdf`, `nochunks`, `validate`, and `glfs-patch-list`.
 `nochunks`: builds GLFS in one huge file.
 
 `validate`:  does an extensive check for XML errors in the book.
-
-`glfs-patch-list`: generates a list of all GLFS controlled patches in the book.
