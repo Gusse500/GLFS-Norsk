@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>February 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: Add SQLite to Optional.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 3rd, 2025</para>
       <itemizedlist>
         <listitem>

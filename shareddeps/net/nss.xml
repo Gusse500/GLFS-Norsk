@@ -79,6 +79,18 @@
       <xref linkend="nspr"/>
     </para>
 
+<!-- TODO: Add SQLite and Python3 in the book to make this process more
+           local and easier, and PROMOTE SQLite to Recommended. -->
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <ulink url="&blfs-svn;/server/sqlite.html">SQLite</ulink> (no packages in
+      this book need lib32-<application>SQLite</application>, so if you are
+      doing multilib, you can just do the normal installation; if you want to
+      install <ulink url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>, then
+      after you install <application>SQLite</application>, reinstall
+      <ulink url="&blfs-svn;/general/python3.html">Python</ulink>)
+    </para>
+
   </sect2>
 
   <sect2 role="installation">
