@@ -42,16 +42,6 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
-    <itemizedlist spacing="compact">
-      <title>Additional Documentation</title>
-      <listitem>
-        <para>
-          Download (HTTP): <ulink url="&freetype2-doc-download-http;"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
     <bridgehead renderas="sect3">FreeType2 Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
@@ -91,14 +81,6 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
-
-    <para>
-      If you downloaded the optional documentation, install it as the
-      <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen role="root"><userinput>cp -v -R docs -T /usr/share/doc/freetype-&freetype2-version; &amp;&amp;
-rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput></screen>
 
   </sect2>
 
