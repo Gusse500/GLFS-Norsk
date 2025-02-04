@@ -242,18 +242,6 @@ $(RENDERTMP)/$(GLFSHTML): $(RENDERTMP)/$(GLFSFULL) version
                 stylesheets/lfs-xsl/profile.xsl      \
                 $(RENDERTMP)/$(GLFSFULL)
 
-glfs-patch-list: glfs-patches.sh
-	@echo "Generating glfs patch list..."
-	$(Q)awk '{if ($$1 == "copy") {sub(/.*\//, "", $$2); print $$2}}' \
-	  glfs-patches.sh > glfs-patch-list
-
-glfs-patches.sh: $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Generating glfs patch script..."
-	$(Q)xsltproc --nonet                     \
-                --output glfs-patches.sh    \
-                stylesheets/patcheslist.xsl \
-                $(RENDERTMP)/$(GLFSFULL)
-
 wget-list: $(BASEDIR)/wget-list
 $(BASEDIR)/wget-list: $(RENDERTMP)/$(GLFSFULL) version
 	@echo "Generating wget list for $(REV) at $(BASEDIR)/wget-list ..."
@@ -327,9 +315,9 @@ $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
 	$(Q)touch $(DUMPDIR)
 	$(Q)rm -rf $(RENDERTMP)
 
-.PHONY: glfs all world html nochunks tmpdir clean             \
-   validate profile-html glfs-patch-list wget-list test-links \
-   dump-commands bootscripts systemd-units version test-options
+.PHONY: glfs all world html nochunks pdf clean validate profile-html \
+   wget-list test-links dump-commands bootscripts systemd-units version \
+   test-options
 
 version:
 	$(Q)REV=$(REV) STAB=$(STAB) ./git-version.sh
