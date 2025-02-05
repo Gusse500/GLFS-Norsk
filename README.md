@@ -51,7 +51,7 @@ Defaults can be changed in a file that isn't tracked (`local.mk`) by declaring
 variables found in `Makefile` in `local.mk`, such as `REV` and `GLFS_THEME`.
 This file must be created manually.
 
-Makefile targets are: `pdf`, `nochunks`, `validate`, and `glfs-patch-list`.
+Makefile targets are: `pdf`, `nochunks`, and `validate`.
 
 `pdf`: builds GLFS as a PDF file.
 
