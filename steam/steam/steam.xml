@@ -56,8 +56,8 @@
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="steam-kernel.xml"/>
 
     <para>
-      Now make a file empty as it does nothing on an LFS system besides
-      give a passive error:
+      Now make a file always exit with exit code 0 as it otherwise does nothing
+      on an LFS system besides give a passive error:
     </para>
 
 <screen><userinput>ln -sf /usr/bin/true steamdeps</userinput></screen>
@@ -79,15 +79,55 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
     <para>
       <command>ln -sf /usr/bin/true steamdeps</command>: This command
       makes the <filename>steamdeps</filename> <application>Python
-      </application> script blank as it uses APT and its <application>
-      Python</application> module, which isn't installed in LFS and
-      probably shouldn't be.
+      </application> script always exit with code 0 as it uses APT and its
+      <application> Python</application> module, which isn't installed in LFS
+      and shouldn't be.
     </para>
 
     <para>
       <command>mv -v /usr/share/doc/steam{,-&steam-version;}</command>: This
       command ensures the doc folder for this package is consistent with the
       other packages.
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>Using Steam</title>
+
+    <para>
+      Before executing <command>steam</command>, you need to ensure you:
+    </para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Made the symlinks in <xref
+        linkend="p11-kit"/></para>
+      </listitem>
+      <listitem>
+        <para>Added the symlink creation instruction in the
+        <command>make-ca</command> script as detailed in <xref
+        linkend="make-ca"/></para>
+      </listitem>
+      <listitem>
+        <para>Are launching in an X11 instance or have
+        <application>Xwayland</application> running in a
+        <application>Wayland</application> session</para>
+      </listitem>
+      <listitem>
+        <para>Have a working internet connection</para>
+      </listitem>
+    </itemizedlist>
+
+    <para>
+      After you have made sure of the points above, now you can launch
+      <command>steam</command>. This will download the runtime for the
+      <application>Steam</application> client. Afterwards, you will be brought
+      to the login screen. Make extra sure you have the symlink made in
+      <xref linkend="make-ca"/> or you will not be able to get past this point.
+      Then, everything should work as normal and you can go ahead and allow
+      <application>Proton</application> as you normally would on any given
+      Linux distribution.
     </para>
 
   </sect2>
