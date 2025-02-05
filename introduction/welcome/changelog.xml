@@ -43,6 +43,14 @@
       <para>February 5th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - cURL: 8.11.1 -&gt; 8.12.0;
+          mako: 1.3.8 -&gt; 1.3.9;
+          hwdata: 0.391 -> 0.392. Fixes
+          <ulink url="&glfs-issues;/92">#92</ulink>,
+          <ulink url="&glfs-issues;/93">#93</ulink>, and
+          <ulink url="&glfs-issues;/94">#94</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Steam: Added more documentation and fixed
           wording.</para>
         </listitem>

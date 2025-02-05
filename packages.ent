@@ -16,7 +16,7 @@
 <!ENTITY libunistring-version         "1.3">
 <!ENTITY libidn2-version              "2.3.7">
 <!ENTITY libpsl-version               "0.21.5">
-<!ENTITY curl-version                 "8.11.1">
+<!ENTITY curl-version                 "8.12.0">
 <!ENTITY wget-version                 "1.25.0">
 <!ENTITY git-version                  "2.48.1">
 <!-- Security -->
@@ -125,7 +125,7 @@
 <!ENTITY seatd-version                "0.9.1">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.13.0">
-<!ENTITY hwdata-version               "0.391">
+<!ENTITY hwdata-version               "0.392">
 <!ENTITY vulkan-version               "1.4.304">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
@@ -148,7 +148,7 @@
 <!ENTITY rustc-version                "1.84.1">
 <!ENTITY cbindgen-version             "0.28.0">
 <!ENTITY rust-bindgen-version         "0.71.1">
-<!ENTITY mako-version                 "1.3.7">
+<!ENTITY mako-version                 "1.3.8">
 <!ENTITY libdrm-version               "2.4.124">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY libvdpau-version             "1.5">
