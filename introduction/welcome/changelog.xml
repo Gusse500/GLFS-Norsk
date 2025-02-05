@@ -43,6 +43,10 @@
       <para>February 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libglvnd: Archived. Fixes
+          <ulink url="&glfs-issues;/68">#68</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - LLVM: Add unpacking LLVM tarball instructions.</para>
         </listitem>
         <listitem>

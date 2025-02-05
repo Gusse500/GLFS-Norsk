@@ -89,24 +89,17 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/wl/wayland-protocols.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/wl/seatd.xml"/>
 
-  <!-- GRAPHICS APIS -->
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/gfxapidummy.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/gl/introgl.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/gl/libglvnd.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/vk/introvk.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/vk/vkheaders.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/vk/libvk.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/vk/spirv-headers.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/vk/spirv-tools.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gfxapi/vk/glslang.xml"/>
-
   <!-- GRAPHICS DRIVERS -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/driversdummy.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/pciutils.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/hwdata.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/whatdriver.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/gpuconfig.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/amdgpu-pro.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/pciutils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/hwdata.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/vkheaders.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvk.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-headers.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-tools.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/glslang.xml"/>
 <!--
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/nvidia.xml"/>
 -->
@@ -126,6 +119,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/pyyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/mesa.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/amdgpu-pro.xml"/>
 
   <!-- X11 -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/x/xdummy.xml"/>

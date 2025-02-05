@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-  <!ENTITY % general-entities SYSTEM "../../../general.ent">
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
   <!ENTITY vulkan-loader-download-http "https://github.com/KhronosGroup/Vulkan-Loader/archive/v&vulkan-loader-version;/Vulkan-Loader-&vulkan-loader-version;.tar.gz">
@@ -136,7 +136,7 @@ ldconfig</userinput></screen>
     &options-cmake;
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../xincludes/cmake-skip-install-rpath.xml"/>
+      href="../../xincludes/cmake-skip-install-rpath.xml"/>
 
     <para>
       <option>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</option>: This

@@ -28,16 +28,16 @@
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
       <xref linkend="xorg7-lib"/>,
-      <xref linkend="gpuconfig"/>, and
+      <xref linkend="gpuconfig"/>,
+      <xref linkend="mesa"/>, and
       <xref linkend="wget"/> (for getting the .deb files in the installation
       instructions)
     </para>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="libglvnd"/>,
-      <xref linkend="libvk"/>,
-      and <xref linkend="wayland"/>
+      <xref linkend="libvk"/> and
+      <xref linkend="wayland"/>
     </para>
 
     <note>
@@ -193,8 +193,8 @@ ldconfig</userinput></screen>
       <para>
         There are many libraries provided by this package that have the same
         name and serve the same purpose. The info below covers the unique
-        libraries. Check the <quote>Contents</quote> section of either
-        <xref linkend="libglvnd"/> and/or <xref linkend="mesa"/>.
+        libraries. Check the <quote>Contents</quote> section of <xref
+        linkend="mesa"/>.
       </para>
     </note>
 

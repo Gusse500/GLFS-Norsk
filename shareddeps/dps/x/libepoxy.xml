@@ -42,7 +42,7 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      OpenGL (<xref linkend="libglvnd"/> and/or <xref linkend="mesa"/>)
+      <xref linkend="mesa"/>
     </para>
 
   </sect2>

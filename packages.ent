@@ -123,8 +123,9 @@
 <!ENTITY wayland-version              "1.23.1">
 <!ENTITY wayland-protocols-version    "1.40">
 <!ENTITY seatd-version                "0.9.1">
-<!-- Graphics APIs -->
-<!ENTITY libglvnd-version             "1.7.0">
+<!-- Graphics Drivers -->
+<!ENTITY pciutils-version             "3.13.0">
+<!ENTITY hwdata-version               "0.391">
 <!ENTITY vulkan-version               "1.4.304">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
@@ -132,9 +133,6 @@
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.1.0">
-<!-- Graphics Drivers -->
-<!ENTITY pciutils-version             "3.13.0">
-<!ENTITY hwdata-version               "0.391">
 <!ENTITY amdgpu-pro-major-version     "24.20">
 <!ENTITY amdgpu-pro-major-short-version "&amdgpu-pro-major-version;">
 <!ENTITY amdgpu-pro-minor-version     "2044449">

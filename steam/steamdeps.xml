@@ -31,10 +31,8 @@
       <xref linkend="dbus"/>,
       Display server (<xref linkend="xorg-server"/> or
       <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
-      <xref linkend="libglvnd"/>,
-      <xref linkend="make-ca"/>, and
-      <xref linkend="mesa"/> (w/ the <parameter>-D glvnd=enabled
-      </parameter> option)
+      <xref linkend="make-ca"/> (with the symlink added), and
+      <xref linkend="mesa"/>
     </para>
 
   </sect2>

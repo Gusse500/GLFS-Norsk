@@ -61,8 +61,8 @@
       <xref linkend="freetype2-pass2"/>,
       <xref linkend="gnutls"/>,
       <xref linkend="libunwind"/> (if 64-bit; not used by Wine 32-bit),
-      <xref linkend="mingw-w64-gcc"/>, and OpenGL (<xref linkend="libglvnd"/>
-      and/or <xref linkend="mesa"/>)
+      <xref linkend="mesa"/>, and
+      <xref linkend="mingw-w64-gcc"/>
     </para>
 
   </sect2>
