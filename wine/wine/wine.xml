@@ -445,7 +445,7 @@ make</userinput></screen>
         <term><command>winemaker</command></term>
         <listitem>
           <para>
-            generates a build infrastructure for compililing Windows programs
+            generates a build infrastructure for compiling Windows programs
             on Unix
           </para>
           <indexterm zone="wine winemaker">
