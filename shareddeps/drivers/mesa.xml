@@ -35,7 +35,8 @@
 
     <note>
       <para>
-        An Internet connection is needed for building the Nouveau Vulkan driver.
+        An Internet connection is needed for building the Nouveau and swrast
+        Vulkan driver.
       </para>
     </note>
 
@@ -85,7 +86,7 @@
           <para>
             <xref linkend="cbindgen"/>, <xref linkend="make-ca"/>,
             <xref linkend="rust-bindgen"/>, and <xref linkend="rustc"/>
-            (required for NVK and Vulkan swrast)
+            (required for Nouveau and swrast Vulkan)
           </para>
         </listitem>
         <listitem>
@@ -497,7 +498,7 @@ ldconfig</userinput></screen>
     <para>
       <computeroutput>BINDGEN_EXTRA_CLANG_ARGS="-m32"</computeroutput>: This
       variable ensures that <xref linkend="rust-bindgen"/> generates bindings
-      that don't go out of bounds when compiling lib32-NVK.
+      that don't go out of bounds when compiling lib32 Nouveau Vulkan.
     </para>
 
     <para>
