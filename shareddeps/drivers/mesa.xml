@@ -560,8 +560,8 @@ ldconfig</userinput></screen>
         <seg>
           <!-- Begin VA-API Drivers -->
           nouveau_drv_video.so,
-          radeonsi_drv_video.so,
-          virtio_gpu_drv_video.so,
+          radeonsi_drv_video.so, and
+          virtio_gpu_drv_video.so
           <!-- End VA-API Drivers -->
         </seg>
         <seg>
@@ -572,17 +572,17 @@ ldconfig</userinput></screen>
         <seg>
           <!-- Begin VDPAU Drivers -->
           libvdpau_nouveau.so,
-          libvdpau_r300.so
-          libvdpau_r600.so, and
-          libvdpau_radeonsi.so
+          libvdpau_r300.so,
+          libvdpau_r600.so,
+          libvdpau_radeonsi.so, and
           libvdpau_virtio_gpu.so
+          (many of these drivers are hard-linked)
           <!-- End VDPAU Drivers -->
-          (Many of these drivers are hard-linked).
         </seg>
         <seg>
           libvulkan_intel_hasvk.so,
           libvulkan_intel.so,
-          libvulkan_lvp.so, and
+          libvulkan_lvp.so,
           libvulkan_nouveau.so, and
           libvulkan_radeon.so
         </seg>
@@ -705,6 +705,20 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="mesa libGL">
             <primary sortas="c-libGL">libGL.so</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libOSMesa">
+        <term><filename class="libraryfile">libOSMesa.so</filename></term>
+        <listitem>
+          <para>
+            allows applications to render into user-allocated memory
+            without any windowing or operating system dependencies, ie.
+            off-screen rendering
+          </para>
+          <indexterm zone="mesa libOSMesa">
+            <primary sortas="c-libOSMesa">libOSMesa.so</primary>
           </indexterm>
         </listitem>
       </varlistentry>
