@@ -105,7 +105,7 @@
       <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>, are
       slightly worse than NVIDIA's proprietary driver. Installing the
       proprietary driver comes with a lot of compromises, such as demanding
-      and older kernel, extra setup, and some kernel options disabled, but
+      an older kernel, extra setup, and some kernel options disabled, but
       doesn't require installing lib32-<xref linkend="mesa"/> for multilib.
       There is another driver called <emphasis>Zink</emphasis> which translates
       Vulkan calls to OpenGL calls which can replace
