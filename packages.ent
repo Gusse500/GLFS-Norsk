@@ -6,8 +6,8 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.19.0">
 <!ENTITY nspr-version                 "4.36">
-<!ENTITY nss-dir                      "3_107">
-<!ENTITY nss-minor-version            "107">
+<!ENTITY nss-dir                      "3_108">
+<!ENTITY nss-minor-version            "108">
 <!--<!ENTITY nss-micro-version            "1">-->
 <!--<!ENTITY nss-version                  "3.&nss-minor-version;.&nss-micro-version;">-->
 <!ENTITY nss-version                  "3.&nss-minor-version;">
@@ -27,7 +27,7 @@
 <!ENTITY elogind-version              "255.17">
 <!ENTITY systemd-version              "257">
 <!ENTITY duktape-version              "2.7.0">
-<!ENTITY pcre2-version                "10.44">
+<!ENTITY pcre2-version                "10.45">
 <!ENTITY glib2-minor                  "2.82">
 <!ENTITY glib2-version                "&glib2-minor;.4">
 <!ENTITY gobject-introspection-version "1.82.0">
@@ -231,7 +231,7 @@
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
 <!ENTITY xorg-server-version          "21.1.15">
-<!ENTITY xwayland-version             "24.1.4">
+<!ENTITY xwayland-version             "24.1.5">
 <!ENTITY mtdev-version                "1.1.7">
 <!-- BEGIN X7DRIVER -->
 <!ENTITY libevdev-version             "1.13.3">
@@ -259,7 +259,7 @@
 <!ENTITY gcc-version                  "14.2.0">
 <!ENTITY mingw-w64-version            "12.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
-<!ENTITY libxkbcommon-version         "1.7.0">
+<!ENTITY libxkbcommon-version         "1.8.0">
 <!ENTITY sdl2-version                 "2.30.11">
 <!ENTITY gstreamer10-version          "1.24.12">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
