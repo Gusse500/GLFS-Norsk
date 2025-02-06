@@ -202,8 +202,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
     <title>Git Repo vs Release Archives</title>
 
     <para>
-      All of the packages in GLFS, except for when obtaing firmware, have you
-      download tarballs or zipfiles. These tarballs and zipfiles were created
+      Most of the packaged source code in GLFS are packaged in
+      tarballs or zipfiles. These tarballs and zipfiles were created
       as part of a release, and often include files not found in the repo
       equivalent where the package development happens. Usually the extra included
       files are the configure scripts you should now be used to using. They are
