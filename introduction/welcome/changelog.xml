@@ -43,6 +43,9 @@
       <para>February 6th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - duktape: Add long build time note.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.107 -&gt; 3.108;
           PCRE2: 10.44 -&gt; 10.45;
           Xwayland: 24.1.4 -&gt; 24.1.5;
