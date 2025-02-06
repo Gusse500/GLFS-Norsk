@@ -59,7 +59,7 @@
       <xref linkend="dbus-pass1"/> or
       </phrase>
       <xref linkend="dbus"/>,
-      <phrase revision="sysv"><xref linkend="elogind"/></phrase>
+      <phrase revision="sysv"><xref linkend="elogind"/>,</phrase>
       <xref linkend="glib2"/>,
       <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>,
       <phrase revision="systemd"><xref linkend="systemd"/>,</phrase> and
