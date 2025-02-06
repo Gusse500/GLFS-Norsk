@@ -13,10 +13,10 @@
   <?dbhtml filename="icu.html"?>
 
 
-  <title>icu-&icu-version;</title>
+  <title>ICU-&icu-version;</title>
 
   <indexterm zone="icu">
-    <primary sortas="a-icu">icu</primary>
+    <primary sortas="a-icu">ICU</primary>
   </indexterm>
 
   <sect2 role="package">
