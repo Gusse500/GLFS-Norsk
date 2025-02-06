@@ -94,19 +94,18 @@
     </para>
 
     <para>
-      To install the various certificate stores, the <application>
-      make-ca</application> script must be installed into the correct
-      location. First, an extra instruction must be added to the script
-      so that <application>Steam</application> can access the
-      certificates. Add the instruction by doing the following command:
+      Before you can install the package, you should add an extra instruction
+      to the <application>make-ca</application> script that makes a symlink
+      required by <xref linkend="steam"/>:
     </para>
 
-    <screen><userinput>cat &gt;&gt; make-ca &lt;&lt; "EOF"
+<screen><userinput>cat &gt;&gt; make-ca &lt;&lt; "EOF"
 <literal>ln -svf /etc/pki/tls/certs/ca-bundle.crt /etc/ssl/certs/ca-certificates.crt
 </literal>EOF</userinput></screen>
 
     <para>
-      Now as the <systemitem class="username">root</systemitem> user:
+      Now to install the <application>make-ca</application> script, it must be
+      installed into the correct location as the &root; user:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
