@@ -43,6 +43,9 @@
       <para>February 6th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - icu: Add long build time note.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - duktape: Add long build time note.</para>
         </listitem>
         <listitem>
