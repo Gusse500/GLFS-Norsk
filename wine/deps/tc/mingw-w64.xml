@@ -69,7 +69,8 @@ cd    build-x86_64 &amp;&amp;
 
 ../configure --prefix=/usr/x86_64-w64-mingw32 \
              --host=x86_64-w64-mingw32        \
-             --enable-experimental &amp;&amp;
+             --enable-experimental            \
+             --with-default-msvcrt=msvcrt     &amp;&amp;
 
 make</userinput></screen>
 
@@ -91,7 +92,8 @@ cd    build-x86_64-winpthreads &amp;&amp;
 
 ../mingw-w64-libraries/winpthreads/configure \
             --prefix=/usr/x86_64-w64-mingw32 \
-            --host=x86_64-w64-mingw32 &amp;&amp;
+            --host=x86_64-w64-mingw32        \
+            --with-default-msvcrt=msvcrt     &amp;&amp;
 
 make</userinput></screen>
 
@@ -116,7 +118,8 @@ cd    build-i686 &amp;&amp;
 
 ../configure --prefix=/usr/i686-w64-mingw32 \
              --host=i686-w64-mingw32        \
-             --enable-experimental &amp;&amp;
+             --enable-experimental          \
+             --with-default-msvcrt=msvcrt   &amp;&amp;
 
 make</userinput></screen>
 
@@ -137,8 +140,9 @@ mkdir build-i686-winpthreads &amp;&amp;
 cd    build-i686-winpthreads &amp;&amp;
 
 ../mingw-w64-libraries/winpthreads/configure \
-            --prefix=/usr/i686-w64-mingw32 \
-            --host=i686-w64-mingw32 &amp;&amp;
+            --prefix=/usr/i686-w64-mingw32   \
+            --host=i686-w64-mingw32          \
+            --with-default-msvcrt=msvcrt     &amp;&amp;
 
 make</userinput></screen>
 
@@ -175,6 +179,15 @@ make</userinput></screen>
     <para>
       <parameter>--enable-experimental</parameter>: This option enables
       experimental features.
+    </para>
+
+    <para>
+      <parameter>--with-default-msvcrt=msvcrt</parameter>: As of
+      <application>MinGW-w64-12.0.0</application>, the Universal C Runtime
+      (UCRT), added in Windows 10, has become the default. This option
+      makes the Microsoft Visual C Runtime (MSVCRT) the default, which is more
+      tested and has less bugs. It also ensures compatibility with software
+      made for older Windows versions.
     </para>
 
   </sect2>

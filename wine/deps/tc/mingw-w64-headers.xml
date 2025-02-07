@@ -72,8 +72,9 @@
 cd    build-x86_64-headers &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/x86_64-w64-mingw32 \
+                               --host=x86_64-w64-mingw32        \
                                --enable-sdk=all                 \
-                               --host=x86_64-w64-mingw32</userinput></screen>
+                               --with-default-msvcrt=msvcrt</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
@@ -95,8 +96,9 @@ cd    build-x86_64-headers &amp;&amp;
 cd    build-i686-headers &amp;&amp;
 
 ../mingw-w64-headers/configure --prefix=/usr/i686-w64-mingw32 \
+                               --host=i686-w64-mingw32        \
                                --enable-sdk=all               \
-                               --host=i686-w64-mingw32</userinput></screen>
+                               --with-default-msvcrt=msvcrt</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
@@ -123,13 +125,22 @@ cd    build-i686-headers &amp;&amp;
     </para>
 
     <para>
+      <parameter>--host=*</parameter>: This option builds files for
+      the architecture passed to it.
+    </para>
+
+    <para>
       <parameter>--enable-sdk=all</parameter>: This option enables
       the full SDK.
     </para>
 
     <para>
-      <parameter>--host=*</parameter>: This option builds files for
-      the architecture passed to it.
+      <parameter>--with-default-msvcrt=msvcrt</parameter>: As of
+      <application>MinGW-w64-12.0.0</application>, the Universal C Runtime
+      (UCRT), added in Windows 10, has become the default. This option
+      makes the Microsoft Visual C Runtime (MSVCRT) the default, which is more
+      tested and has less bugs. It also ensures compatibility with software
+      made for older Windows versions.
     </para>
 
   </sect2>
