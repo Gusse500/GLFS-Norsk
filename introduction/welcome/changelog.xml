@@ -43,6 +43,9 @@
       <para>February 7th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SDL2; libaom: Added long build time note.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SDL2: Remove outdated configuration notice.</para>
         </listitem>
         <listitem>
