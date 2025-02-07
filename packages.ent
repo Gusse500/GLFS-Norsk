@@ -4,7 +4,7 @@
 <!-- CHAPTER III - SHARED DEPENDENCIES -->
 
 <!-- Networking -->
-<!ENTITY libtasn1-version             "4.19.0">
+<!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.36">
 <!ENTITY nss-dir                      "3_108">
 <!ENTITY nss-minor-version            "108">

@@ -43,6 +43,10 @@
       <para>February 6th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libtasn1: 4.19.0 -&gt; 4.20.0 (security update).
+          Fixes <ulink url="&glfs-issues;/96">#96</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - icu: Add long build time note.</para>
         </listitem>
         <listitem>
