@@ -43,6 +43,9 @@
       <para>February 7th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SDL2: Remove outdated configuration notice.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - MinGW-w64: Make MSVCRT the default. Fixes
           <ulink url="&glfs-issues;/97">#97</ulink>.</para>
         </listitem>
