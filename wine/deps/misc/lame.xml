@@ -108,7 +108,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
             --enable-mp3rtp          \
             --disable-static         \
             --enable-nasm &amp;&amp;
-		
+
 make</userinput></screen>
 
     <para>
