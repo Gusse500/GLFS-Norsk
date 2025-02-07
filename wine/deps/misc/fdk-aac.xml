@@ -85,7 +85,7 @@ make</userinput></screen>
             --libdir=/usr/lib32      \
             --host=i686-pc-linux-gnu \
             --disable-static &amp;&amp;
-		
+
 make</userinput></screen>
 
     <para>
