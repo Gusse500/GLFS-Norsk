@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>February 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MinGW-w64: Make UCRT the default. Fixes
+          <ulink url="&glfs-issues;/100">#100</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 7th, 2025</para>
       <itemizedlist>
         <listitem>
