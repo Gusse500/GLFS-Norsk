@@ -43,6 +43,10 @@
       <para>February 9th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - make-ca: 1.14 -&gt; 1.15. Fixes
+          <ulink url="&glfs-issues;/105">#105</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GnuTLS: 3.8.8 -&gt; 3.8.9 (Security Update).
           Fixes <ulink url="&glfs-issues;/104">#104</ulink>.</para>
         </listitem>
