@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY wine-download-http "https://dl.winehq.org/wine/source/&wine-version;/wine-&wine-version;.tar.xz">
+  <!ENTITY wine-download-http "https://dl.winehq.org/wine/source/&wine-major-version;.x/wine-&wine-version;.tar.xz">
   <!ENTITY wine-download-ftp  " ">
 ]>
 
