@@ -129,7 +129,7 @@
 <!ENTITY vulkan-version               "1.4.304">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
-<!ENTITY spirv-version                "&vulkan-version;.0">
+<!ENTITY spirv-version                "&vulkan-version;.1">
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.1.0">
