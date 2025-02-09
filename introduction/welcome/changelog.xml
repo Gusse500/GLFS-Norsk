@@ -43,6 +43,10 @@
       <para>February 9th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - GnuTLS: 3.8.8 -&gt; 3.8.9 (Security Update).
+          Fixes <ulink url="&glfs-issues;/104">#104</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SPIRV-{Headers,Tools}: 1.4.304.0 -&gt; 1.4.304.1.
           Fixes <ulink url="&glfs-issues;/102">#102</ulink>.</para>
         </listitem>
