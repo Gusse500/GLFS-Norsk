@@ -43,6 +43,10 @@
       <para>February 9th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: 2.44 -&gt; 2.43. Properly fixes
+          <ulink url="&glfs-issues;/100">#100</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - make-ca: 1.14 -&gt; 1.15. Fixes
           <ulink url="&glfs-issues;/105">#105</ulink>.</para>
         </listitem>
