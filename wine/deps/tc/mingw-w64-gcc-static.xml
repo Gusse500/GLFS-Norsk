@@ -67,22 +67,13 @@
   <sect2 role="installation">
     <title>Installation of Static MinGW-w64-GCC</title>
 
-    <important>
+    <sect3>
+      <title>x86_64 Installation of Static MinGW-w64-GCC</title>
+
       <para>
-        Although you are compiling for another host and running
-        <command>make install</command> is generally safe, it is
-        recommended to not run <command>make install</command>
-        until you are confident the build was successful.
+        Install x86_64 Static <application>MinGW-w64-GCC</application> by
+        running the following commands:
       </para>
-    </important>
-
-  <sect3>
-    <title>x86_64 Installation of Static MinGW-w64-GCC</title>
-
-    <para>
-      Install x86_64 Static <application>MinGW-w64-GCC</application> by
-      running the following commands:
-    </para>
 
 <screen><userinput>mkdir build-x86_64-mingw-w64-static &amp;&amp;
 cd    build-x86_64-mingw-w64-static &amp;&amp;
@@ -96,21 +87,21 @@ cd    build-x86_64-mingw-w64-static &amp;&amp;
 
 make all-gcc</userinput></screen>
 
-    <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
-    </para>
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
 
 <screen role="root"><userinput>make install-gcc &amp;&amp; cd ..</userinput></screen>
 
-  </sect3>
+    </sect3>
 
-  <sect3>
-    <title>i686 Installation of Static MinGW-w64-GCC</title>
+    <sect3>
+      <title>i686 Installation of Static MinGW-w64-GCC</title>
 
-    <para>
-      Install i686 Static <application>MinGW-w64-GCC</application> by running
-      the following commands:
-    </para>
+      <para>
+        Install i686 Static <application>MinGW-w64-GCC</application> by running
+        the following commands:
+      </para>
 
 <screen><userinput>mkdir build-i686-mingw-w64-static &amp;&amp;
 cd    build-i686-mingw-w64-static &amp;&amp;
@@ -124,9 +115,9 @@ cd    build-i686-mingw-w64-static &amp;&amp;
 
 make all-gcc</userinput></screen>
 
-    <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
-    </para>
+      <para>
+        Now, as the <systemitem class="username">root</systemitem> user:
+      </para>
 
 <screen role="root"><userinput>make install-gcc</userinput></screen>
 
