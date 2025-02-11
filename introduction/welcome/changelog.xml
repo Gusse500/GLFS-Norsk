@@ -43,6 +43,10 @@
       <para>February 10th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - XKeyboard-Config: 2.43 -&gt; 2.44. Fixes
+          <ulink url="&glfs-issues;/106">#106</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - *: Link to libarchive instead of UnZip.</para>
         </listitem>
       </itemizedlist>
