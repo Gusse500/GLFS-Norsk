@@ -43,6 +43,9 @@
       <para>February 11th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Steam: Add text about outdated kernels.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Cython: 3.0.11 -&gt; 3.0.12. Fixes
           <ulink url="&glfs-issues;/107">#107</ulink>.</para>
         </listitem>

@@ -130,6 +130,19 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
       Linux distribution.
     </para>
 
+    <para>
+      If you find that launching any game doesn't open a window but still shows
+      that it is running, there is a good chance that
+      <application>Steam</application> made a change that is incompatible with
+      your current version of the kernel and you need to upgrade. Even a
+      version difference between linux-6.12.3 and linux-6.12.8 can be enough
+      for <application>Steam</application> or any of its runtime components
+      to refuse opening a window, although this usually doesn't prevent
+      <application>Steam</application> itself from launching. Even if you don't
+      upgrade this package, components downloaded by this package will get
+      updated as time goes on.
+    </para>
+
   </sect2>
 
   <sect2 role="content">
