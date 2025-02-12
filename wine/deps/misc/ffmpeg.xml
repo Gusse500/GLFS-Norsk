@@ -225,11 +225,6 @@ ldconfig</userinput></screen>
     &options-configure;
 
     <para>
-      <command>find ... ;</command>: Fixes permissions of documentation files
-      and directories.
-    </para>
-
-    <para>
       <parameter>--enable-libfreetype</parameter>: Enables
       <application>Freetype</application> support.
     </para>
