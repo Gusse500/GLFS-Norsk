@@ -32,41 +32,41 @@ else
 endif
 
 ifndef REV
-	REV = sysv
+  REV = sysv
 endif
 ifneq ($(REV), sysv)
-	ifneq ($(REV), systemd)
-		$(error REV must be 'sysv' (default) or 'systemd'.)
-	endif
+  ifneq ($(REV), systemd)
+    $(error REV must be 'sysv' (default) or 'systemd')
+  endif
 endif
 
 # Used in the book, does not actually change if the book will render for the
 # stable git hash, just changes if text for stable release is rendered or not.
 ifndef STAB
-	STAB = development
+  STAB = development
 endif
 ifneq ($(STAB), development)
-	ifneq ($(STAB), release)
-		$(error STAB must be 'development' (default) or 'release'.)
-	endif
+  ifneq ($(STAB), release)
+    $(error STAB must be 'development' (default) or 'release')
+  endif
 endif
 
 ifeq ($(REV), sysv)
-	BASEDIR         ?= $(HTML_ROOT)/glfs
-	PDF_OUTPUT      ?= glfs.pdf
-	NOCHUNKS_OUTPUT ?= glfs.html
-	DUMPDIR         ?= $(DUMP_ROOT)/glfs-commands
-	GLFSHTML        ?= glfs-html.xml
-	GLFSHTML2       ?= glfs-html2.xml
-	GLFSFULL        ?= glfs-full.xml
+  BASEDIR         ?= $(HTML_ROOT)/glfs
+  PDF_OUTPUT      ?= glfs.pdf
+  NOCHUNKS_OUTPUT ?= glfs.html
+  DUMPDIR         ?= $(DUMP_ROOT)/glfs-commands
+  GLFSHTML        ?= glfs-html.xml
+  GLFSHTML2       ?= glfs-html2.xml
+  GLFSFULL        ?= glfs-full.xml
 else
-	BASEDIR         ?= $(HTML_ROOT)/glfs-systemd
-	PDF_OUTPUT      ?= glfs-sysd.pdf
-	NOCHUNKS_OUTPUT ?= glfs-sysd.html
-	DUMPDIR         ?= $(DUMP_ROOT)/glfs-sysd-commands
-	GLFSHTML        ?= glfs-systemd-html.xml
-	GLFSHTML2       ?= glfs-systemd-html2.xml
-	GLFSFULL        ?= glfs-systemd-full.xml
+  BASEDIR         ?= $(HTML_ROOT)/glfs-systemd
+  PDF_OUTPUT      ?= glfs-sysd.pdf
+  NOCHUNKS_OUTPUT ?= glfs-sysd.html
+  DUMPDIR         ?= $(DUMP_ROOT)/glfs-sysd-commands
+  GLFSHTML        ?= glfs-systemd-html.xml
+  GLFSHTML2       ?= glfs-systemd-html2.xml
+  GLFSFULL        ?= glfs-systemd-full.xml
 endif
 
 glfs: html wget-list
