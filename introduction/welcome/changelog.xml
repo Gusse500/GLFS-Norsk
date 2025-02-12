@@ -43,6 +43,10 @@
       <para>February 11th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - FLAC: 1.4.3 -&gt; 1.5.0. Fixes
+          <ulink url="&glfs-issues;/108">#108</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Steam: Add text about outdated kernels.</para>
         </listitem>
         <listitem>

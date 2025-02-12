@@ -52,7 +52,7 @@
 <!ENTITY libogg-version               "1.3.5">
 <!ENTITY libvorbis-version            "1.3.7">
 <!ENTITY vorbistools-version          "1.4.2">
-<!ENTITY flac-version                 "1.4.3">
+<!ENTITY flac-version                 "1.5.0">
 <!ENTITY opus-version                 "1.5.2">
 <!ENTITY libsndfile-version           "1.2.2">
 <!ENTITY check-version                "0.15.2">
