@@ -43,6 +43,9 @@
       <para>February 12th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - FLAC: Fix download link.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - FFmpeg: Remove outdated command explanation. Fixes
           <ulink url="&glfs-issues;/110">#110</ulink>.</para>
         </listitem>
