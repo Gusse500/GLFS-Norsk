@@ -43,6 +43,10 @@
       <para>February 13th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - cURL: 8.12.0 -&gt; 8.12.1. Fixes
+          <ulink url="&glfs-issues;/114">#114</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libaom: Update test command.</para>
         </listitem>
       </itemizedlist>
