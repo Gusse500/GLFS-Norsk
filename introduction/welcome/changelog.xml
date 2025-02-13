@@ -43,6 +43,11 @@
       <para>February 13th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Steam: Add xdg-desktop-portal as a recommended
+          dependency. Fixes
+          <ulink url="&glfs-issues;/113">#113</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - cURL: 8.12.0 -&gt; 8.12.1. Fixes
           <ulink url="&glfs-issues;/114">#114</ulink>.</para>
         </listitem>

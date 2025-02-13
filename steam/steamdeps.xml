@@ -42,7 +42,10 @@
 
     <para>
       <xref linkend="libvk"/> (required for most games),
-      <xref linkend="pulseaudio"/>, <xref linkend="xdg-user-dirs"/>,
+      <xref linkend="pulseaudio"/>,
+      <ulink url="&blfs-svn;/x/xdg-desktop-portal.html">xdg-desktop-portal</ulink>
+      (and a backend service for your graphical environment),
+      <xref linkend="xdg-user-dirs"/>,
       <ulink url="https://archlinux.org/packages/extra/x86_64/zenity/">
       Zenity</ulink>, <ulink url="&blfs-svn;/general/lsof.html">lsof</ulink>,
       and <xref linkend="libgpg-error"/>
