@@ -269,7 +269,7 @@
 <!ENTITY pipewire-version             "1.2.7">
 <!ENTITY wireplumber-version          "0.5.7">
 <!ENTITY nasm-version                 "2.16.03">
-<!ENTITY libaom-version               "3.9.1">
+<!ENTITY libaom-version               "3.12.0">
 <!ENTITY fdk-aac-version              "2.0.3">
 <!ENTITY lame-version                 "3.100">
 <!ENTITY libvpx-version               "1.15.0">

@@ -43,6 +43,10 @@
       <para>February 12th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libaom: 3.9.1 -&gt; 3.12.0. Fixes
+          <ulink url="&glfs-issues;/111">#111</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Python3: 3.13.1 -&gt; 3.13.2. Fixes
           <ulink url="&glfs-issues;/95">#95</ulink>.</para>
         </listitem>
