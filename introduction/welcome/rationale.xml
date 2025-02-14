@@ -27,9 +27,9 @@
       the book but rather in the BLFS book. There are multiple reasons
       for this, but the most notable one is the packages that aren't in
       the book aren't important for the main packages in the book, those
-      being <application>Steam</application> and <application>Wine
-      </application>. They are still listed anyway if users want more
-      support out of the specific packages not specific to the main
+      being <application>Steam</application> and
+      <application>Wine</application>. They are still listed anyway if users
+      want more support out of the specific packages not specific to the main
       packages, like media playback for example. Another reason for
       packages not being in the book is that the packages take a lot
       of work to install and require jumping around. They can also require
