@@ -137,7 +137,7 @@ directories at the root of the source:
 - `book/`
 - `introduction/`
 - `multilib/`
-- `qol`
+- `qol/`
 - `shareddeps/`
 - `steam/`
 - `wine/`
