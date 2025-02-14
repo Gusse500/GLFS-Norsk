@@ -55,12 +55,11 @@
   <sect2>
     <title>Packages That Are Outdated and Why</title>
 
-<!--
     <para>
       No packages are currently outdated at time of release.
     </para>
--->
 
+<!--
     <para>
       <xref linkend="mingw-w64-binutils"/>: While
       <application>Binutils</application>-2.44 exists and can be installed
@@ -70,6 +69,7 @@
       that one toolchain's version does not match with another but separate
       toolchain's.
     </para>
+-->
 
 <!--
     <para>

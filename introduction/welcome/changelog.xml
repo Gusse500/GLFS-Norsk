@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>February 14th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: Added compatibility patch for
+          MinGW-w64-Binutils-2.44.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 13th, 2025</para>
       <itemizedlist>
         <listitem>
