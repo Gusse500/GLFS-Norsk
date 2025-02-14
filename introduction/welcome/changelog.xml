@@ -43,6 +43,10 @@
       <para>February 13th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - make-ca: Comment out Python3 configuration
+          section.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Steam: Add xdg-desktop-portal as a recommended
           dependency. Fixes
           <ulink url="&glfs-issues;/113">#113</ulink>.</para>

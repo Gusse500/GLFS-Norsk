@@ -276,6 +276,7 @@ openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
 
   </sect2>
 
+<!--
   <sect2 role="configuration" id="make-ca-python">
     <title>Using make-ca with Python3</title>
 
@@ -344,6 +345,8 @@ EOF
 </userinput></screen>
 
   </sect2>
+
+-->
 
   <sect2 role="content">
     <title>Contents</title>
