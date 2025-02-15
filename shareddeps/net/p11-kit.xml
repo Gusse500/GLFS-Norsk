@@ -131,7 +131,7 @@ meson setup ..                                   \
       --prefix=/usr                              \
       --libdir=/usr/lib32                        \
       --buildtype=release                        \
-      -Dtrust_paths=/etc/pki/anchors &amp;&amp;
+      -D trust_paths=/etc/pki/anchors &amp;&amp;
 
 ninja</userinput></screen>
 
