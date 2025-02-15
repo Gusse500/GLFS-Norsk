@@ -26,12 +26,15 @@
   </para>
 
   <para>
-    This section however doesn't install the <application>Xorg</application>
-    server, but instead installs basic software that a lot of software depends
-    on, including the <application>Xorg</application> server, compositors, and
-    window managers/desktop environments, as well as xwayland — a necessary part
-    of Wayland if you want to use <application>Xorg</application> only software.
-    This includes <xref linkend="steam"/> and <xref linkend="wine"/>.
+    This section however doesn't install <xref linkend="xorg-server"/>, but
+    instead installs basic software that a lot of other software depend on,
+    including the <application>Xorg</application> server, compositors, window
+    managers or desktop environments, and <xref linkend="xwayland"/> &mdash; a
+    necessary part of Wayland if you want to use
+    <application>Xorg</application>-only software like <xref linkend="steam"/>.
+    <xref linkend="wine"/> has an experimental
+    <application>Wayland</application> mode but it is still a good idea to
+    install <xref linkend="xwayland"/> for now.
   </para>
 
   <bridgehead renderas="sect3">Xorg Download and Installation
