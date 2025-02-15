@@ -95,7 +95,7 @@
             is the <application>Cython</application> debugger
           </para>
           <indexterm zone="cython cydbg">
-            <primary sortas="c-cydbg">cydbg</primary>
+            <primary sortas="b-cydbg">cydbg</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -109,7 +109,7 @@
             compiled with a C/C++ compiler
           </para>
           <indexterm zone="cython cython-bin">
-            <primary sortas="c-cython-bin">cython-bin</primary>
+            <primary sortas="b-cython-bin">cython-bin</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -123,7 +123,7 @@
             directly importable from <application>Python</application>
           </para>
           <indexterm zone="cython cythonize">
-            <primary sortas="c-cythonize">cythonize</primary>
+            <primary sortas="b-cythonize">cythonize</primary>
           </indexterm>
         </listitem>
       </varlistentry>

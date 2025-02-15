@@ -150,12 +150,17 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
 
     <segmentedlist>
       <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Tarballs</segtitle>
       <segtitle>Installed Libraries</segtitle>
       <segtitle>Installed Directories</segtitle>
 
       <seglistitem>
         <seg>
-          bin_steam.sh, bin_steamdeps.sh, steam, steamdeps
+          bin_steam.sh, bin_steamdeps.sh, steam (link to bin_steam.sh), and
+          steamdeps (link to /usr/bin/true)
+        </seg>
+        <seg>
+          bootstraplinux_ubuntu12_32.tar.xz
         </seg>
         <seg>
           None
@@ -176,11 +181,12 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><command>bin_steam.sh</command></term>
         <listitem>
           <para>
-            is launcher shell script which does many things, including
-            downloading the <application>Steam</application> runtime
+            is launcher shell script that unpacks
+            <filename>bootstraplinux_ubuntu12_32.tar.xz</filename> and properly
+            launches <application>Steam</application>
           </para>
           <indexterm zone="steam bin_steam.sh">
-            <primary sortas="c-bin_steam.sh">bin_steam.sh</primary>
+            <primary sortas="b-bin_steam.sh">bin_steam.sh</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -193,7 +199,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
             for dependencies using APT
           </para>
           <indexterm zone="steam bin_steamdeps.sh">
-            <primary sortas="c-bin_steamdeps.sh">bin_steamdeps.sh</primary>
+            <primary sortas="b-bin_steamdeps.sh">bin_steamdeps.sh</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -205,7 +211,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
             is a symlink to <command>bin_steam.sh</command>
           </para>
           <indexterm zone="steam steam-bin">
-            <primary sortas="c-steam-bin">steam</primary>
+            <primary sortas="b-steam-bin">steam</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -219,7 +225,20 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
             ran
           </para>
           <indexterm zone="steam steam-steamdeps">
-            <primary sortas="c-steam-steamdeps">steamdeps</primary>
+            <primary sortas="b-steam-steamdeps">steamdeps</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="bootstrap-steam">
+        <term><filename>bootstraplinux_ubuntu12_32.tar.xz</filename></term>
+        <listitem>
+          <para>
+            is a tarball containing 32-bit software that fetches the
+            <application>Steam</application> runtime from VALVe's servers
+          </para>
+          <indexterm zone="steam bootstrap-steam">
+            <primary sortas="b-bootstrap-steam">bootstraplinux_ubuntu12_32.tar.xz</primary>
           </indexterm>
         </listitem>
       </varlistentry>
