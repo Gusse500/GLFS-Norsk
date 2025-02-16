@@ -203,6 +203,7 @@ install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-&ffmpeg-version;</userinput>
             --enable-libvorbis                        \
             --enable-libvpx                           \
             --enable-libx264                          \
+            --enable-libx265                          \
             --enable-openssl                          \
             --ignore-tests=enhanced-flv-av1 &amp;&amp;
 

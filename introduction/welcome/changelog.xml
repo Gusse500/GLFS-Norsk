@@ -43,6 +43,10 @@
       <para>February 15th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - FFmpeg: Add <parameter>--enable-libx265</parameter>
+          for lib32.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SDL2: Removed doc instructions.</para>
         </listitem>
         <listitem>
