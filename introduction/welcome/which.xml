@@ -23,12 +23,8 @@
   </para>
 
   <para>
-    As previously mentioned, GLFS stands as a format in
-    between the two books. Not every chapter will be necessary
-    but depending on what the user wants will have to read
-    everything in the relevant chapter depending on if they
-    desire to go with multilib or not, which is discussed in the
-    multilib chapter.
+    Not every chapter will be necessary depending on what you
+    want. Some packages may also not be necessary.
   </para>
 
   <para>
@@ -36,19 +32,19 @@
     most users that want <application>Steam</application> and/or
     <application>Wine</application> should have a x86_64
     CPU capable of 32-bit emulation. If that chapter is skipped,
-    it might be realized to be a mistake and would cause a
-    headache at the final stages.
+    you might get a headache later on.
   </para>
 
   <para>
     The following chapter is Shared Dependencies. Every user
     who wants <application>Steam</application> and/or
     <application>Wine</application> will want to read this chapter
-    as both projects use the packages. Try as you may, but this
-    chapter is absolutely necessary. However, it is recommended
-    to check the dependency lists of Steam and Wine to see what
-    exactly you need from that section instead of installing
-    everything despite only needing maybe 90% of it.
+    as both projects use the packages. Most of this chapter is
+    necessary. However, it is recommended to check the dependency
+    lists of Steam and Wine to see what exactly you need from a
+    given section. If you are in doubt, (re)install all of the listed
+    packages in that chapter. If you don't use them in this book, it
+    still may be useful for some packages in BLFS.
   </para>
 
   <para>
@@ -72,10 +68,7 @@
     and use it. The Wine chapter at the moment does not consider
     retrofitting and will handle it in a similar manner to Arch: build the
     MinGW-w64 toolchain, install the audio and video components, then finally
-    <application>Wine</application> itself. This chapter will depend
-    on packages listed in the Shared Dependencies section, so when
-    prompted, go to the package it lists, then go back. This is done
-    to avoid duplicate sections.
+    <application>Wine</application> itself.
   </para>
 
   <para>
@@ -84,8 +77,8 @@
   </para>
 
   <para>
-    We hope you enjoy using GLFS. May you realize that LFS can
-    provide you of your gaming needs!
+    We hope you enjoy using GLFS and that it provides you most of your
+    gaming needs!
   </para>
 
 </sect1>

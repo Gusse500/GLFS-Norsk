@@ -117,42 +117,6 @@ export PATH=/usr/bin
 if [ ! -L /bin ]; then
         pathappend /bin
 fi
-
-if [ $EUID -eq 0 ] ; then
-        pathappend /usr/sbin
-        if [ ! -L /sbin ]; then
-                pathappend /sbin
-        fi
-        unset HISTFILE
-fi
-
-# Set up some environment variables.
-export HISTSIZE=1000
-export HISTIGNORE="&amp;:[bf]g:exit"
-
-# Set some defaults for graphical systems
-export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share}
-export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg}
-export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
-
-# Set up a red prompt for root and a green one for users.
-NORMAL="\[\e[0m\]"
-RED="\[\e[1;31m\]"
-GREEN="\[\e[1;32m\]"
-if [[ $EUID == 0 ]] ; then
-  PS1="$RED\u [ $NORMAL\w$RED ]# $NORMAL"
-else
-  PS1="$GREEN\u [ $NORMAL\w$GREEN ]\$ $NORMAL"
-fi
-
-for script in /etc/profile.d/*.sh ; do
-        if [ -r $script ] ; then
-                . $script
-        fi
-done
-
-unset script RED GREEN NORMAL
-
 # End /etc/profile</literal>
 EOF</userinput></screen>
 
@@ -220,6 +184,29 @@ EOF</userinput></screen>
           overriding it.
         </para>
       </note>
+
+    </sect3>
+
+    <sect3 id="readline.sh">
+      <title>/etc/profile.d/readline.sh</title>
+
+      <indexterm zone="bash-profile readline.sh">
+        <primary sortas="e-etc-profile.d-readline.sh">/etc/profile.d/readline.sh</primary>
+      </indexterm>
+
+      <para>
+        This script sets up the default <filename>inputrc</filename>
+        configuration file. If the user does not have individual settings, it
+        uses the global file.
+      </para>
+
+<screen role="root"><userinput>cat &gt; /etc/profile.d/readline.sh &lt;&lt; "EOF"
+<literal># Set up the INPUTRC environment variable.
+if [ -z "$INPUTRC" -a ! -f "$HOME/.inputrc" ] ; then
+        INPUTRC=/etc/inputrc
+fi
+export INPUTRC</literal>
+EOF</userinput></screen>
 
     </sect3>
 
