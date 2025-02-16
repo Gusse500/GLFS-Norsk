@@ -183,13 +183,12 @@ strip /usr/libexec/gcc/i686-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,l
   </sect2>
 
   <sect2>
-    <title>Cleaning Up and Testing</title>
+    <title>Testing the Toolchain</title>
 
     <para>
-      Now that <application>MinGW-w64-GCC</application> and friends
-      have been installed, it is time to test the <application>
-      MinGW-w64</application> installation to make sure everything is
-      working as expected.
+      Now that the <application>MinGW-w64</application> cross toolchain have
+      been fully installed, it is time to test the installation to make sure
+      everything is working as expected.
     </para>
 
     <para>
