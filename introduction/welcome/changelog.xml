@@ -43,6 +43,9 @@
       <para>February 15th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SDL2: Removed doc instructions.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Steam: Document packaged tarball.</para>
         </listitem>
       </itemizedlist>
