@@ -117,6 +117,32 @@ export PATH=/usr/bin
 if [ ! -L /bin ]; then
         pathappend /bin
 fi
+
+if [ $EUID -eq 0 ] ; then
+        pathappend /usr/sbin
+        if [ ! -L /sbin ]; then
+                pathappend /sbin
+        fi
+        unset HISTFILE
+fi
+
+# Set up some environment variables.
+export HISTSIZE=1000
+export HISTIGNORE="&amp;:[bf]g:exit"
+
+# Set some defaults for graphical systems
+export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share}
+export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg}
+export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
+
+for script in /etc/profile.d/*.sh ; do
+        if [ -r $script ] ; then
+                . $script
+        fi
+done
+
+unset script
+
 # End /etc/profile</literal>
 EOF</userinput></screen>
 
