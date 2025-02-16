@@ -186,7 +186,7 @@ strip /usr/libexec/gcc/i686-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,l
     <title>Testing the Toolchain</title>
 
     <para>
-      Now that the <application>MinGW-w64</application> cross toolchain have
+      Now that the <application>MinGW-w64</application> cross toolchain has
       been fully installed, it is time to test the installation to make sure
       everything is working as expected.
     </para>
