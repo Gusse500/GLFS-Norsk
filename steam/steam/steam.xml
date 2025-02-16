@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY steam-download-http "https://repo.steampowered.com/steam/pool/steam/s/steam/steam_&steam-version;.tar.gz">
+  <!ENTITY steam-download-http "https://repo.steampowered.com/steam/archive/stable/steam_&steam-version;.tar.gz">
   <!ENTITY steam-download-ftp  " ">
 ]>
 
