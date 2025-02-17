@@ -125,25 +125,23 @@
 
 <![ %development; [
   <!ENTITY important-stability "<para>
-  This book is in a constant flux of updates, including packages and can
-  be akin to the BLFS Git version. Right now, there is no stable
-  version of GLFS rendered online, but you can render it yourself by following
-  <ulink url='&glfs-repo;'/>. This may cause problems when you wish to continue
-  onto BLFS. Sometimes, packages in this book will have newer versions than
-  even BLFS development pages. It is recommended to remember what versions of
-  packages you have on your system because of this. Expect build failures
-  at some point, although we try to limit that possibility.
-  </para>">
+  This book viewable online is in a constant flux of updates, and updates about
+  as often as the BLFS Git/SVN version. While there isn't a viewable online
+  version of the stable release, you can either render it yourself by following
+  <ulink url='&glfs-repo;'/>, or you can download a <ulink
+  url='&glfs-repo;/releases'>release</ulink>.
+</para>">
 ]]>
 <![ %release; [
   <!ENTITY important-stability "<para>
   This is the stable release of this book and is known to have working
-  instructions. External links will point to stable sources. However, links
-  that point to MLFS is problematic as MLFS is rolling release, not stable,
-  so information there may be ahead of the results that appear from this
-  book, and instructions in the newer version of the book may lead to broken
-  instructions in this one. However, in <xref linkend='achievingml'/>, it will
-  show you how to render a stable release of MLFS.
+  instructions and matches up with LFS and BLFS &xlfs-version;. External links
+  will point to stable sources. However, links that point to MLFS is
+  problematic as MLFS is rolling release, not stable, so information there may
+  be ahead of the results that appear from this book, and instructions in the
+  newer version of the book may lead to broken instructions in this one.
+  However, in <xref linkend='achievingml'/>, it will show you how to render a
+  stable release of MLFS.
 </para>">
 ]]>
 <![ %development; [
