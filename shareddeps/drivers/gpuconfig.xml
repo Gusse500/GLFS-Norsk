@@ -37,8 +37,9 @@
 
     <para>
       Selecting <option>CONFIG_DRM_RADEON</option>,
-      <option>CONFIG_DRM_AMDGPU</option>, or
-      <option>CONFIG_DRM_NOUVEAU</option> as
+      <option>CONFIG_DRM_AMDGPU</option>,
+      <option>CONFIG_DRM_NOUVEAU</option>, or
+      <option>CONFIG_DRM_I915</option> as
       <quote><literal>y</literal></quote> is not recommended. If it is, any
       required firmware must be built as a part of the kernel image or the
       initramfs for the driver to function correctly.
@@ -157,7 +158,7 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
         DMC (Display Microcontroller) to provide additional low-power
         states. The GuC and HuC have had a chequered history in the
         kernel and updated firmware may be disabled by default,
-        depending on your kernel version.Further details may be found at
+        depending on your kernel version. Further details may be found at
         <ulink url="https://01.org/linuxgraphics/downloads/firmware/"/> and
         <ulink url="https://wiki.archlinux.org/index.php/intel_graphics"/>.
       </para>
