@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>February 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.13.5 -&gt; 2.13.6 (Security Update).
+          Fixes <ulink url="&glfs-issues;/117">#117</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 17th, 2025</para>
       <itemizedlist>
         <listitem>
