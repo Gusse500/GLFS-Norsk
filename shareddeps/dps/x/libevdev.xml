@@ -71,10 +71,11 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                 \
-      --prefix=/usr            \
-      --buildtype=release      \
-      -D documentation=disabled &amp;&amp;
+meson setup ..                  \
+      --prefix=/usr             \
+      --buildtype=release       \
+      -D documentation=disabled \
+      -D tests=disabled &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -102,6 +103,11 @@ ninja</userinput></screen>
       <title>Command Explanations</title>
 
       &options-meson;
+
+      <para>
+        <parameter>-D tests=disabled</parameter>: This switch disables building
+        tests as they depend on <application>Check</application>.
+      </para>
 
     </sect3>
 

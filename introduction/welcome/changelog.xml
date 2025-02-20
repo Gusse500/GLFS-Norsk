@@ -43,6 +43,9 @@
       <para>February 19th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libevdev: Disable tests.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - lib32-Check: Archived. Fixes
           <ulink url="&glfs-issues;/119">#119</ulink>.</para>
         </listitem>
