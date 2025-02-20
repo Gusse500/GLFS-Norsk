@@ -43,6 +43,10 @@
       <para>February 19th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - lib32-Check: Archived. Fixes
+          <ulink url="&glfs-issues;/119">#119</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libxml2: 2.13.5 -&gt; 2.13.6 (Security Update).
           Fixes <ulink url="&glfs-issues;/117">#117</ulink>.</para>
         </listitem>

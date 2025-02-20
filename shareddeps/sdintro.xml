@@ -56,7 +56,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/flac.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/opus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/libsndfile.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/lib32-check.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/pulseaudio.xml"/>
 
   <!-- BASIC X11 SOFTWARE -->
