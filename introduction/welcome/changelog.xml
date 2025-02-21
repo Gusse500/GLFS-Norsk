@@ -43,6 +43,10 @@
       <para>February 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Artwork: Make glfs-logo.png display size
+          smaller.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - gst-plugins-base: Internally link to plugins.</para>
         </listitem>
         <listitem>

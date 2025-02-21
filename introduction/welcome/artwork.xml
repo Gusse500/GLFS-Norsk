@@ -307,7 +307,8 @@
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/glfs-logo.png" format="PNG" scale="300"/>
+          <imagedata fileref="../images/glfs-logo.png"
+          format="PNG" width="300"/>
         </imageobject>
       </mediaobject>
 
