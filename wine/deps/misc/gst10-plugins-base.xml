@@ -22,14 +22,14 @@
     <title>Introduction to GStreamer Base Plug-ins</title>
 
     <para>
-      The <application>GStreamer Base Plug-ins</application> is a well-groomed and
-      well-maintained collection of <application>GStreamer</application> plug-ins
-      and elements, spanning the range of possible types of elements one would want
-      to write for <application>GStreamer</application>. You will need at least one
-      of Good, Bad, Ugly or
-      <ulink url="&blfs-svn;/multimedia/gst10-libav.html">Libav</ulink>
-      plugins for <application>GStreamer</application>
-      applications to function properly.
+      The <application>GStreamer Base Plug-ins</application> is a well-groomed
+      and well-maintained collection of <application>GStreamer</application>
+      plug-ins and elements, spanning the range of possible types of elements
+      one would want to write for <application>GStreamer</application>. You
+      will need at least one of <xref linkend="gst10-plugins-good"/>, <xref
+      linkend="gst10-plugins-bad"/>, <xref linkend="gst10-plugins-ugly"/>, or
+      <xref linkend="gst10-libav"/> plugins for
+      <application>GStreamer</application> applications to function properly.
     </para>
 
     <bridgehead renderas="sect3">Package Information</bridgehead>

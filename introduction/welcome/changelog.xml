@@ -43,6 +43,9 @@
       <para>February 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - gst-plugins-base: Internally link to plugins.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Gstreamer: Internally link to plugins.</para>
         </listitem>
       </itemizedlist>
