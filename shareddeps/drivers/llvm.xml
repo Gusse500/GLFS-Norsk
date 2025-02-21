@@ -272,7 +272,9 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter>: This switch builds
       the libraries as static and links all of them into an unique shared one.
-      This is the recommended way of building a shared library.
+      This is the recommended way of building a shared library and is required
+      by <xref linkend="rustc"/> in order to build against the system-installed
+      <application>LLVM</application>.
     </para>
 
     <para>
@@ -307,7 +309,7 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D LLVM_ENABLE_RTTI=ON</parameter>: This switch is used to
       build LLVM with run-time type information. This is required for building
-      <xref linkend="mesa"/>.
+      Gallium3D LLVMpipe from <xref linkend="mesa"/>.
     </para>
 
     <para>

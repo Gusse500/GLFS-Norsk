@@ -43,6 +43,10 @@
       <para>February 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - LLVM: Make it clear an option is needed to build
+          Rustc against system-installed LLVM.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Artwork: Make glfs-logo.png display size
           smaller.</para>
         </listitem>
