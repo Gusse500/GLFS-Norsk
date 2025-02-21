@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>February 21st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Gstreamer: Internally link to plugins.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 19th, 2025</para>
       <itemizedlist>
         <listitem>

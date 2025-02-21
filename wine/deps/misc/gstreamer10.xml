@@ -27,8 +27,11 @@
       filters, audio visualisation, web streaming and anything else that
       streams in real-time or otherwise. This package only provides base
       functionality and libraries. You may need at least <xref
-      linkend="gst10-plugins-base"/> and one of Good, Bad, Ugly or
-      <ulink url="&blfs-svn;/multimedia/gst10-libav.html">Libav</ulink>
+      linkend="gst10-plugins-base"/> and one of
+      <xref linkend="gst10-plugins-good"/>,
+      <xref linkend="gst10-plugins-bad"/>,
+      <xref linkend="gst10-plugins-ugly"/>, or
+      <xref linkend="gst10-libav"/>
       plugins.
     </para>
 
