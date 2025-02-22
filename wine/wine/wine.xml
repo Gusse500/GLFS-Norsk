@@ -40,6 +40,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -49,6 +50,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">Wine Dependencies</bridgehead>
 
@@ -61,6 +63,7 @@
   <sect2 role="installation">
     <title>Installation of Wine</title>
 
+<!--
     <para>
       First apply an upstream patch so that delay-load import libraries are
       unbroken with <xref linkend="mingw-w64-binutils"/> due to <application>
@@ -69,6 +72,7 @@
     </para>
 
 <screen><userinput>patch -Np1 -i ../wine-&wine-version;-avoid_idata_section-1.patch</userinput></screen>
+-->
 
     <para>
       Wine has three build types. Scroll down to the build type you want.
