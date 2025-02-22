@@ -43,6 +43,9 @@
       <para>February 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - {rust-,C}bindgen: Remove -D from install.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Wine: 10.1 -&gt; 10.2.
           Fixes <ulink url="&glfs-issues;/122">#122</ulink>.</para>
         </listitem>
