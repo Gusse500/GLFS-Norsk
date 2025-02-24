@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>February 24th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libpsl: Demote libidn2 and libunistring to
+          recommended.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 21st, 2025</para>
       <itemizedlist>
         <listitem>

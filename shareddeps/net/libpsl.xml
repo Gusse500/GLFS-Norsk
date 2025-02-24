@@ -41,10 +41,15 @@
 
     <bridgehead renderas="sect3">libpsl Dependencies</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
-    <para role="required">
+    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <para role="recommended">
       <xref linkend="libidn2"/> and
       <xref linkend='libunistring'/>
+    </para>
+
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <xref linkend="icu"/> (can be used instead of libidn2)
     </para>
 
   </sect2>
