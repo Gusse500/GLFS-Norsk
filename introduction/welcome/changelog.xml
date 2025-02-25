@@ -39,10 +39,13 @@
     </listitem>
     -->
 
-    <listitem revision="systemd">
+    <listitem>
       <para>February 25th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - gpuconfig: Link to linux-firmware.</para>
+        </listitem>
+        <listitem revision="systemd">
           <para>[zeckma] - Polkit: Add missing ninja command.</para>
         </listitem>
       </itemizedlist>

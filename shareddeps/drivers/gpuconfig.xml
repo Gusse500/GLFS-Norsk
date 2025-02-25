@@ -79,7 +79,8 @@
       <para>
         ATI Radeon GPUs require firmware to be able to use KMS (kernel
         modesetting - the preferred option) as well as for Xorg. The firmware
-        is in <application>linux-firmware</application>.
+        is in
+        <ulink url="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">linux-firmware</ulink>.
       </para>
 
       <para>
@@ -172,7 +173,8 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
         Some NVIDIA GPUs from Kepler onwards, including RTX and GTX 9xx series
         onwards, require firmware signed by NVIDIA to work.
         NVIDIA has now released firmware up to Ada (40xx) to
-        <application>linux-firmware</application>. Read
+        <ulink url="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">linux-firmware</ulink>.
+        Read
         <ulink url='https://nouveau.freedesktop.org/CodeNames.html'>the
         CodeNames page of the Nouveau wiki</ulink> to figure out the code
         name of your NVIDIA GPU (for example, the code name of the GeForce RTX
