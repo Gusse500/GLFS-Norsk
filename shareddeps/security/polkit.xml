@@ -130,7 +130,9 @@ meson setup ..                   \
       -D os_type=lfs             \
       -D man=false               \
       -D session_tracking=logind \
-      -D tests=false</userinput></screen>
+      -D tests=false &amp;&amp;
+
+ninja</userinput></screen>
 
 <screen revision="sysv"><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
