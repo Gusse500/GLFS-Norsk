@@ -205,16 +205,17 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
       Most of the packaged source code in GLFS are packaged in
       tarballs or zipfiles. These tarballs and zipfiles were created
       as part of a release, and often include files not found in the repo
-      equivalent where the package development happens. Usually the extra included
-      files are the configure scripts you should now be used to using. They are
-      generated manually using <command>aclocal</command>, <command>autoconf
-      </command>, and <command>automake</command>. The configure scripts are often
-      not in the repos, so if the git repo gets cloned, you will have to generate
-      the configure script yourself if you find <filename>configure.ac</filename>,
-      <filename>Makefile.am</filename>, and possibly <filename>autogen.sh
-      </filename>. You won't need to do this if you find the repo has a
-      <filename>Makefile</filename> or has <filename>meson_options.txt</filename>
-      or <filename>CMakeLists.txt</filename>.
+      equivalent where the package development happens. Usually the extra
+      included files are the configure scripts you should now be used to using.
+      They are generated manually using <command>aclocal</command>,
+      <command>autoconf</command>, and <command>automake</command>. The
+      configure scripts are often not in the repos, so if the git repo gets
+      cloned, you will have to generate the configure script yourself if you
+      find <filename>configure.ac</filename>, <filename>Makefile.am</filename>,
+      and possibly <filename>autogen.sh</filename>. You won't need to do this
+      if you find the repo has a <filename>Makefile</filename>,
+      <filename>meson_options.txt</filename>, or
+      <filename>CMakeLists.txt</filename>.
     </para>
 
     <para>
