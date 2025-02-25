@@ -230,8 +230,8 @@
 %gnome-entities;
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
-<!ENTITY xorg-server-version          "21.1.15">
-<!ENTITY xwayland-version             "24.1.5">
+<!ENTITY xorg-server-version          "21.1.16">
+<!ENTITY xwayland-version             "24.1.6">
 <!ENTITY mtdev-version                "1.1.7">
 <!-- BEGIN X7DRIVER -->
 <!ENTITY libevdev-version             "1.13.3">
