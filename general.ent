@@ -21,7 +21,7 @@
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable   "bd1252e439c6092c335ef4266e06b15e87f240d0">
+<!ENTITY mlfs-stable   "f01069e05df3c1e03b2b86d1c46afcb9d1c96c28">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
