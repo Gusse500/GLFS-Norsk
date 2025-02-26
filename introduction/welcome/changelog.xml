@@ -43,6 +43,9 @@
       <para>February 25th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libva: Externally link to intel-*.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SPIRV-LLVM-Translator: Remove outdated note.</para>
         </listitem>
         <listitem>

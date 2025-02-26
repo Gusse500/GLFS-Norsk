@@ -68,10 +68,10 @@
            drivers -->
       <para role='nodep'>
         The VA API driver suitable for the hardware in your system:
-        intel-vaapi-driver (for Intel GPUs provided with
-        Haswell CPUs or earlier),
-        intel-media (for Intel GPUs provided with
-        Broadwell CPUs or later), and
+        <ulink url="&blfs-svn;/multimedia/intel-vaapi-driver.html">intel-vaapi-driver</ulink>
+        (for Intel GPUs provided with Haswell CPUs or earlier),
+        <ulink url="&blfs-svn;/multimedia/intel-media.html">intel-media</ulink>
+        (for Intel GPUs provided with Broadwell CPUs or later), and
         <xref linkend="mesa"/> (providing the <literal>r600</literal>,
         <literal>radeonsi</literal>, and <literal>nouveau</literal> VA API
         drivers, for the ATI/AMD Radeon HD 2xxx GPUs and later, and
