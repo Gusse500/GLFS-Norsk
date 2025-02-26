@@ -43,6 +43,9 @@
       <para>February 25th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: Remove outdated note.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Xorg-Server: 21.1.15 -&gt; 21.1.16;
           Xwayland: 24.1.5 -&gt; 24.1.6 (Security Fixes). Fixes
           <ulink url="&glfs-issues;/126">#126</ulink> and

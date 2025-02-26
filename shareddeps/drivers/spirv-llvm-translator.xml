@@ -55,15 +55,6 @@
   <sect2 role="installation">
     <title>Installation of SPIRV-LLVM-Translator</title>
 
-    <note>
-      <para>
-        This tarball is <filename>v&spirv-llvm-translator-version;.tar.gz</filename>.
-        <filename>v&spirv-llvm-translator-version;.tar.gz</filename> will
-        extract to the directory <filename class="directory">
-        SPIRV-LLVM-Translator-&spirv-llvm-translator-version;</filename>.
-      </para>
-    </note>
-
     <para>
       Install <application>SPIRV-LLVM-Translator</application> by running the following
       commands:
