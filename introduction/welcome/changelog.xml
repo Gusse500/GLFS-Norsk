@@ -43,6 +43,14 @@
       <para>February 27th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Rustc: 1.84.1 -&gt; 1.85.0;
+          GLib: 2.82.4 -&gt; 2.82.5;
+          HarfBuzz: 10.2.0 -&gt; 10.3.0. Fixes
+          <ulink url="&glfs-issues;/121">#121</ulink>,
+          <ulink url="&glfs-issues;/123">#123</ulink>, and
+          <ulink url="&glfs-issues;/128">#128</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Systemd: 257 -&gt; 257.3;
           Shadow: 4.17.2 -&gt; 4.17.3;
           linux: 6.13.1 -&gt; 6.13.4. Fixes
