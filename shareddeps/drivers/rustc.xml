@@ -9,7 +9,7 @@
 
   <!-- change-id can be found in src/bootstrap/src/utils/change_tracker.rs
        at the very bottom: change_id. -->
-  <!ENTITY change-id          "133207">
+  <!ENTITY change-id          "134650">
 ]>
 
 <sect1 id="rustc" xreflabel="rustc-&rustc-version;">
