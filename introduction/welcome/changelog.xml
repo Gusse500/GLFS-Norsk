@@ -40,6 +40,18 @@
     -->
 
     <listitem>
+      <para>February 27th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Systemd: 257 -&gt; 257.3;
+          Shadow: 4.17.2 -&gt; 4.17.3;
+          linux: 6.13.1 -&gt; 6.13.4. Fixes
+          <ulink url="&glfs-issues;/124">#124</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>February 25th, 2025</para>
       <itemizedlist>
         <listitem>

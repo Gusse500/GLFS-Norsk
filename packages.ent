@@ -23,9 +23,9 @@
 <!ENTITY dbus-version                 "1.16.0">   <!-- Even minors only -->
 <!ENTITY linux-pam-version            "1.7.0">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
-<!ENTITY shadow-version               "4.17.2">
+<!ENTITY shadow-version               "4.17.3">
 <!ENTITY elogind-version              "255.17">
-<!ENTITY systemd-version              "257">
+<!ENTITY systemd-version              "257.3">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY pcre2-version                "10.45">
 <!ENTITY glib2-minor                  "2.82">
