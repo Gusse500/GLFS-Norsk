@@ -241,11 +241,6 @@ locked-deps = true
 # Specify which extended tools (those from the default install).
 tools = ["cargo", "clippy", "rustdoc", "rustfmt"]
 
-# Use the source code shipped in the tarball for the dependencies.
-# The combination of this and the "locked-deps" entry avoids downloading
-# many crates from Internet, and makes the Rustc build more stable.
-vendor = true
-
 [install]
 prefix = "/opt/rustc-&rustc-version;"
 docdir = "share/doc/rustc-&rustc-version;"
@@ -253,10 +248,6 @@ docdir = "share/doc/rustc-&rustc-version;"
 [rust]
 channel = "stable"
 description = "for GLFS &version;"
-
-# Disable building and downloading components that shouldn't as a part of
-# Rustc on a GLFS system.
-download-rustc = false
 
 # Uncomment if FileCheck has been installed.
 #codegen-tests = false
