@@ -254,10 +254,12 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
       and also used in some tests.
     </para>
 
+<!--
     <para>
-      <option>--with-libpcre2</option>: Use this switch if
+      <option>- -with-libpcre2</option>: Use this switch if
       <application>PCRE2</application> is installed.
     </para>
+-->
 
     <para>
       <command>tar -xf ../git-manpages-&git-version;.tar.gz -C
