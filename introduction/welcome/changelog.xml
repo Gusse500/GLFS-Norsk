@@ -43,6 +43,9 @@
       <para>February 27th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Git: Remove testing instructions.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Rustc: 1.84.1 -&gt; 1.85.0;
           GLib: 2.82.4 -&gt; 2.82.5;
           HarfBuzz: 10.2.0 -&gt; 10.3.0. Fixes
