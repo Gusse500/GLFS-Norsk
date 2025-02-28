@@ -114,14 +114,6 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
-      <para>
-        If <application>doxygen</application> is present at build time
-        place the documentation in a versioned directory as the
-        <systemitem class="username">root</systemitem> user:
-      </para>
-
-<screen role="root"><userinput>[ -e /usr/share/doc/libvdpau ] &amp;&amp; mv -v /usr/share/doc/libvdpau{,&libvdpau-version;}</userinput></screen>
-
     </sect2>
 
     <sect2 role="installation">
