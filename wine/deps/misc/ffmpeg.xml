@@ -357,7 +357,7 @@ ldconfig</userinput></screen>
 
     <note>
       <para>
-        Support for most of the dependency packages requires using options
+        Support for some of the dependency packages requires using options
         passed to the <command>configure</command> script. View the output
         from <command>./configure --help</command> for complete information
         about enabling dependency packages.
