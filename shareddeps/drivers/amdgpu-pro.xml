@@ -20,7 +20,8 @@
     <para>
       The <application>AMDGPU PRO</application> proprietary driver contains
       userland drivers and libraries, providing hardware acceleration encoding,
-      EGL, OpenGL, GLES, and Vulkan support.
+      EGL, OpenGL, GLES, and Vulkan support <emphasis>FOR</emphasis> AMDGPU
+      cards. If you do not have an AMDGPU card, you can skip this page.
     </para>
 
     <bridgehead renderas="sect3">AMDGPU PRO Dependencies</bridgehead>
