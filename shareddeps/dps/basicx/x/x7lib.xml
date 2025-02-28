@@ -302,10 +302,12 @@ done</userinput></screen>
       browser is installed.
     </para>
 
+<!--
     <para>
-      <option>--with-fop</option>: Use fop to
+      <option>- -with-fop</option>: Use fop to
       generate PDF documentation (only for the libXfont package).
     </para>
+-->
 
   </sect2>
 
