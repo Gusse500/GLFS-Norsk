@@ -43,6 +43,9 @@
       <para>February 27th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - CMake: Remove references to Qt.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Git: Remove testing instructions.</para>
         </listitem>
         <listitem>

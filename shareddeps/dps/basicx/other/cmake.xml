@@ -174,12 +174,6 @@ make</userinput></screen>
     </para>
 
     <para>
-      <option>--qt-gui</option>: This switch enables building the
-      <application>Qt</application>-based  GUI for
-      <application>CMake</application>.
-    </para>
-
-    <para>
       <option>--parallel=</option>: This switch enables performing the
       <application>CMake</application> bootstrap with multiple jobs
       at one time.
@@ -197,7 +191,7 @@ make</userinput></screen>
 
       <seglistitem>
         <seg>
-          ccmake, cmake, cmake-gui (optional), cpack, and ctest
+          ccmake, cmake, cpack, and ctest
         </seg>
         <seg>
           None
@@ -236,19 +230,6 @@ make</userinput></screen>
           </para>
           <indexterm zone="cmake cmake-prog">
             <primary sortas="b-cmake">cmake</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="cmake-gui">
-        <term><command>cmake-gui</command></term>
-        <listitem>
-          <para>
-            (optional) is the <application>Qt</application>-based frontend to
-            <command>cmake</command>
-          </para>
-          <indexterm zone="cmake cmake-gui">
-            <primary sortas="b-cmake-gui">cmake-gui</primary>
           </indexterm>
         </listitem>
       </varlistentry>
