@@ -74,7 +74,7 @@
 <!ENTITY libpng-version               "1.6.46">
 <!ENTITY apng-version                 "&libpng-version;">
 <!ENTITY freetype2-version            "2.13.3">
-<!ENTITY harfbuzz-version             "10.3.0">
+<!ENTITY harfbuzz-version             "10.4.0">
 <!ENTITY fontconfig-version           "2.16.0">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->

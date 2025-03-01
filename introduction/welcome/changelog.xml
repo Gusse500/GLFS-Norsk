@@ -43,6 +43,9 @@
       <para>February 28th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - HarfBuzz: 10.3.0 -&gt; 10.4.0.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - AMDGPU PRO: Better clarify things.</para>
         </listitem>
       </itemizedlist>
