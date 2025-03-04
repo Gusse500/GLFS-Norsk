@@ -43,6 +43,18 @@
       <para>March 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NSS: 3.108 -&gt; 3.109;
+          CMake: 3.31.5 -&gt; 3.31.6;
+          Wayland-Protocols: 1.40 -&gt; 1.41;
+          hwdata: 0.392 -&gt; 0.393;
+          SPIRV-LLVM-Translator: 19.1.4 -&gt; 19.1.5. Fixes
+          <ulink url="&glfs-issues;/116">#116</ulink>,
+          <ulink url="&glfs-issues;/125">#125</ulink>,
+          <ulink url="&glfs-issues;/130">#130</ulink>,
+          <ulink url="&glfs-issues;/132">#132</ulink>, and
+          <ulink url="&glfs-issues;/135">#135</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Changelog: Cleaned for next release cycle.</para>
         </listitem>
       </itemizedlist>
