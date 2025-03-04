@@ -22,7 +22,7 @@
 ]]><!-- End %development -->
 
 <!ENTITY mlfs-stable        "24cf3b5be96b69ccbfd0fcfe536ad263fdb24502">
-<!ENTITY mlfs-extra-commits "88fae8d7dd33837e14b929676bc967e34417d6cf">
+<!ENTITY mlfs-extra-commits "b138633c16ebfb181e7621e276e8196c73c024a9">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
