@@ -181,8 +181,8 @@ git checkout multilib</userinput></screen>
   <computeroutput>multilib</computeroutput> branch, then switch to the stable
   version:
 </para>
-<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs-stable &amp;&amp;
-cd mlfs-stable &amp;&amp;
+<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
+cd mlfs &amp;&amp;
 git checkout multilib &amp;&amp;
 git checkout &mlfs-stable;</userinput></screen>
 <para>
