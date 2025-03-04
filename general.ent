@@ -21,7 +21,8 @@
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable   "24cf3b5be96b69ccbfd0fcfe536ad263fdb24502">
+<!ENTITY mlfs-stable        "24cf3b5be96b69ccbfd0fcfe536ad263fdb24502">
+<!ENTITY mlfs-extra-commits "88fae8d7dd33837e14b929676bc967e34417d6cf">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
@@ -173,7 +174,8 @@ git checkout multilib</userinput></screen>
   <!ENTITY multilib-rendering1 "<para>
   The links above, however, are rolling release and are rendered frequently.
   The known version of MLFS to work with this version of GLFS is
-  &mlfs-stable;. You can render it by following the instructions below.
+  &mlfs-stable; with &mlfs-extra-commits; merged. You can render it by
+  following the instructions below.
 </para>">
 <![ %sysv; [
   <!ENTITY multilib-rendering2 "<para>First, install <xref linkend='git'/>, then
@@ -184,7 +186,8 @@ git checkout multilib</userinput></screen>
 <screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
 cd mlfs &amp;&amp;
 git checkout multilib &amp;&amp;
-git checkout &mlfs-stable;</userinput></screen>
+git checkout &mlfs-stable; &amp;&amp;
+git merge --no-commit &mlfs-extra-commits;</userinput></screen>
 <para>
   Now inspect the <filename>INSTALL</filename> file to check for the needed
   dependencies in order to render the book. Once you have ensured you have
@@ -200,7 +203,8 @@ git checkout &mlfs-stable;</userinput></screen>
   <!ENTITY multilib-rendering2 "<para>
   Now switch to the stable git hash:
 </para>
-<screen><userinput>git checkout &mlfs-stable;</userinput></screen>">
+<screen><userinput>git checkout &mlfs-stable; &amp;&amp;
+git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
 ]]>
 ]]>
 
