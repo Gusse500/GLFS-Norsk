@@ -69,9 +69,11 @@
 <!ENTITY mlfs-base            "&lfs-website;/~thomas/multilib">
 <![ %sysv; [
 <!ENTITY mlfs-root            "&mlfs-base;">
+<!ENTITY lfs-filename         "lfs-book">
 ]]>
 <![ %systemd; [
 <!ENTITY mlfs-root            "&mlfs-base;-systemd">
+<!ENTITY lfs-filename         "lfs-systemd">
 ]]>
 <!ENTITY mlfs-m32-root        "&mlfs-root;-m32">
 
@@ -160,11 +162,7 @@ git checkout multilib</userinput></screen>
   dependencies in order to render the book. Once you have ensured you have
   installed everything, render the book: 
 </para>
-<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>
-<para>
-  The rendered files will be in
-  <filename class='directory'>~/public_html/lfs-book</filename>.
-</para>">
+<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>">
 ]]>
 <![ %systemd; [
   <!ENTITY multilib-rendering2 " ">
@@ -193,11 +191,7 @@ git merge --no-commit &mlfs-extra-commits;</userinput></screen>
   dependencies in order to render the book. Once you have ensured you have
   installed everything, render the book: 
 </para>
-<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>
-<para>
-  The rendered files will be in
-  <filename class='directory'>~/public_html/lfs-book</filename>.
-</para>">
+<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>">
 ]]>
 <![ %systemd; [
   <!ENTITY multilib-rendering2 "<para>
@@ -207,6 +201,34 @@ git merge --no-commit &mlfs-extra-commits;</userinput></screen>
 git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
 ]]>
 ]]>
+<!ENTITY read-book "<para>
+ This will render the book in
+ <filename class='directory'>~/public_html/&lfs-filename;</filename>.
+ You can change how much multilib support you wish to render the book
+ with by changing the <envar>ARCH</envar> variable's value.
+ The above command will render 64-bit and 32-bit support but leaves out
+ x32-bit support, which is not needed for this book. If you want to get
+ that support too, change <computeroutput>ARCH=ml_32</computeroutput> to
+ <computeroutput>ARCH=ml_all</computeroutput>.
+ You can then point to the HTML using a browser like
+ <ulink url='&blfs-svn;/xsoft/firefox.html'>Firefox</ulink> or
+ <ulink url='&blfs-svn;/basicnet/lynx.html'>Lynx</ulink>.
+</para>
+
+<para>
+  For <application>Firefox</application>, type in the search bar:
+
+<computeroutput>file:///home/<replaceable>&lt;username&gt;</replaceable>/public_html/&lfs-filename;/index.html</computeroutput>,
+
+  and replace <replaceable>&lt;username&gt;</replaceable>
+  with the name of the username you rendered the book with.
+</para>
+
+<para>
+  For <application>Lynx</application>, run the following:
+</para>
+
+<screen><userinput>lynx ~/public_html/&lfs-filename;/index.html</userinput></screen>">
 
 <!ENTITY as_root "<note><para>When installing multiple packages in a script,
   the installation needs to be done as the root user. There are three general
