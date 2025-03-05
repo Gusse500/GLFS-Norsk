@@ -7,17 +7,6 @@
   <!ENTITY python3-download-http
            "https://www.python.org/ftp/python/&python3-version;/Python-&python3-version;.tar.xz">
   <!ENTITY python3-download-ftp  " ">
-  <!ENTITY python3-md5sum        "4c2d9202ab4db02c9d0999b14655dfe5">
-  <!ENTITY python3-size          "22 MB">
-  <!ENTITY python3-buildsize     "649 MB (add 65 MB for tests)">
-  <!ENTITY python3-time          "2.1 SBU (add 1.1 SBU for tests; both using parallelism=4)">
-  <!--
-  Note: Size does not reflect docs that were installed in LFS.
-  Test time measured with 60 second timeout.
-  -->
-  <!ENTITY python3htmldoc-download-http
-  "https://www.python.org/ftp/python/doc/&python3-version;/python-&python3-version;-docs-html.tar.bz2">
-  <!ENTITY python3-docs-md5sum "d6aede88f480a018d26b3206f21654ae">
 ]>
 
 <sect1 id="python3" xreflabel="Python-&python3-version;">
