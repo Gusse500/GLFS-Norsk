@@ -104,12 +104,9 @@
       modules. Therefore performance with the open source drivers,
       <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>, are
       slightly worse than NVIDIA's proprietary driver. Installing the
-      proprietary driver comes with a lot of compromises, such as demanding
-      an older kernel, extra setup, and some kernel options disabled, but
-      doesn't require installing lib32-<xref linkend="mesa"/> for multilib.
-      There is another driver called <emphasis>Zink</emphasis> which translates
-      Vulkan calls to OpenGL calls which can replace
-      <emphasis>Nouveau</emphasis>.
+      proprietary driver can be easier. There is another driver called
+      <emphasis>Zink</emphasis> which translates Vulkan calls to OpenGL
+      calls which can replace <emphasis>Nouveau</emphasis>.
     </para>
 
     <para>
@@ -149,20 +146,18 @@
       the performance of this driver is better than the open source
       alternatives. It allows the use of NVIDIA's CUDA project which is
       useful for hardware acceleration, improving performance of games and
-      workstation applications. That being said, it has a lot of issues that
-      require a lot of compromises to this day and has many issues. It is no
-      longer provided in this book for those reasons. However, you can read
-      an <ulink url="&glfs-repo;/releases/tag/%239ef43">older version</ulink>
-      of the book that has instructions for the driver. If these issues have
-      been resolved, the driver will come back into the book. Otherwise, you
-      can install the drivers mentioned above.
+      workstation applications. This driver has a lot of issues to this day but
+      still provides better performance, thus its installation is provided in
+      this book. Firmware isn't needed as it is provided by this driver.
     </para>
 
     <para>
-      Summary: If you only use OpenGL applications, use
-      <emphasis>Nouveau</emphasis>. If you use a variety of applications and
-      play games that utilize Direct3D and Vulkan, install both
-      <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>. Installing
+      Summary: If you want good performance and care about workstation
+      use cases, install <emphasis>NVIDIA</emphasis>. If you only use
+      OpenGL applications and don't want the proprietary NVIDIA driver,
+      use <emphasis>Nouveau</emphasis>. If you use a variety of
+      applications and play games that utilize Direct3D and Vulkan, install
+      both <emphasis>Nouveau</emphasis> and <emphasis>NVK</emphasis>. Installing
       <emphasis>Zink</emphasis> is a good idea, too.
     </para>
 

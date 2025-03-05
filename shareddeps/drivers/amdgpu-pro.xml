@@ -30,7 +30,7 @@
     <para role="required">
       <xref linkend="xorg7-lib"/>,
       <xref linkend="gpuconfig"/>,
-      <xref linkend="mesa"/>, and
+      &opengl;, and
       <xref linkend="wget"/> (for getting the .deb files in the installation
       instructions)
     </para>

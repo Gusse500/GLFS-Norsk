@@ -96,6 +96,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/gpuconfig.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/pciutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/hwdata.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libglvnd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/vkheaders.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-headers.xml"/>
@@ -121,6 +122,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/mesa.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvdpau-va-gl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/amdgpu-pro.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/nvidia.xml"/>
 
   <!-- X11 -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/x/xdummy.xml"/>

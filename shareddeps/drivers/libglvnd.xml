@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-  <!ENTITY % general-entities SYSTEM "../../../general.ent">
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
   <!ENTITY libglvnd-download-https "https://gitlab.freedesktop.org/glvnd/libglvnd/-/archive/v&libglvnd-version;/libglvnd-v&libglvnd-version;.tar.gz">
@@ -11,8 +11,8 @@
 <sect1 id="libglvnd" xreflabel="libglvnd-&libglvnd-version;">
   <?dbhtml filename="libglvnd.html"?>
 
-
   <title>libglvnd-&libglvnd-version;</title>
+
   <indexterm zone="libglvnd">
     <primary sortas="a-glvnd">libglvnd</primary>
   </indexterm>
@@ -26,6 +26,29 @@
       drivers from different vendors to coexist on the same filesystem,
       and determines which vendor to dispatch each API call to at
       runtime.
+    </para>
+
+    <para>
+      In other words, this package contains OpenGL libraries and wrappers.
+      <xref linkend="mesa"/> also provides OpenGL libraries. You will need to
+      decide which provider you want to install from. This package is
+      required by <xref linkend="nvidia"/> as that driver will not be able to
+      use <application>Mesa's</application> OpenGL libraries; however, every
+      other driver, including those in <application>Mesa</application>, can
+      simply use its OpenGL libraries. Furthermore, no programs in this book
+      require this package. Problems may arise with some build systems
+      expecting certain files or binary-downloaded applications such as <ulink
+      url="https://www.shipofharkinian.com/">Ship of Harkinian</ulink> being
+      linked against this package's libraries which are not provided by <xref
+      linkend="mesa"/>, though these issues are few and far between.
+    </para>
+
+    <para>
+      It is up to you on which provider to install from. If you don't want to
+      install OpenGL libraries from this package, you can skip this page and
+      continue onto the next package. If you want to install this package, but
+      not <xref linkend="nvidia"/>, you will still need to install <xref
+      linkend="mesa"/>. Its instructions will account for this installation.
     </para>
 
     <itemizedlist spacing="compact">
@@ -112,7 +135,7 @@ ldconfig</userinput></screen>
     &options-meson;
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../xincludes/meson-buildtype-release.xml"/>
+      href="../../xincludes/meson-buildtype-release.xml"/>
 
   </sect2>
 

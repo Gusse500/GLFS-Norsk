@@ -32,7 +32,7 @@
       Display server (<xref linkend="xorg-server"/> or
       <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
       <xref linkend="make-ca"/> (with the symlink added), and
-      <xref linkend="mesa"/>
+      &opengl;
     </para>
 
   </sect2>

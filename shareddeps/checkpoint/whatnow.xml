@@ -20,17 +20,17 @@
   <para>
     Well, how do you go from here? You could continue straight to the following
     chapters if you wish. But to run graphical compile like <xref
-    linkend="steam"/> and
-    <xref linkend="wine"/> (including <command>wineboot</command> as shown in
-    the setup for <xref linkend="dxvk"/>), you will need a graphical
-    environment. There are a few components you will need in order to get a
-    graphical environment working and not accidently lock yourself inside of it
-    without a hard reboot. The installation of those components are not covered
-    in this book and which components you will need will depend on if you are
-    going to use <application>X11</application>,
-    <application>Wayland</application>, or both. This page acts as a simple
-    nudge to help point you in the right direction, and when you are done, can
-    come back and continue on with the next chapters.
+    linkend="steam"/> and <xref linkend="wine"/> (including
+    <command>wineboot</command> as shown in the setup for <xref
+    linkend="dxvk"/>), you will need a graphical environment. There are a few
+    components you will need in order to get a graphical environment working
+    and not accidently lock yourself inside of it without a hard reboot. The
+    installation of those components are not covered in this book and which
+    components you will need will depend on if you are going to use
+    <application>X11</application>, <application>Wayland</application>, or
+    both. This page acts as a simple nudge to help point you in the right
+    direction, and when you are done, can come back and continue on with the
+    next chapters.
   </para>
 
   <para>
@@ -43,13 +43,14 @@
     <title>X11</title>
 
     <para>
-      It is recommended to read up on the BLFS page
-      <ulink url="&blfs-svn;/x/xorg-config.html">Xorg-7 Testing and
-      Configuration</ulink>. It is pretty comprehensive. However, there
-      is some extra information you may wish to know.
+      It is recommended to read up on the BLFS page <ulink
+      url="&blfs-svn;/x/xorg-config.html">Xorg-7 Testing and
+      Configuration</ulink>. It is pretty comprehensive. However, using <xref
+      linkend="nvidia"/> with <application>X11</application> requires a
+      slightly different setup, and there may extra information you wish to
+      know.
     </para>
 
-<!--
     <sect3>
       <title>X11 With NVIDIA</title>
 
@@ -58,7 +59,7 @@
         can lead to issues, if <application>X11</application> manages to
         even start. In order to use the <application>NVIDIA</application>
         driver when starting <application>X11</application>, run the following
-        command as the <systemitem class="username">root</systemitem> user:
+        command as the &root; user:
       </para>
 
       <screen role="root"><userinput>nvidia-xconfig</userinput></screen>
@@ -90,8 +91,7 @@
         &root; user:
       </para>
 
-      NOTE: Remove ! between two dashes for unarchiving NVIDIA.
-      <screen role="root"><userinput>nvidia-xconfig -!-prime</userinput></screen>
+      <screen role="root"><userinput>nvidia-xconfig --prime</userinput></screen>
 
       <para>
         It will then say you will have to run a few commands. While in a TTY,
@@ -105,7 +105,7 @@
       </para>
 
     </sect3>
--->
+
     <sect3>
       <title>Using Zink</title>
 
@@ -261,7 +261,6 @@
       however.
     </para>
 
-<!--
     <sect3>
       <title>NVIDIA</title>
 
@@ -287,7 +286,6 @@ EOF</userinput></screen>
       </para>
 
     </sect3>
--->
 
     <sect3>
       <title>Window Managers, Desktop Environments, and Compositors</title>

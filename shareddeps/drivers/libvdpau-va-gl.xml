@@ -53,7 +53,7 @@
         <xref linkend="cmake"/>,
         <xref linkend="libvdpau"/>,
         <xref linkend="libva"/>, and
-        <xref linkend="mesa"/>
+        &opengl;
       </para>
 
     </sect2>

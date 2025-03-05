@@ -43,6 +43,9 @@
       <para>March 5th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libglvnd; NVIDIA: Unarchived.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - luit: Removed. Fixes
           <ulink url="&glfs-issues;/137">#137</ulink>.</para>
         </listitem>

@@ -46,7 +46,7 @@
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
       <xref linkend="libpng"/>,
-      <xref linkend="mesa"/>,
+      &opengl;,
       <xref linkend="xbitmaps"/>, and
       <xref linkend="xcb-utils"/>
     </para>

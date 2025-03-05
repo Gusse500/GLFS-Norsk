@@ -133,6 +133,7 @@
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.13.0">
 <!ENTITY hwdata-version               "0.393">
+<!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-version               "1.4.304">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
@@ -140,15 +141,6 @@
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.1.0">
-<!-- <!ENTITY linux-version                "6.13.1"> -->
-                                                <!-- kernel version in
-                                                     kernel-config
-                                                     presently -->
-<!-- <!ENTITY nvidia-linux-version         "6.10.6"> -->
-                                                <!-- kernel version of when the
-                                                     NVIDIA driver version
-                                                     listed was released -->
-<!-- <!ENTITY nvidia-version               "560.35.03"> -->
 <!ENTITY llvm-maj-version             "19">
 <!ENTITY llvm-point-version           "7">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
@@ -174,6 +166,15 @@
 <!ENTITY amdgpu-pro-repo-folder-version "6.2.3">
 <!ENTITY amdgpu-pro-amf-version       "1.4.35">
 <!ENTITY amdgpu-pro-libamdenc-version "1.0">
+<!ENTITY linux-version                "6.13.4">
+                                                <!-- kernel version in
+                                                     kernel-config
+                                                     presently -->
+<!ENTITY nvidia-linux-version         "6.10.6">
+                                                <!-- kernel version of when the
+                                                     NVIDIA driver version
+                                                     listed was released -->
+<!ENTITY nvidia-version               "560.35.03">
 <!ENTITY libvdpau-va-gl-version       "0.4.2">
 <!-- X11 -->
 <!ENTITY xcb-util-version             "0.4.1">

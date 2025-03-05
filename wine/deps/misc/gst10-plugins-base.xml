@@ -68,7 +68,7 @@
       <xref linkend="libogg"/>,
       <xref linkend="libpng"/>,
       <xref linkend="libvorbis"/>,
-      <xref linkend="mesa"/>,
+      &opengl;,
       <ulink url="&blfs-svn;/x/pango.html">Pango</ulink>,
       <xref linkend="wayland-protocols"/>, and
       <xref linkend="xorg7-lib"/>

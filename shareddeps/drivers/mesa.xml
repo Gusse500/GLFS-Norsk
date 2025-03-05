@@ -26,6 +26,13 @@
       and so forth.
     </para>
 
+    <note><para>
+      If you are wanting to install <xref linkend="nvidia"/>, skip this
+      package. If you don't plan on that but still have installed <xref
+      linkend="libglvnd"/>, you still need to compile drivers for it, and the
+      GBM. The instructions below will account for that.
+    </para></note>
+
     <note>
       <para>
         <application>Mesa</application> is updated relatively often. You may
@@ -150,6 +157,7 @@
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
+      <xref linkend="libglvnd"/>,
       <xref linkend="libunwind"/>,
       <ulink url="&blfs-svn;/general/lm_sensors.html">lm_sensors</ulink>
       <!-- for libsensors according to Meson -->,
@@ -180,19 +188,6 @@
   <sect2 role="installation">
     <title>Installation of Mesa</title>
     
-<!--
-    <para>
-      The recommended patch fixes behavior in the Gallium3D Zink driver when
-      the active Vulkan driver is NVK. Otherwise, many apps flash pretty badly,
-      especially <application>Firefox</application> and
-      <application>Thunderbird</application>. This may trigger seizures. The
-      patch has not been submitted upstream and may not be the best way of
-      doing things, but it fixes the behavior and things seem to work as
-      expected. If you downloaded the patch, apply it now:
-    </para>
-
-<screen><userinput>patch -Np1 -i ../mesa-seizure_prevention-2.patch</userinput></screen>
--->
     <para>
       Install <application>Mesa</application> by running the following
       commands:
@@ -211,6 +206,8 @@ meson setup                    \
       -D valgrind=disabled     \
       -D video-codecs=all      \
       -D libunwind=disabled    \
+      $(pkgconf libglvnd &amp;&amp;    \
+      echo -D glvnd=enabled)   \
       ..    &amp;&amp;
 
 ninja</userinput></screen>
@@ -268,6 +265,9 @@ ninja</userinput></screen>
       -D valgrind=disabled     \
       -D video-codecs=all      \
       -D libunwind=disabled    \
+      $(PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+      pkgconf libglvnd &amp;&amp;      \
+      echo -D glvnd=enabled)   \
       .. &amp;&amp;
       sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
 
@@ -473,6 +473,15 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D libunwind=disabled</parameter>: This parameter disables
       the usage of libunwind.
+    </para>
+
+    <para>
+      <command>$(pkgconf libglvnd &amp;&amp; echo -D glvnd=enabled)</command>:
+      This command checks for the <application>pkgconf</application> file from
+      <xref linkend="libglvnd"/>. If it's found, it will pass
+      <parameter>-D glvnd=enabled</parameter> to <command>meson</command>,
+      which ensures that OpenGL libraries are not built in this package, and
+      that all other libraries will link against it properly.
     </para>
 
     <para>
