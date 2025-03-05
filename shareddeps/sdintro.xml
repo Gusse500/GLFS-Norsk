@@ -19,6 +19,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/netconnect.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/libtasn1.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/nspr.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/sqlite.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/python3.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/nss.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/p11-kit.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/make-ca.xml"/>

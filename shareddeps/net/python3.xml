@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY python3-download-http
+           "https://www.python.org/ftp/python/&python3-version;/Python-&python3-version;.tar.xz">
+  <!ENTITY python3-download-ftp  " ">
+  <!ENTITY python3-md5sum        "4c2d9202ab4db02c9d0999b14655dfe5">
+  <!ENTITY python3-size          "22 MB">
+  <!ENTITY python3-buildsize     "649 MB (add 65 MB for tests)">
+  <!ENTITY python3-time          "2.1 SBU (add 1.1 SBU for tests; both using parallelism=4)">
+  <!--
+  Note: Size does not reflect docs that were installed in LFS.
+  Test time measured with 60 second timeout.
+  -->
+  <!ENTITY python3htmldoc-download-http
+  "https://www.python.org/ftp/python/doc/&python3-version;/python-&python3-version;-docs-html.tar.bz2">
+  <!ENTITY python3-docs-md5sum "d6aede88f480a018d26b3206f21654ae">
+]>
+
+<sect1 id="python3" xreflabel="Python-&python3-version;">
+  <?dbhtml filename="python3.html" ?>
+
+
+  <title>Python-&python3-version;</title>
+
+  <indexterm zone="python3">
+    <primary sortas="a-Python3">Python3</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to Python 3</title>
+
+    <para>
+      The <application>Python 3</application> package contains the
+      <application>Python</application> development environment.
+      This is useful for object-oriented programming, writing scripts,
+      prototyping large programs or developing entire applications.
+    </para>
+
+    <note>
+      <para>
+        <application>Python 3</application> was installed in LFS.
+        The only reason to rebuild it here is if <xref linkend="sqlite"/> is
+        installed or if upgrading.
+      </para>
+    </note>
+
+    <important>
+      <para>
+         If upgrading to a new Python-3 minor version (for example,
+         from Python-3.11.x to Python-3.12.0), you will need to reinstall
+         any Python3 modules you have installed.  You should also
+         reinstall packages that generate Python3 modules.
+      </para>
+
+      <para>Before you upgrade, you can get a list of modules installed
+        with <command>pip3 list</command>.  The list may be incomplete as
+        some Python modules are not installed with <command>pip3</command>,
+        for example the <literal>xcbgen</literal> module installed by
+        <xref role='nodep' linkend='xcb-proto'/>.  Use <command>ls
+        /usr/lib/python3.<replaceable>minor</replaceable>/site-packages</command>
+        for a comprehensive list.
+      </para>
+
+      <para>
+         The Python modules from LFS will also have to be reinstalled:
+         <ulink url="&lfs-root;/chapter08/flit-core.html">flit-core</ulink>,
+         <ulink url="&lfs-root;/chapter08/wheel.html">wheel</ulink>,
+         <ulink url="&lfs-root;/chapter08/setuptools.html">setuptools</ulink>,
+         <ulink url="&lfs-root;/chapter08/meson.html">meson</ulink>,
+         <ulink url="&lfs-root;/chapter08/markupsafe.html">MarkupSafe</ulink>,
+         and <ulink url="&lfs-root;/chapter08/jinja2.html">Jinja2</ulink>.
+      </para>
+    </important>
+
+    <bridgehead renderas="sect3">Package Information</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&python3-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&python3-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">Python 3 Dependencies</bridgehead>
+
+    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <para role="recommended">
+      <xref linkend="sqlite"/> (required if building <ulink
+      url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink> or <ulink
+      url="&blfs-svn;/xsoft/thunderbird.html">Thunderbird</ulink>)
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of Python 3</title>
+
+    <para>
+      Install <application>Python 3</application> by running the following
+      commands:
+    </para>
+
+<screen><userinput>CXX="/usr/bin/g++"               \
+./configure --prefix=/usr        \
+            --enable-shared      \
+            --with-system-expat  \
+            --enable-optimizations &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Now, as the &root; user:
+    </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <para>
+      <command> CXX="/usr/bin/g++" ./configure ...</command>: Avoid an annoying
+      message during configuration.
+    </para>
+
+    <para>
+      <parameter>--with-system-expat</parameter>: This switch enables linking
+      against the system version of <application>Expat</application>.
+    </para>
+
+<!--
+    <para>
+      <parameter>- -with-ensurepip=yes</parameter> : This switch enables building
+      the <command>pip</command> and <command>setuptools</command> packaging
+      programs. <command>setuptools</command> is needed for building some
+      Python modules.
+    </para>
+-->
+
+    <para>
+      <parameter>--enable-optimizations</parameter>: This switch enables
+      stable, but expensive, optimizations.
+    </para>
+
+    <para>
+      <option>--with-lto</option>: This optional switch enables thick Link
+      Time Optimization. Unusually, it creates a much larger <filename
+      class="libraryfile">/usr/lib/python&python3-majorver;/config-&python3-majorver;-&lt;arch&gt;-linux-gnu/libpython&python3-majorver;.a</filename>
+      with a small increase in the time to compile
+      <application>Python</application>. Run-time results do not appear to show
+      any benefit from doing this.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          2to3 (symlink) and
+          2to3-&python3-majorver;,
+
+          <!--
+          easy_install-&python3-majorver;,
+          -->
+
+          idle3 (symlink) and
+          idle&python3-majorver;,
+
+          pip3 and
+          pip&python3-majorver;,
+
+          pydoc3 (symlink) and
+          pydoc&python3-majorver;,
+
+          python3 (symlink) and
+          python&python3-majorver;, and
+
+          python3-config (symlink) and
+          python&python3-majorver;-config
+        </seg>
+        <seg>
+          libpython&python3-majorver;.so and libpython3.so
+        </seg>
+        <seg>
+          /usr/include/python&python3-majorver; and
+          /usr/lib/python&python3-majorver;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+      <!--
+      <varlistentry id="2to3">
+        <term><command>2to3</command></term>
+        <listitem>
+          <para>
+            is designed to assist in the transition between python2 and python3
+            by automatically converting code to be Python3 compatible.
+          </para>
+          <indexterm zone="python3 2to3">
+            <primary sortas="b-2to3">2to3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+      Put here for easy use when removing Python2 -->
+      <!--
+      <varlistentry id="easy_install">
+        <term><command>easy_install</command></term>
+        <listitem>
+          <para>
+            is a frontend to pip3 to make it easier to configure python modules
+            through the PIP package manager
+          </para>
+          <indexterm zone="python3 easy_install">
+            <primary sortas="python3 easy_install">easy_install</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+      -->
+      <varlistentry id="idle3">
+        <term><command>idle3</command></term>
+        <listitem>
+          <para>
+            is a wrapper script that opens a <application>Python</application>
+            aware GUI editor. For this script to run, you must have installed
+            <application>Tk</application> before Python so that the Tkinter
+            Python module is built
+          </para>
+          <indexterm zone="python3 idle3">
+            <primary sortas="b-idle3">idle3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="pydoc3">
+        <term><command>pydoc3</command></term>
+        <listitem>
+          <para>
+            is the <application>Python</application> documentation
+            tool
+          </para>
+          <indexterm zone="python3 pydoc3">
+            <primary sortas="b-pydoc3">pydo3c</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="python3-prog">
+        <term><command>python3</command></term>
+        <listitem>
+          <para>
+            is an interpreted, interactive, object-oriented programming
+            language
+          </para>
+          <indexterm zone="python3 python3-prog">
+            <primary sortas="b-python3">python3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="python-ver">
+        <term><command>python&python3-majorver;</command></term>
+        <listitem>
+          <para>
+            is a version-specific name for the <command>python</command>
+            program
+          </para>
+          <indexterm zone="python3 python-ver">
+            <primary sortas="b-python&python3-majorver;">python&python3-majorver;</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+      <!--
+      <varlistentry id="pyvenv">
+        <term><command>pyvenv</command></term>
+        <listitem>
+          <para>
+            creates virtual <application>Python</application> environments in
+            one or more target directories.
+          </para>
+          <indexterm zone="python3 pyvenv">
+            <primary
+            sortas="b-python&python3-majorver;">python&python3-majorver;</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+      -->
+    </variablelist>
+
+  </sect2>
+
+</sect1>

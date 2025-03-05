@@ -54,7 +54,7 @@
       <xref linkend="lame"/>,
       <ulink url="&blfs-svn;/multimedia/mpg123.html">mgp123</ulink>,
       <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>, and
-      <ulink url="&blfs-svn;/server/sqlite.html">SQLite</ulink>
+      <xref linkend="sqlite"/>
     </para>
 
   </sect2>

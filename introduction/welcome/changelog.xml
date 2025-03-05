@@ -43,6 +43,10 @@
       <para>March 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SQLite; Python3: Added. Fixes
+          <ulink url="&glfs-issues;/91">#91</ulink>.
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.108 -&gt; 3.109;
           CMake: 3.31.5 -&gt; 3.31.6;
           Wayland-Protocols: 1.40 -&gt; 1.41;

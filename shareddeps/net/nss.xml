@@ -79,16 +79,11 @@
       <xref linkend="nspr"/>
     </para>
 
-<!-- TODO: Add SQLite and Python3 in the book to make this process more
-           local and easier, and PROMOTE SQLite to Recommended. -->
-    <bridgehead renderas="sect4">Optional</bridgehead>
-    <para role="optional">
-      <ulink url="&blfs-svn;/server/sqlite.html">SQLite</ulink> (no packages in
-      this book need lib32-<application>SQLite</application>, so if you are
-      doing multilib, you can just do the normal installation; if you want to
-      install <ulink url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>, then
-      after you install <application>SQLite</application>, reinstall
-      <ulink url="&blfs-svn;/general/python3.html">Python</ulink>)
+    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <para role="recommended">
+      <xref linkend="sqlite"/> (required for <ulink
+      url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>; make sure to
+      reinstall <xref linkend="python3"/>)
     </para>
 
   </sect2>
@@ -115,8 +110,9 @@ patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></scre
 
     <important>
       <para>
-        If you're rebuilding NSS and you have not installed SQLite, run the
-        following command to remove a problematic library as the &root; user:
+        If you're rebuilding NSS and you have not installed <xref
+        linkend="sqlite"/>, run the following command to remove a problematic
+        library as the &root; user:
       </para>
 
 <screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
@@ -221,9 +217,10 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
 
     <important>
       <para>
-        If you install SQLite after building this package and wish to build      
-        <ulink url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>, then
-        recompile this package or else an error during compilation will appear.
+        If you install <xref linkend="sqlite"/> after building this package and
+        wish to build <ulink
+        url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>, then recompile
+        this package or else an error during compilation will appear.
       </para>
     </important>
 
@@ -242,8 +239,8 @@ rm -rf ../dist</userinput></screen>
 
     <important>
       <para>
-        If you're rebuilding NSS and you have not installed SQLite, run the
-        following command to remove a problematic library as the &root; user:
+        If you're rebuilding NSS, run the following command to remove a
+        problematic library as the &root; user:
       </para>
 
 <screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
