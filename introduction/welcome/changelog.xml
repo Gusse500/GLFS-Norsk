@@ -44,7 +44,7 @@
       <itemizedlist>
         <listitem>
           <para>[zeckma] - SQLite; Python3: Added. Fixes
-          <ulink url="&glfs-issues;/91">#91</ulink>.
+          <ulink url="&glfs-issues;/91">#91</ulink>.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - NSS: 3.108 -&gt; 3.109;
