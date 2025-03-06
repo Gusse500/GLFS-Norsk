@@ -157,8 +157,8 @@
 <!ENTITY cython-version               "3.0.12">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
-<!ENTITY mesa-major-minor             "24.3">
-<!ENTITY mesa-version                 "&mesa-major-minor;.4">
+<!ENTITY mesa-major-minor             "25.0">
+<!ENTITY mesa-version                 "&mesa-major-minor;.1">
 <!ENTITY amdgpu-pro-major-version     "24.20">
 <!ENTITY amdgpu-pro-major-short-version "&amdgpu-pro-major-version;">
 <!ENTITY amdgpu-pro-minor-version     "2044449">

@@ -43,6 +43,10 @@
       <para>March 5th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: 24.3.4 -&gt; 25.0.1. Fixes
+          <ulink url="&glfs-issues;/120">#120</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libglvnd; NVIDIA: Unarchived.</para>
         </listitem>
         <listitem>
