@@ -124,7 +124,7 @@ help:
 	@echo ""
 
 all: glfs nochunks
-world: all glfs-patch-list dump-commands test-links
+world: all dump-commands test-links
 
 html: $(BASEDIR)/index.html
 $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
