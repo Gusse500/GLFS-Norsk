@@ -12,31 +12,30 @@
   <title>What Now?</title>
 
   <para>
-    By now, you should have most of the packages needed to compile the following
-    packages after this section. The good news is you are now done with the
-    hardest part of this book. Congrats!
+    By now, you should have most of the packages needed to compile any packages
+    mentioned on this page. The good news is you are now done with the hardest
+    part of this book. Congrats!
   </para>
 
   <para>
-    Well, how do you go from here? You could continue straight to the following
-    chapters if you wish. But to run graphical compile like <xref
+    Well, where do you go from here? You could continue straight to the
+    following chapters if you wish. But to run graphical programs like <xref
     linkend="steam"/> and <xref linkend="wine"/> (including
     <command>wineboot</command> as shown in the setup for <xref
     linkend="dxvk"/>), you will need a graphical environment. There are a few
     components you will need in order to get a graphical environment working
-    and not accidently lock yourself inside of it without a hard reboot. The
-    installation of those components are not covered in this book and which
-    components you will need will depend on if you are going to use
-    <application>X11</application>, <application>Wayland</application>, or
-    both. This page acts as a simple nudge to help point you in the right
-    direction, and when you are done, can come back and continue on with the
-    next chapters.
+    and not accidentally lock yourself inside of it without a hard reboot. The
+    installation of those components is not covered in this book, as the
+    specific components will depend on if you plan to use
+    <application>X11</application>, <application>Wayland</application>, or both.
+    This page acts as a simple nudge to help point you in the right direction.
+    When you are done setting up your graphical environment, you can come back
+    and continue with the next chapters.
   </para>
 
   <para>
-    While you are at it, make sure you have followed
-    <xref linkend="bash-profile"/> if you have not already as the files in that
-    section set necessary variables.
+    While you are at it, make sure you have followed <xref linkend="bash-profile"/>
+    if you have not already as the files in that section set necessary variables.
   </para>
 
   <sect2>
@@ -47,7 +46,7 @@
       url="&blfs-svn;/x/xorg-config.html">Xorg-7 Testing and
       Configuration</ulink>. It is pretty comprehensive. However, using <xref
       linkend="nvidia"/> with <application>X11</application> requires a
-      slightly different setup, and there may extra information you wish to
+      slightly different setup, and there may be extra information you wish to
       know.
     </para>
 
@@ -72,15 +71,16 @@
         </para>
       </important>
 
+      <!-- Should using xrandr to set a higher refresh rate also be covered? -->
       <para>
         If you desire to use a high refresh rate, using <command>cvt</command>
         as the method will result in failure. When you start the server, launch
         <command>nvidia-settings</command> as the <systemitem class="username">
         root</systemitem> user and navigate to the
-        <quote>X Server Display Configuration</quote> section on the left sidebar
-        and change the Hz to the right of the screen size. Click
-        <quote>Apply</quote> if you are done, accept the changes, then click
-        <quote>Save to X Configuration File</quote> and if it gives the option,
+        <quote>X Server Display Configuration</quote> section on the left
+        sidebar and change the Hz located to the right of the screen size.
+        Click <quote>Apply</quote> when you are done, accept the changes, then
+        click <quote>Save to X Configuration File</quote>. If given the option,
         choose to merge the file. Note that this method requires
         <ulink url="&blfs-svn;/x/gtk3.html">GTK3</ulink>.
       </para>
@@ -94,14 +94,14 @@
       <screen role="root"><userinput>nvidia-xconfig --prime</userinput></screen>
 
       <para>
-        It will then say you will have to run a few commands. While in a TTY,
-        put those commands into your <filename>~/.xinitrc</filename> file, or
-        else when you start Xorg you will be greeted
-        with a black screen. You can also put the commands in a different
-        script, use the keybind to open a terminal, execute the script while
-        blind, and the graphics should appear like normal. Running the commands
-        in a TTY will complain that it is unable to find any screens. Make sure
-        sure you have installed drivers for both your iGPU and dGPU.
+        It will tell you to run a few commands. While in a TTY, put those
+        commands into your <filename>~/.xinitrc</filename> file, or else when
+        you start Xorg you will be greeted with a black screen. You can also
+        put the commands in a different script and use a keybind to open a
+        terminal and blindly execute the script —  at which point the graphics
+        should appear like normal. Running the commands in a TTY will result in
+        complaints that no screens were found. Additionally, make sure you have
+        installed drivers for both your iGPU and dGPU.
       </para>
 
     </sect3>
@@ -110,10 +110,11 @@
       <title>Using Zink</title>
 
       <para>
-        If you compiled Zink in <xref linkend="mesa"/>, chances are X11 or
-        any Wayland compositors will use the Gallium3D driver meant for your
-        GPU specifically, like Nouveau for NVIDIA GPUs. You can override this
-        by setting the following variable:
+        If you compiled Zink in <xref linkend="mesa"/>, chances are
+        <application>X11</application> or any <application>Wayland</application>
+        compositors will use the Gallium3D driver meant for your GPU
+        specifically (for example, Nouveau for NVIDIA GPUs). You can override
+        this by setting the following variable:
       </para>
 
       <screen><userinput>export MESA_LOADER_DRIVER_OVERRIDE=zink</userinput></screen>
@@ -129,13 +130,14 @@
     <sect3>
       <title>X11 Components</title>
 
+      <!-- Maybe foreshadow desktop environments here? -->
       <para>
         There are typically three important components of an X11 environment:
       </para>
 
       <itemizedlist>
         <listitem>
-          <para>a window manager or desktop environment</para>
+          <para>a window manager</para>
         </listitem>
         <listitem>
           <para>a terminal and/or launcher</para>
@@ -146,18 +148,18 @@
       </itemizedlist>
 
       <sect4>
-        <title>Window Manager or Desktop Environment</title>
+        <title>Window Manager</title>
 
         <para>
-          A window manager is an application that manages windows, their placement,
-          how they move, and more. It is a minimal option for a graphical environment,
-          not requiring a ton of packages and takes less disk and RAM usage. Good
-          window managers include <ulink url="https://awesomewm.org/">AwesomeWM</ulink>,
+          A window manager is an application that manages windows, their
+          placement, how they move, and more. A window manager is a minimal
+          option for a graphical environment. Some popular window managers include
+          <ulink url="https://awesomewm.org/">AwesomeWM</ulink>,
           <ulink url="https://github.com/baskerville/bspwm">BSPWM</ulink>,
           <ulink url="https://dwm.suckless.org/">DWM</ulink>, and
           <ulink url="https://glfs-book.github.io/lfs-qol/i3/i3.html">i3</ulink>.
-          In order to start these window managers, add a line to
-          <filename>~/.xinitrc</filename>:
+          In order to start your chosen window manager, add the following line
+          to <filename>~/.xinitrc</filename>:
         </para>
 
 <screen><userinput>echo "exec <replaceable>&lt;WINDOW-MANAGER&gt;</replaceable>" &gt;&gt; ~/.xinitrc</userinput></screen>
@@ -168,52 +170,35 @@
 
         <screen><userinput>startx</userinput></screen>
 
-        <para>
-          A desktop environment is a more user friendly graphical environment and
-          provides much more than a standard window manager. It is also worth
-          noting that a desktop environment also includes a window manager. Good
-          desktop environments include
-          <ulink url="https://projects.linuxmint.com/cinnamon/">Cinnamon</ulink>,
-          <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink>, and
-          <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. These can
-          require a lot of setup and uses more disk space and RAM. These should
-          be loaded by a display manager, like <ulink url="&blfs-svn;/x/sddm.html">
-          SDDM</ulink>. A display manager is often loaded by a service or daemon.
-        </para>
-
       </sect4>
 
       <sect4>
-        <title>Terminal or Launcher</title>
+        <title>Terminal and/or Launcher</title>
 
         <para>
           By this point, you should know what a terminal is, whether it be a TTY
           or a graphical terminal. Terminals are almost a necessity and help
-          when you are in a pinch. You can launch most applications with a terminal.
-          This is useful when you have no other way to launch an application. There
-          are a wide variety of terminals and some integrate better with the system
-          depending on if you went with a window manager or desktop environment.
-          Check the Arch Wiki page
+          when you are in a pinch. You can launch most applications with a
+          terminal. This is useful when you have no other way to launch an
+          application. Check the Arch Wiki page
           <ulink url="https://wiki.archlinux.org/title/Category:Terminal_emulators">
-          Category:Terminal emulators</ulink> for a comprehensive list on some
-          terminals you can go for and some on the page are in BLFS. If you decided
-          to go with a window manager, make sure to add a keybind for your chosen
-          terminal.
+          Category:Terminal emulators</ulink> for a comprehensive list of terminals.
+          Some of the listed terminals are in BLFS. If you decided to go with a
+          window manager, make sure to add a keybind for your chosen terminal.
         </para>
 
         <para>
-          A launcher is what it sounds like: an application that launches the one
-          you ask it to. Some launch applications by the binary name in the
-          <envar>PATH</envar> variable, while others launch applications according
-          to desktop file entries. Desktop files are often located in <filename>
-          /usr/share/applications</filename> and <filename>
+          A launcher is what it sounds like: an application that launches a
+          specified application. Some launch applications by the binary name in
+          the <envar>PATH</envar> variable, while others launch applications
+          according to desktop file entries. Desktop files are often located in
+          <filename>/usr/share/applications</filename> and <filename>
           ~/.local/share/applications</filename>. Don't be afraid to create your
           own! It's okay to be creative sometimes. Check the Arch Wiki page
           <ulink url="https://wiki.archlinux.org/title/Category:Application_launchers">
-          Category:Application launchers</ulink> for a comprehensive list on some
-          launchers you can go for. Desktop environments include their own
-          launcher and are often accessed via the <quote>start menu</quote>.
-          If you went with a window manager, make sure to add the keybind for the launcher.
+          Category:Application launchers</ulink> for a comprehensive list of
+          launchers. If you decide to use a window manager, make sure to add a
+          keybind for your chosen launcher.
         </para>
 
       </sect4>
@@ -223,26 +208,52 @@
 
         <para>
           A compositor talks with <xref linkend="xorg-server"/> and can change
-          what is seen on screen. The changes compositors make on <application>
-          X11</application> can range from doing vsync, adding window animations
-          which helps with presentation, and opacity. They can be taxing for the
-          GPU if it is weak or the graphics driver isn't that performant. When
-          gaming, it might be a good idea to temporary kill the compositor.
-          These compositors aren't needed on <application>X11</application>;
-          however, they make the graphical environment look nicer. The choice
-          to have one is up to you. Check the Arch Wiki page
-          <ulink url="https://wiki.archlinux.org/title/Xorg#Composite">
-          Xorg Composite</ulink> for a list of compositors. In order to enable
-          them when starting a window manager, add the following line <emphasis>
-          BEFORE</emphasis> the <userinput><literal>exec ...</literal></userinput>
-          line:
+          what is seen on screen. Compositors can add animations, borders,
+          shadows, opacity, etc. to a window. They can also enable vsync.
+          Though compositors aren't needed on <application>X11</application>,
+          they make the graphical environment look nicer. These visual
+          enhancements can be GPU-intensive if the GPU is weak or the graphics
+          driver isn't that performant. When gaming, it might be a good idea to
+          temporary kill the compositor, if you decide to use one.
+          Check the Arch Wiki page
+          <ulink url="https://wiki.archlinux.org/title/Xorg#Composite"> Xorg Composite</ulink>
+          for a list of compositors. In order to enable a compositor when
+          starting a window manager, add the following line
+          <emphasis>BEFORE</emphasis> the
+          <userinput><literal>exec ...</literal></userinput> line:
         </para>
 
 <screen><userinput><literal><replaceable>&lt;compositor&gt;</replaceable> &amp;</literal></userinput></screen>
 
         <para>
-          Desktop environments include their own and are started when the
-          desktop environment loads up.
+          Note that some window managers handle compositing on their own.
+        </para>
+
+      </sect4>
+
+      <sect4>
+        <title>Desktop Environments</title>
+
+        <para>
+          A desktop environment combines some or all of the above components
+          into a cohesive, complete, and more user-friendly graphical
+          environment. However, desktop environments also require more packages,
+          RAM usage, and disk space. Some popular desktop environments include
+          <ulink url="https://projects.linuxmint.com/cinnamon/">Cinnamon</ulink>,
+          <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink>, and
+          <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. These should
+          be loaded by a display manager, like <ulink url="&blfs-svn;/x/sddm.html">
+          SDDM</ulink>. A display manager is often loaded by a service or daemon.
+        </para>
+
+        <para>
+          Desktop environments usually provide their own terminal, which likely
+          integrates better into the graphical environment than a standalone
+          terminal. They also typically provide their own application launcher,
+          often accessed via the <quote>start menu</quote>. Binding a hotkey to
+          start a terminal or launcher is less important on a desktop
+          environment than on a window manager, since you usually have access to
+          a start menu with just the mouse.
         </para>
 
       </sect4>
@@ -255,10 +266,10 @@
     <title>Wayland</title>
 
     <para>
-      Wayland is much more simple to set up than <application>X11</application>.
-      Please read the X11 section above as much of the information is also
-      relevant to <application>Wayland</application>. There are a few changes,
-      however.
+      Wayland is much simpler to set up than <application>X11</application>.
+      You should still read the X11 section above, as much of the information
+      is also relevant to <application>Wayland</application>. There are a few
+      changes, however.
     </para>
 
     <sect3>
@@ -266,8 +277,8 @@
 
       <para>
         Unlike X11, Wayland requires that the nvidia_drm module has the modeset
-        option set to true, which is not by default. Do so by creating the
-        following folder and file as the &root; user, then reboot:
+        option set to true, which is not the case by default. Set it to true by
+        creating the following folder and file as the &root; user, then reboot:
       </para>
 
 <screen role="root"><userinput>mkdir -pv /etc/modprobe.d &amp;&amp;
@@ -275,14 +286,16 @@ cat &gt; /etc/modprobe.d/nvidia.conf &lt;&lt; "EOF"
 <literal>options nvidia_drm modeset=1</literal>
 EOF</userinput></screen>
 
+      <!-- Maybe consider restructuring here as 'Wayland compositor' is
+      referenced before it is defined? -->
       <para>
-        Then you will only need to worry about the refresh rate if it's applicable to
-        you. You won't need to worry about making sure the <application>NVIDIA
-        </application> driver is used when starting
+        Then you will only need to worry about the refresh rate if it's
+        applicable to you. You won't need to worry about making sure the
+        <application>NVIDIA</application> driver is used when starting
         <application>Wayland</application>. However, read through the
         installation instructions for compositors as they will likely have
         information regarding <application>NVIDIA</application>. Results can be
-        shotty, sometimes the compositor won't be able to start. Be diligent.
+        shotty, and sometimes the compositor won't be able to start. Be diligent.
       </para>
 
     </sect3>
@@ -291,23 +304,22 @@ EOF</userinput></screen>
       <title>Window Managers, Desktop Environments, and Compositors</title>
 
       <para>
-        Unlike <application>X11</application> where components were more
-        separated, especially when using a window manager, this is not the
-        case for <application>Wayland</application>. The window manager
-        and compositor will always be combined. Desktop environments will
-        combine both. This leaves the only things that need to be installed are
-        a terminal and perhaps a launcher. The minimal graphical environments
-        are called compositors instead of window managers, but desktop
-        environments are still called desktop environments.
+        Unlike on <application>X11</application>, the window manager and
+        compositor will always be combined on <application>Wayland</application>.
+        Minimal graphical environments are called compositors instead of window
+        managers, but desktop environments are still called desktop environments.
+        For compositors, the only additional components that need to be installed
+        are a terminal and optionally a launcher.
       </para>
 
       <sect4>
         <title>Compositors</title>
 
+        <!-- Consider excluding this paragraph as it seems mostly irrelevant? -->
         <para>
-          Many <application>X11</application> window managers do not have
-          <application>Wayland</application> support. There are some
-          unofficial ports that use certain reusable frameworks which would
+          Many <application>X11</application> window managers do not support
+          <application>Wayland</application>. There are some unofficial
+          ports that use certain reusable frameworks which would
           be called an <application>X11</application> compositor, like
           <ulink url="https://gitlab.freedesktop.org/wlroots/wlroots/">
           wlroots</ulink> (these are called compositor libraries). You can
@@ -318,12 +330,10 @@ EOF</userinput></screen>
         <para>
           Native <application>Wayland</application> compositors include
           <ulink url="https://glfs-book.github.io/lfs-qol/hypr/hypr.html">Hyprland</ulink>,
-          <ulink url="https://glfs-book.github.io/lfs-qol/i3/i3.html">i3</ulink>,
           <ulink url="https://github.com/swaywm/sway">Sway</ulink>, and
           <ulink url="https://github.com/WayfireWM/wayfire">Wayfire</ulink>.
           In order to start these compositors, you can start them by using
-          a display manager or simply run the binary that is of the compositor
-          name. The choice is up to you how you wish to approach it.
+          a display manager or simply running their binary.
         </para>
 
       </sect4>
