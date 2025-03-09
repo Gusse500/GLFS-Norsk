@@ -13,7 +13,7 @@
 
   <para>
     By now, you should have most of the packages needed to compile any packages
-    mentioned on this page. The good news is you are now done with the hardest
+    on this page and beyond. The good news is you are now done with the hardest
     part of this book. Congrats!
   </para>
 
@@ -27,15 +27,16 @@
     and not accidentally lock yourself inside of it without a hard reboot. The
     installation of those components is not covered in this book, as the
     specific components will depend on if you plan to use
-    <application>X11</application>, <application>Wayland</application>, or both.
-    This page acts as a simple nudge to help point you in the right direction.
-    When you are done setting up your graphical environment, you can come back
-    and continue with the next chapters.
+    <application>X11</application>, <application>Wayland</application>, or
+    both. This page acts as a simple nudge to help point you in the right
+    direction. When you are done setting up your graphical environment, you can
+    come back and continue with the next chapters.
   </para>
 
   <para>
-    While you are at it, make sure you have followed <xref linkend="bash-profile"/>
-    if you have not already as the files in that section set necessary variables.
+    While you are at it, make sure you have followed
+    <xref linkend="bash-profile"/> if you have not already as the files in that
+    section set necessary variables.
   </para>
 
   <sect2>
@@ -71,7 +72,6 @@
         </para>
       </important>
 
-      <!-- Should using xrandr to set a higher refresh rate also be covered? -->
       <para>
         If you desire to use a high refresh rate, using <command>cvt</command>
         as the method will result in failure. When you start the server, launch
@@ -111,10 +111,10 @@
 
       <para>
         If you compiled Zink in <xref linkend="mesa"/>, chances are
-        <application>X11</application> or any <application>Wayland</application>
-        compositors will use the Gallium3D driver meant for your GPU
-        specifically (for example, Nouveau for NVIDIA GPUs). You can override
-        this by setting the following variable:
+        <application>X11</application> or any
+        <application>Wayland</application> compositors will use the Gallium3D
+        driver meant for your GPU specifically (for example, Nouveau for NVIDIA
+        GPUs). You can override this by setting the following variable:
       </para>
 
       <screen><userinput>export MESA_LOADER_DRIVER_OVERRIDE=zink</userinput></screen>
@@ -153,8 +153,8 @@
         <para>
           A window manager is an application that manages windows, their
           placement, how they move, and more. A window manager is a minimal
-          option for a graphical environment. Some popular window managers include
-          <ulink url="https://awesomewm.org/">AwesomeWM</ulink>,
+          option for a graphical environment. Some popular window managers
+          include <ulink url="https://awesomewm.org/">AwesomeWM</ulink>,
           <ulink url="https://github.com/baskerville/bspwm">BSPWM</ulink>,
           <ulink url="https://dwm.suckless.org/">DWM</ulink>, and
           <ulink url="https://glfs-book.github.io/lfs-qol/i3/i3.html">i3</ulink>.
@@ -176,15 +176,16 @@
         <title>Terminal and/or Launcher</title>
 
         <para>
-          By this point, you should know what a terminal is, whether it be a TTY
-          or a graphical terminal. Terminals are almost a necessity and help
-          when you are in a pinch. You can launch most applications with a
+          By this point, you should know what a terminal is, whether it be a
+          TTY or a graphical terminal. Terminals are almost a necessity and
+          help when you are in a pinch. You can launch most applications with a
           terminal. This is useful when you have no other way to launch an
           application. Check the Arch Wiki page
           <ulink url="https://wiki.archlinux.org/title/Category:Terminal_emulators">
-          Category:Terminal emulators</ulink> for a comprehensive list of terminals.
-          Some of the listed terminals are in BLFS. If you decided to go with a
-          window manager, make sure to add a keybind for your chosen terminal.
+          Category:Terminal emulators</ulink> for a comprehensive list of
+          terminals. Some of the listed terminals are in BLFS. If you decided
+          to go with a window manager, make sure to add a keybind for your
+          chosen terminal.
         </para>
 
         <para>
@@ -193,8 +194,9 @@
           the <envar>PATH</envar> variable, while others launch applications
           according to desktop file entries. Desktop files are often located in
           <filename>/usr/share/applications</filename> and <filename>
-          ~/.local/share/applications</filename>. Don't be afraid to create your
-          own! It's okay to be creative sometimes. Check the Arch Wiki page
+          ~/.local/share/applications</filename>. Don't be afraid to create
+          your own! It's okay to be creative sometimes. Check the Arch Wiki
+          page
           <ulink url="https://wiki.archlinux.org/title/Category:Application_launchers">
           Category:Application launchers</ulink> for a comprehensive list of
           launchers. If you decide to use a window manager, make sure to add a
@@ -237,13 +239,15 @@
         <para>
           A desktop environment combines some or all of the above components
           into a cohesive, complete, and more user-friendly graphical
-          environment. However, desktop environments also require more packages,
-          RAM usage, and disk space. Some popular desktop environments include
+          environment. However, desktop environments also require more
+          packages, RAM usage, and disk space. Some popular desktop
+          environments include
           <ulink url="https://projects.linuxmint.com/cinnamon/">Cinnamon</ulink>,
           <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink>, and
           <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. These should
           be loaded by a display manager, like <ulink url="&blfs-svn;/x/sddm.html">
-          SDDM</ulink>. A display manager is often loaded by a service or daemon.
+          SDDM</ulink>. A display manager is often loaded by a service or
+          daemon.
         </para>
 
         <para>
@@ -252,8 +256,8 @@
           terminal. They also typically provide their own application launcher,
           often accessed via the <quote>start menu</quote>. Binding a hotkey to
           start a terminal or launcher is less important on a desktop
-          environment than on a window manager, since you usually have access to
-          a start menu with just the mouse.
+          environment than on a window manager, since you usually have access
+          to a start menu with just the mouse.
         </para>
 
       </sect4>
@@ -295,7 +299,8 @@ EOF</userinput></screen>
         <application>Wayland</application>. However, read through the
         installation instructions for compositors as they will likely have
         information regarding <application>NVIDIA</application>. Results can be
-        shotty, and sometimes the compositor won't be able to start. Be diligent.
+        shotty, and sometimes the compositor won't be able to start. Be
+        diligent.
       </para>
 
     </sect3>
@@ -305,17 +310,17 @@ EOF</userinput></screen>
 
       <para>
         Unlike on <application>X11</application>, the window manager and
-        compositor will always be combined on <application>Wayland</application>.
-        Minimal graphical environments are called compositors instead of window
-        managers, but desktop environments are still called desktop environments.
-        For compositors, the only additional components that need to be installed
-        are a terminal and optionally a launcher.
+        compositor will always be combined on
+        <application>Wayland</application>. Minimal graphical environments are
+        called compositors instead of window managers, but desktop environments
+        are still called desktop environments. For compositors, the only
+        additional components that need to be installed are a terminal and
+        optionally a launcher.
       </para>
 
       <sect4>
         <title>Compositors</title>
 
-        <!-- Consider excluding this paragraph as it seems mostly irrelevant? -->
         <para>
           Many <application>X11</application> window managers do not support
           <application>Wayland</application>. There are some unofficial
@@ -344,8 +349,9 @@ EOF</userinput></screen>
         <para>
           Go with <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink> or
           <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. They have
-          good <application>Wayland</application> support. Like with <application>
-          X11</application>, you can launch these using a display manager.
+          good <application>Wayland</application> support. Like with
+          <application>X11</application>, you can launch these using a display
+          manager.
         </para>
 
       </sect4>
