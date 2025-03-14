@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>March 14th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.2 -&gt; 10.3. Fixes
+          <ulink url="&glfs-issues;/152">#152</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 12th, 2025</para>
       <itemizedlist>
         <listitem>
