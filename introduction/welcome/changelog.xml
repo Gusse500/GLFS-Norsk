@@ -40,6 +40,20 @@
     -->
 
     <listitem>
+      <para>March 15th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Updated LLVM and Vulkan related packages.
+          Fixes <ulink url="&glfs-issues;/136">#136</ulink>,
+          <ulink url="&glfs-issues;/138">#138</ulink>,
+          <ulink url="&glfs-issues;/153">#153</ulink>,
+          <ulink url="&glfs-issues;/154">#154</ulink>, and
+          <ulink url="&glfs-issues;/157">#157</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 14th, 2025</para>
       <itemizedlist>
         <listitem>

@@ -1,0 +1,222 @@
+From fc32dd49cb70c4b113353c7a060a875f30b9af04 Mon Sep 17 00:00:00 2001
+From: Matthew Maurer <mmaurer@google.com>
+Date: Tue, 7 Jan 2025 00:53:42 +0000
+Subject: [PATCH] llvm: Ignore error value that is always false
+
+See llvm/llvm-project#121851
+
+For LLVM 20+, this function (`renameModuleForThinLTO`) has no return
+value. For prior versions of LLVM, this never failed, but had a
+signature which allowed an error value people were handling.
+---
+ compiler/rustc_codegen_gcc/src/back/lto.rs       |  4 +---
+ compiler/rustc_codegen_llvm/src/back/lto.rs      |  6 +-----
+ compiler/rustc_codegen_llvm/src/llvm/ffi.rs      |  2 +-
+ compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp | 10 ++--------
+ 4 files changed, 5 insertions(+), 17 deletions(-)
+
+diff --git a/compiler/rustc_codegen_gcc/src/back/lto.rs b/compiler/rustc_codegen_gcc/src/back/lto.rs
+index ed92f9c52412c..f7173d4d2ffce 100644
+--- a/compiler/rustc_codegen_gcc/src/back/lto.rs
++++ b/compiler/rustc_codegen_gcc/src/back/lto.rs
+@@ -660,9 +660,7 @@ pub unsafe fn optimize_thin_module(
+         {
+             let _timer =
+                 cgcx.prof.generic_activity_with_arg("LLVM_thin_lto_rename", thin_module.name());
+-            if !llvm::LLVMRustPrepareThinLTORename(thin_module.shared.data.0, llmod, target) {
+-                return Err(write::llvm_err(&dcx, LlvmError::PrepareThinLtoModule));
+-            }
++            unsafe { llvm::LLVMRustPrepareThinLTORename(thin_module.shared.data.0, llmod, target) };
+             save_temp_bitcode(cgcx, &module, "thin-lto-after-rename");
+         }
+ 
+diff --git a/compiler/rustc_codegen_llvm/src/back/lto.rs b/compiler/rustc_codegen_llvm/src/back/lto.rs
+index 4adf99e91d08d..08b774f8d6ec0 100644
+--- a/compiler/rustc_codegen_llvm/src/back/lto.rs
++++ b/compiler/rustc_codegen_llvm/src/back/lto.rs
+@@ -737,11 +737,7 @@ pub(crate) unsafe fn optimize_thin_module(
+         {
+             let _timer =
+                 cgcx.prof.generic_activity_with_arg("LLVM_thin_lto_rename", thin_module.name());
+-            if unsafe {
+-                !llvm::LLVMRustPrepareThinLTORename(thin_module.shared.data.0, llmod, target)
+-            } {
+-                return Err(write::llvm_err(dcx, LlvmError::PrepareThinLtoModule));
+-            }
++            unsafe { llvm::LLVMRustPrepareThinLTORename(thin_module.shared.data.0, llmod, target) };
+             save_temp_bitcode(cgcx, &module, "thin-lto-after-rename");
+         }
+ 
+diff --git a/compiler/rustc_codegen_llvm/src/llvm/ffi.rs b/compiler/rustc_codegen_llvm/src/llvm/ffi.rs
+index bb324ee682cdb..cb4a8c9a5f21c 100644
+--- a/compiler/rustc_codegen_llvm/src/llvm/ffi.rs
++++ b/compiler/rustc_codegen_llvm/src/llvm/ffi.rs
+@@ -2374,7 +2374,7 @@ unsafe extern "C" {
+         Data: &ThinLTOData,
+         Module: &Module,
+         Target: &TargetMachine,
+-    ) -> bool;
++    );
+     pub fn LLVMRustPrepareThinLTOResolveWeak(Data: &ThinLTOData, Module: &Module) -> bool;
+     pub fn LLVMRustPrepareThinLTOInternalize(Data: &ThinLTOData, Module: &Module) -> bool;
+     pub fn LLVMRustPrepareThinLTOImport(
+diff --git a/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp b/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+index de14c6d188365..6447a9362b3ab 100644
+--- a/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
++++ b/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+@@ -1389,20 +1389,14 @@ static bool clearDSOLocalOnDeclarations(Module &Mod, TargetMachine &TM) {
+   return ClearDSOLocalOnDeclarations;
+ }
+ 
+-extern "C" bool LLVMRustPrepareThinLTORename(const LLVMRustThinLTOData *Data,
++extern "C" void LLVMRustPrepareThinLTORename(const LLVMRustThinLTOData *Data,
+                                              LLVMModuleRef M,
+                                              LLVMTargetMachineRef TM) {
+   Module &Mod = *unwrap(M);
+   TargetMachine &Target = *unwrap(TM);
+ 
+   bool ClearDSOLocal = clearDSOLocalOnDeclarations(Mod, Target);
+-  bool error = renameModuleForThinLTO(Mod, Data->Index, ClearDSOLocal);
+-
+-  if (error) {
+-    LLVMRustSetLastError("renameModuleForThinLTO failed");
+-    return false;
+-  }
+-  return true;
++  renameModuleForThinLTO(Mod, Data->Index, ClearDSOLocal);
+ }
+ 
+ extern "C" bool
+
+From 97f6e4d34b7e103150c35d390e33d17041363af3 Mon Sep 17 00:00:00 2001
+From: Nikita Popov <npopov@redhat.com>
+Date: Mon, 3 Feb 2025 14:50:40 +0100
+Subject: Quote embedded codeview command line arguments
+
+The formatting of the command line arguments has been moved to the
+frontend in:
+https://github.com/llvm/llvm-project/commit/e190d074a0a77c9f8a7d7938a8187a7e2076e290
+
+However, the Rust logic introduced in
+https://github.com/rust-lang/rust/commit/ad0ecebf432fcb80cb666034ea44f75b81e55f95
+did not replicate the previous argument quoting behavior.
+---
+ .../rustc_llvm/llvm-wrapper/PassWrapper.cpp   | 20 +++++++++++--------
+ 1 file changed, 12 insertions(+), 8 deletions(-)
+
+diff --git a/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp b/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+index a6b2384f2d7b2..7eb11f9e6087c 100644
+--- a/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
++++ b/compiler/rustc_llvm/llvm-wrapper/PassWrapper.cpp
+@@ -22,6 +22,7 @@
+ #include "llvm/Passes/StandardInstrumentations.h"
+ #include "llvm/Support/CBindingWrapping.h"
+ #include "llvm/Support/FileSystem.h"
++#include "llvm/Support/Program.h"
+ #include "llvm/Support/TimeProfiler.h"
+ #include "llvm/Support/VirtualFileSystem.h"
+ #include "llvm/Target/TargetMachine.h"
+@@ -472,16 +473,19 @@ extern "C" LLVMTargetMachineRef LLVMRustCreateTargetMachine(
+     assert(ArgsCstrBuff[ArgsCstrBuffLen - 1] == '\0');
+     auto Arg0 = std::string(ArgsCstrBuff);
+     buffer_offset = Arg0.size() + 1;
+-    auto ArgsCppStr = std::string(ArgsCstrBuff + buffer_offset,
+-                                  ArgsCstrBuffLen - buffer_offset);
+-    auto i = 0;
+-    while (i != std::string::npos) {
+-      i = ArgsCppStr.find('\0', i + 1);
+-      if (i != std::string::npos)
+-        ArgsCppStr.replace(i, 1, " ");
++
++    std::string CommandlineArgs;
++    raw_string_ostream OS(CommandlineArgs);
++    ListSeparator LS(" ");
++    for (StringRef Arg : split(StringRef(ArgsCstrBuff + buffer_offset,
++                                         ArgsCstrBuffLen - buffer_offset),
++                               '\0')) {
++      OS << LS;
++      sys::printArg(OS, Arg, /*Quote=*/true);
+     }
++    OS.flush();
+     Options.MCOptions.Argv0 = Arg0;
+-    Options.MCOptions.CommandlineArgs = ArgsCppStr;
++    Options.MCOptions.CommandlineArgs = CommandlineArgs;
+ #else
+     int buffer_offset = 0;
+     assert(ArgsCstrBuff[ArgsCstrBuffLen - 1] == '\0');
+
+From d82219a4fa06bfa47fc5aac64844c461905ae77d Mon Sep 17 00:00:00 2001
+From: Matthew Maurer <mmaurer@google.com>
+Date: Wed, 12 Feb 2025 00:37:33 +0000
+Subject: [PATCH] debuginfo: Set bitwidth appropriately in enum variant tags
+
+Previously, we unconditionally set the bitwidth to 128-bits, the largest
+an discrimnator would possibly be. Then, LLVM would cut down the constant by
+chopping off leading zeroes before emitting the DWARF. LLVM only
+supported 64-bit descriminators, so this would also have occasionally
+resulted in truncated data (or an assert) if more than 64-bits were
+used.
+
+LLVM added support for 128-bit enumerators in llvm/llvm-project#125578
+
+That patchset also trusts the constant to describe how wide the variant tag is.
+As a result, we went from emitting tags that looked like:
+DW_AT_discr_value     (0xfe)
+
+(`form1`)
+
+to emitting tags that looked like:
+DW_AT_discr_value	(<0x10> fe ff ff ff 00 00 00 00 00 00 00 00 00 00 00 00 )
+
+This makes the `DW_AT_discr_value` encode at the bitwidth of the tag,
+which:
+1. Is probably closer to our intentions in terms of describing the data.
+2. Doesn't invoke the 128-bit support which may not be supported by all
+   debuggers / downstream tools.
+3. Will result in smaller debug information.
+---
+ .../src/debuginfo/metadata/enums/native.rs                | 8 +++++++-
+ tests/codegen/enum/enum-debug-niche-2.rs                  | 4 ++--
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/compiler/rustc_codegen_llvm/src/debuginfo/metadata/enums/native.rs b/compiler/rustc_codegen_llvm/src/debuginfo/metadata/enums/native.rs
+index 11824398f243e..187d97c54c873 100644
+--- a/compiler/rustc_codegen_llvm/src/debuginfo/metadata/enums/native.rs
++++ b/compiler/rustc_codegen_llvm/src/debuginfo/metadata/enums/native.rs
+@@ -437,6 +437,12 @@ fn build_enum_variant_member_di_node<'ll, 'tcx>(
+         .source_info
+         .unwrap_or_else(|| (unknown_file_metadata(cx), UNKNOWN_LINE_NUMBER));
+ 
++    let discr = discr_value.opt_single_val().map(|value| {
++        let tag_base_type = tag_base_type(cx.tcx, enum_type_and_layout);
++        let size = cx.size_of(tag_base_type);
++        cx.const_uint_big(cx.type_ix(size.bits()), value)
++    });
++
+     unsafe {
+         llvm::LLVMRustDIBuilderCreateVariantMemberType(
+             DIB(cx),
+@@ -448,7 +454,7 @@ fn build_enum_variant_member_di_node<'ll, 'tcx>(
+             enum_type_and_layout.size.bits(),
+             enum_type_and_layout.align.abi.bits() as u32,
+             Size::ZERO.bits(),
+-            discr_value.opt_single_val().map(|value| cx.const_u128(value)),
++            discr,
+             DIFlags::FlagZero,
+             variant_member_info.variant_struct_type_di_node,
+         )
+diff --git a/tests/codegen/enum/enum-debug-niche-2.rs b/tests/codegen/enum/enum-debug-niche-2.rs
+index 58f43fe3ec6bf..80a4081f15b10 100644
+--- a/tests/codegen/enum/enum-debug-niche-2.rs
++++ b/tests/codegen/enum/enum-debug-niche-2.rs
+@@ -5,8 +5,8 @@
+ //@ ignore-msvc
+ //
+ // CHECK: {{.*}}DICompositeType{{.*}}tag: DW_TAG_variant_part,{{.*}}size: 32,{{.*}}
+-// CHECK: {{.*}}DIDerivedType{{.*}}tag: DW_TAG_member,{{.*}}name: "Placeholder",{{.*}}extraData: i128 4294967295{{[,)].*}}
+-// CHECK: {{.*}}DIDerivedType{{.*}}tag: DW_TAG_member,{{.*}}name: "Error",{{.*}}extraData: i128 0{{[,)].*}}
++// CHECK: {{.*}}DIDerivedType{{.*}}tag: DW_TAG_member,{{.*}}name: "Placeholder",{{.*}}extraData: i32 -1{{[,)].*}}
++// CHECK: {{.*}}DIDerivedType{{.*}}tag: DW_TAG_member,{{.*}}name: "Error",{{.*}}extraData: i32 0{{[,)].*}}
+ #![feature(never_type)]
+ 
+ #[derive(Copy, Clone)]

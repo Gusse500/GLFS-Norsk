@@ -134,15 +134,15 @@
 <!ENTITY pciutils-version             "3.13.0">
 <!ENTITY hwdata-version               "0.393">
 <!ENTITY libglvnd-version             "1.7.0">
-<!ENTITY vulkan-version               "1.4.304">
+<!ENTITY vulkan-version               "1.4.309">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
-<!ENTITY spirv-version                "&vulkan-version;.1">
+<!ENTITY spirv-version                "&vulkan-version;.0">
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.1.0">
-<!ENTITY llvm-maj-version             "19">
-<!ENTITY llvm-point-version           "7">
+<!ENTITY llvm-maj-version             "20">
+<!ENTITY llvm-point-version           "0">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
 <!ENTITY rustc-version                "1.85.0">
 <!ENTITY cbindgen-version             "0.28.0">
@@ -151,7 +151,7 @@
 <!ENTITY libdrm-version               "2.4.124">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY libvdpau-version             "1.5">
-<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.5">
+<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.0">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY ply-version                  "3.11">
 <!ENTITY cython-version               "3.0.12">
@@ -289,5 +289,5 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 <!ENTITY wine-major-version           "10">
 <!ENTITY wine-version                 "&wine-major-version;.3">
-<!ENTITY dxvk-version                 "2.5.3">
+<!ENTITY dxvk-version                 "2.6">
 <!ENTITY vkd3d-proton-version         "2.14.1">
