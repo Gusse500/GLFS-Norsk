@@ -258,11 +258,12 @@
       </para>
 
       <para>
-        Create the file <filename>/etc/modprobe.d/nvfb.conf</filename> to
-        blacklist Nouveau.
+        As the &root; user, create the file
+        <filename>/etc/modprobe.d/nvfb.conf</filename> to blacklist Nouveau:
       </para>
-
-<screen role="root"><userinput>cat &gt;&gt; /etc/modprobe.d/nvfb.conf &lt;&lt; "EOF"
+      
+<screen role="root"><userinput>mkdir -pv /etc/modprobe.d
+cat &gt;&gt; /etc/modprobe.d/nvfb.conf &lt;&lt; "EOF"
 <literal># Begin /etc/modprobe.d/nvfb.conf
 
 blacklist nvidiafb
