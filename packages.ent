@@ -39,8 +39,8 @@
 <!ENTITY systemd-version              "257.3">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY pcre2-version                "10.45">
-<!ENTITY glib2-minor                  "2.82">
-<!ENTITY glib2-version                "&glib2-minor;.5">
+<!ENTITY glib2-minor                  "2.84">
+<!ENTITY glib2-version                "&glib2-minor;.0">
 <!ENTITY gobject-introspection-version "1.82.0">
 <!ENTITY icu-major                    "76">
 <!ENTITY icu-minor                    "1">
@@ -271,7 +271,7 @@
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 <!ENTITY libxkbcommon-version         "1.8.0">
 <!ENTITY sdl2-version                 "2.30.11">
-<!ENTITY gstreamer10-version          "1.24.12">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.26.0">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
@@ -288,6 +288,6 @@
 <!ENTITY ffmpeg-version               "7.1.1">
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 <!ENTITY wine-major-version           "10">
-<!ENTITY wine-version                 "&wine-major-version;.2">
+<!ENTITY wine-version                 "&wine-major-version;.3">
 <!ENTITY dxvk-version                 "2.5.3">
 <!ENTITY vkd3d-proton-version         "2.14.1">

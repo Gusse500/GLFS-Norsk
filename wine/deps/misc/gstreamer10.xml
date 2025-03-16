@@ -71,6 +71,7 @@
     <para role="optional">
       <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for examples),
       <ulink url="&blfs-svn;/general/gsl.html">gsl</ulink> (used by one test if installed),
+      <ulink url="&blfs-svn;/basicnet/libnsl.html">libnsl</ulink>,
       <xref linkend="libunwind"/>,
       <xref linkend="rustc"/> (for IEEE 1588:2008 PTP clock support),
       <ulink url="&blfs-svn;/general/valgrind.html">Valgrind</ulink>,
