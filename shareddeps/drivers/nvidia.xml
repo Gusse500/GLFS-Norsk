@@ -128,7 +128,11 @@
     </note>
 
     <para>
-      First enable XFree86 DRI support in the kernel and recompile if necessary.
+      First enable XFree86 DRI and Nouveau <footnote><para>Newer versions of
+      the NVIDIA drivers will fail to compile with TTY support unless a
+      graphics driver is included in the kernel. Nouveau is used here, though
+      alternate graphics drivers may also work.</para></footnote> support in
+      the kernel and recompile if necessary.
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-kernel.xml"/>
@@ -202,7 +206,7 @@
         it comes to third party modules, they aren't updated when the kernel
         updates, so this glue the third party modules had on the kernel breaks.
         This leads to broken kernel modules. This also applies if you stay on
-        the same kernel verion but change some options, this can also break
+        the same kernel version but change some options, this can also break
         the glue.
       </para>
 
@@ -233,6 +237,41 @@
       installation of 32-bit libraries by default instead of being prompted.
     </para>
 
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Configuring NVIDIA</title>
+
+    <sect3 id="nvidia-config">
+      <title>Config Files</title>
+      <para>
+        <filename>/etc/modprobe.d/nvfb.conf</filename>
+      </para>
+    </sect3>
+
+    <sect3><title>Configuration Information</title>
+
+      <para>
+        Nouveau support was compiled into the kernel to make the NVIDIA driver
+        build. However, Nouveau conflicts with NVIDIA, so it should be
+        blacklisted.
+      </para>
+
+      <para>
+        As the &root; user, create the file
+        <filename>/etc/modprobe.d/nvfb.conf</filename> to blacklist Nouveau:
+      </para>
+      
+<screen role="root"><userinput>mkdir -pv /etc/modprobe.d
+cat &gt;&gt; /etc/modprobe.d/nvfb.conf &lt;&lt; "EOF"
+<literal># Begin /etc/modprobe.d/nvfb.conf
+
+blacklist nvidiafb
+blacklist nouveau
+
+# End /etc/modprobe.d/nvfb.conf</literal>
+EOF</userinput></screen>
+    </sect3>
   </sect2>
 
   <sect2 role="content">
