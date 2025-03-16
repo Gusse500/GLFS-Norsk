@@ -29,7 +29,7 @@
     <note><para>
       If you are wanting to install <xref linkend="nvidia"/>, skip this
       package. If you don't plan on that but still have installed <xref
-      linkend="libglvnd"/>, you still need to compile drivers for it, and the
+      linkend="libglvnd"/>, you still need to compile drivers and the
       GBM. The instructions below will account for that.
     </para></note>
 
@@ -597,11 +597,11 @@ ldconfig</userinput></screen>
         </seg>
         <seg>
           <!-- /usr/include/GL is installed by xorg-protos -->
-          $XORG_PREFIX/{include/{EGL,GLES,GLES2,GLES3,KHR},
-          $XORG_PREFIX/lib/{dri,gbm,vdpau}},
-          $XORG_PREFIX/share/drirc.d (contains workarounds for various applications,
+          /usr/{include/{EGL,GLES,GLES2,GLES3,KHR},
+          /usr/lib/{dri,gbm,vdpau}},
+          /usr/share/drirc.d (contains workarounds for various applications,
           particularly browsers and games),
-          $XORG_PREFIX/share/vulkan,
+          /usr/share/vulkan,
           and /usr/share/doc/mesa-&mesa-version;
         </seg>
       </seglistitem>

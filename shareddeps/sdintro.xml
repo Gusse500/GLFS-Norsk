@@ -119,6 +119,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/cython.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/pyyaml.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/gbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/mesa.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvdpau-va-gl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/amdgpu-pro.xml"/>
