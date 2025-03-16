@@ -48,7 +48,7 @@
         <listitem>
           <para>[Toxikuu] - NVIDIA: 560.35.03 -&gt; 570.124.04. PR
           <ulink url="&glfs-pull;/161">(#161)</ulink>. Fixes
-          <ulink url="&glfs-pull;/129">#129</ulink>.</para>
+          <ulink url="&glfs-issues;/129">#129</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
