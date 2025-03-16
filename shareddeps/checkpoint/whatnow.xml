@@ -130,14 +130,13 @@
     <sect3>
       <title>X11 Components</title>
 
-      <!-- Maybe foreshadow desktop environments here? -->
       <para>
         There are typically three important components of an X11 environment:
       </para>
 
       <itemizedlist>
         <listitem>
-          <para>a window manager</para>
+          <para>a window manager or desktop environment</para>
         </listitem>
         <listitem>
           <para>a terminal and/or launcher</para>
@@ -152,7 +151,7 @@
 
         <para>
           A window manager is an application that manages windows, their
-          placement, how they move, and more. A window manager is a minimal
+          placement, how they move, and more. It is a minimal
           option for a graphical environment. Some popular window managers
           include <ulink url="https://awesomewm.org/">AwesomeWM</ulink>,
           <ulink url="https://github.com/baskerville/bspwm">BSPWM</ulink>,
@@ -170,6 +169,21 @@
 
         <screen><userinput>startx</userinput></screen>
 
+        <para>
+          A desktop environment is a more user-friendly graphical environment
+          which provides much more than a standard window manager
+          <footnote><para>It is worth noting that a desktop environment
+          includes a window manager.</para></footnote>. However, desktop
+          environments also require more packages, RAM usage, and disk space.
+          Some popular desktop environments include
+          <ulink url="https://projects.linuxmint.com/cinnamon/">Cinnamon</ulink>,
+          <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink>, and
+          <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. These should
+          be loaded by a display manager, like
+          <ulink url="&blfs-svn;/x/sddm.html">SDDM</ulink>. A display manager
+          is often loaded by a service or daemon.
+        </para>
+
       </sect4>
 
       <sect4>
@@ -180,7 +194,9 @@
           TTY or a graphical terminal. Terminals are almost a necessity and
           help when you are in a pinch. You can launch most applications with a
           terminal. This is useful when you have no other way to launch an
-          application. Check the Arch Wiki page
+          application. There are a wide variety of terminals and some integrate
+          better with the system depending on if you went with a window manager
+          or desktop environment. Check the Arch Wiki page
           <ulink url="https://wiki.archlinux.org/title/Category:Terminal_emulators">
           Category:Terminal emulators</ulink> for a comprehensive list of
           terminals. Some of the listed terminals are in BLFS. If you decided
@@ -192,15 +208,17 @@
           A launcher is what it sounds like: an application that launches a
           specified application. Some launch applications by the binary name in
           the <envar>PATH</envar> variable, while others launch applications
-          according to desktop file entries. Desktop files are often located in
-          <filename>/usr/share/applications</filename> and <filename>
-          ~/.local/share/applications</filename>. Don't be afraid to create
-          your own! It's okay to be creative sometimes. Check the Arch Wiki
-          page
+          according to desktop file entries<footnote><para>Desktop files are
+          often located in <filename>/usr/share/applications</filename> and/or
+          <filename>~/.local/share/applications</filename>.</para></footnote>.
+          Don't be afraid to create your own! It's okay to be creative
+          sometimes. Check the Arch Wiki page
           <ulink url="https://wiki.archlinux.org/title/Category:Application_launchers">
           Category:Application launchers</ulink> for a comprehensive list of
-          launchers. If you decide to use a window manager, make sure to add a
-          keybind for your chosen launcher.
+          launchers. Desktop environments include their own launcher and are
+          often accessed via the <quote>start menu</quote>. If you decide to
+          use a window manager, make sure to add a keybind for your chosen
+          launcher.
         </para>
 
       </sect4>
@@ -211,16 +229,20 @@
         <para>
           A compositor talks with <xref linkend="xorg-server"/> and can change
           what is seen on screen. Compositors can add animations, borders,
-          shadows, opacity, etc. to a window. They can also enable vsync.
+          shadows, opacity, etc. to windows. They can also enable vsync.
           Though compositors aren't needed on <application>X11</application>,
           they make the graphical environment look nicer. These visual
           enhancements can be GPU-intensive if the GPU is weak or the graphics
-          driver isn't that performant. When gaming, it might be a good idea to
-          temporary kill the compositor, if you decide to use one.
-          Check the Arch Wiki page
+          driver isn't that performant<footnote><para>If you decide to use a
+          compositor, it might be a good idea to temporarily kill it when
+          gaming.</para></footnote>. Check the Arch Wiki page
           <ulink url="https://wiki.archlinux.org/title/Xorg#Composite"> Xorg Composite</ulink>
           for a list of compositors. In order to enable a compositor when
-          starting a window manager, add the following line
+          starting a window manager<footnote><para>Note that some window
+          managers handle compositing on their own. For more information,
+          reference the Arch Wiki page
+          <ulink url="https://wiki.archlinux.org/title/Xorg#Composite"> Xorg Composite</ulink>.
+          </para></footnote>, add the following line
           <emphasis>BEFORE</emphasis> the
           <userinput><literal>exec ...</literal></userinput> line:
         </para>
@@ -228,36 +250,8 @@
 <screen><userinput><literal><replaceable>&lt;compositor&gt;</replaceable> &amp;</literal></userinput></screen>
 
         <para>
-          Note that some window managers handle compositing on their own.
-        </para>
-
-      </sect4>
-
-      <sect4>
-        <title>Desktop Environments</title>
-
-        <para>
-          A desktop environment combines some or all of the above components
-          into a cohesive, complete, and more user-friendly graphical
-          environment. However, desktop environments also require more
-          packages, RAM usage, and disk space. Some popular desktop
-          environments include
-          <ulink url="https://projects.linuxmint.com/cinnamon/">Cinnamon</ulink>,
-          <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink>, and
-          <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. These should
-          be loaded by a display manager, like <ulink url="&blfs-svn;/x/sddm.html">
-          SDDM</ulink>. A display manager is often loaded by a service or
-          daemon.
-        </para>
-
-        <para>
-          Desktop environments usually provide their own terminal, which likely
-          integrates better into the graphical environment than a standalone
-          terminal. They also typically provide their own application launcher,
-          often accessed via the <quote>start menu</quote>. Binding a hotkey to
-          start a terminal or launcher is less important on a desktop
-          environment than on a window manager, since you usually have access
-          to a start menu with just the mouse.
+          Desktop environments include their own compositors which are started
+          when the desktop environment loads up.
         </para>
 
       </sect4>
@@ -290,17 +284,15 @@ cat &gt; /etc/modprobe.d/nvidia.conf &lt;&lt; "EOF"
 <literal>options nvidia_drm modeset=1</literal>
 EOF</userinput></screen>
 
-      <!-- Maybe consider restructuring here as 'Wayland compositor' is
-      referenced before it is defined? -->
       <para>
         Then you will only need to worry about the refresh rate if it's
         applicable to you. You won't need to worry about making sure the
         <application>NVIDIA</application> driver is used when starting
         <application>Wayland</application>. However, read through the
-        installation instructions for compositors as they will likely have
-        information regarding <application>NVIDIA</application>. Results can be
-        shotty, and sometimes the compositor won't be able to start. Be
-        diligent.
+        installation instructions for your chosen graphical environment, as
+        they may have information regarding <application>NVIDIA</application>.
+        Results can be shotty, and sometimes the environment won't be able to
+        start. Be diligent.
       </para>
 
     </sect3>
