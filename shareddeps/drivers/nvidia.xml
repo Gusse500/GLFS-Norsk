@@ -4,10 +4,12 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY nvidia-lib64-download-http "https://us.download.nvidia.com/XFree86/Linux-x86_64/&nvidia-version;/NVIDIA-Linux-x86_64-&nvidia-version;.run">
-  <!ENTITY nvidia-lib64-download-ftp  " ">
+  <!ENTITY nvidia-download-http "https://us.download.nvidia.com/XFree86/Linux-x86_64/&nvidia-version;/NVIDIA-Linux-x86_64-&nvidia-version;.run">
+  <!ENTITY nvidia-download-ftp  " ">
+<!-- x86 is unsupported
   <!ENTITY nvidia-lib32-download-http "https://us.download.nvidia.com/XFree86/Linux-x86/390.157/NVIDIA-Linux-x86-390.157.run">
   <!ENTITY nvidia-lib32-download-ftp  " ">
+-->
 ]>
 
 
@@ -30,19 +32,6 @@
       NVIDIA cards.
     </para>
 
-<!--
-    <note>
-      <para>
-        The page for this package is not actively maintained as none of the
-        GLFS editors use this package, and instead use <xref linkend="mesa"/>.
-        It is recommended to use that instead. If you follow this page, you may
-        encounter errors. Newer versions of this driver also cause headaches,
-        so the future of this driver is unclear. This driver may be archived in
-        the future.
-      </para>
-    </note>
--->
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -51,14 +40,15 @@
       </listitem>
       <listitem>
         <para>
-          x86_64 Download (HTTP): <ulink url="&nvidia-lib64-download-http;"/>
+          Download (HTTP): <ulink url="&nvidia-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          x86_64 Download (FTP): <ulink url="&nvidia-lib64-download-ftp;"/>
+          Download (FTP): <ulink url="&nvidia-download-ftp;"/>
         </para>
       </listitem>
+<!--
       <listitem>
         <para>
           x86 Download (HTTP): <ulink url="&nvidia-lib32-download-http;"/>
@@ -69,14 +59,17 @@
           x86 Download (FTP): <ulink url="&nvidia-lib32-download-ftp;"/>
         </para>
       </listitem>
+-->
     </itemizedlist>
 
+<!--
     <note>
       <para>
         If you are doing multilib, install the x86_64 driver as it includes
         32-bit libraries along with the 64-bit libraries.
       </para>
     </note>
+-->
 
     <bridgehead renderas="sect3">NVIDIA Dependencies</bridgehead>
 
@@ -85,11 +78,6 @@
       <xref linkend="libglvnd"/> and
       <xref linkend="xorg7-lib"/>
     </para>
-
-    <!-- We may need https://archlinux.org/packages/extra/x86_64/egl-gbm/
-         https://archlinux.org/packages/extra/x86_64/egl-wayland/ and
-         https://archlinux.org/packages/extra/x86_64/egl-x11/ with newer
-         versions. -->
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
@@ -128,14 +116,22 @@
     </note>
 
     <para>
-      First enable XFree86 DRI and Nouveau <footnote><para>Newer versions of
-      the NVIDIA drivers will fail to compile with TTY support unless a
-      graphics driver is included in the kernel. Nouveau is used here, though
-      alternate graphics drivers may also work.</para></footnote> support in
-      the kernel and recompile if necessary.
+      First enable XFree86 DRI and Nouveau
+      <footnote><para>
+        Newer versions of
+        the NVIDIA drivers will fail to compile with TTY support unless a
+        graphics driver is included in the kernel. Nouveau is used here, though
+        alternate graphics drivers may also work.
+      </para></footnote>
+      support in the kernel and recompile if necessary.
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-kernel.xml"/>
+
+    <important><para>
+      Build these drivers as kernel modules so that they can properly be
+      blacklisted.
+    </para></important>
 
     <para>
       Install x86_64 <application>NVIDIA</application> by running the following
@@ -147,6 +143,7 @@
   --no-abi-note         \
   --install-compat32-libs</userinput></screen>
 
+<!--
     <para>
       If you are only interested in the 32-bit driver, install x86
       <application>NVIDIA</application> by running the following
@@ -154,6 +151,7 @@
     </para>
 
 <screen role="root"><userinput>sh NVIDIA-Linux-x86-390.157.run</userinput></screen>
+-->
 
     <para>
       And just follow the prompts. It will first ask if you wish to install
@@ -187,7 +185,7 @@
         happens, the driver will then most likely support the kernel version at
         the time. At the top of this section, the recommended kernel version
         to use with this driver is mentioned to ensure that a build failure
-        does not occur. However, the current kernel version used for kernel
+        does not occur. The current kernel version used for kernel
         parameters and such in this book is linux-&linux-version;.
       </para>
     </note>
@@ -262,7 +260,7 @@
         <filename>/etc/modprobe.d/nvfb.conf</filename> to blacklist Nouveau:
       </para>
       
-<screen role="root"><userinput>mkdir -pv /etc/modprobe.d
+<screen role="root"><userinput>mkdir -pv /etc/modprobe.d &amp;&amp;
 cat &gt;&gt; /etc/modprobe.d/nvfb.conf &lt;&lt; "EOF"
 <literal># Begin /etc/modprobe.d/nvfb.conf
 
@@ -347,7 +345,7 @@ EOF</userinput></screen>
           nvidia_drv.so
         </seg>
         <seg>
-          /usr/lib/firmware/nvidia,
+          /usr/lib/firmware/nvidia/&nvidia-version;,
           /usr/lib/gbm,
           /usr/lib/modprobe.d,
           /usr/lib/modules-load.d,

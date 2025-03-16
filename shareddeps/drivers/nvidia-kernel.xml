@@ -7,6 +7,6 @@
   <emphasis role='blue'>G</emphasis>raphics support ---&gt;
     &lt;*/M&gt; <emphasis role='blue'>D</emphasis>irect Rendering Manager (XFree86 4.1.0 and higher DRI support) ---&gt;
                                                                       ...  [DRM]
-      &lt;*/M&gt; N<emphasis role='blue'>o</emphasis>uveau (NVIDIA) cards                                 [DRM_NOUVEAU]
+      &lt;M&gt; N<emphasis role='blue'>o</emphasis>uveau (NVIDIA) cards                                   [DRM_NOUVEAU]
     <emphasis role='blue'>F</emphasis>rame buffer Devices ---&gt;
-      &lt;*/M&gt; n<emphasis role='blue'>V</emphasis>idia Framebuffer Support                               [FB_NVIDIA]</screen>
+      &lt;M&gt; n<emphasis role='blue'>V</emphasis>idia Framebuffer Support                                 [FB_NVIDIA]</screen>
