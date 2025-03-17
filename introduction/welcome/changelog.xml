@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>March 17th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - ICU: 76.1 -&gt; 77.1 Fixes
+          <ulink url="&glfs-issues;/156">#156</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 16th, 2025</para>
       <itemizedlist>
         <listitem>
