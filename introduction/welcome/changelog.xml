@@ -43,6 +43,10 @@
       <para>March 17th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libxkbcommon: 1.8.0 -&gt; 1.8.1. Fixes
+          <ulink url="&glfs-issues;/151">#151</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GObject-Introspection: 1.82.0 -&gt; 1.84.0. Fixes
           <ulink url="&glfs-issues;/159">#159</ulink>.</para>
         </listitem>

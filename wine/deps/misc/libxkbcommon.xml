@@ -137,22 +137,10 @@ ldconfig</userinput></screen>
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../xincludes/meson-buildtype-release.xml"/>
 
-    <!--
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
-
     <para>
-      <option>- -disable-x11</option>: Use this switch if you
-      have not installed <xref linkend="libxcb"/> and
-      don't need the <filename>libxkbcommon-x11.so</filename>
-      library.
-    </para>
-    -->
-
-    <para>
-      <command>mv -v /usr/share/doc/libxkbcommon{,-&libxkbcommon-version;}</command>:
-      If you built the documentation, use this command to install the
-      it in a versioned directory.
+      <parameter>-D enable-docs=false</parameter>: This parameter disables
+      building documentation as <ulink
+      url="&blfs-svn;/general/doxygen.html"></ulink> is not built.
     </para>
 
   </sect2>
@@ -175,9 +163,8 @@ ldconfig</userinput></screen>
           libxkbregistry.so
         </seg>
         <seg>
-          /usr/include/xkbcommon,
-          /usr/libexec/xkbcommon, and
-          /usr/share/doc/libxkbcommon-&libxkbcommon-version;
+          /usr/include/xkbcommon and
+          /usr/libexec/xkbcommon
         </seg>
       </seglistitem>
     </segmentedlist>
