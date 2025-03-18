@@ -43,6 +43,10 @@
       <para>March 17th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - GObject-Introspection: 1.82.0 -&gt; 1.84.0. Fixes
+          <ulink url="&glfs-issues;/159">#159</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Git: 2.48.1 -&gt; 2.49.0. Fixes
           <ulink url="&glfs-issues;/158">#158</ulink>.</para>
         </listitem>

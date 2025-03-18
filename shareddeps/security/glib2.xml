@@ -63,6 +63,12 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
+          Required patch:
+          <ulink url="&patch-root;/glib/glib-&glib2-version;-upstream_fixes-1.patch"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
           Optional patch:
           <ulink url="&patch-root;/glib/glib-skip_warnings-1.patch"/>
         </para>
@@ -97,6 +103,12 @@
 
   <sect2 role="installation">
     <title>Installation of GLib</title>
+
+    <para>
+      First, fix a runtime issue caused by gobject-introspection-1.84.x:
+    </para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../glib-&glib2-version;-upstream_fixes-1.patch</userinput></screen>
 
     <para>
       If desired, apply the optional patch. In many cases, applications that
