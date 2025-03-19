@@ -49,6 +49,7 @@ The dark theme is also the default, but you can switch the theme by
 running `make GLFS_THEME=<theme>`. `<theme>` can equal:
 - `light`
 - `dark`
+
 Note that if you set `GLFS_THEME_PATH`, you can set `GLFS_THEME` to more than
 just what the available options are shown above, but only the available themes
 that are in that path.
