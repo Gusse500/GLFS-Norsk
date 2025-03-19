@@ -41,7 +41,8 @@
 <!ENTITY pcre2-version                "10.45">
 <!ENTITY glib2-minor                  "2.84">
 <!ENTITY glib2-version                "&glib2-minor;.0">
-<!ENTITY gobject-introspection-version "1.84.0">
+<!ENTITY gi-minor                      "1.84">
+<!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "77">
 <!ENTITY icu-minor                    "1">
 <!ENTITY icu-patch                    "0">
