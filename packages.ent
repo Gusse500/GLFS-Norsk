@@ -31,7 +31,7 @@
 <!ENTITY wget-version                 "1.25.0">
 <!ENTITY git-version                  "2.49.0">
 <!-- Security -->
-<!ENTITY dbus-version                 "1.16.0">   <!-- Even minors only -->
+<!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
 <!ENTITY linux-pam-version            "1.7.0">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY shadow-version               "4.17.3">

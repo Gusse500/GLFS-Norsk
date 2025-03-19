@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>March 18th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - D-Bus: 1.16.0 -&gt; 1.16.2. Fixes
+          <ulink url="&glfs-issues;/131">#131</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 17th, 2025</para>
       <itemizedlist>
         <listitem>
