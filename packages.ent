@@ -145,7 +145,10 @@
 <!ENTITY llvm-maj-version             "20">
 <!ENTITY llvm-point-version           "0">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
-<!ENTITY rustc-version                "1.85.0">
+<!ENTITY rustc-version                "1.85.1">
+<!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
+     at the very bottom: change_id. -->
+<!ENTITY rustc-change-id              "134650">
 <!ENTITY cbindgen-version             "0.28.0">
 <!ENTITY rust-bindgen-version         "0.71.1">
 <!ENTITY mako-version                 "1.3.8">
