@@ -317,7 +317,7 @@ export -f as_root</userinput></screen>
 
 <!ENTITY gobject-introspection "<xref linkend='glib2'/> (with GObject Introspection)">
 
-<!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> and/or <xref linkend='mesa'/>)">
+<!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> or <xref linkend='mesa'/>)">
 
 <!ENTITY options-configure
          "<note><para>Run <command>./configure --help</command> for a full list
