@@ -383,39 +383,34 @@ done</userinput></screen>
 
       <seglistitem>
         <seg>
-          amdgpu-arch,
-          analyze-build, bugpoint, c-index-test, clang, clang++ (symlinks to
-          clang-&llvm-maj-version;), clang-&llvm-maj-version;, clang-check, clang-cl,
-          clang-cpp (last two symlinks to clang), clang-extdef-mapping, clang-format,
-          clang-linker-wrapper,
-          clang-offload-bundler, clang-offload-packager,
-          clang-refactor, clang-rename, clang-repl, clang-scan-deps,
-          clang-tblgen,
-          diagtool, dsymutil, FileCheck, git-clang-format, hmaptool, intercept-build,
-          llc, lli,
-          llvm-addr2line (symlink to llvm-symbolizer),
-          llvm-ar, llvm-as, llvm-bcanalyzer,
+          amdgpu-arch, analyze-build, bugpoint, c-index-test, clang, clang++
+          (symlinks to clang-&llvm-maj-version;), clang-&llvm-maj-version;,
+          clang-check, clang-cl, clang-cpp (last two symlinks to clang),
+          clang-extdef-mapping, clang-format, clang-installapi,
+          clang-linker-wrapper, clang-nvlink-wrapper, clang-offload-bundler,
+          clang-offload-packager, clang-refactor, clang-repl, clang-scan-deps,
+          clang-sycl-linker, clang-tblgen, diagtool, dsymutil, FileCheck,
+          git-clang-format, hmaptool, intercept-build, llc, lli, llvm-addr2line
+          (symlink to llvm-symbolizer), llvm-ar, llvm-as, llvm-bcanalyzer,
           llvm-bitcode-strip (symlink to llvm-objcopy), llvm-cat,
-          llvm-cfi-verify, llvm-config, llvm-cov, llvm-c-test, llvm-cvtres,
-          llvm-cxxdump, llvm-cxxfilt, llvm-cxxmap, llvm-debuginfo-analyzer,
-          llvm-debuginfod, llvm-debuginfod-find,
-          llvm-diff, llvm-dis, llvm-dlltool (symlink to llvm-ar),
-          llvm-dwarfdump, llvm-dwarfutil,
+          llvm-cfi-verify, llvm-cgdata,  llvm-config, llvm-cov, llvm-c-test,
+          llvm-ctxprog-util, llvm-cvtres, llvm-cxxdump, llvm-cxxfilt,
+          llvm-cxxmap, llvm-debuginfo-analyzer, llvm-debuginfod,
+          llvm-debuginfod-find, llvm-diff, llvm-dis, llvm-dlltool
+          (symlink to llvm-ar), llvm-dwarfdump, llvm-dwarfutil,
           llvm-dwp, llvm-exegesis, llvm-extract, llvm-gsymutil, llvm-ifs,
           llvm-install-name-tool (symlink to llvm-objcopy), llvm-jitlink,
           llvm-lib (symlink to llvm-ar), llvm-libtool-darwin, llvm-link,
           llvm-lipo, llvm-lto, llvm-lto2, llvm-mc, llvm-mca, llvm-ml,
           llvm-modextract, llvm-mt, llvm-nm, llvm-objcopy, llvm-objdump,
-          llvm-opt-report, llvm-otool (symlink to llv-objdump),
-          llvm-pdbutil, llvm-profdata, llvm-profgen,
-          llvm-ranlib (symlink to llvm-ar), llvm-rc,
-          llvm-readelf (symlink to llvm-readobj), llvm-readobj,
-          llvm-readtapi, llvm-reduce,
-          llvm-remarkutil,
-          llvm-rtdyld, llvm-sim, llvm-size, llvm-split, llvm-stress,
-          llvm-strings, llvm-strip (symlink to llvm-objcopy), llvm-symbolizer,
-          llvm-tblgen, llvm-tli-checker, llvm-undname, llvm-windres (symlink to
-          llvm-rc), llvm-xray, nvptx-arch, opt, sancov, sanstats, scan-build,
+          llvm-opt-report, llvm-otool (symlink to llv-objdump), llvm-pdbutil,
+          llvm-profdata, llvm-profgen, llvm-ranlib (symlink to llvm-ar), llvm-rc,
+          llvm-readelf (symlink to llvm-readobj), llvm-readobj, llvm-readtapi,
+          llvm-reduce, llvm-remarkutil, llvm-rtdyld, llvm-sim, llvm-size,
+          llvm-split, llvm-stress, llvm-strings, llvm-strip
+          (symlink to llvm-objcopy), llvm-symbolizer, llvm-tblgen,
+          llvm-tli-checker, llvm-undname, llvm-windres (symlink to llvm-rc),
+          llvm-xray, nvptx-arch, opt, sancov, sanstats, scan-build,
           scan-build-py, scan-view, and verify-uselistorder
         </seg>
         <seg>
@@ -432,7 +427,7 @@ done</userinput></screen>
           /usr/include/{clang,clang-c,llvm,llvm-c},
           /usr/lib/{clang,cmake/{clang,llvm},libear,libscanbuild},
           /usr/share/{clang,opt-viewer,scan-build,scan-view},
-          /usr/share/doc/llvm-&llvm-version;, and
+          <!--/usr/share/doc/llvm-&llvm-version;, -->and
           /etc/clang
         </seg>
       </seglistitem>
@@ -449,7 +444,7 @@ done</userinput></screen>
           <para>
             lists AMD GPUs installed; at runtime it needs
             <filename class='libraryfile'>libhsa-runtime64.so</filename>
-            which is not a part of GLFS
+            which is not a part of BLFS
           </para>
           <indexterm zone="llvm amdgpu-arch">
             <primary sortas="b-amdgpu-arch">amdgpu-arch</primary>
@@ -596,6 +591,7 @@ done</userinput></screen>
         </listitem>
       </varlistentry>
 
+ <!-- Not present in 20.1.0
       <varlistentry id="clang-rename">
         <term><command>clang-rename</command></term>
         <listitem>
@@ -607,6 +603,7 @@ done</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
+ -->
 
       <varlistentry id="clang-scan-deps">
         <term><command>clang-scan-deps</command></term>
@@ -1182,18 +1179,6 @@ done</userinput></screen>
         </listitem>
       </varlistentry>
 
-<!--  <varlistentry id="llvm-mcmarkup">
-        <term><command>llvm-mcmarkup</command></term>
-        <listitem>
-          <para>
-            is a parser for machine code markup.
-          </para>
-          <indexterm zone="llvm llvm-mcmarkup">
-            <primary sortas="b-llvm-mcmarkup">llvm-mcmarkup</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>-->
-
       <varlistentry id="llvm-ml">
         <term><command>llvm-ml</command></term>
         <listitem>
@@ -1522,8 +1507,8 @@ done</userinput></screen>
         <listitem>
           <para>
             lists NVIDIA GPUs installed; at runtime it needs
-            <filename>libcuda.so</filename> which is installed
-            by <application>NVIDIA</application> (not in this book)
+            <filename class='libraryfile'>libcuda.so</filename>
+            which is not a part of BLFS
           </para>
           <indexterm zone="llvm nvptx-arch">
             <primary sortas="b-nvptx-arch">nvptx-arch</primary>
@@ -1618,46 +1603,6 @@ done</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
-
-<!-- Removed in 12.0.0
-      <varlistentry id="yaml2obj">
-        <term><command>yaml2obj</command></term>
-        <listitem>
-          <para>
-            takes a YAML representation of an object file and converts it
-            to a binary file
-          </para>
-          <indexterm zone="llvm yaml2obj">
-            <primary sortas="b-yaml2obj">yaml2obj</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
--->
-<!--
-      <varlistentry id="libllvm">
-        <term><filename class="libraryfile">libLLVM-&llvm-version;.so</filename></term>
-        <listitem>
-          <para>
-            contains the <application>LLVM</application> API functions.
-          </para>
-          <indexterm zone="llvm libllvm">
-            <primary sortas="c-libllvm">libLLVM-&llvm-version;.so</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libprofile_rt">
-        <term><filename class="libraryfile">libprofile_rt.so</filename></term>
-        <listitem>
-          <para>
-            is the C, C++ and Objective-C runtime library for
-            <application>Clang</application>.
-          </para>
-          <indexterm zone="llvm libprofile_rt">
-            <primary sortas="c-libprofile_rt">libprofile_rt.so</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>-->
 
     </variablelist>
 
