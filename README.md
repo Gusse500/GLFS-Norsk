@@ -57,11 +57,3 @@ that are in that path.
 Defaults can be changed in a file that isn't tracked (`local.mk`) by declaring
 variables found in `Makefile` in `local.mk`, such as `REV` and `GLFS_THEME`.
 This file must be created manually.
-
-Makefile targets are: `pdf`, `nochunks`, and `validate`.
-
-`pdf`: builds GLFS as a PDF file.
-
-`nochunks`: builds GLFS in one huge file.
-
-`validate`:  does an extensive check for XML errors in the book.

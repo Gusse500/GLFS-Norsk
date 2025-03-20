@@ -54,16 +54,12 @@ endif
 
 ifeq ($(REV), sysv)
   BASEDIR         ?= $(HTML_ROOT)/glfs
-  PDF_OUTPUT      ?= glfs.pdf
-  NOCHUNKS_OUTPUT ?= glfs.html
   DUMPDIR         ?= $(DUMP_ROOT)/glfs-commands
   GLFSHTML        ?= glfs-html.xml
   GLFSHTML2       ?= glfs-html2.xml
   GLFSFULL        ?= glfs-full.xml
 else
   BASEDIR         ?= $(HTML_ROOT)/glfs-systemd
-  PDF_OUTPUT      ?= glfs-sysd.pdf
-  NOCHUNKS_OUTPUT ?= glfs-sysd.html
   DUMPDIR         ?= $(DUMP_ROOT)/glfs-sysd-commands
   GLFSHTML        ?= glfs-systemd-html.xml
   GLFSHTML2       ?= glfs-systemd-html2.xml
@@ -107,17 +103,8 @@ help:
 	@echo ""
 	@echo "  html                 Builds the HTML pages of the book."
 	@echo ""
-	@echo "  pdf                  Builds the book as a PDF file."
-	@echo ""
 	@echo "  wget-list            Produces a list of all packages to download."
 	@echo "                       Output is BASEDIR/wget-list"
-	@echo ""
-	@echo "  nochunks             Builds the book as a one-pager. The output"
-	@echo "                       is a large single HTML page containing the"
-	@echo "                       whole book."
-	@echo ""
-	@echo "                       Parameter NOCHUNKS_OUTPUT=<filename> controls"
-	@echo "                       the name of the HTML file."
 	@echo ""
 	@echo "  validate             Runs validation checks on the XML files."
 	@echo ""
@@ -127,7 +114,7 @@ help:
 	@echo "                       containing all valid URLs."
 	@echo ""
 
-all: glfs nochunks
+all: glfs
 world: all dump-commands test-links
 
 html: $(BASEDIR)/index.html
@@ -170,53 +157,6 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
 
-	$(Q)rm -rf $(RENDERTMP)
-
-pdf: validate wget-list
-	@echo "Generating profiled XML for PDF..."
-	$(Q)xsltproc --nonet \
-						--stringparam profile.condition pdf \
-						--output $(RENDERTMP)/glfs-pdf.xml  \
-						stylesheets/lfs-xsl/profile.xsl     \
-						$(RENDERTMP)/$(GLFSFULL)
-
-	@echo "Generating FO file..."
-	$(Q)xsltproc --nonet										\
-					--stringparam rootid "$(ROOT_ID)"	\
-					--output $(RENDERTMP)/glfs-pdf.fo	\
-					stylesheets/glfs-pdf.xsl					\
-					$(RENDERTMP)/glfs-pdf.xml
-
-	$(Q)sed -i -e 's/span="inherit"/span="all"/' $(RENDERTMP)/glfs-pdf.fo
-	$(Q)bash pdf-fixups.sh $(RENDERTMP)/glfs-pdf.fo
-
-	@echo "Generating PDF file..."
-	$(Q)mkdir -p $(RENDERTMP)/images
-	$(Q)cp -R images/* $(RENDERTMP)/images
-
-	$(Q)mkdir -p $(BASEDIR)
-
-	$(Q)fop -q $(RENDERTMP)/glfs-pdf.fo $(BASEDIR)/$(PDF_OUTPUT) 2>fop.log
-	@echo "$(BASEDIR)/$(PDF_OUTPUT) created"
-	@echo "fop.log created"
-	$(Q)rm fop.log
-	@echo "fop.log destroyed"
-	$(Q)rm -rf $(RENDERTMP)
-
-nochunks: $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-$(BASEDIR)/$(NOCHUNKS_OUTPUT): $(RENDERTMP)/$(GLFSHTML) version
-	@echo "Generating non-chunked XHTML file..."
-	$(Q)xsltproc --nonet                                \
-                --stringparam rootid "$(ROOT_ID)"      \
-                --output $(BASEDIR)/$(NOCHUNKS_OUTPUT) \
-                stylesheets/glfs-nochunks.xsl          \
-                $(RENDERTMP)/$(GLFSHTML)
-
-	@echo "Running Tidy and obfuscate.sh on non-chunked XHTML..."
-	$(Q)tidy -config tidy.conf $(BASEDIR)/$(NOCHUNKS_OUTPUT) || true
-	$(Q)bash obfuscate.sh $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	$(Q)sed -i -e "1,20s@text/html@application/xhtml+xml@g" $(BASEDIR)/$(NOCHUNKS_OUTPUT)
-	@echo "Removing $(RENDERTMP)..."
 	$(Q)rm -rf $(RENDERTMP)
 
 validate: $(RENDERTMP)/$(GLFSFULL)
@@ -320,9 +260,8 @@ $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
 	$(Q)touch $(DUMPDIR)
 	$(Q)rm -rf $(RENDERTMP)
 
-.PHONY: glfs all world html nochunks pdf clean validate profile-html \
-   wget-list test-links dump-commands bootscripts systemd-units version \
-   test-options
+.PHONY: glfs all world html clean validate profile-html wget-list test-links \
+   dump-commands bootscripts systemd-units version test-options
 
 version:
 	$(Q)REV=$(REV) STAB=$(STAB) ./git-version.sh
