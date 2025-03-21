@@ -160,8 +160,7 @@ install -v -m644 doc/doxygen/html/search/* \
      </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
-./configure --prefix=/usr            \
-            --libdir=/usr/lib32      \
+./configure --libdir=/usr/lib32      \
             --host=i686-pc-linux-gnu &amp;&amp;
 
 make</userinput></screen>

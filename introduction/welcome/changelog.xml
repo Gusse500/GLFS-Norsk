@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>March 21st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - alsa-*: Don't use prefix for lib32.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 20th, 2025</para>
       <itemizedlist>
         <listitem>
