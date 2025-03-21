@@ -332,6 +332,33 @@ ldconfig</userinput></screen>
       </seglistitem>
     </segmentedlist>
 
+    <bridgehead renderas="sect3">GObject Introspection Contents</bridgehead>
+
+    <segmentedlist>
+      <segtitle>Installed Program</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <!-- g-ir-doc-tool is installed if Mako and Markdown are present -->
+      <seglistitem>
+        <seg>
+          g-ir-annotation-tool, g-ir-compiler, g-ir-doc-tool (optional),
+          g-ir-generate, g-ir-inspect, and g-ir-scanner
+        </seg>
+        <seg>
+          libgirepository-1.0.so and
+          _giscanner.&python3-lib-suffix;.so
+        </seg>
+        <seg>
+          /usr/include/gobject-introspection-1.0,
+          /usr/lib/girepository-1.0,
+          /usr/lib/gobject-introspection,
+          /usr/share/gir-1.0, and
+          /usr/share/gobject-introspection-1.0
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
     <variablelist>
       <bridgehead renderas="sect3">Short Descriptions</bridgehead>
       <?dbfo list-presentation="list"?>
