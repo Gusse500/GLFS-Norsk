@@ -43,6 +43,10 @@
       <para>March 20th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - LLVM; libclc: 20.1.0 -&gt; 20.1.1. Fixes
+          <ulink url="&glfs-issues;/167">#167</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: 25.0.1 -&gt; 25.0.2. Fixes
           <ulink url="&glfs-issues;/166">#166</ulink>.</para>
         </listitem>
