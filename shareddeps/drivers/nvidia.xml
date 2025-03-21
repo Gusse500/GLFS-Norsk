@@ -86,6 +86,14 @@
       <xref linkend="wayland"/>
     </para>
 
+    <bridgehead renderas="sect4">Recommended (Runtime)</bridgehead>
+    <para role="runtime">
+      <xref linkend="xorg-server"/> (for running
+      <command>nvidia-xconfig</command>, which will be asked to ran during
+      installation; however, running this program can be done in <xref
+      linkend="whatnow"/>)
+    </para>
+
   </sect2>
 
   <sect2 role="installation">
