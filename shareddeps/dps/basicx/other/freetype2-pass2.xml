@@ -67,7 +67,7 @@
       the instructions below:
     </para>
 
-<screen><userinput>make distclean
+<screen><userinput>make distclean &amp;&amp;
 
 ./configure --prefix=/usr --enable-freetype-config --disable-static &amp;&amp;
 make</userinput></screen>
