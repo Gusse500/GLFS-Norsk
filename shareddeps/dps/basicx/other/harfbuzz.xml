@@ -162,13 +162,11 @@ ldconfig</userinput></screen>
         <seg>
           hb-info,
           hb-ot-shape-closure,
-          hb-shape,
-          hb-subset, and
-          hb-view (only if Cairo is installed)
+          hb-shape, and
+          hb-subset
         </seg>
         <seg>
           libharfbuzz.so,
-          libharfbuzz-cairo.so (only if Cairo is installed),
           libharfbuzz-gobject.so,
           libharfbuzz-icu.so, and
           libharfbuzz-subset.so
@@ -263,18 +261,6 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="harfbuzz libharfbuzz">
             <primary sortas="c-libharfbuzz">libharfbuzz.so</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libharfbuzz-cairo">
-        <term><filename class="libraryfile">libharfbuzz-cairo.so</filename></term>
-        <listitem>
-          <para>
-            provides Cairo integration for the Harfbuzz text shaping library
-          </para>
-          <indexterm zone="harfbuzz libharfbuzz-cairo">
-            <primary sortas="c-libharfbuzz-cairo">libharfbuzz-cairo</primary>
           </indexterm>
         </listitem>
       </varlistentry>
