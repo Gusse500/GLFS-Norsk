@@ -43,6 +43,9 @@
       <para>March 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA: Fix other package builds without DRI.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - alsa-*: Don't use prefix for lib32.</para>
         </listitem>
       </itemizedlist>

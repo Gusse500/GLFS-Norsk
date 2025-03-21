@@ -142,7 +142,9 @@ ninja</userinput></screen>
       Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>ninja install</userinput></screen>
+<screen role="root"><userinput>ninja install &amp;&amp;
+mkdir -pv /usr/include/GL/internal &amp;&amp;
+cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal</userinput></screen>
 
   </sect2>
 
@@ -256,6 +258,13 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D libunwind=disabled</parameter>: This parameter disables
       the usage of libunwind.
+    </para>
+
+    <para>
+      <command>cp -v ../include/GL/internal/dri_interface.h ...</command>: This
+      command copies over a header file that is needed by <xref
+      linkend="xorg-server"/> since it is not copied over automatically in this
+      build.
     </para>
 
   </sect2>

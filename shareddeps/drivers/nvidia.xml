@@ -82,7 +82,8 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="libvk"/> and
+      <xref linkend="libvdpau"/>,
+      <xref linkend="libvk"/>, and
       <xref linkend="wayland"/>
     </para>
 
@@ -278,7 +279,44 @@ blacklist nouveau
 
 # End /etc/modprobe.d/nvfb.conf</literal>
 EOF</userinput></screen>
+
+      <para>
+        Furthermore, this driver does not install DRI
+        <footnote><para>
+          Direct Rendering Infrastructure.
+        </para></footnote>
+        drivers or driver stubs. Likewise, it does not install a
+        <application>pkg-config</application> file saying where to find the
+        associated files. The files aren't needed with this driver. However,
+        some applications expect the <application>pkg-config</application> file
+        to exist, namely <xref linkend="xorg-server"/>. Create one now as the
+        &root; user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
+<literal>prefix=/usr
+includedir=${prefix}/include
+
+dridriverdir=/usr/lib/dri
+
+Name: dri
+Description: Direct Rendering Infrastructure
+Version: &nvidia-version;
+Requires.private: libdrm >=  2.4.109
+Cflags: -I${includedir}</literal>
+EOF</userinput></screen>
+
+      <para>
+        Applications that do require this file typically will not link against
+        any library in <filename class="libraryfile">/usr/lib/dri</filename>.
+        If you are worried that an application will try to link against
+        non-existent libraries, you can compile <xref linkend="mesa"/> to get
+        these libraries and a real <application>pkg-config</application> file.
+        Note that those libraries will not be used when this driver is in use.
+      </para>
+
     </sect3>
+
   </sect2>
 
   <sect2 role="content">
