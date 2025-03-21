@@ -174,11 +174,11 @@
                                                 <!-- kernel version in
                                                      kernel-config
                                                      presently -->
-<!ENTITY nvidia-linux-version         "6.13.4">
+<!ENTITY nvidia-linux-version         "6.13.7">
                                                 <!-- kernel version of when the
                                                      NVIDIA driver version
                                                      listed was released -->
-<!ENTITY nvidia-version               "570.124.04">
+<!ENTITY nvidia-version               "570.133.07">
 <!ENTITY libvdpau-va-gl-version       "0.4.2">
 <!-- X11 -->
 <!ENTITY xcb-util-version             "0.4.1">

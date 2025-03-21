@@ -40,6 +40,16 @@
     -->
 
     <listitem>
+      <para>March 20th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 570.124.04 -&gt; 570.133.07. Fixes
+          <ulink url="&glfs-issues;/164">#164</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 19th, 2025</para>
       <itemizedlist>
         <listitem>
