@@ -43,6 +43,9 @@
       <para>March 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - GBM: Add lib32 installation instructions.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA: Fix other package builds without DRI.</para>
         </listitem>
         <listitem>

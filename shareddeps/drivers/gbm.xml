@@ -148,9 +148,8 @@ cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal</userinput
 
   </sect2>
 
-<!--
   <sect2 role="installation">
-    <title>lib32 Installation of Mesa</title>
+    <title>lib32 Installation of GBM</title>
 
     <para>
       First clean the build directory:
@@ -159,44 +158,38 @@ cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal</userinput
     <screen><userinput>rm -rf *</userinput></screen>
 
     <para>
-      Install lib32-<application>Mesa</application> by running the following
+      Install lib32-<application>GBM</application> by running the following
       commands:
     </para>
 
-<screen><userinput>meson setup                    \
-      - -cross-file lib32       \
-      - -prefix=/usr            \
-      - -libdir=/usr/lib32      \
-      - -buildtype=release      \
-      -D osmesa=true           \
-      -D platforms=x11,wayland \
-      -D gallium-drivers=auto  \
-      -D vulkan-drivers=auto   \
-      -D valgrind=disabled     \
-      -D video-codecs=all      \
-      -D libunwind=disabled    \
-      $(PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-      pkgconf libglvnd &amp;&amp;      \
-      echo -D glvnd=enabled)   \
-      .. &amp;&amp;
-      sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32           \
+meson setup --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --buildtype=release      \
+            -D platforms=x11,wayland \
+            -D gallium-drivers=      \
+            -D vulkan-drivers=       \
+            -D video-codecs=         \
+            -D gbm=enabled           \
+            -D glx=disabled          \
+            -D llvm=disabled         \
+            -D valgrind=disabled     \
+            -D libunwind=disabled    \
+            .. &amp;&amp;
 
-BINDGEN_EXTRA_CLANG_ARGS="-m32" ninja</userinput></screen>
+ninja</userinput></screen>
 
     <para>
       Now, as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
-cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
-if [ -d DESTDIR/usr/share/vulkan ]; then
-    cp -vR DESTDIR/usr/share/vulkan /usr/share
-fi                                                     &amp;&amp;
-rm -rf DESTDIR                                         &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
--->
 
   <sect2 role="commands">
     <title>Command Explanations</title>
