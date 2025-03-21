@@ -335,7 +335,7 @@ ldconfig</userinput></screen>
     <bridgehead renderas="sect3">GObject Introspection Contents</bridgehead>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
+      <segtitle>Installed Programs</segtitle>
       <segtitle>Installed Libraries</segtitle>
       <segtitle>Installed Directories</segtitle>
 
