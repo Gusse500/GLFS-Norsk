@@ -62,9 +62,8 @@
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
       <xref linkend="xorg7-lib"/>,
-      <xref linkend="libdrm"/>,
-      <xref linkend="mako"/>, and
-      <xref linkend="pyyaml"/>
+      <xref linkend="libdrm"/>, and
+      <xref linkend="mako"/>
     </para>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
@@ -163,7 +162,7 @@ cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal</userinput
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32           \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \
             --buildtype=release      \
