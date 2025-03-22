@@ -75,14 +75,24 @@
            drivers -->
       <para role='nodep'>
         The VDPAU driver suitable for the hardware in your system:
-        <xref linkend='libvdpau-va-gl'/> (for Intel GPUs) and
-        <xref linkend='mesa'/> (providing the <literal>r600</literal>,
-        <literal>radeonsi</literal>, and <literal>nouveau</literal> VDPAU
-        drivers, for the ATI/AMD Radeon HD 2xxx GPUs and later, and
-        <ulink url='https://nouveau.freedesktop.org/VideoAcceleration.html'>
-supported
-        NVIDIA GPUs</ulink>; Mesa must be built after this package for these
-        drivers)
+        <xref linkend='libvdpau-va-gl'/>
+        <footnote><para>
+          For Intel GPUs.
+        </para></footnote>,
+        <xref linkend='mesa'/>
+        <footnote><para>
+          Provides the <literal>r600</literal>,
+          <literal>radeonsi</literal>, and <literal>nouveau</literal> VDPAU
+          drivers, for the ATI/AMD Radeon HD 2xxx GPUs and later, and
+          <ulink url='https://nouveau.freedesktop.org/VideoAcceleration.html'>
+          supported
+          NVIDIA GPUs</ulink>; Mesa must be built after this package for these
+          drivers.
+        </para></footnote>, and
+        <xref linkend="nvidia"/>
+        <footnote><para>
+          For NVIDIA GPUs; proprietary.
+        </para></footnote>.
       </para>
 
     </sect2>
