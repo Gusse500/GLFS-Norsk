@@ -43,6 +43,10 @@
       <para>March 21st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libdrm: Disable building tests. Fixes
+          <ulink url="&glfs-issues;/168">#168</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GBM: Add lib32 installation instructions.</para>
         </listitem>
         <listitem>

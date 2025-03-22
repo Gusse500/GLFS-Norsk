@@ -77,6 +77,7 @@ cd    build &amp;&amp;
 
 meson setup --prefix=/usr         \
             --buildtype=release   \
+            -D tests=false        \
             -D udev=true          \
             -D valgrind=disabled  \
             .. &amp;&amp;
@@ -105,13 +106,14 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                 \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig         \
-meson setup --prefix=/usr                    \
-            --buildtype=release              \
-            --libdir=/usr/lib32              \
-            -D udev=true                     \
-            -D valgrind=disabled             \
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+meson setup --prefix=/usr            \
+            --buildtype=release      \
+            --libdir=/usr/lib32      \
+            -D tests=false           \
+            -D udev=true             \
+            -D valgrind=disabled     \
             .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -134,6 +136,11 @@ ldconfig</userinput></screen>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../xincludes/meson-buildtype-release.xml"/>
+
+    <para>
+      <parameter>-D tests=false</parameter>: This parameter disables building
+      tests for this package.
+    </para>
 
     <para>
       <parameter>-D udev=true</parameter>: This parameter enables support for using
