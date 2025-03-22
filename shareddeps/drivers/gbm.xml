@@ -32,9 +32,10 @@
       <xref linkend="nvidia"/> driver, it's a different story.
       That driver still depends on the <application>GBM</application> library.
       You will not need to install <xref linkend="mesa"/>. If you are not
-      installing <application>NVIDIA</application>, skip this and move onto
-      <application>Mesa</application> for a complete installation of drivers
-      and other necessary software.
+      installing <application>NVIDIA</application>, skip to <xref
+      linkend="spirv-headers"/> and keep going till you reach <xref
+      linkend="mesa"/> to get a complete installation of drivers and other
+      libraries.
     </para>
 
     <note>

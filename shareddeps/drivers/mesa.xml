@@ -26,12 +26,14 @@
       and so forth.
     </para>
 
+<!--
     <note><para>
       If you are wanting to install <xref linkend="nvidia"/>, skip this
       package. If you don't plan on that but still have installed <xref
       linkend="libglvnd"/>, you still need to compile drivers and the
       GBM. The instructions below will account for that.
     </para></note>
+-->
 
     <note>
       <para>

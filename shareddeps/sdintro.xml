@@ -99,31 +99,28 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libglvnd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/vkheaders.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvk.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-headers.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-tools.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/glslang.xml"/>
-<!--
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/nvidia.xml"/>
--->
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/llvm.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/rustc.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/cbindgen.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/rust-bindgen.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/mako.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libdrm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libva.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvdpau.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/gbm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/nvidia.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-headers.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-tools.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/glslang.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/llvm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/rustc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/cbindgen.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/rust-bindgen.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/spirv-llvm-translator.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libclc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/ply.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/cython.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/pyyaml.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/gbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/mesa.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/libvdpau-va-gl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/amdgpu-pro.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="drivers/nvidia.xml"/>
 
   <!-- X11 -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/x/xdummy.xml"/>
