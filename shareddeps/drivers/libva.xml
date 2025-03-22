@@ -60,7 +60,7 @@
 
       <bridgehead renderas="sect4">Recommended</bridgehead>
       <para role="recommended">
-        <xref linkend="mesa"/>
+        &opengl;
       </para>
 
       <bridgehead renderas="sect4">Recommended (Runtime)</bridgehead>
