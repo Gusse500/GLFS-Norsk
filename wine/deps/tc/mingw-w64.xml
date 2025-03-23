@@ -181,14 +181,8 @@ make</userinput></screen>
       experimental features.
     </para>
 
-    <para>
-      <parameter>--with-default-msvcrt=msvcrt</parameter>: As of
-      <application>MinGW-w64-12.0.0</application>, the Universal C Runtime
-      (UCRT), added in Windows 10, has become the default. This option
-      makes the Microsoft Visual C Runtime (MSVCRT) the default, which is more
-      tested and has less bugs. It also ensures compatibility with software
-      made for older Windows versions.
-    </para>
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../../xincludes/mingw-w64-msvcrt.xml"/>
 
   </sect2>
 
