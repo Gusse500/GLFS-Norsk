@@ -40,6 +40,15 @@
     -->
 
     <listitem>
+      <para>March 23rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: Remove --disable-multilib.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 22nd, 2025</para>
       <itemizedlist>
         <listitem>

@@ -62,7 +62,6 @@ cd    build-x86_64 &amp;&amp;
 ../configure --prefix=/usr                                \
              --target=x86_64-w64-mingw32                  \
              --infodir=/usr/share/info/x86_64-w64-mingw32 \
-             --disable-multilib                           \
              --disable-nls                                \
              --disable-werror &amp;&amp;
 
@@ -94,7 +93,6 @@ cd    build-i686 &amp;&amp;
 ../configure --prefix=/usr                              \
              --target=i686-w64-mingw32                  \
              --infodir=/usr/share/info/i686-w64-mingw32 \
-             --disable-multilib                         \
              --disable-nls                              \
              --disable-werror &amp;&amp;
 
@@ -118,14 +116,16 @@ rm -rf DESTDIR</userinput></screen>
 
     &options-subconfigure;
 
+<!--
     <para>
-      <parameter>--disable-multilib</parameter>: This option disables
+      <parameter>- -disable-multilib</parameter>: This option disables
       multilib support in each architecture. It is not needed and doing
       a <application>Wine</application> WoW64 build just uses the
       binaries from each architecture. Do not set <parameter>
-      --enable-multilib</parameter> for any <application>MinGW-w64
+      - -enable-multilib</parameter> for any <application>MinGW-w64
       </application> package or else problems may occur.
     </para>
+-->
 
     <para>
       <parameter>--disable-nls</parameter>: This option disables
