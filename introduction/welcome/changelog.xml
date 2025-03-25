@@ -44,6 +44,10 @@
       <para>March 25th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libevdev: 1.13.3 -&gt; 1.13.4. Fixes
+          <ulink url="&glfs-issues;/174">#174</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Removed 32-bit CPU support. Fixes
           <ulink url="&glfs-issues;/175">#175</ulink>.</para>
         </listitem>
