@@ -44,6 +44,10 @@
       <para>March 25th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libinput: 1.27.1 -&gt; 1.28.0. Fixes
+          <ulink url="&glfs-issues;/172">#172</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - HarfBuzz: 10.4.0 -&gt; 11.0.0. Fixes
           <ulink url="&glfs-issues;/171">#171</ulink>.</para>
         </listitem>
