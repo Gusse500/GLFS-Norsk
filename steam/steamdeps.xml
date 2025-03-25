@@ -11,15 +11,11 @@
   <title>Steam Dependencies</title>
 
   <para>
-    Steam is a 32-bit application which allows users to run Steam
-    on 32-bit hardware, with a few downsides according to a few
-    users, although not a lot of word is out there as most users
-    who do use Steam are on a 64-bit computer. Thus, users will
-    need the ability to run 32-bit software. Read up on
-    <xref linkend="multilib"/> and see if that's you. If so,
-    you must also follow the lib32 instructions of each
-    dependency listed unless the section doesn't have those
-    instructions or were told it is not needed.
+    Steam is a 32-bit application. Thus, users will
+    need the ability to run 32-bit software. You must also
+    follow the lib32 instructions of each dependency listed
+    unless the section doesn't have those instructions or
+    were told it is not needed.
   </para>
 
   <sect2>
@@ -57,7 +53,8 @@
     <title>Optional</title>
 
     <para>
-      <filename>/etc/lsb-release</filename> (for Steam surveys)
+      <ulink url="&blfs-svn;/general/lsb-tools.html">LSB-Tools</ulink>
+      (for Steam surveys)
     </para>
 
   </sect2>

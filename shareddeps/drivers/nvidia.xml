@@ -32,11 +32,13 @@
       NVIDIA cards.
     </para>
 
+<!--
     <important><para>
       This driver is for x86_64 CPUs only and contains 32-bit compatibility
       libraries. If you have a 32-bit CPU, you should use <xref
       linkend="mesa"/> instead.
     </para></important>
+-->
 
     <itemizedlist spacing="compact">
       <listitem>

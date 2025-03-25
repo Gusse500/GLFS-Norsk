@@ -16,9 +16,8 @@
     the Linux From Scratch book but also want to use <application>Steam
     </application> and/or <application>Wine</application>.
     The official Linux From Scratch and Beyond Linux From Scratch books
-    do not support, and the maintainers do not wish to support, these two
-    packages for the forseeable future. However, users should still have
-    both the choice, and an easy to follow guide, to get these packages
+    do not support these two packages. However, users should still have
+    both the choice and an easy to follow guide to get these packages
     working on their system.
   </para>
 

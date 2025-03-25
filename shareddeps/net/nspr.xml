@@ -55,7 +55,8 @@ sed -i 's|$(LIBRARY) ||'  config/rules.mk         &amp;&amp;
 ./configure --prefix=/usr   \
             --with-mozilla  \
             --with-pthreads \
-            $([ $(uname -m) = x86_64 ] &amp;&amp; echo --enable-64bit) &amp;&amp;
+            --enable-64bit &amp;&amp;
+
 make</userinput></screen>
 
     <para>
@@ -66,7 +67,7 @@ make</userinput></screen>
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -97,7 +98,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -137,9 +138,12 @@ ldconfig</userinput></screen>
       <parameter>--enable-64bit</parameter>: The --enable-64bit parameter is
       <emphasis>required</emphasis> on an x86_64 system to prevent
       <command>configure</command> failing with a claim that this is a system
-      without pthread support. The [ $(uname -m) = x86_64 ] test ensures it has
-      no effect on a 32 bit system. Keep the line if intending to do multilib,
-      and the lib32 instructions will be down below.
+      without pthread support.
+    </para>
+
+    <para>
+      <parameter>--disable-64bit</parameter>: This parameter disables building
+      for 64-bit in the lib32 installation.
     </para>
 
   </sect2>

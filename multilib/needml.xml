@@ -12,9 +12,9 @@
   <title>Do I Need Multilib?</title>
 
   <para>
-    If you have a CPU that is capable of multilib, it is time
-    to decide whether to go for it or not. Depending on the
-    circumstance, it may be necessary to go for it.
+    Now that you have an idea of what multilib is, it is time
+    to decide whether to enable that support or not. Depending on the
+    circumstance, it may be necessary.
   </para>
 
   <sect2>
@@ -32,26 +32,12 @@
       Not only are a lot of games 32-bit, but Steam itself
       requires that you have 32-bit libraries. If the 32-bit
       libraries aren't on the system, Steam will quit, saying
-      it needs a library,
-      <filename class="libraryfile">libc.so.6</filename> being
-      the most common example. So if you have a 64-bit CPU, you will need the
-      ability to execute 32-bit applications as well as all the
-      libraries necessary which is laid out in Chapter 3.
+      it needs a library such as
+      <filename class="libraryfile">libc.so.6</filename>.
+      You will need the ability to execute 32-bit applications
+      as well as all the libraries necessary which is laid out
+      in Chapter 3.
     </para>
-
-    <para>
-      If you have a 32-bit CPU, you can skip the 32-bit libraries
-      and compile everything normally as they will build for your
-      architecture.
-    </para>
-
-    <important>
-      <para>
-        Steam will eventually kill off 32-bit CPU support so be wary
-        that while you can run Steam with a 32-bit CPU, in the future
-        perhaps sometime soon, you will no longer be able to do this.
-      </para>
-    </important>
 
   </sect2>
 
@@ -72,12 +58,8 @@
 
     <para>
       A Wine WoW64 (can run 32-bit and 64-bit applications) build is
-      recommended. If you do not have a 64-bit CPU, then follow only
-      the i686 build instructions. Likewise, if you have a 64-bit
-      CPU, then you can follow only the x86_64 build instructions.
-      The MinGW-w64 toolchain is also really helpful for developers,
-      so if you don't want full support with Wine but full support
-      for the MinGW-w64 toolchain, then by all means: go for it.
+      recommended. You can however skip lib32 and i686 instructions
+      to get a pure w64 Wine installation.
     </para>
 
   </sect2>

@@ -28,11 +28,8 @@
   </para>
 
   <para>
-    By default, every user should read the multilib chapter as
-    most users that want <application>Steam</application> and/or
-    <application>Wine</application> should have a x86_64
-    CPU capable of 32-bit emulation. If that chapter is skipped,
-    you might get a headache later on.
+    By default, every user should read the multilib chapter.
+    If that chapter is skipped, you might get a headache later on.
   </para>
 
   <para>
@@ -52,20 +49,14 @@
     patches, configuration, and setup necessary to get
     <application>Steam</application> working and capable of the
     playing the following: Linux games, Windows games via Proton,
-    and games using OpenGL, Vulkan, and Direct3D. It covers both
-    regular compilation of packages and lib32 compilation of some
-    of the same packages. If you read the multilib section and
-    decided that you desire NOT to go with multilib (despite any
-    warnings), you can ignore the lib32 variants of packages.
-    Otherwise, follow every step unless told otherwise in the
-    respective sections or are presented with options.
+    and games using OpenGL, Vulkan, and Direct3D.
   </para>
 
   <para>
-    The following chapter that most users will need is Wine. Likewise
-    with the Steam chapter, users should follow every step in this
-    chapter if they want to install <application>Wine</application>
-    and use it. The Wine chapter at the moment does not consider
+    The following chapter that most users will need is Wine. Users
+    should follow every step in this chapter if they want to install
+    WoW64 <application>Wine</application>, but more information is covered
+    in that chapter. The Wine chapter at the moment does not consider
     retrofitting and will handle it in a similar manner to Arch: build the
     MinGW-w64 toolchain, install the audio and video components, then finally
     <application>Wine</application> itself.

@@ -25,28 +25,24 @@
 
     <para>
       This book is different from the main LFS and BLFS books as it also has
-      lib32 installation instructions whilst also supporting 32-bit CPUs. This
-      is bound to cause confusion.
+      lib32 installation instructions. This is bound to cause confusion.
     </para>
 
     <para>
-      When you see <quote>Installation of ...</quote>, no matter your CPU,
-      those instructions should be followed if you need that package. As you
-      progress, you may come across a different format, and the book will
-      instruct you on what to follow at that point. However, for those who have
-      a x86_64 CPU, you should read <xref linkend="multilib"/> firstly, and
-      second, you will probably have to do more than the normal installation.
+      When you see <quote>Installation of ...</quote>, those instructions
+      should be followed if you need that package. As you progress, you may
+      come across a different format, and the book will instruct you on what to
+      follow at that point. You should read <xref linkend="multilib"/> firstly,
+      and second, you will probably have to do more than the normal
+      installation.
     </para>
 
     <para>
       This is where the sections labeled
-      <quote>lib32 Installation of ...</quote> come in. These sections are
-      meant only for those using or targetting a x86_64 CPU as they provide
+      <quote>lib32 Installation of ...</quote> come in. These sections provide
       32-bit libraries for 32-bit software compatibility, ie. multilib support.
-      If you don't need the 32-bit libraries from a given package on x86_64,
-      you may skip the lib32 installation instructions of that package. If you
-      are on a 32-bit CPU, don't bother with those instructions and just follow
-      the normal installation instructions.
+      If you don't need the 32-bit libraries from a given package, you may skip
+      the lib32 installation instructions of that package.
     </para>
 
   </sect2>
@@ -105,7 +101,7 @@
         <command>make</command>. For instance, if you want to use 6 threads,
         multiply 6 by 2.5 (which is 15), then make sure you have 15G of RAM.
         If you don't have that RAM, try and limit the threads you throw at
-        <command>make</command>.
+        <command>make</command> or allot swap to meet that requirement.
       </para>
     </important>
 

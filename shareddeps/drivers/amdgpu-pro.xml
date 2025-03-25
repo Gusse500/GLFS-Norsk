@@ -3,6 +3,9 @@
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
+
+  <!ENTITY amdgpu-pro-download-http
+    "https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/">
 ]>
 
 <sect1 id="amdgpu-pro" xreflabel="AMDGPU PRO">
@@ -58,17 +61,17 @@
       using <xref linkend="wget"/>:
     </para>
 
-<screen><userinput>cat &gt;&gt; x86_64-amdgpu-pro-wget-list &lt;&lt; "EOF"
-<literal>https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/a/amf-amdgpu-pro/amf-amdgpu-pro_&amdgpu-pro-amf-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/liba/libamdenc-amdgpu-pro/libamdenc-amdgpu-pro_&amdgpu-pro-libamdenc-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libegl1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-dri_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-ext_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-gbm_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-glx_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgles1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgles2-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/v/vulkan-amdgpu-pro/vulkan-amdgpu-pro_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb</literal>
+<screen><userinput>cat &gt; x86_64-amdgpu-pro-wget-list &lt;&lt; "EOF"
+<literal>a/amf-amdgpu-pro/amf-amdgpu-pro_&amdgpu-pro-amf-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+liba/libamdenc-amdgpu-pro/libamdenc-amdgpu-pro_&amdgpu-pro-libamdenc-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libegl1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-dri_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-ext_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-gbm_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-glx_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libgles1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+o/oglp-amdgpu-pro/libgles2-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb
+v/vulkan-amdgpu-pro/vulkan-amdgpu-pro_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_amd64.deb</literal>
 EOF</userinput></screen>
 
     <para>
@@ -78,7 +81,8 @@ EOF</userinput></screen>
 <screen><userinput>mkdir x86_64-amdgpu-pro                                                            &amp;&amp;
 cd    x86_64-amdgpu-pro                                                            &amp;&amp;
 
-wget --continue --input-file=../x86_64-amdgpu-pro-wget-list                        &amp;&amp;
+grep -v '^#' ../x86_64-amdgpu-pro-wget-list | wget -i- -c \
+    -B &amdgpu-pro-download-http; &amp;&amp;
 for deb in *.deb; do
   ar x $deb                                                                        &amp;&amp;
   tar -xf data.tar.xz                                                              &amp;&amp;
@@ -98,6 +102,8 @@ mv usr/share/vulkan/icd.d/amd_icd64.json usr/share/vulkan/icd.d/amd_pro_icd64.js
 mv usr/lib/amdvlk64.so usr/lib/amdvlkpro64.so                                      &amp;&amp;
 sed -i "s#/opt/amdgpu-pro/lib/x86_64-linux-gnu/amdvlk64.so#/usr/lib/amdvlkpro64.so#" \
   usr/share/vulkan/icd.d/amd_pro_icd64.json                                        &amp;&amp;
+rm -rf usr/lib/dri/*                                                               &amp;&amp;
+cp -a opt/amdgpu/lib/x86_64-linux-gnu/dri/* usr/lib/dri/                           &amp;&amp;
 rm -rf opt/amdgpu-pro/lib/x86_64-linux-gnu                                         &amp;&amp;
 rm -rf usr/lib/x86_64-linux-gnu                                                    &amp;&amp;
 rm -rf opt/amdgpu-pro/lib/x86_64-linux-gnu                                         &amp;&amp;
@@ -119,26 +125,18 @@ ldconfig</userinput></screen>
   <sect2 role="installation">
     <title>i686 Installation of AMDGPU PRO</title>
 
-    <note>
-      <para>
-        When using a 32-bit CPU, you will lose support for AMF and AMDENC
-        support, which is a big reason to use the proprietary driver in the
-        first place. Consider upgrading your CPU to the x86_64 architecture.
-      </para>  
-    </note>
-
     <para>
       First create a list of all the files to download that will be downloaded
       using <xref linkend="wget"/>:
     </para>
 
-<screen><userinput>cat &gt;&gt; i386-amdgpu-pro-wget-list &lt;&lt; "EOF"
-<literal>https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libegl1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-dri_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-glx_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgles1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/o/oglp-amdgpu-pro/libgles2-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
-https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/v/vulkan-amdgpu-pro/vulkan-amdgpu-pro_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb</literal>
+<screen><userinput>cat &gt; i386-amdgpu-pro-wget-list &lt;&lt; "EOF"
+<literal>o/oglp-amdgpu-pro/libegl1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
+o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-dri_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
+o/oglp-amdgpu-pro/libgl1-amdgpu-pro-oglp-glx_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
+o/oglp-amdgpu-pro/libgles1-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
+o/oglp-amdgpu-pro/libgles2-amdgpu-pro-oglp_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb
+v/vulkan-amdgpu-pro/vulkan-amdgpu-pro_&amdgpu-pro-major-short-version;-&amdgpu-pro-minor-version;.&amdgpu-pro-ubuntu-version;_i386.deb</literal>
 EOF</userinput></screen>
 
     <para>
@@ -148,7 +146,8 @@ EOF</userinput></screen>
 <screen><userinput>mkdir i386-amdgpu-pro                                                              &amp;&amp;
 cd    i386-amdgpu-pro                                                              &amp;&amp;
 
-wget --continue --input-file=../i386-amdgpu-pro-wget-list                          &amp;&amp;
+grep -v '^#' ../i386-amdgpu-pro-wget-list | wget -i- -c \
+    -B &amdgpu-pro-download-http; &amp;&amp;
 for deb in *.deb; do
   ar x $deb                                                                        &amp;&amp;
   tar -xf data.tar.xz                                                              &amp;&amp;
@@ -167,15 +166,11 @@ mv usr/share/vulkan/icd.d/amd_icd32.json usr/share/vulkan/icd.d/amd_pro_icd32.js
 mv usr/lib32/amdvlk32.so usr/lib32/amdvlkpro32.so                                  &amp;&amp;
 sed -i "s#/opt/amdgpu-pro/lib/i386-linux-gnu/amdvlk32.so#/usr/lib32/amdvlkpro32.so#" \
   usr/share/vulkan/icd.d/amd_pro_icd32.json                                        &amp;&amp;
+rm -rf usr/lib32/dri/*                                                             &amp;&amp;
+cp -a opt/amdgpu/lib/i386-linux-gnu/dri/* usr/lib32/dri/                           &amp;&amp;
 rm -rf usr/lib                                                                     &amp;&amp;
 rm -rf usr/lib32/amdgpu-pro                                                        &amp;&amp;
-rm -rf etc opt                                                                     &amp;&amp;
-
-case $(uname -m) in
-  i686)
-    mv -v usr/lib32 usr/lib
-  ;;
-esac</userinput></screen>
+rm -rf etc opt</userinput></screen>
 
   <para>
     Now install the driver by running the following commands as the

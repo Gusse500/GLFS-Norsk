@@ -144,7 +144,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>
-          libpng-config (symlink), libpng16-config, pngfix and png-fix-itxt
+          libpng-config (symlink), libpng16-config, pngfix, and png-fix-itxt
         </seg>
         <seg>
           libpng.so

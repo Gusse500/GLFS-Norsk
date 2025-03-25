@@ -133,7 +133,7 @@ ldconfig</userinput></screen>
           libunwind-generic.so (symlink to libunwind-x86*.so),
           libunwind-ptrace.so,
           libunwind-setjmp.so, and
-          libunwind-x86_64.so (libunwind-x86.so on i686)
+          libunwind-x86{,_64}.so
         </seg>
         <seg>
           /usr/libexec/libunwind

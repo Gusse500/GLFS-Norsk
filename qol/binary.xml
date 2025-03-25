@@ -18,10 +18,10 @@
     book does not and will not go over how to get that support. However, you
     can figure out how to get that support by looking at another project the
     GLFS development team works on:
-    <ulink url="https://glfs-book.github.io/lfs-qol">LFS QOL</ulink>. The
-    specific chapter you will want to see to get that support is
-    <ulink url="https://glfs-book.github.io/lfs-qol/binary/binary.html">2.
-    Binary</ulink>.
+    <ulink url="&lfs-qol-website;">LFS QOL</ulink>. The
+    specific section you will want to see to get that support is
+    <ulink url="&lfs-qol-website;/binary/binary.html">
+    Binary Support</ulink>.
   </para>
 
   <para>

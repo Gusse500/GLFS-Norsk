@@ -26,25 +26,21 @@
   </para>
 
   <para>
-    If you are on 32-bit, follow the instructions normally for each dependency,
-    and for the <application>MinGW-w64</application> section of this
-    chapter, follow the i686 instructions.
-  </para>
-
-  <para>
-    If you are on 64-bit and don't want a WoW64 build, follow the instructions
+    If you don't want a WoW64 build, follow the instructions
     normally and skip the lib32 instructions. When you reach the <application>
     MinGW-w64</application> section, follow only the x86_64 instructions.
   </para>
 
   <para>
-    If you are on 64-bit and want a 32-bit only build, follow only the lib32
+    If you want a 32-bit only build, follow only the lib32
     instructions. When you reach <application>MinGW-w64</application>, follow
-    the i686 instructions.
+    the i686 instructions. However, for the sake of continuing onto BLFS, it is
+    recommended to do the normal installations as well, save for
+    <application>MinGW-w64</application>.
   </para>
 
   <para>
-    And finally, if you are on 64-bit and want a WoW64 build, follow all the
+    And finally, if you want a WoW64 build, follow all the
     instructions on the dependency pages unless instructed otherwise or are
     presented with options.
   </para>
@@ -60,7 +56,7 @@
       <xref linkend="fontconfig"/>,
       <xref linkend="freetype2-pass2"/>,
       <xref linkend="gnutls"/>,
-      <xref linkend="libunwind"/> (if 64-bit; not used by Wine 32-bit),
+      <xref linkend="libunwind"/> (if 64-bit/WoW64; not used by Wine 32-bit),
       &opengl;, and
       <xref linkend="mingw-w64-gcc"/>
     </para>

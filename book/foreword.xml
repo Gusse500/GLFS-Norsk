@@ -12,11 +12,10 @@
   <title>Foreword</title>
 
   <para>
-    This book is separate from LFS and BLFS and should be followed after LFS.
-    On x86_64 systems, this book is meant to be followed after MLFS. If you
-    have already followed BLFS, you will still have to reinstall a good
-    number of packages, but you can follow it first before following this book.
-    You may also follow this book before moving onto BLFS.
+    This book is separate from LFS/MLFS and BLFS and should be followed after
+    LFS/MLFS. If you have already followed BLFS, you will still have to
+    reinstall a good number of packages, but you can follow it first before
+    following this book. You may also follow this book before moving onto BLFS.
   </para>
 
   <para>Enjoy!</para>

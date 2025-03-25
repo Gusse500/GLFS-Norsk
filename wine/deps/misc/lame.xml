@@ -69,8 +69,10 @@
       the following commands:
     </para>
 
-<screen><userinput>./configure --prefix=/usr --enable-mp3rtp --disable-static \
-    $([ $(uname -m) == "i?86" ] &amp;&amp; echo "--enable-nasm") &amp;&amp;
+<screen><userinput>./configure --prefix=/usr   \
+            --enable-mp3rtp \
+            --disable-static &amp;&amp;
+
 make</userinput></screen>
 
     <para>
@@ -141,15 +143,9 @@ ldconfig</userinput></screen>
       href="../../../xincludes/static-libraries.xml"/>
 
     <para>
-      <command>$([ $(uname -m) == "i?86" ] ...</command>: This checks to see if
-      the CPU architecture is ix86, and if so, it passes the parameter
-      explained below to the configure script.
-    </para>
-
-    <para>
       <parameter>--enable-nasm</parameter>: This option enables the use of
       <xref linkend="nasm"/> to compile optimized assembly routines for
-      32-bit x86. This is not enabled for x86_64 as it has no effect.
+      32-bit. This is not enabled for x86_64 as it has no effect.
     </para>
 
   </sect2>
