@@ -66,10 +66,11 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..            \
-      --prefix=/usr       \
-      --buildtype=release \
-      -D graphite2=disabled &amp;&amp;
+meson setup ..              \
+      --prefix=/usr         \
+      --buildtype=release   \
+      -D graphite2=disabled \
+      -D tests=disabled &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -99,12 +100,14 @@ ninja</userinput></screen>
       commands:
     </para>
 
-<screen><userinput>meson setup ..                       \
-      --cross-file lib32             \
-      --prefix=/usr                  \
-      --libdir=/usr/lib32            \
-      --buildtype=release            \
-      -D graphite2=disabled &amp;&amp;
+<screen><userinput>meson setup ..              \
+      --cross-file lib32    \
+      --prefix=/usr         \
+      --libdir=/usr/lib32   \
+      --buildtype=release   \
+      -D cairo=disabled     \
+      -D graphite2=disabled \
+      -D tests=disabled &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -128,8 +131,20 @@ ldconfig</userinput></screen>
       href="../../../../xincludes/meson-buildtype-release.xml"/>
     
     <para>
+      <parameter>-D cairo=disabled</parameter>: This switch forces this package
+      to not link against <application>Cairo</application> for the lib32 build
+      as it will mistakenly believe that lib32-<application>Cairo</application>
+      is installed if the 64-bit version is installed.
+    </para>
+
+    <para>
       <parameter>-D graphite2=disabled</parameter>: This switch disables
       <application>Graphite2</application> support, which isn't in GLFS.
+    </para>
+
+    <para>
+      <parameter>-D tests=disabled</parameter>: This switch disables building
+      tests.
     </para>
 
 <!--
