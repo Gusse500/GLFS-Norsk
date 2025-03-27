@@ -33,7 +33,6 @@
       <filename class="directory">/run/systemd</filename> layout.
     </para>
 
-    <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>

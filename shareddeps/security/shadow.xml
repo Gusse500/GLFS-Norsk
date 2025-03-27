@@ -30,7 +30,6 @@
       <command>login</command> and <command>su</command> to utilize PAM.
     </para>
 
-    <bridgehead renderas="sect3">Package Information</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
