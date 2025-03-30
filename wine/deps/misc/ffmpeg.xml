@@ -91,6 +91,12 @@
       <xref linkend="libvdpau-va-gl"/>
     </para>
 
+    <bridgehead renderas="sect4">Optional for systems with NVIDIA</bridgehead>
+    <para role="optional">
+      <ulink url="&lfs-qol-website;/general/cuda.html">CUDA</ulink> and
+      <ulink url="&lfs-qol-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
+    </para>
+
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       Full list of optional dependencies are in the
@@ -252,12 +258,6 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <option>--enable-libdrm</option>: Use this switch if
-      <xref linkend="libdrm"/> is installed to build the <quote>kmsgrab</quote>
-      input module which is useful for screen capturing or streaming.
-    </para>
-
-    <para>
       <parameter>--enable-libfdk-aac</parameter>: Enables AAC audio encoding via
       <filename class="libraryfile">libfdk-aac</filename>.
     </para>
@@ -297,6 +297,18 @@ ldconfig</userinput></screen>
     <para>
       <parameter>--enable-openssl</parameter>:
       Enables HTTPS protocol for network streams.
+    </para>
+
+    <para>
+      <option>--enable-libdrm</option>: Use this switch if
+      <xref linkend="libdrm"/> is installed to build the <quote>kmsgrab</quote>
+      input module which is useful for screen capturing or streaming.
+    </para>
+
+    <para>
+      <option>--enable-nvenc --enable-nvdec</option>: These options enable
+      hardware acceleration for NVIDIA GPUs, and depend on the optional
+      dependencies for systems with NVIDIA.
     </para>
 
     <!--
