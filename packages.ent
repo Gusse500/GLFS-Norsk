@@ -156,7 +156,7 @@
 <!ENTITY spirv-version                "&vulkan-version;.0">
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">
-<!ENTITY glslang-version              "15.1.0">
+<!ENTITY glslang-version              "15.2.0">
 <!ENTITY llvm-maj-version             "20">
 <!ENTITY llvm-point-version           "1">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">

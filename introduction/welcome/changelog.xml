@@ -44,6 +44,10 @@
       <para>March 31st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - glslang: 15.1.0 -&gt; 15.2.0. Fixes
+          <ulink url="&glfs-issues;/179">#179</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.109 -&gt; 3.110. Fixes
           <ulink url="&glfs-issues;/178">#178</ulink>.</para>
         </listitem>
