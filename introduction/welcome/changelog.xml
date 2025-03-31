@@ -44,6 +44,10 @@
       <para>March 31st, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NSS: 3.109 -&gt; 3.110. Fixes
+          <ulink url="&glfs-issues;/178">#178</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 3.31.6 -&gt; 4.0.0. Fixes
           <ulink url="&glfs-issues;/177">#177</ulink>.</para>
         </listitem>
