@@ -34,7 +34,7 @@
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
 <!ENTITY linux-pam-version            "1.7.0">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
-<!ENTITY shadow-version               "4.17.3">
+<!ENTITY shadow-version               "4.17.4">
 <!ENTITY elogind-version              "255.17">
 <!ENTITY systemd-version              "257.3">
 <!ENTITY duktape-version              "2.7.0">
