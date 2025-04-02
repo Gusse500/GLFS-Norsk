@@ -156,7 +156,7 @@
           include <ulink url="https://awesomewm.org/">AwesomeWM</ulink>,
           <ulink url="https://github.com/baskerville/bspwm">BSPWM</ulink>,
           <ulink url="https://dwm.suckless.org/">DWM</ulink>, and
-          <ulink url="https://glfs-book.github.io/lfs-qol/i3/i3.html">i3</ulink>.
+          <ulink url="&lfs-qol-website;/wm/i3.html">i3</ulink>.
           In order to start your chosen window manager, add the following line
           to <filename>~/.xinitrc</filename>:
         </para>
@@ -326,9 +326,9 @@ EOF</userinput></screen>
 
         <para>
           Native <application>Wayland</application> compositors include
-          <ulink url="https://glfs-book.github.io/lfs-qol/hypr/hypr.html">Hyprland</ulink>,
+          <ulink url="&lfs-qol-website;/wm/hypr.html">Hyprland</ulink>,
           <ulink url="https://github.com/swaywm/sway">Sway</ulink>, and
-          <ulink url="https://github.com/WayfireWM/wayfire">Wayfire</ulink>.
+          <ulink url="&lfs-qol-website;/wm/wf.html">Wayfire</ulink>.
           In order to start these compositors, you can start them by using
           a display manager or simply running their binary.
         </para>
