@@ -41,6 +41,20 @@
     -->
 
     <listitem>
+      <para>April 2nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libinput: 1.28.0 -&gt; 1.28.1;
+          cURL: 8.12.1 -&gt; 8.13.0;
+          hwdata: 0.393 -&gt; 0.394. Fixes
+          <ulink url="&glfs-issues;/180">#180</ulink>,
+          <ulink url="&glfs-issues;/183">#183</ulink>, and
+          <ulink url="&glfs-issues;/184">#184</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>March 31st, 2025</para>
       <itemizedlist>
         <listitem>
