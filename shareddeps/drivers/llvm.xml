@@ -1508,7 +1508,7 @@ done</userinput></screen>
           <para>
             lists NVIDIA GPUs installed; at runtime it needs
             <filename class='libraryfile'>libcuda.so</filename>
-            which is not a part of BLFS
+            from <xref linkend="nvidia"/>
           </para>
           <indexterm zone="llvm nvptx-arch">
             <primary sortas="b-nvptx-arch">nvptx-arch</primary>
