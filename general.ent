@@ -271,6 +271,9 @@ export -f as_root</userinput></screen>
 <!ENTITY % package-entities SYSTEM      "packages.ent">
 %package-entities;
 
+<!ENTITY abi-break            "<important><para>Updating this package is known
+                               to break ABI.</para></important>">
+
 <!ENTITY parallel_issues "<note><para>This package may occasionally fail when
                           building with multiple processors.  See <xref
                           linkend='parallel-builds'/> for more information.</para></note>">
