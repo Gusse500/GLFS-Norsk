@@ -143,7 +143,7 @@
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY libvdpau-version             "1.5">
 <!ENTITY mesa-major-minor             "25.0">
-<!ENTITY mesa-version                 "&mesa-major-minor;.2">
+<!ENTITY mesa-version                 "&mesa-major-minor;.3">
 <!ENTITY linux-version                "6.13.7">
                                                 <!-- kernel version in
                                                      kernel-config
