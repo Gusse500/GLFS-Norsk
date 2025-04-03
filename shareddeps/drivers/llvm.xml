@@ -187,19 +187,19 @@ mv projects/compiler-rt-&llvm-version;.src projects/compiler-rt</userinput></scr
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-CC=gcc CXX=g++                                   \
-cmake -D CMAKE_INSTALL_PREFIX=/usr               \
-      -D CMAKE_SKIP_INSTALL_RPATH=ON             \
-      -D LLVM_ENABLE_FFI=ON                      \
-      -D CMAKE_BUILD_TYPE=Release                \
-      -D LLVM_BUILD_LLVM_DYLIB=ON                \
-      -D LLVM_LINK_LLVM_DYLIB=ON                 \
-      -D LLVM_ENABLE_RTTI=ON                     \
-      -D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU" \
-      -D LLVM_BINUTILS_INCDIR=/usr/include       \
-      -D LLVM_INCLUDE_BENCHMARKS=OFF             \
-      -D CLANG_DEFAULT_PIE_ON_LINUX=ON           \
-      -D CLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang \
+CC=gcc CXX=g++                                         \
+cmake -D CMAKE_INSTALL_PREFIX=/usr                     \
+      -D CMAKE_SKIP_INSTALL_RPATH=ON                   \
+      -D LLVM_ENABLE_FFI=ON                            \
+      -D CMAKE_BUILD_TYPE=Release                      \
+      -D LLVM_BUILD_LLVM_DYLIB=ON                      \
+      -D LLVM_LINK_LLVM_DYLIB=ON                       \
+      -D LLVM_ENABLE_RTTI=ON                           \
+      -D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU;NVPTX" \
+      -D LLVM_BINUTILS_INCDIR=/usr/include             \
+      -D LLVM_INCLUDE_BENCHMARKS=OFF                   \
+      -D CLANG_DEFAULT_PIE_ON_LINUX=ON                 \
+      -D CLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang       \
       -W no-dev -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -236,7 +236,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr                      \
       -D LLVM_LINK_LLVM_DYLIB=ON                        \
       -D LLVM_ENABLE_RTTI=ON                            \
       -D LLVM_DEFAULT_TARGET_TRIPLE="i686-pc-linux-gnu" \
-      -D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU"        \
+      -D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU;NVPTX"  \
       -D LLVM_HOST_TRIPLE="x86_64-pc-linux-gnu"         \
       -D LLVM_BINUTILS_INCDIR=/usr/include              \
       -D LLVM_INCLUDE_BENCHMARKS=OFF                    \
@@ -288,12 +288,13 @@ ldconfig</userinput></screen>
       href="../../xincludes/cmake-skip-install-rpath.xml"/>
 
     <para>
-      <parameter>-D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU"</parameter>: This
-      switch enables building for x86, the same target as the host, and also for
+      <parameter>-D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU;NVPTX"</parameter>:
+      This switch enables building for x86, the same target as the host, for
       the r600 AMD GPU used by the <xref linkend="mesa"/> r600 and radeonsi
-      drivers. The default is all of the targets. You can use a semicolon
-      separated list. Valid targets are:
-      host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch,
+      drivers, as well as NVIDIA GPUs used in tandem with <ulink
+      url="&lfs-qol-website;/general/cuda.html">CUDA</ulink>. The default is
+      all of the targets. You can use a semicolon separated list. Valid targets
+      are: host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch,
       Mips, MSP430, NVPTX, PowerPC, RISCV, Sparc, SystemZ, SystemZ, VE,
       WebAssembly, X86, XCore, or all.
     </para>

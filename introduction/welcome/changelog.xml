@@ -44,6 +44,12 @@
       <para>April 3rd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - LLVM: 20.1.1 -> 20.1.2;
+          SPIRV-LLVM-Translator: 20.1.0 -> 20.1.1. Fixes
+          <ulink url="&glfs-issues;/181">#181</ulink> and
+          <ulink url="&glfs-issues;/182">#182</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libxml2: 1.13.6 -&gt; 1.14.0. Fixes
           <ulink url="&glfs-issues;/176">#176</ulink>.</para>
         </listitem>
