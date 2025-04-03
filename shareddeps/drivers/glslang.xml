@@ -41,6 +41,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Required patch:
+          <ulink url="&patch-root;/glslang/glslang-&glslang-version;-SPIRV_install-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">Glslang Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
@@ -53,6 +63,13 @@
 
   <sect2 role="installation">
     <title>Installation of Glslang</title>
+
+    <para>
+      First patch the package to ensure that <filename
+      class="libraryfile">libSPIRV.so</filename> will be installed:
+    </para>
+
+<screen><userinput>patch -Np1 -i ../glslang-&glslang-version;-SPIRV_install-1.patch</userinput></screen>
 
     <para>
       Install <application>Glslang</application> by running the following

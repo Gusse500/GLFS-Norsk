@@ -44,6 +44,9 @@
       <para>April 3rd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Glslang: Ensure libSPIRV is installed.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - LLVM: 20.1.1 -> 20.1.2;
           SPIRV-LLVM-Translator: 20.1.0 -> 20.1.1. Fixes
           <ulink url="&glfs-issues;/181">#181</ulink> and
