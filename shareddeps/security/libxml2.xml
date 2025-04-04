@@ -43,6 +43,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -52,6 +53,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">libxml2 Dependencies</bridgehead>
 
@@ -65,11 +67,13 @@
   <sect2 role="installation">
     <title>Installation of libxml2</title>
 
+<!--
     <para>
       First, apply a patch from upstream:
     </para>
 
 <screen><userinput>patch -Np1 -i ../libxml2-&libxml2-version;-fix_parse_blanks-1.patch</userinput></screen>
+-->
 
     <para>
       Install <application>libxml2</application> by running the following
