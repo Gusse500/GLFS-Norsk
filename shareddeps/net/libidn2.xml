@@ -79,17 +79,12 @@ make</userinput></screen>
     <title>lib32 Installation of lib32-libidn2</title>
 
     <para>
-      First clean the directory by running the following command:
-    </para>
-
-    <screen><userinput>make distclean</userinput></screen>
-
-    <para>
       Install <application>lib32-libidn2</application>
       by running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 ./configure --prefix=/usr            \
             --libdir=/usr/lib32      \

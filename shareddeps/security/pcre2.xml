@@ -74,17 +74,12 @@ make</userinput></screen>
     <title>lib32 Installation of PCRE2</title>
 
     <para>
-      First clean the directory:
-    </para>
-
-    <screen><userinput>make distclean</userinput></screen>
-
-    <para>
-      Now install lib32-<application>PCRE2</application> by running the
+      Install lib32-<application>PCRE2</application> by running the
       following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                    \
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"                    \
 PKG_CONFIG_PATH="/usr/lib32/pkgconfig"          \
 ./configure --prefix=/usr                       \
             --libdir=/usr/lib32                 \

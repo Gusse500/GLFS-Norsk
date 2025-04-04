@@ -115,18 +115,15 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GStreamer Bad Plug-ins</title>
-
-    <para>First clean the build directory:</para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
+    <title>lib32 Installation of GStreamer Bad Plug-ins</title>
 
     <para>
       Install lib32 <application>GStreamer Bad Plug-ins</application> by running the
       following commands:
     </para>
 
-<screen><userinput>meson setup ..            \
+<screen><userinput>rm -rf * &amp;&amp;
+meson setup ..            \
       --cross-file lib32  \
       --prefix=/usr       \
       --libdir=/usr/lib32 \

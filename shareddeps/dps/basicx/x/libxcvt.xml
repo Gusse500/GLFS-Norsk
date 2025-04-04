@@ -80,17 +80,12 @@ ninja</userinput></screen>
     <title>lib32 Installation of libxcvt</title>
 
     <para>
-      First clean the build directory:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
       Install lib32-<application>libxcvt</application> by running the following
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \

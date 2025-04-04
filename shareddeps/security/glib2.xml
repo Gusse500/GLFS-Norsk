@@ -221,16 +221,11 @@ ninja</userinput></screen>
     <title>lib32 Installation of GLib</title>
 
     <para>
-      First clean the build directory:
+      Install lib32-GLib by running the following commands:
     </para>
 
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
-      Now install GLib by running the following commands:
-    </para>
-
-<screen><userinput>meson setup ..                  \
+<screen><userinput>rm -rf * &amp;&amp;
+meson setup ..                  \
       --cross-file lib32        \
       --prefix=/usr             \
       --libdir=/usr/lib32       \

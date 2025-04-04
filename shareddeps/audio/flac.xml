@@ -100,17 +100,12 @@ make</userinput></screen>
     <title>lib32 Installation of FLAC</title>
 
     <para>
-      First clean the directory:
-    </para>
-
-    <screen><userinput>make distclean</userinput></screen>
-
-    <para>
       Install lib32-<application>FLAC</application> by running the
       following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
 CFLAGS+=" -L/usr/lib32"              \
 CXXFLAGS+=" -L/usr/lib32"            \
 ./configure --prefix=/usr            \

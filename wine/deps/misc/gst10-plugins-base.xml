@@ -131,17 +131,12 @@ ninja</userinput></screen>
     <title>lib32 Installation of GStreamer Base Plug-ins</title>
 
     <para>
-      First clean the build directory
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
       Install lib32 <application>GStreamer Base Plug-ins</application> by
       running the following commands:
     </para>
 
-<screen><userinput>meson setup ..               \
+<screen><userinput>rm -rf * &amp;&amp;
+meson setup ..               \
       --cross-file lib32     \
       --prefix=/usr          \
       --libdir=/usr/lib32    \

@@ -88,17 +88,12 @@ make</userinput></screen>
     <title>lib32 Installation of ALSA Plugins</title>
 
     <para>
-      First clean the directory:
-    </para>
-
-    <screen><userinput>make distclean</userinput></screen>
-
-    <para>
       Install 32-bit <application>ALSA Plugins</application> by
       running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"    \
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"    \
 ./configure --libdir=/usr/lib32 \
             --sysconfdir=/etc   \
             --disable-libav     \

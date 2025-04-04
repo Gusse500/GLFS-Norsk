@@ -168,14 +168,6 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
   <sect2 role="installation">
     <title>lib32 Installation of NSS</title>
 
-    <para>
-      First clean directories in the source tree:
-    </para>
-
-<screen><userinput>cd ../nss                                         &amp;&amp;
-find -name "Linux*.OBJ" -type d -exec rm -rf {} + &amp;&amp;
-rm -rf ../dist</userinput></screen>
-
     <important>
       <para>
         If you're rebuilding NSS, run the following command to remove a
@@ -190,10 +182,14 @@ fi</userinput></screen>
     </important>
 
     <para>
-      Now install <application>lib32-NSS</application> by running the following commands:
+      Install <application>lib32-NSS</application> by running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"   \
+<screen><userinput>cd ../nss                                         &amp;&amp;
+find -name "Linux*.OBJ" -type d -exec rm -rf {} + &amp;&amp;
+rm -rf ../dist                                    &amp;&amp;
+
+CC="gcc -m32" CXX="g++ -m32"   \
 make BUILD_OPT=1                      \
 NSPR_INCLUDE_DIR=/usr/include/nspr  \
   USE_SYSTEM_ZLIB=1                   \

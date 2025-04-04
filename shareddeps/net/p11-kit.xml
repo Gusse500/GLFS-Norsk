@@ -114,17 +114,12 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
     <title>lib32 Installation of p11-kit</title>
 
     <para>
-      First clean the directory by running the following command:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
       Install <application>lib32-p11-kit</application>
       by running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                     \
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"                     \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
 CFLAGS+=" -Wno-error=incompatible-pointer-types" \
 meson setup ..                                   \

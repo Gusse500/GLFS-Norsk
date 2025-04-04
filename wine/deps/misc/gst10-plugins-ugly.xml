@@ -110,20 +110,15 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GStreamer Ugly Plug-ins</title>
+    <title>lib32 Installation of GStreamer Ugly Plug-ins</title>
 
     <para>
-      First clean the build directory:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
-      Install <application>GStreamer Ugly Plug-ins</application> by running the following
+      Install lib32 <application>GStreamer Ugly Plug-ins</application> by running the following
       commands:
     </para>
 
-<screen><userinput>meson setup ..            \
+<screen><userinput>rm -rf * &amp;&amp;
+meson setup ..            \
       --cross-file lib32  \
       --prefix=/usr       \
       --libdir=/usr/lib32 \

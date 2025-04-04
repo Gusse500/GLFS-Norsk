@@ -175,17 +175,12 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
     <title>lib32 Installation of Linux PAM</title>
 
     <para>
-      First clean the build directory:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
-      Now install lib32-<application>Linux-PAM</application> by
+      Install lib32-<application>Linux-PAM</application> by
       running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"           \
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"           \
 PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
 meson setup ..                         \
   --prefix=/usr                        \

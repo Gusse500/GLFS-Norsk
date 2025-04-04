@@ -119,17 +119,12 @@ rm -vf /usr/lib/libx265.a</userinput></screen>
     <title>lib32-Installation of x265</title>
 
     <para>
-      First clean the build directory:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
       Install lib32-<application>x265</application> by running the following
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 cmake -D CMAKE_INSTALL_PREFIX=/usr   \
       -D LIB_INSTALL_DIR=lib32       \

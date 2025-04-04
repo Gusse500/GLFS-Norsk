@@ -73,17 +73,12 @@ make</userinput></screen>
     <title>lib32 Installation of libunwind</title>
 
     <para>
-      First clean the directory:
-    </para>
-
-    <screen><userinput>make clean</userinput></screen>
-
-    <para>
       Install lib32-<application>libunwind</application> by running the following
       commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"                     \
+<screen><userinput>make clean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"                     \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
 ./configure --prefix=/usr                        \
             --libdir=/usr/lib32                  \

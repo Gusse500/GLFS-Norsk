@@ -84,17 +84,12 @@ ninja</userinput></screen>
     <title>lib32 Installation of libpsl</title>
 
     <para>
-      First clean the directory by running the following command:
-    </para>
-
-<screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
       Install <application>lib32-libpsl</application>
       by running the following commands:
     </para>
 
-<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup ..                       \
       --prefix=/usr                  \
