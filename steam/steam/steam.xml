@@ -22,7 +22,7 @@
 
     <para>
       The <application>Steam</application> package provides a digital software
-      delivery system, store, and launcher through VALVe's proprietary runtime.
+      delivery system, store, and launcher through VALVE's proprietary runtime.
     </para>
 
     <itemizedlist spacing="compact">
@@ -101,7 +101,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
 
     <itemizedlist>
       <listitem>
-        <para>Made the symlinks in <xref
+        <para>Made the symlink in <xref
         linkend="p11-kit"/></para>
       </listitem>
       <listitem>

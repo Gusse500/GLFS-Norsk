@@ -110,6 +110,7 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
 
   </sect2>
 
+<!--
   <sect2>
     <title>lib32 Installation of p11-kit</title>
 
@@ -123,9 +124,9 @@ CC="gcc -m32" CXX="g++ -m32"                     \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
 CFLAGS+=" -Wno-error=incompatible-pointer-types" \
 meson setup ..                                   \
-      --prefix=/usr                              \
-      --libdir=/usr/lib32                        \
-      --buildtype=release                        \
+      - -prefix=/usr                              \
+      - -libdir=/usr/lib32                        \
+      - -buildtype=release                        \
       -D trust_paths=/etc/pki/anchors &amp;&amp;
 
 ninja</userinput></screen>
@@ -140,6 +141,7 @@ rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
+-->
 
   <sect2 role="commands">
     <title>Command Explanations</title>
@@ -171,8 +173,7 @@ ldconfig</userinput></screen>
       <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so &amp;&amp;
-ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib32/libnssckbi.so</userinput></screen>
+<screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so</userinput></screen>
 
   </sect2>
 
