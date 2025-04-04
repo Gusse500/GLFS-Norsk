@@ -160,10 +160,10 @@
 <!ENTITY llvm-maj-version             "20">
 <!ENTITY llvm-point-version           "2">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
-<!ENTITY rustc-version                "1.85.1">
+<!ENTITY rustc-version                "1.86.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
      at the very bottom: change_id. -->
-<!ENTITY rustc-change-id              "134650">
+<!ENTITY rustc-change-id              "136941">
 <!ENTITY cbindgen-version             "0.28.0">
 <!ENTITY rust-bindgen-version         "0.71.1">
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.1">

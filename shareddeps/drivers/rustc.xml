@@ -115,7 +115,7 @@
       </listitem>
     </itemizedlist>
 
-    <!-- TODO: Remove in Rustc-1.87.0 -->
+<!--
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -125,6 +125,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">Rustc Dependencies</bridgehead>
 
@@ -242,6 +243,9 @@ description = "for GLFS &version;"
 # Uncomment if FileCheck has been installed.
 #codegen-tests = false
 
+# Disable the need for lld.
+lld = false
+
 # Enable the same optimizations as the official upstream build.
 lto = "thin"
 codegen-units = 1
@@ -279,13 +283,13 @@ fi</userinput></screen>
       </para>
     </note>
 
+<!--
     <para>
       Now apply a patch to fix building with <xref linkend="llvm"/>:
     </para>
 
-<!-- TODO: Remove in Rustc-1.87.0 -->
-
 <screen><userinput>patch -Np1 -i ../rustc-&rustc-version;-upstream_fixes_llvm-1.patch</userinput></screen>
+-->
 
 <!--
     <note>

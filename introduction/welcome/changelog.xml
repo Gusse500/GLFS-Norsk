@@ -44,6 +44,10 @@
       <para>April 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Rustc: 1.85.1 -&gt; 1.86.0. Fixes
+          <ulink url="&glfs-issues;/186">#186</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - p11-kit: Remove lib32 instructions.</para>
         </listitem>
         <listitem>
