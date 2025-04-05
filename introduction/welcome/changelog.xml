@@ -45,7 +45,7 @@
       <itemizedlist>
         <listitem>
           <para>[zeckma] - Wine: 10.4 -&gt; 10.5. Fixes
-          <ulink url="&glfs-issues;/189">#189</ulink>.</para>
+          <ulink url="&glfs-issues;/192">#192</ulink>.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - All: Stop using .so for library suffixes. Fixes
