@@ -5,11 +5,6 @@
   %general-entities;
 
   <!ENTITY nvidia-download-http "https://us.download.nvidia.com/XFree86/Linux-x86_64/&nvidia-version;/NVIDIA-Linux-x86_64-&nvidia-version;.run">
-  <!ENTITY nvidia-download-ftp  " ">
-<!-- x86 is unsupported
-  <!ENTITY nvidia-lib32-download-http "https://us.download.nvidia.com/XFree86/Linux-x86/390.157/NVIDIA-Linux-x86-390.157.run">
-  <!ENTITY nvidia-lib32-download-ftp  " ">
--->
 ]>
 
 
@@ -32,14 +27,6 @@
       NVIDIA cards.
     </para>
 
-<!--
-    <important><para>
-      This driver is for x86_64 CPUs only and contains 32-bit compatibility
-      libraries. If you have a 32-bit CPU, you should use <xref
-      linkend="mesa"/> instead.
-    </para></important>
--->
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -51,33 +38,7 @@
           Download (HTTP): <ulink url="&nvidia-download-http;"/>
         </para>
       </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&nvidia-download-ftp;"/>
-        </para>
-      </listitem>
-<!--
-      <listitem>
-        <para>
-          x86 Download (HTTP): <ulink url="&nvidia-lib32-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          x86 Download (FTP): <ulink url="&nvidia-lib32-download-ftp;"/>
-        </para>
-      </listitem>
--->
     </itemizedlist>
-
-<!--
-    <note>
-      <para>
-        If you are doing multilib, install the x86_64 driver as it includes
-        32-bit libraries along with the 64-bit libraries.
-      </para>
-    </note>
--->
 
     <bridgehead renderas="sect3">NVIDIA Dependencies</bridgehead>
 
@@ -90,17 +51,31 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="libvdpau"/>,
-      <xref linkend="libvk"/>, and
-      <xref linkend="wayland"/>
-    </para>
-
-    <bridgehead renderas="sect4">Recommended (Runtime)</bridgehead>
-    <para role="runtime">
-      <xref linkend="xorg-server"/> (required for running
-      <command>nvidia-xconfig</command>; this driver will ask you if you want
-      to run that utility during installation; however, running this program
-      can be done in <xref linkend="whatnow"/>)
+      <itemizedlist spacing="compact">
+        <listitem>
+          <para>
+            <xref linkend="libvdpau"/> (for using the VDPAU driver)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="libvk"/> (needed to install the Vulkan drivers)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="wayland"/> (needed for Wayland support)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="xorg-server"/> (required for running
+            <command>nvidia-xconfig</command>; this driver will ask you if you
+            want to run that utility during installation; however, running this
+            program can be done in <xref linkend="whatnow"/>)
+          </para>
+        </listitem>
+      </itemizedlist>
     </para>
 
   </sect2>
