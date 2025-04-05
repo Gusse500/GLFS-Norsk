@@ -381,7 +381,7 @@ EOF</userinput></screen>
           libnvidia-tls,
           libnvidia-wayland-client,
           libnvoptix,
-          for <xref linkend="wine"/> (_nvngx.dll and nvngx.dll),
+          for <xref linkend="wine"/> (_nvngx and nvngx; both are DLLs),
           libvdpau_nvidia,
           nvidia-drm_gbm, and
           nvidia_drv
@@ -1031,25 +1031,25 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="_nvngx">
-        <term><filename class="libraryfile">_nvngx.dll</filename></term>
+        <term><filename class="libraryfile">_nvngx</filename></term>
         <listitem>
           <para>
             provides DLSS support for use with <application>Wine</application>
           </para>
           <indexterm zone="nvidia _nvngx">
-            <primary sortas="c-_nvngx">_nvngx.dll</primary>
+            <primary sortas="c-_nvngx">_nvngx</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="nvngx">
-        <term><filename class="libraryfile">nvngx.dll</filename></term>
+        <term><filename class="libraryfile">nvngx</filename></term>
         <listitem>
           <para>
             provides DLSS support for use with Proton
           </para>
           <indexterm zone="nvidia nvngx">
-            <primary sortas="c-nvngx">nvngx.dll</primary>
+            <primary sortas="c-nvngx">nvngx</primary>
           </indexterm>
         </listitem>
       </varlistentry>
