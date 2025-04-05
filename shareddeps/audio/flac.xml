@@ -149,7 +149,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>flac and metaflac</seg>
-        <seg>libFLAC.so and libFLAC++.so</seg>
+        <seg>libFLAC and libFLAC++</seg>
         <seg>/usr/include/FLAC, /usr/include/FLAC++ and
         /usr/share/doc/flac-&flac-version;</seg>
       </seglistitem>
@@ -187,14 +187,14 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libflac">
-        <term><filename class="libraryfile">libFLAC{,++}.so</filename></term>
+        <term><filename class="libraryfile">libFLAC{,++}</filename></term>
         <listitem>
           <para>
             these libraries provide native FLAC and Ogg FLAC C/C++ APIs
             for programs utilizing FLAC
           </para>
           <indexterm zone="flac libflac">
-            <primary sortas="c-libFLAC">libFLAC{,++}.so</primary>
+            <primary sortas="c-libFLAC">libFLAC{,++}</primary>
           </indexterm>
         </listitem>
       </varlistentry>

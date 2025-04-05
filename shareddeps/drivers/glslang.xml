@@ -66,7 +66,7 @@
 
     <para>
       First patch the package to ensure that <filename
-      class="libraryfile">libSPIRV.so</filename> will be installed:
+      class="libraryfile">libSPIRV</filename> will be installed:
     </para>
 
 <screen><userinput>patch -Np1 -i ../glslang-&glslang-version;-SPIRV_install-1.patch</userinput></screen>
@@ -171,10 +171,10 @@ ldconfig</userinput></screen>
           spirv-remap
         </seg>
         <seg>
-          libglslang.so,
-          libglslang-default-resource-limits.so,
-          libSPIRV.so, and
-          libSPVRemapper.so
+          libglslang,
+          libglslang-default-resource-limits,
+          libSPIRV, and
+          libSPVRemapper
         </seg>
         <seg>
           /usr/include/glslang and
@@ -202,52 +202,52 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libglslang">
-        <term><filename class="libraryfile">libglslang.so</filename></term>
+        <term><filename class="libraryfile">libglslang</filename></term>
         <listitem>
           <para>
             contains functions that provide a front-end and validator for
             OpenGL, OpenGL ES, and Vulkan shaders to other programs
           </para>
           <indexterm zone="glslang libglslang">
-            <primary sortas="c-libglslang">libglslang.so</primary>
+            <primary sortas="c-libglslang">libglslang</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
 <!-- Library removed in glslang-14.0.0
       <varlistentry id="libHLSL">
-        <term><filename class="libraryfile">libHLSL.so</filename></term>
+        <term><filename class="libraryfile">libHLSL</filename></term>
         <listitem>
           <para>
             provides a front-end for shaders that are in HLSL format
           </para>
           <indexterm zone="glslang libHLSL">
-            <primary sortas="c-libHLSL">libHLSL.so</primary>
+            <primary sortas="c-libHLSL">libHLSL</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 -->
 
       <varlistentry id="libSPIRV">
-        <term><filename class="libraryfile">libSPIRV.so</filename></term>
+        <term><filename class="libraryfile">libSPIRV</filename></term>
         <listitem>
           <para>
             provides a front-end and generator for SPIR-V binaries
           </para>
           <indexterm zone="glslang libSPIRV">
-            <primary sortas="c-libSPIRV">libSPIRV.so</primary>
+            <primary sortas="c-libSPIRV">libSPIRV</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libSPVRemapper">
-        <term><filename class="libraryfile">libSPVRemapper.so</filename></term>
+        <term><filename class="libraryfile">libSPVRemapper</filename></term>
         <listitem>
           <para>
             provides a remapper for SPIR-V binaries
           </para>
           <indexterm zone="glslang libSPVRemapper">
-            <primary sortas="c-libSPVRemapper">libSPVRemapper.so</primary>
+            <primary sortas="c-libSPVRemapper">libSPVRemapper</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -155,7 +155,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libx264.so
+          libx264
         </seg>
         <seg>
           None
@@ -169,14 +169,14 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libx264">
-        <term><filename class="libraryfile">libx264.so</filename></term>
+        <term><filename class="libraryfile">libx264</filename></term>
         <listitem>
           <para>
             provides the functions used to encode video streams into the
             H.264/MPEG-4 AVC format
           </para>
           <indexterm zone="x264 libx264">
-            <primary sortas="c-libx264">libx264.so</primary>
+            <primary sortas="c-libx264">libx264</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -87,7 +87,7 @@ make</userinput></screen>
           mtdev-test
         </seg>
         <seg>
-          libmtdev.so
+          libmtdev
         </seg>
         <seg>
           None
@@ -113,13 +113,13 @@ make</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libmtdev">
-        <term><filename class="libraryfile">libmtdev.so</filename></term>
+        <term><filename class="libraryfile">libmtdev</filename></term>
         <listitem>
           <para>
             contains Multitouch Protocol Translation API functions
           </para>
           <indexterm zone="mtdev libmtdev">
-            <primary sortas="c-libmtdev">libmtdev.so</primary>
+            <primary sortas="c-libmtdev">libmtdev</primary>
           </indexterm>
         </listitem>
       </varlistentry>

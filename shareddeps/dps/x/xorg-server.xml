@@ -381,7 +381,7 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="modesetting_drv-x7">
-        <term><filename class="libraryfile">modesetting_drv.so</filename></term>
+        <term><filename class="libraryfile">modesetting_drv</filename></term>
         <listitem>
           <para>
             provides a video driver for machines using Kernel Mode Setting (KMS).
@@ -389,7 +389,7 @@ EOF</userinput></screen>
             acceleration
           </para>
           <indexterm zone="xorg-server modesetting_drv-x7">
-            <primary sortas="c-modesetting_drv">modesetting_drv.so</primary>
+            <primary sortas="c-modesetting_drv">modesetting_drv</primary>
           </indexterm>
         </listitem>
       </varlistentry>

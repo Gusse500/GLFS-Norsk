@@ -76,7 +76,7 @@ make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr</userinput></screen>
           None
         </seg>
         <seg>
-          libduktape.so and libduktaped.so
+          libduktape and libduktaped
         </seg>
         <seg>
           None
@@ -90,26 +90,26 @@ make -f Makefile.sharedlibrary INSTALL_PREFIX=/usr</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libduktape">
-        <term><filename class="libraryfile">libduktape.so</filename></term>
+        <term><filename class="libraryfile">libduktape</filename></term>
         <listitem>
           <para>
             is an embeddable Javascript engine
           </para>
           <indexterm zone="duktape libduktape">
-            <primary sortas="c-libduktape">libduktape.so</primary>
+            <primary sortas="c-libduktape">libduktape</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libduktaped">
-        <term><filename class="libraryfile">libduktaped.so</filename></term>
+        <term><filename class="libraryfile">libduktaped</filename></term>
         <listitem>
           <para>
             is a debug version of <filename
-            class="libraryfile">libduktape.so</filename>
+            class="libraryfile">libduktape</filename>
           </para>
           <indexterm zone="duktape libduktaped">
-            <primary sortas="c-libduktaped">libduktaped.so</primary>
+            <primary sortas="c-libduktaped">libduktaped</primary>
           </indexterm>
         </listitem>
       </varlistentry>

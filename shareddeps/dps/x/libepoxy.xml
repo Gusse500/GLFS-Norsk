@@ -96,7 +96,7 @@ ninja</userinput></screen>
           None
         </seg>
         <seg>
-          libepoxy.so
+          libepoxy
         </seg>
         <seg>
           /usr/include/epoxy
@@ -111,14 +111,14 @@ ninja</userinput></screen>
 
 
       <varlistentry id="libepoxy-lib">
-        <term><filename class="libraryfile">libepoxy.so</filename></term>
+        <term><filename class="libraryfile">libepoxy</filename></term>
         <listitem>
           <para>
             contains API functions for handling OpenGL function
             pointer management
           </para>
           <indexterm zone="libepoxy libepoxy-lib">
-            <primary sortas="c-libepoxy">libepoxy.so</primary>
+            <primary sortas="c-libepoxy">libepoxy</primary>
           </indexterm>
         </listitem>
       </varlistentry>

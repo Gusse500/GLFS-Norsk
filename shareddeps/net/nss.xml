@@ -281,11 +281,11 @@ ldconfig</userinput></screen>
           certutil, nss-config, and pk12util
         </seg>
         <seg>
-          libcrmf.a, libfreebl3.so, libfreeblpriv3.so,
-          libnss3.so, libnssckbi.so, libnssckbi-testlib.so,
-          libnssdbm3.so, libnsssysinit.so, libnssutil3.so,
-          libpkcs11testmodule.so, libsmime3.so, libsoftokn3.so,
-          and libssl3.so
+          libcrmf (static), libfreebl3, libfreeblpriv3,
+          libnss3, libnssckbi, libnssckbi-testlib,
+          libnssdbm3, libnsssysinit, libnssutil3,
+          libpkcs11testmodule, libsmime3, libsoftokn3,
+          and libssl3
         </seg>
         <seg>
           /usr/include/nss

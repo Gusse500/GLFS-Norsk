@@ -123,12 +123,12 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libunwind.so,
-          libunwind-coredump.so,
-          libunwind-generic.so (symlink to libunwind-x86*.so),
-          libunwind-ptrace.so,
-          libunwind-setjmp.so, and
-          libunwind-x86{,_64}.so
+          libunwind,
+          libunwind-coredump,
+          libunwind-generic (symlink to libunwind-x86*),
+          libunwind-ptrace,
+          libunwind-setjmp, and
+          libunwind-x86{,_64}
         </seg>
         <seg>
           /usr/libexec/libunwind

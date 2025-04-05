@@ -90,7 +90,7 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
           pkcs1-conv and sexp-conv
         </seg>
         <seg>
-          libhogweed.so and libnettle.so
+          libhogweed and libnettle
         </seg>
         <seg>
           /usr/include/nettle and /usr/share/doc/nettle-&nettle-version;

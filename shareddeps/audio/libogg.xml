@@ -116,7 +116,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>None</seg>
-        <seg>libogg.so</seg>
+        <seg>libogg</seg>
         <seg>/usr/include/ogg and /usr/share/doc/libogg-&libogg-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -127,14 +127,14 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libogg-lib">
-        <term><filename class="libraryfile">libogg.so</filename></term>
+        <term><filename class="libraryfile">libogg</filename></term>
         <listitem>
           <para>
             provides the functions required for programs to
             read or write Ogg formatted bit streams
           </para>
           <indexterm zone="libogg libogg-lib">
-            <primary sortas="c-libogg">libogg.so</primary>
+            <primary sortas="c-libogg">libogg</primary>
           </indexterm>
         </listitem>
       </varlistentry>

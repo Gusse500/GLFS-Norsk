@@ -160,9 +160,9 @@ ldconfig</userinput></screen>
           xkbcli
         </seg>
         <seg>
-          libxkbcommon.so,
-          libxkbcommon-x11.so, and
-          libxkbregistry.so
+          libxkbcommon,
+          libxkbcommon-x11, and
+          libxkbregistry
         </seg>
         <seg>
           /usr/include/xkbcommon and
@@ -189,39 +189,39 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libxkbcommon-lib">
-        <term><filename class="libraryfile">libxkbcommon.so</filename></term>
+        <term><filename class="libraryfile">libxkbcommon</filename></term>
         <listitem>
           <para>
             contains the <application>libxkbcommon</application> API functions
           </para>
           <indexterm zone="libxkbcommon libxkbcommon-lib">
-            <primary sortas="c-libxkbcommon">libxkbcommon.so</primary>
+            <primary sortas="c-libxkbcommon">libxkbcommon</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libxkbcommon-x11">
-        <term><filename class="libraryfile">libxkbcommon-x11.so</filename></term>
+        <term><filename class="libraryfile">libxkbcommon-x11</filename></term>
         <listitem>
           <para>
             contains the <application>libxkbcommon</application> X11 specific API
             functions
           </para>
           <indexterm zone="libxkbcommon libxkbcommon-x11">
-            <primary sortas="c-libxkbcommon-x11">libxkbcommon-x11.so</primary>
+            <primary sortas="c-libxkbcommon-x11">libxkbcommon-x11</primary>
           </indexterm>
         </listitem>
      </varlistentry>
 
      <varlistentry id="libxkbregistry">
-       <term><filename class="libraryfile">libxkbregistry.so</filename></term>
+       <term><filename class="libraryfile">libxkbregistry</filename></term>
        <listitem>
          <para>
            contains a list of available XKB models, layouts, and variants for a
            given ruleset
          </para>
          <indexterm zone="libxkbcommon libxkbregistry">
-           <primary sortas="c-libxkbregistry">libxkbregistry.so</primary>
+           <primary sortas="c-libxkbregistry">libxkbregistry</primary>
          </indexterm>
        </listitem>
      </varlistentry>

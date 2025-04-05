@@ -133,7 +133,7 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
             libinput-record, libinput-replay Library Executables -->
           </seg>
           <seg>
-            libinput.so
+            libinput
           </seg>
           <seg>
             /etc/libinput,
@@ -163,13 +163,13 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
         </varlistentry>
 
         <varlistentry id="libinput-lib">
-          <term><filename class="libraryfile">libinput.so</filename></term>
+          <term><filename class="libraryfile">libinput</filename></term>
           <listitem>
             <para>
               contains API functions for handling input devices
             </para>
             <indexterm zone="libinput libinput-lib">
-              <primary sortas="c-libinput-lib">libinput.so</primary>
+              <primary sortas="c-libinput-lib">libinput</primary>
             </indexterm>
           </listitem>
         </varlistentry>

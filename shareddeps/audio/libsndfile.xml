@@ -139,7 +139,7 @@ ldconfig</userinput></screen>
           sndfile-play, and
           sndfile-salvage
         </seg>
-        <seg>libsndfile.so</seg>
+        <seg>libsndfile</seg>
         <seg>/usr/share/doc/libsndfile-&libsndfile-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -271,13 +271,13 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libsndfile-lib">
-        <term><filename class="libraryfile">libsndfile.so</filename></term>
+        <term><filename class="libraryfile">libsndfile</filename></term>
         <listitem>
           <para>
             contains the <application>libsndfile</application> API functions
           </para>
           <indexterm zone="libsndfile libsndfile-lib">
-            <primary sortas="c-libsndfile">libsndfile.so</primary>
+            <primary sortas="c-libsndfile">libsndfile</primary>
           </indexterm>
         </listitem>
       </varlistentry>

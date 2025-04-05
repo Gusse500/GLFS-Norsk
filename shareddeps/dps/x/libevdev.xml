@@ -124,7 +124,7 @@ ninja</userinput></screen>
             libevdev-tweak-device, mouse-dpi-tool, and touchpad-edge-detector
           </seg>
           <seg>
-            libevdev.so
+            libevdev
           </seg>
           <seg>
             /usr/include/libevdev-1.0
@@ -176,13 +176,13 @@ ninja</userinput></screen>
         </varlistentry>
 
         <varlistentry id="libevdev-lib">
-          <term><filename class="libraryfile">libevdev.so</filename></term>
+          <term><filename class="libraryfile">libevdev</filename></term>
           <listitem>
             <para>
               is a library of Xorg driver input functions
             </para>
             <indexterm zone="libevdev libevdev-lib">
-              <primary sortas="c-libevdev-lib">ebvdev.so</primary>
+              <primary sortas="c-libevdev-lib">ebvdev</primary>
             </indexterm>
           </listitem>
         </varlistentry>

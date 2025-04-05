@@ -179,11 +179,11 @@ ldconfig</userinput></screen>
           gst-typefind-1.0
         </seg>
         <seg>
-          libgstbase-1.0.so,
-          libgstcheck-1.0.so,
-          libgstcontroller-1.0.so,
-          libgstnet-1.0.so, and
-          libgstreamer-1.0.so
+          libgstbase-1.0,
+          libgstcheck-1.0,
+          libgstcontroller-1.0,
+          libgstnet-1.0, and
+          libgstreamer-1.0
         </seg>
         <seg>
           /usr/{include,lib,libexec,share}/gstreamer-1.0
@@ -265,57 +265,57 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libgstbase-1.0">
-        <term><filename class="libraryfile">libgstbase-1.0.so</filename></term>
+        <term><filename class="libraryfile">libgstbase-1.0</filename></term>
         <listitem>
           <para>
             provides some base classes to be extended by elements and utility
             classes that are most useful for plugin developers
           </para>
           <indexterm zone="gstreamer10 libgstbase-1.0">
-            <primary sortas="c-libgstbase-1.0">libgstbase-1.0.so</primary>
+            <primary sortas="c-libgstbase-1.0">libgstbase-1.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgstcheck-1.0">
-        <term><filename class="libraryfile">libgstcheck-1.0.so</filename></term>
+        <term><filename class="libraryfile">libgstcheck-1.0</filename></term>
         <listitem>
           <para>
             provides functionality for writing unit tests that use the check
             framework
           </para>
           <indexterm zone="gstreamer10 libgstcheck-1.0">
-            <primary sortas="c-libgstcheck-1.0">libgstcheck-1.0.so</primary>
+            <primary sortas="c-libgstcheck-1.0">libgstcheck-1.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgstcontroller-1.0">
-        <term><filename class="libraryfile">libgstcontroller-1.0.so</filename></term>
+        <term><filename class="libraryfile">libgstcontroller-1.0</filename></term>
         <listitem>
           <para>
             provides functionality to animate element properties over time
           </para>
           <indexterm zone="gstreamer10 libgstcontroller-1.0">
-            <primary sortas="c-libgstcontroller-1.0">libgstcontroller-1.0.so</primary>
+            <primary sortas="c-libgstcontroller-1.0">libgstcontroller-1.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgstnet-1.0">
-        <term><filename class="libraryfile">libgstnet-1.0.so</filename></term>
+        <term><filename class="libraryfile">libgstnet-1.0</filename></term>
         <listitem>
           <para>
             provides network elements and objects
           </para>
           <indexterm zone="gstreamer10 libgstnet-1.0">
-            <primary sortas="c-libgstnet-1.0">libgstnet-1.0.so</primary>
+            <primary sortas="c-libgstnet-1.0">libgstnet-1.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgstreamer-1.0">
-        <term><filename class="libraryfile">libgstreamer-1.0.so</filename></term>
+        <term><filename class="libraryfile">libgstreamer-1.0</filename></term>
         <listitem>
           <para>
             provides all of the core <application>gstreamer</application>
@@ -324,7 +324,7 @@ ldconfig</userinput></screen>
             along with some more specialized elements
           </para>
           <indexterm zone="gstreamer10 libgstreamer-1.0">
-            <primary sortas="c-libgstreamer-1.0">libgstreamer-1.0.so</primary>
+            <primary sortas="c-libgstreamer-1.0">libgstreamer-1.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>

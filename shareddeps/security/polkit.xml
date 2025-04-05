@@ -94,7 +94,7 @@
     </bridgehead>
     <para role="optional">
       One polkit authentication agent for using polkit in the graphical
-      environment; this will greatly depend on what desktop you are running...
+      environment; this will greatly depend on what desktop you are running.
     </para>
 
   </sect2>
@@ -209,8 +209,8 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
           pkttyagent, and polkitd
         </seg>
         <seg>
-          libpolkit-agent-1.so and
-          libpolkit-gobject-1.so
+          libpolkit-agent-1 and
+          libpolkit-gobject-1
         </seg>
         <seg>
           /etc/polkit-1,
@@ -304,26 +304,26 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libpolkit-agent-1">
-        <term><filename class="libraryfile">libpolkit-agent-1.so</filename></term>
+        <term><filename class="libraryfile">libpolkit-agent-1</filename></term>
         <listitem>
           <para>
             contains the <application>Polkit</application> authentication
             agent API functions
           </para>
           <indexterm zone="polkit libpolkit-agent-1">
-            <primary sortas="c-libpolkit-agent-1">libpolkit-agent-1.so</primary>
+            <primary sortas="c-libpolkit-agent-1">libpolkit-agent-1</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libpolkit-gobject-1">
-        <term><filename class="libraryfile">libpolkit-gobject-1.so</filename></term>
+        <term><filename class="libraryfile">libpolkit-gobject-1</filename></term>
         <listitem>
           <para>
             contains the <application>Polkit</application> authorization API functions
           </para>
           <indexterm zone="polkit libpolkit-gobject-1">
-            <primary sortas="c-libpolkit-gobject-1">libpolkit-gobject-1.so</primary>
+            <primary sortas="c-libpolkit-gobject-1">libpolkit-gobject-1</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -103,7 +103,7 @@ make</userinput></screen> -->
           None
         </seg>
         <seg>
-          libyaml.so
+          libyaml
         </seg>
         <seg>
           None
@@ -117,13 +117,13 @@ make</userinput></screen> -->
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libyaml-lib">
-        <term><filename class="libraryfile">libyaml.so</filename></term>
+        <term><filename class="libraryfile">libyaml</filename></term>
         <listitem>
           <para>
             contains API functions for parsing and emitting YAML code
           </para>
           <indexterm zone="libyaml libyaml-lib">
-            <primary sortas="c-libyaml">libyaml.so</primary>
+            <primary sortas="c-libyaml">libyaml</primary>
           </indexterm>
         </listitem>
       </varlistentry>

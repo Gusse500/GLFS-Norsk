@@ -207,7 +207,7 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
           xmllint
         </seg>
         <seg>
-          libxml2.so
+          libxml2
         </seg>
         <seg>
           /usr/include/libxml2,
@@ -263,14 +263,14 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libxml2-lib">
-        <term><filename class="libraryfile">libxml2.so</filename></term>
+        <term><filename class="libraryfile">libxml2</filename></term>
         <listitem>
           <para>
             provides functions for programs to parse files that use the XML
             format
           </para>
           <indexterm zone="libxml2 libxml2-lib">
-            <primary sortas="c-libxml2">libxml2.so</primary>
+            <primary sortas="c-libxml2">libxml2</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -120,7 +120,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libfdk-aac.so
+          libfdk-aac
         </seg>
         <seg>
           /usr/include/fdk-aac
@@ -134,13 +134,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libfdk-aac">
-        <term><filename class="libraryfile">libfdk-aac.so</filename></term>
+        <term><filename class="libraryfile">libfdk-aac</filename></term>
         <listitem>
           <para>
             provides the functions used to encode audio in AAC format
           </para>
           <indexterm zone="fdk-aac libfdk-aac">
-            <primary sortas="c-libfdk-aac">libfdk-aac.so</primary>
+            <primary sortas="c-libfdk-aac">libfdk-aac</primary>
           </indexterm>
         </listitem>
       </varlistentry>

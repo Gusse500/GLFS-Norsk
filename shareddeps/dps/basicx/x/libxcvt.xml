@@ -128,7 +128,7 @@ ldconfig</userinput></screen>
           cvt
         </seg>
         <seg>
-          libxcvt.so
+          libxcvt
         </seg>
         <seg>
           /usr/include/libxcvt
@@ -155,13 +155,13 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libxcvt-lib">
-        <term><filename class="libraryfile">libxcvt.so</filename></term>
+        <term><filename class="libraryfile">libxcvt</filename></term>
         <listitem>
           <para>
             contains functions for calculating VESA CVT
           </para>
           <indexterm zone="libxcvt libxcvt-lib">
-            <primary sortas="c-libxcvt">libxcvt.so</primary>
+            <primary sortas="c-libxcvt">libxcvt</primary>
           </indexterm>
         </listitem>
       </varlistentry>

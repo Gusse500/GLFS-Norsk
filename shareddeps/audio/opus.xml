@@ -131,7 +131,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libopus.so
+          libopus
         </seg>
         <seg>
           /usr/include/opus and /usr/share/doc/opus-&opus-version;
@@ -145,13 +145,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libopus">
-        <term><filename class="libraryfile">libopus.so</filename></term>
+        <term><filename class="libraryfile">libopus</filename></term>
         <listitem>
           <para>
             provides the functions used to read and write Opus format
           </para>
           <indexterm zone="opus libopus">
-            <primary sortas="c-libopus">libopus.so</primary>
+            <primary sortas="c-libopus">libopus</primary>
           </indexterm>
         </listitem>
       </varlistentry>

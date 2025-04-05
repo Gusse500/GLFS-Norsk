@@ -293,7 +293,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
           dbus-update-activation-environment, and dbus-uuidgen
         </seg>
         <seg>
-           libdbus-1.so
+           libdbus-1
         </seg>
         <seg>
           /etc/dbus-1,
@@ -432,7 +432,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
       </varlistentry>
 
       <varlistentry id="libdbus-1">
-        <term><filename class="libraryfile">libdbus-1.so</filename></term>
+        <term><filename class="libraryfile">libdbus-1</filename></term>
         <listitem>
           <para>
             contains the API functions used by the
@@ -443,7 +443,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
             library to implement a message bus daemon
           </para>
           <indexterm zone="dbus libdbus-1">
-            <primary sortas="c-libdbus-1">libdbus-1.so</primary>
+            <primary sortas="c-libdbus-1">libdbus-1</primary>
           </indexterm>
         </listitem>
       </varlistentry>

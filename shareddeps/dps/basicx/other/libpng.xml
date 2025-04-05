@@ -142,7 +142,7 @@ ldconfig</userinput></screen>
           libpng-config (symlink), libpng16-config, pngfix, and png-fix-itxt
         </seg>
         <seg>
-          libpng.so
+          libpng
         </seg>
         <seg>
           /usr/include/libpng16 and
@@ -197,14 +197,14 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libpng-lin">
-        <term><filename class="libraryfile">libpng.so</filename></term>
+        <term><filename class="libraryfile">libpng</filename></term>
         <listitem>
           <para>
             contain routines used to create and manipulate PNG
             format graphics files
           </para>
           <indexterm zone="libpng libpng-lin">
-            <primary sortas="c-libpng">libpng.so</primary>
+            <primary sortas="c-libpng">libpng</primary>
           </indexterm>
         </listitem>
       </varlistentry>

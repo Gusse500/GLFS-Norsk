@@ -151,7 +151,7 @@ ldconfig</userinput></screen>
           llvm-spirv
         </seg>
         <seg>
-          libLLVMSPIRVLib.so
+          libLLVMSPIRVLib
         </seg>
         <seg>
           /usr/include/libLLVMSPIRVLib
@@ -177,13 +177,13 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libLLVMSPIRVLib">
-        <term><filename class="libraryfile">libLLVMSPIRVLib.so</filename></term>
+        <term><filename class="libraryfile">libLLVMSPIRVLib</filename></term>
         <listitem>
           <para>
             contains functions for translating between SPIR-V and LLVM IR
           </para>
           <indexterm zone="spirv-llvm-translator libLLVMSPIRVLib">
-            <primary sortas="c-libLLVMSPIRVLib">libLLVMSPIRVLib.so</primary>
+            <primary sortas="c-libLLVMSPIRVLib">libLLVMSPIRVLib</primary>
           </indexterm>
         </listitem>
       </varlistentry>

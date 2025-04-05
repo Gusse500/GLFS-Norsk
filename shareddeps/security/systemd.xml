@@ -161,17 +161,12 @@ ninja</userinput></screen>
     <title>lib32 Installation of Systemd</title>
 
     <para>
-      First clean the build directory:
-    </para>
-
-    <screen><userinput>rm -rf *</userinput></screen>
-
-    <para>
       Rebuild lib32-<application>Systemd</application> by running the
       following commands:
     </para>
 
-<screen><userinput>LANG=en_US.UTF-8                  \
+<screen><userinput>rm -rf * &amp;&amp;
+LANG=en_US.UTF-8                  \
 meson setup .. --cross-file lib32 \
       --prefix=/usr               \
       --libdir=/usr/lib32         \
@@ -334,7 +329,7 @@ EOF</userinput></screen>
 
       <seglistitem>
         <seg>
-          pam_systemd.so
+          pam_systemd
         </seg>
       </seglistitem>
     </segmentedlist>
@@ -345,7 +340,7 @@ EOF</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="pam_systemd">
-        <term><filename class="libraryfile">pam_systemd.so</filename></term>
+        <term><filename class="libraryfile">pam_systemd</filename></term>
         <listitem>
           <para>
             is a PAM module used to register user sessions with the
@@ -353,7 +348,7 @@ EOF</userinput></screen>
             <command>systemd-logind</command>
           </para>
           <indexterm zone="systemd pam_systemd">
-            <primary sortas="c-pam_systemd">pam_systemd.so</primary>
+            <primary sortas="c-pam_systemd">pam_systemd</primary>
           </indexterm>
         </listitem>
       </varlistentry>

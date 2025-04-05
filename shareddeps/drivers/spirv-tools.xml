@@ -177,13 +177,13 @@ ldconfig</userinput></screen>
           spirv-val
         </seg>
         <seg>
-          libSPIRV-Tools-diff.so,
-          libSPIRV-Tools-link.so,
-          libSPIRV-Tools-lint.so,
-          libSPIRV-Tools-opt.so,
-          libSPIRV-Tools-reduce.so,
-          libSPIRV-Tools-shared.so, and
-          libSPIRV-Tools.so
+          libSPIRV-Tools-diff,
+          libSPIRV-Tools-link,
+          libSPIRV-Tools-lint,
+          libSPIRV-Tools-opt,
+          libSPIRV-Tools-reduce,
+          libSPIRV-Tools-shared, and
+          libSPIRV-Tools
         </seg>
         <seg>
           /usr/include/spirv-tools and
@@ -318,13 +318,13 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libSPIRV-Tools">
-        <term><filename class="libraryfile">libSPIRV-Tools.so</filename></term>
+        <term><filename class="libraryfile">libSPIRV-Tools</filename></term>
         <listitem>
           <para>
             contains functions for processing SPIR-V modules
           </para>
           <indexterm zone="spirv-tools libSPIRV-Tools">
-            <primary sortas="c-libSPIRV-Tools">libSPIRV-Tools.so</primary>
+            <primary sortas="c-libSPIRV-Tools">libSPIRV-Tools</primary>
           </indexterm>
         </listitem>
       </varlistentry>

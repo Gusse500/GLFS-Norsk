@@ -174,7 +174,7 @@ ldconfig</userinput></screen>
             None
           </seg>
           <seg>
-            libvdpau.so
+            libvdpau
           </seg>
           <seg>
             /usr/{include,lib}/vdpau
@@ -188,14 +188,14 @@ ldconfig</userinput></screen>
         <?dbhtml list-presentation="table"?>
 
         <varlistentry id="libvdpau-lib">
-          <term><filename class="libraryfile">libvdpau.so</filename></term>
+          <term><filename class="libraryfile">libvdpau</filename></term>
           <listitem>
             <para>
               contains functions to offload portions of the video decoding
               process and video post-processing to the GPU video-hardware
             </para>
             <indexterm zone="libvdpau libvdpau-lib">
-              <primary sortas="c-libvdpau">libvdpau.so</primary>
+              <primary sortas="c-libvdpau">libvdpau</primary>
             </indexterm>
           </listitem>
         </varlistentry>

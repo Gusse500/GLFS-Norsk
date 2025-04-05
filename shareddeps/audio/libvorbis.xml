@@ -146,7 +146,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libvorbis.so, libvorbisenc.so and libvorbisfile.so
+          libvorbis, libvorbisenc, and libvorbisfile
         </seg>
         <seg>
           /usr/include/vorbis and /usr/share/doc/libvorbis-&libvorbis-version;
@@ -160,13 +160,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libvorbis-lib">
-        <term><filename class="libraryfile">libvorbis.so</filename></term>
+        <term><filename class="libraryfile">libvorbis</filename></term>
         <listitem>
           <para>
             provides the functions used to read and write sound files
           </para>
           <indexterm zone="libvorbis libvorbis-lib">
-            <primary sortas="c-libvorbis">libvorbis.so</primary>
+            <primary sortas="c-libvorbis">libvorbis</primary>
           </indexterm>
         </listitem>
       </varlistentry>

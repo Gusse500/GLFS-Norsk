@@ -85,7 +85,7 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
           gpg-error, gpgrt-config, and yat2m
         </seg>
         <seg>
-          libgpg-error.so
+          libgpg-error
         </seg>
         <seg>
           /usr/share/common-lisp/source/gpg-error,
@@ -139,14 +139,14 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
       </varlistentry>
 
       <varlistentry id="libgpg-error-lib">
-        <term><filename class="libraryfile">libgpg-error.so</filename></term>
+        <term><filename class="libraryfile">libgpg-error</filename></term>
         <listitem>
           <para>
             contains the <application>libgpg-error</application> API
             functions
           </para>
           <indexterm zone="libgpg-error libgpg-error-lib">
-            <primary sortas="c-libgpg-error">libgpg-error.so</primary>
+            <primary sortas="c-libgpg-error">libgpg-error</primary>
           </indexterm>
         </listitem>
       </varlistentry>

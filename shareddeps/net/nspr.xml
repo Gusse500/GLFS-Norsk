@@ -156,7 +156,7 @@ ldconfig</userinput></screen>
           nspr-config
         </seg>
         <seg>
-          libnspr4.so, libplc4.so, and libplds4.so
+          libnspr4, libplc4, and libplds4
         </seg>
         <seg>
           /usr/include/nspr
@@ -183,7 +183,7 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libnspr4">
-        <term><filename class="libraryfile">libnspr4.so</filename></term>
+        <term><filename class="libraryfile">libnspr4</filename></term>
         <listitem>
           <para>
             contains functions that provide platform independence for non-GUI
@@ -192,32 +192,32 @@ ldconfig</userinput></screen>
             basic memory management and shared library linking
           </para>
           <indexterm zone="nspr libnspr4">
-            <primary sortas="c-libnspr4">libnspr4.so</primary>
+            <primary sortas="c-libnspr4">libnspr4</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libplc4">
-        <term><filename class="libraryfile">libplc4.so</filename></term>
+        <term><filename class="libraryfile">libplc4</filename></term>
         <listitem>
           <para>
             contains functions that implement many of the features offered by
             libnspr4
           </para>
           <indexterm zone="nspr libplc4">
-            <primary sortas="c-libplc4">libplc4.so</primary>
+            <primary sortas="c-libplc4">libplc4</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libplds4">
-        <term><filename class="libraryfile">libplds4.so</filename></term>
+        <term><filename class="libraryfile">libplds4</filename></term>
         <listitem>
           <para>
             contains functions that provide data structures
           </para>
           <indexterm zone="nspr libplds4">
-            <primary sortas="c-libplds4">libplds4.so</primary>
+            <primary sortas="c-libplds4">libplds4</primary>
           </indexterm>
         </listitem>
       </varlistentry>

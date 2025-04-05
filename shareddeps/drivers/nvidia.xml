@@ -369,47 +369,47 @@ EOF</userinput></screen>
         </seg>
         <seg>
           gsp_ga10x.bin and
-          gsp_tu10x.bin (firmware is for the x86_64 driver)
+          gsp_tu10x.bin
         </seg>
         <seg>
-          libEGL_nvidia.so,
-          libGLESv1_CM_nvidia.so,
-          libGLESv2_nvidia.so,
-          libGLX_nvidia.so,
-          libcuda.so,
-          libcudadebugger.so,
-          libglxserver_nvidia.so,
-          libnvcuvid.so,
-          libnvidia-allocator.so,
-          libnvidia-api.so,
-          libnvidia-cfg.so,
-          libnvidia-egl-gbm.so,
-          libnvidia-egl-wayland.so,
-          libnvidia-eglcore.so,
-          libnvidia-encode.so,
-          libnvidia-fbc.so,
-          libnvidia-glcore.so,
-          libnvidia-glsi.so,
-          libnvidia-glvkspirv.so,
-          libnvidia-gpucomp.so,
-          libnvidia-gtk2.so,
-          libnvidia-gtk3.so,
-          libnvidia-ml.so,
-          libnvidia-ngx.so,
-          libnvidia-nvvm.so,
-          libnvidia-opencl.so,
-          libnvidia-opticalflow.so,
-          libnvidia-pkcs11-openssl3.so,
-          libnvidia-pkcs11.so,
-          libnvidia-ptxjitcompiler.so,
-          libnvidia-rtcore.so,
-          libnvidia-tls.so,
-          libnvidia-wayland-client.so,
-          libnvoptix.so,
+          libEGL_nvidia,
+          libGLESv1_CM_nvidia,
+          libGLESv2_nvidia,
+          libGLX_nvidia,
+          libcuda,
+          libcudadebugger,
+          libglxserver_nvidia,
+          libnvcuvid,
+          libnvidia-allocator,
+          libnvidia-api,
+          libnvidia-cfg,
+          libnvidia-egl-gbm,
+          libnvidia-egl-wayland,
+          libnvidia-eglcore,
+          libnvidia-encode,
+          libnvidia-fbc,
+          libnvidia-glcore,
+          libnvidia-glsi,
+          libnvidia-glvkspirv,
+          libnvidia-gpucomp,
+          libnvidia-gtk2,
+          libnvidia-gtk3,
+          libnvidia-ml,
+          libnvidia-ngx,
+          libnvidia-nvvm,
+          libnvidia-opencl,
+          libnvidia-opticalflow,
+          libnvidia-pkcs11-openssl3,
+          libnvidia-pkcs11,
+          libnvidia-ptxjitcompiler,
+          libnvidia-rtcore,
+          libnvidia-tls,
+          libnvidia-wayland-client,
+          libnvoptix,
           for <xref linkend="wine"/> (_nvngx.dll and nvngx.dll),
-          libvdpau_nvidia.so,
-          nvidia-drm_gbm.so, and
-          nvidia_drv.so
+          libvdpau_nvidia,
+          nvidia-drm_gbm, and
+          nvidia_drv
         </seg>
         <seg>
           /usr/lib/firmware/nvidia/&nvidia-version;,
@@ -445,7 +445,7 @@ EOF</userinput></screen>
         <term><command>nvidia-bug-report.sh</command></term>
         <listitem>
           <para>
-            is the <application>NVIDIA</application> bug reporting shell script.
+            is the <application>NVIDIA</application> bug reporting shell script
           </para>
           <indexterm zone="nvidia nvidia-bug-report.sh">
             <primary sortas="b-nvidia-bug-report.sh">nvidia-bug-report.sh</primary>
@@ -621,338 +621,338 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libEGL_nvidia">
-        <term><filename class="libraryfile">libEGL_nvidia.so</filename></term>
+        <term><filename class="libraryfile">libEGL_nvidia</filename></term>
         <listitem>
           <para>
             provides <application>NVIDIA</application> implementations
             of OpenGL functionality
           </para>
           <indexterm zone="nvidia libEGL_nvidia">
-            <primary sortas="c-libEGL_nvidia">libEGL_nvidia.so</primary>
+            <primary sortas="c-libEGL_nvidia">libEGL_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGLESv1_CM_nvidia">
-        <term><filename class="libraryfile">libGLESv1_CM_nvidia.so</filename></term>
+        <term><filename class="libraryfile">libGLESv1_CM_nvidia</filename></term>
         <listitem>
           <para>
             provides the API entry points for all OpenGL ES and EGL function calls
           </para>
           <indexterm zone="nvidia libGLESv1_CM_nvidia">
-            <primary sortas="c-libGLESv1_CM_nvidia">libGLESv1_CM_nvidia.so</primary>
+            <primary sortas="c-libGLESv1_CM_nvidia">libGLESv1_CM_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGLESv2_nvidia">
-        <term><filename class="libraryfile">libGLESv2_nvidia.so</filename></term>
+        <term><filename class="libraryfile">libGLESv2_nvidia</filename></term>
         <listitem>
           <para>
             provides the API entry points for all OpenGL ES and EGL function calls
           </para>
           <indexterm zone="nvidia libGLESv2_nvidia">
-            <primary sortas="c-libGLESv2_nvidia">libGLESv2_nvidia.so</primary>
+            <primary sortas="c-libGLESv2_nvidia">libGLESv2_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGLX_nvidia">
-        <term><filename class="libraryfile">libGLX_nvidia.so</filename></term>
+        <term><filename class="libraryfile">libGLX_nvidia</filename></term>
         <listitem>
           <para>
             provides <application>NVIDIA</application> implementations
             of OpenGL functionality
           </para>
           <indexterm zone="nvidia libGLX_nvidia">
-            <primary sortas="c-libGLX_nvidia">libGLX_nvidia.so</primary>
+            <primary sortas="c-libGLX_nvidia">libGLX_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libcuda">
-        <term><filename class="libraryfile">libcuda.so</filename></term>
+        <term><filename class="libraryfile">libcuda</filename></term>
         <listitem>
           <para>
             provides runtime support for CUDA
           </para>
           <indexterm zone="nvidia libcuda">
-            <primary sortas="c-libcuda">libcuda.so</primary>
+            <primary sortas="c-libcuda">libcuda</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libcudadebugger">
-        <term><filename class="libraryfile">libcudadebugger.so</filename></term>
+        <term><filename class="libraryfile">libcudadebugger</filename></term>
         <listitem>
           <para>
             provides support for debugging CUDA applications
           </para>
           <indexterm zone="nvidia libcudadebugger">
-            <primary sortas="c-libcudadebugger">libcudadebugger.so</primary>
+            <primary sortas="c-libcudadebugger">libcudadebugger</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libglxserver_nvidia">
-        <term><filename class="libraryfile">libglxserver_nvidia.so</filename></term>
+        <term><filename class="libraryfile">libglxserver_nvidia</filename></term>
         <listitem>
           <para>
             is the <application>NVIDIA</application> GLX extension module for
             <application>X11</application>
           </para>
           <indexterm zone="nvidia libglxserver_nvidia">
-            <primary sortas="c-libglxserver_nvidia">libglxserver_nvidia.so</primary>
+            <primary sortas="c-libglxserver_nvidia">libglxserver_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvcuvid">
-        <term><filename class="libraryfile">libnvcuvid.so</filename></term>
+        <term><filename class="libraryfile">libnvcuvid</filename></term>
         <listitem>
           <para>
             provides an interface to hardware video decoding capabilities
           </para>
           <indexterm zone="nvidia libnvcuvid">
-            <primary sortas="c-libnvcuvid">libnvcuvid.so</primary>
+            <primary sortas="c-libnvcuvid">libnvcuvid</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-allocator">
-        <term><filename class="libraryfile">libnvidia-allocator.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-allocator</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-allocator">
-            <primary sortas="c-libnvidia-allocator">libnvidia-allocator.so</primary>
+            <primary sortas="c-libnvidia-allocator">libnvidia-allocator</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-api">
-        <term><filename class="libraryfile">libnvidia-api.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-api</filename></term>
         <listitem>
           <para>
-            provides an interface for managing properties of GPUs.
+            provides an interface for managing properties of GPUs
           </para>
           <indexterm zone="nvidia libnvidia-api">
-            <primary sortas="c-libnvidia-api">libnvidia-api.so</primary>
+            <primary sortas="c-libnvidia-api">libnvidia-api</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-cfg">
-        <term><filename class="libraryfile">libnvidia-cfg.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-cfg</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-cfg">
-            <primary sortas="c-libnvidia-cfg">libnvidia-cfg.so</primary>
+            <primary sortas="c-libnvidia-cfg">libnvidia-cfg</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-egl-gbm">
-        <term><filename class="libraryfile">libnvidia-egl-gbm.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-egl-gbm</filename></term>
         <listitem>
           <para>
             provides GBM EGL application support
           </para>
           <indexterm zone="nvidia libnvidia-egl-gbm">
-            <primary sortas="c-libnvidia-egl-gbm">libnvidia-egl-gbm.so</primary>
+            <primary sortas="c-libnvidia-egl-gbm">libnvidia-egl-gbm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-egl-wayland">
-        <term><filename class="libraryfile">libnvidia-egl-wayland.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-egl-wayland</filename></term>
         <listitem>
           <para>
             provides client-side <application>Wayland</application> EGL
             application support
           </para>
           <indexterm zone="nvidia libnvidia-egl-wayland">
-            <primary sortas="c-libnvidia-egl-wayland">libnvidia-egl-wayland.so</primary>
+            <primary sortas="c-libnvidia-egl-wayland">libnvidia-egl-wayland</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-eglcore">
-        <term><filename class="libraryfile">libnvidia-eglcore.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-eglcore</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-eglcore">
-            <primary sortas="c-libnvidia-eglcore">libnvidia-eglcore.so</primary>
+            <primary sortas="c-libnvidia-eglcore">libnvidia-eglcore</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-encode">
-        <term><filename class="libraryfile">libnvidia-encode.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-encode</filename></term>
         <listitem>
           <para>
             provides an interface to video encoder hardware
           </para>
           <indexterm zone="nvidia libnvidia-encode">
-            <primary sortas="c-libnvidia-encode">libnvidia-encode.so</primary>
+            <primary sortas="c-libnvidia-encode">libnvidia-encode</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-fbc">
-        <term><filename class="libraryfile">libnvidia-fbc.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-fbc</filename></term>
         <listitem>
           <para>
             provides an interface to capture and optionally encode the
             framebuffer of an <application>X11</application> server screen
           </para>
           <indexterm zone="nvidia libnvidia-fbc">
-            <primary sortas="c-libnvidia-fbc">libnvidia-fbc.so</primary>
+            <primary sortas="c-libnvidia-fbc">libnvidia-fbc</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-glcore">
-        <term><filename class="libraryfile">libnvidia-glcore.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-glcore</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-glcore">
-            <primary sortas="c-libnvidia-glcore">libnvidia-glcore.so</primary>
+            <primary sortas="c-libnvidia-glcore">libnvidia-glcore</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-glsi">
-        <term><filename class="libraryfile">libnvidia-glsi.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-glsi</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-glsi">
-            <primary sortas="c-libnvidia-glsi">libnvidia-glsi.so</primary>
+            <primary sortas="c-libnvidia-glsi">libnvidia-glsi</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-glvkspirv">
-        <term><filename class="libraryfile">libnvidia-glvkspirv.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-glvkspirv</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-glvkspirv">
-            <primary sortas="c-libnvidia-glvkspirv">libnvidia-glvkspirv.so</primary>
+            <primary sortas="c-libnvidia-glvkspirv">libnvidia-glvkspirv</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-gpucomp">
-        <term><filename class="libraryfile">libnvidia-gpucomp.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-gpucomp</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-gpucomp">
-            <primary sortas="c-libnvidia-gpucomp">libnvidia-gpucomp.so</primary>
+            <primary sortas="c-libnvidia-gpucomp">libnvidia-gpucomp</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-gtk2">
-        <term><filename class="libraryfile">libnvidia-gtk2.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-gtk2</filename></term>
         <listitem>
           <para>
             provides the <command>nvidia-settings</command> user interface
           </para>
           <indexterm zone="nvidia libnvidia-gtk2">
-            <primary sortas="c-libnvidia-gtk2">libnvidia-gtk2.so</primary>
+            <primary sortas="c-libnvidia-gtk2">libnvidia-gtk2</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-gtk3">
-        <term><filename class="libraryfile">libnvidia-gtk3.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-gtk3</filename></term>
         <listitem>
           <para>
             provides the <command>nvidia-settings</command> user interface
           </para>
           <indexterm zone="nvidia libnvidia-gtk3">
-            <primary sortas="c-liblnvidia-gtk3">libnvidia-gtk3.so</primary>
+            <primary sortas="c-liblnvidia-gtk3">libnvidia-gtk3</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-ml">
-        <term><filename class="libraryfile">libnvidia-ml.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-ml</filename></term>
         <listitem>
           <para>
             provides a monitoring and management API
           </para>
           <indexterm zone="nvidia libnvidia-ml">
-            <primary sortas="c-libnvidia-ml">libnvidia-ml.so</primary>
+            <primary sortas="c-libnvidia-ml">libnvidia-ml</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-ngx">
-        <term><filename class="libraryfile">libnvidia-ngx.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-ngx</filename></term>
         <listitem>
           <para>
             provides functions for AI features
           </para>
           <indexterm zone="nvidia libnvidia-ngx">
-            <primary sortas="c-libnvidia-ngx">libnvidia-ngx.so</primary>
+            <primary sortas="c-libnvidia-ngx">libnvidia-ngx</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-nvvm">
-        <term><filename class="libraryfile">libnvidia-nvvm.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-nvvm</filename></term>
         <listitem>
           <para>
             provides JIT link-time-optimization for the CUDA driver
           </para>
           <indexterm zone="nvidia libnvidia-nvvm">
-            <primary sortas="c-libnvidia-nvvm">libnvidia-nvvm.so</primary>
+            <primary sortas="c-libnvidia-nvvm">libnvidia-nvvm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-opencl">
-        <term><filename class="libraryfile">libnvidia-opencl.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-opencl</filename></term>
         <listitem>
           <para>
             provides <application>NVIDIA</application>'s implementation of
             the OpenCL API standard
           </para>
           <indexterm zone="nvidia libnvidia-opencl">
-            <primary sortas="c-libnvidia-opencl">libnvidia-opencl.so</primary>
+            <primary sortas="c-libnvidia-opencl">libnvidia-opencl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-opticalflow">
-        <term><filename class="libraryfile">libnvidia-opticalflow.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-opticalflow</filename></term>
         <listitem>
           <para>
             can be used for hardware-accelerated computation of optical flow
             vectors and stereo disparity values
           </para>
           <indexterm zone="nvidia libnvidia-opticalflow">
-            <primary sortas="c-libnvidia-opticalflow">libnvidia-opticalflow.so</primary>
+            <primary sortas="c-libnvidia-opticalflow">libnvidia-opticalflow</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-pkcs11-openssl3">
-        <term><filename class="libraryfile">libnvidia-pkcs11-openssl3.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-pkcs11-openssl3</filename></term>
         <listitem>
           <para>
             is a cryptography library wrapper aiming to provide cryptography
@@ -960,13 +960,13 @@ EOF</userinput></screen>
             Compute mode
           </para>
           <indexterm zone="nvidia libnvidia-pkcs11-openssl3">
-            <primary sortas="c-libnvidia-pkcs11-openssl3">libnvidia-pkcs11-openssl3.so</primary>
+            <primary sortas="c-libnvidia-pkcs11-openssl3">libnvidia-pkcs11-openssl3</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-pkcs11">
-        <term><filename class="libraryfile">libnvidia-pkcs11.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-pkcs11</filename></term>
         <listitem>
           <para>
             is a cryptography library wrapper aiming to provide cryptography
@@ -974,83 +974,83 @@ EOF</userinput></screen>
             Compute mode
           </para>
           <indexterm zone="nvidia libnvidia-pkcs11">
-            <primary sortas="c-libnvidia-pkcs11">libnvidia-pkcs11.so</primary>
+            <primary sortas="c-libnvidia-pkcs11">libnvidia-pkcs11</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-ptxjitcompiler">
-        <term><filename class="libraryfile">libnvidia-ptxjitcompiler.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-ptxjitcompiler</filename></term>
         <listitem>
           <para>
             is a JIT compiler which compiles PTX into GPU machine code and is
             used by the CUDA driver
           </para>
           <indexterm zone="nvidia libnvidia-ptxjitcompiler">
-            <primary sortas="c-libnvidia-ptxjitcompiler">libnvidia-ptxjitcompiler.so</primary>
+            <primary sortas="c-libnvidia-ptxjitcompiler">libnvidia-ptxjitcompiler</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-rtcore">
-        <term><filename class="libraryfile">libnvidia-rtcore.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-rtcore</filename></term>
         <listitem>
           <para>
             is used internally by other driver components
           </para>
           <indexterm zone="nvidia libnvidia-rtcore">
-            <primary sortas="c-libnvidia-rtcore">libnvidia-rtcore.so</primary>
+            <primary sortas="c-libnvidia-rtcore">libnvidia-rtcore</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-tls">
-        <term><filename class="libraryfile">libnvidia-tls.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-tls</filename></term>
         <listitem>
           <para>
             provides thread local storage support for the <application>NVIDIA
             </application> OpenGL libraries
           </para>
           <indexterm zone="nvidia libnvidia-tls">
-            <primary sortas="c-libnvidia-tls">libnvidia-tls.so</primary>
+            <primary sortas="c-libnvidia-tls">libnvidia-tls</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvidia-wayland-client">
-        <term><filename class="libraryfile">libnvidia-wayland-client.so</filename></term>
+        <term><filename class="libraryfile">libnvidia-wayland-client</filename></term>
         <listitem>
           <para>
             is required for <command>nvidia-settings</command> on
             <application>Wayland</application>
           </para>
           <indexterm zone="nvidia libnvidia-wayland-client">
-            <primary sortas="c-libnvidia-wayland-client">libnvidia-wayland-client.so</primary>
+            <primary sortas="c-libnvidia-wayland-client">libnvidia-wayland-client</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libnvoptix">
-        <term><filename class="libraryfile">libnvoptix.so</filename></term>
+        <term><filename class="libraryfile">libnvoptix</filename></term>
         <listitem>
           <para>
             implements the OptiX ray tracing engine
           </para>
           <indexterm zone="nvidia libnvoptix">
-            <primary sortas="c-libnvoptix">libnvoptix.so</primary>
+            <primary sortas="c-libnvoptix">libnvoptix</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libvdpau_nvidia">
-        <term><filename class="libraryfile">libvdpau_nvidia.so</filename></term>
+        <term><filename class="libraryfile">libvdpau_nvidia</filename></term>
         <listitem>
           <para>
             provides the <application>NVIDIA</application> implementation for
             the VDPAU library
           </para>
           <indexterm zone="nvidia libvdpau_nvidia">
-            <primary sortas="c-libvdpau_nvidia">libvdpau_nvidia.so</primary>
+            <primary sortas="c-libvdpau_nvidia">libvdpau_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -1080,26 +1080,26 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="nvidia-drm_gbm">
-        <term><filename class="libraryfile">nvidia-drm_gbm.so</filename></term>
+        <term><filename class="libraryfile">nvidia-drm_gbm</filename></term>
         <listitem>
           <para>
             is the <application>NVIDIA</application> implementation of GBM
           </para>
           <indexterm zone="nvidia nvidia-drm_gbm">
-            <primary sortas="c-nvidia-drm_gbm">nvidia-drm_gbm.so</primary>
+            <primary sortas="c-nvidia-drm_gbm">nvidia-drm_gbm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="nvidia_drv">
-        <term><filename class="libraryfile">nvidia_drv.so</filename></term>
+        <term><filename class="libraryfile">nvidia_drv</filename></term>
         <listitem>
           <para>
             is the <application>NVIDIA</application> <application>X11
             </application> driver
           </para>
           <indexterm zone="nvidia nvidia_drv">
-            <primary sortas="c-nvidia_drv">nvidia_drv.so</primary>
+            <primary sortas="c-nvidia_drv">nvidia_drv</primary>
           </indexterm>
         </listitem>
       </varlistentry>

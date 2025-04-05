@@ -118,7 +118,7 @@ make</userinput></screen>
           sqlite3
         </seg>
         <seg>
-          libsqlite3.so
+          libsqlite3
         </seg>
         <seg>
           None
@@ -146,13 +146,13 @@ make</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libsqlite3">
-        <term><filename class="libraryfile">libsqlite3.so</filename></term>
+        <term><filename class="libraryfile">libsqlite3</filename></term>
         <listitem>
           <para>
             contains the <application>SQLite</application> API functions
           </para>
           <indexterm zone="sqlite libsqlite3">
-            <primary sortas="c-libsqlite3">libsqlite3.so</primary>
+            <primary sortas="c-libsqlite3">libsqlite3</primary>
           </indexterm>
         </listitem>
       </varlistentry>

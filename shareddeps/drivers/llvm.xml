@@ -304,7 +304,7 @@ ldconfig</userinput></screen>
       <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter>, this switch enables
       linking the tools against the shared library instead of the static ones.
       It slightly reduces their size and also ensures that llvm-config
-      will correctly use libLLVM-&llvm-maj-version;.so.
+      will correctly use libLLVM-&llvm-maj-version;.
     </para>
 
     <para>
@@ -317,7 +317,7 @@ ldconfig</userinput></screen>
       <parameter>-D LLVM_BINUTILS_INCDIR=/usr/include</parameter>: This switch
       is used to tell the build system the location of binutils headers,
       which were installed in LFS.  This allows the building of
-      <filename class="libraryfile">LLVMgold.so</filename>, which is needed
+      <filename class="libraryfile">LLVMgold</filename>, which is needed
       for building programs with <command>clang</command> and Link Time
       Optimization (LTO).
     </para>
@@ -415,14 +415,14 @@ done</userinput></screen>
           scan-build-py, scan-view, and verify-uselistorder
         </seg>
         <seg>
-          libLLVM.so,
-          libLLVM*.a (107 libraries),
-          libLTO.so,
-          libRemarks.so,
-          libclang.so,
-          libclang-cpp.so,
-          libclang*.a (43 libraries),
-          and LLVMgold.so
+          libLLVM,
+          libLLVM* (107 static libraries),
+          libLTO,
+          libRemarks,
+          libclang,
+          libclang-cpp,
+          libclang* (43 static libraries),
+          and LLVMgold
         </seg>
         <seg>
           /usr/include/{clang,clang-c,llvm,llvm-c},
@@ -444,7 +444,7 @@ done</userinput></screen>
         <listitem>
           <para>
             lists AMD GPUs installed; at runtime it needs
-            <filename class='libraryfile'>libhsa-runtime64.so</filename>
+            <filename class='libraryfile'>libhsa-runtime64</filename>
             which is not a part of BLFS
           </para>
           <indexterm zone="llvm amdgpu-arch">
@@ -1508,7 +1508,7 @@ done</userinput></screen>
         <listitem>
           <para>
             lists NVIDIA GPUs installed; at runtime it needs
-            <filename class='libraryfile'>libcuda.so</filename>
+            <filename class='libraryfile'>libcuda</filename>
             from <xref linkend="nvidia"/>
           </para>
           <indexterm zone="llvm nvptx-arch">

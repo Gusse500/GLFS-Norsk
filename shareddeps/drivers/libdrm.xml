@@ -164,8 +164,8 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libdrm_amdgpu.so, libdrm_intel.so, libdrm_nouveau.so,
-          libdrm_radeon.so, and libdrm.so<!--, and libkms.so-->
+          libdrm_amdgpu, libdrm_intel, libdrm_nouveau,
+          libdrm_radeon, and libdrm<!--, and libkms-->
         </seg>
         <seg>
            /usr/include/libdrm <!--,/usr/include/libkms,-->
@@ -180,77 +180,77 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libdrm_amdgpu">
-        <term><filename class="libraryfile">libdrm_amdgpu.so</filename></term>
+        <term><filename class="libraryfile">libdrm_amdgpu</filename></term>
         <listitem>
           <para>
             contains the AMDGPU specific Direct Rendering Manager functions
           </para>
           <indexterm zone="libdrm libdrm_amdgpu">
-            <primary sortas="c-libdrm_amdgpu">libdrm_amdgpu.so</primary>
+            <primary sortas="c-libdrm_amdgpu">libdrm_amdgpu</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libdrm_intel">
-        <term><filename class="libraryfile">libdrm_intel.so</filename></term>
+        <term><filename class="libraryfile">libdrm_intel</filename></term>
         <listitem>
           <para>
             contains the Intel specific Direct Rendering Manager
             functions
           </para>
           <indexterm zone="libdrm libdrm_intel">
-            <primary sortas="c-libdrm_intel">libdrm_intel.so</primary>
+            <primary sortas="c-libdrm_intel">libdrm_intel</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libdrm_nouveau">
-        <term><filename class="libraryfile">libdrm_nouveau.so</filename></term>
+        <term><filename class="libraryfile">libdrm_nouveau</filename></term>
         <listitem>
           <para>
             contains the open source nVidia (Nouveau) specific Direct
             Rendering Manager functions
           </para>
           <indexterm zone="libdrm libdrm_nouveau">
-            <primary sortas="c-libdrm_nouveau">libdrm_nouveau.so</primary>
+            <primary sortas="c-libdrm_nouveau">libdrm_nouveau</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libdrm_radeon">
-        <term><filename class="libraryfile">libdrm_radeon.so</filename></term>
+        <term><filename class="libraryfile">libdrm_radeon</filename></term>
         <listitem>
           <para>
             contains the AMD Radeon specific Direct Rendering Manager
             functions
           </para>
           <indexterm zone="libdrm libdrm_radeon">
-            <primary sortas="c-libdrm_radeon">libdrm_radeon.so</primary>
+            <primary sortas="c-libdrm_radeon">libdrm_radeon</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libdrm-lib">
-        <term><filename class="libraryfile">libdrm.so</filename></term>
+        <term><filename class="libraryfile">libdrm</filename></term>
         <listitem>
           <para>
             contains the Direct Rendering Manager API functions
           </para>
           <indexterm zone="libdrm libdrm-lib">
-            <primary sortas="c-libdrm">libdrm.so</primary>
+            <primary sortas="c-libdrm">libdrm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <!-- Removed in 2.4.111
       <varlistentry id="libkms">
-        <term><filename class="libraryfile">libkms.so</filename></term>
+        <term><filename class="libraryfile">libkms</filename></term>
         <listitem>
           <para>
             contains API functions for kernel mode setting abstraction
           </para>
           <indexterm zone="libdrm libkms">
-            <primary sortas="c-libkms">libkms.so</primary>
+            <primary sortas="c-libkms">libkms</primary>
           </indexterm>
         </listitem>
       </varlistentry>

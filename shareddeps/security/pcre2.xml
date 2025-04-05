@@ -167,10 +167,10 @@ ldconfig</userinput></screen>
           and pcre2test.
         </seg>
         <seg>
-          libpcre2-8.so,
-          libpcre2-16.so,
-          libpcre2-32.so,
-          and libpcre2-posix.so
+          libpcre2-8,
+          libpcre2-16,
+          libpcre2-32,
+          and libpcre2-posix
         </seg>
         <seg>
           /usr/share/doc/pcre2-&pcre2-version;

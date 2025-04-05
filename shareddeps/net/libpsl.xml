@@ -132,7 +132,7 @@ ldconfig</userinput></screen>
           psl
         </seg>
         <seg>
-          libpsl.so
+          libpsl
         </seg>
         <seg>
           None
@@ -158,13 +158,13 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libpsl-lib">
-        <term><filename class="libraryfile">libpsl.so</filename></term>
+        <term><filename class="libraryfile">libpsl</filename></term>
         <listitem>
           <para>
             contains a library used to access the Public Suffix List
           </para>
           <indexterm zone="libpsl libpsl-lib">
-            <primary sortas="c-libpsl">libpsl.so</primary>
+            <primary sortas="c-libpsl">libpsl</primary>
           </indexterm>
         </listitem>
       </varlistentry>

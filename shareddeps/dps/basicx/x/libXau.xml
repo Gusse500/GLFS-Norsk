@@ -113,7 +113,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>None</seg>
-        <seg>libXau.so</seg>
+        <seg>libXau</seg>
         <seg>None</seg>
       </seglistitem>
     </segmentedlist>
@@ -124,13 +124,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libXau-x7">
-        <term><filename class="libraryfile">libXau.so</filename></term>
+        <term><filename class="libraryfile">libXau</filename></term>
         <listitem>
           <para>
             is the library of X authority database routines
           </para>
           <indexterm zone="libXau libXau-x7">
-            <primary sortas="c-libXau">libXau.so</primary>
+            <primary sortas="c-libXau">libXau</primary>
           </indexterm>
         </listitem>
       </varlistentry>

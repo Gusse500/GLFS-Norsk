@@ -183,7 +183,7 @@ make</userinput></screen>
           python&python3-majorver;-config
         </seg>
         <seg>
-          libpython&python3-majorver;.so and libpython3.so
+          libpython&python3-majorver; and libpython3
         </seg>
         <seg>
           /usr/include/python&python3-majorver; and

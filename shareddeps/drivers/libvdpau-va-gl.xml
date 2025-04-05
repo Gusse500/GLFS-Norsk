@@ -149,7 +149,7 @@ echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh</userinput></screen>
             None
           </seg>
           <seg>
-            libvdpau_va_gl.so
+            libvdpau_va_gl
           </seg>
           <seg>
             None
@@ -163,14 +163,14 @@ echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh</userinput></screen>
         <?dbhtml list-presentation="table"?>
 
         <varlistentry id="libvdpau-va-gl-lib">
-          <term><filename class="libraryfile">libvdpau_va_gl.so</filename></term>
+          <term><filename class="libraryfile">libvdpau_va_gl</filename></term>
           <listitem>
             <para>
               contains functions to implement the OpenGL backend to
               the VDPAU (Video Decode and Presentation API for Unix) API
             </para>
             <indexterm zone="libvdpau-va-gl libvdpau-va-gl-lib">
-              <primary sortas="c-libvdpau-va-gl">libvdpau.so</primary>
+              <primary sortas="c-libvdpau-va-gl">libvdpau</primary>
             </indexterm>
           </listitem>
         </varlistentry>

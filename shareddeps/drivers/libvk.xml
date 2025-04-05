@@ -153,7 +153,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libvulkan.so
+          libvulkan
         </seg>
         <seg>
           /usr/lib/cmake/VulkanLoader
@@ -167,13 +167,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libvulkan">
-        <term><filename class="libraryfile">libvulkan.so</filename></term>
+        <term><filename class="libraryfile">libvulkan</filename></term>
         <listitem>
           <para>
             provides the Vulkan API and core support for graphics drivers
           </para>
           <indexterm zone="libvk libvulkan">
-            <primary sortas="c-libvulkan">libvulkan.so</primary>
+            <primary sortas="c-libvulkan">libvulkan</primary>
           </indexterm>
         </listitem>
       </varlistentry>

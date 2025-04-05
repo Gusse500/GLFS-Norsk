@@ -188,8 +188,8 @@ ldconfig</userinput></screen>
           makeconv, pkgdata, and uconv
         </seg>
         <seg>
-          libicudata.so, libicui18n.so, libicuio.so,
-          libicutest.so, libicutu.so, and libicuuc.so
+          libicudata, libicui18n, libicuio,
+          libicutest, libicutu, and libicuuc
         </seg>
         <seg>
           /usr/include/unicode,
@@ -413,97 +413,97 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libicudata">
-        <term><filename class="libraryfile">libicudata.so</filename></term>
+        <term><filename class="libraryfile">libicudata</filename></term>
         <listitem>
           <para>
             is the data library
           </para>
           <indexterm zone="icu libicudata">
-            <primary sortas="c-libicudata">libicudata.so</primary>
+            <primary sortas="c-libicudata">libicudata</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libicui18n">
-        <term><filename class="libraryfile">libicui18n.so</filename></term>
+        <term><filename class="libraryfile">libicui18n</filename></term>
         <listitem>
           <para>
             is the internationalization (i18n) library
           </para>
           <indexterm zone="icu libicui18n">
-            <primary sortas="c-libicui18n">libicui18n.so</primary>
+            <primary sortas="c-libicui18n">libicui18n</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libicuio">
-        <term><filename class="libraryfile">libicuio.so</filename></term>
+        <term><filename class="libraryfile">libicuio</filename></term>
         <listitem>
           <para>
             is the ICU I/O (unicode stdio) library
           </para>
           <indexterm zone="icu libicuio">
-            <primary sortas="c-libicuio">libicuio.so</primary>
+            <primary sortas="c-libicuio">libicuio</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
 <!--  <varlistentry id="libicule">
-        <term><filename class="libraryfile">libicule.so</filename></term>
+        <term><filename class="libraryfile">libicule</filename></term>
         <listitem>
           <para>
             is the layout engine.
           </para>
           <indexterm zone="icu libicule">
-            <primary sortas="c-libicule">libicule.so</primary>
+            <primary sortas="c-libicule">libicule</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libiculx">
-        <term><filename class="libraryfile">libiculx.so</filename></term>
+        <term><filename class="libraryfile">libiculx</filename></term>
         <listitem>
           <para>
             is the layout extensions engine.
           </para>
           <indexterm zone="icu libiculx">
-            <primary sortas="c-libiculx">libiculx.so</primary>
+            <primary sortas="c-libiculx">libiculx</primary>
           </indexterm>
         </listitem>
       </varlistentry>-->
 
       <varlistentry id="libicutest">
-        <term><filename class="libraryfile">libicutest.so</filename></term>
+        <term><filename class="libraryfile">libicutest</filename></term>
         <listitem>
           <para>
             is the test library
           </para>
           <indexterm zone="icu libicutest">
-            <primary sortas="c-libicutest">libicutest.so</primary>
+            <primary sortas="c-libicutest">libicutest</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libicutu">
-        <term><filename class="libraryfile">libicutu.so</filename></term>
+        <term><filename class="libraryfile">libicutu</filename></term>
         <listitem>
           <para>
             is the tool utility library
           </para>
           <indexterm zone="icu libicutu">
-            <primary sortas="c-libicutu">libicutu.so</primary>
+            <primary sortas="c-libicutu">libicutu</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libicuuc">
-        <term><filename class="libraryfile">libicuuc.so</filename></term>
+        <term><filename class="libraryfile">libicuuc</filename></term>
         <listitem>
           <para>
             is the common library
           </para>
           <indexterm zone="icu libicuuc">
-            <primary sortas="c-libicuuc">libicuuc.so</primary>
+            <primary sortas="c-libicuuc">libicuuc</primary>
           </indexterm>
         </listitem>
       </varlistentry>

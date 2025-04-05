@@ -238,8 +238,8 @@ ldconfig</userinput></screen>
           aserver
         </seg>
         <seg>
-          libasound.so and
-          libatopology.so
+          libasound and
+          libatopology
         </seg>
         <seg>
           /usr/include/alsa,
@@ -267,25 +267,25 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libasound">
-        <term><filename class="libraryfile">libasound.so</filename></term>
+        <term><filename class="libraryfile">libasound</filename></term>
         <listitem>
           <para>
             contains the ALSA API functions
           </para>
           <indexterm zone="alsa-lib libasound">
-            <primary sortas="c-libasound">libasound.so</primary>
+            <primary sortas="c-libasound">libasound</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libatopology">
-        <term><filename class="libraryfile">libatopology.so</filename></term>
+        <term><filename class="libraryfile">libatopology</filename></term>
         <listitem>
           <para>
             contains API functions for the ALSA topologies
           </para>
           <indexterm zone="alsa-lib libatopology">
-            <primary sortas="c-libatopology">libatopology.so</primary>
+            <primary sortas="c-libatopology">libatopology</primary>
           </indexterm>
         </listitem>
       </varlistentry>

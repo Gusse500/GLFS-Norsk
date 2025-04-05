@@ -249,7 +249,7 @@ ldconfig</userinput></screen>
           fc-query, fc-scan, and fc-validate
         </seg>
         <seg>
-          libfontconfig.so
+          libfontconfig
         </seg>
         <seg>
           /etc/fonts,
@@ -379,7 +379,7 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libfontconfig">
-        <term><filename class="libraryfile">libfontconfig.so</filename></term>
+        <term><filename class="libraryfile">libfontconfig</filename></term>
         <listitem>
           <para>
             contains functions used by the <application>Fontconfig</application>
@@ -387,7 +387,7 @@ ldconfig</userinput></screen>
             access
           </para>
           <indexterm zone="fontconfig libfontconfig">
-            <primary sortas="c-libfontconfig">libfontconfig.so</primary>
+            <primary sortas="c-libfontconfig">libfontconfig</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -91,12 +91,12 @@
 
     <sect2 role="installation">
       <title>Installation of libva</title>
-      <!-- libva*.so.2 have been around for a long time...
+      <!-- libva*.2 have been around for a long time...
       <caution>
         <para>
           If you are reinstalling this package, you will need
           to remove the older versions of the libraries.  These are in the
-          form of libva*.so.1 and any symbolic links pointing to them.  In
+          form of libva*.1 and any symbolic links pointing to them.  In
           addition, any packages that use these files need to be rebuilt.
         </para>
       </caution>
@@ -172,11 +172,11 @@ ldconfig</userinput></screen>
             None
           </seg>
           <seg>
-            libva-drm.so,
-            libva-glx.so,
-            libva.so,
-            libva-wayland.so, and
-            libva-x11.so
+            libva-drm,
+            libva-glx,
+            libva,
+            libva-wayland, and
+            libva-x11
           </seg>
           <seg>
             /usr/include/va
@@ -190,14 +190,14 @@ ldconfig</userinput></screen>
         <?dbhtml list-presentation="table"?>
 
         <varlistentry id="libva-lib">
-          <term><filename class="libraryfile">libva.so</filename></term>
+          <term><filename class="libraryfile">libva</filename></term>
           <listitem>
             <para>
               contains API functions which provide access to hardware
               accelerated video processing
             </para>
             <indexterm zone="libva libva-lib">
-              <primary sortas="c-libva">libva.so</primary>
+              <primary sortas="c-libva">libva</primary>
             </indexterm>
           </listitem>
         </varlistentry>

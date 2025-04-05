@@ -204,11 +204,11 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          amdgpu_dri.so,
-          amdvlkpro{64,32}.so,
-          libamdenc64.so,
-          libamfrt64.so, and
-          libGLX_amd.so
+          amdgpu_dri,
+          amdvlkpro{64,32},
+          libamdenc64,
+          libamfrt64, and
+          libGLX_amd
         </seg>
         <seg>
           /usr/share/doc/{libegl1-amdgpu-pro-oglp,libgl1-amdgpu-pro-oglp-glx,libgles2-amdgpu-pro-oglp,libgl1-amdgpu-pro-oglp-dri,libgles1-amdgpu-pro-oglp,vulkan-amdgpu-pro},
@@ -224,62 +224,62 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="amdgpu_dri">
-      <term><filename class="libraryfile">amdgpu_dri.so</filename></term>
+      <term><filename class="libraryfile">amdgpu_dri</filename></term>
         <listitem>
           <para>
             is the AMDGPU DRI driver
           </para>
           <indexterm zone="amdgpu-pro amdgpu_dri">
-            <primary sortas="c-amdgpu_dri">amdgpu_dri.so</primary>
+            <primary sortas="c-amdgpu_dri">amdgpu_dri</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="amdvlkpro">
-      <term><filename class="libraryfile">amdvlkpro{64,32}.so</filename></term>
+      <term><filename class="libraryfile">amdvlkpro{64,32}</filename></term>
         <listitem>
           <para>
             is the AMDGPU Vulkan driver
           </para>
           <indexterm zone="amdgpu-pro amdvlkpro">
-            <primary sortas="c-amdvlkpro">amdvlkpro{64,32}.so</primary>
+            <primary sortas="c-amdvlkpro">amdvlkpro{64,32}</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libamdenc64">
-      <term><filename class="libraryfile">libamdenc64.so</filename></term>
+      <term><filename class="libraryfile">libamdenc64</filename></term>
         <listitem>
           <para>
             handles encoding for AMDGPU cards
           </para>
           <indexterm zone="amdgpu-pro libamdenc64">
-            <primary sortas="c-libamdenc64">libamdenc64.so</primary>
+            <primary sortas="c-libamdenc64">libamdenc64</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libamfrt64">
-      <term><filename class="libraryfile">libamfrt64.so</filename></term>
+      <term><filename class="libraryfile">libamfrt64</filename></term>
         <listitem>
           <para>
             provides the Advanced Media Framework, allowing better multimedia
             processing on AMD GPUs
           </para>
           <indexterm zone="amdgpu-pro libamfrt64">
-            <primary sortas="c-libamfrt64">libamfrt64.so</primary>
+            <primary sortas="c-libamfrt64">libamfrt64</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGLX_amd">
-      <term><filename class="libraryfile">libGLX_amd.so</filename></term>
+      <term><filename class="libraryfile">libGLX_amd</filename></term>
         <listitem>
           <para>
             is the AMD version of GLX
           </para>
           <indexterm zone="amdgpu-pro libGLX_amd">
-            <primary sortas="c-libGLX_amd">libGLX_amd.so</primary>
+            <primary sortas="c-libGLX_amd">libGLX_amd</primary>
           </indexterm>
         </listitem>
       </varlistentry>

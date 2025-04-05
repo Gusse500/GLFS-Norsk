@@ -113,7 +113,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>None</seg>
-        <seg>libXdmcp.so</seg>
+        <seg>libXdmcp</seg>
         <seg>/usr/share/doc/libXdmcp-&libXdmcp-version;</seg>
       </seglistitem>
     </segmentedlist>
@@ -124,13 +124,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libXdmcp-x7">
-        <term><filename class="libraryfile">libXdmcp.so</filename></term>
+        <term><filename class="libraryfile">libXdmcp</filename></term>
         <listitem>
           <para>
             is the X Display Manager Control Protocol library
           </para>
           <indexterm zone="libXdmcp libXdmcp-x7">
-            <primary sortas="c-libXdmcp">libXdmcp.so</primary>
+            <primary sortas="c-libXdmcp">libXdmcp</primary>
           </indexterm>
         </listitem>
       </varlistentry>

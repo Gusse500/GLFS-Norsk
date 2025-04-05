@@ -284,7 +284,7 @@ EOF</userinput></screen>
           loginctl
         </seg>
         <seg>
-           libelogind.so
+          libelogind
         </seg>
         <seg>
           /usr/lib/elogind,
@@ -339,13 +339,13 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libelogind">
-        <term><filename class="libraryfile">libelogind.so</filename></term>
+        <term><filename class="libraryfile">libelogind</filename></term>
         <listitem>
           <para>
             is the main elogind utility library
           </para>
           <indexterm zone="elogind libelogind">
-            <primary sortas="c-libelogind">libelogind.so</primary>
+            <primary sortas="c-libelogind">libelogind</primary>
           </indexterm>
         </listitem>
       </varlistentry>

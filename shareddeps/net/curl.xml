@@ -218,7 +218,7 @@ ldconfig</userinput></screen>
            curl and curl-config
         </seg>
         <seg>
-           libcurl.so
+           libcurl
         </seg>
         <seg>
           /usr/include/curl and
@@ -258,14 +258,14 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libcurl">
-        <term><filename class="libraryfile">libcurl.so</filename></term>
+        <term><filename class="libraryfile">libcurl</filename></term>
         <listitem>
           <para>
             provides the API functions required by
             <command>curl</command> and other programs
           </para>
           <indexterm zone="curl libcurl">
-            <primary sortas="c-libcurl">libcurl.so</primary>
+            <primary sortas="c-libcurl">libcurl</primary>
           </indexterm>
         </listitem>
       </varlistentry>

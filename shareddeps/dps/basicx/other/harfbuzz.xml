@@ -176,10 +176,10 @@ ldconfig</userinput></screen>
           hb-subset
         </seg>
         <seg>
-          libharfbuzz.so,
-          libharfbuzz-gobject.so,
-          libharfbuzz-icu.so, and
-          libharfbuzz-subset.so
+          libharfbuzz,
+          libharfbuzz-gobject,
+          libharfbuzz-icu, and
+          libharfbuzz-subset
         </seg>
         <seg>
           /usr/include/harbuzz,
@@ -264,50 +264,50 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libharfbuzz">
-        <term><filename class="libraryfile">libharfbuzz.so</filename></term>
+        <term><filename class="libraryfile">libharfbuzz</filename></term>
         <listitem>
           <para>
             is the HarfBuzz text shaping library
           </para>
           <indexterm zone="harfbuzz libharfbuzz">
-            <primary sortas="c-libharfbuzz">libharfbuzz.so</primary>
+            <primary sortas="c-libharfbuzz">libharfbuzz</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libharfbuzz-gobject">
-        <term><filename class="libraryfile">libharfbuzz-gobject.so</filename></term>
+        <term><filename class="libraryfile">libharfbuzz-gobject</filename></term>
         <listitem>
           <para>
             provides GObject integration for the HarfBuzz text shaping library
           </para>
           <indexterm zone="harfbuzz libharfbuzz-gobject">
-            <primary sortas="c-libharfbuzz-gobject">libharfbuzz-gobject.so</primary>
+            <primary sortas="c-libharfbuzz-gobject">libharfbuzz-gobject</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libharfbuzz-icu">
-        <term><filename class="libraryfile">libharfbuzz-icu.so</filename></term>
+        <term><filename class="libraryfile">libharfbuzz-icu</filename></term>
         <listitem>
           <para>
             provides ICU integration for the HarfBuzz text shaping library
           </para>
           <indexterm zone="harfbuzz libharfbuzz-icu">
-            <primary sortas="c-libharfbuzz-icu">libharfbuzz-icu.so</primary>
+            <primary sortas="c-libharfbuzz-icu">libharfbuzz-icu</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libharfbuzz-subset">
-        <term><filename class="libraryfile">libharfbuzz-subset.so</filename></term>
+        <term><filename class="libraryfile">libharfbuzz-subset</filename></term>
         <listitem>
           <para>
             provides API functions for performing subsetting operations on font
             files
           </para>
           <indexterm zone="harfbuzz libharfbuzz-subset">
-            <primary sortas="c-libharfbuzz-subset">libharfbuzz-subset.so</primary>
+            <primary sortas="c-libharfbuzz-subset">libharfbuzz-subset</primary>
           </indexterm>
         </listitem>
       </varlistentry>

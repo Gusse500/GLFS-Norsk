@@ -324,16 +324,16 @@ done</userinput></screen>
           cxpm and sxpm
         </seg>
         <seg>
-          libfontenc.so, libFS.so, libICE.so,
-          libpciaccess.so, libSM.so, libX11.so, libX11-xcb, libXaw6.so,
-          libXaw7.so, libXaw.so, libXcomposite.so,
-          libXcursor.so, libXdamage.so, libXext.so,
-          libXfixes.so, libXfont2.so, libXft.so, libXinerama.so,
-          libXi.so, libxkbfile.so, libXmu.so, libXmuu.so,
-          libXpm.so, libXpresent.so, libXrandr.so, libXrender.so, libXRes.so,
-          libxshmfence.so, libXss.so, libXt.so, libXtst.so, libXvMC.so,
-          libXvMCW.so, libXv.so, libXxf86dga.so and
-          libXxf86vm.so
+          libfontenc, libFS, libICE,
+          libpciaccess, libSM, libX11, libX11-xcb, libXaw6,
+          libXaw7, libXaw, libXcomposite,
+          libXcursor, libXdamage, libXext,
+          libXfixes, libXfont2, libXft, libXinerama,
+          libXi, libxkbfile, libXmu, libXmuu,
+          libXpm, libXpresent, libXrandr, libXrender, libXRes,
+          libxshmfence, libXss, libXt, libXtst, libXvMC,
+          libXvMCW, libXv, libXxf86dga and
+          libXxf86vm
         </seg>
         <seg>
           /usr/include/X11/fonts,
@@ -389,423 +389,423 @@ done</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libfontenc">
-        <term><filename class="libraryfile">libfontenc.so</filename></term>
+        <term><filename class="libraryfile">libfontenc</filename></term>
         <listitem>
           <para>
             is the X11 font encoding library
           </para>
           <indexterm zone="xorg7-lib libfontenc">
-            <primary sortas="c-libfontenc">libfontenc.so</primary>
+            <primary sortas="c-libfontenc">libfontenc</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libFS">
-        <term><filename class="libraryfile">libFS.so</filename></term>
+        <term><filename class="libraryfile">libFS</filename></term>
         <listitem>
           <para>
             is the library interface to the X Font Server
           </para>
           <indexterm zone="xorg7-lib libFS">
-            <primary sortas="c-libFS">libFS.so</primary>
+            <primary sortas="c-libFS">libFS</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libICE">
-        <term><filename class="libraryfile">libICE.so</filename></term>
+        <term><filename class="libraryfile">libICE</filename></term>
         <listitem>
           <para>
             is the X Inter Client Exchange Library
           </para>
           <indexterm zone="xorg7-lib libICE">
-            <primary sortas="c-libICE">libICE.so</primary>
+            <primary sortas="c-libICE">libICE</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libpciaccess">
-        <term><filename class="libraryfile">libpciaccess.so</filename></term>
+        <term><filename class="libraryfile">libpciaccess</filename></term>
         <listitem>
           <para>
             is the generic PCI Access library for X
           </para>
           <indexterm zone="xorg7-lib libpciaccess">
-            <primary sortas="c-libpciaccess">libpciaccess.so</primary>
+            <primary sortas="c-libpciaccess">libpciaccess</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libSM">
-        <term><filename class="libraryfile">libSM.so</filename></term>
+        <term><filename class="libraryfile">libSM</filename></term>
         <listitem>
           <para>
             is the X Session Management Library
           </para>
           <indexterm zone="xorg7-lib libSM">
-            <primary sortas="c-libSM">libSM.so</primary>
+            <primary sortas="c-libSM">libSM</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libX11">
-        <term><filename class="libraryfile">libX11.so</filename></term>
+        <term><filename class="libraryfile">libX11</filename></term>
         <listitem>
           <para>
             is the Xlib Library
           </para>
           <indexterm zone="xorg7-lib libX11">
-            <primary sortas="c-libX11">libX11.so</primary>
+            <primary sortas="c-libX11">libX11</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXaw6">
-        <term><filename class="libraryfile">libXaw6.so</filename></term>
+        <term><filename class="libraryfile">libXaw6</filename></term>
         <listitem>
           <para>
             is the X Athena Widgets Library, version 6
           </para>
           <indexterm zone="xorg7-lib libXaw6">
-            <primary sortas="c-libXaw6">libXaw6.so</primary>
+            <primary sortas="c-libXaw6">libXaw6</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXaw7">
-        <term><filename class="libraryfile">libXaw7.so</filename></term>
+        <term><filename class="libraryfile">libXaw7</filename></term>
         <listitem>
           <para>
             is the X Athena Widgets Library, version 7
           </para>
           <indexterm zone="xorg7-lib libXaw7">
-            <primary sortas="c-libXaw7">libXaw7.so</primary>
+            <primary sortas="c-libXaw7">libXaw7</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXaw">
-        <term><filename class="libraryfile">libXaw.so</filename></term>
+        <term><filename class="libraryfile">libXaw</filename></term>
         <listitem>
           <para>
             are symbolic links to the current X Athena Widgets Library,
             version 7
           </para>
           <indexterm zone="xorg7-lib libXaw">
-            <primary sortas="c-libXaw">libXaw.so</primary>
+            <primary sortas="c-libXaw">libXaw</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXcomposite">
-        <term><filename class="libraryfile">libXcomposite.so</filename></term>
+        <term><filename class="libraryfile">libXcomposite</filename></term>
         <listitem>
           <para>
             is the X Composite Library
           </para>
           <indexterm zone="xorg7-lib libXcomposite">
-            <primary sortas="c-libXcomposite">libXcomposite.so</primary>
+            <primary sortas="c-libXcomposite">libXcomposite</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXcursor">
-        <term><filename class="libraryfile">libXcursor.so</filename></term>
+        <term><filename class="libraryfile">libXcursor</filename></term>
         <listitem>
           <para>
             is the X Cursor management library
           </para>
           <indexterm zone="xorg7-lib libXcursor">
-            <primary sortas="c-libXcursor">libXcursor.so</primary>
+            <primary sortas="c-libXcursor">libXcursor</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXdamage">
-        <term><filename class="libraryfile">libXdamage.so</filename></term>
+        <term><filename class="libraryfile">libXdamage</filename></term>
         <listitem>
           <para>
             is the X Damage Library
           </para>
           <indexterm zone="xorg7-lib libXdamage">
-            <primary sortas="c-libXdamage">libXdamage.so</primary>
+            <primary sortas="c-libXdamage">libXdamage</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXext">
-        <term><filename class="libraryfile">libXext.so</filename></term>
+        <term><filename class="libraryfile">libXext</filename></term>
         <listitem>
           <para>
             is the Misc X Extension Library
           </para>
           <indexterm zone="xorg7-lib libXext">
-            <primary sortas="c-libXext">libXext.so</primary>
+            <primary sortas="c-libXext">libXext</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXfixes">
-        <term><filename class="libraryfile">libXfixes.so</filename></term>
+        <term><filename class="libraryfile">libXfixes</filename></term>
         <listitem>
           <para>
             provides augmented versions of core protocol requests
           </para>
           <indexterm zone="xorg7-lib libXfixes">
-            <primary sortas="c-libXfixes">libXfixes.so</primary>
+            <primary sortas="c-libXfixes">libXfixes</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXfont2">
-        <term><filename class="libraryfile">libXfont2.so</filename></term>
+        <term><filename class="libraryfile">libXfont2</filename></term>
         <listitem>
           <para>
             is the X font library
           </para>
           <indexterm zone="xorg7-lib libXfont2">
-            <primary sortas="c-libXfont2">libXfont2.so</primary>
+            <primary sortas="c-libXfont2">libXfont2</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXft">
-        <term><filename class="libraryfile">libXft.so</filename></term>
+        <term><filename class="libraryfile">libXft</filename></term>
         <listitem>
           <para>
             is the X FreeType interface library
           </para>
           <indexterm zone="xorg7-lib libXft">
-            <primary sortas="c-libXft">libXft.so</primary>
+            <primary sortas="c-libXft">libXft</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXinerama">
-        <term><filename class="libraryfile">libXinerama.so</filename></term>
+        <term><filename class="libraryfile">libXinerama</filename></term>
         <listitem>
           <para>
             is the Xinerama Library
           </para>
           <indexterm zone="xorg7-lib libXinerama">
-            <primary sortas="c-libXinerama">libXinerama.so</primary>
+            <primary sortas="c-libXinerama">libXinerama</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXi">
-        <term><filename class="libraryfile">libXi.so</filename></term>
+        <term><filename class="libraryfile">libXi</filename></term>
         <listitem>
           <para>
             is the X Input Extension Library
           </para>
           <indexterm zone="xorg7-lib libXi">
-            <primary sortas="c-libXi">libXi.so</primary>
+            <primary sortas="c-libXi">libXi</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libxkbfile">
-        <term><filename class="libraryfile">libxkbfile.so</filename></term>
+        <term><filename class="libraryfile">libxkbfile</filename></term>
         <listitem>
           <para>
             is the xkbfile Library
           </para>
           <indexterm zone="xorg7-lib libxkbfile">
-            <primary sortas="c-libxkbfile">libxkbfile.so</primary>
+            <primary sortas="c-libxkbfile">libxkbfile</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXmu">
-        <term><filename class="libraryfile">libXmu.so</filename></term>
+        <term><filename class="libraryfile">libXmu</filename></term>
         <listitem>
           <para>
             is the X interface library for miscellaneous utilities not
             part of the Xlib standard
           </para>
           <indexterm zone="xorg7-lib libXmu">
-            <primary sortas="c-libXmu">libXmu.so</primary>
+            <primary sortas="c-libXmu">libXmu</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXmuu">
-        <term><filename class="libraryfile">libXmuu.so</filename></term>
+        <term><filename class="libraryfile">libXmuu</filename></term>
         <listitem>
           <para>
             is the Mini Xmu Library
           </para>
           <indexterm zone="xorg7-lib libXmuu">
-            <primary sortas="c-libXmuu">libXmuu.so</primary>
+            <primary sortas="c-libXmuu">libXmuu</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXpm">
-        <term><filename class="libraryfile">libXpm.so</filename></term>
+        <term><filename class="libraryfile">libXpm</filename></term>
         <listitem>
           <para>
             is the X Pixmap Library
           </para>
           <indexterm zone="xorg7-lib libXpm">
-            <primary sortas="c-libXpm">libXpm.so</primary>
+            <primary sortas="c-libXpm">libXpm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXpresent">
-        <term><filename class="libraryfile">libXpresent.so</filename></term>
+        <term><filename class="libraryfile">libXpresent</filename></term>
         <listitem>
           <para>
             is the library interface to the X Present Extension
           </para>
           <indexterm zone="xorg7-lib libXpresent">
-            <primary sortas="c-libXpresent">libXpresent.so</primary>
+            <primary sortas="c-libXpresent">libXpresent</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXrandr">
-        <term><filename class="libraryfile">libXrandr.so</filename></term>
+        <term><filename class="libraryfile">libXrandr</filename></term>
         <listitem>
           <para>
             is the X Resize, Rotate and Reflection extension library
           </para>
           <indexterm zone="xorg7-lib libXrandr">
-            <primary sortas="c-libXrandr">libXrandr.so</primary>
+            <primary sortas="c-libXrandr">libXrandr</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXrender">
-        <term><filename class="libraryfile">libXrender.so</filename></term>
+        <term><filename class="libraryfile">libXrender</filename></term>
         <listitem>
           <para>
             is the X Render Library
           </para>
           <indexterm zone="xorg7-lib libXrender">
-            <primary sortas="c-libXrender">libXrender.so</primary>
+            <primary sortas="c-libXrender">libXrender</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXRes">
-        <term><filename class="libraryfile">libXRes.so</filename></term>
+        <term><filename class="libraryfile">libXRes</filename></term>
         <listitem>
           <para>
             is the X-Resource extension client library
           </para>
           <indexterm zone="xorg7-lib libXRes">
-            <primary sortas="c-libXRes">libXRes.so</primary>
+            <primary sortas="c-libXRes">libXRes</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libxshmfence">
-        <term><filename class="libraryfile">libxshmfence.so</filename></term>
+        <term><filename class="libraryfile">libxshmfence</filename></term>
         <listitem>
           <para>
             exposes an event API on top of Linux futexes
           </para>
           <indexterm zone="xorg7-lib libxshmfence">
-            <primary sortas="c-libxshmfence">libxshmfence.so</primary>
+            <primary sortas="c-libxshmfence">libxshmfence</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXss">
-        <term><filename class="libraryfile">libXss.so</filename></term>
+        <term><filename class="libraryfile">libXss</filename></term>
         <listitem>
           <para>
             is the X11 Screen Saver extension client library
           </para>
           <indexterm zone="xorg7-lib libXss">
-            <primary sortas="c-libXss">libXss.so</primary>
+            <primary sortas="c-libXss">libXss</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXt">
-        <term><filename class="libraryfile">libXt.so</filename></term>
+        <term><filename class="libraryfile">libXt</filename></term>
         <listitem>
           <para>
             is the X Toolkit Library
           </para>
           <indexterm zone="xorg7-lib libXt">
-            <primary sortas="c-libXt">libXt.so</primary>
+            <primary sortas="c-libXt">libXt</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXtst">
-        <term><filename class="libraryfile">libXtst.so</filename></term>
+        <term><filename class="libraryfile">libXtst</filename></term>
         <listitem>
           <para>
             is the Xtst Library
           </para>
           <indexterm zone="xorg7-lib libXtst">
-            <primary sortas="c-libXtst">libXtst.so</primary>
+            <primary sortas="c-libXtst">libXtst</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXvMC">
-        <term><filename class="libraryfile">libXvMC.so</filename></term>
+        <term><filename class="libraryfile">libXvMC</filename></term>
         <listitem>
           <para>
             is the X-Video Motion Compensation Library
           </para>
           <indexterm zone="xorg7-lib libXvMC">
-            <primary sortas="c-libXvMC">libXvMC.so</primary>
+            <primary sortas="c-libXvMC">libXvMC</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXvMCW">
-        <term><filename class="libraryfile">libXvMCW.so</filename></term>
+        <term><filename class="libraryfile">libXvMCW</filename></term>
         <listitem>
           <para>
             is the XvMC Wrapper including the Nonstandard VLD extension
           </para>
           <indexterm zone="xorg7-lib libXvMCW">
-            <primary sortas="c-libXvMCW">libXvMCW.so</primary>
+            <primary sortas="c-libXvMCW">libXvMCW</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXv">
-        <term><filename class="libraryfile">libXv.so</filename></term>
+        <term><filename class="libraryfile">libXv</filename></term>
         <listitem>
           <para>
             is the X Window System video extension library
           </para>
           <indexterm zone="xorg7-lib libXv">
-            <primary sortas="c-libXv">libXv.so</primary>
+            <primary sortas="c-libXv">libXv</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXxf86dga">
-        <term><filename class="libraryfile">libXxf86dga.so</filename></term>
+        <term><filename class="libraryfile">libXxf86dga</filename></term>
         <listitem>
           <para>
             is the client library for the XFree86-DGA extension
           </para>
           <indexterm zone="xorg7-lib libXxf86dga">
-            <primary sortas="c-libXxf86dga">libXxf86dga.so</primary>
+            <primary sortas="c-libXxf86dga">libXxf86dga</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libXxf86vm">
-        <term><filename class="libraryfile">libXxf86vm.so</filename></term>
+        <term><filename class="libraryfile">libXxf86vm</filename></term>
         <listitem>
           <para>
             is the client library for the XFree86-VidMode X extension
           </para>
           <indexterm zone="xorg7-lib libXxf86vm">
-            <primary sortas="c-libXxf86vm">libXxf86vm.so</primary>
+            <primary sortas="c-libXxf86vm">libXxf86vm</primary>
           </indexterm>
         </listitem>
       </varlistentry>

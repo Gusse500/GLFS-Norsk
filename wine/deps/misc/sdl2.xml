@@ -206,7 +206,7 @@ make</userinput></screen>
 
       <seglistitem>
         <seg>sdl2-config</seg>
-        <seg>libSDL2.so</seg>
+        <seg>libSDL2</seg>
         <seg>/usr/include/SDL2 and
              /usr/lib/cmake/SDL2</seg>
       </seglistitem>
@@ -232,7 +232,7 @@ make</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libsdl2">
-        <term><filename class="libraryfile">libSDL2.so</filename></term>
+        <term><filename class="libraryfile">libSDL2</filename></term>
         <listitem>
           <para>
             contains functions that provide low level access to audio,
@@ -240,7 +240,7 @@ make</userinput></screen>
             2D frame buffer across multiple platforms
           </para>
           <indexterm zone="sdl2 libsdl2">
-            <primary sortas="c-libsdl2">libSDL2.so</primary>
+            <primary sortas="c-libsdl2">libSDL2</primary>
           </indexterm>
         </listitem>
       </varlistentry>

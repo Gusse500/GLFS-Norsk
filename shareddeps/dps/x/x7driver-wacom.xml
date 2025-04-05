@@ -113,7 +113,7 @@ make</userinput></screen>
             isdv4-serial-debugger, isdv4-serial-inputattach, and xsetwacom
           </seg>
           <seg>
-            wacom_drv.so
+            wacom_drv
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -137,13 +137,13 @@ make</userinput></screen>
         </varlistentry>
 
         <varlistentry id="wacom_drv">
-          <term><filename class="libraryfile">wacom_drv.so</filename></term>
+          <term><filename class="libraryfile">wacom_drv</filename></term>
           <listitem>
             <para>
               is an Xorg input driver for Wacom devices
             </para>
             <indexterm zone="xorg-wacom-driver wacom_drv">
-              <primary sortas="c-wacom_drv">wacom_drv.so</primary>
+              <primary sortas="c-wacom_drv">wacom_drv</primary>
             </indexterm>
           </listitem>
         </varlistentry>

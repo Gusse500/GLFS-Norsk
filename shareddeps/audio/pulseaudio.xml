@@ -249,7 +249,7 @@ ldconfig</userinput></screen>
 
 <screen role="root"><userinput>sed -i '/load-module module-console-kit/s/^/#/' /etc/pulse/default.pa</userinput></screen>
 
-       In 13.0 this is protected via .ifexists module-console-kit.so
+       In 13.0 this is protected via .ifexists module-console-kit
 -->
       <para>
         You may have to configure the audio system. You can start
@@ -317,12 +317,12 @@ ldconfig</userinput></screen>
           start-pulseaudio-x11
         </seg>
         <seg>
-          libpulse.so,
-          libpulse-mainloop-glib.so,
-          libpulse-simple.so,
-          libpulsecommon-&pulseaudio-major-version;.so,
-          libpulsecore-&pulseaudio-major-version;.so, and
-          libpulsedsp.so
+          libpulse,
+          libpulse-mainloop-glib,
+          libpulse-simple,
+          libpulsecommon-&pulseaudio-major-version;,
+          libpulsecore-&pulseaudio-major-version;, and
+          libpulsedsp
         </seg>
         <seg>
           /etc/pulse,

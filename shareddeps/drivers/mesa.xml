@@ -167,7 +167,7 @@
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://archive.mesa3d.org/demos/">mesa-demos</ulink>
       (provides more than 300 demos to test <application>Mesa</application>),
-      <ulink url="https://omxil.sourceforge.net/">Bellagio OpenMAX Integration
+      <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile platforms), and
       <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
       libtizonia</ulink>
@@ -524,7 +524,7 @@ ldconfig</userinput></screen>
       <segtitle>Installed Libraries</segtitle><!-- in /usr/lib -->
       <segtitle>Installed DRI Driver Stubs</segtitle><!-- in /usr/lib/dri -->
       <segtitle>Installed VA-API Drivers</segtitle><!-- in /usr/lib/dri -->
-      <segtitle>Installed GBM Backends</segtitle><!-- in /usr/lib/gbm -->
+      <segtitle>Installed GBM Drivers</segtitle><!-- in /usr/lib/gbm -->
       <segtitle>Installed VDPAU Drivers</segtitle><!-- in /usr/lib/vdpau -->
       <segtitle>Installed Vulkan Drivers</segtitle><!-- in /usr/lib -->
       <segtitle>Installed Directories</segtitle>
@@ -534,63 +534,63 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libEGL.so,
-          libGL.so,
-          libGLESv1_CM.so,
-          libGLESv2.so,
-          libgallium-&mesa-version;.so,
-          libgbm.so,
-          libglapi.so,
-          libGLX_mesa.so,
-          libOSMesa.so, and
-          libxatracker.so
+          libEGL,
+          libGL,
+          libGLESv1_CM,
+          libGLESv2,
+          libgallium-&mesa-version;,
+          libgbm,
+          libglapi,
+          libGLX_mesa,
+          libOSMesa, and
+          libxatracker
         </seg>
         <seg>
           <!-- Begin DRI Driver Stubs -->
-          libdril_dri.so and symlinks to it:
-          crocus_dri.so,
-          i915_dri.so,
-          iris_dri.so,
-          kms_swrast_dri.so,
-          nouveau_dri.so,
-          r300_dri.so,
-          r600_dri.so,
-          r600_drv_video.so,
-          radeonsi_dri.so,
-          swrast_dri.so,
-          virtio_gpu_dri.so,
-          vmwgfx_dri.so, and
-          zink_dri.so
+          libdril_dri and symlinks to it:
+          crocus_dri,
+          i915_dri,
+          iris_dri,
+          kms_swrast_dri,
+          nouveau_dri,
+          r300_dri,
+          r600_dri,
+          r600_drv_video,
+          radeonsi_dri,
+          swrast_dri,
+          virtio_gpu_dri,
+          vmwgfx_dri, and
+          zink_dri
           <!-- End DRI Driver Stubs -->
         </seg>
         <seg>
           <!-- Begin VA-API Drivers -->
-          nouveau_drv_video.so,
-          radeonsi_drv_video.so, and
-          virtio_gpu_drv_video.so
+          nouveau_drv_video,
+          radeonsi_drv_video, and
+          virtio_gpu_drv_video
           <!-- End VA-API Drivers -->
         </seg>
         <seg>
-          <!-- Begin GBM backends -->
-          dri_gbm.so
-          <!-- End GBM backends -->
+          <!-- Begin GBM drivers -->
+          dri_gbm
+          <!-- End GBM drivers -->
         </seg>
         <seg>
           <!-- Begin VDPAU Drivers -->
-          libvdpau_nouveau.so,
-          libvdpau_r300.so,
-          libvdpau_r600.so,
-          libvdpau_radeonsi.so, and
-          libvdpau_virtio_gpu.so
+          libvdpau_nouveau,
+          libvdpau_r300,
+          libvdpau_r600,
+          libvdpau_radeonsi, and
+          libvdpau_virtio_gpu
           (many of these drivers are hard-linked)
           <!-- End VDPAU Drivers -->
         </seg>
         <seg>
-          libvulkan_intel_hasvk.so,
-          libvulkan_intel.so,
-          libvulkan_lvp.so,
-          libvulkan_nouveau.so, and
-          libvulkan_radeon.so
+          libvulkan_intel_hasvk,
+          libvulkan_intel,
+          libvulkan_lvp,
+          libvulkan_nouveau, and
+          libvulkan_radeon
         </seg>
         <seg>
           <!-- /usr/include/GL is installed by xorg-protos -->
@@ -611,7 +611,7 @@ ldconfig</userinput></screen>
 
       
       <varlistentry id="dri_gbm">
-        <term><filename class='libraryfile'>dri_gbm.so</filename></term>
+        <term><filename class='libraryfile'>dri_gbm</filename></term>
         <listitem>
           <para>
             implements Graphics Buffer Management functions needed by
@@ -622,7 +622,7 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libdril_dri">
-        <term><filename class='libraryfile'>libdril_dri.so</filename></term>
+        <term><filename class='libraryfile'>libdril_dri</filename></term>
         <listitem>
           <para>
             is a stub allowing Xorg server to co-operate with the Gallium3D
@@ -632,20 +632,20 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libEGL">
-        <term><filename class="libraryfile">libEGL.so</filename></term>
+        <term><filename class="libraryfile">libEGL</filename></term>
         <listitem>
           <para>
             provides a native platform graphics interface as
             defined by the EGL-1.4 specification
           </para>
           <indexterm zone="mesa libEGL">
-            <primary sortas="c-libGL">libEGL.so</primary>
+            <primary sortas="c-libGL">libEGL</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgallium">
-        <term><filename class='libraryfile'>libgallium-&mesa-version;.so</filename></term>
+        <term><filename class='libraryfile'>libgallium-&mesa-version;</filename></term>
         <listitem>
           <para>
             contains all the Gallium3D drivers
@@ -654,69 +654,69 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libgbm">
-        <term><filename class="libraryfile">libgbm.so</filename></term>
+        <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
             is the <application>Mesa</application> Graphics Buffer
             Manager library
           </para>
           <indexterm zone="mesa libgbm">
-            <primary sortas="c-libgbm">libgbm.so</primary>
+            <primary sortas="c-libgbm">libgbm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libglapi">
-        <term><filename class="libraryfile">libglapi.so</filename></term>
+        <term><filename class="libraryfile">libglapi</filename></term>
         <listitem>
           <para>
             is the <application>Mesa</application> implementation of the OpenGL
             API
           </para>
           <indexterm zone="mesa libglapi">
-            <primary sortas="c-libglapi">libglapi.so</primary>
+            <primary sortas="c-libglapi">libglapi</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGLESv1_CM">
-        <term><filename class="libraryfile">libGLESv1_CM.so</filename></term>
+        <term><filename class="libraryfile">libGLESv1_CM</filename></term>
         <listitem>
           <para>
             is the <application>Mesa</application> OpenGL ES 1.1 library
           </para>
           <indexterm zone="mesa libGLESv1_CM">
-            <primary sortas="c-libGLESv1_CM">libGLESv1_CM.so</primary>
+            <primary sortas="c-libGLESv1_CM">libGLESv1_CM</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGLES2">
-        <term><filename class="libraryfile">libGLES2.so</filename></term>
+        <term><filename class="libraryfile">libGLES2</filename></term>
         <listitem>
           <para>
             is the <application>Mesa</application> OpenGL ES 2.0 library
           </para>
           <indexterm zone="mesa libGLES2">
-            <primary sortas="c-libGLES2">libGLES2.so</primary>
+            <primary sortas="c-libGLES2">libGLES2</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libGL">
-        <term><filename class="libraryfile">libGL.so</filename></term>
+        <term><filename class="libraryfile">libGL</filename></term>
         <listitem>
           <para>
             is the main <application>Mesa</application> OpenGL library
           </para>
           <indexterm zone="mesa libGL">
-            <primary sortas="c-libGL">libGL.so</primary>
+            <primary sortas="c-libGL">libGL</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libOSMesa">
-        <term><filename class="libraryfile">libOSMesa.so</filename></term>
+        <term><filename class="libraryfile">libOSMesa</filename></term>
         <listitem>
           <para>
             allows applications to render into user-allocated memory
@@ -724,19 +724,19 @@ ldconfig</userinput></screen>
             off-screen rendering
           </para>
           <indexterm zone="mesa libOSMesa">
-            <primary sortas="c-libOSMesa">libOSMesa.so</primary>
+            <primary sortas="c-libOSMesa">libOSMesa</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libxatracker">
-        <term><filename class="libraryfile">libxatracker.so</filename></term>
+        <term><filename class="libraryfile">libxatracker</filename></term>
         <listitem>
           <para>
             is the XA state tracker for the VMWare vmwgfx driver
           </para>
           <indexterm zone="mesa libxatracker">
-            <primary sortas="c-libxatracker">libxatracker.so</primary>
+            <primary sortas="c-libxatracker">libxatracker</primary>
           </indexterm>
         </listitem>
       </varlistentry>

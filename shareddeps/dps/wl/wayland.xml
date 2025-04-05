@@ -147,10 +147,10 @@ ldconfig</userinput></screen>
           wayland-scanner
         </seg>
         <seg>
-          libwayland-client.so,
-          libwayland-cursor.so,
-          libwayland-egl.so,
-          and libwayland-server.so
+          libwayland-client,
+          libwayland-cursor,
+          libwayland-egl,
+          and libwayland-server
         </seg>
         <seg>
           /usr/share/wayland
@@ -177,53 +177,53 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libwayland-client">
-        <term><filename class="libraryfile">libwayland-client.so</filename></term>
+        <term><filename class="libraryfile">libwayland-client</filename></term>
         <listitem>
           <para>
             contains API functions for writing <application>Wayland</application>
             applications
           </para>
           <indexterm zone="wayland libwayland-client">
-            <primary sortas="c-libwayland-client">libwayland-client.so</primary>
+            <primary sortas="c-libwayland-client">libwayland-client</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libwayland-cursor">
-        <term><filename class="libraryfile">libwayland-cursor.so</filename></term>
+        <term><filename class="libraryfile">libwayland-cursor</filename></term>
         <listitem>
           <para>
             contains API functions for managing cursors in <application>Wayland</application>
             applications
           </para>
           <indexterm zone="wayland libwayland-cursor">
-            <primary sortas="c-libwayland-cursor">libwayland-cursor.so</primary>
+            <primary sortas="c-libwayland-cursor">libwayland-cursor</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libwayland-egl">
-        <term><filename class="libraryfile">libwayland-egl.so</filename></term>
+        <term><filename class="libraryfile">libwayland-egl</filename></term>
         <listitem>
           <para>
             contains API functions for handling OpenGL calls in
             <application>Wayland</application> applications
           </para>
           <indexterm zone="wayland libwayland-egl">
-            <primary sortas="c-libwayland-egl">libwayland-egl.so</primary>
+            <primary sortas="c-libwayland-egl">libwayland-egl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libwayland-server">
-        <term><filename class="libraryfile">libwayland-server.so</filename></term>
+        <term><filename class="libraryfile">libwayland-server</filename></term>
         <listitem>
           <para>
             contains API functions for writing <application>Wayland</application>
             compositors
           </para>
           <indexterm zone="wayland libwayland-server">
-            <primary sortas="c-libwayland-server">libwayland-server.so</primary>
+            <primary sortas="c-libwayland-server">libwayland-server</primary>
           </indexterm>
         </listitem>
       </varlistentry>

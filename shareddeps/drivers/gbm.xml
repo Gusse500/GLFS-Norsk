@@ -92,7 +92,7 @@
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://archive.mesa3d.org/demos/">mesa-demos</ulink>
       (provides more than 300 demos to test drivers),
-      <ulink url="https://omxil.sourceforge.net/">Bellagio OpenMAX Integration
+      <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile platforms), and
       <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
       libtizonia</ulink>
@@ -223,7 +223,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D gbm=enabled</parameter>: This parameter forces <filename
-      class="libraryfile">libgbm.so</filename> to be built.
+      class="libraryfile">libgbm</filename> to be built.
     </para>
 
     <para>
@@ -270,7 +270,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libgbm.so
+          libgbm
         </seg>
         <seg>
           /usr/share/drirc.d (contains workarounds for various applications,
@@ -285,13 +285,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libgbm-gbm">
-        <term><filename class="libraryfile">libgbm.so</filename></term>
+        <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
             is the Graphics Buffer Manager library
           </para>
           <indexterm zone="gbm libgbm-gbm">
-            <primary sortas="c-libgbm-gbm">libgbm.so</primary>
+            <primary sortas="c-libgbm-gbm">libgbm</primary>
           </indexterm>
         </listitem>
       </varlistentry>

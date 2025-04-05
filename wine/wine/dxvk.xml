@@ -243,11 +243,11 @@ done</userinput></screen>
           None
         </seg>
         <seg>
-          d3d10core.dll,
-          d3d11.dll,
-          d3d8.dll,
-          d3d9.dll, and
-          dxgi.dll
+          d3d10core,
+          d3d11,
+          d3d8,
+          d3d9, and
+          dxgi (all DLLs)
         </seg>
         <seg>
           /usr/lib/dxvk/{win32,win64}
@@ -261,61 +261,61 @@ done</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="d3d10core">
-        <term><filename class="libraryfile">d3d10core.dll</filename></term>
+        <term><filename class="libraryfile">d3d10core</filename></term>
         <listitem>
           <para>
             converts Direct3D 10 calls to Vulkan
           </para>
           <indexterm zone="dxvk d3d10core">
-            <primary sortas="c-d3d10core">d3d10core.dll</primary>
+            <primary sortas="c-d3d10core">d3d10core</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="d3d11">
-        <term><filename class="libraryfile">d3d11.dll</filename></term>
+        <term><filename class="libraryfile">d3d11</filename></term>
         <listitem>
           <para>
             converts Direct3D 11 calls to Vulkan
           </para>
           <indexterm zone="dxvk d3d11">
-            <primary sortas="c-d3d11">d3d11.dll</primary>
+            <primary sortas="c-d3d11">d3d11</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="d3d8">
-        <term><filename class="libraryfile">d3d8.dll</filename></term>
+        <term><filename class="libraryfile">d3d8</filename></term>
         <listitem>
           <para>
             converts Direct3D 8 calls to Vulkan
           </para>
           <indexterm zone="dxvk d3d8">
-            <primary sortas="c-d3d8">d3d8.dll</primary>
+            <primary sortas="c-d3d8">d3d8</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="d3d9">
-        <term><filename class="libraryfile">d3d9.dll</filename></term>
+        <term><filename class="libraryfile">d3d9</filename></term>
         <listitem>
           <para>
             converts Direct3D 9 calls to Vulkan
           </para>
           <indexterm zone="dxvk d3d9">
-            <primary sortas="c-d3d9">d3d9.dll</primary>
+            <primary sortas="c-d3d9">d3d9</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="dxgi">
-        <term><filename class="libraryfile">dxgi.dll</filename></term>
+        <term><filename class="libraryfile">dxgi</filename></term>
         <listitem>
           <para>
             handles the Direct3D Graphics Infrastructure
           </para>
           <indexterm zone="dxvk dxgi">
-            <primary sortas="c-dxgi">dxgi.dll</primary>
+            <primary sortas="c-dxgi">dxgi</primary>
           </indexterm>
         </listitem>
       </varlistentry>

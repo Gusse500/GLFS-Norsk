@@ -89,7 +89,7 @@ ninja</userinput></screen>
           None
         </seg>
         <seg>
-          libpixman-1.so
+          libpixman-1
         </seg>
         <seg>
           /usr/include/pixman-1
@@ -103,14 +103,14 @@ ninja</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libpixman">
-        <term><filename class="libraryfile">libpixman-1.so</filename></term>
+        <term><filename class="libraryfile">libpixman-1</filename></term>
         <listitem>
           <para>
             contains functions that provide low-level pixel manipulation
             features
           </para>
           <indexterm zone="pixman libpixman">
-            <primary sortas="c-libpixman">libpixman-1.so</primary>
+            <primary sortas="c-libpixman">libpixman-1</primary>
           </indexterm>
         </listitem>
       </varlistentry>

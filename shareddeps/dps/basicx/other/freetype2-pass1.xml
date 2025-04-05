@@ -200,7 +200,7 @@ ldconfig</userinput></screen>
           freetype-config
         </seg>
         <seg>
-          libfreetype.so
+          libfreetype
         </seg>
         <seg>
           /usr/include/freetype2 and
@@ -228,14 +228,14 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libfreetype-pass1">
-        <term><filename class="libraryfile">libfreetype.so</filename></term>
+        <term><filename class="libraryfile">libfreetype</filename></term>
         <listitem>
           <para>
             contains functions for rendering various font types, such
             as TrueType and Type1
           </para>
           <indexterm zone="freetype2-pass1 libfreetype-pass1">
-            <primary sortas="c-libfreetype-pass1">libfreetype.so</primary>
+            <primary sortas="c-libfreetype-pass1">libfreetype</primary>
           </indexterm>
         </listitem>
       </varlistentry>

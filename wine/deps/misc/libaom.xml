@@ -154,7 +154,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libaom.so
+          libaom
         </seg>
         <seg>
           /usr/include/aom
@@ -168,14 +168,14 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libaom-lib">
-        <term><filename class="libraryfile">libaom.so</filename></term>
+        <term><filename class="libraryfile">libaom</filename></term>
         <listitem>
           <para>
             contains functions that provide a reference implementation of the
             AV1 codec
           </para>
           <indexterm zone="libaom libaom-lib">
-            <primary sortas="c-libaom">libaom.so</primary>
+            <primary sortas="c-libaom">libaom</primary>
           </indexterm>
         </listitem>
       </varlistentry>

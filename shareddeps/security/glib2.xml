@@ -312,12 +312,12 @@ ldconfig</userinput></screen>
           gtester, and            gtester-report
         </seg>
         <seg>
-          libgio-2.0.so,
-          libgirepository-2.0.so,
-          libglib-2.0.so,
-          libgmodule-2.0.so,
-          libgobject-2.0.so, and
-          libgthread-2.0.so
+          libgio-2.0,
+          libgirepository-2.0,
+          libglib-2.0,
+          libgmodule-2.0,
+          libgobject-2.0, and
+          libgthread-2.0
         </seg>
         <seg>
           /usr/include/gio-unix-2.0,
@@ -344,8 +344,8 @@ ldconfig</userinput></screen>
           g-ir-generate, g-ir-inspect, and g-ir-scanner
         </seg>
         <seg>
-          libgirepository-1.0.so and
-          _giscanner.&python3-lib-suffix;.so
+          libgirepository-1.0 and
+          _giscanner.&python3-lib-suffix;
         </seg>
         <seg>
           /usr/include/gobject-introspection-1.0,
@@ -590,7 +590,7 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libgio">
-        <term><filename class='libraryfile'>libgio-2.0.so</filename></term>
+        <term><filename class='libraryfile'>libgio-2.0</filename></term>
         <listitem>
           <para>
             is a library providing useful classes for general purpose I/O,
@@ -598,26 +598,26 @@ ldconfig</userinput></screen>
             functionality
           </para>
           <indexterm zone="glib2 libgio">
-            <primary sortas="c-libgio">libgio-2.0.so</primary>
+            <primary sortas="c-libgio">libgio-2.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgirepository">
-        <term><filename class='libraryfile'>libgirepository-2.0.so</filename></term>
+        <term><filename class='libraryfile'>libgirepository-2.0</filename></term>
         <listitem>
           <para>
             is a library providing access to typelibs and introspection data
             which describes C APIs
           </para>
           <indexterm zone="glib2 libgirepository">
-            <primary sortas="c-libgirepository2">libgirepository-2.0.so</primary>
+            <primary sortas="c-libgirepository2">libgirepository-2.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libglib">
-        <term><filename class='libraryfile'>libglib-2.0.so</filename></term>
+        <term><filename class='libraryfile'>libglib-2.0</filename></term>
         <listitem>
           <para>
             is a general-purpose, portable utility library, which provides
@@ -625,37 +625,37 @@ ldconfig</userinput></screen>
             utilities, file utilities, a mainloop abstraction, and so on
           </para>
           <indexterm zone="glib2 libglib">
-            <primary sortas="c-libglib">libglib-2.0.so</primary>
+            <primary sortas="c-libglib">libglib-2.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgmodule">
-        <term><filename class='libraryfile'>libgmodule-2.0.so</filename></term>
+        <term><filename class='libraryfile'>libgmodule-2.0</filename></term>
         <listitem>
           <para>
             provides portable API for dynamically loading modules
           </para>
           <indexterm zone="glib2 libgmodule">
-            <primary sortas="c-libgmodule">libgmodule-2.0.so</primary>
+            <primary sortas="c-libgmodule">libgmodule-2.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgobject">
-        <term><filename class='libraryfile'>libgobject-2.0.so</filename></term>
+        <term><filename class='libraryfile'>libgobject-2.0</filename></term>
         <listitem>
           <para>
             provides the GLib base type system and object class
           </para>
           <indexterm zone="glib2 libgobject">
-            <primary sortas="c-libgobject">libgobject-2.0.so</primary>
+            <primary sortas="c-libgobject">libgobject-2.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
       <varlistentry id="libgthread">
-        <term><filename class='libraryfile'>libgthread-2.0.so</filename></term>
+        <term><filename class='libraryfile'>libgthread-2.0</filename></term>
         <listitem>
           <para>
             is a skeleton library for backwards compatibility; it used to
@@ -663,7 +663,7 @@ ldconfig</userinput></screen>
             merged info <systemitem class='library'>libglib-2.0</systemitem>
           </para>
           <indexterm zone="glib2 libgthread">
-            <primary sortas="c-libgthread">libgthread-2.0.so</primary>
+            <primary sortas="c-libgthread">libgthread-2.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -754,7 +754,7 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libgirepository-1.0">
-        <term><filename class='libraryfile'>libgirepository-1.0.so</filename></term>
+        <term><filename class='libraryfile'>libgirepository-1.0</filename></term>
         <listitem>
           <para>
             is a counterpart of
@@ -762,7 +762,7 @@ ldconfig</userinput></screen>
             with the old 1.0 API
           </para>
           <indexterm zone="glib2 libgirepository-1.0">
-            <primary sortas="c-libgirepository1">libgirepository-1.0.so</primary>
+            <primary sortas="c-libgirepository1">libgirepository-1.0</primary>
           </indexterm>
         </listitem>
       </varlistentry>

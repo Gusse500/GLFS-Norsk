@@ -113,7 +113,7 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
           lspci, pcilmr, and setpci
         </seg>
         <seg>
-          libpci.so
+          libpci
         </seg>
         <seg>
           /usr/include/pci
@@ -164,14 +164,14 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libpci">
-      <term><filename class="libraryfile">libpci.so</filename></term>
+      <term><filename class="libraryfile">libpci</filename></term>
       <listitem>
         <para>
           is a library that allows applications to access the PCI
           subsystem
         </para>
         <indexterm zone="pciutils libpci">
-          <primary sortas="c-libpci">libpci.so</primary>
+          <primary sortas="c-libpci">libpci</primary>
         </indexterm>
       </listitem>
       </varlistentry>

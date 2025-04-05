@@ -95,7 +95,7 @@ ninja</userinput></screen>
     <para>
       <parameter>-D libseat-seatd=disabled</parameter>: This parameter disables
       building support for the in-house logind daemon in
-      <filename class="libraryfile">libseat.so</filename> and instead relies on
+      <filename class="libraryfile">libseat</filename> and instead relies on
       the system-installed <phrase revision="sysv">e</phrase>logind instead.
     </para>
 
@@ -114,7 +114,7 @@ ninja</userinput></screen>
           None
         </seg>
         <seg>
-          libseat.so
+          libseat
         </seg>
         <seg>
           none
@@ -127,14 +127,14 @@ ninja</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="libseatd">
-        <term><filename class="libraryfile">libseatd.so</filename></term>
+      <varlistentry id="libseat">
+        <term><filename class="libraryfile">libseat</filename></term>
         <listitem>
           <para>
             contains functions to handle seat management
           </para>
-          <indexterm zone="seatd libseatd">
-            <primary sortas="c-libseatd">libseatd.so</primary>
+          <indexterm zone="seatd libseat">
+            <primary sortas="c-libseat">libseat</primary>
           </indexterm>
         </listitem>
       </varlistentry>

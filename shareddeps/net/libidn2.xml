@@ -127,7 +127,7 @@ ldconfig</userinput></screen>
           idn2
         </seg>
         <seg>
-          libidn2.so
+          libidn2
         </seg>
         <seg>
           None
@@ -154,14 +154,14 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libidn2-lib">
-        <term><filename class="libraryfile">libidn2.so</filename></term>
+        <term><filename class="libraryfile">libidn2</filename></term>
         <listitem>
           <para>
             contains a generic Stringprep implementation used for
             internationalized string handling
           </para>
           <indexterm zone="libidn2 libidn2-lib">
-            <primary sortas="c-libidn2">libidn2.so</primary>
+            <primary sortas="c-libidn2">libidn2</primary>
           </indexterm>
         </listitem>
       </varlistentry>

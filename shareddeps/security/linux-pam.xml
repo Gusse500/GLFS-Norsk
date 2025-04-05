@@ -354,7 +354,7 @@ EOF</userinput></screen>
           unix_update
         </seg>
         <seg>
-          libpam.so, libpamc.so and libpam_misc.so
+          libpam, libpamc, and libpam_misc
         </seg>
         <seg>
           /etc/security,
@@ -484,14 +484,14 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libpam">
-        <term><filename class="libraryfile">libpam.so</filename></term>
+        <term><filename class="libraryfile">libpam</filename></term>
         <listitem>
           <para>
             provides the interfaces between applications and the
             PAM modules
           </para>
           <indexterm zone="linux-pam libpam">
-            <primary sortas="c-libpam">libpam.so</primary>
+            <primary sortas="c-libpam">libpam</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -157,7 +157,7 @@ ldconfig</userinput></screen>
           lame and mp3rtp
         </seg>
         <seg>
-          libmp3lame.so
+          libmp3lame
         </seg>
         <seg>
           /usr/include/lame and
@@ -197,14 +197,14 @@ ldconfig</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libmp3lame">
-        <term><filename class="libraryfile">libmp3lame.so</filename></term>
+        <term><filename class="libraryfile">libmp3lame</filename></term>
         <listitem>
           <para>
             provides the functions necessary to convert raw PCM and WAV files
             to MP3 files
           </para>
           <indexterm zone="lame libmp3lame">
-            <primary sortas="c-libmp3lame">libmp3lame.so</primary>
+            <primary sortas="c-libmp3lame">libmp3lame</primary>
           </indexterm>
         </listitem>
       </varlistentry>

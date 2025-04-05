@@ -120,7 +120,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>None</seg>
-        <seg>libunistring.so</seg>
+        <seg>libunistring</seg>
         <seg>
           /usr/include/unistring and
           /usr/share/doc/libunistring-&libunistring-version;
@@ -134,13 +134,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libunistring-lib">
-        <term><command>libunistring.so</command></term>
+        <term><command>libunistring</command></term>
         <listitem>
           <para>
             provides the unicode string library API
           </para>
           <indexterm zone="libunistring libunistring-lib">
-            <primary sortas="c-libunistring-lib">libunistring.so</primary>
+            <primary sortas="c-libunistring-lib">libunistring</primary>
           </indexterm>
         </listitem>
       </varlistentry>

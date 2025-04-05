@@ -453,9 +453,9 @@ EOF</userinput></screen>
           rust-gdbgui, rust-lldb, rustc, rustdoc, and rustfmt
         </seg>
         <seg>
-          librustc-driver-&lt;16-byte-hash&gt;.so,
-          libstd-&lt;16-byte-hash&gt;.so, and
-          libtest-&lt;16-byte-hash&gt;.so
+          librustc-driver-&lt;16-byte-hash&gt;,
+          libstd-&lt;16-byte-hash&gt;, and
+          libtest-&lt;16-byte-hash&gt;
         </seg>
         <seg>
           ~/.cargo,
@@ -662,13 +662,13 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libstd">
-        <term><filename class="libraryfile">libstd-&lt;16-byte-hash&gt;.so</filename></term>
+        <term><filename class="libraryfile">libstd-&lt;16-byte-hash&gt;</filename></term>
         <listitem>
           <para>
             is the Rust Standard Library, the foundation of portable Rust software
           </para>
           <indexterm zone="rustc libstd">
-            <primary sortas="c-libstd">libstd-&lt;16-byte-hash&gt;.so</primary>
+            <primary sortas="c-libstd">libstd-&lt;16-byte-hash&gt;</primary>
           </indexterm>
         </listitem>
       </varlistentry>

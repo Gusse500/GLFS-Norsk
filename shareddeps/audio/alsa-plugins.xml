@@ -137,7 +137,7 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          Numerous libasound_module_<replaceable>&lt;module&gt;</replaceable>.so
+          Numerous libasound_module_<replaceable>&lt;module&gt;</replaceable>
           modules including
           conf_pulse,
           ctl_arcam_av,
@@ -166,93 +166,93 @@ ldconfig</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="libasound_module_pcm_oss.so">
-        <term><filename class="libraryfile">libasound_module_pcm_oss.so</filename></term>
+      <varlistentry id="libasound_module_pcm_oss">
+        <term><filename class="libraryfile">libasound_module_pcm_oss</filename></term>
         <listitem>
           <para>
             Allows native <application>ALSA</application> applications to
             run on <application>OSS</application>
           </para>
-          <indexterm zone="alsa-plugins libasound_module_pcm_oss.so">
-            <primary sortas="c-libasound_module_pcm_oss">libasound_module_pcm_oss.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_pcm_oss">
+            <primary sortas="c-libasound_module_pcm_oss">libasound_module_pcm_oss</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libasound_module_pcm_upmix.so">
-        <term><filename class="libraryfile">libasound_module_pcm_upmix.so</filename></term>
+      <varlistentry id="libasound_module_pcm_upmix">
+        <term><filename class="libraryfile">libasound_module_pcm_upmix</filename></term>
         <listitem>
           <para>
             Allows upmixing sound to 4 or 6 channels
           </para>
-          <indexterm zone="alsa-plugins libasound_module_pcm_upmix.so">
-            <primary sortas="c-libasound_module_pcm_upmix">libasound_module_pcm_upmix.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_pcm_upmix">
+            <primary sortas="c-libasound_module_pcm_upmix">libasound_module_pcm_upmix</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libasound_module_pcm_vdownmix.so">
-        <term><filename class="libraryfile">libasound_module_pcm_vdownmix.so</filename></term>
+      <varlistentry id="libasound_module_pcm_vdownmix">
+        <term><filename class="libraryfile">libasound_module_pcm_vdownmix</filename></term>
         <listitem>
           <para>
             Allows downmixing sound from 4-6 channels to 2
             channel stereo output
           </para>
-          <indexterm zone="alsa-plugins libasound_module_pcm_vdownmix.so">
-            <primary sortas="c-libasound_module_pcm_vdownmix">libasound_module_pcm_vdownmix.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_pcm_vdownmix">
+            <primary sortas="c-libasound_module_pcm_vdownmix">libasound_module_pcm_vdownmix</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libasound_module_pcm_jack.so">
-        <term><filename class="libraryfile">libasound_module_pcm_jack.so</filename></term>
+      <varlistentry id="libasound_module_pcm_jack">
+        <term><filename class="libraryfile">libasound_module_pcm_jack</filename></term>
         <listitem>
           <para>
             Allows native <application>ALSA</application> applications to
             work with <command>jackd</command>
           </para>
-          <indexterm zone="alsa-plugins libasound_module_pcm_jack.so">
-            <primary sortas="c-libasound_module_pcm_jack">libasound_module_pcm_jack.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_pcm_jack">
+            <primary sortas="c-libasound_module_pcm_jack">libasound_module_pcm_jack</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libasound_module_pcm_pulse.so">
-        <term><filename class="libraryfile">libasound_module_pcm_pulse.so</filename></term>
+      <varlistentry id="libasound_module_pcm_pulse">
+        <term><filename class="libraryfile">libasound_module_pcm_pulse</filename></term>
         <listitem>
           <para>
             Allows native <application>ALSA</application> applications
             to access a <application>PulseAudio</application> sound
             daemon
           </para>
-          <indexterm zone="alsa-plugins libasound_module_pcm_pulse.so">
-            <primary sortas="c-libasound_module_pcm_pulse">libasound_module_pcm_pulse.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_pcm_pulse">
+            <primary sortas="c-libasound_module_pcm_pulse">libasound_module_pcm_pulse</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libasound_module_pcm_a52.so">
-        <term><filename class="libraryfile">libasound_module_pcm_a52.so</filename></term>
+      <varlistentry id="libasound_module_pcm_a52">
+        <term><filename class="libraryfile">libasound_module_pcm_a52</filename></term>
         <listitem>
           <para>
             Converts S16 linear sound format to A52 compressed format
             and sends it to an SPDIF output
           </para>
-          <indexterm zone="alsa-plugins libasound_module_pcm_a52.so">
-            <primary sortas="c-libasound_module_pcm_a52">libasound_module_pcm_a52.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_pcm_a52">
+            <primary sortas="c-libasound_module_pcm_a52">libasound_module_pcm_a52</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libasound_module_rate_samplerate.so">
-        <term><filename class="libraryfile">libasound_module_rate_samplerate.so</filename></term>
+      <varlistentry id="libasound_module_rate_samplerate">
+        <term><filename class="libraryfile">libasound_module_rate_samplerate</filename></term>
         <listitem>
           <para>
             Provides an external rate converter through
             <filename class="libraryfile">libsamplerate</filename>
           </para>
-          <indexterm zone="alsa-plugins libasound_module_rate_samplerate.so">
-            <primary sortas="c-libasound_module_rate_samplerate">libasound_module_rate_samplerate.so</primary>
+          <indexterm zone="alsa-plugins libasound_module_rate_samplerate">
+            <primary sortas="c-libasound_module_rate_samplerate">libasound_module_rate_samplerate</primary>
           </indexterm>
         </listitem>
       </varlistentry>

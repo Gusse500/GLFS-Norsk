@@ -44,6 +44,10 @@
       <para>April 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - All: Stop using .so for library suffixes. Fixes
+          <ulink url="&glfs-issues;/188">#188</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GLib: 2.84.0 -&gt; 2.84.1. Fixes
           <ulink url="&glfs-issues;/191">#191</ulink>.</para>
         </listitem>

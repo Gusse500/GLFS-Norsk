@@ -171,27 +171,27 @@ ldconfig</userinput></screen>
           playout
         </seg>
         <seg>
-          libgstadaptivedemux-1.0.so,
-          libgstanalytics-1.0.so,
-          libgstbadaudio-1.0.so,
-          libgstbasecamerabinsrc-1.0.so,
-          libgstcuda-1.0.so,
-          libgstcodecparsers-1.0.so,
-          libgstcodecs-1.0.so,
-          libgstdxva-1.0.so,
-          libgstinsertbin-1.0.so,
-          libgstisoff-1.0.so,
-          libgstmpegts-1.0.so,
-          libgstmse-1.0.so,
-          libgstphotography-1.0.so,
-          libgstplay-1.0.so,
-          libgstplayer-1.0.so,
-          libgstsctp-1.0.so,
-          libgsttranscoder-1.0.so,
-          libgsturidownloader-1.0.so,
-          libgstva-1.0.so,
-          libgstwayland-1.0.so,
-          libgstwebrtc-1.0.so, and
+          libgstadaptivedemux-1.0,
+          libgstanalytics-1.0,
+          libgstbadaudio-1.0,
+          libgstbasecamerabinsrc-1.0,
+          libgstcuda-1.0,
+          libgstcodecparsers-1.0,
+          libgstcodecs-1.0,
+          libgstdxva-1.0,
+          libgstinsertbin-1.0,
+          libgstisoff-1.0,
+          libgstmpegts-1.0,
+          libgstmse-1.0,
+          libgstphotography-1.0,
+          libgstplay-1.0,
+          libgstplayer-1.0,
+          libgstsctp-1.0,
+          libgsttranscoder-1.0,
+          libgsturidownloader-1.0,
+          libgstva-1.0,
+          libgstwayland-1.0,
+          libgstwebrtc-1.0, and
           several plugins under /usr/lib/gstreamer-1.0
         </seg>
         <seg>

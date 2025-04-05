@@ -97,7 +97,7 @@ make</userinput></screen>
             synclient and syndaemon
           </seg>
           <seg>
-            synaptics_drv.so
+            synaptics_drv
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -134,13 +134,13 @@ make</userinput></screen>
         </varlistentry>
 
         <varlistentry id="synaptics_drv">
-          <term><filename class="libraryfile">synaptics_drv.so</filename></term>
+          <term><filename class="libraryfile">synaptics_drv</filename></term>
           <listitem>
             <para>
               is an Xorg input driver for touchpads
             </para>
             <indexterm zone="xorg-synaptics-driver synaptics_drv">
-              <primary sortas="c-synaptics_drv">synaptics_drv.so</primary>
+              <primary sortas="c-synaptics_drv">synaptics_drv</primary>
             </indexterm>
           </listitem>
         </varlistentry>

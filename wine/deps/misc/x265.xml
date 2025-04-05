@@ -83,7 +83,7 @@ make</userinput></screen>
     <!-- To editors: hard coded versions "209", "212", and "3.6" are not a
          bug.  This <important> block should be removed when we update x265
          to 3.7 (or 4.0 or whatever new version).  The problem only happens
-         when we downgrade libx265.so, upgrading is OK (as long as following
+         when we downgrade libx265, upgrading is OK (as long as following
          the LFS package management page). 
     <important>
       <para>
@@ -92,13 +92,13 @@ make</userinput></screen>
         remove the shared library from x265-20240812 as the &root; user:
       </para>
 
-      <screen role='root'><userinput>rm -fv /usr/lib/libx265.so.212</userinput></screen>
+      <screen role='root'><userinput>rm -fv /usr/lib/libx265.212</userinput></screen>
 
       <para>
         This is for preventing <command>ldconfig</command> from recreating
-        the symlink <filename>libx265.so</filename> with the target
-        <filename>/usr/lib/libx265.so.212</filename> which seems to be
-        <quote>a newer version</quote> of <filename>libx265.so.209</filename>
+        the symlink <filename>libx265</filename> with the target
+        <filename>/usr/lib/libx265.212</filename> which seems to be
+        <quote>a newer version</quote> of <filename>libx265.209</filename>
         from x265-3.6.
       </para>
     </important>
@@ -172,7 +172,7 @@ ldconfig</userinput></screen>
 
     <para>
       <command>rm -vf /usr/lib{,32}/libx265.a</command>: This removes an
-      unnecessary static library
+      unnecessary static library.
     </para>
 
   </sect2>
@@ -190,7 +190,7 @@ ldconfig</userinput></screen>
           x265
         </seg>
         <seg>
-          libx265.so
+          libx265
         </seg>
         <seg>
           None
@@ -204,14 +204,14 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libx265">
-        <term><filename class="libraryfile">libx265.so</filename></term>
+        <term><filename class="libraryfile">libx265</filename></term>
         <listitem>
           <para>
             provides the functions used to encode video streams into the
             H.265/HEVC format
           </para>
           <indexterm zone="x265 libx265">
-            <primary sortas="c-libx265">libx265.so</primary>
+            <primary sortas="c-libx265">libx265</primary>
           </indexterm>
         </listitem>
       </varlistentry>

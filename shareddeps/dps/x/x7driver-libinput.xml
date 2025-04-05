@@ -91,7 +91,7 @@ make</userinput></screen>
 
         <seglistitem>
           <seg>
-            libinput_drv.so
+            libinput_drv
           </seg>
         </seglistitem>
       </segmentedlist>
@@ -102,14 +102,14 @@ make</userinput></screen>
         <?dbhtml list-presentation="table"?>
 
         <varlistentry id="libinput_drv">
-          <term><filename class="libraryfile">libinput_drv.so</filename></term>
+          <term><filename class="libraryfile">libinput_drv</filename></term>
           <listitem>
             <para>
               is an Xorg input driver for mouse, keyboard, touchpad,
               touchscreen, and tablet devices
             </para>
             <indexterm zone="xorg-libinput-driver libinput_drv">
-              <primary sortas="c-libinput_drv">libinput_drv.so</primary>
+              <primary sortas="c-libinput_drv">libinput_drv</primary>
             </indexterm>
           </listitem>
         </varlistentry>

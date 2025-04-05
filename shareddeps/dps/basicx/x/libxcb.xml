@@ -150,13 +150,13 @@ ldconfig</userinput></screen>
           None
         </seg>
         <seg>
-          libxcb.so, libxcb-composite.so, libxcb-damage.so, libxcb-dbe.so,
-          libxcb-dpms.so, libxcb-dri2.so, libxcb-dri3.so, libxcb-glx.so,
-          libxcb-present.so, libxcb-randr.so, libxcb-record.so,
-          libxcb-render.so, libxcb-res.so, libxcb-screensaver.so,
-          libxcb-shape.so, libxcb-shm.so, libxcb-sync.so, libxcb-xf86dri.so,
-          libxcb-xfixes.so, libxcb-xinerama.so, libxcb-xinput.so,
-          libxcb-xkb.so, libxcb-xtest.so, libxcb-xvmc.so, and libxcb-xv.so
+          libxcb, libxcb-composite, libxcb-damage, libxcb-dbe,
+          libxcb-dpms, libxcb-dri2, libxcb-dri3, libxcb-glx,
+          libxcb-present, libxcb-randr, libxcb-record,
+          libxcb-render, libxcb-res, libxcb-screensaver,
+          libxcb-shape, libxcb-shm, libxcb-sync, libxcb-xf86dri,
+          libxcb-xfixes, libxcb-xinerama, libxcb-xinput,
+          libxcb-xkb, libxcb-xtest, libxcb-xvmc, and libxcb-xv
         </seg>
         <seg>
           /usr/include/xcb and
@@ -171,13 +171,13 @@ ldconfig</userinput></screen>
       <?dbhtml list-presentation="table"?>
 
       <varlistentry id="libxcb-lib">
-        <term><filename class="libraryfile">libxcb.so</filename></term>
+        <term><filename class="libraryfile">libxcb</filename></term>
         <listitem>
           <para>
             is an interface to the X Window System protocol
           </para>
           <indexterm zone="libxcb libxcb-lib">
-            <primary sortas="c-libxcb">libxcb.so</primary>
+            <primary sortas="c-libxcb">libxcb</primary>
           </indexterm>
         </listitem>
       </varlistentry>
