@@ -44,6 +44,10 @@
       <para>April 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wine: 10.4 -&gt; 10.5. Fixes
+          <ulink url="&glfs-issues;/189">#189</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - All: Stop using .so for library suffixes. Fixes
           <ulink url="&glfs-issues;/188">#188</ulink>.</para>
         </listitem>
