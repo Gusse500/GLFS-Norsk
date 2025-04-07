@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 6th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.0.0 -&gt; 11.0.1. Fixes
+          <ulink url="&glfs-issues;/193">#193</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 4th, 2025</para>
       <itemizedlist>
         <listitem>
