@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 7th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - DXVK: 2.6 -&gt; 2.6.1. Fixes
+          <ulink url="&glfs-issues;/195">#195</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 6th, 2025</para>
       <itemizedlist>
         <listitem>
