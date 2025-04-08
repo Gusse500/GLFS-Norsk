@@ -205,7 +205,6 @@ $(BASEDIR)/wget-list: $(RENDERTMP)/$(GLFSFULL) version
 
 test-links: $(BASEDIR)/test-links
 $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
-	$(Q)trap '$(CLEAN)' EXIT
 	@echo "Generating test-links file..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --nonet                        \
