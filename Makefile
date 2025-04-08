@@ -12,6 +12,7 @@
 
 # Adjust these to suit your installation, or include the variables
 # you wish to change in local.mk, which must be created manually.
+AUTO_CLEAN      ?= 1
 GLFS_THEME_PATH ?= stylesheets/lfs-xsl
 GLFS_THEME      ?= dark
 RENDERTMP       := $(shell mktemp -d)
@@ -50,6 +51,11 @@ ifneq ($(STAB), development)
   ifneq ($(STAB), release)
     $(error STAB must be 'development' (default) or 'release')
   endif
+endif
+
+CLEAN = rm -rf $(RENDERTMP)
+ifeq ($(AUTO_CLEAN), 0)
+  CLEAN =
 endif
 
 ifeq ($(REV), sysv)
@@ -157,11 +163,12 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
 
-	$(Q)rm -rf $(RENDERTMP)
+	$(Q)$(CLEAN)
 
 validate: $(RENDERTMP)/$(GLFSFULL)
 $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
 	$(Q)[ -d $(RENDERTMP) ] || mkdir -p $(RENDERTMP)
+	$(Q)trap '$(CLEAN)' EXIT
 
 	@echo "Rendering the book for $(REV)..."
 	$(Q)xsltproc --nonet                               \
@@ -198,6 +205,7 @@ $(BASEDIR)/wget-list: $(RENDERTMP)/$(GLFSFULL) version
 
 test-links: $(BASEDIR)/test-links
 $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
+	$(Q)trap '$(CLEAN)' EXIT
 	@echo "Generating test-links file..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --nonet                        \
@@ -227,7 +235,10 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
          fi; \
    done
 
+	$(Q)$(CLEAN)
+
 bootscripts:
+	$(Q)trap '$(CLEAN)' EXIT
 	@VERSION=`grep "bootscripts-version " general.ent | cut -d\" -f2`; \
    BOOTSCRIPTS="glfs-bootscripts-$$VERSION";                          \
    if [ ! -e $$BOOTSCRIPTS.tar.xz ]; then                             \
@@ -238,7 +249,10 @@ bootscripts:
      tar  -cJhf $$BOOTSCRIPTS.tar.xz -C $(RENDERTMP) $$BOOTSCRIPTS;   \
    fi
 
+	$(Q)$(CLEAN)
+
 systemd-units:
+	$(Q)trap '$(CLEAN)' EXIT
 		@VERSION=`grep "systemd-units-version " general.ent | cut -d\" -f2`; \
 	UNITS="glfs-systemd-units-$$VERSION";                                   \
 	if [ ! -e $$UNITS.tar.xz ]; then                                        \
@@ -248,8 +262,12 @@ systemd-units:
 		tar -cJhf $$UNITS.tar.xz -C $(RENDERTMP) $$UNITS;                    \
 	fi
 
+	$(Q)$(CLEAN)
+
 test-options:
+	$(Q)trap '$(CLEAN)' EXIT
 	$(Q)xsltproc --xinclude --nonet stylesheets/test-options.xsl index.xml
+	$(Q)$(CLEAN)
 
 dump-commands: $(DUMPDIR)
 $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
@@ -258,9 +276,9 @@ $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
                 stylesheets/dump-commands.xsl \
                 $(RENDERTMP)/$(GLFSFULL)
 	$(Q)touch $(DUMPDIR)
-	$(Q)rm -rf $(RENDERTMP)
+	$(Q)$(CLEAN)
 
-.PHONY: glfs all world html clean validate profile-html wget-list test-links \
+.PHONY: glfs all world html validate profile-html wget-list test-links \
    dump-commands bootscripts systemd-units version test-options
 
 version:
