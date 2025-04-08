@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - make-ca: 1.15 -> 1.16. Fixes
+          <ulink url="&glfs-issues;/196">#196</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 7th, 2025</para>
       <itemizedlist>
         <listitem>
