@@ -12,7 +12,6 @@
 <sect1 id="make-ca" xreflabel="make-ca-&make-ca-version;">
   <?dbhtml filename="make-ca.html"?>
 
-
   <title>make-ca-&make-ca-version;</title>
   <indexterm zone="make-ca">
     <primary sortas="a-make-ca">make-ca</primary>
@@ -95,8 +94,10 @@
 
     <para>
       Before you can install the package, you should add an extra instruction
-      to the <application>make-ca</application> script that makes a symlink
-      required by <xref linkend="steam"/>:
+      to the <application>make-ca</application> script that makes a
+      compatibility symlink that is used by Debian Linux packages and is
+      required by <xref linkend="steam"/> as its main development is done on
+      Debian Linux. Add that instruction to the script now:
     </para>
 
 <screen><userinput>cat &gt;&gt; make-ca &lt;&lt; "EOF"
