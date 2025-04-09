@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY certhost              "https://hg.mozilla.org/">
+  <!ENTITY certhost              "https://hg-edge.mozilla.org/">
   <!ENTITY certpath              "/lib/ckfw/builtins/certdata.txt">
   <!ENTITY make-ca-download      "https://github.com/lfs-book/make-ca/archive/v&make-ca-version;/make-ca-&make-ca-version;.tar.gz">
 ]>
@@ -40,7 +40,7 @@
       it is for most Linux distributions). The certificate store provided here
       is taken from the Mozilla Foundation, who have established very strict
       inclusion policies described <ulink
-        url="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">here</ulink>.
+      url="https://www.mozilla.org/en-US/about/governance/policies/security-group/certs/policy/">here</ulink>.
     </para>   
 
     <itemizedlist spacing="compact">
