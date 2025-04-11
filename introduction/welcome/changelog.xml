@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 10th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.42 -&gt; 1.43. Fixes
+          <ulink url="&glfs-issues;/197">#197</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 8th, 2025</para>
       <itemizedlist>
         <listitem>
