@@ -44,6 +44,10 @@
       <para>April 10th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libvpx: 1.15.0 -&gt; 1.15.1. Fixes
+          <ulink url="&glfs-issues;/199">#199</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libgpg-error: 1.51 -&gt; 1.53. Fixes
           <ulink url="&glfs-issues;/198">#198</ulink>.</para>
         </listitem>
