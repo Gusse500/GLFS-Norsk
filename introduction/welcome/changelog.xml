@@ -44,6 +44,10 @@
       <para>April 10th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libgpg-error: 1.51 -&gt; 1.53. Fixes
+          <ulink url="&glfs-issues;/198">#198</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Wayland-Protocols: 1.42 -&gt; 1.43. Fixes
           <ulink url="&glfs-issues;/197">#197</ulink>.</para>
         </listitem>
