@@ -44,6 +44,9 @@
       <para>April 14th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - alsa-{lib,ucm-conf,utils}: * -&gt; 1.2.14.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - alsa-lib: Ensure alsa-ucm-conf is installed.</para>
         </listitem>
         <listitem>

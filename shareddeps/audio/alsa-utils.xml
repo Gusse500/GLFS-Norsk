@@ -66,6 +66,7 @@
   <sect2 role="installation">
     <title>Installation of ALSA Utilities</title>
 
+<!--
     <para>
       First fix an issue with the distributed udev rules:
     </para>
@@ -74,6 +75,7 @@
     -e '/LABEL="alsa_restore_go"/s/go/std/'               \
     -e '/^ENV.ALSA_CARD_NUMBER/i LABEL="alsa_restore_go"' \
     -i alsactl/90-alsa-restore.rules.in</userinput></screen>
+-->
 
     <para>
       Install <application>ALSA Utilities</application> by
