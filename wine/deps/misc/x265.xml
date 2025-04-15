@@ -176,7 +176,7 @@ ldconfig</userinput></screen>
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/cmake-policy-version.xml"/>
+      href="../../../xincludes/cmake-policy-version.xml"/>
 
     <para>
       <parameter>-W no-dev</parameter>: This switch is used to suppress warnings
