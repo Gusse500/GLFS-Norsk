@@ -69,9 +69,10 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-cmake -D CMAKE_BUILD_TYPE=Release  \
-      -D CMAKE_INSTALL_PREFIX=/usr \
-      .. &amp;&amp;
+cmake -D CMAKE_BUILD_TYPE=Release         \
+      -D CMAKE_INSTALL_PREFIX=/usr        \
+      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
+      -W no-dev .. &amp;&amp;
 
 make</userinput></screen>
 
@@ -97,11 +98,12 @@ make</userinput></screen>
       </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"                 \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig         \
-cmake -D CMAKE_BUILD_TYPE=Release            \
-      -D CMAKE_INSTALL_PREFIX=/usr           \
-      .. &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"              \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
+cmake -D CMAKE_BUILD_TYPE=Release         \
+      -D CMAKE_INSTALL_PREFIX=/usr        \
+      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
+      -W no-dev .. &amp;&amp;
 
 make</userinput></screen>
 
