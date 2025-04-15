@@ -62,6 +62,14 @@
     <title>Installation of x265</title>
 
     <para>
+      First, change the CMake policy to allow building with CMake-4.0 and
+      newer:
+    </para>
+
+<screen><userinput>sed -r '/cmake_policy.*(0025|0054)/d' \
+  -i source/CMakeLists.txt</userinput></screen>
+
+    <para>
       Install <application>x265</application> by running the following
       commands:
     </para>
@@ -70,10 +78,11 @@
 <screen><userinput>mkdir bld &amp;&amp;
 cd    bld &amp;&amp;
 
-cmake -D CMAKE_INSTALL_PREFIX=/usr \
-      -D GIT_ARCHETYPE=1           \
-      -W no-dev                    \
-      ../source                    &amp;&amp;
+cmake -D CMAKE_INSTALL_PREFIX=/usr        \
+      -D GIT_ARCHETYPE=1                  \
+      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
+      -W no-dev ../source &amp;&amp;
+
 make</userinput></screen>
 
     <para>
@@ -124,11 +133,12 @@ rm -vf /usr/lib/libx265.a</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-cmake -D CMAKE_INSTALL_PREFIX=/usr   \
-      -D LIB_INSTALL_DIR=lib32       \
-      -D GIT_ARCHETYPE=1             \
+CC="gcc -m32" CXX="g++ -m32"              \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
+cmake -D CMAKE_INSTALL_PREFIX=/usr        \
+      -D LIB_INSTALL_DIR=lib32            \
+      -D GIT_ARCHETYPE=1                  \
+      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -W no-dev ../source &amp;&amp;
 
 make</userinput></screen>
@@ -157,17 +167,20 @@ ldconfig</userinput></screen>
     &options-cmake;
 
     <para>
-      <parameter>-W no-dev</parameter>: This switch is used to suppress warnings
-      intended for the package developers.
-    </para>
-
-    <para>
       <parameter>-D GIT_ARCHETYPE=1</parameter>: This switch is needed
       because the build system will not generate a pkg-config file or install
       a shared library unless <xref linkend="git"/> is installed. Git isn't
       required for anything else in this package, so this switch is used to
       work around it for users who do not want to install Git as a build
       dependency.
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/cmake-policy-version.xml"/>
+
+    <para>
+      <parameter>-W no-dev</parameter>: This switch is used to suppress warnings
+      intended for the package developers.
     </para>
 
     <para>
