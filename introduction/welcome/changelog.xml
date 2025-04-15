@@ -44,6 +44,9 @@
       <para>April 14th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libvpx: Ensure files get updated.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - alsa-lib: Patch alsa-ucm-conf config file.</para>
         </listitem>
       </itemizedlist>
