@@ -147,7 +147,7 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-meson setup --cross-file lib32  \
+meson setup --cross-file=lib32  \
             --prefix=/usr       \
             --libdir=/usr/lib32 \
             --buildtype=release \

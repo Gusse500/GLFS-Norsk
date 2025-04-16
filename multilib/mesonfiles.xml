@@ -127,13 +127,13 @@ EOF</userinput></screen>
       <userinput>meson setup ..</userinput>, you can simply do:
     </para>
 
-<screen><userinput>meson setup .. --cross-file lib32 &lt;other-options&gt;</userinput></screen>
+<screen><userinput>meson setup .. --cross-file=lib32 &lt;other-options&gt;</userinput></screen>
 
     <para>
       Or...
     </para>
 
-<screen><userinput>meson setup .. --native-file x86 &lt;other-options&gt;</userinput></screen>
+<screen><userinput>meson setup .. --native-file=x86 &lt;other-options&gt;</userinput></screen>
 
   </sect2>
 
