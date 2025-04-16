@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
+  <!ENTITY fontconfig-gitlab "https://gitlab.freedesktop.org/fontconfig/fontconfig">
   <!ENTITY fontconfig-download-http
-           "https://www.freedesktop.org/software/fontconfig/release/fontconfig-&fontconfig-version;.tar.xz">
-  <!ENTITY fontconfig-download-ftp  " ">
+    "&fontconfig-gitlab;/-/archive/&fontconfig-version;/fontconfig-&fontconfig-version;.tar.gz">
 ]>
 
 <sect1 id="fontconfig" xreflabel="Fontconfig-&fontconfig-version;">
@@ -35,11 +35,6 @@
           Download (HTTP): <ulink url="&fontconfig-download-http;"/>
         </para>
       </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&fontconfig-download-ftp;"/>
-        </para>
-      </listitem>
     </itemizedlist>
 <!--
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
@@ -56,7 +51,8 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      <xref linkend="freetype2-pass2"/>
+      <xref linkend="freetype2-pass2"/> and
+      <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
     <bridgehead renderas="sect4">Optional</bridgehead>
@@ -78,25 +74,24 @@
       commands:
     </para>
 
-<screen><userinput>./configure --prefix=/usr        \
-            --sysconfdir=/etc    \
-            --localstatedir=/var \
-            --disable-docs       \
-            --docdir=/usr/share/doc/fontconfig-&fontconfig-version; &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
-make</userinput></screen>
+meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
+ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.  One test
+      To test the results, issue: <command>ninja test</command>.  One test
       is known to fail if the kernel does not support user namespaces.  Some
       tests will download some font files via Internet.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>make install</userinput></screen>
+<screen role="root"><userinput>ninja install &amp;&amp;
+rm -vf /usr/lib/libfontconfig.a</userinput></screen>
 
   </sect2>
 
@@ -104,29 +99,27 @@ make</userinput></screen>
     <title>lib32 Installation of Fontconfig</title>
 
     <para>
-      Install lib32-<application>Fontconfig</application> by running the following
-      commands:
+      Install lib32-<application>Fontconfig</application> by running the
+      following commands:
     </para>
 
-<screen><userinput>make distclean &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-./configure --prefix=/usr            \
-            --libdir=/usr/lib32      \
-            --sysconfdir=/etc        \
-            --localstatedir=/var     \
-            --host=i686-pc-linux-gnu \
-            --disable-docs &amp;&amp;
+<screen><userinput>rm -rf * &amp;&amp;
+meson setup --prefix=/usr       \
+            --libdir=/usr/lib32 \
+            --cross-file=lib32  \
+            --buildtype=release \
+            .. &amp;&amp;
 
-make</userinput></screen>
+ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
-cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
-rm -rf DESTDIR                        &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install       &amp;&amp;
+rm -vf DESTDIR/usr/lib32/libfontconfig.a &amp;&amp;
+cp -Rv DESTDIR/usr/lib32/* /usr/lib32    &amp;&amp;
+rm -rf DESTDIR                           &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
@@ -134,12 +127,11 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
-    &options-configure;
+    &options-meson;
 
     <para>
-      <parameter>--disable-docs</parameter>: This switch avoids building the
-      documentation (the release tarball includes pre-generated
-      documentation).
+      <command>rm -vf /usr/lib/libfontconfig.a</command>: This command removes
+      a useless static library.
     </para>
 
   </sect2>
