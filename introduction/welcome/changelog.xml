@@ -44,6 +44,9 @@
       <para>April 15th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libaom: 3.12.0 -&gt; 3.12.1.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 4.0.0 -&gt; 4.0.1. Fixes
           <ulink url="&glfs-issues;/200">#200</ulink>.</para>
         </listitem>

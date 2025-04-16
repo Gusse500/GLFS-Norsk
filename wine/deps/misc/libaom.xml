@@ -5,11 +5,7 @@
   %general-entities;
 
   <!ENTITY libaom-download-http "https://storage.googleapis.com/aom-releases/libaom-&libaom-version;.tar.gz">
-  <!ENTITY libaom-download-ftp  " ">
 ]>
-
-<!-- Tests not run for version 3.6.1. -->
-<!-- Tests not run for version 3.9.0. -->
 
 <sect1 id="libaom" xreflabel="libaom-&libaom-version;">
   <?dbhtml filename="libaom.html"?>
@@ -39,11 +35,6 @@
       <listitem>
         <para>
           Download (HTTP): <ulink url="&libaom-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&libaom-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -151,7 +142,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>
-          None
+          aomdec and aomenc
         </seg>
         <seg>
           libaom
@@ -167,6 +158,32 @@ ldconfig</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
+      <varlistentry id="aomdec">
+        <term><command>aomdec</command></term>
+        <listitem>
+          <para>
+            offers various decoders supported by this package, including one
+            for AV1
+          </para>
+          <indexterm zone="libaom aomdec">
+            <primary sortas="b-aomdec">aomdec</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="aomenc">
+        <term><command>aomenc</command></term>
+        <listitem>
+          <para>
+            offers various encoders supported by this package, including one
+            for AV1
+          </para>
+          <indexterm zone="libaom aomenc">
+            <primary sortas="b-aomenc">aomenc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libaom-lib">
         <term><filename class="libraryfile">libaom</filename></term>
         <listitem>
@@ -179,6 +196,9 @@ ldconfig</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
+
     </variablelist>
+
   </sect2>
+
 </sect1>
