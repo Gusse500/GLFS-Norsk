@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 15th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - CMake: 4.0.0 -&gt; 4.0.1. Fixes
+          <ulink url="&glfs-issues;/200">#200</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 14th, 2025</para>
       <itemizedlist>
         <listitem>
