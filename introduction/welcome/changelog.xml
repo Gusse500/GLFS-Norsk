@@ -44,6 +44,9 @@
       <para>April 17th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - gpuconfig: Document Xe driver.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Rustc: Update config.toml.</para>
         </listitem>
       </itemizedlist>
