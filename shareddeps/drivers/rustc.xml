@@ -186,7 +186,11 @@ ln -svfn rustc-&rustc-version; /opt/rustc</userinput></screen>
     </para>
 
 <screen><userinput>cat &gt; config.toml &lt;&lt; "EOF" &amp;&amp;
-<literal># see config.toml.example for more possible options.
+<literal># See config.toml.example for more possible options,
+# and see src/bootstrap/defaults/config.dist.toml for a few options
+# automatically set when building from a release tarball.
+# We have to override a decent number of them.
+
 # Tell x.py the editors have reviewed the content of this file
 # and updated it to follow the major changes of the building system,
 # so x.py will not warn us to do such a review.
@@ -195,10 +199,6 @@ change-id = &rustc-change-id;
 [llvm]
 # When using system llvm prefer shared libraries
 link-shared = true
-
-# Do not download pre-built LLVM, instead either use the system
-# LLVM or build LLVM from the shipped source.
-download-ci-llvm = false
 </literal>
 EOF
 if [ ! -f /usr/lib32/libc.so.6 ]; then
@@ -220,11 +220,15 @@ target = [
 EOF
 fi &amp;&amp;
 cat &gt;&gt; config.toml &lt;&lt; "EOF" &amp;&amp;
-<literal># omit docs to save time and space (default is to build them)
-docs = false
+<literal># Do a 2-stage bootstrap instead of a 3-stage one to save time and space.
+# Note that the numbers "1" below mean to *run* the stage-*1* compiler and
+# build the stage-2 compiler.
+build-stage = 1
+test-stage = 1
+doc-stage = 1
 
-# install extended tools: cargo, clippy, etc
-extended = true
+# omit docs to save time and space (default is to build them)
+docs = false
 
 # Do not query new versions of dependencies online.
 locked-deps = true
@@ -245,6 +249,9 @@ description = "for GLFS &version;"
 
 # Disable the need for lld.
 lld = false
+
+# If you didn't build in NVPTX support, you can uncomment this.
+#llvm-bitcode-linker = false
 
 # Enable the same optimizations as the official upstream build.
 lto = "thin"
@@ -360,12 +367,6 @@ mv -v /etc/bash_completion.d/cargo \
     <para>
       <literal>targets = [...]</literal>: this builds the targets that will
       be necessary for 32-bit Rust projects.
-    </para>
-
-    <para>
-      <literal>extended = true</literal>: this installs several tools
-      (specified by the <literal>tools</literal> entry) alongside
-      <command>rustc</command>.
     </para>
 
     <para>
