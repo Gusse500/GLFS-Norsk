@@ -79,7 +79,7 @@
 <!ENTITY libpng-version               "1.6.47">
 <!ENTITY apng-version                 "&libpng-version;">
 <!ENTITY freetype2-version            "2.13.3">
-<!ENTITY harfbuzz-version             "11.0.1">
+<!ENTITY harfbuzz-version             "11.1.0">
 <!ENTITY fontconfig-version           "2.16.2">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -259,7 +259,7 @@
 <!-- CHAPTER IV - STEAM -->
 
 <!ENTITY xdg-user-dirs-version        "0.18">
-<!ENTITY libgpg-error-version         "1.53">
+<!ENTITY libgpg-error-version         "1.54">
 <!ENTITY steam-version                "1.0.0.82">
 
 

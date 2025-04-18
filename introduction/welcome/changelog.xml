@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>April 18th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.0.1 -&gt; 11.1.0;
+          libgpg-error: 1.53 -&gt; 1.54. Fixes
+          <ulink url="&glfs-issues;/202">#202</ulink> and
+          <ulink url="&glfs-issues;/207">#207</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 17th, 2025</para>
       <itemizedlist>
         <listitem>
