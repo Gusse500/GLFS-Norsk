@@ -145,11 +145,11 @@
                                                 <!-- kernel version in
                                                      kernel-config
                                                      presently -->
-<!ENTITY nvidia-linux-version         "6.13.7">
+<!ENTITY nvidia-linux-version         "6.14.2">
                                                 <!-- kernel version of when the
                                                      NVIDIA driver version
                                                      listed was released -->
-<!ENTITY nvidia-version               "570.133.07">
+<!ENTITY nvidia-version               "575.51.02">
 <!ENTITY spirv-version                "&vulkan-version;.0">
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">

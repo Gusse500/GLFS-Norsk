@@ -44,6 +44,10 @@
       <para>April 18th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA: 570.133.07 -&gt; 575.51.02. Fixes
+          <ulink url="&glfs-issues;/206">#206</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - HarfBuzz: 11.0.1 -&gt; 11.1.0;
           libgpg-error: 1.53 -&gt; 1.54. Fixes
           <ulink url="&glfs-issues;/202">#202</ulink> and
