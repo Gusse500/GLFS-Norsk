@@ -44,6 +44,10 @@
       <para>April 18th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: 25.0.3 -&gt; 25.0.4. Fixes
+          <ulink url="&glfs-issues;/204">#204</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA: 570.133.07 -&gt; 575.51.02. Fixes
           <ulink url="&glfs-issues;/206">#206</ulink>.</para>
         </listitem>
