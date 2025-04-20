@@ -227,11 +227,30 @@ make</userinput></screen>
 
       <seglistitem>
         <seg>
-          msidb, msiexec, notepad, regedit, regsvr32, widl, wine,
-          wine-preloader, wine64, wine64-preloader, wineboot, winebuild,
-          winecfg, wineconsole, winecpp, winedbg, winedump, winefile,
-          wineg++, winegcc, winemaker, winemine, winepath, wineserver,
-          wmc, and wrc
+          function_grep.pl,
+          msidb (link to wine),
+          msiexec (link to wine),
+          notepad (link to wine),
+          regedit (link to wine),
+          regsvr32 (link to wine),
+          widl,
+          wine,
+          wineboot (link to wine),
+          winebuild,
+          winecfg (link to wine),
+          wineconsole (link to wine),
+          winecpp (link to winegcc),
+          winedbg (link to wine),
+          winedump,
+          winefile (link to wine),
+          wineg++ (link to winegcc),
+          winegcc,
+          winemaker,
+          winemine (link to wine),
+          winepath (link to wine),
+          wineserver,
+          wmc, and
+          wrc
         </seg>
 
         <seg>Various dynamic and static libraries</seg>
@@ -248,11 +267,24 @@ make</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
+      <varlistentry id="function_grep.pl">
+        <term><command>function_grep.pl</command></term>
+        <listitem>
+          <para>
+            is a Perl script that does the same job as <command>grep</command>
+          </para>
+          <indexterm zone="wine function_grep.pl">
+            <primary sortas="b-function_grep.pl">function_grep.pl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="msidb">
         <term><command>msidb</command></term>
         <listitem>
           <para>
-            handles MSI databases
+            handles MSI databases;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine msidb">
             <primary sortas="b-msidb">msidb</primary>
@@ -264,7 +296,8 @@ make</userinput></screen>
         <term><command>msiexec</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> MSI installer
+            is the <application>Wine</application> MSI installer;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine msiexec">
             <primary sortas="b-msiexec">msiexec</primary>
@@ -276,7 +309,8 @@ make</userinput></screen>
         <term><command>notepad</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> text editor
+            is the <application>Wine</application> text editor;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine notepad">
             <primary sortas="b-notepad">notepad</primary>
@@ -288,7 +322,8 @@ make</userinput></screen>
         <term><command>regedit</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> registry editor
+            is the <application>Wine</application> registry editor;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine regedit">
             <primary sortas="b-regedit">regedit</primary>
@@ -300,7 +335,8 @@ make</userinput></screen>
         <term><command>regsvr32</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> DLL Registration Server
+            is the <application>Wine</application> DLL Registration Server;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine regsvr32">
             <primary sortas="b-regsvr32">regsvr32</primary>
@@ -333,48 +369,13 @@ make</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="wine-preloader">
-        <term><command>wine-preloader</command></term>
-        <listitem>
-          <para>
-            preloads Win32 binaries
-          </para>
-          <indexterm zone="wine wine-preloader">
-            <primary sortas="b-wine-preloader">wine-preloader</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="wine64">
-        <term><command>wine64</command></term>
-        <listitem>
-          <para>
-            runs 64-bit Windows programs on Unix
-          </para>
-          <indexterm zone="wine wine64">
-            <primary sortas="b-wine64">wine64</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="wine64-preloader">
-        <term><command>wine64-preloader</command></term>
-        <listitem>
-          <para>
-            preloads 64-bit Windows binaries
-          </para>
-          <indexterm zone="wine wine64-preloader">
-            <primary sortas="b-wine64-preloader">wine64-preloader</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
       <varlistentry id="wineboot">
         <term><command>wineboot</command></term>
         <listitem>
           <para>
             performs <application>Wine</application> initialization, startup,
-            and shutdown tasks
+            and shutdown tasks;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine wineboot">
             <primary sortas="b-wineboot">wineboot</primary>
@@ -386,7 +387,7 @@ make</userinput></screen>
         <term><command>winebuild</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> dll builder
+            is the <application>Wine</application> DLL builder
           </para>
           <indexterm zone="wine winebuild">
             <primary sortas="b-winebuild">winebuild</primary>
@@ -398,7 +399,8 @@ make</userinput></screen>
         <term><command>winecfg</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> Configuration Editor
+            is the <application>Wine</application> Configuration Editor;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winecfg">
             <primary sortas="b-winecfg">winecfg</primary>
@@ -410,7 +412,8 @@ make</userinput></screen>
         <term><command>wineconsole</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> console
+            is the <application>Wine</application> console;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine wineconsole">
             <primary sortas="b-wineconsole">wineconsole</primary>
@@ -435,7 +438,8 @@ make</userinput></screen>
         <term><command>winedbg</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> debugger
+            is the <application>Wine</application> debugger;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winedbg">
             <primary sortas="b-winedbg">winedbg</primary>
@@ -459,7 +463,8 @@ make</userinput></screen>
         <term><command>winefile</command></term>
         <listitem>
           <para>
-            is a <application>Wine</application> File Manager
+            is a <application>Wine</application> File Manager;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winefile">
             <primary sortas="b-winefile">winefile</primary>
@@ -485,7 +490,10 @@ make</userinput></screen>
         <listitem>
           <para>
             is the <application>Wine</application> <application>Minesweeper
-            </application> game.
+            </application> game; it is also just an example and not meant
+            to be an accurate implementation of <application>Minesweeper;
+            </application>
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winemine">
             <primary sortas="b-winemine">winemine</primary>
@@ -497,7 +505,8 @@ make</userinput></screen>
         <term><command>winepath</command></term>
         <listitem>
           <para>
-            is a tool to convert Unix paths to/from Win32 paths
+            is a tool to convert Unix paths to/from Win32 paths;
+            symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winepath">
             <primary sortas="b-winepath">winepath</primary>

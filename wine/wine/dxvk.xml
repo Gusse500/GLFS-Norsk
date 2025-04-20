@@ -223,7 +223,7 @@ done</userinput></screen>
     </para>
 
     <para>
-      <command>wine{,64} reg add ...</command>: This command overrides the
+      <command>wine reg add ...</command>: This command overrides the
       registry so that <application>Wine</application> will use the new DLL
       files instead of the old ones.
     </para>
