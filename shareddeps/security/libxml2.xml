@@ -4,12 +4,13 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libxml2-download-http "https://download.gnome.org/sources/libxml2/2.13/libxml2-&libxml2-version;.tar.xz">
+  <!ENTITY libxml2-dl-root "https://download.gnome.org/sources/libxml2">
+  <!ENTITY libxml2-download-http
+    "&libxml2-dl-root;/&libxml2-minor;/libxml2-&libxml2-version;.tar.xz">
 ]>
 
 <sect1 id="libxml2" xreflabel="libxml2-&libxml2-version;">
   <?dbhtml filename="libxml2.html"?>
-
 
   <title>libxml2-&libxml2-version;</title>
 
