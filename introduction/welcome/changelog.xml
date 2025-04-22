@@ -44,6 +44,10 @@
       <para>April 22nd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - LLVM, libclc: 20.1.2 -&gt; 20.1.3. Fixes
+          <ulink url="&glfs-issues;/203">#203</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Wine: 10.5 -&gt; 10.6. Fixes
           <ulink url="&glfs-issues;/208">#208</ulink>.</para>
         </listitem>

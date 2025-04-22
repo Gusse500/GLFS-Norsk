@@ -156,7 +156,7 @@
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.2.0">
 <!ENTITY llvm-maj-version             "20">
-<!ENTITY llvm-point-version           "2">
+<!ENTITY llvm-point-version           "3">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
 <!ENTITY rustc-version                "1.86.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs

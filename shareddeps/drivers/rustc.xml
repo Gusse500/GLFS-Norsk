@@ -141,7 +141,7 @@
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
       <xref linkend="llvm"/>
-      (built with -DLLVM_LINK_LLVM_DYLIB=ON so that
+      (built with <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter> so that
       <application>Rustc</application> can link to the system-installed
       <application>LLVM</application> instead of building its shipped version)
     </para>
