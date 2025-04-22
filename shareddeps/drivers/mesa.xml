@@ -203,7 +203,6 @@ cd    build &amp;&amp;
 meson setup                    \
       --prefix=/usr            \
       --buildtype=release      \
-      -D osmesa=true           \
       -D platforms=x11,wayland \
       -D gallium-drivers=auto  \
       -D vulkan-drivers=auto   \
@@ -257,7 +256,6 @@ meson setup                    \
       --prefix=/usr            \
       --libdir=/usr/lib32      \
       --buildtype=release      \
-      -D osmesa=true           \
       -D platforms=x11,wayland \
       -D gallium-drivers=auto  \
       -D vulkan-drivers=auto   \
@@ -351,8 +349,7 @@ ldconfig</userinput></screen>
         </listitem>
         <listitem>
           <para>
-            <literal>softpipe</literal> (using CPU for 3D rasterization; needed for
-            OSMesa which provides OpenGL bitmap support)
+            <literal>softpipe</literal> (using CPU for 3D rasterization)
           </para>
         </listitem>
         <listitem>
@@ -395,12 +392,6 @@ ldconfig</userinput></screen>
       build only a subset of these drivers if you precisely know which drivers
       you need, for example:
       <option>-D gallium-drivers=radeonsi,iris,swrast</option>.
-    </para>
-
-    <para>
-      <parameter>-D osmesa=true</parameter>: This switch enables building
-      the <filename class="libraryfile">libOSMesa</filename> library and
-      provides Gallium3D support in it. It requires the softpipe gallium driver.
     </para>
 
     <para>
@@ -543,8 +534,7 @@ ldconfig</userinput></screen>
           libgallium-&mesa-version;,
           libgbm,
           libglapi,
-          libGLX_mesa,
-          libOSMesa, and
+          libGLX_mesa, and
           libxatracker
         </seg>
         <seg>
@@ -713,20 +703,6 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="mesa libGL">
             <primary sortas="c-libGL">libGL</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libOSMesa">
-        <term><filename class="libraryfile">libOSMesa</filename></term>
-        <listitem>
-          <para>
-            allows applications to render into user-allocated memory
-            without any windowing or operating system dependencies, ie.
-            off-screen rendering
-          </para>
-          <indexterm zone="mesa libOSMesa">
-            <primary sortas="c-libOSMesa">libOSMesa</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -78,12 +78,6 @@
       </listitem>
       <listitem>
         <para>
-          OSMesa from <xref linkend="mesa"/>: for bitmap support. It is
-          compiled using the <parameter>-D osmesa=true</parameter> option.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
           <xref linkend="sdl2"/>: for input and other neat stuff.
         </para>
       </listitem>
