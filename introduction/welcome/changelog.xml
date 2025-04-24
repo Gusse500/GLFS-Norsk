@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 24th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Steam: 1.0.0.82 -&gt; 1.0.0.83. Fixes
+          <ulink url="&glfs-issues;/212">#212</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 22nd, 2025</para>
       <itemizedlist>
         <listitem>
