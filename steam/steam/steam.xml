@@ -235,7 +235,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <listitem>
           <para>
             is a tarball containing 32-bit software that fetches the
-            <application>Steam</application> runtime from VALVe's servers
+            <application>Steam</application> runtime from VALVE's servers
           </para>
           <indexterm zone="steam bootstrap-steam">
             <primary sortas="b-bootstrap-steam">bootstraplinux_ubuntu12_32.tar.xz</primary>
