@@ -5,7 +5,6 @@
   %general-entities;
 
   <!ENTITY mesa-download-http "https://mesa.freedesktop.org/archive/mesa-&mesa-version;.tar.xz">
-  <!ENTITY mesa-download-ftp  " ">
 ]>
 
 <sect1 id="mesa" xreflabel="Mesa-&mesa-version;">
@@ -22,18 +21,9 @@
 
     <para>
       <application>Mesa</application> offers a wide variety of graphic
-      software, offering the OpenGL library, OpenGL drivers, Vulkan drivers,
-      and so forth.
+      software, like the OpenGL libraries and drivers, Vulkan drivers,
+      and other drivers.
     </para>
-
-<!--
-    <note><para>
-      If you are wanting to install <xref linkend="nvidia"/>, skip this
-      package. If you don't plan on that but still have installed <xref
-      linkend="libglvnd"/>, you still need to compile drivers and the
-      GBM. The instructions below will account for that.
-    </para></note>
--->
 
     <note>
       <para>
@@ -60,12 +50,7 @@
           Download (HTTP): <ulink url="&mesa-download-http;"/>
         </para>
       </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&mesa-download-ftp;"/>
-        </para>
-      </listitem>
-    </itemizedlist>
+
 <!--
     <para>
       <emphasis role="strong">Patch for Seizure Prevention (Recommended)</emphasis>
@@ -79,6 +64,7 @@
       </listitem>
     </itemizedlist>
 -->
+
     <bridgehead renderas="sect3">Mesa Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
@@ -113,7 +99,7 @@
         <listitem>
           <para>
             <xref role="first" linkend="libva"/> (to provide VA-API support for some
-            gallium drivers, note that there is a circular dependency. You must
+            Gallium3D drivers, note that there is a circular dependency. You must
             build <application>libva</application> first without EGL and GLX support,
             install this package, and rebuild <application>libva</application>)
           </para>
