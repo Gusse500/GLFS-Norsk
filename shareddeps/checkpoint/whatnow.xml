@@ -34,6 +34,13 @@
   </para>
 
   <para>
+    Furthermore, make sure to install a video userland driver. While no
+    sections later in this book depend on the drivers, a graphical environment
+    needs a driver. Be sure to read <xref linkend="whatdriver"/> and install
+    the driver(s) of your choosing.
+  </para>
+
+  <para>
     While you are at it, make sure you have followed
     <xref linkend="bash-profile"/> if you have not already as the files in that
     section set necessary variables.
