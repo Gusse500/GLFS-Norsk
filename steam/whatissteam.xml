@@ -12,13 +12,12 @@
   <title>What is Steam?</title>
 
   <para>
-    Steam is a set of tools that can purchase, download, and execute a
-    variety of games and software, including Windows applications
-    without the need of Wine via the Steam tool Proton. This can
-    can be a replacement for Wine although some applications might
-    not work as expected. Most games are built for Windows but
-    most work fine with Proton. It works on regular Linux distributions,
-    including LFS without all the setup required for Wine.
+    Steam is a set of tools that can purchase, download, and execute a variety
+    of games and software, including Windows applications without the need of
+    Wine via the Steam tool Proton. This can be a replacement for Wine although
+    some applications might not work as expected. Most games are built for
+    Windows but most work fine with Proton. It works on regular Linux
+    distributions, including LFS without all the setup required for Wine.
   </para>
 
   <para>
