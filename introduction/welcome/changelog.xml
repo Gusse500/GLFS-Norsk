@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>April 27th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libgpg-error: 1.54 -&gt; 1.55.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 24th, 2025</para>
       <itemizedlist>
         <listitem>
