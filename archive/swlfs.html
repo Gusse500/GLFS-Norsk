@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+		<title>
+		Steam and Wine on Linux From Scratch!
+		</title>
+	</head>
+	<body>
+		<h1>
+		Steam and Wine on Linux From Scratch!
+		</h1>
+		<p>
+		Linux From Scratch is a guide meant to cover how a basic Linux System works, and how to install the very bare minimum (close to the very bare minimum, but not quite, as some packages aren't necessary in my opinion) amount of packages to get a bootable, working system, primed to be able to go forward from there and continue onto the next guide, Beyond Linux From Scratch. BLFS covers many packages for nearly everyone, except, well, gamers and those that can't do Linux without some Windows software which runs fine on Linux under Wine. 
+		</p>
+		<p>
+		So what's the option for people like them? Going off-roading!
+		</p>
+		<p>
+		I would like to note that getting Steam and Wine to work on LFS are two different tasks, but I recommend installing most of the packages (as well as the lib32 versions) listed in the Steam section if you are doing a multilib installation (more on that later) if you intend to just install Wine and skip Steam. Some packages not even including multilib are still necessary for Wine to even compile, like having a display server and having OpenGL (either MESA or libglvnd). For this sake, I'll cover Steam first, then Wine. If you just wanna use Steam and be done with it, you can just skip anything covered in the Wine section. In other words, when you're done with the Steam section, you're done.
+		</p>
+		<h3>
+		I'll say this here: I may do things a certain way which you might not agree with and may not be the best way to do things. This guide is the way I did and do things and what I did is not the only way to get things working. Little disclaimer out of the way.
+		</h3>
+		<h2>
+		Multilib / lib32
+		</h2>
+		<p>
+		Most people following this guide should be using an x86_64 CPU and is capable of emulating 32-bit applications. In that case, Steam will complain that it cannot find the 32-bit version of libc.so.6 if you skip the lib32 branches. Please don't do this and install both the 64-bit and 32-bit versions of the packages I will lay out if you are following the Steam section. Wine users, some applications are 32-bit only, so I recommend following the lib32 branches as well. Users who just have an i*86 CPU should follow the 64-bit instructions as the instructions for you will just compile for i*86, i686 in most cases. If you have trouble following those instructions for your arch, I recommend taking a look at <a href="https://linuxfromscratch.org/blfs/view/stable" target="_blank">https://linuxfromscratch.org/blfs/view/stable</a> and the packages listed on there that are on here. Most if not all of the packages one here (besides Steam, Wine, and the Mingw-w64 toolchain) are also on BLFS.
+		</p>
+		<h2>
+		Multilib Preparation
+		</h2>
+		<p>
+		Those that have decided, or couldn't decide due to their architecture and Steam's requirement, that they want/need to have multilib support, it would be wise to test if you have that support or not:
+		<br><br>
+		<code>
+		echo "int main(){}" >> dummy.c
+		<br>
+		gcc -m32 dummy.c
+		<br>
+		./a.out
+		</code>
+		<br><br>
+		The output of said command should be:
+		<br>
+		<code>
+		</code>
+		<br>
+		Well... nothing! If there is no error, then you can both compile 32-bit binaries like executables and libraries, and also execute them. If so, you can skip this section and go to the sections you need. For most people, I would hazard a guess that the first error started when <code>gcc -m32</code> was ran, which means GCC doesn't have 32-bit compilation support. Follow the proceding instructions to get multilib support.
+		</p>
+		<p>
+		The best resource to get general multilib support is <a href="https://linuxfromscratch.org/~thomas/multilib" target="_blank">https://linuxfromscratch.org/~thomas/multilib</a>. This is essentially the LFS guide but with multilib. Personally, what I do is I build LFS with multilib support in mind. There probably is a way to get that support without rebuilding but I don't do this. If you want to try, be my guest. As for the guide, it has a couple issues I have found. I will rattle them off along as I go.
+		</p>
+		<h3>
+		It adds support for x32
+		</h3>
+		<p>
+		x32 is a format that is essentially 32-bit with some of the advantages of 64-bit. Most desktop applications don't support this and is basically useless for Steam and Wine users. Almost no-one ever uses it and I recommend against installing x32. I will cover how not to get that support as it's not needed. As a general rule, there are some packages that have the following sections: a 64-bit compilation step, a 32-bit compilation step, and a x32-bit compilation step. The x32-bit compilation steps can be skipped entirely.
+		</p>
+		<h4>
+		4.2. Creating a Limited Directory Layout in the LFS Filesystem:
+		</h4>
+		<p>
+		<code>
+		mkdir -pv $LFS/usr/lib{,x}32
+		<br>
+		ln -sv usr/lib32 $LFS/lib32
+		<br>
+		ln -sv usr/libx32 $LFS/libx32
+		<br><br>
+		</code>
+		Should be changed to:
+		<br><br>
+		<code>
+		mkdir -pv $LFS/usr/lib32
+		<br>
+		ln -sv usr/lib32 $LFS/lib32
+		<br>
+		</code>
+		</p>
+		<h4>
+		4.3. Adding the LFS User:
+		</h4>
+		<p>
+		<code>
+		chown -v lfs $LFS/{lib32,libx32}
+		<br><br>
+		</code>
+		Should be changed to:
+		<code>
+		<br><br>
+		chown -v lfs $LFS/lib32
+		<br>
+		</code>
+		</p>
+		<h4>
+		4.4. Setting Up the Environment:
+		</h4>
+		<p>
+		<code>
+		cat > ~/.bashrc << "EOF" <br>
+		set +h <br>
+		umask 022 <br>
+		LFS=/mnt/lfs <br>
+		LC_ALL=POSIX <br>
+		LFS_TGT=x86_64-lfs-linux-gnu <br>
+		LFS_TGT32=i686-lfs-linux-gnu <br>
+		LFS_TGTX32=x86_64-lfs-linux-gnux32 <br>
+		PATH=/usr/bin <br>
+		if [ ! -L /bin ]; then PATH=/bin:$PATH; fi <br>
+		PATH=$LFS/tools/bin:$PATH <br>
+		CONFIG_SITE=$LFS/usr/share/config.site <br>
+		export LFS LC_ALL LFS_TGT LFS_TGT32 LFS_TGTX32 PATH <br>
+		EOF
+		<br><br>
+		</code>
+		Should be changed to:
+		<code>
+		<br><br>
+		cat > ~/.bashrc << "EOF" <br>
+		set +h <br>
+		umask 022 <br>
+		LFS=/mnt/lfs <br>
+		LC_ALL=POSIX <br>
+		LFS_TGT=x86_64-lfs-linux-gnu <br>
+		LFS_TGT32=i686-lfs-linux-gnu <br>
+		PATH=/usr/bin <br>
+		if [ ! -L /bin ]; then PATH=/bin:$PATH; fi <br>
+		PATH=$LFS/tools/bin:$PATH <br>
+		CONFIG_SITE=$LFS/usr/share/config.site <br>
+		export LFS LC_ALL LFS_TGT LFS_TGT32 PATH <br>
+		EOF
+		<br>
+		</code>
+		</p>
+		<h4>
+		All passes of GCC:
+		</h4>
+		<p>
+		With the current instructions, and this isn't just involving multilib, nscd is no longer necessary but the configure command for me always found a way to still build nscd. Therefore, I recommend including in the configure command with all passes:
+		<br><br>
+		<code>
+		--disable-nscd
+		</code>
+		<br><br>
+		I would put that in the libstdc++ configure command as well for good measure...
+		<br><br>
+		As for the multilib, it has the user define the env variable: mlist, and it is defined like so:
+		<br><br>
+		<code>
+		mlist=m64,m32,mx32 ../configure ...
+		</code>
+		<br><br>
+		But it should be changed to:
+		<br><br>
+		<code>
+		mlist=m64,m32 ../configure ...
+		</code>
+		<br>
+		</p>
+		<h4>
+		7.2. Changing Ownership:
+		</h4>
+		<p>
+		Don't execute the following command if you want to avoid an error (the directory shouldn't be there), unless you like errors:
+		<code>
+		<br><br>
+		chown -R root:root $LFS/libx32
+		<br>
+		</code>
+		</p>
+		<h4>
+		10.3. Linux-6.8.2:
+		</h4>
+		<p>
+		When enabling binary emulation in the Linux kernel, don't enable <code>x32 ABI for 64-bit mode [CONFIG_X86_X32]</code>. 
+		<br><br><br>
+		That covers the no x32-bit subsection.
+		</p>
+		<h3>
+		It does not compile lib32-GDBM
+		</h3>
+		<p>
+		lib32-GDBM is needed by some desktop packgages that you are trying to compile lib32 for, so it's a good idea to compile it so you don't need to go back later:
+		<code>
+		<br><br>
+		CC="gcc -m32" CXX="g++ -m32" \ <br>
+		./configure --prefix=/usr    \ <br>
+			    --libdir=/usr/lib32 \ <br>
+			    --disable-static \ <br>
+			    --enable-libgdbm-compat
+		<br><br>
+		make <br>
+		make DESTDIR=$PWD/DESTDIR install <br>
+		cp -vr DESTDIR/usr/lib32/* /usr/lib32 <br>
+		rm -rf DESTDIR
+		<br><br>
+		</code>
+		That covers the lib32-GDBM compilation subsection and issues with the multilib LFS guide.
+		</p>
+		<h3>
+		What else?
+		</h3>
+		<p>
+		Well, you are done with getting the tools you need for lib32 compilation and are ready for the Steam and/or Wine sections of this guide. As a general rule, this command format will compile the lib32 libraries for you:
+		<code>
+		<br><br>
+		CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig [configure/meson/cmake...] ... --libdir=/usr/lib32 <br>
+		[make / ninja] <br>
+		[make DESTDIR=$PWD/DESTDIR install] / [DESTDIR=$PWD/DESTDIR ninja install] <br>
+		cp -vr DESTDIR/usr/lib32/* /usr/lib32
+		<br><br>
+		</code>
+		It would be wise to also check to see if the libraries you just compiled are 32-bit, and that can be done using file. If you don't check it and it ends up being 64-bit, the package you try to compile for 32-bit that depends on the previous package will error out during the linking step because the dependency library is in an invalid format. A simple library being 64 bit in the lib32 directory won't break your system but you'll need to fix the issue before you can compile packages that depend on it.
+		</p>
+		<h2>
+		Steam
+		</h2>
+	</body>
+</html>

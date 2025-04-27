@@ -11,40 +11,64 @@
   <title>Preface</title>
 
   <para>
-    After around 2 or 3 months of my first ever install of Linux From Scratch,
-    I had an question: how do I install <application>Steam</application> on
-    this? After some time, I went for Beyond Linux From Scratch, a very great
-    book that covered most of what I both wanted and needed, but my
-    <application>Steam</application> question never got answered. So I just
-    tried to install the <application>Steam</application> tarball and I went
-    down the rabbit hole.
+    Sometime after my first install of LFS, I had an question that others had:
+    how do I install <application>Steam</application> on this system? I kept
+    that thought in the back of my head as I went for Beyond LFS, a book that
+    covered a good number of packages I needed. However, the issue of
+    <application>Steam</application> was not cleared up yet. So I just tried to
+    install the <application>Steam</application> tarball. Because I did not
+    have 32-bit libraries, this ended in failure.
   </para>
 
   <para>
-    Beyond Linux From Scratch didn't show how so I felt alone and on my own.
-    I learned shortly after my attempt that I need multilib, and Bruce Dubbs
-    saw my email and responded quite promptly saying to go to Thomas' Multilib
-    mirror. This made all the difference, but now I needed to find out all the
-    packages to install, all the configuration.
+    Beyond LFS doesn't cover the installation of Steam, so I had to look
+    elsewhere. I learned shortly after my attempt that I needed a multilib
+    toolchain. I sent an <ulink
+    url="https://lists.linuxfromscratch.org/sympa/arc/blfs-support/2023-03/msg00049.html">email</ulink>
+    to the blfs-support mailing list in search of potential multilib support.
+    Douglas Reno saw my email and suggested to give Thomas' Multilib branch a
+    read. I rebuilt my LFS system with multilib support in mind.
   </para>
 
   <para>
     Rahul Chandra in the same thread mentioned his scripts for his distro,
-    Tucana. These scripts helped so much, even if all the scripts were
-    presented all at once. Once I had got <application>Steam</application>
-    to work, I realized that in some way, somehow, I must share how I did it
-    and to help others with a single comprehensive guide.
+    Tucana. These scripts gave me a basic idea of how to do lib32 installations
+    for BLFS packages which were necessary for
+    <application>Steam.</application>. While this wasn't exactly difficult,
+    it was a big timesink as I had to manually type in all the lib32
+    compilation options to successfully build 32-bit libraries. Even after
+    having built all the 32-bit libraries required, a few more fixes and files
+    were necessary. After about a week, I managed to get
+    <application>Steam</application> working. I realized that this was a lot of
+    work, and many users who'd want to do the same thing would get stuck and
+    not know what to do. In the worst case, they'd give up before even reaching
+    their goal. I had made a pretty lackluster <ulink
+    url="https://www.youtube.com/watch?v=yQ8ueeRZ5q0">YouTube video</ulink>
+    explaining some troubleshooting information in an attempt to make things a
+    bit easier. Shortly after the video, I realized it wasn't really good
+    enough. Knowledge and methods are one thing, but hours spent is another. I
+    put my ambitions for an easier guide on my backlog and did other things.
   </para>
 
   <para>
-    At some point, I also decided to try to get Wine to work. I was successful.
-    I, again like with <application>Steam</application> before, wanted to share
-    the process. Rahul reached out to me, and that led to this book's creation
+    Sometime afterwards, I decided to do a <ulink
+    url="https://www.youtube.com/playlist?list=PL_vcsK5qbWSv-70zpfFcol_D9yovtf6N6">stream
+    series</ulink> that included that installation of
+    <application>Wine</application>, not just <application>Steam</application>.
+    My general idea was to compile all the stream footage (roughly 40 GB worth)
+    into a single video master guide. When some time passed, I came to the
+    conclusion that for a installation guide for two complex packages on an LFS
+    system, a video is not a great format. I decided to then write up some
+    basic <ulink url="../archive/swlfs.html">HTML</ulink>. Rahul Chandra came
+    across my <ulink
+    url="https://www.youtube.com/channel/UCqYrmltSQNdtsbpsbhZI3wg/community?lb=UgkxDlke0llHGWxC7HpzVyv24K8XcsWFF8Dn">YouTube
+    post</ulink> and reached out to me. He suggested that I should reuse the
+    LFS/BLFS codebase to make my own book. That led to this book's creation
     and editing.
   </para>
 
   <para>
-    Thank you, and I hope this helps you.
+    Hopefully this book does its job. Have fun, and good luck!
   </para>
 
   <blockquote>
@@ -55,6 +79,5 @@ zeckma.tech &lt;at&gt; gmail.com</literallayout>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="foreword.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whoread.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="organization.xml"/>
-  <!-- <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="errata.xml"/> -->
 
 </preface>

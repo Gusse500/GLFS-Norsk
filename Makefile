@@ -163,6 +163,12 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
 
+	@echo "Copying over legacy HTML..."
+	$(Q)if [ ! -e $(BASEDIR)/archive ]; then \
+		mkdir -p $(BASEDIR)/archive;          \
+	fi;
+	$(Q)cp -R archive/*.html $(BASEDIR)/archive
+
 	$(Q)$(CLEAN)
 
 validate: $(RENDERTMP)/$(GLFSFULL)
