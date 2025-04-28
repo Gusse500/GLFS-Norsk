@@ -41,6 +41,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -50,6 +51,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">Glslang Dependencies</bridgehead>
 
@@ -64,12 +66,14 @@
   <sect2 role="installation">
     <title>Installation of Glslang</title>
 
+<!--
     <para>
       First patch the package to ensure that <filename
       class="libraryfile">libSPIRV</filename> will be installed:
     </para>
 
 <screen><userinput>patch -Np1 -i ../glslang-&glslang-version;-SPIRV_install-1.patch</userinput></screen>
+-->
 
     <para>
       Install <application>Glslang</application> by running the following
