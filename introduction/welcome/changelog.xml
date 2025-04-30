@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>April 30th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - gst*: 1.26.0 -&gt; 1.26.1 (Security). Fixes
+          <ulink url="&glfs-issues;/215">#215</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 27th, 2025</para>
       <itemizedlist>
         <listitem>
