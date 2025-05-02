@@ -68,30 +68,10 @@
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
-    <para role="recommended">
-      <itemizedlist spacing="compact">
-        <listitem>
-          <para>
-            <xref linkend="wayland-protocols"/> (required for many desktop
-            environments and recommended for GTK)
-          </para>
-        </listitem>
-      </itemizedlist>
-    </para>
-
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
-      <xref linkend="libunwind"/>,
-      <xref linkend="nettle"/>,
-      <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://archive.mesa3d.org/demos/">mesa-demos</ulink>
-      (provides more than 300 demos to test drivers),
-      <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
-      Layer</ulink> (for mobile platforms), and
-      <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
-      libtizonia</ulink>
+      (provides more than 300 demos to test drivers)
     </para>
 <!--
     <note>
@@ -121,7 +101,6 @@ cd    build &amp;&amp;
 
 meson setup --prefix=/usr            \
             --buildtype=release      \
-            -D platforms=x11,wayland \
             -D gallium-drivers=      \
             -D vulkan-drivers=       \
             -D video-codecs=         \
@@ -158,7 +137,6 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \
             --buildtype=release      \
-            -D platforms=x11,wayland \
             -D gallium-drivers=      \
             -D vulkan-drivers=       \
             -D video-codecs=         \
@@ -192,12 +170,6 @@ ldconfig</userinput></screen>
       fully-optimized build, and disables debug assertions which will
       severely slow down the libraries in certain use-cases. Without this
       switch, build sizes can span into the 2GB range.
-    </para>
-
-    <para>
-      <parameter>-D platforms=...</parameter>: This parameter
-      controls which windowing systems will be supported. Available
-      linux platforms are x11 and wayland.
     </para>
 
     <para>
@@ -235,8 +207,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D valgrind=disabled</parameter>: This parameter disables
-      the usage of Valgrind during the build process. Remove this parameter
-      if you have Valgrind installed, and wish to check for memory leaks.
+      the usage of Valgrind during the build process.
     </para>
 
     <para>
