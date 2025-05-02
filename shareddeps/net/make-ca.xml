@@ -145,29 +145,6 @@ install -vdm755 /etc/ssl/local</userinput></screen>
 
 <screen role="root"><userinput>/usr/sbin/make-ca -g</userinput></screen>
 
-    <para>
-      You should periodically update the store with the above command,
-      either manually, or via a <phrase revision="sysv">cron job.</phrase>
-      <phrase revision="systemd">systemd timer. A timer is installed at
-      <filename>/usr/lib/systemd/system/update-pki.timer</filename> that, if
-      enabled, will check for updates weekly.</phrase><phrase
-      revision="sysv">If you've installed <!-- xref linkend="fcron"/ --> and
-      completed the section on periodic jobs, execute</phrase> <phrase
-      revision="systemd">Execute</phrase> the following commands, as the
-      <systemitem class="username">root</systemitem> user, to <phrase
-      revision="sysv">create a weekly cron job:</phrase><phrase
-      revision="systemd">enable the systemd timer:</phrase>
-    </para>
-
-<screen role="nodump" revision="sysv"><userinput>cat &gt; /etc/cron.weekly/update-pki.sh &lt;&lt; "EOF" &amp;&amp;
-<literal>#!/bin/bash
-/usr/sbin/make-ca -g</literal>
-EOF
-
-chmod 754 /etc/cron.weekly/update-pki.sh</userinput></screen>
-
-<screen role="root" revision="systemd"><userinput>systemctl enable update-pki.timer</userinput></screen>
-
   </sect2>
 
   <sect2 role="configuration" id="make-ca-config">
