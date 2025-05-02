@@ -73,11 +73,6 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            <xref linkend="libglvnd"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
             <xref linkend="wayland-protocols"/> (required for many desktop
             environments and recommended for GTK)
           </para>
