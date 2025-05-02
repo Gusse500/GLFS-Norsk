@@ -136,10 +136,13 @@
 <!ENTITY vulkan-version               "1.4.309">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
-<!ENTITY mako-version                 "1.3.10">
 <!ENTITY libdrm-version               "2.4.124">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY libvdpau-version             "1.5">
+<!ENTITY mako-version                 "1.3.10">
+<!ENTITY cython-version               "3.0.12">
+<!ENTITY yaml-version                 "0.2.5">
+<!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY mesa-major-minor             "25.0">
 <!ENTITY mesa-version                 "&mesa-major-minor;.4">
 <!ENTITY linux-version                "6.14.2">
@@ -167,9 +170,6 @@
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.1">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY ply-version                  "3.11">
-<!ENTITY cython-version               "3.0.12">
-<!ENTITY yaml-version                 "0.2.5">
-<!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY amdgpu-pro-major-version     "24.20">
 <!ENTITY amdgpu-pro-major-short-version "&amdgpu-pro-major-version;">
 <!ENTITY amdgpu-pro-minor-version     "2044449">

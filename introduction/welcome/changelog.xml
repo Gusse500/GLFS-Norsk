@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>May 2nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GBM: Make PyYAML a requirement.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>April 30th, 2025</para>
       <itemizedlist>
         <listitem>
