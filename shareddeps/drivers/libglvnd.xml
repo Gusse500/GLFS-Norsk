@@ -51,7 +51,7 @@
       install OpenGL libraries from this package, you can skip this page and
       continue onto the next package. If you want to install this package, but
       not <xref linkend="nvidia"/>, you will still need to install <xref
-      linkend="mesa"/>. Its instructions will account for this installation.
+      linkend="mesa"/> for drivers.
     </para>
 
     <itemizedlist spacing="compact">
