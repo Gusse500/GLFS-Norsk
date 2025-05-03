@@ -1,3 +1,4 @@
 DRM="*M"
+FB_SIMPLE=" M"
 FB_NVIDIA="M"
 DRM_NOUVEAU="M"

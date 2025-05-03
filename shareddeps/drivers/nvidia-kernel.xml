@@ -9,4 +9,5 @@
                                                                       ...  [DRM]
       &lt;M&gt; N<emphasis role='blue'>o</emphasis>uveau (NVIDIA) cards                                   [DRM_NOUVEAU]
     <emphasis role='blue'>F</emphasis>rame buffer Devices ---&gt;
-      &lt;M&gt; n<emphasis role='blue'>V</emphasis>idia Framebuffer Support                                 [FB_NVIDIA]</screen>
+      &lt;M&gt;   n<emphasis role='blue'>V</emphasis>idia Framebuffer Support                               [FB_NVIDIA]
+      &lt; /M&gt; <emphasis role='blue'>S</emphasis>imple framebuffer support                               [FB_SIMPLE]</screen>

@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>May 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Fix building with GCC-15.x.x.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 2nd, 2025</para>
       <itemizedlist>
         <listitem>

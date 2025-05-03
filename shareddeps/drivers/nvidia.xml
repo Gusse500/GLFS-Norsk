@@ -40,6 +40,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Required patch:
+          <ulink url="&patch-root;/nvidia/nvidia-&nvidia-version;-gcc15.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">NVIDIA Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
@@ -85,13 +95,13 @@
 
     <note>
       <para>
-        Make sure to execute the following command when an <application>Xorg
+        Make sure to execute the following commands when an <application>Xorg
         </application> instance isn't running, or else the driver will
         complain and quit. Alternatively, you can pass <parameter>
         --allow-installation-with-running-driver --no-x-check</parameter> to
-        override NVIDIA's warnings. This is not recommended as it skips
-        sanity checks, but is generally safe. If you do this, you should
-        reboot afterwards.
+        <command>nvidia-installer</command> to override NVIDIA's warnings. This
+        is not recommended as it skips sanity checks, but is generally safe. If
+        you do this, you should reboot afterwards.
       </para>
 
       <para>
@@ -131,10 +141,18 @@
       command as the <systemitem class="username">root</systemitem> user:
     </para>
 
-<screen role="root"><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run \</userinput><userinput revision='sysv'>
-  --no-systemd          \</userinput><userinput>
-  --no-abi-note         \
-  --install-compat32-libs</userinput></screen>
+<screen role="root"><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run -x &amp;&amp;
+pushd NVIDIA-Linux-x86_64-&nvidia-version; &amp;&amp;
+  patch -Np1 -i ../nvidia-&nvidia-version;-gcc15.patch \
+    -d kernel &amp;&amp;
+  patch -Np1 -i ../nvidia-&nvidia-version;-gcc15.patch \
+    -d kernel-open &amp;&amp;
+  ./nvidia-installer --no-abi-note \
+                     --ui=none     \</userinput><userinput revision='sysv'>
+                     --no-systemd  \</userinput><userinput>
+                     --install-compat32-libs &amp;&amp;
+  popd &amp;&amp;
+rm -rf NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 
     <tip><para>
       If you aren't booted in the LFS system you are installing GLFS for, then
@@ -221,14 +239,29 @@
   <sect2 role="commands">
     <title>Command Explanations</title>
 
-    <para revision="sysv">
-      <parameter>--no-systemd</parameter>: This parameter disables Systemd
-      support.
+    <para>
+      <parameter>-x</parameter>: This switch extracts the runfile.
+    </para>
+
+    <para>
+      <command>patch ...</command>: These commands apply patches that force
+      the installation to use <parameter>-std=gnu17</parameter> when compiling
+      kernel modules. This is necessary to allow building with GCC-15.x.x.
     </para>
 
     <para>
       <parameter>--no-abi-note</parameter>: This parameter removes a mostly
       useless note about a minimum kernel version for NVIDIA OpenGL libraries.
+    </para>
+
+    <para>
+      <parameter>--ui=none</parameter>: This disables a TUI menu which can get
+      graphical issues during installation.
+    </para>
+
+    <para revision="sysv">
+      <parameter>--no-systemd</parameter>: This parameter disables Systemd
+      support.
     </para>
 
     <para>
