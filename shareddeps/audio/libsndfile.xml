@@ -63,6 +63,12 @@
     <title>Installation of libsndfile</title>
 
     <para>
+      Fix the code to allow building with GCC-15.x.x:
+    </para>
+
+<screen><userinput>sed '/typedef enum/,/bool ;/d' -i src/ALAC/alac_{en,de}coder.c</userinput></screen>
+
+    <para>
       Install <application>libsndfile</application> by running the following
       commands:
     </para>

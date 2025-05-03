@@ -42,10 +42,26 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Required patch:
+          <ulink url="&patch-root;/libunwind/libunwind-&libunwind-version;-fix_malloc.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
   </sect2>
 
   <sect2 role="installation">
     <title>Installation of libunwind</title>
+
+    <para>
+      Fix an incorrect prototype for <envar>malloc()</envar>:
+    </para>
+
+<screen><userinput>patch -Np1 -i ../libunwind-&libunwind-version;-fix_malloc.patch</userinput></screen>
 
     <para>
       Install <application>libunwind</application> by running the following

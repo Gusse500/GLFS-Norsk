@@ -44,6 +44,10 @@
       <para>May 2nd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libsndfile; libunwind; Wine: Fix building with
+          GCC-15.x.x.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: A few tweaks regarding libglvnd.</para>
         </listitem>
         <listitem>

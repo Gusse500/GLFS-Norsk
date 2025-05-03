@@ -91,7 +91,9 @@
 <screen><userinput>mkdir build-win64 &amp;&amp;
 cd    build-win64 &amp;&amp;
 
-../configure --prefix=/usr --enable-win64 &amp;&amp;
+../configure --prefix=/usr   \
+             --disable-tests \
+             --enable-win64 &amp;&amp;
 
 make              &amp;&amp;
 
@@ -99,8 +101,9 @@ cd ..             &amp;&amp;
 mkdir build-win32 &amp;&amp;
 cd    build-win32 &amp;&amp;
 
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
-../configure --prefix=/usr                \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+../configure --prefix=/usr           \
+             --disable-tests         \
              --with-wine64=../build-win64 &amp;&amp;
 
 make</userinput></screen>
@@ -126,7 +129,9 @@ make install</userinput></screen>
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-../configure --prefix=/usr --enable-win64 &amp;&amp;
+../configure --prefix=/usr   \
+             --disable-tests \
+             --enable-win64 &amp;&amp;
 
 make</userinput></screen>
 
@@ -159,7 +164,7 @@ make</userinput></screen>
 cd    build &amp;&amp;
 
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-../configure --prefix=/usr &amp;&amp;
+../configure --prefix=/usr --disable-tests &amp;&amp;
 
 make</userinput></screen>
 
@@ -177,6 +182,21 @@ make</userinput></screen>
     <title>Command Explanations</title>
 
     &options-subconfigure;
+
+    <para>
+      <parameter>--disable-tests</parameter>: This parameter disables building
+      tests. As of now with GCC-15.x.x, tests are broken
+      <footnote><para>
+        With the dwrite component, the regression test for it is broken with
+        GCC-15.x.x as a C runtime, the MSVCRT (MicroSoft Visual C RunTime) DLL
+        this package compiles, does not export <envar>trunc{,f,l}</envar>.
+        Newer GCC lowers the reference to <envar>floor</envar>. So this
+        reference cannot be found, breaking the test compilation and making
+        this package to FTBFS. Further reading <ulink
+        url="https://bugs.winehq.org/show_bug.cgi?id=58191">here</ulink>.
+      </para></footnote>, so this parameter is a requirement for the time
+      being.
+    </para>
 
     <para>
       <parameter>--with-wine64=../build-win64</parameter>: This option
