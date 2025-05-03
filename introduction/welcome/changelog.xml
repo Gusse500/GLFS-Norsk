@@ -44,6 +44,10 @@
       <para>May 2nd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - GCC: 14.2.0 -&gt; 15.1.0. Fixes
+          <ulink url="&glfs-issues;/213">#213</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libsndfile; libunwind; Wine: Fix building with
           GCC-15.x.x.</para>
         </listitem>
