@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>May 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.8.1 -&gt; 1.9.1. Fixes
+          <ulink url="&glfs-issues;/216">#216</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 3rd, 2025</para>
       <itemizedlist>
         <listitem>
