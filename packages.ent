@@ -77,10 +77,10 @@
 <!ENTITY xcb-proto-version            "1.17.0">
 <!ENTITY libxcb-version               "1.17.0">
 <!ENTITY which-version                "2.23">
-<!ENTITY libpng-version               "1.6.47">
-<!ENTITY apng-version                 "&libpng-version;">
+<!ENTITY libpng-version               "1.6.48">
+<!ENTITY apng-version                 "1.6.47">
 <!ENTITY freetype2-version            "2.13.3">
-<!ENTITY harfbuzz-version             "11.1.0">
+<!ENTITY harfbuzz-version             "11.2.0">
 <!ENTITY fontconfig-version           "2.16.2">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -124,7 +124,7 @@
 <!ENTITY libunwind-version            "1.8.1">
 <!ENTITY nettle-version               "3.10.1">
 <!ENTITY gnutls-version               "3.8.9">
-<!ENTITY pixman-version               "0.44.2">
+<!ENTITY pixman-version               "0.46.0">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.23.1">
 <!ENTITY wayland-protocols-version    "1.44">
@@ -167,7 +167,7 @@
 <!ENTITY rustc-change-id              "136941">
 <!ENTITY cbindgen-version             "0.28.0">
 <!ENTITY rust-bindgen-version         "0.71.1">
-<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.1">
+<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.2">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY ply-version                  "3.11">
 <!ENTITY amdgpu-pro-major-version     "24.20">
