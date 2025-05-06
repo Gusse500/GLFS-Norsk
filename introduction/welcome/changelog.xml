@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>May 5th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.4 -&gt; 25.0.5. Fixes
+          <ulink url="&glfs-issues;/223">#223</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 4th, 2025</para>
       <itemizedlist>
         <listitem>
