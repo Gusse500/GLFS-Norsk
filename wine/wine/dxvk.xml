@@ -141,6 +141,12 @@ install -vDm644 build-win32/DESTDIR/bin/*.dll \
   <sect2 role="configuration">
     <title>Setting Up DXVK</title>
 
+    <note><para>
+      This section requires a running graphical environment. If you are not
+      ready yet, you may skip this section and return back once you are in a
+      graphical environment.
+    </para></note>
+
     <para>
       First, create the <application>Wine</application> prefix if it is not
       already made:

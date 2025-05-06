@@ -47,7 +47,8 @@
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
       <xref linkend="dxvk"/>
-      (for <filename class="libraryfile">dxgi</filename>),
+      (for <filename class="libraryfile">dxgi</filename> and
+      the configuration section),
       <xref linkend="git"/> (with <xref linkend="curl"/>;
       to clone the repository),
       <xref linkend="glslang"/>,

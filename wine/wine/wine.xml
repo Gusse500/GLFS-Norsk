@@ -185,17 +185,7 @@ make</userinput></screen>
 
     <para>
       <parameter>--disable-tests</parameter>: This parameter disables building
-      tests. As of now with GCC-15.x.x, tests are broken
-      <footnote><para>
-        With the dwrite component, the regression test for it is broken with
-        GCC-15.x.x as a C runtime, the MSVCRT (MicroSoft Visual C RunTime) DLL
-        this package compiles, does not export <envar>trunc{,f,l}</envar>.
-        Newer GCC lowers the reference to <envar>floor</envar>. So this
-        reference cannot be found, breaking the test compilation and making
-        this package to FTBFS. Further reading <ulink
-        url="https://bugs.winehq.org/show_bug.cgi?id=58191">here</ulink>.
-      </para></footnote>, so this parameter is a requirement for the time
-      being.
+      tests.
     </para>
 
     <para>
@@ -272,9 +262,7 @@ make</userinput></screen>
           wmc, and
           wrc
         </seg>
-
         <seg>Various dynamic and static libraries</seg>
-
         <seg>
           /usr/include/wine/windows, /usr/lib/wine/x86_64-windows,
           /usr/lib32/wine/i686-unix, and /usr/share/wine

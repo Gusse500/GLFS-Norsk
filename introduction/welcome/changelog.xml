@@ -44,6 +44,10 @@
       <para>May 5th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wine: 10.6 -&gt; 10.7. Fixes
+          <ulink url="&glfs-issues;/226">#226</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Mesa: 25.0.4 -&gt; 25.0.5. Fixes
           <ulink url="&glfs-issues;/223">#223</ulink>.</para>
         </listitem>
