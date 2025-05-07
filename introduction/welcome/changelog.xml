@@ -41,6 +41,35 @@
     -->
 
     <listitem>
+      <para>May 6th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.9.1 -&gt; 1.9.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Vulkan-*: 1.4.309 -&gt; 1.4.313. Fixes
+          <ulink url="&glfs-issues;/169">#169</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.110 -&gt; 3.111. Fixes
+          <ulink url="&glfs-issues;/218">#218</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM, libclc: 20.1.3 -&gt; 20.1.4. Fixes
+          <ulink url="&glfs-issues;/224">#224</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.0.1 -&gt; 4.0.2. Fixes
+          <ulink url="&glfs-issues;/227">#227</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL2: 2.30.11 -&gt; 2.32.6. Fixes
+          <ulink url="&glfs-issues;/228">#228</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 5th, 2025</para>
       <itemizedlist>
         <listitem>

@@ -17,8 +17,8 @@
 <!ENTITY python3-version              "&python3-majorver;.&python3-patch;">
 <!ENTITY python3-lib-suffix           "cpython-&python3-major;&python3-minor;-&lt;arch&gt;-linux-gnu">
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
-<!ENTITY nss-dir                      "3_110">
-<!ENTITY nss-minor-version            "110">
+<!ENTITY nss-dir                      "3_111">
+<!ENTITY nss-minor-version            "111">
 <!--<!ENTITY nss-micro-version            "1">-->
 <!--<!ENTITY nss-version                  "3.&nss-minor-version;.&nss-micro-version;">-->
 <!ENTITY nss-version                  "3.&nss-minor-version;">
@@ -119,7 +119,7 @@
 <!-- END X7LIB -->
 <!ENTITY libxcvt-version              "0.1.3">
 <!ENTITY cmake-major-version          "4.0">
-<!ENTITY cmake-minor-version          "1">
+<!ENTITY cmake-minor-version          "2">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY libunwind-version            "1.8.1">
 <!ENTITY nettle-version               "3.10.1">
@@ -133,7 +133,7 @@
 <!ENTITY pciutils-version             "3.13.0">
 <!ENTITY hwdata-version               "0.394">
 <!ENTITY libglvnd-version             "1.7.0">
-<!ENTITY vulkan-version               "1.4.309">
+<!ENTITY vulkan-version               "1.4.313">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
 <!ENTITY vulkan-loader-version        "&vulkan-version;">
 <!ENTITY libdrm-version               "2.4.124">
@@ -159,7 +159,7 @@
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.3.0">
 <!ENTITY llvm-maj-version             "20">
-<!ENTITY llvm-point-version           "3">
+<!ENTITY llvm-point-version           "4">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
 <!ENTITY rustc-version                "1.86.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
@@ -271,8 +271,8 @@
 <!ENTITY gcc-version                  "15.1.0">
 <!ENTITY mingw-w64-version            "12.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
-<!ENTITY libxkbcommon-version         "1.9.1">
-<!ENTITY sdl2-version                 "2.30.11">
+<!ENTITY libxkbcommon-version         "1.9.2">
+<!ENTITY sdl2-version                 "2.32.6">
 <!ENTITY gstreamer10-version          "1.26.1">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
