@@ -23,6 +23,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvorbis.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flac.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="opus.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="speex.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libsndfile.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pulseaudio.xml"/>
 

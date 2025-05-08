@@ -53,7 +53,7 @@
       <xref linkend="alsa-lib"/>,
       <xref linkend="lame"/>,
       <ulink url="&blfs-svn;/multimedia/mpg123.html">mgp123</ulink>,
-      <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>, and
+      <xref linkend="speex"/>, and
       <xref linkend="sqlite"/>
     </para>
 

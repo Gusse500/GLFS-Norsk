@@ -60,7 +60,7 @@
       <xref linkend="dbus"/>,
       <phrase revision="sysv"><xref linkend="elogind"/>,</phrase>
       <xref linkend="glib2"/>,
-      <ulink url="&blfs-svn;/multimedia/speex.html">Speex</ulink>,
+      <xref linkend="speex"/>,
       <phrase revision="systemd"><xref linkend="systemd"/>,</phrase> and
       <xref linkend="xorg7-lib"/>
     </para>
