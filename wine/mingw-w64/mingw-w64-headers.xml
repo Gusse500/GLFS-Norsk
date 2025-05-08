@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY mingw-w64-download-http "https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/mingw-w64-v&mingw-w64-version;.tar.bz2">
+  <!ENTITY mingw-w64-download-ftp  " ">
+]>
+
+<sect1 id="mingw-w64-headers" xreflabel="MinGW-w64-headers-&mingw-w64-version;">
+  <?dbhtml filename="mingw-w64-headers.html"?>
+
+  <title>MinGW-w64-headers-&mingw-w64-version;</title>
+
+  <indexterm zone="mingw-w64-headers">
+    <primary sortas="a-mingw-w64-headers">mingw-w64-headers</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to MinGW-w64-headers</title>
+
+    <para>
+      MinGW-w64-headers provides header files for Windows. The rest of the
+      MinGW-w64 will be compiled later.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&mingw-w64-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&mingw-w64-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of MinGW-w64-headers</title>
+
+    <note>
+      <para>
+        If you haven't read <xref linkend="winedeps"/> and are confused by
+        the separate sections (x86_64 xxx and i686 xxx), please read that page
+        to figure out what sections to follow.
+      </para>
+
+      <para>
+        The <userinput>make install</userinput> command for each following
+        x86_64 section will be followed by
+        <userinput>&amp;&amp; cd ..</userinput> in case you wish to also follow
+        the i686 sections. It navigates to the parent directory (out of the
+        build directory), allowing you to create another build directory and run
+        the configure scripts from there.
+      </para>
+    </note>
+
+  <sect3>
+    <title>x86_64 MinGW-w64-headers</title>
+    
+    <para>
+      Install x86_64 <application>MinGW-w64-headers</application>
+      by running the following commands:
+    </para>
+
+<screen><userinput>mkdir build-x86_64-headers &amp;&amp;
+cd    build-x86_64-headers &amp;&amp;
+
+../mingw-w64-headers/configure --prefix=/usr/x86_64-w64-mingw32 \
+                               --host=x86_64-w64-mingw32        \
+                               --enable-sdk=all                 \
+                               --with-default-msvcrt=msvcrt</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make install &amp;&amp; cd ..</userinput></screen>
+
+  </sect3>
+
+  <sect3>
+    <title>i686 MinGW-w64-headers</title>
+
+    <para>
+      Install i686 <application>MinGW-w64-headers</application>
+      by running the following commands:
+    </para>
+
+<screen><userinput>mkdir build-i686-headers &amp;&amp;
+cd    build-i686-headers &amp;&amp;
+
+../mingw-w64-headers/configure --prefix=/usr/i686-w64-mingw32 \
+                               --host=i686-w64-mingw32        \
+                               --enable-sdk=all               \
+                               --with-default-msvcrt=msvcrt</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+    </sect3>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <note><para>
+      Run <command>../mingw-w64-headers/configure --help</command> for a full
+      list of options.
+    </para></note>
+
+    <para>
+      <parameter>--prefix=/usr/*</parameter>: This option installs
+      the files to their respective architecture for better separation
+      of architectures.
+    </para>
+
+    <para>
+      <parameter>--host=*</parameter>: This option builds files for
+      the architecture passed to it.
+    </para>
+
+    <para>
+      <parameter>--enable-sdk=all</parameter>: This option enables
+      the full SDK.
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/mingw-w64-msvcrt.xml"/>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          None
+        </seg>
+        <seg>
+          None
+        </seg>
+        <seg>
+          /usr/{i686,x86_64}-w64-mingw32/include
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+</sect1>

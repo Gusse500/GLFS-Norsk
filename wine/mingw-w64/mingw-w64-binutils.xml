@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY mingw-w64-binutils-download-http "https://sourceware.org/pub/binutils/releases/binutils-&binutils-version;.tar.xz">
+  <!ENTITY mingw-w64-binutils-download-ftp  " ">
+]>
+
+<sect1 id="mingw-w64-binutils" xreflabel="MinGW-w64-Binutils-&binutils-version;">
+  <?dbhtml filename="mingw-w64-binutils.html"?>
+
+  <title>MinGW-w64-Binutils-&binutils-version;</title>
+
+  <indexterm zone="mingw-w64-binutils">
+    <primary sortas="a-mingw-w64-binutils">MinGW-w64-Binutils</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to MinGW-w64-Binutils</title>
+
+    <para>
+      MinGW-w64-Binutils is a collection of software that can change
+      the state of Windows binaries or make them executable. These
+      Binutils are specific to MinGW-w64, and using regular Binutils
+      will not work for the proceeding packages.
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&mingw-w64-binutils-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&mingw-w64-binutils-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of MinGW-w64-Binutils</title>
+
+  <sect3>
+    <title>x86_64 MinGW-w64-Binutils</title>
+    
+    <para>
+      Install x86_64 <application>MinGW-w64-Binutils</application>
+      by running the following commands:
+    </para>
+
+<screen><userinput>mkdir build-x86_64 &amp;&amp;
+cd    build-x86_64 &amp;&amp;
+
+../configure --prefix=/usr                                \
+             --target=x86_64-w64-mingw32                  \
+             --infodir=/usr/share/info/x86_64-w64-mingw32 \
+             --disable-nls                                \
+             --disable-werror &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
+rm -v  DESTDIR/usr/lib/bfd-plugins/libdep.so &amp;&amp;
+cp -Rv DESTDIR/usr/* /usr                    &amp;&amp;
+rm -rf DESTDIR                               &amp;&amp;
+cd ..</userinput></screen>
+
+  </sect3>
+
+  <sect3>
+    <title>i686 MinGW-w64-Binutils</title>
+
+    <para>
+      Install i686 <application>MinGW-w64-Binutils</application>
+      by running the following commands:
+    </para>
+
+<screen><userinput>mkdir build-i686 &amp;&amp;
+cd    build-i686 &amp;&amp;
+
+../configure --prefix=/usr                              \
+             --target=i686-w64-mingw32                  \
+             --infodir=/usr/share/info/i686-w64-mingw32 \
+             --disable-nls                              \
+             --disable-werror &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
+rm -v  DESTDIR/usr/lib/bfd-plugins/libdep.so &amp;&amp;
+cp -Rv DESTDIR/usr/* /usr                    &amp;&amp;
+rm -rf DESTDIR</userinput></screen>
+
+    </sect3>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    &options-subconfigure;
+
+    <para>
+      <parameter>--disable-nls</parameter>: This option disables
+      NLS support, disabling output diagnostics in languages other than
+      American English. Omit <parameter>--disable-nls</parameter> and
+      invoke <option>--enable-nls</option> to enable NLS support.
+    </para>
+
+    <para>
+      <parameter>--disable-werror</parameter>: This option makes it so
+      warnings won't be considered errors.
+    </para>
+
+    <para>
+      <parameter>--target=*</parameter>: This option builds files for
+      the architecture passed to it.
+    </para>
+
+    <para>
+      <command>rm -v DESTDIR/usr/lib/bfd-plugins/libdep.so</command>:
+      This command removes an libary that conflicts with the original library
+      provided by the original compilation of
+      <ulink url="&mlfs-m32-root;/chapter08/binutils.html">Binutils</ulink>.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <segmentedlist>
+      <segtitle>Installed Programs</segtitle>
+      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installed Directories</segtitle>
+
+      <seglistitem>
+        <seg>
+          {i686,x86_64}-w64-mingw32-addr2line,
+          {i686,x86_64}-w64-mingw32-c++filt,
+          {i686,x86_64}-w64-mingw32-dllwrap,
+          {i686,x86_64}-w64-mingw32-elfedit,
+          {i686,x86_64}-w64-mingw32-gprof,
+          {i686,x86_64}-w64-mingw32-size,
+          {i686,x86_64}-w64-mingw32-strings,
+          {i686,x86_64}-w64-mingw32-windmc,
+          {i686,x86_64}-w64-mingw32-windres,
+          ar, as, dlltool, ld, ld.bfd, nm, objcopy, ranlib,
+          readelf, and strip (<application>MinGW-w64</application>
+          specific binaries besides formatting include:
+          {i686,x86_64}-w64-mingw32-dllwrap,
+          {i686,x86_64}-w64-mingw32-windmc,
+          {i686,x86_64}-w64-mingw32-windres,
+          and dlltool)
+        </seg>
+        <seg>
+          None
+        </seg>
+        <seg>
+          /usr/{i686,x86_64}-w64-mingw32/bin,
+          /usr/{i686,x86_64}-w64-mingw32/lib/ldscripts, and
+          /usr/share/info/{i686,x86_64}-w64-mingw32
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <para>
+      Only binutils specific to <application>MinGW-w64</application>
+      will be explained. For the rest, see
+      <ulink url="&mlfs-m32-root;/chapter08/binutils.html">
+      Binutils</ulink>.
+    </para>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="dllwrap">
+      <term><command>{i686,x86_64}-w64-mingw32-dllwrap</command></term>
+        <listitem>
+          <para>
+            ancient tool for generating PE style DLLs
+          </para>
+          <indexterm zone="mingw-w64-binutils dllwrap">
+            <primary sortas="b-dllwrap">dllwrap</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="windmc">
+      <term><command>{i686,x86_64}-w64-mingw32-windmc</command></term>
+        <listitem>
+          <para>
+            generates Windows message resources
+          </para>
+          <indexterm zone="mingw-w64-binutils windmc">
+            <primary sortas="b-windmc">windmc</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="windres">
+      <term><command>{i686,x86_64}-w64-mingw32-windres</command></term>
+        <listitem>
+          <para>
+            manipulates Windows resources
+          </para>
+          <indexterm zone="mingw-w64-binutils windres">
+            <primary sortas="b-windres">windres</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="dlltool">
+      <term><command>dlltool</command></term>
+        <listitem>
+          <para>
+            creates files needed to build and use DLLs
+          </para>
+          <indexterm zone="mingw-w64-binutils dlltool">
+            <primary sortas="b-dlltool">dlltool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

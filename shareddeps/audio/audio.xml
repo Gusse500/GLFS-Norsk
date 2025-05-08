@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+ <!ENTITY % general-entities SYSTEM "../../general.ent">
+ %general-entities;
+]>
+
+<chapter id="audio">
+  <?dbhtml filename="audio.html"?>
+
+  <title>Audio</title>
+
+  <para>
+    This chapter covers audio libraries and utilities that are often
+    dependencies of other packages.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="alsa.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="alsa-lib.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="alsa-plugins.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="alsa-utils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libogg.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvorbis.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="flac.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="opus.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libsndfile.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pulseaudio.xml"/>
+
+</chapter>

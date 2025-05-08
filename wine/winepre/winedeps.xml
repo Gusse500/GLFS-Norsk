@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="winedeps" xreflabel="Wine Dependencies">
+  <?dbhtml filename="winedeps.html"?>
+
+
+  <title>Wine Dependencies</title>
+
+  <para>
+    Wine has three build formats and depending on what build you want,
+    you will have to pay attention to what you install and its format.
+  </para>
+
+  <para>
+    The three build types are: 32-bit, 64-bit, and WoW64. 32-bit and 64-bit
+    are self-explanatory, but WoW64 needs explanation. WoW64 is a compatibility
+    layer created by Microsoft when applications and computers were becoming 64-bit.
+    This layer allows users to emulate 32-bit Windows applications on a 64-bit
+    CPU. Knowing this, a Wine WoW64 build can be explained as a build type that
+    allows the user to execute Windows 32-bit and 64-bit applications.
+  </para>
+
+  <para>
+    If you don't want a WoW64 build, follow the instructions
+    normally and skip the lib32 instructions. When you reach the <application>
+    MinGW-w64</application> section, follow only the x86_64 instructions.
+  </para>
+
+  <para>
+    If you want a 32-bit only build, follow only the lib32
+    instructions. When you reach <application>MinGW-w64</application>, follow
+    the i686 instructions. However, for the sake of continuing onto BLFS, it is
+    recommended to do the normal installations as well, save for
+    <application>MinGW-w64</application>.
+  </para>
+
+  <para>
+    And finally, if you want a WoW64 build, follow all the
+    instructions on the dependency pages unless instructed otherwise or are
+    presented with options.
+  </para>
+
+  <sect2>
+    <title>Required</title>
+
+    <para>
+      Audio (<xref linkend="alsa-plugins"/> and/or
+      <xref linkend="pulseaudio"/>), <xref linkend="dbus"/>,
+      Display server (<xref linkend="xorg-server"/> or
+      <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
+      <xref linkend="fontconfig"/>,
+      <xref linkend="freetype2-pass2"/>,
+      <xref linkend="gnutls"/>,
+      <xref linkend="libunwind"/> (if 64-bit/WoW64; not used by Wine 32-bit),
+      &opengl;, and
+      <xref linkend="mingw-w64-gcc"/>
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>Recommended</title>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          <xref linkend="gstreamer10"/>: allows consuming and working with
+          multimedia such as music and videos. Most games and some software
+          work without it, although some will need
+          <xref linkend="gst10-libav"/> for WMA decoding. Please install the
+          base and plugins of your choice as well as Gstreamer.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="sdl2"/>: for input and other neat stuff.
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          <xref linkend="libvk"/>: for Vulkan support.
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2>
+    <title>Optional</title>
+
+    <para>
+      <ulink url="https://aur.archlinux.org/packages/libcapi/">
+      libcapi</ulink>,
+      <ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>,
+      <ulink url="https://archlinux.org/packages/extra/x86_64/gphoto2/">
+      gphoto2</ulink>,
+      <ulink url="&blfs-svn;/basicnet/samba.html">Samba</ulink>,
+      <ulink url="&blfs-svn;/pst/sane.html">SANE</ulink>,
+      <ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
+      <ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
+      smbclient</ulink>,
+      <ulink
+      url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
+      OpenCL</ulink>,
+      <ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
+      <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, and
+      <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
+    </para>
+
+  </sect2>
+
+</sect1>

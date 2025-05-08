@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+ <!ENTITY % general-entities SYSTEM "../../../general.ent">
+ %general-entities;
+]>
+
+<chapter id="x">
+  <?dbhtml filename="x.html"?>
+
+  <title>X11</title>
+
+  <para>
+    This chapter covers X11 packages on top of the basic X11 software. There
+    may be some packages you will still need here if you are using Wayland,
+    such as the XCB Utils, Xwayland, and input drivers, namely libinput and
+    libevdev.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xcb-utils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xbitmaps.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x7app.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xcursor-themes.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x7font.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xkeyboard-config.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libepoxy.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xorg-server.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xwayland.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mtdev.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x7driver.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xinit.xml"/>
+
+</chapter>

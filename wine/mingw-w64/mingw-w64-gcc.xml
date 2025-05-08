@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY mingw-w64-gcc-download-http "&gnu-http;/gcc/gcc-&mingw-w64-gcc-version;/gcc-&mingw-w64-gcc-version;.tar.xz">
+  <!ENTITY mingw-w64-gcc-download-ftp  " ">
+]>
+
+<sect1 id="mingw-w64-gcc" xreflabel="MinGW-w64-GCC-&mingw-w64-gcc-version;">
+  <?dbhtml filename="mingw-w64-gcc.html"?>
+
+  <title>MinGW-w64-GCC-&mingw-w64-gcc-version;</title>
+
+  <indexterm zone="mingw-w64-gcc">
+    <primary sortas="a-mingw-w64-gcc">mingw-w64-gcc</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduction to MinGW-w64-GCC</title>
+
+    <para>
+      <application>MinGW-w64-GCC</application> has been built statically
+      beforehand, and it should be rebuilt to ensure robustness. This section
+      will be dedicated to finishing the MinGW-w64 toolchain.
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="../../xincludes/long-build-time.xml"/>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Download (HTTP): <ulink url="&mingw-w64-gcc-download-http;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Download (FTP): <ulink url="&mingw-w64-gcc-download-ftp;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">MinGW-w64-GCC Dependencies</bridgehead>
+
+    <bridgehead renderas="sect4">Required</bridgehead>
+    <para role="required">
+      <xref linkend="mingw-w64"/>
+    </para>
+
+    <bridgehead renderas="sect4">Optional</bridgehead>
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/gdb.html">
+      GDB</ulink> and
+      <ulink url="&blfs-svn;/general/valgrind.html">
+      Valgrind</ulink> (for tests)
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installation of MinGW-w64-GCC</title>
+
+    <important>
+      <para>
+        Although you are compiling for another host and running
+        <command>make install</command> is generally safe, it is
+        recommended to not run <command>make install</command>
+        until you are confident the build was successful.
+      </para>
+    </important>
+
+  <sect3>
+    <title>x86_64 Installation of MinGW-w64-GCC</title>
+
+    <para>
+      Install x86_64 <application>MinGW-w64-GCC</application> by running the
+      following commands:
+    </para>
+
+<screen><userinput>mkdir build-x86_64-mingw-w64 &amp;&amp;
+cd    build-x86_64-mingw-w64 &amp;&amp;
+
+../configure --prefix=/usr               \
+             --target=x86_64-w64-mingw32 \
+             --enable-threads=posix      \
+             --enable-shared             \
+             --disable-multilib          \
+             --enable-languages=c,c++ &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      If you have installed additional packages such as
+      <application>valgrind</application> and <application>gdb
+      </application>, the <application>gcc</application> part of the
+      test suite will run more tests than in LFS. Some of those will
+      report FAIL and others XPASS (pass when expected to FAIL).
+      As of gcc-&gcc-version;, about 65 FAIL occur in the “guality”
+      suite, as well as miscellaneous failures throughout the rest of
+      the test suite. If all the compilers above are built, there will
+      be a little over 80 unexpected failures out of over 546,000 tests.
+      To run the tests, issue:
+    </para>
+
+<screen><userinput>make -k check</userinput></screen>
+
+    <para>
+      The tests are very long, and the results may be hard to find in the
+      logs, specially if you use parallel jobs with make. You can get a
+      summary of the tests with:
+    </para>
+
+    <screen><userinput>../contrib/test_summary</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make install &amp;&amp;
+cd ..        &amp;&amp;
+
+ln -sfv x86_64-w64-mingw32-gcc /usr/bin/x86_64-w64-mingw32-cc &amp;&amp;
+strip /usr/libexec/gcc/x86_64-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,lto*}</userinput></screen>
+
+  </sect3>
+
+  <sect3>
+    <title>i686 Installation of MinGW-w64-GCC</title>
+
+    <para>
+      Install i686 <application>MinGW-w64-GCC</application> by running the
+      following commands:
+    </para>
+
+<screen><userinput>mkdir build-i686-mingw-w64 &amp;&amp;
+cd    build-i686-mingw-w64 &amp;&amp;
+
+../configure --prefix=/usr             \
+             --target=i686-w64-mingw32 \
+             --enable-shared           \
+             --enable-threads=posix    \
+             --disable-multilib        \
+             --enable-languages=c,c++ &amp;&amp;
+
+make</userinput></screen>
+
+    <para>
+      If you have installed additional packages such as
+      <application>valgrind</application> and <application>gdb
+      </application>, the <application>gcc</application> part of the
+      test suite will run more tests than in LFS. Some of those will
+      report FAIL and others XPASS (pass when expected to FAIL).
+      As of gcc-&gcc-version;, about 65 FAIL occur in the “guality”
+      suite, as well as miscellaneous failures throughout the rest of
+      the test suite. If all the compilers above are built, there will
+      be a little over 80 unexpected failures out of over 546,000 tests.
+      To run the tests, issue:
+    </para>
+
+<screen><userinput>make -k check</userinput></screen>
+
+    <para>
+      The tests are very long, and the results may be hard to find in the
+      logs, specially if you use parallel jobs with make. You can get a
+      summary of the tests with:
+    </para>
+
+    <screen><userinput>../contrib/test_summary</userinput></screen>
+
+    <para>
+      Now, as the <systemitem class="username">root</systemitem> user:
+    </para>
+
+<screen role="root"><userinput>make install &amp;&amp;
+
+ln -sfv i686-w64-mingw32-gcc /usr/bin/i686-w64-mingw32-cc &amp;&amp;
+strip /usr/libexec/gcc/i686-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,lto*}</userinput></screen>
+
+    </sect3>
+
+  </sect2>
+
+  <sect2>
+    <title>Testing the Toolchain</title>
+
+    <para>
+      Now that the <application>MinGW-w64</application> cross toolchain has
+      been fully installed, it is time to test the installation to make sure
+      everything is working as expected.
+    </para>
+
+    <para>
+      Confirm that the regular C and C++ compilers are working correctly:
+    </para>
+
+<screen><userinput>echo "int main(){}" >> main.c &amp;&amp;
+cp -v main.c main.cpp &amp;&amp;
+gcc main.c            &amp;&amp;
+./a.out               &amp;&amp;
+
+rm -v a.out           &amp;&amp;
+g++ main.cpp          &amp;&amp;
+./a.out               &amp;&amp;
+
+rm -v a.out main.{c,cpp}</userinput></screen>
+
+    <para>
+      If you're doing multilib:
+    </para>
+
+<screen><userinput>echo "int main(){}" >> main.c &amp;&amp;
+cp -v main.c main.cpp &amp;&amp;
+gcc -m32 main.c       &amp;&amp;
+./a.out               &amp;&amp;
+
+rm -v a.out           &amp;&amp;
+g++ -m32 main.cpp     &amp;&amp;
+./a.out               &amp;&amp;
+
+rm -v a.out main.{c,cpp}</userinput></screen>
+
+    <para>
+      Now test the <application>MinGW-w64</application> cross compiler.
+    </para>
+
+    <para>
+      For x86_64:
+    </para>
+
+<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF" &amp;&amp;
+<literal>#include &lt;stdio.h&gt;
+int main(){}
+</literal>EOF
+
+cp main.{c,cpp}                        &amp;&amp;
+sed -i 's/stdio.h/iostream/g' main.cpp &amp;&amp;
+
+x86_64-w64-mingw32-gcc main.c   &amp;&amp;
+rm -v a.exe                     &amp;&amp;
+x86_64-w64-mingw32-g++ main.cpp &amp;&amp;
+rm -v a.exe main.{c,cpp}</userinput></screen>
+
+    <para>
+      For i686:
+    </para>
+
+<screen><userinput>cat &gt;&gt; main.c &lt;&lt; "EOF" &amp;&amp;
+<literal>#include &lt;stdio.h&gt;
+int main(){}
+</literal>EOF
+
+cp main.{c,cpp}                        &amp;&amp;
+sed -i 's/stdio.h/iostream/g' main.cpp &amp;&amp;
+
+i686-w64-mingw32-gcc main.c   &amp;&amp;
+rm -v a.exe                   &amp;&amp;
+i686-w64-mingw32-g++ main.cpp &amp;&amp;
+rm -v a.exe main.{c,cpp}</userinput></screen>
+
+    <para>
+      The commands above should have no errors, otherwise
+      something went wrong with the installation.
+    </para>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    &options-subconfigure;
+
+    <para>
+      <command>mkdir build; cd build</command>: The
+      <application>GCC</application> documentation recommends
+      building the package in a dedicated build directory.
+    </para>
+
+    <para>
+      <parameter>--enable-shared</parameter>: This option enables building
+      shared libraries.
+    </para>
+
+    <para>
+      <parameter>--enable-threads=posix</parameter>: This option enables
+      support for POSIX threads via the winpthreads library.
+    </para>
+
+    <para>
+      <parameter>--disable-multilib</parameter>: This option ensures
+      that files are created for the specific architecture of your computer.
+    </para>
+
+    <para>
+      <parameter>--enable-languages=c,c++</parameter>:
+      This command builds support for C and C++. Refer to <ulink
+      url="&blfs-svn;/general/gcc.html"/>
+      to find what other languages are supported.
+    </para>
+
+    <para>
+      <command>make -k check</command>: This command runs the test suite
+      without stopping if any errors are encountered.
+    </para>
+
+    <para>
+      <command>../contrib/test_summary</command>: This command will produce
+      a summary of the test suite results. You can append <command>| grep
+      -A7 Summ</command> to the command to produce an even more condensed
+      version of the summary. You may also wish to redirect the output
+      to a file for review and comparison later on.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Contents</title>
+
+    <para>
+      There are no binaries specific to this package besides the format
+      the compilers are targetting. For in-depth descriptions, read <ulink
+      url="&lfs-root;/chapter08/gcc.html#contents-gcc"/>
+    </para>
+
+  </sect2>
+
+</sect1>

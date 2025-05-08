@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="whatis-mingw-w64" xreflabel="What is the MinGW-w64 Toolchain?">
+  <?dbhtml filename="whatis-mingw-w64.html"?>
+
+  <title>What is the MinGW-w64 Toolchain?</title>
+
+  <para>
+    <application>MinGW-w64</application> itself is a package providing headers,
+    C runtime libraries, and much more. When support for it is built into
+    compilers such as <application>GCC</application>, it enables the building
+    of software targetting Windows, such as programs and libraries. This
+    software is aimed to be used on Windows, but can also be used on Linux.
+  </para>
+
+  <note><para>
+    <application>LLVM</application> can also be used for the toolchain. This
+    book will use <application>GCC</application> instead as it has easier
+    instructions, quicker build times, and saves disk space.
+  </para></note>
+
+  <para>
+    <xref linkend="wine"/> depends on this functionality to build DLLs (Dynamic
+    Link Libraries), or the equivalent of Linux dynamic libraries, appended
+    with the suffix <filename class="extension">.so</filename>, or Shared
+    Objects.
+  </para>
+
+  <para>
+    A lot of Windows software is dynamically linked. While most of them when
+    shipped include DLLs packaged in the installed directory, or extracted from
+    a ZIP file, not all DLLs will be packaged as a number will be installed on
+    a given Windows machine already, such as libraries for DirectX/Direct3D
+    support. Since we are on a Unix-like operating system, we do not have such
+    DLLs installed on the system, and they were never compiled in LFS or
+    earlier in this book. <xref linkend="nvidia"/> does install two DLL files
+    but are strictly meant for <application>Wine</application> and Proton.
+    <application>MinGW-w64</application> does not install these libraries, so
+    <application>Wine</application> needs to compile them for most Windows
+    software to function.
+  </para>
+
+  <para>
+    If you are a developer and wish to target Windows, this toolchain should be
+    pretty useful. You won't need to follow any of the chapters after this one
+    if you just want the MinGW-w64 toolchain. It is recommended to still
+    install <application>Wine</application> for sanity checks revolving around
+    your built software you are developing, although it isn't a perfect
+    replacement for an accurate Windows environment. While the built software
+    may work fine with <application>Wine</application>, it could be totally
+    broken on Windows. An example is linking against libraries installed by
+    <application>Wine</application> or <application>MinGW-w64</application> and
+    Windows complaining that Unixlib can not be found.
+  </para>
+
+</sect1>

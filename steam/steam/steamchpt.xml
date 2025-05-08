@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<chapter id="SteamChpt">
+  <?dbhtml filename="steamchpt.html"?>
+
+  <title>Steam</title>
+
+  <para>
+    This chapter covers the installation of Steam itself and any potential
+    post-installation configuration.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="steam.xml"/>
+
+</chapter>

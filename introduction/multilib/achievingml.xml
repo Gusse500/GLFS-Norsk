@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="achievingml" xreflabel="Achieving Multilib">
+  <?dbhtml filename="achievingml.html"?>
+
+
+  <title>Achieving Multilib</title>
+
+  <para>
+    On many distros, getting multilib support is very straight
+    forward. There exists a guide that can act as a replacement
+    for LFS: compiling and configuring a system that can boot,
+    run, and compile software; and also have that same ability
+    with 32-bit. It acts to form the basis that will allow you
+    to follow any of the instructions laid out in the Steam
+    and Wine chapters.
+  </para>
+
+  <para>
+    Such a guide is maintained by Thomas Trepl at
+    <ulink url="&mlfs-m32-root;"/>.
+    This only covers installing 32-bit support along with 64-bit. If you
+    want x32-bit support, which is not needed for this book, follow
+    <ulink url="&mlfs-root;"/>.
+  </para>
+
+  &multilib-rendering1;
+
+  <sect2 revision="sysv">
+    <title>Rendering MLFS</title>
+    &multilib-rendering2;
+    &read-book;
+
+  </sect2>
+
+  <sect2 revision="systemd">
+    <title>Rendering MLFS</title>
+
+    <para>
+      First, install <xref linkend="git"/>, then clone the LFS repo and switch
+      to the <computeroutput>multilib</computeroutput> branch:
+    </para>
+
+<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
+cd mlfs &amp;&amp;
+git checkout multilib</userinput></screen>
+
+    &multilib-rendering2;
+
+    <para>
+      Now inspect the <filename>INSTALL</filename> file to check for the needed
+      dependencies in order to render the book. Once you have ensured you have
+      installed everything, render the book:
+    </para>
+
+<screen><userinput>make -j1 REV=systemd ARCH=ml_32</userinput></screen>
+
+    &read-book;
+
+  </sect2>
+
+  <sect2>
+    <title>More Info</title>
+
+    <para>
+      The same principles of compiling for 32-bit in that book will also
+      apply to this book as well. If you haven't already, read
+      <xref linkend="important"/>
+      to check what basic principles still apply in this book when targeting
+      32-bit.
+    </para>
+
+    <para>
+      Furthermore, read <xref linkend="which-instructions"/> to find out which
+      instructions to follow.
+    </para>
+
+  </sect2>
+
+</sect1>

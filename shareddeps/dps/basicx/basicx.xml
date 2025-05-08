@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+ <!ENTITY % general-entities SYSTEM "../../../general.ent">
+ %general-entities;
+]>
+
+<chapter id="basicx">
+  <?dbhtml filename="basicx.html"?>
+
+  <title>Basic X11 Software</title>
+
+  <para>
+    This chapter covers X11 software that are needed by most graphical
+    software. This also covers configuration and dependencies not just used
+    by GUI software.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/basic-xorg-7.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/util-macros.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/xorgproto.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/libXau.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/libXdmcp.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/xcb-proto.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/libxcb.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/which.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/libpng.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/freetype2-pass1.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/harfbuzz.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/freetype2-pass2.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/fontconfig.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/x7lib.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/libxcvt.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/cmake.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/dbus.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/libunwind.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/nettle.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/gnutls.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/pixman.xml"/>
+
+</chapter>

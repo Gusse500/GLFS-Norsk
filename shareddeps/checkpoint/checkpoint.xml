@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+ <!ENTITY % general-entities SYSTEM "../../general.ent">
+ %general-entities;
+]>
+
+<chapter id="checkpoint">
+  <?dbhtml filename="checkpoint.html"?>
+
+  <title>Checkpoint</title>
+
+  <para>
+    This mini-chapter conludes the main stretch of this book and touches up
+    some things before moving onto Steam and Wine.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatnow.xml"/>
+
+</chapter>

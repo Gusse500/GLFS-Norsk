@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+ <!ENTITY % general-entities SYSTEM "../../general.ent">
+ %general-entities;
+]>
+
+<chapter id="drivers">
+  <?dbhtml filename="drivers.html"?>
+
+  <title>Graphics Drivers</title>
+
+  <para>
+    This chapter covers graphics drivers, as well as some APIs. Together, they
+    allow for a graphical environment, and in some cases, a simple TTY.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatdriver.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gpuconfig.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pciutils.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="hwdata.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libglvnd.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vkheaders.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvk.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cython.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libyaml.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pyyaml.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gbm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-headers.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-tools.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glslang.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rustc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cbindgen.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rust-bindgen.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-llvm-translator.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libclc.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ply.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mesa.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau-va-gl.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="amdgpu-pro.xml"/>
+
+</chapter>

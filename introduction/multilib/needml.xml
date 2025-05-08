@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="needml" xreflabel="Do I Need Multilib?">
+  <?dbhtml filename="needml.html"?>
+
+
+  <title>Do I Need Multilib?</title>
+
+  <para>
+    Now that you have an idea of what multilib is, it is time
+    to decide whether to enable that support or not. Depending on the
+    circumstance, it may be necessary.
+  </para>
+
+  <sect2>
+    <title>Steam</title>
+    
+    <para>
+      Most gamers would not know this unless they push the
+      limits of the games they play, but many games on Steam
+      are 32-bit. Some games are no longer receiving updates
+      while some are still being updated but are still 32-bit
+      to this day.
+    </para>
+
+    <para>
+      Not only are a lot of games 32-bit, but Steam itself
+      requires that you have 32-bit libraries. If the 32-bit
+      libraries aren't on the system, Steam will quit, saying
+      it needs a library such as
+      <filename class="libraryfile">libc.so.6</filename>.
+      You will need the ability to execute 32-bit applications
+      as well as all the libraries necessary which is laid out
+      in Chapter 3.
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>Wine</title>
+      
+    <para>
+      Unlike Steam, Wine does not require that you have 32-bit libraries
+      or the i686-w64-mingw32 toolchain. Moreover, to get multilib
+      support in Wine, it must be compiled twice: a w64 build and a w32
+      w/ w64 build. However, it was discussed eariler in the Steam
+      section that many games are 32-bit and are no longer maintained or
+      will take a while to switch to 64-bit. This is the case with
+      Windows applications as well. This means that if you do a 64-bit
+      only build, compatabilty for all those 32-bit applications will
+      be lost.
+    </para>
+
+    <para>
+      A Wine WoW64 (can run 32-bit and 64-bit applications) build is
+      recommended. You can however skip lib32 and i686 instructions
+      to get a pure w64 Wine installation.
+    </para>
+
+  </sect2>
+
+</sect1>

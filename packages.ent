@@ -1,7 +1,4 @@
-<!-- CHAPTER II - MULTILIB -->
-<!-- <!ENTITY glibc-version                "2.40"> -->
-
-<!-- CHAPTER III - SHARED DEPENDENCIES -->
+<!-- SHARED DEPENDENCIES -->
 
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
@@ -257,7 +254,7 @@
 
 
 
-<!-- CHAPTER IV - STEAM -->
+<!-- STEAM -->
 
 <!ENTITY xdg-user-dirs-version        "0.18">
 <!ENTITY libgpg-error-version         "1.55">
@@ -265,7 +262,7 @@
 
 
 
-<!-- CHAPTER V - WINE -->
+<!-- WINE -->
 
 <!ENTITY binutils-version             "2.44">
 <!ENTITY gcc-version                  "15.1.0">

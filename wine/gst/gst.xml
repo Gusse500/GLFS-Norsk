@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<chapter id="Gst">
+  <?dbhtml filename="gst.html"?>
+
+  <title>Gst</title>
+
+  <para>
+    This chapter covers how to install <application>Gstreamer</application> and
+    its dependencies. <application>Gstreamer</application> is used in
+    <application>Wine</application> for some codec playback.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nasm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libaom.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fdk-aac.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lame.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvpx.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x264.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x265.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ffmpeg.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gstreamer10.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gst10-plugins-base.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gst10-plugins-good.xml"/> 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gst10-plugins-bad.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gst10-plugins-ugly.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gst10-libav.xml"/>
+
+</chapter>

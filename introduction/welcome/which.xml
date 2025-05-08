@@ -23,7 +23,7 @@
   </para>
 
   <para>
-    Not every chapter will be necessary depending on what you
+    Not every chapter/section will be necessary depending on what you
     want. Some packages may also not be necessary.
   </para>
 
@@ -33,7 +33,7 @@
   </para>
 
   <para>
-    The following chapter is Shared Dependencies. Every user
+    The following section is Shared Dependencies. Every user
     who wants <application>Steam</application> and/or
     <application>Wine</application> will want to read this chapter
     as both projects use the packages. Most of this chapter is
@@ -45,7 +45,7 @@
   </para>
 
   <para>
-    The next chapter is Steam, which covers all the packages,
+    The next section is Steam, which covers all the packages,
     patches, configuration, and setup necessary to get
     <application>Steam</application> working and capable of the
     playing the following: Linux games, Windows games via Proton,
@@ -53,7 +53,7 @@
   </para>
 
   <para>
-    The following chapter that most users will need is Wine. Users
+    The following section that most users will need is Wine. Users
     should follow every step in this chapter if they want to install
     WoW64 <application>Wine</application>, but more information is covered
     in that chapter. The Wine chapter at the moment does not consider
@@ -63,7 +63,7 @@
   </para>
 
   <para>
-    The last chapter covers quality of life improvements and packages.
+    The last section covers quality of life improvements and packages.
     This chapter is not required but recommended.
   </para>
 

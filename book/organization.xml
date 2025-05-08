@@ -12,7 +12,7 @@
   <title>Organization</title>
 
   <para>
-    This book is divided into the following 7 sections:
+    This book is divided into the following sections:
   </para>
 
   <bridgehead renderas="sect2">Part I - Introduction</bridgehead>
@@ -22,15 +22,7 @@
     understand the rest of the book.
   </para>
 
-  <bridgehead renderas="sect2">Part II - Multilib</bridgehead>
-
-  <para>
-    In this section we explain what multilib is, why you might
-    want or need it, and how to get multilib support. This should
-    be a precursor to the following sections.
-  </para>
-
-  <bridgehead renderas="sect2">Part III - Shared Dependencies</bridgehead>
+  <bridgehead renderas="sect2">Part II - Shared Dependencies</bridgehead>
 
   <para>
     This section is dedicated to covering dependencies that are shared
@@ -41,7 +33,7 @@
     in their respective chapters.
   </para>
 
-  <bridgehead renderas="sect2">Part IV - Steam</bridgehead>
+  <bridgehead renderas="sect2">Part III - Steam</bridgehead>
 
   <para>
     This part details how to install <application>Steam</application>
@@ -49,7 +41,7 @@
     configuration for certain packages.
   </para>
 
-  <bridgehead renderas="sect2">Part V - Wine</bridgehead>
+  <bridgehead renderas="sect2">Part IV - Wine</bridgehead>
 
   <para>
     This section goes over installing a toolchain called <application>
@@ -58,7 +50,7 @@
     <application>Wine</application> and configure it.
   </para>
 
-  <bridgehead renderas="sect2">Part VI - Quality of Life</bridgehead>
+  <bridgehead renderas="sect2">Part V - Quality of Life</bridgehead>
 
   <para>
     This section goes over quality of life improvements and packages
