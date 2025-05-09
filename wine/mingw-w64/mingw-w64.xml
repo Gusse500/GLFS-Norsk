@@ -69,6 +69,7 @@ cd    build-x86_64 &amp;&amp;
 
 ../configure --prefix=/usr/x86_64-w64-mingw32 \
              --host=x86_64-w64-mingw32        \
+             --disable-lib32                  \
              --enable-experimental            \
              --with-default-msvcrt=msvcrt     &amp;&amp;
 
@@ -93,6 +94,7 @@ cd    build-x86_64-winpthreads &amp;&amp;
 ../mingw-w64-libraries/winpthreads/configure \
             --prefix=/usr/x86_64-w64-mingw32 \
             --host=x86_64-w64-mingw32        \
+            --disable-lib32                  \
             --with-default-msvcrt=msvcrt     &amp;&amp;
 
 make</userinput></screen>
@@ -118,6 +120,7 @@ cd    build-i686 &amp;&amp;
 
 ../configure --prefix=/usr/i686-w64-mingw32 \
              --host=i686-w64-mingw32        \
+             --disable-lib64                \
              --enable-experimental          \
              --with-default-msvcrt=msvcrt   &amp;&amp;
 
@@ -142,7 +145,8 @@ cd    build-i686-winpthreads &amp;&amp;
 ../mingw-w64-libraries/winpthreads/configure \
             --prefix=/usr/i686-w64-mingw32   \
             --host=i686-w64-mingw32          \
-            --with-default-msvcrt=msvcrt     &amp;&amp;
+            --disable-lib64                  \
+            --with-default-msvcrt=msvcrt &amp;&amp;
 
 make</userinput></screen>
 
