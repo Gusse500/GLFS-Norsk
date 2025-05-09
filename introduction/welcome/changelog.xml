@@ -41,6 +41,23 @@
     -->
 
     <listitem>
+      <para>May 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.49.1 -&gt; 3.49.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.394 -&gt; 0.395. Fixes
+          <ulink url="&glfs-issues;/229">#229</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.5 -> 25.1.0. Fixes
+          <ulink url="&glfs-issues;/230">#230</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 7th, 2025</para>
       <itemizedlist>
         <listitem>

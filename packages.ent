@@ -3,10 +3,10 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.36">
-<!ENTITY sqlite-version               "3.49.1">
+<!ENTITY sqlite-version               "3.49.2">
 <!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3490100">
-<!ENTITY sqlite-doc-version           "3490100">
+<!ENTITY sqlite-dl-version            "3490200">
+<!ENTITY sqlite-doc-version           "3490200">
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "13">
 <!ENTITY python3-patch                "3">
@@ -130,7 +130,7 @@
 <!ENTITY seatd-version                "0.9.1">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.13.0">
-<!ENTITY hwdata-version               "0.394">
+<!ENTITY hwdata-version               "0.395">
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-version               "1.4.313">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
@@ -142,8 +142,8 @@
 <!ENTITY cython-version               "3.0.12">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
-<!ENTITY mesa-major-minor             "25.0">
-<!ENTITY mesa-version                 "&mesa-major-minor;.5">
+<!ENTITY mesa-major-minor             "25.1">
+<!ENTITY mesa-version                 "&mesa-major-minor;.0">
 <!ENTITY linux-version                "6.14.2">
                                                 <!-- kernel version in
                                                      kernel-config
