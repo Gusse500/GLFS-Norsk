@@ -199,15 +199,15 @@ make</userinput></screen>
           None
         </seg>
         <seg>
-          Various static libraries and headers needed by Windows. To see the
-          whole list, visit <ulink
+          libwinpthread-1 (DLL; in /usr/{i686,x86_64}-w64-mingw32/bin) and
+          hundreds of static libraries and headers needed by Windows. To see
+          the whole list of libraries, visit <ulink
           url="https://archlinux.org/packages/extra/any/mingw-w64-crt/"/>,
-          <ulink url="https://archlinux.org/packages/extra/any/mingw-w64-winpthreads/"/>, and
-          <xref linkend="mingw-w64-headers"/> and see
-          <emphasis>"Package Contents"</emphasis>.
+          and see <emphasis>"Package Contents"</emphasis>.
         </seg>
         <seg>
-          None
+          /usr/{i686,x86_64}-w64-mingw32/{bin,lib} and
+          /usr/x86_64-w64-mingw32/lib32
         </seg>
       </seglistitem>
     </segmentedlist>
