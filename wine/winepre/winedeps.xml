@@ -69,11 +69,9 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          <xref linkend="gstreamer10"/>: allows consuming and working with
+          <xref linkend="gstreamer-suite"/>: allows consuming and working with
           multimedia such as music and videos. Most games and some software
-          work without it, although some will need
-          <xref linkend="gst10-libav"/> for WMA decoding. Please install the
-          base and plugins of your choice as well as Gstreamer.
+          work without it, although some will need it for WMA decoding.
         </para>
       </listitem>
       <listitem>
