@@ -58,4 +58,31 @@
     Windows complaining that Unixlib can not be found.
   </para>
 
+  <para>
+    The following process works up to building the pieces for a static
+    compilation of GCC, which means it cannot do much of anything with dynamic
+    libraries besides build them. This is especially a problem with C++
+    software as you need <filename class="libraryfile">libstdc++</filename>,
+    which should be dynamic, for linking and execution. This is also a problem
+    for software that uses atomic. Most of all, Windows software built with the
+    toolchain needs <filename class="libraryfile">libgcc_s_seh</filename> which
+    is not provided in the static build.
+  </para>
+
+  <para>
+    However, this barebones basic toolchain is enough to build up the remaining
+    pieces of the toolchain. After doing so, you can rebuild GCC and have a
+    complete toolchain ready for targetting Windows. Realistically, you could
+    grab a binary distribution of the toolchain and compile everything with
+    less steps. In the past, that is exactly what this book has done. GLFS
+    editors/contributors since then have decided to scrap that idea
+    <footnote><para>
+      See this
+      <ulink url="https://github.com/Zeckmathederg/glfs/issues/9">issue</ulink>
+      for rationale behind bootstrapping the MinGW-w64 toolchain. The issue
+      originates from the old Github repository the GLFS project was once
+      hosted.
+    </para></footnote> and have chosen to bootstrap the toolchain instead.
+  </para>
+
 </sect1>
