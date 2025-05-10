@@ -90,8 +90,7 @@ ninja</userinput></screen>
       Now, as the &root; user:
     </para>
 
-<screen role="root"><userinput>ninja install &amp;&amp;
-rm -vf /usr/lib/libfontconfig.a</userinput></screen>
+<screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
 
@@ -117,7 +116,6 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install       &amp;&amp;
-rm -vf DESTDIR/usr/lib32/libfontconfig.a &amp;&amp;
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32    &amp;&amp;
 rm -rf DESTDIR                           &amp;&amp;
 ldconfig</userinput></screen>
@@ -128,11 +126,6 @@ ldconfig</userinput></screen>
     <title>Command Explanations</title>
 
     &options-meson;
-
-    <para>
-      <command>rm -vf /usr/lib/libfontconfig.a</command>: This command removes
-      a useless static library.
-    </para>
 
   </sect2>
 
