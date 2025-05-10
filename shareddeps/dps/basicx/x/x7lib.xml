@@ -50,7 +50,8 @@
     </para>
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="https://github.com/vapier/ncompress">ncompress</ulink> (for some tests) and
+      <ulink url="&lfs-qol-website;/general/ncompress.html">ncompress</ulink>
+      (for some tests) and
       <ulink url="&w3m-url;">W3m</ulink> (to generate additional PDF or text
       documentation for the libXfont package).
     </para>
