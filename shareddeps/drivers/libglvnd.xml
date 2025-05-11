@@ -166,14 +166,13 @@ ldconfig</userinput></screen>
         <seg>
           libEGL,
           libGL,
-          libGLESv1_CM,
           libGLESv2,
           libGLX,
           libGLdispatch, and
           libOpenGL
         </seg>
         <seg>
-          /usr/include/{EGL,GLES{,2,3},glvnd,KHR}
+          /usr/include/{EGL,GLES{2,3},glvnd,KHR}
         </seg>
       </seglistitem>
     </segmentedlist>
@@ -204,19 +203,6 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="libglvnd glvnd-libGL">
             <primary sortas="b-glvnd-libGL">libGL</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="glvnd-libGLESv1_CM">
-        <term><filename class="libraryfile">libGLESv1_CM</filename></term>
-        <listitem>
-          <para>
-            is a wrapper library to <filename class="libraryfile">libGLdispatch
-            </filename> which exposes OpenGL ES entrypoints
-          </para>
-          <indexterm zone="libglvnd glvnd-libGLESv1_CM">
-            <primary sortas="b-glvnd-libGLESv1_CM">libGLESv1_CM</primary>
           </indexterm>
         </listitem>
       </varlistentry>
