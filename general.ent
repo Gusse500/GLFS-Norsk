@@ -332,8 +332,9 @@ export -f as_root</userinput></screen>
          "<note><para>Run <command>../configure --help</command> for a full
           list of options.</para></note>">
 <!ENTITY options-meson
-         "<note><para>Inspect <filename>meson_options.txt</filename> for a full
-          list of options.</para></note>">
+         "<note><para>Inspect <filename>meson_options.txt</filename> or
+          <filename>meson.options</filename> for a full list of
+          options.</para></note>">
 <!ENTITY options-cmake
          "<note><para>For a full list of options and values, make sure you are
           in a build directory, then run <command>cmake -LAH ..</command>.
