@@ -335,6 +335,6 @@ export -f as_root</userinput></screen>
          "<note><para>Inspect <filename>meson_options.txt</filename> for a full
           list of options.</para></note>">
 <!ENTITY options-cmake
-         "<note><para>Inspect <filename>CMakeLists.txt</filename> and other
-          <application>CMake</application> related files for a full list of
-          options.</para></note>">
+         "<note><para>For a full list of options and values, make sure you are
+          in a build directory, then run <command>cmake -LAH ..</command>.
+          </para></note>">
