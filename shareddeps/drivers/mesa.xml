@@ -193,8 +193,9 @@ meson setup                    \
       -D platforms=x11,wayland \
       -D gallium-drivers=auto  \
       -D vulkan-drivers=auto   \
-      -D valgrind=disabled     \
+      -D gles1=disabled        \
       -D video-codecs=all      \
+      -D valgrind=disabled     \
       -D libunwind=disabled    \
       .. &amp;&amp;
 
@@ -244,8 +245,9 @@ meson setup                    \
       -D platforms=x11,wayland \
       -D gallium-drivers=auto  \
       -D vulkan-drivers=auto   \
-      -D valgrind=disabled     \
+      -D gles1=disabled        \
       -D video-codecs=all      \
+      -D valgrind=disabled     \
       -D libunwind=disabled    \
       .. &amp;&amp;
       sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
@@ -276,6 +278,12 @@ ldconfig</userinput></screen>
       fully-optimized build, and disables debug assertions which will
       severely slow down the libraries in certain use-cases. Without this
       switch, build sizes can span into the 2GB range.
+    </para>
+
+    <para>
+      <parameter>-D platforms=...</parameter>: This parameter
+      controls which windowing systems will be supported. Available
+      linux platforms are x11 and wayland.
     </para>
 
     <para>
@@ -377,12 +385,6 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <parameter>-D platforms=...</parameter>: This parameter
-      controls which windowing systems will be supported. Available
-      linux platforms are x11 and wayland.
-    </para>
-
-    <para>
       <parameter>-D vulkan-drivers=auto</parameter>: This switch enables support
       for the Vulkan graphics API. It automatically builds all graphics drivers
       that are available for Vulkan. If you wish to build specific drivers,
@@ -428,9 +430,8 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <parameter>-D valgrind=disabled</parameter>: This parameter disables
-      the usage of Valgrind during the build process. Remove this parameter
-      if you have Valgrind installed, and wish to check for memory leaks.
+      <parameter>-D gles1=disabled</parameter>: This flag disables building a
+      deprecated spec of OpenGL ES.
     </para>
 
     <para>
@@ -443,16 +444,19 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
+      <parameter>-D valgrind=disabled</parameter>: This parameter disables
+      the usage of Valgrind during the build process. Remove this parameter
+      if you have Valgrind installed, and wish to check for memory leaks.
+    </para>
+
+    <para>
       <parameter>-D libunwind=disabled</parameter>: This parameter disables
       the usage of libunwind.
     </para>
 
     <para>
-      <command>meson configure -D build-tests=true</command>: This command will
-      reconfigure the build to set <option>-D build-tests=true</option>, but
-      keep the other options specified in the <command>meson setup</command>
-      command unchanged.  It allows <command>ninja test</command> to build and
-      run unit tests.
+      <option>-D gles2=disabled</option>: If you don't need OpenGL ES, use
+      this option. Be sure to read <xref linkend="aboutgles"/>.
     </para>
 
     <para>
@@ -480,6 +484,14 @@ ldconfig</userinput></screen>
       tells this package to link against libraries in the proper directory.
     </para>
 
+    <para>
+      <command>meson configure -D build-tests=true</command>: This command will
+      reconfigure the build to set <option>-D build-tests=true</option>, but
+      keep the other options specified in the <command>meson setup</command>
+      command unchanged.  It allows <command>ninja test</command> to build and
+      run unit tests.
+    </para>
+
   </sect2>
 
   <sect2 role="content">
@@ -502,7 +514,6 @@ ldconfig</userinput></screen>
         <seg>
           libEGL (or libEGL_mesa if <xref linkend="libglvnd"/> is installed),
           libGL,
-          libGLESv1_CM,
           libGLESv2,
           libgallium-&mesa-version;,
           libgbm,
@@ -559,7 +570,7 @@ ldconfig</userinput></screen>
         </seg>
         <seg>
           <!-- /usr/include/GL is installed by xorg-protos -->
-          /usr/{include/{EGL,GLES,GLES2,GLES3,KHR},
+          /usr/{include/{EGL,GLES2,GLES3,KHR},
           /usr/lib/{dri,gbm,vdpau}},
           /usr/share/drirc.d (contains workarounds for various applications,
           particularly browsers and games),
@@ -639,18 +650,6 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="mesa libglapi">
             <primary sortas="c-libglapi">libglapi</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libGLESv1_CM">
-        <term><filename class="libraryfile">libGLESv1_CM</filename></term>
-        <listitem>
-          <para>
-            is the <application>Mesa</application> OpenGL ES 1.1 library
-          </para>
-          <indexterm zone="mesa libGLESv1_CM">
-            <primary sortas="c-libGLESv1_CM">libGLESv1_CM</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -151,6 +151,11 @@ ldconfig</userinput></screen>
       default as this guide is for Linux, not Haiku.
     </para>
 
+    <para>
+      <option>-D gles2=false</option>: If you don't need OpenGL ES, use
+      this option. Be sure to read <xref linkend="aboutgles"/>.
+    </para>
+
   </sect2>
 
   <sect2 role="content">
