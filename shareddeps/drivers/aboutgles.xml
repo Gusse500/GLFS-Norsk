@@ -33,10 +33,34 @@
       <application>Mutter</application>, <application>Wayfire</application>,
       and <application>Wlroots</application>. While compositors can utilize
       Vulkan, most compositors require GLES rendering and don't offer a Vulkan
-      solution. GLESv1 on the otherhand is an outdated specification of the
-      GLES API that has been phased out for many years. This book disables
-      building for GLESv1 as it is deprecated. You may build for it if
-      you wish.
+      solution, or any other rendering API solution. GLESv1 on the otherhand is
+      an outdated specification of the GLES API that has been phased out for
+      many years. This book disables building for GLESv1 as it is deprecated.
+      You may build the API spec if you wish.
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>History of Wayland and GLES</title>
+
+    <para>
+      When the <application>Wayland</application> set of protocols were made, a
+      reference implementation had to be made for it to show what was possible,
+      and how to create a compositor for the new protocol. The result was
+      <application>Weston</application>. For its rendering API, it used, and
+      uses, GLES and EGL. This was done so that dependency on the libraries
+      from the <application>X</application> Window System wasn't needed, that a
+      Wayland-only setup was possible. A small benefit of using GLES was that
+      it could run on embedded software.
+    </para>
+
+    <para>
+      Thus, compositors and compositor libraries followed suite and did the
+      same thing. However, any rendering API can be used as long as it can be
+      put through EGL. Desktop OpenGL and Vulkan can be used with no issues.
+      Today, the situation is the same and most compositors don't accept any
+      other rendering API besides GLES.
     </para>
 
   </sect2>
@@ -49,12 +73,7 @@
       that does not support Vulkan rendering, you are very likely going to have
       to build GLES v2 and v3, or else OpenGL and EGL rendering will not be an
       option. There are very few Wayland compositors that support Vulkan and do
-      not require GLES. As of writing this, it is unclear to the editors of
-      this book why GLES is required and regular OpenGL + EGL cannot be used
-      without GLES. There may be a technical reason for it, but it appears
-      OpenGL + EGL are perfectly capable of doing rendering on their own
-      without the need of a subset of itself. If you do find a Wayland
-      compositor that supports Vulkan rendering, like <ulink
+      not require GLES. If you do find one, like <ulink
       url="https://codeberg.org/dwl/dwl">dwl</ulink>, you won't really need
       GLES beyond compositing. Wayland clients, which are applications, will
       typically just use OpenGL and/or Vulkan with EGL. This means that you
