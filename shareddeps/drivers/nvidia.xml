@@ -147,10 +147,9 @@ pushd NVIDIA-Linux-x86_64-&nvidia-version; &amp;&amp;
     -d kernel &amp;&amp;
   patch -Np1 -i ../nvidia-&nvidia-version;-gcc15.patch \
     -d kernel-open &amp;&amp;
-  ./nvidia-installer --no-abi-note \
-                     --ui=none     \</userinput><userinput revision='sysv'>
+  ./nvidia-installer --no-abi-note \</userinput><userinput revision='sysv'>
                      --no-systemd  \</userinput><userinput>
-                     --install-compat32-libs &amp;&amp;
+                     --ui=none &amp;&amp;
   popd &amp;&amp;
 rm -rf NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 
@@ -234,6 +233,18 @@ rm -rf NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       </para>
     </important>
 
+    <para>
+      Now remove the driver for an outdated OpenGL ES spec as the &root; user:
+    </para>
+
+<screen role="root"><userinput>rm -vf /usr/lib/libGLESv1_CM_nvidia*</userinput></screen>
+
+    <para>
+      For multilib, again as the &root; user:
+    </para>
+
+<screen role="root"><userinput>rm -vf /usr/lib32/libGLESv1_CM_nvidia*</userinput></screen>
+
   </sect2>
 
   <sect2 role="commands">
@@ -265,7 +276,7 @@ rm -rf NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     </para>
 
     <para>
-      <parameter>--install-compat32-libs</parameter>: This option enables the
+      <option>--install-compat32-libs</option>: This option enables the
       installation of 32-bit libraries by default instead of being prompted.
     </para>
 
@@ -381,7 +392,6 @@ EOF</userinput></screen>
         </seg>
         <seg>
           libEGL_nvidia,
-          libGLESv1_CM_nvidia,
           libGLESv2_nvidia,
           libGLX_nvidia,
           libcuda,
