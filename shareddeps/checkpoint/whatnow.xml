@@ -120,8 +120,8 @@
         If you compiled Zink in <xref linkend="mesa"/>, chances are
         <application>X11</application> or any
         <application>Wayland</application> compositors will use the Gallium3D
-        driver meant for your GPU specifically (for example, Nouveau for NVIDIA
-        GPUs). You can override this by setting the following variable:
+        driver meant for your GPU specifically. You can override this by
+        setting the following variable:
       </para>
 
       <screen><userinput>export MESA_LOADER_DRIVER_OVERRIDE=zink</userinput></screen>
@@ -130,6 +130,11 @@
         This could be considered unstable, so if you experience crashes, the
         Zink driver could be the issue and you should use the Gallium3D driver
         meant for your GPU instead.
+      </para>
+
+      <para>
+        If you are on a NVIDIA Turing or newer GPU, Zink will be used by
+        default instead Gallium3D Nouveau.
       </para>
 
     </sect3>
