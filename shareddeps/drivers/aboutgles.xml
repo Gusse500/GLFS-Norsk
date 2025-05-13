@@ -49,10 +49,10 @@
       reference implementation had to be made for it to show what was possible,
       and how to create a compositor for the new protocol. The result was
       <application>Weston</application>. For its rendering API, it used, and
-      uses, GLES and EGL. This was done so that dependency on the libraries
+      uses, GLES and EGL. This was done so that the dependency on the libraries
       from the <application>X</application> Window System wasn't needed, that a
       Wayland-only setup was possible. A small benefit of using GLES was that
-      it could run on embedded software.
+      it could run on embedded systems like Raspberry Pis.
     </para>
 
     <para>
