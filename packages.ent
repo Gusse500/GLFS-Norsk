@@ -45,7 +45,7 @@
 <!ENTITY icu-patch                    "0">
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.14">
-<!ENTITY libxml2-version              "&libxml2-minor;.2">
+<!ENTITY libxml2-version              "&libxml2-minor;.3">
 <!ENTITY shared-mime-info-version     "2.4">
 <!ENTITY desktop-file-utils-version   "0.28">
 <!ENTITY polkit-version               "126">

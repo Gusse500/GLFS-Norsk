@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>May 14th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.2 -&gt; 2.14.3. Fixes
+          <ulink url="&glfs-issues;/238">#238</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 13th, 2025</para>
       <itemizedlist>
         <listitem>
