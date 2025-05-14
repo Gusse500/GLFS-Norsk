@@ -79,7 +79,7 @@
 <!ENTITY libpng-version               "1.6.48">
 <!ENTITY apng-version                 "1.6.47">
 <!ENTITY freetype2-version            "2.13.3">
-<!ENTITY harfbuzz-version             "11.2.0">
+<!ENTITY harfbuzz-version             "11.2.1">
 <!ENTITY fontconfig-version           "2.16.2">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->

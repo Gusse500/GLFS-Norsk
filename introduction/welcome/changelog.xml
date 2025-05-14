@@ -44,6 +44,10 @@
       <para>May 14th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - HarfBuzz: 11.2.0 -&gt; 11.2.1. Fixes
+          <ulink url="&glfs-issues;/237">#237</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libxml2: 2.14.2 -&gt; 2.14.3. Fixes
           <ulink url="&glfs-issues;/238">#238</ulink>.</para>
         </listitem>
