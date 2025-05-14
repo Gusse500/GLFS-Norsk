@@ -132,7 +132,6 @@ directories at the root of the source:
 - `appendices/`
 - `book/`
 - `introduction/`
-- `multilib/`
 - `qol/`
 - `shareddeps/`
 - `steam/`
@@ -155,22 +154,19 @@ needs to get updated.
 This directory contains XML files rendered for the Introduction section of the
 book. Contains `welcome/changelog.xml` which does need to get updated often.
 Rest of the XML files usually don't.
-#### 3.1.2.4. `multilib/`
-This directory contains XML files rendered for the Multilib section of the
-book. Rarely needs to get updated.
-#### 3.1.2.5. `qol/`
+#### 3.1.2.4. `qol/`
 This directory contains XML files rendered for the QOL section of the book.
 Rarely needs to get updated.
-#### 3.1.2.6. `shareddeps/`
+#### 3.1.2.5. `shareddeps/`
 This directory contains XML files rendered for the Shared Dependencies section
 of the book. Contains packages.
-#### 3.1.2.7. `steam/`
+#### 3.1.2.6. `steam/`
 This directory contains XML files rendered for the Steam section of the book.
 Contains packages.
-#### 3.1.2.8. `wine/`
+#### 3.1.2.7. `wine/`
 This directory contains XML files rendered for the Wine section of the book.
 Contains packages.
-#### 3.1.2.9. `changelog.xml`
+#### 3.1.2.8. `changelog.xml`
 This symlink points to `introduction/welcome/changelog.xml`, an XML file that
 details changes made to the book since the last release. All changes should be
 noted here, and the message should be similar or exact to the git commit
@@ -181,7 +177,7 @@ use for LFS/BLFS. Changes that shouldn't have a changelog entry are simple
 typos, grammar changes, fixing rendering failures, wording, etc. (small
 changes) and internal changes (not counting changes to `packages.ent`, those
 count as updates that need to have a changelog entry).
-#### 3.1.2.10. `index.xml`
+#### 3.1.2.9. `index.xml`
 This file is an XML file that determines which main XML files to include for
 rendering. Think of it as the master XML file, or your `int main()`, but for
 XML. Rarely needs changing unless a new section is added.
