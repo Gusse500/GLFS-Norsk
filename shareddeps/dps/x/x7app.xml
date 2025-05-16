@@ -96,10 +96,6 @@ xwininfo-&xwininfo-version;.tar.xz
 xwud-&xwud-version;.tar.xz</literal>
 EOF</userinput></screen>
 
-   <!-- Removed because it is also installed with mkfontscale
-   &mkfontdir-md5sum;  mkfontdir-&mkfontdir-version;.tar.bz2
-   -->
-
     <para>
       To download the needed files using <xref linkend='wget'/>,
       use the following commands:
@@ -146,9 +142,9 @@ done</userinput></screen>
 <screen><userinput>exit</userinput></screen>
 
     <para>
-      Unless you installed the optional dependencies, remove an undocumented
-      script which is reported to be broken (<command>xkeystone</command>
-      provided by the <application>xrandr</application> package).
+      Remove an undocumented script which is reported to be broken
+      (<command>xkeystone</command> provided by the
+      <application>xrandr</application> package):
     </para>
 
     <screen><userinput>as_root rm -f /usr/bin/xkeystone</userinput></screen>
