@@ -14,7 +14,8 @@ package is ... and does ...
 package has this usecase ... and has not many dependencies ...
 
 # Dependencies
-package requires ... and ... is not in any of the `*LFS*` books so it will need to be added too.
+package requires ... and ... is not in any of the `*LFS*` books so it will need
+to be added too.
 
 # Is this package a dependency of other packages?
 Yes or No.
