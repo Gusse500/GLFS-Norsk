@@ -210,8 +210,7 @@ make</userinput></screen>
           and see <emphasis>"Package Contents"</emphasis>.
         </seg>
         <seg>
-          /usr/{i686,x86_64}-w64-mingw32/{bin,lib} and
-          /usr/x86_64-w64-mingw32/lib32
+          /usr/{i686,x86_64}-w64-mingw32/{bin,lib}
         </seg>
       </seglistitem>
     </segmentedlist>
