@@ -70,10 +70,10 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      <xref linkend="xorg7-lib"/>,
       <xref linkend="libdrm"/>,
-      <xref linkend="mako"/>, and
-      <xref linkend="pyyaml"/>
+      <xref linkend="mako"/>,
+      <xref linkend="pyyaml"/>, and
+      <xref linkend="xorg7-lib"/>
     </para>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
