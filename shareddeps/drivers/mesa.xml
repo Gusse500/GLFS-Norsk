@@ -34,8 +34,8 @@
 
     <note>
       <para>
-        An Internet connection is needed for building the Nouveau and swrast
-        Vulkan driver. The system certificate store may need to be set up with
+        An Internet connection is needed for building the Nouveau Vulkan
+        driver. The system certificate store may need to be set up with
         <xref role='recommended' linkend='make-ca'/> before building this
         package.
       </para>
@@ -83,8 +83,13 @@
         <listitem>
           <para>
             <xref linkend="cbindgen"/>, <xref linkend="make-ca"/>,
-            <xref linkend="rust-bindgen"/>, and <xref linkend="rustc"/>
-            (required for Nouveau and swrast Vulkan)
+            <xref linkend="mesonfiles"/> <xref linkend="rust-bindgen"/>, and
+            <xref linkend="rustc"/> (required for Nouveau Vulkan;
+            if the recommended dependencies are met, not counting <xref
+            linkend="mesonfiles"/>, setting <parameter>auto</parameter> or
+            <parameter>all</parameter> for
+            <parameter>vulkan-drivers=</parameter> will build them by default,
+            which is set for the lib32 build down below)
           </para>
         </listitem>
         <listitem>
@@ -115,15 +120,6 @@
             <xref linkend="llvm"/> (required for the r300, r600, and radeonsi
             drivers, and the LLVMpipe software rasterizer; Clang in LLVM is
             required for Vulkan Swrast)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="mesonfiles"/> (required for lib32 Nouveau
-            and Swrast Vulkan; if the recommended dependencies are met, setting
-            <parameter>auto</parameter> or <parameter>all</parameter> for
-            <parameter>vulkan-drivers=</parameter> will build them by default,
-            which is set for the lib32 build down below)
           </para>
         </listitem>
         <listitem>
