@@ -143,6 +143,7 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
+      <xref linkend="gbm"/>,
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
       <xref linkend="libglvnd"/>,
       <xref linkend="libunwind"/>,
