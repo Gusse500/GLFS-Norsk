@@ -150,8 +150,8 @@
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
       <xref linkend="libglvnd"/>,
       <xref linkend="libunwind"/>,
-      <ulink url="&blfs-svn;/general/lm_sensors.html">lm_sensors</ulink>
-      <!-- for libsensors according to Meson -->,
+      <ulink url="&blfs-svn;/general/lm_sensors.html">lm_sensors</ulink>,
+      <!-- for libsensors according to Meson -->
       <xref linkend="nettle"/>,
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://archive.mesa3d.org/demos/">mesa-demos</ulink>
