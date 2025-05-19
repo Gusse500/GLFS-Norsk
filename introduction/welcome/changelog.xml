@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>May 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.86.0 -&gt; 1.87.0. Fixes
+          <ulink url="&glfs-issues;/240">#240</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 14th, 2025</para>
       <itemizedlist>
         <listitem>

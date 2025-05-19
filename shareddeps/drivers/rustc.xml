@@ -181,13 +181,13 @@ ln -svfn rustc-&rustc-version; /opt/rustc</userinput></screen>
     </note>
 
     <para>
-      Create a suitable <filename>config.toml</filename> file which will
+      Create a suitable <filename>bootstrap.toml</filename> file which will
       configure the build.
     </para>
 
-<screen><userinput>cat &gt; config.toml &lt;&lt; "EOF" &amp;&amp;
-<literal># See config.toml.example for more possible options,
-# and see src/bootstrap/defaults/config.dist.toml for a few options
+<screen><userinput>cat &gt; bootstrap.toml &lt;&lt; "EOF" &amp;&amp;
+<literal># See bootstrap.toml.example for more possible options,
+# and see src/bootstrap/defaults/bootstrap.dist.toml for a few options
 # automatically set when building from a release tarball.
 # We have to override a decent number of them.
 
@@ -202,25 +202,28 @@ link-shared = true
 </literal>
 EOF
 if [ ! -f /usr/lib32/libc.so.6 ]; then
-cat &gt;&gt; config.toml &lt;&lt; "EOF"
+cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF"
 <literal># If building the shipped LLVM source, only enable the x86 target
 # instead of all the targets supported by LLVM.
 targets = "X86"
 </literal>
 EOF
 fi
-if [ -f /usr/lib32/libc.so.6 ]; then
-cat &gt;&gt; config.toml &lt;&lt; "EOF"
+cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF"
 <literal>[build]
-target = [
+description = "for GLFS &version;"</literal>
+EOF
+if [ -f /usr/lib32/libc.so.6 ]; then
+cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF"
+<literal>target = [
   "x86_64-unknown-linux-gnu",
   "i686-unknown-linux-gnu",
-]
-</literal>
+]</literal>
 EOF
 fi &amp;&amp;
-cat &gt;&gt; config.toml &lt;&lt; "EOF" &amp;&amp;
-<literal># Do a 2-stage bootstrap instead of a 3-stage one to save time and space.
+cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF" &amp;&amp;
+<literal>
+# Do a 2-stage bootstrap instead of a 3-stage one to save time and space.
 # Note that the numbers "1" below mean to *run* the stage-*1* compiler and
 # build the stage-2 compiler.
 build-stage = 1
@@ -242,7 +245,6 @@ docdir = "share/doc/rustc-&rustc-version;"
 
 [rust]
 channel = "stable"
-description = "for GLFS &version;"
 
 # Uncomment if FileCheck has been installed.
 #codegen-tests = false
@@ -259,7 +261,7 @@ codegen-units = 1
 </literal>
 EOF
 if [ -f /usr/lib32/libc.so.6 ]; then
-cat &gt;&gt; config.toml &lt;&lt; "EOF"
+cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF"
 <literal>[target.x86_64-unknown-linux-gnu]
 cc = "/usr/bin/gcc"
 cxx = "/usr/bin/g++"
@@ -274,7 +276,7 @@ ar = "/usr/bin/gcc-ar"
 ranlib = "/usr/bin/gcc-ranlib"</literal>
 EOF
 else
-cat &gt;&gt; config.toml &lt;&lt; "EOF"
+cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF"
 <literal>[target.x86_64-unknown-linux-gnu]
 llvm-config = "/usr/bin/llvm-config"
 
@@ -285,7 +287,7 @@ fi</userinput></screen>
 
     <note>
       <para>
-        The above commands will create config.toml differently depending
+        The above commands will create bootstrap.toml differently depending
         on if a few checks pass/fail. This was done to avoid confusion.
       </para>
     </note>
@@ -306,7 +308,7 @@ fi</userinput></screen>
         config matched the requested path to build a codegen
         backend</computeroutput></quote>. And the provided
         <quote>suggestion</quote> (<computeroutput>add backend to
-        codegen-backends in config.toml</computeroutput>) will not silence
+        codegen-backends in bootstrap.toml</computeroutput>) will not silence
         it.  This warning is <ulink
         url='https://github.com/rust-lang/rust/issues/110692'>bogus</ulink>
         and it should be ignored.
@@ -358,39 +360,40 @@ mv -v /etc/bash_completion.d/cargo \
     <title>Command Explanations</title>
 
     <para>
-      <command>ln -svfn rustc-&rustc-version; /opt/rustc</command>: if this is
+      <command>ln -svfn rustc-&rustc-version; /opt/rustc</command>: If this is
       not the first use of the <filename class="directory">/opt/rustc</filename>
       symlink, overwrite it by forcing, and use the '-n' flag to avoid getting
       confusing results from e.g. <command>ls -l</command>.
     </para>
 
     <para>
-      <literal>targets = [...]</literal>: this builds the targets that will
+      <literal>targets = [...]</literal>: This builds the targets that will
       be necessary for 32-bit Rust projects.
     </para>
 
     <para>
       <literal>tools = ["cargo", "clippy", "rustdoc", "rustfmt"]</literal>:
-      only build the tools from the 'default' profile in binary command
+      Only build the tools from the 'default' profile in binary command
       <command>rustup</command> which are recommended for most users.
       The other tools are unlikely to be useful unless using (old) code
       analyzers or editing the standard library.
     </para>
 
     <para>
-      <literal>channel = "stable"</literal>: this ensures only stable features
-      can be used, the default in <filename>config.toml</filename> is to use
+      <literal>channel = "stable"</literal>: This ensures only stable features
+      can be used, the default in <filename>bootstrap.toml</filename> is to use
       development features, which is not appropriate for a released version.
     </para>
 
     <!-- comment while using shipped LLVM -->
     <para>
-      <literal>[target.x86_64-unknown-linux-gnu]</literal>: the syntax of
-      <filename>config.toml</filename> requires an <literal>llvm-config</literal>
-      entry for each target for which system-llvm is to be used. Change the target
-      to <literal>[target.i686-unknown-linux-gnu]</literal> if you are building
+      <literal>[target.x86_64-unknown-linux-gnu]</literal>: The syntax of
+      <filename>bootstrap.toml</filename> requires an
+      <literal>llvm-config</literal> entry for each target for which
+      system-LLVM is to be used. Change the target to
+      <literal>[target.i686-unknown-linux-gnu]</literal> if you are building
       on 32-bit x86. This whole section may be omitted if you wish to build
-      against the shipped llvm, or do not have clang, but the resulting build will
+      against the shipped LLVM, or do not have clang, but the resulting build will
       be larger and take longer.
     </para>
 
