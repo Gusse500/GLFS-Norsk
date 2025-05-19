@@ -190,17 +190,18 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
       <para>
         Some NVIDIA GPUs from Kepler onwards, including RTX and GTX 9xx series
         onwards, require firmware signed by NVIDIA to work.
-        NVIDIA has now released firmware up to Ada (40xx) to
+        NVIDIA has now released firmware up to Blackwell (50xx) to
         <ulink url="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">linux-firmware</ulink>.
         Read
         <ulink url='https://nouveau.freedesktop.org/CodeNames.html'>the
         CodeNames page of the Nouveau wiki</ulink> to figure out the code
         name of your NVIDIA GPU (for example, the code name of the GeForce RTX
-        4060 Ti is AD106). The directory for the firmware files you need is
-        named as the result converting the code name to lowercase
-        (<filename class='directory'>ad106</filename> for the example).
-        The directory (or some of its contents) may be actually a symlink to
-        another directory (or some files in another directory).
+        5080 is GB203, but in <application>linux-firmware,</application>, all
+        50xx RTX GPUs use the GB202 firmware). The directory for the firmware
+        files you need is named as the result converting the code name to
+        lowercase (<filename class='directory'>gb202</filename> for the
+        example). The directory (or some of its contents) may be actually a
+        symlink to another directory (or some files in another directory).
       </para>
 
       <para>
