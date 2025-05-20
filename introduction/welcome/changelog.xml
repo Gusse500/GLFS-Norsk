@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>May 20th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - sessreg: 1.1.3 -&gt; 1.1.4;
+          smproxy: 1.0.7 -&gt; 1.0.8;
+          xcursorgen: 1.0.8 -&gt; 1.0.9 (Xorg apps).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 19th, 2025</para>
       <itemizedlist>
         <listitem>
