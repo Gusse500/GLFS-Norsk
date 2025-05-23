@@ -37,7 +37,7 @@
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY pcre2-version                "10.45">
 <!ENTITY glib2-minor                  "2.84">
-<!ENTITY glib2-version                "&glib2-minor;.1">
+<!ENTITY glib2-version                "&glib2-minor;.2">
 <!ENTITY gi-minor                      "1.84">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "77">
@@ -139,11 +139,11 @@
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY libvdpau-version             "1.5">
 <!ENTITY mako-version                 "1.3.10">
-<!ENTITY cython-version               "3.1.0">
+<!ENTITY cython-version               "3.1.1">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY mesa-major-minor             "25.1">
-<!ENTITY mesa-version                 "&mesa-major-minor;.0">
+<!ENTITY mesa-version                 "&mesa-major-minor;.1">
 <!ENTITY linux-version                "6.14.2">
                                                 <!-- kernel version in
                                                      kernel-config
@@ -158,7 +158,7 @@
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.3.0">
 <!ENTITY llvm-maj-version             "20">
-<!ENTITY llvm-point-version           "4">
+<!ENTITY llvm-point-version           "5">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
 <!ENTITY rustc-version                "1.87.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
@@ -270,7 +270,7 @@
 <!ENTITY gcc-version                  "15.1.0">
 <!ENTITY mingw-w64-version            "12.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
-<!ENTITY libxkbcommon-version         "1.9.2">
+<!ENTITY libxkbcommon-version         "1.10.0">
 <!ENTITY sdl2-version                 "2.32.6">
 <!ENTITY gstreamer10-version          "1.26.1">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
