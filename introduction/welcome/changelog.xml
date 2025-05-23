@@ -44,6 +44,9 @@
       <para>May 23rd, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Xorg Libraries: Don't build libFS.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libxkbcommon: 1.9.2 -&gt; 1.10.0.</para>
         </listitem>
         <listitem>

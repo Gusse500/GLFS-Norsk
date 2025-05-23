@@ -75,7 +75,7 @@
 <literal>xtrans-&xtrans-version;.tar.xz
 libX11-&libX11-version;.tar.xz
 libXext-&libXext-version;.tar.xz
-libFS-&libFS-version;.tar.xz
+#libFS-&libFS-version;.tar.xz
 libICE-&libICE-version;.tar.xz
 libSM-&libSM-version;.tar.xz
 libXScrnSaver-&libXScrnSaver-version;.tar.xz
@@ -105,6 +105,12 @@ libxkbfile-&libxkbfile-version;.tar.xz
 libxshmfence-&libxshmfence-version;.tar.xz
 libXpresent-&libXpresent-version;.tar.xz</literal>
 EOF</userinput></screen>
+
+    <para>
+      <application>libFS</application> is commented out and will not be built
+      unless you go out of your way to uncomment it. It is not needed for any
+      packages in the LFS books and only necessary for some Xorg apps.
+    </para>
 
     <para>
       To download the needed files using <xref linkend='wget'/>,
@@ -325,15 +331,40 @@ done</userinput></screen>
           cxpm and sxpm
         </seg>
         <seg>
-          libfontenc, libFS, libICE,
-          libpciaccess, libSM, libX11, libX11-xcb, libXaw6,
-          libXaw7, libXaw, libXcomposite,
-          libXcursor, libXdamage, libXext,
-          libXfixes, libXfont2, libXft, libXinerama,
-          libXi, libxkbfile, libXmu, libXmuu,
-          libXpm, libXpresent, libXrandr, libXrender, libXRes,
-          libxshmfence, libXss, libXt, libXtst, libXvMC,
-          libXvMCW, libXv, libXxf86dga and
+          libfontenc,
+          libICE,
+          libpciaccess,
+          libSM,
+          libX11,
+          libX11-xcb,
+          libXaw6,
+          libXaw7,
+          libXaw,
+          libXcomposite,
+          libXcursor,
+          libXdamage,
+          libXext,
+          libXfixes,
+          libXfont2,
+          libXft,
+          libXinerama,
+          libXi,
+          libxkbfile,
+          libXmu,
+          libXmuu,
+          libXpm,
+          libXpresent,
+          libXrandr,
+          libXrender,
+          libXRes,
+          libxshmfence,
+          libXss,
+          libXt,
+          libXtst,
+          libXvMC,
+          libXvMCW,
+          libXv,
+          libXxf86dga and
           libXxf86vm
         </seg>
         <seg>
@@ -342,7 +373,6 @@ done</userinput></screen>
           /usr/include/X11/SM,
           /usr/include/X11/Xmu,
           /usr/include/X11/Xtrans,
-          /usr/share/doc/libFS,
           /usr/share/doc/libICE-&libICE-version;,
           /usr/share/doc/libSM-&libSM-version;,
           /usr/share/doc/libX11-&libX11-version;,
@@ -401,6 +431,7 @@ done</userinput></screen>
         </listitem>
       </varlistentry>
 
+<!--
       <varlistentry id="libFS">
         <term><filename class="libraryfile">libFS</filename></term>
         <listitem>
@@ -412,6 +443,7 @@ done</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
+-->
 
       <varlistentry id="libICE">
         <term><filename class="libraryfile">libICE</filename></term>
