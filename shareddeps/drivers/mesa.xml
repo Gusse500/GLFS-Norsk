@@ -25,6 +25,14 @@
       and other drivers.
     </para>
 
+    <para>
+      Read <xref linkend="aboutgl"/> to decide if you want to install OpenGL
+      implementations from this provider.
+      If you want to install <xref linkend="libglvnd"/>, install that
+      <emphasis>FIRST</emphasis> before installing this package so that this
+      package's OpenGL implementations do not get built.
+    </para>
+
     <note>
       <para>
         <application>Mesa</application> is updated relatively often. You may
@@ -452,20 +460,27 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <option>-D gles2=disabled</option>: If you don't need OpenGL ES, use
-      this option. Be sure to read <xref linkend="aboutgles"/>.
-    </para>
-
-    <para>
       <option>-D egl-native-platform="..."</option>: This parameter
       controls which Embedded Graphics Library support will be built. Available
       linux options are auto (default), x11, wayland, surfaceless, and drm.
     </para>
 
     <para>
+      <option>-D gles2=disabled</option>: If you don't need OpenGL ES, use
+      this option. Be sure to read <xref linkend="aboutgles"/>.
+    </para>
+
+    <para>
       <option>-D legacy-x11="..."</option> This parameter controls which legacy
       X11 features get built-in support. Available linux options are none
       (default) and dri2. These features are rarely needed anymore.
+    </para>
+
+    <para>
+      <option>-D libgbm-external=true</option>: This links against the
+      system-installed <filename class="libraryfile">libgbm</filename> and
+      disables building the GBM if <xref linkend="gbm"/> is installed. Whenever
+      updating this package, it is recommended to also update the GBM.
     </para>
 
     <para>
@@ -510,11 +525,11 @@ ldconfig</userinput></screen>
         </seg>
         <seg>
           libEGL (or libEGL_mesa if <xref linkend="libglvnd"/> is installed),
-          libGL,
-          libGLESv2,
+          libGL (if <xref linkend="libglvnd"/> is not installed),
+          libGLESv2 (if <xref linkend="libglvnd"/> is not installed),
           libgallium-&mesa-version;,
           libgbm,
-          libglapi,
+          libglapi (if <xref linkend="libglvnd"/> is not installed),
           libGLX_mesa (if <xref linkend="libglvnd"/> is installed), and
           libxatracker
         </seg>
@@ -607,8 +622,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libEGL</filename></term>
         <listitem>
           <para>
-            provides a native platform graphics interface as
-            defined by the EGL-1.4 specification
+            provides an interface between graphics APIs and the window system;
+            provided if <xref linkend="libglvnd"/> is not installed
           </para>
           <indexterm zone="mesa libEGL">
             <primary sortas="c-libGL">libEGL</primary>
@@ -642,8 +657,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libglapi</filename></term>
         <listitem>
           <para>
-            is the <application>Mesa</application> implementation of the OpenGL
-            API
+            is <application>Mesa's</application> implementation of the OpenGL
+            API; provided if <xref linkend="libglvnd"/> is not installed
           </para>
           <indexterm zone="mesa libglapi">
             <primary sortas="c-libglapi">libglapi</primary>
@@ -655,7 +670,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGLES2</filename></term>
         <listitem>
           <para>
-            is the <application>Mesa</application> OpenGL ES 2.0 library
+            contains OpenGL ES 2.x and 3.x calls; provided if <xref
+            linkend="libglvnd"/> is not installed
           </para>
           <indexterm zone="mesa libGLES2">
             <primary sortas="c-libGLES2">libGLES2</primary>
@@ -667,7 +683,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGL</filename></term>
         <listitem>
           <para>
-            is the main <application>Mesa</application> OpenGL library
+            is the main OpenGL library; provided if <xref linkend="libglvnd"/>
+            is not installed <filename class="libraryfile">libOpenGL</filename>
+            is not provided by this package
           </para>
           <indexterm zone="mesa libGL">
             <primary sortas="c-libGL">libGL</primary>

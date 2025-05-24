@@ -29,29 +29,8 @@
     </para>
 
     <para>
-      In other words, this package contains OpenGL libraries and wrappers.
-      <xref linkend="mesa"/> also provides OpenGL libraries. You will need to
-      decide which provider you want to install from. This package is
-      required by <xref linkend="nvidia"/> as that driver will not be able to
-      use <application>Mesa's</application> OpenGL libraries; however, every
-      other driver, including those in <application>Mesa</application>, can
-      simply use its OpenGL libraries. Furthermore, no programs in this book
-      require this package. Problems may arise with some build systems
-      expecting certain files or binary-downloaded applications
-      <footnote><para>
-        <ulink url="https://www.shipofharkinian.com/">Ship of Harkinian</ulink>
-        is a notable example.
-      </para></footnote>
-      linked against this package's libraries which are not provided by <xref
-      linkend="mesa"/>, though these issues are few and far between.
-    </para>
-
-    <para>
-      It is up to you on which provider to install from. If you don't want to
-      install OpenGL libraries from this package, you can skip this page and
-      continue onto the next package. If you want to install this package, but
-      not <xref linkend="nvidia"/>, you will still need to install <xref
-      linkend="mesa"/> for drivers.
+      Read <xref linkend="aboutgl"/> to decide if you want to install OpenGL
+      implementations from this provider.
     </para>
 
     <itemizedlist spacing="compact">
@@ -203,7 +182,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGL</filename></term>
         <listitem>
           <para>
-            is a wrapper library to <filename class="libraryfile">libGLdispatch
+            is the <quote>legacy</quote> OpenGL library; wrapper library
+            calling <filename class="libraryfile">libGLdispatch
             </filename> and <filename class="libraryfile">libGLX</filename>
           </para>
           <indexterm zone="libglvnd glvnd-libGL">
@@ -216,8 +196,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGLESv2</filename></term>
         <listitem>
           <para>
-            is a wrapper library to <filename class="libraryfile">libGLdispatch
-            </filename> which exposes OpenGL ES entrypoints
+            exposes OpenGL ES 2.x and 3.x entrypoints; wrapper library calling
+            <filename class="libraryfile">libGLdispatch</filename>
           </para>
           <indexterm zone="libglvnd glvnd-libGLESv2">
             <primary sortas="b-glvnd-libGLESv2">libGLESv2</primary>
@@ -229,8 +209,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGLX</filename></term>
         <listitem>
           <para>
-            manages loading GLX vendor libraries and dispatching GLX core
-            and extension functions to the right vendor
+            dispatches GLX extensions to the right vendor
           </para>
           <indexterm zone="libglvnd glvnd-libGLX">
             <primary sortas="b-glvnd-libGLX">libGLX</primary>
@@ -242,7 +221,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGLdispatch</filename></term>
         <listitem>
           <para>
-            implements core GL dispatching and TLS
+            dispatches OpenGL and TLS to the right vendor
           </para>
           <indexterm zone="libglvnd glvnd-libGLdispatch">
             <primary sortas="b-glvnd-libGLdispatch">libGLdispatch</primary>
@@ -254,9 +233,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libOpenGL</filename></term>
         <listitem>
           <para>
-            is a wrapper library to <filename class="libraryfile">
-            libGLdispatch</filename> which exposes OpenGL 4.5 core and
-            compatibility entry points
+            is the <quote>new</quote> OpenGL library and exposes OpenGL
+            entrypoints; wrapper library calling <filename
+            class="libraryfile"> libGLdispatch</filename>
           </para>
           <indexterm zone="libglvnd glvnd-libOpenGL">
             <primary sortas="b-glvnd-libOpenGL">libOpenGL</primary>

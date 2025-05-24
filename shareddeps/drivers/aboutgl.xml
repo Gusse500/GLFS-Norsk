@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="aboutgl" xreflabel="About OpenGL">
+  <?dbhtml filename="aboutgl.html"?>
+
+  <title>About OpenGL</title>
+
+  <sect2>
+    <title>What is OpenGL?</title>
+
+    <para>
+      OpenGL is a graphics API that was developed by Silicon Graphics, Inc.
+      which started off as IRIS GL. It was developed to be cross-platform as
+      getting graphics to work had previously been different on each set of
+      hardware. Due to pressure from other competitors, SGI open sourced IRIS
+      GL and called it OpenGL. Nowadays, OpenGL is now managed by Khronos Group
+      who also manages Vulkan. However, they define the standards of the APIs,
+      but don't make drivers for the APIs, nor implement the calls.
+    </para>
+
+    <para>
+      So, <application>Mesa</application> came in and implemented drivers and
+      functions for OpenGL. They also implement GLX and EGL which provide
+      interfaces to window systems like <application>Xorg</application>.
+      However, their method doesn't dispatch the calls in a vendor-neutral way.
+      For the most part, this approach is fine and doesn't lead to any issues.
+      <application>NVIDIA</application> has decided that this was a bad
+      approach, enough to warrent making another implementation of OpenGL
+      called <application>libglvnd</application> which only provides the
+      implementations for OpenGL, OpenGL ES, GLX, and EGL. This had led to
+      legacy OpenGL vs new OpenGL on Linux.
+    </para>
+
+    <para>
+      There is <filename class="libraryfile">libGL</filename> which is now
+      considered legacy OpenGL and is provided by both <xref linkend="mesa"/>
+      and <xref linkend="libglvnd"/>. Meanwhile, there is <filename
+      class="libraryfile">libOpenGL</filename> which is considered the new
+      OpenGL and is only provided by <xref linkend="libglvnd"/>. Apps and
+      libraries that link against the legacy OpenGL will work with both
+      providers, but linking against the new OpenGL, which only has dispatching
+      functions, break on systems with only <xref linkend="mesa"/> installed.
+    </para>
+
+    <para>
+      This is only a problem for binary only packages and some
+      <application>CMake</application> build systems. For this book and in
+      BLFS, it has no effect unless you wish to use <xref linkend="nvidia"/>,
+      which specifically requires <xref linkend="libglvnd"/>.
+    </para>
+
+    <para>
+      If you want only legacy OpenGL, you can just install <xref
+      linkend="mesa"/>. If you want new OpenGL, support for some binary-only
+      packages, <xref linkend="nvidia"/>, and get past some
+      <application>CMake</application> build systems, install <xref
+      linkend="libglvnd"/>. If you want a driver from <xref
+      linkend="mesa"/>, you can build that after
+      <application>libglvnd</application>. <application>Mesa</application> will
+      auto-detect <application>libglvnd</application> and will skip building
+      its OpenGL implementations.
+    </para>
+
+    <note><para>
+      Switching from <application>Mesa</application> OpenGL to
+      <application>libglvnd</application> OpenGL is sort of trivial. However,
+      switching from <application>libglvnd</application> OpenGL to
+      <application>Mesa</application> OpenGL requires a lot of rebuilding.
+    </para></note>
+
+  </sect2>
+
+  <sect2 id="aboutgles">
+    <title>About GLES (OpenGL ES)</title>
+
+    <sect3>
+      <title>What is GLES?</title>
+
+      <para>
+        GLES, or OpenGL ES, or OpenGL for Embedded Systems, is what the full
+        name suggests: it is a stripped down version of OpenGL, a subset, with
+        a slightly different API here and there. It is used mostly for devices
+        with ARM chips such as smart phones and tablets, but is also used in
+        gaming consoles. On the Linux desktop, you typically have desktop, or
+        full, OpenGL, EGL, GLX, and GLESv{1,2,3}.
+      </para>
+
+      <para>
+        GLES, specifically v2 and v3, are used sometimes, but mostly in one
+        area. Such an area is in <application>Wayland</application>
+        compositors and compositor libraries, such as
+        <application>Hyprland</application>, <application>Mutter</application>,
+        <application>Wayfire</application>, and
+        <application>Wlroots</application>. While compositors can utilize
+        Vulkan, most compositors require GLES rendering and don't offer a Vulkan
+        solution, or any other rendering API solution. GLESv1 on the otherhand
+        is an outdated specification of the GLES API that has been phased out
+        for many years. This book disables building for GLESv1 as it is
+        deprecated. You may build the API spec if you wish.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>History of Wayland and GLES</title>
+
+      <para>
+        When the <application>Wayland</application> set of protocols were made, a
+        reference implementation had to be made for it to show what was possible,
+        and how to create a compositor for the new protocol. The result was
+        <application>Weston</application>. For its rendering API, it used, and
+        uses, GLES and EGL. This was done so that the dependency on the
+        libraries from the <application>X</application> Window System wasn't
+        needed, that a Wayland-only setup was possible. A small benefit of using
+        GLES was that it could run on embedded systems like Raspberry Pis.
+      </para>
+
+      <para>
+        Thus, compositors and compositor libraries followed suite and did the
+        same thing. However, any rendering API can be used as long as it can be
+        put through EGL. Desktop OpenGL and Vulkan can be used with no issues.
+        Today, the situation is the same and most compositors don't accept any
+        other rendering API besides GLES.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Do I need GLES?</title>
+
+      <para>
+        If you are wanting to use Wayland compositors, and are going to use one
+        that does not support Vulkan rendering, you are very likely going to
+        have to build GLES v2 and v3, or else OpenGL and EGL rendering will not
+        be an option. There are very few Wayland compositors that support
+        Vulkan and do not require GLES. If you do find one, like <ulink
+        url="https://codeberg.org/dwl/dwl">dwl</ulink>, you won't really need
+        GLES beyond compositing. Wayland clients, which are applications, will
+        typically just use OpenGL and/or Vulkan with EGL. This means that you
+        would be able to skip GLES support but would kill off the ability to
+        use other Wayland compositors that require GLES rendering.
+      </para>
+
+      <para>
+        On the otherhand, if you are using the <application>X</application>
+        Window System, GLES will almost never be used and that support for the
+        API can be disabled without much worry. However, you kill off the
+        ability to use Wayland compositors that require GLES rendering if you
+        want to switch over to Wayland in the future.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Disabling GLES</title>
+
+      <para>
+        If you decided to disable GLES support, it is pretty easy to not build
+        in support for the API. In <quote>Command Explanations</quote>, for
+        both <xref linkend="libglvnd"/> and <xref linkend="mesa"/>, they will
+        explain the options required to disable the support. Furthermore,
+        <xref linkend="nvidia"/> installs drivers for GLES. The installation
+        instructions for that driver will cover how to delete them if you do
+        not need GLES.
+      </para>
+
+      <para>
+        If you already have installed GLES from any of the OpenGL providers,
+        removing all the related files is pretty easy. You can follow the
+        instructions below as the &root; user to remove the API:
+      </para>
+
+<screen role="root"><userinput>for libdir in /usr/lib*; do
+  rm -vf  $libdir/pkgconfig/gles*
+  rm -vrf /usr/include/GLES*
+  rm -vf  $libdir/libGLES*
+done
+ldconfig</userinput></screen>
+
+      <para>
+        Recompile any packages as necessary to remove the dependency on GLES.
+      </para>
+
+      <para>
+        If you have decided to revert your decision and wish to build support
+        for GLES, just recompile OpenGL from the original OpenGL provider you
+        went with without the option needed to disable GLESv2. You can however
+        keep the option to disable GLESv1 as v1 is an outdated spec and not
+        needed today.
+      </para>
+
+    </sect3>
+
+  </sect2>
+      
+</sect1>

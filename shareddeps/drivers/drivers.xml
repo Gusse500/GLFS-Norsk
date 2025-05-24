@@ -19,7 +19,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gpuconfig.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pciutils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="hwdata.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutgles.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutgl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libglvnd.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vkheaders.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvk.xml"/>
