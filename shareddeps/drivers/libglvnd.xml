@@ -21,17 +21,15 @@
     <title>Introduction to libglvnd</title>
 
     <para>
-      libglvnd is a vendor-neutral dispatch layer for arbitrating
-      OpenGL API calls between multiple vendors. It allows multiple
-      drivers from different vendors to coexist on the same filesystem,
-      and determines which vendor to dispatch each API call to at
-      runtime.
+      The <application>libglvnd</application> package provides OpenGL
+      implementations that dispatch API calls to a given driver vendor. Some of
+      the libraries are simply wrappers to the main dispatcher.
     </para>
 
-    <para>
+    <important><para>
       Read <xref linkend="aboutgl"/> to decide if you want to install OpenGL
       implementations from this provider.
-    </para>
+    </para></important>
 
     <itemizedlist spacing="compact">
       <listitem>

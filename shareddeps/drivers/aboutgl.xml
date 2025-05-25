@@ -29,11 +29,11 @@
       interfaces to window systems like <application>Xorg</application>.
       However, their method doesn't dispatch the calls in a vendor-neutral way.
       For the most part, this approach is fine and doesn't lead to any issues.
-      <application>NVIDIA</application> has decided that this was a bad
-      approach, enough to warrent making another implementation of OpenGL
-      called <application>libglvnd</application> which only provides the
-      implementations for OpenGL, OpenGL ES, GLX, and EGL. This had led to
-      legacy OpenGL vs new OpenGL on Linux.
+      <application>NVIDIA</application> has decided that this was a bad enough
+      approach to warrant making another implementation of OpenGL called
+      <application>libglvnd</application>. It only provides the implementations
+      for OpenGL, OpenGL ES, GLX, and EGL. This had led to legacy OpenGL vs new
+      OpenGL on Linux.
     </para>
 
     <para>
@@ -44,18 +44,35 @@
       OpenGL and is only provided by <xref linkend="libglvnd"/>. Apps and
       libraries that link against the legacy OpenGL will work with both
       providers, but linking against the new OpenGL, which only has dispatching
-      functions, break on systems with only <xref linkend="mesa"/> installed.
+      functions, will result in those binaries being broken on systems with
+      only <xref linkend="mesa"/> installed.
     </para>
 
     <para>
       This is only a problem for binary only packages and some
       <application>CMake</application> build systems. For this book and in
-      BLFS, it has no effect unless you wish to use <xref linkend="nvidia"/>,
-      which specifically requires <xref linkend="libglvnd"/>.
+      BLFS, you shouldn't run into any of those issues unless you wish to use
+      <xref linkend="nvidia"/>, which specifically requires <xref
+      linkend="libglvnd"/>. LFS-QOL aims to work around issues that arise from
+      packages having stubborn build systems, like in the case of <ulink
+      url="&lfs-qol-website;/general/obs-studio.html">OBS-Studio</ulink>.
+      For binary-only packages, it is generally hit or miss whether the
+      developers link against new or legacy OpenGL. A gaming example is with
+      ports and recompilations: the binary for <ulink
+      url="https://www.shipofharkinian.com/">Ship of Harkinian</ulink>, a PC
+      port of the Nintendo 64 game, Legend of Zelda: Ocarina of Time, links
+      against new OpenGL and will be broken with only
+      <application>Mesa</application> installed; furthermore, trying to get
+      around the issue by building from source also leads to many issues.
+      However, the binary of the PC port made from statically recompiling the
+      Nintendo 64 game, Legend of Zelda: Majora's Mask, called <ulink
+      url="https://github.com/Zelda64Recomp/Zelda64Recomp">Zelda 64:
+      Recompiled</ulink>, links against legacy OpenGL and works with both
+      OpenGL providers.
     </para>
 
     <para>
-      If you want only legacy OpenGL, you can just install <xref
+      If you only want legacy OpenGL, you can just install <xref
       linkend="mesa"/>. If you want new OpenGL, support for some binary-only
       packages, <xref linkend="nvidia"/>, and get past some
       <application>CMake</application> build systems, install <xref

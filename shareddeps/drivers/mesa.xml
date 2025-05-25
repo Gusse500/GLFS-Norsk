@@ -25,13 +25,13 @@
       and other drivers.
     </para>
 
-    <para>
+    <important><para>
       Read <xref linkend="aboutgl"/> to decide if you want to install OpenGL
       implementations from this provider.
       If you want to install <xref linkend="libglvnd"/>, install that
       <emphasis>FIRST</emphasis> before installing this package so that this
       package's OpenGL implementations do not get built.
-    </para>
+    </para></important>
 
     <note>
       <para>
