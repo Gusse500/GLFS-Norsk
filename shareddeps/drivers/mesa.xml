@@ -684,8 +684,9 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             is the main OpenGL library; provided if <xref linkend="libglvnd"/>
-            is not installed <filename class="libraryfile">libOpenGL</filename>
-            is not provided by this package
+            is not installed; <filename
+            class="libraryfile">libOpenGL</filename> is not provided by this
+            package
           </para>
           <indexterm zone="mesa libGL">
             <primary sortas="c-libGL">libGL</primary>
