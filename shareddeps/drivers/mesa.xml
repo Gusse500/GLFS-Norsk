@@ -155,11 +155,11 @@
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
       <xref linkend="libglvnd"/>,
       <xref linkend="libunwind"/>,
-      <ulink url="&blfs-svn;/general/lm_sensors.html">lm_sensors</ulink>,
+      <ulink url="&blfs-svn;/general/lm-sensors.html">lm-sensors</ulink>,
       <!-- for libsensors according to Meson -->
       <xref linkend="nettle"/>,
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
-      <ulink url="https://archive.mesa3d.org/demos/">mesa-demos</ulink>
+      <ulink url="&lfs-qol-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test <application>Mesa</application>),
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile platforms), and
