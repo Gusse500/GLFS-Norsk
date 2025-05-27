@@ -57,7 +57,7 @@
       with LFS and are not yet booted into the new system yet, then it is
       recommended to navigate to <filename
       class="directory">$LFS/sources</filename> then follow the below
-      instructions on the host system.
+      instructions on the host system outside of a chroot.
     </para></note>
 
     <para>
