@@ -26,8 +26,8 @@
 
   <para>
     This section is dedicated to covering dependencies that are shared
-    between <application>Steam</application> and <application>Wine
-    </application>. As it turns out, there are quite a lot of
+    between <application>Steam</application> and <application>Wine.
+    </application> As it turns out, there are quite a lot of
     dependencies they both depend on. Anything specific to <application>
     Steam</application> and <application>Wine</application> are covered
     in their respective chapters.
