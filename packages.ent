@@ -14,8 +14,8 @@
 <!ENTITY python3-version              "&python3-majorver;.&python3-patch;">
 <!ENTITY python3-lib-suffix           "cpython-&python3-major;&python3-minor;-&lt;arch&gt;-linux-gnu">
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
-<!ENTITY nss-dir                      "3_111">
-<!ENTITY nss-minor-version            "111">
+<!ENTITY nss-dir                      "3_112">
+<!ENTITY nss-minor-version            "112">
 <!--<!ENTITY nss-micro-version            "1">-->
 <!--<!ENTITY nss-version                  "3.&nss-minor-version;.&nss-micro-version;">-->
 <!ENTITY nss-version                  "3.&nss-minor-version;">
