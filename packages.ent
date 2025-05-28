@@ -144,11 +144,11 @@
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY mesa-major-minor             "25.1">
 <!ENTITY mesa-version                 "&mesa-major-minor;.1">
-<!ENTITY linux-version                "6.14.2">
+<!ENTITY linux-version                "6.14.6">
                                                 <!-- kernel version in
                                                      kernel-config
                                                      presently -->
-<!ENTITY nvidia-linux-version         "6.14.2">
+<!ENTITY nvidia-linux-version         "6.14.6">
                                                 <!-- kernel version of when the
                                                      NVIDIA driver version
                                                      listed was released -->
