@@ -134,7 +134,7 @@
 
       <para>
         If you are on a NVIDIA Turing or newer GPU, Zink will be used by
-        default instead Gallium3D Nouveau.
+        default instead of Gallium3D Nouveau.
       </para>
 
     </sect3>

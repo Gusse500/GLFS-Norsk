@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>May 27th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Overhaul. Fixes
+          <ulink url="&glfs-issues;/248">#248</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>May 23rd, 2025</para>
       <itemizedlist>
         <listitem>
