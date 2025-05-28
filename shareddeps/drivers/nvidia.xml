@@ -659,7 +659,7 @@ cp -vR html /usr/share/doc/nvidia-&nvidia-version;</userinput></screen>
       </para>
       
 <screen role="root"><userinput>mkdir -pv /usr/lib/modprobe.d &amp;&amp;
-cat &gt;&gt; /usr/lib/modprobe.d/nvfb.conf &lt;&lt; "EOF"
+cat &gt; /usr/lib/modprobe.d/nvfb.conf &lt;&lt; "EOF"
 <literal># Begin /usr/lib/modprobe.d/nvfb.conf
 
 blacklist nouveau
