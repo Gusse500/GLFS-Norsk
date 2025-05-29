@@ -44,6 +44,9 @@
       <para>May 29th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA: 575.51.02 -&gt; 575.57.08.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - cURL: 8.13.0 -&gt; 8.14.0. Fixes
           <ulink url="&glfs-issues;/249">#249</ulink>.</para>
         </listitem>

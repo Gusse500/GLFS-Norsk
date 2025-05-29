@@ -44,7 +44,7 @@
       <listitem>
         <para>
           Required patch:
-          <ulink url="&patch-root;/nvidia/nvidia-&nvidia-version;-gcc15.patch"/>
+          <ulink url="&patch-root;/nvidia/nvidia-&nvidia-version;-kernel_gpl_cachyos-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -124,15 +124,13 @@
 cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 
     <para>
-      Apply a patch for each kernel types for the driver for compatibility with
-      <application>GCC-15</application>:
+      Apply a patch for the proprietary kernel module type for the driver for
+      compatibility with <application>linux-6.15</application>:
     </para>
 
-<screen><userinput>for kernel_type in kernel{,-open}; do
-  pushd $kernel_type &amp;&amp;
-    patch -Np1 -i ../../nvidia-&nvidia-version;-gcc15.patch
-  popd
-done</userinput></screen>
+<screen><userinput>pushd kernel &amp;&amp;
+  patch -Np1 -i ../../nvidia-&nvidia-version;-kernel_gpl_cachyos-1.patch &amp;&amp;
+popd</userinput></screen>
 
   </sect2>
 
@@ -305,24 +303,24 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
       <sect4>
         <title>64-bit Installation</title>
 
-<screen role="root"><userinput>mkdir -pv /usr/share/nvidia  &amp;&amp;
-cp -v libnvidia-cfg.so*       \
-      libnvidia-eglcore.so*   \
-      libnvidia-glcore.so*    \
-      libnvidia-glsi.so*      \
-      libnvidia-glvkspirv.so* \
-      libnvidia-gpucomp.so*   \
-      libnvidia-ml.so*        \
-      libnvidia-pkcs11*       \
-      libnvidia-rtcore.so*    \
-      libnvidia-tls.so*       \
-      libnvidia-allocator.so* \
-      /usr/lib               &amp;&amp;
+<screen role="root"><userinput>mkdir -pv /usr/share/nvidia                       &amp;&amp;
+cp -v libnvidia-cfg.so*                            \
+      libnvidia-eglcore.so*                        \
+      libnvidia-glcore.so*                         \
+      libnvidia-glsi.so*                           \
+      libnvidia-glvkspirv.so*                      \
+      libnvidia-gpucomp.so*                        \
+      libnvidia-ml.so*                             \
+      libnvidia-pkcs11*                            \
+      libnvidia-rtcore.so*                         \
+      libnvidia-tls.so*                            \
+      libnvidia-allocator.so*                      \
+      /usr/lib                                    &amp;&amp;
 ln -svrf /usr/lib/libnvidia-allocator.so.&nvidia-version; \
-         /usr/lib/gbm/nvidia-drm_gbm.so &amp;&amp;
-cp -v nvidia-modprobe         \
-      /usr/bin               &amp;&amp;
-cp -v nvidia-application-profiles* \
+         /usr/lib/gbm/nvidia-drm_gbm.so           &amp;&amp;
+cp -v nvidia-modprobe                              \
+      /usr/bin                                    &amp;&amp;
+cp -v nvidia-application-profiles*                 \
       /usr/share/nvidia</userinput></screen>
 
       </sect4>
@@ -360,14 +358,14 @@ ln -svrf /usr/lib32/libnvidia-allocator.so.&nvidia-version; \
 
 <screen role="root"><userinput>mkdir -pv /usr/lib/xorg/modules/{drivers,extensions} &amp;&amp;
 mkdir -pv /usr/share/X11/xorg.conf.d                 &amp;&amp;
-cp -v nvidia_drv.so*              \
+cp -v nvidia_drv.so*                                  \
           /usr/lib/xorg/modules/drivers              &amp;&amp;
-cp -v libglxserver_nvidia.so*     \
+cp -v libglxserver_nvidia.so*                         \
           /usr/lib/xorg/modules/extensions           &amp;&amp;
-cp -v libGLX_nvidia.so*           \
-      libnvidia-fbc.so*           \
+cp -v libGLX_nvidia.so*                               \
+      libnvidia-fbc.so*                               \
           /usr/lib                                   &amp;&amp;
-cp -v nvidia-drm-outputclass.conf \
+cp -v nvidia-drm-outputclass.conf                     \
           /usr/share/X11/xorg.conf.d</userinput></screen>
 
       </sect4>
@@ -395,17 +393,13 @@ cp -v nvidia-drm-outputclass.conf \
         <title>64-bit Installation</title>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/glvnd/egl_vendor.d &amp;&amp;
-cp -v libnvidia-egl-*.so*    \
+cp -v libnvidia-egl-*.so*                \
           /usr/lib                      &amp;&amp;
-cp -v libEGL_nvidia.so*    \
+cp -v libEGL_nvidia.so*                  \
           /usr/lib                      &amp;&amp;
-cp -v libnvidia-wayland*     \
+cp -v libnvidia-wayland*                 \
           /usr/lib                      &amp;&amp;
-cp -v 10*.json               \
-          /usr/share/glvnd/egl_vendor.d &amp;&amp;
-cp -v 15*.json               \
-          /usr/share/glvnd/egl_vendor.d &amp;&amp;
-cp -v 20*.json               \
+cp -v {10,15,20}*.json                   \
           /usr/share/glvnd/egl_vendor.d</userinput></screen>
 
       </sect4>
@@ -414,8 +408,8 @@ cp -v 20*.json               \
         <title>32-bit Installation</title>
 
 <screen role="root"><userinput>cp -v libnvidia-egl-*.so* \
-  /usr/lib32 &amp;&amp;
-cp -v libEGL_nvidia.so* \
+  /usr/lib32             &amp;&amp;
+cp -v libEGL_nvidia.so*   \
   /usr/lib32</userinput></screen>
 
       </sect4>
@@ -462,7 +456,7 @@ cp -v nvidia_icd.json /usr/share/vulkan/icd.d</userinput></screen>
       <para>
         The Vulkan driver according to the ICD configuration file is <filename
         class="libraryfile">libGLX_nvidia</filename>. If you installed the EGL
-        drivers, you can change what Vulkan driver is used like so:
+        drivers, you can make the Vulkan driver use EGL instead of GLX like so:
       </para>
 
 <screen role="root"><userinput>sed -i 's/GLX/EGL/' \
@@ -508,7 +502,7 @@ cp -v nvidia_icd.json /usr/share/vulkan/icd.d</userinput></screen>
         <title>64-bit Installation</title>
 
 <screen role="root"><userinput>cp -v libOpenCL.so*        \
-  /usr/lib &amp;&amp;
+  /usr/lib                &amp;&amp;
 cp -v libnvidia-opencl.so* \
   /usr/lib</userinput></screen>
 
@@ -518,7 +512,7 @@ cp -v libnvidia-opencl.so* \
         <title>32-bit Installation</title>
 
 <screen role="root"><userinput>cp -v libOpenCL.so*        \
-  /usr/lib32 &amp;&amp;
+  /usr/lib32              &amp;&amp;
 cp -v libnvidia-opencl.so* \
   /usr/lib32</userinput></screen>
 
@@ -532,7 +526,8 @@ cp -v libnvidia-opencl.so* \
       <para>
         If you want to use <ulink
         url="&lfs-qol-website;/general/cuda.html">CUDA</ulink> or applications
-        that uses it, install the libraries for it.
+        that use it, install the libraries for it. They also enable general
+        hardware acceleration and ray tracing.
       </para>
 
       <sect4>
@@ -571,9 +566,9 @@ cp -v libnvidia-opencl.so* \
       </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/lib/nvidia/wine &amp;&amp;
-cp -v libnvidia-ngx.so* \
-          /usr/lib &amp;&amp;
-cp -v *nvngx*.dll       \
+cp -v libnvidia-ngx.so*         \
+          /usr/lib             &amp;&amp;
+cp -v *nvngx*.dll               \
           /usr/lib/nvidia/wine</userinput></screen>
 
     </sect3>
@@ -624,7 +619,7 @@ cp -v nvidia-settings.png                \
       <title>Documentation</title>
 
       <para>
-        If you want to install documentation, do so now.
+        If you want to install the documentation, do so now.
       </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/doc/nvidia-&nvidia-version; &amp;&amp;
