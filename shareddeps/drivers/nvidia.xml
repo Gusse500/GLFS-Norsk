@@ -303,24 +303,25 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
       <sect4>
         <title>64-bit Installation</title>
 
-<screen role="root"><userinput>mkdir -pv /usr/share/nvidia                       &amp;&amp;
-cp -v libnvidia-cfg.so*                            \
-      libnvidia-eglcore.so*                        \
-      libnvidia-glcore.so*                         \
-      libnvidia-glsi.so*                           \
-      libnvidia-glvkspirv.so*                      \
-      libnvidia-gpucomp.so*                        \
-      libnvidia-ml.so*                             \
-      libnvidia-pkcs11*                            \
-      libnvidia-rtcore.so*                         \
-      libnvidia-tls.so*                            \
-      libnvidia-allocator.so*                      \
-      /usr/lib                                    &amp;&amp;
-ln -svrf /usr/lib/libnvidia-allocator.so.&nvidia-version; \
-         /usr/lib/gbm/nvidia-drm_gbm.so           &amp;&amp;
-cp -v nvidia-modprobe                              \
-      /usr/bin                                    &amp;&amp;
-cp -v nvidia-application-profiles*                 \
+<screen role="root"><userinput>mkdir -pv /usr/share/nvidia                &amp;&amp;
+rm    -fv /usr/lib/libnvidia-allocator.so* &amp;&amp;
+cp -v libnvidia-cfg.so*                     \
+      libnvidia-eglcore.so*                 \
+      libnvidia-glcore.so*                  \
+      libnvidia-glsi.so*                    \
+      libnvidia-glvkspirv.so*               \
+      libnvidia-gpucomp.so*                 \
+      libnvidia-ml.so*                      \
+      libnvidia-pkcs11*                     \
+      libnvidia-rtcore.so*                  \
+      libnvidia-tls.so*                     \
+      libnvidia-allocator.so*               \
+      /usr/lib                             &amp;&amp;
+ln -svrf /usr/lib/libnvidia-allocator.so*   \
+         /usr/lib/gbm/nvidia-drm_gbm.so    &amp;&amp;
+cp -v nvidia-modprobe                       \
+      /usr/bin                             &amp;&amp;
+cp -v nvidia-application-profiles*          \
       /usr/share/nvidia</userinput></screen>
 
       </sect4>
@@ -328,16 +329,17 @@ cp -v nvidia-application-profiles*                 \
       <sect4>
         <title>32-bit Installation</title>
 
-<screen role="root"><userinput>cp -v libnvidia-cfg.so*       \
-      libnvidia-eglcore.so*   \
-      libnvidia-glcore.so*    \
-      libnvidia-glsi.so*      \
-      libnvidia-glvkspirv.so* \
-      libnvidia-gpucomp.so*   \
-      libnvidia-rtcore.so*    \
-      libnvidia-allocator.so* \
-      /usr/lib32             &amp;&amp;
-ln -svrf /usr/lib32/libnvidia-allocator.so.&nvidia-version; \
+<screen role="root"><userinput>rm -fv   /usr/lib32/libnvidia-allocator.so* &amp;&amp;
+cp -v    libnvidia-cfg.so*                   \
+         libnvidia-eglcore.so*               \
+         libnvidia-glcore.so*                \
+         libnvidia-glsi.so*                  \
+         libnvidia-glvkspirv.so*             \
+         libnvidia-gpucomp.so*               \
+         libnvidia-rtcore.so*                \
+         libnvidia-allocator.so*             \
+         /usr/lib32                         &amp;&amp;
+ln -svrf /usr/lib32/libnvidia-allocator.so*  \
          /usr/lib32/gbm/nvidia-drm_gbm.so</userinput></screen>
 
       </sect4>
