@@ -137,6 +137,14 @@ popd</userinput></screen>
   <sect2>
     <title>Installation of the NVIDIA Kernel Modules</title>
 
+    <note><para>
+      Building the kernel modules in a chroot will likely cause a build
+      failure. It is heavily recommended to build them when booted in the LFS
+      target to avoid <command>uname -r</command> reporting the kernel version
+      of the host rather than the target leading to build files being unable to
+      be found.
+    </para></note>
+
     <para>
       Now you will need to build the kernel modules for the driver. There are
       two types: <emphasis role="bold">open</emphasis> and
@@ -232,9 +240,14 @@ make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
       </para>
 
       <para>
-        Be sure that when you reinstall the driver, make sure you are using
-        the new kernel and have the kernel source you built from. Otherwise
-        the driver will fail to install.
+        Be sure that when you reinstall the kernel modules, make sure you are
+        using the new kernel and have the kernel source you built from.
+        Otherwise the modules will fail to build.
+      </para>
+
+      <para>
+        When you upgrade the kernel, you will not have to reinstall the
+        driver software, just the kernel modules.
       </para>
     </important>
 
@@ -267,13 +280,17 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
   <sect2>
     <title>Making a NVIDIA Software Installation Script</title>
 
+    <note><para>
+      Skip to <xref linkend="nvidia-install"/> if you already made an install
+      script.
+    </para></note>
+
     <para>
       There is a lot of software this driver provides. A portion of it
       depending on your usecase can be safely skipped. To offer
       customizability without complexity, the following section is dedicated to
       walking you through making a custom install script to install only what
-      you need. If you already made one, skip to <xref
-      linkend="nvidia-install"/>.
+      you need.
     </para>
 
     <para>
@@ -866,7 +883,6 @@ EOF</userinput></screen>
           libnvidia-ngx,
           libnvidia-nvvm{70,},
           libnvidia-opencl,
-          libnvidia-opticalflow,
           libnvidia-pkcs11-openssl3,
           libnvidia-pkcs11,
           libnvidia-ptxjitcompiler,
