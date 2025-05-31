@@ -3,10 +3,10 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.36">
-<!ENTITY sqlite-version               "3.49.2">
+<!ENTITY sqlite-version               "3.50.0">
 <!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3490200">
-<!ENTITY sqlite-doc-version           "3490200">
+<!ENTITY sqlite-dl-version            "3500000">
+<!ENTITY sqlite-doc-version           "3500000">
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "13">
 <!ENTITY python3-patch                "3">

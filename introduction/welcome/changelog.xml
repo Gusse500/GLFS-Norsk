@@ -44,6 +44,9 @@
       <para>May 30th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SQLite: 3.49.0 -&gt; 3.50.0.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Cbindgen: 0.28.0 -&gt; 0.29.0. Fixes
           <ulink url="&glfs-issues;/245">#245</ulink>.</para>
         </listitem>
