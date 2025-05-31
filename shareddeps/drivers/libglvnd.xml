@@ -46,10 +46,11 @@
 
     <bridgehead renderas="sect3">libglvnd Dependencies</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
-
-    <para>
-      <xref linkend="xorg7-lib"/>
+    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <para role="recommended">
+      <xref linkend="xorg7-lib"/> (for <filename
+      class="libraryfile">libGL</filename> and <filename
+      class="libraryfile">libGLX</filename>)
     </para>
 
   </sect2>
