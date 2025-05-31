@@ -20,6 +20,12 @@
   <sect2 role="package">
     <title>Introduction to AMDGPU PRO</title>
 
+    <important><para>
+      This page is now considered deprecated and will be removed right before
+      release of GLFS-12.4. Please use the drivers from <xref linkend="mesa"/>
+      and replace AMF with <xref linkend="libva"/>.
+    </para></important>
+
     <para>
       The <application>AMDGPU PRO</application> proprietary driver contains
       userland drivers and libraries, providing hardware acceleration encoding,
