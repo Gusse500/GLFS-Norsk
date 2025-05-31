@@ -272,13 +272,6 @@
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 <!ENTITY libxkbcommon-version         "1.10.0">
 <!ENTITY sdl2-version                 "2.32.6">
-<!ENTITY gstreamer10-version          "1.26.1">  <!-- Even minors only -->
-<!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
-<!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
-<!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
-<!ENTITY gst10-plugins-ugly-version   "&gstreamer10-version;">
-<!ENTITY pipewire-version             "1.2.7">
-<!ENTITY wireplumber-version          "0.5.7">
 <!ENTITY nasm-version                 "2.16.03">
 <!ENTITY libaom-version               "3.12.1">
 <!ENTITY fdk-aac-version              "2.0.3">
@@ -287,6 +280,11 @@
 <!ENTITY x264-version                 "20240812">
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "7.1.1">
+<!ENTITY gstreamer10-version          "1.26.2">  <!-- Even minors only -->
+<!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
+<!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
+<!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
+<!ENTITY gst10-plugins-ugly-version   "&gstreamer10-version;">
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 <!ENTITY wine-major-version           "10">
 <!ENTITY wine-version                 "&wine-major-version;.7">

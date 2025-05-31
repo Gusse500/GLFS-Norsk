@@ -44,6 +44,10 @@
       <para>May 30th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Gst: 1.26.1 -&gt; 1.26.2 (security). Fixes
+          <ulink url="&glfs-issues;/250">#250</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA: Create install script.</para>
         </listitem>
       </itemizedlist>

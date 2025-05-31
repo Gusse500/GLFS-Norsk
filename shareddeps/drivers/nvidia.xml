@@ -792,6 +792,20 @@ blacklist nvidiafb
 EOF</userinput></screen>
 
       <para>
+        The DRM kernel module does not use modesetting by default which is
+        needed by Wayland compositors. Make it use modesetting as the &root;
+        user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nvidia_drm.conf
+
+options nvidia_drm modeset=1
+
+# End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
+EOF</userinput></screen>
+
+      <para>
         Furthermore, this driver does not install DRI
         <footnote><para>
           Direct Rendering Infrastructure.
