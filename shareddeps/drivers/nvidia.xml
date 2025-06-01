@@ -326,6 +326,7 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing mandatory software - 64-bit"
+mkdir -pv /usr/lib/gbm                     &amp;&amp;
 mkdir -pv /usr/share/nvidia                &amp;&amp;
 rm    -fv /usr/lib/libnvidia-allocator.so* &amp;&amp;
 cp -v libnvidia-cfg.so*                     \
@@ -356,6 +357,7 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing mandatory software - lib32"
+mkdir -pv /usr/lib32/gbm                    &amp;&amp;
 rm -fv   /usr/lib32/libnvidia-allocator.so* &amp;&amp;
 cp -v    libnvidia-cfg.so*                   \
          libnvidia-eglcore.so*               \
@@ -676,6 +678,8 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing NVIDIA-Settings"
+mkdir -pv /usr/share/applications        \
+          /usr/share/pixmaps            &amp;&amp;
 cp -v libnvidia-gtk* /usr/lib           &amp;&amp;
 install -vm755 nvidia-settings /usr/bin &amp;&amp;
 cp -v nvidia-settings.desktop            \
