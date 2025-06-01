@@ -19,6 +19,13 @@
   <sect2 role="package">
     <title>Introduction to NVIDIA</title>
 
+    <important><para>
+      The installation instructions in this page are currently broken. While the
+      driver properly hooks into the system and the driver loads when starting
+      X11, <application>Steam</application> fails to launch. This is suspected
+      to be a symlink issue and is quickly being worked out.
+    </para></important>
+
     <para>
       The <application>NVIDIA</application> proprietary driver contains
       firmware, kernel drivers, userland drivers pertaining to OpenGL,
@@ -352,8 +359,7 @@ for lib in ${nvidia_lib[@]}; do
 done                                       &amp;&amp;
 ln -svrf /usr/lib/libnvidia-allocator.so    \
          /usr/lib/gbm/nvidia-drm_gbm.so    &amp;&amp;
-cp -v nvidia-modprobe                       \
-      /usr/bin                             &amp;&amp;
+install -vm4755 nvidia-modprobe /usr/bin   &amp;&amp;
 cp -v nvidia-application-profiles*          \
       /usr/share/nvidia                    &amp;&amp;
 </literal>
@@ -1006,8 +1012,9 @@ EOF</userinput></screen>
         <term><command>nvidia-modprobe</command></term>
         <listitem>
           <para>
-            creates Linux device files and loads the <application>NVIDIA
-            </application> kernel module
+            is a suid program which populates <filename
+            class="directory">/dev</filename> with directories and files for
+            this driver and is loaded when starting a display server
           </para>
           <indexterm zone="nvidia nvidia-modprobe">
             <primary sortas="b-nvidia-modprobe">nvidia-modprobe</primary>
