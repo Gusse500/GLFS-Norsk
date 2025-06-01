@@ -302,6 +302,11 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
 # Install script for NVIDIA driver software, not including kernel modules.
 # Script modules made by
 # &copyholder;, &copyrightdate;.
+
+nvidia_symlink() {
+  ln -svf $1.so.*.*.* $1.so.1
+  ln -svf $1.so.1 $1.so
+}
 </literal>
 EOF</userinput></screen>
 
@@ -328,20 +333,24 @@ EOF</userinput></screen>
 <literal>echo "Installing mandatory software - 64-bit"
 mkdir -pv /usr/lib/gbm                     &amp;&amp;
 mkdir -pv /usr/share/nvidia                &amp;&amp;
-rm    -fv /usr/lib/libnvidia-allocator.so* &amp;&amp;
-cp -v libnvidia-cfg.so*                     \
-      libnvidia-eglcore.so*                 \
-      libnvidia-glcore.so*                  \
-      libnvidia-glsi.so*                    \
-      libnvidia-glvkspirv.so*               \
-      libnvidia-gpucomp.so*                 \
-      libnvidia-ml.so*                      \
-      libnvidia-pkcs11*                     \
-      libnvidia-rtcore.so*                  \
-      libnvidia-tls.so*                     \
-      libnvidia-allocator.so*               \
-      /usr/lib                             &amp;&amp;
-ln -svrf /usr/lib/libnvidia-allocator.so*   \
+nvidia_lib=(
+  libnvidia-cfg
+  libnvidia-eglcore
+  libnvidia-glcore
+  libnvidia-glsi
+  libnvidia-glvkspirv
+  libnvidia-gpucomp
+  libnvidia-ml
+  libnvidia-pkcs11
+  libnvidia-rtcore
+  libnvidia-tls
+  libnvidia-allocator
+)
+for lib in ${nvidia_lib[@]}; do
+  cp -v $lib.so* /usr/lib                  &amp;&amp;
+  nvidia_symlink /usr/lib/$lib
+done                                       &amp;&amp;
+ln -svrf /usr/lib/libnvidia-allocator.so    \
          /usr/lib/gbm/nvidia-drm_gbm.so    &amp;&amp;
 cp -v nvidia-modprobe                       \
       /usr/bin                             &amp;&amp;
@@ -357,19 +366,23 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing mandatory software - lib32"
-mkdir -pv /usr/lib32/gbm                    &amp;&amp;
-rm -fv   /usr/lib32/libnvidia-allocator.so* &amp;&amp;
-cp -v    libnvidia-cfg.so*                   \
-         libnvidia-eglcore.so*               \
-         libnvidia-glcore.so*                \
-         libnvidia-glsi.so*                  \
-         libnvidia-glvkspirv.so*             \
-         libnvidia-gpucomp.so*               \
-         libnvidia-rtcore.so*                \
-         libnvidia-allocator.so*             \
-         /usr/lib32                         &amp;&amp;
-ln -svrf /usr/lib32/libnvidia-allocator.so*  \
-         /usr/lib32/gbm/nvidia-drm_gbm.so   &amp;&amp;
+mkdir -pv /usr/lib32/gbm                   &amp;&amp;
+nvidia_lib=(
+  libnvidia-cfg
+  libnvidia-eglcore
+  libnvidia-glcore
+  libnvidia-glsi
+  libnvidia-glvkspirv
+  libnvidia-gpucomp
+  libnvidia-rtcore
+  libnvidia-allocator
+)
+for lib in ${nvidia_lib[@]}; do
+  cp -v $lib.so* /usr/lib32                &amp;&amp;
+  nvidia_symlink /usr/lib32/$lib
+done                                       &amp;&amp;
+ln -svrf /usr/lib32/libnvidia-allocator.so  \
+         /usr/lib32/gbm/nvidia-drm_gbm.so  &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -390,17 +403,21 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing X11 drivers - 64-bit"
-mkdir -pv /usr/lib/xorg/modules/{drivers,extensions} &amp;&amp;
-mkdir -pv /usr/share/X11/xorg.conf.d                 &amp;&amp;
-cp -v nvidia_drv.so*                                  \
-          /usr/lib/xorg/modules/drivers              &amp;&amp;
-cp -v libglxserver_nvidia.so*                         \
-          /usr/lib/xorg/modules/extensions           &amp;&amp;
-cp -v libGLX_nvidia.so*                               \
-      libnvidia-fbc.so*                               \
-          /usr/lib                                   &amp;&amp;
-cp -v nvidia-drm-outputclass.conf                     \
-          /usr/share/X11/xorg.conf.d                 &amp;&amp;
+mkdir -pv /usr/lib/xorg/modules/{drivers,extensions}    &amp;&amp;
+mkdir -pv /usr/share/X11/xorg.conf.d                    &amp;&amp;
+cp -v nvidia_drv.so*                                     \
+          /usr/lib/xorg/modules/drivers                 &amp;&amp;
+cp -v libglxserver_nvidia.so*                            \
+          /usr/lib/xorg/modules/extensions              &amp;&amp;
+nvidia_symlink                                           \
+  /usr/lib/xorg/modules/extensions/libglxserver_nvidia  &amp;&amp;
+cp -v libGLX_nvidia.so*                                  \
+      libnvidia-fbc.so*                                  \
+      /usr/lib                                          &amp;&amp;
+nvidia_symlink /usr/lib/libGLX_nvidia                   &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-fbc                   &amp;&amp;
+cp -v nvidia-drm-outputclass.conf                        \
+          /usr/share/X11/xorg.conf.d                    &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -413,7 +430,9 @@ EOF</userinput></screen>
 <literal>echo "Installing X11 drivers - lib32"
 cp -v libGLX_nvidia.so* \
       libnvidia-fbc.so* \
-      /usr/lib32 &amp;&amp;
+      /usr/lib32                        &amp;&amp;
+nvidia_symlink /usr/lib32/libGLX_nvidia &amp;&amp;
+nvidia_symlink /usr/lib32/libnvidia-fbc &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -435,12 +454,18 @@ EOF</userinput></screen>
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing EGL drivers - 64-bit"
 mkdir -pv /usr/share/glvnd/egl_vendor.d &amp;&amp;
-cp -v libnvidia-egl-*.so*                \
-          /usr/lib                      &amp;&amp;
-cp -v libEGL_nvidia.so*                  \
-          /usr/lib                      &amp;&amp;
-cp -v libnvidia-wayland*                 \
-          /usr/lib                      &amp;&amp;
+nvidia_lib=(
+  libnvidia-egl-gbm
+  libnvidia-egl-wayland
+  libnvidia-egl-xcb
+  libnvidia-egl-xlib
+  libEGL_nvidia
+  libnvidia-wayland-client
+)
+for lib in ${nvidia_lib[@]}; do
+  cp -v $lib.so* /usr/lib               &amp;&amp;
+  nvidia_symlink /usr/lib/$lib
+done                                    &amp;&amp;
 cp -v {10,15,20}*.json                   \
           /usr/share/glvnd/egl_vendor.d &amp;&amp;
 </literal>
@@ -453,10 +478,17 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing EGL drivers - lib32"
-cp -v libnvidia-egl-*.so* \
-  /usr/lib32             &amp;&amp;
-cp -v libEGL_nvidia.so*   \
-  /usr/lib32             &amp;&amp;
+nvidia_lib=(
+  libnvidia-egl-gbm
+  libnvidia-egl-wayland
+  libnvidia-egl-xcb
+  libnvidia-egl-xlib
+  libEGL_nvidia
+)
+for lib in ${nvidia_lib[@]}; do
+  cp -v $lib.so* /usr/lib32      &amp;&amp;
+  nvidia_symlink /usr/lib32/$lib
+done                             &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -477,8 +509,9 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the GLES v2 and v3 driver - 64-bit"
-cp -v libGLESv2_nvidia.so* \
-  /usr/lib &amp;&amp;
+cp -v libGLESv2_nvidia.so*                \
+  /usr/lib                               &amp;&amp;
+nvidia_symlink /usr/lib/libGLESv2_nvidia &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -489,8 +522,9 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the GLES v2 and v3 driver - lib32"
-cp -v libGLESv2_nvidia.so* \
-  /usr/lib32 &amp;&amp;
+cp -v libGLESv2_nvidia.so*                  \
+  /usr/lib32                               &amp;&amp;
+nvidia_symlink /usr/lib32/libGLESv2_nvidia &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -543,8 +577,9 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the VDPAU driver - 64-bit"
-cp -v libvdpau_nvidia.so* \
-  /usr/lib/vdpau &amp;&amp;
+cp -v libvdpau_nvidia.so*                      \
+  /usr/lib/vdpau                              &amp;&amp;
+nvidia_symlink /usr/lib/vdpau/libvdpau_nvidia &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -555,8 +590,9 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the VDPAU driver - lib32"
-cp -v libvdpau_nvidia.so* \
-  /usr/lib32/vdpau &amp;&amp;
+cp -v libvdpau_nvidia.so*                        \
+  /usr/lib32/vdpau                              &amp;&amp;
+nvidia_symlink /usr/lib32/vdpau/libvdpau_nvidia &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -578,10 +614,12 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the OpenCL driver and loader - 64-bit"
-cp -v libOpenCL.so*        \
-  /usr/lib                &amp;&amp;
-cp -v libnvidia-opencl.so* \
-  /usr/lib                &amp;&amp;
+cp -v libOpenCL.so*                       \
+  /usr/lib                               &amp;&amp;
+cp -v libnvidia-opencl.so*                \
+  /usr/lib                               &amp;&amp;
+nvidia_symlink /usr/lib/libOpenCL        &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-opencl &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -592,10 +630,12 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the OpenCL driver and loader - lib32"
-cp -v libOpenCL.so*        \
-  /usr/lib32              &amp;&amp;
-cp -v libnvidia-opencl.so* \
-  /usr/lib32              &amp;&amp;
+cp -v libOpenCL.so*                         \
+  /usr/lib32                               &amp;&amp;
+cp -v libnvidia-opencl.so*                  \
+  /usr/lib32                               &amp;&amp;
+nvidia_symlink /usr/lib32/libOpenCL        &amp;&amp;
+nvidia_symlink /usr/lib32/libnvidia-opencl &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -618,14 +658,22 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the CUDA drivers - 64-bit"
-cp -v libcuda.so*         \
-      libcudadebugger.so* \
-      libnvidia-api.so*   \
-      libnvidia-encode*   \
-      libnvidia-ptx*      \
-      libnvidia-nvvm*     \
-      libnvcuvid.so*      \
-      /usr/lib           &amp;&amp;
+nvidia_lib=(
+  libcuda
+  libcudadebugger
+  libnvidia-encode
+  libnvidia-ptxjitcompiler
+  libnvidia-nvvm
+  libnvcuvid
+)
+for lib in ${nvidia_lib[@]}; do
+  cp -v $lib.so* /usr/lib          &amp;&amp;
+  nvidia_symlink /usr/lib/$lib
+done                               &amp;&amp;
+cp -v   libnvidia-api*    /usr/lib &amp;&amp;
+ln -svf /usr/lib/libnvidia-api.so.1 \
+        /usr/lib/libnvidia-api.so  &amp;&amp;
+cp -v   libnvidia-nvvm70* /usr/lib &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -636,12 +684,17 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the CUDA drivers - lib32"
-cp -v libcuda.so*         \
-      libnvidia-encode*   \
-      libnvidia-ptx*      \
-      libnvidia-nvvm*     \
-      libnvcuvid.so*      \
-      /usr/lib32         &amp;&amp;
+nvidia_lib=(
+  libcuda
+  libnvidia-encode
+  libnvidia-ptxjitcompiler
+  libnvidia-nvvm
+  libnvcuvid
+)
+for lib in ${nvidia_lib[@]}; do
+  cp -v $lib.so* /usr/lib32      &amp;&amp;
+  nvidia_symlink /usr/lib32/$lib
+done                             &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -658,11 +711,12 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the NGX drivers"
-mkdir -pv /usr/lib/nvidia/wine &amp;&amp;
-cp -v libnvidia-ngx.so*         \
-          /usr/lib             &amp;&amp;
-cp -v *nvngx*.dll               \
-          /usr/lib/nvidia/wine &amp;&amp;
+mkdir -pv /usr/lib/nvidia/wine        &amp;&amp;
+cp -v libnvidia-ngx.so*                \
+          /usr/lib                    &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-ngx &amp;&amp;
+cp -v *nvngx*.dll                      \
+          /usr/lib/nvidia/wine        &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -681,6 +735,8 @@ EOF</userinput></screen>
 mkdir -pv /usr/share/applications        \
           /usr/share/pixmaps            &amp;&amp;
 cp -v libnvidia-gtk* /usr/lib           &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-gtk2  &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-gtk3  &amp;&amp;
 install -vm755 nvidia-settings /usr/bin &amp;&amp;
 cp -v nvidia-settings.desktop            \
       /usr/share/applications           &amp;&amp;
@@ -734,7 +790,11 @@ EOF</userinput></screen>
       </para>
 
 <screen role="root"><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF" &amp;&amp;
-<literal>echo "Installation of NVIDIA driver software complete!"</literal>
+<literal># Probe all modules and recreate modules.dep and map files to ensure NVIDIA
+# loads at boot.
+depmod -a &amp;&amp;
+
+echo "Installation of NVIDIA driver software complete!"</literal>
 EOF
 
 install -vm755 nvidia-install-soft /usr/sbin</userinput></screen>
@@ -909,7 +969,7 @@ EOF</userinput></screen>
           libnvidia-wayland-client,
           libOpenCL.so,
           libvdpau_nvidia,
-          nvidia-drm_gbm
+          nvidia-drm_gbm,
           nvidia_drv, and
           for <xref linkend="wine"/> (_nvngx,
           nvngx, and
