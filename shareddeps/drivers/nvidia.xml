@@ -311,8 +311,14 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
 # &copyholder;, &copyrightdate;.
 
 nvidia_symlink() {
-  ln -svf $1.so.*.*.* $1.so.1
-  ln -svf $1.so.1 $1.so
+  soname=$(readelf -d $1.so.*.*.* | \
+    grep '(SONAME)' | sed -n 's/.*\[\(.*\)\]/\1/p')
+  if test -n $soname; then
+    test -e $(dirname $1)/$soname || \
+      ln -svf $1.so.*.*.* $(dirname $1)/$soname
+    test -e $1.so || \
+      ln -svf $soname $1.so
+  fi
 }
 </literal>
 EOF</userinput></screen>
@@ -409,21 +415,23 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing X11 drivers - 64-bit"
-mkdir -pv /usr/lib/xorg/modules/{drivers,extensions}    &amp;&amp;
-mkdir -pv /usr/share/X11/xorg.conf.d                    &amp;&amp;
-cp -v nvidia_drv.so*                                     \
-          /usr/lib/xorg/modules/drivers                 &amp;&amp;
-cp -v libglxserver_nvidia.so*                            \
-          /usr/lib/xorg/modules/extensions              &amp;&amp;
-nvidia_symlink                                           \
-  /usr/lib/xorg/modules/extensions/libglxserver_nvidia  &amp;&amp;
-cp -v libGLX_nvidia.so*                                  \
-      libnvidia-fbc.so*                                  \
-      /usr/lib                                          &amp;&amp;
-nvidia_symlink /usr/lib/libGLX_nvidia                   &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-fbc                   &amp;&amp;
-cp -v nvidia-drm-outputclass.conf                        \
-          /usr/share/X11/xorg.conf.d                    &amp;&amp;
+mkdir -pv /usr/lib/xorg/modules/{drivers,extensions}        &amp;&amp;
+mkdir -pv /usr/share/X11/xorg.conf.d                        &amp;&amp;
+cp -v nvidia_drv.so*                                         \
+          /usr/lib/xorg/modules/drivers                     &amp;&amp;
+cp -v libglxserver_nvidia.so*                                \
+          /usr/lib/xorg/modules/extensions                  &amp;&amp;
+ln -svf libglxserver_nvidia.so.*.*.*                         \
+  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so.1 &amp;&amp;
+ln -svf libglxserver_nvidia.so.1                             \
+  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so   &amp;&amp;
+cp -v libGLX_nvidia.so*                                      \
+      libnvidia-fbc.so*                                      \
+      /usr/lib                                              &amp;&amp;
+nvidia_symlink /usr/lib/libGLX_nvidia                       &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-fbc                       &amp;&amp;
+cp -v nvidia-drm-outputclass.conf                            \
+          /usr/share/X11/xorg.conf.d                        &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -812,6 +820,12 @@ install -vm755 nvidia-install-soft /usr/sbin</userinput></screen>
   <sect2 id="nvidia-install" role="installation">
     <title>Installing the NVIDIA Driver Software</title>
 
+    <note><para>
+      If you have an existing installation, it may be a good idea to follow
+      <xref linkend="nvidia-uninstalling"/> first before going through this 
+      section.
+    </para></note>
+
     <para>
       After you have made a custom install script, run it as the &root; user:
     </para>
@@ -827,6 +841,95 @@ cp -vR html /usr/share/doc/nvidia-&nvidia-version;</userinput></screen>
 
   </sect2>
 
+  <sect2 id="nvidia-uninstalling">
+    <title>Uninstalling the NVIDIA Driver</title>
+
+    <para>
+      If something went wrong with the install process or you want to switch to
+      another driver without keeping this driver, create the following script
+      as the &root; user:
+    </para>
+
+<screen role="root"><userinput>cat &gt; nvidia-uninstall &lt;&lt; "EOF" &amp;&amp;
+<literal># This script uninstalls the NVIDIA driver.
+# Made by &copyholder;, &copyrightdate;.
+
+echo "Uninstalling the NVIDIA driver..."
+nvidia_lib=(
+  libnvidia-cfg
+  libnvidia-eglcore
+  libnvidia-glcore
+  libnvidia-glsi
+  libnvidia-glvkspirv
+  libnvidia-gpucomp
+  libnvidia-ml
+  libnvidia-pkcs11
+  libnvidia-rtcore
+  libnvidia-tls
+  libnvidia-allocator
+  libGLX_nvidia
+  libnvidia-fbc
+  libnvidia-egl-gbm
+  libnvidia-egl-wayland
+  libnvidia-egl-xcb
+  libnvidia-egl-xlib
+  libEGL_nvidia
+  libnvidia-wayland-client
+  libGLESv2_nvidia
+  libnvidia-opencl
+  libcuda
+  libcudadebugger
+  libnvidia-encode
+  libnvidia-ptxjitcompiler
+  libnvidia-nvvm
+  libnvidia-nvvm70
+  libnvcuvid
+  libnvidia-api
+  libnvidia-ngx
+  libnvidia-gtk2
+  libnvidia-gtk3
+)
+
+rm -rvf /usr/share/doc/nvidia*                                   &amp;&amp;
+rm -rvf /usr/lib/firmware/nvidia/[0-9]*                          &amp;&amp;
+rm -rvf /usr/{share,lib}/nvidia                                  &amp;&amp;
+rm -vf  /usr/lib{,32}/gbm/nvidia-drm_gbm.so                      &amp;&amp;
+rm -vf  /usr/lib/xorg/modules/drivers/nvidia_drv.so*             &amp;&amp;
+rm -vf  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so* &amp;&amp;
+rm -vf  /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf   &amp;&amp;
+rm -vf  /usr/share/glvnd/egl_vendor.d/{10,15,20}_nvidia_*.json   &amp;&amp;
+rm -vf  /usr/share/vulkan/icd.d/nvidia_icd.json                  &amp;&amp;
+rm -vf  /usr/lib{,32}/vdpau/libvdpau_nvidia.so*                  &amp;&amp;
+rm -vf  /usr/share/applications/nvidia-settings.desktop          &amp;&amp;
+rm -vf  /usr/share/pixmaps/nvidia-settings.png                   &amp;&amp;
+
+for lib in ${nvidia_lib[@]}; do
+  rm -vf /usr/lib{,32}/$lib.so*
+done &amp;&amp;
+
+for bin in nvidia-{modprobe,settings,smi,xconfig}; do
+  rm -vf /usr/{,s}bin/$bin
+done &amp;&amp;
+
+for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
+  rm -vf /usr/lib/modules/$(uname -r)/kernel/drivers/video/$mod.ko
+done &amp;&amp;
+
+depmod -a &amp;&amp;
+echo "Uninstallation complete!"
+echo "Whitelist Nouveau to have a working framebuffer!"</literal>
+EOF
+
+install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
+
+    <para>
+      Now run it whenever you need to as the &root; user:
+    </para>
+
+<screen role="nodump"><computeroutput>/sbin/nvidia-uninstall</computeroutput></screen>
+
+  </sect2>
+
   <sect2 role="configuration">
     <title>Configuring NVIDIA</title>
 
@@ -834,6 +937,9 @@ cp -vR html /usr/share/doc/nvidia-&nvidia-version;</userinput></screen>
       <title>Config Files</title>
       <para>
         <filename>/usr/lib/modprobe.d/nvfb.conf</filename>
+      </para>
+      <para>
+        <filename>/usr/lib/modprobe.d/nvidia_drm.conf</filename>
       </para>
     </sect3>
 
@@ -932,7 +1038,8 @@ EOF</userinput></screen>
           nvidia-install-soft,
           nvidia-modprobe,
           nvidia-settings,
-          nvidia-smi, and
+          nvidia-smi,
+          nvidia-uninstall, and
           nvidia-xconfig
         </seg>
         <seg>
@@ -1043,6 +1150,18 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="nvidia nvidia-smi">
             <primary sortas="b-nvidia-smi">nvidia-smi</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="nvidia-uninstall">
+        <term><command>nvidia-uninstall</command></term>
+        <listitem>
+          <para>
+            is a custom-made install script that uninstalls the driver
+          </para>
+          <indexterm zone="nvidia nvidia-uninstall">
+            <primary sortas="b-nvidia-uninstall">nvidia-uninstall</primary>
           </indexterm>
         </listitem>
       </varlistentry>
