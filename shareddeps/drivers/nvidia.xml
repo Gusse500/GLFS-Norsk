@@ -1653,7 +1653,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">_nvngx</filename></term>
         <listitem>
           <para>
-            provides DLSS support for use with <application>Wine</application>
+            provides DLSS support for use with Proton
           </para>
           <indexterm zone="nvidia _nvngx">
             <primary sortas="c-_nvngx">_nvngx</primary>
@@ -1665,7 +1665,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">nvngx</filename></term>
         <listitem>
           <para>
-            provides DLSS support for use with Proton
+            provides DLSS support for use with <application>Wine</application>
           </para>
           <indexterm zone="nvidia nvngx">
             <primary sortas="c-nvngx">nvngx</primary>
