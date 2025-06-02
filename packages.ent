@@ -287,6 +287,6 @@
 <!ENTITY gst10-plugins-ugly-version   "&gstreamer10-version;">
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 <!ENTITY wine-major-version           "10">
-<!ENTITY wine-version                 "&wine-major-version;.7">
+<!ENTITY wine-version                 "&wine-major-version;.9">
 <!ENTITY dxvk-version                 "2.6.1">
 <!ENTITY vkd3d-proton-version         "2.14.1">
