@@ -543,8 +543,8 @@ EOF</userinput></screen>
 
       <para>
         Add to the script if you are going to use Vulkan (highly recommended).
-        A prerequisite is following either the <application>X11</application>
-        or EGL sections.
+        A prerequisite is following the <application>X11</application>
+        section.
       </para>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
@@ -557,17 +557,26 @@ EOF</userinput></screen>
       <para>
         The Vulkan driver according to the ICD configuration file is <filename
         class="libraryfile">libGLX_nvidia</filename>. If you installed the EGL
-        drivers, you can make the Vulkan driver use EGL instead of GLX. This is
-        required if you didn't follow the <application>X11</application>
-        section. Add to the script if you want or need to make that change.
+        drivers, you can make the Vulkan driver use EGL instead of GLX. Read
+        the note below why you might not want to make such a change.
+        Add to the script if you want to make that change.
       </para>
 
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
+<!-- Disincentivize running this -->
+<screen role="nodump"><computeroutput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Making the Vulkan driver use EGL instead of GLX"
 sed -i 's/GLX/EGL/'                        \
   /usr/share/vulkan/icd.d/nvidia_icd.json &amp;&amp;
 </literal>
-EOF</userinput></screen>
+EOF</computeroutput></screen>
+
+      <note><para>
+        The above command can result in <application>Steam</application> games
+        that are ran through Proton to crash in an X11 instance. If said games
+        crash on startup, modify the configuration file to use GLX instead of
+        EGL and remove the edit process in the install script if you already
+        added the instruction and ran the install script.
+      </para></note>
 
     </sect3>
 
