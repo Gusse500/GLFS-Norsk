@@ -385,6 +385,8 @@ nvidia_lib=(
   libnvidia-glsi
   libnvidia-glvkspirv
   libnvidia-gpucomp
+  libnvidia-ml
+  libnvidia-tls
   libnvidia-allocator
 )
 for lib in ${nvidia_lib[@]}; do
