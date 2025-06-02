@@ -53,7 +53,7 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      <xref linkend="gbm"/>,
+      &gbm;,
       <xref linkend="libglvnd"/>, and
       <xref linkend="xorg7-lib"/>
     </para>
@@ -348,7 +348,6 @@ nvidia_lib=(
   libnvidia-gpucomp
   libnvidia-ml
   libnvidia-pkcs11
-  libnvidia-rtcore
   libnvidia-tls
   libnvidia-allocator
 )
@@ -656,8 +655,7 @@ EOF</userinput></screen>
       <para>
         Add to the script if you want to use <ulink
         url="&lfs-qol-website;/general/cuda.html">CUDA</ulink> or applications
-        that use it. The software installed also enables general
-        hardware acceleration and ray tracing.
+        that use it.
       </para>
 
       <sect4>
@@ -669,6 +667,7 @@ nvidia_lib=(
   libcuda
   libcudadebugger
   libnvidia-encode
+  libnvidia-opticalflow
   libnvidia-ptxjitcompiler
   libnvidia-nvvm
   libnvcuvid
@@ -724,6 +723,28 @@ cp -v libnvidia-ngx.so*                \
 nvidia_symlink /usr/lib/libnvidia-ngx &amp;&amp;
 install -vm755 *nvngx*.dll             \
           /usr/lib/nvidia/wine        &amp;&amp;
+</literal>
+EOF</userinput></screen>
+
+    </sect3>
+
+    <sect3>
+      <title>Raytracing Drivers</title>
+
+      <para>
+        If you want to enable raytracing support, add to the script.
+      </para>
+
+<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
+<literal>echo "Installing the raytracing drivers"
+mkdir -pv /usr/share/nvidia              &amp;&amp;
+cp -v libnvidia-rtcore.so*                \
+      libnvoptix.so*                      \
+      /usr/lib                           &amp;&amp;
+nvidia_symlink /usr/lib/libnvidia-rtcore &amp;&amp;
+nvidia_symlink /usr/lib/libnvoptix       &amp;&amp;
+install -vm755 nvoptix.bin                \
+               /usr/share/nvidia         &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -820,7 +841,8 @@ install -vm755 nvidia-install-soft /usr/sbin</userinput></screen>
     </para></note>
 
     <para>
-      After you have made a custom install script, run it as the &root; user:
+      After you have made a custom install script, run it in a TTY or chroot as
+      the &root; user:
     </para>
 
 <screen role="root"><userinput>/sbin/nvidia-install-soft</userinput></screen>
@@ -874,12 +896,14 @@ nvidia_lib=(
   libcuda
   libcudadebugger
   libnvidia-encode
+  libnvidia-opticalflow
   libnvidia-ptxjitcompiler
   libnvidia-nvvm
   libnvidia-nvvm70
   libnvcuvid
   libnvidia-api
   libnvidia-ngx
+  libnvoptix
   libnvidia-gtk2
   libnvidia-gtk3
 )
@@ -917,7 +941,7 @@ EOF
 install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
 
     <para>
-      Now run it whenever you need to as the &root; user:
+      Now run it in a TTY or chroot whenever you need to as the &root; user:
     </para>
 
 <screen role="nodump"><computeroutput>/sbin/nvidia-uninstall</computeroutput></screen>
@@ -1048,6 +1072,7 @@ EOF</userinput></screen>
           libGLX_nvidia,
           libglxserver_nvidia,
           libnvcuvid,
+          libnvoptix,
           libnvidia-allocator,
           libnvidia-api,
           libnvidia-cfg,
@@ -1068,6 +1093,7 @@ EOF</userinput></screen>
           libnvidia-ngx,
           libnvidia-nvvm{70,},
           libnvidia-opencl,
+          libnvidia-opticalflow,
           libnvidia-pkcs11-openssl3,
           libnvidia-pkcs11,
           libnvidia-ptxjitcompiler,
@@ -1258,6 +1284,18 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="nvidia libnvcuvid">
             <primary sortas="c-libnvcuvid">libnvcuvid</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libnvoptix">
+        <term><filename class="libraryfile">libnvoptix</filename></term>
+        <listitem>
+          <para>
+            provides the OptiX Ray Tracing API
+          </para>
+          <indexterm zone="nvidia libnvoptix">
+            <primary sortas="c-libnvoptix">libnvoptix</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -1507,6 +1545,19 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="nvidia libnvidia-opencl">
             <primary sortas="c-libnvidia-opencl">libnvidia-opencl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libnvidia-opticalflow">
+        <term><filename class="libraryfile">libnvidia-opticalflow</filename></term>
+        <listitem>
+          <para>
+            provides Optical Flow support which improves frames, similar to
+            DLSS, with the help of CUDA
+          </para>
+          <indexterm zone="nvidia libnvidia-opticalflow">
+            <primary sortas="c-libnvidia-opticalflow">libnvidia-opticalflow</primary>
           </indexterm>
         </listitem>
       </varlistentry>

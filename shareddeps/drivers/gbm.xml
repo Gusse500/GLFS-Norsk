@@ -23,16 +23,19 @@
     <para>
       The <application>GBM</application>
         <footnote><para>
-          Graphics Buffer Management.
+          Graphics Buffer Manager.
         </para></footnote>
       library provides API functions for graphical rendering and is supplied by
       <application>Mesa</application>. Most drivers on Linux distributions come
       from <application>Mesa</application>, so <application>GBM</application>
-      will get installed along those drivers. With the
-      <xref linkend="nvidia"/> driver, it's a different story.
-      That driver still depends on the <application>GBM</application> library.
-      You will not need to install <xref linkend="mesa"/>. If you are not
-      installing <application>NVIDIA</application>, skip to <xref
+      will get installed along those drivers. On the other hand, <xref
+      linkend="nvidia"/> does not need the full <application>Mesa</application>
+      stack, but it still needs the <application>GBM</application> library. As
+      such, you can install just what you need. You will not need to install
+      the full <xref linkend="mesa"/> stack if you want to install <xref
+      linkend="nvidia"/>, but you can if you so choose. It can be a good idea
+      to do so as to have a fallback (Zink Gallium3D + Nouveau Vulkan). If you
+      are not installing <application>NVIDIA</application>, skip to <xref
       linkend="spirv-headers"/> and keep going till you reach <xref
       linkend="mesa"/> to get a complete installation of drivers and other
       libraries.
@@ -73,18 +76,6 @@
       <ulink url="&lfs-qol-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test drivers)
     </para>
-<!--
-    <note>
-      <para>
-        The instructions below assume that
-        <application>LLVM</application> with the r600/amdgpu and host backends
-        and run-time type information (RTTI - needed for nouveau) are installed.
-        You will need to modify the instructions if you
-        choose not to install all of these. For an explanation of Gallium3D see
-        <ulink url="https://en.wikipedia.org/wiki/Gallium3D"/>.
-      </para>
-    </note>
--->
 
   </sect2>
 
