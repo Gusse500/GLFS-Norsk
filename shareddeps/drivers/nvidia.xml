@@ -380,17 +380,15 @@ EOF</userinput></screen>
 <literal>echo "Installing mandatory software - lib32"
 mkdir -pv /usr/lib32/gbm                   &amp;&amp;
 nvidia_lib=(
-  libnvidia-cfg
   libnvidia-eglcore
   libnvidia-glcore
   libnvidia-glsi
   libnvidia-glvkspirv
   libnvidia-gpucomp
-  libnvidia-rtcore
   libnvidia-allocator
 )
 for lib in ${nvidia_lib[@]}; do
-  cp -v $lib.so* /usr/lib32                &amp;&amp;
+  cp -v 32/$lib.so* /usr/lib32             &amp;&amp;
   nvidia_symlink /usr/lib32/$lib
 done                                       &amp;&amp;
 ln -svrf /usr/lib32/libnvidia-allocator.so  \
@@ -442,8 +440,8 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing X11 drivers - lib32"
-cp -v libGLX_nvidia.so* \
-      libnvidia-fbc.so* \
+cp -v 32/libGLX_nvidia.so* \
+      32/libnvidia-fbc.so* \
       /usr/lib32                        &amp;&amp;
 nvidia_symlink /usr/lib32/libGLX_nvidia &amp;&amp;
 nvidia_symlink /usr/lib32/libnvidia-fbc &amp;&amp;
@@ -500,7 +498,7 @@ nvidia_lib=(
   libEGL_nvidia
 )
 for lib in ${nvidia_lib[@]}; do
-  cp -v $lib.so* /usr/lib32      &amp;&amp;
+  cp -v 32/$lib.so* /usr/lib32   &amp;&amp;
   nvidia_symlink /usr/lib32/$lib
 done                             &amp;&amp;
 </literal>
@@ -536,7 +534,7 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the GLES v2 and v3 driver - lib32"
-cp -v libGLESv2_nvidia.so*                  \
+cp -v 32/libGLESv2_nvidia.so*               \
   /usr/lib32                               &amp;&amp;
 nvidia_symlink /usr/lib32/libGLESv2_nvidia &amp;&amp;
 </literal>
@@ -604,7 +602,7 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the VDPAU driver - lib32"
-cp -v libvdpau_nvidia.so*                        \
+cp -v 32/libvdpau_nvidia.so*                     \
   /usr/lib32/vdpau                              &amp;&amp;
 nvidia_symlink /usr/lib32/vdpau/libvdpau_nvidia &amp;&amp;
 </literal>
@@ -644,9 +642,9 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing the OpenCL driver and loader - lib32"
-cp -v libOpenCL.so*                         \
+cp -v 32/libOpenCL.so*                      \
   /usr/lib32                               &amp;&amp;
-cp -v libnvidia-opencl.so*                  \
+cp -v 32/libnvidia-opencl.so*               \
   /usr/lib32                               &amp;&amp;
 nvidia_symlink /usr/lib32/libOpenCL        &amp;&amp;
 nvidia_symlink /usr/lib32/libnvidia-opencl &amp;&amp;
@@ -706,7 +704,7 @@ nvidia_lib=(
   libnvcuvid
 )
 for lib in ${nvidia_lib[@]}; do
-  cp -v $lib.so* /usr/lib32      &amp;&amp;
+  cp -v 32/$lib.so* /usr/lib32   &amp;&amp;
   nvidia_symlink /usr/lib32/$lib
 done                             &amp;&amp;
 </literal>
@@ -876,6 +874,7 @@ nvidia_lib=(
   libEGL_nvidia
   libnvidia-wayland-client
   libGLESv2_nvidia
+  libOpenCL
   libnvidia-opencl
   libcuda
   libcudadebugger
