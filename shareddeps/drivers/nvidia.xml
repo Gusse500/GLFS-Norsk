@@ -19,13 +19,6 @@
   <sect2 role="package">
     <title>Introduction to NVIDIA</title>
 
-    <important><para>
-      The installation instructions in this page are currently broken. While the
-      driver properly hooks into the system and the driver loads when starting
-      X11, <application>Steam</application> fails to launch. This is suspected
-      to be a symlink issue and is quickly being worked out.
-    </para></important>
-
     <para>
       The <application>NVIDIA</application> proprietary driver contains
       firmware, kernel drivers, userland drivers pertaining to OpenGL,
@@ -729,7 +722,7 @@ mkdir -pv /usr/lib/nvidia/wine        &amp;&amp;
 cp -v libnvidia-ngx.so*                \
           /usr/lib                    &amp;&amp;
 nvidia_symlink /usr/lib/libnvidia-ngx &amp;&amp;
-cp -v *nvngx*.dll                      \
+install -vm755 *nvngx*.dll             \
           /usr/lib/nvidia/wine        &amp;&amp;
 </literal>
 EOF</userinput></screen>
