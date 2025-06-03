@@ -360,7 +360,7 @@ nvidia_lib=(
 )
 for lib in ${nvidia_lib[@]}; do
   cp -v $lib.so* /usr/lib                  &amp;&amp;
-  nvidia_symlink /usr/lib/$lib
+  nvidia_symlink /usr/lib/$lib             &amp;&amp;
 done                                       &amp;&amp;
 ln -svrf /usr/lib/libnvidia-allocator.so    \
          /usr/lib/gbm/nvidia-drm_gbm.so    &amp;&amp;
@@ -390,7 +390,7 @@ nvidia_lib=(
 )
 for lib in ${nvidia_lib[@]}; do
   cp -v 32/$lib.so* /usr/lib32             &amp;&amp;
-  nvidia_symlink /usr/lib32/$lib
+  nvidia_symlink /usr/lib32/$lib           &amp;&amp;
 done                                       &amp;&amp;
 ln -svrf /usr/lib32/libnvidia-allocator.so  \
          /usr/lib32/gbm/nvidia-drm_gbm.so  &amp;&amp;
@@ -477,7 +477,7 @@ nvidia_lib=(
 )
 for lib in ${nvidia_lib[@]}; do
   cp -v $lib.so* /usr/lib               &amp;&amp;
-  nvidia_symlink /usr/lib/$lib
+  nvidia_symlink /usr/lib/$lib          &amp;&amp;
 done                                    &amp;&amp;
 cp -v {10,15,20}*.json                   \
           /usr/share/glvnd/egl_vendor.d &amp;&amp;
@@ -500,7 +500,7 @@ nvidia_lib=(
 )
 for lib in ${nvidia_lib[@]}; do
   cp -v 32/$lib.so* /usr/lib32   &amp;&amp;
-  nvidia_symlink /usr/lib32/$lib
+  nvidia_symlink /usr/lib32/$lib &amp;&amp;
 done                             &amp;&amp;
 </literal>
 EOF</userinput></screen>
@@ -690,7 +690,7 @@ nvidia_lib=(
 )
 for lib in ${nvidia_lib[@]}; do
   cp -v $lib.so* /usr/lib          &amp;&amp;
-  nvidia_symlink /usr/lib/$lib
+  nvidia_symlink /usr/lib/$lib     &amp;&amp;
 done                               &amp;&amp;
 cp -v   libnvidia-api*    /usr/lib &amp;&amp;
 ln -svf /usr/lib/libnvidia-api.so.1 \
@@ -715,7 +715,7 @@ nvidia_lib=(
 )
 for lib in ${nvidia_lib[@]}; do
   cp -v 32/$lib.so* /usr/lib32   &amp;&amp;
-  nvidia_symlink /usr/lib32/$lib
+  nvidia_symlink /usr/lib32/$lib &amp;&amp;
 done                             &amp;&amp;
 </literal>
 EOF</userinput></screen>
