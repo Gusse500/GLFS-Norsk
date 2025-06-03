@@ -25,6 +25,14 @@
       and other drivers.
     </para>
 
+    <para>
+      Every driver from this package works with <xref linkend="libglvnd"/>. The
+      package will auto-detect a <application>libglvnd</application>
+      installation if present and will link against the libraries provided by
+      that package. Thus, the OpenGL libraries provided by this package will
+      not be built, only the drivers for OpenGL.
+    </para>
+
     <important><para>
       Read <xref linkend="aboutgl"/> to decide if you want to install OpenGL
       implementations from this provider.
