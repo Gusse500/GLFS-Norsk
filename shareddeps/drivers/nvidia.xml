@@ -882,8 +882,51 @@ cp -vR html /usr/share/doc/nvidia-&nvidia-version;</userinput></screen>
     </para>
 
 <screen role="root"><userinput>cat &gt; nvidia-uninstall &lt;&lt; "EOF" &amp;&amp;
-<literal># This script uninstalls the NVIDIA driver.
+<literal>#!/bin/bash
+# This script uninstalls the NVIDIA driver.
 # Made by &copyholder;, &copyrightdate;.
+PRESERVE_FIRMWARE=0
+PRESERVE_KERNEL=0
+PRESERVE_PROG=0
+PRESERVE_LIB=0
+while test $# -gt 0; do
+  case "$1" in
+    --preserve-firmware )
+      echo "Keeping firmware."
+      PRESERVE_FIRMWARE=1
+    ;;
+
+    --preserve-kernel-modules )
+      echo "Keeping kernel modules."
+      PRESERVE_KERNEL=1
+    ;;
+
+    --preserve-programs )
+      echo "Keeping programs."
+      PRESERVE_PROG=1
+    ;;
+
+    --preserve-libraries )
+      echo "Keeping libraries."
+      PRESERVE_LIB=1
+    ;;
+
+    --help | -h )
+      echo "Usage: nvidia-uninstall [OPTION]"
+      echo "      --preserve-firmware            Do not delete firmware"
+      echo "      --preserve-kernel-modules      Do not delete kernel modules"
+      echo "      --preserve-programs            Do not delete programs"
+      echo "      --preserve-libraries           Do not delete libraries"
+      echo "  -h, --help                         Display this help and exit"
+      exit
+    ;;
+
+    * )
+      echo "Unknown option: $1"
+    ;;
+  esac
+  shift 1
+done
 
 echo "Uninstalling the NVIDIA driver..."
 nvidia_lib=(
@@ -924,32 +967,41 @@ nvidia_lib=(
   libnvidia-gtk3
 )
 
-rm -rvf /usr/share/doc/nvidia*                                   &amp;&amp;
-rm -rvf /usr/lib/firmware/nvidia/[0-9]*                          &amp;&amp;
-rm -rvf /usr/{share,lib}/nvidia                                  &amp;&amp;
-rm -vf  /usr/lib{,32}/gbm/nvidia-drm_gbm.so                      &amp;&amp;
-rm -vf  /usr/lib/xorg/modules/drivers/nvidia_drv.so*             &amp;&amp;
-rm -vf  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so* &amp;&amp;
-rm -vf  /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf   &amp;&amp;
-rm -vf  /usr/share/glvnd/egl_vendor.d/{10,15,20}_nvidia_*.json   &amp;&amp;
-rm -vf  /usr/share/vulkan/icd.d/nvidia_icd.json                  &amp;&amp;
-rm -vf  /usr/lib{,32}/vdpau/libvdpau_nvidia.so*                  &amp;&amp;
-rm -vf  /usr/share/applications/nvidia-settings.desktop          &amp;&amp;
-rm -vf  /usr/share/pixmaps/nvidia-settings.png                   &amp;&amp;
+rm -rvf /usr/share/doc/nvidia*                                     &amp;&amp;
+if test x"$PRESERVE_FIRMWARE" = x"0"; then
+  rm -rvf /usr/lib/firmware/nvidia/[0-9]*
+fi
 
-for lib in ${nvidia_lib[@]}; do
-  rm -vf /usr/lib{,32}/$lib.so*
-done &amp;&amp;
+if test x"$PRESERVE_LIB" = x"0"; then
+  rm -rvf /usr/lib/nvidia                                          &amp;&amp;
+  rm -vf  /usr/lib{,32}/gbm/nvidia-drm_gbm.so                      &amp;&amp;
+  rm -vf  /usr/lib/xorg/modules/drivers/nvidia_drv.so*             &amp;&amp;
+  rm -vf  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so* &amp;&amp;
+  rm -vf  /usr/lib{,32}/vdpau/libvdpau_nvidia.so*                  &amp;&amp;
+  rm -vf  /usr/share/vulkan/icd.d/nvidia_icd.json                  &amp;&amp;
+  rm -vf  /usr/share/glvnd/egl_vendor.d/{10,15,20}_nvidia_*.json   &amp;&amp;
+  rm -vf  /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf   &amp;&amp;
+  rm -rvf /usr/share/nvidia                                        &amp;&amp;
+  for lib in ${nvidia_lib[@]}; do
+    rm -vf /usr/lib{,32}/$lib.so*
+  done
+fi
 
-for bin in nvidia-{modprobe,settings,smi,xconfig}; do
-  rm -vf /usr/{,s}bin/$bin
-done &amp;&amp;
+if test x"$PRESERVE_PROG" = x"0"; then
+  for bin in nvidia-{modprobe,settings,smi,xconfig}; do
+    rm -vf /usr/{,s}bin/$bin
+  done                                                             &amp;&amp;
+  rm -vf  /usr/share/applications/nvidia-settings.desktop          &amp;&amp;
+  rm -vf  /usr/share/pixmaps/nvidia-settings.png
+fi
 
-for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
-  rm -vf /usr/lib/modules/$(uname -r)/kernel/drivers/video/$mod.ko
-done &amp;&amp;
+if test x"$PRESERVE_KERNEL" = x"0"; then
+  for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
+    rm -vf /usr/lib/modules/$(uname -r)/kernel/drivers/video/$mod.ko
+  done
+fi
 
-depmod -a &amp;&amp;
+depmod -a                                                          &amp;&amp;
 echo "Uninstallation complete!"
 echo "Whitelist Nouveau to have a working framebuffer!"</literal>
 EOF
