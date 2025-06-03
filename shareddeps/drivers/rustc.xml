@@ -223,13 +223,6 @@ EOF
 fi &amp;&amp;
 cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF" &amp;&amp;
 <literal>
-# Do a 2-stage bootstrap instead of a 3-stage one to save time and space.
-# Note that the numbers "1" below mean to *run* the stage-*1* compiler and
-# build the stage-2 compiler.
-build-stage = 1
-test-stage = 1
-doc-stage = 1
-
 # omit docs to save time and space (default is to build them)
 docs = false
 
@@ -333,7 +326,7 @@ fi</userinput></screen>
     </para>
 
 <screen role='root'><userinput>./x.py install rustc std &amp;&amp;
-./x.py install --stage=1 cargo clippy rustfmt</userinput></screen>
+./x.py install cargo clippy rustfmt</userinput></screen>
 
     <para>
       Still as the &root; user, fix the installation of the documentation
