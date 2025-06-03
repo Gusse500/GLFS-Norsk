@@ -33,7 +33,7 @@
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY shadow-version               "4.17.4">
 <!ENTITY elogind-version              "255.17">
-<!ENTITY systemd-version              "257.3">
+<!ENTITY systemd-version              "257.6">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY pcre2-version                "10.45">
 <!ENTITY glib2-minor                  "2.84">

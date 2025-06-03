@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>June 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Systemd: 257.3 -&gt; 257.6.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 2nd, 2025</para>
       <itemizedlist>
         <listitem>
