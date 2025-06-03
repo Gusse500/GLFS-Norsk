@@ -63,6 +63,13 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
+            <ulink url="&lfs-qol-website;/general/cuda.html">CUDA</ulink>
+            (for NVENC, NVDEC, Optical Flow, and other hardware
+            acceleration not provided by VDPAU)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
             <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for
             <command>nvidia-settings</command>)
           </para>
