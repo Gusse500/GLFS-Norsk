@@ -441,8 +441,8 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing X11 drivers - lib32"
-cp -v 32/libGLX_nvidia.so* \
-      32/libnvidia-fbc.so* \
+cp -v 32/libGLX_nvidia.so*               \
+      32/libnvidia-fbc.so*               \
       /usr/lib32                        &amp;&amp;
 nvidia_symlink /usr/lib32/libGLX_nvidia &amp;&amp;
 nvidia_symlink /usr/lib32/libnvidia-fbc &amp;&amp;
