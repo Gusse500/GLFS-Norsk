@@ -44,6 +44,19 @@
       <para>June 4th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - hwdata: 0.395 -&gt; 0.396.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Python: 3.13.3 -&gt; 3.13.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL2: 2.32.6 -&gt; 2.32.8.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - cURL: 8.14.0 -&gt; 8.14.1 (security). Fixes
+          <ulink url="&glfs-issues;/253">#253</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - make-ca: 1.16 -&gt; 1.16.1. Fixes
           <ulink url="&glfs-issues;/252">#252</ulink>.</para>
         </listitem>
