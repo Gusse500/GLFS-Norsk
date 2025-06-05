@@ -142,7 +142,7 @@
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY mesa-major-minor             "25.1">
-<!ENTITY mesa-version                 "&mesa-major-minor;.1">
+<!ENTITY mesa-version                 "&mesa-major-minor;.2">
 <!ENTITY linux-version                "6.15">
                                                 <!-- kernel version in
                                                      kernel-config
