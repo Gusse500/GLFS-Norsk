@@ -75,8 +75,8 @@ ninja</userinput></screen>
 
     &options-meson;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../xincludes/meson-buildtype-release.xml"/>
+    &meson-buildtype-release;
+
 <!-- the default for the xorg symlinks is false. So the change to
      the symlink command is not needed. Note that those symlinks have
      been deprecated since 2005...
@@ -92,6 +92,7 @@ ninja</userinput></screen>
 -->
 
   </sect2>
+
   <sect2 role="content">
     <title>Contents</title>
 

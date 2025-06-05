@@ -131,8 +131,8 @@ ldconfig</userinput></screen>
       build failure.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/static-libraries.xml"/>
+    &static-libraries;
+
     <!-- No longer valid with 2.10.1, /usr/bin/freetype-config is installed
          by the 'make install' command.
     <para>

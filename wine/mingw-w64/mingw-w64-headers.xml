@@ -134,8 +134,7 @@ cd    build-i686-headers &amp;&amp;
       the full SDK.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/mingw-w64-msvcrt.xml"/>
+    &mingw-w64-msvcrt;
 
   </sect2>
 

@@ -153,8 +153,7 @@ ldconfig</userinput></screen>
       recommend building in a dedicated build directory.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
+    &static-libraries;
 
     <para>
       <option>--disable-vp8</option>: This switch prevents building support for

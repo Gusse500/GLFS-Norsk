@@ -202,8 +202,7 @@ done</userinput></screen>
       parameter changes what Win archetecture to build for.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-buildtype-release.xml"/>
+    &meson-buildtype-release;
 
     <para>
       <command>wine reg add ...</command>: This command overrides the

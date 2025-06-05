@@ -204,8 +204,7 @@ rm -rf DESTDIR</userinput></screen>
 
     &options-meson;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-buildtype-release.xml"/>
+    &meson-buildtype-release;
 
     <para>
       <parameter>-D pamconfdir=/etc/pam.d</parameter>: Forces the PAM files to

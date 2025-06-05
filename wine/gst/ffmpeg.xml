@@ -234,8 +234,7 @@ ldconfig</userinput></screen>
       Note that the resulting libraries and binaries will be unredistributable.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
+    &static-libraries;
 
     <para>
       <parameter>--enable-shared</parameter>: Enables building shared

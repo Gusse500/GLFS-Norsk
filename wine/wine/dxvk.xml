@@ -28,8 +28,7 @@
       many people install this package.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/long-build-time.xml"/>
+    &long-build-time;
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -219,8 +218,7 @@ done</userinput></screen>
       parameter changes what Win archetecture to build for.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-buildtype-release.xml"/>
+    &meson-buildtype-release;
 
     <para>
       <command>WINEPREFIX=~/.wine wineboot -u</command>: This command creates a

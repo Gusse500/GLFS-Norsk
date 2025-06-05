@@ -121,8 +121,8 @@ ldconfig</userinput></screen>
 
     &options-cmake;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/cmake-skip-install-rpath.xml"/>
+    &cmake-skip-install-rpath;
+
     <para>
       <parameter>-D BUILD_SHARED_LIBS=ON</parameter>: This switch forces the
       build system to install shared libraries instead of static libraries.

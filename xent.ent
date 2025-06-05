@@ -1,0 +1,85 @@
+<!ENTITY abi-break
+  "<important><para>Updating this package is known
+  to break ABI.</para></important>">
+
+<!ENTITY parallel_issues
+  "<note><para>This package may occasionally fail when
+  building with multiple processors.  See <xref
+  linkend='parallel-builds'/> for more information.</para></note>">
+
+<!ENTITY shell-env
+  "<note><para>If installing in the chroot environment, be
+  sure to export the <envar>SHELL</envar> environment
+  variable or configuration of the package will
+  fail.</para></note>">
+
+<!ENTITY gi-doc-disable
+  "Allow building this package without <xref linkend='gi-docgen'/>
+  installed.  If you have <xref linkend='gi-docgen'/> installed and
+  you wish to rebuild and install the API documentation, a
+  <command>meson configure</command> command will reset this
+  option.">
+
+<!ENTITY build-use-internet
+  "<note><para>An Internet connection is needed for building this
+  package. The system certificate store may need to be set up with
+  <xref role='required' linkend='make-ca'/> before building this
+  package.</para></note>">
+
+<!ENTITY test-use-internet
+  "<note><para>An Internet connection is needed for some tests of
+  this package. The system certificate store may need to be set up
+  with <xref role='nodep' linkend='make-ca'/> before testing this
+  package.</para></note>">
+
+<!ENTITY options-configure
+  "<note><para>Run <command>./configure --help</command> for a full list
+  of options.</para></note>">
+<!ENTITY options-subconfigure
+  "<note><para>Run <command>../configure --help</command> for a full
+  list of options.</para></note>">
+<!ENTITY options-meson
+  "<note><para>Inspect <filename>meson_options.txt</filename> or
+  <filename>meson.options</filename> for a full list of
+  options.</para></note>">
+<!ENTITY options-cmake
+  "<note><para>For a full list of options and values, make sure you are
+  in a build directory, then run <command>cmake -LAH ..</command>.
+  </para></note>">
+
+<!-- Previously were xincludes. Not all of them from BLFS/xincludes will be
+     here, only take what we need. -->
+<!ENTITY cmake-policy-version
+  "<para><parameter>-D CMAKE_POLICY_VERSION_MINIMUM=3.5</parameter>:
+  This switch allows building this package with cmake-4.0 or newer.</para>">
+<!ENTITY cmake-skip-install-rpath
+  "<!-- https://wiki.debian.org/RpathIssue/
+        https://security.stackexchange.com/questions/161799/ -->
+  <para><parameter>-D CMAKE_SKIP_INSTALL_RPATH=ON</parameter>:
+  This switch makes <command>cmake</command> remove hardcoded library search
+  paths (rpath) when installing a binary executable file or a shared library.
+  This package does not need rpath once it's installed into the standard
+  location, and rpath may sometimes cause unwanted effects or even security
+  issues.</para>">
+<!ENTITY long-build-time
+  "<note><para>This may take a while to build. Feel free to do something else
+  while this is building.</para></note>">
+<!ENTITY meson-buildtype-release
+  "<para><parameter>--buildtype=release</parameter>: Specify a buildtype
+  suitable for stable releases of the package, as the default may
+  produce unoptimized binaries.</para>">
+<!ENTITY meson-wrap-nofallback
+  "<para><parameter>--wrap-mode=nofallback</parameter>: This switch prevents
+  <command>meson</command> from using subproject fallbacks for any
+  dependency declarations in the build files, stopping it downloading
+  any optional dependency which is not installed on the system.</para>">
+<!ENTITY mingw-w64-msvcrt
+  "<para><parameter>--with-default-msvcrt=msvcrt</parameter>: As of
+  <application>MinGW-w64-12.0.0</application>, the Universal C Runtime
+  (UCRT), added in Windows 10, has become the default. This option
+  makes the Microsoft Visual C Runtime (MSVCRT) the default, which is more
+  tested and has less bugs. It also ensures compatibility with software
+  made for older Windows versions.</para>">
+<!ENTITY static-libraries
+  "<para><parameter>--disable-static</parameter>: This switch prevents
+  installation of static versions of the libraries.</para>">

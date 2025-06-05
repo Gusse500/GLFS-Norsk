@@ -164,8 +164,7 @@ ldconfig</userinput></screen>
 
     &options-meson;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/meson-wrap-nofallback.xml"/>
+    &meson-wrap-nofallback;
 
     <para>
       <parameter>-D systemd=disabled</parameter>: Don't install systemd support

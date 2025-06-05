@@ -272,38 +272,6 @@ export -f as_root</userinput></screen>
 <!ENTITY % package-entities SYSTEM      "packages.ent">
 %package-entities;
 
-<!ENTITY abi-break            "<important><para>Updating this package is known
-                               to break ABI.</para></important>">
-
-<!ENTITY parallel_issues "<note><para>This package may occasionally fail when
-                          building with multiple processors.  See <xref
-                          linkend='parallel-builds'/> for more information.</para></note>">
-
-<!ENTITY shell-env "<note><para>If installing in the chroot environment, be
-                    sure to export the <envar>SHELL</envar> environment
-                    variable or configuration of the package will
-                    fail.</para></note>">
-
-<!ENTITY gi-doc-disable
-         "Allow building this package without <xref linkend='gi-docgen'/>
-          installed.  If you have <xref linkend='gi-docgen'/> installed and
-          you wish to rebuild and install the API documentation, a
-          <command>meson configure</command> command will reset this
-          option.">
-
-<!-- TODO change "nodep" to "required"/"optional" after 12.3 release. -->
-<!ENTITY build-use-internet
-         "<note><para>An Internet connection is needed for building this
-          package. The system certificate store may need to be set up with
-          <xref role='nodep' linkend='make-ca'/> before building this
-          package.</para></note>">
-
-<!ENTITY test-use-internet
-         "<note><para>An Internet connection is needed for some tests of
-          this package. The system certificate store may need to be set up
-          with <xref role='nodep' linkend='make-ca'/> before testing this
-          package.</para></note>">
-
 <!ENTITY logind
          "<phrase revision='sysv'><xref linkend='elogind'/></phrase>
           <phrase revision='systemd'><xref linkend='systemd'/></phrase>">
@@ -325,17 +293,5 @@ export -f as_root</userinput></screen>
 <!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> or <xref linkend='mesa'/>)">
 <!ENTITY gbm    "GBM (<xref linkend='gbm'/> or <xref linkend='mesa'/>)">
 
-<!ENTITY options-configure
-         "<note><para>Run <command>./configure --help</command> for a full list
-          of options.</para></note>">
-<!ENTITY options-subconfigure
-         "<note><para>Run <command>../configure --help</command> for a full
-          list of options.</para></note>">
-<!ENTITY options-meson
-         "<note><para>Inspect <filename>meson_options.txt</filename> or
-          <filename>meson.options</filename> for a full list of
-          options.</para></note>">
-<!ENTITY options-cmake
-         "<note><para>For a full list of options and values, make sure you are
-          in a build directory, then run <command>cmake -LAH ..</command>.
-          </para></note>">
+<!ENTITY % xinclude-entities SYSTEM "xent.ent">
+%xinclude-entities;

@@ -50,8 +50,7 @@
       wish to skip installing some of the optional packages.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/long-build-time.xml"/>
+    &long-build-time;
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -284,8 +283,7 @@ ldconfig</userinput></screen>
       production system.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/cmake-skip-install-rpath.xml"/>
+    &cmake-skip-install-rpath;
 
     <para>
       <parameter>-D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU;NVPTX"</parameter>:

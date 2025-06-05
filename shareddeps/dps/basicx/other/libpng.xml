@@ -124,8 +124,7 @@ ldconfig</userinput></screen>
 
     &options-configure;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/static-libraries.xml"/>
+    &static-libraries;
 
   </sect2>
 

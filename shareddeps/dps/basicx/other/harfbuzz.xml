@@ -26,8 +26,7 @@
       shaping engine.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/long-build-time.xml"/>
+    &long-build-time;
 
     <itemizedlist spacing="compact">
       <listitem>
@@ -122,9 +121,8 @@ ldconfig</userinput></screen>
 
     &options-meson;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/meson-buildtype-release.xml"/>
-    
+    &meson-buildtype-release;
+
     <para>
       <parameter>-D cairo=disabled</parameter>: This switch forces this package
       to not link against <application>Cairo</application> for the lib32 build

@@ -111,8 +111,7 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
 
     &options-meson;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../../xincludes/meson-wrap-nofallback.xml"/>
+    &meson-wrap-nofallback;
 
     <para revision="sysv">
       <parameter>-D systemd=disabled</parameter>: Don't install systemd support

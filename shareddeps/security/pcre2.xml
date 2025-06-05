@@ -142,8 +142,7 @@ ldconfig</userinput></screen>
       <application>pcre2test</application> program.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
+    &static-libraries;
 
     <para>
       <parameter>--enable-jit</parameter>: this option enables Just-in-time

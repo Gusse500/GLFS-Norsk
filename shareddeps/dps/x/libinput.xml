@@ -101,8 +101,7 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
 
       &options-meson;
 
-      <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-        href="../../../xincludes/meson-buildtype-release.xml"/>
+      &meson-buildtype-release;
 
       <para>
         <parameter>-D debug-gui=false</parameter>: This switch

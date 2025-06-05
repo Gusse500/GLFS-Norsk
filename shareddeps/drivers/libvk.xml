@@ -130,8 +130,7 @@ ldconfig</userinput></screen>
 
     &options-cmake;
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/cmake-skip-install-rpath.xml"/>
+    &cmake-skip-install-rpath;
 
     <para>
       <option>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</option>: This

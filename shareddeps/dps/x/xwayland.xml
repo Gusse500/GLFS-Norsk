@@ -112,8 +112,7 @@ EOF</userinput></screen>
       don't plan to install it later.
     </para>
 
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../../xincludes/meson-buildtype-release.xml"/>
+    &meson-buildtype-release;
 
     <para>
       <parameter>-D secure-rpc=false</parameter>: Disables RPC support
