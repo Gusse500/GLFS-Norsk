@@ -135,9 +135,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       compatibility with <application>linux-6.15</application>:
     </para>
 
-<screen><userinput>pushd kernel &amp;&amp;
-  patch -Np1 -i ../../nvidia-&nvidia-version;-kernel_gpl_cachyos-1.patch &amp;&amp;
-popd</userinput></screen>
+<screen><userinput>patch -d kernel -Np1 -i ../../nvidia-&nvidia-version;-kernel_gpl_cachyos-1.patch</userinput></screen>
 
   </sect2>
 
