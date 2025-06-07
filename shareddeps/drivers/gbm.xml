@@ -110,7 +110,10 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
 mkdir -pv /usr/include/GL/internal &amp;&amp;
-cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal</userinput></screen>
+cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal
+if test -d /usr/include/EGL; then
+  cp -v ../include/EGL/eglmesaext.h /usr/include/EGL
+fi</userinput></screen>
 
   </sect2>
 
@@ -211,6 +214,13 @@ ldconfig</userinput></screen>
       command copies over a header file that is needed by <xref
       linkend="xorg-server"/> since it is not copied over automatically in this
       build.
+    </para>
+
+    <para>
+      <command>cp -v ../include/EGL/eglmesaext.h ...</command>: This command
+      copies over a header file that is needed by <ulink
+      url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> and possibly other
+      packages.
     </para>
 
   </sect2>
