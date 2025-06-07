@@ -324,8 +324,7 @@ fi</userinput></screen>
       Now, as the &root; user, install the package:
     </para>
 
-<screen role='root'><userinput>./x.py install rustc std &amp;&amp;
-./x.py install cargo clippy rustfmt</userinput></screen>
+<screen role='root'><userinput>./x.py install</userinput></screen>
 
     <para>
       Still as the &root; user, fix the installation of the documentation
