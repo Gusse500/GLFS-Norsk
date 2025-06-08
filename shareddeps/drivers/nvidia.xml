@@ -65,7 +65,8 @@
           <para>
             <ulink url="&lfs-qol-website;/general/cuda.html">CUDA</ulink>
             (for NVENC, NVDEC, Optical Flow, and other hardware
-            acceleration not provided by VDPAU)
+            acceleration not provided by VDPAU; install after following this
+            page)
           </para>
         </listitem>
         <listitem>
@@ -82,6 +83,11 @@
         <listitem>
           <para>
             <xref linkend="libvk"/> (for using the Vulkan drivers)
+          </para>
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="nvidia-egl"/> (for EGL driver support)
           </para>
         </listitem>
         <listitem>
@@ -465,20 +471,16 @@ EOF</userinput></screen>
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing EGL drivers - 64-bit"
 mkdir -pv /usr/share/glvnd/egl_vendor.d &amp;&amp;
-nvidia_lib=(
-  libnvidia-egl-gbm
-  libnvidia-egl-wayland
-  libnvidia-egl-xcb
-  libnvidia-egl-xlib
-  libEGL_nvidia
-  libnvidia-wayland-client
-)
-for lib in ${nvidia_lib[@]}; do
-  cp -v $lib.so* /usr/lib               &amp;&amp;
-  nvidia_symlink /usr/lib/$lib || exit
-done                                    &amp;&amp;
-cp -v {10,15,20}*.json                   \
-          /usr/share/glvnd/egl_vendor.d &amp;&amp;
+cp -v libEGL_nvidia.so*                  \
+      /usr/lib                          &amp;&amp;
+nvidia_symlink                           \
+      /usr/lib/libEGL_nvidia            &amp;&amp;
+cp -v libnvidia-wayland-client.so*       \
+      /usr/lib                          &amp;&amp;
+nvidia_symlink                           \
+      /usr/lib/libnvidia-wayland-client &amp;&amp;
+cp -v 10_nvidia.json                     \
+      /usr/share/glvnd/egl_vendor.d     &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -489,17 +491,8 @@ EOF</userinput></screen>
 
 <screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
 <literal>echo "Installing EGL drivers - lib32"
-nvidia_lib=(
-  libnvidia-egl-gbm
-  libnvidia-egl-wayland
-  libnvidia-egl-xcb
-  libnvidia-egl-xlib
-  libEGL_nvidia
-)
-for lib in ${nvidia_lib[@]}; do
-  cp -v 32/$lib.so* /usr/lib32   &amp;&amp;
-  nvidia_symlink /usr/lib32/$lib || exit
-done                             &amp;&amp;
+cp -v 32/libEGL_nvidia.so* /usr/lib32   &amp;&amp;
+nvidia_symlink /usr/lib32/libEGL_nvidia &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -941,10 +934,6 @@ nvidia_lib=(
   libnvidia-allocator
   libGLX_nvidia
   libnvidia-fbc
-  libnvidia-egl-gbm
-  libnvidia-egl-wayland
-  libnvidia-egl-xcb
-  libnvidia-egl-xlib
   libEGL_nvidia
   libnvidia-wayland-client
   libGLESv2_nvidia
@@ -976,8 +965,8 @@ if test x"$PRESERVE_LIB" = x"0"; then
   rm -vf  /usr/lib/xorg/modules/drivers/nvidia_drv.so*             &amp;&amp;
   rm -vf  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so* &amp;&amp;
   rm -vf  /usr/lib{,32}/vdpau/libvdpau_nvidia.so*                  &amp;&amp;
+  rm -vf  /usr/share/glvnd/egl_vendor.d/10_nvidia.json             &amp;&amp;
   rm -vf  /usr/share/vulkan/icd.d/nvidia_icd.json                  &amp;&amp;
-  rm -vf  /usr/share/glvnd/egl_vendor.d/{10,15,20}_nvidia_*.json   &amp;&amp;
   rm -vf  /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf   &amp;&amp;
   rm -rvf /usr/share/nvidia                                        &amp;&amp;
   for lib in ${nvidia_lib[@]}; do
@@ -1143,10 +1132,6 @@ EOF</userinput></screen>
           libnvidia-api,
           libnvidia-cfg,
           libnvidia-eglcore,
-          libnvidia-egl-gbm,
-          libnvidia-egl-wayland,
-          libnvidia-egl-xcb,
-          libnvidia-egl-xlib,
           libnvidia-encode,
           libnvidia-fbc,
           libnvidia-glcore,
@@ -1177,7 +1162,7 @@ EOF</userinput></screen>
         <seg>
           /usr/lib/firmware/nvidia/&nvidia-version;,
           /usr/lib/nvidia/wine,
-          /usr/share/egl/egl_external_platform.d, and
+          /usr/share/glvnd/egl_vendor.d, and
           /usr/share/nvidia
         </seg>
       </seglistitem>
@@ -1411,55 +1396,6 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="nvidia libnvidia-eglcore">
             <primary sortas="c-libnvidia-eglcore">libnvidia-eglcore</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libnvidia-egl-gbm">
-        <term><filename class="libraryfile">libnvidia-egl-gbm</filename></term>
-        <listitem>
-          <para>
-            provides GBM EGL application support
-          </para>
-          <indexterm zone="nvidia libnvidia-egl-gbm">
-            <primary sortas="c-libnvidia-egl-gbm">libnvidia-egl-gbm</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libnvidia-egl-wayland">
-        <term><filename class="libraryfile">libnvidia-egl-wayland</filename></term>
-        <listitem>
-          <para>
-            provides client-side <application>Wayland</application> EGL
-            application support
-          </para>
-          <indexterm zone="nvidia libnvidia-egl-wayland">
-            <primary sortas="c-libnvidia-egl-wayland">libnvidia-egl-wayland</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libnvidia-egl-xcb">
-        <term><filename class="libraryfile">libnvidia-egl-xcb</filename></term>
-        <listitem>
-          <para>
-            provides EGL XCB support
-          </para>
-          <indexterm zone="nvidia libnvidia-egl-xcb">
-            <primary sortas="c-libnvidia-egl-xcb">libnvidia-egl-xcb</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libnvidia-egl-xlib">
-        <term><filename class="libraryfile">libnvidia-egl-xlib</filename></term>
-        <listitem>
-          <para>
-            provides EGL XLib support
-          </para>
-          <indexterm zone="nvidia libnvidia-egl-xlib">
-            <primary sortas="c-libnvidia-egl-xlib">libnvidia-egl-xlib</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -143,6 +143,10 @@
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY mesa-major-minor             "25.1">
 <!ENTITY mesa-version                 "&mesa-major-minor;.2">
+<!ENTITY eglexternalplatform-version  "1.2.1">
+<!ENTITY egl-gbm-version              "1.1.2.1">
+<!ENTITY egl-wayland-version          "1.1.19">
+<!ENTITY egl-x11-version              "1.0.2">
 <!ENTITY linux-version                "6.15">
                                                 <!-- kernel version in
                                                      kernel-config

@@ -30,6 +30,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pyyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gbm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-headers.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-tools.xml"/>
