@@ -23,7 +23,7 @@
       The <application>NVIDIA</application> proprietary driver contains
       firmware, kernel drivers, userland drivers pertaining to OpenGL,
       Vulkan, and hardware acceleration, and provides useful utilites for
-      NVIDIA cards.
+      NVIDIA cards. If you don't have a NVIDIA GPU, skip to the next package.
     </para>
 
     <itemizedlist spacing="compact">
@@ -1014,6 +1014,42 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
       <para>
         <filename>/usr/lib/modprobe.d/nvidia_drm.conf</filename>
       </para>
+      <para>
+        <filename>/usr/lib/modprobe.d/nvidia.conf</filename>
+      </para>
+    </sect3>
+
+    <sect3>
+      <title>List of Packages With Issues</title>
+
+      <para>
+        Using this driver can come with compromises. So far, these issues seem
+        limited to Wayland, desktop environments, and display managers. The
+        list below documents the known packages that have issues with this
+        driver.
+      </para>
+
+      <itemizedlist>
+        <listitem revision="sysv">
+          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Using this
+          package on SysVinit systems will result in failure as GDM does not
+          want to use Wayland for NVIDIA GPUs, but a permission issue with SysV
+          prevents X11 from being used. You must launch
+          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> through the
+          terminal instead. Read the mutter entry.</para>
+        </listitem>
+        <listitem>
+          <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
+          Compile this package with
+          <parameter>-D wayland_eglstream=true</parameter> and
+          <parameter>-D egl_device=true</parameter> to enable launching with
+          Wayland. Ensure the <xref linkend="nvidia-egl"/> are
+          installed.</para>
+          <para revision="sysv">On SysVinit systems, only the Wayland
+          version can be used.</para>
+        </listitem>
+      </itemizedlist>
+
     </sect3>
 
     <sect3><title>Configuration Information</title>
@@ -1052,6 +1088,21 @@ EOF</userinput></screen>
 options nvidia_drm modeset=1
 
 # End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
+EOF</userinput></screen>
+
+      <para>
+        When the GPU sleeps/hibernates, it will lose all memory allocations by
+        default. You can prevent this by setting two options for the NVIDIA
+        module as the &root; user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nvidia.conf
+
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
+
+# End /usr/lib/modprobe.d/nvidia.conf</literal>
 EOF</userinput></screen>
 
       <para>
