@@ -330,9 +330,10 @@ nvidia_symlink() {
     grep 'SONAME' | awk '{print $2}')
 
   if [ -n $soname ]; then
-     [ $origin.so.$VERSION = $soname ] || \
-       ln -sfv $origin.so.$VERSION $soname &amp;&amp;
-     ln -sfv $soname $origin.so || exit
+    if [ $origin.so.$VERSION != $soname ]; then
+      ln -sfv $origin.so.$VERSION $soname
+    fi
+    ln -sfv $soname $origin.so
   fi
 
   popd &gt; /dev/null
