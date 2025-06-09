@@ -41,6 +41,19 @@
     -->
 
     <listitem>
+      <para>June 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.50.0 -&gt; 3.50.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libvpx: 1.15.1 -&gt; 1.15.2 (security). Fixes
+          <ulink url="&glfs-issues;/257">#257</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>June 7th, 2025</para>
       <itemizedlist>
         <listitem>

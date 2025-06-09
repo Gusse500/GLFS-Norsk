@@ -3,10 +3,10 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.36">
-<!ENTITY sqlite-version               "3.50.0">
+<!ENTITY sqlite-version               "3.50.1">
 <!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3500000">
-<!ENTITY sqlite-doc-version           "3500000">
+<!ENTITY sqlite-dl-version            "3500100">
+<!ENTITY sqlite-doc-version           "3500100">
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "13">
 <!ENTITY python3-patch                "4">
@@ -280,7 +280,7 @@
 <!ENTITY libaom-version               "3.12.1">
 <!ENTITY fdk-aac-version              "2.0.3">
 <!ENTITY lame-version                 "3.100">
-<!ENTITY libvpx-version               "1.15.1">
+<!ENTITY libvpx-version               "1.15.2">
 <!ENTITY x264-version                 "20240812">
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "7.1.1">
