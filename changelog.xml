@@ -1,1 +1,948 @@
-introduction/welcome/changelog.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY changelogs  "https://www.linuxfromscratch.org/blfs">
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<!-- vim: set expandtab: -->
+
+<sect1 id="changelog" xreflabel="Change Log">
+  <?dbhtml filename="changelog.html"?>
+
+
+  <title>Change Log</title>
+
+  <!-- <para>Please note that the Change Log only lists which editor was
+  responsible for putting the changes into SVN; please read the
+  <xref linkend="credits"/> page in Chapter 1 for details on
+  who wrote what.</para> -->
+
+  <para>Current release: &version; &ndash; &releasedate;</para>
+
+  <itemizedlist>
+    <title>Changelog Entries:</title>
+
+<!-- Changelog template
+    <listitem>
+      <para>MMMM DD{nd,st,th}, YYYY</para>
+      <itemizedlist>
+        <listitem>
+          <para>[name] - Newer entry.</para>
+        </listitem>
+        <listitem>
+          <para>[name] - package: ver -&gt; ver. Fixes
+          <ulink url="&glfs-issues;/num">#num</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+    -->
+
+    <listitem>
+      <para>June 9th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - rust-bindgen: 0.71.1 -&gt; 0.72.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdrm: 2.4.124 -&gt; 2.4.125.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - XKeyboard-Config: 2.44 -&gt; 2.45.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>June 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.50.0 -&gt; 3.50.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libvpx: 1.15.1 -&gt; 1.15.2 (security). Fixes
+          <ulink url="&glfs-issues;/257">#257</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>June 7th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Add EGL libraries.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>June 5th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.1.1 -&gt; 25.1.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM: 20.1.5 -&gt; 20.1.6.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>June 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.395 -&gt; 0.396.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Python: 3.13.3 -&gt; 3.13.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL2: 2.32.6 -&gt; 2.32.8.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - cURL: 8.14.0 -&gt; 8.14.1 (security). Fixes
+          <ulink url="&glfs-issues;/253">#253</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - make-ca: 1.16 -&gt; 1.16.1. Fixes
+          <ulink url="&glfs-issues;/252">#252</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>June 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Systemd: 257.3 -&gt; 257.6.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>June 2nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.7 -&gt; 10.9.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 31st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - AMDGPU PRO: Deprecate until 12.4.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 30th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.49.0 -&gt; 3.50.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cbindgen: 0.28.0 -&gt; 0.29.0. Fixes
+          <ulink url="&glfs-issues;/245">#245</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Gst: 1.26.1 -&gt; 1.26.2 (security). Fixes
+          <ulink url="&glfs-issues;/250">#250</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Create install script.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 29th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 575.51.02 -&gt; 575.57.08.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - cURL: 8.13.0 -&gt; 8.14.0. Fixes
+          <ulink url="&glfs-issues;/249">#249</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 28th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: 3.111 -&gt; 3.112. Fixes
+          <ulink url="&glfs-issues;/247">#247</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 27th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Overhaul. Fixes
+          <ulink url="&glfs-issues;/248">#248</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 23rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - aboutgles -&gt; aboutgl.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xorg Libraries: Don't build libFS.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.9.2 -&gt; 1.10.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLib: 2.84.1 -&gt; 2.84.2. Fixes
+          <ulink url="&glfs-issues;/241">#241</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.1.0 -&gt; 3.1.1. Fixes
+          <ulink url="&glfs-issues;/242">#242</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.1.0 -&gt; 25.1.1. Fixes
+          <ulink url="&glfs-issues;/243">#243</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM, libclc: 20.1.4 -&gt; 20.1.5. Fixes
+          <ulink url="&glfs-issues;/244">#244</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 20th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - sessreg: 1.1.3 -&gt; 1.1.4;
+          smproxy: 1.0.7 -&gt; 1.0.8;
+          xcursorgen: 1.0.8 -&gt; 1.0.9 (Xorg apps).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.86.0 -&gt; 1.87.0. Fixes
+          <ulink url="&glfs-issues;/240">#240</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 14th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.2.0 -&gt; 11.2.1. Fixes
+          <ulink url="&glfs-issues;/237">#237</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.2 -&gt; 2.14.3. Fixes
+          <ulink url="&glfs-issues;/238">#238</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 13th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Cython: 3.0.12 -&gt; 3.1.0. Fixes
+          <ulink url="&glfs-issues;/231">#231</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 12th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GLES: Explain the API and how to disable it.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 9th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Gst*: Combine into 1 page (GStreamer Suite).</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.49.1 -&gt; 3.49.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.394 -&gt; 0.395. Fixes
+          <ulink url="&glfs-issues;/229">#229</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.5 -> 25.1.0. Fixes
+          <ulink url="&glfs-issues;/230">#230</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 7th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Speex: Added.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - *: Split up book into chapters.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 6th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.9.1 -&gt; 1.9.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Vulkan-*: 1.4.309 -&gt; 1.4.313. Fixes
+          <ulink url="&glfs-issues;/169">#169</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.110 -&gt; 3.111. Fixes
+          <ulink url="&glfs-issues;/218">#218</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM, libclc: 20.1.3 -&gt; 20.1.4. Fixes
+          <ulink url="&glfs-issues;/224">#224</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.0.1 -&gt; 4.0.2. Fixes
+          <ulink url="&glfs-issues;/227">#227</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL2: 2.30.11 -&gt; 2.32.6. Fixes
+          <ulink url="&glfs-issues;/228">#228</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 5th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.6 -&gt; 10.7. Fixes
+          <ulink url="&glfs-issues;/226">#226</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.4 -&gt; 25.0.5. Fixes
+          <ulink url="&glfs-issues;/223">#223</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 20.1.1 -&gt; 20.1.2. Fixes
+          <ulink url="&glfs-issues;/225">#225</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libpng: 1.6.47 -&gt; 1.6.48. Fixes
+          <ulink url="&glfs-issues;/222">#222</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Pixman: 0.44.2 -&gt; 0.46.0. Fixes
+          <ulink url="&glfs-issues;/221">#221</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.1.0 -&gt; 11.2.0. Fixes
+          <ulink url="&glfs-issues;/220">#220</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.43 -&gt; 1.44. Fixes
+          <ulink url="&glfs-issues;/217">#217</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.8.1 -&gt; 1.9.1. Fixes
+          <ulink url="&glfs-issues;/216">#216</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Fix building with GCC-15.x.x.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>May 2nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GCC: 14.2.0 -&gt; 15.1.0. Fixes
+          <ulink url="&glfs-issues;/213">#213</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libsndfile; libunwind; Wine: Fix building with
+          GCC-15.x.x.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: A few tweaks regarding libglvnd.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GBM: Make PyYAML a requirement.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 30th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - gst*: 1.26.0 -&gt; 1.26.1 (Security). Fixes
+          <ulink url="&glfs-issues;/215">#215</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 27th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - glslang: 15.2.0 -&gt; 15.3.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Preface: Heavily tweaked.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libgpg-error: 1.54 -&gt; 1.55.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 24th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - whatdriver: Reworked explanations.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Steam: 1.0.0.82 -&gt; 1.0.0.83. Fixes
+          <ulink url="&glfs-issues;/212">#212</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 22nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - LLVM, libclc: 20.1.2 -&gt; 20.1.3. Fixes
+          <ulink url="&glfs-issues;/203">#203</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 10.5 -&gt; 10.6. Fixes
+          <ulink url="&glfs-issues;/208">#208</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 21st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - LibXft: 2.3.8 -&gt; 2.3.9. Fixes
+          <ulink url="&glfs-issues;/209">#209</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: Update installed contents.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.1 -&gt; 2.14.2 (security fix). Fixes
+          <ulink url="&glfs-issues;/205">#205</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 18th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.3 -&gt; 25.0.4. Fixes
+          <ulink url="&glfs-issues;/204">#204</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 570.133.07 -&gt; 575.51.02. Fixes
+          <ulink url="&glfs-issues;/206">#206</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.0.1 -&gt; 11.1.0;
+          libgpg-error: 1.53 -&gt; 1.54. Fixes
+          <ulink url="&glfs-issues;/202">#202</ulink> and
+          <ulink url="&glfs-issues;/207">#207</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 17th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - gpuconfig: Document Xe driver.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: Update config.toml.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 16th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Fontconfig: 2.16.0 -&gt; 2.16.2. Fixes
+          <ulink url="&glfs-issues;/201">#201</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 15th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libaom: 3.12.0 -&gt; 3.12.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.0.0 -&gt; 4.0.1. Fixes
+          <ulink url="&glfs-issues;/200">#200</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 14th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - alsa-{lib,ucm-conf,utils}: * -&gt; 1.2.14.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - alsa-lib: Ensure alsa-ucm-conf is installed.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Python3: 3.13.2 -&gt; 3.13.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libvdpau-va-gl: Allow building w/ CMake-4.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - x265: Allow building with CMake-4.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libvpx: Ensure files get updated.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - alsa-lib: Patch alsa-ucm-conf config file.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 11th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - mako: 1.3.8 -&gt; 1.3.10.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 10th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libvpx: 1.15.0 -&gt; 1.15.1. Fixes
+          <ulink url="&glfs-issues;/199">#199</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libgpg-error: 1.51 -&gt; 1.53. Fixes
+          <ulink url="&glfs-issues;/198">#198</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.42 -&gt; 1.43. Fixes
+          <ulink url="&glfs-issues;/197">#197</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 8th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - make-ca: 1.15 -> 1.16. Fixes
+          <ulink url="&glfs-issues;/196">#196</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 7th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - DXVK: 2.6 -&gt; 2.6.1. Fixes
+          <ulink url="&glfs-issues;/195">#195</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 6th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.0.0 -&gt; 11.0.1. Fixes
+          <ulink url="&glfs-issues;/193">#193</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.4 -&gt; 10.5. Fixes
+          <ulink url="&glfs-issues;/192">#192</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - All: Stop using .so for library suffixes. Fixes
+          <ulink url="&glfs-issues;/188">#188</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLib: 2.84.0 -&gt; 2.84.1. Fixes
+          <ulink url="&glfs-issues;/191">#191</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.85.1 -&gt; 1.86.0. Fixes
+          <ulink url="&glfs-issues;/186">#186</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - p11-kit: Remove lib32 instructions.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.0 -&gt; 2.14.1 Fixes
+          <ulink url="&glfs-issues;/190">#190</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 3rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Glslang: Ensure libSPIRV is installed.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM: 20.1.1 -> 20.1.2;
+          SPIRV-LLVM-Translator: 20.1.0 -> 20.1.1. Fixes
+          <ulink url="&glfs-issues;/181">#181</ulink> and
+          <ulink url="&glfs-issues;/182">#182</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxml2: 1.13.6 -&gt; 1.14.0. Fixes
+          <ulink url="&glfs-issues;/176">#176</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.2 -&gt; 25.0.3. Fixes
+          <ulink url="&glfs-issues;/185">#185</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>April 2nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libinput: 1.28.0 -&gt; 1.28.1;
+          cURL: 8.12.1 -&gt; 8.13.0;
+          hwdata: 0.393 -&gt; 0.394. Fixes
+          <ulink url="&glfs-issues;/180">#180</ulink>,
+          <ulink url="&glfs-issues;/183">#183</ulink>, and
+          <ulink url="&glfs-issues;/184">#184</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 31st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - shadow: 4.17.3 -&gt; 4.17.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - glslang: 15.1.0 -&gt; 15.2.0. Fixes
+          <ulink url="&glfs-issues;/179">#179</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.109 -&gt; 3.110. Fixes
+          <ulink url="&glfs-issues;/178">#178</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 3.31.6 -&gt; 4.0.0. Fixes
+          <ulink url="&glfs-issues;/177">#177</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 25th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libevdev: 1.13.3 -&gt; 1.13.4. Fixes
+          <ulink url="&glfs-issues;/174">#174</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Removed 32-bit CPU support. Fixes
+          <ulink url="&glfs-issues;/175">#175</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libinput: 1.27.1 -&gt; 1.28.0. Fixes
+          <ulink url="&glfs-issues;/172">#172</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 10.4.0 -&gt; 11.0.0. Fixes
+          <ulink url="&glfs-issues;/171">#171</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.41 -&gt; 1.42. Fixes
+          <ulink url="&glfs-issues;/173">#173</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 23rd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: Remove --disable-multilib.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 22nd, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.3 -&gt; 10.4. Fixes
+          <ulink url="&glfs-issues;/170">#170</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 21st, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - *: Made the book easier to follow for NVIDIA
+          users.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdrm: Disable building tests. Fixes
+          <ulink url="&glfs-issues;/168">#168</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GBM: Add lib32 installation instructions.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Fix other package builds without DRI.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - alsa-*: Don't use prefix for lib32.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 20th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - LLVM; libclc: 20.1.0 -&gt; 20.1.1. Fixes
+          <ulink url="&glfs-issues;/167">#167</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.0.1 -&gt; 25.0.2. Fixes
+          <ulink url="&glfs-issues;/166">#166</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 570.124.04 -&gt; 570.133.07. Fixes
+          <ulink url="&glfs-issues;/164">#164</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 19th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.85.0 -&gt; 1.85.1. Fixes
+          <ulink url="&glfs-issues;/162">#162</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 18th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - D-Bus: 1.16.0 -&gt; 1.16.2. Fixes
+          <ulink url="&glfs-issues;/131">#131</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 17th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.8.0 -&gt; 1.8.1. Fixes
+          <ulink url="&glfs-issues;/151">#151</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GObject-Introspection: 1.82.0 -&gt; 1.84.0. Fixes
+          <ulink url="&glfs-issues;/159">#159</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Git: 2.48.1 -&gt; 2.49.0. Fixes
+          <ulink url="&glfs-issues;/158">#158</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - ICU: 76.1 -&gt; 77.1. Fixes
+          <ulink url="&glfs-issues;/156">#156</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 16th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Document GBM.</para>
+        </listitem>
+        <listitem>
+          <para>[Toxikuu] - NVIDIA: 560.35.03 -&gt; 570.124.04. PR
+          <ulink url="&glfs-pull;/161">(#161)</ulink>. Fixes
+          <ulink url="&glfs-issues;/129">#129</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 15th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Updated LLVM and Vulkan related packages.
+          Fixes <ulink url="&glfs-issues;/136">#136</ulink>,
+          <ulink url="&glfs-issues;/138">#138</ulink>,
+          <ulink url="&glfs-issues;/153">#153</ulink>,
+          <ulink url="&glfs-issues;/154">#154</ulink>, and
+          <ulink url="&glfs-issues;/157">#157</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 14th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - GLib2: 2.82.5 -&gt; 2.84.0. Fixes
+          <ulink url="&glfs-issues;/139">#139</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Gst*: 1.24.12 -&gt; 1.26.0. Fixes
+          <ulink url="&glfs-issues;/155">#155</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 10.2 -&gt; 10.3. Fixes
+          <ulink url="&glfs-issues;/152">#152</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 12th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Keep up with BLFS.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 5th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Mesa: 24.3.4 -&gt; 25.0.1. Fixes
+          <ulink url="&glfs-issues;/120">#120</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libglvnd; NVIDIA: Unarchived.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - luit: Removed. Fixes
+          <ulink url="&glfs-issues;/137">#137</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>March 4th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite; Python3: Added. Fixes
+          <ulink url="&glfs-issues;/91">#91</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.108 -&gt; 3.109;
+          CMake: 3.31.5 -&gt; 3.31.6;
+          Wayland-Protocols: 1.40 -&gt; 1.41;
+          hwdata: 0.392 -&gt; 0.393;
+          SPIRV-LLVM-Translator: 19.1.4 -&gt; 19.1.5. Fixes
+          <ulink url="&glfs-issues;/116">#116</ulink>,
+          <ulink url="&glfs-issues;/125">#125</ulink>,
+          <ulink url="&glfs-issues;/130">#130</ulink>,
+          <ulink url="&glfs-issues;/132">#132</ulink>, and
+          <ulink url="&glfs-issues;/135">#135</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Changelog: Cleaned for next release cycle.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+  </itemizedlist>
+
+</sect1>

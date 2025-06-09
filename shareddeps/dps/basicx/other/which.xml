@@ -146,7 +146,7 @@ chown -v root:root /usr/bin/which</userinput></screen>
       Some build systems
       <footnote><para>
         A notable example is <ulink
-        url="&lfs-qol-website;/svr4/pkgsuite.html">pkgsuite</ulink>.
+        url="&slfs-website;/svr4/pkgsuite.html">pkgsuite</ulink>.
       </para></footnote> expect <command>which</command> to support options
       which can alter the string of the file path of a given program. This
       installation can therefore trip up those build systems. If in doubt,

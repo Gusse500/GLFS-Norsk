@@ -93,8 +93,8 @@
 
     <bridgehead renderas="sect4">Optional for systems with NVIDIA</bridgehead>
     <para role="optional">
-      <ulink url="&lfs-qol-website;/general/cuda.html">CUDA</ulink> and
-      <ulink url="&lfs-qol-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
+      <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink> and
+      <ulink url="&slfs-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
     </para>
 
     <bridgehead renderas="sect4">Optional</bridgehead>

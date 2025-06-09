@@ -53,9 +53,9 @@
       <application>CMake</application> build systems. For this book and in
       BLFS, you shouldn't run into any of those issues unless you wish to use
       <xref linkend="nvidia"/>, which specifically requires <xref
-      linkend="libglvnd"/>. LFS-QOL aims to work around issues that arise from
+      linkend="libglvnd"/>. SLFS aims to work around issues that arise from
       packages having stubborn build systems, like in the case of <ulink
-      url="&lfs-qol-website;/general/obs-studio.html">OBS-Studio</ulink>.
+      url="&slfs-website;/general/obs-studio.html">OBS-Studio</ulink>.
       For binary-only packages, it is generally hit or miss whether the
       developers link against new or legacy OpenGL. A gaming example is with
       ports and recompilations: the binary for <ulink

@@ -161,7 +161,7 @@
       <!-- for libsensors according to Meson -->
       <xref linkend="nettle"/>,
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
-      <ulink url="&lfs-qol-website;/general/mesa-demos.html">Mesa-Demos</ulink>
+      <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test <application>Mesa</application>),
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile platforms), and

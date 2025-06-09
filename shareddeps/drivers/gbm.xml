@@ -73,7 +73,7 @@
 
     <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
-      <ulink url="&lfs-qol-website;/general/mesa-demos.html">Mesa-Demos</ulink>
+      <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test drivers)
     </para>
 

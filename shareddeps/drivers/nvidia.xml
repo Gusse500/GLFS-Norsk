@@ -63,7 +63,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            <ulink url="&lfs-qol-website;/general/cuda.html">CUDA</ulink>
+            <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink>
             (for NVENC, NVDEC, Optical Flow, and other hardware
             acceleration not provided by VDPAU; install after following this
             page)
@@ -191,7 +191,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       There will be 5 or 6 kernel modules that will be built. Depending on your
       use case, you can skip building a module or two. The UVM (Unified Virtual
       Memory) module is for use with <ulink
-      url="&lfs-qol-website;/general/cuda.html">CUDA</ulink>. If you won't use
+      url="&slfs-website;/general/cuda.html">CUDA</ulink>. If you won't use
       it, nor wish to use its capabilities, you can skip building the UVM
       kernel module. There is also the PeerMem module which is for datacenters.
       For gaming, it can safely be disabled.
@@ -678,7 +678,7 @@ EOF</userinput></screen>
 
       <para>
         Add to the script if you want to use <ulink
-        url="&lfs-qol-website;/general/cuda.html">CUDA</ulink> or applications
+        url="&slfs-website;/general/cuda.html">CUDA</ulink> or applications
         that use it.
       </para>
 
@@ -774,7 +774,7 @@ EOF</userinput></screen>
 
     </sect3>
 
-<!-- Maybe should be in LFS-QOL? -->
+<!-- Maybe should be in SLFS? -->
     <sect3>
       <title>NVIDIA-Settings</title>
 
