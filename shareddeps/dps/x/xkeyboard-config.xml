@@ -63,8 +63,19 @@ meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 
 ninja</userinput></screen>
 
+    <important><para>
+      If upgrading from version 2.44 or earlier, the installation will
+      fail if some files are not symbolic links.  To fix this, run as
+      the &root; user:
+    </para>
+<screen role="root"><userinput>if [ -f /usr/share/X11/xkb ]; then
+  rm -rf /usr/share/X11/xkb
+  rm -f  /usr/share/man/man7/xkeyboard-config.7
+  rm -f  /usr/share/pkgconfig/xkeyboard-config.pc
+fi</userinput></screen></important>
+
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Now, as the &root; user:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
