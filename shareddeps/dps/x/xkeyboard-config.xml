@@ -68,7 +68,7 @@ ninja</userinput></screen>
       fail if some files are not symbolic links.  To fix this, run as
       the &root; user:
     </para>
-<screen role="root"><userinput>if [ -f /usr/share/X11/xkb ]; then
+<screen role="root"><userinput>if [ -d /usr/share/X11/xkb ]; then
   rm -rf /usr/share/X11/xkb
   rm -f  /usr/share/man/man7/xkeyboard-config.7
   rm -f  /usr/share/pkgconfig/xkeyboard-config.pc
