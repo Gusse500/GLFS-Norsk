@@ -900,7 +900,7 @@ PRESERVE_FIRMWARE=0
 PRESERVE_KERNEL=0
 PRESERVE_PROG=0
 PRESERVE_LIB=0
-while test $# -gt 0; do
+while [ $# -gt 0 ]; do
   case "$1" in
     --preserve-firmware )
       echo "Keeping firmware."
@@ -975,11 +975,11 @@ nvidia_lib=(
 )
 
 rm -rvf /usr/share/doc/nvidia*                                     &amp;&amp;
-if test x"$PRESERVE_FIRMWARE" = x"0"; then
+if [ "$PRESERVE_FIRMWARE" = "0" ]; then
   rm -rvf /usr/lib/firmware/nvidia/[0-9]*
 fi
 
-if test x"$PRESERVE_LIB" = x"0"; then
+if [ "$PRESERVE_LIB" = "0" ]; then
   rm -rvf /usr/lib/nvidia                                          &amp;&amp;
   rm -vf  /usr/lib{,32}/gbm/nvidia-drm_gbm.so                      &amp;&amp;
   rm -vf  /usr/lib/xorg/modules/drivers/nvidia_drv.so*             &amp;&amp;
@@ -994,7 +994,7 @@ if test x"$PRESERVE_LIB" = x"0"; then
   done
 fi
 
-if test x"$PRESERVE_PROG" = x"0"; then
+if [ "$PRESERVE_PROG" = "0" ]; then
   for bin in nvidia-{modprobe,settings,smi,xconfig}; do
     rm -vf /usr/{,s}bin/$bin
   done                                                             &amp;&amp;
@@ -1002,7 +1002,7 @@ if test x"$PRESERVE_PROG" = x"0"; then
   rm -vf  /usr/share/pixmaps/nvidia-settings.png
 fi
 
-if test x"$PRESERVE_KERNEL" = x"0"; then
+if [ "$PRESERVE_KERNEL" = "0" ]; then
   for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
     rm -vf /usr/lib/modules/$(uname -r)/kernel/drivers/video/$mod.ko
   done
