@@ -1054,9 +1054,15 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
           package on SysVinit systems will result in failure as GDM does not
           want to use Wayland for NVIDIA GPUs, but a permission issue with SysV
           prevents X11 from being used. You must launch
-          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> through the
-          terminal instead. Read the mutter entry.</para>
+          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> or
+          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
+          through the terminal instead. Read the Mutter entry.</para>
         </listitem>
+        <listitem revision="sysv"><para>
+          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
+          Only the Wayland version can be used right now and cannot be
+          launched via GDM.
+        </para></listitem>
         <listitem>
           <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
           Compile this package with
@@ -1064,8 +1070,9 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
           <parameter>-D egl_device=true</parameter> to enable launching with
           Wayland. Ensure the <xref linkend="nvidia-egl"/> are
           installed.</para>
-          <para revision="sysv">On SysVinit systems, only the Wayland
-          version can be used.</para>
+          <para revision="sysv">On SysVinit systems, Mutter can only be
+          launched via a TTY or a display manager other than GDM if using X11
+          as of now.</para>
         </listitem>
       </itemizedlist>
 
