@@ -18,6 +18,5 @@
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wayland.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wayland-protocols.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="seatd.xml"/>
 
 </chapter>
