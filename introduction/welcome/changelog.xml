@@ -44,6 +44,9 @@
       <para>June 9th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - rust-bindgen: 0.71.1 -&gt; 0.72.0.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libdrm: 2.4.124 -&gt; 2.4.125.</para>
         </listitem>
         <listitem>

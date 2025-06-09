@@ -168,7 +168,7 @@
      at the very bottom: change_id. -->
 <!ENTITY rustc-change-id              "138986">
 <!ENTITY cbindgen-version             "0.29.0">
-<!ENTITY rust-bindgen-version         "0.71.1">
+<!ENTITY rust-bindgen-version         "0.72.0">
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.2">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY libva-version                "2.22.0">
