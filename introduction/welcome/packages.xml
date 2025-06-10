@@ -66,15 +66,7 @@
       After that, download the packages and patches by doing the following:
     </para>
 
-<screen><userinput>wget -N --input-file=wget-list --continue &amp;&amp;
-git clone --recursive https://github.com/doitsujin/dxvk dxvk-&dxvk-version; &amp;&amp;
-cd dxvk-&dxvk-version; &amp;&amp;
-git checkout v&dxvk-version; &amp;&amp;
-cd .. &amp;&amp;
-git clone --recursive https://github.com/HansKristian-Work/vkd3d-proton vkd3d-proton-&vkd3d-proton-version; &amp;&amp;
-cd vkd3d-proton-&vkd3d-proton-version; &amp;&amp;
-git checkout v&vkd3d-proton-version; &amp;&amp;
-cd ..</userinput></screen>
+<screen><userinput>wget -N --input-file=wget-list --continue</userinput></screen>
 
   </sect2>
 

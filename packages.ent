@@ -296,3 +296,9 @@
 <!ENTITY dxvk-spirv                   "8b246ff75c6615ba4532fe4fde20f1be090c3764">
 <!ENTITY dxvk-vulkan                  "234c4b7370a8ea3239a214c9e871e4b17c89f4ab">
 <!ENTITY vkd3d-proton-version         "2.14.1">
+<!ENTITY vkd3d-proton-spirv           "2b2e05e088841c63c0b6fd4c9fb380d8688738d3">
+<!ENTITY vkd3d-proton-vulkan          "75ad707a587e1469fb53a901b9b68fe9f6fbc11f">
+<!ENTITY vkd3d-proton-dxil-spirv      "47f8b0d6bba72431e89e896ac6c902309e0cf09b">
+<!ENTITY vkd3d-proton-spirv-cross     "68300dc07ac3dc592dbbdb87e02d5180f984ad12">
+<!ENTITY vkd3d-proton-dxil-spirv-headers "3f17b2af6784bfa2c5aa5dbb8e0e74a607dd8b3b">
+<!ENTITY vkd3d-proton-spirv-tools     "4d2f0b40bfe290dea6c6904dafdf7fd8328ba346">

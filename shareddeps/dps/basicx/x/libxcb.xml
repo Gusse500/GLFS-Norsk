@@ -51,7 +51,7 @@
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
-      <xref linkend="libXdmcp"/>
+      <xref linkend="libXdmcp"/> (required for <xref linkend="mesa"/>)
     </para>
 
   </sect2>

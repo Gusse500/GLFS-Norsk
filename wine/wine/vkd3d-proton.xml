@@ -3,9 +3,6 @@
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
-
-  <!ENTITY vkd3d-proton-download-http "https://github.com/HansKristian-Work/vkd3d-proton">
-  <!ENTITY vkd3d-proton-download-ftp  " ">
 ]>
 
 <sect1 id="vkd3d-proton" xreflabel="VKD3D-Proton-&vkd3d-proton-version;">
@@ -29,19 +26,6 @@
       <application>Wine</application>, <application>VKD3D</application>.
     </para>
 
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Download (HTTP): <ulink url="&vkd3d-proton-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&vkd3d-proton-download-ftp;"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
     <bridgehead renderas="sect3">VKD3D-Proton Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
@@ -49,8 +33,6 @@
       <xref linkend="dxvk"/>
       (for <filename class="libraryfile">dxgi</filename> and
       the configuration section),
-      <xref linkend="git"/> (with <xref linkend="curl"/>;
-      to clone the repository),
       <xref linkend="glslang"/>,
       <xref linkend="mingw-w64-gcc"/> (compiled with POSIX thread support), and
       <xref linkend="wine"/>
@@ -63,17 +45,82 @@
 
   </sect2>
 
+  <sect2>
+    <title>Downloading DXVK</title>
+
+    <para>
+      This package depends on submodules and multiple of them will need to be
+      downloaded. Create a list of the needed tarballs that will be downloaded:
+    </para>
+
+<screen><userinput>cat &gt; vkd3d-proton-&vkd3d-proton-version;-list &lt;&lt; "EOF"
+<literal>HansKristian-Work/vkd3d-proton/archive/v&vkd3d-proton-version;/vkd3d-proton-&vkd3d-proton-version;.tar.gz
+KhronosGroup/SPIRV-Headers/archive/&vkd3d-proton-spirv;.tar.gz
+KhronosGroup/Vulkan-Headers/archive/&vkd3d-proton-vulkan;.tar.gz
+HansKristian-Work/dxil-spirv/archive/&vkd3d-proton-dxil-spirv;.tar.gz
+KhronosGroup/SPIRV-Cross/archive/&vkd3d-proton-spirv-cross;.tar.gz
+KhronosGroup/SPIRV-Headers/archive/&vkd3d-proton-dxil-spirv-headers;.tar.gz
+KhronosGroup/SPIRV-Tools/archive/&vkd3d-proton-spirv-tools;.tar.gz</literal>
+EOF</userinput></screen>
+
+    <para>
+      Download the tarballs using <xref linkend="wget"/>:
+    </para>
+
+<screen><userinput>mkdir vkd3d-proton &amp;&amp;
+cd    vkd3d-proton &amp;&amp;
+grep -v '^#' ../vkd3d-proton-&vkd3d-proton-version;-list | wget -i- -c \
+    -B https://github.com</userinput></screen>
+
+  </sect2>
+
   <sect2 role="installation">
     <title>Installation of VKD3D-Proton</title>
 
     <para>
-      Clone the repository using <xref linkend="git"/> as this project
-      depends on submodules, even if they are installed on the system:
+      Extract all the tarballs:
     </para>
 
-<screen><userinput>git clone --recursive &vkd3d-proton-download-http; vkd3d-proton-&vkd3d-proton-version; &amp;&amp;
-cd vkd3d-proton-&vkd3d-proton-version; &amp;&amp;
-git checkout v&vkd3d-proton-version;</userinput></screen>
+<screen><userinput>for i in *.tar.?z*; do
+  echo "Extracting $i..."
+  tar -xf $i
+done</userinput></screen>
+
+    <para>
+      Now that the tarballs have been extracted, the submodules need to be
+      moved in place. Do so now:
+    </para>
+
+<screen><userinput>mv -T SPIRV-Headers-&vkd3d-proton-spirv;                \
+      vkd3d-proton-&vkd3d-proton-version;/khronos/SPIRV-Headers                            &amp;&amp;
+mv -T Vulkan-Headers-*                                                      \
+      vkd3d-proton-&vkd3d-proton-version;/khronos/Vulkan-Headers                           &amp;&amp;
+mv -T dxil-spirv-*                                                          \
+      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv                           &amp;&amp;
+mv -T SPIRV-Cross-*                                                         \
+      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/SPIRV-Cross   &amp;&amp;
+mv -T SPIRV-Headers-&vkd3d-proton-dxil-spirv-headers;                \
+      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/spirv-headers &amp;&amp;
+mv -T SPIRV-Tools-*                                                         \
+      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/SPIRV-Tools</userinput></screen>
+<!-- Submodules will be the death of me and alignment. -->
+
+
+    <para>
+      Go into the <filename
+      class="directory">vkd3d-proton-&vkd3d-proton-version;</filename>
+      directory:
+    </para>
+
+<screen><userinput>cd vkd3d-proton-&vkd3d-proton-version;</userinput></screen>
+
+    <para>
+      Fix broken version generation which creates a broken header file during
+      compilation:
+    </para>
+
+<screen><userinput>sed "165s/.*/  command : \['echo', '0'\],/" \
+  -i meson.build</userinput></screen>
 
     <note><para>
       If you are doing multilib, it is up to you if you want to install the
