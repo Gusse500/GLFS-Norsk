@@ -291,5 +291,8 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 <!ENTITY wine-major-version           "10">
 <!ENTITY wine-version                 "&wine-major-version;.9">
-<!ENTITY dxvk-version                 "2.6.1">
+<!ENTITY dxvk-version                 "2.6.2">
+<!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
+<!ENTITY dxvk-spirv                   "8b246ff75c6615ba4532fe4fde20f1be090c3764">
+<!ENTITY dxvk-vulkan                  "234c4b7370a8ea3239a214c9e871e4b17c89f4ab">
 <!ENTITY vkd3d-proton-version         "2.14.1">

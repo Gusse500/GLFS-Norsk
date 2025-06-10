@@ -3,9 +3,6 @@
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
-
-  <!ENTITY dxvk-download-http "https://github.com/doitsujin/dxvk">
-  <!ENTITY dxvk-download-ftp  " ">
 ]>
 
 <sect1 id="dxvk" xreflabel="DXVK-&dxvk-version;">
@@ -30,25 +27,10 @@
 
     &long-build-time;
 
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Download (HTTP): <ulink url="&dxvk-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&dxvk-download-ftp;"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
     <bridgehead renderas="sect3">DXVK Dependencies</bridgehead>
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-      <xref linkend="git"/> (with <xref linkend="curl"/>;
-      to clone the repository),
       <xref linkend="glslang"/>,
       <xref linkend="mingw-w64-gcc"/> (compiled with POSIX thread support), and
       <xref linkend="wine"/>
@@ -61,17 +43,62 @@
 
   </sect2>
 
+  <sect2>
+    <title>Downloading DXVK</title>
+
+    <para>
+      This package depends on submodules and multiple of them will need to be
+      downloaded. Create a list of the needed tarballs that will be downloaded:
+    </para>
+
+<screen><userinput>cat &gt; dxvk-&dxvk-version;-list &lt;&lt; "EOF"
+<literal>doitsujin/dxvk/archive/v&dxvk-version;/dxvk-&dxvk-version;.tar.gz
+doitsujin/libdisplay-info/archive/&dxvk-libdisplay-info;.tar.gz
+KhronosGroup/SPIRV-Headers/archive/&dxvk-spirv;.tar.gz
+KhronosGroup/Vulkan-Headers/archive/&dxvk-vulkan;.tar.gz</literal>
+EOF</userinput></screen>
+
+    <para>
+      Download the tarballs using <xref linkend="wget"/>:
+    </para>
+
+<screen><userinput>mkdir dxvk &amp;&amp;
+cd    dxvk &amp;&amp;
+grep -v '^#' ../dxvk-&dxvk-version;-list | wget -i- -c \
+    -B https://github.com</userinput></screen>
+
+  </sect2>
+
   <sect2 role="installation">
     <title>Installation of DXVK</title>
 
     <para>
-      Clone the repository using <xref linkend="git"/> as this project
-      depends on submodules, even if they are installed on the system:
+      Extract all the tarballs:
     </para>
 
-<screen><userinput>git clone --recursive &dxvk-download-http; dxvk-&dxvk-version; &amp;&amp;
-cd dxvk-&dxvk-version; &amp;&amp;
-git checkout v&dxvk-version;</userinput></screen>
+<screen><userinput>for i in *.tar.?z*; do
+  echo "Extracting $i..."
+  tar -xf $i
+done</userinput></screen>
+
+    <para>
+      Now that the tarballs have been extracted, the submodules need to be
+      moved in place. Do so now:
+    </para>
+
+<screen><userinput>mv -T libdisplay-info-*                       \
+      dxvk-&dxvk-version;/subprojects/libdisplay-info &amp;&amp;
+mv -T SPIRV-Headers-*                         \
+      dxvk-&dxvk-version;/include/spirv               &amp;&amp;
+mv -T Vulkan-Headers-*                        \
+      dxvk-&dxvk-version;/include/vulkan</userinput></screen>
+
+    <para>
+      Go into the <filename class="directory">dxvk-&dxvk-version;</filename>
+      directory:
+    </para>
+
+<screen><userinput>cd dxvk-&dxvk-version;</userinput></screen>
 
     <note><para>
       If you are doing multilib, it is recommended to install 32-bit along with
