@@ -673,7 +673,7 @@ done</userinput></screen>
         <listitem>
           <para>
             runs clang-format on git generated patches (requires
-            <xref linkend="git"/>)
+            <ulink url='&blfs-svn;/general/git.html'>Git</ulink>)
           </para>
           <indexterm zone="llvm git-clang-format">
             <primary sortas="b-git-clang-format">git-clang-format</primary>

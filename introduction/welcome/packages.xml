@@ -52,11 +52,10 @@
     </para>
 
     <note><para>
-      This process depends on <xref linkend="git"/> and <xref linkend="wget"/>.
-      It also depends on a working internet connection. If you just got done
-      with LFS and are not yet booted into the new system yet, then it is
-      recommended to navigate to <filename
-      class="directory">$LFS/sources</filename> then follow the below
+      This process depends on <xref linkend="wget"/>. It also depends on a
+      working internet connection. If you just got done with LFS and are not
+      yet booted into the new system yet, then it is recommended to navigate to
+      <filename class="directory">$LFS/sources</filename> then follow the below
       instructions on the host system outside of a chroot.
     </para></note>
 

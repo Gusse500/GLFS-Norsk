@@ -115,13 +115,6 @@
 <!ENTITY root                 "<systemitem class='username'>root</systemitem>">
 <!ENTITY gi-docgen-url        "https://gnome.pages.gitlab.gnome.org/gi-docgen/">
 
-<!-- These entities are used to identify versions of LFS
-     packages referenced throughout the BLFS book. -->
-
-<!ENTITY lfs-perl-version             "5.40"> <!-- used in git -->
-
-<!-- End LFS versions -->
-
 <!ENTITY blfs-bootscripts-version     "20240209">
 <!ENTITY systemd-units-version        "20240205">
 
@@ -152,7 +145,8 @@
 <![ %development; [
   <!ENTITY multilib-rendering1 "<para>You can render MLFS if you wish.</para>">
 <![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>First, install <xref linkend='git'/>, then
+  <!ENTITY multilib-rendering2 "<para>First, install <ulink
+  url='&blfs-svn;/general/git.html'>Git</ulink>, then
   clone the LFS repo and switch to the
   <computeroutput>multilib</computeroutput> branch:
 </para>
@@ -178,7 +172,8 @@ git checkout multilib</userinput></screen>
   following the instructions below.
 </para>">
 <![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>First, install <xref linkend='git'/>, then
+  <!ENTITY multilib-rendering2 "<para>First, install <ulink
+  url='&blfs-svn;/general/git.html'>Git</ulink>, then
   clone the LFS repo, switch to the
   <computeroutput>multilib</computeroutput> branch, then switch to the stable
   version:

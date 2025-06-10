@@ -26,7 +26,6 @@
 <!ENTITY libpsl-version               "0.21.5">
 <!ENTITY curl-version                 "8.14.1">
 <!ENTITY wget-version                 "1.25.0">
-<!ENTITY git-version                  "2.49.0">
 <!-- Security -->
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
 <!ENTITY linux-pam-version            "1.7.0">

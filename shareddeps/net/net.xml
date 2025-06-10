@@ -28,6 +28,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libpsl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="curl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wget.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="git.xml"/>
 
 </chapter>
