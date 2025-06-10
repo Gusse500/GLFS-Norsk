@@ -122,7 +122,7 @@
 <!ENTITY libunwind-version            "1.8.1">
 <!ENTITY nettle-version               "3.10.1">
 <!ENTITY gnutls-version               "3.8.9">
-<!ENTITY pixman-version               "0.46.0">
+<!ENTITY pixman-version               "0.46.2">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.23.1">
 <!ENTITY wayland-protocols-version    "1.44">
@@ -136,7 +136,7 @@
 <!ENTITY libdrm-version               "2.4.125">
 <!ENTITY libvdpau-version             "1.5">
 <!ENTITY mako-version                 "1.3.10">
-<!ENTITY cython-version               "3.1.1">
+<!ENTITY cython-version               "3.1.2">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY mesa-major-minor             "25.1">
