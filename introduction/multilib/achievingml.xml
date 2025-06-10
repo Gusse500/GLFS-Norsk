@@ -42,8 +42,9 @@
     <title>Rendering MLFS</title>
 
     <para>
-      First, install <xref linkend="git"/>, then clone the LFS repo and switch
-      to the <computeroutput>multilib</computeroutput> branch:
+      First, install <ulink
+      url="&blfs-svn;/general/git.html">Git</ulink>, then clone the LFS repo
+      and switch to the <computeroutput>multilib</computeroutput> branch:
     </para>
 
 <screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
