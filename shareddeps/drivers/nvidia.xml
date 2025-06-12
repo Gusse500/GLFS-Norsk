@@ -386,7 +386,7 @@ for lib in ${nvidia_lib[@]}; do
   cp -v $lib.so* /usr/lib                  &amp;&amp;
   nvidia_symlink /usr/lib/$lib || exit
 done                                       &amp;&amp;
-ln -svrf /usr/lib/libnvidia-allocator.so    \
+ln -svrf /usr/lib/libnvidia-allocator.so.1  \
          /usr/lib/gbm/nvidia-drm_gbm.so    &amp;&amp;
 install -vm4755 nvidia-modprobe /usr/bin   &amp;&amp;
 cp -v nvidia-application-profiles*          \
@@ -413,11 +413,11 @@ nvidia_lib=(
   libnvidia-allocator
 )
 for lib in ${nvidia_lib[@]}; do
-  cp -v 32/$lib.so* /usr/lib32             &amp;&amp;
+  cp -v 32/$lib.so* /usr/lib32              &amp;&amp;
   nvidia_symlink /usr/lib32/$lib || exit
-done                                       &amp;&amp;
-ln -svrf /usr/lib32/libnvidia-allocator.so  \
-         /usr/lib32/gbm/nvidia-drm_gbm.so  &amp;&amp;
+done                                        &amp;&amp;
+ln -svrf /usr/lib32/libnvidia-allocator.so.1 \
+         /usr/lib32/gbm/nvidia-drm_gbm.so   &amp;&amp;
 </literal>
 EOF</userinput></screen>
 
@@ -440,11 +440,11 @@ EOF</userinput></screen>
 <literal>echo "Installing X11 drivers - 64-bit"
 mkdir -pv /usr/lib/xorg/modules/{drivers,extensions}        &amp;&amp;
 mkdir -pv /usr/share/X11/xorg.conf.d                        &amp;&amp;
-cp -v nvidia_drv.so*                                         \
+cp -v nvidia_drv.so                                          \
           /usr/lib/xorg/modules/drivers                     &amp;&amp;
 cp -v libglxserver_nvidia.so*                                \
           /usr/lib/xorg/modules/extensions                  &amp;&amp;
-ln -svf libglxserver_nvidia.so.*.*.*                         \
+ln -svf libglxserver_nvidia.so.$NV_VERSION                   \
   /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so.1 &amp;&amp;
 ln -svf libglxserver_nvidia.so.1                             \
   /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so   &amp;&amp;
@@ -1061,8 +1061,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         </listitem>
         <listitem revision="sysv"><para>
           <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
-          Only the Wayland version can be used right now and cannot be
-          launched via GDM.
+          This must be launched via a TTY or a display manager other than GDM
+          for now on SysVinit systems.
         </para></listitem>
         <listitem>
           <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
@@ -1072,8 +1072,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
           Wayland. Ensure the <xref linkend="nvidia-egl"/> are
           installed.</para>
           <para revision="sysv">On SysVinit systems, Mutter can only be
-          launched via a TTY or a display manager other than GDM if using X11
-          as of now.</para>
+          launched via a TTY or a display manager other than GDM as of
+          now.</para>
         </listitem>
       </itemizedlist>
 
