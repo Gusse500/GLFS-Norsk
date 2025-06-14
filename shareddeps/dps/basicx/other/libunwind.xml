@@ -47,7 +47,7 @@
       <listitem>
         <para>
           Required patch:
-          <ulink url="&patch-root;/libunwind/libunwind-&libunwind-version;-fix_malloc.patch"/>
+          <ulink url="&dl-root;/libunwind/libunwind-&libunwind-version;-fix_malloc.patch"/>
         </para>
       </listitem>
     </itemizedlist>

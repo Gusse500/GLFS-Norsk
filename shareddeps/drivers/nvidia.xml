@@ -44,7 +44,7 @@
       <listitem>
         <para>
           Required patch:
-          <ulink url="&patch-root;/NVIDIA/NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch"/>
+          <ulink url="&dl-root;/NVIDIA/NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>

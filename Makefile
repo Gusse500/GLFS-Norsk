@@ -133,7 +133,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 					stylesheets/glfs-chunked.xsl               \
 					$(RENDERTMP)/$(GLFSHTML)
 
-	@echo "Copying CSS code, images, and patches..."
+	@echo "Copying CSS code, images, and file downloads..."
 	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
       mkdir -p $(BASEDIR)/stylesheets;          \
    fi;
@@ -150,10 +150,12 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	$(Q)cd $(BASEDIR)/; sed -e "s@../images@images@g"           \
                            -i *.html
 
-	$(Q)if [ ! -e $(BASEDIR)/patches ]; then \
-		mkdir -p $(BASEDIR)/patches;          \
+	$(Q)if [ ! -e $(BASEDIR)/download ]; then \
+		mkdir -p $(BASEDIR)/download;          \
    fi;
-	$(Q)cp -R patches/* $(BASEDIR)/patches
+	$(Q)cp -R download/* $(BASEDIR)/download
+	$(Q)rm -rf $(BASEDIR)/patches
+	$(Q)ln -sf download $(BASEDIR)/patches
 
 	@echo "Running Tidy and obfuscate.sh on chunked XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \

@@ -51,7 +51,7 @@
       <listitem>
         <para>
           Required patch:
-          <ulink url="&patch-root;/ffmpeg/ffmpeg-&ffmpeg-version;-chromium_method-1.patch"/>
+          <ulink url="&dl-root;/ffmpeg/ffmpeg-&ffmpeg-version;-chromium_method-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
