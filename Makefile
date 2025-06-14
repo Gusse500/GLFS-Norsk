@@ -153,6 +153,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	$(Q)if [ ! -e $(BASEDIR)/download ]; then \
 		mkdir -p $(BASEDIR)/download;          \
    fi;
+	$(Q)rm -rf $(BASEDIR)/download/*
 	$(Q)cp -R download/* $(BASEDIR)/download
 	$(Q)rm -rf $(BASEDIR)/patches
 	$(Q)ln -sf download $(BASEDIR)/patches
