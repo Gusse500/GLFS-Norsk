@@ -27,9 +27,9 @@ more internal but nonetheless essential.
 At the root of the source, you'll find these files and directories:
 - `.github/workflows/`
 - `archive/`
+- `download/`
 - `images/`
 - `kernel-config/`
-- `patches/`
 - `stylesheets/`
 - `template/`
 - `.gitattributes`
