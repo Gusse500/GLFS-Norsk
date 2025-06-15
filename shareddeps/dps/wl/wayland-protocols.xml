@@ -8,13 +8,13 @@
   <!ENTITY wayland-protocols-download-ftp  " ">
 ]>
 
-<sect1 id="wayland-protocols" xreflabel="wayland-protocols-&wayland-protocols-version;">
+<sect1 id="wayland-protocols" xreflabel="Wayland-Protocols-&wayland-protocols-version;">
   <?dbhtml filename="wayland-protocols.html"?>
 
   <title>Wayland-Protocols-&wayland-protocols-version;</title>
 
   <indexterm zone="wayland-protocols">
-    <primary sortas="a-wayland-protocols">wayland-protocols</primary>
+    <primary sortas="a-wayland-protocols">Wayland-Protocols</primary>
   </indexterm>
 
   <sect2 role="package">

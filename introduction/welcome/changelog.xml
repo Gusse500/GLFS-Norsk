@@ -44,6 +44,9 @@
       <para>June 15th, 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.44 -&gt; 1.45.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CMake: 4.0.2 -&gt; 4.0.3.</para>
         </listitem>
         <listitem>

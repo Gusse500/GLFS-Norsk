@@ -125,7 +125,7 @@
 <!ENTITY pixman-version               "0.46.2">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.23.1">
-<!ENTITY wayland-protocols-version    "1.44">
+<!ENTITY wayland-protocols-version    "1.45">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.13.0">
 <!ENTITY hwdata-version               "0.396">
