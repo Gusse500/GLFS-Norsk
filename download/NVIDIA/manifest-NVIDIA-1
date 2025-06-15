@@ -1,0 +1,18 @@
+manifest-version: 1
+mandatory-64: libnvidia-cfg libnvidia-eglcore libnvidia-glcore libnvidia-glsi libnvidia-glvkspirv libnvidia-gpucomp libnvidia-ml libnvidia-pkcs11 libnvidia-tls libnvidia-allocator
+mandatory-32: libnvidia-eglcore libnvidia-glcore libnvidia-glsi libnvidia-glvkspirv libnvidia-gpucomp libnvidia-ml libnvidia-tls libnvidia-allocator
+x11-64: libGLX_nvidia libnvidia-fbc
+x11-32: libGLX_nvidia libnvidia-fbc
+egl-64: libEGL_nvidia libnvidia-wayland-client
+egl-32: libEGL_nvidia
+glesv2-64: libGLESv2_nvidia
+glesv2-32: libGLESv2_nvidia
+vdpau-64: libvdpau_nvidia
+vdpau-32: libvdpau_nvidia
+opencl-64: libOpenCL libnvidia-opencl
+opencl-32: libOpenCL libnvidia-opencl
+cuda-64: libcuda libcudadebugger libnvidia-encode libnvidia-nvvm libnvidia-nvvm70 libnvidia-opticalflow libnvidia-ptxjitcompiler libnvcuvid
+cuda-32: libcuda libnvidia-encode libnvidia-ptxjitcompiler libnvidia-nvvm libnvcuvid
+ngx: libnvidia-ngx
+rt: libnvidia-rtcore libnvoptix
+settings: libnvidia-gtk3

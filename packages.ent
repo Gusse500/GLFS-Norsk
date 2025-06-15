@@ -154,6 +154,7 @@
                                                      NVIDIA driver version
                                                      listed was released -->
 <!ENTITY nvidia-version               "575.57.08">
+<!ENTITY nv-manifest-version          "1">
 <!ENTITY spirv-version                "&vulkan-version;.0">
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">

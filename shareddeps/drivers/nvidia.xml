@@ -47,6 +47,18 @@
           <ulink url="&dl-root;/NVIDIA/NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch"/>
         </para>
       </listitem>
+      <listitem>
+        <para>
+          Required install script:
+          <ulink url="&dl-root;/NVIDIA/install-NVIDIA-&nv-manifest-version;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Required manifest file for the install script:
+          <ulink url="&dl-root;/NVIDIA/manifest-NVIDIA-&nv-manifest-version;"/>
+        </para>
+      </listitem>
     </itemizedlist>
 
     <bridgehead renderas="sect3">NVIDIA Dependencies</bridgehead>
@@ -288,597 +300,191 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
 
   </sect2>
 
-  <sect2>
-    <title>Making a NVIDIA Software Installation Script</title>
-
-    <note><para>
-      Skip to <xref linkend="nvidia-install"/> if you already made an install
-      script.
-    </para></note>
-
-    <para>
-      There is a lot of software this driver provides. A portion of it
-      depending on your usecase can be safely skipped. To offer
-      customizability without complexity, the following section is dedicated to
-      walking you through making a custom install script to install only what
-      you need.
-    </para>
-
-    <para>
-      First make a starter script so that it can be added to:
-    </para>
-
-<screen><userinput>cat &gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>#!/bin/sh
-# Install script for NVIDIA driver software, not including kernel modules.
-# Script modules made by
-# &copyholder;, &copyrightdate;.
-
-NV_VERSION=$(basename $PWD | sed 's/NVIDIA-Linux-x86_64-//')
-
-nvidia_symlink() {
-  pushd $(dirname $1) &gt; /dev/null
-
-  origin=$(basename $1)
-  if [ $origin = "libOpenCL" ]; then
-    VERSION="1.0.0"
-  else
-    VERSION=$NV_VERSION
-  fi
-
-  soname=$(objdump -p $origin.so.$VERSION |
-    grep 'SONAME' | awk '{print $2}')
-
-  if [ -n $soname ]; then
-    if [ $origin.so.$VERSION != $soname ]; then
-      ln -sfv $origin.so.$VERSION $soname
-    fi
-    ln -sfv $soname $origin.so
-  fi
-
-  popd &gt; /dev/null
-}
-</literal>
-EOF</userinput></screen>
-<!-- We have to use -f for ln or else $soname will not link to the current
-     library (*.so.$VERSION). Furthermore, the soname may be same as
-     *.so.$VERSION, but $orign.so still needs to be made. We have to force it
-     or else *.so will link to the previous library.
-       "Yes, this is stupid!"
-         - Heavy from "The Heavy is Dead" -->
-
-    <para>
-      Each subsection of this section will have an explanation of a piece of
-      the driver you may need. Along with that, it might have two subsections:
-      a 64-bit and lib32 section. If you're not doing multilib, you can skip
-      the lib32 sections and only follow the 64-bit ones. Each block of
-      commands will add to the script.
-    </para>
-
-    <sect3>
-      <title>Mandatory Software</title>
-
-      <para>
-        Most of this software is needed by other components in this driver,
-        while the rest of it helps with loading the driver.
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing mandatory software - 64-bit"
-mkdir -pv /usr/lib/gbm                     &amp;&amp;
-mkdir -pv /usr/share/nvidia                &amp;&amp;
-nvidia_lib=(
-  libnvidia-cfg
-  libnvidia-eglcore
-  libnvidia-glcore
-  libnvidia-glsi
-  libnvidia-glvkspirv
-  libnvidia-gpucomp
-  libnvidia-ml
-  libnvidia-pkcs11
-  libnvidia-tls
-  libnvidia-allocator
-)
-for lib in ${nvidia_lib[@]}; do
-  cp -v $lib.so* /usr/lib                  &amp;&amp;
-  nvidia_symlink /usr/lib/$lib || exit
-done                                       &amp;&amp;
-ln -svrf /usr/lib/libnvidia-allocator.so.1  \
-         /usr/lib/gbm/nvidia-drm_gbm.so    &amp;&amp;
-install -vm4755 nvidia-modprobe /usr/bin   &amp;&amp;
-cp -v nvidia-application-profiles*          \
-      /usr/share/nvidia                    &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing mandatory software - lib32"
-mkdir -pv /usr/lib32/gbm                   &amp;&amp;
-nvidia_lib=(
-  libnvidia-eglcore
-  libnvidia-glcore
-  libnvidia-glsi
-  libnvidia-glvkspirv
-  libnvidia-gpucomp
-  libnvidia-ml
-  libnvidia-tls
-  libnvidia-allocator
-)
-for lib in ${nvidia_lib[@]}; do
-  cp -v 32/$lib.so* /usr/lib32              &amp;&amp;
-  nvidia_symlink /usr/lib32/$lib || exit
-done                                        &amp;&amp;
-ln -svrf /usr/lib32/libnvidia-allocator.so.1 \
-         /usr/lib32/gbm/nvidia-drm_gbm.so   &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>X11 Drivers</title>
-
-      <para>
-        Add to the script if you are going to use <xref
-        linkend="xorg-server"/> or <xref linkend="xwayland"/>.
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing X11 drivers - 64-bit"
-mkdir -pv /usr/lib/xorg/modules/{drivers,extensions}        &amp;&amp;
-mkdir -pv /usr/share/X11/xorg.conf.d                        &amp;&amp;
-cp -v nvidia_drv.so                                          \
-          /usr/lib/xorg/modules/drivers                     &amp;&amp;
-cp -v libglxserver_nvidia.so*                                \
-          /usr/lib/xorg/modules/extensions                  &amp;&amp;
-ln -svf libglxserver_nvidia.so.$NV_VERSION                   \
-  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so.1 &amp;&amp;
-ln -svf libglxserver_nvidia.so.1                             \
-  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so   &amp;&amp;
-cp -v libGLX_nvidia.so*                                      \
-      libnvidia-fbc.so*                                      \
-      /usr/lib                                              &amp;&amp;
-nvidia_symlink /usr/lib/libGLX_nvidia                       &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-fbc                       &amp;&amp;
-cp -v nvidia-drm-outputclass.conf                            \
-          /usr/share/X11/xorg.conf.d                        &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing X11 drivers - lib32"
-cp -v 32/libGLX_nvidia.so*               \
-      32/libnvidia-fbc.so*               \
-      /usr/lib32                        &amp;&amp;
-nvidia_symlink /usr/lib32/libGLX_nvidia &amp;&amp;
-nvidia_symlink /usr/lib32/libnvidia-fbc &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>EGL Drivers</title>
-
-      <para>
-        Add to the script if you are going to use EGL (like with <xref
-        linkend="wayland"/>).
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing EGL drivers - 64-bit"
-mkdir -pv /usr/share/glvnd/egl_vendor.d &amp;&amp;
-cp -v libEGL_nvidia.so*                  \
-      /usr/lib                          &amp;&amp;
-nvidia_symlink                           \
-      /usr/lib/libEGL_nvidia            &amp;&amp;
-cp -v libnvidia-wayland-client.so*       \
-      /usr/lib                          &amp;&amp;
-nvidia_symlink                           \
-      /usr/lib/libnvidia-wayland-client &amp;&amp;
-cp -v 10_nvidia.json                     \
-      /usr/share/glvnd/egl_vendor.d     &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing EGL drivers - lib32"
-cp -v 32/libEGL_nvidia.so* /usr/lib32   &amp;&amp;
-nvidia_symlink /usr/lib32/libEGL_nvidia &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>GLES v2 and v3 Driver</title>
-
-      <para>
-        Add to the script if you didn't disable OpenGL ES v2 and v3 in <xref
-        linkend="libglvnd"/>.
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the GLES v2 and v3 driver - 64-bit"
-cp -v libGLESv2_nvidia.so*                \
-  /usr/lib                               &amp;&amp;
-nvidia_symlink /usr/lib/libGLESv2_nvidia &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the GLES v2 and v3 driver - lib32"
-cp -v 32/libGLESv2_nvidia.so*               \
-  /usr/lib32                               &amp;&amp;
-nvidia_symlink /usr/lib32/libGLESv2_nvidia &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>Vulkan Configuration File</title>
-
-      <para>
-        Add to the script if you are going to use Vulkan (highly recommended).
-        A prerequisite is following the <application>X11</application>
-        section.
-      </para>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the Vulkan configuration file"
-mkdir -pv /usr/share/vulkan/icd.d             &amp;&amp;
-cp -v nvidia_icd.json /usr/share/vulkan/icd.d &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      <para>
-        The Vulkan driver according to the ICD configuration file is <filename
-        class="libraryfile">libGLX_nvidia</filename>. If you installed the EGL
-        drivers, you can make the Vulkan driver use EGL instead of GLX.
-      </para>
-
-      <important><para>
-        The command below can result in <application>Steam</application> games
-        that are ran through Proton to crash. It may also cause other issues.
-        The EGL Vulkan driver does not allow for GLX calls, so if you need to
-        use an application that uses GLX via Vulkan, do not add to the script
-        to change the driver. If you want to do so anyway, add to the script.
-      </para>
-<!-- Disincentivize running this -->
-<screen role="nodump"><computeroutput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Making the Vulkan driver use EGL instead of GLX"
-sed -i 's/GLX/EGL/'                        \
-  /usr/share/vulkan/icd.d/nvidia_icd.json &amp;&amp;
-</literal>
-EOF</computeroutput></screen></important>
-
-    </sect3>
-
-    <sect3>
-      <title>VDPAU Driver</title>
-
-      <para>
-        Add to the script if you installed <xref linkend="libvdpau"/>.
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the VDPAU driver - 64-bit"
-cp -v libvdpau_nvidia.so*                      \
-  /usr/lib/vdpau                              &amp;&amp;
-nvidia_symlink /usr/lib/vdpau/libvdpau_nvidia &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the VDPAU driver - lib32"
-cp -v 32/libvdpau_nvidia.so*                     \
-  /usr/lib32/vdpau                              &amp;&amp;
-nvidia_symlink /usr/lib32/vdpau/libvdpau_nvidia &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>OpenCL Driver and Loader</title>
-
-      <para>
-        Add to the script if you want <ulink
-        url="https://wiki.archlinux.org/title/GPGPU#OpenCL">OpenCL</ulink>
-        support. This will also install the OpenCL loader.
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the OpenCL driver and loader - 64-bit"
-cp -v libOpenCL.so*                       \
-  /usr/lib                               &amp;&amp;
-cp -v libnvidia-opencl.so*                \
-  /usr/lib                               &amp;&amp;
-nvidia_symlink /usr/lib/libOpenCL        &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-opencl &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the OpenCL driver and loader - lib32"
-cp -v 32/libOpenCL.so*                      \
-  /usr/lib32                               &amp;&amp;
-cp -v 32/libnvidia-opencl.so*               \
-  /usr/lib32                               &amp;&amp;
-nvidia_symlink /usr/lib32/libOpenCL        &amp;&amp;
-nvidia_symlink /usr/lib32/libnvidia-opencl &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>CUDA Drivers</title>
-
-      <para>
-        Add to the script if you want to use <ulink
-        url="&slfs-website;/general/cuda.html">CUDA</ulink> or applications
-        that use it.
-      </para>
-
-      <sect4>
-        <title>64-bit</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the CUDA drivers - 64-bit"
-nvidia_lib=(
-  libcuda
-  libcudadebugger
-  libnvidia-encode
-  libnvidia-opticalflow
-  libnvidia-ptxjitcompiler
-  libnvidia-nvvm
-  libnvcuvid
-)
-for lib in ${nvidia_lib[@]}; do
-  cp -v $lib.so* /usr/lib          &amp;&amp;
-  nvidia_symlink /usr/lib/$lib || exit
-done                               &amp;&amp;
-cp -v   libnvidia-api*    /usr/lib &amp;&amp;
-ln -svf /usr/lib/libnvidia-api.so.1 \
-        /usr/lib/libnvidia-api.so  &amp;&amp;
-cp -v   libnvidia-nvvm70* /usr/lib &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-      <sect4>
-        <title>lib32</title>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the CUDA drivers - lib32"
-nvidia_lib=(
-  libcuda
-  libnvidia-encode
-  libnvidia-ptxjitcompiler
-  libnvidia-nvvm
-  libnvcuvid
-)
-for lib in ${nvidia_lib[@]}; do
-  cp -v 32/$lib.so* /usr/lib32   &amp;&amp;
-  nvidia_symlink /usr/lib32/$lib || exit
-done                             &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-      </sect4>
-
-    </sect3>
-
-    <sect3>
-      <title>NGX Drivers</title>
-
-      <para>
-        NGX implements DLSS. Add to the script if you want DLSS.
-      </para>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the NGX drivers"
-mkdir -pv /usr/lib/nvidia/wine        &amp;&amp;
-cp -v libnvidia-ngx.so*                \
-          /usr/lib                    &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-ngx &amp;&amp;
-install -vm755 *nvngx*.dll             \
-          /usr/lib/nvidia/wine        &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-    </sect3>
-
-    <sect3>
-      <title>Raytracing Drivers</title>
-
-      <para>
-        If you want to enable raytracing support, add to the script.
-      </para>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing the raytracing drivers"
-mkdir -pv /usr/share/nvidia              &amp;&amp;
-cp -v libnvidia-rtcore.so*                \
-      libnvoptix.so*                      \
-      /usr/lib                           &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-rtcore &amp;&amp;
-nvidia_symlink /usr/lib/libnvoptix       &amp;&amp;
-install -vm755 nvoptix.bin                \
-               /usr/share/nvidia         &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-    </sect3>
-
-<!-- Maybe should be in SLFS? -->
-    <sect3>
-      <title>NVIDIA-Settings</title>
-
-      <para>
-        Add to the script if you want <command>nvidia-settings</command> which
-        can let you change settings like framerate in the Xorg server.
-      </para>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing NVIDIA-Settings"
-mkdir -pv /usr/share/applications        \
-          /usr/share/pixmaps            &amp;&amp;
-cp -v libnvidia-gtk* /usr/lib           &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-gtk2  &amp;&amp;
-nvidia_symlink /usr/lib/libnvidia-gtk3  &amp;&amp;
-install -vm755 nvidia-settings /usr/bin &amp;&amp;
-cp -v nvidia-settings.desktop            \
-      /usr/share/applications           &amp;&amp;
-cp -v nvidia-settings.png                \
-      /usr/share/pixmaps                &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-    </sect3>
-
-    <sect3>
-      <title>NVIDIA-XConfig</title>
-
-      <para>
-        Add to the script if you want <command>nvidia-xconfig</command> which
-        can generate X11 configuration files.
-      </para>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing NVIDIA-XConfig"
-install -vm755 nvidia-xconfig /usr/bin &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-    </sect3>
-
-    <sect3>
-      <title>NVIDIA-SMI</title>
-
-      <para>
-        Add to the script if you want <command>nvidia-smi</command> which grabs
-        information about GPU loads, temperatures, etc. and display it on the
-        command line.
-      </para>
-
-<screen><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF"
-<literal>echo "Installing NVIDIA-SMI"
-install -vm755 nvidia-smi /usr/bin &amp;&amp;
-</literal>
-EOF</userinput></screen>
-
-    </sect3>
-
-    <sect3>
-      <title>Installing the Install Script</title>
-
-      <para>
-        Now that you have a custom install script made, it's time to install it
-        to the system so it can be ran whenever you update the driver. Do so
-        now as the &root; user:
-      </para>
-
-<screen role="root"><userinput>cat &gt;&gt; nvidia-install-soft &lt;&lt; "EOF" &amp;&amp;
-<literal># Probe all modules and recreate modules.dep and map files to ensure NVIDIA
-# loads at boot.
-depmod -a &amp;&amp;
-
-echo "Installation of NVIDIA driver software complete!"</literal>
-EOF
-
-install -vm755 nvidia-install-soft /usr/sbin</userinput></screen>
-
-    </sect3>
-
-  </sect2>
-
-  <sect2 id="nvidia-install" role="installation">
+  <sect2 role="installation">
     <title>Installing the NVIDIA Driver Software</title>
 
     <note><para>
       If you have an existing installation, it may be a good idea to follow
       <xref linkend="nvidia-uninstalling"/> first before going through this 
-      section to remove some cruft and leftover libraries. This is not
-      necessary for the most part though.
+      section to remove some cruft and leftover libraries. This is not strictly
+      necessary, though.
     </para></note>
 
     <para>
-      After you have made a custom install script, run it in a TTY or chroot as
-      the &root; user:
+      Install the install script and manifest file for the script as the &root;
+      user:
     </para>
 
-<screen role="root"><userinput>/sbin/nvidia-install-soft</userinput></screen>
+<screen role="root"><userinput>mkdir -pv /usr/share/nvidia              &amp;&amp;
+install -vm755 ../install-NVIDIA-&nv-manifest-version;        \
+               /usr/sbin/nvidia-install  &amp;&amp;
+install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
+               /usr/share/nvidia/manifest</userinput></screen>
 
     <para>
-      If you want to install the documentation, do so now as the &root; user:
+      Now see what options there are and what you want to install by running
+      <command>/sbin/nvidia-install --help</command>.
     </para>
 
-<screen role="root"><userinput>mkdir -pv /usr/share/doc/nvidia-&nvidia-version; &amp;&amp;
-cp -vR html /usr/share/doc/nvidia-&nvidia-version;</userinput></screen>
+    <para>
+      If you want to do the default installation, you can just run the
+      following command as the &root; user:
+    </para>
+
+<screen role="root"><userinput>/sbin/nvidia-install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Configuring NVIDIA</title>
+
+    <sect3 id="nvidia-config">
+      <title>Config Files</title>
+      <para>
+        <filename>/usr/lib/modprobe.d/nouveau.conf</filename>
+      </para>
+      <para>
+        <filename>/usr/lib/modprobe.d/nvidia_drm.conf</filename>
+      </para>
+      <para>
+        <filename>/usr/lib/modprobe.d/nvidia.conf</filename>
+      </para>
+    </sect3>
+
+    <sect3>
+      <title>List of Packages With Issues</title>
+
+      <para>
+        Using this driver can come with compromises. So far, these issues seem
+        limited to Wayland, desktop environments, and display managers. The
+        list below documents the known packages that have issues with this
+        driver.
+      </para>
+
+      <itemizedlist>
+        <listitem revision="sysv">
+          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Using this
+          package on SysVinit systems will result in failure as GDM does not
+          want to use Wayland for NVIDIA GPUs, but a permission issue with SysV
+          prevents X11 from being used. You must launch
+          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> or
+          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
+          through the terminal instead. Read the Mutter entry.</para>
+        </listitem>
+        <listitem revision="sysv"><para>
+          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
+          This must be launched via a TTY or a display manager other than GDM
+          for now on SysVinit systems.
+        </para></listitem>
+        <listitem>
+          <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
+          Compile this package with
+          <parameter>-D wayland_eglstream=true</parameter> and
+          <parameter>-D egl_device=true</parameter> to enable launching with
+          Wayland. Ensure the <xref linkend="nvidia-egl"/> are
+          installed.</para>
+          <para revision="sysv">On SysVinit systems, Mutter can only be
+          launched via a TTY or a display manager other than GDM as of
+          now.</para>
+        </listitem>
+      </itemizedlist>
+
+    </sect3>
+
+    <sect3><title>Configuration Information</title>
+
+      <para>
+        Nouveau and NVIDIAFB support was compiled into the kernel to make the
+        NVIDIA kernel modules build successfully. However, Nouveau and NVIDIAFB
+        conflict with the NVIDIA kernel modules, so they should be blacklisted.
+      </para>
+
+      <para>
+        As the &root; user, create the file
+        <filename>/usr/lib/modprobe.d/nouveau.conf</filename> to blacklist Nouveau
+        and NVIDIAFB:
+      </para>
+      
+<screen role="root"><userinput>mkdir -pv /usr/lib/modprobe.d &amp;&amp;
+cat &gt; /usr/lib/modprobe.d/nouveau.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nouveau.conf
+
+blacklist nouveau
+blacklist nvidiafb
+
+# End /usr/lib/modprobe.d/nouveau.conf</literal>
+EOF</userinput></screen>
+
+      <para>
+        The DRM kernel module does not use modesetting by default which is
+        needed by Wayland compositors. Make it use modesetting as the &root;
+        user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nvidia_drm.conf
+
+options nvidia_drm modeset=1
+
+# End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
+EOF</userinput></screen>
+
+      <para>
+        When the GPU sleeps/hibernates, it will lose all memory allocations by
+        default. You can prevent this by setting two options for the NVIDIA
+        module as the &root; user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nvidia.conf
+
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
+
+# End /usr/lib/modprobe.d/nvidia.conf</literal>
+EOF</userinput></screen>
+
+      <para>
+        Furthermore, this driver does not install DRI
+        <footnote><para>
+          Direct Rendering Infrastructure.
+        </para></footnote>
+        drivers or driver stubs. Likewise, it does not install a
+        <application>pkg-config</application> file saying where to find the
+        associated files. The files aren't needed with this driver. However,
+        some applications expect the <application>pkg-config</application> file
+        to exist, namely <xref linkend="xorg-server"/>. Create one now as the
+        &root; user:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
+<literal>prefix=/usr
+includedir=${prefix}/include
+
+dridriverdir=/usr/lib/dri
+
+Name: dri
+Description: Direct Rendering Infrastructure
+Version: &nvidia-version;
+Requires.private: libdrm >=  2.4.109
+Cflags: -I${includedir}</literal>
+EOF</userinput></screen>
+
+      <para>
+        Applications that do require this file typically will not link against
+        any library in <filename class="libraryfile">/usr/lib/dri</filename>.
+        If you are worried that an application will try to link against
+        non-existent libraries, you can compile <xref linkend="mesa"/> to get
+        these libraries and a real <application>pkg-config</application> file.
+        Note that those libraries will not be used when this driver is in use.
+      </para>
+
+      <note><para>
+        You should skip to <xref linkend="xcb-utils"/> after you are done with
+        this page unless you wish to install extra software.
+      </para></note>
+
+    </sect3>
 
   </sect2>
 
@@ -970,7 +576,6 @@ nvidia_lib=(
   libnvidia-api
   libnvidia-ngx
   libnvoptix
-  libnvidia-gtk2
   libnvidia-gtk3
 )
 
@@ -1023,158 +628,6 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
 
   </sect2>
 
-  <sect2 role="configuration">
-    <title>Configuring NVIDIA</title>
-
-    <sect3 id="nvidia-config">
-      <title>Config Files</title>
-      <para>
-        <filename>/usr/lib/modprobe.d/nvfb.conf</filename>
-      </para>
-      <para>
-        <filename>/usr/lib/modprobe.d/nvidia_drm.conf</filename>
-      </para>
-      <para>
-        <filename>/usr/lib/modprobe.d/nvidia.conf</filename>
-      </para>
-    </sect3>
-
-    <sect3>
-      <title>List of Packages With Issues</title>
-
-      <para>
-        Using this driver can come with compromises. So far, these issues seem
-        limited to Wayland, desktop environments, and display managers. The
-        list below documents the known packages that have issues with this
-        driver.
-      </para>
-
-      <itemizedlist>
-        <listitem revision="sysv">
-          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Using this
-          package on SysVinit systems will result in failure as GDM does not
-          want to use Wayland for NVIDIA GPUs, but a permission issue with SysV
-          prevents X11 from being used. You must launch
-          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> or
-          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
-          through the terminal instead. Read the Mutter entry.</para>
-        </listitem>
-        <listitem revision="sysv"><para>
-          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
-          This must be launched via a TTY or a display manager other than GDM
-          for now on SysVinit systems.
-        </para></listitem>
-        <listitem>
-          <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
-          Compile this package with
-          <parameter>-D wayland_eglstream=true</parameter> and
-          <parameter>-D egl_device=true</parameter> to enable launching with
-          Wayland. Ensure the <xref linkend="nvidia-egl"/> are
-          installed.</para>
-          <para revision="sysv">On SysVinit systems, Mutter can only be
-          launched via a TTY or a display manager other than GDM as of
-          now.</para>
-        </listitem>
-      </itemizedlist>
-
-    </sect3>
-
-    <sect3><title>Configuration Information</title>
-
-      <para>
-        Nouveau and NVIDIAFB support was compiled into the kernel to make the
-        NVIDIA kernel modules build successfully. However, Nouveau and NVIDIAFB
-        conflict with the NVIDIA kernel modules, so they should be blacklisted.
-      </para>
-
-      <para>
-        As the &root; user, create the file
-        <filename>/usr/lib/modprobe.d/nvfb.conf</filename> to blacklist Nouveau
-        and NVIDIAFB:
-      </para>
-      
-<screen role="root"><userinput>mkdir -pv /usr/lib/modprobe.d &amp;&amp;
-cat &gt; /usr/lib/modprobe.d/nvfb.conf &lt;&lt; "EOF"
-<literal># Begin /usr/lib/modprobe.d/nvfb.conf
-
-blacklist nouveau
-blacklist nvidiafb
-
-# End /usr/lib/modprobe.d/nvfb.conf</literal>
-EOF</userinput></screen>
-
-      <para>
-        The DRM kernel module does not use modesetting by default which is
-        needed by Wayland compositors. Make it use modesetting as the &root;
-        user:
-      </para>
-
-<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
-<literal># Begin /usr/lib/modprobe.d/nvidia_drm.conf
-
-options nvidia_drm modeset=1
-
-# End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
-EOF</userinput></screen>
-
-      <para>
-        When the GPU sleeps/hibernates, it will lose all memory allocations by
-        default. You can prevent this by setting two options for the NVIDIA
-        module as the &root; user:
-      </para>
-
-<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
-<literal># Begin /usr/lib/modprobe.d/nvidia.conf
-
-options nvidia NVreg_PreserveVideoMemoryAllocations=1
-options nvidia NVreg_TemporaryFilePath=/var/tmp
-
-# End /usr/lib/modprobe.d/nvidia.conf</literal>
-EOF</userinput></screen>
-
-      <para>
-        Furthermore, this driver does not install DRI
-        <footnote><para>
-          Direct Rendering Infrastructure.
-        </para></footnote>
-        drivers or driver stubs. Likewise, it does not install a
-        <application>pkg-config</application> file saying where to find the
-        associated files. The files aren't needed with this driver. However,
-        some applications expect the <application>pkg-config</application> file
-        to exist, namely <xref linkend="xorg-server"/>. Create one now as the
-        &root; user:
-      </para>
-
-<screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
-<literal>prefix=/usr
-includedir=${prefix}/include
-
-dridriverdir=/usr/lib/dri
-
-Name: dri
-Description: Direct Rendering Infrastructure
-Version: &nvidia-version;
-Requires.private: libdrm >=  2.4.109
-Cflags: -I${includedir}</literal>
-EOF</userinput></screen>
-
-      <para>
-        Applications that do require this file typically will not link against
-        any library in <filename class="libraryfile">/usr/lib/dri</filename>.
-        If you are worried that an application will try to link against
-        non-existent libraries, you can compile <xref linkend="mesa"/> to get
-        these libraries and a real <application>pkg-config</application> file.
-        Note that those libraries will not be used when this driver is in use.
-      </para>
-
-      <note><para>
-        Now you should skip to <xref linkend="xcb-utils"/>.
-      </para></note>
-
-    </sect3>
-
-  </sect2>
-
   <sect2 role="content">
     <title>Contents</title>
 
@@ -1186,7 +639,7 @@ EOF</userinput></screen>
 
       <seglistitem>
         <seg>
-          nvidia-install-soft,
+          nvidia-install,
           nvidia-modprobe,
           nvidia-settings,
           nvidia-smi,
@@ -1216,7 +669,6 @@ EOF</userinput></screen>
           libnvidia-glsi,
           libnvidia-glvkspirv,
           libnvidia-gpucomp,
-          libnvidia-gtk2,
           libnvidia-gtk3,
           libnvidia-ml,
           libnvidia-ngx,
@@ -1251,15 +703,15 @@ EOF</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="nvidia-install-soft">
-        <term><command>nvidia-install-soft</command></term>
+      <varlistentry id="nvidia-install">
+        <term><command>nvidia-install</command></term>
         <listitem>
           <para>
-            is a custom-made install script that installs all the software from
+            is an install script that installs all the software from
             this driver that you need
           </para>
-          <indexterm zone="nvidia nvidia-install-soft">
-            <primary sortas="b-nvidia-install-soft">nvidia-install-soft</primary>
+          <indexterm zone="nvidia nvidia-install">
+            <primary sortas="b-nvidia-install">nvidia-install</primary>
           </indexterm>
         </listitem>
       </varlistentry>
@@ -1550,19 +1002,6 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="nvidia libnvidia-gpucomp">
             <primary sortas="c-libnvidia-gpucomp">libnvidia-gpucomp</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libnvidia-gtk2">
-        <term><filename class="libraryfile">libnvidia-gtk2</filename></term>
-        <listitem>
-          <para>
-            for <command>nvidia-settings</command>; utilizes
-            <application>GTK-2</application>
-          </para>
-          <indexterm zone="nvidia libnvidia-gtk2">
-            <primary sortas="c-libnvidia-gtk2">libnvidia-gtk2</primary>
           </indexterm>
         </listitem>
       </varlistentry>
