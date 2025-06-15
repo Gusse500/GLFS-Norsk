@@ -36,7 +36,7 @@
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY pcre2-version                "10.45">
 <!ENTITY glib2-minor                  "2.84">
-<!ENTITY glib2-version                "&glib2-minor;.2">
+<!ENTITY glib2-version                "&glib2-minor;.3">
 <!ENTITY gi-minor                      "1.84">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "77">
