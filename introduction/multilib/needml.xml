@@ -5,38 +5,38 @@
   %general-entities;
 ]>
 
-<sect1 id="needml" xreflabel="Do I Need Multilib?">
+<sect1 id="needml" xreflabel="Trenger jeg Multilib?">
   <?dbhtml filename="needml.html"?>
 
 
-  <title>Do I Need Multilib?</title>
+  <title>Trenger jeg Multilib?</title>
 
   <para>
-    Now that you have an idea of what multilib is, it is time
-    to decide whether to enable that support or not. Depending on the
-    circumstance, it may be necessary.
+    Nå som du har en idé om hva multilib er, er det på tide 
+    å bestemme om du vil aktivere den støtten eller ikke. Avhengig av 
+    omstendighetene kan det være nødvendig.
   </para>
 
   <sect2>
     <title>Steam</title>
     
     <para>
-      Most gamers would not know this unless they push the
-      limits of the games they play, but many games on Steam
-      are 32-bit. Some games are no longer receiving updates
-      while some are still being updated but are still 32-bit
-      to this day.
+      De fleste spillere ville ikke vite dette med mindre de presser 
+      grensene for spillene de spiller, men mange spill på Steam 
+      er 32-bit. Noen spill mottar ikke lenger oppdateringer, 
+      mens noen fortsatt oppdateres, men fortsatt er 32-bit 
+      den dag i dag.
     </para>
 
     <para>
-      Not only are a lot of games 32-bit, but Steam itself
-      requires that you have 32-bit libraries. If the 32-bit
-      libraries aren't on the system, Steam will quit, saying
-      it needs a library such as
+      Ikke bare er mange spill 32-bit, men Steam selv 
+      krever at du har 32-bit biblioteker. Hvis 32-bit 
+      bibliotekene ikke er på systemet, vil Steam avslutte og si 
+      at de trenger et bibliotek som
       <filename class="libraryfile">libc.so.6</filename>.
-      You will need the ability to execute 32-bit applications
-      as well as all the libraries necessary which is laid out
-      in Chapter 3.
+      Du trenger muligheten til å kjøre 32-bits applikasjoner 
+      samt alle nødvendige biblioteker som er beskrevet i 
+      kapittel 3.
     </para>
 
   </sect2>
@@ -45,21 +45,21 @@
     <title>Wine</title>
       
     <para>
-      Unlike Steam, Wine does not require that you have 32-bit libraries
-      or the i686-w64-mingw32 toolchain. Moreover, to get multilib
-      support in Wine, it must be compiled twice: a w64 build and a w32
-      w/ w64 build. However, it was discussed eariler in the Steam
-      section that many games are 32-bit and are no longer maintained or
-      will take a while to switch to 64-bit. This is the case with
-      Windows applications as well. This means that if you do a 64-bit
-      only build, compatabilty for all those 32-bit applications will
-      be lost.
+      I motsetning til Steam krever ikke Wine at du har 32-bits biblioteker 
+      eller verktøykjeden i686-w64-mingw32. For å få multilib støtte 
+      i Wine, må det dessuten kompileres to ganger: en w64-bygg og en w32 
+      med w64-bygg. Det ble imidlertid diskutert tidligere i Steam 
+      seksjonen at mange spill er 32-bit og ikke lenger vedlikeholdes, eller 
+      det vil ta en stund å bytte til 64-bit. Dette er tilfelle med Windows 
+      applikasjoner også. Dette betyr at hvis du gjør en 64-bit bygg, 
+      vil kompatibiliteten for alle disse 32-bits applikasjonene 
+      gå tapt.
     </para>
 
     <para>
-      A Wine WoW64 (can run 32-bit and 64-bit applications) build is
-      recommended. You can however skip lib32 and i686 instructions
-      to get a pure w64 Wine installation.
+      En Wine WoW64 (kan kjøre 32-biters og 64-biters applikasjoner) er 
+      anbefalt. Du kan imidlertid hoppe over lib32- og i686 instruksjonene 
+      for å få en ren w64 Wine installasjon.
     </para>
 
   </sect2>

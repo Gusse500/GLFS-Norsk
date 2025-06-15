@@ -11,9 +11,9 @@
   <title>Multilib</title>
 
   <para>
-    In this chapter, we cover multilib, from explaining what it is,
-    if you need it, and how to get multilib support. Please do not
-    skip this chapter and read through most of it carefully.
+    I dette kapittelet dekker vi multilib, fra å forklare hva det er, 
+    om du trenger det, og hvordan du får multilib støtte. Vennligst ikke 
+    hopp over dette kapittelet, og les nøye gjennom det meste.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatisml.xml"/>

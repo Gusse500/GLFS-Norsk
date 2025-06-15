@@ -1,30 +1,30 @@
-# 1. How can I contribute?
-First, please read the
+# 1. Hvordan kan jeg bidra?
+Først, vennligst les
 [Linux From Scratch Editor's Manual](https://www.linuxfromscratch.org/lfs/LFS-EDITORS-GUIDE.html)
-as it contains some good info. Some info is missing and some is LFS-specific.
+siden den inneholder noe god informasjon. Noe informasjon mangler, og noe er spesifikt for LFS.
 
-# 2. Basics
-This project is primarily written in Docbook XML. Most issues and updates
-pertain to the XML that gets put into the final text of the rendered book. If
-you wish to contribute somehow but don't know XML and/or don't want to write
-any XML, you can make issues over on
+# 2. Grunnleggende
+Dette prosjektet er hovedsakelig skrevet i Docbook XML. De fleste problemene og oppdateringene 
+gjelder XML-en som legges inn i den endelige teksten i den gjengitte boken. Hvis 
+du ønsker å bidra på en eller annen måte, men ikke kjenner XML og/eller ikke ønsker å skrive 
+noe XML, kan du legge inn problemene på
 [issues](https://github.com/glfs-book/glfs/issues).
 
-If you are feeling more savvy, familarize yourself with the book, how it's
-written, where essential files are located, then make an update as you see fit,
-and make a PR. This bit requires a more in-depth explanation and where it
-really diverges from the LFS Editor's Manual. If you are a BLFS editor, editing
-this book will not be too different. Read sections 3.1.2, 3.2, and 3.3 for GLFS
-specific information.
+Hvis du føler deg mer kyndig, bør du gjøre deg kjent med boken, hvordan den er
+skrevet, hvor viktige filer finnes, deretter foreta en oppdatering etter behov,
+og legge til en PR. Denne delen krever en mer grundig forklaring og hvor den
+virkelig avviker fra LFS Editor's Manual. Hvis du er en BLFS redaktør, vil redigeringen
+av denne boken ikke være så annerledes. Les avsnitt 3.1.2, 3.2 og 3.3 for GLFS 
+spesifikk informasjon.
 
-# 3. For the savvy
-## 3.1. Where things are located
-### 3.1.1. Internal files and directories
-Before starting with the main bulk of the book and what people will be reading,
-we need to cover the files and directories of the source of the book that are
-more internal but nonetheless essential.
+# 3. For de kyndige
+## 3.1. Hvor tingene befinner seg
+### 3.1.1. Interne filer og mapper
+Før vi begynner med hoveddelen av boken og hva folk skal lese, 
+må vi dekke filene og mappene for kilden til boken som er 
+mer interne, men likevel essensielle.
 
-At the root of the source, you'll find these files and directories:
+I roten av kildekoden finner du disse filene og mappene:
 - `.github/workflows/`
 - `archive/`
 - `download/`
@@ -46,85 +46,85 @@ At the root of the source, you'll find these files and directories:
 - `xent.ent`
 
 #### 3.1.1.1. `.github/workflows/`
-This directory contains YAML files that are used by Github CIs to render the
-book and put it up on the GLFS website hosted on Github. It rarely needs
-updating.
+Denne mappen inneholder YAML filer som brukes av Github CI-er til å gjengi
+boken og legge den ut på GLFS nettstedet som ligger på Github. Den trenger sjelden
+oppdatering.
 #### 3.1.1.2. `archive/`
-This directory contains XML files that are no longer considered needed or
-useful to be included in the book, but are moved there in case they need to be
-brought back or for the sake of study. Files that don't conform to new
-standards don't need to be updated unless they are being brought back into the
-book.
+Denne mappen inneholder XML filer som ikke lenger anses som nødvendige 
+eller nyttige å inkludere i boken, men som flyttes dit i tilfelle 
+de må hentes tilbake eller for studiets skyld. Filer som ikke samsvarer med nye 
+standarder trenger ikke å oppdateres med mindre de bringes tilbake til 
+boken.
 #### 3.1.1.3. `download/`
-This directory contains downloads that may be needed by other packages such as
-patches or scripts.
+Denne mappen inneholder nedlastinger som kan være nødvendige for andre pakker, 
+for eksempel oppdateringer eller skript.
 #### 3.1.1.4. `images/`
-This directory contains images used by the book, ie. for the note, important,
-warning, and tip boxes, as well as for the favicon and image that shows up at
-the top of the home page. Rarely needs to get updated.
+Denne mappen inneholder bilder som brukes av boken, f.eks. for merknader, viktig informasjon, 
+advarsel og tips-bokser, samt for favorittikonet og bildet som vises øverst 
+på hjemmesiden. Trenger sjelden å oppdateres.
 #### 3.1.1.5. `kernel-config/`
-This directory contains the needed files to generate kernel configuration
-blocks you'd find in pages the require you to change the configuration in your
-kernel. Update as needed.
+Denne mappen inneholder filene som trengs for å generere kjernekonfigurasjonsblokker 
+som du finner på sider som krever at du endrer konfigurasjonen i 
+kjernen din. Oppdater etter behov.
 #### 3.1.1.6. `stylesheets/`
-This directory contains the Docbook XML XSLT stylesheets needed to generate
-HTML from the XML source. It also contains the CSS files needed to make the
-book look prettier. Very rarely needs updating.
+Denne mappen inneholder Docbook XML XSLT-stilarkene som trengs for å generere 
+HTML fra XML kilden. Den inneholder også CSS filene som trengs for å gjøre 
+boken penere. Trenger svært sjelden oppdatering.
 #### 3.1.1.7. `template/`
-This directory contains templates that most pages in this book are based on,
-mainly packages. It has documentation that can help you figure out what you
-want and don't want. May need to get updated if standards change.
+Denne mappen inneholder maler som de fleste sidene i denne boken er basert på, 
+hovedsakelig pakker. Den har dokumentasjon som kan hjelpe deg med å finne ut 
+hva du vil og ikke vil. Den må kanskje oppdateres hvis standardene endres.
 #### 3.1.1.8. `.gitattributes`
-This file is a standard git file that gives attributes to matching files.
-Rarely needs to get updated.
+Denne filen er en standard git fil som gir attributter til samsvarende filer. 
+Trenger sjelden å oppdateres.
 #### 3.1.1.9. `.gitignore`
-This file is a standard git file that ignores matching files from entering the
-git history and tree. For instance, `conditional.ent` and `version.ent`
-generated by `git-version.sh` are ignored but may exist locally if you render
-the book. Very rarely needs to get updated.
+Denne filen er en standard git fil som ignorerer samsvarende filer fra å komme inn i
+git historikken og treet. For eksempel ignoreres `conditional.ent` og `version.ent`
+generert av `git-version.sh`, men kan finnes lokalt hvis du gjengir
+boken. Trenger svært sjelden å oppdateres.
 #### 3.1.1.10. `INSTALL.md`
-This file details what packages you will need in order to render the book
-yourself. Rarely needs to get updated.
+Denne filen beskriver hvilke pakker du trenger for å kunne gjengi boken. 
+Trenger sjelden å oppdateres.
 #### 3.1.1.11. `Makefile`
-This file is the Makefile used by **make** in order to render the book. Rarely
-needs to get updated.
+Denne filen er Makefile som brukes av **make** for å gjengi boken. 
+Trenger sjelden å oppdateres.
 #### 3.1.1.12. `expand_date`
-This file is a Python script that expands the date variable in XML files,
-although this behavior has fallen out of favor in GLFS but remains strong in
-BLFS. Rarely needs to get updated.
+Denne filen er et Python skript som utvider datovariabelen i XML-filer,
+selv om denne oppførselen har falt i unåde i GLFS, men fortsatt er sterk i
+BLFS. Trenger sjelden å oppdateres.
 #### 3.1.1.13. `general.ent`
-This file is an XML entity file containing important variables used by the
-book's XML and also includes different entity files. This file needs to get
-updated every stable release.
+Denne filen er en XML entitetsfil som inneholder viktige variabler som brukes av 
+bokens XML, og inkluderer også forskjellige entitetsfiler. Denne filen må 
+oppdateres ved hver stabile utgivelse.
 #### 3.1.1.14. `git-version.sh`
-This file is a shell script that generates the version and revision the book
-should be rendered for, and outputs according text to `conditional.ent` and
-`version.ent`. Rarely needs to get updated.
+Denne filen er et skallskript som genererer versjonen og revisjonen boken 
+skal gjengis for, og sender ut teksten i henhold til `conditional.ent` og 
+`version.ent`. Trenger sjelden å oppdateres.
 #### 3.1.1.15. `gnome.ent`
-This file is an XML entity file that contains GNOME specific entities used by a
-small selection of XML files. Rarely needs to get updated.
+Denne filen er en XML entitetsfil som inneholder GNOME spesifikke enheter som brukes 
+av et lite utvalg XML filer. Trenger sjelden å oppdateres.
 #### 3.1.1.16. `obfuscate.sh`
-This file is a shell script that obfuscates email addresses in XML and HTML
-files. Rarely needs to get updated.
+Denne filen er et skallskript som tilslører e-postadresser i XML og HTML 
+filer. Trenger sjelden å oppdateres.
 #### 3.1.1.17. `packages.ent`
-This file is an XML entity file that contains version variables. Certain
-version variables are used by certain packages, although usually there will
-only be one variable used by a given package. For example, &pulseaudio-version;
-is used by Pulseaudio. These variables determine the package's version.
-Whenever a package needs an update, this file needs to get edited.
+Denne filen er en XML-enhetsfil som inneholder versjonsvariabler. Enkelte 
+versjonsvariabler brukes av bestemte pakker, men vanligvis vil det bare 
+være én variabel som brukes av en gitt pakke. For eksempel brukes &pulseaudio-version;
+av Pulseaudio. Disse variablene bestemmer pakkens versjon.
+Når en pakke trenger en oppdatering, må denne filen redigeres.
 #### 3.1.1.18. `tidy.conf`
-This file is a configuration file used by **tidy**. Rarely needs to get
-updated.
+Denne filen er en konfigurasjonsfil som brukes av **tidy**. Trenger sjelden å 
+bli oppdatert.
 #### 3.1.1.19. `xent.ent`
-This file is an XML entity file that contains content that gets repeated
-throughout the book. Update or add to as needed.
+Denne filen er en XML enhetsfil som inneholder innhold som gjentas 
+gjennom hele boken. Oppdater eller legg til etter behov.
 
 ***
 
-### 3.1.2. Book files and directories
-Now that the internals are covered, it's time to cover the files that have a
-stronger impact of the final rendered product. Here are the following files and
-directories at the root of the source:
+### 3.1.2. Bokens filer og mapper
+Nå som de interne detaljene er dekket, er det på tide å dekke filene som har en
+sterkere innvirkning på det endelige gjengitte produktet. Her er følgende filer og
+mapper i roten av kildekoden:
 
 - `appendices/`
 - `book/`
@@ -136,103 +136,104 @@ directories at the root of the source:
 - `changelog.xml` (link to `introduction/welcome/changelog.xml`)
 - `index.xml`
 
-Some packages in the directories may need to get updated whenever a version
-gets updated. Unlike BLFS, GLFS does not use md5sums, SBUs, or size. It does
-use links and package versions, however. The links have to be correct, as well
-as the instructions.
+Noen pakker i mappene må kanskje oppdateres hver gang en versjon 
+oppdateres. I motsetning til BLFS bruker ikke GLFS md5sums, SBU-er eller størrelse. Den bruker 
+imidlertid lenker og pakkeversjoner. Lenkene må være korrekte, i likhet 
+med instruksjonene.
 
 #### 3.1.2.1. `appendices/`
-This directory contains XML files rendered at the end of the book. Rarely needs
-to get updated.
+Denne mappen inneholder XML filer som gjengis på slutten av boken. 
+Trenger sjelden å oppdateres.
 #### 3.1.2.2. `book/`
-This directory contains XML files rendered at the beginning of the book. Rarely
-needs to get updated.
+Denne katalogen inneholder XML filer som er gjengitt i begynnelsen av boken. 
+Trenger sjelden å oppdateres.
 #### 3.1.2.3. `introduction/`
-This directory contains XML files rendered for the Introduction section of the
-book. Contains `welcome/changelog.xml` which does need to get updated often.
-Rest of the XML files usually don't.
+Denne mappen inneholder XML filer gjengitt for introduksjonsdelen av 
+boken. Inneholder `welcome/changelog.xml` som må oppdateres ofte. 
+Resten av XML filene gjør det vanligvis ikke.
 #### 3.1.2.4. `qol/`
-This directory contains XML files rendered for the QOL section of the book.
-Rarely needs to get updated.
+Denne mappen inneholder XML filer gjengitt for QOL-delen av boken. 
+Trenger sjelden å oppdateres.
 #### 3.1.2.5. `shareddeps/`
-This directory contains XML files rendered for the Shared Dependencies section
-of the book. Contains packages.
+Denne mappen inneholder XML filer gjengitt for delen Delte avhengigheter 
+i boken. Inneholder pakker.
 #### 3.1.2.6. `steam/`
-This directory contains XML files rendered for the Steam section of the book.
-Contains packages.
+Denne mappen inneholder XML filer gjengitt for Steam-delen av boken. 
+Inneholder pakker.
 #### 3.1.2.7. `wine/`
-This directory contains XML files rendered for the Wine section of the book.
-Contains packages.
+Denne mappen inneholder XML filer gjengitt for Wine-delen av boken. 
+Inneholder pakker.
 #### 3.1.2.8. `changelog.xml`
-This symlink points to `introduction/welcome/changelog.xml`, an XML file that
-details changes made to the book since the last release. All changes should be
-noted here, and the message should be similar or exact to the git commit
-message that details the commit. `->` should be `-&gt;` in the XML file. For
-the user in the changelog entry, it'd be appreciated if it matched with your
-Github username. If you are a BLFS/LFS editor, you can also use the handle you
-use for LFS/BLFS. Changes that shouldn't have a changelog entry are simple
-typos, grammar changes, fixing rendering failures, wording, etc. (small
-changes) and internal changes (not counting changes to `packages.ent`, those
-count as updates that need to have a changelog entry).
+Denne symbolske lenken peker til `introduction/welcome/changelog.xml`, en XML fil som
+beskriver endringer gjort i boken siden forrige utgivelse. Alle endringer bør
+noteres her, og meldingen bør være lik eller nøyaktig som git commit meldingen
+som beskriver commit-en. `->` bør være `->` i XML filen. For
+brukeren i endringsloggoppføringen ville det blitt satt pris på om den samsvarte med
+Github brukernavnet ditt. Hvis du er en BLFS/LFS redigerer, kan du også bruke referansen du
+bruker for LFS/BLFS. Endringer som ikke skal ha en endringsloggoppføring er enkle
+skrivefeil, grammatikkendringer, retting av gjengivelsesfeil, ordlyd osv. (små
+endringer) og interne endringer (ikke medregnet endringer i `packages.ent`, disse
+teller som oppdateringer som må ha en endringsloggoppføring).
 #### 3.1.2.9. `index.xml`
-This file is an XML file that determines which main XML files to include for
-rendering. Think of it as the master XML file, or your `int main()`, but for
-XML. Rarely needs changing unless a new section is added.
+Denne filen er en XML fil som bestemmer hvilke XML hovedfiler som skal inkluderes 
+for gjengivelse. Tenk på den som hoved XML filen, eller din `int main()`, men for 
+XML. Trenger sjelden å endres med mindre en ny seksjon legges til.
 
 ***
 
-### 3.1.3. Standards
-Beyond knowing where files are, the text inside those files also counts, and
-there are standards to keep in mind.
+### 3.1.3. Standarder
+I tillegg til å vite hvor filene er, teller også teksten i disse filene, og 
+det finnes standarder å huske på.
 
-1. No tabs except in the Makefile. Use spaces. Unless after a sentence, use two
-at a time.
-2. Keep character count on any given line a maximum of 80 characters and do not
-go over that limit. This keeps the XML from getting ugly and out of hand. There
-are situations where you can't keep it under that limit, such as using links or
-code blocks. That is fine. But if you can help it, please keep under the 80
-character limit.
-3. Use oxford commas (subject1, subject2, and subject3) instead of
-(subject1, subject2 and subject3).
-4. Edit `changelog.xml` as necessary. See section 3.1.2.9.
+1. Ingen tabulatorer unntatt i Makefile. Bruk mellomrom. Med mindre det er etter en setning, 
+bruk to om gangen.
+2. Hold tegnantallet på en gitt linje maksimalt 80 tegn, og ikke overskrid denne grensen. 
+Dette hindrer XML filen i å bli stygg og utilgjengelig. Det 
+finnes situasjoner der du ikke kan holde den under denne grensen, for eksempel ved bruk av lenker 
+eller kodeblokker. Det er greit. Men hvis du kan unngå det, vær så snill å holde deg under 80 
+tegngrensen.
+3. Bruk oxford-komma (subjekt1, subjekt2 og subjekt3) i stedet for 
+(subjekt1, subjekt2 og subjekt3).
+4. Rediger `changelog.xml` etter behov. Se avsnitt 3.1.2.9.
 
-## 3.2. Making an update
-First, you're going to need
-[Git](https://glfs-book.github.io/glfs/shareddeps/git.html) in order to clone,
-pull, and push. Once you have it installed, you are going to need to fork this
-repository to your Github account. Once you have it forked, you are going to
-need to clone that fork:
+## 3.2. Gjør en oppdatering
+Først trenger du
+[Git](https://glfs-book.github.io/glfs/shareddeps/git.html) for å klone,
+trekke og pushe. Når du har installert det, må du forke dette
+repositoriet til Github kontoen din. Når du har forket det, må du
+klone forkingen:
 ```Bash
 git clone https://github.com/<username>/glfs
 ```
-Now that you have cloned the repo, you can make changes to the default branch
-`trunk`, or you can make another one:
+Nå som du har klonet repoet, kan du gjøre endringer i standardgrenen
+`trunk`, eller du kan lage en til:
 ```Bash
 git checkout --track origin -b <branch_name>
 ```
-Now make an edit as you see fit. If it isn't an edit to an internal file that
-isn't `packages.ent` or fixing a simple typo, make a changelog entry (see
-section 3.1.2.9). Once you have made one, copy the text you made, reformat that
-text you copied into plain text that won't get messed up in a git commit
-message, then do a test render. See if the render looks fine, if it rendered.
-Afterwards, do a `git status` to see you edited the correct files, haven't made
-any new ones that shouldn't have been made, then `git add` those files.
-Afterwards, do
+Gjør nå en redigering slik du synes passer. Hvis det ikke er en redigering i en intern fil som
+ikke er `packages.ent` eller retting av en enkel skrivefeil, lag en endringsloggoppføring (se
+avsnitt 3.1.2.9). Når du har gjort en, kopier teksten du lagde, formater
+teksten du kopierte til ren tekst som ikke blir rotet til i en git commit
+melding, og utfør deretter en testrendering. Se om renderingen ser fin ut, om den ble gjengitt.
+
+Etterpå, gjør en `git status` for å se at du redigerte de riktige filene, ikke har laget
+noen nye som ikke burde vært laget, og `git add` deretter disse filene.
+Etterpå, gjør
 ```Bash
 git commit -m "<copied_text>" -m "<optional_message>"
 ```
-Now do:
+Nå gjør:
 ```Bash
 git push origin <branch_name>
 ```
 
 ## 3.3. Making a PR
 Now over on Github on your repo, make a Pull/Merge Request that merges into
-`glfs-book:trunk`. If it has a conflict, repeat section 3.2. to fix those
-conflicts before making the PR/MR. If all looks good, submit it.
+`glfs-book:trunk`. Hvis det er en konflikt, gjenta avsnitt 3.2 for å fikse disse 
+konfliktene før du foretar PR/MR. Hvis alt ser bra ut, send det inn.
 
-There may be changes requested. This is okay and is routine. Repeat section
-3.2. as necessary and Github will automatically pull in the new changes to the
-PR. Rinse and repeat until the PR is merged.
+Det kan være behov for endringer. Dette er greit og rutinemessig. Gjenta avsnitt 
+3.2 etter behov, så vil Github automatisk hente inn de nye endringene i 
+PR-en. Skyll og gjenta til PR-en er slått sammen.
 
-After that, pat yourself on the back, as you are now a GLFS contributor.
+Etter det, klapp deg selv på skulderen, siden du nå er en GLFS bidragsyter.
