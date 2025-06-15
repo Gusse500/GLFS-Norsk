@@ -333,6 +333,16 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
 
 <screen role="root"><userinput>/sbin/nvidia-install</userinput></screen>
 
+    <important><para>
+      If you are booted into the system you are running the commands for, doing
+      so for the above command in a graphical environment may crash that
+      environment and drop you back to a TTY. Don't do that, just run it from a
+      TTY or in a chroot where the display doesn't rely on the libraries
+      provided from this driver. As for the TTY, it is actually driven by the
+      kernel or its modules, not the libraries. That is why running the above
+      command in a TTY is safe&mdash;it doesn't overwrite the kernel modules.
+    </para></important>
+
   </sect2>
 
   <sect2 role="configuration">
