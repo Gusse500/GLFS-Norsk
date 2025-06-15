@@ -5,52 +5,52 @@
   %general-entities;
 ]>
 
-<sect1 id="mesonfiles" xreflabel="Meson Toolchain Files">
+<sect1 id="mesonfiles" xreflabel="Meson Verktøykjedefiler">
   <?dbhtml filename="mesonfiles.html"?>
 
 
-  <title>Meson Toolchain Files</title>
+  <title>Meson verktøykjedefiler</title>
 
   <sect2>
-    <title>Introduction to Meson Toolchain Files</title>
+    <title>Introduksjon til Meson Verktøykjedefiler</title>
     
     <para>
-      Most applications that rely on the <application>Meson</application>
-      build system have decent support for cross compilation, ie. compiling
-      32-bit binaries on a 64-bit system. It can be as easy as setting the
-      <envar>CC</envar>, <envar>CXX</envar>, and <envar>PKG_CONFIG_PATH
-      </envar> variables before using the <userinput>meson setup ..
-      </userinput> command to compile 32-bit binaries on a 64-bit system.
-      However, some projects are more complicated for many different
-      reasons, leading to the necessity of <application>Meson
-      </application> toolchain files. They specify compilers,
-      options that should be invoked, the <application>pkg-conf</application>
-      binary (or rather symlink that uses a certain personality file) to use,
-      <command>llvm-config</command> to use, etc. This is required for many
-      Meson projects, especially if you have followed BLFS before this book.
-      Therefore, this section should be considered a requirement.
+      De fleste applikasjoner som er avhengige av <application>Meson</application>
+      byggesystemer har god støtte for krysskompilering, dvs. kompilering av 
+      32-biters binærfiler på et 64-biters system. Det kan være så enkelt som å sette opp
+      <envar>CC</envar>, <envar>CXX</envar>, og <envar>PKG_CONFIG_PATH
+      </envar> variabler før du bruker <userinput>meson setup ..
+      </userinput> kommandoen for å kompilere 32-bit binærfiler på et 64-bit system.
+      Noen prosjekter er imidlertid mer kompliserte av mange forskjellige 
+      grunner, noe som fører til behovet for <application>Meson
+      </application> verktøykjedefiler. De spesifiserer kompilatorer, 
+      alternativer som skal kalles, <application>pkg-conf</application>
+      binær (eller rettere sagt symbollenke som bruker en bestemt personlighetfil),
+      <command>llvm-config</command> å bruke, osv. Dette er nødvendig for mange 
+      Meson prosjekter, spesielt hvis du har fulgt BLFS før denne boken. 
+      Derfor bør denne delen betraktes som et krav.
     </para>
 
     <para>
-      There are two <application>Meson</application> files: the cross
-      toolchain file and the native toolchain file. There are different situations
-      for using either.
+      Det er to <application>Meson</application> filer: kryss verktøykjedefilen 
+      og den opprinnelige verktøykjedefilen. Det finnes forskjellige situasjoner 
+      for bruk av begge.
     </para>
 
-    <bridgehead renderas="sect3">Meson Toolchain File Dependencies</bridgehead>
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect3">Meson Verktøykjedefil Avhengigheter</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
-        <xref linkend="pkgconf"/> (runtime)
+        <xref linkend="pkgconf"/> (kjøretid)
       </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Creating the Cross Toolchain File</title>
+    <title>Opprette Kryss Verktøykjedefilen</title>
 
     <para>
-      Create the cross toolchain file by running the following commands as the
-      &root; user:
+      Opprett kryss verktøykjedefilen ved å kjøre følgende kommandoer som
+      &root; bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/meson/cross &amp;&amp;
@@ -83,11 +83,11 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>Creating the Native Toolchain File</title>
+    <title>Opprette Opprinnelige Verktøykjedefilen</title>
 
     <para>
-      Create the native toolchain file by running the following commands as the
-      &root; user:
+      Opprett den opprinnelige verktøykjedefilen ved å kjøre følgende kommandoer som
+      &root; bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/meson/native &amp;&amp;
@@ -120,17 +120,17 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>How to Use the File</title>
+    <title>Slik bruker du filen</title>
 
     <para>
-      Instead of setting environment variables before invoking
-      <userinput>meson setup ..</userinput>, you can simply do:
+      I stedet for å angi miljøvariabler før påkalling av
+      <userinput>meson setup ..</userinput>, du kan rett og slett gjøre:
     </para>
 
 <screen><userinput>meson setup .. --cross-file=lib32 &lt;other-options&gt;</userinput></screen>
 
     <para>
-      Or...
+      Eller...
     </para>
 
 <screen><userinput>meson setup .. --native-file=x86 &lt;other-options&gt;</userinput></screen>

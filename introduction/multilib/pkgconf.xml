@@ -12,24 +12,24 @@
   <title>Pkgconf Personalties</title>
 
   <para>
-    The <command>pkgconf</command> compilation in the multilib
-    mirror does not cover <command>pkgconf</command> personalities
-    which are needed for <xref linkend="mesonfiles"/>.
+    <command>pkgconf</command> kompilering i multilib 
+    speilet dekker ikke <command>pkgconf</command> personalities
+    som er nødvendige for <xref linkend="mesonfiles"/>.
   </para>
 
   <para>
-    The <command>pkgconf</command> personalities allow for
-    <command>pkgconf</command> to be ran without having to specify
-    the pkgconfig path.
+    <command>pkgconf</command> personalities tillater
+    <command>pkgconf</command> å kjøres uten å måtte spesifisere 
+    pkgconfig banen.
   </para>
 
   <sect2>
-    <title>Creating the personalites</title>
+    <title>Opprette personalities</title>
 
     <para>
-      Create the following personalities as the
+      Opprett følgende personalities som
       <systemitem class="username">root</systemitem>
-      user:
+      bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/pkgconfig/personality.d &amp;&amp;
@@ -51,22 +51,22 @@ SystemLibraryPaths: /usr/lib32</literal>
 EOF</userinput></screen>
 
     <para>
-      Again as the <systemitem class="username">root</systemitem> user,
-      create the symlinks that enable pkgconf to find the personalites:
+      Igjen som <systemitem class="username">root</systemitem> bruker,
+      opprett symbolske lenker som gjør det mulig for pkgconf å finne personalities:
     </para>
 
 <screen role="root"><userinput>ln -sv pkgconf /usr/bin/x86_64-pc-linux-gnu-pkg-config &amp;&amp;
 ln -sv pkgconf /usr/bin/i686-pc-linux-gnu-pkg-config</userinput></screen>
     
     <para>
-      Now verify that the x86_64 pkg-config is using the right
+      Bekreft nå at x86_64 pkg-config bruker riktig
       personality:
     </para>
 
 <screen><userinput>x86_64-pc-linux-gnu-pkg-config --dump-personality</userinput></screen>
     
     <para>
-      The result should be:
+      Resultatet bør være:
     </para>
 
 <screen><computeroutput>Triplet: x86_64-pc-linux-gnu
@@ -76,13 +76,13 @@ SystemIncludePaths: /usr/include
 SystemLibraryPaths: /usr/lib</computeroutput></screen>
 
     <para>
-      Then verify the i686 pkg-config is using the right personality:
+      Bekreft deretter at i686 pkg-config bruker riktig personality:
     </para>
 
     <screen><userinput>i686-pc-linux-gnu-pkg-config --dump-personality</userinput></screen>
     
     <para>
-      The result should be:
+      Resultatet bør være:
     </para>
 
 <screen><computeroutput>Triplet: i686-pc-linux-gnu

@@ -9,42 +9,42 @@
   <?dbhtml filename="achievingml.html"?>
 
 
-  <title>Achieving Multilib</title>
+  <title>Oppnå Multilib</title>
 
   <para>
-    On many distros, getting multilib support is very straight
-    forward. There exists a guide that can act as a replacement
-    for LFS: compiling and configuring a system that can boot,
-    run, and compile software; and also have that same ability
-    with 32-bit. It acts to form the basis that will allow you
-    to follow any of the instructions laid out in the Steam
-    and Wine chapters.
+    På mange distribusjoner er det veldig enkelt 
+    å få multilib støtte. Det finnes en veiledning som kan fungere som en erstatning 
+    for LFS: kompilering og konfigurering av et system som kan starte opp, 
+    kjøre og kompilere programvare; og som også har den samme muligheten med 
+    32-bit. Den danner grunnlaget som lar deg følge 
+    instruksjonene som er beskrevet i Steam 
+    og Wine kapitlene.
   </para>
 
   <para>
-    Such a guide is maintained by Thomas Trepl at
+    En slik guide vedlikeholdes av Thomas Trepl på
     <ulink url="&mlfs-m32-root;"/>.
-    This only covers installing 32-bit support along with 64-bit. If you
-    want x32-bit support, which is not needed for this book, follow
+    Dette dekker kun installasjon av 32-bits støtte sammen med 64-bits. Hvis du 
+    ønsker x32-bits støtte, som ikke er nødvendig for denne boken, følg
     <ulink url="&mlfs-root;"/>.
   </para>
 
   &multilib-rendering1;
 
   <sect2 revision="sysv">
-    <title>Rendering MLFS</title>
+    <title>Gjengi MLFS</title>
     &multilib-rendering2;
     &read-book;
 
   </sect2>
 
   <sect2 revision="systemd">
-    <title>Rendering MLFS</title>
+    <title>Gjengi MLFS</title>
 
     <para>
-      First, install <ulink
-      url="&blfs-svn;/general/git.html">Git</ulink>, then clone the LFS repo
-      and switch to the <computeroutput>multilib</computeroutput> branch:
+      Først, installer <ulink
+      url="&blfs-svn;/general/git.html">Git</ulink>, klon deretter LFS repositoriet 
+      og bytt til <computeroutput>multilib</computeroutput> grenen:
     </para>
 
 <screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
@@ -54,9 +54,9 @@ git checkout multilib</userinput></screen>
     &multilib-rendering2;
 
     <para>
-      Now inspect the <filename>INSTALL</filename> file to check for the needed
-      dependencies in order to render the book. Once you have ensured you have
-      installed everything, render the book:
+      Nå inspiser <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
+      avhengigheter for å gjengi boken. Når du har sørget for at du har 
+      installert alt, gjengi boken:
     </para>
 
 <screen><userinput>make -j1 REV=systemd ARCH=ml_32</userinput></screen>
@@ -66,19 +66,19 @@ git checkout multilib</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>More Info</title>
+    <title>Mer informasjon</title>
 
     <para>
-      The same principles of compiling for 32-bit in that book will also
-      apply to this book as well. If you haven't already, read
+      De samme prinsippene for kompilering for 32-bit i den boken vil også 
+      gjelde for denne boken. Hvis du ikke allerede har gjort det, les
       <xref linkend="important"/>
-      to check what basic principles still apply in this book when targeting
+      å sjekke hvilke grunnleggende prinsipper som fortsatt gjelder i denne boken når man målretter
       32-bit.
     </para>
 
     <para>
-      Furthermore, read <xref linkend="which-instructions"/> to find out which
-      instructions to follow.
+      Les videre <xref linkend="which-instructions"/> for å finne ut hvilke 
+      instruksjoner du skal følge.
     </para>
 
   </sect2>
