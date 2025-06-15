@@ -18,32 +18,32 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to luit</title>
+    <title>Introduksjon til luit</title>
 
     <para>
-      The <application>luit</application> package is a filter
-      that can be run between an arbitrary application and a UTF-8 
-      terminal emulator. It will convert application output from the 
-      locale’s encoding into UTF‐8, and convert terminal input from 
-      UTF‐8 into the locale’s encoding.
+      <application>luit</application> pakken er et filter
+	  som kan kjøres mellom et vilkårlig program og en UTF-8
+	  terminalemulator. Den vil konvertere programutdata fra den lokale
+	  koden til UTF-8, og konvertere terminalinndata fra
+	  UTF-8 til den lokale koden..
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&luit-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&luit-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&luit-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&luit-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">luit Dependencies</bridgehead>
+    <bridgehead renderas="sect3">luit Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg7-app"/>
     </para>
@@ -51,22 +51,22 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of luit</title>
+    <title>Installasjon av luit</title>
 
     <para>
-      Install <application>luit</application> by running the
-      following commands:
+      Installer <application>luit</application> ved å kjøre
+      følgende kommandoer:
     </para>
 
 <screen><userinput>./configure $XORG_CONFIG &amp;&amp;
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -74,24 +74,24 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>luit</seg>
-        <seg>None</seg>
-        <seg>None</seg>
+        <seg>Ingen</seg>
+        <seg>Ingen</seg>
       </seglistitem>
     </segmentedlist>
 

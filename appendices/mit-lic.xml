@@ -5,14 +5,14 @@
   %general-entities;
 ]>
 
-<appendix id="MIT" xreflabel="MIT License">
+<appendix id="MIT" xreflabel="MIT Lisensen">
   <?dbhtml filename="mit.html" ?>
 
   <appendixinfo>
     <date>$Date$</date>
   </appendixinfo>
 
-  <title>The MIT License</title>
+  <title>MIT Lisensen</title>
 
   <para>
     Copyright &copy; 1999-2025 The BLFS Development Team

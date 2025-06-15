@@ -18,36 +18,36 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Wireplumber</title>
+    <title>Introduksjon til Wireplumber</title>
 
     <para>
-      The <application>Wireplumber</application> package contains a session and
-      policy manager for <application>Pipewire</application>.
+      <application>Wireplumber</application> Pakken inneholder en økt og
+      retningslinje behandler for <application>Pipewire</application>.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&wireplumber-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&wireplumber-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&wireplumber-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&wireplumber-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Wireplumber Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Wireplumber Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="elogind"/>,
-      <xref linkend="glib2"/>, and
+      <xref linkend="glib2"/>, og
       <xref linkend="pipewire"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <ulink url="&blfs-svn;/general/lua.html">Lua</ulink>
     </para>
@@ -55,11 +55,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Wireplumber</title>
+    <title>Installasjon av Wireplumber</title>
 
     <para>
-      Install <application>Wireplumber</application> by running the following
-      commands:
+      Installer <application>Wireplumber</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -70,18 +70,18 @@ meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.
+      For å teste resultatene, utsted: <command>ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
     <para>
-      Finally, rename the documentation directory to a versioned directory as
-      the &root; user:
+      Til slutt, gi dokumentasjonsmappen nytt navn til en versjonsbasert mappe som
+      &root; bruker:
     </para>
 
 <screen role="root"><userinput>mv -v /usr/share/doc/wireplumber{,-&wireplumber-version;}</userinput></screen>
@@ -89,7 +89,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../xincludes/meson-buildtype-release.xml"/>
@@ -97,18 +97,18 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Wireplumber</title>
+    <title>Konfigurere Wireplumber</title>
 
-    <sect3><title>Configuration Information</title>
+    <sect3><title>Konfigurasjonsinformasjon</title>
 
       <para>
-        In order for Wireplumber to be used by Pipewire, Wireplumber must be
-        configured to start when a desktop environment is started.
+        For at Wireplumber skal kunne brukes av Pipewire, må Wireplumber være 
+        konfigurert til å starte når et skrivebordsmiljø startes..
       </para>
 
       <para>
-        First, create a shell script that will start Wireplumber and Pipewire
-        in the correct order as the &root; user:
+        Først, lag et skallskript som starter Wireplumber og Pipewire 
+        i riktig rekkefølge som &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/bin/pipewire-launcher.sh &lt;&lt; "EOF"
@@ -127,15 +127,15 @@ exec /usr/bin/wireplumber &amp;
 EOF</userinput></screen>
 
     <para>
-      Next, make this shell script executable as the &root; user:
+      Gjør deretter dette skallskriptet kjørbart som &root; bruker:
     </para>
 
 <screen role="root"><userinput>chmod +x /usr/bin/pipewire-launcher.sh</userinput></screen>
 
     <para>
-      Finally, create an XDG Autostart file that will run
-      <command>/usr/bin/pipewire-launcher.sh</command> when a desktop
-      environment is started, as the &root; user:
+      Til slutt, opprett en XDG Autostartfil som kjører
+      <command>/usr/bin/pipewire-launcher.sh</command> når et 
+      skrivebordsmiljø startes, som &root; bruker:
     </para>
     
 <screen role="root"><userinput>mkdir -pv /etc/xdg/autostart/                 &amp;&amp;
@@ -150,9 +150,9 @@ Type=Application</literal>
 EOF</userinput></screen>
 
     <para>
-      Now that Wireplumber is configured to start when a desktop environment is
-      started, it is recommended that you log out of your session and log back
-      in again.
+      Nå som Wireplumber er konfigurert til å starte når et skrivebordsmiljø 
+      startes, anbefales det at du logger deg ut av økten og logger deg 
+      inn igjen..
     </para>
     
     </sect3>
@@ -160,17 +160,17 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           wireplumber,
-          wpctl, and
+          wpctl, og
           wpexec
         </seg>
         <seg>
@@ -178,15 +178,15 @@ EOF</userinput></screen>
         </seg>
         <seg>
           /usr/include/wireplumber-0.5,
-          /usr/lib/wireplumber-0.5, and
-          /usr/share/wireplumber, and
+          /usr/lib/wireplumber-0.5, og
+          /usr/share/wireplumber, og
           /usr/share/doc/wireplumber-&wireplumber-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -194,7 +194,7 @@ EOF</userinput></screen>
         <term><command>wireplumber</command></term>
         <listitem>
           <para>
-            is a session and policy manager for Pipewire
+            er økt- og policyansvarlig for Pipewire
           </para>
           <indexterm zone="wireplumber wireplumber-prog">
             <primary sortas="b-wireplumber">wireplumber</primary>
@@ -206,7 +206,7 @@ EOF</userinput></screen>
         <term><command>wpctl</command></term>
         <listitem>
           <para>
-            controls and queries information from Wireplumber
+            kontroller og spørreinformasjon fra Wireplumber
           </para>
           <indexterm zone="wireplumber wpctl">
             <primary sortas="b-wpctl">wpctl</primary>
@@ -218,7 +218,7 @@ EOF</userinput></screen>
         <term><command>wpexec</command></term>
         <listitem>
           <para>
-            executes Wireplumber scripts, which are often written in Lua
+            kjører Wireplumber-skript, som ofte er skrevet i Lua
           </para>
           <indexterm zone="wireplumber wpexec">
             <primary sortas="b-wpexec">wpexec</primary>
@@ -230,7 +230,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libwireplumber-0.5.so</filename></term>
         <listitem>
           <para>
-            contains functions that allow other programs to control Wireplumber
+            inneholder funksjoner som lar andre programmer kontrollere Wireplumber
           </para>
           <indexterm zone="wireplumber libwireplumber">
             <primary sortas="c-libwireplumber">libwireplumber-0.5.so</primary>

@@ -19,24 +19,24 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to lib32-Check</title>
+    <title>Introduksjon til lib32-Check</title>
 
     <para>
-      The <application>Check</application> package was already installed in
-      LFS, but the lib32 instructions are missing from MLFS which is needed for
-      lib32-<xref linkend="pulseaudio"/>. If you are doing multilib, install
-      this.
+      <application>Check</application> pakken var allerede installert i
+      LFS, men lib32 instruksjonene mangler fra MLFS, som er nødvendige for
+      lib32-<xref linkend="pulseaudio"/>. Hvis du bruker multilib, installer
+	  dette.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&lib32-check-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&lib32-check-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&lib32-check-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&lib32-check-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -44,11 +44,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Check</title>
+    <title>lib32 Installasjon av Check</title>
     
     <para>
-      Install lib32-<application>Check</application> by running the following
-      commands:
+      Installer lib32-<application>Check</application> ved å kjøre følgende
+	  kommandoer:
     </para>
 
 <screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
@@ -60,7 +60,7 @@
 make</userinput></screen>
     
     <para>
-      Now as the <systemitem class="username">root</systemitem> user:
+      Nå som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -71,35 +71,35 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           libcheck.so
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -107,8 +107,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libcheck.so</filename></term>
         <listitem>
           <para>
-            contains functions that allow <application>Check</application> to
-            be called from a test program 
+            inneholder funksjoner som tillater <application>Check</application> å
+            bli kalt fra et testprogram 
           </para>
           <indexterm zone="lib32-check libcheck">
             <primary sortas="c-libcheck">libcheck.so</primary>

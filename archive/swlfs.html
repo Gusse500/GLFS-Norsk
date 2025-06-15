@@ -2,36 +2,36 @@
 <html lang="en-US">
 	<head>
 		<title>
-		Steam and Wine on Linux From Scratch!
+		Steam og Wine på Linux From Scratch!
 		</title>
 	</head>
 	<body>
 		<h1>
-		Steam and Wine on Linux From Scratch!
+		Steam og Wine på Linux From Scratch!
 		</h1>
 		<p>
-		Linux From Scratch is a guide meant to cover how a basic Linux System works, and how to install the very bare minimum (close to the very bare minimum, but not quite, as some packages aren't necessary in my opinion) amount of packages to get a bootable, working system, primed to be able to go forward from there and continue onto the next guide, Beyond Linux From Scratch. BLFS covers many packages for nearly everyone, except, well, gamers and those that can't do Linux without some Windows software which runs fine on Linux under Wine. 
+		Linux From Scratch er en guide som er ment å dekke hvordan et grunnleggende Linux-system fungerer, og hvordan man installerer det aller minste (nær det aller minste, men ikke helt, siden noen pakker ikke er nødvendige etter min mening) antall pakker for å få et oppstartbart, fungerende system, klargjort for å kunne gå videre derfra og fortsette til neste guide, Beyond Linux From Scratch. BLFS dekker mange pakker for nesten alle, bortsett fra, vel, spillere og de som ikke kan bruke Linux uten Windows-programvare som kjører fint på Linux under Wine.
 		</p>
 		<p>
-		So what's the option for people like them? Going off-roading!
+		Så hva er alternativet for folk som dem? Å gå off-roading!
 		</p>
 		<p>
-		I would like to note that getting Steam and Wine to work on LFS are two different tasks, but I recommend installing most of the packages (as well as the lib32 versions) listed in the Steam section if you are doing a multilib installation (more on that later) if you intend to just install Wine and skip Steam. Some packages not even including multilib are still necessary for Wine to even compile, like having a display server and having OpenGL (either MESA or libglvnd). For this sake, I'll cover Steam first, then Wine. If you just wanna use Steam and be done with it, you can just skip anything covered in the Wine section. In other words, when you're done with the Steam section, you're done.
+		Jeg vil bemerke at det å få Steam og Wine til å fungere på LFS er to forskjellige oppgaver, men jeg anbefaler å installere de fleste pakkene (samt lib32-versjonene) som er oppført i Steam-delen hvis du gjør en multilib-installasjon (mer om det senere) hvis du har tenkt å bare installere Wine og hoppe over Steam. Noen pakker som ikke engang inkluderer multilib er fortsatt nødvendige for at Wine skal kunne kompileres, som å ha en skjermserver og ha OpenGL (enten MESA eller libglvnd). Av denne grunn vil jeg dekke Steam først, deretter Wine. Hvis du bare vil bruke Steam og være ferdig med det, kan du bare hoppe over alt som er dekket i Wine-delen. Med andre ord, når du er ferdig med Steam-delen, er du ferdig.
 		</p>
 		<h3>
-		I'll say this here: I may do things a certain way which you might not agree with and may not be the best way to do things. This guide is the way I did and do things and what I did is not the only way to get things working. Little disclaimer out of the way.
+		Jeg sier dette her: Jeg kan gjøre ting på en bestemt måte som du kanskje ikke er enig i, og som kanskje ikke er den beste måten å gjøre ting på. Denne veiledningen er måten jeg gjorde og gjør ting på, og det jeg gjorde er ikke den eneste måten å få ting til å fungere på. En liten ansvarsfraskrivelse utelukket.
 		</h3>
 		<h2>
 		Multilib / lib32
 		</h2>
 		<p>
-		Most people following this guide should be using an x86_64 CPU and is capable of emulating 32-bit applications. In that case, Steam will complain that it cannot find the 32-bit version of libc.so.6 if you skip the lib32 branches. Please don't do this and install both the 64-bit and 32-bit versions of the packages I will lay out if you are following the Steam section. Wine users, some applications are 32-bit only, so I recommend following the lib32 branches as well. Users who just have an i*86 CPU should follow the 64-bit instructions as the instructions for you will just compile for i*86, i686 in most cases. If you have trouble following those instructions for your arch, I recommend taking a look at <a href="https://linuxfromscratch.org/blfs/view/stable" target="_blank">https://linuxfromscratch.org/blfs/view/stable</a> and the packages listed on there that are on here. Most if not all of the packages one here (besides Steam, Wine, and the Mingw-w64 toolchain) are also on BLFS.
+		De fleste som følger denne veiledningen, bør bruke en x86_64 CPU som kan emulere 32-biters applikasjoner. I så fall vil Steam klage over at de ikke finner 32-biters versjonen av libc.so.6 hvis du hopper over lib32-grenene. Ikke gjør dette, og installer både 64-biters og 32-biters versjoner av pakkene jeg vil legge ut hvis du følger Steam-delen. Wine-brukere, noen applikasjoner er bare 32-biters, så jeg anbefaler å følge lib32-grenene også. Brukere som bare har en i*86 CPU, bør følge 64-biters instruksjonene, da instruksjonene for deg bare vil kompilere for i*86, i686 i de fleste tilfeller. Hvis du har problemer med å følge disse instruksjonene for din arch, anbefaler jeg å ta en titt på <a href="https://linuxfromscratch.org/blfs/view/stable" target="_blank">https://linuxfromscratch.org/blfs/view/stable</a> og pakkene som er oppført der, som er her. De fleste, om ikke alle, pakkene her (foruten Steam, Wine og Mingw-w64-verktøykjeden) er også på BLFS.
 		</p>
 		<h2>
-		Multilib Preparation
+		Multilib Forberedelse
 		</h2>
 		<p>
-		Those that have decided, or couldn't decide due to their architecture and Steam's requirement, that they want/need to have multilib support, it would be wise to test if you have that support or not:
+		De som har bestemt seg for, eller ikke kunne bestemme seg på grunn av arkitekturen sin og Steams krav, at de ønsker/trenger å ha støtte for multilib, vil være lurt å teste om dere har den støtten eller ikke:
 		<br><br>
 		<code>
 		echo "int main(){}" >> dummy.c
@@ -41,24 +41,24 @@
 		./a.out
 		</code>
 		<br><br>
-		The output of said command should be:
+		Utdataene fra nevnte kommando skal være:
 		<br>
 		<code>
 		</code>
 		<br>
-		Well... nothing! If there is no error, then you can both compile 32-bit binaries like executables and libraries, and also execute them. If so, you can skip this section and go to the sections you need. For most people, I would hazard a guess that the first error started when <code>gcc -m32</code> was ran, which means GCC doesn't have 32-bit compilation support. Follow the proceding instructions to get multilib support.
+		Vel ... ingenting! Hvis det ikke er noen feil, kan du både kompilere 32-bit binærfiler som kjørbare filer og biblioteker, og også kjøre dem. I så fall kan du hoppe over denne delen og gå til delene du trenger. For de fleste vil jeg gjette at den første feilen startet da <code>gcc -m32</code> ble kjørt, noe som betyr at GCC ikke har støtte for 32-bit kompilering. Følg instruksjonene for å få støtte for flere biblioteker.
 		</p>
 		<p>
-		The best resource to get general multilib support is <a href="https://linuxfromscratch.org/~thomas/multilib" target="_blank">https://linuxfromscratch.org/~thomas/multilib</a>. This is essentially the LFS guide but with multilib. Personally, what I do is I build LFS with multilib support in mind. There probably is a way to get that support without rebuilding but I don't do this. If you want to try, be my guest. As for the guide, it has a couple issues I have found. I will rattle them off along as I go.
+		Den beste ressursen for å få generell støtte for flere biblioteker er <a href="https://linuxfromscratch.org/~thomas/multilib" target="_blank">https://linuxfromscratch.org/~thomas/multilib</a>. Dette er i hovedsak LFS-guiden, men med multilib. Personlig bygger jeg LFS med multilib-støtte i tankene. Det finnes sannsynligvis en måte å få den støtten på uten å bygge om, men jeg gjør ikke dette. Hvis du vil prøve, vær så snill. Når det gjelder guiden, har den et par problemer jeg har funnet. Jeg skal rable dem gjennom underveis.
 		</p>
 		<h3>
-		It adds support for x32
+		Det legger til støtte for x32
 		</h3>
 		<p>
-		x32 is a format that is essentially 32-bit with some of the advantages of 64-bit. Most desktop applications don't support this and is basically useless for Steam and Wine users. Almost no-one ever uses it and I recommend against installing x32. I will cover how not to get that support as it's not needed. As a general rule, there are some packages that have the following sections: a 64-bit compilation step, a 32-bit compilation step, and a x32-bit compilation step. The x32-bit compilation steps can be skipped entirely.
+		x32 er et format som i hovedsak er 32-bit med noen av fordelene til 64-bit. De fleste skrivebordsapplikasjoner støtter ikke dette, og det er i utgangspunktet ubrukelig for Steam- og Wine-brukere. Nesten ingen bruker det noen gang, og jeg anbefaler ikke å installere x32. Jeg vil dekke hvordan man ikke får den støtten, da det ikke er nødvendig. Som en generell regel finnes det noen pakker som har følgende deler: et 64-bit kompileringstrinn, et 32-bit kompileringstrinn og et x32-bit kompileringstrinn. X32-bit kompileringstrinnene kan hoppes over helt.
 		</p>
 		<h4>
-		4.2. Creating a Limited Directory Layout in the LFS Filesystem:
+		4.2. Opprette et begrenset mappeoppsett i LFS-filsystemet:
 		</h4>
 		<p>
 		<code>
@@ -69,7 +69,7 @@
 		ln -sv usr/libx32 $LFS/libx32
 		<br><br>
 		</code>
-		Should be changed to:
+		Bør endres til:
 		<br><br>
 		<code>
 		mkdir -pv $LFS/usr/lib32
@@ -79,7 +79,7 @@
 		</code>
 		</p>
 		<h4>
-		4.3. Adding the LFS User:
+		4.3. Legge til LFS-brukeren:
 		</h4>
 		<p>
 		<code>
@@ -94,7 +94,7 @@
 		</code>
 		</p>
 		<h4>
-		4.4. Setting Up the Environment:
+		4.4. Sette opp miljøet:
 		</h4>
 		<p>
 		<code>
@@ -114,7 +114,7 @@
 		EOF
 		<br><br>
 		</code>
-		Should be changed to:
+		Bør endres til:
 		<code>
 		<br><br>
 		cat > ~/.bashrc << "EOF" <br>
@@ -134,24 +134,24 @@
 		</code>
 		</p>
 		<h4>
-		All passes of GCC:
+		Alle gjennomganger av GCC:
 		</h4>
 		<p>
-		With the current instructions, and this isn't just involving multilib, nscd is no longer necessary but the configure command for me always found a way to still build nscd. Therefore, I recommend including in the configure command with all passes:
+		Med de nåværende instruksjonene, og dette gjelder ikke bare multilib, er ikke nscd lenger nødvendig, men configure-kommandoen har alltid funnet en måte å bygge nscd på for meg. Derfor anbefaler jeg å inkludere følgende i configure-kommandoen med alle gjennomganger:
 		<br><br>
 		<code>
 		--disable-nscd
 		</code>
 		<br><br>
-		I would put that in the libstdc++ configure command as well for good measure...
+		Jeg ville også lagt det inn i libstdc++ configure-kommandoen for sikkerhets skyld....
 		<br><br>
-		As for the multilib, it has the user define the env variable: mlist, and it is defined like so:
+		Når det gjelder multilib, må brukeren definere env-variabelen: mlist, og den er definert slik:
 		<br><br>
 		<code>
 		mlist=m64,m32,mx32 ../configure ...
 		</code>
 		<br><br>
-		But it should be changed to:
+		Men det bør endres til:
 		<br><br>
 		<code>
 		mlist=m64,m32 ../configure ...
@@ -159,10 +159,10 @@
 		<br>
 		</p>
 		<h4>
-		7.2. Changing Ownership:
+		7.2. Endring av eierskap:
 		</h4>
 		<p>
-		Don't execute the following command if you want to avoid an error (the directory shouldn't be there), unless you like errors:
+		Ikke utfør følgende kommando hvis du vil unngå en feil (mappen skal ikke være der), med mindre du liker feil:
 		<code>
 		<br><br>
 		chown -R root:root $LFS/libx32
@@ -173,15 +173,15 @@
 		10.3. Linux-6.8.2:
 		</h4>
 		<p>
-		When enabling binary emulation in the Linux kernel, don't enable <code>x32 ABI for 64-bit mode [CONFIG_X86_X32]</code>. 
+		Når du aktiverer binær emulering i Linux-kjernen, må du ikke aktivere <code>x32 ABI for 64-bit mode [CONFIG_X86_X32]</code>. 
 		<br><br><br>
-		That covers the no x32-bit subsection.
+		Det dekker underavsnittet uten x32-bit.
 		</p>
 		<h3>
-		It does not compile lib32-GDBM
+		Den kompilerer ikke lib32-GDBM
 		</h3>
 		<p>
-		lib32-GDBM is needed by some desktop packgages that you are trying to compile lib32 for, so it's a good idea to compile it so you don't need to go back later:
+		lib32-GDBM trengs av noen skrivebordspakker du prøver å kompilere lib32 for, så det er lurt å kompilere det slik at du ikke trenger å gå tilbake senere.:
 		<code>
 		<br><br>
 		CC="gcc -m32" CXX="g++ -m32" \ <br>
@@ -196,13 +196,13 @@
 		rm -rf DESTDIR
 		<br><br>
 		</code>
-		That covers the lib32-GDBM compilation subsection and issues with the multilib LFS guide.
+		Det dekker underavsnittet om lib32-GDBM-kompileringen og problemer med multilib LFS-veiledningen..
 		</p>
 		<h3>
-		What else?
+		Hva annet?
 		</h3>
 		<p>
-		Well, you are done with getting the tools you need for lib32 compilation and are ready for the Steam and/or Wine sections of this guide. As a general rule, this command format will compile the lib32 libraries for you:
+		Vel, du er ferdig med å få tak i verktøyene du trenger for lib32-kompilering og er klar for Steam- og/eller Wine-delene i denne veiledningen. Som en generell regel vil dette kommandoformatet kompilere lib32-bibliotekene for deg:
 		<code>
 		<br><br>
 		CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig [configure/meson/cmake...] ... --libdir=/usr/lib32 <br>
@@ -211,7 +211,7 @@
 		cp -vr DESTDIR/usr/lib32/* /usr/lib32
 		<br><br>
 		</code>
-		It would be wise to also check to see if the libraries you just compiled are 32-bit, and that can be done using file. If you don't check it and it ends up being 64-bit, the package you try to compile for 32-bit that depends on the previous package will error out during the linking step because the dependency library is in an invalid format. A simple library being 64 bit in the lib32 directory won't break your system but you'll need to fix the issue before you can compile packages that depend on it.
+		Det ville være lurt å også sjekke om bibliotekene du nettopp kompilerte er 32-bit, og det kan gjøres ved hjelp av file. Hvis du ikke sjekker det og det ender opp med å være 64-bit, vil pakken du prøver å kompilere for 32-bit som er avhengig av den forrige pakken, få feil under koblingstrinnet fordi avhengighetsbiblioteket er i et ugyldig format. Et enkelt bibliotek som er 64-bit i lib32-katalogen vil ikke ødelegge systemet ditt, men du må fikse problemet før du kan kompilere pakker som er avhengige av det.
 		</p>
 		<h2>
 		Steam

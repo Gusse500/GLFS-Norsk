@@ -18,34 +18,34 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Pipewire</title>
+    <title>Introduksjon til Pipewire</title>
 
     <para>
-      The <application>pipewire</application> package contains a server and
-      userspace API to handle multimedia pipelines. This includes a universal
-      API to connect to multimedia devices, as well as sharing multimedia
-      files between applications.
+      <application>pipewire</application> Pakken inneholder en server og et
+      brukerområde API for å håndtere multimediepipelines. Dette inkluderer et
+      universelt API for å koble til multimedieenheter, samt deling av
+      multimediefiler mellom applikasjoner.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&pipewire-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&pipewire-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&pipewire-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&pipewire-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Recommended patch:
+          Anbefalt oppdatering:
           <ulink url="&patch-root;/pipewire-&pipewire-version;-upstream_fix-1.patch"/>
           (required to fix <quote>could not play camera stream</quote> error
           from <xref linkend='snapshot'/>)
@@ -54,9 +54,9 @@
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Pipewire Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Pipewire Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <ulink url="&blfs-svn;/general/bluez.html">BlueZ</ulink>,
       <xref linkend="dbus-pass2"/>,
@@ -64,47 +64,47 @@
       <xref linkend="gst10-plugins-base"/>,
       <xref linkend="pulseaudio"/>,
       <ulink url="&blfs-svn;/multimedia/sbc.html">SBC</ulink>,
-      <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>, and
-      <xref role="runtime" linkend="wireplumber"/> (runtime)
+      <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>, og
+      <xref role="runtime" linkend="wireplumber"/> (kjøretid)
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="alsa-lib"/>,
-      <xref linkend="libdrm"/> (for one example and libcamera support),
+      <xref linkend="libdrm"/> (for ett eksempel og libcamera støtte),
       <xref linkend="libxcb"/>,
       <xref linkend="libsndfile"/>,
       <xref linkend="opus"/>,
-      <xref linkend="sdl2"/> (for some examples),
-      <xref linkend="libvk"/>, and
+      <xref linkend="sdl2"/> (for noen eksempler),
+      <xref linkend="libvk"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
     <note>
       <para>
-        These are not the only optional dependencies. Check <ulink url="&blfs-svn;/multimedia/pipewire.html">
-        BLFS' Pipewire</ulink> for a complete list.
+        Dette er ikke de eneste valgfrie avhengighetene. Sjekk <ulink url="&blfs-svn;/multimedia/pipewire.html">
+        BLFS Pipewire</ulink> for en komplett liste.
       </para>
     </note>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Pipewire</title>
+    <title>Installasjon av Pipewire</title>
 
 <!--
     <para>
-      If building <xref linkend='snapshot'/>, apply a patch to fix an issue
-      causing <xref linkend='snapshot'/> fail to play stream from some
-      cameras:
+      Hvis man bygger <xref linkend='snapshot'/>, installer en oppdatering for å fikse et problem
+      som forårsaker at <xref linkend='snapshot'/> klarer ikke å spille av strømming fra noen
+      kameraer:
     </para>
 
     <screen><userinput>patch -Np1 -i ../pipewire-&pipewire-version;-upstream_fix-1.patch</userinput></screen>
 -->
 
     <para>
-      Install <application>pipewire</application> by running the following
-      commands:
+      Installer <application>pipewire</application> ved å kjøre følgende
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -118,60 +118,60 @@ meson setup ..                 \
 ninja</userinput></screen>
 
     <para>
-      To test the result, issue: <command>ninja test</command>.
+      For å teste resultatene, utsted: <command>ninja test</command>.
     </para>
     <!--
     <para>
-      If upgrading from an earlier release of Pipewire, it's needed to
-      remove any old binary executables that interfere with the
-      installation.  As the &root; user:
+      Hvis du oppgraderer fra en tidligere versjon av Pipewire, er det nødvendig
+      å fjerne eventuelle gamle binære kjørbare filer som forstyrrer
+      installasjonen. Som &root; bruker:
     </para>
 
 <screen role='root'><userinput>rm -vf /usr/bin/pipewire-*</userinput></screen>
 -->
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="../../../xincludes/meson-buildtype-release.xml"/>
 
     <para>
-      <parameter>-D session-managers="[]"</parameter>: This switch
-      allows specifying the session managers to build as subprojects.
-      We specify an empty list to prevent <command>meson</command> from
-      downloading any external copy of the session managers. A Pipewire
-      session manager recommended by the PipeWire developers for general
-      use, <xref linkend="wireplumber" role="nodep"/>, is available as a
-      separate GLFS package.  Build it after installing Pipewire if you
-      need to run the Pipewire daemon.
+      <parameter>-D session-managers="[]"</parameter>: Denne bryteren
+      tillater å spesifisere sesjonsadministratorene som skal bygges som delprosjekter.
+      Vi spesifiserer en tom liste for å forhindre <command>meson</command> fra å
+      nedlasting av en ekstern kopi av øktbehandlerne.
+      En Pipewire øktbehandler anbefalt av PipeWire utviklerne for generell
+      bruk, <xref linkend="wireplumber" role="nodep"/>, er tilgjengelig som en separat
+      GLFS pakke. Bygg den etter at du har installert Pipewire hvis du
+      trenger å kjøre Pipewire daemonen.
     </para>
 
     <para>
-      <option>-D ffmpeg=enabled</option>: This switch enables using ffmpeg for
-      audio conversion as a SPA backend.
+      <option>-D ffmpeg=enabled</option>: Denne bryteren muliggjør bruk av ffmpeg for
+      lydkonvertering som et SPA bakstykke.
     </para>
 
     <para>
-      <option>-D vulkan=enabled</option>: This switch enables using Vulkan for
-      video rendering as a SPA backend.
+      <option>-D vulkan=enabled</option>: Denne bryteren muliggjør bruk av Vulkan for
+      videogjengivelse som et SPA bakstykke.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -195,14 +195,14 @@ ninja</userinput></screen>
           spa-inspect,
           spa-json-dump,
           spa-monitor,
-          spa-resample, and
-          pipewire-aes67, pipewire-avb, pipewire-pulse (symlinks to pipewire),
+          spa-resample, og
+          pipewire-aes67, pipewire-avb, pipewire-pulse (symbolske lenker til pipewire),
           pw-dsdplay, pw-encplay, pw-midiplay, pw-midirecord, pw-play,
-          pw-record (symlinks to pw-cat)
+          pw-record (symbolske lenker til pw-cat)
         </seg>
         <seg>
-          libpipewire-0.3.so and
-          60 modules below /usr/lib/pipewire-0.3 and /usr/lib/spa-0.2
+          libpipewire-0.3.so og
+          60 moduler under /usr/lib/pipewire-0.3 og /usr/lib/spa-0.2
         </seg>
         <seg>
           /usr/include/pipewire-0.3,
@@ -212,14 +212,14 @@ ninja</userinput></screen>
           /usr/lib/pipewire-0.3,
           /usr/lib/spa-0.2,
           /usr/share/alsa-card-profile,
-          /usr/share/pipewire, and
+          /usr/share/pipewire, og
           /usr/share/spa-0.2
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -227,8 +227,8 @@ ninja</userinput></screen>
         <term><command>pipewire</command></term>
         <listitem>
           <para>
-            is a service that allows access to multimedia devices and allows
-            sharing of multimedia files between applications
+            er en tjeneste som gir tilgang til multimedieenheter og tillater
+            deling av multimediefiler mellom applikasjoner
           </para>
           <indexterm zone="pipewire pipewire-prog">
             <primary sortas="b-pipewire">pipewire</primary>
@@ -240,8 +240,8 @@ ninja</userinput></screen>
         <term><command>pipewire-pulse</command></term>
         <listitem>
           <para>
-            starts a Pulseaudio-compatible version of
-            the pipewire service
+            starter en Pulseaudio-kompatibel versjon av
+            pipewire-tjenesten
           </para>
           <indexterm zone="pipewire pipewire-pulse">
             <primary sortas="b-pipewire-pulse">pipewire-pulse</primary>
@@ -253,7 +253,7 @@ ninja</userinput></screen>
         <term><command>pw-cat</command></term>
         <listitem>
           <para>
-            allows you to play or record media using a pipewire instance
+            lar deg spille av eller ta opp media ved hjelp av en pipewire-instans
           </para>
           <indexterm zone="pipewire pw-cat">
             <primary sortas="b-pw-cat">pw-cat</primary>
@@ -265,7 +265,7 @@ ninja</userinput></screen>
         <term><command>pw-cli</command></term>
         <listitem>
           <para>
-            allows you to interact with a pipewire instance
+            lar deg samhandle med en pipewire-instans
           </para>
           <indexterm zone="pipewire pw-cli">
             <primary sortas="b-pw-cli">pw-cli</primary>
@@ -277,8 +277,8 @@ ninja</userinput></screen>
         <term><command>pw-config</command></term>
         <listitem>
           <para>
-            allows you to interact with pipewire's configuration system
-            for debugging purposes or syntax checking
+            lar deg samhandle med pipewires konfigurasjonssystem
+            for feilsøking eller syntakskontroll
           </para>
           <indexterm zone="pipewire pw-config">
             <primary sortas="b-pw-config">pw-config</primary>
@@ -290,7 +290,7 @@ ninja</userinput></screen>
         <term><command>pw-dot</command></term>
         <listitem>
           <para>
-            lists all of the daemons and objects in use by pipewire
+            lister opp alle nissene og objektene som brukes av pipewire
           </para>
           <indexterm zone="pipewire pw-dot">
             <primary sortas="b-pw-dot">pw-dot</primary>
@@ -302,8 +302,8 @@ ninja</userinput></screen>
         <term><command>pw-dump</command></term>
         <listitem>
           <para>
-            dumps debug messages from a local or remote pipewire instance to
-            the console
+            dumper feilsøkingsmeldinger fra en lokal eller ekstern pipewire-instans til
+            konsollen
           </para>
           <indexterm zone="pipewire pw-dump">
             <primary sortas="b-pw-dump">pw-dump</primary>
@@ -315,7 +315,7 @@ ninja</userinput></screen>
         <term><command>pw-jack</command></term>
         <listitem>
           <para>
-            runs JACK applications on a pipewire instance
+            kjører JACK-applikasjoner på en pipewire-instans
           </para>
           <indexterm zone="pipewire pw-jack">
             <primary sortas="b-pw-jack">pw-jack</primary>
@@ -327,7 +327,7 @@ ninja</userinput></screen>
         <term><command>pw-link</command></term>
         <listitem>
           <para>
-            links pipewire ports together
+            kobler pipewire porter sammen
           </para>
           <indexterm zone="pipewire pw-link">
             <primary sortas="b-pw-link">pw-link</primary>
@@ -339,8 +339,8 @@ ninja</userinput></screen>
         <term><command>pw-loopback</command></term>
         <listitem>
           <para>
-            initializes a loopback link between two different pipewire ports.
-            This is useful for testing and debugging
+            initialiserer en loopback-kobling mellom to forskjellige pipewire porter.
+            Dette er nyttig for testing og feilsøking
           </para>
           <indexterm zone="pipewire pw-loopback">
             <primary sortas="b-pw-loopback">pw-loopback</primary>
@@ -352,7 +352,7 @@ ninja</userinput></screen>
         <term><command>pw-metadata</command></term>
         <listitem>
           <para>
-            inspects, adds, and removes metadata for objects
+            inspiserer, legger til og fjerner metadata for objekter
           </para>
           <indexterm zone="pipewire pw-metadata">
             <primary sortas="b-pw-metadata">pw-metadata</primary>
@@ -364,7 +364,7 @@ ninja</userinput></screen>
         <term><command>pw-mididump</command></term>
         <listitem>
           <para>
-            dumps MIDI messages from a file to the screen
+            dumper MIDI-meldinger fra en fil til skjermen
           </para>
           <indexterm zone="pipewire pw-mididump">
             <primary sortas="b-pw-mididump">pw-mididump</primary>
@@ -376,7 +376,7 @@ ninja</userinput></screen>
         <term><command>pw-mon</command></term>
         <listitem>
           <para>
-            allows you to monitor pipewire instances
+            lar deg overvåke pipewire forekomster
           </para>
           <indexterm zone="pipewire pw-mon">
             <primary sortas="b-pw-mon">pw-mon</primary>
@@ -388,7 +388,7 @@ ninja</userinput></screen>
         <term><command>pw-profiler</command></term>
         <listitem>
           <para>
-            tracks memory usage and API calls used by pipewire
+            sporer minnebruk og API-kall brukt av pipewire
           </para>
           <indexterm zone="pipewire pw-profiler">
             <primary sortas="b-pw-profiler">pw-profiler</primary>
@@ -400,7 +400,7 @@ ninja</userinput></screen>
         <term><command>pw-reserve</command></term>
         <listitem>
           <para>
-            reserves or monitors a device via D-Bus
+            reserverer eller overvåker en enhet via D-Bus
           </para>
           <indexterm zone="pipewire pw-reserve">
             <primary sortas="b-pw-reserve">pw-reserve</primary>
@@ -412,7 +412,7 @@ ninja</userinput></screen>
         <term><command>pw-top</command></term>
         <listitem>
           <para>
-            displays real-time performance information from pipewire
+            viser ytelsesinformasjon i sanntid fra pipewire
           </para>
           <indexterm zone="pipewire pw-top">
             <primary sortas="b-pw-top">pw-top</primary>
@@ -424,7 +424,7 @@ ninja</userinput></screen>
         <term><command>pw-v4l2</command></term>
         <listitem>
           <para>
-            runs v4l2 applications on a pipewire instance
+            kjører v4l2-applikasjoner på en pipewire-instans
           </para>
           <indexterm zone="pipewire pw-v4l2">
             <primary sortas="b-pw-v4l2">pw-v4l2</primary>
@@ -436,7 +436,7 @@ ninja</userinput></screen>
         <term><command>spa-acp-tool</command></term>
         <listitem>
           <para>
-            inspects the card profile of a given sound card
+            inspiserer kortprofilen til et gitt lydkort
           </para>
           <indexterm zone="pipewire spa-acp-tool">
             <primary sortas="b-spa-acp-tool">spa-acp-tool</primary>
@@ -448,7 +448,7 @@ ninja</userinput></screen>
         <term><command>spa-inspect</command></term>
         <listitem>
           <para>
-            allows you to inspect pipewire plugins
+            lar deg inspisere pipewire programtillegg
           </para>
           <indexterm zone="pipewire spa-inspect">
             <primary sortas="b-spa-inspect">spa-inspect</primary>
@@ -460,7 +460,7 @@ ninja</userinput></screen>
         <term><command>spa-json-dump</command></term>
         <listitem>
           <para>
-            dumps the current pipewire configuration in JSON format
+            dumper den gjeldende pipewire konfigurasjonen i JSON-format
           </para>
           <indexterm zone="pipewire spa-json-dump">
             <primary sortas="b-spa-json-dump">spa-json-dump</primary>
@@ -472,7 +472,7 @@ ninja</userinput></screen>
         <term><command>spa-monitor</command></term>
         <listitem>
           <para>
-            allows you to monitor pipewire plugins
+            lar deg overvåke pipewire programtillegg
           </para>
           <indexterm zone="pipewire spa-monitor">
             <primary sortas="b-spa-monitor">spa-monitor</primary>
@@ -484,7 +484,7 @@ ninja</userinput></screen>
         <term><command>spa-resample</command></term>
         <listitem>
           <para>
-            resamples a given file
+            resamplerer en gitt fil
           </para>
           <indexterm zone="pipewire spa-resample">
             <primary sortas="b-spa-resample">spa-resample</primary>
@@ -496,7 +496,7 @@ ninja</userinput></screen>
         <term><filename class="libraryfile">libpipewire-0.3.so</filename></term>
         <listitem>
           <para>
-            contains API functions for handling multimedia pipelines
+            inneholder API-funksjoner for håndtering av multimediepipelines
           </para>
           <indexterm zone="pipewire libpipewire">
             <primary sortas="c-libpipewire">libpipewire-0.3.so</primary>
@@ -508,7 +508,7 @@ ninja</userinput></screen>
         <term><filename class="libraryfile">libpulse.so</filename></term>
         <listitem>
           <para>
-            is a pipewire plugin for pulseaudio.
+            er en pipewire programtillegg for pulseaudio.
           </para>
           <indexterm zone="pipewire libpulse">
             <primary sortas="c-libpulse">libpulse.so</primary>
@@ -520,7 +520,7 @@ ninja</userinput></screen>
         <term><filename class="libraryfile">libpulse-simple.so</filename></term>
         <listitem>
           <para>
-            is a simplified version of the pulseaudio plugin for pipewire.
+            er en forenklet versjon av pulseaudio programtillegg for pipewire.
           </para>
           <indexterm zone="pipewire libpulse-simple">
             <primary sortas="c-libpulse-simple">libpulse-simple.so</primary>
@@ -532,7 +532,7 @@ ninja</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_pipewire.so</filename></term>
         <listitem>
           <para>
-            is an ALSA plugin for pipewire.
+            er ALSA programtillegg for pipewire.
           </para>
           <indexterm zone="pipewire libasound_module_pcm_pipewire">
             <primary sortas="c-libasound_module_pcm_pipewire">libasound_module_pcm_pipewire.so</primary>
@@ -544,7 +544,7 @@ ninja</userinput></screen>
         <term><filename class="libraryfile">libgstpipewire.so</filename></term>
         <listitem>
           <para>
-            is a Gstreamer plugin for pipewire.
+            er Gstreamer programtillegg for pipewire.
           </para>
           <indexterm zone="pipewire libgstpipewire">
             <primary sortas="c-libgstpipewire">libgstpipewire.so</primary>

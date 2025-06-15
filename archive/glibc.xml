@@ -18,48 +18,48 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to glibc</title>
+    <title>Introduksjon til glibc</title>
 
     <para>
-      The glibc package has already been compiled in LFS Multilib, both the
-      64-bit and 32-bit versions. However, the LFS Multilib book does not
-      add <command>"-mstackrealign"</command> to the <envar>CC</envar> and
-      <envar>CXX</envar> variables when configuring and compiling lib32-glibc.
-      This flag realigns the stack if necessary which can help prevent
-      segmentation faults for binary only applications, such as
-      <xref linkend="steam"/> and some Windows applications via
-      <xref linkend="wine"/>. Trying to run any app through Steam will
-      crash the launch process. This can be fixed by setting
+      Glibc pakken er allerede kompilert i LFS Multilib, både
+      64-bit og 32-bit versions. LFS Multilib boken legger imidlertid ikke
+      til <command>"-mstackrealign"</command> til <envar>CC</envar> og
+      <envar>CXX</envar> variabler ved konfigurasjon og kompilering av lib32-glibc.
+      Dette flagget justerer stakken om nødvendig, noe som kan bidra til å forhindre
+      segmenteringsfeil for kun binære applikasjoner, for eksempel
+      <xref linkend="steam"/> og noen Windows applikasjoner via
+      <xref linkend="wine"/>. Hvis du prøver å kjøre en app via Steam, vil
+      oppstartsprosessen krasje. Dette kan fikses ved å sette
       <computeroutput>LD_PRELOAD="" %command%</computeroutput>
-      under each app's manual launch options, or as this section will do, will
-      compile glibc in a certain way for the 32-bit version. The 64-bit version
-      of glibc does not need to be modified. Only the 32-bit version does.
+      under hver apps manuelle oppstartsalternativer, eller som denne delen vil gjøre, vil
+      kompilere glibc på en bestemt måte for 32-bitersversjonen. 64-bitersversjonen
+      av glibc trenger ikke å endres. Bare 32-bitersversjonen trenger det.
     </para>
 
     <para>
-      There will be added flags as well to prevent Steam crashes on launch with
-      <xref linkend="nvidia"/> due to frame pointers, which do not play well
-      with 32-bit.
+      Det vil også bli lagt til flagg for å forhindre Steam-krasj ved oppstart med
+      <xref linkend="nvidia"/> på grunn av rammepekere, som ikke virker bra
+      med 32-bit.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&glibc-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&glibc-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&glibc-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&glibc-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="https://www.linuxfromscratch.org/patches/lfs/development/glibc-&glibc-version;-fhs-1.patch"/>
         </para>
       </listitem>
@@ -68,10 +68,10 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of glibc</title>
+    <title>lib32 Installasjon av glibc</title>
 
     <para>
-      Install lib32-<application>glibc</application> by running the following commands:
+      Installer lib32-<application>glibc</application> ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch &amp;&amp;
@@ -94,7 +94,7 @@ CXX="g++ -m32 -mstackrealign -fno-omit-frame-pointer -mno-omit-leaf-frame-pointe
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -106,7 +106,7 @@ ldconfig</userinput></screen>
     <important>
 
       <para>
-        Now check that the multilib toolchain is still functional:
+        Sjekk nå at multilib verktøykjeden fortsatt fungerer:
       </para>
 
 <screen><userinput>echo 'int main(){}' > dummy.c       &amp;&amp;
@@ -114,18 +114,18 @@ gcc -m32 dummy.c                    &amp;&amp;
 readelf -l a.out | grep '/ld-linux'</userinput></screen>
 
       <para>
-        There should be no errors and the output should be:
+        Det skal ikke være noen feil, og resultatet skal være:
       </para>
 
 <screen><computeroutput>[Requesting program interpreter: /lib/ld-linux.so.2]</computeroutput></screen>
 
       <para>
-        If you do not see that result and are met with errors, then something
-        went wrong. Go back and double check the commands you ran were correct.
+        Hvis du ikke ser det resultatet og får feilmeldinger, har noe
+        gått galt. Gå tilbake og dobbeltsjekk at kommandoene du kjørte var riktige..
       </para>
 
       <para>
-        Once all is well, clean up the test files:
+        Når alt er i orden, rydd opp i testfilene:
       </para>
 
       <screen><userinput>rm -v dummy.c a.out</userinput></screen>
@@ -135,10 +135,10 @@ readelf -l a.out | grep '/ld-linux'</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <para>
-      For a complete list of glibc's contents, see
+      For en fullstendig liste over innholdet i glibc, se
       <ulink url="https://linuxfromscratch.org/~thomas/multilib/chapter08/glibc.html"/>.
     </para>
 

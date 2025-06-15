@@ -5,70 +5,70 @@
   %general-entities;
 ]>
 
-<preface id="preface" xreflabel="Preface">
+<preface id="preface" xreflabel="Forord">
   <?dbhtml filename="preface.html" dir="preface"?>
 
-  <title>Preface</title>
+  <title>Forord</title>
 
   <para>
-    Sometime after my first install of LFS, I had a question that others had:
-    how do I install <application>Steam</application> on this system? I kept
-    that thought in the back of my head as I went for Beyond LFS, a book that
-    covered a good number of packages I needed. However, the issue of
-    <application>Steam</application> was not cleared up yet. So I just tried to
-    install the <application>Steam</application> tarball. Because I did not
-    have 32-bit libraries, this ended in failure.
+    En gang etter min første installasjon av LFS, hadde jeg et spørsmål som andre hadde: 
+    hvordan installerer jeg <application>Steam</application> på dette systemet? Jeg holdt 
+    den tanken i bakhodet mens jeg gikk for Beyond LFS, en bok som 
+    dekket en god del pakker jeg trengte. Imidlertid var spørsmålet om
+    <application>Steam</application> ennå ikke oppklart. Så jeg prøvde bare 
+    å installere <application>Steam</application> tarballen. Fordi jeg ikke 
+    hadde 32-bits biblioteker, endte dette med en fiasko.
   </para>
 
   <para>
-    Beyond LFS doesn't cover the installation of Steam, so I had to look
-    elsewhere. I learned shortly after my attempt that I needed a multilib
-    toolchain. I sent an <ulink
+    Beyond LFS dekker ikke installasjon av Steam, så jeg måtte lete 
+    andre steder. Jeg fant ut kort tid etter forsøket at jeg trengte en multibibliotek 
+    verktøykjede. Jeg sendte en <ulink
     url="https://lists.linuxfromscratch.org/sympa/arc/blfs-support/2023-03/msg00049.html">email</ulink>
-    to the blfs-support mailing list in search of potential multilib support.
-    Douglas Reno saw my email and suggested to give Thomas' Multilib branch a
-    read. I rebuilt my LFS system with multilib support in mind.
+    til blfs-support postlisten på jakt etter potensiell multilib støtte. 
+    Douglas Reno så e-posten min og foreslo å lese Multilib grenen til Thomas. 
+    Jeg gjenoppbygde LFS systemet mitt med støtte for multilib i tankene.
   </para>
 
   <para>
-    Rahul Chandra in the same thread mentioned his scripts for his distro,
-    Tucana. These scripts gave me a basic idea of how to do lib32 installations
-    for BLFS packages which were necessary for
-    <application>Steam.</application>. While this wasn't exactly difficult,
-    it was a big timesink as I had to manually type in all the lib32
-    compilation options to successfully build 32-bit libraries. Even after
-    having built all the 32-bit libraries required, a few more fixes and files
-    were necessary. After about a week, I managed to get
-    <application>Steam</application> working. I realized that this was a lot of
-    work, and many users who'd want to do the same thing would get stuck and
-    not know what to do. In the worst case, they'd give up before even reaching
-    their goal. I had made a pretty lackluster <ulink
+    Rahul Chandra nevnte i samme tråd skriptene sine for distroen sin, 
+    Tucana. Disse skriptene ga meg en grunnleggende idé om hvordan jeg skulle gjøre lib32 
+    installasjoner for BLFS pakker som var nødvendige for
+    <application>Steam.</application>. Selv om dette ikke akkurat var vanskelig, 
+    var det et stort tidssvinn, siden jeg måtte skrive inn alle lib32 
+    kompileringsalternativene manuelt for å kunne bygge 32-bits biblioteker. Selv etter 
+    å ha bygget alle de nødvendige 32-bits bibliotekene, var noen flere rettelser og filer 
+    nødvendige. Etter omtrent en uke klarte jeg å få
+    <application>Steam</application> til å fungere. Jeg innså at dette var mye arbeid, 
+    og mange brukere som ville gjøre det samme ville bli sittende fast 
+    og ikke vite hva de skulle gjøre. I verste fall ville de gi opp før de i det hele tatt nådde målet 
+    sitt. Jeg hadde laget en ganske mangelfull <ulink
     url="https://www.youtube.com/watch?v=yQ8ueeRZ5q0">YouTube video</ulink>
-    explaining some troubleshooting information in an attempt to make things a
-    bit easier. Shortly after the video, I realized it wasn't really good
-    enough. Knowledge and methods are one thing, but hours spent is another. I
-    put my ambitions for an easier guide on my backlog and did other things.
+    som forklarer litt feilsøkingsinformasjon i et forsøk på å gjøre ting 
+    litt enklere. Kort tid etter videoen innså jeg at den ikke var god nok. 
+    Kunnskap og metoder er én ting, men timer brukt er noe annet. Jeg 
+    la ambisjonene mine om en enklere guide på hyllen og gjorde andre ting.
   </para>
 
   <para>
-    Sometime afterwards, I decided to do a <ulink
-    url="https://www.youtube.com/playlist?list=PL_vcsK5qbWSv-70zpfFcol_D9yovtf6N6">stream
-    series</ulink> that included that installation of
-    <application>Wine</application>, not just <application>Steam</application>.
-    My general idea was to compile all the stream footage (roughly 40 GB worth)
-    into a single video master guide. When some time passed, I came to the
-    conclusion that for a installation guide for two complex packages on an LFS
-    system, a video is not a great format. I decided to then write up some
-    basic <ulink url="../archive/swlfs.html">HTML</ulink>. Rahul Chandra came
-    across my <ulink
+    En stund etterpå bestemte jeg meg for å gjøre en <ulink
+    url="https://www.youtube.com/playlist?list=PL_vcsK5qbWSv-70zpfFcol_D9yovtf6N6">strømmeserie</ulink> 
+    som inkluderte installasjon av
+    <application>Wine</application>, ikke bare <application>Steam</application>.
+    Den generelle ideen min var å samle alt strømmeopptaket (omtrent 40 GB) 
+    til én enkelt videomasterguide. Etter en stund kom jeg til 
+    konklusjonen at for en installasjonsguide for to komplekse pakker på et LFS 
+    system, er ikke en video et godt format. Jeg bestemte meg deretter for å skrive noen 
+    grunnleggende <ulink url="../archive/swlfs.html">HTML</ulink>. Rahul Chandra kom 
+    over min <ulink
     url="https://www.youtube.com/channel/UCqYrmltSQNdtsbpsbhZI3wg/community?lb=UgkxDlke0llHGWxC7HpzVyv24K8XcsWFF8Dn">YouTube
-    post</ulink> and reached out to me. He suggested that I should reuse the
-    LFS/BLFS codebase to make my own book. That led to this book's creation
-    and editing.
+    post</ulink> og kontaktet meg. Han foreslo at jeg burde gjenbruke 
+    LFS/BLFS kodebasen for å lage min egen bok. Det førte til at denne boken ble laget 
+    og redigert.
   </para>
 
   <para>
-    Hopefully this book does its job. Have fun, and good luck!
+    Forhåpentligvis gjør denne boken jobben sin. Kos deg, og lykke til!
   </para>
 
   <blockquote>

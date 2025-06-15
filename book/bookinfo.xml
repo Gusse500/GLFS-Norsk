@@ -12,10 +12,10 @@
   <title>
     Gaming Linux<superscript>&reg;</superscript> From Scratch
     <phrase revision="systemd">(Systemd</phrase>
-    <phrase revision="sysv">(System V</phrase> Edition)
+    <phrase revision="sysv">(System V</phrase> Utgave)
   </title>
-  <subtitle>Version &version;</subtitle>
-  <subtitle>Published &releasedate;</subtitle>
+  <subtitle>Versjon &version;</subtitle>
+  <subtitle>Publisert &releasedate;</subtitle>
 
   <authorgroup>
     <corpauthor>
@@ -29,29 +29,29 @@
   </copyright>
 
   <legalnotice>
-    <para>Copyright &copy; &copyrightdate;, &copyholder;</para>
+    <para>Opphavsrett &copy; &copyrightdate;, &copyholder;</para>
 
-    <para>All rights reserved.</para>
+    <para>Alle rettigheter forbeholdt.</para>
 
-    <para>This book is licensed under a <xref linkend="CC"/>.</para>
+    <para>Denne boken er lisensiert under <xref linkend="CC"/>.</para>
 
     <para>
-      Computer instructions may be extracted from the book under the
+      Datamaskininstruksjoner kan hentes fra boken under
       <xref linkend="MIT"/>.
     </para>
 
     <para>
-      <trademark class='registered'>Linux</trademark> is a registered trademark
-      of Linus Torvalds.
+      <trademark class='registered'>Linux</trademark> er et registrert varemerke 
+      tilhørende Linus Torvalds.
     </para>
   </legalnotice>
 
   <abstract>
     <para>
-      This book introduces and guides the reader through additions to the
-      system like <application>Steam</application>,
-      <application>Wine</application>, and their dependencies after the
-      LFS or Multilib-LFS book on x86_64 systems.
+      Denne boken introduserer og veileder leseren gjennom tillegg til 
+      systemet som <application>Steam</application>,
+      <application>Wine</application>, og deres avhengigheter etter 
+      LFS eller Multilib-LFS boken på x86_64-systemer.
     </para>
   </abstract>
 

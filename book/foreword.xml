@@ -5,24 +5,24 @@
   %general-entities;
 ]>
 
-<sect1 id="foreword" xreflabel="Foreword">
+<sect1 id="foreword" xreflabel="Forord">
   <?dbhtml filename="foreword.html"?>
 
 
-  <title>Foreword</title>
+  <title>Forord</title>
 
   <para>
-    This book is separate from LFS/MLFS and BLFS and should be followed after
-    LFS/MLFS. If you have already followed BLFS, you will still have to
-    reinstall a good number of packages, but you can follow it first before
-    following this book. You may also follow this book before moving onto BLFS.
+    Denne boken er separat fra LFS/MLFS og BLFS, og bør følges etter 
+    LFS/MLFS. Hvis du allerede har fulgt BLFS, må du fortsatt 
+    installere en god del pakker på nytt, men du kan følge den først før 
+    du følger denne boken. Du kan også følge denne boken før du går videre til BLFS.
   </para>
 
-  <para>Enjoy!</para>
+  <para>Nyt!</para>
 
   <blockquote>
 <literallayout>Zeckma
-August 2nd, 2024</literallayout>
+2. august 2024</literallayout>
   </blockquote>
 
 </sect1>

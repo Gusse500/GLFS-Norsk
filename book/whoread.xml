@@ -5,20 +5,20 @@
   %general-entities;
 ]>
 
-<sect1 id="whoread" xreflabel="Who Would Want to Read this Book">
+<sect1 id="whoread" xreflabel="Hvem ville ønske å lese denne boken">
   <?dbhtml filename="whoread.html"?>
 
 
-  <title>Who Would Want to Read this Book</title>
+  <title>Hvem ville ønske å lese denne boken</title>
 
   <para>
-    This book is aimed towards users who want to use a system following
-    the Linux From Scratch book but also want to use <application>Steam
-    </application> and/or <application>Wine</application>.
-    The official Linux From Scratch and Beyond Linux From Scratch books
-    do not support these two packages. However, users should still have
-    both the choice and an easy to follow guide to get these packages
-    working on their system.
+    Denne boken er rettet mot brukere som ønsker å bruke et system som følger 
+    boken «Linux From Scratch», men som også ønsker å bruke <application>Steam
+    </application> og/eller <application>Wine</application>.
+    De offisielle bøkene om Linux From Scratch og Beyond Linux From Scratch 
+    støtter ikke disse to pakkene. Brukere bør imidlertid fortsatt ha 
+    både valget og en lettfattelig veiledning for å få disse pakkene til 
+    å fungere på systemet sitt.
   </para>
 
 </sect1>

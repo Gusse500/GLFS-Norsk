@@ -20,37 +20,37 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Git</title>
+    <title>Introduksjon til Git</title>
 
     <para>
-      <application>Git</application> is a free and open source, distributed
-      version control system designed to handle everything from small to very
-      large projects with speed and efficiency. Every
-      <application>Git</application> clone is a full-fledged repository with
-      complete history and full revision tracking capabilities, not dependent
-      on network access or a central server. Branching and merging are fast and
-      easy to do. <application>Git</application> is used for version control of
-      files, much like tools such as <application>Mercurial</application>,
+      <application>Git</application> er et gratis og åpen kildekode, distribuert 
+      versjonskontrollsystem designet for å håndtere alt fra små til svært store 
+      prosjekter med hastighet og effektivitet. Hver
+      <application>Git</application> klone er et fullverdig arkiv med 
+      komplett historikk og full revisjonssporingsfunksjonalitet, ikke avhengig 
+      av nettverkstilgang eller en sentral server. Forgrening og sammenslåing er raskt og 
+      enkelt å gjøre. <application>Git</application> brukes til versjonskontroll av 
+      filer, omtrent som verktøy som <application>Mercurial</application>,
       <application>Bazaar</application>, <application>Subversion</application>,
       <ulink url="https://www.nongnu.org/cvs/">CVS</ulink>,
-      <application>Perforce</application>, and
+      <application>Perforce</application>, og
       <application>Team Foundation Server</application>.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&git-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&git-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&git-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&git-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -62,27 +62,27 @@
         <para>
           <ulink url="&git-root;/git-htmldocs-&git-version;.tar.xz">
           &git-root;/git-htmldocs-&git-version;.tar.xz</ulink>
-          and other docs
+          og andre dokumenter
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Git Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Git Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="curl"/> (needed to use <application>Git</application> over
-      http, https, ftp or ftps)
+      <xref linkend="curl"/> (påkrevd for å bruke <application>Git</application> over
+      http, https, ftp eller ftps)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Git</title>
+    <title>Installasjon av Git</title>
 
     <para>
-      Install <application>Git</application> by running the following
-      commands:
+      Installer <application>Git</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr \
@@ -92,40 +92,41 @@ make</userinput></screen>
 
 <!--
     <para>
-      The test suite can be run in parallel mode. To run the test suite, issue:
-      <command>make test -k |&amp; tee test.log</command>.  If some test
-      fails, the list of failed tests can be shown via
+    <para>
+      Testpakken kan kjøres i parallellmodus. For å kjøre testpakken, utfør:
+      <command>make test -k |&amp; tee test.log</command>.  Hvis noen tester 
+      mislykkes, kan listen over ikke beståtte tester vises via
       <command>grep '^not ok' test.log | grep -v TODO</command>.
       <!- - It looks like I'd misdiagnosed the issue.  - ->
-      <!- -phrase revision='systemd'>One test named <literal>start and stop
-      Linux/systemd maintenance</literal> is known to fail if the current
-      login session is not started after rebuilding
-      <xref linkend='systemd'/> with <xref linkend='linux-pam'/>
-      support, or it's a SSH session but the SSH server is not configured
-      with <option>UsePAM</option> enabled.</phrase- ->
+      <!- -phrase revision='systemd'>En test ved navn <literal>start and stop
+      Linux/systemd maintenance</literal> er kjent for å mislykkes hvis den nåværende 
+      påloggingsøkten ikke startes etter gjenoppbygging av
+      <xref linkend='systemd'/> med <xref linkend='linux-pam'/>
+      støtte, eller det er en SSH økt, men SSH serveren er ikke konfigurert 
+      med <option>UsePAM</option> aktivert.</phrase- ->
     </para>
 -->
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem>
-      user:
+      Nå, som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>make perllibdir=/usr/lib/perl5/&lfs-perl-version;/site_perl install</userinput></screen>
 
-    <bridgehead renderas="sect3">If you downloaded the man pages and/or html docs</bridgehead>
+    <bridgehead renderas="sect3">Hvis du lastet ned manualsidene og/eller HTML dokumentasjonen</bridgehead>
 
     <para>
-      If you downloaded the man pages untar them as the
-      <systemitem class="username">root</systemitem> user:
+      Hvis du lastet ned manualsidene, untar dem som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>tar -xf ../git-manpages-&git-version;.tar.xz \
     -C /usr/share/man --no-same-owner --no-overwrite-dir</userinput></screen>
 
     <para>
-      If you downloaded the html docs untar them as the
-      <systemitem class="username">root</systemitem> user:
+      Hvis du lastet ned html dokumentene, untar dem som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -vp   /usr/share/doc/git-&git-version; &amp;&amp;
@@ -136,12 +137,12 @@ find        /usr/share/doc/git-&git-version; -type d -exec chmod 755 {} \; &amp;
 find        /usr/share/doc/git-&git-version; -type f -exec chmod 644 {} \;</userinput></screen>
 
 <!-- ==== Reorganize docs ====== -->
-    <bridgehead renderas="sect3">Reorganize text and html in the html-docs</bridgehead>
+    <bridgehead renderas="sect3">Omorganiser tekst og html i html dokumentasjonen</bridgehead>
 
     <para>
-      The html-docs include a lot of plain text files.
-      Reorganize the files as the
-      <systemitem class="username">root</systemitem> user:
+      Html dokumentene inneholder mange rene tekstfiler. 
+      Omorganiser filene som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -vp /usr/share/doc/git-&git-version;/man-pages/{html,text}         &amp;&amp;
@@ -162,40 +163,40 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
   </sect2>
 
   <sect2>
-    <title>Using Git</title>
+    <title>Bruke Git</title>
 
     <para>
-      This Git installation doesn't have the full power Git can provide, such
-      as scheduling and the like. If you want even more features, check
-      <ulink url="&blfs-svn;/general/git.html"/>. However, this installation
-      if you installed <xref linkend="curl"/> can provide enough features to
-      be of good use for you, such as the ability to clone repos. This is
-      sometimes a necessity when developers don't publish releases or haven't
-      in a long time, so the repo is the only way to obtain the (hopefully) up
-      to date package. In order to clone a repo, simply invoke:
+      Denne Git installasjonen har ikke all den kraften Git kan tilby, som for eksempel 
+      planlegging og lignende. Hvis du vil ha enda flere funksjoner, sjekk
+      <ulink url="&blfs-svn;/general/git.html"/>. Men, denne installasjonen 
+      hvis du installerte <xref linkend="curl"/> kan tilby nok funksjoner til 
+      å være nyttige for deg, for eksempel muligheten til å klone repositorier. Dette er 
+      noen ganger en nødvendighet når utviklere ikke publiserer utgivelser eller ikke har gjort 
+      det på lenge, så repositoriet er den eneste måten å få tak i den (forhåpentligvis) oppdaterte 
+      pakken. For å klone et repositori, bare bruk:
     </para>
 
-    <screen><userinput>git clone https://path/to/repo.git</userinput></screen>
+    <screen><userinput>git clone https://sti/til/repo.git</userinput></screen>
 
     <para>
-      The above command will then clone the entire repository besides
-      subprojects, something that some projects do and require special instructions.
-      A directory will be created, called <filename>repo</filename>, in the current
-      working directory, with all the repo's files being in that just created
-      directory. If you want to for some reason change the directory name, you
-      can do it when you clone the repo, like so:
+      Kommandoen ovenfor vil da klone hele depotet foruten 
+      delprosjekter, noe noen prosjekter gjør og krever spesielle instruksjoner. 
+      En mappe vil bli opprettet, kalt <filename>repo</filename>, i gjeldende 
+      arbeidsmappe, med alle filene til repoet i den nettopp opprettede 
+      mappen. Hvis du av en eller annen grunn vil endre mappenavnet, kan du 
+      gjøre det når du kloner repoet, slik som dette:
     </para>
 
-<screen><userinput>git clone https://path/to/repo.git newname</userinput></screen>
+<screen><userinput>git clone https://sti/til/repo.git nyttnavn</userinput></screen>
 
     <para>
-      The above command will create the directory called <filename>newname
-      </filename> and put all the repo's files in that directory. Eventually you'll
-      come across a repository that has some subprojects, for instance an
-      emulator that depends on graphic libraries and intends to compile a static
-      version of it. In order to pull in those subprojects, you must also
-      invoke the <parameter>--recurse-submodules</parameter> option. This will
-      clone all the subprojects and check them out.
+      Kommandoen ovenfor vil opprette mappen kalt <filename>nyttnavn
+      </filename> og legg alle filene til repositoriet i den mappen. Etter hvert 
+      vil du komme over et repositorium som har noen delprosjekter, for eksempel 
+      en emulator som er avhengig av grafikkbiblioteker og har til hensikt å kompilere en 
+      statisk versjon av det. For å hente inn disse delprosjektene må du også 
+      påkalle <parameter>--recurse-submodules</parameter> alternativ. Dette vil 
+      klone alle delprosjektene og sjekke dem ut.
     </para>
 
   </sect2>
@@ -204,95 +205,95 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
     <title>Git Repo vs Release Archives</title>
 
     <para>
-      Most of the packaged source code in GLFS are packaged in
-      tarballs or zipfiles. These tarballs and zipfiles were created
-      as part of a release, and often include files not found in the repo
-      equivalent where the package development happens. Usually the extra
-      included files are the configure scripts you should now be used to using.
-      They are generated manually using <command>aclocal</command>,
-      <command>autoconf</command>, and <command>automake</command>. The
-      configure scripts are often not in the repos, so if the git repo gets
-      cloned, you will have to generate the configure script yourself if you
-      find <filename>configure.ac</filename>, <filename>Makefile.am</filename>,
-      and possibly <filename>autogen.sh</filename>. You won't need to do this
-      if you find the repo has a <filename>Makefile</filename>,
-      <filename>meson_options.txt</filename>, or
+      Det meste av den pakkede kildekoden i GLFS er pakket i 
+      tarballer eller zipfiler. Disse tarballene og zipfilene ble opprettet 
+      som en del av en utgivelse, og inkluderer ofte filer som ikke finnes i repo 
+      ekvivalenten der pakkeutviklingen skjer. Vanligvis er de ekstra 
+      inkluderte filene konfigurasjonsskriptene du nå burde være vant til å bruke. 
+      De genereres manuelt ved hjelp av <command>aclocal</command>,
+      <command>autoconf</command>, og <command>automake</command>. 
+      configure skript er ofte ikke i repoene, så hvis git repoet blir klonet, 
+      må du generere configure skriptet selv, hvis du 
+      finner <filename>configure.ac</filename>, <filename>Makefile.am</filename>,
+      og muligens <filename>autogen.sh</filename>. Du trenger ikke å gjøre dette 
+      hvis du finner ut at depotet har en <filename>Makefile</filename>,
+      <filename>meson_options.txt</filename>, eller
       <filename>CMakeLists.txt</filename>.
     </para>
 
     <para>
-      Another big difference between the repo and the release package is that
-      the repo probably has had commits after the last release if it had any,
-      and new commits can introduce bugs or prevent compilation. When developers
-      prepare a new release, often they search for issues, bugs, and compilation
-      errors, making it stable before they publish the release and its related
-      package files. Release packages aren't entirely safe from issues and can
-      help with causing issues as files can be added. Sometimes you can tell
-      if something is wrong, sometimes you can't. It's always important to be
-      up to date with security news to prevent damage.
+      En annen stor forskjell mellom repoet og utgivelsespakken er at 
+      repoet sannsynligvis har hatt commits etter den siste utgivelsen hvis det hadde noen, 
+      og nye commits kan introdusere feil eller forhindre kompilering. Når utviklere 
+      forbereder en ny utgivelse, søker de ofte etter problemer, feil og kompileringsfeil, 
+      slik at den blir stabil før de publiserer utgivelsen og dens relaterte 
+      pakkefiler. Utgivelsespakker er ikke helt trygge for problemer og kan 
+      bidra til å forårsake problemer ettersom filer kan legges til. Noen ganger kan du se 
+      om noe er galt, noen ganger ikke. Det er alltid viktig å være oppdatert med 
+      sikkerhetsnyheter for å forhindre skade.
     </para>
 
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--with-gitconfig=/etc/gitconfig</parameter>: This sets
-      <filename>/etc/gitconfig</filename> as the file that stores
-      the default, system wide, <application>Git</application>
-      settings.
+      <parameter>--with-gitconfig=/etc/gitconfig</parameter>: Dette setter
+      <filename>/etc/gitconfig</filename> som filen som lagrer
+      standard, systemomfattende, <application>Git</application>
+      innstillinger.
     </para>
 
     <para>
-      <parameter>--with-python=python3</parameter>: Use this switch to use
-      <application>Python 3</application>, instead of the EOL'ed
-      <application>Python 2</application>. Python is used for the
-      <command>git p4</command> interface to Perforce repositories,
-      and also used in some tests.
+      <parameter>--with-python=python3</parameter>: Bruk denne bryteren for å bruke
+      <application>Python 3</application>, i stedet for EOL-en
+      <application>Python 2</application>. Python brukes til
+      <command>git p4</command> grensesnitt til Perforce repositorier, 
+      og også brukt i noen tester.
     </para>
 
 <!--
     <para>
-      <option>- -with-libpcre2</option>: Use this switch if
-      <application>PCRE2</application> is installed.
+      <option>- -with-libpcre2</option>: Bruk denne bryteren hvis
+      <application>PCRE2</application> er installert.
     </para>
 -->
 
     <para>
       <command>tar -xf ../git-manpages-&git-version;.tar.gz -C
-      /usr/share/man --no-same-owner</command>: This untars
+      /usr/share/man --no-same-owner</command>: Dette untarer
       <filename>git-manpages-&git-version;.tar.gz</filename>. The
-      <option>-C</option> option makes tar change directory to
-      <filename class="directory">/usr/share/man</filename> before
-      it starts to decompress the docs. The <option>--no-same-owner</option>
-      option stops tar from preserving the user and group details of the
-      files. This is useful as that user or group may not exist on your
-      system; this could (potentially) be a security risk.
+      <option>-C</option> alternativet gjør at tar endrer mappen til
+      <filename class="directory">/usr/share/man</filename> før
+      den begynner å dekomprimere dokumentene. <option>--no-same-owner</option>
+      alternativet hindrer tar i å bevare bruker- og gruppedetaljene i filene. 
+      Dette er nyttig ettersom den brukeren eller gruppen kanskje ikke finnes på 
+      systemet ditt; dette kan (potensielt) være en sikkerhetsrisiko.
     </para>
 
     <para>
-      <command>mv /usr/share/doc/git-&git-version; ...</command>: These
-      commands move some of the files into subfolders to make it easier to sort
-      through the docs and find what you're looking for.
+      <command>mv /usr/share/doc/git-&git-version; ...</command>: Disse 
+      kommandoene flytter noen av filene til undermapper for å gjøre det enklere å sortere 
+      gjennom dokumentene og finne det du leter etter.
     </para>
 
     <para>
-      <command>find ... chmod ...</command>: These commands correct the
-      permissions in the shipped documentation tar file.
+      <command>find ... chmod ...</command>: Disse kommandoene korrigerer 
+      tillatelsene i den medfølgende dokumentasjonens tar fil.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Git</title>
+    <title>Konfigurere Git</title>
 
     <sect3 id="git-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
       <para>
-        <filename>~/.gitconfig</filename> and
+        <filename>~/.gitconfig</filename> og
         <filename>/etc/gitconfig</filename>
       </para>
 
@@ -309,32 +310,32 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          git, git-receive-pack, git-upload-archive, and
-          git-upload-pack (hardlinked to each
-          other), git-cvsserver, git-shell, gitk, and scalar
+          git, git-receive-pack, git-upload-archive, og
+          git-upload-pack (hardlenket til 
+		  hverandre), git-cvsserver, git-shell, gitk, og scalar
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/libexec/git-core,
-          /usr/lib/perl5/&lfs-perl-version;/site_perl/Git, and
+          /usr/lib/perl5/&lfs-perl-version;/site_perl/Git, og
           /usr/share/{doc/git-&git-version;,git-core,git-gui,gitk,gitweb}
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -342,7 +343,7 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git</command></term>
         <listitem>
           <para>
-            is the stupid content tracker
+            er innholdssporeren
           </para>
           <indexterm zone="git git-prog">
             <primary sortas="b-git">git</primary>
@@ -354,7 +355,7 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git-cvsserver</command></term>
         <listitem>
           <para>
-            is a CVS server emulator for <application>Git</application>
+            er en CVS serveremulator for <application>Git</application>
           </para>
           <indexterm zone="git git-cvsserver">
             <primary sortas="b-git-cvsserver">git-cvsserver</primary>
@@ -366,8 +367,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>gitk</command></term>
         <listitem>
           <para>
-            is a graphical <application>Git</application> repository browser
-            (needs <ulink url="&blfs-svn;/general/tk.html">Tk</ulink>)
+            er en grafisk <application>Git</application> nettleser for arkivet
+            (trenger <ulink url="&blfs-svn;/general/tk.html">Tk</ulink>)
           </para>
           <indexterm zone="git gitk">
             <primary sortas="b-gitk">gitk</primary>
@@ -379,8 +380,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git-receive-pack</command></term>
         <listitem>
           <para>
-            is invoked by <command>git send-pack</command> and updates the
-            repository with the information fed from the remote end
+            påkalles av <command>git send-pack</command> og oppdaterer 
+            depotet med informasjonen som mates fra den eksterne enden
           </para>
           <indexterm zone="git git-receive-pack">
             <primary sortas="b-git-receive-pack">git-receive-pack</primary>
@@ -392,8 +393,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git-shell</command></term>
         <listitem>
           <para>
-            is a login shell for SSH accounts to provide restricted Git
-            access
+            er et innloggingsskall for SSH kontoer for å gi begrenset Git 
+            tilgang
           </para>
           <indexterm zone="git git-shell">
             <primary sortas="b-git-shell">git-shell</primary>
@@ -405,8 +406,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git-upload-archive</command></term>
         <listitem>
           <para>
-            is invoked by <command>git archive --remote</command> and sends
-            a generated archive to the other end over the git protocol
+            påkalles av <command>git archive --remote</command> og sender 
+            et generert arkiv til den andre enden over git-protokollen
           </para>
           <indexterm zone="git git-upload-archive">
             <primary sortas="b-git-upload-archive">git-upload-archive</primary>
@@ -418,9 +419,9 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git-upload-pack</command></term>
         <listitem>
           <para>
-            is invoked by <command>git fetch-pack</command>, it discovers
-            what objects the other side is missing, and sends them after
-            packing
+            påkalles av <command>git fetch-pack</command>, den oppdager 
+            hvilke objekter den andre siden mangler, og sender dem etter 
+            pakking
           </para>
           <indexterm zone="git git-upload-pack">
             <primary sortas="b-git-upload-pack">git-upload-pack</primary>
@@ -432,8 +433,8 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>scalar</command></term>
         <listitem>
           <para>
-            is a repository management tool that optimizes Git for use in
-            large repositories
+            er et verktøy for administrasjon av arkiver som optimaliserer Git for bruk i 
+            store arkiver
           </para>
           <indexterm zone="git scalar">
             <primary sortas="b-scalar">scalar</primary>

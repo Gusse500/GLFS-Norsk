@@ -11,41 +11,41 @@
   <!ENTITY gnat-binary-i686-download-ftp  " ">
 ]>
 
-<sect1 id="gnat-binary" xreflabel="Binary GNAT">
+<sect1 id="gnat-binary" xreflabel="Binær GNAT">
   <?dbhtml filename="gnat-binary.html"?>
 
-  <title>Binary GNAT</title>
+  <title>Binær GNAT</title>
 
   <indexterm zone="gnat-binary">
     <primary sortas="a-gnat-binary">gnat-binary</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>About GNAT</title>
+    <title>Om GNAT</title>
     
     <para>
-	Ada is a modern programming language designed for large, long-lived
-	applications &mdash; and embedded systems in particular &mdash; where
-	reliability and efficiency are essential. It has a set of unique technical
-	features that make it highly effective for use in large, complex and
-	safety-critical projects.
+	Ada er et moderne programmeringsspråk designet for store, langt støttede
+	applikasjoner &mdash; og innebygde systemer spesielt &mdash; der
+	pålitelighet og effektivitet er avgjørende. Den har et sett med unike tekniske
+	funksjoner som gjør den svært effektiv for bruk i store, komplekse og
+	sikkerhetskritiske prosjekter.
     </para>
 
     <para>
-	The compiler and associated tools on this page are known as the
-	<application>GNAT</application> technology, developed by the Adacore
-	company, using the <application>GCC</application> backend. Since
-	parts of the Ada compiler are written in Ada, there is a circular
-	dependency on an Ada compiler. The instructions below install a
-	binary compiler. You do not need to do that if you already have built
-	<application>GNAT</application> tools. The next section covers how to
-	build GNAT once the circular dependency is satisfied.
+	Kompilatoren og tilhørende verktøy på denne siden er kjent som
+	<application>GNAT</application> teknologi, utviklet av Adacore
+	selskapet, ved hjelp av <application>GCC</application> backend.
+	Siden deler av Ada kompilatoren er skrevet i Ada, er det en sirkulær
+	avhengighet av en Ada kompilator. Instruksjonene nedenfor installerer
+	en binær kompilator. Du trenger ikke å gjøre det hvis du allerede har bygget
+	<application>GNAT</application> verktøy. Neste avsnitt dekker hvordan man
+	bygger GNAT når den sirkulære avhengigheten er oppfylt.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Binary Download (x86): <ulink url="&gnat-binary-i686-download-http;"/>
+          Binary Nedlasting (x86): <ulink url="&gnat-binary-i686-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -53,24 +53,24 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Binary Download (x86_64): <ulink url="&gnat-binary-amd64-download-http;"/>
+          Binary Nedlasting (x86_64): <ulink url="&gnat-binary-amd64-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
     <note>
     <para>
-	If you are currently in a TTY and relying on command-line
-	tools to obtain software, it is recommended to open the
-	x86 GNAT download link with
+	Hvis du for øyeblikket er i en (TTY) og er avhengig av kommandolinjeverktøy
+	for å laste ned programvare, anbefales det å åpne nedlastingslenken
+	for x86 GNAT med
 	<ulink url="https://www.linuxfromscratch.org/blfs/view/svn/basicnet/lynx.html">
-	lynx</ulink> or
+	lynx</ulink> eller
 	<ulink url="https://www.linuxfromscratch.org/blfs/view/svn/basicnet/links.html">
-	links</ulink>. You can use
-	<xref linkend="wget"/> but not <xref linkend="curl"/>.
-	If you do end up using <application>wget</application>
-	regardless of the recommendation against it, please run
-	the following the command before unpacking:
+	links</ulink>. Du kan bruke
+	<xref linkend="wget"/> men ikke <xref linkend="curl"/>.
+	Hvis du ender opp med å bruke <application>wget</application>
+	Uavhengig av anbefalingen mot det, vennligst kjør
+	følgende kommando før du pakker ut:
     </para>
     
     <screen><userinput>mv c5e9e6fdff5cb77ed90cf8c62536653e27c0bed6\?filename\=gnat-gpl-2014-x86-linux-bin.tar.gz\&amp;rand\=1247 \
@@ -80,24 +80,24 @@
 
     <important>
     <para>
-	If you are doing multilib, just download the x86_64
-	<application>GNAT</application> binary tarball.
-	The instructions in the next section for multilib will
-	work as expected and <application>GCC</application>
-	will continue to have multilib support.
+	Hvis du bruker multilib, bare last ned x86_64
+	<application>GNAT</application> binær tarball.
+	Instruksjonene i neste avsnitt for multilib vil
+	fungere som forventet og <application>GCC</application>
+	vil fortsatt ha støtte for flere biblioteker.
     </para>
     </important>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GNAT Binaries</title>
+    <title>Installasjon av GNAT Binærfiler</title>
 
     <para>
-	Install the x86_64 <application>GNAT</application>
-	binaries by running the following commands as the
-	<systemitem class="username">root</systemitem> user
-	while still in the directory the tarball is in:
+	Installer x86_64 <application>GNAT</application>
+	binærfiler ved å kjøre følgende kommandoer som
+	<systemitem class="username">root</systemitem> bruker
+	mens du fortsatt er i mappen som tar-ballen er i:
     </para>
 
 <screen role="root"><userinput>export GNATTBPATH=$PWD                                           &amp;&amp;
@@ -111,10 +111,10 @@ cd $GNATTBPATH                                                   &amp;&amp;
 unset GNATTBPATH</userinput></screen>
 
     <para>
-	Or install the x86 <application>GNAT</application>
-	binaries by running the following commands as the
-	<systemitem class="username">root</systemitem> user
-	while still in the directory the tarball is in:
+	Eller installer x86 <application>GNAT</application>
+	binærfiler ved å kjøre følgende kommandoer som
+	<systemitem class="username">root</systemitem> bruker
+	mens du fortsatt er i mappen som tar-ballen er i:
     </para>
 
 <screen role="root"><userinput>export GNATTBPATH=$PWD                                    &amp;&amp;
@@ -128,20 +128,20 @@ cd $GNATTBPATH                                            &amp;&amp;
 unset GNATTBPATH</userinput></screen>
 
     <para>
-	Now adjust the <filename>PATH</filename> variable so
-	the <application>GNAT</application> software can be found
-	and used:
+	Juster nå <filename>PATH</filename> variabelen så
+	<application>GNAT</application> programvare kan finnes
+	og brukes:
     </para>
 
 <screen><userinput>PATH_HOLD=$PATH &amp;&amp;
 export PATH=/opt/gnat/bin:$PATH_HOLD</userinput></screen>
 
     <para>
-	Ensure <command>ld</command> and <command>as</command>
-	from the <application>GNAT</application> package aren't
-	used as to prevent issues with aging by issuing the
-	following as the <systemitem class="username">root
-	</systemitem> user:
+	Forsikre deg om at <command>ld</command> og <command>as</command>
+	fra <application>GNAT</application> pakken ikke
+	brukes for å forhindre problemer med aldring ved å utstede
+	følgende som <systemitem class="username">root
+	</systemitem> bruker:
     </para>
 
 <screen><userinput>find /opt/gnat -name ld -exec mv -v {} {}.old \; &amp;&amp;
