@@ -19,7 +19,6 @@ NV_RT=1
 NV_SETTINGS=1
 NV_XCONF=1
 NV_SMI=1
-#NV_SYMLINKS=1
 DESTDIR= PREFIX=/usr NV_X_RUN_DIR=$PWD
 
 while [ $# -gt 0 ]; do
@@ -45,7 +44,6 @@ while [ $# -gt 0 ]; do
     --no-nvidia-settings )   NV_SETTINGS=0                     ;;
     --no-nvidia-xconfig )    NV_XCONF=0                        ;;
     --no-nvidia-smi )        NV_SMI=0                          ;;
-#    --no-optional-symlinks ) NV_SYMLINKS=0                     ;;
     --destdir=* )            DESTDIR="${1#--destdir=}"         ;;
     --prefix=* )             PREFIX="${1#--prefix=}"           ;;
     --ex-run-dir=* )         NV_X_RUN_DIR="${1#--ex-run-dir=}" ;;
@@ -84,8 +82,6 @@ echo "                                      engine"
 echo "  --no-nvidia-settings                do not install nvidia-settings"
 echo "  --no-nvidia-xconfig                 do not install nvidia-xconfig"
 echo "  --no-nvidia-smi                     do not install nvidia-smi"
-# Symlinking is not supported at the moment
-#echo "  --no-optional-symlinks              do not install optional symlinks"
 echo "  --destdir=DESTDIR                   specify DESTDIR, not set by default"
 echo "  --prefix=PREFIX                     specify PREFIX, /usr set by default"
 echo "  --ex-run-dir=NVIDIA-XXX.XX.XX       specify the extracted runfile directory"
@@ -329,6 +325,7 @@ echo "Installing documentation..."
 mkdir -pv $DOCDIR/nvidia-$NVIDIA_VERSION &&
 cp -R $NV_X_RUN_DIR/html $DOCDIR/nvidia-$NVIDIA_VERSION || exit
 
+# Praise be to ldconfig, it creates symlinks on its own so we don't need to!
 echo "Running /sbin/ldconfig..."
 /sbin/ldconfig  &&
 echo "Running /sbin/depmod -a..."
