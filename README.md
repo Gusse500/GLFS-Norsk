@@ -7,15 +7,7 @@ pakker som Steam og Wine etter Linux From Scratch boken.
 
 Gå til https://glfs-book.github.io/glfs/ og begynne å bla gjennom boken!
 
-Boken er under rullende utgivelse på nett, men det finnes en stabil versjon i GLFS 
-kilden via `stable` grenen.
-
-Du kan bytte til den ved å kjøre følgende kommando:
-```Bash
-git checkout stable
-```
-
-Deretter gjengir du boken ved å kjøre `make STAB=release`.
+Boken er under rullende utgivelse på nett.
 
 Det finnes også [Releases](https://github.com/glfs-book/glfs/releases) som du
 kan lastes ned. Alle inneholder både SysV og Systemd utgavene av 

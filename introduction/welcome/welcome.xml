@@ -8,23 +8,23 @@
 <chapter id="welcome">
   <?dbhtml filename="welcome.html"?>
 
-  <title>Welcome to GLFS</title>
+  <title>Velkommen til GLFS</title>
 
   <para>
-    The GLFS book is designed to be taken in optional chunks
-    and cover most setups users might be using. It is different
-    from both LFS and BLFS in that LFS is meant to be followed
-    almost command by command unless otherwise told so, and BLFS
-    has packages scattered throughout in chapters, only certain
-    ones meant to be followed through, such as
+    GLFS-boken er utformet for å tas i valgfrie deler 
+    og dekke de fleste oppsettene brukere måtte bruke. Den er forskjellig 
+    fra både LFS og BLFS ved at LFS er ment å følges 
+    nesten kommando for kommando med mindre annet er angitt, og BLFS 
+    har pakker spredt utover i kapitler, bare visse som er 
+    ment å følges, for eksempel
     <application>Xorg</application>.
   </para>
 
   <para>
-    Please read <xref linkend="whichsections"/> for more
-    information regarding that. Along with that, please read most
-    of this section carefully as it explains important conventions
-    to help you if you were to get lost or stuck.
+    Vennligst les <xref linkend="whichsections"/> for mer 
+    informasjon om det. I tillegg til det, vennligst les mesteparten 
+    av denne delen nøye, da den forklarer viktige konvensjoner 
+    som kan hjelpe deg hvis du skulle gå deg vill eller stå fast.
   </para>
 
 <!--  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="acknowledgments.xml"/> -->
