@@ -1,9 +1,9 @@
-# Ok, so you have downloaded the XML source. Now what?
+# Ok, så du har lastet ned XML kildekoden. Hva nå??
 
-You are probably wanting to convert these XML files to easier to read HTML.
+Du ønsker sannsynligvis å konvertere disse XML filene til enklere HTML filer.
 
-To install the programs you need to generate HTML, you need
-to have or install the following packages:
+For å installere programmene du trenger for å generere HTML, må du ha 
+eller installere følgende pakker:
 
 - libxml2
 - libxslt
@@ -11,6 +11,6 @@ to have or install the following packages:
 - docbook-4.5-dtd
 - tidy
 
-The installation instructions for all these packages are available
-in the BLFS book from one of the mirrors found at
-https://www.linuxfromscratch.org/blfs.
+Installasjonsinstruksjonene for alle disse pakkene er tilgjengelige 
+i BLFS boken på
+https://lfs.freding.no/blfs.

@@ -1,59 +1,59 @@
 # Gaming Linux From Scatch (GLFS)
 
-Gaming Linux From Scratch is a book that covers how to install packages
-like Steam and Wine after the Linux From Scratch book.
+Gaming Linux From Scratch er en bok som dekker hvordan man installerer 
+pakker som Steam og Wine etter Linux From Scratch boken.
 
-# Where to Read
+# Hvor kan du lese
 
-Go to https://glfs-book.github.io/glfs/ and start going through the book!
+Gå til https://glfs-book.github.io/glfs/ og begynne å bla gjennom boken!
 
-The book online is rolling release but there is a stable version in the GLFS
-source via the `stable` branch.
+Boken er under rullende utgivelse på nett, men det finnes en stabil versjon i GLFS 
+kilden via `stable` grenen.
 
-You can switch to it by running the following command:
+Du kan bytte til den ved å kjøre følgende kommando:
 ```Bash
 git checkout stable
 ```
 
-Then render the book by running `make STAB=release`.
+Deretter gjengir du boken ved å kjøre `make STAB=release`.
 
-There are also [Releases](https://github.com/glfs-book/glfs/releases) that you
-can download. All of them contain both the SysV and Systemd editions of the
-book, chunked HTML.
+Det finnes også [Releases](https://github.com/glfs-book/glfs/releases) som du
+kan lastes ned. Alle inneholder både SysV og Systemd utgavene av 
+boken, chunked HTML.
 
-# Installation
+# Installasjon
 
-How do I convert these XML files to HTML myself? You need to have some software
-installed that deal with these conversions. Please read the `INSTALL.md` file to
-determine what programs you need to install and where to get instructions to
-install that software.
+Hvordan konverterer jeg disse XML-filene til HTML selv? Du må ha installert programvare 
+som håndterer disse konverteringene. Les `INSTALL.md`-filen for å 
+finne ut hvilke programmer du må installere og hvor du kan få instruksjoner 
+for å installere programvaren.
 
-After that, you can build the HTML with a simple `make` command.
-You can change the revision, ie. systemd vs sysv by adding `REV=<rev>` to the
-`make` command. `<rev>` can be:
-- `sysv` (default)
+Etter det kan du bygge HTML koden med en enkel `make` kommando.
+Du kan endre revisjonen, f.eks. systemd vs. sysv, ved å legge til `REV=<rev>` til
+`make` kommandoen. `<rev>` kan være:
+- `sysv` (standard)
 - `systemd`
 
-Example: `make REV=systemd`.
+Eksempel: `make REV=systemd`.
 
-The default target (sysv) builds the HTML in `~/public_html/glfs`,
-whereas for systemd, it would be in `~/public_html/glfs-systemd`.
+Standardmålet (sysv) bygger HTML koden i `~/public_html/glfs`,
+mens for systemd ville det være i `~/public_html/glfs-systemd`.
 
-It will by default make each package and section its own page then link
-everything together for a smooth experience.
+Som standard vil hver pakke og seksjon være sin egen side, og deretter koble 
+alt sammen for en smidig opplevelse.
 
-You can set a path to GLFS themes by running `make GLFS_THEME_PATH=<path>`.
-The default is `stylesheets/lfs-xsl`.
+Du kan angi en sti til GLFS temaer ved å kjøre `make GLFS_THEME_PATH=<path>`.
+Standardinnstillingen er `stylesheets/lfs-xsl`.
 
-The dark theme is also the default, but you can switch the theme by
-running `make GLFS_THEME=<theme>`. `<theme>` can equal:
+Det mørke temaet er også standard, men du kan bytte tema ved å 
+kjøre `make GLFS_THEME=<theme>`. `<theme>` kan være lik:
 - `light`
 - `dark`
 
-Note that if you set `GLFS_THEME_PATH`, you can set `GLFS_THEME` to more than
-just what the available options are shown above, but only the available themes
-that are in that path.
+Merk at hvis du setter `GLFS_THEME_PATH`, du kan sette `GLFS_THEME` til mer enn
+bare det som er tilgjengelige alternativer vist ovenfor, men bare de tilgjengelige temaene
+som er i den banen.
 
-Defaults can be changed in a file that isn't tracked (`local.mk`) by declaring
-variables found in `Makefile` in `local.mk`, such as `REV` and `GLFS_THEME`.
-This file must be created manually.
+Standardverdier kan endres i en fil som ikke spores (`local.mk`) ved å deklarere
+variabler som finnes i `Makefile` i `local.mk`, slik som `REV` og `GLFS_THEME`.
+Denne filen må opprettes manuelt.

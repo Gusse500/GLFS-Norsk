@@ -7,7 +7,7 @@ elif test x"$REV" = x"systemd"; then
     SYSV="IGNORE"
     SYSTEMD="INCLUDE"
 else
-    echo You must provide either \"sysv\" or \"systemd\" as argument for
+    echo Du må oppgi enten \"sysv\" eller \"systemd\" som argument for
     echo \"REV\"
     exit 1
 fi
@@ -19,7 +19,7 @@ elif test x"$STAB" = x"release"; then
     DEVELOPMENT="IGNORE"
     RELEASE="INCLUDE"
 else
-    echo You must provide either \"development\" or \"release\" as argument for
+    echo Du må oppgi enten \"development\" eller \"release\" som argument for
     echo \"STAB\"
     exit 1
 fi
@@ -39,11 +39,11 @@ if ! git status > /dev/null; then
     exit 0
 fi
 
-export LC_ALL=en_US.utf8
-export TZ=America/Chicago
+export LC_ALL=nb_NO.utf8
+export TZ=Europe/Oslo
 
 commit_date=$(git show -s --format=format:"%cd" --date=local)
-short_date=$(date --date "$commit_date" "+%Y-%m-%d")
+short_date=$(date --date "$commit_date" "+%d.%m.%Y")
 
 year=$(date --date "$commit_date" "+%Y")
 month=$(date --date "$commit_date" "+%B")
@@ -57,7 +57,7 @@ case $day in
     * ) suffix="th";;
 esac
 
-full_date="$month $day$suffix, $year"
+full_date="$day. $month $year"
 
 sha="$(git describe --abbrev=1 --always --exclude '*')"
 version=$(echo -n "#" && echo -n "$sha")

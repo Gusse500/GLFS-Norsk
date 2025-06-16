@@ -21,7 +21,7 @@
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable        "24cf3b5be96b69ccbfd0fcfe536ad263fdb24502">
+<!ENTITY mlfs-stable        "8a7c3d0a96b382fd7ebd96e9833b604b86797a67">
 <!ENTITY mlfs-extra-commits "b138633c16ebfb181e7621e276e8196c73c024a9">
 <![ %release; [
 <!ENTITY version       "%relnum;">
@@ -123,40 +123,40 @@
 
 <![ %development; [
   <!ENTITY important-stability "<para>
-  This book viewable online is in a constant flux of updates, and updates about
-  as often as the BLFS Git/SVN version. While there isn't a viewable online
-  version of the stable release, you can either render it yourself by following
-  <ulink url='&glfs-repo;'/>, or you can download a <ulink
+  Denne boken, som er tilgjengelig på nett, er i konstant strøm av oppdateringer, og oppdateres 
+  omtrent like ofte som BLFS Git/SVN-versjonen. Selv om det ikke finnes en synlig nettversjon 
+  av den stabile utgivelsen, kan du enten gjengi den selv ved å følge
+  <ulink url='&glfs-repo;'/>, eller du kan laste ned en <ulink
   url='&glfs-repo;/releases'>release</ulink>.
 </para>">
 ]]>
 <![ %release; [
   <!ENTITY important-stability "<para>
-  This is the stable release of this book and is known to have working
-  instructions and matches up with LFS and BLFS &xlfs-version;. External links
-  will point to stable sources. However, links that point to MLFS is
-  problematic as MLFS is rolling release, not stable, so information there may
-  be ahead of the results that appear from this book, and instructions in the
-  newer version of the book may lead to broken instructions in this one.
-  However, in <xref linkend='achievingml'/>, it will show you how to render a
-  stable release of MLFS.
+  Dette er den stabile utgaven av denne boken, og den er kjent for å ha fungerende 
+  instruksjoner og samsvarer med LFS og BLFS &xlfs-version;. Eksterne lenker 
+  vil peke til stabile kilder. Lenker som peker til MLFS er imidlertid 
+  problematiske ettersom MLFS er en rullerende utgivelse, ikke stabil, så informasjonen der kan 
+  være foran resultatene som vises i denne boken, og instruksjoner i den 
+  nyere versjonen av boken kan føre til ødelagte instruksjoner i denne. 
+  Imidlertid, i <xref linkend='achievingml'/>, vil det vises hvordan du gjengir en 
+  stabil utgave av MLFS.
 </para>">
 ]]>
 <![ %development; [
-  <!ENTITY multilib-rendering1 "<para>You can render MLFS if you wish.</para>">
+  <!ENTITY multilib-rendering1 "<para>Du kan rendre MLFS hvis du ønsker det.</para>">
 <![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>First, install <ulink
-  url='&blfs-svn;/general/git.html'>Git</ulink>, then
-  clone the LFS repo and switch to the
+  <!ENTITY multilib-rendering2 "<para>Først, installer <ulink
+  url='&blfs-svn;/general/git.html'>Git</ulink>, så 
+  klon LFS repositoriet og bytt til
   <computeroutput>multilib</computeroutput> branch:
 </para>
-<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
+<screen><userinput>git clone https://github.com/Gusse500/LFS-Norsk.git mlfs &amp;&amp;
 cd mlfs &amp;&amp;
 git checkout multilib</userinput></screen>
 <para>
-  Now inspect the <filename>INSTALL</filename> file to check for the needed
-  dependencies in order to render the book. Once you have ensured you have
-  installed everything, render the book: 
+  Nå inspiserer <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
+  avhengigheter for å gjengi boken. Når du har sørget for at du har 
+  installert alt, gjengi boken: 
 </para>
 <screen><userinput>make -j1 ARCH=ml_32</userinput></screen>">
 ]]>
@@ -166,89 +166,89 @@ git checkout multilib</userinput></screen>
 ]]>
 <![ %release; [
   <!ENTITY multilib-rendering1 "<para>
-  The links above, however, are rolling release and are rendered frequently.
-  The known version of MLFS to work with this version of GLFS is
-  &mlfs-stable; with &mlfs-extra-commits; merged. You can render it by
-  following the instructions below.
+  Lenkene ovenfor er imidlertid rullerende utgivelser og gjengis ofte. 
+  Den kjente versjonen av MLFS som fungerer med denne versjonen av GLFS er
+  &mlfs-stable; med &mlfs-extra-commits; slått sammen. Du kan gjengi den ved å 
+  følge instruksjonene nedenfor.
 </para>">
 <![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>First, install <ulink
-  url='&blfs-svn;/general/git.html'>Git</ulink>, then
-  clone the LFS repo, switch to the
-  <computeroutput>multilib</computeroutput> branch, then switch to the stable
-  version:
+  <!ENTITY multilib-rendering2 "<para>Først, installer <ulink
+  url='&blfs-svn;/general/git.html'>Git</ulink>, så 
+  klon LFS repositoriet og bytt til
+  <computeroutput>multilib</computeroutput> grenen, og bytt deretter til den stabile 
+  versjonen:
 </para>
-<screen><userinput>git clone https://git.linuxfromscratch.org/lfs.git mlfs &amp;&amp;
+<screen><userinput>git clone https://github.com/Gusse500/LFS-Norsk.git mlfs &amp;&amp;
 cd mlfs &amp;&amp;
 git checkout multilib &amp;&amp;
 git checkout &mlfs-stable; &amp;&amp;
 git merge --no-commit &mlfs-extra-commits;</userinput></screen>
 <para>
-  Now inspect the <filename>INSTALL</filename> file to check for the needed
-  dependencies in order to render the book. Once you have ensured you have
-  installed everything, render the book: 
+  Nå inspiserer <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
+  avhengigheter for å gjengi boken. Når du har sørget for at du har 
+  installert alt, gjengi boken: 
 </para>
 <screen><userinput>make -j1 ARCH=ml_32</userinput></screen>">
 ]]>
 <![ %systemd; [
   <!ENTITY multilib-rendering2 "<para>
-  Now switch to the stable git hash:
+  Bytt nå til den stabile git hashen:
 </para>
 <screen><userinput>git checkout &mlfs-stable; &amp;&amp;
 git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
 ]]>
 ]]>
 <!ENTITY read-book "<para>
- This will render the book in
+ Dette vil gjengi boken i
  <filename class='directory'>~/public_html/&lfs-filename;</filename>.
- You can change how much multilib support you wish to render the book
- with by changing the <envar>ARCH</envar> variable's value.
- The above command will render 64-bit and 32-bit support but leaves out
- x32-bit support, which is not needed for this book. If you want to get
- that support too, change <computeroutput>ARCH=ml_32</computeroutput> to
+ Du kan endre hvor mye multilib støtte du ønsker å gjengi boken 
+ med ved å endre <envar>ARCH</envar> variabelens verdi. 
+ Kommandoen ovenfor vil gjengi 64-bit og 32-bit støtte, men utelater 
+ x32-bit støtte, som ikke er nødvendig for denne boken. Hvis du vil ha den støtten også, 
+ endre <computeroutput>ARCH=ml_32</computeroutput> til
  <computeroutput>ARCH=ml_all</computeroutput>.
- You can then point to the HTML using a browser like
- <ulink url='&blfs-svn;/xsoft/firefox.html'>Firefox</ulink> or
+ Du kan deretter peke på HTML koden ved hjelp av en nettleser som
+ <ulink url='&blfs-svn;/xsoft/firefox.html'>Firefox</ulink> eller
  <ulink url='&blfs-svn;/basicnet/lynx.html'>Lynx</ulink>.
 </para>
 
 <para>
-  For <application>Firefox</application>, type in the search bar:
+  For <application>Firefox</application>, skriv inn i søkefeltet:
 
 <computeroutput>file:///home/<replaceable>&lt;username&gt;</replaceable>/public_html/&lfs-filename;/index.html</computeroutput>,
 
-  and replace <replaceable>&lt;username&gt;</replaceable>
-  with the name of the username you rendered the book with.
+  og erstatte <replaceable>&lt;username&gt;</replaceable>
+  med navnet på brukernavnet du brukte til å gjengi boken.
 </para>
 
 <para>
-  For <application>Lynx</application>, run the following:
+  For <application>Lynx</application>, kjør følgende:
 </para>
 
 <screen><userinput>lynx ~/public_html/&lfs-filename;/index.html</userinput></screen>">
 
-<!ENTITY as_root "<note><para>When installing multiple packages in a script,
-  the installation needs to be done as the root user. There are three general
-  options that can be used to do this:</para>
+<!ENTITY as_root "<note><para>Når du installerer flere pakker i et skript, 
+må installasjonen gjøres som root bruker. Det finnes tre generelle 
+alternativer som kan brukes til å gjøre dette:</para>
 
   <orderedlist>
 
-  <listitem><para>Run the entire script as the root user (not
-  recommended).</para></listitem>
+  <listitem><para>Kjør hele skriptet som root bruker (ikke 
+  anbefalt).</para></listitem>
 
-  <listitem><para>Use the <command>sudo</command> command from the
-  sudo package.</para></listitem>
+  <listitem><para>Bruk <command>sudo</command> kommandoen fra 
+  sudo pakken.</para></listitem>
 
   <listitem><para>Use <command>su -c &quot;command arguments&quot;</command>
-  (quotes required) which will ask for the root  password for every iteration
-  of the loop.</para></listitem>
+  ((anførselstegn kreves) som vil be om root passordet for hver iterasjon 
+  av løkken.</para></listitem>
 
   </orderedlist>
 
-  <para>One way to handle this situation is to create a short
-  <command>bash</command> function that automatically selects the appropriate
-  method.  Once the command is set in the environment, it does not need to be
-  set again.</para>
+  <para>En måte å håndtere denne situasjonen på er å lage en kort
+  <command>bash</command> funksjon som automatisk velger riktig 
+  metode. Når kommandoen er satt i miljøet, trenger den ikke å 
+  settes på nytt.</para>
 
   <screen><userinput>as_root()
 {
@@ -261,8 +261,8 @@ git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
 export -f as_root</userinput></screen>
 </note>">
 
-<!ENTITY not-katamari         "<para>This package is provided for testing the
-                               completed Xorg installation.</para>">
+<!ENTITY not-katamari         "<para>Denne pakken er tilgjengelig for testing av 
+                               den fullførte Xorg-installasjonen.</para>">
 
 <!ENTITY % package-entities SYSTEM      "packages.ent">
 %package-entities;
@@ -272,21 +272,21 @@ export -f as_root</userinput></screen>
           <phrase revision='systemd'><xref linkend='systemd'/></phrase>">
 
 <!ENTITY qt5-deps
-         "(<xref linkend='qt5'/> or <xref role='nodep' linkend='qt5-alternate'/>)">
+         "(<xref linkend='qt5'/> eller <xref role='nodep' linkend='qt5-alternate'/>)">
 
 <!ENTITY build-wheel-cmd "pip3 wheel -w dist --no-build-isolation --no-deps --no-cache-dir">
 <!ENTITY build-wheel "<screen><userinput>&build-wheel-cmd; $PWD</userinput></screen>">
 
 <!ENTITY install-wheel "pip3 install --no-index --find-links=dist --no-cache-dir --no-user">
 
-<!ENTITY berkeley-db "<ulink url='https://anduin.linuxfromscratch.org/BLFS/bdb/db-5.3.28.tar.gz'>Berkeley DB</ulink> (deprecated)">
+<!ENTITY berkeley-db "<ulink url='https://anduin.linuxfromscratch.org/BLFS/bdb/db-5.3.28.tar.gz'>Berkeley DB</ulink> (utdatert)">
 
 <!ENTITY unzip "<ulink url='&blfs-svn;/general/libarchive.html'>libarchive</ulink>">
 
-<!ENTITY gobject-introspection "<xref linkend='glib2'/> (with GObject Introspection)">
+<!ENTITY gobject-introspection "<xref linkend='glib2'/> (med GObject Introspection)">
 
-<!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> or <xref linkend='mesa'/>)">
-<!ENTITY gbm    "GBM (<xref linkend='gbm'/> or <xref linkend='mesa'/>)">
+<!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> eller <xref linkend='mesa'/>)">
+<!ENTITY gbm    "GBM (<xref linkend='gbm'/> eller <xref linkend='mesa'/>)">
 
 <!ENTITY % xinclude-entities SYSTEM "xent.ent">
 %xinclude-entities;
