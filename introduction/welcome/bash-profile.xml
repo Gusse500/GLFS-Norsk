@@ -5,40 +5,40 @@
   %general-entities;
 ]>
 
-<sect1 id="bash-profile" xreflabel="The Bash Shell Startup Files">
+<sect1 id="bash-profile" xreflabel="Bash skallets oppstartsfiler">
   <?dbhtml filename="bash-profile.html"?>
 
 
-  <title>The Bash Shell Startup Files</title>
+  <title>Bash skallets oppstartsfiler</title>
 
   <para>
-    Bash, or the shell, can source a file at startup that applies for all
-    users, which can be very helpful for many different purposes. This can
-    involve setting many useful variables to adding new functionality to the
-    shell, usually for convenience. This section is therefore recommended and
-    setting up packages in this book will rely on this section and the created
-    files. There is little downside to following this section unless you are
-    not able to copy and paste the following commands, in which case there will
-    be a lot of typing involved. Doing this in a chroot is recommended before
-    booting back into your LFS system.
+    Bash, eller skallet, kan opprette en fil ved oppstart som gjelder for alle 
+    brukere, noe som kan være svært nyttig for mange forskjellige formål. Dette kan 
+    innebære å sette mange nyttige variabler for å legge til ny funksjonalitet i skallet, 
+    vanligvis for enkelhets skyld. Denne delen anbefales derfor, og oppsett av 
+    pakker i denne boken vil avhenge av denne delen og de opprettede filene. 
+    Det er liten ulempe med å følge denne delen med mindre du ikke 
+    kan kopiere og lime inn følgende kommandoer, i så fall vil det være mye 
+    skriving involvert. Det anbefales å gjøre dette i en chroot før du 
+    starter opp igjen i LFS systemet.
   </para>
 
   <note>
     <para>
-      Most of the instructions below are used to create files located in the
-      <filename class='directory'>/etc</filename> directory structure which
-      requires you to execute the commands as the <systemitem
-      class='username'>root</systemitem> user. If you elect to create the
-      files in user's home directories instead, you should run the commands
-      as an unprivileged user.
+      De fleste instruksjonene nedenfor brukes til å opprette filer som ligger i
+      <filename class='directory'>/etc</filename> mappestrukturen som 
+      krever at du kjører kommandoene som <systemitem
+      class='username'>root</systemitem> bruker. Hvis du velger å opprette 
+      filene i brukerens hjemmemapper i stedet, bør du kjøre kommandoene 
+      som en ikke-privilegert bruker.
     </para>
   </note>
 
   <note>
     <para>
-      There are more startup files that can be made. The ones here establish
-      a basic setup while offering convenience. For more startup files, see
-      <ulink url="&blfs-svn;/postlfs/profile.html">BLFS Bash Startup Files.
+      Det finnes flere oppstartsfiler som kan opprettes. De som er her, etablerer 
+      et grunnleggende oppsett samtidig som de er praktiske. For flere oppstartsfiler, se
+      <ulink url="&blfs-svn;/postlfs/profile.html">Oppstartsfilene til Bash Skallet.
       </ulink>
     </para>
   </note>
@@ -51,19 +51,19 @@
     </indexterm>
 
     <para>
-      Here is a base <filename>/etc/profile</filename>. This file starts by
-      setting up some helper functions and some basic parameters. It specifies
-      some <command>bash</command> history parameters and, for security
-      purposes, disables keeping a permanent history file for the <systemitem
-      class="username">root</systemitem> user.  It also sets a default user
-      prompt.  It then calls small, single purpose scripts in the <filename
-      class='directory'>/etc/profile.d</filename> directory to provide most
-      of the initialization.
+      Her er en grunnleggende <filename>/etc/profile</filename>. Denne filen starter med 
+      å sette opp noen hjelpefunksjoner og noen grunnleggende parametere. Den spesifiserer 
+      noen <command>bash</command> historikkparametere og, av sikkerhetshensyn, 
+      deaktiverer lagring av en permanent historikkfil for <systemitem
+      class="username">root</systemitem> bruker.  Den angir også en standard brukerledetekst. 
+	  Deretter kaller den små skript i <filename
+      class='directory'>/etc/profile.d</filename> mappen for å gi 
+      mesteparten av initialiseringen.
     </para>
 
     <para>
-      For more information on the escape sequences you can use for your prompt
-      (i.e., the <envar>PS1</envar> environment variable) see <command>info
+      For mer informasjon om escape sekvensene du kan bruke for ledeteksten din 
+      (dvs. <envar>PS1</envar> miljøvariabelen) se <command>info
       bash</command> -- <emphasis role="strong">Node: Printing a
       Prompt</emphasis>.
     </para>
@@ -147,15 +147,15 @@ unset script
 EOF</userinput></screen>
 
     <sect3 id="etc-profile.d">
-      <title>The /etc/profile.d Directory</title>
+      <title>/etc/profile.d Mappen</title>
 
       <indexterm zone="bash-profile etc-profile.d">
         <primary sortas="e-etc-profile.d">/etc/profile.d</primary>
       </indexterm>
 
       <para>
-        Now create the <filename class='directory'>/etc/profile.d</filename>
-        directory, where the individual initialization scripts are placed:
+        Nå oppretter du <filename class='directory'>/etc/profile.d</filename>
+        mappen, der de individuelle initialiseringsskriptene plasseres:
       </para>
 
 <screen role="root"><userinput>install --directory --mode=0755 --owner=root --group=root /etc/profile.d</userinput></screen>
@@ -170,9 +170,9 @@ EOF</userinput></screen>
       </indexterm>
 
       <para>
-        This script adds some useful paths to the <envar>PATH</envar> and
-        can be used to customize other PATH related environment variables
-        (e.g. LD_LIBRARY_PATH, etc) that may be needed for all users.
+        Dette skriptet legger til noen nyttige stier til <envar>PATH</envar> og
+        kan brukes til å tilpasse andre PATH relaterte miljøvariabler 
+        (f.eks. LD_LIBRARY_PATH osv.) som kan være nødvendige for alle brukere.
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/extrapaths.sh &lt;&lt; "EOF"
@@ -196,18 +196,18 @@ EOF</userinput></screen>
 
       <note>
         <para>
-          The <command>man</command> program automatically deduces the search
-          path for man pages by examining the content of the
-          <envar>PATH</envar> variable, see
+          <command>man</command> programmet utleder automatisk søkestien 
+          for manualsider ved å undersøke innholdet i
+          <envar>PATH</envar> variabelen, se
           <ulink role='man' url='&man;manpath.5'>manpath(5)</ulink> for
-          details.  Setting the <envar>MANPATH</envar> variable may override
-          the automatic deduction, so the BLFS editors do not recommend
-          setting it.  If you must set it for any reason, it's better to start
-          its value with a colon (<literal>:</literal>), for example
+          detaljer. Innstilling av <envar>MANPATH</envar> variabelen kan overstyre 
+          den automatiske utledningen, så BLFS redaktørene anbefaler ikke å 
+          sette den. Hvis du må sette den av en eller annen grunn, er det bedre å starte 
+          verdien med et kolon (<literal>:</literal>), for eksempel
           <command>MANPATH=:/opt/somepkg/share/man:/opt/otherpkg/share/man</command>
-          so the paths listed in the <envar>MANPATH</envar> variable will
-          be appended to the automatically deduced value instead of
-          overriding it.
+          så stiene som er oppført i <envar>MANPATH</envar> variabelen vil 
+          bli lagt til den automatisk utledede verdien i stedet for å 
+          overstyre den.
         </para>
       </note>
 
@@ -221,9 +221,9 @@ EOF</userinput></screen>
       </indexterm>
 
       <para>
-        This script sets up the default <filename>inputrc</filename>
-        configuration file. If the user does not have individual settings, it
-        uses the global file.
+        Dette skriptet setter opp standard <filename>inputrc</filename>
+        konfigurasjonsfil. Hvis brukeren ikke har individuelle innstillinger, 
+        bruker den den globale filen.
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/readline.sh &lt;&lt; "EOF"
@@ -244,9 +244,9 @@ EOF</userinput></screen>
       </indexterm>
 
       <para>
-        Setting the <command>umask</command> value is important for security.
-        Here the default group write permissions are turned off for system
-        users and when the user name and group name are not the same.
+        Innstilling av <command>umask</command> verdien er viktig for sikkerheten. 
+        Her er standard skrivetillatelser for gruppen slått av for systembrukere 
+        og når brukernavnet og gruppenavnet ikke er det samme.
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/umask.sh &lt;&lt; "EOF"
@@ -271,11 +271,11 @@ EOF</userinput></screen>
     </indexterm>
 
       <para>
-        This script sets an environment variable necessary for
-        native language support. A full discussion on determining this
-        variable can be found on the <ulink
+        Dette skriptet angir en miljøvariabel som er nødvendig for 
+        støtte for morsmål. En fullstendig diskusjon om hvordan du 
+        bestemmer denne variabelen finner du på <ulink
         url="&lfs-website;/~thomas/multilib/chapter09/locale.html">
-        Configuring the System Locale</ulink> page.
+        Configuring the System Locale</ulink> siden.
       </para>
 
 <screen role="root" revision="sysv"><userinput>cat &gt; /etc/profile.d/i18n.sh &lt;&lt; "EOF"
