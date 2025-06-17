@@ -92,7 +92,7 @@ echo "  --manifest=manifest                 specify manifest file location,"
 echo "                                      PREFIX/share/nvidia/manifest set by default"
 echo "  -h, --help                          display this help and exit"
       exit ;;
-    * ) echo "Unknown option: $1" ;;
+    * ) echo "Unknown option: $1"; exit ;;
   esac
   shift 1
 done
@@ -104,7 +104,7 @@ LIBDIR=$DESTDIR$PREFIX/lib
 LIB32=$DESTDIR$PREFIX/lib32
 BINDIR=$DESTDIR$PREFIX/bin
 SHAREDIR=$DESTDIR$PREFIX/share
-SYSCONFDIR=/etc
+SYSCONFDIR=$DESTDIR/etc
 XDRIV=$LIBDIR/xorg/modules/drivers
 XEXT=$LIBDIR/xorg/modules/extensions
 NVWINEDIR=$LIBDIR/nvidia/wine
@@ -170,7 +170,7 @@ if [ $X11_64 = 1 ]; then
   install -vm644 $NV_X_RUN_DIR/libglxserver_nvidia.so.$NVIDIA_VERSION \
     $XEXT                                                            &&
   ln -svf libglxserver_nvidia.so.$NVIDIA_VERSION                      \
-    /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so          &&
+    $XEXT/libglxserver_nvidia.so                                     &&
   cp -v $NV_X_RUN_DIR/nvidia-drm-outputclass.conf $XCONFD || exit
 fi
 if [ $X11_32 = 1 ]; then
@@ -302,7 +302,7 @@ fi
 
 if [ $NV_SETTINGS = 1 ]; then
   echo "Installing nvidia-settings..."
-  mkdir -pv $SHAREDIR/applications $SHAREDIR/pixmaps $LIBDIR &&
+  mkdir -pv $BINDIR $LIBDIR $SHAREDIR/applications $SHAREDIR/pixmaps &&
   for lib in $(cat $NV_MANIFEST | grep settings: | cut -d':' -f2-); do
     install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
   done
@@ -313,11 +313,13 @@ fi
 
 if [ $NV_XCONF = 1 ]; then
   echo "Installing nvidia-xconfig..."
+  mkdir -pv $BINDIR &&
   install -vm755 $NV_X_RUN_DIR/nvidia-xconfig $BINDIR || exit
 fi
 
 if [ $NV_SMI = 1 ]; then
   echo "Installing nvidia-smi..."
+  mkdir -pv $BINDIR &&
   install -vm755 $NV_X_RUN_DIR/nvidia-smi $BINDIR || exit
 fi
 
