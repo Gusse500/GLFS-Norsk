@@ -18,75 +18,75 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to cURL</title>
+    <title>Introduksjon til cURL</title>
 
     <para>
-      The <application>cURL</application> package contains an utility
-      and a library used for transferring files with URL syntax to any of
-      the following protocols: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP,
+      <application>cURL</application> pakken inneholder et verktøy
+      og et bibliotek som brukes til å overføre filer med URL-syntaks til hvilken som helst av
+      følgende protokoller: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP,
       HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTSP, SMB, SMBS,
-      SMTP, SMPTS, TELNET, and TFTP. Its ability to both download
-      and upload files can be incorporated into other programs to support
-      functions like streaming media.
+      SMTP, SMPTS, TELNET, and TFTP. Evnen til å både laste ned
+      og laste opp filer kan integreres i andre programmer for å støtte
+      funksjoner som strømming av media.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&curl-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&curl-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&curl-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&curl-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&dl-root;/curl/curl-&curl-version;-upstream_fix-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">cURL Dependencies</bridgehead>
+    <bridgehead renderas="sect3">cURL Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="libpsl"/>
     </para>
 
     <note>
       <para>
-        While there is an option to build the package without libpsl, both
-        the upstream developers, the BLFS and GLFS editors alike highly
-        recommend not disabling support for libpsl to prevent sites from using
-        super cookies which poses security risks.
+        Selv om det finnes et alternativ for å bygge pakken uten libpsl, anbefaler både
+        oppstrømsutviklerne, BLFS og GLFS redaktørene på det sterkeste
+        at man ikke deaktiverer støtte for libpsl for å forhindre at nettsteder bruker
+        superinformasjonskapsler, noe som utgjør en sikkerhetsrisiko.
       </para>
     </note>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of cURL</title>
+    <title>Installasjon av cURL</title>
 
 <!--
     <para>
-      First fix a regression that was fixed upstream:
+      Først fikser du en regresjon som ble fikset oppstrøms:
     </para>
 
 <screen><userinput>patch -Np1 -i ../curl-&curl-version;-upstream_fix-1.patch</userinput></screen>
 -->
 
     <para>
-      Install <application>cURL</application> by running the following
-      commands:
+      Installer <application>cURL</application> ved å kjøre følgende
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -100,8 +100,8 @@ cd    build &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem>
-      user:
+      Nå, som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -116,23 +116,23 @@ find docs \( -name Makefile\* -o  \
 cp -v -R docs -T /usr/share/doc/curl-&curl-version;</userinput></screen>
 
     <para>
-      To run some simple verification tests on the newly installed
-      <command>curl</command>, issue the following commands:
+      For å kjøre noen enkle verifiseringstester på den nylig installerte
+      <command>curl</command>, utsted følgende kommandoer:
       <command>curl --trace-ascii debugdump.txt https://www.example.com/</command>
-      and
+      og
       <command>curl --trace-ascii d.txt --trace-time https://example.com/</command>.
-      Inspect the locally created trace files <filename>debugdump.txt</filename>
-      and <filename>d.txt</filename>, which contains version information,
-      downloaded files information, etc. One file has the time for each action logged.
+      Inspiser de lokalt opprettede sporingsfilene <filename>debugdump.txt</filename>
+      og <filename>d.txt</filename>, som inneholder versjonsinformasjon,
+      informasjon om nedlastede filer osv. Én fil har logget tiden for hver handling.
     </para>
   </sect2>
 
   <sect2>
-    <title>lib32 Installation of cURL</title>
+    <title>lib32 Installasjon av cURL</title>
     
     <para>
-      Install <application>lib32-cURL</application>
-      by running the following commands:
+      Installer <application>lib32-cURL</application>
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -148,7 +148,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig   \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -159,95 +159,95 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-subconfigure;
 
     <para>
-      <command>mkdir build &amp;&amp; cd build</command>: This is not necessary
-      for just the normal installation, but cleaning the directory leads to the
-      documentation in the source being wiped and this package tries to rebuild
-      it for the lib32 installation, so building in a build directory allows
-      for deleting just the build artifacts.
+      <command>mkdir build &amp;&amp; cd build</command>: Dette er ikke nødvendig
+      bare for den vanlige installasjonen, men rengjøring av mappen fører til at
+      dokumentasjonen i kildekoden slettes, og denne pakken prøver å
+      gjenoppbygge den for lib32 installasjonen, så bygging i en byggemappe tillater
+      sletting av bare byggeartefaktene.
     </para>
 
     &static-libraries;
 
     <para>
-      <parameter>--with-ca-path=/etc/ssl/certs</parameter>: This
-      switch sets the location of the BLFS Certificate Authority store.
+      <parameter>--with-ca-path=/etc/ssl/certs</parameter>: Denne
+      bryteren angir plasseringen til BLFS sertifiseringsinstansens lager.
     </para>
 
     <para>
-      <parameter>--with-openssl</parameter>: This parameter chooses
-      <application>OpenSSL</application> as SSL/TLS implementation.
-      This option is not needed if <option>--with-gnutls</option> is
-      selected instead.
+      <parameter>--with-openssl</parameter>: Denne parameteren velger
+      <application>OpenSSL</application> som SSL/TLS implementering.
+      Dette alternativet er ikke nødvendig hvis <option>--with-gnutls</option> er
+      valgt i stedet.
     </para>
 
     <para>
-      <option>--with-gssapi</option>: This parameter adds
-      <application>Kerberos 5</application> support to
+      <option>--with-gssapi</option>: Denne parameteren legger til
+      <application>Kerberos 5</application> støtte for
       <filename class="libraryfile">libcurl</filename>.
     </para>
 
     <para>
-      <option>--with-gnutls</option>: Use this switch to
-      build with <application>GnuTLS</application> support
-      instead of <application>OpenSSL</application> for SSL/TLS. This requires
-      <xref linkend="gnutls"/> to be installed already.
+      <option>--with-gnutls</option>: Bruk denne bryteren til å
+      bygge med <application>GnuTLS</application> støtte
+      istedenfor <application>OpenSSL</application> for SSL/TLS. Dette krever at
+      <xref linkend="gnutls"/> er installert allerede.
     </para>
 
     <para>
-      <option>--with-ca-bundle=/etc/pki/tls/certs/ca-bundle.crt</option>: Use
-      this switch instead of <parameter>--with-ca-path</parameter> if
-      building with <application>GnuTLS</application> support
-      instead of <application>OpenSSL</application> for SSL/TLS.
+      <option>--with-ca-bundle=/etc/pki/tls/certs/ca-bundle.crt</option>: Bruk
+      denne bryteren i stedet for <parameter>--with-ca-path</parameter> hvis det
+      bygges med <application>GnuTLS</application> støtte
+      istedenfor <application>OpenSSL</application> for SSL/TLS.
     </para>
 
     <para>
-      <option>--with-libssh2</option>: This parameter adds
-      <application>SSH</application> support to cURL. This is disabled
-      by default.
+      <option>--with-libssh2</option>: Denne parameteren legger til
+      <application>SSH</application> støtte for cURL. Dette er deaktivert
+      som standard.
     </para>
 
     <para>
-      <option>--enable-ares</option>: This parameter adds support for DNS
-      resolution through the c-ares library.
+      <option>--enable-ares</option>: Denne parameteren legger til støtte for DNS
+      løsning gjennom c-ares biblioteket.
     </para>
 
     <para>
-      <command>find docs ... -exec rm {} \;</command>: This command removes
-      <filename>Makefiles</filename> and man files from the documentation
-      directory that would otherwise be installed by the commands that follow.
+      <command>find docs ... -exec rm {} \;</command>: Denne kommandoen fjerner
+      <filename>Makefiles</filename> og manualfiler fra dokumentasjonsmappen
+      som ellers ville blitt installert av kommandoene som følger.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte programmer</segtitle>
+      <segtitle>Installert bibliotek</segtitle>
+      <segtitle>Installerte mapper</segtitle>
 
       <seglistitem>
         <seg>
-           curl and curl-config
+           curl og curl-config
         </seg>
         <seg>
            libcurl
         </seg>
         <seg>
-          /usr/include/curl and
+          /usr/include/curl og
           /usr/share/doc/curl-&curl-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -255,7 +255,7 @@ ldconfig</userinput></screen>
         <term><command>curl</command></term>
         <listitem>
          <para>
-           is a command line tool for transferring files with URL syntax
+           er et kommandolinjeverktøy for overføring av filer med URL syntaks
          </para>
           <indexterm zone="curl curl-prog">
             <primary sortas="b-curl">curl</primary>
@@ -267,8 +267,8 @@ ldconfig</userinput></screen>
         <term><command>curl-config</command></term>
         <listitem>
           <para>
-            prints information about the last compile, like libraries
-            linked to and prefix setting
+            skriver ut informasjon om siste kompilering, som biblioteker
+            lenket til og prefiksinnstilling
           </para>
           <indexterm zone="curl curl-config">
             <primary sortas="b-curl-config">curl-config</primary>
@@ -280,8 +280,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libcurl</filename></term>
         <listitem>
           <para>
-            provides the API functions required by
-            <command>curl</command> and other programs
+            tilbyr API funksjonene som kreves av
+            <command>curl</command> og andre programmer
           </para>
           <indexterm zone="curl libcurl">
             <primary sortas="c-libcurl">libcurl</primary>

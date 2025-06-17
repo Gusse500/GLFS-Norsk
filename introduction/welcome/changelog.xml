@@ -40,6 +40,23 @@
     </listitem>
     -->
 
+   <listitem>
+      <para>15. juni 2025</para>
+      <itemizedlist>Legg til commentMore handlinger
+        <listitem>
+          <para>[zeckma] - libpng: 1.6.48 -&gt; 1.6.49.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - MinGW-w64: 12.0.0 -&gt; 13.0.0. Fikser
+          <ulink url="&glfs-issues;/257">#261</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 10.9 -&gt; 10.10. Fikser
+          <ulink url="&glfs-issues;/257">#262</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>15. juni 2025</para>
       <itemizedlist>
