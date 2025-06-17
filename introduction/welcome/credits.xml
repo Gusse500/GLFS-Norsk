@@ -5,14 +5,14 @@
   %general-entities;
 ]>
 
-<sect1 id="credits" xreflabel="Credits">
+<sect1 id="credits" xreflabel="Kredit">
   <?dbhtml filename="credits.html"?>
 
 
-  <title>Credits</title>
+  <title>Kredit</title>
 
   <sect2>
-    <title>GLFS Current Editors</title>
+    <title>GLFS Nåværende Redaktører</title>
     
     <itemizedlist>
 
@@ -22,7 +22,7 @@
   </sect2>
  
   <sect2>
-    <title>GLFS Contributors</title>
+    <title>GLFS Bidragsytere</title>
     
     <itemizedlist>
 
@@ -35,7 +35,7 @@
   </sect2>
      
   <sect2>
-    <title>BLFS Current Editors</title>
+    <title>BLFS Nåværende Redaktører</title>
 
     <itemizedlist>
 
@@ -50,12 +50,12 @@
   </sect2>
 
   <sect2>
-    <title>BLFS Contributors and Past Editors</title>
+    <title>BLFS Bidragsytere og Tidligere Redaktører</title>
 
-    <para>The list of contributors is far too large to provide detailed
-    information about the contributions for each contributor.  Over the years,
-    the following individuals have provided significant inputs to the
-    book:</para>
+    <para>Listen over bidragsytere er altfor lang til å gi detaljert
+    informasjon om bidragene til hver bidragsyter. Gjennom årene
+    har følgende personer gitt betydelige bidrag til
+    boken:</para>
 
     <itemizedlist>
 
@@ -111,7 +111,7 @@
   </sect2>
 
   <sect2>
-    <title>BLFS General Acknowledgments</title>
+    <title>BLFS Generelle Takksigelser</title>
 
     <itemizedlist>
 
