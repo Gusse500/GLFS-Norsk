@@ -17,68 +17,71 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to NVIDIA</title>
+    <title>Introduksjon til NVIDIA</title>
 
     <para>
-      The <application>NVIDIA</application> proprietary driver contains
-      firmware, kernel drivers, userland drivers pertaining to OpenGL,
-      Vulkan, and hardware acceleration, and provides useful utilites for
-      NVIDIA cards. If you don't have a NVIDIA GPU, skip to the next package.
+      <application>NVIDIA</application> proprietære driver inneholder
+      fastvare, kjernedrivere, brukerlanddrivere knyttet til OpenGL,
+      Vulkan og maskinvareakselerasjon, og tilbyr nyttige verktøy for
+      NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste
+      pakke.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Recommended kernel version to use: linux-&nvidia-linux-version;
+          Anbefalt kjerneversjon å bruke: linux-&nvidia-linux-version;
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&nvidia-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&nvidia-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
+<!--
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&dl-root;/NVIDIA/NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch"/>
         </para>
       </listitem>
+-->
       <listitem>
         <para>
-          Required install script:
+          Nødvendig installasjonsskript:
           <ulink url="&dl-root;/NVIDIA/install-NVIDIA-&nv-manifest-version;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Required manifest file for the install script:
+          Nødvendig manifestfil for installasjonsskriptet:
           <ulink url="&dl-root;/NVIDIA/manifest-NVIDIA-&nv-manifest-version;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">NVIDIA Dependencies</bridgehead>
+    <bridgehead renderas="sect3">NVIDIA Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       &gbm;,
-      <xref linkend="libglvnd"/>, and
+      <xref linkend="libglvnd"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <itemizedlist spacing="compact">
         <listitem>
           <para>
             <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink>
-            (for NVENC, NVDEC, Optical Flow, and other hardware
-            acceleration not provided by VDPAU; install after following this
-            page)
+            (for NVENC, NVDEC, Optical Flow, og annen maskinvare
+            akselerasjon ikke levert av VDPAU; installer etter å ha fulgt denne
+            siden)
           </para>
         </listitem>
         <listitem>
@@ -89,28 +92,28 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libvdpau"/> (for using the VDPAU driver)
+            <xref linkend="libvdpau"/> (for å bruke VDPAU driver)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libvk"/> (for using the Vulkan drivers)
+            <xref linkend="libvk"/> (for å bruke Vulkan drivere)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="nvidia-egl"/> (for EGL driver support)
+            <xref linkend="nvidia-egl"/> (for EGL driver støtte)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="wayland"/> (needed for Wayland support)
+            <xref linkend="wayland"/> (nødvendig for Wayland støtte)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="xorg-server"/> (required for running
-            <command>nvidia-xconfig</command>, like in <xref
+            <xref linkend="xorg-server"/> (nødvendig for å kjøre
+            <command>nvidia-xconfig</command>, som i <xref
             linkend="whatnow"/>)
           </para>
         </listitem>
@@ -120,105 +123,107 @@
   </sect2>
 
   <sect2>
-    <title>Preparing for the NVIDIA Installation</title>
+    <title>Forberedelser til NVIDIA installasjonen</title>
 
     <para>
-      First enable XFree86 DRI and Nouveau
+      Første aktiver XFree86 DRI og Nouveau
       <footnote><para>
-        Newer versions of
-        the NVIDIA drivers will fail to compile with TTY support unless a
-        graphics driver is included in the kernel. Nouveau is used here, though
-        alternate graphics drivers may also work.
+        Nyere versjoner av 
+        NVIDIA driverne vil ikke kunne kompileres med TTY støtte med mindre en 
+        grafikkdriver er inkludert i kjernen. Nouveau brukes her, men 
+        alternative grafikkdrivere kan også fungere.
       </para></footnote>
-      support in the kernel and recompile if necessary.
+      støtte i kjernen og rekompilere om nødvendig.
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-kernel.xml"/>
 
     <important><para>
-      Build these drivers as kernel modules so that they can properly be
-      blacklisted.
+      Bygg disse driverne som kjernemoduler slik at de kan bli svartelistet på
+      riktig måte.
     </para></important>
 
     <para>
-      Extract the <application>NVIDIA</application> driver runfile and
-      navigate to the extracted directory:
+      Pakk ut <application>NVIDIA</application> driver runfile
+      og naviger til den utpakkede mappen:
     </para>
 
 <screen><userinput>sh NVIDIA-Linux-x86_64-&nvidia-version;.run -x &amp;&amp;
 cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 
+<!--
     <para>
-      Apply a patch for the proprietary kernel module type for the driver for
-      compatibility with <application>linux-6.15</application>:
+      Installer en oppdatering for den proprietære kjernemodultypen for driveren for
+	  kompatibilitet med <application>linux-6.15</application>:
     </para>
 
 <screen><userinput>patch -d kernel -Np1 -i ../../NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch</userinput></screen>
+-->
 
   </sect2>
 
   <sect2>
-    <title>Installation of the NVIDIA Kernel Modules</title>
+    <title>Installasjon av NVIDIA kjernemodulene</title>
 
     <note><para>
-      Building the kernel modules in a chroot will likely cause a build
-      failure. It is heavily recommended to build them when booted in the LFS
-      target to avoid <command>uname -r</command> reporting the kernel version
-      of the host rather than the target leading to build files being unable to
-      be found.
+      Å bygge kjernemodulene i en chroot vil sannsynligvis føre til en byggefeil.
+      Det anbefales på det sterkeste å bygge dem når de startes opp i LFS målet
+      for å unngå <command>uname -r</command> rapportering av kjerneversjonen
+      til verten i stedet for målet, noe som fører til at byggefiler ikke
+      kan finnes.
     </para></note>
 
     <para>
-      Now you will need to build the kernel modules for the driver. There are
-      two types: <emphasis role="bold">open</emphasis> and
-      <emphasis role="bold">proprietary</emphasis>. If you have the
-      NVIDIA Grace Hopper or NVIDIA Blackwell cards, you must
-      compile the <emphasis role="bold">open</emphasis> kernel modules.
-      If you have a Turing, Ampere, Ada Lovelace,
-      or Hopper card, it is recommended to now build the
-      <emphasis role="bold">open</emphasis> kernel modules.
-      If you have a Maxwell, Pascal, or Volta card, build the
-      <emphasis role="bold">proprietary</emphasis> kernel modules.
-      If you are using both an older and newer card, but not the newest cards,
-      build the <emphasis role="bold">proprietary</emphasis> kernel modules.
+      Nå må du bygge kjernemodulene for driveren. Det finnes
+      to typer: <emphasis role="bold">open</emphasis> og
+      <emphasis role="bold">proprietary</emphasis>. Hvis du har
+      NVIDIA Grace Hopper eller NVIDIA Blackwell kort, må du
+      kompilere <emphasis role="bold">open</emphasis> kjernemoduler.
+      Hvis du har Turing, Ampere, Ada Lovelace,
+      eller Hopper kort, anbefales det å nå bygge
+      <emphasis role="bold">open</emphasis> kjernemoduler.
+      Hvis du har Maxwell, Pascal, eller Volta kort, bygg
+      <emphasis role="bold">proprietary</emphasis> kjernemoduler.
+      Hvis du bruker både et eldre og et nyere kort, men ikke de nyeste kortene,
+      bygg <emphasis role="bold">proprietary</emphasis> kjernemoduler.
     </para>
 
     <para>
-      If you are going to build the <emphasis role="bold">open</emphasis>
-      kernel modules, set the <envar>NVIDIA_KERNEL_TYPE</envar> variable:
+      Hvis du skal bygge <emphasis role="bold">open</emphasis>
+      kjernemoduler, sett <envar>NVIDIA_KERNEL_TYPE</envar> variabelen:
     </para>
 
 <screen><userinput>export NVIDIA_KERNEL_TYPE="kernel-open"</userinput></screen>
 
     <para>
-      If you are going to instead build the <emphasis
-      role="bold">proprietary</emphasis> kernel modules, set the
-      <envar>NVIDIA_KERNEL_TYPE</envar> variable:
+      Hvis du i stedet skal bygge <emphasis
+      role="bold">proprietary</emphasis> kjernemoduler, sett
+      <envar>NVIDIA_KERNEL_TYPE</envar> variabelen:
     </para>
 
 <!-- proprietary is the exception, not the rule -->
 <screen><computeroutput>export NVIDIA_KERNEL_TYPE="kernel"</computeroutput></screen>
 
     <para>
-      There will be 5 or 6 kernel modules that will be built. Depending on your
-      use case, you can skip building a module or two. The UVM (Unified Virtual
-      Memory) module is for use with <ulink
-      url="&slfs-website;/general/cuda.html">CUDA</ulink>. If you won't use
-      it, nor wish to use its capabilities, you can skip building the UVM
-      kernel module. There is also the PeerMem module which is for datacenters.
-      For gaming, it can safely be disabled.
+      Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av
+      brukstilfellet ditt, kan du hoppe over å bygge en eller to moduler. UVM
+      modulen (UnifiedVirtual Memory) er til bruk med <ulink
+      url="&slfs-website;/general/cuda.html">CUDA</ulink>. Hvis du ikke vil bruke
+      den, eller ønsker å bruke dens funksjoner, kan du hoppe over å bygge UVM
+      kjernemodulen. Det finnes også PeerMem modulen som er for datasentre.
+      For spilling kan den trygt deaktiveres.
     </para>
 
     <para>
-      For UVM, the module is named <computeroutput>nvidia-uvm</computeroutput>.
-      For PeerMem, it will be named
-      <computeroutput>nvidia-peermem</computeroutput>. To skip these, add the
-      module names to the <envar>NV_EXCLUDE_KERNEL_MODULES</envar> for the
-      <command>make</command> command. The variable should be seperated, as
-      such:
+      For UVM heter modulen <computeroutput>nvidia-uvm</computeroutput>.
+      For PeerMem vil den bli kalt
+      <computeroutput>nvidia-peermem</computeroutput>. For å hoppe over disse, legg
+      til modulnavnene til <envar>NV_EXCLUDE_KERNEL_MODULES</envar> i
+      <command>make</command> kommandoen. Variabelen bør være separert, slik
+      som dette:
       <computeroutput>NV_EXCLUDE_KERNEL_MODULES="nvidia-uvm nvidia-peermem"</computeroutput>.
-      The <command>make</command> command will have the variable set to
-      nothing. Add to it as you see fit.
+      <command>make</command> kommandoen vil ha variabelen satt til
+      ingenting. Legg til noe i den etter eget ønske.
     </para>
 
     <para>

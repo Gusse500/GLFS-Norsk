@@ -40,9 +40,19 @@
     </listitem>
     -->
 
+    <listitem>
+      <para>17. juni 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 575.57.08 -&gt; 575.64 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/264">#264</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
    <listitem>
-      <para>15. juni 2025</para>
-      <itemizedlist>Legg til commentMore handlinger
+      <para>16. juni 2025</para>
+      <itemizedlist>
         <listitem>
           <para>[zeckma] - libpng: 1.6.48 -&gt; 1.6.49.</para>
         </listitem>

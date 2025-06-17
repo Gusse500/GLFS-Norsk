@@ -330,7 +330,5 @@ cp -R $NV_X_RUN_DIR/html $DOCDIR/nvidia-$NVIDIA_VERSION || exit
 # Praise be to ldconfig, it creates symlinks on its own so we don't need to!
 echo "Running /sbin/ldconfig..."
 /sbin/ldconfig  &&
-echo "Running /sbin/depmod -a..."
-/sbin/depmod -a &&
 
 echo "Installation of NVIDIA-$NVIDIA_VERSION complete!"
