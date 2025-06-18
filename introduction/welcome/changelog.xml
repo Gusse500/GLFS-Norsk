@@ -44,6 +44,14 @@
       <para>17. juni 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Xwayland: 24.1.6 -&gt; 24.1.7 (sikkerhet).
+          Fikser <ulink url="&glfs-issues;/266">#266</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xorg-Server: 21.1.16 -&gt; 21.1.17 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/265">#265</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA: 575.57.08 -&gt; 575.64 (sikkerhet). Fikser
           <ulink url="&glfs-issues;/264">#264</ulink>.</para>
         </listitem>
