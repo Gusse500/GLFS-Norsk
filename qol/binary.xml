@@ -5,30 +5,30 @@
   %general-entities;
 ]>
 
-<sect1 id="binary" xreflabel="Binary Support">
+<sect1 id="binary" xreflabel="Binær støtte">
   <?dbhtml filename="binary.html"?>
 
 
-  <title>Binary Support</title>
+  <title>Binær støtte</title>
 
   <para>
-    Now that have <application>Steam</application> and/or
-    <application>Wine</application>, you now have decent support for running
-    binary only applications. However, there are AppImages and Flatpaks. This
-    book does not and will not go over how to get that support. However, you
-    can figure out how to get that support by looking at another project the
-    GLFS development team works on:
-    <ulink url="&slfs-website;">SLFS</ulink>. The
-    specific section you will want to see to get that support is
+    Nå som du har <application>Steam</application> og/eller
+    <application>Wine</application>, Du har nå god støtte for å kjøre
+    kun binære applikasjoner. Det finnes imidlertid AppImages og Flatpaks. Denne
+    boken går ikke gjennom og vil ikke gå gjennom hvordan du får den støtten. Du kan
+    imidlertid finne ut hvordan du får den støtten ved å se på et annet prosjekt
+    GLFS utviklingsteamet jobber med:
+    <ulink url="&slfs-website;">SLFS</ulink>. 
+    den spesifikke delen du vil se for å få den støtten er
     <ulink url="&slfs-website;/binary/binary.html">
     Binary Support</ulink>.
   </para>
 
   <para>
-    After following the instructions, you should be able to run AppImages and
-    use Flatpak. You can even use Flatpak to install
-    <application>Steam</application> if you wish. That method is not covered in
-    this book.
+    Etter å ha fulgt instruksjonene, skal du kunne kjøre AppImages og bruke Flatpak.
+    Du kan til og med bruke Flatpak til å installere
+    <application>Steam</application> hvis du ønsker det. Den metoden er ikke dekket i
+    denne boken.
   </para>
 
 </sect1>

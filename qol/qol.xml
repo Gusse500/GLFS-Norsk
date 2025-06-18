@@ -5,10 +5,10 @@
   %general-entities;
 ]>
 
-<part id="qol" xreflabel="Quality of Life">
+<part id="qol" xreflabel="Livskvalitet">
   <?dbhtml filename="qol.html" dir="qol"?>
 
-  <title>Quality of Life</title>
+  <title>Livskvalitet</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="qolintro.xml"/>
 

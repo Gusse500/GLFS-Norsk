@@ -9,13 +9,13 @@
   <?dbhtml filename="qolintro.html"?>
 
 
-  <title>Quality of Life</title>
+  <title>Livskvalitet</title>
 
   <para>
-    Now that you have installed <application>Steam</application>, <application>
-    Wine</application>, or both, you may be satisfied with your current setup.
-    However, there are some quality of life improvements that may be of use to
-    you. This chapter goes through a handful of those improvements.
+    Nå som du har installert <application>Steam</application>, <application>
+    Wine</application>, eller begge deler, kan du være fornøyd med ditt nåværende oppsett.
+    Det finnes imidlertid noen forbedringer av livskvaliteten som kan være nyttige for
+    deg. Dette kapittelet går gjennom en håndfull av disse forbedringene.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gamepad.xml"/>
