@@ -5,64 +5,64 @@
   %general-entities;
 ]>
 
-<sect1 id="packages" xreflabel="Getting the Source Packages">
+<sect1 id="packages" xreflabel="Hente kildepakkene">
   <?dbhtml filename="packages.html"?>
 
 
-  <title>Getting the Source Packages</title>
+  <title>Hente kildepakkene</title>
 
-  <para>Within the GLFS instructions, each package has two references for
-  finding the source files for the package&mdash;an HTTP link and an FTP link
-  (some packages may only list one of these links). Every effort has been made
-  to ensure that these links are accurate. However, the World Wide Web is in
-  continuous flux. Packages are sometimes moved or updated and the exact URL
-  specified is not always available.</para>
+  <para>Innenfor GLFS-instruksjonene har hver pakke to referanser for å
+  finne kildefilene for pakken&mdash;en HTTP lenke og en FTP lenke
+  (noen pakker viser kanskje bare én av disse lenkene). Vi har gjort vårt ytterste for
+  å sikre at disse lenkene er nøyaktige. Imidlertid er World Wide Web i
+  kontinuerlig endring. Pakker flyttes eller oppdateres noen ganger, og den nøyaktige URL-adressen
+  som er spesifisert er ikke alltid tilgjengelig.</para>
 
-  <para>The BLFS Team noticed this problem with BLFS, so they, with the
-  assistance of Oregon State University Open Source Lab, have made an HTTP/FTP
-  site available through world wide mirrors. See <ulink
+  <para>BLFS teamet la merke til dette problemet med BLFS, så de har, med hjelp
+  fra Oregon State University Open Source Lab, gjort et HTTP/FTP
+  nettsted tilgjengelig gjennom verdensomspennende speil. Se <ulink
   url="https://www.linuxfromscratch.org/blfs/download.html#sources">
-  https://www.linuxfromscratch.org/blfs/download.html#sources</ulink> for a
-  list. These sites have all the sources of the exact versions of the packages
-  used in BLFS. If you can't find the BLFS or GLFS package you need at the
-  listed addresses, get it from these sites.</para>
+  https://www.linuxfromscratch.org/blfs/download.html#sources</ulink> for en
+  liste. Disse nettstedene har alle kildene til de nøyaktige versjonene av pakkene
+  som brukes i BLFS. Hvis du ikke finner BLFS- eller GLFS-pakken du trenger på de
+  oppførte adressene, kan du hente den fra disse nettstedene.</para>
 
-  <para>We would like to ask a favor, however.  Although this is a public
-  resource for you to use, please do not abuse it.  They have already had one
-  unthinking individual download over 3 GB of data, including multiple copies of
-  the same files that are placed at different locations (via symlinks) to make
-  finding the right package easier.  This person clearly did not know what files
-  he needed and downloaded everything.  The best place to download files
-  is the site or sites set up by the source code developer.  Please try
-  there first.</para>
+  <para>Vi vil imidlertid gjerne be om en tjeneste. Selv om dette er en offentlig
+  ressurs du kan bruke, må du ikke misbruke den. De har allerede hatt én
+  tankeløs person som har lastet ned over 3 GB data, inkludert flere kopier av
+  de samme filene som er plassert på forskjellige steder (via symbolske lenker) for å gjøre
+  det enklere å finne riktig pakke. Denne personen visste tydeligvis ikke hvilke filer
+  han trengte og lastet ned alt. Det beste stedet å laste ned filer er
+  nettstedet eller nettstedene som er satt opp av kildekodeutvikleren. Vennligst prøv
+  der først.</para>
 
-  <para>As for GLFS, some packages listed here are not on BLFS or their site.
-  In such a case, we do not have a solution at the moment besides going to the
-  developer(s) and/or their website.</para>
+  <para>Når det gjelder GLFS, finnes ikke alle pakkene som er oppført her på BLFS eller nettstedet deres.
+  I slike tilfeller har vi ingen annen løsning for øyeblikket enn å gå til
+  utvikleren(e) og/eller nettstedet deres.</para>
 
   <sect2>
-    <title>Obtaining the Source Packages in Bulk</title>
+    <title>Hente kildepakkene i bulk</title>
 
     <para>
-      Obtaining all the source packages all at once is not recommended as
-      you will probably pull in packages you won't want. However, it is
-      certainly a convenient option if you have the disk space to spare and may
-      be necessary if the LFS system cannot download any source code, but
-      another system can, such as the host you built the LFS target from.
+      Det anbefales ikke å skaffe alle kildekodepakkene samtidig, da du
+      sannsynligvis vil hente inn pakker du ikke vil ha. Det er imidlertid
+      absolutt et praktisk alternativ hvis du har diskplass til overs, og det kan
+      være nødvendig hvis LFS systemet ikke kan laste ned kildekode, men
+      et annet system kan, for eksempel verten du bygde LFS målet fra.
     </para>
 
     <note><para>
-      This process depends on <xref linkend="wget"/>. It also depends on a
-      working internet connection. If you just got done with LFS and are not
-      yet booted into the new system yet, then it is recommended to navigate to
-      <filename class="directory">$LFS/sources</filename> then follow the below
-      instructions on the host system outside of a chroot.
+      Denne prosessen er avhengig av <xref linkend="wget"/>. Det avhenger også av
+      en fungerende internettforbindelse. Hvis du nettopp er ferdig med LFS og ikke
+      har startet opp i det nye systemet ennå, anbefales det å navigere til
+      <filename class="directory">$LFS/sources</filename> følg deretter
+      instruksjonene nedenfor på vertssystemet utenfor en chroot.
     </para></note>
 
     <para>
-      First navigate to the directory you want the downloaded source code and
-      patches to be, then download <ulink url="../wget-list">wget-list</ulink>.
-      After that, download the packages and patches by doing the following:
+      Naviger først til mappen du vil at den nedlastede kildekoden og
+      oppdateringene skal være i, og last deretter ned <ulink url="../wget-list">wget-list</ulink>.
+      Etter det laster du ned pakkene og oppdateringene ved å gjøre følgende:
     </para>
 
 <screen><userinput>wget -N --input-file=wget-list --continue</userinput></screen>

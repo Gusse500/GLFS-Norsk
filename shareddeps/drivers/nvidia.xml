@@ -21,7 +21,7 @@
 
     <para>
       <application>NVIDIA</application> proprietære driver inneholder
-      fastvare, kjernedrivere, brukerlanddrivere knyttet til OpenGL,
+      fastvare, kjernedrivere, userland drivere knyttet til OpenGL,
       Vulkan og maskinvareakselerasjon, og tilbyr nyttige verktøy for
       NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste
       pakke.
@@ -154,7 +154,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 <!--
     <para>
       Installer en oppdatering for den proprietære kjernemodultypen for driveren for
-	  kompatibilitet med <application>linux-6.15</application>:
+      kompatibilitet med <application>linux-6.15</application>:
     </para>
 
 <screen><userinput>patch -d kernel -Np1 -i ../../NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch</userinput></screen>
@@ -227,9 +227,9 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     </para>
 
     <para>
-      Now build the kernel modules by running the following commands below
-      (the commands below will navigate to the right directory based on what
-      <envar>NVIDIA_KERNEL_TYPE</envar> is set to):
+      Bygg nå kjernemodulene ved å kjøre følgende kommandoer nedenfor
+      (kommandoene nedenfor vil navigere til riktig mappe basert på hva)
+      <envar>NVIDIA_KERNEL_TYPE</envar> er satt til):
     </para>
 
 <screen><userinput>pushd $NVIDIA_KERNEL_TYPE &amp;&amp;
@@ -237,50 +237,50 @@ make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
 
     <note>
       <para>
-        You may encounter various build failures. This usually happens because
-        the kernel version you're using is <quote>too high.</quote> If this
-        happens, it may be necessary to downgrade the kernel to a lower
-        version. When a new driver release happens, the driver will then most
-        likely support the kernel version at the time. At the top of this
-        section, the recommended kernel version to use with this driver is
-        mentioned to ensure that a build failure does not occur. The current
-        kernel version used for kernel parameters and such in this book is
+        Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi
+        kjerneversjonen du bruker er <quote>for høy.</quote> Hvis dette
+        skjer, kan det være nødvendig å nedgradere kjernen til en lavere
+        versjon. Når en ny driverutgivelse kommer, vil driveren mest
+        sannsynlig støtte kjerneversjonen på det tidspunktet. Øverst i denne
+        delen er den anbefalte kjerneversjonen som skal brukes med denne driveren
+        nevnt for å sikre at det ikke oppstår en byggefeil. Den nåværende
+        kjerneversjonen som brukes for kjerneparametere og lignende i denne boken er
         linux-&linux-version;.
       </para>
     </note>
 
     <important>
       <para>
-        When you update the kernel, you will also need to reinstall the
-        <application>NVIDIA</application> kernel modules.
+        Når du oppdaterer kjernen, må du også installere
+        <application>NVIDIA</application> kjernemoduler på nytt.
       </para>
 
       <para>
-        This is because there is glue when kernel modules are built. This glue
-        doesn't matter too much with first party modules (modules in the kernel
-        source tree) as the modules are updated at the same time the kernel is.
-        At that point, there is new glue holding them together. However, when
-        it comes to third party modules, they aren't updated when the kernel
-        updates, so this glue the third party modules had on the kernel breaks.
-        This leads to broken kernel modules. This also applies if you stay on
-        the same kernel version but change some options, this can also break
-        the glue.
+        Dette er fordi det er lim når kjernemoduler bygges. Dette limet
+        spiller ikke så stor rolle med førstepartsmoduler (moduler i kjernens
+        kildetre) ettersom modulene oppdateres samtidig som kjernen oppdateres.
+        På det tidspunktet er det nytt lim som holder dem sammen. Men når
+        det gjelder tredjepartsmoduler, oppdateres de ikke når kjernen
+        oppdateres, så dette limet tredjepartsmodulene hadde på kjernen bryter sammen.
+        Dette fører til ødelagte kjernemoduler. Dette gjelder også hvis du forblir på
+        samme kjerneversjon, men endrer noen alternativer, dette kan også bryte
+        limet.
       </para>
 
       <para>
-        Be sure that when you reinstall the kernel modules, make sure you are
-        using the new kernel and have the kernel source you built from.
-        Otherwise the modules will fail to build.
+        Sørg for at når du installerer kjernemodulene på nytt, må du sørge for at du
+        bruker den nye kjernen og har kjernekildekoden du bygde fra.
+        Ellers vil modulene ikke kunne bygges.
       </para>
 
       <para>
-        When you upgrade the kernel, you will not have to reinstall the
-        driver software, just the kernel modules.
+        Når du oppgraderer kjernen, trenger du ikke å installere driverprogramvaren
+        på nytt, bare kjernemodulene.
       </para>
     </important>
 
     <para>
-      Now as the &root; user:
+      Nå som &root; bruker:
     </para>
 
 <screen role="root"><userinput>for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
@@ -290,7 +290,7 @@ make modules_install &amp;&amp;
 popd</userinput></screen>
 
     <para>
-      Install the firmware as the &root; user:
+      Installer fastvaren som &root; bruker:
     </para>
 
 <screen role="root"><userinput>rm -rvf /usr/lib/firmware/nvidia/[0-9]* &amp;&amp;
@@ -298,7 +298,7 @@ mkdir -pv /usr/lib/firmware/nvidia/&nvidia-version; &amp;&amp;
 cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></screen>
 
     <para>
-      Finally, unset the <envar>NVIDIA_KERNEL_TYPE</envar> variable:
+      Til slutt, deaktiver <envar>NVIDIA_KERNEL_TYPE</envar> variabelen:
     </para>
         
 <screen><userinput>unset NVIDIA_KERNEL_TYPE</userinput></screen>
@@ -306,18 +306,18 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
   </sect2>
 
   <sect2 role="installation">
-    <title>Installing the NVIDIA Driver Software</title>
+    <title>Installere NVIDIA driverprogramvaren</title>
 
     <note><para>
-      If you have an existing installation, it may be a good idea to follow
-      <xref linkend="nvidia-uninstalling"/> first before going through this 
-      section to remove some cruft and leftover libraries. This is not strictly
-      necessary, though.
+      Hvis du har en eksisterende installasjon, kan det være lurt å følge
+      <xref linkend="nvidia-uninstalling"/> først før du går gjennom denne
+      delen for å fjerne noen smuss og restbiblioteker. Dette er imidlertid
+      ikke strengt nødvendig.
     </para></note>
 
     <para>
-      Install the install script and manifest file for the script as the &root;
-      user:
+      Installer installasjonsskriptet og manifestfilen for skriptet som &root;
+      bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/share/nvidia              &amp;&amp;
@@ -327,34 +327,34 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
                /usr/share/nvidia/manifest</userinput></screen>
 
     <para>
-      Now see what options there are and what you want to install by running
+      Se nå hvilke alternativer som finnes og hva du vil installere ved å kjøre
       <command>/sbin/nvidia-install --help</command>.
     </para>
 
     <para>
-      If you want to do the default installation, you can just run the
-      following command as the &root; user:
+      Hvis du vil gjøre standardinstallasjonen, kan du bare kjøre
+      følgende kommando som &root; bruker:
     </para>
 
 <screen role="root"><userinput>/sbin/nvidia-install</userinput></screen>
 
     <important><para>
-      If you are booted into the system you are running the commands for, doing
-      so for the above command in a graphical environment may crash that
-      environment and drop you back to a TTY. Don't do that, just run it from a
-      TTY or in a chroot where the display doesn't rely on the libraries
-      provided from this driver. As for the TTY, it is actually driven by the
-      kernel or its modules, not the libraries. That is why running the above
-      command in a TTY is safe&mdash;it doesn't overwrite the kernel modules.
+      Hvis du starter opp i systemet du kjører kommandoene for, kan det å gjøre
+      det for kommandoen ovenfor i et grafisk miljø krasje det
+      miljøet og føre deg tilbake til en TTY. Ikke gjør det, bare kjør den fra en
+      TTY eller i en chroot der skjermen ikke er avhengig av bibliotekene
+      som leveres av denne driveren. Når det gjelder TTY, drives den faktisk av
+      kjernen eller dens moduler, ikke bibliotekene. Det er derfor det er trygt å
+      kjøre kommandoen ovenfor i en TTY.&mdash;den overskriver ikke kjernemodulene.
     </para></important>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring NVIDIA</title>
+    <title>Konfigure NVIDIA</title>
 
     <sect3 id="nvidia-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
       <para>
         <filename>/usr/lib/modprobe.d/nouveau.conf</filename>
       </para>
@@ -367,57 +367,57 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
     </sect3>
 
     <sect3>
-      <title>List of Packages With Issues</title>
+      <title>Liste over pakker med problemer</title>
 
       <para>
-        Using this driver can come with compromises. So far, these issues seem
-        limited to Wayland, desktop environments, and display managers. The
-        list below documents the known packages that have issues with this
-        driver.
+        Bruk av denne driveren kan føre til kompromisser. Så langt ser disse problemene ut til å være
+        begrenset til Wayland, skrivebordsmiljøer og skjermbehandlere.
+        Listen nedenfor dokumenterer de kjente pakkene som har problemer med denne
+        driveren.
       </para>
 
       <itemizedlist>
         <listitem revision="sysv">
-          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Using this
-          package on SysVinit systems will result in failure as GDM does not
-          want to use Wayland for NVIDIA GPUs, but a permission issue with SysV
-          prevents X11 from being used. You must launch
-          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> or
+          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Bruk av denne
+          pakken på SysVinit systemer vil føre til feil, ettersom GDM ikke
+          vil bruke Wayland for NVIDIA GPU-er, men et tillatelsesproblem med SysV
+          forhindrer at X11 brukes. Du må starte
+          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> eller
           <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
-          through the terminal instead. Read the Mutter entry.</para>
+          gjennom terminalen i stedet. Les Mutter oppføringen.</para>
         </listitem>
         <listitem revision="sysv"><para>
           <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
-          This must be launched via a TTY or a display manager other than GDM
-          for now on SysVinit systems.
+          Dette må foreløpig startes via en TTY eller en annen skjermbehandler enn GDM
+          på SysVinit systemer.
         </para></listitem>
         <listitem>
           <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
-          Compile this package with
-          <parameter>-D wayland_eglstream=true</parameter> and
-          <parameter>-D egl_device=true</parameter> to enable launching with
-          Wayland. Ensure the <xref linkend="nvidia-egl"/> are
-          installed.</para>
-          <para revision="sysv">On SysVinit systems, Mutter can only be
-          launched via a TTY or a display manager other than GDM as of
-          now.</para>
+          Kompiler denne pakken med
+          <parameter>-D wayland_eglstream=true</parameter> og
+          <parameter>-D egl_device=true</parameter> for å aktivere oppstart med
+          Wayland. Sørg for at <xref linkend="nvidia-egl"/> er
+          installert.</para>
+          <para revision="sysv">På SysVinit systemer kan Mutter bare
+          startes via en TTY eller en annen skjermbehandler enn GDM
+          per nå.</para>
         </listitem>
       </itemizedlist>
 
     </sect3>
 
-    <sect3><title>Configuration Information</title>
+    <sect3><title>Konfigurasjonsinformasjon</title>
 
       <para>
-        Nouveau and NVIDIAFB support was compiled into the kernel to make the
-        NVIDIA kernel modules build successfully. However, Nouveau and NVIDIAFB
-        conflict with the NVIDIA kernel modules, so they should be blacklisted.
+        Støtte for Nouveau og NVIDIAFB ble kompilert inn i kjernen for å sikre at
+        NVIDIA kjernemodulene ble bygd på en vellykket måte. Nouveau og NVIDIAFB
+        er imidlertid i konflikt med NVIDIA kjernemodulene, så de bør svartelistes.
       </para>
 
       <para>
-        As the &root; user, create the file
-        <filename>/usr/lib/modprobe.d/nouveau.conf</filename> to blacklist Nouveau
-        and NVIDIAFB:
+        Som &root; bruker, opprett filen
+        <filename>/usr/lib/modprobe.d/nouveau.conf</filename> for å svarteliste Nouveau
+        og NVIDIAFB:
       </para>
       
 <screen role="root"><userinput>mkdir -pv /usr/lib/modprobe.d &amp;&amp;
@@ -431,9 +431,9 @@ blacklist nvidiafb
 EOF</userinput></screen>
 
       <para>
-        The DRM kernel module does not use modesetting by default which is
-        needed by Wayland compositors. Make it use modesetting as the &root;
-        user:
+        DRM kjernemodulen bruker ikke modusinnstilling som standard, noe som er
+        nødvendig for Wayland kompositore. Gjør at den bruker modusinnstilling som &root;
+        bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
@@ -445,9 +445,9 @@ options nvidia_drm modeset=1
 EOF</userinput></screen>
 
       <para>
-        When the GPU sleeps/hibernates, it will lose all memory allocations by
-        default. You can prevent this by setting two options for the NVIDIA
-        module as the &root; user:
+        Når GPU-en går i hvilemodus/dvalemodus, mister den som
+        standard alle minnetildelinger. Du kan forhindre dette ved å angi to alternativer for NVIDIA
+        modulen. som &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
@@ -460,16 +460,16 @@ options nvidia NVreg_TemporaryFilePath=/var/tmp
 EOF</userinput></screen>
 
       <para>
-        Furthermore, this driver does not install DRI
+        Dessuten installerer ikke denne driveren DRI
         <footnote><para>
           Direct Rendering Infrastructure.
         </para></footnote>
-        drivers or driver stubs. Likewise, it does not install a
-        <application>pkg-config</application> file saying where to find the
-        associated files. The files aren't needed with this driver. However,
-        some applications expect the <application>pkg-config</application> file
-        to exist, namely <xref linkend="xorg-server"/>. Create one now as the
-        &root; user:
+        drivere eller driverstubber. På samme måte installerer den ikke en
+        <application>pkg-config</application> fil som sier hvor du finner de
+        tilknyttede filene. Filene er ikke nødvendige med denne driveren. Imidlertid
+        forventer noen applikasjoner at <application>pkg-config</application> filen
+        eksisterer, nemlig <xref linkend="xorg-server"/>. Opprett en nå som
+        &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
@@ -486,17 +486,17 @@ Cflags: -I${includedir}</literal>
 EOF</userinput></screen>
 
       <para>
-        Applications that do require this file typically will not link against
-        any library in <filename class="libraryfile">/usr/lib/dri</filename>.
-        If you are worried that an application will try to link against
-        non-existent libraries, you can compile <xref linkend="mesa"/> to get
-        these libraries and a real <application>pkg-config</application> file.
-        Note that those libraries will not be used when this driver is in use.
+        Programmer som krever denne filen vil vanligvis ikke lenke mot
+        noe bibliotek i <filename class="libraryfile">/usr/lib/dri</filename>.
+        Hvis du er bekymret for at et program vil prøve å lenke mot
+        ikke-eksisterende biblioteker, kan du kompilere <xref linkend="mesa"/> å få
+        disse bibliotekene og en ekte <application>pkg-config</application> fil.
+        Merk at disse bibliotekene ikke vil bli brukt når denne driveren er i bruk.
       </para>
 
       <note><para>
-        You should skip to <xref linkend="xcb-utils"/> after you are done with
-        this page unless you wish to install extra software.
+        Du bør hoppe over til <xref linkend="xcb-utils"/> etter at du er ferdig
+        med denne siden med mindre du ønsker å installere ekstra programvare.
       </para></note>
 
     </sect3>
@@ -504,13 +504,13 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 id="nvidia-uninstalling">
-    <title>Uninstalling the NVIDIA Driver</title>
+    <title>Avinstallere NVIDIA driveren</title>
 
     <para>
-      If something went wrong with the install process, you want to switch to
-      another driver without keeping this driver, or want to remove a previous
-      installation before installing a new driver, create the following script
-      as the &root; user:
+      Hvis noe gikk galt med installasjonsprosessen, og du vil bytte
+      til en annen driver uten å beholde denne driveren, eller hvis du vil fjerne en tidligere
+      installasjon før du installerer en ny driver, kan du opprette følgende skript
+      som &root; bruker:
     </para>
 
 <screen role="root"><userinput>cat &gt; nvidia-uninstall &lt;&lt; "EOF" &amp;&amp;
@@ -636,7 +636,7 @@ EOF
 install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
 
     <para>
-      Now run it in a TTY or chroot whenever you need to as the &root; user:
+      Kjør den nå i en TTY eller chroot når du trenger det, som &root; bruker:
     </para>
 
 <screen role="nodump"><computeroutput>/sbin/nvidia-uninstall</computeroutput></screen>
@@ -644,13 +644,13 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Firmware</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Fastvare</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -658,11 +658,11 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
           nvidia-modprobe,
           nvidia-settings,
           nvidia-smi,
-          nvidia-uninstall, and
+          nvidia-uninstall, og
           nvidia-xconfig
         </seg>
         <seg>
-          gsp_ga10x.bin and
+          gsp_ga10x.bin og
           gsp_tu10x.bin
         </seg>
         <seg>
@@ -699,22 +699,22 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
           libOpenCL.so,
           libvdpau_nvidia,
           nvidia-drm_gbm,
-          nvidia_drv, and
+          nvidia_drv, og
           for <xref linkend="wine"/> (_nvngx,
-          nvngx, and
-          nvngx_dlssg; all three are DLLs)
+          nvngx, og
+          nvngx_dlssg; alle tre er DLL-er)
         </seg>
         <seg>
           /usr/lib/firmware/nvidia/&nvidia-version;,
           /usr/lib/nvidia/wine,
-          /usr/share/glvnd/egl_vendor.d, and
+          /usr/share/glvnd/egl_vendor.d, og
           /usr/share/nvidia
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -722,8 +722,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><command>nvidia-install</command></term>
         <listitem>
           <para>
-            is an install script that installs all the software from
-            this driver that you need
+            er et installasjonsskript som installerer alle programvarene fra
+            denne driveren som du trenger
           </para>
           <indexterm zone="nvidia nvidia-install">
             <primary sortas="b-nvidia-install">nvidia-install</primary>
@@ -735,9 +735,9 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><command>nvidia-modprobe</command></term>
         <listitem>
           <para>
-            is a suid program which populates <filename
-            class="directory">/dev</filename> with directories and files for
-            this driver and is loaded when starting a display server
+            er et suid program som fyller ut <filename
+            class="directory">/dev</filename> med mapper og filer for
+            denne driveren og lastes inn når en skjermserver startes
           </para>
           <indexterm zone="nvidia nvidia-modprobe">
             <primary sortas="b-nvidia-modprobe">nvidia-modprobe</primary>
@@ -749,8 +749,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><command>nvidia-settings</command></term>
         <listitem>
           <para>
-            a GUI application relying on <ulink url="&blfs-svn;/x/gtk3.html">GTK-3
-            </ulink> that allows tweaking settings like resolution and refresh rate
+            et GUI program som er avhengig av <ulink url="&blfs-svn;/x/gtk3.html">GTK-3
+            </ulink> som tillater justering av innstillinger som oppløsning og oppdateringsfrekvens
           </para>
           <indexterm zone="nvidia nvidia-settings">
             <primary sortas="b-nvidia-settings">nvidia-settings</primary>
@@ -762,7 +762,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><command>nvidia-smi</command></term>
         <listitem>
           <para>
-            provides NVIDIA GPU monitoring information
+            gir NVIDIA GPU overvåkingsinformasjon
           </para>
           <indexterm zone="nvidia nvidia-smi">
             <primary sortas="b-nvidia-smi">nvidia-smi</primary>
@@ -774,7 +774,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><command>nvidia-uninstall</command></term>
         <listitem>
           <para>
-            is a custom-made install script that uninstalls the driver
+            er et spesiallaget installasjonsskript som avinstallerer driveren
           </para>
           <indexterm zone="nvidia nvidia-uninstall">
             <primary sortas="b-nvidia-uninstall">nvidia-uninstall</primary>
@@ -786,9 +786,9 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><command>nvidia-xconfig</command></term>
         <listitem>
           <para>
-            manipulates <application>X11</application> configuration files
-            to allow the <application>NVIDIA</application> driver to be used
-            when starting <application>X11</application>
+            manipulerer <application>X11</application> konfigurasjonsfiler
+            for å tillate <application>NVIDIA</application> driveren å brukes
+            ved oppstart av <application>X11</application>
           </para>
           <indexterm zone="nvidia nvidia-xconfig">
             <primary sortas="b-nvidia-xconfig">nvidia-xconfig</primary>
@@ -800,7 +800,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libcudadebugger</filename></term>
         <listitem>
           <para>
-            allows debugging <application>CUDA</application> applications
+            tillater feilsøking av <application>CUDA</application> applikasjoner
           </para>
           <indexterm zone="nvidia libcudadebugger">
             <primary sortas="c-libcudadebugger">libcudadebugger</primary>
@@ -812,7 +812,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libcuda</filename></term>
         <listitem>
           <para>
-            provides support for applications that use
+            gir støtte for applikasjoner som bruker
             <application>CUDA</application>
           </para>
           <indexterm zone="nvidia libcuda">
@@ -825,8 +825,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libEGL_nvidia</filename></term>
         <listitem>
           <para>
-            provides the <application>NVIDIA</application> implementation
-            of EGL
+            gir <application>NVIDIA</application> implementeringen
+            av EGL
           </para>
           <indexterm zone="nvidia libEGL_nvidia">
             <primary sortas="c-libEGL_nvidia">libEGL_nvidia</primary>
@@ -838,8 +838,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libGLESv2_nvidia</filename></term>
         <listitem>
           <para>
-            provides the <application>NVIDIA</application> implementation
-            of OpenGL ES v2
+            gir <application>NVIDIA</application> implementeringen
+            av OpenGL ES v2
           </para>
           <indexterm zone="nvidia libGLESv2_nvidia">
             <primary sortas="c-libGLESv2_nvidia">libGLESv2_nvidia</primary>
@@ -851,8 +851,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libGLX_nvidia</filename></term>
         <listitem>
           <para>
-            provides the <application>NVIDIA</application> implementation
-            of GLX
+            gir <application>NVIDIA</application> implementeringen
+            av GLX
           </para>
           <indexterm zone="nvidia libGLX_nvidia">
             <primary sortas="c-libGLX_nvidia">libGLX_nvidia</primary>
@@ -864,7 +864,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libglxserver_nvidia</filename></term>
         <listitem>
           <para>
-            is the <application>NVIDIA</application> X11 GLX extension module
+            er <application>NVIDIA</application> X11 GLX utvidelsesmodul
           </para>
           <indexterm zone="nvidia libglxserver_nvidia">
             <primary sortas="c-libglxserver_nvidia">libglxserver_nvidia</primary>
@@ -876,7 +876,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvcuvid</filename></term>
         <listitem>
           <para>
-            provides an interface to hardware accelerated decoding
+            gir et grensesnitt til maskinvareakselerert dekoding
           </para>
           <indexterm zone="nvidia libnvcuvid">
             <primary sortas="c-libnvcuvid">libnvcuvid</primary>
@@ -888,7 +888,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvoptix</filename></term>
         <listitem>
           <para>
-            provides the OptiX Ray Tracing API
+            gir OptiX Ray Tracing API
           </para>
           <indexterm zone="nvidia libnvoptix">
             <primary sortas="c-libnvoptix">libnvoptix</primary>
@@ -900,7 +900,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-allocator</filename></term>
         <listitem>
           <para>
-            handles NVIDIA GPU memory management
+            håndterer NVIDIA GPU minnehåndtering
           </para>
           <indexterm zone="nvidia libnvidia-allocator">
             <primary sortas="c-libnvidia-allocator">libnvidia-allocator</primary>
@@ -912,7 +912,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-api</filename></term>
         <listitem>
           <para>
-            provides the NVAPI interface
+            tilbyr NVAPI grensesnittet
           </para>
           <indexterm zone="nvidia libnvidia-api">
             <primary sortas="c-libnvidia-api">libnvidia-api</primary>
@@ -924,7 +924,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-cfg</filename></term>
         <listitem>
           <para>
-            queries a NVIDIA GPU's configuration settings
+            spør etter konfigurasjonsinnstillingene til en NVIDIA GPU
           </para>
           <indexterm zone="nvidia libnvidia-cfg">
             <primary sortas="c-libnvidia-cfg">libnvidia-cfg</primary>
@@ -936,8 +936,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-eglcore</filename></term>
         <listitem>
           <para>
-            provides primary EGL functionality to other components of the
-            driver
+            gir primær EGL funksjonalitet til andre komponenter i
+            driveren
           </para>
           <indexterm zone="nvidia libnvidia-eglcore">
             <primary sortas="c-libnvidia-eglcore">libnvidia-eglcore</primary>
@@ -949,7 +949,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-encode</filename></term>
         <listitem>
           <para>
-            provides an interface to video encoder hardware
+            gir et grensesnitt til videokodermaskinvare
           </para>
           <indexterm zone="nvidia libnvidia-encode">
             <primary sortas="c-libnvidia-encode">libnvidia-encode</primary>
@@ -961,8 +961,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-fbc</filename></term>
         <listitem>
           <para>
-            provides an interface to capture and optionally encode the
-            framebuffer of an <application>X11</application> server screen
+            gir et grensesnitt for å fange opp og eventuelt kode
+            rammebufferen til en <application>X11</application> serverskjerm
           </para>
           <indexterm zone="nvidia libnvidia-fbc">
             <primary sortas="c-libnvidia-fbc">libnvidia-fbc</primary>
@@ -974,8 +974,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-glcore</filename></term>
         <listitem>
           <para>
-            provides the primary OpenGL functionality for other components of
-            this driver
+            gir den primære OpenGL funksjonaliteten for andre komponenter i
+            denne driveren
           </para>
           <indexterm zone="nvidia libnvidia-glcore">
             <primary sortas="c-libnvidia-glcore">libnvidia-glcore</primary>
@@ -987,8 +987,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-glsi</filename></term>
         <listitem>
           <para>
-            provides the OpenGL Shader Interface for other components of this
-            driver
+            gir OpenGL Shader grensesnittet for andre komponenter i denne
+            driveren
           </para>
           <indexterm zone="nvidia libnvidia-glsi">
             <primary sortas="c-libnvidia-glsi">libnvidia-glsi</primary>
@@ -1000,7 +1000,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-glvkspirv</filename></term>
         <listitem>
           <para>
-            allows using SPIR-V shaders in OpenGL
+            tillater bruk av SPIR-V shaders i OpenGL
           </para>
           <indexterm zone="nvidia libnvidia-glvkspirv">
             <primary sortas="c-libnvidia-glvkspirv">libnvidia-glvkspirv</primary>
@@ -1012,8 +1012,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-gpucomp</filename></term>
         <listitem>
           <para>
-            provides primary functionality for allowing computations being done
-            on the GPU for use with other components in this driver
+            gir primær funksjonalitet for å tillate at beregninger utføres
+            på GPU-en for bruk med andre komponenter i denne driveren
           </para>
           <indexterm zone="nvidia libnvidia-gpucomp">
             <primary sortas="c-libnvidia-gpucomp">libnvidia-gpucomp</primary>
@@ -1025,7 +1025,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-gtk3</filename></term>
         <listitem>
           <para>
-            for <command>nvidia-settings</command>; utilizes
+            for at <command>nvidia-settings</command>; bruker
             <application>GTK-3</application>
           </para>
           <indexterm zone="nvidia libnvidia-gtk3">
@@ -1038,7 +1038,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-ml</filename></term>
         <listitem>
           <para>
-            provides a monitoring and management API
+            tilbyr et API for overvåking og administrasjon
           </para>
           <indexterm zone="nvidia libnvidia-ml">
             <primary sortas="c-libnvidia-ml">libnvidia-ml</primary>
@@ -1050,7 +1050,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-ngx</filename></term>
         <listitem>
           <para>
-            provides functions for DLSS support
+            tilbyr funksjoner for DLSS støtte
           </para>
           <indexterm zone="nvidia libnvidia-ngx">
             <primary sortas="c-libnvidia-ngx">libnvidia-ngx</primary>
@@ -1062,7 +1062,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-nvvm</filename></term>
         <listitem>
           <para>
-            provides JIT LTO for CUDA
+            git JIT LTO for CUDA
           </para>
           <indexterm zone="nvidia libnvidia-nvvm">
             <primary sortas="c-libnvidia-nvvm">libnvidia-nvvm</primary>
@@ -1074,8 +1074,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-opencl</filename></term>
         <listitem>
           <para>
-            provides <application>NVIDIA</application>'s implementation of
-            the OpenCL API standard
+            gir <application>NVIDIA</application> sin implementering av
+            OpenCL API standarden
           </para>
           <indexterm zone="nvidia libnvidia-opencl">
             <primary sortas="c-libnvidia-opencl">libnvidia-opencl</primary>
@@ -1087,8 +1087,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-opticalflow</filename></term>
         <listitem>
           <para>
-            provides Optical Flow support which improves frames, similar to
-            DLSS, with the help of CUDA
+            Gir støtte for Optical Flow som forbedrer bilder, på samme måte som
+            DLSS, ved hjelp av CUDA
           </para>
           <indexterm zone="nvidia libnvidia-opticalflow">
             <primary sortas="c-libnvidia-opticalflow">libnvidia-opticalflow</primary>
@@ -1100,8 +1100,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-pkcs11</filename></term>
         <listitem>
           <para>
-            provides cryptography functions when the driver is operating in
-            Confidential Compute mode
+            tilbyr kryptografifunksjoner når driveren er i
+            konfidensiell beregningsmodus
           </para>
           <indexterm zone="nvidia libnvidia-pkcs11">
             <primary sortas="c-libnvidia-pkcs11">libnvidia-pkcs11</primary>
@@ -1113,8 +1113,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-ptxjitcompiler</filename></term>
         <listitem>
           <para>
-            is a JIT compiler which compiles PTX into GPU machine code;
-            used by CUDA
+            er en JIT kompilator som kompilerer PTX til GPU maskinkode;
+            brukt av CUDA
           </para>
           <indexterm zone="nvidia libnvidia-ptxjitcompiler">
             <primary sortas="c-libnvidia-ptxjitcompiler">libnvidia-ptxjitcompiler</primary>
@@ -1126,8 +1126,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-rtcore</filename></term>
         <listitem>
           <para>
-            implements the RT (Ray Tracing) core functionality and is used by
-            other components in this driver
+            implementerer kjernefunksjonaliteten RT (Ray Tracing) og brukes av
+            andre komponenter i denne driveren
           </para>
           <indexterm zone="nvidia libnvidia-rtcore">
             <primary sortas="c-libnvidia-rtcore">libnvidia-rtcore</primary>
@@ -1139,8 +1139,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-tls</filename></term>
         <listitem>
           <para>
-            provides TLS support for the <application>NVIDIA
-            </application> OpenGL implementations
+            gir TLS support for <application>NVIDIA
+            </application> OpenGL implementeringer
           </para>
           <indexterm zone="nvidia libnvidia-tls">
             <primary sortas="c-libnvidia-tls">libnvidia-tls</primary>
@@ -1152,7 +1152,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libnvidia-wayland-client</filename></term>
         <listitem>
           <para>
-            is required for <command>nvidia-settings</command> on
+            er nødvendig for <command>nvidia-settings</command> på
             <application>Wayland</application>
           </para>
           <indexterm zone="nvidia libnvidia-wayland-client">
@@ -1165,8 +1165,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">libvdpau_nvidia</filename></term>
         <listitem>
           <para>
-            provides the <application>NVIDIA</application> implementation for
-            the VDPAU API
+            gir <application>NVIDIA</application> implementering for
+            VDPAU API
           </para>
           <indexterm zone="nvidia libvdpau_nvidia">
             <primary sortas="c-libvdpau_nvidia">libvdpau_nvidia</primary>
@@ -1178,7 +1178,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">_nvngx</filename></term>
         <listitem>
           <para>
-            provides DLSS support for use with Proton
+            gir DLSS støtte for bruk med Proton
           </para>
           <indexterm zone="nvidia _nvngx">
             <primary sortas="c-_nvngx">_nvngx</primary>
@@ -1190,7 +1190,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">nvngx</filename></term>
         <listitem>
           <para>
-            provides DLSS support for use with <application>Wine</application>
+            gir DLSS støtte for bruk med <application>Wine</application>
           </para>
           <indexterm zone="nvidia nvngx">
             <primary sortas="c-nvngx">nvngx</primary>
@@ -1202,7 +1202,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">nvngx_dlssg</filename></term>
         <listitem>
           <para>
-            is the DLSS 3 Frame Generation library
+            er DLSS 3 Frame Generation biblioteket
           </para>
           <indexterm zone="nvidia nvngx_dlssg">
             <primary sortas="c-nvngx_dlssg">nvngx_dlssg</primary>
@@ -1214,7 +1214,7 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">nvidia-drm_gbm</filename></term>
         <listitem>
           <para>
-            is the <application>NVIDIA</application> GBM driver
+            er <application>NVIDIA</application> GBM driveren
           </para>
           <indexterm zone="nvidia nvidia-drm_gbm">
             <primary sortas="c-nvidia-drm_gbm">nvidia-drm_gbm</primary>
@@ -1226,8 +1226,8 @@ install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
         <term><filename class="libraryfile">nvidia_drv</filename></term>
         <listitem>
           <para>
-            is the <application>NVIDIA</application> <application>X11
-            </application> driver
+            er <application>NVIDIA</application> <application>X11
+            </application> driveren
           </para>
           <indexterm zone="nvidia nvidia_drv">
             <primary sortas="c-nvidia_drv">nvidia_drv</primary>

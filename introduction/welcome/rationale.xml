@@ -5,106 +5,106 @@
   %general-entities;
 ]>
 
-<sect1 id="rationale" xreflabel="Rationale for Packages">
+<sect1 id="rationale" xreflabel="Begrunnelse for pakker">
   <?dbhtml filename="rationale.html"?>
 
-  <title>Rationale for Packages</title>
+  <title>Begrunnelse for pakker</title>
 
   <para>
-    Upon reading through some of the sections in this book, you may notice
-    that a lot of the packages linked in some of the sections aren't in
-    this book but rather in BLFS, some optional dependencies aren't
-    listed, some packages may be outdated, and some packages that have test
-    suites don't have test instructions. These choices are very much
-    deliberate.
+    Når du leser gjennom noen av avsnittene i denne boken, kan du legge merke
+    til at mange av pakkene som er lenket i noen av avsnittene ikke er i
+    denne boken, men heller i BLFS, noen valgfrie avhengigheter er ikke
+    oppført, noen pakker kan være utdaterte, og noen pakker som har testpakker
+    har ikke testinstruksjoner. Disse valgene er svært
+    bevisste.
   </para>
 
   <sect2>
-    <title>Why Are Many Packages Not in the Book?</title>
+    <title>Hvorfor er mange pakker ikke i boken?</title>
 
     <para>
-      Many packages linked on some of the packages' sections aren't in
-      the book but rather in the BLFS book. There are multiple reasons
-      for this, but the most notable one is the packages that aren't in
-      the book aren't important for the main packages in the book, those
-      being <application>Steam</application> and
-      <application>Wine</application>. They are still listed anyway if users
-      want more support out of the specific packages not specific to the main
-      packages, like media playback for example. Another reason for
-      packages not being in the book is that the packages take a lot
-      of work to install and require jumping around. They can also require
-      a lot of choice or take up space or RAM for no real benefit for a
-      lot of users when there are more simple solutions.
+      Mange pakker som er lenket til i noen av pakkeseksjonene er ikke i
+      boken, men snarere i BLFS boken. Det er flere grunner
+      til dette, men den viktigste grunnen er at pakkene som ikke er i
+      boken ikke er viktige for hovedpakkene i boken, som
+      er <application>Steam</application> og
+      <application>Wine</application>. De er fortsatt oppført uansett hvis brukere
+      ønsker mer støtte fra de spesifikke pakkene som ikke er spesifikke for hovedpakkene
+      som for eksempel medieavspilling. En annen grunn til at
+      pakker ikke er med i boken er at pakkene krever mye
+      arbeid å installere og krever at man hopper rundt. De kan også kreve mange
+      valgmuligheter eller ta opp plass eller RAM uten noen reell fordel for
+      mange brukere når det finnes enklere løsninger.
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Why Are Some Optional Dependencies Not Listed?</title>
+    <title>Hvorfor er noen valgfrie avhengigheter ikke oppført?</title>
 
     <para>
-      There are some optional dependencies that aren't listed, and the
-      main reason for this is that they just would take up unnecessary
-      space. If on the offchance you desire even more out of your system,
-      there are plenty more packages in BLFS and BLFS is more geared for
-      everyone, although this book focuses more on gaming. Usually the
-      optional dependencies that are not listed are those that are needed
-      for testing builds and generating documentation.
+      Det finnes noen valgfrie avhengigheter som ikke er oppført, og
+      hovedårsaken til dette er at de bare ville ta opp unødvendig
+      plass. Hvis du tilfeldigvis ønsker å få enda mer ut av systemet ditt,
+      finnes det mange flere pakker i BLFS, og BLFS er mer rettet mot
+      alle, selv om denne boken fokuserer mer på spilling. Vanligvis er de
+      valgfrie avhengighetene som ikke er oppført, de som er nødvendige for å
+      teste bygg og generere dokumentasjon.
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Packages That Are Outdated and Why</title>
+    <title>Pakker som er utdaterte og hvorfor</title>
 
     <para>
-      No packages are currently outdated at time of release.
+      Ingen pakker er for øyeblikket utdaterte på utgivelsestidspunktet.
     </para>
 
 <!--
     <para>
-      <xref linkend="mingw-w64-binutils"/>: While
-      <application>Binutils</application>-2.44 exists and can be installed
-      without issue, on the MinGW-w64 side of things, <xref linkend="wine"/>
-      is incompatible with <application>MinGW-w64-Binutils</application>-2.44.
-      Mismatched <application>Binutils</application> versions are fine granted
-      that one toolchain's version does not match with another but separate
-      toolchain's.
+      <xref linkend="mingw-w64-binutils"/>: Mens
+      <application>Binutils</application>-2.44 finnes og kan installeres
+      uten problemer, på MinGW-w64 siden av sakene, <xref linkend="wine"/>
+      er uforenlig med <application>MinGW-w64-Binutils</application>-2.44.
+      Ikke samsvarende <application>Binutils</application> versjoner er finjustert
+      slik at én verktøykjedes versjon ikke samsvarer med en annen, men er separate
+      verktøykjeder.
     </para>
 -->
 
 <!--
     <para>
-      <xref linkend="nvidia"/>: Newer versions of <application>NVIDIA
-      </application> have many issues. For example, the newest version demands
-      that users disable framebuffer emulation support in the kernel in order
-      to install and use the driver. The one before that requires a
-      <command>sed</command> command after extraction of the runfile.
-      <xref linkend="nvidia"/> does not have these issues. Do note that none of
-      the GLFS editors use this driver anymore and instead use Nouveau Vulkan
-      and Zink Gallium3D from <xref linkend="mesa"/>. It is pretty competent
-      now and is recommended to use those drivers instead.
+      <xref linkend="nvidia"/>: Nyere versjoner av <application>NVIDIA
+      </application> har mange problemer. For eksempel krever den nyeste
+      versjonen at brukere deaktiverer støtte for framebuffer emulering i kjernen for å
+      kunne installere og bruke driveren. Den forrige krever en
+      <command>sed</command> kommando etter utpakking av runfilen.
+      <xref linkend="nvidia"/> har ikke disse problemene. Merk at ingen av
+      GLFS redaktørene bruker denne driveren lenger, men bruker i stedet Nouveau Vulkan
+      og Zink Gallium3D fra <xref linkend="mesa"/>. Den er ganske kompetent
+      nå, og det anbefales å bruke disse driverne i stedet.
     </para>
 -->
 
   </sect2>
 
   <sect2>
-    <title>Some Package Test Instructions Aren't Included</title>
+    <title>Enkelte pakketestinstruksjoner er ikke inkludert</title>
 
     <para>
-      Many packages have test suites which can test a given build for
-      any potential bugs and may tell you if something has gone wrong.
-      However, in GLFS, a lot of these packages have test suites that
-      depend on packages that aren't necessary in the book and would
-      make this book larger than it needs to be. Furthermore, a lot of
-      the packages that do have test suites aren't involved with critical
-      components of the system and don't tend to have bugs that
-      come up as a result of a build, but rather the released source
-      code itself. If you want to do test suites of a given package,
-      BLFS has good instructions for that on each package and covers
-      all the required dependencies, as well as instructions on how to
-      install those dependencies.
+      Mange pakker har testpakker som kan teste en gitt versjon for
+      potensielle feil og kan fortelle deg om noe har gått galt.
+      I GLFS har imidlertid mange av disse pakkene testpakker som er
+      avhengige av pakker som ikke er nødvendige i boken og ville gjort
+      denne boken større enn den trenger å være. Videre er mange av
+      pakkene som har testpakker ikke involvert i kritiske
+      komponenter i systemet og har en tendens til ikke å ha feil som
+      oppstår som et resultat av en versjon, men snarere den utgitte kildekoden.
+      Hvis du vil teste en gitt pakke, har
+      BLFS gode instruksjoner for det på hver pakke og dekker
+      alle nødvendige avhengigheter, samt instruksjoner om hvordan du
+      installerer disse avhengighetene.
     </para>
 
   </sect2>

@@ -5,50 +5,49 @@
   %general-entities;
 ]>
 
-<sect1 id="important" xreflabel="Important Information">
+<sect1 id="important" xreflabel="Viktig informasjon">
   <?dbhtml filename="important.html"?>
 
-  <title>Important Information</title>
+  <title>Viktig informasjon</title>
 
   <para>
-    BLFS has more information regarding compilation, /usr vs /usr/local,
-    boot scripts, etc. at 
+    BLFS har mer informasjon om kompilering, /usr vs /usr/local,
+    oppstartsskript osv. på
     <ulink url="&blfs-svn;/introduction/important.html"/>.
-    Unlike this book, this would be a chapter in BLFS.
-    A lot of that information has been omitted as this book is more linear
-    and doesn't follow how BLFS follows. However, we will cover some bases
-    here.
+    I motsetning til denne boken, ville dette vært et kapittel i BLFS.
+    Mye av denne informasjonen er utelatt, ettersom denne boken er mer lineær
+    og ikke følger hvordan BLFS følger. Vi vil imidlertid dekke noen grunnleggende
+    elementer her.
   </para>
 
-  <sect2 id="which-instructions" xreflabel="Which Instructions to Follow">
-    <title>Which Instructions to Follow</title>
+  <sect2 id="which-instructions" xreflabel="Hvilke instruksjoner som skal følges">
+    <title>Hvilke instruksjoner som skal følges</title>
 
     <para>
-      This book is different from the main LFS and BLFS books as it also has
-      lib32 installation instructions. This is bound to cause confusion.
+      Denne boken er forskjellig fra de vanlige LFS og BLFS bøkene, ettersom den også har
+      installasjonsinstruksjoner for lib32. Dette vil garantert føre til forvirring.
     </para>
 
     <para>
-      When you see <quote>Installation of ...</quote>, those instructions
-      should be followed if you need that package. As you progress, you may
-      come across a different format, and the book will instruct you on what to
-      follow at that point. You should read <xref linkend="multilib"/> firstly,
-      and second, you will probably have to do more than the normal
-      installation.
+      Når du ser <quote>Installasjon av ...</quote>, disse instruksjonene
+      bør følges hvis du trenger den pakken. Etter hvert som du går videre, kan du
+      komme over et annet format, og boken vil instruere deg om hva du skal
+      følge på det tidspunktet. Du bør lese <xref linkend="multilib"/> først,
+      og for det andre, må du sannsynligvis gjøre mer enn den vanlige installasjonen.
     </para>
 
     <para>
-      This is where the sections labeled
-      <quote>lib32 Installation of ...</quote> come in. These sections provide
-      32-bit libraries for 32-bit software compatibility, ie. multilib support.
-      If you don't need the 32-bit libraries from a given package, you may skip
-      the lib32 installation instructions of that package.
+      Det er her seksjonene merket
+      <quote>lib32 Installasjon av ...</quote> kommer inn. Disse seksjonene gir
+      32-bits biblioteker for 32-bits programvarekompatibilitet, dvs. støtte for multilib.
+      Hvis du ikke trenger 32-bits bibliotekene fra en gitt pakke, kan du hoppe over
+      lib32 installasjonsinstruksjonene for den pakken.
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Stability</title>
+    <title>Stabilitet</title>
 
     &important-stability;
 
@@ -58,72 +57,72 @@
     <title>Init System</title>
 
     <para revision="sysv">
-      This version of this book is meant for SysV LFS systems. The Systemd
-      version of the book is not viewable online by &copyholder; due to Github
-      Pages restraints. Thus you will need to download or render the book
-      yourself. Follow the <ulink url="&glfs-repo;">GLFS rendering
-      instructions</ulink> in order to render the book yourself. You will need
-      <ulink url='&blfs-svn;/general/git.html'>Git</ulink> to clone the
-      repository. You can download the book <ulink
-      url="&glfs-repo;/releases">here</ulink>.
+      Denne versjonen av boken er ment for SysV LFS-systemer. Systemd
+      versjonen av boken kan ikke vises på nett av &copyholder; på grunn av
+      begrensninger på Github Pages. Dermed må du laste ned eller gjengi boken
+      selv. Følg instruksjonene <ulink url="&glfs-repo;">GLFS rendering
+      instructions</ulink> for å kunne gjengi boken selv. Du trenger
+      <ulink url='&blfs-svn;/general/git.html'>Git</ulink> å klone
+      depotet. Du kan laste ned boken <ulink
+      url="&glfs-repo;/releases">her</ulink>.
     </para>
 
     <para revision="systemd">
-      This version of this book is meant for Systemd LFS systems.
+      Denne versjonen av denne boken er ment for Systemd LFS systemer.
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Building software</title>
+    <title>Bygge programvare</title>
 
     <para>
-      Building software on GLFS is identical to how it's done in the
-      BLFS books, along with having lib32 compilation instructions. It
-      goes without saying firstmost that you should have <envar>MAKEFLAGS</envar>
-      set to save yourself a lot of time. This is useful for the <command>make
-      </command> utility to use the amount of threads that you both want
-      and have.
+      Å bygge programvare på GLFS er identisk med hvordan det gjøres i
+      BLFS bøkene, i tillegg til at det finnes lib32 kompileringsinstruksjoner. Det
+      sier seg selv at du først og fremst bør ha <envar>MAKEFLAGS</envar>
+      satt for å spare deg mye tid. Dette er nyttig for <command>make
+      </command> verktøyet for å bruke mengden tråder du både ønsker
+      og har.
     </para>
 
 <screen><userinput>export MAKEFLAGS='-jx'</userinput></screen>
 
     <para>
-      Replace <option>x</option> with the amount of threads you have.
-      You can check the amount of threads you have with:
+      Erstatt <option>x</option> med antall tråder du har.
+      Du kan sjekke antall tråder du har med:
     </para>
 
 <screen><userinput>grep processor /proc/cpuinfo</userinput></screen>
 
     <important>
       <para>
-        Make sure that you have enough RAM for your system!
-        A general method is having 2.5G per thread that is thrown at
-        <command>make</command>. For instance, if you want to use 6 threads,
-        multiply 6 by 2.5 (which is 15), then make sure you have 15G of RAM.
-        If you don't have that RAM, try and limit the threads you throw at
-        <command>make</command> or allot swap to meet that requirement.
+        Sørg for at du har nok RAM til systemet ditt!
+        En generell metode er å ha 2,5 G per tråd som du vil bruke for
+        <command>make</command>. Hvis du for eksempel vil bruke 6 tråder,
+        multipliser 6 med 2,5 (som er 15), og sørg for at du har 15 GB RAM.
+        Hvis du ikke har den mengden RAM, kan du prøve å begrense antall tråder du bruker.
+        <command>make</command> eller bruke vekselfil for å oppfylle det kravet.
       </para>
     </important>
 
     <para>
-      Next is compiling for lib32. There are many packages which will have
-      a lib32 counterpart. If you just got done with a normal compilation
-      of a package and wish to do a lib32 compilation of that same package,
-      make sure to clean the directory first:
+      Neste steg er kompilering for lib32. Det finnes mange pakker som vil ha
+      en lib32 motpart. Hvis du nettopp er ferdig med en vanlig kompilering
+      av en pakke og ønsker å gjøre en lib32 kompilering av den samme pakken,
+      sørg for å rense mappen først:
     </para>
 
 <screen><userinput>make distclean</userinput></screen>
 
-    <para>Or, if you made a build directory, do this in the build
-    directory:</para>
+    <para>Eller, hvis du har laget en byggemappe, gjør dette i
+    byggemappeen:</para>
 
     <screen><userinput>rm -rf *</userinput></screen>
 
-    <para>Then proceed with the lib32 compilation instructions.</para>
+    <para>Fortsett deretter med lib32 kompileringsinstruksjonene.</para>
 
     <para>
-      Generally, the format of targetting lib32 goes like this:
+      Vanligvis er formatet for målretting av lib32 slik:
     </para>
 
     <para>For <command>./configure</command>:</para>
@@ -175,18 +174,18 @@ ldconfig</userinput></screen>
 
     <note>
       <para>
-        After you do a DESTDIR installation, it is recommended to
-        to use <command>file</command> on one of the libraries in
-        <filename>DESTDIR/usr/lib32</filename>. An output of such
-        a command for a lib32 build of a library should be
-        comparable to the following:
+        Etter at du har utført en DESTDIR installasjon, anbefales det
+        å bruke <command>file</command> på et av bibliotekene i
+        <filename>DESTDIR/usr/lib32</filename>. Utdata fra en slik
+        kommando for en lib32 bygging av et bibliotek bør være
+        sammenlignbar med følgende:
       </para>
 
 <screen><computeroutput>ELF 32-bit LSB shared object, Intel 80386, version 1 (SYSV), dynamically linked</computeroutput></screen>
 
       <para>
-        Note the <computeroutput>32-bit LSB shared object</computeroutput> part.
-        A 64-bit library would show as a <computeroutput>64-bit LSB shared
+        Merk <computeroutput>32-bit LSB shared object</computeroutput> delen.
+        Et 64-bits bibliotek ville vises som <computeroutput>64-bit LSB shared
         object</computeroutput>.
       </para>
     </note>
