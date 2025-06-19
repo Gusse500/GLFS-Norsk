@@ -19,35 +19,35 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to ALSA Utilities</title>
+    <title>Introduksjon til ALSA Verktøy</title>
 
     <para>
-      The <application>ALSA Utilities</application> package contains
-      various utilities which are useful for controlling your sound
-      card.
+      <application>ALSA Verktøy</application> pakken inneholder
+      diverse verktøy som er nyttige for å kontrollere lydkortet
+      ditt.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&alsa-utils-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&alsa-utils-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&alsa-utils-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&alsa-utils-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">ALSA Utilities Dependencies</bridgehead>
+    <bridgehead renderas="sect3">ALSA Verktøy Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="alsa-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       
       <ulink url="&blfs-svn;/general/python-modules.html#docutils">
@@ -57,18 +57,18 @@
       <ulink url="&blfs-svn;/multimedia/libsamplerate.html">
       libsamplerate</ulink>,
       <ulink url="&blfs-svn;/pst/xmlto.html">
-      xmlto</ulink>, and
+      xmlto</ulink>, og
       <ulink url="https://hightek.org/projects/dialog/">Dialog</ulink>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of ALSA Utilities</title>
+    <title>Installasjon av ALSA Verktøy</title>
 
 <!--
     <para>
-      First fix an issue with the distributed udev rules:
+      Først fikser du et problem med de distribuerte udev reglene:
     </para>
 
 <screen><userinput>sed -e 's/acp-pdm-dmic/acp-dmic-codec/'                   \
@@ -78,8 +78,8 @@
 -->
 
     <para>
-      Install <application>ALSA Utilities</application> by
-      running the following commands:
+      Installer <application>ALSA Verktøy</application> ved å
+      kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --disable-alsaconf \
@@ -90,11 +90,11 @@
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -102,38 +102,38 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--disable-alsaconf</parameter>: This switch disables building
-      the <command>alsaconf</command> configuration tool which is incompatible
-      with <application>Udev</application>.
+      <parameter>--disable-alsaconf</parameter>: Denne bryteren deaktiverer bygging av
+      <command>alsaconf</command> konfigurasjonsverktøy som er inkompatibelt
+      med <application>Udev</application>.
     </para>
 
     <para>
-      <parameter>--disable-xmlto</parameter>: Omit this switch if you have
-      installed xmlto and wish to regenerate the man pages.
+      <parameter>--disable-xmlto</parameter>: Utelat denne bryteren hvis du har
+      installert xmlto og ønsker å generere man-sidene på nytt.
     </para>
 
     <para>
-      <parameter>--disable-bat</parameter>: Omit this switch if you have
-      installed fftw and wish to install the Basic Audio Tester (BAT).
+      <parameter>--disable-bat</parameter>: Utelat denne bryteren hvis du har
+      installert fftw og ønsker å installere Basic Audio Tester (BAT).
     </para>
 
     <para>
-      <parameter>--with-curses=ncursesw</parameter>: This switch forces the
-      use of wide-character ncurses libraries.
+      <parameter>--with-curses=ncursesw</parameter>: Denne bryteren tvinger
+	  frem bruken av ncurses biblioteker med brede tegn.
     </para>
 
   </sect2>
 
   <sect2 role="configuration" id="alsa-utils-config-sect">
-    <title>Configuring ALSA Utilities</title>
+    <title>Konfigurere ALSA Verktøy</title>
 
     <sect3 id="alsa-utils-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
         <filename>/var/lib/alsa/asound.state</filename>
@@ -146,66 +146,66 @@ make</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        As the &root; user, apply the default setting for the sound card.
-        Note that this command may return an exit code of 99 although the
-        card is correctly initialized:
+        Som &root; bruker, bruk standardinnstillingen for lydkortet.
+        Merk at denne kommandoen kan returnere en avslutningskode på 99 selv om
+        kortet er riktig initialisert:
       </para>
 
 <screen role="nodump"><userinput>alsactl init</userinput></screen>
 
       <para>
-        Note that all channels of your sound card may be muted by default.
-        You can use the <command>alsamixer</command> program to change
-        this. Use <command>speaker-test</command> to check that your
-        settings have been applied correctly. You should hear
-        <quote>pink noise</quote> on your speakers.
+        Merk at alle kanalene på lydkortet ditt kan være dempet som standard.
+        Du kan bruke <command>alsamixer</command> program for å endre
+        dette. Bruk <command>speaker-test</command> for å sjekke at
+        innstillingene dine er riktig brukt. Du bør høre
+        <quote>pink noise</quote> på høyttalerne dine.
       </para>
 
       <para>
-        The <filename>alsactl</filename> program is normally run from a
-        standard <application>udev</application> rule. The first time it
-        is run, it will complain that there is no state in
-        <filename>/var/lib/alsa/asound.state</filename>. You can prevent
-        this by running the following command as the
-        <systemitem class="username">root</systemitem> user:
+        <filename>alsactl</filename> programmet kjøres vanligvis fra en
+        standard <application>udev</application> regel. Første gang den
+        kjøres, vil den klage over at det ikke er noen tilstand i
+        <filename>/var/lib/alsa/asound.state</filename>. Du kan forhindre
+        dette ved å kjøre følgende kommando som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>alsactl -L store</userinput></screen>
 
       <para>
-        The volume settings should be restored from the saved state by
-        <application>Udev</application> when the device is detected
-        (during boot or when plugged in for USB devices).
+        Voluminnstillingene bør gjenopprettes fra den lagrede tilstanden av
+        <application>Udev</application> når enheten oppdages
+        (under oppstart eller når den er koblet til USB-enheter).
       </para>
 <!-- not needed with elogind or systemd-logind
       <para>
-        All sound devices are not accessible for any user except
-        <systemitem class="username">root</systemitem> and members of the
-        <systemitem class="groupname">audio</systemitem> group. Add any
-        users that might use the sound devices to that group:
+        Alle lydenheter er ikke tilgjengelige for noen brukere unntatt
+        <systemitem class="username">root</systemitem> og medlemmer av
+        <systemitem class="groupname">audio</systemitem> gruppe. Legg til eventuelle
+        brukere som kan bruke lydenhetene i den gruppen:
       </para>
 
 <screen role="root"><userinput>usermod -a -G audio <replaceable>&lt;username&gt;</replaceable></userinput></screen>
 
       <note>
         <para>
-          You may need to log out and back in again to refresh your group
-          memberships. '<command>su <replaceable>&lt;username&gt;</replaceable></command>'
-          should work as well.
+          Du må kanskje logge ut og inn igjen for å oppdateregruppemedlemskapene
+          dine. '<command>su <replaceable>&lt;username&gt;</replaceable></command>'
+          burde også fungere.
         </para>
       </note>
 -->
       <para>
-        On systems which have multiple sound cards, you may need to adjust the
-        default audio device so that you can get output from your speakers.
-        To set the default device, first check the
-        <filename>/proc/asound/cards</filename> file to determine which number
-        you need to set. After you know this information, set the default card
-        with the following command as the
-        <systemitem class="username">root</systemitem> user:
+        På systemer som har flere lydkort, må du kanskje justere
+        standard lydenhet slik at du kan få lyd fra høyttalerne.
+        For å angi standardenhet, sjekk først
+        <filename>/proc/asound/cards</filename> filen for å finne ut hvilket tall
+        du må angi. Når du vet denne informasjonen, angir du standardkortet
+        med følgende kommando som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="nodump"><userinput>cat &gt; /etc/asound.conf &lt;&lt; "EOF"
@@ -220,18 +220,18 @@ EOF</userinput></screen>
     </sect3>
 
     <sect3 id="alsa-utils-init" revision="sysv">
-      <title>Boot Script</title>
+      <title>Oppstartsskript</title>
 
       <indexterm zone="alsa-utils alsa-utils-init">
         <primary sortas="f-alsa">alsa</primary>
       </indexterm>
 
       <para>
-        To automatically store and restore volume settings (if the udev rule
-        doesn't work for you) when the system is rebooted, install the
-        <filename>/etc/rc.d/init.d/alsa</filename> boot script from the
+        For å lagre og gjenopprette voluminnstillinger automatisk (hvis udev regelen
+        ikke fungerer for deg) når systemet startes på nytt, installer
+        <filename>/etc/rc.d/init.d/alsa</filename> oppstartsskript fra
         <ulink url="&blfs-svn;/introduction/bootscripts.html">
-        blfs-bootscripts</ulink> package.
+        blfs-bootscripts</ulink> pakken.
       </para>
 
 <screen role="root"><userinput>make install-alsa</userinput></screen>
@@ -241,22 +241,22 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           aconnect, alsactl, alsaloop, alsamixer, alsatplg,
           alsaucm, alsa-info.sh, amidi, amixer, aplay, aplaymidi,
           arecord (symlink), arecordmidi, aseqdump, aseqnet, axfer,
-          iecset, and speaker-test
+          iecset, og speaker-test
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/share/sounds/alsa and /var/lib/alsa
@@ -265,7 +265,7 @@ EOF</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -273,8 +273,8 @@ EOF</userinput></screen>
         <term><command>aconnect</command></term>
         <listitem>
           <para>
-            is a utility for connecting and disconnecting two
-            existing ports in the ALSA sequencer system
+            er et verktøy for å koble til og fra to
+            eksisterende porter i ALSA sekvenseringssystemet
           </para>
           <indexterm zone="alsa-utils aconnect">
             <primary sortas="b-aconnect">aconnect</primary>
@@ -286,9 +286,9 @@ EOF</userinput></screen>
         <term><command>alsactl</command></term>
         <listitem>
           <para>
-            is used to control advanced settings for ALSA sound card drivers.
-            Use this if alsamixer cannot utilize all of your sound card's
-            features
+            brukes til å kontrollere avanserte innstillinger for ALSA lydkortdrivere.
+            Bruk dette hvis alsamixer ikke kan bruke alle lydkortets
+            funksjoner.
           </para>
           <indexterm zone="alsa-utils alsactl">
             <primary sortas="b-alsactl">alsactl</primary>
@@ -300,8 +300,8 @@ EOF</userinput></screen>
         <term><command>alsaloop</command></term>
         <listitem>
           <para>
-            allows creation of a PCM loopback between a PCM capture
-            device and a PCM playback device
+            tillater oppretting av en PCM-loopback mellom en PCM-opptaksenhet
+            og en PCM-avspillingsenhet
           </para>
           <indexterm zone="alsa-utils alsaloop">
             <primary sortas="b-alsaloop">alsaloop</primary>
@@ -313,8 +313,8 @@ EOF</userinput></screen>
         <term><command>alsamixer</command></term>
         <listitem>
           <para>
-            is an Ncurses based mixer program for use with
-            the ALSA sound card drivers
+            er et Ncurses basert mikserprogram for bruk med
+            ALSA lydkortdriverne
           </para>
           <indexterm zone="alsa-utils alsamixer">
             <primary sortas="b-alsamixer">alsamixer</primary>
@@ -326,8 +326,8 @@ EOF</userinput></screen>
         <term><command>alsatplg</command></term>
         <listitem>
           <para>
-            is a utility used to compile topology configuration files into
-            binary files for kernel drivers
+            er et verktøy som brukes til å kompilere topologikonfigurasjonsfiler til
+            binære filer for kjernedrivere
           </para>
           <indexterm zone="alsa-utils alsatplg">
             <primary sortas="b-alsatplg">alsatplg</primary>
@@ -339,7 +339,7 @@ EOF</userinput></screen>
         <term><command>alsaucm</command></term>
         <listitem>
           <para>
-          allows applications to access the hardware in an abstracted manner
+          lar applikasjoner få tilgang til maskinvaren på en abstrakt måte
           </para>
           <indexterm zone="alsa-utils alsaucm">
             <primary sortas="b-alsaucm">alsaucm</primary>
@@ -351,8 +351,8 @@ EOF</userinput></screen>
         <term><command>amidi</command></term>
         <listitem>
           <para>
-            is used to read from and write to ALSA
-            RawMIDI ports
+            brukes til å lese fra og skrive til ALSA
+            RawMIDI porter
           </para>
           <indexterm zone="alsa-utils amidi">
             <primary sortas="b-amidi">amidi</primary>
@@ -364,8 +364,8 @@ EOF</userinput></screen>
         <term><command>amixer</command></term>
         <listitem>
           <para>
-            allows command-line control of the mixers for the
-            ALSA sound card drivers
+            tillater kommandolinjekontroll av mikserne for
+            ALSA lydkortdriverne
           </para>
           <indexterm zone="alsa-utils amixer">
             <primary sortas="b-amixer">amixer</primary>
@@ -377,8 +377,8 @@ EOF</userinput></screen>
         <term><command>aplay</command></term>
         <listitem>
           <para>
-            is a command-line soundfile player for the
-            ALSA sound card drivers
+            er en kommandolinjeavspiller for lydfiler for
+            ALSA lydkortdriverne
           </para>
           <indexterm zone="alsa-utils aplay">
             <primary sortas="b-aplay">aplay</primary>
@@ -390,8 +390,8 @@ EOF</userinput></screen>
         <term><command>aplaymidi</command></term>
         <listitem>
           <para>
-            is a command-line utility that plays the specified
-            MIDI file(s) to one or more ALSA sequencer ports
+            er et kommandolinjeverktøy som spiller av den/de spesifiserte
+            MIDI-filen(e) til en eller flere ALSA sequencerporter
           </para>
           <indexterm zone="alsa-utils aplaymidi">
             <primary sortas="b-aplaymidi">aplaymidi</primary>
@@ -403,8 +403,8 @@ EOF</userinput></screen>
         <term><command>arecord</command></term>
         <listitem>
           <para>
-            is a command-line soundfile recorder for the
-            ALSA sound card drivers
+            er en kommandolinjebasert lydfilopptaker for
+            ALSA lydkortdriverne
           </para>
           <indexterm zone="alsa-utils arecord">
             <primary sortas="b-arecord">arecord</primary>
@@ -416,8 +416,8 @@ EOF</userinput></screen>
         <term><command>arecordmidi</command></term>
         <listitem>
           <para>
-            is a command-line utility that records a standard
-            MIDI file from one or more ALSA sequencer ports
+            er et kommandolinjeverktøy som spiller inn en standard
+            MIDI-fil fra en eller flere ALSA sequencerporter
           </para>
           <indexterm zone="alsa-utils arecordmidi">
             <primary sortas="b-arecordmidi">arecordmidi</primary>
@@ -429,8 +429,8 @@ EOF</userinput></screen>
         <term><command>aseqdump</command></term>
         <listitem>
           <para>
-            is a command-line utility that prints the sequencer events it
-            receives as text
+            er et kommandolinjeverktøy som skriver ut sequencer hendelsene
+            det mottar som tekst
           </para>
           <indexterm zone="alsa-utils aseqdump">
             <primary sortas="b-aseqdump">aseqdump</primary>
@@ -442,8 +442,8 @@ EOF</userinput></screen>
         <term><command>aseqnet</command></term>
         <listitem>
           <para>
-            is an ALSA sequencer client which sends and
-            receives event packets over a network
+            er en ALSA sekvenseringsklient som sender og
+            mottar hendelsespakker over et nettverk
           </para>
           <indexterm zone="alsa-utils aseqnet">
             <primary sortas="b-aseqnet">aseqnet</primary>
@@ -455,8 +455,8 @@ EOF</userinput></screen>
         <term><command>axfer</command></term>
         <listitem>
           <para>
-            is a command-line recorder and player used to transfer audio frames
-            between sound devices and files
+            er en kommandolinjeopptaker og spiller som brukes til å overføre lydbilder
+            mellom lydenheter og filer
           </para>
           <indexterm zone="alsa-utils axfer">
             <primary sortas="b-axfer">axfer</primary>
@@ -468,9 +468,9 @@ EOF</userinput></screen>
         <term><command>iecset</command></term>
         <listitem>
           <para>
-            is a small utility to set or dump the IEC958 (or so-called
-            <quote>S/PDIF</quote>) status bits of the specified sound
-            card via the ALSA control API
+            er et lite verktøy for å sette eller dumpe IEC958 (eller såkalt
+            <quote>S/PDIF</quote>) statusbiter for det angitte lydkortet
+            via ALSA kontroll API
           </para>
           <indexterm zone="alsa-utils iecset">
             <primary sortas="b-iecset">iecset</primary>
@@ -482,7 +482,7 @@ EOF</userinput></screen>
         <term><command>speaker-test</command></term>
         <listitem>
           <para>
-            is a command-line speaker test tone generator for ALSA
+            er en kommandolinjegenerator for høyttalertest for ALSA
           </para>
           <indexterm zone="alsa-utils speaker-test">
             <primary sortas="b-speaker-test">speaker-test</primary>

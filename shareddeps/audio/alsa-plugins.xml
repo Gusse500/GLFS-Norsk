@@ -18,34 +18,34 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to ALSA Plugins</title>
+    <title>Introduksjon til ALSA Programtillegg</title>
 
     <para>
-      The <application>ALSA Plugins</application> package contains
-      plugins for various audio libraries and sound servers.
+      <application>ALSA Programtillegg</application> Pakken inneholder
+      programtillegg for diverse lydbiblioteker og lydservere.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&alsa-plugins-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&alsa-plugins-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&alsa-plugins-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&alsa-plugins-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">ALSA Plugins Dependencies</bridgehead>
+    <bridgehead renderas="sect3">ALSA Programtillegg Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="alsa-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
 
       <xref linkend="ffmpeg"/>,
@@ -55,29 +55,29 @@
       <ulink url="&blfs-svn;/multimedia/speex.html">
       Speex</ulink>,
       <ulink url="https://jackaudio.org/">JACK</ulink>,
-      <ulink url="https://github.com/AVnu/libavtp/">libavtp</ulink>, and
+      <ulink url="https://github.com/AVnu/libavtp/">libavtp</ulink>, og
       <ulink url="http://maemo.org/">maemo</ulink>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of ALSA Plugins</title>
+    <title>Installasjon av ALSA Programtillegg</title>
 
     <para>
-      Install <application>ALSA Plugins</application> by
-      running the following commands:
+      Installer <application>ALSA Programtillegg</application> ved å
+      kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --sysconfdir=/etc --disable-libav &amp;&amp;
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -85,11 +85,11 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of ALSA Plugins</title>
+    <title>lib32 Installasjon av ALSA Programtillegg</title>
 
     <para>
-      Install 32-bit <application>ALSA Plugins</application> by
-      running the following commands:
+      Installer 32-bit <application>ALSA Programtillegg</application> ved å
+      kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -102,7 +102,7 @@ CC="gcc -m32" CXX="g++ -m32"    \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -113,32 +113,32 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <option>--disable-libav</option>: Disable FFMpeg support as the
-      package does not build when FFmpeg is installed.
+      <option>--disable-libav</option>: Deaktiver FFMpeg støtte, da
+      pakken ikke bygger når FFmpeg er installert..
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          Numerous libasound_module_<replaceable>&lt;module&gt;</replaceable>
-          modules including
+          Mange libasound_module_<replaceable>&lt;module&gt;</replaceable>
+          moduler inkludert
           conf_pulse,
           ctl_arcam_av,
           ctl_oss,
@@ -152,7 +152,7 @@ ldconfig</userinput></screen>
           pcm_usb_stream,
           pcm_vdownmix,
           rate_lavrate*,
-          rate_samplerate*, and
+          rate_samplerate*, og
           rate_speexrate*
         </seg>
         <seg>
@@ -162,7 +162,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -170,8 +170,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_oss</filename></term>
         <listitem>
           <para>
-            Allows native <application>ALSA</application> applications to
-            run on <application>OSS</application>
+            Tillater opprinnelige <application>ALSA</application> applikasjoner til å
+            kjøre på <application>OSS</application>
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_oss">
             <primary sortas="c-libasound_module_pcm_oss">libasound_module_pcm_oss</primary>
@@ -183,7 +183,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_upmix</filename></term>
         <listitem>
           <para>
-            Allows upmixing sound to 4 or 6 channels
+            Muliggjør oppmiksing av lyd til 4 eller 6 kanaler
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_upmix">
             <primary sortas="c-libasound_module_pcm_upmix">libasound_module_pcm_upmix</primary>
@@ -195,8 +195,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_vdownmix</filename></term>
         <listitem>
           <para>
-            Allows downmixing sound from 4-6 channels to 2
-            channel stereo output
+            Tillater nedmiksing av lyd fra 4–6 kanaler til 2
+            kanals stereoutgang
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_vdownmix">
             <primary sortas="c-libasound_module_pcm_vdownmix">libasound_module_pcm_vdownmix</primary>
@@ -208,8 +208,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_jack</filename></term>
         <listitem>
           <para>
-            Allows native <application>ALSA</application> applications to
-            work with <command>jackd</command>
+            Tillater opprinnelige <application>ALSA</application> applikasjoner til å
+            virke med <command>jackd</command>
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_jack">
             <primary sortas="c-libasound_module_pcm_jack">libasound_module_pcm_jack</primary>
@@ -221,9 +221,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_pulse</filename></term>
         <listitem>
           <para>
-            Allows native <application>ALSA</application> applications
-            to access a <application>PulseAudio</application> sound
-            daemon
+            Tillater opprinnelige <application>ALSA</application> applikasjoner
+            å få tilgang til en <application>PulseAudio</application> lyd
+            nisse
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_pulse">
             <primary sortas="c-libasound_module_pcm_pulse">libasound_module_pcm_pulse</primary>
@@ -235,8 +235,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_a52</filename></term>
         <listitem>
           <para>
-            Converts S16 linear sound format to A52 compressed format
-            and sends it to an SPDIF output
+            Konverterer S16 lineært lydformat til A52 komprimert format
+            og sender det til en SPDIF utgang
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_a52">
             <primary sortas="c-libasound_module_pcm_a52">libasound_module_pcm_a52</primary>
@@ -248,7 +248,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_rate_samplerate</filename></term>
         <listitem>
           <para>
-            Provides an external rate converter through
+            Tilbyr en ekstern kurskonverterer gjennom
             <filename class="libraryfile">libsamplerate</filename>
           </para>
           <indexterm zone="alsa-plugins libasound_module_rate_samplerate">

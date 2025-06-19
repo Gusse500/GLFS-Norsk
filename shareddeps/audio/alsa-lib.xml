@@ -19,58 +19,58 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to ALSA Library</title>
+    <title>Introduksjon til ALSA biblioteket</title>
 
     <para>
-      The <application>ALSA Library</application> package contains
-      the ALSA library used by programs (including <application>ALSA
-      Utilities</application>) requiring access to the ALSA sound
-      interface.
+      <application>ALSA Library</application> pakken inneholder
+      ALSA biblioteket som brukes av programmer (inkludert <application>ALSA
+      Verktøy</application>) krever tilgang til ALSA
+      lydgrensesnittet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&alsa-lib-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&alsa-lib-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&alsa-lib-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&alsa-lib-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
     
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Recommended file:
+          Anbefalt fil:
           <ulink url="https://www.alsa-project.org/files/pub/lib/alsa-ucm-conf-&alsa-lib-version;.tar.bz2"/>
         </para>
       </listitem>
 <!--
       <listitem>
         <para>
-          Recommended patch:
+          Anbefalt oppdatering:
           <ulink url="&dl-root;/alsa-ucm-conf-&alsa-lib-version;-upstream_fix-1.patch"/>
         </para>
       </listitem>
 -->
     </itemizedlist>
 
-    <bridgehead renderas="sect3">ALSA Library Dependencies</bridgehead>
+    <bridgehead renderas="sect3">ALSA biblioteks avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended (Runtime)</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt (kjøretid)</bridgehead>
     <para role="runtime">
       <phrase revision="sysv"><xref linkend="elogind"/></phrase>
       <phrase revision="systemd"><xref linkend="systemd"/></phrase>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/doxygen.html">
-      Doxygen</ulink> and
+      Doxygen</ulink> og
       <ulink url="&lfs-website;/blfs/view/12.1/general/python2.html">
       Python2</ulink>
     </para>
@@ -78,21 +78,21 @@
   </sect2>
 
   <sect2 role="kernel"  id="alsa-lib-kernel">
-    <title>Kernel Configuration</title>
+    <title>Kjernekonfigurasjon</title>
 
     <para>
-       If needed, enable the following options in the kernel
-       configuration and recompile the kernel:
+       Om nødvendig, aktiver følgende alternativer i
+       kjernekonfigurasjonen og kompiler kjernen på nytt:
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
       href="alsa-lib-kernel.xml"/>
 
     <para>
-      In the Device Drivers &rArr; Sound card support &rArr; Advanced Linux
-      Sound Architecture section of the kernel configuration, select the
-      settings and drivers appropriate for your hardware.  If necessary,
-      recompile and install your new kernel.
+      I Device Drivers &rArr; Sound card support &rArr; Advanced Linux
+      Sound Architecture delen av kjernekonfigurasjonen velger du
+      innstillingene og driverne som er passende for maskinvaren din. Om nødvendig,
+      kompilerer og installer den nye kjernen på nytt.
     </para>
 
     <indexterm zone="alsa-lib alsa-lib-kernel">
@@ -102,11 +102,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of ALSA Library</title>
+    <title>Installasjon av ALSA biblioteket</title>
 <!--
     <para>
-      First, if you are building on a 32-bit system, fix a regression that
-      causes a segmentation fault when playing audio:
+      Først, hvis du bygger på et 32-bits system, må du fikse en regresjon som
+      forårsaker en segmenteringsfeil når du spiller av lyd:
     </para>
 
 <screen><userinput>case $(uname -m) in
@@ -115,28 +115,28 @@ esac</userinput></screen>
 -->
 
     <para>
-      Install <application>ALSA Library</application> by
-      running the following commands:
+      Installer <application>ALSA Library</application> ved å
+      kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure &amp;&amp;
 make</userinput></screen>
 
    <para>
-     If you have <application>Doxygen</application> installed and you wish to
-     build the library API documentation, run the following
-     commands from the top-level directory of the source tree:
+     Hvis du har <application>Doxygen</application> installert og du ønsker å
+     bygge bibliotekets API dokumentasjon, kjør følgende
+     kommandoer fra toppnivåmappen i kildetreet:
    </para>
 
 <screen remap="doc"><userinput>make doc</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the &root; user, install the package and recommended
-      configuration files:
+      Nå, som &root; bruker, installer pakken og anbefalte
+      konfigurasjonsfiler:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -144,9 +144,9 @@ tar -C /usr/share/alsa --strip-components=1 -xf ../alsa-ucm-conf-&alsa-lib-versi
 
 <!--
     <para>
-      Still as the &root; user, patch a configuration file to fix an issue
-      which would otherwise cause the <command>alsactl init</command>
-      command to fail on some systems:
+      Fortsatt som &root; bruker, oppdater en konfigurasjonsfil for å fikse et problem
+      som ellers ville forårsake at <command>alsactl init</command>
+      kommandoen mislykkes på noen systemer:
     </para>
 
 <screen role="root"><userinput>patch -Np1 -d /usr/share/alsa \
@@ -154,8 +154,8 @@ tar -C /usr/share/alsa --strip-components=1 -xf ../alsa-ucm-conf-&alsa-lib-versi
 -->
 
     <para>
-      To install the API documentation, run the following command as
-      the <systemitem class="username">root</systemitem> user:
+      For å installere API dokumentasjonen, kjør følgende kommando som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"
@@ -168,10 +168,10 @@ install -v -m644 doc/doxygen/html/search/* \
   </sect2>
 
   <sect2 role="installation">
-     <title>lib32 Installation of ALSA Library</title>
+     <title>lib32 Installasjon av ALSA biblioteket</title>
 
      <para>
-       Install the 32-bit ALSA Library by running the following commands:
+       Installer 32-biters ALSA biblioteket ved å kjøre følgende kommandoer:
      </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -182,7 +182,7 @@ CC="gcc -m32" CXX="g++ -m32"         \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -193,20 +193,20 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring ALSA Library</title>
+    <title>Konfigurere ALSA biblioteket</title>
 
     <sect3 id="alsa-lib-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
-        <filename>~/.asoundrc</filename> and
+        <filename>~/.asoundrc</filename> og
         <filename>/etc/asound.conf</filename>
       </para>
 
@@ -221,23 +221,23 @@ ldconfig</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        The default <filename>alsa.conf</filename> is adequate for most
-        installations. For extra functionality and/or advanced control of your
-        sound device, you may need to create additional configuration files.
-        For information on the available configuration parameters, visit
+        Standard <filename>alsa.conf</filename> er tilstrekkelig for de fleste
+        installasjoner. For ekstra funksjonalitet og/eller avansert kontroll over
+        lydenheten din, må du kanskje opprette flere konfigurasjonsfiler.
+        For informasjon om tilgjengelige konfigurasjonsparametere, besøk
         <ulink url="https://www.alsa-project.org/main/index.php/Asoundrc"/>.
       </para>
 
       <para>
-        Furthermore, if this package was not built with
-        <phrase revision="sysv"><xref linkend="elogind"/> support,</phrase>
+        Videre, hvis denne pakken ikke ble bygget med
+        <phrase revision="sysv"><xref linkend="elogind"/> støtte,</phrase>
         <phrase revision="systemd">
-        <xref linkend="systemd"/>,</phrase> add any non-root users to the
-        <systemitem class='groupname'>audio</systemitem> group as the
-        <systemitem class="username">root</systemitem> user:
+        <xref linkend="systemd"/>,</phrase> legg til eventuelle ikke-root brukere i
+        <systemitem class='groupname'>audio</systemitem> gruppen som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>usermod -a -G audio <replaceable>&lt;username&gt;</replaceable></userinput></screen>
@@ -247,31 +247,31 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           aserver
         </seg>
         <seg>
-          libasound and
+          libasound og
           libatopology
         </seg>
         <seg>
           /usr/include/alsa,
-          /usr/share/alsa and
+          /usr/share/alsa og
           /usr/share/doc/alsa-lib-&alsa-lib-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -279,7 +279,7 @@ ldconfig</userinput></screen>
         <term><command>aserver</command></term>
         <listitem>
           <para>
-            is the ALSA server
+            er ALSA serveren
           </para>
           <indexterm zone="alsa-lib aserver">
             <primary sortas="b-aserver">aserver</primary>
@@ -291,7 +291,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound</filename></term>
         <listitem>
           <para>
-            contains the ALSA API functions
+            inneholder ALSA API funksjonene
           </para>
           <indexterm zone="alsa-lib libasound">
             <primary sortas="c-libasound">libasound</primary>
@@ -303,7 +303,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libatopology</filename></term>
         <listitem>
           <para>
-            contains API functions for the ALSA topologies
+            inneholder API funksjoner for ALSA topologiene
           </para>
           <indexterm zone="alsa-lib libatopology">
             <primary sortas="c-libatopology">libatopology</primary>

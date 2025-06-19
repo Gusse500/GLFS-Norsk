@@ -13,14 +13,14 @@
   <title>ALSA</title>
 
   <indexterm zone="alsa">
-    <primary sortas="g-ALSA-Description">ALSA Description</primary>
+    <primary sortas="g-ALSA-Description">ALSA beskrivelse</primary>
   </indexterm>
 
   <para>
-    The Linux kernel now provides ALSA support by default. However,
-    applications need to interface to that capability. The following three
-    sections of the book deal with the separate components of ALSA.
-    More Alsa packages if needed have installation instructions at
+    Linux kjernen støtter nå ALSA som standard. Imidlertid
+    må applikasjoner koble seg til denne funksjonen. De følgende tre
+    delene av boken omhandler de separate komponentene i ALSA.
+    Flere Alsa pakker har installasjonsinstruksjoner om nødvendig på
     <ulink url="&blfs-svn;/multimedia/libdriv.html"/>.
   </para>
 
