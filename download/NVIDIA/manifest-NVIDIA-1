@@ -3,7 +3,7 @@ mandatory-64: libnvidia-cfg libnvidia-eglcore libnvidia-glcore libnvidia-glsi li
 mandatory-32: libnvidia-eglcore libnvidia-glcore libnvidia-glsi libnvidia-glvkspirv libnvidia-gpucomp libnvidia-ml libnvidia-tls libnvidia-allocator
 x11-64: libGLX_nvidia libnvidia-fbc
 x11-32: libGLX_nvidia libnvidia-fbc
-egl-64: libEGL_nvidia libnvidia-wayland-client
+egl-64: libEGL_nvidia
 egl-32: libEGL_nvidia
 glesv2-64: libGLESv2_nvidia
 glesv2-32: libGLESv2_nvidia
@@ -15,4 +15,4 @@ cuda-64: libcuda libcudadebugger libnvidia-encode libnvidia-nvvm libnvidia-nvvm7
 cuda-32: libcuda libnvidia-encode libnvidia-ptxjitcompiler libnvidia-nvvm libnvcuvid
 ngx: libnvidia-ngx
 rt: libnvidia-rtcore libnvoptix
-settings: libnvidia-gtk3
+settings: libnvidia-gtk3 libnvidia-wayland-client

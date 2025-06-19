@@ -23,8 +23,7 @@
       <application>NVIDIA</application> proprietære driver inneholder
       fastvare, kjernedrivere, userland drivere knyttet til OpenGL,
       Vulkan og maskinvareakselerasjon, og tilbyr nyttige verktøy for
-      NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste
-      pakke.
+      NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste pakke.
     </para>
 
     <itemizedlist spacing="compact">
@@ -308,12 +307,14 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
   <sect2 role="installation">
     <title>Installere NVIDIA driverprogramvaren</title>
 
+<!--
     <note><para>
       Hvis du har en eksisterende installasjon, kan det være lurt å følge
       <xref linkend="nvidia-uninstalling"/> først før du går gjennom denne
       delen for å fjerne noen smuss og restbiblioteker. Dette er imidlertid
       ikke strengt nødvendig.
     </para></note>
+-->
 
     <para>
       Installer installasjonsskriptet og manifestfilen for skriptet som &root;
@@ -500,146 +501,6 @@ EOF</userinput></screen>
       </para></note>
 
     </sect3>
-
-  </sect2>
-
-  <sect2 id="nvidia-uninstalling">
-    <title>Avinstallere NVIDIA driveren</title>
-
-    <para>
-      Hvis noe gikk galt med installasjonsprosessen, og du vil bytte
-      til en annen driver uten å beholde denne driveren, eller hvis du vil fjerne en tidligere
-      installasjon før du installerer en ny driver, kan du opprette følgende skript
-      som &root; bruker:
-    </para>
-
-<screen role="root"><userinput>cat &gt; nvidia-uninstall &lt;&lt; "EOF" &amp;&amp;
-<literal>#!/bin/bash
-# This script uninstalls the NVIDIA driver.
-# Made by &copyholder;, &copyrightdate;.
-PRESERVE_FIRMWARE=0
-PRESERVE_KERNEL=0
-PRESERVE_PROG=0
-PRESERVE_LIB=0
-while [ $# -gt 0 ]; do
-  case "$1" in
-    --preserve-firmware )
-      echo "Keeping firmware."
-      PRESERVE_FIRMWARE=1
-    ;;
-
-    --preserve-kernel-modules )
-      echo "Keeping kernel modules."
-      PRESERVE_KERNEL=1
-    ;;
-
-    --preserve-programs )
-      echo "Keeping programs."
-      PRESERVE_PROG=1
-    ;;
-
-    --preserve-libraries )
-      echo "Keeping libraries."
-      PRESERVE_LIB=1
-    ;;
-
-    --help | -h )
-      echo "Usage: nvidia-uninstall [OPTION]"
-      echo "      --preserve-firmware            Do not delete firmware"
-      echo "      --preserve-kernel-modules      Do not delete kernel modules"
-      echo "      --preserve-programs            Do not delete programs"
-      echo "      --preserve-libraries           Do not delete libraries"
-      echo "  -h, --help                         Display this help and exit"
-      exit
-    ;;
-
-    * )
-      echo "Unknown option: $1"
-    ;;
-  esac
-  shift 1
-done
-
-echo "Uninstalling the NVIDIA driver..."
-nvidia_lib=(
-  libnvidia-cfg
-  libnvidia-eglcore
-  libnvidia-glcore
-  libnvidia-glsi
-  libnvidia-glvkspirv
-  libnvidia-gpucomp
-  libnvidia-ml
-  libnvidia-pkcs11
-  libnvidia-rtcore
-  libnvidia-tls
-  libnvidia-allocator
-  libGLX_nvidia
-  libnvidia-fbc
-  libEGL_nvidia
-  libnvidia-wayland-client
-  libGLESv2_nvidia
-  libOpenCL
-  libnvidia-opencl
-  libcuda
-  libcudadebugger
-  libnvidia-encode
-  libnvidia-opticalflow
-  libnvidia-ptxjitcompiler
-  libnvidia-nvvm
-  libnvidia-nvvm70
-  libnvcuvid
-  libnvidia-api
-  libnvidia-ngx
-  libnvoptix
-  libnvidia-gtk3
-)
-
-rm -rvf /usr/share/doc/nvidia*                                     &amp;&amp;
-if [ "$PRESERVE_FIRMWARE" = "0" ]; then
-  rm -rvf /usr/lib/firmware/nvidia/[0-9]*
-fi
-
-if [ "$PRESERVE_LIB" = "0" ]; then
-  rm -rvf /usr/lib/nvidia                                          &amp;&amp;
-  rm -vf  /usr/lib{,32}/gbm/nvidia-drm_gbm.so                      &amp;&amp;
-  rm -vf  /usr/lib/xorg/modules/drivers/nvidia_drv.so*             &amp;&amp;
-  rm -vf  /usr/lib/xorg/modules/extensions/libglxserver_nvidia.so* &amp;&amp;
-  rm -vf  /usr/lib{,32}/vdpau/libvdpau_nvidia.so*                  &amp;&amp;
-  rm -vf  /usr/share/glvnd/egl_vendor.d/10_nvidia.json             &amp;&amp;
-  rm -vf  /usr/share/vulkan/icd.d/nvidia_icd.json                  &amp;&amp;
-  rm -vf  /usr/share/X11/xorg.conf.d/nvidia-drm-outputclass.conf   &amp;&amp;
-  rm -rvf /usr/share/nvidia                                        &amp;&amp;
-  for lib in ${nvidia_lib[@]}; do
-    rm -vf /usr/lib{,32}/$lib.so*
-  done
-fi
-
-if [ "$PRESERVE_PROG" = "0" ]; then
-  for bin in nvidia-{modprobe,settings,smi,xconfig}; do
-    rm -vf /usr/{,s}bin/$bin
-  done                                                             &amp;&amp;
-  rm -vf  /usr/share/applications/nvidia-settings.desktop          &amp;&amp;
-  rm -vf  /usr/share/pixmaps/nvidia-settings.png
-fi
-
-if [ "$PRESERVE_KERNEL" = "0" ]; then
-  for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
-    rm -vf /usr/lib/modules/$(uname -r)/kernel/drivers/video/$mod.ko
-  done
-fi
-
-depmod -a                                                          &amp;&amp;
-echo "Uninstallation complete!"
-echo "Whitelist Nouveau to have a working framebuffer!"</literal>
-EOF
-
-install -vm755 nvidia-uninstall /usr/sbin</userinput></screen>
-
-    <para>
-      Kjør den nå i en TTY eller chroot når du trenger det, som &root; bruker:
-    </para>
-
-<screen role="nodump"><computeroutput>/sbin/nvidia-uninstall</computeroutput></screen>
 
   </sect2>
 
