@@ -128,7 +128,7 @@ ninja</userinput></screen>
       anbefales ikke. Se <ulink
       url="https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/"/>
       for mer informasjon. 
-	  Fortsatt som <systemitem class="username">root</systemitem>
+      Fortsatt som <systemitem class="username">root</systemitem>
       bruker, fjern <application>D-Bus</application> konfigurasjonsfilen 
       for den systemomfattende daemonen for å unngå å opprette unødvendige 
       systembrukere og grupper:
