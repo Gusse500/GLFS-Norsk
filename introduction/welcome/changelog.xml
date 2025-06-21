@@ -41,6 +41,36 @@
     -->
 
     <listitem>
+      <para>June 20th, 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Linux-PAM: 1.7.0 -&gt; 1.7.1 (sikkerhet).
+          Fikser <ulink url="&glfs-issues;/272">#272</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.3 -&gt; 2.14.4 (sikkerhet).
+          Fikser <ulink url="&glfs-issues;/271">#271</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.112 -&gt; 3.113.
+          Fikser <ulink url="&glfs-issues;/270">#270</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xwayland: 24.1.7 -&gt; 24.1.8 (sikkerhet).
+          Fikser <ulink url="&glfs-issues;/269">#269</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xorg-Server: 21.1.17 -&gt; 21.1.18 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/269">#269</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libogg: 1.3.5 -&gt; 1.3.6.
+          Fikser <ulink url="&glfs-issues;/268">#268</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>17. juni 2025</para>
       <itemizedlist>
         <listitem>
