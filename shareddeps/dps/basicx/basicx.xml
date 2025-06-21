@@ -8,12 +8,12 @@
 <chapter id="basicx">
   <?dbhtml filename="basicx.html"?>
 
-  <title>Basic X11 Software</title>
+  <title>Grunnleggende X11 programvare</title>
 
   <para>
-    This chapter covers X11 software that are needed by most graphical
-    software. This also covers configuration and dependencies not just used
-    by GUI software.
+    Dette kapittelet dekker X11-programvare som er nødvendig for de fleste grafiske 
+    programmer. Dette dekker også konfigurasjon og avhengigheter som ikke bare 
+    brukes av GUI programvare.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/basic-xorg-7.xml"/>

@@ -18,66 +18,66 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Speex</title>
+    <title>Introduksjon til Speex</title>
 
     <para>
-      <application>Speex</application> is an audio compression format
-      designed specifically for speech. It is well-adapted to internet
-      applications and provides useful features that are not present in most
-      other CODECs.
+      <application>Speex</application> er et lydkomprimeringsformat 
+      utviklet spesielt for tale. Det er godt tilpasset internett 
+      applikasjoner og tilbyr nyttige funksjoner som ikke finnes i de 
+      fleste andre kodeker.
     </para>
 
-    <bridgehead renderas="sect3">Package Information</bridgehead>
+    <bridgehead renderas="sect3">Pakkeinformasjon</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&speex-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&speex-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&speexdsp-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&speexdsp-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-   <bridgehead renderas="sect3">Additional Download</bridgehead>
+   <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&patch-root;/speexdsp-&speex-version;-build_fixes-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Speex Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Speex avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="libogg"/> and
+      <xref linkend="libogg"/> og
       <xref linkend="pkgconf"/> (for lib32)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Speex</title>
+    <title>Installasjon av Speex</title>
 
     <para>
-      This package consists of two separate tarballs.
-      They need to be extracted and built independently.
+      Denne pakken består av to separate tarballer. 
+      De må pakkes ut og bygges uavhengig av hverandre.
     </para>
 
     <para>
-      Install <application>Speex</application> by running the
-      following commands:
+      Installer <application>Speex</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -90,13 +90,13 @@ cd    build &amp;&amp;
 make</userinput></screen>
 
     <para>
-      As the &root; user:
+      Som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      Now extract and install the speexdsp package:
+      Pakk nå ut og installer speexdsp pakken:
     </para>
 
 <screen><userinput>tar -xf ../../speexdsp-&speexdsp-version;.tar.gz &amp;&amp;
@@ -109,7 +109,7 @@ pushd speexdsp-&speexdsp-version;                &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Again, as the &root; user:
+      Igjen, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -118,11 +118,11 @@ popd</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Speex</title>
+    <title>lib32 Installasjon av Speex</title>
 
     <para>
-      Install lib32-<application>Speex</application> by running the
-      following commands:
+      Installer lib32-<application>Speex</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -137,7 +137,7 @@ PKG_CONFIG=/usr/bin/i686-pc-linux-gnu-pkg-config      \
 make</userinput></screen>
 
     <para>
-      As the &root; user:
+      Som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install   &amp;&amp;
@@ -146,7 +146,7 @@ rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
     <para>
-      Now extract and install the lib32-speexdsp package:
+      Pakk nå ut og installer lib32-speexdsp pakken:
     </para>
 
 <screen><userinput>tar -xf ../../speexdsp-&speexdsp-version;.tar.gz &amp;&amp;
@@ -162,7 +162,7 @@ PKG_CONFIG=/usr/bin/i686-pc-linux-gnu-pkg-config \
 make</userinput></screen>
 
     <para>
-      Again, as the &root; user:
+      Igjen, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install   &amp;&amp;
@@ -174,7 +174,7 @@ popd</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
@@ -182,33 +182,33 @@ popd</userinput></screen>
 
 <!-- Included by default as of 1.2.1
     <para>
-      <option>- -enable-binaries</option>: Builds two binaries to encode and
-      decode to and from the speex format.
+      <option>- -enable-binaries</option>: Bygger to binærfiler for å koding 
+      og dekoding til og fra speex formatet.
     </para>
 -->
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
-        <seg>speexenc and speexdec</seg>
-        <seg>libspeex and libspeexdsp</seg>
+        <seg>speexenc og speexdec</seg>
+        <seg>libspeex og libspeexdsp</seg>
         <seg>
-          /usr/include/speex and
+          /usr/include/speex og
           /usr/share/doc/speex-&speex-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -216,8 +216,8 @@ popd</userinput></screen>
         <term><command>speexdec</command></term>
         <listitem>
           <para>
-            decodes a <application>Speex</application> file and
-            produces a WAV or raw file
+            dekoder en <application>Speex</application> fil og 
+            produserer en WAV eller RAW fil
           </para>
           <indexterm zone="speex speexdec">
             <primary sortas="b-speexdec">speexdec</primary>
@@ -229,7 +229,7 @@ popd</userinput></screen>
         <term><command>speexenc</command></term>
         <listitem>
           <para>
-            encodes a WAV or raw file using <application>Speex</application>
+            koder en WAV eller RAW fil ved hjelp av <application>Speex</application>
           </para>
           <indexterm zone="speex speexenc">
             <primary sortas="b-speexenc">speexenc</primary>
@@ -241,7 +241,7 @@ popd</userinput></screen>
         <term><filename class="libraryfile">libspeex</filename></term>
         <listitem>
           <para>
-            provides functions for the audio encoding/decoding programs
+            tilbyr funksjoner for lydkodings/dekodings programmer
           </para>
           <indexterm zone="speex libspeex">
             <primary sortas="c-libspeex">libspeex.so</primary>
@@ -253,7 +253,7 @@ popd</userinput></screen>
         <term><filename class="libraryfile">libspeexdsp</filename></term>
         <listitem>
           <para>
-            is a speech processing library that goes along with the
+            er et talebehandlingsbibliotek som går sammen med
             <application>Speex</application> codec
           </para>
           <indexterm zone="speex libspeexdsp">

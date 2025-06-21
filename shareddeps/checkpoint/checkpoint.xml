@@ -8,11 +8,11 @@
 <chapter id="checkpoint">
   <?dbhtml filename="checkpoint.html"?>
 
-  <title>Checkpoint</title>
+  <title>Kontrollpunkt</title>
 
   <para>
-    This mini-chapter conludes the main stretch of this book and touches up
-    some things before moving onto Steam and Wine.
+    Dette minikapittelet avslutter hoveddelen av boken og finpusser 
+    noen ting før vi går videre til Steam og Wine.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatnow.xml"/>
