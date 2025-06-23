@@ -403,6 +403,18 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
           startes via en TTY eller en annen skjermbehandler enn GDM
           per nå.</para>
         </listitem>
+        <listitem>
+          <para>
+            <xref linkend="xorg-server"/>: Selv om denne pakken fungerer helt fint, 
+            vil TearFree oppdateringen og konfigurasjonsfilen være ubrukelig ettersom
+            Xorg driveren (<filename class="libraryfile">nvidia_drv</filename>)
+            vil bli brukt i stedet for modusinnstillingsdriveren. TearFree oppdateringen 
+            og konfigurasjonsfilen er modusinnstillingsspesifikk. Derfor må du finne 
+            en annen måte å bli kvitt skjermriving hvis det er ditt ønske. Slike 
+            rettelser kan redusere ytelsen drastisk, slik at 144 FPS kan 
+            falle til 60 FPS.
+          </para>
+        </listitem>
       </itemizedlist>
 
     </sect3>
