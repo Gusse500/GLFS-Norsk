@@ -44,6 +44,9 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
+      <!-- Not runtime as mesa/nvidia provide DRI needed at configuration. -->
+      A userland graphics driver (<xref linkend='mesa'/> and/or
+      <xref linkend='nvidia'/>),
       <xref linkend="libxcvt"/>,
       <xref linkend="pixman"/>,
       <xref linkend="wayland-protocols"/>,
@@ -85,9 +88,12 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>ninja install</userinput><userinput revision="sysv"> &amp;&amp;
+install -vdm1777 /tmp/.X11-unix &amp;&amp;
+if [ -z "$(grep .X11-unix /etc/sysconfig/createfiles)" ]; then
 cat &gt;&gt; /etc/sysconfig/createfiles &lt;&lt; "EOF"
 <literal>/tmp/.X11-unix dir 1777 root root</literal>
-EOF</userinput></screen>
+EOF
+fi</userinput></screen>
 
     <para>
       If <xref linkend='xorg-server'/> is not installed and you do not plan
@@ -159,7 +165,8 @@ EOF</userinput></screen>
         <term><command>Xwayland</command></term>
         <listitem>
           <para>
-            Allows X clients to run under wayland
+            is a minimal X server that can run on top of Wayland to allow Xorg
+            clients to execute
           </para>
           <indexterm zone="xwayland Xwayland">
             <primary sortas="b-Xwayland">Xwayland</primary>
