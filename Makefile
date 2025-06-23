@@ -38,7 +38,7 @@ ifndef REV
 endif
 ifneq ($(REV), sysv)
   ifneq ($(REV), systemd)
-    $(error REV must be 'sysv' (default) or 'systemd')
+    $(feil REV må være 'sysv' (standard) eller 'systemd')
   endif
 endif
 
@@ -49,7 +49,7 @@ ifndef STAB
 endif
 ifneq ($(STAB), development)
   ifneq ($(STAB), release)
-    $(error STAB must be 'development' (default) or 'release')
+    $(feil STAB må være 'development' (standard) eller 'release')
   endif
 endif
 
@@ -76,48 +76,48 @@ glfs: html wget-list
 
 help:
 	@echo ""
-	@echo "make <parameters> <targets>"
+	@echo "make <parametere> <mål>"
 	@echo ""
-	@echo "Parameters:"
+	@echo "Parametere:"
 	@echo ""
-	@echo "  REV=<rev>              Build variation of book"
-	@echo "                         Valid values for REV are:"
-	@echo "                         * sysv    - Build book for SysV"
-	@echo "                         * systemd - Build book for systemd"
-	@echo "                         Defaults to 'sysv'"
+	@echo "  REV=<rev>              Bygg variant av boken"
+	@echo "                         Gyldige verdier for REV er:"
+	@echo "                         * sysv    - Bygg boken for SysV"
+	@echo "                         * systemd - Bygg boken for systemd"
+	@echo "                         Standard er 'sysv'"
 	@echo ""
-	@echo "  BASEDIR=<dir>          Put the output in directory <dir>."
-	@echo "                         Defaults to"
-	@echo "                         '$(HTML_ROOT)/glfs' if REV=sysv (or unset)"
-	@echo "                         or to"
-	@echo "                         '$(HTML_ROOT)/glfs-systemd' if REV=systemd"
+	@echo "  BASEDIR=<dir>          Plasser utdataene i mappen <dir>."
+	@echo "                         Standard er"
+	@echo "                         '$(HTML_ROOT)/glfs' hvis REV=sysv (eller ikke-satt)"
+	@echo "                         eller"
+	@echo "                         '$(HTML_ROOT)/glfs-systemd' hvis REV=systemd"
 	@echo ""
-	@echo "  V=<val>                If <val> is a non-empty value, all"
-	@echo "                         steps to produce the output is shown."
-	@echo "                         Default is unset."
+	@ech V=<val>              Hvis <val> er en ikke-tom verdi, alle"
+	@echo "                       trinnene for å produsere resultatet vises."
+	@echo "                       Standard er ikke-satt."
 	@echo ""
-	@echo "  GLFS_THEME_PATH=<PATH> Sets the path of themes (CSS files)."
-	@echo "                         'stylesheets/lfs-xsl' is the default."
+	@echo "  GLFS_THEME_PATH=<PATH> Angir stien til temaer (CSS filer)."
+	@echo "                         'stylesheets/lfs-xsl' er standard."
 	@echo ""
-	@echo "  GLFS_THEME=<theme>     Sets the theme of the book, ie. light/dark."
-	@echo "                         'dark' is the default."
+	@echo "  GLFS_THEME=<theme>     Setter temaet for boken, dvs. light/dark."
+	@echo "                         'dark' er standard."
 	@echo ""
-	@echo "Targets:"
-	@echo "  help                 Show this help text."
+	@echo "Mål:"
+	@echo "  help                 Vis denne hjelpeteksten."
 	@echo ""
-	@echo "  glfs                 Builds targets 'html' and 'wget-list'."
+	@echo "  glfs                 Bygger målene 'html' og 'wget-list'."
 	@echo ""
-	@echo "  html                 Builds the HTML pages of the book."
+	@echo "  html                 Bygger HTML sidene til boken."
 	@echo ""
-	@echo "  wget-list            Produces a list of all packages to download."
-	@echo "                       Output is BASEDIR/wget-list"
+	@echo "  wget-list            Lager en liste over alle pakker som skal lastes ned."
+	@echo "                       Utdata er BASEDIR/wget-list"
 	@echo ""
-	@echo "  validate             Runs validation checks on the XML files."
+	@echo "  validate             Kjører valideringskontroller på XML filene."
 	@echo ""
-	@echo "  test-links           Runs validation checks on URLs in the book."
-	@echo "                       Produces a file named BASEDIR/bad_urls containing"
-	@echo "                       URLS which are invalid and a BASEDIR/good_urls"
-	@echo "                       containing all valid URLs."
+	@echo "  test-links           Kjører valideringskontroller på nettadresser i boken."
+	@echo "                       Produserer en fil med navnet BASEDIR/bad_urls som inneholder"
+	@echo "                       nettadresser som er ugyldige og en BASEDIR/good_urls"
+	@echo "                       som inneholder alle gyldige nettadresser."
 	@echo ""
 
 all: glfs
@@ -125,7 +125,7 @@ world: all dump-commands test-links
 
 html: $(BASEDIR)/index.html
 $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
-	@echo "Generating chunked XHTML files..."
+	@echo "Generering av delte XHTML filer..."
 	$(Q)xsltproc --nonet                                    \
 					--stringparam chunk.quietly $(CHUNK_QUIET) \
 					--stringparam rootid "$(ROOT_ID)"          \
@@ -133,7 +133,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 					stylesheets/glfs-chunked.xsl               \
 					$(RENDERTMP)/$(GLFSHTML)
 
-	@echo "Copying CSS code, images, and file downloads..."
+	@echo "Kopiering av CSS kode, bilder og nedlastinger..."
 	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
       mkdir -p $(BASEDIR)/stylesheets;          \
    fi;
@@ -158,7 +158,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	$(Q)rm -rf $(BASEDIR)/patches
 	$(Q)ln -sf download $(BASEDIR)/patches
 
-	@echo "Running Tidy and obfuscate.sh on chunked XHTML..."
+	@echo "Kjører Tidy og obfuscate.sh på delt XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \
       tidy -config tidy.conf $$filename;                          \
       true;                                                       \
@@ -166,7 +166,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
 
-	@echo "Copying over legacy HTML..."
+	@echo "Kopiering over eldre HTML..."
 	$(Q)if [ ! -e $(BASEDIR)/archive ]; then \
 		mkdir -p $(BASEDIR)/archive;          \
 	fi;
@@ -179,7 +179,7 @@ $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
 	$(Q)[ -d $(RENDERTMP) ] || mkdir -p $(RENDERTMP)
 	$(Q)trap '$(CLEAN)' EXIT
 
-	@echo "Rendering the book for $(REV)..."
+	@echo "Gjengir boken for $(REV)..."
 	$(Q)xsltproc --nonet                               \
                 --xinclude                            \
                 --output $(RENDERTMP)/$(GLFSHTML2)    \
@@ -187,7 +187,7 @@ $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
                 stylesheets/lfs-xsl/profile.xsl       \
                 index.xml
 
-	@echo "Validating the book..."
+	@echo "Validerer boken..."
 	$(Q)xmllint --nonet                             \
                --noent                             \
                --postvalid                         \
@@ -196,7 +196,7 @@ $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
 
 profile-html: $(RENDERTMP)/$(GLFSHTML)
 $(RENDERTMP)/$(GLFSHTML): $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Generating profiled XML for XHTML..."
+	@echo "Genererer profilert XML for XHTML..."
 	$(Q)xsltproc --nonet                              \
                 --stringparam profile.condition html \
                 --output $(RENDERTMP)/$(GLFSHTML)    \
@@ -205,7 +205,7 @@ $(RENDERTMP)/$(GLFSHTML): $(RENDERTMP)/$(GLFSFULL) version
 
 wget-list: $(BASEDIR)/wget-list
 $(BASEDIR)/wget-list: $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Generating wget list for $(REV) at $(BASEDIR)/wget-list ..."
+	@echo "Genererer wget liste for $(REV) på $(BASEDIR)/wget-list ..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --nonet                       \
                 --output $(BASEDIR)/wget-list \
@@ -214,7 +214,7 @@ $(BASEDIR)/wget-list: $(RENDERTMP)/$(GLFSFULL) version
 
 test-links: $(BASEDIR)/test-links
 $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Generating test-links file..."
+	@echo "Genererer test-links fil..."
 	$(Q)mkdir -p $(BASEDIR)
 	$(Q)xsltproc --nonet                        \
                 --stringparam list_mode full   \
@@ -222,7 +222,7 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
                 stylesheets/wget-list.xsl      \
                 $(RENDERTMP)/$(GLFSFULL)
 
-	@echo "Checking URLs, first pass..."
+	@echo "Sjekk av nettadresser, første omgang..."
 	$(Q)rm -f $(BASEDIR)/{good,bad,true_bad}_urls
 	$(Q)for URL in `cat $(BASEDIR)/test-links`; do                     \
          wget --spider --tries=2 --timeout=60 $$URL >>/dev/null 2>&1; \
@@ -233,7 +233,7 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
          fi;                                                          \
    done
 
-	@echo "Checking URLs, second pass..."
+	@echo "Sjekk av nettadresser, andre omgang..."
 	$(Q)for URL2 in `cat $(BASEDIR)/bad_urls`; do                       \
          wget --spider --tries=2 --timeout=60 $$URL2 >>/dev/null 2>&1; \
          if test $$? -ne 0 ; then                                      \
@@ -279,7 +279,7 @@ test-options:
 
 dump-commands: $(DUMPDIR)
 $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
-	@echo "Dumping book commands at $(DUMPDIR)..."
+	@echo "Dumping av bokkommandoer på $(DUMPDIR)..."
 	$(Q)xsltproc --output $(DUMPDIR)/          \
                 stylesheets/dump-commands.xsl \
                 $(RENDERTMP)/$(GLFSFULL)
