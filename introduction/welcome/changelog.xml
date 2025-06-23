@@ -44,6 +44,9 @@
       <para>22. juni 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - pciutils: 3.13.0 -&gt; 3.14.0.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - SA: Lenke til GLFS råd om LFS.</para>
         </listitem>
       </itemizedlist>
