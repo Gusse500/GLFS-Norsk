@@ -41,7 +41,16 @@
     -->
 
     <listitem>
-      <para>June 20th, 2025</para>
+      <para>22. juni 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SA: Lenke til GLFS råd om LFS.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>20. juni 2025</para>
       <itemizedlist>
         <listitem>
           <para>[zeckma] - Linux-PAM: 1.7.0 -&gt; 1.7.1 (sikkerhet).
