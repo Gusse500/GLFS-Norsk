@@ -351,6 +351,54 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
 
   </sect2>
 
+  <sect2 revision="systemd">
+    <title>Installasjon av NVIDIA-Powerd</title>
+    <para>
+      Hvis du vil ha <application>NVIDIA-Powerd</application>, som kan sette i dvalemodus 
+      og gå i hvilemodus hvis den blir bedt om det, kjør følgende kommandoer som &root;
+      bruker for å installere nissen og Systemd enhetsfilene:
+    </para>
+<screen role="root"><userinput>mkdir -pv /usr/lib/systemd/system             \
+          /usr/lib/systemd/system-sleep       \
+          /usr/share/dbus-1/system.d         &amp;&amp;
+install -vm755 nvidia-powerd /usr/bin        &amp;&amp;
+install -vm755 systemd/nvidia-sleep.sh        \
+               /usr/bin                      &amp;&amp;
+install -vm755 systemd/system-sleep/nvidia    \
+               /usr/lib/systemd/system-sleep &amp;&amp;
+cp -v systemd/system/*.service                \
+      /usr/lib/systemd/system                &amp;&amp;
+cp -v nvidia-dbus.conf                        \
+      /usr/share/dbus-1/system.d             &amp;&amp;
+
+cat &gt; systemd-homed-override.conf &lt;&lt; "EOF" &amp;&amp;
+<literal>[Service]
+Environment="SYSTEMD_HOME_LOCK_FREEZE_SESSION=false"</literal>
+EOF
+cat &gt; systemd-suspend-override.conf &lt;&lt; "EOF" &amp;&amp;
+<literal>[Service]
+Environment="SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"</literal>
+EOF
+
+for service in {homed,suspend,suspend-then-hibernate,hibernate,hybrid-sleep}; do
+  mkdir -pv /usr/lib/systemd/system/systemd-"$service".service.d
+done &amp;&amp;
+cp -v systemd-homed-override.conf                                                       \
+      /usr/lib/systemd/system/systemd-homed.service.d/10-nvidia-no-freeze-session.conf &amp;&amp;
+for service in {suspend,suspend-then-hibernate,hibernate,hybrid-sleep}; do
+  cp -v systemd-suspend-override.conf \
+    /usr/lib/systemd/system/systemd-"$service".service.d/10-nvidia-no-freeze-session.conf
+done</userinput></screen>
+    <para>
+      Systemd enhetene må kjøres ved oppstart. Aktiver dem som
+      &root; bruker:
+    </para>
+<screen role="root"><userinput>for service in nvidia-{resume,hibernate,suspend}; do
+  systemctl enable $service
+done</userinput></screen>
+  </sect2>
+
+
   <sect2 role="configuration">
     <title>Konfigure NVIDIA</title>
 

@@ -40,6 +40,16 @@
     </listitem>
     -->
 
+    <listitem revision="systemd">
+      <para>23. juni 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Lagt til powerd for Systemd. Del av
+          <ulink url="&glfs-issues;/273">#273</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>22. juni 2025</para>
       <itemizedlist>
