@@ -18,62 +18,62 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to D-Bus</title>
+    <title>Introduksjon til D-Bus</title>
 
     <para revision="systemd">
-      Even though <application>D-Bus</application> was built in LFS, there are
-      some features provided by the package that other GLFS packages need, but
-      their dependencies didn't fit into LFS.
+      Selv om <application>D-Bus</application> ble bygget i LFS, er det noen 
+      funksjoner levert av pakken som andre GLFS pakker trenger, men 
+      avhengighetene deres passet ikke inn i LFS.
     </para>
 
     <para revision="sysv">
-      D-Bus was already compiled before, but not a useful program,
-      <command>dbus-launch</command>. This pass will cover it, and some setup
-      required.
+      D-Bus ble allerede kompilert før, men ikke et nyttig program,
+      <command>dbus-launch</command>. Denne gjennomgangen dekker det, og noe oppsett 
+      som kreves.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&dbus-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&dbus-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&dbus-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&dbus-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">D-Bus Dependencies</bridgehead>
+    <bridgehead renderas="sect3">D-Bus avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="xorg7-lib"/> (for <command>dbus-launch</command> program)
+      <xref linkend="xorg7-lib"/> (for <command>dbus-launch</command> programmet)
       <!-- elogind cannot be used by dbus: dbus only uses the systemd service,
       not the logind one
-      <phrase revision="sysv">and <xref linkend="elogind"/> (These are
-      circular dependencies. First build without them, and then again after
-      both packages are installed.)</phrase>-->
+      <phrase revision="sysv">og <xref linkend="elogind"/> (Dette er 
+      sirkulære avhengigheter. Bygg først uten dem, og deretter igjen etter at 
+      begge pakkene er installert.)</phrase>-->
     </para>
 
-    <bridgehead renderas="sect4" revision="systemd">Optional</bridgehead>
+    <bridgehead renderas="sect4" revision="systemd">Valgfri</bridgehead>
     <para role="optional" revision="systemd">
       <phrase revision="systemd"><xref role="runtime" linkend="systemd"/>
-      (runtime, for registering services launched by D-Bus session daemon as
-      systemd user services)</phrase>
+      (kjøretid, for registrering av tjenester lansert av D-Bus øktnissen som 
+      systemd brukertjenester)</phrase>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of D-Bus</title>
+    <title>Installasjon av D-Bus</title>
 
     <para>
-      Install <application>D-Bus</application> by running the following
-      commands (you may wish to review the
-      <filename>meson_options.txt</filename> file first and add any desired
-      parameters to the <command>meson</command> command shown below):
+      Installer <application>D-Bus</application> ved å kjøre følgende 
+      kommandoer (du kan ønske å gjennomgå
+      <filename>meson_options.txt</filename> filen først og legg til ønskede 
+      parametere til <command>meson</command> kommandoen vist nedenfor):
     </para>
 
 <screen><userinput revision="sysv">rm -rf build &amp;&amp;
@@ -89,16 +89,16 @@ meson setup --prefix=/usr          \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
     <para>
-      If you are using a DESTDIR install,
-      <command>dbus-daemon-launch-helper</command> needs to be fixed
-      afterwards. Issue, as <systemitem class="username">root</systemitem>
-      user:
+      Hvis du bruker en DESTDIR installasjon,
+      <command>dbus-daemon-launch-helper</command> må fikses 
+      etterpå. Utsted, som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>chown -v root:messagebus /usr/libexec/dbus-daemon-launch-helper &amp;&amp;
@@ -107,29 +107,29 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-wrap-nofallback;
 
     <para revision="sysv">
-      <parameter>-D systemd=disabled</parameter>: Don't install systemd support
-      files even if <filename class="libraryfile">libsystemd</filename> exists
-      (i.e. the <xref linkend="elogind"/> package is installed).
+      <parameter>-D systemd=disabled</parameter>: Ikke installer systemd støttefiler 
+      selv om <filename class="libraryfile">libsystemd</filename> eksisterer
+      (dvs. <xref linkend="elogind"/> pakken er installert).
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring D-Bus</title>
+    <title>Konfigurere D-Bus</title>
 
     <sect3 id="dbus-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
         <filename>/etc/dbus-1/session.conf</filename>,
-        <filename>/etc/dbus-1/system.conf</filename> and
+        <filename>/etc/dbus-1/system.conf</filename> og
         <filename>/etc/dbus-1/system.d/*</filename>
       </para>
 
@@ -148,26 +148,26 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
     </sect3>
 
     <sect3 id="dbus-session-config" xreflabel="D-Bus custom services directory">
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        The configuration files listed above should probably not be
-        modified. If changes are required, you should create
-        <filename>/etc/dbus-1/session-local.conf</filename> and/or
-        <filename>/etc/dbus-1/system-local.conf</filename> and make any
-        desired changes to these files.
+        Konfigurasjonsfilene som er oppført ovenfor bør sannsynligvis ikke 
+        endres. Hvis endringer er nødvendige, bør du opprette
+        <filename>/etc/dbus-1/session-local.conf</filename> og/eller
+        <filename>/etc/dbus-1/system-local.conf</filename> og gjør 
+        eventuelle ønskede endringer i disse filene.
      </para>
 
       <para>
-        If any packages install a
+        Hvis noen pakker installerer en
         <application>D-Bus</application> <filename>.service</filename>
-        file outside of the standard <filename
-        class="directory">/usr/share/dbus-1/services</filename> directory,
-        that directory should be added to the local session configuration.
-        For instance, <filename
-        class="directory">/usr/local/share/dbus-1/services</filename> can
-        be added by performing the following commands as the
-        <systemitem class="username">root</systemitem> user:
+        fil utenfor standard <filename
+        class="directory">/usr/share/dbus-1/services</filename> mappen,
+        den mappen bør legges til i den lokale sesjonskonfigurasjonen. 
+        For eksempel, <filename
+        class="directory">/usr/local/share/dbus-1/services</filename> kan
+        legges til ved å utføre følgende kommandoer som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/dbus-1/session-local.conf &lt;&lt; "EOF"
@@ -185,14 +185,14 @@ EOF</userinput></screen>
     </sect3>
 
     <sect3  id="dbus-session">
-      <title>D-Bus Session Daemon</title>
+      <title>D-Bus Øktnisse</title>
 
       <para revision="sysv">
-        To automatically start <command>dbus-daemon</command> when the
-        system is rebooted, install the
-        <filename>/etc/rc.d/init.d/dbus</filename> bootscript from the
+        For å automatisk starte <command>dbus-daemon</command> når 
+        systemet startes på nytt, installer
+        <filename>/etc/rc.d/init.d/dbus</filename> oppstartsskript fra
         <ulink url="&blfs-svn;/introduction/bootscripts.html">
-        blfs-bootscripts</ulink> package.
+        blfs-bootscripts</ulink> pakken.
       </para>
 
       <indexterm zone="dbus dbus-session" revision="sysv">
@@ -202,51 +202,51 @@ EOF</userinput></screen>
 <screen role="root" revision="sysv"><userinput>make install-dbus</userinput></screen>
 
       <para revision="sysv">
-        Note that this boot script only starts the system-wide
-        <application>D-Bus</application> daemon. Each user requiring access to
-        <application>D-Bus</application> services will also need to run a
-        session daemon as well. There are many methods you can use to start a
-        session daemon using the <command>dbus-launch</command> command. Review
-        the <command>dbus-launch</command> man page for details about the
-        available parameters and options. Here are some suggestions and
-        examples:
+        Merk at dette oppstartsskriptet bare starter den systemomfattende
+        <application>D-Bus</application> nissen. Hver bruker som trenger tilgang til
+        <application>D-Bus</application> tjenestene må også kjøre en 
+        øktnisse. Det finnes mange metoder du kan bruke for å starte en 
+        øktnisse ved å bruke <command>dbus-launch</command> kommandoen. Gjennomgå
+        <command>dbus-launch</command> manualsiden for detaljer om 
+        tilgjengelige parametere og alternativer. Her er noen forslag og 
+        eksempler:
       </para>
 
       <para revision="systemd">
-        There are many methods you can use to start a session daemon
-        using the <command>dbus-launch</command> command. Review the
-        <command>dbus-launch</command> man page for details about the
-        available parameters and options. Here are some suggestions and
-        examples:
+        Det finnes mange metoder du kan bruke for å starte en øktnisse 
+        ved å bruke <command>dbus-launch</command> kommandoen. Gjennomgå
+        <command>dbus-launch</command> manualsiden for detaljer om 
+        tilgjengelige parametere og alternativer. Her er noen forslag og 
+        eksempler:
       </para>
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Add <command>dbus-launch</command> to the line in the
-            <filename>~/.xinitrc</filename> file that starts your graphical
-            desktop environment.
+            Legg til <command>dbus-launch</command> til linjen i
+            <filename>~/.xinitrc</filename> fil som starter det grafiske 
+            skrivebordsmiljøet ditt.
           </para>
         </listitem>
         <listitem>
           <para>
-            If you use <command>gdm</command> or some other display manager
-            that calls the <filename>~/.xsession</filename> file, you can add
-            <command>dbus-launch</command> to the line in your
-            <filename>~/.xsession</filename> file that starts your graphical
-            desktop environment. The syntax would be similar to the example in
-            the <filename>~/.xinitrc</filename> file.
+            Hvis du bruker <command>gdm</command> eller en annen skjermbehandler 
+            som kaller <filename>~/.xsession</filename> filen, kan du legge til
+            <command>dbus-launch</command> til linjen i din
+            <filename>~/.xsession</filename> filen som starter det grafiske 
+            skrivebordsmiljøet ditt. Syntaksen vil være lik eksemplet i
+            <filename>~/.xinitrc</filename> filen.
           </para>
         </listitem>
         <listitem>
           <para>
-            The examples shown previously use
-            <command>dbus-launch</command> to specify a program to be run. This
-            has the benefit (when also using the
-            <parameter>--exit-with-x11</parameter> parameter) of stopping the
-            session daemon when the specified program is stopped. You can also
-            start the session daemon in your system or personal startup scripts
-            by adding the following lines:
+            Eksemplene som er vist tidligere bruker
+            <command>dbus-launch</command> å spesifisere et program som skal kjøres. Dette 
+            har fordelen (når man også bruker
+            <parameter>--exit-with-x11</parameter> parameter) for å stoppe 
+            øktnissen når det angitte programmet stoppes. Du kan også 
+            starte øktnissen i systemet eller personlige oppstartsskript 
+            ved å legge til følgende linjer:
           </para>
 
 <screen role="nodump"><userinput><literal># Start the D-Bus session daemon
@@ -254,9 +254,9 @@ eval `dbus-launch`
 export DBUS_SESSION_BUS_ADDRESS</literal></userinput></screen>
 
           <para>
-            This method will not stop the session daemon when you exit
-            your shell, therefore you should add the following line to your
-            <filename>~/.bash_logout</filename> file:
+            Denne metoden vil ikke stoppe øktnissen når du avslutter 
+            skallet ditt, derfor bør du legge til følgende linje i
+            <filename>~/.bash_logout</filename> filen:
           </para>
 
 <screen role="nodump"><userinput><literal># Kill the D-Bus session daemon
@@ -266,11 +266,11 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
       </itemizedlist>
 
       <para>
-        Now would be a good idea to reboot and test to see if D-Bus,
-        <phrase revision="sysv">e</phrase>logind, etc. works, and you can
-        login. Run the command <command>loginctl</command> after ensuring
-        D-Bus is running. The result should indicate that a SESSION and a SEAT
-        have been created.
+        Nå ville det være lurt å starte på nytt og teste for å se om D-Bus,
+        <phrase revision="sysv">e</phrase>logind, osv. fungerer, og du kan 
+        logge inn. Kjør kommandoen <command>loginctl</command> etter å ha 
+        forsikret at D-Bus kjører. Resultatet skal indikere at en SESSION og en SEAT 
+        er opprettet.
       </para>
 
     </sect3>
@@ -278,18 +278,18 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           dbus-cleanup-sockets, dbus-daemon, dbus-launch, dbus-monitor,
           dbus-run-session, dbus-send, dbus-test-tool,
-          dbus-update-activation-environment, and dbus-uuidgen
+          dbus-update-activation-environment, og dbus-uuidgen
         </seg>
         <seg>
            libdbus-1
@@ -300,14 +300,14 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
           /usr/lib/cmake/DBus1,
           /usr/share/dbus-1,
           /usr/share/xml/dbus-1,
-          /usr/share/doc/dbus-&dbus-version;, and
+          /usr/share/doc/dbus-&dbus-version;, og
           /var/{lib,run}/dbus
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -315,7 +315,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-cleanup-sockets</command></term>
         <listitem>
           <para>
-            is used to clean up leftover sockets in a directory
+            brukes til å rydde opp i gjenværende sockets i en mappe
           </para>
           <indexterm zone="dbus dbus-cleanup-sockets">
             <primary sortas="b-dbus-cleanup-sockets">dbus-cleanup-sockets</primary>
@@ -327,7 +327,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-daemon</command></term>
         <listitem>
           <para>
-            is the <application>D-Bus</application> message bus daemon
+            er <application>D-Bus</application> meldingsbussnisse
           </para>
           <indexterm zone="dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
@@ -339,9 +339,9 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-launch</command></term>
         <listitem>
           <para>
-            is used to start <command>dbus-daemon</command> from a shell
-            script. It  would  normally be called from a user's login
-            scripts
+            brukes til å starte <command>dbus-daemon</command> fra et skallskript. 
+            Det ville normalt bli kalt fra en brukers 
+            påloggingsskript
           </para>
           <indexterm zone="dbus dbus-launch">
             <primary sortas="b-dbus-launch">dbus-launch</primary>
@@ -353,8 +353,8 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-monitor</command></term>
         <listitem>
           <para>
-            is used to monitor messages going through a
-            <application>D-Bus</application> message bus
+            brukes til å overvåke meldinger som går gjennom en
+            <application>D-Bus</application> meldingsbuss
           </para>
           <indexterm zone="dbus dbus-monitor">
             <primary sortas="b-dbus-monitor">dbus-monitor</primary>
@@ -366,7 +366,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-run-session</command></term>
         <listitem>
           <para>
-            starts a process as a new <application>D-Bus</application> session
+            starter en prosess som en ny <application>D-Bus</application> økt
           </para>
           <indexterm zone="dbus dbus-run-session">
             <primary sortas="b-dbus-run-session">dbus-run-session</primary>
@@ -378,8 +378,8 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-send</command></term>
         <listitem>
           <para>
-            is used to send a message to a <application>D-Bus</application>
-            message bus
+            brukes til å sende en melding til en <application>D-Bus</application>
+            meldingsbuss
           </para>
           <indexterm zone="dbus dbus-send">
             <primary sortas="b-dbus-send">dbus-send</primary>
@@ -391,8 +391,8 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-test-tool</command></term>
         <listitem>
           <para>
-            is a <application>D-Bus</application> traffic generator and test
-            tool; it is a multi-purpose tool for debugging and profiling
+            er en <application>D-Bus</application> trafikkgenerator og testverktøy; 
+            det er et flerbruksverktøy for feilsøking og profilering
             <application>D-Bus</application>
           </para>
           <indexterm zone="dbus dbus-test-tool">
@@ -405,11 +405,11 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-update-activation-environment</command></term>
         <listitem>
           <para>
-            is used to update the environment used for
-            <application>D-Bus</application> session services;
-            it updates the list of environment variables used by
-            <command>dbus-daemon --session</command> when it activates session
-            services without using systemd
+            brukes til å oppdatere miljøet som brukes til
+            <application>D-Bus</application> økttjenester; 
+            den oppdaterer listen over miljøvariabler som brukes av
+            <command>dbus-daemon --session</command> når den aktiverer økttjenester 
+            uten å bruke systemd
           </para>
           <indexterm zone="dbus dbus-update-activation-environment">
             <primary sortas="b-dbus-update-activation-environment">
@@ -422,7 +422,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-uuidgen</command></term>
         <listitem>
           <para>
-            is used to generate a universally unique ID
+            brukes til å generere en universell unik ID
           </para>
           <indexterm zone="dbus dbus-uuidgen">
             <primary sortas="b-dbus-uuidgen">dbus-uuidgen</primary>
@@ -434,12 +434,12 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><filename class="libraryfile">libdbus-1</filename></term>
         <listitem>
           <para>
-            contains the API functions used by the
-            <application>D-Bus</application> message daemon.
-            <application>D-Bus</application> is first a library that provides
-            one-to-one communication between any two applications;
-            <command>dbus-daemon</command> is an application that uses this
-            library to implement a message bus daemon
+            inneholder API funksjonene som brukes av
+            <application>D-Bus</application> øktnissen.
+            <application>D-Bus</application> er først et bibliotek som tilbyr 
+            én-til-én kommunikasjon mellom to applikasjoner;
+            <command>dbus-daemon</command> er et program som bruker dette 
+            biblioteket til å implementere en meldingsbussnisse
           </para>
           <indexterm zone="dbus libdbus-1">
             <primary sortas="c-libdbus-1">libdbus-1</primary>

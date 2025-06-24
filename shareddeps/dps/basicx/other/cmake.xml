@@ -18,15 +18,15 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to CMake</title>
+    <title>Introduksjon til CMake</title>
 
     <para>
-      The <application>CMake</application> package contains a modern
-      toolset used for generating Makefiles. It is a successor of the
-      auto-generated <command>configure</command> script and aims to
-      be platform- and compiler-independent. A significant user of
-      <application>CMake</application> is <application>KDE</application>
-      since version 4.
+      <application>CMake</application> pakken inneholder et moderne 
+      verktøysett som brukes til å generere Makefiles. Det er en etterfølger av den 
+      automatisk genererte <command>configure</command> skriptet og har som mål å 
+      være plattform- og kompilatoruavhengig. En betydelig bruker av
+      <application>CMake</application> er <application>KDE</application>
+      siden versjon 4.
     </para>
 
     &long-build-time;
@@ -34,41 +34,41 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&cmake-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&cmake-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&cmake-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&cmake-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Påkrevd oppdatering:
           <ulink url="&patch-root;/cmake-&cmake-version;-upstream_fix-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">CMake Dependencies</bridgehead>
+    <bridgehead renderas="sect3">CMake avhengigheter</bridgehead>
 
     <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
       <xref linkend="curl"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/libarchive.html">
       libarchive</ulink>,
       <ulink url="&blfs-svn;/general/libuv.html">
-      libuv</ulink>, and
+      libuv</ulink>, og
       <ulink url="&blfs-svn;/basicnet/nghttp2.html">
       nghttp2</ulink>
     </para>
@@ -76,19 +76,19 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of CMake</title>
+    <title>Installasjon av CMake</title>
 
  <!--
     <para>
-      First, adapt the FindBoost module to use Boost-1.80.0:
+      Først, tilpass FindBoost modulen til å bruke Boost-1.80.0:
     </para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../cmake-&cmake-version;-upstream_fix-1.patch</userinput></screen>
 -->
 
     <para>
-      Install <application>CMake</application> by running the following
-      commands:
+      Installer <application>CMake</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake &amp;&amp;
@@ -107,10 +107,10 @@
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>bin/ctest
-      -j<replaceable>$(nproc)</replaceable></command>. Replace
-      <replaceable>$(nproc)</replaceable> with an integer between 1 and the
-      number of system logical cores if you don't want to use all of them.
+      For å teste resultatene, utsted: <command>bin/ctest
+      -j<replaceable>$(nproc)</replaceable></command>. Erstatt
+      <replaceable>$(nproc)</replaceable> med et heltall mellom 1 og 
+      antallet systemlogiske kjerner hvis du ikke vil bruke alle.
       <!--
         One test, RunCMake.FindBoost, is known to fail.
         Now cmake-3.27.0.  All tests pass.
@@ -118,19 +118,19 @@ make</userinput></screen>
     </para>
 
     <para>
-      If you want to investigate a problem with a given "problem1-test",
-      use <command>bin/ctest -R "problem1-test"</command> and, to omit it, use
-      <command>bin/ctest -E "problem1-test"</command>. These options can be
-      used together:
+      Hvis du vil undersøke et problem med en gitt "problem1-test",
+      bruk <command>bin/ctest -R "problem1-test"</command> og, for å utelate det, bruk
+      <command>bin/ctest -E "problem1-test"</command>. Disse alternativene kan 
+      brukes sammen:
       <command>bin/ctest -R "problem1-test" -E "problem2-test"</command>.
-      Option <option>-N</option> can be used to display all
-      available tests, and you can run <command>bin/ctest</command> for a
-      sub-set of tests by using separated by spaces names or numbers as
-      options. Option <option>--help</option> can be used to show all options.
+      Alternativet <option>-N</option> kan brukes til å vise alle 
+      tilgjengelige tester, og du kan kjøre <command>bin/ctest</command> for et 
+      delsett av tester ved å bruke navn eller tall atskilt med mellomrom som 
+      alternativer. Alternativ <option>--help</option> kan brukes til å vise alle alternativer.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -138,65 +138,65 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <para>
       <command>sed ... Modules/GNUInstallDirs.cmake</command>:
-      This command disables applications using cmake from attempting to
-      install files in /usr/lib64/.
+      Denne kommandoen deaktiverer programmer som bruker cmake fra å forsøke å 
+      installere filer i /usr/lib64/.
     </para>
 
     <para>
-      <parameter>--system-libs</parameter>: This switch forces the build
-      system to link against the system installed version for all needed
-      libraries but those explicitly specified via a
-      <option>--no-system-*</option> option.
+      <parameter>--system-libs</parameter>: Denne bryteren tvinger byggesystemet 
+      å koble mot den systeminstallerte versjonen for alle nødvendige 
+      biblioteker, unntatt de som er eksplisitt spesifisert via en
+      <option>--no-system-*</option> alternativ.
     </para>
 
     <para>
-      <parameter>--no-system-jsoncpp</parameter> and
-      <parameter>--no-system-cppdap</parameter>: These switches remove the
-      <application>JSON-C++</application> library from the list of system
-      libraries. A bundled version of that library is used instead.
+      <parameter>--no-system-jsoncpp</parameter> og
+      <parameter>--no-system-cppdap</parameter>: Disse bryterne fjerner
+      <application>JSON-C++</application> biblioteket fra listen over systembiblioteker. 
+      En samlet versjon av det biblioteket brukes i stedet.
     </para>
 
     <para>
-      <parameter>--no-system-librhash</parameter>: This switch removes the
-      <application>librhash</application> library from the list of system
-      libraries used. A bundled version of that library is used instead.
+      <parameter>--no-system-librhash</parameter>: Denne bryteren fjerner
+      <application>librhash</application> biblioteket fra listen over systembiblioteker. 
+      En samlet versjon av det biblioteket brukes i stedet.
     </para>
 
     <para>
-      <parameter>--no-system-{libarchive,libuv,nghttp2}</parameter>: These
-      switches do the same thing as above but for those packages listed in
-      these parameters. They are not installed currently.
+      <parameter>--no-system-{libarchive,libuv,nghttp2}</parameter>: Disse 
+      bryterne gjør det samme som ovenfor, men for pakkene som er oppført i disse 
+      parameterne. De er ikke installert for øyeblikket.
     </para>
 
     <para>
-      <option>--parallel=</option>: This switch enables performing the
-      <application>CMake</application> bootstrap with multiple jobs
-      at one time.
+      <option>--parallel=</option>: Denne bryteren gjør det mulig å utføre
+      <application>CMake</application> bootstrap med flere jobber 
+      samtidig.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          ccmake, cmake, cpack, and ctest
+          ccmake, cmake, cpack, og ctest
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          /usr/share/cmake-&cmake-major-version; and
+          /usr/share/cmake-&cmake-major-version; og
           /usr/share/doc/cmake-&cmake-version;
         </seg>
       </seglistitem>
@@ -204,7 +204,7 @@ make</userinput></screen>
 
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -212,7 +212,7 @@ make</userinput></screen>
         <term><command>ccmake</command></term>
         <listitem>
           <para>
-            is a curses based interactive frontend to
+            er et curses basert interaktivt grensesnitt til
             <command>cmake</command>
           </para>
           <indexterm zone="cmake ccmake">
@@ -225,7 +225,7 @@ make</userinput></screen>
         <term><command>cmake</command></term>
         <listitem>
           <para>
-            is the makefile generator
+            er makefile generatoren
           </para>
           <indexterm zone="cmake cmake-prog">
             <primary sortas="b-cmake">cmake</primary>
@@ -237,7 +237,7 @@ make</userinput></screen>
         <term><command>cpack</command></term>
         <listitem>
           <para>
-            is the <application>CMake</application> packaging program
+            er <application>CMake</application> pakkeprogram
           </para>
           <indexterm zone="cmake cpack">
             <primary sortas="b-cpack">cpack</primary>
@@ -249,7 +249,7 @@ make</userinput></screen>
         <term><command>ctest</command></term>
         <listitem>
           <para>
-            is a testing utility for cmake-generated build trees
+            er et testverktøy for cmake-genererte byggetrær
           </para>
           <indexterm zone="cmake ctest">
             <primary sortas="b-ctest">ctest</primary>
