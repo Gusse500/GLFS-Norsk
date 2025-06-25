@@ -61,6 +61,12 @@
           <ulink url="&dl-root;/NVIDIA/manifest-NVIDIA-&nv-manifest-version;"/>
         </para>
       </listitem>
+      <listitem revision="sysv">
+        <para>
+          Anbefalte SysVinit oppstartsskript for NVIDIA-Powerd:
+          <ulink url="&dl-root;/NVIDIA/NVIDIA-sysv-bootscripts-&nv-sysv-bs;.tar.xz"/>
+        </para>
+      </listitem>
     </itemizedlist>
 
     <bridgehead renderas="sect3">NVIDIA Avhengigheter</bridgehead>
@@ -81,6 +87,12 @@
             (for NVENC, NVDEC, Optical Flow, og annen maskinvare
             akselerasjon ikke levert av VDPAU; installer etter å ha fulgt denne
             siden)
+          </para>
+        </listitem>
+        <listitem revision="sysv">
+          <para>
+            <xref linkend="dbus"/> og <xref linkend="elogind"/> (for
+            NVIDIA-Powerd støtte)
           </para>
         </listitem>
         <listitem>
@@ -351,6 +363,27 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
 
   </sect2>
 
+<!-- UNFINISHED, DOES NOT WORK!
+
+  <sect2 revision="sysv">
+    <title>Installation of NVIDIA-Powerd</title>
+    <para>
+      If you want <application>NVIDIA-Powerd</application>, which can suspend
+      and hibernate if asked to, then run the following commands as the &root;
+      user to install the daemon and the bootscripts:
+    </para>
+<screen role="root"><userinput>mkdir -pv /usr/share/dbus-1/system.d        &amp;&amp;
+install -vm755 nvidia-powerd /usr/bin       &amp;&amp;
+cp -v nvidia-dbus.conf                       \
+      /usr/share/dbus-1/system.d            &amp;&amp;
+tar -xf ../NVIDIA-sysv-bootscripts-&nv-sysv-bs;.tar.xz &amp;&amp;
+pushd NVIDIA-sysv-bootscripts-&nv-sysv-bs;             &amp;&amp;
+  make install-nvidia-powerd                &amp;&amp;
+popd                                        &amp;&amp;
+rm -rf NVIDIA-sysv-bootscripts-&nv-sysv-bs;</userinput></screen>
+  </sect2>
+-->
+
   <sect2 revision="systemd">
     <title>Installasjon av NVIDIA-Powerd</title>
     <para>
@@ -397,7 +430,6 @@ done</userinput></screen>
   systemctl enable $service
 done</userinput></screen>
   </sect2>
-
 
   <sect2 role="configuration">
     <title>Konfigure NVIDIA</title>

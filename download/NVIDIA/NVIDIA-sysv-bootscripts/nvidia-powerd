@@ -1,0 +1,66 @@
+#!/bin/sh
+########################################################################
+# Begin nvidia-powerd
+#
+# Description : nvidia-powerd Boot Script
+#
+# Authors     : Zeckma - zeckma.tech@gmail.com
+#
+# Version     : GLFS #779fd
+#
+########################################################################
+
+### BEGIN INIT INFO
+# Provides:            nvidia-powerd
+# Required-Start:      $local_fs dbus
+# Should-Start:        $syslog
+# Required-Stop:       $local_fs
+# Should-Stop:         $syslog
+# Default-Start:       2 3 4 5
+# Default-Stop:        0 1 6
+# Short-Description:   NVIDIA power management
+# Description:         NVIDIA power management
+# X-LFS-Provided-By:   GLFS
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+case "${1}" in
+   start)
+      log_info_msg "Starting the NVIDIA-Powerd Daemon"
+      start_daemon /usr/bin/nvidia-powerd
+      evaluate_retval
+
+#      log_info_msg "Enabling NVIDIA sleep"
+#      start_daemon /usr/bin/nvidia-sleep "sleep"
+#      evaluate_retval
+      log_info_msg "Enabling NVIDIA suspend"
+      start_daemon /usr/bin/nvidia-sleep "suspend"
+      evaluate_retval
+      log_info_msg "Enabling NVIDIA hibernate"
+      start_daemon /usr/bin/nvidia-sleep "hibernate"
+      evaluate_retval
+      log_info_msg "Enabling NVIDIA resume"
+      start_daemon /usr/bin/nvidia-sleep "resume"
+      evaluate_retval
+      ;;
+
+   stop)
+      log_info_msg "Stopping the NVIDIA-Powerd Daemon"
+      if pidofproc nvidia-powerd >/dev/null; then
+         /usr/bin/killall nvidia-powerd
+      fi
+      evaluate_retval
+      ;;
+
+   status)
+      statusproc nvidia-powerd
+      ;;
+
+   *)
+      echo "Usage: ${0} {start|stop|status}"
+      exit 1
+      ;;
+esac
+
+# End /etc/init.d/nvidia-powerd
