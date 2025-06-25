@@ -61,12 +61,14 @@
           <ulink url="&dl-root;/NVIDIA/manifest-NVIDIA-&nv-manifest-version;"/>
         </para>
       </listitem>
+<!-- NOT READY
       <listitem revision="sysv">
         <para>
           Anbefalte SysVinit oppstartsskript for NVIDIA-Powerd:
           <ulink url="&dl-root;/NVIDIA/NVIDIA-sysv-bootscripts-&nv-sysv-bs;.tar.xz"/>
         </para>
       </listitem>
+-->
     </itemizedlist>
 
     <bridgehead renderas="sect3">NVIDIA Avhengigheter</bridgehead>
@@ -89,12 +91,14 @@
             siden)
           </para>
         </listitem>
+<!-- NOT READY
         <listitem revision="sysv">
           <para>
             <xref linkend="dbus"/> og <xref linkend="elogind"/> (for
             NVIDIA-Powerd støtte)
           </para>
         </listitem>
+-->
         <listitem>
           <para>
             <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for
