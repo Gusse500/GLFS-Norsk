@@ -18,22 +18,22 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Nettle</title>
+    <title>Introduksjon til Nettle</title>
 
     <para>
-      The <application>Nettle</application> package contains a low-level
-      cryptographic library that is designed to fit easily in many contexts.
+      <application>Nettle</application> Pakken inneholder et lavnivåkryptografisk 
+      bibliotek som er designet for å passe enkelt inn i mange sammenhenger.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&nettle-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&nettle-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&nettle-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&nettle-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -41,22 +41,22 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Nettle</title>
+    <title>Installasjon av Nettle</title>
 
     <para>
-      Install <application>Nettle</application> by running the following
-      commands:
+      Installer <application>Nettle</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr --disable-static &amp;&amp;
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -67,7 +67,7 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
@@ -76,29 +76,29 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           nettle-hash, nettle-lfib-stream, nettle-pbkdf2,
-          pkcs1-conv and sexp-conv
+          pkcs1-conv og sexp-conv
         </seg>
         <seg>
-          libhogweed and libnettle
+          libhogweed og libnettle
         </seg>
         <seg>
-          /usr/include/nettle and /usr/share/doc/nettle-&nettle-version;
+          /usr/include/nettle og /usr/share/doc/nettle-&nettle-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -106,7 +106,7 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
         <term><command>nettle-hash</command></term>
         <listitem>
           <para>
-            calculates a hash value using a specified algorithm
+            beregner en hashverdi ved hjelp av en spesifisert algoritme
           </para>
           <indexterm zone="nettle nettle-hash">
             <primary sortas="b-nettle-hash">nettle-hash</primary>
@@ -118,10 +118,10 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
         <term><command>nettle-lfib-stream</command></term>
         <listitem>
           <para>
-            outputs a sequence of pseudorandom (non-cryptographic)  bytes,
-            using Knuth's lagged fibonacci generator. The stream is useful for
-            testing, but should not be used to generate cryptographic keys or
-            anything else that needs real randomness
+            sender ut en sekvens av pseudotilfeldige (ikke-kryptografiske) byte, 
+            ved hjelp av Knuths lagged fibonacci-generator. Strømmen er nyttig 
+            for testing, men bør ikke brukes til å generere kryptografiske 
+            nøkler eller noe annet som trenger ekte tilfeldighet
           </para>
           <indexterm zone="nettle nettle-lfib-stream">
             <primary sortas="b-nettle-lfib-stream">nettle-lfib-stream</primary>
@@ -133,10 +133,10 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
         <term><command>nettle-pbkdf2</command></term>
         <listitem>
           <para>
-            is a password-based key derivation function that takes a password
-            or a passphrase as input and returns a strengthened password,
-            which is protected against pre-computation attacks by using
-            salting and other expensive computations.
+            er en passordbasert nøkkelutledningsfunksjon som tar et passord 
+            eller en passordfrase som inndata og returnerer et forsterket passord, 
+            som er beskyttet mot angrep før beregning ved hjelp av salting og 
+            andre dyre beregninger.
           </para>
           <indexterm zone="nettle nettle-pbkdf2">
             <primary sortas="b-nettle-pbkdf2">nettle-pbkdf2</primary>
@@ -148,8 +148,8 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
         <term><command>pkcs1-conv</command></term>
         <listitem>
           <para>
-            converts private and public RSA keys from PKCS #1 format to
-            sexp format
+            konverterer private og offentlige RSA nøkler fra PKCS #1 format 
+            til sexp format
           </para>
           <indexterm zone="nettle pkcs1-conv">
             <primary sortas="b-pkcs1-conv">pkcs1-conv</primary>
@@ -161,7 +161,7 @@ install -v -m644 nettle.{html,pdf} /usr/share/doc/nettle-&nettle-version;</useri
         <term><command>sexp-conv</command></term>
         <listitem>
           <para>
-            converts an s-expression to a different encoding
+            konverterer et s-uttrykk til en annen koding
           </para>
           <indexterm zone="nettle sexp-conv">
             <primary sortas="b-sexp-conv">sexp-conv</primary>

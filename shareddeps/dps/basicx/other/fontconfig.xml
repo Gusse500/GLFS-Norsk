@@ -19,12 +19,12 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Fontconfig</title>
+    <title>Introduksjon til Fontconfig</title>
 
     <para>
-      The <application>Fontconfig</application> package contains
-      a library and support programs used for configuring and
-      customizing font access.
+      <application>Fontconfig</application> pakken inneholder 
+      et bibliotek og støtteprogrammer som brukes til å konfigurere og 
+      tilpasse skrifttilgang.
     </para>
 
     &test-use-internet;
@@ -32,46 +32,46 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&fontconfig-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&fontconfig-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&patch-root;/fontconfig-&fontconfig-version;-gperf-3.1-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
-    <bridgehead renderas="sect3">Fontconfig Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Fontconfig avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="freetype2-pass2"/> and
+      <xref linkend="freetype2-pass2"/> og
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/bubblewrap.html">bubblewrap</ulink>
-      (used by some tests),
-      <xref linkend="curl"/>, and
+      (brukt av noen tester),
+      <xref linkend="curl"/>, og
       &unzip;
-      (both used by some tests for downloading and extracting test files)
+      (begge brukes av noen tester for nedlasting og utpakking av testfiler)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Fontconfig</title>
+    <title>Installasjon av Fontconfig</title>
 
     <para>
-      Install <application>Fontconfig</application> by running the following
-      commands:
+      Installer <application>Fontconfig</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -81,13 +81,13 @@ meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.  One test
-      is known to fail if the kernel does not support user namespaces.  Some
-      tests will download some font files via Internet.
+      For å teste resultatene, utsted: <command>ninja test</command>.  Én test 
+      er kjent for å mislykkes hvis kjernen ikke støtter brukernavneområder. Noen 
+      tester vil laste ned noen fontfiler via Internett.
     </para>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -95,11 +95,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Fontconfig</title>
+    <title>lib32 Installasjon av Fontconfig</title>
 
     <para>
-      Install lib32-<application>Fontconfig</application> by running the
-      following commands:
+      Installer lib32-<application>Fontconfig</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -112,7 +112,7 @@ meson setup --prefix=/usr       \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install       &amp;&amp;
@@ -123,22 +123,22 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Fontconfig</title>
+    <title>Konfigurere Fontconfig</title>
 
     <sect3 id="fontconfig-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
         <filename>
           /etc/fonts/*,
-          /etc/fonts/conf.d/* and
+          /etc/fonts/conf.d/* og
           /usr/share/fontconfig/conf.avail/*
         </filename>
       </para>
@@ -158,18 +158,18 @@ ldconfig</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        The main configuration file for <application>Fontconfig</application> is
-        <filename>/etc/fonts/fonts.conf</filename>. Generally you do not want
-        to edit this file. It will also read <filename>/etc/fonts/local.conf</filename>
-        and any files in <filename class="directory">/etc/fonts/conf.d</filename>.
-        To put a new font directory in the configuration, create
-        (or update) the <filename>/etc/fonts/local.conf</filename> file with your
-        local information or add a new file in
-        <filename class="directory">/etc/fonts/conf.d</filename>. The default
-        location of fonts in <application>Fontconfig</application> is:
+        Hovedkonfigurasjonsfilen for <application>Fontconfig</application> er
+        <filename>/etc/fonts/fonts.conf</filename>. Vanligvis vil du ikke 
+        redigere denne filen. Den vil også lese <filename>/etc/fonts/local.conf</filename>
+        og eventuelle filer i <filename class="directory">/etc/fonts/conf.d</filename>.
+        For å legge til en ny skrifttypemappei konfigurasjonen, opprett
+        (eller oppdater) <filename>/etc/fonts/local.conf</filename> fil med din 
+        lokale informasjon eller legg til en ny fil i
+        <filename class="directory">/etc/fonts/conf.d</filename>. Standard 
+        plassering av fonter i <application>Fontconfig</application> er:
       </para>
 
       <itemizedlist spacing="compact">
@@ -185,21 +185,21 @@ ldconfig</userinput></screen>
         </listitem>
         <listitem>
           <para>
-            ~/.fonts <emphasis>(this is now deprecated, but for the moment
-            it still works)</emphasis>
+            ~/.fonts <emphasis>(denne er nå utdatert, men for 
+            øyeblikket fungerer den fortsatt)</emphasis>
           </para>
         </listitem>
       </itemizedlist>
 
       <para>
-        <application>Fontconfig</application> also ships many example
-        configuration files in the
+        <application>Fontconfig</application> sender også mange eksempler 
+        på konfigurasjonsfiler i
         <filename class="directory">/usr/share/fontconfig/conf.avail</filename>
-        directory. Symlinking specific files to
+        mappen. Symbolkoble spesifikke filer til
         <filename class="directory">/etc/fonts/conf.d</filename>
-        will enable them. The default setup is generally good enough for
-        most users. See <filename>/etc/fonts/conf.d/README</filename>
-        for a description of the configuration files.
+        vil aktivere dem. Standardoppsettet er vanligvis godt nok for de 
+        fleste brukere. Se <filename>/etc/fonts/conf.d/README</filename>
+        for en beskrivelse av konfigurasjonsfilene.
       </para>
 
       <indexterm zone="fontconfig fontconfig-config">
@@ -211,8 +211,8 @@ ldconfig</userinput></screen>
       </indexterm>
 
       <para>
-        More information about configuring <application>Fontconfig</application>
-        can be found in the user's manual in <ulink
+        Mer informasjon om konfigurering av <application>Fontconfig</application>
+        finnes i brukerhåndboken i <ulink
         url="file:///usr/share/doc/fontconfig-&fontconfig-version;/fontconfig-user.html"/>.
       </para>
 
@@ -221,17 +221,17 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           fc-cache, fc-cat, fc-conflist, fc-list, fc-match, fc-pattern,
-          fc-query, fc-scan, and fc-validate
+          fc-query, fc-scan, og fc-validate
         </seg>
         <seg>
           libfontconfig
@@ -240,14 +240,14 @@ ldconfig</userinput></screen>
           /etc/fonts,
           /usr/include/fontconfig,
           /usr/share/fontconfig,
-          /usr/share/xml/fontconfig, and
+          /usr/share/xml/fontconfig, og
           /var/cache/fontconfig
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -255,7 +255,7 @@ ldconfig</userinput></screen>
         <term><command>fc-cache</command></term>
         <listitem>
           <para>
-            is used to create font information caches
+            brukes til å lage fontinformasjonsbuffere
           </para>
           <indexterm zone="fontconfig fc-cache">
             <primary sortas="b-fc-cache">fc-cache</primary>
@@ -267,7 +267,7 @@ ldconfig</userinput></screen>
         <term><command>fc-cat</command></term>
         <listitem>
           <para>
-            is used to read font information caches
+            brukes til å lese fontinformasjonsbuffere
           </para>
           <indexterm zone="fontconfig fc-cat">
             <primary sortas="b-fc-cat">fc-cat</primary>
@@ -279,7 +279,7 @@ ldconfig</userinput></screen>
         <term><command>fc-conflist</command></term>
         <listitem>
           <para>
-            shows the ruleset files' information on the system
+            viser informasjonen om regelsettfilene på systemet
           </para>
           <indexterm zone="fontconfig fc-conflist">
             <primary sortas="b-fc-conflist">fc-conflist</primary>
@@ -291,7 +291,7 @@ ldconfig</userinput></screen>
         <term><command>fc-list</command></term>
         <listitem>
           <para>
-            is used to create font lists
+            brukes til å lage fontlister
           </para>
           <indexterm zone="fontconfig fc-list">
             <primary sortas="b-fc-list">fc-list</primary>
@@ -303,8 +303,8 @@ ldconfig</userinput></screen>
         <term><command>fc-match</command></term>
         <listitem>
           <para>
-            is used to match available fonts, or find fonts that match
-            a given pattern
+            brukes til å finne tilgjengelige fonter, eller fonter som samsvarer med et 
+            gitt mønster
           </para>
           <indexterm zone="fontconfig fc-match">
             <primary sortas="b-fc-match">fc-match</primary>
@@ -316,8 +316,8 @@ ldconfig</userinput></screen>
         <term><command>fc-pattern</command></term>
         <listitem>
           <para>
-            is used to parse pattern (empty pattern by default) and show
-            the parsed result
+            brukes til å analysere mønster (tomt mønster som standard) og vise 
+            det analyserte resultatet
           </para>
           <indexterm zone="fontconfig fc-pattern">
             <primary sortas="b-fc-pattern">fc-pattern</primary>
@@ -329,7 +329,7 @@ ldconfig</userinput></screen>
         <term><command>fc-query</command></term>
         <listitem>
           <para>
-            is used to query fonts files and print resulting patterns
+            brukes til å spørre fontfiler og skrive ut resulterende mønstre
           </para>
           <indexterm zone="fontconfig fc-query">
             <primary sortas="b-fc-query">fc-query</primary>
@@ -341,8 +341,8 @@ ldconfig</userinput></screen>
         <term><command>fc-scan</command></term>
         <listitem>
           <para>
-            is used to scan font files and directories, and print resulting
-            patterns
+            brukes til å skanne fontfiler og mapper, og skrive ut resulterende 
+            mønstre
           </para>
           <indexterm zone="fontconfig fc-scan">
             <primary sortas="b-fc-scan">fc-scan</primary>
@@ -354,7 +354,7 @@ ldconfig</userinput></screen>
         <term><command>fc-validate</command></term>
         <listitem>
           <para>
-            is used to validate font files
+            brukes til å validere fontfiler
           </para>
           <indexterm zone="fontconfig fc-validate">
             <primary sortas="b-fc-validate">fc-validate</primary>
@@ -366,9 +366,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libfontconfig</filename></term>
         <listitem>
           <para>
-            contains functions used by the <application>Fontconfig</application>
-            programs and also by other programs to configure or customize font
-            access
+            inneholder funksjoner som brukes av <application>Fontconfig</application>
+            programmer og også av andre programmer for å konfigurere eller 
+            tilpasse skrifttype tilgang
           </para>
           <indexterm zone="fontconfig libfontconfig">
             <primary sortas="c-libfontconfig">libfontconfig</primary>

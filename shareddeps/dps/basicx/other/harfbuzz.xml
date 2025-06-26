@@ -19,11 +19,11 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to HarfBuzz</title>
+    <title>Introduksjon til HarfBuzz</title>
 
     <para>
-      The <application>HarfBuzz</application> package contains an OpenType text
-      shaping engine.
+      <application>HarfBuzz</application> Pakken inneholder en OpenType 
+      tekstformingsmotor.
     </para>
 
     &long-build-time;
@@ -31,35 +31,35 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&harfbuzz-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&harfbuzz-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&harfbuzz-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&harfbuzz-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
     
-    <bridgehead renderas="sect3">HarfBuzz Dependencies</bridgehead>
+    <bridgehead renderas="sect3">HarfBuzz Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="glib2"/> (required for Pango; GObject Introspection
-      required for building GNOME),
+      <xref linkend="glib2"/> (påkrevd for Pango; GObject Introspection
+      påkrevd for bygging av GNOME),
       <xref linkend="icu"/>,
-      <xref role="first" linkend="freetype2-pass1"/>, and
+      <xref role="first" linkend="freetype2-pass1"/>, og
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of HarfBuzz</title>
+    <title>Installasjon av HarfBuzz</title>
 
     <para>
-      Install <application>HarfBuzz</application> by running the following
-      commands:
+      Installer <application>HarfBuzz</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -78,7 +78,7 @@ ninja</userinput></screen>
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -86,11 +86,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of HarfBuzz</title>
+    <title>lib32 Installasjon av HarfBuzz</title>
 
     <para>
-      Install lib32-<application>HarfBuzz</application> by running the following
-      commands:
+      Installer lib32-<application>HarfBuzz</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -106,7 +106,7 @@ meson setup ..              \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -117,78 +117,78 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D cairo=disabled</parameter>: This switch forces this package
-      to not link against <application>Cairo</application> for the lib32 build
-      as it will mistakenly believe that lib32-<application>Cairo</application>
-      is installed if the 64-bit version is installed.
+      <parameter>-D cairo=disabled</parameter>: Denne bryteren tvinger denne pakken 
+      til ikke å lenke mot <application>Cairo</application> for lib32 bygget,
+      ettersom den feilaktig vil tro at lib32-<application>Cairo</application>
+      er installert hvis 64-bits sversjonen er installert.
     </para>
 
     <para>
-      <parameter>-D graphite2=disabled</parameter>: This switch disables
-      <application>Graphite2</application> support, which isn't in GLFS.
+      <parameter>-D graphite2=disabled</parameter>: Denne bryteren deaktiverer
+      <application>Graphite2</application> støtte, som ikke er i GLFS.
     </para>
 
     <para>
-      <parameter>-D tests=disabled</parameter>: This switch disables building
-      tests.
+      <parameter>-D tests=disabled</parameter>: Denne bryteren deaktiverer bygging
+      av tester.
     </para>
 
 <!--
     <para>
-      <parameter>-Dbenchmark=disabled</parameter>: This switch disables
-      downloading and building the <application>google-benchmark</application>
-      subproject, which requires <xref linkend="git"/>, and is of no
-      use for non developers.
+      <parameter>-Dbenchmark=disabled</parameter>: Denne bryteren deaktiverer 
+      nedlasting og bygging av <application>google-benchmark</application>
+      delprosjekt, som krever <xref linkend="git"/>, og er ikke nyttig 
+      for ikke-utviklere.
     </para>
 -->
 <!--
     <para>
-      <option>-Ddocs=disabled</option>: If <xref linkend="gtk-doc"/> is
-      installed, the documentation is built and installed. This switch
-      prevents that.
+      <option>-Ddocs=disabled</option>: Hvis <xref linkend="gtk-doc"/> er
+      installert, blir dokumentasjonen bygget og installert. Denne bryteren 
+      forhindrer det.
     </para>
 -->
     
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           hb-info,
           hb-ot-shape-closure,
-          hb-shape, and
+          hb-shape, og
           hb-subset
         </seg>
         <seg>
           libharfbuzz,
           libharfbuzz-gobject,
-          libharfbuzz-icu, and
+          libharfbuzz-icu, og
           libharfbuzz-subset
         </seg>
         <seg>
           /usr/include/harbuzz,
-          /usr/lib/cmake/harfbuzz, and
-          /usr/share/gtk-doc/html/harfbuzz (optional)
+          /usr/lib/cmake/harfbuzz, og
+          /usr/share/gtk-doc/html/harfbuzz (valgfri)
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -196,8 +196,8 @@ ldconfig</userinput></screen>
        <term><command>hb-info</command></term>
        <listitem>
          <para>
-           is used for gathering information about fonts installed on the
-           system
+           brukes til å samle informasjon om fonter som er installert på 
+           systemet
          </para>
          <indexterm zone="harfbuzz hb-info">
            <primary sortas="b-hb-info">hb-info</primary>
@@ -209,10 +209,10 @@ ldconfig</userinput></screen>
         <term><command>hb-ot-shape-closure</command></term>
         <listitem>
           <para>
-            gives the set of characters contained in a string, represented as
-            single characters and/or single character names. Example:
+            gir settet med tegn som finnes i en streng, representert som 
+            enkelttegn og/eller navn på enkelttegn. Eksempel:
             <command>hb-ot-shape-closure
-              /usr/share/fonts/dejavu/DejaVuSans.ttf "Hello World."</command>
+              /usr/share/fonts/dejavu/DejaVuSans.ttf "Hallo Verden."</command>
           </para>
           <indexterm zone="harfbuzz hb-ot-shape-closure">
             <primary sortas="b-hb-ot-shape-closure">hb-ot-shape-closure</primary>
@@ -224,7 +224,7 @@ ldconfig</userinput></screen>
         <term><command>hb-shape</command></term>
         <listitem>
           <para>
-            is used for the conversion of text strings into positioned glyphs
+            brukes til å konvertere tekststrenger til posisjonerte tegn
           </para>
           <indexterm zone="harfbuzz hb-shape">
             <primary sortas="b-hb-shape">hb-shape</primary>
@@ -236,7 +236,7 @@ ldconfig</userinput></screen>
         <term><command>hb-subset</command></term>
         <listitem>
           <para>
-            is used to create subsets of fonts, and display text using them
+            brukes til å lage delsett av fonter og vise tekst ved hjelp av dem
           </para>
           <indexterm zone="harfbuzz hb-subset">
             <primary sortas="b-hb-subset">hb-subset</primary>
@@ -248,12 +248,12 @@ ldconfig</userinput></screen>
         <term><command>hb-view</command></term>
         <listitem>
           <para>
-            displays a graphical view of a string shape using a
-            particular font as a set of glyphs. The output format is
-            automatically defined by the file extension, the supported ones
-            being ansi/png/svg/pdf/ps/eps. For example:
+            viser en grafisk visning av en strengform ved bruk av en 
+            bestemt skrifttype som et sett med tegn. Utdataformatet er 
+            automatisk definert av filtypen, og de støttede formatene 
+            er ansi/png/svg/pdf/ps/eps. For eksempel:
             <command>hb-view --output-file=hello.png
-              /usr/share/fonts/dejavu/DejaVuSans.ttf "Hello World."</command>
+              /usr/share/fonts/dejavu/DejaVuSans.ttf "Hallo Verden."</command>
           </para>
           <indexterm zone="harfbuzz hb-view">
             <primary sortas="b-hb-view">hb-view</primary>
@@ -265,7 +265,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libharfbuzz</filename></term>
         <listitem>
           <para>
-            is the HarfBuzz text shaping library
+            er HarfBuzz tekstformingsbibliotek
           </para>
           <indexterm zone="harfbuzz libharfbuzz">
             <primary sortas="c-libharfbuzz">libharfbuzz</primary>
@@ -277,7 +277,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libharfbuzz-gobject</filename></term>
         <listitem>
           <para>
-            provides GObject integration for the HarfBuzz text shaping library
+            gir GObject integrasjon for HarfBuzz tekstformingsbiblioteket
           </para>
           <indexterm zone="harfbuzz libharfbuzz-gobject">
             <primary sortas="c-libharfbuzz-gobject">libharfbuzz-gobject</primary>
@@ -289,7 +289,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libharfbuzz-icu</filename></term>
         <listitem>
           <para>
-            provides ICU integration for the HarfBuzz text shaping library
+            gir ICU integrasjon for HarfBuzz tekstformingsbiblioteket
           </para>
           <indexterm zone="harfbuzz libharfbuzz-icu">
             <primary sortas="c-libharfbuzz-icu">libharfbuzz-icu</primary>
@@ -301,8 +301,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libharfbuzz-subset</filename></term>
         <listitem>
           <para>
-            provides API functions for performing subsetting operations on font
-            files
+            tilbyr API funksjoner for å utføre delsettingsoperasjoner på 
+            fontfiler
           </para>
           <indexterm zone="harfbuzz libharfbuzz-subset">
             <primary sortas="c-libharfbuzz-subset">libharfbuzz-subset</primary>

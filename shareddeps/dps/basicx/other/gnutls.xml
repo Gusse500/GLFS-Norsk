@@ -18,13 +18,13 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to GnuTLS</title>
+    <title>Introduksjon til GnuTLS</title>
 
     <para>
-      The <application>GnuTLS</application> package contains libraries and
-      userspace tools which provide a secure layer over a reliable transport
-      layer. Currently the <application>GnuTLS</application> library implements
-      the proposed standards by the IETF's TLS working group. Quoting from the
+      <application>GnuTLS</application> Pakken inneholder biblioteker og 
+      brukerområdeverktøy som gir et sikkert lag over pålitelige transportlag. 
+      For øyeblikket <application>GnuTLS</application> biblioteket implementerer 
+      de foreslåtte standardene fra IETFs TLS arbeidsgruppe. Siterer fra
       <ulink url="https://datatracker.ietf.org/doc/rfc8446/">
         TLS 1.3 protocol specification
       </ulink>:
@@ -32,20 +32,20 @@
 
     <para>
       <quote>
-        TLS allows client/server applications to communicate over the Internet
-        in a way that is designed to prevent eavesdropping, tampering, and
-        message forgery.
+        TLS lar klient/server applikasjoner kommunisere over Internett 
+        på en måte som er utformet for å forhindre avlytting, manipulering og 
+        meldingsforfalskning.
       </quote>
     </para>
 
     <para>
-      <application>GnuTLS</application> provides support for TLS 1.3, TLS 1.2,
-      TLS 1.1, TLS 1.0, and (optionally) SSL 3.0 protocols. It also supports
-      TLS extensions, including server name and max record size. Additionally,
-      the library supports authentication using the SRP protocol, X.509
-      certificates, and OpenPGP keys, along with support for the TLS
-      Pre-Shared-Keys (PSK) extension, the Inner Application (TLS/IA)
-      extension, and X.509 and OpenPGP certificate handling.
+      <application>GnuTLS</application> støtter TLS 1.3, TLS 1.2, 
+      TLS 1.1, TLS 1.0 og (valgfritt) SSL 3.0-protokoller. Den støtter også 
+      TLS utvidelser, inkludert servernavn og maksimal poststørrelse. I tillegg 
+      støtter biblioteket autentisering ved hjelp av SRP protokollen, X.509 
+      sertifikater og OpenPGP-nøkler, samt støtte for TLS 
+      Pre-Shared-Keys (PSK) utvidelsen, Inner Application (TLS/IA) 
+      utvidelsen og håndtering av X.509 og OpenPGP sertifikater..
     </para>
 
     &long-build-time;
@@ -53,58 +53,58 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&gnutls-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&gnutls-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&gnutls-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&gnutls-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">GnuTLS Dependencies</bridgehead>
+    <bridgehead renderas="sect3">GnuTLS Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="nettle"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="make-ca"/>,
       <xref linkend="libunistring"/>,
-      <xref linkend="libtasn1"/>, and
+      <xref linkend="libtasn1"/>, og
       <xref linkend="p11-kit"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&gnu-http;/autogen/">autogen</ulink>,
-      <ulink url="https://cmocka.org/">cmocka</ulink> and
+      <ulink url="https://cmocka.org/">cmocka</ulink> og
       <ulink url="https://ftp.debian.org/debian/pool/main/d/datefudge/">datefudge</ulink>
-      (used during the test suite if the DANE library is built),
+      (brukes under testpakken hvis DANE biblioteket er bygget),
       <ulink url="https://github.com/smuellerDD/leancrypto">leancrypto</ulink>,
-      <ulink url="https://github.com/open-quantum-safe/liboqs">liboqs</ulink>, and
-      <ulink url="&sourceforge-dl;/trousers/">Trousers</ulink> (Trusted Platform Module support)
+      <ulink url="https://github.com/open-quantum-safe/liboqs">liboqs</ulink>, og
+      <ulink url="&sourceforge-dl;/trousers/">Trousers</ulink> (Trusted Platform Modul støtte)
     </para>
 
     <note><para>
  <!-- Note that if you do not install <xref linkend="libtasn1"/>, an older
        3.8.0 includes minitasn1 4.19 which is currnet at the moment. ken -->
-      Note that if you do not install <xref linkend="libtasn1"/>, a
-      version shipped in the <application>GnuTLS</application> tarball will be
-      used instead.
+      Merk at hvis du ikke installerer <xref linkend="libtasn1"/>, en 
+      versjon sendt i <application>GnuTLS</application> tarballen vil bli
+      brukt i stedet.
     </para></note>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GnuTLS</title>
+    <title>Installasjon av GnuTLS</title>
 
     <para>
-      Install <application>GnuTLS</application> by running the
-      following commands:
+      Installer <application>GnuTLS</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr \
@@ -121,11 +121,11 @@ make</userinput></screen>
      install time. -->
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -133,82 +133,82 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--with-default-trust-store-pkcs11="pkcs11:"</parameter>: This
-      switch tells gnutls to use the PKCS #11 trust store as the default trust.
-      Omit this switch if <xref linkend="p11-kit"/> is not installed.
+      <parameter>--with-default-trust-store-pkcs11="pkcs11:"</parameter>: Denne 
+      bryteren forteller gnutls at den skal bruke PKCS #11 tillitslageret som standard tillit. 
+      Utelat denne bryteren hvis <xref linkend="p11-kit"/> ikke er installert.
     </para>
     <!-- see above
     <para>
-      <parameter>- -disable-rpath</parameter>: This switch prevents building
-      GnuTLS utilities and tests with hardcoded runtime library search path.
-      Hardcoded rpath is unneeded for BLFS, and it causes test failures if
-      an old version of GnuTLS is installed.
+      <parameter>- -disable-rpath</parameter>: Denne bryteren forhindrer bygging 
+      av GnuTLS verktøy og tester med hardkodet søkesti for kjøretids biblioteket. 
+      Hardkodet rpath er unødvendig for BLFS, og den forårsaker testfeil hvis 
+      en gammel versjon av GnuTLS er installert.
     </para>
     -->
     <para>
       <option>--with-default-trust-store-file=/etc/pki/tls/certs/ca-bundle.crt</option>:
-      This switch tells <command>configure</command> where to find the
-      legacy CA certificate bundle and to use it instead of PKCS #11 module
-      by default. Use this if <xref linkend="p11-kit"/> is not installed.
+      Denne bryteren forteller <command>configure</command> hvor du finner den 
+      eldre CA sertifikatpakken og hvordan du bruker den i stedet for PKCS #11 modulen 
+      som standard. Bruk dette hvis <xref linkend="p11-kit"/> ikke er installert.
     </para>
 
     <para>
       <option>--enable-openssl-compatibility</option>:
-      Use this switch if you wish to build the OpenSSL compatibility library.
+      Bruk denne bryteren hvis du ønsker å bygge OpenSSL kompatibilitetsbiblioteket.
     </para>
 
     <para>
-      <option>--without-p11-kit</option>: Use this switch if you have not
-      installed <xref linkend="p11-kit"/>.
+      <option>--without-p11-kit</option>: Bruk denne bryteren hvis du ikke har 
+      installert <xref linkend="p11-kit"/>.
     </para>
 
     <para>
-      <option>--with-included-unistring</option>: This switch uses the bundled
-      version of libunistring, instead of the system one. Use this switch if
-      you have not installed <xref linkend="libunistring"/>.
+      <option>--with-included-unistring</option>: Denne bryteren bruker den medfølgende 
+      versjonen av libunistring, i stedet for systemversjonen. Bruk denne bryteren hvis 
+      du ikke har installert <xref linkend="libunistring"/>.
     </para>
 
     <para>
-      <option>--disable-dsa</option>: This option completely disables DSA
-      algorithm support.
+      <option>--disable-dsa</option>: Dette alternativet deaktiverer DSA 
+      algoritmestøtte fullstendig.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           certtool, danetool, gnutls-cli, gnutls-cli-debug,
-          gnutls-serv, ocsptool, p11tool, psktool, and srptool
+          gnutls-serv, ocsptool, p11tool, psktool, og srptool
         </seg>
         <seg>
           libgnutls, libgnutls-dane, libgnutlsxx,
-          libgnutls-openssl (optional), and
+          libgnutls-openssl (valgfri), og
           /usr/lib/guile/3.0/extensions/guile-gnutls-v-2
         </seg>
         <seg>
           /usr/include/gnutls,
           /usr/lib/guile/3.0/site-ccache/gnutls,
-          /usr/share/guile/site/3.0/gnutls, and
+          /usr/share/guile/site/3.0/gnutls, og
           /usr/share/doc/gnutls-&gnutls-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -216,8 +216,8 @@ make</userinput></screen>
         <term><command>certtool</command></term>
         <listitem>
           <para>
-            is used to generate X.509 certificates, certificate requests,
-            and private keys
+            brukes til å generere X.509 sertifikater, sertifikatforespørsler 
+            og private nøkler
           </para>
           <indexterm zone="gnutls certtool">
             <primary sortas="b-certtool">certtool</primary>
@@ -229,8 +229,8 @@ make</userinput></screen>
         <term><command>danetool</command></term>
         <listitem>
           <para>
-            is a tool used to generate and check DNS resource records
-            for the DANE protocol
+            er et verktøy som brukes til å generere og sjekke DNS ressursposter 
+            for DANE protokollen
           </para>
           <indexterm zone="gnutls danetool">
             <primary sortas="b-danetool">danetool</primary>
@@ -242,8 +242,8 @@ make</userinput></screen>
         <term><command>gnutls-cli</command></term>
         <listitem>
           <para>
-            is a simple client program to set up a TLS connection to some
-            other computer
+            er et enkelt klientprogram for å sette opp en TLS tilkobling til en 
+            annen datamaskin
           </para>
           <indexterm zone="gnutls gnutls-cli">
             <primary sortas="b-gnutls-cli">gnutls-cli</primary>
@@ -255,8 +255,8 @@ make</userinput></screen>
         <term><command>gnutls-cli-debug</command></term>
         <listitem>
           <para>
-            is a simple client program to set up a TLS connection to some
-            other computer and produces very verbose progress results
+            er et enkelt klientprogram for å sette opp en TLS tilkobling til en 
+            annen datamaskin og produserer svært detaljerte fremdriftsresultater
           </para>
           <indexterm zone="gnutls gnutls-cli-debug">
             <primary sortas="b-gnutls-cli-debug">gnutls-cli-debug</primary>
@@ -268,8 +268,8 @@ make</userinput></screen>
         <term><command>gnutls-serv</command></term>
         <listitem>
           <para>
-            is a simple server program that listens to incoming TLS
-            connections
+            er et enkelt serverprogram som lytter til innkommende TLS 
+            tilkoblinger
           </para>
           <indexterm zone="gnutls gnutls-serv">
             <primary sortas="b-gnutls-serv">gnutls-serv</primary>
@@ -281,8 +281,8 @@ make</userinput></screen>
         <term><command>ocsptool</command></term>
         <listitem>
           <para>
-            is a program that can parse and print information about OCSP
-            requests/responses, generate requests and verify responses
+            er et program som kan analysere og skrive ut informasjon om OCSP 
+            forespørsler/svar, generere forespørsler og verifisere svar
           </para>
           <indexterm zone="gnutls ocsptool">
             <primary sortas="b-ocsptool">ocsptool</primary>
@@ -294,8 +294,8 @@ make</userinput></screen>
         <term><command>p11tool</command></term>
         <listitem>
           <para>
-            is a program that allows handling data from PKCS #11 smart cards
-            and security modules
+            er et program som tillater håndtering av data fra PKCS #11 smartkort 
+            og sikkerhetsmoduler
           </para>
           <indexterm zone="gnutls p11tool">
             <primary sortas="b-p11tool">p11tool</primary>
@@ -307,7 +307,7 @@ make</userinput></screen>
         <term><command>psktool</command></term>
         <listitem>
           <para>
-            is a simple program that generates random keys for use with TLS-PSK
+            er et enkelt program som genererer tilfeldige nøkler for bruk med TLS-PSK
           </para>
           <indexterm zone="gnutls psktool">
             <primary sortas="b-psktool">psktool</primary>
@@ -319,8 +319,8 @@ make</userinput></screen>
         <term><command>srptool</command></term>
         <listitem>
           <para>
-            is a simple program that emulates the programs in the Stanford
-            SRP (Secure Remote Password) libraries using GnuTLS
+            er et enkelt program som emulerer programmene i Stanford 
+            SRP bibliotekene (Secure Remote Password) ved hjelp av GnuTLS
           </para>
           <indexterm zone="gnutls srptool">
             <primary sortas="b-srptool">srptool</primary>
@@ -332,7 +332,7 @@ make</userinput></screen>
         <term><filename class="libraryfile">libgnutls</filename></term>
         <listitem>
           <para>
-            contains the core API functions and X.509 certificate API functions
+            inneholder kjerne API funksjonene og X.509 sertifikat API funksjonene
           </para>
           <indexterm zone="gnutls libgnutls">
             <primary sortas="c-libgnutls">libgnutls</primary>

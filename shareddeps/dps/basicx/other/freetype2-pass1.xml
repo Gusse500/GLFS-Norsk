@@ -22,53 +22,53 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to FreeType2 - Pass 1</title>
+    <title>Introduksjon til to FreeType2 - Pass 1</title>
 
     <para>
-      The <application>FreeType2</application> package contains
-      a library which allows applications to properly render
-      <application>TrueType</application> fonts.
+      <application>FreeType2</application> Pakken inneholder 
+      et bibliotek som lar applikasjoner gjengi 
+      <application>TrueType</application> fonter på riktig måte.
     </para>
 
     <para>
-      This package has a circular dependency on <xref
-      linkend="harfbuzz"/>, so this package must be installed first,
-      <application>harfBuzz</application> second, then lastly this
-      package again. This is the first pass.
+      Denne pakken har en sirkulær avhengighet av <xref
+      linkend="harfbuzz"/>, så denne pakken må installeres først,
+      <application>harfBuzz</application> for det andre, så til slutt denne 
+      pakken igjen. Dette er første omgang.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&freetype2-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&freetype2-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&freetype2-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&freetype2-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
-      <title>Additional Documentation</title>
+      <title>Tilleggsdokumentasjon</title>
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&freetype2-doc-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&freetype2-doc-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">FreeType2 Dependencies</bridgehead>
+    <bridgehead renderas="sect3">FreeType2 avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="libpng"/> and
+      <xref linkend="libpng"/> og
       <xref linkend="which"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional (for documentation)</bridgehead>
+    <bridgehead renderas="sect4">Valgfri (for dokumentasjon)</bridgehead>
     <para role="optional">
       <ulink url="https://pypi.org/project/docwriter/">docwriter</ulink>
     </para>
@@ -76,18 +76,18 @@
   </sect2>
  
   <sect2 role="installation">
-    <title>Installation of FreeType2 - Pass 1</title>
+    <title>Installasjon av FreeType2 - Pass 1</title>
 
     <para>
-      If you downloaded the additional documentation, unpack it into the
-      source tree using the following command:
+      Hvis du lastet ned tilleggsdokumentasjonen, pakker du den ut i 
+      kildetreet ved å bruke følgende kommando.:
     </para>
 
 <screen><userinput>tar -xf ../freetype-doc-&freetype2-doc-version;.tar.xz --strip-components=2 -C docs</userinput></screen>
 
     <para>
-      Install <application>FreeType2</application> by running the following
-      commands:
+      Installer <application>FreeType2</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>sed -ri "s:.*(AUX_MODULES.*valid):\1:" modules.cfg &amp;&amp;
@@ -99,17 +99,17 @@ sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      If you downloaded the optional documentation, install it as the
+      Hvis du lastet ned den valgfrie dokumentasjonen, installer den som
       <systemitem class="username">root</systemitem> user:
     </para>
 
@@ -119,11 +119,11 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of FreeType2 - Pass 1</title>
+    <title>lib32 Installasjon av FreeType2 - Pass 1</title>
 
     <para>
-      Install lib32-<application>FreeType2</application> by running the following
-      commands:
+      Installer lib32-<application>FreeType2</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -138,7 +138,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -149,29 +149,29 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <command>sed -ri ...</command>: First command enables GX/AAT and OpenType
-      table validation and second command enables Subpixel Rendering. Note that
-      Subpixel Rendering may have patent issues.  Be sure to read the
-      <literal>'Other patent issues'</literal> part of <ulink
-      url="https://freetype.org/patents.html"/> before enabling this option.
+      <command>sed -ri ...</command>: Den første kommandoen aktiverer GX/AAT og OpenType 
+      tabellvalidering, og den andre kommandoen aktiverer gjengivelse av Subpixel. 
+      Merk at gjengivelse av Subpixel kan ha patentproblemer. Sørg for å lese
+      <literal>'Other patent issues'</literal> delen av <ulink
+      url="https://freetype.org/patents.html"/> før du aktiverer dette alternativet.
     </para>
 
     <para>
-      <parameter>--enable-freetype-config</parameter>: This switch
-      ensure that the man page for freetype-config is installed.
+      <parameter>--enable-freetype-config</parameter>: Denne bryteren 
+      sørger for at manualsiden for freetype-config er installert.
     </para>
 
     <para>
-      <option>--without-harfbuzz</option>: If
-      <application>harfbuzz</application> is installed prior to
-      <application>freetype</application> without
-      <application>freetype</application> support, use this switch to avoid a
-      build failure.
+      <option>--without-harfbuzz</option>: Hvis
+      <application>harfbuzz</application> er installert før
+      <application>freetype</application> uten
+      <application>freetype</application> støtte, bruk denne bryteren for å 
+      unngå en byggefeil.
     </para>
 
     &static-libraries;
@@ -179,21 +179,21 @@ ldconfig</userinput></screen>
     <!-- No longer valid with 2.10.1, /usr/bin/freetype-config is installed
          by the 'make install' command.
     <para>
-      <command>cp builds/unix/freetype-config /usr/bin</command>: Manually
-      place the freetype configureation program needed by other programs when
-      using the freetype library.
+      <command>cp builds/unix/freetype-config /usr/bin</command>: Manuelt 
+      plasser freetype-konfigurasjonsprogrammet som trengs av andre programmer 
+      når freetype biblioteket brukes.
     </para>
     -->
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -203,14 +203,14 @@ ldconfig</userinput></screen>
           libfreetype
         </seg>
         <seg>
-          /usr/include/freetype2 and
+          /usr/include/freetype2 og
           /usr/share/doc/freetype-&freetype2-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -218,8 +218,8 @@ ldconfig</userinput></screen>
         <term><command>freetype-config</command></term>
         <listitem>
           <para>
-            is used to get <application>FreeType</application> compilation
-            and linking information
+            brukes til å få <application>FreeType</application> kompilering 
+            og lenkeinformasjon
           </para>
           <indexterm zone="freetype2-pass1 freetype-config-pass1">
             <primary sortas="b-freetype-config-pass1">freetype2-config</primary>
@@ -231,8 +231,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libfreetype</filename></term>
         <listitem>
           <para>
-            contains functions for rendering various font types, such
-            as TrueType and Type1
+            inneholder funksjoner for gjengivelse av ulike skrifttyper, som 
+            for eksempel TrueType og Type1
           </para>
           <indexterm zone="freetype2-pass1 libfreetype-pass1">
             <primary sortas="c-libfreetype-pass1">libfreetype</primary>
