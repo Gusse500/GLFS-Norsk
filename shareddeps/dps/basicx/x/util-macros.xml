@@ -19,54 +19,54 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to util-macros</title>
+    <title>Introduksjon til util-macros</title>
 
     <para>
-      The <application>util-macros</application> package contains the
-      <application>m4</application> macros used by all of the
-      <application>Xorg</application> packages.
+      <application>util-macros</application> pakken inneholder
+      <application>m4</application> makroer som brukes av alle
+      <application>Xorg</application> pakkene.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&util-macros-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&util-macros-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&util-macros-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&util-macros-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">util-macros Dependencies</bridgehead>
+    <bridgehead renderas="sect3">util-macros Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="xorg-env"/> (should be set for the following instructions
-      to work)
+      <xref linkend="xorg-env"/> (bør være satt for at følgende instruksjoner 
+      skal fungere)
     </para>
 
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of util-macros</title>
+    <title>Installasjon av util-macros</title>
 
     <para>
-      Install <application>util-macros</application> by running the following
-      commands:
+      Installer <application>util-macros</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure $XORG_CONFIG</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -74,29 +74,29 @@
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          /usr/share/pkgconfig and
+          /usr/share/pkgconfig og
           /usr/share/util-macros
         </seg>
       </seglistitem>

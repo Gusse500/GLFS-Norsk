@@ -5,11 +5,11 @@
   %general-entities;
 ]>
 
-<sect1 id="basic-xorg-7" xreflabel="Basic Xorg-&xorg-version; Software Introduction">
+<sect1 id="basic-xorg-7" xreflabel="Basic Xorg-&xorg-version; Programvareintroduksjon">
   <?dbhtml filename="basic-xorg-7.html"?>
 
 
-  <title>Basic Xorg-&xorg-version; Software Introduction</title>
+  <title>Basic Xorg-&xorg-version; Programvareintroduksjon</title>
 
   <indexterm zone="basic-xorg-7">
     <primary sortas="a-basic-xorg-7">Basic Xorg</primary>
@@ -17,110 +17,110 @@
 
 
   <para>
-    <application>Xorg</application> is a freely redistributable,
-    open-source implementation of the <application>X</application> Window
-    System. This system provides a client/server interface between display
-    hardware (the mouse, keyboard, and video displays) and the desktop
-    environment, while also providing both the windowing infrastructure and a
-    standardized application interface (API).
+    <application>Xorg</application> er en fritt omdistribuerbar, 
+    åpen kildekode implementering av <application>X</application> Vindussystem. 
+    Dette systemet tilbyr et klient/server-grensesnitt mellom skjermmaskinvare 
+    (mus, tastatur og videoskjermer) og skrivebordsmiljøet, 
+    samtidig som det sørger for både vindusinfrastruktur og en 
+    standardisert applikasjonsgrensesnitt (API).
   </para>
 
   <para>
-    This section however doesn't install <xref linkend="xorg-server"/>, but
-    instead installs basic software that a lot of other software depend on,
-    including the <application>Xorg</application> server, compositors, window
-    managers or desktop environments, and <xref linkend="xwayland"/> &mdash; a
-    necessary part of Wayland if you want to use
-    <application>Xorg</application>-only software like <xref linkend="steam"/>.
-    <xref linkend="wine"/> has an experimental
-    <application>Wayland</application> mode but it is still a good idea to
-    install <xref linkend="xwayland"/> for now.
+    Denne delen installerer imidlertid ikke <xref linkend="xorg-server"/>, men 
+    installerer i stedet grunnleggende programvare som mye annen programvare er 
+    avhengig av, inkludert <application>Xorg</application> server, kompositorer, 
+    vindusbehandlere eller skrivebordsmiljøer, og <xref linkend="xwayland"/> &mdash; 
+    en nødvendig del av Wayland hvis du vil bruke
+    <application>Xorg</application>-bare programvare som <xref linkend="steam"/>.
+    <xref linkend="wine"/> har en eksperimentell
+    <application>Wayland</application> modus, men det er fortsatt en god idé å 
+    installere <xref linkend="xwayland"/> foreløpig.
   </para>
 
-  <bridgehead renderas="sect3">Xorg Download and Installation
-  Instructions</bridgehead>
+  <bridgehead renderas="sect3">Instruksjoner for Nedlasting og Installasjon av 
+  Xorg </bridgehead>
 
   <para>
-    Xorg-7.0 introduced a completely auto-tooled, modular build system.
-    With the new modular build system, it is no longer possible to download
-    the entire package in a single file. In fact, there will be well over 100
-    packages that need to be fetched from the download location. To assist
-    with such a large task, installing <xref linkend="wget"/> is strongly
-    recommended for downloading the needed files.  A complete
-    <application>wget</application> file list is provided for each page
-    that includes multiple packages.
+    Xorg-7.0 introduserte et fullstendig automatisk, modulært byggesystem. Med 
+    det nye modulære byggesystemet er det ikke lenger mulig å laste ned hele 
+    pakken i én fil. Faktisk vil det være godt over 100 pakker som må hentes fra 
+    nedlastingsstedet. For å hjelpe med en så stor oppgave, er installasjon 
+    av <xref linkend="wget"/> sterkt anbefalt 
+    for nedlasting av nødvendige filer. En komplett
+    <application>wget</application> filliste er gitt for hver side 
+    som inkluderer flere pakker.
   </para>
 
   <para>
-    Given the number of packages available, deciding which packages you
-    need to install for your particular setup may seem a bit overwhelming at
-    first.  Take a look at <ulink url=
-    "https://wiki.x.org/wiki/ModuleDescriptions">this page</ulink>
-    and <ulink url=
+    Gitt antallet tilgjengelige pakker, kan det virke litt overveldende å 
+    bestemme hvilke pakker du trenger å installere for ditt spesifikke 
+    oppsett i starten. Ta en titt på <ulink url=
+    "https://wiki.x.org/wiki/ModuleDescriptions">denne siden</ulink>
+    og <ulink url=
     "https://lists.x.org/archives/xorg-modular/2005-November/000801.html">
-    this thread</ulink>
-    to get an idea of what you will need.  If you are unsure, you should
-    install all packages at the cost of extra disk space.
+    denne tråden</ulink>
+    for å få en idé om hva du trenger. Hvis du er usikker, bør du 
+    installere alle pakkene på bekostning av ekstra diskplass.
   </para>
 
   <note>
     <para>
-      Even if you intend to download only the necessary packages, you
-      should download the wget file lists.  The list of files are ordered by
-      dependency, and the package versions listed in the files are known to
-      work well with each other. Further, the wget file lists contain comments
-      for specific packages that are deprecated or are not recommended to
-      install. Newer packages are likely intended for the
-      next release of <application>Xorg</application> and have already proved
-      to be incompatible with current versions of software installed in GLFS.
-      The installed size of <application>Xorg</application> can be reduced
-      considerably by installing only the packages that you will need and use,
-      however, the GLFS book cannot account for all dependencies and build
-      options for the individual <application>Xorg</application> packages.
-      The instructions assume that all packages have been built.
+      Selv om du bare har tenkt å laste ned de nødvendige pakkene, bør du laste 
+      ned wget fillistene. Listen over filer er sortert etter avhengighet, og 
+      pakkeversjonene som er oppført i filene er kjent for å fungere godt 
+      sammen. Videre inneholder wget fillistene kommentarer for spesifikke 
+      pakker som er utdaterte eller ikke anbefales å installere. Nyere pakker er 
+      sannsynligvis ment for neste utgivelse av 
+      <application>Xorg</application> og har allerede vist seg å være 
+      inkompatible med gjeldende versjoner av programvare installert i GLFS. 
+      Den installerte størrelsen på <application>Xorg</application> kan reduseres 
+      betraktelig ved å bare installere pakkene du trenger og bruker, 
+      men GLFS boken kan ikke ta hensyn til alle avhengigheter og bygge 
+      alternativer for de enkelte <application>Xorg</application> pakker. 
+      Instruksjonene forutsetter at alle pakker er bygget.
     </para>
   </note>
 
   <para>
-    Additionally, because of the large number of repetitive commands,
-    you are encouraged to partially automate the build. Instructions have been
-    given that utilize the
-    <ulink url="&blfs-svn;/postlfs/sudo.html">sudo</ulink> package.
-    It is recommended that you use the <parameter>:NOPASSWD</parameter>
-    configuration option for the user that will be building the xorg packages.
-    There are other accommodations in the off chance you didn't install it.
-    You can use the <command>su</command> utility, invoking <parameter>-c
-    </parameter>. This requires that you enter your password each time a
-    package needs to get installed. The last accommodation is allow you
-    to build and install each package as the <systemitem class="username">root
-    </systemitem> user. This is not recommended but is an option if you
-    don't want to install <application>sudo</application> and don't want
-    to type a password again and again.
+    I tillegg, på grunn av det store antallet repeterende kommandoer, 
+    oppfordres du til å delvis automatisere byggingen. Instruksjoner har blitt 
+    gitt som bruker
+    <ulink url="&blfs-svn;/postlfs/sudo.html">sudo</ulink> pakken.
+    Det anbefales at du bruker <parameter>:NOPASSWD</parameter>
+    konfigurasjonsalternativ for brukeren som skal bygge xorg pakkene. 
+    Det finnes andre løsninger i tilfelle du ikke har installert det. 
+    Du kan bruke <command>su</command> verktøyet, og bruke <parameter>-c
+    </parameter>. Dette krever at du skriver inn passordet ditt hver gang en 
+    pakke må installeres. Den siste løsningen er å bygge og installere 
+    hver pakke som <systemitem class="username">root
+    </systemitem> bruker. Dette anbefales ikke, men er et alternativ hvis du 
+    ikke vil installere <application>sudo</application> og ikke vil 
+    skrive inn et passord igjen og igjen.
   </para>
 
   <sect2 id="xorg-env" xreflabel="Xorg build environment">
-    <title>Setting up the Xorg Build Environment</title>
+    <title>Sette opp Xorg Byggemiljøet</title>
 
     <para>
-      Set the <envar>XORG_PREFIX</envar> variable for compatibility with BLFS
-      with the following command:
+      Sette <envar>XORG_PREFIX</envar> variabel for kompatibilitet med BLFS 
+      med følgende kommando:
     </para>
 
     <screen><userinput>export XORG_PREFIX="/usr"</userinput></screen>
 
     <note>
-      <para>The <envar>XORG_PREFIX</envar> variable will not be used in this
-      book, but it is a necessary variable to set if you intend to follow
-      certain BLFS instructions. If you aren't just copy and pasting BLFS
-      instructions, you may do without the variable but be sure to replace
-      the variable in the instructions with <filename>/usr</filename>.</para>
+      <para><envar>XORG_PREFIX</envar> variabelen vil ikke bli brukt i denne 
+      boken, men det er en nødvendig variabel å angi hvis du har tenkt å følge 
+      visse BLFS instruksjoner. Hvis du bare kopierer og limer BLFS 
+      instruksjoner, kan du klare deg uten variabelen, men sørg for å erstatte 
+      variabelen i instruksjonene med <filename>/usr</filename>.</para>
     </note>
 
     <para>
-      Throughout these instructions, you will use the following
-      <command>configure</command> switches for all of the packages. Create the
-      <envar>XORG_CONFIG</envar> variable to use for this parameter
-      substitution:
+      Gjennom disse instruksjonene vil du bruke følgende
+      <command>configure</command> brytere for alle pakkene. Opprett
+      <envar>XORG_CONFIG</envar> variabel som skal brukes for denne parameterens 
+      erstatning:
     </para>
 
 <screen><userinput>export XORG_CONFIG="--prefix=/usr --sysconfdir=/etc \
@@ -128,14 +128,14 @@
 
     <note>
       <para>
-        The instructions below depend on the files created in
+        Instruksjonene nedenfor avhenger av filene som er opprettet i
         <xref linkend="bash-profile"/>.
       </para>
     </note>
 
     <para>
-      Create an <filename>/etc/profile.d/xorg.sh</filename> configuration
-      file containing these variables as the &root; user:
+      Opprett en <filename>/etc/profile.d/xorg.sh</filename> konfigurasjonsfil 
+      som inneholder disse variablene som &root; bruker:
     </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/xorg.sh &lt;&lt; EOF
@@ -146,11 +146,11 @@ EOF
 chmod 644 /etc/profile.d/xorg.sh</userinput></screen>
 
     <para>
-      If you've installed <application>sudo</application>, ensure that
-      <envar>XORG_CONFIG</envar> is available
-      in the <application>sudo</application> environment. As the
-      <systemitem class="username">root</systemitem> user, run the following
-      command:
+      Hvis du har installert <application>sudo</application>, sørg for at
+      <envar>XORG_CONFIG</envar> er tilgjengelig
+      i <application>sudo</application> miljøet. Som
+      <systemitem class="username">root</systemitem> brukeren, kjør følgende 
+      kommando:
     </para>
 
 <screen role="root"><userinput>cat &gt; /etc/sudoers.d/xorg &lt;&lt; EOF

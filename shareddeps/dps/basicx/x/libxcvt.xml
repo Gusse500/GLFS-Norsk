@@ -18,44 +18,44 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libxcvt</title>
+    <title>Introduksjon til libxcvt</title>
 
     <para>
-      <application>libxcvt</application> is a library providing a standalone
-      version of the X server implementation of the VESA CVT standard timing
-      modelines generator. It is meant to be a direct replacement to the
-      version formerly provided by the Xorg server.
+      <application>libxcvt</application> er et bibliotek som tilbyr en frittstående 
+      versjon av X serverimplementeringen av VESA CVT standard timing 
+      modelines generator. Det er ment å være en direkte erstatning for 
+      versjonen som tidligere ble levert av Xorg serveren.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libxcvt-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&libxcvt-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&libxcvt-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&libxcvt-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">libxcvt Dependencies</bridgehead>
+    <bridgehead renderas="sect3">libxcvt Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="xorg-env"/> (should be set for the following instructions
-      to work)
+      <xref linkend="xorg-env"/> (bør være satt for at følgende instruksjoner 
+      skal fungere)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libxcvt</title>
+    <title>Installasjon av libxcvt</title>
 
     <para>
-      Install <application>libxcvt</application> by running the following
-      commands:
+      Installer <application>libxcvt</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -65,11 +65,11 @@ meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -77,11 +77,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of libxcvt</title>
+    <title>lib32 Installasjon av libxcvt</title>
 
     <para>
-      Install lib32-<application>libxcvt</application> by running the following
-      commands:
+      Installer lib32-<application>libxcvt</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -95,7 +95,7 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
@@ -106,7 +106,7 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
@@ -115,12 +115,12 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
@@ -136,7 +136,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -144,8 +144,8 @@ ldconfig</userinput></screen>
         <term><command>cvt</command></term>
         <listitem>
           <para>
-            calculates VESA Coordinated Video Timing (CVT) modelines for use
-            with X
+            beregner VESA Coordinated Video Timing (CVT) modelines for bruk
+            med X
           </para>
           <indexterm zone="libxcvt cvt">
             <primary sortas="b-cvt">cvt</primary>
@@ -157,7 +157,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxcvt</filename></term>
         <listitem>
           <para>
-            contains functions for calculating VESA CVT
+            inneholder funksjoner for å beregne VESA CVT
           </para>
           <indexterm zone="libxcvt libxcvt-lib">
             <primary sortas="c-libxcvt">libxcvt</primary>
