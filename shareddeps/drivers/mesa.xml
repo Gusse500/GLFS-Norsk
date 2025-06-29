@@ -17,43 +17,43 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Mesa</title>
+    <title>Introduksjon til Mesa</title>
 
     <para>
-      <application>Mesa</application> offers a wide variety of graphic
-      software, like the OpenGL libraries and drivers, Vulkan drivers,
-      and other drivers.
+      <application>Mesa</application> tilbyr et bredt utvalg av grafikk 
+      programvare, som OpenGL biblioteker og drivere, Vulkan drivere 
+      og andre drivere.
     </para>
 
     <para>
-      Every driver from this package works with <xref linkend="libglvnd"/>. The
-      package will auto-detect a <application>libglvnd</application>
-      installation if present and will link against the libraries provided by
-      that package. Thus, the OpenGL libraries provided by this package will
-      not be built, only the drivers for OpenGL.
+      Alle driverne fra denne pakken fungerer med <xref linkend="libglvnd"/>.
+      Pakken vil automatisk oppdage en <application>libglvnd</application>
+      installasjon hvis tilgjengelig og vil lenke mot bibliotekene levert av 
+      den pakken. Dermed vil ikke OpenGL bibliotekene levert av denne pakken 
+      bli bygget, bare driverne for OpenGL.
     </para>
 
     <important><para>
-      Read <xref linkend="aboutgl"/> to decide if you want to install OpenGL
-      implementations from this provider.
-      If you want to install <xref linkend="libglvnd"/>, install that
-      <emphasis>FIRST</emphasis> before installing this package so that this
-      package's OpenGL implementations do not get built.
+      Les <xref linkend="aboutgl"/> for å avgjøre om du vil installere OpenGL 
+      implementeringer fra denne leverandøren. 
+      Hvis du vil installere <xref linkend="libglvnd"/>, installer den
+      <emphasis>FØRST</emphasis> før du installerer denne pakken, slik at denne 
+      pakkens OpenGL implementeringer ikke blir bygget.
     </para></important>
 
     <note>
       <para>
-        <application>Mesa</application> is updated relatively often. You may
-        want to use the latest available &mesa-major-minor;.x mesa version.
+        <application>Mesa</application> oppdateres relativt ofte. Du kan bruke 
+        den nyeste tilgjengelige &mesa-major-minor;.x mesa versjonen.
       </para>
     </note>
 
     <note>
       <para>
-        An Internet connection is needed for building the Nouveau Vulkan
-        driver. The system certificate store may need to be set up with
-        <xref role='recommended' linkend='make-ca'/> before building this
-        package.
+        En internettforbindelse er nødvendig for å bygge Nouveau Vulkan 
+        driveren. Systemsertifikatlageret må kanskje konfigureres med
+        <xref role='recommended' linkend='make-ca'/> før du bygger denne 
+        pakken.
       </para>
     </note>
 
@@ -62,96 +62,97 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&mesa-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&mesa-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
     <para>
-      <emphasis role="strong">Patch for Seizure Prevention (Recommended)</emphasis>
+      <emphasis role="strong">Oppdatering for Seizure forebygging (anbefalt)</emphasis>
     </para>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Recommended patch:
+          Anbefalt oppdatering:
           <ulink url="&dl-root;/mesa/mesa-seizure_prevention-3.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Mesa Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Mesa Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libdrm"/>,
+      <xref linkend="libXdmcp"/>,
       <xref linkend="mako"/>,
-      <xref linkend="pyyaml"/>, and
+      <xref linkend="pyyaml"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
             <xref linkend="cbindgen"/>, <xref linkend="make-ca"/>,
-            <xref linkend="mesonfiles"/>, <xref linkend="rust-bindgen"/>, and
-            <xref linkend="rustc"/> (required for Nouveau Vulkan)
+            <xref linkend="mesonfiles"/>, <xref linkend="rust-bindgen"/>, og
+            <xref linkend="rustc"/> (påkrevd for Nouveau Vulkan)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="glslang"/> (required for Vulkan support)
+            <xref linkend="glslang"/> (påkrevd for Vulkan støtte)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libclc"/> (required for the Intel Iris Gallium3D)
+            <xref linkend="libclc"/> (påkrevd for Intel Iris Gallium3D)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref role="first" linkend="libva"/> (to provide VA-API support for some
-            Gallium3D drivers, note that there is a circular dependency. You must
-            build <application>libva</application> first without EGL and GLX support,
-            install this package, and rebuild <application>libva</application>)
+            <xref role="first" linkend="libva"/> (For å gi VA-API støtte for noen 
+            Gallium3D-drivere, merk at det er en sirkulær avhengighet. Du må 
+            bygge <application>libva</application> først uten EGL og GLX støtte, 
+            installer denne pakken og gjenoppbygg <application>libva</application>)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libvdpau"/> (to build VDPAU drivers)
+            <xref linkend="libvdpau"/> (for å bygge VDPAU drivere)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="llvm"/> (required for the r300, r600, and radeonsi
-            drivers, and the LLVMpipe software rasterizer; Clang in LLVM is
-            required for Swrast Vulkan)
+            <xref linkend="llvm"/> (kreves for r300, r600 og radeonsi 
+            driverne og LLVMpipe programvarens rasteriseringsprogram; Clang i LLVM 
+            er nødvendig for Swrast Vulkan)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="ply"/> (required for Intel Vulkan)
+            <xref linkend="ply"/> (påkrevd for Intel Vulkan)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libvk"/> (required for the Zink Gallium3D driver)
+            <xref linkend="libvk"/> (påkrevd for Zink Gallium3D driver)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="wayland-protocols"/> (required for many desktop
-            environments and recommended for GTK)
+            <xref linkend="wayland-protocols"/> (kreves for mange skrivebordsmiljøer 
+            og anbefales for GTK)
           </para>
         </listitem>
       </itemizedlist>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       &gbm;,
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
@@ -164,7 +165,7 @@
       <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test <application>Mesa</application>),
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
-      Layer</ulink> (for mobile platforms), and
+      Layer</ulink> (for mobile plattformer), og
       <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
       libtizonia</ulink>
     </para>
@@ -172,11 +173,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Mesa</title>
+    <title>Installasjon av Mesa</title>
     
     <para>
-      Install <application>Mesa</application> by running the following
-      commands:
+      Installer <application>Mesa</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -197,20 +198,20 @@ meson setup                    \
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>meson configure -D build-tests=true &amp;&amp; ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
     <para>
-      If desired, install the optional documentation by running
-      the following commands as the
-      <systemitem class="username">root</systemitem> user:
+      Hvis ønskelig, installer den valgfrie dokumentasjonen ved å kjøre 
+      følgende kommandoer som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"
@@ -219,11 +220,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Mesa</title>
+    <title>lib32 Installasjon av Mesa</title>
 
     <para>
-      Install lib32-<application>Mesa</application> by running the following
-      commands:
+      Installer lib32-<application>Mesa</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -245,7 +246,7 @@ meson setup                    \
 BINDGEN_EXTRA_CLANG_ARGS="-m32" ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
@@ -259,269 +260,269 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <para>
-      <parameter>--buildtype=release</parameter>: This switch ensures a
-      fully-optimized build, and disables debug assertions which will
-      severely slow down the libraries in certain use-cases. Without this
-      switch, build sizes can span into the 2GB range.
+      <parameter>--buildtype=release</parameter>: Denne bryteren sikrer en 
+      fullstendig optimalisert bygging, og deaktiverer feilsøkingspåstander som 
+      vil gjøre bibliotekene betydelig tregere i visse brukstilfeller. Uten 
+      denne bryteren kan byggestørrelser strekke seg inn i 2 GB området.
     </para>
 
     <para>
-      <parameter>-D platforms=...</parameter>: This parameter
-      controls which windowing systems will be supported. Available
-      linux platforms are x11 and wayland.
+      <parameter>-D platforms=...</parameter>: Denne parameteren 
+      kontrollerer hvilke vindussystemer som støttes. Tilgjengelige 
+      Linux plattformer er x11 og Wayland.
     </para>
 
     <para>
-      <parameter>-D gallium-drivers=auto</parameter>: This parameter
-      controls which Gallium3D drivers should be built. Gallium drivers
-      are essentially OpenGL drivers. If you wish to build
-      specific drivers, valid options include:
+      <parameter>-D gallium-drivers=auto</parameter>: Denne parameteren 
+      kontrollerer hvilke Gallium3D drivere som skal bygges. Gallium drivere 
+      er i hovedsak OpenGL drivere. Hvis du ønsker å bygge 
+      spesifikke drivere, inkluderer gyldige alternativer:
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            <literal>auto</literal> selects all Gallium3D drivers available
+            <literal>auto</literal> velger alle tilgjengelige Gallium3D drivere
             for x86
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>r300</literal> (for ATI Radeon 9000 or Radeon X
-            series)
+            <literal>r300</literal> (for ATI Radeon 9000 eller Radeon X
+            seriene)
           </para>
         </listitem>
         <listitem>
           <para>
             <literal>r600</literal> (for AMD/ATI Radeon HD 2000-6000
-            series) 
+            seriene) 
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>radeonsi</literal> (for AMD Radeon HD 7000 or newer
-            AMD GPU models)
+            <literal>radeonsi</literal> (for AMD Radeon HD 7000 eller nyere
+            AMD GPU modeller)
           </para>
         </listitem>
         <listitem>
           <para>
             <literal>nouveau</literal>
-            (for Supported NVIDIA GPUs, they are listed as all
-            <quote>3D features</quote> either <quote>DONE</quote> or
-            <quote>N/A</quote> in <ulink
+            (For støttede NVIDIA GPU-er, de er oppført alle som
+            <quote>3D funksjoner</quote> enten <quote>DONE</quote> eller
+            <quote>N/A</quote> i <ulink
             url='https://nouveau.freedesktop.org/FeatureMatrix.html'>the Nouveau
             status page</ulink>)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>virgl</literal> (for QEMU virtual GPU
-            with <application>virglrender</application> support)
+            <literal>virgl</literal> (for QEMU virtuelle GPU
+            med <application>virglrender</application> støtte)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>svga</literal> (for VMWare virtual GPU)
+            <literal>svga</literal> (for VMWare virtuelle GPU)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>softpipe</literal> (using CPU for 3D rasterization)
+            <literal>softpipe</literal> (bruke CPU for 3D rasterisering)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>llvmpipe</literal> (<literal>softpipe</literal> but uses
-            <application>LLVM</application> to increase performance)
+            <literal>llvmpipe</literal> (<literal>softpipe</literal> men bruker
+            <application>LLVM</application> for å øke ytelsen)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>zink</literal> (a driver converting OpenGL calls to Vulkan;
-            if the Vulkan driver is performant, this driver can also be
-            performant; can be used as a replacement for Gallium3D drivers like
-            <literal>nouveau</literal> as detailed in
+            <literal>zink</literal> (en driver som konverterer OpenGL kall til Vulkan; 
+            hvis Vulkan driveren er effektiv, kan denne driveren også være 
+            effektiv; kan brukes som en erstatning for Gallium3D drivere som
+            <literal>nouveau</literal> som beskrevet i
             <xref linkend="whatnow"/>)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>iris</literal> (for Intel GPUs shipped with Broadwell or newer
-            CPUs)
+            <literal>iris</literal> (for Intel GPUer levert med Broadwell eller nyere
+            CPUer)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>crocus</literal> (for Intel GMA 3000, X3000 series, 4000 series,
-            or X4000 series GPUs shipped with chipsets, or Intel HD GPUs shipped with
-            pre-Broadwell CPUs)
+            <literal>crocus</literal> (for Intel GMA 3000, X3000 serie, 4000 serie,
+            eller X4000 serie GPUer levert med brikkesett, eller Intel HD GPUer 
+            levert med pre-Broadwell CPUer)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>i915</literal> (for Intel GMA 900, 950, 3100, or 3150 GPUs
-            shipped with chipsets or Atom D/N 4xx/5xx CPUs)
+            <literal>i915</literal> (for Intel GMA 900, 950, 3100, eller 3150 GPUer
+            levert med brikkesett eller Atom D/N 4xx/5xx CPUer)
           </para>
         </listitem>
       </itemizedlist>
       
-      You may replace <literal>auto</literal> with a comma-separated list to
-      build only a subset of these drivers if you precisely know which drivers
-      you need, for example:
+      Du kan erstatte <literal>auto</literal> med en kommaseparert liste for å 
+      bygge et delsett av disse driverne hvis du vet nøyaktig hvilke drivere 
+      du trenger, for eksempel:
       <option>-D gallium-drivers=radeonsi,iris,swrast</option>.
     </para>
 
     <para>
-      <parameter>-D vulkan-drivers=auto</parameter>: This switch enables support
-      for the Vulkan graphics API. It automatically builds all graphics drivers
-      that are available for Vulkan. If you wish to build specific drivers,
-      valid options include:
+      <parameter>-D vulkan-drivers=auto</parameter>: Denne bryteren aktiverer 
+      støtte for Vulkan grafikk API. Den bygger automatisk alle grafikkdrivere 
+      som er tilgjengelige for Vulkan. Hvis du ønsker å bygge spesifikke drivere, 
+      inkluderer gyldige alternativer:
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            <literal>amd</literal> (for AMD Radeon HD 7730 or newer AMD GPUs)
+            <literal>amd</literal> (for AMD Radeon HD 7730 eller nyere AMD GPUer)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>intel</literal> (for Intel GPUs shipped with Skylake or newer
-            CPUs, or as a dedicated PCIe card)
+            <literal>intel</literal> (for Intel GPUer levert med Skylake eller 
+            nyere CPUer, eller som et dedikert PCIe kort)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>intel_hasvk</literal> (for Intel GPUs shipped with Ivy Bridge,
-            Haswell, or Broadwell CPUs)
+            <literal>intel_hasvk</literal> (for Intel GPUer levert med Ivy Bridge,
+            Haswell, eller Broadwell CPUer)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>nouveau</literal> (for GTX 16XX, RTX 20XX, or newer NVIDIA GPUs;
-            this driver is maturing and is already quite performant, although less so
-            than the <application>NVIDIA</application> driver; however, it is a good
-            replacement, especially when used with <literal>zink</literal>)
+            <literal>nouveau</literal> (for GTX 16XX, RTX 20XX, eller nyere NVIDIA GPUer;
+            denne driveren utvikles og er allerede ganske effektiv, men mindre enn 
+            <application>NVIDIA</application> driver; det er imidlertid en god 
+            erstatning, spesielt når den brukes med <literal>zink</literal>)
           </para>
         </listitem>
         <listitem>
           <para>
-            <literal>swrast</literal> (using CPU for 3D rasterization. Note that it's
-            much slower than using a modern 3D-capable GPU)
+            <literal>swrast</literal> (bruker CPU for 3D-rasterisering. Merk at 
+            det er mye tregere enn å bruke et moderne 3D kompatibelt GPU)
           </para>
         </listitem>
       </itemizedlist>
 
-      You may replace <literal>auto</literal> with a comma-separated list to
-      build only a subset of these drivers if you precisely know which drivers
-      you need, for example:
+      Du kan erstatte <literal>auto</literal> med en kommaseparert liste for å 
+      bygge et delsett av disse driverne hvis du vet nøyaktig hvilke drivere du 
+      trenger, for eksempel:
       <option>-D vulkan-drivers=amd,nouveau,swrast</option>.
     </para>
 
     <para>
-      <parameter>-D gles1=disabled</parameter>: This flag disables building a
-      deprecated spec of OpenGL ES.
+      <parameter>-D gles1=disabled</parameter>: Dette flagget deaktiverer 
+      bygging av en utdatert spesifikasjon for OpenGL ES.
     </para>
 
     <para>
-      <parameter>-D video-codecs=all</parameter>: This parameter enables
-      building all the video codecs as they are disabled by default to avoid
-      legal issues. It would be prudent to not distribute your build if you
-      set this option. The matter is still unclear, however. See this
+      <parameter>-D video-codecs=all</parameter>: Denne parameteren aktiverer 
+      bygging av alle videokodeker, siden de er deaktivert som standard for å unngå 
+      juridiske problemer. Det ville være klokt å ikke distribuere byggingen din 
+      hvis du angir dette alternativet. Saken er imidlertid fortsatt uklar. Se dette.
       <ulink url="https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1016687">
-      Debian bug report</ulink> for more info.
+      Debian bug report</ulink> for mer informasjon.
     </para>
 
     <para>
-      <parameter>-D valgrind=disabled</parameter>: This parameter disables
-      the usage of Valgrind during the build process. Remove this parameter
-      if you have Valgrind installed, and wish to check for memory leaks.
+      <parameter>-D valgrind=disabled</parameter>: Denne parameteren deaktiverer 
+      bruken av Valgrind under byggeprosessen. Fjern denne parameteren 
+      hvis du har Valgrind installert og ønsker å sjekke for minnelekkasjer.
     </para>
 
     <para>
-      <parameter>-D libunwind=disabled</parameter>: This parameter disables
-      the usage of libunwind.
+      <parameter>-D libunwind=disabled</parameter>: Denne parameteren deaktiverer
+      bruken av libunwind.
     </para>
 
     <para>
-      <option>-D egl-native-platform="..."</option>: This parameter
-      controls which Embedded Graphics Library support will be built. Available
-      linux options are auto (default), x11, wayland, surfaceless, and drm.
+      <option>-D egl-native-platform="..."</option>: Denne parameteren styrer 
+      hvilken støtte for innebygde grafikkbiblioteker som skal bygges. Tilgjengelige 
+      Linux alternativer er auto (standard), x11, wayland, surfaceless og drm.
     </para>
 
     <para>
-      <option>-D gles2=disabled</option>: If you don't need OpenGL ES, use
-      this option. Be sure to read <xref linkend="aboutgles"/>.
+      <option>-D gles2=disabled</option>: Hvis du ikke trenger OpenGL ES, bruk 
+      dette alternativet. Sørg for å lese <xref linkend="aboutgles"/>.
     </para>
 
     <para>
-      <option>-D legacy-x11="..."</option> This parameter controls which legacy
-      X11 features get built-in support. Available linux options are none
-      (default) and dri2. These features are rarely needed anymore.
+      <option>-D legacy-x11="..."</option> Denne parameteren kontrollerer hvilke 
+      eldre X11 funksjoner som får innebygd støtte. Tilgjengelige Linux alternativer 
+      er ingen (standard) og dri2. Disse funksjonene er sjelden nødvendig lenger.
     </para>
 
     <para>
-      <option>-D libgbm-external=true</option>: This links against the
-      system-installed <filename class="libraryfile">libgbm</filename> and
-      disables building the GBM if it's installed. Whenever updating this
-      package, it is recommended to also update the GBM so this option is not
-      used.
+      <option>-D libgbm-external=true</option>: Dette lenker mot 
+      systeminstallerte <filename class="libraryfile">libgbm</filename> og
+      deaktiverer bygging av GBM hvis den er installert. Når du oppdaterer denne 
+      pakken, anbefales det å også oppdatere GBM slik at dette alternativet 
+      ikke brukes.
     </para>
 
     <para>
-      <computeroutput>BINDGEN_EXTRA_CLANG_ARGS="-m32"</computeroutput>: This
-      variable ensures that <xref linkend="rust-bindgen"/> generates bindings
-      that don't go out of bounds when compiling lib32 Nouveau Vulkan.
+      <computeroutput>BINDGEN_EXTRA_CLANG_ARGS="-m32"</computeroutput>: Denne 
+      variabelen sikrer at <xref linkend="rust-bindgen"/> genererer bindinger 
+      som ikke går utenfor grensene ved kompilering av lib32 Nouveau Vulkan.
     </para>
 
     <para>
       <command>sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja</command>:
-      This package can be stubborn and likes to link against LLVM libraries in
-      <filename>/lib</filename>, even on a multilib installation, so this command
-      tells this package to link against libraries in the proper directory.
+      Denne pakken kan være sta og liker å lenke mot LLVM biblioteker i
+      <filename>/lib</filename>, selv på en multilib installasjon, så denne kommandoen 
+      forteller denne pakken at den skal lenke mot biblioteker i riktig mappe.
     </para>
 
     <para>
-      <command>meson configure -D build-tests=true</command>: This command will
-      reconfigure the build to set <option>-D build-tests=true</option>, but
-      keep the other options specified in the <command>meson setup</command>
-      command unchanged.  It allows <command>ninja test</command> to build and
-      run unit tests.
+      <command>meson configure -D build-tests=true</command>: Denne kommandoen vil 
+      konfigurere bygget på nytt for å angi <option>-D build-tests=true</option>, men
+      behold de andre alternativene som er spesifisert i <command>meson setup</command>
+      kommandoen uendret. Den tillater <command>ninja test</command> å bygge og 
+      kjøre enhetstester.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle><!-- in /usr/lib -->
-      <segtitle>Installed DRI Driver Stubs</segtitle><!-- in /usr/lib/dri -->
-      <segtitle>Installed VA-API Drivers</segtitle><!-- in /usr/lib/dri -->
-      <segtitle>Installed GBM Drivers</segtitle><!-- in /usr/lib/gbm -->
-      <segtitle>Installed VDPAU Drivers</segtitle><!-- in /usr/lib/vdpau -->
-      <segtitle>Installed Vulkan Drivers</segtitle><!-- in /usr/lib -->
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle><!-- in /usr/lib -->
+      <segtitle>Installerte DRI Driver Stubber</segtitle><!-- in /usr/lib/dri -->
+      <segtitle>Installerte VA-API Drivere</segtitle><!-- in /usr/lib/dri -->
+      <segtitle>Installerte GBM Drivere</segtitle><!-- in /usr/lib/gbm -->
+      <segtitle>Installerte VDPAU Drivere</segtitle><!-- in /usr/lib/vdpau -->
+      <segtitle>Installerte Vulkan Drivere</segtitle><!-- in /usr/lib -->
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          libEGL (or libEGL_mesa if <xref linkend="libglvnd"/> is installed),
-          libGL (if <xref linkend="libglvnd"/> is not installed),
-          libGLESv2 (if <xref linkend="libglvnd"/> is not installed),
+          libEGL (eller libEGL_mesa hvis <xref linkend="libglvnd"/> er installert),
+          libGL (hvis <xref linkend="libglvnd"/> ikke er installert),
+          libGLESv2 (hvis <xref linkend="libglvnd"/> ikke er installert),
           libgallium-&mesa-version;,
           libgbm,
-          libglapi (if <xref linkend="libglvnd"/> is not installed),
-          libGLX_mesa (if <xref linkend="libglvnd"/> is installed), and
+          libglapi (hvis <xref linkend="libglvnd"/> ikke er installert),
+          libGLX_mesa (hvis <xref linkend="libglvnd"/> er installert), og
           libxatracker
         </seg>
         <seg>
           <!-- Begin DRI Driver Stubs -->
-          libdril_dri and symlinks to it:
+          libdril_dri og symbolske lenker til den:
           crocus_dri,
           i915_dri,
           iris_dri,
@@ -533,14 +534,14 @@ ldconfig</userinput></screen>
           radeonsi_dri,
           swrast_dri,
           virtio_gpu_dri,
-          vmwgfx_dri, and
+          vmwgfx_dri, og
           zink_dri
           <!-- End DRI Driver Stubs -->
         </seg>
         <seg>
           <!-- Begin VA-API Drivers -->
           nouveau_drv_video,
-          radeonsi_drv_video, and
+          radeonsi_drv_video, og
           virtio_gpu_drv_video
           <!-- End VA-API Drivers -->
         </seg>
@@ -554,24 +555,24 @@ ldconfig</userinput></screen>
           libvdpau_nouveau,
           libvdpau_r300,
           libvdpau_r600,
-          libvdpau_radeonsi, and
+          libvdpau_radeonsi, og
           libvdpau_virtio_gpu
-          (many of these drivers are hard-linked)
+          (mange av disse driverne er hardt koblet)
           <!-- End VDPAU Drivers -->
         </seg>
         <seg>
           libvulkan_intel_hasvk,
           libvulkan_intel,
           libvulkan_lvp,
-          libvulkan_nouveau, and
+          libvulkan_nouveau, og
           libvulkan_radeon
         </seg>
         <seg>
           <!-- /usr/include/GL is installed by xorg-protos -->
           /usr/{include/{EGL,GLES2,GLES3,KHR},
           /usr/lib/{dri,gbm,vdpau}},
-          /usr/share/drirc.d (contains workarounds for various applications,
-          particularly browsers and games),
+          /usr/share/drirc.d (inneholder løsninger for diverse applikasjoner, 
+          spesielt nettlesere og spill),
           /usr/share/vulkan,
           and /usr/share/doc/mesa-&mesa-version;
         </seg>
@@ -579,7 +580,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -587,8 +588,8 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>dri_gbm</filename></term>
         <listitem>
           <para>
-            implements Graphics Buffer Management functions needed by
-            <systemitem class='library'>libgbm</systemitem> on top of
+            implementerer grafikkbufferhåndteringsfunksjoner som trengs av
+            <systemitem class='library'>libgbm</systemitem> på toppen av
             <systemitem class='library'>libdrm</systemitem>
           </para>
         </listitem>
@@ -598,8 +599,8 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libdril_dri</filename></term>
         <listitem>
           <para>
-            is a stub allowing Xorg server to co-operate with the Gallium3D
-            drivers
+            er en stubb som tillater Xorg serveren å samarbeide med Gallium3D
+            drivere
           </para>
         </listitem>
       </varlistentry>
@@ -608,8 +609,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libEGL</filename></term>
         <listitem>
           <para>
-            provides an interface between graphics APIs and the window system;
-            provided if <xref linkend="libglvnd"/> is not installed
+            gir et grensesnitt mellom grafikk APIer og vindussystemet; 
+            gitt hvis <xref linkend="libglvnd"/> ikke er installert
           </para>
           <indexterm zone="mesa libEGL">
             <primary sortas="c-libGL">libEGL</primary>
@@ -621,7 +622,7 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgallium-&mesa-version;</filename></term>
         <listitem>
           <para>
-            contains all the Gallium3D drivers
+            inneholder alle Gallium3D driverne
           </para>
         </listitem>
       </varlistentry>
@@ -630,8 +631,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
-            is the <application>Mesa</application> Graphics Buffer
-            Manager library
+            er <application>Mesa</application> Graphics Buffer
+            Manager bibliotek
           </para>
           <indexterm zone="mesa libgbm">
             <primary sortas="c-libgbm">libgbm</primary>
@@ -643,8 +644,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libglapi</filename></term>
         <listitem>
           <para>
-            is <application>Mesa's</application> implementation of the OpenGL
-            API; provided if <xref linkend="libglvnd"/> is not installed
+            er <application>Mesa</application> implementering av OpenGL 
+            API; gitt hvis <xref linkend="libglvnd"/> ikke er installert
           </para>
           <indexterm zone="mesa libglapi">
             <primary sortas="c-libglapi">libglapi</primary>
@@ -656,8 +657,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGLES2</filename></term>
         <listitem>
           <para>
-            contains OpenGL ES 2.x and 3.x calls; provided if <xref
-            linkend="libglvnd"/> is not installed
+            inneholder OpenGL ES 2.x og 3.x kall; gitt hvis <xref
+            linkend="libglvnd"/> ikke er installert
           </para>
           <indexterm zone="mesa libGLES2">
             <primary sortas="c-libGLES2">libGLES2</primary>
@@ -669,10 +670,10 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGL</filename></term>
         <listitem>
           <para>
-            is the main OpenGL library; provided if <xref linkend="libglvnd"/>
-            is not installed; <filename
-            class="libraryfile">libOpenGL</filename> is not provided by this
-            package
+            er hovedbiblioteket for OpenGL; gitt hvis <xref linkend="libglvnd"/>
+            ikke er installert; <filename
+            class="libraryfile">libOpenGL</filename> er ikke levert av denne
+            pakken
           </para>
           <indexterm zone="mesa libGL">
             <primary sortas="c-libGL">libGL</primary>
@@ -684,7 +685,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxatracker</filename></term>
         <listitem>
           <para>
-            is the XA state tracker for the VMWare vmwgfx driver
+            er XA tilstandssporing for VMWare vmwgfx driveren
           </para>
           <indexterm zone="mesa libxatracker">
             <primary sortas="c-libxatracker">libxatracker</primary>
