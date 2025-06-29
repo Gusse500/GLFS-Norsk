@@ -40,6 +40,18 @@
     </listitem>
     -->
 
+    <listitem>
+      <para>28. juni 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Fontconfig: 2.16.2 -&gt; 2.17.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Glslang: 15.3.0 -&gt; 15.4.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem revision="systemd">
       <para>23. juni 2025</para>
       <itemizedlist>

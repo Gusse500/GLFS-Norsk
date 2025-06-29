@@ -79,7 +79,7 @@
 <!ENTITY apng-version                 "1.6.47">
 <!ENTITY freetype2-version            "2.13.3">
 <!ENTITY harfbuzz-version             "11.2.1">
-<!ENTITY fontconfig-version           "2.16.2">
+<!ENTITY fontconfig-version           "2.17.0">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
 <!ENTITY xtrans-version               "1.6.0">
@@ -159,7 +159,7 @@
 <!ENTITY spirv-version                "&vulkan-version;.0">
 <!ENTITY spirv-headers-version        "&spirv-version;">
 <!ENTITY spirv-tools-version          "&spirv-version;">
-<!ENTITY glslang-version              "15.3.0">
+<!ENTITY glslang-version              "15.4.0">
 <!ENTITY llvm-maj-version             "20">
 <!ENTITY llvm-point-version           "6">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
