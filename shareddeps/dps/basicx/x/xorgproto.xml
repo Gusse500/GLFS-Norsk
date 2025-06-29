@@ -19,30 +19,30 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to xorgproto</title>
+    <title>Introduksjon til xorgproto</title>
 
     <para>
-      The <application>xorgproto</application> package provides the
-      header files required to build the X Window system, and to allow other
-      applications to build against the installed X Window system.
+      <application>xorgproto</application> pakken inneholder 
+      deklarasjonsfilene som kreves for å bygge X Vindussystemet, og for at 
+      andre applikasjoner kan bygge mot det installerte X Vindussystemet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xorgproto-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&xorgproto-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&xorgproto-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&xorgproto-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">xorgproto Dependencies</bridgehead>
+    <bridgehead renderas="sect3">xorgproto Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="util-macros"/>
     </para>
@@ -50,11 +50,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of xorgproto</title>
+    <title>Installasjon av xorgproto</title>
 
     <para>
-      Install <application>xorgproto</application> by running the
-      following commands:
+      Installer <application>xorgproto</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -64,11 +64,11 @@ meson setup --prefix=/usr .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
@@ -80,32 +80,32 @@ install -vm 644 ../[^m]*.txt ../PM_spec /usr/share/doc/xorgproto-&xorgproto-vers
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <option>-D legacy=true</option>: Installs legacy headers needed
-      by old programs (such as <ulink
+      <option>-D legacy=true</option>: Installerer eldre deklarasjoner som trengs 
+      av gamle programmer (som for eksempel <ulink
       url="https://lesstif.sourceforge.net/">LessTif</ulink>).
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
-        <seg>None</seg>
-        <seg>None</seg>
+        <seg>Ingen</seg>
+        <seg>Ingen</seg>
         <seg>
           /usr/include/GL,
-          /usr/include/X11, and
+          /usr/include/X11, og
           /usr/share/doc/xorgproto-&xorgproto-version;
         </seg>
       </seglistitem>
