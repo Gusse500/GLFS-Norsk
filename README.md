@@ -5,7 +5,7 @@ pakker som Steam og Wine etter Linux From Scratch boken.
 
 # Hvor kan du lese
 
-Gå til https://glfs-book.github.io/glfs/ og begynne å bla gjennom boken!
+Gå til [https://glfs-book.github.io/glfs/](https://lfs.freding.no/glfs/index.html) og begynne å bla gjennom boken!
 
 Boken er under rullende utgivelse på nett.
 
