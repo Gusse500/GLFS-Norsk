@@ -22,7 +22,7 @@
     <title>Introduksjon til libxcb</title>
 
     <para>
-      <application>libxcb</application> Pakken inneholder et grensesnitt til 
+      <application>libxcb</application> pakken inneholder et grensesnitt til 
       X Vindussystem protokollen, som erstatter det nåværende Xlib grensesnittet. 
       Xlib kan også bruke XCB som et transportlag, slik at programvare kan sende 
       forespørsler og motta svar med begge deler.
@@ -45,13 +45,9 @@
 
     <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="libXau"/> og
+      <xref linkend="libXau"/>,
+      <xref linkend="libXdmcp"/>, og
       <xref linkend="xcb-proto"/>
-    </para>
-
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
-    <para role="recommended">
-      <xref linkend="libXdmcp"/>
     </para>
 
   </sect2>

@@ -86,7 +86,7 @@
     <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libdrm"/>,
-      <xref linkend="libXdmcp"/>,
+      <xref linkend="libxcb"/>,
       <xref linkend="mako"/>,
       <xref linkend="pyyaml"/>, og
       <xref linkend="xorg7-lib"/>

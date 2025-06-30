@@ -8,10 +8,10 @@
   <!ENTITY gbm-download-ftp  " ">
 ]>
 
-<sect1 id="gbm" xreflabel="GBM from Mesa-&mesa-version;">
+<sect1 id="gbm" xreflabel="GBM fra Mesa-&mesa-version;">
   <?dbhtml filename="gbm.html"?>
 
-  <title>GBM from Mesa-&mesa-version;</title>
+  <title>GBM fra Mesa-&mesa-version;</title>
 
   <indexterm zone="gbm">
     <primary sortas="a-GBM">GBM</primary>
@@ -21,70 +21,71 @@
     <title>Introduction to GBM</title>
 
     <para>
-      The <application>GBM</application>
+      <application>GBM</application>
         <footnote><para>
           Graphics Buffer Manager.
         </para></footnote>
-      library provides API functions for graphical rendering and is supplied by
-      <application>Mesa</application>. Most drivers on Linux distributions come
-      from <application>Mesa</application>, so <application>GBM</application>
-      will get installed along those drivers. On the other hand, <xref
-      linkend="nvidia"/> does not need the full <application>Mesa</application>
-      stack, but it still needs the <application>GBM</application> library. As
-      such, you can install just what you need. You will not need to install
-      the full <xref linkend="mesa"/> stack if you want to install <xref
-      linkend="nvidia"/>, but you can if you so choose. It can be a good idea
-      to do so as to have a fallback (Zink Gallium3D + Nouveau Vulkan). If you
-      are not installing <application>NVIDIA</application>, skip to <xref
-      linkend="spirv-headers"/> and keep going till you reach <xref
-      linkend="mesa"/> to get a complete installation of drivers and other
-      libraries.
+      biblioteket tilbyr API funksjoner for grafisk gjengivelse og leveres av
+      <application>Mesa</application>. De fleste drivere på Linux distribusjoner 
+      kommer fra <application>Mesa</application>, så <application>GBM</application>
+      vil bli installert sammen med disse driverne. På den annen side, <xref
+      linkend="nvidia"/> trenger ikke den fulle <application>Mesa</application>
+      stabelen, men den trenger fortsatt <application>GBM</application> biblioteket. 
+      Som sådan kan du installere akkurat det du trenger. Du trenger ikke å 
+      installere hele <xref linkend="mesa"/> stabelen hvis du vil installere <xref
+      linkend="nvidia"/>, men du kan hvis du ønsker det. Det kan være lurt å 
+      gjøre det for å ha et reserveprogram (Zink Gallium3D + Nouveau Vulkan). 
+      Hvis du ikke installerer <application>NVIDIA</application>, hopp til <xref
+      linkend="spirv-headers"/> og fortsett til du kommer frem til <xref
+      linkend="mesa"/> for å få en fullstendig installasjon av drivere og 
+      andre biblioteker.
     </para>
 
     <note>
       <para>
-        <application>Mesa</application> is updated relatively often. You may
-        want to use the latest available &mesa-major-minor;.x mesa version.
+        <application>Mesa</application> oppdateres relativt ofte. Du kan bruke
+        den nyeste tilgjengelige &mesa-major-minor;.x mesa versjonen.
       </para>
     </note>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&gbm-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&gbm-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&gbm-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&gbm-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">GBM Dependencies</bridgehead>
+    <bridgehead renderas="sect3">GBM Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libdrm"/>,
+      <xref linkend="libxcb"/>,
       <xref linkend="mako"/>,
-      <xref linkend="pyyaml"/>, and
+      <xref linkend="pyyaml"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
-      (provides more than 300 demos to test drivers)
+      (tilbyr mer enn 300 demonstrasjoner for å teste drivere)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GBM</title>
+    <title>Installasjon av GBM</title>
     
     <para>
-      Install the <application>GBM</application> by running the following
-      commands:
+      Installer <application>GBM</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -105,7 +106,7 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
@@ -118,11 +119,11 @@ fi</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of GBM</title>
+    <title>lib32 Installasjon av GBM</title>
 
     <para>
-      Install lib32-<application>GBM</application> by running the following
-      commands:
+      Installer lib32-<application>GBM</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -144,7 +145,7 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -155,100 +156,100 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <para>
-      <parameter>--buildtype=release</parameter>: This switch ensures a
-      fully-optimized build, and disables debug assertions which will
-      severely slow down the libraries in certain use-cases. Without this
-      switch, build sizes can span into the 2GB range.
+      <parameter>--buildtype=release</parameter>: Denne bryteren sikrer en 
+      fullstendig optimalisert bygging, og deaktiverer feilsøkingspåstander som 
+      vil gjøre bibliotekene betydelig tregere i visse brukstilfeller. Uten 
+      denne bryteren kan byggestørrelser strekke seg inn i 2 GB området.
     </para>
 
     <para>
-      <parameter>-D gallium-drivers=</parameter>: This parameter forces
-      Gallium3D (OpenGL) drivers to not be built as drivers are provided by
+      <parameter>-D gallium-drivers=</parameter>: Denne parameteren tvinger 
+      Gallium3D (OpenGL) drivere til å ikke bygges, ettersom drivere leveres av
       <xref linkend="nvidia"/>.
     </para>
 
     <para>
-      <parameter>-D vulkan-drivers=</parameter>: This parameter forces
-      Vulkan drivers to not be built as drivers are provided by <xref
+      <parameter>-D vulkan-drivers=</parameter>: Denne parameteren tvinger
+      Vulkan drivere til å ikke bygges, ettersom drivere leveres av <xref
       linkend="nvidia"/>.
     </para>
 
     <para>
-      <parameter>-D video-codecs=</parameter>: This parameter forces video
-      codecs to not be built.
+      <parameter>-D video-codecs=</parameter>: Denne parameteren tvinger video
+      kodeker å ikke bygges.
     </para>
 
     <para>
-      <parameter>-D gbm=enabled</parameter>: This parameter forces <filename
-      class="libraryfile">libgbm</filename> to be built.
+      <parameter>-D gbm=enabled</parameter>: Denne parameteren tvinger <filename
+      class="libraryfile">libgbm</filename> til å bygges.
     </para>
 
     <para>
-      <parameter>-D glx=disabled</parameter>: This parameter disables building
-      any OpenGL libraries or drivers which are provided by <xref
+      <parameter>-D glx=disabled</parameter>: Denne parameteren deaktiverer 
+      bygging av OpenGL biblioteker eller drivere som leveres av <xref
       linkend="nvidia"/>.
     </para>
 
     <para>
-      <parameter>-D llvm=disabled</parameter>: This parameter disables unneeded
-      <xref linkend="llvm"/> support.
+      <parameter>-D llvm=disabled</parameter>: Denne parameteren deaktiverer 
+      unødvendig <xref linkend="llvm"/> støtte.
     </para>
 
     <para>
-      <parameter>-D valgrind=disabled</parameter>: This parameter disables
-      the usage of Valgrind during the build process.
+      <parameter>-D valgrind=disabled</parameter>: Denne parameteren deaktiverer
+      bruken av Valgrind under byggeprosessen.
     </para>
 
     <para>
-      <parameter>-D libunwind=disabled</parameter>: This parameter disables
-      the usage of libunwind.
+      <parameter>-D libunwind=disabled</parameter>: Denne parameteren deaktiverer
+      bruken av libunwind.
     </para>
 
     <para>
-      <command>cp -v ../include/GL/internal/dri_interface.h ...</command>: This
-      command copies over a header file that is needed by <xref
-      linkend="xorg-server"/> since it is not copied over automatically in this
-      build.
+      <command>cp -v ../include/GL/internal/dri_interface.h ...</command>: Denne
+      kommandoen kopierer over en deklarasjonsfil som trengs av <xref
+      linkend="xorg-server"/> siden den ikke automatisk kopieres over i dette
+      bygget.
     </para>
 
     <para>
-      <command>cp -v ../include/EGL/eglmesaext.h ...</command>: This command
-      copies over a header file that is needed by <ulink
-      url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> and possibly other
-      packages.
+      <command>cp -v ../include/EGL/eglmesaext.h ...</command>: Denne kommandoen
+      kopierer over en deklarasjonsfil som trengs av <ulink
+      url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> og muligens andre
+      pakker.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           libgbm
         </seg>
         <seg>
-          /usr/share/drirc.d (contains workarounds for various applications,
-          particularly browsers and games)
+          /usr/share/drirc.d (inneholder løsninger for diverse applikasjoner, 
+          spesielt nettlesere og spill)
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -256,7 +257,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
-            is the Graphics Buffer Manager library
+            er Grafikk bufringsbehandler biblioteket
           </para>
           <indexterm zone="gbm libgbm-gbm">
             <primary sortas="c-libgbm-gbm">libgbm</primary>
