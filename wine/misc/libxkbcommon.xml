@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libxkbcommon-download-http "https://github.com/xkbcommon/libxkbcommon/archive/refs/tags/xkbcommon-&libxkbcommon-version;.tar.gz">
+  <!ENTITY libxkbcommon-download-http "https://github.com/xkbcommon/libxkbcommon/archive/xkbcommon-&libxkbcommon-version;.tar.gz">
   <!ENTITY libxkbcommon-download-ftp  " ">
 ]>
 
@@ -18,63 +18,63 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libxkbcommon</title>
+    <title>Introduksjon til libxkbcommon</title>
 
     <para>
-      <application>libxkbcommon</application> is a keymap compiler and
-      support library which processes a reduced subset of keymaps as
-      defined by the XKB specification.
+      <application>libxkbcommon</application> er en tastekartkompilator og 
+      et støttebibliotek som behandler et redusert delsett av tastekart som 
+      definert av XKB spesifikasjonen.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libxkbcommon-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&libxkbcommon-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&libxkbcommon-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&libxkbcommon-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">libxkbcommon Dependencies</bridgehead>
+    <bridgehead renderas="sect3">libxkbcommon Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref role="runtime" linkend="xkeyboard-config"/> (runtime)
+      <xref role="runtime" linkend="xkeyboard-config"/> (kjøretid)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
        <xref linkend="libxcb"/>,
-       <xref linkend="wayland"/>, and
+       <xref linkend="wayland"/>, og
        <xref linkend="wayland-protocols"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
-      <command>Xvfb</command> from
-      <xref linkend='xorg-server'/> or
+      <command>Xvfb</command> fra
+      <xref linkend='xorg-server'/> eller
       <xref role='nodep' linkend='xwayland'/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libxkbcommon</title>
+    <title>Installasjon av libxkbcommon</title>
 
     <para>
-      First, fix an issue when libxml2-2.14 and later is installed by running
-      the following command:
+      Først, fiks et problem når libxml2-2.14 og nyere er installert ved å kjøre 
+      følgende kommando:
     </para>
 
 <screen><userinput>sed -i "s/sizeof(dtdstr)/ARRAY_SIZE(dtdstr) - 1/" src/registry.c</userinput></screen>
 
     <para>
-      Install <application>libxkbcommon</application> by running the following
-      commands:
+      Installer <application>libxkbcommon</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -88,13 +88,13 @@ meson setup ..            \
 ninja</userinput></screen>
 
     <para>
-      To test the results, ensure <command>Xvfb</command> and
-      <xref linkend='xkeyboard-config'/> are available, then issue:
+      For å teste resultatene, sørg for at <command>Xvfb</command> og
+      <xref linkend='xkeyboard-config'/> er tilgjengelige, deretter utsted:
       <command>ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -102,11 +102,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of libxkbcommon</title>
+    <title>lib32 Installasjon av libxkbcommon</title>
 
     <para>
-      Install lib32-<application>libxkbcommon</application> by running the following
-      commands:
+      Installer lib32-<application>libxkbcommon</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -121,7 +121,7 @@ meson setup ..                       \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -132,27 +132,27 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D enable-docs=false</parameter>: This parameter disables
-      building documentation as <ulink
-      url="&blfs-svn;/general/doxygen.html"></ulink> is not built.
+      <parameter>-D enable-docs=false</parameter>: Denne parameteren deaktiverer 
+      bygging av dokumentasjon siden <ulink
+      url="&blfs-svn;/general/doxygen.html"></ulink> ikke er bygget.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -160,18 +160,18 @@ ldconfig</userinput></screen>
         </seg>
         <seg>
           libxkbcommon,
-          libxkbcommon-x11, and
+          libxkbcommon-x11, og
           libxkbregistry
         </seg>
         <seg>
-          /usr/include/xkbcommon and
+          /usr/include/xkbcommon og
           /usr/libexec/xkbcommon
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -179,7 +179,7 @@ ldconfig</userinput></screen>
         <term><command>xkbcli</command></term>
         <listitem>
           <para>
-            provides a debugger and compiler for XKB keymaps
+            tilbyr en feilsøker og kompilator for XKB tastekart
           </para>
           <indexterm zone="libxkbcommon xkbcli">
             <primary sortas="b-xkbcli">xkbcli</primary>
@@ -191,7 +191,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxkbcommon</filename></term>
         <listitem>
           <para>
-            contains the <application>libxkbcommon</application> API functions
+            inneholder <application>libxkbcommon</application> API funksjoner
           </para>
           <indexterm zone="libxkbcommon libxkbcommon-lib">
             <primary sortas="c-libxkbcommon">libxkbcommon</primary>
@@ -203,8 +203,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxkbcommon-x11</filename></term>
         <listitem>
           <para>
-            contains the <application>libxkbcommon</application> X11 specific API
-            functions
+            inneholder <application>libxkbcommon</application> X11 spesifikke API
+            funksjoner
           </para>
           <indexterm zone="libxkbcommon libxkbcommon-x11">
             <primary sortas="c-libxkbcommon-x11">libxkbcommon-x11</primary>
@@ -216,8 +216,8 @@ ldconfig</userinput></screen>
        <term><filename class="libraryfile">libxkbregistry</filename></term>
        <listitem>
          <para>
-           contains a list of available XKB models, layouts, and variants for a
-           given ruleset
+           inneholder en liste over tilgjengelige XKB-modeller, oppsett og 
+           varianter for et gitt regelsett
          </para>
          <indexterm zone="libxkbcommon libxkbregistry">
            <primary sortas="c-libxkbregistry">libxkbregistry</primary>
