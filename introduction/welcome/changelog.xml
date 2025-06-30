@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>30. juni 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.50.1 -&gt; 3.50.2. 
+          Fikser <ulink url="&glfs-issues;/276">#276</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>29. juni 2025</para>
       <itemizedlist>
         <listitem>
