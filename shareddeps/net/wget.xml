@@ -12,7 +12,6 @@
 <sect1 id="wget" xreflabel="Wget-&wget-version;">
   <?dbhtml filename="wget.html"?>
 
-
   <title>Wget-&wget-version;</title>
 
   <indexterm zone="wget">
@@ -20,57 +19,53 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Wget</title>
+    <title>Introduksjon til Wget</title>
 
     <para>
-      The <application>Wget</application> package contains a utility useful for
-      non-interactive downloading of files from the Web.
+      <application>Wget</application> Pakken inneholder et verktøy som er 
+      nyttig for ikke-interaktiv nedlasting av filer fra nettet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&wget-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&wget-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&wget-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&wget-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Wget Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Wget Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="libpsl"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended at runtime</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt ved kjøretid</bridgehead>
     <para role="recommended">
       <xref role="runtime" linkend="make-ca"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="gnutls"/>,
-      <ulink url="&blfs-svn;/general/perl-modules.html#perl-http-daemon">
-      HTTP-Daemon</ulink> (for the test suite),
-      <ulink url="&blfs-svn;/general/perl-modules.html#perl-io-socket-ssl">
-      IO-Socket-SSL</ulink> (for the test suite),
       <xref linkend="libidn2"/>,
-      <xref linkend="pcre2"/>, and
-      <ulink url="&blfs-svn;/general/valgrind.html">Valgrind</ulink> (for the test suite)
+      <xref linkend="libunistring"/>, og
+      <xref linkend="pcre2"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Wget</title>
+    <title>Installasjon av Wget</title>
 
     <para>
-      Install <application>Wget</application> by running the following commands:
+      Installer <application>Wget</application> ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr      \
@@ -80,60 +75,43 @@
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
-    </para>
-
-    <!-- libwww-perl/HTTP-Daemon/#21
-         Removing, since IO::Socket//INET6 has been deprecated
-         and replaced with IO::Socket::IP, which fixes the
-         problem
-    <para>
-      HTTPS tests are known to fail if Perl module IO::Socket::INET6
-      is installed.
-    </para>
--->
-    <para>
-      Some tests may fail when Valgrind tests are enabled.
-    </para>
-
-    <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--sysconfdir=/etc</parameter>: This relocates the configuration
-      file from <filename class="directory">/usr/etc</filename> to
+      <parameter>--sysconfdir=/etc</parameter>: Dette flytter konfigurasjonsfilen 
+      fra <filename class="directory">/usr/etc</filename> til
       <filename class="directory">/etc</filename>.
     </para>
 
     <para>
-      <parameter>--with-ssl=openssl</parameter>: This allows the program to use
-      openssl instead of GnuTLS.
+      <parameter>--with-ssl=openssl</parameter>: Dette lar programmet bruke 
+      openssl i stedet for GnuTLS.
     </para>
 
     <para>
-      <option>--enable-valgrind-tests</option>: This allows the tests to be
-      run under valgrind.
+      <option>--enable-valgrind-tests</option>: Dette gjør at testene kan 
+      kjøres under Valgrind.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Wget</title>
+    <title>Konfigurere Wget</title>
 
     <sect3 id="wget-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
-        <filename>/etc/wgetrc</filename> and
+        <filename>/etc/wgetrc</filename> og
         <filename>~/.wgetrc</filename>
       </para>
 
@@ -147,9 +125,9 @@ make</userinput></screen>
 
 <!--
       <para>
-        If you have installed <xref linkend="make-ca"/> and you want
-        <application>Wget</application> to use them, as the
-        <systemitem class="username">root</systemitem> user:
+        Hvis du har installert <xref linkend="make-ca"/> og du vil
+        <application>Wget</application> å bruke dem, som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>echo ca-directory=/etc/ssl/certs >> /etc/wgetrc</userinput></screen>
@@ -160,28 +138,28 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           wget
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -189,9 +167,9 @@ make</userinput></screen>
         <term><command>wget</command></term>
         <listitem>
           <para>
-            retrieves files from the Web using the HTTP, HTTPS and FTP
-            protocols.  It is designed to be non-interactive, for background or
-            unattended operations
+            henter filer fra nettet ved hjelp av HTTP, HTTPS og FTP 
+            protokollene. Den er designet for å være ikke-interaktiv, 
+            for bakgrunnsoperasjoner eller uovervåkede operasjoner.
           </para>
           <indexterm zone="wget wget-prog">
             <primary sortas="b-wget">wget</primary>
