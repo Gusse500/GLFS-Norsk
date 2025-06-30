@@ -64,12 +64,17 @@
 
     <note>
       <para>
-        Selv om det finnes et alternativ for å bygge pakken uten libpsl, anbefaler både
-        oppstrømsutviklerne, BLFS og GLFS redaktørene på det sterkeste
-        at man ikke deaktiverer støtte for libpsl for å forhindre at nettsteder bruker
-        superinformasjonskapsler, noe som utgjør en sikkerhetsrisiko.
+        Selv om du kan bygge pakken uten libpsl, anbefaler 
+        oppstrømsutviklerne på det sterkeste å bygge støtte for libpsl. 
+        Det forhindrer nettsteder i å bruke superinformasjonskapsler som utgjør 
+        sikkerhetsrisikoer.
       </para>
     </note>
+
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
+    <para role="optional">
+      <xref linkend="libidn2"/>
+    </para>
 
   </sect2>
 
