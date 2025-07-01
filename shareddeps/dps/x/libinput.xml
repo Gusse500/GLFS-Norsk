@@ -24,43 +24,43 @@
     </indexterm>
 
     <sect3 role="package">
-      <title>Introduction to Libinput</title>
+      <title>Introduksjon til Libinput</title>
 
       <para>
-        <application>libinput</application> is a library that handles
-        input devices for display servers and other applications that
-        need to directly deal with input devices.
+        <application>libinput</application> er et bibliotek som håndterer 
+        inndataenheter for skjermservere og andre applikasjoner som trenger 
+        å håndtere inndataenheter direkte.
       </para>
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Download (HTTP): <ulink url="&libinput-download-http;"/>
+            Nedlasting (HTTP): <ulink url="&libinput-download-http;"/>
           </para>
         </listitem>
         <listitem>
           <para>
-            Download (FTP): <ulink url="&libinput-download-ftp;"/>
+            Nedlasting (FTP): <ulink url="&libinput-download-ftp;"/>
           </para>
         </listitem>
       </itemizedlist>
 
-      <bridgehead renderas="sect4">libinput Dependencies</bridgehead>
+      <bridgehead renderas="sect4">libinput Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect5">Required</bridgehead>
+      <bridgehead renderas="sect5">Påkrevd</bridgehead>
       <para role="required">
-        <xref linkend="libevdev"/> and
+        <xref linkend="libevdev"/> og
         <xref linkend="mtdev"/>
       </para>
 
     </sect3>
 
     <sect3 role="installation">
-      <title>Installation of Libinput</title>
+      <title>Installasjon av Libinput</title>
 
       <para>
-        Install <application>libinput</application> by running the following
-        commands:
+        Installer <application>libinput</application> ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -76,16 +76,16 @@ meson setup --prefix=/usr             \
 ninja</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
       <para>
-        If you have passed <option>-D documentation=true</option> to
-        <command>meson</command>, you can install the generated documentation
-        by running the following commands as the <systemitem
-        class="username">root</systemitem> user:
+        Hvis du har sendt <option>-D documentation=true</option> til
+        <command>meson</command>, kan du installere den genererte 
+        dokumentasjonen ved å kjøre følgende kommandoer som <systemitem
+        class="username">root</systemitem> bruker:
       </para>
 
 <!-- seems the api doc is not generated because the directory is not a git
@@ -97,33 +97,33 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
     </sect3>
 
     <sect3 role="commands">
-      <title>Command Explanations</title>
+      <title>Parameterforklaringer</title>
 
       &options-meson;
 
       &meson-buildtype-release;
 
       <para>
-        <parameter>-D debug-gui=false</parameter>: This switch
-        disables creation of a visual debug helper for libinput. Remove
-        if you want it, and you have GTK3 installed.
+        <parameter>-D debug-gui=false</parameter>: Denne bryteren deaktiverer 
+        opprettelsen av en visuell feilsøkingshjelper for libinput. Fjern hvis 
+        du ønsker den, og du har GTK3 installert.
       </para>
 
       <para>
-        <parameter>-D libwacom=false</parameter>: Remove this option if you
-        have libwacom installed, or if you are installing
+        <parameter>-D libwacom=false</parameter>: Fjern dette alternativet hvis 
+        du har libwacom installert, eller hvis du installerer
         GNOME.
       </para>
 
     </sect3>
 
     <sect3 role="content">
-      <title>Contents</title>
+      <title>Innhold</title>
 
       <segmentedlist>
-        <segtitle>Installed Programs</segtitle>
-        <segtitle>Installed Libraries</segtitle>
-        <segtitle>Installed Directories</segtitle>
+        <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
         <seglistitem>
           <seg>
@@ -137,14 +137,14 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
           <seg>
             /etc/libinput,
             /usr/libexec/libinput,
-            /usr/share/libinput, and (optionally)
+            /usr/share/libinput, og (valgfri)
             /usr/share/doc/libinput-&libinput-version;
           </seg>
         </seglistitem>
       </segmentedlist>
 
       <variablelist>
-        <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+        <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
         <?dbfo list-presentation="list"?>
         <?dbhtml list-presentation="table"?>
 
@@ -152,8 +152,8 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
           <term><command>libinput</command></term>
           <listitem>
             <para>
-              is a set of tools to interface with the
-              <application>libinput</application> library
+              er et sett med verktøy for å samhandle med
+              <application>libinput</application> biblioteket
             </para>
             <indexterm zone="libinput libinput-prog">
               <primary sortas="b-libinput-prog">libinput</primary>
@@ -165,7 +165,7 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
           <term><filename class="libraryfile">libinput</filename></term>
           <listitem>
             <para>
-              contains API functions for handling input devices
+              inneholder API funksjoner for håndtering av inndataenheter
             </para>
             <indexterm zone="libinput libinput-lib">
               <primary sortas="c-libinput-lib">libinput</primary>

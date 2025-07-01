@@ -11,10 +11,10 @@
   <title>X11</title>
 
   <para>
-    This chapter covers X11 packages on top of the basic X11 software. There
-    may be some packages you will still need here if you are using Wayland,
-    such as the XCB Utils, Xwayland, and input drivers, namely libinput and
-    libevdev.
+    Dette kapittelet dekker X11 pakker i tillegg til den grunnleggende X11 
+    programvaren. Det kan være noen pakker du fortsatt trenger her hvis du 
+    bruker Wayland, som for eksempel XCB Utils, Xwayland og inndata drivere, 
+    nemlig libinput og libevdev.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xcb-utils.xml"/>

@@ -8,21 +8,22 @@
   <!ENTITY x7apps-download-ftp  " ">
 ]>
 
-<sect1 id="xorg7-app" xreflabel="Xorg Applications">
+<sect1 id="xorg7-app" xreflabel="Xorg Applikasjoner">
   <?dbhtml filename="x7app.html"?>
 
-  <title>Xorg Applications</title>
+  <title>Xorg Applikasjoner</title>
 
   <indexterm zone="xorg7-app">
-    <primary sortas="a-xorg7-app">Xorg-&xorg-version; Applications</primary>
+    <primary sortas="a-xorg7-app">Xorg-&xorg-version; Applikasjoner</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Xorg Applications</title>
+    <title>Introduksjon til Xorg Applikasjoner</title>
 
     <para>
-      The <application>Xorg</application> applications provide the
-      expected applications available in previous X Window implementations.
+      <application>Xorg</application> applikasjonene gir de forventede 
+      applikasjonene som var tilgjengelige i tidligere X Vindu 
+      implementeringer.
     </para>
 
     &long-build-time;
@@ -30,33 +31,33 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&x7apps-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&x7apps-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&x7apps-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&x7apps-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Xorg Applications Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Xorg Applikasjoner Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libpng"/>,
       &opengl;,
-      <xref linkend="xbitmaps"/>, and
+      <xref linkend="xbitmaps"/>, og
       <xref linkend="xcb-utils"/>
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Downloading Xorg Applications</title>
+    <title>Laste ned Xorg Applikasjoner</title>
 
     <para>
-      First, create a list of files to be downloaded:
+      Først, lag en liste over filer som skal lastes ned:
     </para>
 
 <screen><userinput>cat &gt; app-&xorg-version;-list &lt;&lt; "EOF"
@@ -96,8 +97,8 @@ xwud-&xwud-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
-      To download the needed files using <xref linkend='wget'/>,
-      use the following commands:
+      For å laste ned de nødvendige filene ved hjelp av <xref linkend='wget'/>,
+      bruk følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir app &amp;&amp;
@@ -108,18 +109,18 @@ grep -v '^#' ../app-&xorg-version;-list | wget -i- -c \
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Xorg Applications</title>
+    <title>Installasjon av Xorg Applikasjoner</title>
 
 &as_root;
 
     <para>
-      First, start a subshell that will exit on error:
+      Først starter du et underskall som avsluttes ved feil:
     </para>
 
 <screen><userinput>bash -e</userinput></screen>
 
     <para>
-      Install all of the packages by running the following commands:
+      Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>for package in $(grep -v '^#' ../app-&xorg-version;-list)
@@ -135,15 +136,15 @@ do
 done</userinput></screen>
 
     <para>
-      Finally, exit the shell that was started earlier:
+      Til slutt, avslutt skallet som ble startet tidligere:
     </para>
 
 <screen><userinput>exit</userinput></screen>
 
     <para>
-      Remove an undocumented script which is reported to be broken
-      (<command>xkeystone</command> provided by the
-      <application>xrandr</application> package):
+      Fjern et udokumentert skript som er rapportert å være ødelagt
+      (<command>xkeystone</command> levert av
+      <application>xrandr</application> pakken):
     </para>
 
     <screen><userinput>as_root rm -f /usr/bin/xkeystone</userinput></screen>
@@ -151,26 +152,26 @@ done</userinput></screen>
   </sect2>
 <!--
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <para>
       <command>sed -e 's/\$(CPP) \$(DEFS)/$(CPP) -P $(DEFS)/' -i
-      man/Makefile.in</command>: with <application>gcc-5</application> the
-      behavior of <command>cpp</command> was changed to emit line numbers.
-      That results in unterminated <application>sed</application> commands in
-      <filename>filenames.sed</filename>. Adding <literal>-P</literal> restores
-      the old behavior.
+      man/Makefile.in</command>: med <application>gcc-5</application> 
+      oppførselen til <command>cpp</command> ble endret for å sende ut linjenumre.
+      Det resulterer i uavsluttete <application>sed</application> kommandoer i
+      <filename>filenames.sed</filename>. Legge til <literal>-P</literal> 
+      gjenoppretter den gamle oppførselen.
     </para>
 
   </sect2>
 -->
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
 
@@ -180,13 +181,13 @@ done</userinput></screen>
         xinput, xkbbell, xkbcomp, xkbevd, xkbvleds, xkbwatch, xkill,
         xlsatoms, xlsclients, xmessage, xmodmap, xpr, xprop, xrandr, xrdb,
         xrefresh, xset, xsetroot, xvinfo, xwd, xwininfo, and xwud</seg>
-        <seg>None</seg>
-        <seg>None</seg>
+        <seg>Ingen</seg>
+        <seg>Ingen</seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -194,7 +195,7 @@ done</userinput></screen>
         <term><command>iceauth</command></term>
         <listitem>
           <para>
-            is the ICE authority file utility
+            er ICE autorisasjonsfilverktøyet
           </para>
           <indexterm zone="xorg7-app iceauth-x7">
             <primary sortas="b-iceauth">iceauth</primary>
@@ -206,7 +207,7 @@ done</userinput></screen>
         <term><command>mkfontdir</command></term>
         <listitem>
           <para>
-            creates an index of X font files in a directory
+            oppretter en indeks over X fontfiler i en mappe
           </para>
           <indexterm zone="xorg7-app mkfontdir-x7">
             <primary sortas="b-mkfontdir">mkfontdir</primary>
@@ -218,7 +219,7 @@ done</userinput></screen>
         <term><command>mkfontscale</command></term>
         <listitem>
           <para>
-            creates an index of scalable font files for X
+            oppretter en indeks over skalerbare fontfiler for X
           </para>
           <indexterm zone="xorg7-app mkfontscale-x7">
             <primary sortas="b-mkfontscale">mkfontscale</primary>
@@ -230,7 +231,7 @@ done</userinput></screen>
         <term><command>sessreg</command></term>
         <listitem>
           <para>
-            manages utmp/wtmp entries for non-init clients
+            administrerer utmp/wtmp oppføringer for ikke-init klienter
           </para>
           <indexterm zone="xorg7-app sessreg-x7">
             <primary sortas="b-sessreg">sessreg</primary>
@@ -242,7 +243,7 @@ done</userinput></screen>
         <term><command>setxkbmap</command></term>
         <listitem>
           <para>
-            sets the keyboard using the X Keyboard Extension
+            angir tastaturet ved hjelp av X tastaturutvidelsen
           </para>
           <indexterm zone="xorg7-app setxkbmap-x7">
             <primary sortas="b-setxkbmap">setxkbmap</primary>
@@ -254,7 +255,7 @@ done</userinput></screen>
         <term><command>smproxy</command></term>
         <listitem>
           <para>
-            is the Session Manager Proxy
+            er Øktbehandler proxyen
           </para>
           <indexterm zone="xorg7-app smproxy-x7">
             <primary sortas="b-smproxy">smproxy</primary>
@@ -266,7 +267,7 @@ done</userinput></screen>
         <term><command>xauth</command></term>
         <listitem>
           <para>
-            is the X authority file utility
+            er X autorisasjonsfilverktøyet
           </para>
           <indexterm zone="xorg7-app xauth-x7">
             <primary sortas="b-xauth">xauth</primary>
@@ -278,8 +279,8 @@ done</userinput></screen>
         <term><command>xcmsdb</command></term>
         <listitem>
           <para>
-            is the Device Color Characterization utility for the X
-            Color Management System
+            er verktøyet for enhetsfargekarakterisering for X 
+            fargebehandlingssystemet
           </para>
           <indexterm zone="xorg7-app xcmsdb-x7">
             <primary sortas="b-xcmsdb">xcmsdb</primary>
@@ -291,7 +292,7 @@ done</userinput></screen>
         <term><command>xcursorgen</command></term>
         <listitem>
           <para>
-            creates an X cursor file from a collection of PNG images
+            oppretter en X markørfil fra en samling av PNG bilder
           </para>
           <indexterm zone="xorg7-app xcursorgen-x7">
             <primary sortas="b-xcursorgen">xcursorgen</primary>
@@ -303,7 +304,7 @@ done</userinput></screen>
         <term><command>xdpr</command></term>
         <listitem>
           <para>
-            dumps an X window directly to a printer
+            dumper et X vindu direkte til en skriver
           </para>
           <indexterm zone="xorg7-app xdpr-x7">
             <primary sortas="b-xdpr">xdpr</primary>
@@ -315,7 +316,7 @@ done</userinput></screen>
         <term><command>xdpyinfo</command></term>
         <listitem>
           <para>
-            is a display information utility for X
+            er et verktøy for visningsinformasjon for X
           </para>
           <indexterm zone="xorg7-app xdpyinfo-x7">
             <primary sortas="b-xdpyinfo">xdpyinfo</primary>
@@ -327,7 +328,7 @@ done</userinput></screen>
         <term><command>xdriinfo</command></term>
         <listitem>
           <para>
-            queries configuration information of DRI drivers
+            spør etter konfigurasjonsinformasjon for DRI drivere
           </para>
           <indexterm zone="xorg7-app xdriinfo-x7">
             <primary sortas="b-xdriinfo">xdriinfo</primary>
@@ -339,7 +340,7 @@ done</userinput></screen>
         <term><command>xev</command></term>
         <listitem>
           <para>
-            prints contents of X events
+            skriver ut innholdet i X hendelser
           </para>
           <indexterm zone="xorg7-app xev-x7">
             <primary sortas="b-xev">xev</primary>
@@ -351,7 +352,7 @@ done</userinput></screen>
         <term><command>xgamma</command></term>
         <listitem>
           <para>
-            alters a monitor's gamma correction through the X server
+            endrer en skjerms gammakorreksjon gjennom X serveren
           </para>
           <indexterm zone="xorg7-app xgamma-x7">
             <primary sortas="b-xgamma">xgamma</primary>
@@ -363,7 +364,7 @@ done</userinput></screen>
         <term><command>xhost</command></term>
         <listitem>
           <para>
-            is a server access control program for X
+            er et program for servertilgangskontroll for X
           </para>
           <indexterm zone="xorg7-app xhost-x7">
             <primary sortas="b-xhost">xhost</primary>
@@ -375,7 +376,7 @@ done</userinput></screen>
         <term><command>xinput</command></term>
         <listitem>
           <para>
-            is a utility to configure and test X input devices
+            er et verktøy for å konfigurere og teste X inndataenheter
           </para>
           <indexterm zone="xorg7-app xinput-x7">
             <primary sortas="b-xinput">xinput</primary>
@@ -387,7 +388,7 @@ done</userinput></screen>
         <term><command>xkbbell</command></term>
         <listitem>
           <para>
-            is an XKB utility program that raises a bell event
+            er et XKB verktøyprogram som genererer en klokkehendelse
           </para>
           <indexterm zone="xorg7-app xkbbell-x7">
             <primary sortas="b-xkbbell">xkbbell</primary>
@@ -399,7 +400,7 @@ done</userinput></screen>
         <term><command>xkbcomp</command></term>
         <listitem>
           <para>
-            compiles an XKB keyboard description
+            kompilerer en XKB tastaturbeskrivelse
           </para>
           <indexterm zone="xorg7-app xkbcomp-x7">
             <primary sortas="b-xkbcomp">xkbcomp</primary>
@@ -411,7 +412,7 @@ done</userinput></screen>
         <term><command>xkbevd</command></term>
         <listitem>
           <para>
-            is the XKB event daemon
+            er XKB hendelsesdaemonen
           </para>
           <indexterm zone="xorg7-app xkbevd-x7">
             <primary sortas="b-xkbevd">xkbevd</primary>
@@ -423,7 +424,7 @@ done</userinput></screen>
         <term><command>xkbvleds</command></term>
         <listitem>
           <para>
-            shows the XKB status of keyboard LEDs
+            viser XKB statusen til tastatur LEDene
           </para>
           <indexterm zone="xorg7-app xkbvleds-x7">
             <primary sortas="b-xkbvleds">xkbvleds</primary>
@@ -435,7 +436,7 @@ done</userinput></screen>
         <term><command>xkbwatch</command></term>
         <listitem>
           <para>
-            monitors modifier keys and LEDs
+            overvåker modifikatortaster og LED lamper
           </para>
           <indexterm zone="xorg7-app xkbwatch-x7">
             <primary sortas="b-xkbwatch">xkbwatch</primary>
@@ -447,7 +448,7 @@ done</userinput></screen>
         <term><command>xkill</command></term>
         <listitem>
           <para>
-            kills a client by its X resource
+            dreper en klient med sin X ressurs
           </para>
           <indexterm zone="xorg7-app xkill-x7">
             <primary sortas="b-xkill">xkill</primary>
@@ -459,7 +460,7 @@ done</userinput></screen>
         <term><command>xlsatoms</command></term>
         <listitem>
           <para>
-            lists interned atoms defined on the server
+            lister opp interne atomer som er definert på serveren
           </para>
           <indexterm zone="xorg7-app xlsatoms-x7">
             <primary sortas="b-xlsatoms">xlsatoms</primary>
@@ -471,7 +472,7 @@ done</userinput></screen>
         <term><command>xlsclients</command></term>
         <listitem>
           <para>
-            lists client applications running on a display
+            viser klientapplikasjoner som kjører på en skjerm
           </para>
           <indexterm zone="xorg7-app xlsclients-x7">
             <primary sortas="b-xlsclients">xlsclients</primary>
@@ -483,7 +484,7 @@ done</userinput></screen>
         <term><command>xmessage</command></term>
         <listitem>
           <para>
-            displays a message or query in a window
+            viser en melding eller forespørsel i et vindu
           </para>
           <indexterm zone="xorg7-app xmessage-x7">
             <primary sortas="b-xmessage">xmessage</primary>
@@ -495,8 +496,8 @@ done</userinput></screen>
         <term><command>xmodmap</command></term>
         <listitem>
           <para>
-            is a utility for modifying keymaps and pointer button
-            mappings in X
+            er et verktøy for å endre tastekombinasjoner og 
+            pekerknapptilordninger i X
           </para>
           <indexterm zone="xorg7-app xmodmap-x7">
             <primary sortas="b-xmodmap">xmodmap</primary>
@@ -508,7 +509,7 @@ done</userinput></screen>
         <term><command>xpr</command></term>
         <listitem>
           <para>
-            prints an X window dump
+            skriver ut en X Vindu dump
           </para>
           <indexterm zone="xorg7-app xpr-x7">
             <primary sortas="b-xpr">xpr</primary>
@@ -520,7 +521,7 @@ done</userinput></screen>
         <term><command>xprop</command></term>
         <listitem>
           <para>
-            is a property displayer for X
+            er en egenskapsvisning for X
           </para>
           <indexterm zone="xorg7-app xprop-x7">
             <primary sortas="b-xprop">xprop</primary>
@@ -532,7 +533,7 @@ done</userinput></screen>
         <term><command>xrandr</command></term>
         <listitem>
           <para>
-            is a primitive command line interface to RandR extension
+            er et primitivt kommandolinjegrensesnitt til RandR utvidelsen
           </para>
           <indexterm zone="xorg7-app xrandr-x7">
             <primary sortas="b-xrandr">xrandr</primary>
@@ -544,7 +545,7 @@ done</userinput></screen>
         <term><command>xrdb</command></term>
         <listitem>
           <para>
-            is the X server resource database utility
+            er X serverens ressursdatabaseverktøy
           </para>
           <indexterm zone="xorg7-app xrdb-x7">
             <primary sortas="b-xrdb">xrdb</primary>
@@ -556,7 +557,7 @@ done</userinput></screen>
         <term><command>xrefresh</command></term>
         <listitem>
           <para>
-            refreshes all or part of an X screen
+            oppdaterer hele eller deler av en X skjerm
           </para>
           <indexterm zone="xorg7-app xrefresh-x7">
             <primary sortas="b-xrefresh">xrefresh</primary>
@@ -568,7 +569,7 @@ done</userinput></screen>
         <term><command>xset</command></term>
         <listitem>
           <para>
-            is the user preference utility for X
+            er brukerpreferanseverktøyet for X
           </para>
           <indexterm zone="xorg7-app xset-x7">
             <primary sortas="b-xset">xset</primary>
@@ -580,7 +581,7 @@ done</userinput></screen>
         <term><command>xsetroot</command></term>
         <listitem>
           <para>
-            is the root window parameter setting utility for X
+            er verktøyet for innstilling av grunnleggende vinduparametere for X
           </para>
           <indexterm zone="xorg7-app xsetroot-x7">
             <primary sortas="b-xsetroot">xsetroot</primary>
@@ -592,7 +593,7 @@ done</userinput></screen>
         <term><command>xvinfo</command></term>
         <listitem>
           <para>
-            prints out X-Video extension adaptor information
+            skriver ut informasjon om X-Video utvidelsesadapteren
           </para>
           <indexterm zone="xorg7-app xvinfo-x7">
             <primary sortas="b-xvinfo">xvinfo</primary>
@@ -604,7 +605,7 @@ done</userinput></screen>
         <term><command>xwd</command></term>
         <listitem>
           <para>
-            dumps an image of an X window
+            dumper et bilde av et X vindu
           </para>
           <indexterm zone="xorg7-app xwd-x7">
             <primary sortas="b-xwd">xwd</primary>
@@ -616,7 +617,7 @@ done</userinput></screen>
         <term><command>xwininfo</command></term>
         <listitem>
           <para>
-            is a window information utility for X
+            er et verktøy for vindusinformasjon for X
           </para>
           <indexterm zone="xorg7-app xwininfo-x7">
             <primary sortas="b-xwininfo">xwininfo</primary>
@@ -628,7 +629,7 @@ done</userinput></screen>
         <term><command>xwud</command></term>
         <listitem>
           <para>
-            is an image displayer for X
+            er en bildevisningsenhet for X
           </para>
           <indexterm zone="xorg7-app xwud-x7">
             <primary sortas="b-xwud">xwud</primary>

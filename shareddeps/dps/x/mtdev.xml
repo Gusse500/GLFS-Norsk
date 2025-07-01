@@ -18,24 +18,24 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to mtdev</title>
+    <title>Introduksjon til mtdev</title>
 
     <para>
-      The <application>mtdev</application> package contains Multitouch
-      Protocol Translation Library which is used to transform all
-      variants of kernel MT (Multitouch) events to the slotted type B
-      protocol.
+      <application>mtdev</application> pakken inneholder Multitouch Protocol 
+      Translation Library som brukes til å transformere alle varianter av 
+      kjerne MT (Multitouch) hendelser til den slottede type B 
+      protokollen.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&mtdev-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&mtdev-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&mtdev-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&mtdev-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -43,29 +43,29 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of mtdev</title>
+    <title>Installasjon av mtdev</title>
 
     <para>
-      Install <application>mtdev</application> by running the following
-      commands:
+      Installer <application>mtdev</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr --disable-static &amp;&amp;
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
@@ -74,12 +74,12 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -89,13 +89,13 @@ make</userinput></screen>
           libmtdev
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -103,7 +103,7 @@ make</userinput></screen>
         <term><command>mtdev-test</command></term>
         <listitem>
           <para>
-            is a tool to test <filename class="libraryfile">libmtdev</filename>
+            er et verktøy for å teste <filename class="libraryfile">libmtdev</filename>
           </para>
           <indexterm zone="mtdev mtdev-test">
             <primary sortas="b-mtdev-test">mtdev-test</primary>
@@ -115,7 +115,7 @@ make</userinput></screen>
         <term><filename class="libraryfile">libmtdev</filename></term>
         <listitem>
           <para>
-            contains Multitouch Protocol Translation API functions
+            inneholder Multitouch Protocol Translation API funksjoner
           </para>
           <indexterm zone="mtdev libmtdev">
             <primary sortas="c-libmtdev">libmtdev</primary>
