@@ -44,6 +44,9 @@
       <para>30. juni 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa: 25.1.2 -&gt; 25.1.4.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Shadow: 4.17.4 -&gt; 4.18.0.</para>
         </listitem>
         <listitem>
