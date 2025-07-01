@@ -18,30 +18,30 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Wayland-Protocols</title>
+    <title>Introduksjon til Wayland-Protocols</title>
 
     <para>
-      The <application>Wayland-Protocols</application> package contains
-      additional Wayland protocols that add functionality outside of
-      protocols already in the Wayland core.
+      <application>Wayland-Protocols</application> pakken inneholder flere 
+      Wayland protokoller som legger til funksjonalitet utover protokoller som 
+      allerede finnes i Wayland kjernen.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&wayland-protocols-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&wayland-protocols-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&wayland-protocols-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&wayland-protocols-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Wayland-Protocols Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Wayland-Protocols Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="wayland"/>
     </para>
@@ -49,11 +49,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Wayland-Protocols</title>
+    <title>Installasjon av Wayland-Protocols</title>
 
     <para>
-      Install <application>Wayland-Protocols</application> by running the following
-      commands:
+      Installer <application>Wayland-Protocols</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -63,11 +63,11 @@ meson setup --prefix=/usr --buildtype=release &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.
+      For å teste resultatene, utsted: <command>ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -75,26 +75,26 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/share/wayland-protocols

@@ -18,30 +18,30 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Wayland</title>
+    <title>Introduksjon til Wayland</title>
 
     <para>
-      <application>Wayland</application> is a project to define a protocol
-      for a compositor to talk to its clients as well as a library
-      implementation of the protocol.
+      <application>Wayland</application> er et prosjekt for å definere en 
+      protokoll for at en kompositor skal kunne kommunisere med klientene sine, 
+      samt en bibliotekimplementering av protokollen.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&wayland-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&wayland-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&wayland-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&wayland-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Wayland Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Wayland Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libxml2"/>
     </para>
@@ -49,11 +49,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Wayland</title>
+    <title>Installasjon av Wayland</title>
 
     <para>
-      Install <application>Wayland</application> by running the following
-      commands:
+      Installer <application>Wayland</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -71,12 +71,12 @@ ninja</userinput></screen>
            19 tests will fail.  Unfortunately BLFS /etc/profile sets
            XDG_RUNTIME_DIR but does not create it.  For now simply unset
            the variable.  -->
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>env -u XDG_RUNTIME_DIR ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -84,11 +84,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Wayland</title>
+    <title>lib32 Installasjon av Wayland</title>
 
     <para>
-      Install lib32-<application>Wayland</application> by running the following
-      commands:
+      Installer lib32-<application>Wayland</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -107,12 +107,12 @@ ninja</userinput></screen>
            19 tests will fail.  Unfortunately BLFS /etc/profile sets
            XDG_RUNTIME_DIR but does not create it.  For now simply unset
            the variable.  -->
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>env -u XDG_RUNTIME_DIR ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -123,24 +123,24 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <para>
-      <parameter>-D documentation=false</parameter>: This switch is used to
-      disable building of the API documentation.
+      <parameter>-D documentation=false</parameter>: Denne bryteren brukes til 
+      å deaktivere bygging av API dokumentasjon.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -150,7 +150,7 @@ ldconfig</userinput></screen>
           libwayland-client,
           libwayland-cursor,
           libwayland-egl,
-          and libwayland-server
+          og libwayland-server
         </seg>
         <seg>
           /usr/share/wayland
@@ -159,7 +159,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -167,8 +167,8 @@ ldconfig</userinput></screen>
         <term><command>wayland-scanner</command></term>
         <listitem>
           <para>
-            is a tool to generate proxy methods in wayland-client-protocol.h
-            and wayland-server-protocol.h
+            er et verktøy for å generere proxy metoder i wayland-client-protocol.h
+            og wayland-server-protocol.h
           </para>
           <indexterm zone="wayland wayland-scanner">
             <primary sortas="b-wayland-scanner">wayland-scanner</primary>
@@ -180,8 +180,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libwayland-client</filename></term>
         <listitem>
           <para>
-            contains API functions for writing <application>Wayland</application>
-            applications
+            inneholder API funksjoner for å skrive 
+            <application>Wayland</application> applikasjoner
           </para>
           <indexterm zone="wayland libwayland-client">
             <primary sortas="c-libwayland-client">libwayland-client</primary>
@@ -193,8 +193,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libwayland-cursor</filename></term>
         <listitem>
           <para>
-            contains API functions for managing cursors in <application>Wayland</application>
-            applications
+            inneholder API funksjoner for å administrere markører i 
+            <application>Wayland</application> applikasjoner
           </para>
           <indexterm zone="wayland libwayland-cursor">
             <primary sortas="c-libwayland-cursor">libwayland-cursor</primary>
@@ -206,8 +206,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libwayland-egl</filename></term>
         <listitem>
           <para>
-            contains API functions for handling OpenGL calls in
-            <application>Wayland</application> applications
+            inneholder API funksjoner for håndtering av OpenGL kall i
+            <application>Wayland</application> applikasjoner
           </para>
           <indexterm zone="wayland libwayland-egl">
             <primary sortas="c-libwayland-egl">libwayland-egl</primary>
@@ -219,8 +219,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libwayland-server</filename></term>
         <listitem>
           <para>
-            contains API functions for writing <application>Wayland</application>
-            compositors
+            inneholder API funksjoner for å skrive 
+            <application>Wayland</application> kompositorer
           </para>
           <indexterm zone="wayland libwayland-server">
             <primary sortas="c-libwayland-server">libwayland-server</primary>

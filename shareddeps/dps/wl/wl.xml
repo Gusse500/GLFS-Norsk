@@ -11,9 +11,9 @@
   <title>Wayland</title>
 
   <para>
-    This chapter covers Wayland dependencies if you wish to use a Wayland
-    graphical environment. If you want to only use X11, you may skip this
-    chapter.
+    Dette kapittelet dekker Wayland-avhengigheter hvis du ønsker å bruke et 
+    grafisk Wayland miljø. Hvis du bare vil bruke X11, kan du hoppe over 
+    dette kapittelet.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wayland.xml"/>
