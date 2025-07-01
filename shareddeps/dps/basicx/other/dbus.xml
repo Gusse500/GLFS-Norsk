@@ -8,10 +8,10 @@
   <!ENTITY dbus-download-ftp  " ">
 ]>
 
-<sect1 id="dbus" xreflabel="dbus-&dbus-version;">
+<sect1 id="dbus" xreflabel="D-Bus-&dbus-version;">
   <?dbhtml filename="dbus.html"?>
 
-  <title>dbus-&dbus-version;</title>
+  <title>D-Bus-&dbus-version;</title>
 
   <indexterm zone="dbus">
     <primary sortas="a-D-Bus">D-Bus</primary>

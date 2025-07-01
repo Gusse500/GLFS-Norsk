@@ -8,13 +8,13 @@
   <!ENTITY dbus-download-ftp  " ">
 ]>
 
-<sect1 id="dbus-pass1" xreflabel="dbus-&dbus-version; - Pass 1" revision="sysv">
+<sect1 id="dbus-pass1" xreflabel="D-Bus-&dbus-version; - Pass 1" revision="sysv">
   <?dbhtml filename="dbus-pass1.html"?>
 
-  <title>dbus-&dbus-version; - Pass 1</title>
+  <title>D-Bus-&dbus-version; - Pass 1</title>
   
   <indexterm zone="dbus-pass1">
-    <primary sortas="a-dbus-pass1">dbus-pass1</primary>
+    <primary sortas="a-dbus-pass1">D-Bus-Pass1</primary>
   </indexterm>
 
   <sect2 role="package">
