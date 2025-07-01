@@ -18,35 +18,35 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to D-Bus - Pass 1</title>
+    <title>Introduksjon til D-Bus - Pass 1</title>
 
     <para>
-      <application>D-Bus</application> is a message bus system, a simple way
-      for applications to talk to one another.
-      <application>D-Bus</application> supplies both a system daemon (for
-      events such as <quote>new hardware device added</quote> or <quote>printer
-      queue changed</quote>) and a per-user-login-session daemon (for general
-      IPC needs among user applications). Also, the message bus is built on top
-      of a general one-to-one message passing framework, which can be used by
-      any two applications to communicate directly (without going through the
-      message bus daemon).
+      <application>D-Bus</application> er et meldingsbussystem, en enkel måte 
+      for applikasjoner å kommunisere med hverandre.
+      <application>D-Bus</application> leverer både en systemdaemon (for 
+      hendelser som <quote>ny maskinvareenhet lagt til</quote> or <quote>skriverkøen 
+      er endret</quote>) og en daemon for per-bruker påloggingsøkt (for generelle 
+      IPC behov blant brukerapplikasjoner). Meldingsbussen er også bygget oppå 
+      et generelt én-til-én meldingsoverføringsrammeverk, som kan brukes av to 
+      applikasjoner til å kommunisere direkte (uten å gå gjennom 
+      meldingsbussdaemonen).
     </para>
 
     <para>
-      This is the first pass. A useful program, <command>dbus-launch</command>,
-      will be compiled later, but is not needed now. It depends on
-      <xref linkend="xorg7-lib"/> being installed beforehand.
+      Dette er første gjennomgang. Et nyttig program., <command>dbus-launch</command>,
+      vil bli kompilert senere, men er ikke nødvendig nå. Det avhenger av at
+      <xref linkend="xorg7-lib"/> installeres på forhånd.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&dbus-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&dbus-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&dbus-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&dbus-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -54,68 +54,21 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of D-Bus - Pass 1</title>
+    <title>Installasjon av D-Bus - Pass 1</title>
+
+    &dbus-m64;
 
     <para>
-      Install <application>D-Bus</application> by running the following
-      commands (you may wish to review the
-      <filename>meson_options.txt</filename> file first and add any desired
-      parameters to the
-      <command>meson</command> command shown below):
-    </para>
-
-<screen><userinput>mkdir build &amp;&amp;
-cd    build &amp;&amp;
-
-meson setup --prefix=/usr          \
-            --buildtype=release    \
-            --wrap-mode=nofallback \
-            -D systemd=disabled    \
-            .. &amp;&amp;
-
-ninja</userinput></screen>
-
-    <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen role="root"><userinput>ninja install</userinput></screen>
-
-<!-- FIXME: No longer needed with usr merge
-    <para>
-      The shared library needs to be moved to
-      <filename class="directory">/lib</filename>, and as a result the
-      <filename class="extension">.so</filename> file in
-      <filename class="directory">/usr/lib</filename> will need to be
-      recreated. Run the following command as the
-      <systemitem class="username">root</systemitem> user:
-    </para>
-
-<screen role="root"><userinput>mv -v /usr/lib/libdbus-1.so.* /lib &amp;&amp;
-ln -sfv ../../lib/$(readlink /usr/lib/libdbus-1.so) /usr/lib/libdbus-1.so</userinput></screen>
--->
-
-    <para>
-      If you are using a DESTDIR install,
-      <command>dbus-daemon-launch-helper</command> needs to be fixed
-      afterwards. Issue, as <systemitem class="username">root</systemitem>
-      user:
-    </para>
-
-<screen role="root"><userinput>chown -v root:messagebus /usr/libexec/dbus-daemon-launch-helper &amp;&amp;
-chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></screen>
-
-    <para>
-      Generate the <application>D-Bus</application> UUID to avoid
-      warnings when compiling some packages with the following command as the
-      <systemitem class="username">root</systemitem> user:
+      Generer <application>D-Bus</application> UUID for å unngå 
+      advarsler når du kompilerer noen pakker med følgende kommando som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>dbus-uuidgen --ensure</userinput></screen>
 
     <para>
-      If using elogind, create a symlink to the
-      <filename>/var/lib/dbus/machine-id</filename> file:
+      Hvis du bruker elogind, opprett en symbollenke til
+      <filename>/var/lib/dbus/machine-id</filename> filen:
     </para>
 
 <screen role="root"><userinput>ln -sfv /var/lib/dbus/machine-id /etc</userinput></screen>
@@ -123,18 +76,18 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
   </sect2>
 
   <sect2>
-    <title>lib32 Installation of D-Bus</title>
+    <title>lib32 Installasjon av D-Bus</title>
 
     <note>
       <para>
-        The program <command>dbus-launch</command> will not need to have a
-        lib32 version, so this lib32 compilation will be the first and only
-        needed pass unless you are upgrading D-Bus.
+        Programmet <command>dbus-launch</command> trenger ikke å ha en 
+        lib32 versjon, så denne lib32-kompilasjonen vil være den første og 
+        eneste nødvendige prosessen med mindre du oppgraderer D-Bus.
       </para>
     </note>
 
     <para>
-      Install lib32-D-Bus by running the following commands:
+      Installer lib32-D-Bus ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -149,7 +102,7 @@ meson setup --prefix=/usr              \
 ninja</userinput></screen>
 
     <para>
-      Now as the &root; user:
+      Nå som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -160,25 +113,25 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-wrap-nofallback;
 
     <para>
-      <parameter>-D systemd=disabled</parameter>: Don't install systemd support
-      files even if <filename class="libraryfile">libsystemd</filename> exists
-      (i.e. the <xref linkend="elogind"/> package is installed). 
+      <parameter>-D systemd=disabled</parameter>: Ikke installer systemd 
+      støttefiler selv om <filename class="libraryfile">libsystemd</filename> 
+      finnes (dvs. <xref linkend="elogind"/> pakken er installert). 
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <para>
-      See the full list of contents at <xref linkend="dbus"/>.
+      Se hele innholdslisten på <xref linkend="dbus"/>.
     </para>
 
   </sect2>

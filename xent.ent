@@ -83,3 +83,72 @@
 <!ENTITY static-libraries
   "<para><parameter>--disable-static</parameter>: Denne bryteren forhindrer 
   installasjon av statiske versjoner av bibliotekene.</para>">
+
+<!-- Save repetition for multiple passes of a package. -->
+<!ENTITY dbus-m64 "
+<para>
+  Installer <application>D-Bus</application> ved å kjøre følgende 
+  kommandoer (du kan ønske å gjennomgå
+  <filename>meson_options.txt</filename> filen først og legg til ønskede 
+  parametere til <command>meson</command> kommandoen vist nedenfor):
+</para>
+
+<screen><userinput revision='sysv'>mkdir  build &amp;&amp;
+cd     build &amp;&amp;
+
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --wrap-mode=nofallback \</userinput><userinput revision='sysv'>
+            -D systemd=disabled    \</userinput><userinput>
+            .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role='root'><userinput>ninja install</userinput></screen>
+
+    <para>
+      Hvis du bruker en DESTDIR installasjon,
+      <command>dbus-daemon-launch-helper</command> må fikses 
+      etterpå. Utsted følgende som &root; bruker:
+    </para>
+
+<screen role='root'><userinput>chown -v root:messagebus /usr/libexec/dbus-daemon-launch-helper &amp;&amp;
+chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></screen>">
+
+<!ENTITY freetype-m64 "<para>
+  Installer <application>FreeType2</application> ved å kjøre følgende 
+  kommandoer:
+</para>
+<screen><userinput>./configure --prefix=/usr            \
+            --enable-freetype-config \
+            --disable-static &amp;&amp;
+make</userinput></screen>
+<para>
+  Nå, som &root; bruker:
+</para>
+<screen role='root'><userinput>make install</userinput></screen>">
+<!ENTITY freetype-m32 "<para>
+  Installer lib32-<application>FreeType2</application> ved å kjøre følgende 
+  kommandoer:
+</para>
+<screen><userinput>make distclean &amp;&amp;
+CC=&quot;gcc -m32&quot; CXX=&quot;g++ -m32&quot;         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+./configure --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu \
+            --enable-freetype-config \
+            --disable-static &amp;&amp;
+
+make</userinput></screen>
+<para>
+  Nå, som &root; bruker:
+</para>
+<screen role='root'><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>">

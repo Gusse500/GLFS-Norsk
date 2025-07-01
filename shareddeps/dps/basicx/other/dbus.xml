@@ -29,7 +29,8 @@
     <para revision="sysv">
       D-Bus ble allerede kompilert før, men ikke et nyttig program,
       <command>dbus-launch</command>. Denne gjennomgangen dekker det, og noe oppsett 
-      som kreves.
+      som kreves. Fjern den tidligere utpakkede kildekoden du bygde fra 
+      og utpakk den fra tarballen på nytt for å få et rent kildekodetre.
     </para>
 
     <itemizedlist spacing="compact">
@@ -69,40 +70,7 @@
   <sect2 role="installation">
     <title>Installasjon av D-Bus</title>
 
-    <para>
-      Installer <application>D-Bus</application> ved å kjøre følgende 
-      kommandoer (du kan ønske å gjennomgå
-      <filename>meson_options.txt</filename> filen først og legg til ønskede 
-      parametere til <command>meson</command> kommandoen vist nedenfor):
-    </para>
-
-<screen><userinput revision="sysv">rm -rf build &amp;&amp;
-</userinput><userinput>mkdir  build &amp;&amp;
-cd     build &amp;&amp;
-
-meson setup --prefix=/usr          \
-            --buildtype=release    \
-            --wrap-mode=nofallback \</userinput><userinput revision='sysv'>
-            -D systemd=disabled    \</userinput><userinput>
-            .. &amp;&amp;
-
-ninja</userinput></screen>
-
-    <para>
-      Nå, som &root; bruker:
-    </para>
-
-<screen role="root"><userinput>ninja install</userinput></screen>
-
-    <para>
-      Hvis du bruker en DESTDIR installasjon,
-      <command>dbus-daemon-launch-helper</command> må fikses 
-      etterpå. Utsted, som <systemitem class="username">root</systemitem>
-      bruker:
-    </para>
-
-<screen role="root"><userinput>chown -v root:messagebus /usr/libexec/dbus-daemon-launch-helper &amp;&amp;
-chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></screen>
+    &dbus-m64;
 
   </sect2>
 
