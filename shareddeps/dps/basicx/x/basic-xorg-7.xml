@@ -29,14 +29,17 @@
     Denne delen installerer imidlertid ikke <xref linkend="xorg-server"/>, men 
     installerer i stedet grunnleggende programvare som mye annen programvare er 
     avhengig av, inkludert <application>Xorg</application> server, kompositorer, 
-    vindusbehandlere eller skrivebordsmiljøer, og <xref linkend="xwayland"/> &mdash; 
-    en nødvendig del av Wayland hvis du vil bruke
-    <application>Xorg</application>-bare programvare som <xref linkend="steam"/>.
-    <xref linkend="wine"/> har en eksperimentell
+    vindusbehandlere eller skrivebordsmiljøer, og <xref linkend="xwayland"/>.
+  </para>
+  
+  <note><para>
+    <application>Xwayland</application> er en nødvendig del av Wayland hvis du 
+	vil bruke <application>Xorg</application>-bare programvare som <xref
+    linkend="steam"/>. <xref linkend="wine"/> har en eksperimentell
     <application>Wayland</application> modus, men det er fortsatt en god idé å 
     installere <xref linkend="xwayland"/> foreløpig.
-  </para>
-
+  </para></note>
+    
   <bridgehead renderas="sect3">Instruksjoner for Nedlasting og Installasjon av 
   Xorg </bridgehead>
 
