@@ -18,36 +18,36 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to LLVM</title>
+    <title>Introduksjon til LLVM</title>
 
     <para>
-      The <application>LLVM</application> package contains a collection of
-      modular and reusable compiler and toolchain technologies. The Low Level
-      Virtual Machine (LLVM) Core libraries provide a modern source and
-      target-independent optimizer, along with code generation support for many
-      popular CPUs, as well as some less common ones. These libraries are
-      built around a well specified code representation known as the LLVM
-      intermediate representation ("LLVM IR").
+      <application>LLVM</application> pakken inneholder en samling av modulære 
+      og gjenbrukbare kompilator og verktøykjedeteknologier. Lavnivå virtuelle 
+      maskin (LLVM) kjernebibliotekene gir en moderne kilde og måluavhengig 
+      optimalisering, sammen med støtte for kodegenerering for mange populære 
+      CPUer, samt noen mindre vanlige. Disse bibliotekene er bygget rundt en 
+      velspesifisert koderepresentasjon kjent som LLVM mellomrepresentasjonen 
+      ("LLVM IR").
     </para>
 
     <para>
-      <application>Clang</application> provides new C, C++, Objective C
-      and Objective C++ front-ends for <application>LLVM</application> and is
-      required by some desktop packages such as
+      <application>Clang</application> tilbyr nye C, C++, Objective C 
+      og Objective C++ grensesnitt for <application>LLVM</application> og er 
+      nødvendig for noen skrivebordspakker som
       <ulink url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>
-      and for <xref linkend="rustc"/> if that is built using the system
+      og for <xref linkend="rustc"/> hvis det er bygget ved hjelp av systemets
       <application>LLVM</application>.
     </para>
 
     <para>
-      The <application>Compiler RT</application> package provides
-      runtime sanitizer and profiling libraries for developers who use
-      <application>Clang</application> and <application>LLVM</application>.
+      <application>Compiler RT</application> pakken inneholder 
+      kjøretidsrenser og profileringsbiblioteker for utviklere som bruker
+      <application>Clang</application> og <application>LLVM</application>.
     </para>
 
     <para>
-      The below instructions will install all of these projects, though you may
-      wish to skip installing some of the optional packages.
+      Instruksjonene nedenfor vil installere alle disse prosjektene, men du kan 
+      hoppe over installasjonen av noen av de valgfrie pakkene hvis ønskelig.
     </para>
 
     &long-build-time;
@@ -55,14 +55,14 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&llvm-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&llvm-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">LLVM Dependencies</bridgehead>
+    <bridgehead renderas="sect3">LLVM Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>
     </para>
@@ -70,17 +70,17 @@
   </sect2>
 
   <sect2>
-    <title>Downloading LLVM tarballs</title>
+    <title>Nedlasting av LLVM tarballer</title>
 
     <para>
-      The tarballs that are to be downloaded are poorly named and may conflict
-      with other present tarballs that may be in the current directory. The
-      instructions below work around this by putting the tarballs in a new
-      directory so they are isolated.
+      Tarballene som skal lastes ned har dårlig navn og kan komme i konflikt 
+      med andre tarballer som kan være i gjeldende mappe. Instruksjonene 
+      nedenfor omgår dette ved å plassere tarballene i en ny mappe slik at de 
+      er isolert.
     </para>
 
     <para>
-      First, create a list of files to be downloaded:
+      Først, lag en liste over filer som skal lastes ned:
     </para>
 
 <screen><userinput>cat &gt; llvm-&llvm-version;-list &lt;&lt; "EOF"
@@ -97,8 +97,8 @@ compiler-rt-&llvm-version;.src.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
-      To download the needed files using <xref linkend='wget'/>,
-      use the following commands:
+      For å laste ned de nødvendige filene ved hjelp av <xref linkend='wget'/>,
+      bruk følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir llvm &amp;&amp;
@@ -109,33 +109,33 @@ grep -v '^#' ../llvm-&llvm-version;-list | wget -i- -c \
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of LLVM</title>
+    <title>Installasjon av LLVM</title>
 
     <para>
-      Extract the <filename>llvm-&llvm-version;.src.tar.xz</filename> tarball
-      and navigate to the extracted
-      <filename class="directory">llvm-&llvm-version;.src</filename> directory:
+      Pakk ut <filename>llvm-&llvm-version;.src.tar.xz</filename> tarballen
+      og naviger til den utpakkede
+      <filename class="directory">llvm-&llvm-version;.src</filename> mappen:
     </para>
 
 <screen><userinput>tar -xf llvm-&llvm-version;.src.tar.xz &amp;&amp;
 cd llvm-&llvm-version;.src</userinput></screen>
 
     <para>
-      The <filename>cmake-&llvm-version;.src.tar.xz</filename> and
-      <filename>third-party-&llvm-version;.src.tar.xz</filename> tarballs are
-      necessary for the LLVM building process. The
-      <filename>cmake-&llvm-version;.src.tar.xz</filename> tarball includes
-      CMake modules that LLVM uses, such as properly setting the version
-      number. The <filename>third-party-&llvm-version;.src.tar.xz</filename>
-      tarball includes dependencies, such as benchmark and unittest. Upstream
-      expects both tarballs to be extracted at the same level as the
-      <filename>llvm-&llvm-version;.src.tar.xz</filename> tarball.
-      Additionally, the extracted directories must be renamed to
-      <filename class="directory">cmake</filename> and
-      <filename class="directory">third-party</filename> respectively. Extract
-      them and modify the build system to avoid creating ambiguously-named
-      directories outside the
-      <filename class="directory">llvm-&llvm-version;.src</filename> hierarchy:
+      <filename>cmake-&llvm-version;.src.tar.xz</filename> og
+      <filename>third-party-&llvm-version;.src.tar.xz</filename> tarballene er
+      nødvendig for LLVM byggeprosessen. 
+      <filename>cmake-&llvm-version;.src.tar.xz</filename> tarballen inkluderer
+      CMake moduler som LLVM bruker, for eksempel riktig angivelse av 
+      versjonsnummeret. <filename>third-party-&llvm-version;.src.tar.xz</filename>
+      tarballen inkluderer avhengigheter, som benchmark og unittest. Oppstrøms 
+      forventer at begge tarballene pakkes ut på samme nivå som
+      <filename>llvm-&llvm-version;.src.tar.xz</filename> tarballen.
+      I tillegg må de utpakkede mappene gis nytt navn til
+      <filename class="directory">cmake</filename> og
+      <filename class="directory">third-party</filename> henholdsvis. Pakk dem 
+      ut og modifiser byggesystemet for å unngå å opprette tvetydig navngitte 
+      mapper utenfor
+      <filename class="directory">llvm-&llvm-version;.src</filename> hierarkiet:
     </para>
 
 <screen><userinput>tar -xf ../cmake-&llvm-version;.src.tar.xz &amp;&amp;
@@ -146,41 +146,41 @@ sed '/LLVM_THIRD_PARTY_DIR/s@../third-party@third-party-&llvm-version;.src@' \
     -i cmake/modules/HandleLLVMOptions.cmake</userinput></screen>
 
     <para>
-      Install <application>clang</application> into
-      the source tree by running the following commands:
+      Pakk ut <application>clang</application> inn i
+      kildetreet ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>tar -xf ../clang-&llvm-version;.src.tar.xz -C tools &amp;&amp;
 mv tools/clang-&llvm-version;.src tools/clang</userinput></screen>
 
     <para>
-      Install <application>compiler-rt</application> into
-      the source tree by running the following commands:
+      Pakk ut <application>compiler-rt</application> inn i
+      kildetreet ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>tar -xf ../compiler-rt-&llvm-version;.src.tar.xz -C projects    &amp;&amp;
 mv projects/compiler-rt-&llvm-version;.src projects/compiler-rt</userinput></screen>
 
     <para>
-     There are many Python scripts in this package which use
-     <command>/usr/bin/env python</command> to access the system Python
-     which on LFS is <application>Python3</application>. Use the following
-     command to fix these scripts:
+     Det er mange Python skript i denne pakken som bruker
+     <command>/usr/bin/env python</command> for å få tilgang til systemets 
+     Python som på LFS er <application>Python3</application>. Bruk følgende 
+     kommando for å fikse disse skriptene:
     </para>
 
 <screen><userinput>grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'</userinput></screen>
 
     <para>
-      Ensure installing the <command>FileCheck</command> program which is
-      needed by the test suite of some packages (for example
+      Sørg for å installere <command>FileCheck</command> programmet som er 
+      nødvendig for testpakken til noen pakker (for eksempel
       <xref linkend="rustc"/>): 
     </para>
 
     <screen><userinput>sed 's/utility/tool/' -i utils/FileCheck/CMakeLists.txt</userinput></screen>
 
     <para>
-      Install <application>LLVM</application> by running the following
-      commands:
+      Installer <application>LLVM</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -204,7 +204,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr                     \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
@@ -213,11 +213,11 @@ cp bin/FileCheck /usr/bin</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>lib32 Installation of LLVM</title>
+    <title>lib32 Installasjon av LLVM</title>
 
     <para>
-      If you are doing multilib, you will also need to install the
-      32-bit runtime libraries. Install them by doing the following:
+      Hvis du bruker multilib, må du også installere 32-bit kjøretids 
+      bibliotekene. Installer dem ved å gjøre følgende:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -246,8 +246,8 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr                      \
 ninja</userinput></screen>
 
     <para>
-      Now as the <systemitem class="username">root</systemitem>
-      user:
+      Nå som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -258,111 +258,111 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
     <para>
-      <parameter>-D LLVM_ENABLE_FFI=ON</parameter>: This switch allows
-      <application>LLVM</application> to use
+      <parameter>-D LLVM_ENABLE_FFI=ON</parameter>: Denne bryteren tillater
+      <application>LLVM</application> å bruke
       <application>libffi</application>.
     </para>
 
     <para>
-      <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter>: This switch builds
-      the libraries as static and links all of them into an unique shared one.
-      This is the recommended way of building a shared library and is required
-      by <xref linkend="rustc"/> in order to build against the system-installed
-      <application>LLVM</application>.
+      <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter>: Denne bryteren bygger 
+      bibliotekene som statiske og kobler dem alle til et unikt delt bibliotek. 
+      Dette er den anbefalte måten å bygge et delt bibliotek på, og det er 
+      obligatorisk for <xref linkend="rustc"/> for å bygge mot det 
+      systeminstallerte <application>LLVM</application>.
     </para>
 
     <para>
-      <parameter>-D CMAKE_BUILD_TYPE=Release</parameter>: This switch enables
-      compiler optimizations in order to speed up the code and reduce its size.
-      It also disables some compile checks which are not necessary on a
-      production system.
+      <parameter>-D CMAKE_BUILD_TYPE=Release</parameter>: Denne bryteren 
+      aktiverer kompilatoroptimaliseringer for å øke hastigheten på koden og 
+      redusere størrelsen. Den deaktiverer også noen kompileringskontroller som 
+      ikke er nødvendige på et produksjonssystem.
     </para>
 
     &cmake-skip-install-rpath;
 
     <para>
       <parameter>-D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU;NVPTX"</parameter>:
-      This switch enables building for x86, the same target as the host, for
-      the r600 AMD GPU used by the <xref linkend="mesa"/> r600 and radeonsi
-      drivers, as well as NVIDIA GPUs used in tandem with <ulink
-      url="&slfs-website;/general/cuda.html">CUDA</ulink>. The default is
-      all of the targets. You can use a semicolon separated list. Valid targets
-      are: host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch,
-      Mips, MSP430, NVPTX, PowerPC, RISCV, Sparc, SystemZ, SystemZ, VE,
-      WebAssembly, X86, XCore, or all.
+      Denne bryteren muliggjør bygging for x86, samme mål som verten, for 
+      r600 AMD GPUen som brukes av <xref linkend="mesa"/> r600 og radeonsi
+      drivere, samt NVIDIA GPUer som brukes sammen med <ulink
+      url="&slfs-website;/general/cuda.html">CUDA</ulink>. Standardinnstillingen 
+      er alle målene. Du kan bruke en semikolonseparert liste. Gyldige mål er: 
+      host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch, Mips, 
+      MSP430, NVPTX, PowerPC, RISCV, Sparc, SystemZ, SystemZ, VE, WebAssembly, 
+      X86, XCore eller all.
     </para>
 
     <para>
-      <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter>: Used in conjunction with
-      <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter>, this switch enables
-      linking the tools against the shared library instead of the static ones.
-      It slightly reduces their size and also ensures that llvm-config
-      will correctly use libLLVM-&llvm-maj-version;.
+      <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter>: Brukes sammen med
+      <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter>, Denne bryteren 
+      muliggjør kobling av verktøyene mot det delte biblioteket i stedet for de 
+      statiske. Den reduserer størrelsen deres litt og sikrer også at 
+      llvm-config vil bruke riktig libLLVM-&llvm-maj-version;.
     </para>
 
     <para>
-      <parameter>-D LLVM_ENABLE_RTTI=ON</parameter>: This switch is used to
-      build LLVM with run-time type information. This is required for building
-      Gallium3D LLVMpipe from <xref linkend="mesa"/>.
+      <parameter>-D LLVM_ENABLE_RTTI=ON</parameter>: Denne bryteren brukes til 
+      å bygge LLVM med kjøretidstypeinformasjon. Dette er nødvendig for å bygge 
+      Gallium3D LLVMpipe fra <xref linkend="mesa"/>.
     </para>
 
     <para>
-      <parameter>-D LLVM_BINUTILS_INCDIR=/usr/include</parameter>: This switch
-      is used to tell the build system the location of binutils headers,
-      which were installed in LFS.  This allows the building of
-      <filename class="libraryfile">LLVMgold</filename>, which is needed
-      for building programs with <command>clang</command> and Link Time
-      Optimization (LTO).
+      <parameter>-D LLVM_BINUTILS_INCDIR=/usr/include</parameter>: Denne 
+      bryteren brukes til å fortelle byggesystemet plasseringen av binutils 
+      deklarasjoner, som ble installert i LFS. Dette tillater bygging av
+      <filename class="libraryfile">LLVMgold</filename>, som er nødvendig for 
+      å bygge programmer med <command>clang</command> og Koblingstidspunkt
+      Optimalisering (LTO).
     </para>
 
     <para>
       <parameter>-D LLVM_INCLUDE_BENCHMARKS=OFF</parameter>:
-      is used to disable generation build targets for the LLVM
-      benchmarks. This option requires additional code that
-      is not currently available.
+      brukes til å deaktivere generasjonsbyggemål for LLVM 
+      benchmarks. Dette alternativet krever tilleggskode som ikke 
+      er tilgjengelig for øyeblikket.
     </para>
 
     <para>
-      <parameter>-D CLANG_DEFAULT_PIE_ON_LINUX=ON</parameter>: makes
-      <option>-fpie</option> option the default when compiling programs.
-      Together with the <xref linkend="gASLR"/> feature enabled in the kernel,
-      this defeats some kind of attacks based on known memory layouts.
+      <parameter>-D CLANG_DEFAULT_PIE_ON_LINUX=ON</parameter>: gjør
+      <option>-fpie</option> standardalternativet når programmer kompileres. 
+      Sammen med <xref linkend="gASLR"/> funksjonen aktivert i kjernen, 
+      dette bekjemper noen typer angrep basert på kjente minneoppsett.
     </para>
 
     <para>
       <parameter>-D CLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang</parameter>:
-      makes <command>clang</command> and <command>clang++</command>
-      search <filename class='directory'>/etc/clang</filename> for
-      configuration files.
+      gjør at <command>clang</command> og <command>clang++</command>
+      søker <filename class='directory'>/etc/clang</filename> for
+      konfigurasjonsfiler.
     </para>
 
     <para>
-      <option>-D BUILD_SHARED_LIBS=ON</option>: if used instead of
-      <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter> and
-      <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter>, builds all the
-      <application>LLVM</application> libraries (about 60) as shared
-      libraries instead of static.
+      <option>-D BUILD_SHARED_LIBS=ON</option>: hvis brukt i stedet for
+      <parameter>-D LLVM_BUILD_LLVM_DYLIB=ON</parameter> og
+      <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter>, bygges alle
+      <application>LLVM</application> biblioteker (omtrent 60) 
+      som delte biblioteker i stedet for statiske.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring LLVM</title>
+    <title>Konfigurere LLVM</title>
 
     <sect3 id="llvm-config-info">
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        If you've built Clang, as the &root; user create two configuration
-        files to make <xref linkend='gSSP'/> enabled by default for
-        <command>clang</command> and <command>clang++</command>, so
-        the default configuration of their SSP feature will be consistent
-        with <application>GCC</application>:
+        Hvis du har bygget Clang, som &root; brukeren oppretter to 
+        konfigurasjonsfiler for å lage <xref linkend='gSSP'/> aktivert som 
+        standard for <command>clang</command> og <command>clang++</command>, så
+        standardkonfigurasjonen til SSP funksjonen deres vil være konsistent
+        med <application>GCC</application>:
       </para>
 
 <screen role='root'><userinput>mkdir -pv /etc/clang &amp;&amp;
@@ -373,67 +373,67 @@ done</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           amdgpu-arch, analyze-build, bugpoint, c-index-test, clang, clang++
           (symlinks to clang-&llvm-maj-version;), clang-&llvm-maj-version;,
-          clang-check, clang-cl, clang-cpp (last two symlinks to clang),
+          clang-check, clang-cl, clang-cpp (de to siste symbollenker til clang),
           clang-extdef-mapping, clang-format, clang-installapi,
           clang-linker-wrapper, clang-nvlink-wrapper, clang-offload-bundler,
           clang-offload-packager, clang-refactor, clang-repl, clang-scan-deps,
           clang-sycl-linker, clang-tblgen, diagtool, dsymutil, FileCheck,
           git-clang-format, hmaptool, intercept-build, llc, lli, llvm-addr2line
-          (symlink to llvm-symbolizer), llvm-ar, llvm-as, llvm-bcanalyzer,
-          llvm-bitcode-strip (symlink to llvm-objcopy), llvm-cat,
+          (symbollenke til llvm-symbolizer), llvm-ar, llvm-as, llvm-bcanalyzer,
+          llvm-bitcode-strip (symbollenke til llvm-objcopy), llvm-cat,
           llvm-cfi-verify, llvm-cgdata,  llvm-config, llvm-cov, llvm-c-test,
           llvm-ctxprog-util, llvm-cvtres, llvm-cxxdump, llvm-cxxfilt,
           llvm-cxxmap, llvm-debuginfo-analyzer, llvm-debuginfod,
-          llvm-debuginfod-find, llvm-diff, llvm-dis, llvm-dlltool
-          (symlink to llvm-ar), llvm-dwarfdump, llvm-dwarfutil,
-          llvm-dwp, llvm-exegesis, llvm-extract, llvm-gsymutil, llvm-ifs,
-          llvm-install-name-tool (symlink to llvm-objcopy), llvm-jitlink,
-          llvm-lib (symlink to llvm-ar), llvm-libtool-darwin, llvm-link,
-          llvm-lipo, llvm-lto, llvm-lto2, llvm-mc, llvm-mca, llvm-ml,
-          llvm-modextract, llvm-mt, llvm-nm, llvm-objcopy, llvm-objdump,
-          llvm-opt-report, llvm-otool (symlink to llv-objdump), llvm-pdbutil,
-          llvm-profdata, llvm-profgen, llvm-ranlib (symlink to llvm-ar), llvm-rc,
-          llvm-readelf (symlink to llvm-readobj), llvm-readobj, llvm-readtapi,
-          llvm-reduce, llvm-remarkutil, llvm-rtdyld, llvm-sim, llvm-size,
-          llvm-split, llvm-stress, llvm-strings, llvm-strip
-          (symlink to llvm-objcopy), llvm-symbolizer, llvm-tblgen,
-          llvm-tli-checker, llvm-undname, llvm-windres (symlink to llvm-rc),
-          llvm-xray, nvptx-arch, opt, sancov, sanstats, scan-build,
-          scan-build-py, scan-view, and verify-uselistorder
+          llvm-debuginfod-find, llvm-diff, llvm-dis, llvm-dlltool (symbollenke 
+          til llvm-ar), llvm-dwarfdump, llvm-dwarfutil, llvm-dwp, llvm-exegesis, 
+          llvm-extract, llvm-gsymutil, llvm-ifs, llvm-install-name-tool 
+          (symbollenke til llvm-objcopy), llvm-jitlink, llvm-lib (symbollenke 
+          til llvm-ar), llvm-libtool-darwin, llvm-link, llvm-lipo, llvm-lto, 
+          llvm-lto2, llvm-mc, llvm-mca, llvm-ml, llvm-modextract, llvm-mt, 
+          llvm-nm, llvm-objcopy, llvm-objdump, llvm-opt-report, llvm-otool 
+          (symbollenke til llv-objdump), llvm-pdbutil, llvm-profdata, 
+          llvm-profgen, llvm-ranlib (symbollenke til llvm-ar), llvm-rc, 
+          llvm-readelf (symbollenke til llvm-readobj), llvm-readobj, 
+          llvm-readtapi, llvm-reduce, llvm-remarkutil, llvm-rtdyld, llvm-sim, 
+          llvm-size, llvm-split, llvm-stress, llvm-strings, llvm-strip 
+          (symbollenke til llvm-objcopy), llvm-symbolizer, llvm-tblgen, 
+          llvm-tli-checker, llvm-undname, llvm-windres (symbollenke til 
+          llvm-rc), llvm-xray, nvptx-arch, opt, sancov, sanstats, scan-build, 
+          scan-build-py, scan-view, og verify-uselistorder
         </seg>
         <seg>
           libLLVM,
-          libLLVM* (107 static libraries),
+          libLLVM* (107 statiske biblioteker),
           libLTO,
           libRemarks,
           libclang,
           libclang-cpp,
-          libclang* (43 static libraries),
-          and LLVMgold
+          libclang* (43 statiske biblioteker),
+          og LLVMgold
         </seg>
         <seg>
           /usr/include/{clang,clang-c,llvm,llvm-c},
           /usr/lib/{clang,cmake/{clang,llvm},libear,libscanbuild},
           /usr/share/{clang,opt-viewer,scan-build,scan-view},
-          <!--/usr/share/doc/llvm-&llvm-version;, -->and
+          <!--/usr/share/doc/llvm-&llvm-version;, -->og
           /etc/clang
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -441,9 +441,9 @@ done</userinput></screen>
         <term><command>amdgpu-arch</command></term>
         <listitem>
           <para>
-            lists AMD GPUs installed; at runtime it needs
+            viser installerte AMD GPUer; ved kjøretid trenger den
             <filename class='libraryfile'>libhsa-runtime64</filename>
-            which is not a part of BLFS
+            som ikke er en del av BLFS
           </para>
           <indexterm zone="llvm amdgpu-arch">
             <primary sortas="b-amdgpu-arch">amdgpu-arch</primary>
@@ -455,7 +455,7 @@ done</userinput></screen>
         <term><command>analyze-build</command></term>
         <listitem>
           <para>
-            is a static analysis tool
+            er et statisk analyseverktøy
           </para>
           <indexterm zone="llvm analyze-build">
             <primary sortas="b-analyze-build">analyze-build</primary>
@@ -467,7 +467,7 @@ done</userinput></screen>
         <term><command>bugpoint</command></term>
         <listitem>
           <para>
-            is the automatic test case reduction tool
+            er det automatiske verktøyet for reduksjon av testtilfeller
           </para>
           <indexterm zone="llvm bugpoint">
             <primary sortas="b-bugpoint">bugpoint</primary>
@@ -479,7 +479,7 @@ done</userinput></screen>
         <term><command>c-index-test</command></term>
         <listitem>
           <para>
-            is used to test the libclang API and demonstrate its usage
+            brukes til å teste libclang API og demonstrere bruken av den
           </para>
           <indexterm zone="llvm c-index-test">
             <primary sortas="b-c-index-test">c-index-test</primary>
@@ -491,8 +491,8 @@ done</userinput></screen>
         <term><command>clang</command></term>
         <listitem>
           <para>
-            is the <application>Clang</application> C, C++,
-            and Objective-C compiler
+            er <application>Clang</application> C, C++,
+            og Objective-C kompilator
           </para>
           <indexterm zone="llvm clang">
             <primary sortas="b-clang">clang</primary>
@@ -504,8 +504,8 @@ done</userinput></screen>
         <term><command>clang-check</command></term>
         <listitem>
           <para>
-            is a tool to perform static code analysis and display Abstract
-            Syntax Trees (AST)
+            er et verktøy for å utføre statisk kodeanalyse og vise et 
+            sammendrag av syntaks trær ((Abstract Syntax Trees)(AST)
           </para>
           <indexterm zone="llvm clang-check">
             <primary sortas="b-clang-check">clang-check</primary>
@@ -517,8 +517,8 @@ done</userinput></screen>
         <term><command>clang-extdef-mapping</command></term>
         <listitem>
           <para>
-            is a tool to collect the USR name and location of external
-            definitions in a source file
+            er et verktøy for å samle USR navn og plasseringen til eksterne 
+            definisjoner i en kildefil
           </para>
           <indexterm zone="llvm clang-extdef-mapping">
             <primary sortas="b-clang-extdef-mapping">clang-extdef-mapping</primary>
@@ -530,8 +530,8 @@ done</userinput></screen>
         <term><command>clang-format</command></term>
         <listitem>
           <para>
-            is a tool to format C/C++/Java/JavaScript/Objective-C/Protobuf
-            code
+            er et verktøy for å formatere C/C++/Java/JavaScript/Objective-C/Protobuf
+            kode
           </para>
           <indexterm zone="llvm clang-format">
             <primary sortas="b-clang-format">clang-format</primary>
@@ -543,7 +543,7 @@ done</userinput></screen>
         <term><command>clang-linker-wrapper</command></term>
         <listitem>
           <para>
-            is a wrapper utility over the host linker
+            er et innpakningsverktøy over vertslenkeren
           </para>
           <indexterm zone="llvm clang-linker-wrapper">
             <primary sortas="b-clang-linker-wrapper">clang-linker-wrapper</primary>
@@ -555,8 +555,8 @@ done</userinput></screen>
         <term><command>clang-offload-bundler</command></term>
         <listitem>
           <para>
-            is a tool to bundle/unbundle OpenMP offloaded files associated with
-            a common source file
+            er et verktøy for å pakke/avpakke OpenMP avlastede filer tilknyttet 
+            en felles kildefil.
           </para>
           <indexterm zone="llvm clang-offload-bundler">
             <primary sortas="b-clang-offload-bundler">clang-offload-bundler</primary>
@@ -568,9 +568,9 @@ done</userinput></screen>
         <term><command>clang-offload-packager</command></term>
         <listitem>
           <para>
-            is a tool to bundle several object files into a single binary,
-            which can then be used to create a fatbinary containing offloading
-            code
+            er et verktøy for å samle flere objektfiler til én enkelt binærfil, 
+            som deretter kan brukes til å lage en fatbinærfil som inneholder 
+            avlastningskode
           </para>
           <indexterm zone="llvm clang-offload-packager">
             <primary sortas="b-clang-offload-packager">clang-offload-packager</primary>
@@ -582,7 +582,7 @@ done</userinput></screen>
         <term><command>clang-refactor</command></term>
         <listitem>
           <para>
-            is a Clang-based refactoring tool for C, C++ and Objective-C
+            er et Clang-basert refaktoreringsverktøy for C, C++ og Objective-C
           </para>
           <indexterm zone="llvm clang-refactor">
             <primary sortas="b-clang-refactor">clang-refactor</primary>
@@ -595,7 +595,7 @@ done</userinput></screen>
         <term><command>clang-rename</command></term>
         <listitem>
           <para>
-            is a tool to rename symbols in C/C++ programs
+            er et verktøy for å gi nytt navn til symboler i C/C++ programmer
           </para>
           <indexterm zone="llvm clang-rename">
             <primary sortas="b-clang-rename">clang-rename</primary>
@@ -608,7 +608,7 @@ done</userinput></screen>
         <term><command>clang-scan-deps</command></term>
         <listitem>
           <para>
-            is a tool to scan for dependencies in a source file
+            er et verktøy for å skanne etter avhengigheter i en kildefil
           </para>
           <indexterm zone="llvm clang-scan-deps">
             <primary sortas="b-clang-scan-deps">clang-scan-deps</primary>
@@ -620,9 +620,9 @@ done</userinput></screen>
         <term><command>clang-tblgen</command></term>
         <listitem>
           <para>
-            is a program that translates compiler-related target
-            description (<filename class='extension'>.td</filename>) files
-            into C++ code and other output formats
+            er et program som oversetter kompilatorrelaterte mål 
+            beskrivelse (<filename class='extension'>.td</filename>) filer
+            til C++ kode og andre utdataformater
           </para>
           <indexterm zone="llvm clang-tblgen">
             <primary sortas="b-clang-tblgen">clang-tblgen</primary>
@@ -634,7 +634,7 @@ done</userinput></screen>
         <term><command>diagtool</command></term>
         <listitem>
           <para>
-            is a combination of tools for dealing with diagnostics in clang
+            er en kombinasjon av verktøy for å håndtere diagnostikk i clang
           </para>
           <indexterm zone="llvm diagtool">
             <primary sortas="b-diagtool">diagtool</primary>
@@ -646,8 +646,8 @@ done</userinput></screen>
         <term><command>FileCheck</command></term>
         <listitem>
           <para>
-            is a tool that reads two files (one from standard input,
-            and one specified on the command line) and uses one to verify the other.
+            er et verktøy som leser to filer (én fra standard inndata og én 
+            spesifisert på kommandolinjen) og bruker den ene til å bekrefte den andre.
           </para>
           <indexterm zone="llvm FileCheck">
             <primary sortas="b-FileCheck">FileCheck</primary>
@@ -659,8 +659,8 @@ done</userinput></screen>
         <term><command>dsymutil</command></term>
         <listitem>
           <para>
-            is a tool used to manipulate archived DWARF debug symbol files,
-            compatible with the Darwin command <command>dsymutil</command>
+            er et verktøy som brukes til å manipulere arkiverte DWARF 
+            feilsøkingssymbolfiler, kompatibel med Darwin-kommandoen <command>dsymutil</command>
           </para>
           <indexterm zone="llvm dsymutil">
             <primary sortas="b-dsymutil">dsymutil</primary>
@@ -672,7 +672,7 @@ done</userinput></screen>
         <term><command>git-clang-format</command></term>
         <listitem>
           <para>
-            runs clang-format on git generated patches (requires
+            kjører clang-format på git-genererte oppdateringer (krever
             <ulink url='&blfs-svn;/general/git.html'>Git</ulink>)
           </para>
           <indexterm zone="llvm git-clang-format">
@@ -685,7 +685,7 @@ done</userinput></screen>
         <term><command>hmaptool</command></term>
         <listitem>
           <para>
-            is a Python tool to dump and construct header maps
+            er et Pythonverktøy for å dumpe og konstruere deklarasjonskart
           </para>
           <indexterm zone="llvm hmaptool">
             <primary sortas="b-hmaptool">hmaptool</primary>
@@ -697,7 +697,7 @@ done</userinput></screen>
         <term><command>intercept-build</command></term>
         <listitem>
           <para>
-            generates a database of build commands for a project
+            genererer en database med byggekommandoer for et prosjekt
           </para>
           <indexterm zone="llvm intercept-build">
             <primary sortas="b-intercept-build">intercept-build</primary>
@@ -709,7 +709,7 @@ done</userinput></screen>
         <term><command>llc</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> static compiler
+            er <application>LLVM</application> statiske kompilator
           </para>
           <indexterm zone="llvm llc">
             <primary sortas="b-llc">llc</primary>
@@ -721,8 +721,8 @@ done</userinput></screen>
         <term><command>lli</command></term>
         <listitem>
           <para>
-            is used to directly execute programs from
-            <application>LLVM</application> bitcode
+            brukes til å kjøre programmer direkte fra
+            <application>LLVM</application> bitkode
           </para>
           <indexterm zone="llvm lli">
             <primary sortas="b-lli">lli</primary>
@@ -734,8 +734,8 @@ done</userinput></screen>
         <term><command>llvm-addr2line</command></term>
         <listitem>
           <para>
-            is a tool used to convert addresses into file names and line
-            numbers
+            er et verktøy som brukes til å konvertere adresser til filnavn 
+            og linjenumre
           </para>
           <indexterm zone="llvm llvm-addr2line">
             <primary sortas="b-llvm-addr2line">llvm-addr2line</primary>
@@ -747,7 +747,7 @@ done</userinput></screen>
         <term><command>llvm-ar</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> archiver
+            er <application>LLVM</application> arkiver
           </para>
           <indexterm zone="llvm llvm-ar">
             <primary sortas="b-llvm-ar">llvm-ar</primary>
@@ -759,7 +759,7 @@ done</userinput></screen>
         <term><command>llvm-as</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> assembler
+            er <application>LLVM</application> assembler
           </para>
           <indexterm zone="llvm llvm-as">
             <primary sortas="b-llvm-as">llvm-as</primary>
@@ -771,7 +771,7 @@ done</userinput></screen>
         <term><command>llvm-bcanalyzer</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> bitcode analyzer
+            er <application>LLVM</application> bitkodeanalysator
           </para>
           <indexterm zone="llvm llvm-bcanalyzer">
             <primary sortas="b-llvm-bcanalyzer">llvm-bcanalyzer</primary>
@@ -783,7 +783,7 @@ done</userinput></screen>
         <term><command>llvm-bitcode-strip</command></term>
         <listitem>
           <para>
-            strips LLVM bitcode from an object
+            stripper LLVM bitkode fra et objekt
           </para>
           <indexterm zone="llvm llvm-bitcode-strip">
             <primary sortas="b-llvm-bitcode-strip">llvm-bitcode-strip</primary>
@@ -795,7 +795,7 @@ done</userinput></screen>
         <term><command>llvm-cat</command></term>
         <listitem>
           <para>
-            is a tool to concatenate llvm modules
+            er et verktøy for å sammenkoble llvm moduler
           </para>
           <indexterm zone="llvm llvm-cat">
             <primary sortas="b-llvm-cat">llvm-cat</primary>
@@ -807,9 +807,9 @@ done</userinput></screen>
         <term><command>llvm-cfi-verify</command></term>
         <listitem>
           <para>
-            identifies whether Control Flow Integrity protects all indirect
-            control flow instructions in the provided object file, DSO, or
-            binary
+            identifiserer om kontrollflytintegritet beskytter alle indirekte 
+            kontrollflytinstruksjoner i den oppgitte objektfilen, DSO eller 
+            binærfilen.
           </para>
           <indexterm zone="llvm llvm-cfi-verify">
             <primary sortas="b-llvm-cfi-verify">llvm-cfi-verify</primary>
@@ -821,7 +821,7 @@ done</userinput></screen>
         <term><command>llvm-config</command></term>
         <listitem>
           <para>
-            Prints <application>LLVM</application> compilation options
+            Skriver ut <application>LLVM</application> kompileringsalternativer
           </para>
           <indexterm zone="llvm llvm-config">
             <primary sortas="b-llvm-config">llvm-config</primary>
@@ -833,7 +833,7 @@ done</userinput></screen>
         <term><command>llvm-cov</command></term>
         <listitem>
           <para>
-            is used to emit coverage information
+            brukes til å sende ut dekningsinformasjon
           </para>
           <indexterm zone="llvm llvm-cov">
             <primary sortas="b-llvm-cov">llvm-cov</primary>
@@ -845,7 +845,7 @@ done</userinput></screen>
         <term><command>llvm-c-test</command></term>
         <listitem>
           <para>
-            is a bytecode disassembler
+            er en bytekode demonterer
           </para>
           <indexterm zone="llvm llvm-c-test">
             <primary sortas="b-llvm-c-test">llvm-c-test</primary>
@@ -857,7 +857,7 @@ done</userinput></screen>
         <term><command>llvm-cvtres</command></term>
         <listitem>
           <para>
-            is a tool to convert Microsoft resource files to COFF
+            er et verktøy for å konvertere Microsoft ressursfiler til COFF
           </para>
           <indexterm zone="llvm llvm-cvtres">
             <primary sortas="b-llvm-cvtres">llvm-cvtres</primary>
@@ -869,7 +869,7 @@ done</userinput></screen>
         <term><command>llvm-cxxdump</command></term>
         <listitem>
           <para>
-            is used as a C++ ABI Data Dumper
+            brukes som en C++ ABI Data Dumper
           </para>
           <indexterm zone="llvm llvm-cxxdump">
             <primary sortas="b-llvm-cxxdump">llvm-cxxdump</primary>
@@ -881,7 +881,7 @@ done</userinput></screen>
         <term><command>llvm-cxxfilt</command></term>
         <listitem>
           <para>
-            is used to demangle C++ symbols in llvm code
+            brukes til å demangle C++ symboler i llvm kode
           </para>
           <indexterm zone="llvm llvm-cxxfilt">
             <primary sortas="b-llvm-cxxfilt">llvm-cxxfilt</primary>
@@ -893,7 +893,7 @@ done</userinput></screen>
         <term><command>llvm-cxxmap</command></term>
         <listitem>
           <para>
-            is used to remap C++ mangled symbols
+            brukes til å omdefinere mangled C++ symboler
           </para>
           <indexterm zone="llvm llvm-cxxmap">
             <primary sortas="b-llvm-cxxmap">llvm-cxxmap</primary>
@@ -905,7 +905,7 @@ done</userinput></screen>
         <term><command>llvm-debuginfo-analyzer</command></term>
         <listitem>
           <para>
-            prints a logical representation of low-level debug information
+            skriver ut en logisk representasjon av lavnivå feilsøkingsinformasjon
           </para>
           <indexterm zone="llvm llvm-debuginfo-analyzer">
             <primary sortas="b-llvm-debuginfo-analyzer">llvm-debuginfo-analyzer</primary>
@@ -917,8 +917,8 @@ done</userinput></screen>
         <term><command>llvm-debuginfod</command></term>
         <listitem>
           <para>
-            is a service providing debug information over an HTTP API for
-            analyzing stripped binaries
+            er en tjeneste som tilbyr feilsøkingsinformasjon over et 
+            HTTP API for å analysere fjernede binærfiler
           </para>
           <indexterm zone="llvm llvm-debuginfod">
             <primary sortas="b-llvm-debuginfod">llvm-debuginfod</primary>
@@ -930,8 +930,8 @@ done</userinput></screen>
         <term><command>llvm-debuginfod-find</command></term>
         <listitem>
           <para>
-            is an interface to the <command>llvm-debuginfod</command> daemon
-            for finding debuginfod artifacts
+            er et grensesnitt til <command>llvm-debuginfod</command> daemon
+            for å finne debuginfod artefakter
           </para>
           <indexterm zone="llvm llvm-debuginfod-find">
             <primary sortas="b-llvm-debuginfod-find">llvm-debuginfod-find</primary>
@@ -943,7 +943,7 @@ done</userinput></screen>
         <term><command>llvm-diff</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> structural
+            er <application>LLVM</application> strukturelle
             '<command>diff</command>'
           </para>
           <indexterm zone="llvm llvm-diff">
@@ -956,7 +956,7 @@ done</userinput></screen>
         <term><command>llvm-dis</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> disassembler
+            er <application>LLVM</application> disassembler
           </para>
           <indexterm zone="llvm llvm-dis">
             <primary sortas="b-llvm-dis">llvm-dis</primary>
@@ -968,7 +968,7 @@ done</userinput></screen>
         <term><command>llvm-dwarfdump</command></term>
         <listitem>
           <para>
-            prints the content of DWARF sections in object files
+            skriver ut innholdet i DWARF seksjoner i objektfiler
           </para>
           <indexterm zone="llvm llvm-dwarfdump">
             <primary sortas="b-llvm-dwarfdump">llvm-dwarfdump</primary>
@@ -980,7 +980,7 @@ done</userinput></screen>
         <term><command>llvm-dwarfutil</command></term>
         <listitem>
           <para>
-            is a tool to copy and manipulate debug info
+            er et verktøy for å kopiere og manipulere feilsøkingsinformasjon
           </para>
           <indexterm zone="llvm llvm-dwarfutil">
             <primary sortas="b-llvm-dwarfutil">llvm-dwarfutil</primary>
@@ -992,7 +992,7 @@ done</userinput></screen>
         <term><command>llvm-dwp</command></term>
         <listitem>
           <para>
-            merges split DWARF files
+            slår sammen delte DWARF filer
           </para>
           <indexterm zone="llvm llvm-dwp">
             <primary sortas="b-llvm-dwp">llvm-dwp</primary>
@@ -1004,7 +1004,7 @@ done</userinput></screen>
         <term><command>llvm-elfabi</command></term>
         <listitem>
           <para>
-            is used to read information about an ELF binary's ABI
+            brukes til å lese informasjon om en ELF binærfils ABI
           </para>
           <indexterm zone="llvm llvm-elfabi">
             <primary sortas="b-llvm-elfabi">llvm-elfabi</primary>
@@ -1016,9 +1016,9 @@ done</userinput></screen>
         <term><command>llvm-exegesis</command></term>
         <listitem>
           <para>
-            is a benchmarking tool that uses information available in LLVM to
-            measure host machine instruction characteristics like latency or
-            port decomposition
+            er et benchmarkingverktøy som bruker informasjon tilgjengelig i 
+            LLVM til å måle instruksjonsegenskaper for vertsmaskinen, som 
+            latens eller portdekomposisjon
           </para>
           <indexterm zone="llvm llvm-exegesis">
             <primary sortas="b-llvm-exegesis">llvm-exegesis</primary>
@@ -1030,8 +1030,8 @@ done</userinput></screen>
         <term><command>llvm-extract</command></term>
         <listitem>
           <para>
-            is used to extract a function from an
-            <application>LLVM</application> module
+            brukes til å trekke ut en funksjon fra en
+            <application>LLVM</application> modul
           </para>
           <indexterm zone="llvm llvm-extract">
             <primary sortas="b-llvm-extract">llvm-extract</primary>
@@ -1043,9 +1043,9 @@ done</userinput></screen>
         <term><command>llvm-gsymutil</command></term>
         <listitem>
           <para>
-            is used to process GSYM Symbolication Format files which
-            convert memory addresses to function name and source file
-            line. These files are smaller than DWARF or Breakpad files
+            brukes til å behandle GSYM Symboliseringsformatfiler som 
+            konverterer minneadresser til funksjonsnavn og kildefillinje. 
+            Disse filene er mindre enn DWARF eller Breakpad filer
           </para>
           <indexterm zone="llvm llvm-gsymutil">
             <primary sortas="b-llvm-gsymutil">llvm-gsymutil</primary>
@@ -1057,7 +1057,7 @@ done</userinput></screen>
         <term><command>llvm-ifs</command></term>
         <listitem>
           <para>
-            is used to merge interface stubs with object files
+            brukes til å slå sammen grensesnittstubber med objektfiler
           </para>
           <indexterm zone="llvm llvm-ifs">
             <primary sortas="b-llvm-ifs">llvm-ifs</primary>
@@ -1069,7 +1069,7 @@ done</userinput></screen>
         <term><command>llvm-install-name-tool</command></term>
         <listitem>
           <para>
-            is used to rewrite load commands into MachO binary format
+            brukes til å omskrive lastekommandoer til MachO binærformat
           </para>
           <indexterm zone="llvm llvm-install-name-tool">
             <primary sortas="b-llvm-install-name-tool">llvm-install-name-tool</primary>
@@ -1081,8 +1081,8 @@ done</userinput></screen>
         <term><command>llvm-jitlink</command></term>
         <listitem>
           <para>
-            is used to parse relocatable object files to make their contents
-            executable in a target process
+            brukes til å analysere flyttbare objektfiler for å gjøre innholdet 
+            deres kjørbart i en målprosess
           </para>
           <indexterm zone="llvm llvm-jitlink">
             <primary sortas="b-llvm-jitlink">llvm-jitlink</primary>
@@ -1094,9 +1094,9 @@ done</userinput></screen>
         <term><command>llvm-libtool-darwin</command></term>
         <listitem>
           <para>
-            provides basic libtool functionality on Darwin-based systems.
-            This is mostly useful if you are generating binaries for macOS
-            systems
+            gir grunnleggende libtool funksjonalitet på Darwin baserte 
+            systemer. Dette er mest nyttig hvis du genererer binærfiler for 
+            macOS systemer.
           </para>
           <indexterm zone="llvm llvm-libtool-darwin">
             <primary sortas="b-llvm-libtool-darwin">llvm-libtool-darwin</primary>
@@ -1108,7 +1108,7 @@ done</userinput></screen>
         <term><command>llvm-link</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> linker
+            er <application>LLVM</application> lenker
           </para>
           <indexterm zone="llvm llvm-link">
             <primary sortas="b-llvm-link">llvm-link</primary>
@@ -1120,7 +1120,7 @@ done</userinput></screen>
         <term><command>llvm-lipo</command></term>
         <listitem>
           <para>
-            is used to create universal binaries from MachO files
+            brukes til å lage universelle binærfiler fra MachO filer
           </para>
           <indexterm zone="llvm llvm-lipo">
             <primary sortas="b-llvm-lipo">llvm-lipo</primary>
@@ -1132,8 +1132,8 @@ done</userinput></screen>
         <term><command>llvm-lto</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> LTO (link time optimization)
-            linker
+            er <application>LLVM</application> LTO (koblingstidsoptimalisering)
+            lenker
           </para>
           <indexterm zone="llvm llvm-lto">
             <primary sortas="b-llvm-lto">llvm-lto</primary>
@@ -1145,7 +1145,7 @@ done</userinput></screen>
         <term><command>llvm-lto2</command></term>
         <listitem>
           <para>
-            is a test harness for the resolution based LTO interface
+            er en testpakke for det oppløsningsbaserte LTO grensesnittet
           </para>
           <indexterm zone="llvm llvm-lto2">
             <primary sortas="b-llvm-lto2">llvm-lto2</primary>
@@ -1157,7 +1157,7 @@ done</userinput></screen>
         <term><command>llvm-mc</command></term>
         <listitem>
           <para>
-            is a standalone machine code assembler/disassembler
+            er en frittstående maskinkode assembler/disassembler
           </para>
           <indexterm zone="llvm llvm-mc">
             <primary sortas="b-llvm-mc">llvm-mc</primary>
@@ -1169,8 +1169,8 @@ done</userinput></screen>
         <term><command>llvm-mca</command></term>
         <listitem>
           <para>
-            is a performance analysis tool to statically measure the
-            performance of machine code
+            er et ytelsesanalyseverktøy for statisk måling av 
+            ytelsen til maskinkode
           </para>
           <indexterm zone="llvm llvm-mca">
             <primary sortas="b-llvm-mca">llvm-mca</primary>
@@ -1182,7 +1182,7 @@ done</userinput></screen>
         <term><command>llvm-ml</command></term>
         <listitem>
           <para>
-            is a playground for machine code provided by LLVM
+            er en lekeplass for maskinkode levert av LLVM
           </para>
           <indexterm zone="llvm llvm-ml">
             <primary sortas="b-llvm-ml">llvm-ml</primary>
@@ -1194,7 +1194,7 @@ done</userinput></screen>
         <term><command>llvm-modextract</command></term>
         <listitem>
           <para>
-            is a tool to extract one module from multimodule bitcode files
+            er et verktøy for å trekke ut én modul fra multimodul bitkodefiler
           </para>
           <indexterm zone="llvm llvm-modextract">
             <primary sortas="b-llvm-modextract">llvm-modextract</primary>
@@ -1206,8 +1206,8 @@ done</userinput></screen>
         <term><command>llvm-mt</command></term>
         <listitem>
           <para>
-            is a tool to generate signed files and catalogs from a
-            side-by-side assembly manifest (used for Microsoft SDK)
+            er et verktøy for å generere signerte filer og mapper fra et 
+            side-ved-side samlingsmanifest (brukes for Microsoft SDK)
           </para>
           <indexterm zone="llvm llvm-mt">
             <primary sortas="b-llvm-mt">llvm-mt</primary>
@@ -1219,8 +1219,8 @@ done</userinput></screen>
         <term><command>llvm-nm</command></term>
         <listitem>
           <para>
-            is used to list <application>LLVM</application> bitcode
-            and object file's symbol table
+            brukes til å liste <application>LLVM</application> bitkode
+            og objektfilens symboltabell
           </para>
           <indexterm zone="llvm llvm-nm">
             <primary sortas="b-llvm-nm">llvm-nm</primary>
@@ -1232,7 +1232,7 @@ done</userinput></screen>
         <term><command>llvm-objcopy</command></term>
         <listitem>
           <para>
-            is LLVM's version of an objcopy tool
+            er LLVM sin versjon av et objcopy verktøy
           </para>
           <indexterm zone="llvm llvm-objcopy">
             <primary sortas="b-llvm-objcopy">llvm-objcopy</primary>
@@ -1244,7 +1244,7 @@ done</userinput></screen>
         <term><command>llvm-objdump</command></term>
         <listitem>
           <para>
-            is an <application>LLVM</application> object file dumper
+            er en <application>LLVM</application> objektfildumper
           </para>
           <indexterm zone="llvm llvm-objdump">
             <primary sortas="b-llvm-objdump">llvm-objdump</primary>
@@ -1256,8 +1256,8 @@ done</userinput></screen>
         <term><command>llvm-opt-report</command></term>
         <listitem>
           <para>
-            is a tool to generate an optimization report from YAML optimization
-            record files
+            er et verktøy for å generere en optimaliseringsrapport fra YAML 
+            optimaliseringspostfiler
           </para>
           <indexterm zone="llvm llvm-opt-report">
             <primary sortas="b-llvm-opt-report">llvm-opt-report</primary>
@@ -1269,7 +1269,7 @@ done</userinput></screen>
         <term><command>llvm-pdbutil</command></term>
         <listitem>
           <para>
-            is a PDB (Program Database) dumper. PDB is a Microsoft format
+            er en PDB (Program Database)-dumper. PDB er et Microsoft-format
           </para>
           <indexterm zone="llvm llvm-pdbutil">
             <primary sortas="b-llvm-pdbutil">llvm-pdbutil</primary>
@@ -1281,7 +1281,7 @@ done</userinput></screen>
         <term><command>llvm-profdata</command></term>
         <listitem>
           <para>
-            is a small tool to manipulate and print profile data files
+            er et lite verktøy for å manipulere og skrive ut profildatafiler
           </para>
           <indexterm zone="llvm llvm-profdata">
             <primary sortas="b-llvm-profdata">llvm-profdata</primary>
@@ -1293,7 +1293,7 @@ done</userinput></screen>
         <term><command>llvm-profgen</command></term>
         <listitem>
           <para>
-            generates LLVM SPGO profiling information
+            genererer LLVM SPGO profileringsinformasjon
           </para>
           <indexterm zone="llvm llvm-profgen">
             <primary sortas="b-llvm-profgen">llvm-profgen</primary>
@@ -1305,8 +1305,8 @@ done</userinput></screen>
         <term><command>llvm-ranlib</command></term>
         <listitem>
           <para>
-            is used to generate an index for a <application>LLVM</application>
-            archive
+            brukes til å generere en indeks for et <application>LLVM</application>
+            arkiv
           </para>
           <indexterm zone="llvm llvm-ranlib">
             <primary sortas="b-llvm-ranlib">llvm-ranlib</primary>
@@ -1318,8 +1318,8 @@ done</userinput></screen>
         <term><command>llvm-rc</command></term>
         <listitem>
           <para>
-            is a platform-independent tool to compile resource scripts
-            into binary resource files
+            er et plattformuavhengig verktøy for å kompilere ressursskript 
+            til binære ressursfiler
           </para>
           <indexterm zone="llvm llvm-rc">
             <primary sortas="b-llvm-rc">llvm-rc</primary>
@@ -1331,7 +1331,7 @@ done</userinput></screen>
         <term><command>llvm-readobj</command></term>
         <listitem>
           <para>
-            displays low-level format-specific information about object files
+            viser formatspesifikk informasjon på lavt nivå om objektfiler
           </para>
           <indexterm zone="llvm llvm-readobj">
             <primary sortas="b-llvm-readobj">llvm-readobj</primary>
@@ -1343,7 +1343,7 @@ done</userinput></screen>
         <term><command>llvm-readtapi</command></term>
         <listitem>
           <para>
-            is the LLVM TAPI file reader and transformer
+            er LLVM TAPI filleseren og transformatoren
           </para>
           <indexterm zone="llvm llvm-readtapi">
             <primary sortas="b-llvm-readtapi">llvm-readtapi</primary>
@@ -1355,8 +1355,8 @@ done</userinput></screen>
         <term><command>llvm-reduce</command></term>
         <listitem>
           <para>
-            is used to automatically reduce testcases
-            when running a test suite
+            brukes til å automatisk redusere testtilfeller 
+            når en testpakke kjøres
           </para>
           <indexterm zone="llvm llvm-reduce">
             <primary sortas="b-llvm-reduce">llvm-reduce</primary>
@@ -1368,8 +1368,8 @@ done</userinput></screen>
         <term><command>llvm-remarkutil</command></term>
         <listitem>
           <para>
-            converts remark files between bitstream and YAML; or prints
-            function instruction count information in remark files
+            konverterer kommentarfiler mellom bitstrøm og YAML; eller skriver 
+            ut informasjon om antall funksjonsinstruksjoner i kommentarfiler
           </para>
           <indexterm zone="llvm llvm-remarkutil">
             <primary sortas="b-llvm-remarkutil">llvm-remarkutil</primary>
@@ -1381,7 +1381,7 @@ done</userinput></screen>
         <term><command>llvm-rtdyld</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> MC-JIT tool
+            er <application>LLVM</application> MC-JIT verktøyet
           </para>
           <indexterm zone="llvm llvm-rtdyld">
             <primary sortas="b-llvm-rtdyld">llvm-rtdyld</primary>
@@ -1393,7 +1393,7 @@ done</userinput></screen>
         <term><command>llvm-size</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> object size dumper
+            er <application>LLVM</application> objektstørrelsesdumper
           </para>
           <indexterm zone="llvm llvm-size">
             <primary sortas="b-llvm-size">llvm-size</primary>
@@ -1405,7 +1405,7 @@ done</userinput></screen>
         <term><command>llvm-split</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> module splitter
+            er <application>LLVM</application> modulsplitter
           </para>
           <indexterm zone="llvm llvm-split">
             <primary sortas="b-llvm-split">llvm-split</primary>
@@ -1417,8 +1417,8 @@ done</userinput></screen>
         <term><command>llvm-stress</command></term>
         <listitem>
           <para>
-            is used to generate random
-            <filename class="extension">.ll</filename> files
+            brukes til å generere tilfeldige
+            <filename class="extension">.ll</filename> filer
           </para>
           <indexterm zone="llvm llvm-stress">
             <primary sortas="b-llvm-stress">llvm-stress</primary>
@@ -1430,8 +1430,8 @@ done</userinput></screen>
         <term><command>llvm-strings</command></term>
         <listitem>
           <para>
-            print strings found in a binary (object file, executable, or
-            archive library)
+            skriver ut strenger funnet i en binærfil (objektfil, kjørbar
+            fil eller arkivbibliotek)
           </para>
           <indexterm zone="llvm llvm-strings">
             <primary sortas="b-llvm-strings">llvm-strings</primary>
@@ -1443,7 +1443,7 @@ done</userinput></screen>
         <term><command>llvm-symbolizer</command></term>
         <listitem>
           <para>
-            converts addresses into source code locations
+            konverterer adresser til kildekodeplasseringer
           </para>
           <indexterm zone="llvm llvm-symbolizer">
             <primary sortas="b-llvm-symbolizer">llvm-symbolizer</primary>
@@ -1455,8 +1455,8 @@ done</userinput></screen>
         <term><command>llvm-tblgen</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> Target Description
-            To C++ Code Generator
+            er <application>LLVM</application> målbeskrivelse 
+            til C++ kodegenerator
           </para>
           <indexterm zone="llvm llvm-tblgen">
             <primary sortas="b-llvm-tblgen">llvm-tblgen</primary>
@@ -1468,8 +1468,8 @@ done</userinput></screen>
         <term><command>llvm-tli-checker</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> TargetLibraryInfo
-            versus SDK checker
+            er <application>LLVM</application> TargetLibraryInfo
+            versus SDK sjekker
           </para>
           <indexterm zone="llvm llvm-tli-checker">
             <primary sortas="b-llvm-tli-checker">llvm-tli-checker</primary>
@@ -1481,7 +1481,7 @@ done</userinput></screen>
         <term><command>llvm-undname</command></term>
         <listitem>
           <para>
-            is a tool to demangle names
+            er et verktøy for å demangle navn
           </para>
           <indexterm zone="llvm llvm-undname">
             <primary sortas="b-llvm-undname">llvm-undname</primary>
@@ -1493,7 +1493,7 @@ done</userinput></screen>
         <term><command>llvm-xray</command></term>
         <listitem>
           <para>
-            is an implementation of Google's XRay function call tracing system
+            er en implementering av Googles XRay funksjonskallsporingssystem
           </para>
           <indexterm zone="llvm llvm-xray">
             <primary sortas="b-llvm-xray">llvm-xray</primary>
@@ -1505,9 +1505,9 @@ done</userinput></screen>
         <term><command>nvptx-arch</command></term>
         <listitem>
           <para>
-            lists NVIDIA GPUs installed; at runtime it needs
+            lister installerte NVIDIA GPUer; ved kjøretid trenger den
             <filename class='libraryfile'>libcuda</filename>
-            from <xref linkend="nvidia"/>
+            fra <xref linkend="nvidia"/>
           </para>
           <indexterm zone="llvm nvptx-arch">
             <primary sortas="b-nvptx-arch">nvptx-arch</primary>
@@ -1519,7 +1519,7 @@ done</userinput></screen>
         <term><command>opt</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> optimizer
+            er <application>LLVM</application> optimaliserer
           </para>
           <indexterm zone="llvm opt">
             <primary sortas="b-opt">opt</primary>
@@ -1531,7 +1531,7 @@ done</userinput></screen>
         <term><command>sancov</command></term>
         <listitem>
           <para>
-            is the sanitizer coverage processing tool
+            er rensedekning prosesseringsverktøy
           </para>
           <indexterm zone="llvm sancov">
             <primary sortas="b-sancov">sancov</primary>
@@ -1543,7 +1543,7 @@ done</userinput></screen>
         <term><command>sanstats</command></term>
         <listitem>
           <para>
-            is the sanitizer statistics processing tool
+            er rensestatistikk prosesseringsverktøy
           </para>
           <indexterm zone="llvm sanstats">
             <primary sortas="b-sanstats">sanstats</primary>
@@ -1555,8 +1555,8 @@ done</userinput></screen>
         <term><command>scan-build</command></term>
         <listitem>
           <para>
-            is a <application>Perl</application> script that invokes the
-            <application>Clang</application> static analyzer
+            er et <application>Perl</application> skript som påkaller
+            <application>Clang</application> statisk analysator
           </para>
           <indexterm zone="llvm scan-build">
             <primary sortas="b-scan-build">scan-build</primary>
@@ -1568,8 +1568,8 @@ done</userinput></screen>
         <term><command>scan-build-py</command></term>
         <listitem>
           <para>
-            is a <application>Python</application> script that invokes the
-            <application>Clang</application> static analyzer
+            er et <application>Python</application> skript som påkaller
+            <application>Clang</application> statisk analysator
           </para>
           <indexterm zone="llvm scan-build-py">
             <primary sortas="b-scan-build-py">scan-build-py</primary>
@@ -1581,8 +1581,8 @@ done</userinput></screen>
         <term><command>scan-view</command></term>
         <listitem>
           <para>
-            is a viewer for <application>Clang</application> static analyzer
-            results
+            er en viser for <application>Clang</application> statisk analysator
+            resultat
           </para>
           <indexterm zone="llvm scan-view">
             <primary sortas="b-scan-view">scan-view</primary>
@@ -1594,8 +1594,8 @@ done</userinput></screen>
         <term><command>verify-uselistorder</command></term>
         <listitem>
           <para>
-            is the <application>LLVM</application> tool to verify use-list
-            order
+            er <application>LLVM</application> verktøy for å verifisere use-list
+            rekkefølge
           </para>
           <indexterm zone="llvm verify-uselistorder">
             <primary sortas="b-verify-uselistorder">verify-uselistorder</primary>

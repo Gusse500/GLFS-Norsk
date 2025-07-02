@@ -41,6 +41,25 @@
     -->
 
     <listitem>
+      <para>1. juli 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - LLVM; libclc: 20.1.6 -&gt; 20.1.7.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.87.0 -&gt; 1.88.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 20.1.2 -&gt; 20.1.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GS: 1.26.2 -&gt; 1.26.3 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/278">#278</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>30. juni 2025</para>
       <itemizedlist>
         <listitem>

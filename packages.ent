@@ -161,15 +161,15 @@
 <!ENTITY spirv-tools-version          "&spirv-version;">
 <!ENTITY glslang-version              "15.4.0">
 <!ENTITY llvm-maj-version             "20">
-<!ENTITY llvm-point-version           "6">
+<!ENTITY llvm-point-version           "7">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
-<!ENTITY rustc-version                "1.87.0">
+<!ENTITY rustc-version                "1.88.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
      at the very bottom: change_id. -->
-<!ENTITY rustc-change-id              "138986">
+<!ENTITY rustc-change-id              "140732">
 <!ENTITY cbindgen-version             "0.29.0">
 <!ENTITY rust-bindgen-version         "0.72.0">
-<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.2">
+<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.4">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY ply-version                  "3.11">
@@ -286,7 +286,7 @@
 <!ENTITY x264-version                 "20240812">
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "7.1.1">
-<!ENTITY gstreamer10-version          "1.26.2">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.26.3">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
