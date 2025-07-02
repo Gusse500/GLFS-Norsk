@@ -5,27 +5,27 @@
   %general-entities;
 ]>
 
-<sect1 id="xorg7-input-driver" xreflabel="Xorg Input Drivers">
+<sect1 id="xorg7-input-driver" xreflabel="Xorg Inndata Drivere">
   <?dbhtml filename="x7driver.html"?>
 
 
-  <title>Xorg Input Drivers</title>
+  <title>Xorg Inndata Drivere</title>
 
   <indexterm zone="xorg7-input-driver">
     <primary sortas="a-xorg7-input-driver">xorg7-input-driver</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Xorg Input Drivers</title>
+    <title>Introduction to Xorg Inndata Drivere</title>
 
     <para>
-      The <application>Xorg Input Drivers</application> page contains the
-      instructions for building Xorg input drivers that are necessary in
-      order for Xorg Server to respond user inputs.
+      <application>Xorg Inndata Drivere</application> siden inneholder 
+      instruksjoner for å bygge Xorg inndatadrivere som er nødvendige for 
+      at Xorg serveren skal kunne svare på brukerinndata.
     </para>
 
     <sect3 id="xorg-input-drivers">
-      <title>Xorg Input Drivers</title>
+      <title>Xorg Inndata Drivere</title>
 
       <itemizedlist spacing="compact">
         <listitem>

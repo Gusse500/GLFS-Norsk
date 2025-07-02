@@ -22,72 +22,72 @@
     </indexterm>
 
     <sect3 role="package">
-      <title>Introduction to Xorg Libinput Driver</title>
+      <title>Introduksjon til Xorg Libinput Driver</title>
 
       <para>
-        The <application>X.Org Libinput Driver</application> is a thin wrapper
-        around libinput and allows for libinput to be used for input devices in
-        X. This driver can be used as drop-in replacement for evdev and
+        <application>X.Org Libinput Driver</application> er et tynt omslag 
+        rundt libinput og tillater bruk av libinput for inndataenheter i X. 
+        Denne driveren kan brukes som en drop-in-erstatning for evdev og 
         synaptics.
       </para>
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Download (HTTP): <ulink url="&xorg-libinput-driver-download-http;"/>
+            Nedlasting (HTTP): <ulink url="&xorg-libinput-driver-download-http;"/>
           </para>
         </listitem>
         <listitem>
           <para>
-            Download (FTP): <ulink url="&xorg-libinput-driver-download-ftp;"/>
+            Nedlasting (FTP): <ulink url="&xorg-libinput-driver-download-ftp;"/>
           </para>
         </listitem>
       </itemizedlist>
 
-      <bridgehead renderas="sect4">Xorg Libinput Driver Dependencies</bridgehead>
+      <bridgehead renderas="sect4">Xorg Libinput Driver Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect5">Required</bridgehead>
+      <bridgehead renderas="sect5">Påkrevd</bridgehead>
       <para role="required">
-        <xref linkend="libinput"/> and
+        <xref linkend="libinput"/> og
         <xref linkend="xorg-server"/>
       </para>
 
     </sect3>
 
     <sect3 role="installation">
-      <title>Installation of Xorg Libinput Driver</title>
+      <title>Installasjon av Xorg Libinput Driver</title>
 
       <para>
-        Install <application>Xorg Libinput Driver</application> by running the following
-        commands:
+        Installer <application>Xorg Libinput Driver</application> ved å kjøre 
+        følgende kommandoer:
       </para>
 
 <screen><userinput>./configure $XORG_CONFIG &amp;&amp;
 make</userinput></screen>
 
       <para>
-        To test the results, issue <command>make check</command>.
+        For å teste resultatene, utsted <command>make check</command>.
       </para>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
     </sect3>
 
     <sect3 role="commands">
-      <title>Command Explanations</title>
+      <title>Parameterforklaringer</title>
 
       &options-configure;
 
     </sect3>
 
     <sect3 role="content">
-      <title>Contents</title>
+      <title>Innhold</title>
 
       <segmentedlist>
-        <segtitle>Installed Xorg Driver</segtitle>
+        <segtitle>Installert Xorg Driver</segtitle>
 
         <seglistitem>
           <seg>
@@ -97,7 +97,7 @@ make</userinput></screen>
       </segmentedlist>
 
       <variablelist>
-        <bridgehead renderas="sect4">Short Descriptions</bridgehead>
+        <bridgehead renderas="sect4">Korte Beskrivelser</bridgehead>
         <?dbfo list-presentation="list"?>
         <?dbhtml list-presentation="table"?>
 
@@ -105,8 +105,8 @@ make</userinput></screen>
           <term><filename class="libraryfile">libinput_drv</filename></term>
           <listitem>
             <para>
-              is an Xorg input driver for mouse, keyboard, touchpad,
-              touchscreen, and tablet devices
+              er en Xorg inndatadriver for mus, tastatur, pekeplate, 
+              berøringsskjerm og nettbrett
             </para>
             <indexterm zone="xorg-libinput-driver libinput_drv">
               <primary sortas="c-libinput_drv">libinput_drv</primary>
