@@ -153,7 +153,7 @@
                                                 <!-- kernel version of when the
                                                      NVIDIA driver version
                                                      listed was released -->
-<!ENTITY nvidia-version               "575.64">
+<!ENTITY nvidia-version               "575.64.03">
 <!ENTITY nv-manifest-version          "1">
 <!ENTITY nv-sysv-bs                   "1">
 <!ENTITY spirv-version                "&vulkan-version;.0">

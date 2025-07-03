@@ -44,6 +44,16 @@
       <para>1. juli 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA: 575.64 -&gt; 575.64.03. Fikser
+          <ulink url="&glfs-issues;/279">#279</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>1. juli 2025</para>
+      <itemizedlist>
+        <listitem>
           <para>[zeckma] - LLVM; libclc: 20.1.6 -&gt; 20.1.7.</para>
         </listitem>
         <listitem>
