@@ -8,26 +8,26 @@
   <!ENTITY mingw-w64-gcc-static-download-ftp  " ">
 ]>
 
-<sect1 id="mingw-w64-gcc-static" xreflabel="Static MinGW-w64-GCC-&mingw-w64-gcc-version;">
+<sect1 id="mingw-w64-gcc-static" xreflabel="Statisk MinGW-w64-GCC-&mingw-w64-gcc-version;">
   <?dbhtml filename="mingw-w64-gcc-static.html"?>
 
-  <title>Static MinGW-w64-GCC-&mingw-w64-gcc-version;</title>
+  <title>Statisk MinGW-w64-GCC-&mingw-w64-gcc-version;</title>
 
   <indexterm zone="mingw-w64-gcc-static">
     <primary sortas="a-mingw-w64-gcc-static">mingw-w64-gcc-static</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Static MinGW-w64-GCC</title>
+    <title>Introduksjon til Statisk MinGW-w64-GCC</title>
 
     <para>
-      <application>MinGW-w64-GCC</application> provides
-      <application>GCC</application> compilers for MinGW-w64,
-      allowing users and applications to compile code targetting
-      Windows. This will be done in steps to avoid the need for
-      already present binaries. This is the static build, which
-      will have limited support but will be able to compile software
-      better for the MinGW-w64 targets.
+      <application>MinGW-w64-GCC</application> gir
+      <application>GCC</application> kompilatorer for MinGW-w64, som lar 
+      brukere og applikasjoner kompilere kode målrettet Windows. Dette vil 
+      bli gjort i trinn for å unngå behovet for allerede eksisterende 
+      binærfiler. Dette er den statiske byggingen, som vil ha begrenset 
+      støtte, men vil kunne kompilere programvare bedre for 
+      MinGW-w64 målene.
     </para>
 
     &long-build-time;
@@ -35,43 +35,35 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&mingw-w64-gcc-static-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&mingw-w64-gcc-static-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&mingw-w64-gcc-static-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&mingw-w64-gcc-static-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Static MinGW-w64-GCC Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Statisk MinGW-w64-GCC Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="mingw-w64-binutils"/> and
+      <xref linkend="mingw-w64-binutils"/> og
       <xref linkend="mingw-w64-headers"/>
-    </para>
-
-    <bridgehead renderas="sect4">Optional</bridgehead>
-    <para role="optional">
-      <ulink url="&blfs-svn;/general/gdb.html">
-      GDB</ulink> and
-      <ulink url="&blfs-svn;/general/valgrind.html">
-      Valgrind</ulink> (for tests)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Static MinGW-w64-GCC</title>
+    <title>Installasjon av Statisk MinGW-w64-GCC</title>
 
     <sect3>
-      <title>x86_64 Installation of Static MinGW-w64-GCC</title>
+      <title>x86_64 Installasjon av Statisk MinGW-w64-GCC</title>
 
       <para>
-        Install x86_64 Static <application>MinGW-w64-GCC</application> by
-        running the following commands:
+        Installer x86_64 Statisk <application>MinGW-w64-GCC</application> ved å
+        kjøre følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build-x86_64-mingw-w64-static &amp;&amp;
@@ -87,7 +79,7 @@ cd    build-x86_64-mingw-w64-static &amp;&amp;
 make all-gcc</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som &root; bruker:
       </para>
 
 <screen role="root"><userinput>make install-gcc &amp;&amp; cd ..</userinput></screen>
@@ -95,11 +87,11 @@ make all-gcc</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>i686 Installation of Static MinGW-w64-GCC</title>
+      <title>i686 Installasjon av Statisk MinGW-w64-GCC</title>
 
       <para>
-        Install i686 Static <application>MinGW-w64-GCC</application> by running
-        the following commands:
+        Installer i686 Statisk <application>MinGW-w64-GCC</application> ved å
+        kjøre følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build-i686-mingw-w64-static &amp;&amp;
@@ -115,7 +107,7 @@ cd    build-i686-mingw-w64-static &amp;&amp;
 make all-gcc</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som &root; bruker:
       </para>
 
 <screen role="root"><userinput>make install-gcc</userinput></screen>
@@ -125,48 +117,49 @@ make all-gcc</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-subconfigure;
 
     <para>
-      <command>mkdir build; cd build</command>: The
-      <application>GCC</application> documentation recommends
-      building the package in a dedicated build directory.
+      <command>mkdir build; cd build</command>: 
+      <application>GCC</application> dokumentasjonen anbefaler at man bygger 
+      pakken i en dedikert byggemappe.
     </para>
 
     <para>
-      <parameter>--disable-shared</parameter>: This option disables building
-      shared libraries. They will be built later.
+      <parameter>--disable-shared</parameter>: Dette alternativet deaktiverer 
+      bygging av delte biblioteker. De vil bli bygget senere.
     </para>
 
     <para>
-      <parameter>--disable-multilib</parameter>: This option ensures
-      that files are created for the specific architecture of your computer.
+      <parameter>--disable-multilib</parameter>: Dette alternativet sikrer at 
+      filer opprettes for den spesifikke arkitekturen til datamaskinen din.
     </para>
 
     <para>
-      <parameter>--disable-threads</parameter>: This option disables
-      thread support due to building errors in GCC. This support will be
-      built in later.
+      <parameter>--disable-threads</parameter>: Dette alternativet deaktiverer 
+      trådstøtte på grunn av byggefeil i GCC. Denne støtten vil bli innebygd 
+      senere.
     </para>
     
     <para>
       <parameter>--enable-languages=c,c++</parameter>:
-      This command builds support for C and C++. Refer to <ulink
+      Denne kommandoen bygger støtte for C og C++. Se <ulink
       url="&blfs-svn;/general/gcc.html"/>
-      to find what other languages are supported.
+      for å finne ut hvilke andre språk som støttes.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
-
+    <title>Innhold</title>
     <para>
-      There are no binaries specific to this package besides the format
-      the compilers are targetting. For in-depth descriptions, read <ulink
-      url="&lfs-root;/chapter08/gcc.html#contents-gcc"/>
+      Det finnes ingen binærfiler spesifikke for denne pakken bortsett fra 
+      formatet kompilatorene sikter seg inn på, og de har derfor 
+      arkitekturtripletten som prefiks, for eksempel <command>x86_64-w64-mingw32-gcc</command>. 
+      For dyptgående beskrivelser, les <ulink
+      url="&lfs-root;/chapter08/gcc.html#contents-gcc"/>.
     </para>
 
   </sect2>
