@@ -79,7 +79,7 @@
 <!ENTITY apng-version                 "1.6.47">
 <!ENTITY freetype2-version            "2.13.3">
 <!ENTITY harfbuzz-version             "11.2.1">
-<!ENTITY fontconfig-version           "2.17.0">
+<!ENTITY fontconfig-version           "2.17.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
 <!ENTITY xtrans-version               "1.6.0">
@@ -128,7 +128,7 @@
 <!ENTITY wayland-protocols-version    "1.45">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.396">
+<!ENTITY hwdata-version               "0.397">
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-version               "1.4.313">
 <!ENTITY vulkan-headers-version       "&vulkan-version;">
