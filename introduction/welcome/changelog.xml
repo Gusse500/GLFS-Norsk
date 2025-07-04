@@ -44,6 +44,9 @@
       <para>3. juli 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mesa; GBM: 25.1.4 -&gt; 25.1.5.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Fontconfig: 2.17.0 -&gt; 2.17.1 (sikkerhet). Fikser
           <ulink url="&glfs-issues;/281">#281</ulink>.</para>
         </listitem>
