@@ -18,29 +18,29 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to xinit</title>
+    <title>Introduksjon til xinit</title>
 
     <para>
-      The <application>xinit</application> package contains a usable script
-      to start the xserver.
+      <application>xinit</application> pakken inneholder et brukbart skript for 
+      å starte xserveren.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xinit-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&xinit-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&xinit-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&xinit-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">xinit Dependencies</bridgehead>
+    <bridgehead renderas="sect3">xinit Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg7-lib"/>
     </para>
@@ -48,22 +48,22 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of xinit</title>
+    <title>Installasjon av xinit</title>
 
     <para>
-      Install <application>xinit</application> by running the
-      following commands:
+      Installer <application>xinit</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure $XORG_CONFIG --with-xinitdir=/etc/X11/app-defaults &amp;&amp;
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -72,35 +72,35 @@ ldconfig</userinput></screen>
     <note>
 
       <para>
-        If starting Xorg from the command line, the default instructions
-        above start Xorg on the current virtual terminal.  It may be
-        convenient to see Xorg and associated application messages on the
-        current virtual terminal, normally tty1, and start the graphical
-        environment on the first available unused virtual terminal, normally
-        tty7.  To do this, set the suid bit on the Xorg application as the
-        <systemitem class="username">root</systemitem> user:
+        Hvis du starter Xorg fra kommandolinjen, starter standardinstruksjonene 
+        ovenfor Xorg på den gjeldende virtuelle terminalen. Det kan være 
+        praktisk å se Xorg og tilhørende programmeldinger på den gjeldende 
+        virtuelle terminalen, vanligvis tty1, og starte det grafiske miljøet på 
+        den første tilgjengelige ubrukte virtuelle terminalen, vanligvis tty7. 
+        For å gjøre dette, sett suid biten på Xorg applikasjonen som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="nodump"><userinput>chmod u+s /usr/bin/Xorg</userinput></screen>
 
       <para>
-        At this point you can start Xorg on virtual terminal 7 with
-        <command>startx &lt;client arguments&gt; -- vt7</command>.  Now
-        you can toggle between tty1 and tty7 with the Ctrl-Alt-F1 and
-        Ctrl-Alt-F7 key combinations.
+        På dette tidspunktet kan du starte Xorg på virtuell terminal 7 med
+        <command>startx &lt;client arguments&gt; -- vt7</command>.  Nå kan du 
+        veksle mellom tty1 og tty7 med tastekombinasjonene Ctrl-Alt-F1 
+        og Ctrl-Alt-F7.
       </para>
 
       <para>
-        To automatically start Xorg on the first available virtual terminal,
-        modify the <command>startx</command> script as the  <systemitem
-        class="username">root</systemitem> user with:
+        For å starte Xorg automatisk på den første tilgjengelige virtuelle 
+        terminalen, endre <command>startx</command> skriptet som  <systemitem
+        class="username">root</systemitem> bruker med:
       </para>
 
 <screen role="nodump"><userinput>sed -i '/$serverargs $vtarg/ s/serverargs/: #&amp;/' /usr/bin/startx</userinput></screen>
 
       <para>
-        After this change, the virtual terminal does not need to be
-        specified on the <command>startx</command> command line.
+        Etter denne endringen trenger ikke den virtuelle terminalen å bli 
+        spesifisert på <command>startx</command> kommandolinjen.
       </para>
 
     </note>
@@ -108,29 +108,29 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
-        <seg>xinit and startx</seg>
-        <seg>None</seg>
-        <seg>None</seg>
+        <seg>xinit og startx</seg>
+        <seg>Ingen</seg>
+        <seg>Ingen</seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -138,7 +138,7 @@ ldconfig</userinput></screen>
         <term><command>startx</command></term>
         <listitem>
           <para>
-            initializes an X session
+            initialiserer en X økt
           </para>
           <indexterm zone="xinit startx">
             <primary sortas="b-startx">startx</primary>
@@ -150,7 +150,7 @@ ldconfig</userinput></screen>
         <term><command>xinit</command></term>
         <listitem>
           <para>
-            is the X Window System initializer
+            er X Vindussystem initialiseringen
           </para>
           <indexterm zone="xinit xinit">
             <primary sortas="b-xinit">xinit</primary>

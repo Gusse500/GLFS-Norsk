@@ -19,29 +19,29 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to XKeyboard-Config</title>
+    <title>Introduksjon til XKeyboard-Config</title>
 
     <para>
-      The <application>XKeyboard-Config</application> package contains
-      the keyboard configuration database for the X Window System.
+      <application>XKeyboard-Config</application> pakken inneholder 
+      tastaturkonfigurasjonsdatabasen for X Vindussystemet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xkeyboard-config-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&xkeyboard-config-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&xkeyboard-config-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&xkeyboard-config-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">XKeyboard-Config Dependencies</bridgehead>
+    <bridgehead renderas="sect3">XKeyboard-Config Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg7-lib"/>
     </para>
@@ -49,11 +49,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of XKeyboard-Config</title>
+    <title>Installasjon av XKeyboard-Config</title>
 
     <para>
-      Install <application>XKeyboard-Config</application> by running the
-      following commands:
+      Installer <application>XKeyboard-Config</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -64,9 +64,9 @@ meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
 
     <important><para>
-      If upgrading from version 2.44 or earlier, the installation will
-      fail if some files are not symbolic links.  To fix this, run as
-      the &root; user:
+      Hvis du oppgraderer fra versjon 2.44 eller tidligere, vil installasjonen 
+      mislykkes hvis noen filer ikke er symbolske lenker. For å fikse dette, 
+      kjør som &root; bruker:
     </para>
 <screen role="root"><userinput>if [ -d /usr/share/X11/xkb ]; then
   rm -rf /usr/share/X11/xkb
@@ -75,14 +75,14 @@ ninja</userinput></screen>
 fi</userinput></screen></important>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
@@ -92,29 +92,29 @@ fi</userinput></screen></important>
      the symlink command is not needed. Note that those symlinks have
      been deprecated since 2005...
     <para>
-      <command>sed ... rules/meson.build</command>: Make sure
-      a symlink is created even if it already exists.
+      <command>sed ... rules/meson.build</command>: Sørg for at en symbolsk 
+      lenke opprettes selv om den allerede finnes.
     </para>
     <para>
-      <parameter>- -with-xkb-rules-symlink=xorg</parameter>: By default, the
-      XKB rules installed are named "base". This creates symlinks named
-      "xorg" to those rules, which is the default name used by Xorg.
+      <parameter>- -with-xkb-rules-symlink=xorg</parameter>: Som standard heter 
+      de installerte XKB reglene «base». Dette oppretter symbolske lenker kalt 
+      «xorg» til disse reglene, som er standardnavnet som brukes av Xorg.
     </para>
 -->
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
-        <seg>None</seg>
-        <seg>None</seg>
+        <seg>Ingen</seg>
+        <seg>Ingen</seg>
         <seg>/usr/share/X11/xkb</seg>
       </seglistitem>
     </segmentedlist>

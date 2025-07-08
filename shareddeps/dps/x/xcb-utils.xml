@@ -8,53 +8,53 @@
   <!ENTITY xcb-utils-download-ftp  " ">
 ]>
 
-<sect1 id="xcb-utils" xreflabel="XCB Utils">
+<sect1 id="xcb-utils" xreflabel="XCB Verktøy">
   <?dbhtml filename="xcb-utils.html"?>
 
-  <title>XCB Utils</title>
+  <title>XCB Verktøy</title>
 
   <indexterm zone="xcb-utils">
-    <primary sortas="a-xcb-utils">XCB Utils</primary>
+    <primary sortas="a-xcb-utils">XCB Verktøy</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to XCB Utils</title>
+    <title>Introduksjon til XCB Verktøy</title>
 
     <para>
-      The <application>XCB</application> collection of utilities provide
-      useful libraries for developers to use for X window manager and Wayland
-      compositor development. The installed packages below should be good
-      enough for most packages.
+      <application>XCB</application> samling av verktøy gir nyttige biblioteker 
+      som utviklere kan bruke til X Vindusbehandler og Wayland kompositor 
+      utvikling. De installerte pakkene nedenfor burde være gode nok for de 
+      fleste pakker.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xcb-utils-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&xcb-utils-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&xcb-utils-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&xcb-utils-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">XCB Utils Dependencies</bridgehead>
+    <bridgehead renderas="sect3">XCB Verktøy Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="libxcb"/> and
+      <xref linkend="libxcb"/> og
       <xref linkend="xcb-proto"/>
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Downloading XCB Utils</title>
+    <title>Nedlasting av XCB Verktøy</title>
 
     <para>
-      First, create a list of files to be downloaded:
+      Først, lag en liste over filer som skal lastes ned:
     </para>
 
 <screen><userinput>cat &gt; xcb-utils-list &lt;&lt; "EOF"
@@ -68,8 +68,8 @@ xcb-util-errors-&xcb-util-errors-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
-      To download the needed files using <xref linkend='wget'/>,
-      use the following commands:
+      For å laste ned de nødvendige filene ved hjelp av <xref linkend='wget'/>,
+      bruk følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir xcb-utils &amp;&amp;
@@ -80,18 +80,18 @@ grep -v '^#' ../xcb-utils-list | wget -i- -c \
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of XCB Utils</title>
+    <title>Installasjon av XCB Verktøy</title>
 
 &as_root;
 
     <para>
-      First, start a subshell that will exit on error:
+      Først starter du et underskall som avsluttes ved feil:
     </para>
 
 <screen><userinput>bash -e</userinput></screen>
 
     <para>
-      Install all of the packages by running the following commands:
+      Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>for package in $(grep -v '^#' ../xcb-utils-list)
@@ -107,7 +107,7 @@ do
 done</userinput></screen>
 
     <para>
-      Finally, exit the shell that was started earlier:
+      Til slutt, avslutt skallet som ble startet tidligere:
     </para>
 
 <screen><userinput>exit</userinput></screen>
@@ -115,27 +115,27 @@ done</userinput></screen>
   </sect2>
   
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
 
-        <seg>None</seg>
+        <seg>Ingen</seg>
         <seg>
           libxcb-util, libxcb-image, libxcb-keysyms,
           libxcb-render-util, libxcb-ewmh, libxcb-icccm,
-          libxcb-cursor, and libxcb-errors
+          libxcb-cursor, og libxcb-errors
         </seg>
-        <seg>None</seg>
+        <seg>Ingen</seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -143,7 +143,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-util</filename></term>
         <listitem>
           <para>
-            provides utility functions for other XCB utilities
+            tilbyr verktøyfunksjoner for andre XCB verktøy
           </para>
           <indexterm zone="xcb-utils libxcb-util">
             <primary sortas="c-libxcb-util">libxcb-util</primary>
@@ -155,7 +155,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-image</filename></term>
         <listitem>
           <para>
-            is a port of Xlib's XImage and XShmImage functions
+            er en portering av Xlibs XImage og XShmImage funksjoner
           </para>
           <indexterm zone="xcb-utils libxcb-image">
             <primary sortas="c-libxcb-image">libxcb-image</primary>
@@ -167,8 +167,8 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-keysyms</filename></term>
         <listitem>
           <para>
-            provides the standard X key constants and API functions for
-            conversion to/from keycodes
+            tilbyr standard X nøkkelkonstanter og API funksjoner for 
+            konvertering til/fra nøkkelkoder
           </para>
           <indexterm zone="xcb-utils libxcb-keysyms">
             <primary sortas="c-libxcb-keysyms">libxcb-keysyms</primary>
@@ -180,7 +180,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-render-util</filename></term>
         <listitem>
           <para>
-            provides convenience functions for the Render extension
+            tilbyr praktiske funksjoner for Render utvidelsen
           </para>
           <indexterm zone="xcb-utils libxcb-render-util">
             <primary sortas="c-libxcb-render-util">libxcb-render-util</primary>
@@ -192,7 +192,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-ewmh</filename></term>
         <listitem>
           <para>
-            provides the client and window-manager helpers for EWMH
+            gir klient og vindushåndterings hjelpere for EWMH
           </para>
           <indexterm zone="xcb-utils libxcb-ewmh">
             <primary sortas="c-libxcb-ewmh">libxcb-ewmh</primary>
@@ -204,7 +204,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-icccm</filename></term>
         <listitem>
           <para>
-            provides the client and window-manager helpers for ICCCM
+            gir klient og vindushåndterings hjelpere for ICCCM
           </para>
           <indexterm zone="xcb-utils libxcb-icccm">
             <primary sortas="c-libxcb-icccm">libxcb-icccm</primary>
@@ -216,7 +216,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-cursor</filename></term>
         <listitem>
           <para>
-             is a port of Xlib's libXcursor functions
+             er en portering av Xlibs libXcursor funksjoner
           </para>
           <indexterm zone="xcb-utils libxcb-cursor">
             <primary sortas="c-libxcb-cursor">libxcb-cursor</primary>
@@ -228,7 +228,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libxcb-errors</filename></term>
         <listitem>
           <para>
-            gives human-readable errors and codes
+            gir menneskelig lesbare feil og koder
           </para>
           <indexterm zone="xcb-utils libxcb-errors">
             <primary sortas="c-libxcb-errors">libxcb-errors</primary>

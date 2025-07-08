@@ -18,29 +18,29 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to xbitmaps</title>
+    <title>Introduksjon til xbitmaps</title>
 
     <para>
-      The <application>xbitmaps</application> package contains bitmap
-      images used by multiple applications built in Xorg chapter.
+      <application>xbitmaps</application> pakken inneholder bitmap bilder som 
+      brukes av flere applikasjoner bygget i Xorg kapittelet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xbitmaps-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&xbitmaps-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&xbitmaps-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&xbitmaps-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">xbitmaps Dependencies</bridgehead>
+    <bridgehead renderas="sect3">xbitmaps Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="util-macros"/>
     </para>
@@ -48,21 +48,21 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of xbitmaps</title>
+    <title>Installasjon av xbitmaps</title>
 
     <para>
-      Install <application>xbitmaps</application> by running the
-      following commands:
+      Installer <application>xbitmaps</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure $XORG_CONFIG</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -70,23 +70,23 @@
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
-        <seg>None</seg>
-        <seg>None</seg>
+        <seg>Ingen</seg>
+        <seg>Ingen</seg>
         <seg>/usr/include/X11/bitmaps</seg>
       </seglistitem>
     </segmentedlist>
