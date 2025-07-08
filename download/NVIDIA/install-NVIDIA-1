@@ -114,6 +114,12 @@ VKICDDIR=$SHAREDIR/vulkan/icd.d
 XCONFD=$SYSCONFDIR/X11/xorg.conf.d
 OPENCLICDDIR=$SYSCONFDIR/OpenCL/vendors
 
+INSTALL_BIN="install -vm755"
+INSTALL_SBIN="install -vm4755"
+# Most libraries have 755 perms instead of 644.
+# Let's ensure these libraries follow suite.
+INSTALL_LIB="$INSTALL_BIN"
+
 if [ ! -d $NV_X_RUN_DIR ]; then
   echo "Directory $NV_X_RUN_DIR doesn't exist, cannot install software from it."
   exit
@@ -133,201 +139,216 @@ fi
 NVIDIA_VERSION=$(cat $NV_X_RUN_DIR/README.txt | grep Version: | awk '{ print $5 }')
 echo "Installing NVIDIA-$NVIDIA_VERSION..."
 
+# Make sure that when there's an error to bail out.
+set -e
+
 if [ $MANDATORY_64 = 1 ]; then
   echo "Installing 64-bit mandatory software..."
-  mkdir -pv $BINDIR $LIBDIR/gbm $SHAREDIR/nvidia &&
+  mkdir -pv $BINDIR $LIBDIR/gbm $SHAREDIR/nvidia
   for lib in $(cat $NV_MANIFEST | grep mandatory-64: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
   ln -svf libnvidia-allocator.so.$NVIDIA_VERSION   \
-    $LIBDIR/libnvidia-allocator.so.1              &&
+    $LIBDIR/libnvidia-allocator.so.1
   ln -svrf $LIBDIR/libnvidia-allocator.so.1        \
-    $LIBDIR/gbm/nvidia-drm_gbm.so                 &&
-  install -vm4755 $NV_X_RUN_DIR/nvidia-modprobe    \
-    $BINDIR                                       &&
+    $LIBDIR/gbm/nvidia-drm_gbm.so
+  $INSTALL_SBIN $NV_X_RUN_DIR/nvidia-modprobe    \
+    $BINDIR
   cp -v $NV_X_RUN_DIR/nvidia-application-profiles* \
-    $SHAREDIR/nvidia || exit
+    $SHAREDIR/nvidia
 fi
 if [ $MANDATORY_32 = 1 ]; then
   echo "Installing lib32 mandatory software..."
-  mkdir -pv $LIB32/gbm &&
+  mkdir -pv $LIB32/gbm
   for lib in $(cat $NV_MANIFEST | grep mandatory-32: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32 || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
   ln -svf libnvidia-allocator.so.$NVIDIA_VERSION \
-    $LIB32/libnvidia-allocator.so.1             &&
+    $LIB32/libnvidia-allocator.so.1
   ln -svrf $LIB32/libnvidia-allocator.so.1       \
-    $LIB32/gbm/nvidia-drm_gbm.so || exit
+    $LIB32/gbm/nvidia-drm_gbm.so
 fi
 
 if [ $X11_64 = 1 ]; then
   echo "Installing 64-bit X11 libraries..."
-  mkdir -pv $XDRIV $XEXT $XCONFD &&
+  mkdir -pv $XDRIV $XEXT $XCONFD
   for lib in $(cat $NV_MANIFEST | grep x11-64: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
-  install -vm644 $NV_X_RUN_DIR/nvidia_drv.so $XDRIV                  &&
-  install -vm644 $NV_X_RUN_DIR/libglxserver_nvidia.so.$NVIDIA_VERSION \
-    $XEXT                                                            &&
+  $INSTALL_LIB $NV_X_RUN_DIR/nvidia_drv.so $XDRIV
+  $INSTALL_LIB $NV_X_RUN_DIR/libglxserver_nvidia.so.$NVIDIA_VERSION \
+    $XEXT
   ln -svf libglxserver_nvidia.so.$NVIDIA_VERSION                      \
-    $XEXT/libglxserver_nvidia.so                                     &&
-  cp -v $NV_X_RUN_DIR/nvidia-drm-outputclass.conf $XCONFD || exit
+    $XEXT/libglxserver_nvidia.so
+  cp -v $NV_X_RUN_DIR/nvidia-drm-outputclass.conf $XCONFD
 fi
 if [ $X11_32 = 1 ]; then
   echo "Installing lib32 X11 libraries..."
-  mkdir -pv $LIB32 &&
+  mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep x11-32: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32 || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
 fi
 
 if [ $EGL_64 = 1 ]; then
   echo "Installing 64-bit EGL libraries..."
-  mkdir -pv $LIBDIR $EGLGLVNDDIR &&
+  mkdir -pv $LIBDIR $EGLGLVNDDIR
   for lib in $(cat $NV_MANIFEST | grep egl-64: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
-  cp -v $NV_X_RUN_DIR/10_nvidia.json $EGLGLVNDDIR || exit
+  cp -v $NV_X_RUN_DIR/10_nvidia.json $EGLGLVNDDIR
 fi
 if [ $EGL_32 = 1 ]; then
   echo "Installing lib32 EGL libraries..."
-  mkdir -pv $LIB32 &&
+  mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep egl-32: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32 || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
 fi
 
 if [ $GLESV2_64 = 1 ]; then
   echo "Installing 64-bit GLESv2 libraries..."
-  mkdir -pv $LIBDIR &&
+  mkdir -pv $LIBDIR
   for lib in $(cat $NV_MANIFEST | grep glesv2-64: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
 fi
 if [ $GLESV2_32 = 1 ]; then
   echo "Installing lib32 GLESv2 libraries..."
-  mkdir -pv $LIB32 &&
+  mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep glesv2-32: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32 || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
 fi
 
 if [ $VULKAN = 1 ]; then
   echo "Installing the Vulkan ICD..."
-  mkdir -pv $VKICDDIR &&
-  cp -v $NV_X_RUN_DIR/nvidia_icd.json $VKICDDIR || exit
+  mkdir -pv $VKICDDIR
+  cp -v $NV_X_RUN_DIR/nvidia_icd.json $VKICDDIR
   if [ $VULKAN_EGL = 1 ]; then
     echo "Choosing EGL over GLX for Vulkan..."
-    sed -i 's/GLX/EGL/' $VKICDDIR/nvidia_icd.json || exit
+    sed -i 's/GLX/EGL/' $VKICDDIR/nvidia_icd.json
   fi
 fi
 
 if [ $VDPAU_64 = 1 ]; then
   echo "Installing 64-bit VDPAU libraries..."
-  mkdir -pv $LIBDIR/vdpau &&
+  mkdir -pv $LIBDIR/vdpau
   for lib in $(cat $NV_MANIFEST | grep vdpau-64: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR/vdpau || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR/vdpau
   done
 fi
 if [ $VDPAU_32 = 1 ]; then
   echo "Installing lib32 VDPAU libraries..."
-  mkdir -pv $LIB32/vdpau &&
+  mkdir -pv $LIB32/vdpau
   for lib in $(cat $NV_MANIFEST | grep vdpau-32: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32/vdpau || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32/vdpau
   done
 fi
 
 if [ $OPENCL_64 = 1 ]; then
   echo "Installing 64-bit OpenCL libraries..."
-  mkdir -pv $LIBDIR $OPENCLICDDIR &&
+  mkdir -pv $LIBDIR $OPENCLICDDIR
   for lib in $(cat $NV_MANIFEST | grep opencl-64: | cut -d':' -f2-); do
     if [ $lib = "libOpenCL" ]; then
-      install -vm644 $NV_X_RUN_DIR/$lib.so.$OPENCL_VERSION $LIBDIR || exit
+      $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$OPENCL_VERSION $LIBDIR
     else
-      install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+      $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
     fi
   done
-  cp -v $NV_X_RUN_DIR/nvidia.icd $OPENCLICDDIR || exit
+  cp -v $NV_X_RUN_DIR/nvidia.icd $OPENCLICDDIR
 fi
 if [ $OPENCL_32 = 1 ]; then
   echo "Installing lib32 OpenCL libraries..."
-  mkdir -pv $LIB32 &&
+  mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep opencl-32: | cut -d':' -f2-); do
     if [ $lib = "libOpenCL" ]; then
-      install -vm644 $NV_X_RUN_DIR/32/$lib.so.$OPENCL_VERSION $LIB32 || exit
+      $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$OPENCL_VERSION $LIB32
     else
-      install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32 || exit
+      $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
     fi
   done
 fi
 
 if [ $CUDA_64 = 1 ]; then
   echo "Installing 64-bit CUDA libraries..."
-  mkdir -pv $LIBDIR &&
+  mkdir -pv $LIBDIR
   for lib in $(cat $NV_MANIFEST | grep cuda-64: | cut -d':' -f2-); do
   if [ $lib = "libnvidia-nvvm70" ]; then
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVVM70_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVVM70_VERSION $LIBDIR
   else
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   fi
   done
-  install -vm644 $NV_X_RUN_DIR/libnvidia-api.so.1 $LIBDIR &&
-  ln -svf libnvidia-api.so.1 $LIBDIR/libnvidia-api.so || exit
+  $INSTALL_LIB $NV_X_RUN_DIR/libnvidia-api.so.1 $LIBDIR
+  ln -svf libnvidia-api.so.1 $LIBDIR/libnvidia-api.so
 fi
 if [ $CUDA_32 = 1 ]; then
   echo "Installing lib32 CUDA libraries..."
-  mkdir -pv $LIB32 &&
+  mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep cuda-32: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32 || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
 fi
 
 if [ $NGX = 1 ]; then
   echo "Installing NGX (DLSS) libraries..."
-  mkdir -pv $NVWINEDIR &&
+  mkdir -pv $NVWINEDIR
   for lib in $(cat $NV_MANIFEST | grep ngx: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
-  install -vm755 $NV_X_RUN_DIR/*nvngx*.dll $NVWINEDIR || exit
+  $INSTALL_LIB $NV_X_RUN_DIR/*nvngx*.dll $NVWINEDIR
 fi
 
 if [ $NV_RT = 1 ]; then
   echo "Installing raytracing libraries..."
-  mkdir -pv $SHAREDIR/nvidia $LIBDIR &&
+  mkdir -pv $SHAREDIR/nvidia $LIBDIR
   for lib in $(cat $NV_MANIFEST | grep rt: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
-  install -vm755 $NV_X_RUN_DIR/nvoptix.bin $SHAREDIR/nvidia || exit
+  $INSTALL_BIN $NV_X_RUN_DIR/nvoptix.bin $SHAREDIR/nvidia
 fi
 
 if [ $NV_SETTINGS = 1 ]; then
   echo "Installing nvidia-settings..."
-  mkdir -pv $BINDIR $LIBDIR $SHAREDIR/applications $SHAREDIR/pixmaps &&
+  mkdir -pv $BINDIR $LIBDIR $SHAREDIR/applications $SHAREDIR/pixmaps
   for lib in $(cat $NV_MANIFEST | grep settings: | cut -d':' -f2-); do
-    install -vm644 $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR || exit
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
-  install -vm755 $NV_X_RUN_DIR/nvidia-settings $BINDIR               &&
-  cp -v $NV_X_RUN_DIR/nvidia-settings.desktop $SHAREDIR/applications &&
-  cp -v $NV_X_RUN_DIR/nvidia-settings.png $SHAREDIR/pixmaps || exit
+  $INSTALL_BIN $NV_X_RUN_DIR/nvidia-settings $BINDIR
+  cp -v $NV_X_RUN_DIR/nvidia-settings.desktop $SHAREDIR/applications
+  cp -v $NV_X_RUN_DIR/nvidia-settings.png $SHAREDIR/pixmaps
 fi
 
 if [ $NV_XCONF = 1 ]; then
   echo "Installing nvidia-xconfig..."
-  mkdir -pv $BINDIR &&
-  install -vm755 $NV_X_RUN_DIR/nvidia-xconfig $BINDIR || exit
+  mkdir -pv $BINDIR
+  $INSTALL_BIN $NV_X_RUN_DIR/nvidia-xconfig $BINDIR
 fi
 
 if [ $NV_SMI = 1 ]; then
   echo "Installing nvidia-smi..."
-  mkdir -pv $BINDIR &&
-  install -vm755 $NV_X_RUN_DIR/nvidia-smi $BINDIR || exit
+  mkdir -pv $BINDIR
+  $INSTALL_BIN $NV_X_RUN_DIR/nvidia-smi $BINDIR
 fi
 
 echo "Installing documentation..."
-mkdir -pv $DOCDIR/nvidia-$NVIDIA_VERSION &&
-cp -R $NV_X_RUN_DIR/html $DOCDIR/nvidia-$NVIDIA_VERSION || exit
+mkdir -pv $DOCDIR/nvidia-$NVIDIA_VERSION
+cp -R $NV_X_RUN_DIR/html $DOCDIR/nvidia-$NVIDIA_VERSION
 
 echo "Running /sbin/ldconfig..."
-/sbin/ldconfig  &&
+if [ $(id -u) = "0" ]; then
+  # $LIBDIR and $LIB32 are not passed here. The cache should always be built in
+  # this case, and if a DESTDIR is given, it should be a path ldconfig will
+  # look in.
+  /sbin/ldconfig
+else
+  # This is mainly for maintainers who will want to have symlinks in a
+  # distribution, who should run this as a non-root process and should provide
+  # a DESTDIR. ldconfig will then make symlinks in $LIBDIR and $LIB32.
+  # ldconfig should still be ran after installing from that distribution to
+  # build the library cache.
+  /sbin/ldconfig -n $LIBDIR $LIB32
+fi
 
 echo "Installation of NVIDIA-$NVIDIA_VERSION complete!"
