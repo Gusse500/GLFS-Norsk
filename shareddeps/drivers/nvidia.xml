@@ -618,8 +618,7 @@ EOF</userinput></screen>
           nvidia-install,
           nvidia-modprobe,
           nvidia-settings,
-          nvidia-smi,
-          nvidia-uninstall, og
+          nvidia-smi, og
           nvidia-xconfig
         </seg>
         <seg>
@@ -731,6 +730,7 @@ EOF</userinput></screen>
         </listitem>
       </varlistentry>
 
+<!--
       <varlistentry id="nvidia-uninstall">
         <term><command>nvidia-uninstall</command></term>
         <listitem>
@@ -742,6 +742,7 @@ EOF</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
+-->
 
       <varlistentry id="nvidia-xconfig">
         <term><command>nvidia-xconfig</command></term>
