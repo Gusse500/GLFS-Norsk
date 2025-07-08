@@ -223,17 +223,17 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av
       brukstilfellet ditt, kan du hoppe over å bygge en eller to moduler. UVM
       modulen (UnifiedVirtual Memory) er til bruk med <ulink
-      url="&slfs-website;/general/cuda.html">CUDA</ulink>. Hvis du ikke vil bruke
-      den, eller ønsker å bruke dens funksjoner, kan du hoppe over å bygge UVM
-      kjernemodulen. Det finnes også PeerMem modulen som er for datasentre.
+      url="&slfs-website;/general/cuda.html">CUDA</ulink>. Hvis du ikke vil 
+      bruke den, eller ønsker å bruke dens funksjoner, kan du hoppe over å bygge 
+      UVM kjernemodulen. Det finnes også PeerMem modulen som er for datasentre.
       For spilling kan den trygt deaktiveres.
     </para>
 
     <para>
       For UVM heter modulen <computeroutput>nvidia-uvm</computeroutput>.
       For PeerMem vil den bli kalt
-      <computeroutput>nvidia-peermem</computeroutput>. For å hoppe over disse, legg
-      til modulnavnene til <envar>NV_EXCLUDE_KERNEL_MODULES</envar> i
+      <computeroutput>nvidia-peermem</computeroutput>. For å hoppe over disse, 
+      legg til modulnavnene til <envar>NV_EXCLUDE_KERNEL_MODULES</envar> i
       <command>make</command> kommandoen. Variabelen bør være separert, slik
       som dette:
       <computeroutput>NV_EXCLUDE_KERNEL_MODULES="nvidia-uvm nvidia-peermem"</computeroutput>.
@@ -257,10 +257,10 @@ make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
         skjer, kan det være nødvendig å nedgradere kjernen til en lavere
         versjon. Når en ny driverutgivelse kommer, vil driveren mest
         sannsynlig støtte kjerneversjonen på det tidspunktet. Øverst i denne
-        delen er den anbefalte kjerneversjonen som skal brukes med denne driveren
-        nevnt for å sikre at det ikke oppstår en byggefeil. Den nåværende
-        kjerneversjonen som brukes for kjerneparametere og lignende i denne boken er
-        linux-&linux-version;.
+        delen er den anbefalte kjerneversjonen som skal brukes med denne 
+        driveren nevnt for å sikre at det ikke oppstår en byggefeil. Den 
+        nåværende kjerneversjonen som brukes for kjerneparametere og lignende i 
+        denne boken er linux-&linux-version;.
       </para>
     </note>
 
@@ -276,21 +276,21 @@ make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
         kildetre) ettersom modulene oppdateres samtidig som kjernen oppdateres.
         På det tidspunktet er det nytt lim som holder dem sammen. Men når
         det gjelder tredjepartsmoduler, oppdateres de ikke når kjernen
-        oppdateres, så dette limet tredjepartsmodulene hadde på kjernen bryter sammen.
-        Dette fører til ødelagte kjernemoduler. Dette gjelder også hvis du forblir på
-        samme kjerneversjon, men endrer noen alternativer, dette kan også bryte
-        limet.
+        oppdateres, så dette limet tredjepartsmodulene hadde på kjernen bryter 
+        sammen. Dette fører til ødelagte kjernemoduler. Dette gjelder også hvis 
+        du forblir på samme kjerneversjon, men endrer noen alternativer, dette 
+        kan også bryte limet.
       </para>
 
       <para>
-        Sørg for at når du installerer kjernemodulene på nytt, må du sørge for at du
-        bruker den nye kjernen og har kjernekildekoden du bygde fra.
+        Sørg for at når du installerer kjernemodulene på nytt, må du sørge for 
+        at du bruker den nye kjernen og har kjernekildekoden du bygde fra.
         Ellers vil modulene ikke kunne bygges.
       </para>
 
       <para>
-        Når du oppgraderer kjernen, trenger du ikke å installere driverprogramvaren
-        på nytt, bare kjernemodulene.
+        Når du oppgraderer kjernen, trenger du ikke å installere 
+        driverprogramvaren på nytt, bare kjernemodulene.
       </para>
     </important>
 
@@ -357,12 +357,12 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
 
     <important><para>
       Hvis du starter opp i systemet du kjører kommandoene for, kan det å gjøre
-      det for kommandoen ovenfor i et grafisk miljø krasje det
-      miljøet og føre deg tilbake til en TTY. Ikke gjør det, bare kjør den fra en
-      TTY eller i en chroot der skjermen ikke er avhengig av bibliotekene
-      som leveres av denne driveren. Når det gjelder TTY, drives den faktisk av
-      kjernen eller dens moduler, ikke bibliotekene. Det er derfor det er trygt å
-      kjøre kommandoen ovenfor i en TTY.&mdash;den overskriver ikke kjernemodulene.
+      det for kommandoen ovenfor i et grafisk miljø krasje det miljøet og føre 
+      deg tilbake til en TTY. Ikke gjør det, bare kjør den fra en TTY eller i en 
+      chroot der skjermen ikke er avhengig av bibliotekene som leveres av denne 
+      driveren. Når det gjelder TTY, drives den faktisk av kjernen eller dens 
+      moduler, ikke bibliotekene. Det er derfor det er trygt å kjøre kommandoen 
+      ovenfor i en TTY.&mdash;den overskriver ikke kjernemodulene.
     </para></important>
 
   </sect2>
@@ -391,9 +391,9 @@ rm -rf NVIDIA-sysv-bootscripts-&nv-sysv-bs;</userinput></screen>
   <sect2 revision="systemd">
     <title>Installasjon av NVIDIA-Powerd</title>
     <para>
-      Hvis du vil ha <application>NVIDIA-Powerd</application>, som kan sette i dvalemodus 
-      og gå i hvilemodus hvis den blir bedt om det, kjør følgende kommandoer som &root;
-      bruker for å installere nissen og Systemd enhetsfilene:
+      Hvis du vil ha <application>NVIDIA-Powerd</application>, som kan settes i 
+      dvalemodus og gå i hvilemodus, kjør følgende kommandoer som &root; bruker 
+      for å installere daemonen og Systemd enhetsfilene:
     </para>
 <screen role="root"><userinput>mkdir -pv /usr/lib/systemd/system             \
           /usr/lib/systemd/system-sleep       \
@@ -455,26 +455,26 @@ done</userinput></screen>
       <title>Liste over pakker med problemer</title>
 
       <para>
-        Bruk av denne driveren kan føre til kompromisser. Så langt ser disse problemene ut til å være
-        begrenset til Wayland, skrivebordsmiljøer og skjermbehandlere.
-        Listen nedenfor dokumenterer de kjente pakkene som har problemer med denne
-        driveren.
+        Bruk av denne driveren kan føre til kompromisser. Så langt ser disse 
+        problemene ut til å være begrenset til Wayland, skrivebordsmiljøer og 
+        skjermbehandlere. Listen nedenfor dokumenterer de kjente pakkene som har 
+        problemer med denne driveren.
       </para>
 
       <itemizedlist>
         <listitem revision="sysv">
           <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Bruk av denne
           pakken på SysVinit systemer vil føre til feil, ettersom GDM ikke
-          vil bruke Wayland for NVIDIA GPU-er, men et tillatelsesproblem med SysV
-          forhindrer at X11 brukes. Du må starte
+          vil bruke Wayland for NVIDIA GPU-er, men et tillatelsesproblem med 
+          SysV forhindrer at X11 brukes. Du må starte
           <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> eller
           <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
           gjennom terminalen i stedet. Les Mutter oppføringen.</para>
         </listitem>
         <listitem revision="sysv"><para>
           <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
-          Dette må foreløpig startes via en TTY eller en annen skjermbehandler enn GDM
-          på SysVinit systemer.
+          Dette må foreløpig startes via en TTY eller en annen skjermbehandler 
+          enn GDM på SysVinit systemer.
         </para></listitem>
         <listitem>
           <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
@@ -489,14 +489,14 @@ done</userinput></screen>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="xorg-server"/>: Selv om denne pakken fungerer helt fint, 
-            vil TearFree oppdateringen og konfigurasjonsfilen være ubrukelig ettersom
-            Xorg driveren (<filename class="libraryfile">nvidia_drv</filename>)
-            vil bli brukt i stedet for modusinnstillingsdriveren. TearFree oppdateringen 
-            og konfigurasjonsfilen er modusinnstillingsspesifikk. Derfor må du finne 
-            en annen måte å bli kvitt skjermriving hvis det er ditt ønske. Slike 
-            rettelser kan redusere ytelsen drastisk, slik at 144 FPS kan 
-            falle til 60 FPS.
+            <xref linkend="xorg-server"/>: Selv om denne pakken fungerer helt 
+            fint, vil TearFree oppdateringen og konfigurasjonsfilen være 
+            ubrukelig ettersom Xorg driveren (<filename class="libraryfile">nvidia_drv</filename>)
+            vil bli brukt i stedet for modusinnstillingsdriveren. TearFree 
+            oppdateringen og konfigurasjonsfilen er modusinnstillingsspesifikk. 
+            Derfor må du finne en annen måte å bli kvitt skjermriving hvis det 
+            er ditt ønske. Slike rettelser kan redusere ytelsen drastisk, slik 
+            at 144 FPS kan falle til 60 FPS.
           </para>
         </listitem>
       </itemizedlist>
@@ -506,15 +506,17 @@ done</userinput></screen>
     <sect3><title>Konfigurasjonsinformasjon</title>
 
       <para>
-        Støtte for Nouveau og NVIDIAFB ble kompilert inn i kjernen for å sikre at
-        NVIDIA kjernemodulene ble bygd på en vellykket måte. Nouveau og NVIDIAFB
-        er imidlertid i konflikt med NVIDIA kjernemodulene, så de bør svartelistes.
+        Støtte for Nouveau og NVIDIAFB ble kompilert inn i kjernen for å sikre 
+        at NVIDIA kjernemodulene ble bygd på en vellykket måte. Nouveau og 
+        NVIDIAFB er imidlertid i konflikt med NVIDIA kjernemodulene, så de bør 
+        svartelistes. Videre kan det hende at andre moduler har blitt bygget som 
+        kan komme i konflikt, og som også bør deaktiveres.
       </para>
 
       <para>
         Som &root; bruker, opprett filen
-        <filename>/usr/lib/modprobe.d/nouveau.conf</filename> for å svarteliste Nouveau
-        og NVIDIAFB:
+        <filename>/usr/lib/modprobe.d/nouveau.conf</filename> for å svarteliste 
+        Nouveau og NVIDIAFB, samt andre moduler som er i konflikt:
       </para>
       
 <screen role="root"><userinput>mkdir -pv /usr/lib/modprobe.d &amp;&amp;
@@ -523,14 +525,16 @@ cat &gt; /usr/lib/modprobe.d/nouveau.conf &lt;&lt; "EOF"
 
 blacklist nouveau
 blacklist nvidiafb
+blacklist nova_core
+blacklist nova_drm
 
 # End /usr/lib/modprobe.d/nouveau.conf</literal>
 EOF</userinput></screen>
 
       <para>
         DRM kjernemodulen bruker ikke modusinnstilling som standard, noe som er
-        nødvendig for Wayland kompositore. Gjør at den bruker modusinnstilling som &root;
-        bruker:
+        nødvendig for Wayland kompositorer. Gjør at den bruker modusinnstilling 
+        som &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
@@ -542,9 +546,9 @@ options nvidia_drm modeset=1
 EOF</userinput></screen>
 
       <para>
-        Når GPU-en går i hvilemodus/dvalemodus, mister den som
-        standard alle minnetildelinger. Du kan forhindre dette ved å angi to alternativer for NVIDIA
-        modulen. som &root; bruker:
+        Når GPU-en går i hvilemodus/dvalemodus, mister den som standard alle 
+        minnetildelinger. Du kan forhindre dette ved å angi to alternativer for 
+        NVIDIA modulen. som &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
@@ -563,10 +567,10 @@ EOF</userinput></screen>
         </para></footnote>
         drivere eller driverstubber. På samme måte installerer den ikke en
         <application>pkg-config</application> fil som sier hvor du finner de
-        tilknyttede filene. Filene er ikke nødvendige med denne driveren. Imidlertid
-        forventer noen applikasjoner at <application>pkg-config</application> filen
-        eksisterer, nemlig <xref linkend="xorg-server"/>. Opprett en nå som
-        &root; bruker:
+        tilknyttede filene. Filene er ikke nødvendige med denne driveren. 
+        Imidlertid forventer noen applikasjoner at <application>pkg-config</application> 
+        filen eksisterer, nemlig <xref linkend="xorg-server"/>. Opprett en nå 
+        som &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
@@ -583,12 +587,12 @@ Cflags: -I${includedir}</literal>
 EOF</userinput></screen>
 
       <para>
-        Programmer som krever denne filen vil vanligvis ikke lenke mot
-        noe bibliotek i <filename class="libraryfile">/usr/lib/dri</filename>.
-        Hvis du er bekymret for at et program vil prøve å lenke mot
-        ikke-eksisterende biblioteker, kan du kompilere <xref linkend="mesa"/> å få
-        disse bibliotekene og en ekte <application>pkg-config</application> fil.
-        Merk at disse bibliotekene ikke vil bli brukt når denne driveren er i bruk.
+        Programmer som krever denne filen vil vanligvis ikke lenke mot noe 
+        bibliotek i <filename class="libraryfile">/usr/lib/dri</filename>. Hvis 
+        du er bekymret for at et program vil prøve å lenke mot ikke-eksisterende 
+        biblioteker, kan du kompilere <xref linkend="mesa"/> å få disse 
+        bibliotekene og en ekte <application>pkg-config</application> fil. Merk 
+        at disse bibliotekene ikke vil bli brukt når denne driveren er i bruk.
       </para>
 
       <note><para>
