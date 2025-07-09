@@ -18,11 +18,11 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Cython</title>
+    <title>Introduksjon til Cython</title>
 
     <para>
-      The <application>Cython</application> package provides a compiler for
-      writing C extensions for the <application>Python</application> language.
+      <application>Cython</application> pakken inneholder en kompilator for å 
+      skrive C utvidelser for <application>Python</application> språket.
     </para>
 
     &long-build-time;
@@ -30,12 +30,12 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&cython-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&cython-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&cython-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&cython-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -43,16 +43,16 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Cython</title>
+    <title>Installasjon av Cython</title>
 
     <para>
-      Build the module:
+      Bygg modulen:
     </para>
 
 <screen><userinput>pip3 wheel -w dist --no-build-isolation --no-deps --no-cache-dir $PWD</userinput></screen>
 
     <para>
-      Install the module as the <systemitem class="username">root</systemitem> user:
+      Installer modulen som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>pip3 install --no-index --find-links=dist --no-cache-dir --no-user Cython</userinput></screen>
@@ -60,30 +60,30 @@
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          cydbg, cython, and cythonize
+          cydbg, cython, og cythonize
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/lib/python&python3-majorver;/site-packages/Cython,
           /usr/lib/python&python3-majorver;/site-packages/Cython-&cython-version;.dist-info,
-          and /usr/lib/python&python3-majorver;/site-packages/pyximport
+          og /usr/lib/python&python3-majorver;/site-packages/pyximport
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -91,7 +91,7 @@
         <term><command>cydbg</command></term>
         <listitem>
           <para>
-            is the <application>Cython</application> debugger
+            er <application>Cython</application> feilsøkingsverktøy
           </para>
           <indexterm zone="cython cydbg">
             <primary sortas="b-cydbg">cydbg</primary>
@@ -103,9 +103,9 @@
         <term><command>cython</command></term>
         <listitem>
           <para>
-            is a compiler for code written in the <application>Cython
-            </application> language. It outputs a C/C++ program which can be
-            compiled with a C/C++ compiler
+            er en kompilator for kode skrevet i <application>Cython
+            </application> språket. Den sender ut et C/C++ program som kan 
+            kompileres med en C/C++ kompilator
           </para>
           <indexterm zone="cython cython-bin">
             <primary sortas="b-cython-bin">cython-bin</primary>
@@ -117,9 +117,9 @@
         <term><command>cythonize</command></term>
         <listitem>
           <para>
-            is a compiler for code written in the <application>Cython
-            </application> language. It outputs an extension module which is
-            directly importable from <application>Python</application>
+            er en kompilator for kode skrevet i <application>Cython
+            </application> språket. Den sender ut en utvidelsesmodul som kan 
+            importeres direkte fra <application>Python</application>
           </para>
           <indexterm zone="cython cythonize">
             <primary sortas="b-cythonize">cythonize</primary>

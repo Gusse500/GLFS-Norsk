@@ -8,11 +8,11 @@
 <chapter id="drivers">
   <?dbhtml filename="drivers.html"?>
 
-  <title>Graphics Drivers</title>
+  <title>Grafikkdrivere</title>
 
   <para>
-    This chapter covers graphics drivers, as well as some APIs. Together, they
-    allow for a graphical environment, and in some cases, a simple TTY.
+    Dette kapittelet dekker grafikkdrivere, samt noen API-er. Sammen gir de 
+	mulighet for et grafisk miljø, og i noen tilfeller en enkel TTY.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatdriver.xml"/>

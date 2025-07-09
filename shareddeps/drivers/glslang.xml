@@ -18,11 +18,11 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Glslang</title>
+    <title>Introduksjon til Glslang</title>
 
     <para>
-      The <application>Glslang</application> package contains an frontend and
-      validator for OpenGL, OpenGL ES, and Vulkan shaders.
+      <application>Glslang</application> pakken inneholder et brukergrensesnitt 
+      og en validator for OpenGL, OpenGL ES og Vulkan shadere.
     </para>
 
     &long-build-time;
@@ -30,53 +30,53 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&glslang-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&glslang-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&glslang-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&glslang-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&dl-root;/glslang/glslang-&glslang-version;-SPIRV_install-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Glslang Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Glslang Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="cmake"/> and
+      <xref linkend="cmake"/> og
       <xref linkend="spirv-tools"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Glslang</title>
+    <title>Installasjon av Glslang</title>
 
 <!--
     <para>
-      First patch the package to ensure that <filename
-      class="libraryfile">libSPIRV</filename> will be installed:
+      Først oppdaterer du pakken for å sikre at <filename
+      class="libraryfile">libSPIRV</filename> vil bli installert:
     </para>
 
 <screen><userinput>patch -Np1 -i ../glslang-&glslang-version;-SPIRV_install-1.patch</userinput></screen>
 -->
 
     <para>
-      Install <application>Glslang</application> by running the following
-      commands:
+      Installer <application>Glslang</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -92,11 +92,11 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.
+      For å teste resultatene, utsted: <command>ninja test</command>.
     </para>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -104,11 +104,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Glslang</title>
+    <title>lib32 Installasjon av Glslang</title>
 
     <para>
-      Install lib32-<application>Glslang</application> by running the following
-      commands:
+      Installer lib32-<application>Glslang</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -125,7 +125,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -136,58 +136,58 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
     <para>
-      <parameter>-D ALLOW_EXTERNAL_SPIRV_TOOLS=ON</parameter>: This switch allows
-      the build system to use the system-installed copy of
-      <xref linkend="spirv-tools" role="nodep"/>, instead of downloading and
-      installing its own copy.
+      <parameter>-D ALLOW_EXTERNAL_SPIRV_TOOLS=ON</parameter>: Denne bryteren 
+      lar byggesystemet bruke den systeminstallerte kopien av
+      <xref linkend="spirv-tools" role="nodep"/>, i stedet for å laste ned og 
+      installere sin egen kopi.
     </para>
 
     <para>
-      <parameter>-D BUILD_SHARED_LIBS=ON</parameter>: This switch builds shared
-      versions of the libraries, and does not install static versions of them.
+      <parameter>-D BUILD_SHARED_LIBS=ON</parameter>: Denne bryteren bygger delte 
+      versjoner av bibliotekene, og installerer ikke statiske versjoner av dem.
     </para>
 
     <para>
-      <parameter>-D GLSLANG_TESTS=ON</parameter>: This switch builds the 
-      tests for the package.
+      <parameter>-D GLSLANG_TESTS=ON</parameter>: Denne bryteren bygger 
+      testene for pakken.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           glslang,
-          glslang-validator (symlink to glslang), and
+          glslang-validator (symlink to glslang), og
           spirv-remap
         </seg>
         <seg>
           libglslang,
           libglslang-default-resource-limits,
-          libSPIRV, and
+          libSPIRV, og
           libSPVRemapper
         </seg>
         <seg>
-          /usr/include/glslang and
+          /usr/include/glslang og
           /usr/lib/cmake/glslang
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -195,8 +195,8 @@ ldconfig</userinput></screen>
         <term><command>glslang</command></term>
         <listitem>
           <para>
-            provides a front end and validator for OpenGL, OpenGL ES, and
-            Vulkan shaders
+            tilbyr et brukergrensesnitt og en validator for OpenGL, OpenGL ES 
+            og Vulkan shadere
           </para>
           <indexterm zone="glslang glslang-prog">
             <primary sortas="b-glslang">glslang</primary>
@@ -208,8 +208,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libglslang</filename></term>
         <listitem>
           <para>
-            contains functions that provide a front-end and validator for
-            OpenGL, OpenGL ES, and Vulkan shaders to other programs
+            inneholder funksjoner som gir et brukergrensesnitt og en validator 
+            for OpenGL, OpenGL ES og Vulkan shadere til andre programmer
           </para>
           <indexterm zone="glslang libglslang">
             <primary sortas="c-libglslang">libglslang</primary>
@@ -222,7 +222,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libHLSL</filename></term>
         <listitem>
           <para>
-            provides a front-end for shaders that are in HLSL format
+            gir et brukergrensesnitt for shaders som er i HLSL format
           </para>
           <indexterm zone="glslang libHLSL">
             <primary sortas="c-libHLSL">libHLSL</primary>
@@ -235,7 +235,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libSPIRV</filename></term>
         <listitem>
           <para>
-            provides a front-end and generator for SPIR-V binaries
+            tilbyr et brukergrensesnitt og en generator for SPIR-V binærfiler
           </para>
           <indexterm zone="glslang libSPIRV">
             <primary sortas="c-libSPIRV">libSPIRV</primary>
@@ -247,7 +247,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libSPVRemapper</filename></term>
         <listitem>
           <para>
-            provides a remapper for SPIR-V binaries
+            gir en remapper for SPIR-V binærfiler
           </para>
           <indexterm zone="glslang libSPVRemapper">
             <primary sortas="c-libSPVRemapper">libSPVRemapper</primary>

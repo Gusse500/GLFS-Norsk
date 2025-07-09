@@ -18,56 +18,56 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Xwayland</title>
+    <title>Introduksjon til Xwayland</title>
 
     <para>
-      The <application>Xwayland</application> package is an Xorg server
-      running on top of the wayland server. It has been separated from the
-      main Xorg server package. It allows running X clients inside a
-      wayland session.
+      <application>Xwayland</application> pakken er en Xorg server som 
+      kjører oppå Wayland serveren. Den har blitt separert fra hovedpakken 
+      for Xorg serveren. Den tillater kjøring av X-klienter i en 
+      Wayland økt.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xwayland-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&xwayland-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&xwayland-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&xwayland-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Xwayland Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Xwayland Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <!-- Not runtime as mesa/nvidia provide DRI needed at configuration. -->
-      A userland graphics driver (<xref linkend='mesa'/> and/or
+      En brukerland grafikkdriver (<xref linkend='mesa'/> og/eller
       <xref linkend='nvidia'/>),
       <xref linkend="libxcvt"/>,
       <xref linkend="pixman"/>,
       <xref linkend="wayland-protocols"/>,
-      <xref role='runtime' linkend="xorg7-app"/> (runtime), and
-      <xref linkend="xorg7-font"/> (only font-util)
+      <xref role='runtime' linkend="xorg7-app"/> (kjøretid), og
+      <xref linkend="xorg7-font"/> (bare font-util)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="libepoxy"/> and
+      <xref linkend="libepoxy"/> og
       &opengl;
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Xwayland</title>
+    <title>Installasjon av Xwayland</title>
 
     <para>
-      Install <application>xwayland</application> by running the following
-      commands:
+      Installer <application>xwayland</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>sed -i '/install_man/,$d' meson.build &amp;&amp;
@@ -84,7 +84,7 @@ meson setup --prefix=/usr                  \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput><userinput revision="sysv"> &amp;&amp;
@@ -96,9 +96,9 @@ EOF
 fi</userinput></screen>
 
     <para>
-      If <xref linkend='xorg-server'/> is not installed and you do not plan
-      to install it later, you can install <command>Xvfb</command> from this
-      package.  As the &root; user:
+      Hvis <xref linkend='xorg-server'/> ikke er installert, og du ikke 
+      planlegger å installere det senere, kan du installere <command>Xvfb</command> 
+      fra denne pakken. Som &root; bruker:
     </para>
 
 <screen role="nodump"><userinput>install -vm755 hw/vfb/Xvfb /usr/bin</userinput></screen>
@@ -106,58 +106,58 @@ fi</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <para>
-      <command>sed -i '/install_man/,$d' meson.build</command>: Prevents
-      installing a manual page for <command>Xserver</command>,
-      which is also provided by <xref linkend='xorg-server'/>.  Remove this
-      command if <xref linkend='xorg-server'/> is not installed and you
-      don't plan to install it later.
+      <command>sed -i '/install_man/,$d' meson.build</command>: Forhindrer 
+      installasjon av en manualside for <command>Xserver</command>,
+      som også leveres av <xref linkend='xorg-server'/>. Fjern denne kommandoen 
+      hvis <xref linkend='xorg-server'/> ikke er installert, og du ikke 
+      planlegger å installere det senere.
     </para>
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D secure-rpc=false</parameter>: Disables RPC support
-      as <ulink url="&blfs-svn;/basicnet/libtirpc.html">libtirpc</ulink>
-      was not built.
+      <parameter>-D secure-rpc=false</parameter>: Deaktiverer RPC støtte
+      siden <ulink url="&blfs-svn;/basicnet/libtirpc.html">libtirpc</ulink>
+      ikke ble bygget.
     </para>
 
     <para revision="sysv">
-      <command>cat &gt;&gt; /etc/sysconfig/createfiles...</command>: This
-      command creates the <filename class="directory">/tmp/.X11-unix</filename>
-      directory at startup, and ensures that the permissions and ownership
-      are correct as required by applications using Xwayland.
+      <command>cat &gt;&gt; /etc/sysconfig/createfiles...</command>: Denne
+      kommandoen oppretter <filename class="directory">/tmp/.X11-unix</filename>
+      mappen ved oppstart, og sørger for at tillatelsene og eierskapet er 
+      riktige slik det kreves av applikasjoner som bruker Xwayland.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           Xwayland
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -165,8 +165,8 @@ fi</userinput></screen>
         <term><command>Xwayland</command></term>
         <listitem>
           <para>
-            is a minimal X server that can run on top of Wayland to allow Xorg
-            clients to execute
+            er en minimal X server som kan kjøres oppå Wayland for å tillate 
+            Xorg klienter å kjøre
           </para>
           <indexterm zone="xwayland Xwayland">
             <primary sortas="b-Xwayland">Xwayland</primary>

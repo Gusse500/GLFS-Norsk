@@ -18,53 +18,53 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to AMDGPU PRO</title>
+    <title>Introduksjon til AMDGPU PRO</title>
 
     <important><para>
-      This page is now considered deprecated and will be removed right before
-      release of GLFS-12.4. Please use the drivers from <xref linkend="mesa"/>
-      and replace AMF with <xref linkend="libva"/>.
+      Denne siden anses nå som utdatert og vil bli fjernet rett før utgivelsen 
+      av GLFS-12.4. Vennligst bruk driverne fra <xref linkend="mesa"/>
+      og erstatt AMF med <xref linkend="libva"/>.
     </para></important>
 
     <para>
-      The <application>AMDGPU PRO</application> proprietary driver contains
-      userland drivers and libraries, providing hardware acceleration encoding,
-      EGL, OpenGL, GLES, and Vulkan support <emphasis>FOR</emphasis> AMDGPU
-      cards. If you do not have an AMDGPU card, you can skip this page.
+      <application>AMDGPU PRO</application> proprietære driver inneholder 
+      brukerland drivere og biblioteker, som tilbyr koding av 
+      maskinvareakselerasjon, støtte for EGL, OpenGL, GLES og Vulkan <emphasis>FOR</emphasis> 
+      AMDGPU kort. Hvis du ikke har et AMDGPU kort, kan du hoppe over denne siden.
     </para>
 
-    <bridgehead renderas="sect3">AMDGPU PRO Dependencies</bridgehead>
+    <bridgehead renderas="sect3">AMDGPU PRO Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg7-lib"/>,
       <xref linkend="gpuconfig"/>,
-      <xref linkend="mesa"/>, and
-      <xref linkend="wget"/> (for getting the .deb files in the installation
-      instructions)
+      <xref linkend="mesa"/>, og
+      <xref linkend="wget"/> (for å hente .deb-filene i 
+      installasjonsinstruksjonene)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="libvk"/> and
+      <xref linkend="libvk"/> og
       <xref linkend="wayland"/>
     </para>
 
     <note>
       <para>
-        If you are doing multilib, follow both the x86_64 and i686
-        instructions.
+        Hvis du bruker multilib, følg instruksjonene for både 
+        x86_64 og i686.
       </para>
     </note>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>x86_64 Installation of AMDGPU PRO</title>
+    <title>x86_64 Installasjon av AMDGPU PRO</title>
 
     <para>
-      First create a list of all the files to download that will be downloaded
-      using <xref linkend="wget"/>:
+      Først lager du en liste over alle filene som skal lastes ned, som skal 
+      lastes ned ved hjelp av <xref linkend="wget"/>:
     </para>
 
 <screen><userinput>cat &gt; x86_64-amdgpu-pro-wget-list &lt;&lt; "EOF"
@@ -81,7 +81,7 @@ v/vulkan-amdgpu-pro/vulkan-amdgpu-pro_&amdgpu-pro-major-short-version;-&amdgpu-p
 EOF</userinput></screen>
 
     <para>
-      Download and unpack the drivers by following the instructions below:
+      Last ned og pakk ut driverne ved å følge instruksjonene nedenfor:
     </para>
 
 <screen><userinput>mkdir x86_64-amdgpu-pro                                                            &amp;&amp;
@@ -119,8 +119,8 @@ rm -rf opt/amdgpu-pro/etc/vulkan                                                
 rm -rf etc opt</userinput></screen>
 
   <para>
-    Now install the driver by running the following commands as the
-    <systemitem class="username">root</systemitem> user:
+    Installer nå driveren ved å kjøre følgende kommandoer som
+    <systemitem class="username">root</systemitem> bruker:
   </para>
 
 <screen role="root"><userinput>cp -Rv usr/* /usr &amp;&amp;
@@ -129,11 +129,11 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>i686 Installation of AMDGPU PRO</title>
+    <title>i686 Installasjon av AMDGPU PRO</title>
 
     <para>
-      First create a list of all the files to download that will be downloaded
-      using <xref linkend="wget"/>:
+      Først lager du en liste over alle filene som skal lastes ned, som skal 
+      lastes ned ved hjelp av <xref linkend="wget"/>:
     </para>
 
 <screen><userinput>cat &gt; i386-amdgpu-pro-wget-list &lt;&lt; "EOF"
@@ -146,7 +146,7 @@ v/vulkan-amdgpu-pro/vulkan-amdgpu-pro_&amdgpu-pro-major-short-version;-&amdgpu-p
 EOF</userinput></screen>
 
     <para>
-      Download and unpack the drivers by following the instructions below:
+      Last ned og pakk ut driverne ved å følge instruksjonene nedenfor:
     </para>
 
 <screen><userinput>mkdir i386-amdgpu-pro                                                              &amp;&amp;
@@ -179,8 +179,8 @@ rm -rf usr/lib32/amdgpu-pro                                                     
 rm -rf etc opt</userinput></screen>
 
   <para>
-    Now install the driver by running the following commands as the
-    <systemitem class="username">root</systemitem> user:
+    Installer nå driveren ved å kjøre følgende kommandoer som
+    <systemitem class="username">root</systemitem> bruker:
   </para>
 
 <screen role="root"><userinput>cp -Rv usr/* /usr &amp;&amp;
@@ -189,43 +189,43 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <note>
       <para>
-        There are many libraries provided by this package that have the same
-        name and serve the same purpose. The info below covers the unique
-        libraries. Check the <quote>Contents</quote> section of <xref
+        Denne pakken tilbyr mange biblioteker som har samme navn og tjener samme 
+        formål. Informasjonen nedenfor dekker de unike bibliotekene. 
+        Sjekk <quote>Innhold</quote> seksjonen av <xref
         linkend="mesa"/>.
       </para>
     </note>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           amdgpu_dri,
           amdvlkpro{64,32},
           libamdenc64,
-          libamfrt64, and
+          libamfrt64, og
           libGLX_amd
         </seg>
         <seg>
           /usr/share/doc/{libegl1-amdgpu-pro-oglp,libgl1-amdgpu-pro-oglp-glx,libgles2-amdgpu-pro-oglp,libgl1-amdgpu-pro-oglp-dri,libgles1-amdgpu-pro-oglp,vulkan-amdgpu-pro},
-          /usr/share/drirc.d, and
+          /usr/share/drirc.d, og
           /usr/share/vulkan/icd.d
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -233,7 +233,7 @@ ldconfig</userinput></screen>
       <term><filename class="libraryfile">amdgpu_dri</filename></term>
         <listitem>
           <para>
-            is the AMDGPU DRI driver
+            er AMDGPU DRI driveren
           </para>
           <indexterm zone="amdgpu-pro amdgpu_dri">
             <primary sortas="c-amdgpu_dri">amdgpu_dri</primary>
@@ -245,7 +245,7 @@ ldconfig</userinput></screen>
       <term><filename class="libraryfile">amdvlkpro{64,32}</filename></term>
         <listitem>
           <para>
-            is the AMDGPU Vulkan driver
+            er AMDGPU Vulkan driveren
           </para>
           <indexterm zone="amdgpu-pro amdvlkpro">
             <primary sortas="c-amdvlkpro">amdvlkpro{64,32}</primary>
@@ -257,7 +257,7 @@ ldconfig</userinput></screen>
       <term><filename class="libraryfile">libamdenc64</filename></term>
         <listitem>
           <para>
-            handles encoding for AMDGPU cards
+            håndterer koding for AMDGPU kort
           </para>
           <indexterm zone="amdgpu-pro libamdenc64">
             <primary sortas="c-libamdenc64">libamdenc64</primary>
@@ -269,8 +269,8 @@ ldconfig</userinput></screen>
       <term><filename class="libraryfile">libamfrt64</filename></term>
         <listitem>
           <para>
-            provides the Advanced Media Framework, allowing better multimedia
-            processing on AMD GPUs
+            tilbyr Advanced Media Framework, som muliggjør bedre 
+            multimediabehandling på AMD GPU-er
           </para>
           <indexterm zone="amdgpu-pro libamfrt64">
             <primary sortas="c-libamfrt64">libamfrt64</primary>
@@ -282,7 +282,7 @@ ldconfig</userinput></screen>
       <term><filename class="libraryfile">libGLX_amd</filename></term>
         <listitem>
           <para>
-            is the AMD version of GLX
+            er AMD versjonen av GLX
           </para>
           <indexterm zone="amdgpu-pro libGLX_amd">
             <primary sortas="c-libGLX_amd">libGLX_amd</primary>
