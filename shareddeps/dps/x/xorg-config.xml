@@ -8,121 +8,121 @@
   <?dbhtml filename="xorg-config.html"?>
 
 
-  <title>Xorg-&xorg-version; Testing and Configuration</title>
+  <title>Xorg-&xorg-version; Testing og Konfigurasjon</title>
 
   <indexterm zone="xorg-config">
-    <primary sortas="g-configuring-xorg">Configuring Xorg</primary>
+    <primary sortas="g-configuring-xorg">Konfigurere Xorg</primary>
   </indexterm>
 
-  <sect2 id='X11-testing' xreflabel="Testing Xorg">
-    <title>Testing Xorg</title>
+  <sect2 id='X11-testing' xreflabel="Teste Xorg">
+    <title>Teste Xorg</title>
 
     <note>
       <para>
-        Before starting Xorg for the first time, is useful to
-        rebuild the library cache by running <userinput>ldconfig</userinput>
-        as the <systemitem class="username">root</systemitem> user.
+        Før du starter Xorg for første gang, er det nyttig å gjenoppbygge 
+        bibliotekets hurtigbuffer ved å kjøre <userinput>ldconfig</userinput>
+        som <systemitem class="username">root</systemitem> bruker.
       </para>
     </note>
 
     <note>
       <para>
-        Before starting Xorg for the first time, is often needed to
-        reboot the system to ensure all appropriate daemons are started
-        and appropriate security issues are properly set.
-        As an alternative, logging out and logging back in may work, but as
-        of this writing has not been tested.
+        Før du starter Xorg for første gang, er det ofte nødvendig å starte 
+        systemet på nytt for å sikre at alle nødvendige daemoner er startet og 
+        at nødvendige sikkerhetsproblemer er riktig konfigurert. Alternativt kan 
+        det fungere å logge ut og logge inn igjen, men i skrivende stund er 
+        dette ikke testet.
       </para>
     </note>
 
     <warning>
       <para>
-        If Xorg hangs for some reason (for example, lacking a proper
-        input driver), the system may stop responding to any user input.
-        As a precaution, you can enable a magic <keycap>SysRq</keycap> key
-        before testing Xorg.  As the
-        <systemitem class="username">root</systemitem> user, issue:
+        Hvis Xorg henger seg av en eller annen grunn (for eksempel fordi den 
+        mangler en skikkelig inputdriver), kan systemet slutte å svare på 
+        brukerinndata. Som en forholdsregel kan du aktivere en magisk 
+        <keycap>SysRq</keycap> nøkkel før du tester Xorg. Som
+        <systemitem class="username">root</systemitem> bruker, utsted:
       </para>
 
 <screen><userinput>echo 4 > /proc/sys/kernel/sysrq</userinput></screen>
 
       <para>
-        Then if Xorg hangs, it's possible to use
+        Hvis Xorg henger seg opp, er det mulig å bruke
         <keycombo>
           <keycap>Alt</keycap>
           <keycap>SysRq</keycap>
           <keycap>R</keycap>
         </keycombo>
-        to reset the keyboard mode.  Now it should be able to use
+        for å tilbakestille tastaturmodusen. Nå skal du kunne bruke
         <keycombo>
           <keycap>Ctrl</keycap>
           <keycap>Alt</keycap>
           <keycap>Fx</keycap>
         </keycombo>
-        (replace x with a VT number) to switch to another VT.
-        If it works, login and kill Xorg using command line in the new VT.
+        ((erstatt x med et VT nummer) for å bytte til en annen VT. Hvis det 
+        fungerer, logg inn og avslutt Xorg ved hjelp av kommandolinjen i den nye VTen.
       </para>
     </warning>
 
     <para>
-      To test the <application>Xorg</application> installation, issue
-      <command>startx</command>. This command brings up a rudimentary window
-      manager called <emphasis>twm</emphasis> with three xterm windows and one
-      xclock window.  The xterm window in the upper left is a login terminal and
-      running <emphasis>exit</emphasis> from this terminal will exit the
-      <application>X Window</application> session.  The third xterm window may
-      be obscured on your system by the other two xterms.
+      For å teste <application>Xorg</application> installasjon, utsted
+      <command>startx</command>. Denne kommandoen åpner et rudimentær 
+      vindusbehandling kalt <emphasis>twm</emphasis> med tre xterm vinduer og 
+      ett xclock vindu. Xterm vinduet øverst til venstre er en innloggingsterminal 
+      og kjøre <emphasis>exit</emphasis> fra denne terminalen vil gå ut av 
+      <application>X Window</application> økten. Det tredje xterm vinduet kan 
+      være skjult på systemet ditt av de to andre xtermene.
     </para>
 
     <note>
       <para>
-        When testing <application>Xorg</application> with the
-        <application>twm</application> window manager, there will be several
-        warnings in the Xorg log file, <!--<filename revision="sysv">
+        Ved testing av <application>Xorg</application> med
+        <application>twm</application> vindusbehandleren, vil det være flere 
+        advarsler i Xorg loggfilen, <!--<filename revision="sysv">
         /var/log/Xorg.0.log</filename><filename revision="systemd">-->
-        $HOME/.local/share/xorg/Xorg.0.log<!--</filename>-->, about missing font
-        files. In addition, there will be several warnings on the text mode
-        terminal (usually tty1) about missing fonts. These warnings do not
-        affect functionality, but can be removed if desired by installing
-        the <xref linkend="xorg7-legacy"/>.
+        $HOME/.local/share/xorg/Xorg.0.log<!--</filename>-->, om manglende 
+        fontfiler. I tillegg vil det være flere advarsler på tekstmodus 
+        terminalen (vanligvis tty1) om manglende fonter. Disse advarslene 
+        påvirker ikke funksjonaliteten, men kan fjernes om ønskelig ved å 
+        installere <xref linkend="xorg7-legacy"/>.
       </para>
     </note>
 
     <note>
       <para>
-        On systems with NVIDIA GPUs which are using the Nouveau kernel driver,
-        you may encounter occasional GPU crashes and hangs. If this problem
-        occurs, downgrade to the latest version of the Linux 6.1 kernel.
+        På systemer med NVIDIA GPUer som bruker Nouveau kjernedriveren, kan du 
+        oppleve sporadiske GPU krasj og henginger. Hvis dette problemet oppstår, 
+        nedgrader til den nyeste versjonen av Linux 6.1-kjernen.
         <!--https://gitlab.freedesktop.org/drm/nouveau/-/issues/257-->
       </para>
     </note>
 
     <para>
-      Generally, there is no specific configuration required for
-      <application>Xorg</application>, but customization is possible. For
-      details, see <xref linkend='xconfig'/> below.
+      Vanligvis er det ingen spesifikk konfigurasjon som kreves for
+      <application>Xorg</application>, men tilpasning er mulig. For detaljer, 
+      se <xref linkend='xconfig'/> under.
     </para>
 
   </sect2>
 
-  <sect2 role="configuration" id="checking-dri" xreflabel="Checking the DRI
-  installation">
-    <title>Checking the Direct Rendering Infrastructure (DRI)
-    Installation</title>
+  <sect2 role="configuration" id="checking-dri" xreflabel="Kontrollere DRI
+  installasjonen">
+    <title>Kontrollerer Infrastrukturen for Direkte Gjengivelse (DRI)
+    Installasjonen</title>
 
     <para>
-      DRI is a framework for allowing software to access graphics hardware in
-      a safe and efficient manner. It is installed in
-      <application>X</application> by default (using
-      <application>Mesa</application>) if you have a supported video card.
+      DRI er et rammeverk som lar programvare få tilgang til grafikkmaskinvare 
+      på en trygg og effektiv måte. Det er installert i
+      <application>X</application> som standard (ved bruk av
+      <application>Mesa</application>) hvis du har et støttet skjermkort.
     </para>
 
     <para>
-      To check if DRI drivers are installed properly, check the log file
-      <filename>$HOME/.local/share/xorg/Xorg.0.log</filename> (or
-      <filename>/var/log/Xorg.0.log</filename> if you have
-      built <xref linkend="xorg-server"/> with the suid bit) for
-      statements such as:
+      For å sjekke om DRI driverne er riktig installert, sjekk loggfilen
+      <filename>$HOME/.local/share/xorg/Xorg.0.log</filename> (eller
+      <filename>/var/log/Xorg.0.log</filename> hvis du har
+      bygget <xref linkend="xorg-server"/> med suid biten) for 
+      utsagn som:
     </para>
 
 <screen><literal>(II) modeset(0): [DRI2] Setup complete
@@ -131,40 +131,40 @@
 
     <note>
       <para>
-        DRI configuration may differ if you are using alternate drivers, such
-        as traditional DDX drivers, or the proprietary drivers from
-        <ulink url="https://www.nvidia.com/page/home.html">NVIDIA</ulink> or
+        DRI konfigurasjonen kan variere hvis du bruker alternative drivere, for 
+        eksempel tradisjonelle DDX drivere eller proprietære drivere fra
+        <ulink url="https://www.nvidia.com/page/home.html">NVIDIA</ulink> eller
         <ulink url="https://www.amd.com/">AMD</ulink>.
       </para>
     </note>
 
 <!-- With elogind, this is not needed anymore
     <para>
-      Although all users can use software acceleration, any hardware
-      acceleration (DRI2) is only available to <systemitem
-      class="username">root</systemitem> and members of the <systemitem
-      class="groupname">video</systemitem> group, but
+      Selv om alle brukere kan bruke programvareakselerasjon, er 
+      maskinvareakselerasjon (DRI2) bare tilgjengelig for <systemitem
+      class="username">root</systemitem> og medlemmer av <systemitem
+      class="groupname">video</systemitem> gruppen, men
       <phrase revision="sysv"><emphasis>ConsoleKit2</emphasis></phrase>
       <phrase revision="systemd"><emphasis>systemd-logind</emphasis></phrase>
-      takes care of adding any logged in user to the user ACL's of
-      <filename>/dev/dri/card*</filename>, the special file(s) allowing access
-      to hardware acceleration.<phrase revision="systemd"> So, no further
-      configuration is needed.</phrase>
+      tar seg av å legge til alle innloggede brukere i brukerens 
+      tilgangskontrollister til <filename>/dev/dri/card*</filename>, den/de 
+      spesielle filen(e) som gir tilgang til maskinvareakselerasjon.<phrase revision="systemd"> 
+      Så ingen ytterligere konfigurasjon er nødvendig.</phrase>
     </para>
 
     <para revision="sysv">
-      If your driver is supported and <emphasis>ConsoleKit2</emphasis> is not
-      installed, add any users that might use X to the <systemitem
-      class="groupname">video</systemitem> group:
+      Hvis driveren din støttes og <emphasis>ConsoleKit2</emphasis> ikke er 
+      installert, legg til eventuelle brukere som kan bruke X i <systemitem
+      class="groupname">video</systemitem> gruppen:
     </para>
 
 <screen role="root" revision="sysv"><userinput>usermod -a -G video <replaceable>&lt;username&gt;</replaceable></userinput></screen>
 -->
     <para>
-      Another way to determine if DRI is working properly is to use one of the
-      two optionally installed OpenGL demo programs in <xref
-      linkend="mesa"/>. From an X terminal, run <command>glxinfo -B</command>
-      and look for the phrase:
+      En annen måte å finne ut om DRI fungerer som det skal, er å bruke et av de 
+      to valgfritt installerte OpenGL demoprogrammene i <xref
+      linkend="mesa"/>. Fra en X terminal, kjør <command>glxinfo -B</command>
+      og se etter uttrykket:
     </para>
 
 <screen><computeroutput>name of display: :0
@@ -172,30 +172,30 @@ display: :0  screen: 0
 direct rendering: Yes</computeroutput></screen>
 
     <para>
-      If direct rendering is enabled, you can add verbosity by running
-      <command>LIBGL_DEBUG=verbose glxinfo</command>. This will show the
-      drivers, device nodes and files used by the DRI system.
+      Hvis direkte gjengivelse er aktivert, kan du legge til detaljnivå ved å 
+      kjøre <command>LIBGL_DEBUG=verbose glxinfo</command>. Dette vil vise 
+      driverne, enhetsnodene og filene som brukes av DRI systemet.
     </para>
 
     <para>
-      To confirm that DRI2 hardware acceleration is working, you can (still in
-      the X terminal) run the command <command>glxinfo | grep -E "(OpenGL
+      For å bekrefte at DRI2 maskinvareakselerasjonen fungerer, kan du (fortsatt 
+      i X terminalen) kjøre kommandoen <command>glxinfo | grep -E "(OpenGL
       vendor|OpenGL renderer|OpenGL version)"</command>.
-      If that reports something <emphasis>other than</emphasis>
-      <literal>Software Rasterizer</literal> then you have working
-      acceleration for the user who ran the command.
+      Hvis det rapporterer noe <emphasis>annet enn</emphasis>
+      <literal>Software Rasterizer</literal> da har du en fungerende 
+      akselerasjon for brukeren som kjørte kommandoen.
     </para>
 
     <para>
-      If your hardware does not have any DRI2 driver available, it will use a
-      Software Rasterizer for Direct Rendering. In such cases, you can use a
-      new, LLVM-accelerated, Software Rasterizer called LLVMPipe. In order to
-      build LLVMPipe just make sure that <xref linkend="llvm"/> is present at
-      Mesa build time. Note that all decoding is done on the CPU instead of
-      the GPU, so the display will run slower than with hardware acceleration.
-      To check if you are using LLVMpipe, review the output of the glxinfo
-      command above.  An example of the output using the Software Rasterizer
-      is shown below:
+      Hvis maskinvaren din ikke har noen DRI2 driver tilgjengelig, vil den bruke 
+      en programvarerasterizer for direkte gjengivelse. I slike tilfeller kan du 
+      bruke en ny, LLVM akselerert programvarerasterizer kalt LLVMPipe. For å 
+      bygge LLVMPipe, må du bare sørge for at <xref linkend="llvm"/> er tilstede 
+      ved Mesa byggetid. Merk at all dekoding gjøres på CPU-en i stedet for 
+      GPU-en, så skjermen vil kjøre saktere enn med maskinvareakselerasjon. For 
+      å sjekke om du bruker LLVMpipe, se gjennom resultatet av glxinfo 
+      kommandoen ovenfor. Et eksempel på resultatet ved bruk av Software 
+      Rasterizer vises nedenfor.:
     </para>
 
 <screen><computeroutput>OpenGL vendor string: VMware, Inc.
@@ -203,72 +203,72 @@ OpenGL renderer string: Gallium 0.4 on llvmpipe (LLVM 3.5, 256 bits)
 OpenGL version string: 3.0 Mesa 10.4.5</computeroutput></screen>
 
     <para>
-      You can also force LLVMPipe by exporting the
-      <envar>LIBGL_ALWAYS_SOFTWARE=1</envar> environment variable when
-      starting Xorg.
+      Du kan også tvinge frem LLVMPipe ved å eksportere
+      <envar>LIBGL_ALWAYS_SOFTWARE=1</envar> miljøvariabel når du 
+      starter Xorg.
     </para>
 
     <para>
-      Again, if you have built the Mesa OpenGL demos, you can also run the test
-      program <command>glxgears</command>. This program brings up a window with
-      three gears turning. The X terminal will display how many frames were
-      drawn every five seconds, so this will give a rough benchmark. The window
-      is scalable, and the frames drawn per second is highly dependent on the
-      size of the window. On some hardware, <command>glxgears</command> will
-      run synchronized with the vertical refresh signal and the frame rate will
-      be approximately the same as the monitor refresh rate.
+      Igjen, hvis du har bygget Mesa OpenGL demoene, kan du også kjøre 
+      testprogrammet. <command>glxgears</command>. Dette programmet åpner et 
+      vindu med tre gir som roterer. X terminalen vil vise hvor mange rammer som 
+      ble tegnet hvert femte sekund, så dette vil gi et grovt referansepunkt. 
+      Vinduet er skalerbart, og rammene som tegnes per sekund er sterkt avhengig 
+      av størrelsen på vinduet. På noe maskinvare, <command>glxgears</command> 
+      vil kjøre synkronisert med det vertikale oppdateringssignalet, og 
+      bildefrekvensen vil være omtrent den samme som skjermens oppdateringsfrekvens.
     </para>
 
   </sect2>
 
-  <sect2 role="configuration" id="xorg-debug" xreflabel="Debugging Xorg">
-    <title>Debugging Xorg</title>
+  <sect2 role="configuration" id="xorg-debug" xreflabel="Feilsøke Xorg">
+    <title>Feilsøke Xorg</title>
 
     <para>
-      When starting xorg, there are a couple of ways to check what any
-      issues you may have.  If the system comes up, you can see what driver
-      is being used by running <command>xdriinfo</command>. If there are
-      issues or you just want to check, look at <filename>Xorg.0.log</filename>.
+      Når du starter xorg, finnes det et par måter å sjekke hvilke problemer du 
+      kan ha. Hvis systemet starter opp, kan du se hvilken driver som brukes ved 
+      å kjøre <command>xdriinfo</command>. Hvis det er problemer, eller du bare 
+      vil sjekke, se på <filename>Xorg.0.log</filename>.
     </para>
 
     <para>
-      The location of <filename>Xorg.0.log</filename> depends on how Xorg is
-      installed.  If the instructions in the book are followed closely and
-      Xorg is started from the command line, it will be located in the
-      <filename class="directory">$HOME/.local/share/xorg/</filename> directory.
-      If Xorg is started by a display manager (e.g. <xref linkend='lightdm'/>,
-      <xref linkend='sddm'/>, or <xref linkend='gdm'/>) or if
-      <filename>$XORG_PREFIX/bin/Xorg</filename> has the suid bit set,
-      it will be located in the <filename class="directory">/var/log/</filename>
-      directory.
+      Plasseringen av <filename>Xorg.0.log</filename> avhenger av hvordan Xorg 
+      er installert. Hvis instruksjonene i boken følges nøye og Xorg startes fra 
+      kommandolinjen, vil den bli plassert i
+      <filename class="directory">$HOME/.local/share/xorg/</filename> mappen.
+      Hvis Xorg startes av en skjermbehandler (f.eks. <xref linkend='lightdm'/>,
+      <xref linkend='sddm'/>, or <xref linkend='gdm'/>) eller hvis
+      <filename>$XORG_PREFIX/bin/Xorg</filename> har suid biten satt, vil den 
+      være plassert i <filename class="directory">/var/log/</filename>
+      mappen.
     </para>
 
-    <bridgehead renderas="sect3">Xorg.0.log Issues</bridgehead>
+    <bridgehead renderas="sect3">Xorg.0.log Problemer</bridgehead>
 
     <para>
-      When you look at Xorg.0.log, check for entries like (EE) or (WW).
-      Below are some common entries:
+      Når du ser på Xorg.0.log, se etter oppføringer som (EE) eller (WW). 
+      Nedenfor er noen vanlige oppføringer:
     </para>
 
     <bridgehead renderas="sect5">(WW) Open ACPI failed (/var/run/acpid.socket)</bridgehead>
 
     <para>
-      This warning is because <xref linkend='acpid'/> is not installed. If you
-      are not on a laptop, it can be safely ignored. On a laptop, install
-      <xref linkend='acpid'/> to enable actions like recognizing when the lid is
-      closed.
+      Denne advarselen er fordi <xref linkend='acpid'/> ikke er installert. Hvis 
+      du ikke bruker en bærbar PC, kan den trygt ignoreres. På en bærbar PC, 
+      installer <xref linkend='acpid'/> for å aktivere handlinger som å 
+      gjenkjenne når lokket er lukket.
     </para>
 
     <bridgehead renderas="sect5">(WW) VGA arbiter: cannot open kernel arbiter, no multi-card support</bridgehead>
 
     <para>
-      This warning is displayed when a regular user starts Xorg.  The library
-      <filename>libpciaccess.so</filename> issues this warning when it
-      tries to open <filename>/dev/vga_arbiter</filename>.  If there is no
-      more than one legacy PCI (not PCIe) graphic cards on the system, it
-      can safely be ignored.  If really necessary, the
-      permissions of this device can be changed by adding a udev rule and
-      adding the local user to the video group. As the &root; user:
+      Denne advarselen vises når en vanlig bruker starter Xorg. Biblioteket
+      <filename>libpciaccess.so</filename> gir denne advarselen når den prøver 
+      å åpne <filename>/dev/vga_arbiter</filename>.  Hvis det ikke finnes mer 
+      enn ett eldre PCI grafikkort (ikke PCIe) på systemet, kan det trygt 
+      ignoreres. Hvis det er virkelig nødvendig, kan tillatelsene til denne 
+      enheten endres ved å legge til en udev regel og legge til den lokale 
+      brukeren i videogruppen. Som &root; bruker:
     </para>
 
 <screen role="root"><userinput>cat > /etc/udev/rules.d/99-vga-arbiter.rules &lt;&lt; EOF
@@ -281,32 +281,32 @@ usermod -a -G video &lt;user running xorg&gt;</userinput></screen>
 
   </sect2>
 
-  <sect2 role="configuration" id="hybrid-graphics" xreflabel="Hybrid Graphics">
-    <title>Hybrid Graphics</title>
+  <sect2 role="configuration" id="hybrid-graphics" xreflabel="Hybrid Grafikk">
+    <title>Hybrid Grafikk</title>
 
     <para>
-      Hybrid Graphics is still in experimental state for Linux. Xorg Developers
-      have developed a technology called PRIME that can be used for switching
-      between integrated and muxless discrete GPU at will. Automatic switching
-      is not possible at the moment.
+      Hybrid Grafikk er fortsatt i eksperimentell tilstand for Linux. Xorg 
+      utviklere har utviklet en teknologi kalt PRIME som kan brukes til å bytte 
+      mellom integrert og multipleksløs diskret GPU etter eget ønske. Automatisk 
+      bytte er ikke mulig for øyeblikket.
     </para>
 
     <para>
-      In order to use PRIME for GPU switching, make sure that you are using
-      Linux Kernel 3.4 or later (recommended). You will need latest DRI and
-      DDX drivers for your hardware and <application>Xorg Server</application>
-      1.13 or later.
+      For å bruke PRIME for GPU bytte, må du sørge for at du bruker Linux Kernel 
+      3.4 eller nyere (anbefales). Du trenger de nyeste DRI og DDX driverne for 
+      maskinvaren din og <application>Xorg Server</application>
+      1.13 eller senere.
     </para>
 
     <para>
-      <application>Xorg Server</application> should load both GPU drivers
-      automatically. You can check that by running:
+      <application>Xorg Server</application> burde laste begge GPU driverne 
+      automatisk. Du kan sjekke det ved å kjøre:
     </para>
 
 <screen><userinput>xrandr --listproviders</userinput></screen>
 
     <para>
-      There should be two (or more) providers listed, for example:
+      Det bør være to (eller flere) leverandører oppført, for eksempel:
     </para>
 
 <screen><computeroutput>Providers: number : 2
@@ -317,59 +317,59 @@ Provider 1: id: 0x56 cap: 0xf, Source Output, Sink Output, Source Offload, Sink 
          the xf86-video-* removal all the names will be modesetting unless
          a proprietary driver used... -->
     <para>
-      In order to be able to run a GLX application on a discrete GPU, you will
-      need to run the following command, where &lt;provider&gt; is the id of
-      the more powerful discrete card, and &lt;sink&gt; is the id of card
-      which has a display connected:
+      For å kunne kjøre et GLX program på en separat GPU, må du kjøre følgende 
+      kommando, der &lt;provider&gt; er ID-en til det kraftigste separate 
+      kortet, og &lt;sink&gt; er ID-en til kortet som har en skjerm 
+      tilkoblet:
     </para>
 
 <screen><userinput>xrandr --setprovideroffloadsink <replaceable>&lt;provider&gt; &lt;sink&gt;</replaceable></userinput></screen>
 
     <note>
       <para>
-        With the <application>Xorg</application> modesetting driver,
-        which is DRI3 capable, the above command is no longer
-        necessary. It does no harm however.
+        Med <application>Xorg</application> modussettingsdriveren, som er 
+        DRI3 kompatibel, er kommandoen ovenfor ikke lenger nødvendig. 
+        Det skader imidlertid ikke.
       </para>
     </note>
 
     <para>
-      Then, you will need to export the <envar>DRI_PRIME=1</envar> environment
-      variable each time you want the powerful GPU to be used. For example,
+      Deretter må du eksportere <envar>DRI_PRIME=1</envar> miljøvariabelen hver 
+      gang du vil at den kraftige GPU-en skal brukes. For eksempel,
 
 <screen><userinput>DRI_PRIME=1 glxinfo | grep -E "(OpenGL vendor|OpenGL renderer|OpenGL version)"</userinput></screen>
 
-      will show OpenGL vendor, renderer and version for the discrete GPU.
+      vil vise OpenGL leverandøren, renderer og versjon for den separate GPU-en.
     </para>
 
     <para>
-      If the last command reports same OpenGL renderer with and without
-      <envar>DRI_PRIME=1</envar>, you will need to check your installation.
+      Hvis den siste kommandoen rapporterer samme OpenGL renderer med og uten
+      <envar>DRI_PRIME=1</envar>, du må sjekke installasjonen din.
     </para>
 
   </sect2>
 
   <sect2 role="configuration" id='xconfig'>
-    <title>Setting up Xorg Devices</title>
+    <title>Sette opp Xorg Enheter</title>
 
     <para>
-      For most hardware configurations, modern Xorg will automatically
-      get the server configuration correct without any user intervention. There
-      are, however, some cases where auto-configuration will be incorrect.
-      Following are some example manual configuration items that may be of use
-      in these instances.
+      For de fleste maskinvarekonfigurasjoner vil moderne Xorg automatisk få 
+      serverkonfigurasjonen riktig uten brukerinngripen. Det finnes imidlertid 
+      noen tilfeller der automatisk konfigurasjon vil være feil. 
+      Følgende er noen eksempler på manuelle konfigurasjonselementer som kan 
+      være nyttige i disse tilfellene.
     </para>
 
     <sect3 id="xinput">
-      <title>Setting up X Input Devices</title>
+      <title>Sette opp X Inndataenheter</title>
       <para>
-        For most input devices, no additional configuration will be
-        necessary. This section is provided for informational purposes only.
+        For de fleste inndataenheter vil ingen ytterligere konfigurasjon være 
+        nødvendig. Denne delen er kun ment for informasjonsformål.
       </para>
 
       <para>
-        A sample default XKB setup could look like the following (executed as
-        the <systemitem class="username">root</systemitem> user):
+        Et eksempel på et standard XKB oppsett kan se slik ut (utført som
+        <systemitem class="username">root</systemitem> bruker):
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/X11/xorg.conf.d/xkb-defaults.conf &lt;&lt; "EOF"
@@ -382,20 +382,20 @@ EndSection</literal>
 EOF</userinput></screen>
 
       <para>
-        The <quote>XkbLayout</quote> line is an example for a French (AZERTY)
-        keyboard. Change it to your keyboard model. That line is not needed for
-        a QWERTY (US) keyboard.
+        <quote>XkbLayout</quote> linjen er et eksempel for et fransk (AZERTY) 
+        tastatur. Endre det til din tastaturmodell. Den linjen er ikke nødvendig 
+        for et QWERTY (amerikansk) tastatur.
       </para>
     </sect3>
 
     <sect3 id="xdisplay">
-      <title>Fine Tuning Display Settings</title>
+      <title>Finjustering av Skjerminnstillinger</title>
 
       <para>
-        If you want to set the monitor resolution for Xorg, first run
-        <command>xrandr</command> in a X terminal to list the supported
-        resolutions and the corresponding refresh rates.  For example, it
-        outputs the following for one monitor:
+        Hvis du vil angi skjermoppløsningen for Xorg, kjør først
+        <command>xrandr</command> i en X terminal for å liste opp de støttede 
+        oppløsningene og tilhørende oppdateringsfrekvenser. For eksempel sender 
+        den ut følgende for én skjerm:
       </para>
 
 <screen><computeroutput>Screen 0: minimum 16 x 16, current 5760 x 2160, maximum 32767 x 32767
@@ -414,10 +414,10 @@ DP-1 connected primary 3840x2160+0+0 (normal left inverted right x axis y axis) 
    640x480       59.38</computeroutput></screen>
 
       <para>
-        From the output we can see the monitor is identified
-        <literal>DP-1</literal>.  Select a suitable resolution from the
-        output list, for example <literal>1920x1440</literal>.  Then
-        as the &root; user, create a configuration file for the Xorg server:
+        Fra utdataene kan vi se at skjermen er identifisert
+        <literal>DP-1</literal>.  Velg en passende oppløsning fra utdatalisten, 
+        for eksempel <literal>1920x1440</literal>.  Deretter
+        som &root; bruker, opprett en konfigurasjonsfil for Xorg serveren:
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/X11/xorg.conf.d/monitor-DP-1.conf &lt;&lt; "EOF"
@@ -428,15 +428,15 @@ EndSection</literal>
 EOF</userinput></screen>
 
       <para>
-        Sometimes <command>xrandr</command> may fail to detect some
-        resolution settings supported by the monitor.  It usually happens
-        with virtual monitors of virtual machine managers like
-        <xref linkend='qemu'/> or VMWare: a virtual monitor actually
-        supports all pairs of integers in a range as the resolution, but
-        <command>xrandr</command> will only list a few.  To use a
-        resolution not listed by <command>xrandr</command>, first run
-        <command>cvt</command> to get the mode line for the resolution.
-        For example:
+        Noen ganger <command>xrandr</command> kan mislykkes i å oppdage enkelte 
+        oppløsningsinnstillinger som støttes av skjermen. Det skjer vanligvis 
+        med virtuelle skjermer fra virtuelle maskinadministratorer som
+        <xref linkend='qemu'/> eller VMWare: en virtuell skjerm støtter faktisk 
+        alle par av heltall i et område som oppløsning, men
+        <command>xrandr</command> vil bare liste opp noen få. For å bruke en 
+        oppløsning som ikke er oppført av <command>xrandr</command>, kjør først
+        <command>cvt</command> for å få moduslinjen for oppløsningen.
+        For eksempel:
       </para>
 
       <screen><userinput>cvt 1600 900</userinput>
@@ -444,8 +444,8 @@ EOF</userinput></screen>
 Modeline "1600x900_60.00"  118.25  1600 1696 1856 2112  900 903 908 934 -hsync +vsync</literal></computeroutput></screen>
 
       <para>
-        As the &root; user, create a Xorg server configuration file
-        containing this mode line, and specify the mode as preferred mode:
+        Som &root; bruker, opprett en Xorg serverkonfigurasjonsfil som inneholder 
+        denne moduslinjen, og spesifiser modusen som foretrukket modus:
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/X11/xorg.conf.d/monitor-DP-1.conf &lt;&lt; "EOF"
@@ -457,13 +457,13 @@ EndSection</literal>
 EOF</userinput></screen>
 
       <para>
-        Some high-end LCD monitors support a refresh rate higher than 100 Hz
-        but <command>xrandr</command> may fail to recognize the supported
-        refresh rate and use 60 Hz instead.  This issue would prevent you
-        from utilizing the full capability of the monitor, and may cause
-        the screen to flicker or show <quote>artifacts</quote> like meshes
-        or grids.  To resolve the issue, again use <command>cvt</command>
-        to get the mode line with a custom refresh rate:
+        Noen avanserte LCD skjermer støtter en oppdateringsfrekvens på over 100 
+        Hz, men <command>xrandr</command> kan mislykkes i å gjenkjenne den 
+        støttede oppdateringsfrekvensen og bruke 60 Hz i stedet. Dette problemet 
+        vil hindre deg i å utnytte skjermens fulle kapasitet, og kan føre til at 
+        skjermen flimrer eller viser <quote>gjenstander</quote> som masker eller 
+        rutenett. For å løse problemet, bruk igjen <command>cvt</command>
+        for å få moduslinjen med en tilpasset oppdateringsfrekvens:
       </para>
 
       <screen><userinput>cvt 3840 2160 144</userinput>
@@ -471,14 +471,14 @@ EOF</userinput></screen>
 Modeline "3840x2160_144.00"  1829.25  3840 4200 4624 5408  2160 2163 2168 2350 -hsync +vsync</literal></computeroutput></screen>
 
       <para>
-        Then paste it into the Xorg server configuration file and set it
-        as the preferred mode.
+        Lim det deretter inn i Xorg serverkonfigurasjonsfilen og angi den som 
+        foretrukket modus.
       </para>
 
       <para>
-        Another common setup is having multiple server layouts for use in
-        different environments. Though the server will automatically detect the
-        presence of another monitor, it may get the order incorrect:
+        Et annet vanlig oppsett er å ha flere serveroppsett for bruk i 
+        forskjellige miljøer. Selv om serveren automatisk vil oppdage 
+        tilstedeværelsen av en annen skjerm, kan den få feil rekkefølge.:
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/X11/xorg.conf.d/server-layout.conf &lt;&lt; "EOF"
@@ -491,15 +491,15 @@ EndSection</literal>
 EOF</userinput></screen>
 
       <para>
-        When you drag a window in twm (or any non-compositing window
-        manager) horizontally, you may observe that the vertical borders
-        of the window are broken into multiple segments.  This is an example
-        of the visual artifacts called <emphasis>screen tearing</emphasis>.
-        To resolve the screen tearing problems, create a configuration file
-        that enables the TearFree option. Note that you must have the
-        Tearfree patch applied from <xref role="nodep"
-        linkend="xorg-server"/> for this to function properly, and it may
-        increase memory allocation and reduce performance.
+        Når du drar et vindu i twm (eller en hvilken som helst ikke-kompositt 
+        vindusbehandling horisontalt, kan du se at de vertikale kantene av 
+        vinduet er delt inn i flere segmenter. Dette er et eksempel på de 
+        visuelle artefaktene som kalles <emphasis>skjermriving</emphasis>.
+        For å løse problemene med skjermriving, opprett en konfigurasjonsfil som 
+        aktiverer TearFree alternativet. Merk at du må ha Tearfree oppdateringen 
+        installert fra <xref role="nodep"
+        linkend="xorg-server"/> for at dette skal fungere ordentlig, og det kan 
+        øke minneallokeringen og redusere ytelsen.
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/X11/xorg.conf.d/20-tearfree.conf &lt;&lt; "EOF"
@@ -511,11 +511,11 @@ EndSection</literal>
 EOF</userinput></screen>
 
       <para>
-        With modern Xorg, little or no additional graphic card configuration
-        is necessary. If you should need extra options passed to your video
-        driver, add them into the <literal>Device</literal> section as well.
-        The options supported by the modesetting driver are documented in
-        the man page <ulink role='man'
+        Med moderne Xorg er lite eller ingen ekstra grafikkortkonfigurasjon 
+        nødvendig. Hvis du trenger ekstra alternativer sendt til videodriveren, 
+        legg du dem til i <literal>Device</literal> seksjonen også. 
+        Alternativene som støttes av modusinnstillingsdriveren er dokumentert 
+        i manualsiden <ulink role='man'
         url='&man;modesetting.4'>modesetting(4)</ulink>.
       </para>
 
