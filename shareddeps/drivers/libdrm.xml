@@ -18,58 +18,58 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Libdrm</title>
+    <title>Introduksjon til Libdrm</title>
 
     <para>
-      <application>Libdrm</application> provides a userspace library for
-      accessing the direct rendering manager (DRM) on operating systems that
-      support the ioctl interface. Libdrm is a low-level library, typically used
-      by graphics drivers such as the Mesa DRI drivers, the X drivers, libva and
-      similar projects.
+      <application>Libdrm</application> tilbyr et brukerrombibliotek for tilgang 
+      til Direct Rendering Manager (DRM) på operativsystemer som støtter ioctl 
+      grensesnittet. Libdrm er et lavnivåbibliotek, vanligvis brukt av 
+      grafikkdrivere som Mesa DRI driverne, X driverne, libva og lignende 
+      prosjekter.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libdrm-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&libdrm-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&libdrm-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&libdrm-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">libdrm Dependencies</bridgehead>
+    <bridgehead renderas="sect3">libdrm Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="xorg7-lib"/> (for Intel KMS API support required by Mesa)
+      <xref linkend="xorg7-lib"/> (for Intel KMS API støtte påkrevd av Mesa)
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/libatomic_ops.html">libatomic_ops</ulink>
-      (required by architectures without native atomic operations)
+      (kreves av arkitekturer uten opprinnelige atomic operasjoner)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Libdrm</title>
+    <title>Installasjon av Libdrm</title>
 
 <!--
     <para>
-      First fix a problem building the libdrm_intel library:
+      Først fiks et problem med å bygge libdrm_intel biblioteket:
     </para>
 
 <screen><userinput>sed -i '/not.*system/s/system/cpu_family/' meson.build</userinput></screen>
 -->
 
     <para>
-      Install <application>libdrm</application> by running the following
-      commands:
+      Installer <application>libdrm</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -85,7 +85,7 @@ meson setup --prefix=/usr         \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -93,11 +93,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Libdrm</title>
+    <title>lib32 Installasjon av Libdrm</title>
 
     <para>
-      Install lib32-<application>libdrm</application> by running the following
-      commands:
+      Installer lib32-<application>libdrm</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -114,7 +114,7 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
@@ -125,56 +125,56 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D tests=false</parameter>: This parameter disables building
-      tests for this package.
+      <parameter>-D tests=false</parameter>: Denne parameteren deaktiverer 
+      bygging av tester for denne pakken.
     </para>
 
     <para>
-      <parameter>-D udev=true</parameter>: This parameter enables support for using
-      <application>Udev</application> instead of <command>mknod</command>.
+      <parameter>-D udev=true</parameter>: Denne parameteren aktiverer støtte for 
+      bruk av<application>Udev</application> istedenfor <command>mknod</command>.
     </para>
 
     <para>
-      <parameter>-D valgrind=disabled</parameter>: This parameter disables
-      building libdrm with valgrind support. This fixes building some packages
-      that use libdrm. Change this parameter to "enabled" (or remove it) if you
-      need support for valgrind.
+      <parameter>-D valgrind=disabled</parameter>: Denne parameteren deaktiverer 
+      bygging av libdrm med støtte for valgrind. Dette fikser problemet med å 
+      bygge noen pakker som bruker libdrm. Endre denne parameteren til 
+      «enabled» (eller fjern den) hvis du trenger støtte for valgrind.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           libdrm_amdgpu, libdrm_intel, libdrm_nouveau,
-          libdrm_radeon, and libdrm<!--, and libkms-->
+          libdrm_radeon, og libdrm<!--, and libkms-->
         </seg>
         <seg>
            /usr/include/libdrm <!--,/usr/include/libkms,-->
-           and /usr/share/libdrm
+           og /usr/share/libdrm
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -182,7 +182,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libdrm_amdgpu</filename></term>
         <listitem>
           <para>
-            contains the AMDGPU specific Direct Rendering Manager functions
+            inneholder AMDGPU spesifikke Direct Rendering Manager funksjoner
           </para>
           <indexterm zone="libdrm libdrm_amdgpu">
             <primary sortas="c-libdrm_amdgpu">libdrm_amdgpu</primary>
@@ -194,8 +194,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libdrm_intel</filename></term>
         <listitem>
           <para>
-            contains the Intel specific Direct Rendering Manager
-            functions
+            inneholder Intel spesifikke Direct Rendering Manager
+            funksjoner
           </para>
           <indexterm zone="libdrm libdrm_intel">
             <primary sortas="c-libdrm_intel">libdrm_intel</primary>
@@ -207,8 +207,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libdrm_nouveau</filename></term>
         <listitem>
           <para>
-            contains the open source nVidia (Nouveau) specific Direct
-            Rendering Manager functions
+            inneholder åpen kildekode nVidia (Nouveau) spesifikke Direct
+            Rendering Manager funksjoner
           </para>
           <indexterm zone="libdrm libdrm_nouveau">
             <primary sortas="c-libdrm_nouveau">libdrm_nouveau</primary>
@@ -220,8 +220,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libdrm_radeon</filename></term>
         <listitem>
           <para>
-            contains the AMD Radeon specific Direct Rendering Manager
-            functions
+            inneholder AMD Radeon spesifikke Direct Rendering Manager
+            funksjoner
           </para>
           <indexterm zone="libdrm libdrm_radeon">
             <primary sortas="c-libdrm_radeon">libdrm_radeon</primary>
@@ -233,7 +233,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libdrm</filename></term>
         <listitem>
           <para>
-            contains the Direct Rendering Manager API functions
+            inneholder Direct Rendering Manager API funksjoner
           </para>
           <indexterm zone="libdrm libdrm-lib">
             <primary sortas="c-libdrm">libdrm</primary>
@@ -246,7 +246,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libkms</filename></term>
         <listitem>
           <para>
-            contains API functions for kernel mode setting abstraction
+            inneholder API funksjoner for abstraksjon av kjernemodusinnstilling
           </para>
           <indexterm zone="libdrm libkms">
             <primary sortas="c-libkms">libkms</primary>

@@ -22,88 +22,88 @@
     </indexterm>
 
     <sect2 role="package">
-      <title>Introduction to libva</title>
+      <title>Introduksjon til libva</title>
 
       <para>
-        The <application>libva</application> package contains a library which
-        provides access to hardware accelerated video processing, using hardware
-        to accelerate video processing in order to offload the central
-        processing unit (CPU) to decode and encode compressed digital video. The VA
-        API video decode/encode interface is platform and window system
-        independent targeted at Direct Rendering Infrastructure (DRI) in the X
-        Window System however it can potentially also be used with direct
-        framebuffer and graphics sub-systems for video output. Accelerated
-        processing includes support for video decoding, video encoding,
-        subpicture blending, and rendering.
+        <application>libva</application> pakken inneholder et bibliotek som gir 
+        tilgang til maskinvareakselerert videobehandling, ved bruk av maskinvare 
+        for å akselerere videobehandling for å avlaste den sentrale 
+        prosessorenheten (CPU) for å dekode og kode komprimert digital video. 
+        VA API grensesnittet for videodekoding/koding er plattform og 
+        vindussystem uavhengige rettet mot direkte gjengivelsesinfrastruktur 
+        (DRI) i X Vindussystemet, men det kan potensielt også brukes med direkte 
+        bildebuffer og grafikkundersystemer for videoutgang. Akselerert 
+        behandling inkluderer støtte for videodekoding, videokoding, blanding 
+        av underbilder og gjengivelse.
       </para>
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Download (HTTP): <ulink url="&libva-download-http;"/>
+            Nedlasting (HTTP): <ulink url="&libva-download-http;"/>
           </para>
         </listitem>
         <listitem>
           <para>
-            Download (FTP): <ulink url="&libva-download-ftp;"/>
+            Nedlasting (FTP): <ulink url="&libva-download-ftp;"/>
           </para>
         </listitem>
       </itemizedlist>
 
-      <bridgehead renderas="sect3">libva Dependencies</bridgehead>
+      <bridgehead renderas="sect3">libva Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect4">Required</bridgehead>
+      <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
-        <xref linkend="xorg-env"/> and
+        <xref linkend="xorg-env"/> og
         <xref linkend="libdrm"/>
       </para>
 
-      <bridgehead renderas="sect4">Recommended</bridgehead>
+      <bridgehead renderas="sect4">Anbefalt</bridgehead>
       <para role="recommended">
         &opengl;
       </para>
 
-      <bridgehead renderas="sect4">Recommended (Runtime)</bridgehead>
+      <bridgehead renderas="sect4">Anbefalt (Kjøretid)</bridgehead>
       <!-- "nodep" to prevent BLFS tool from blindly installing all the
            drivers -->
       <para role='nodep'>
-        The VA API driver suitable for the hardware in your system:
+        VA API driveren som passer for maskinvaren i systemet ditt:
         <ulink url="&blfs-svn;/multimedia/intel-vaapi-driver.html">intel-vaapi-driver</ulink>
-        (for Intel GPUs provided with Haswell CPUs or earlier),
+        (for Intel GPU-er levert med Haswell CPU-er eller tidligere),
         <ulink url="&blfs-svn;/multimedia/intel-media.html">intel-media</ulink>
-        (for Intel GPUs provided with Broadwell CPUs or later), and
-        <xref linkend="mesa"/> (providing the <literal>r600</literal>,
-        <literal>radeonsi</literal>, and <literal>nouveau</literal> VA API
-        drivers, for the ATI/AMD Radeon HD 2xxx GPUs and later, and
+        (for Intel GPU-er levert med Broadwell CPU-er eller nyere), og
+        <xref linkend="mesa"/> (gir <literal>r600</literal>,
+        <literal>radeonsi</literal>, og <literal>nouveau</literal> VA API
+        drivere, for ATI/AMD Radeon HD 2xxx GPU-er og senere, og
         <ulink url='https://nouveau.freedesktop.org/VideoAcceleration.html'>
-        supported
-        NVIDIA GPUs</ulink>; there is a circular dependency, read the
-        <xref linkend="mesa"/> page for information on how to break it)
+        støttede
+        NVIDIA GPU-er</ulink>; det er en sirkulær avhengighet, les
+        <xref linkend="mesa"/> side for informasjon om hvordan du bryter den)
       </para>
 
-      <bridgehead renderas="sect4">Optional</bridgehead>
+      <bridgehead renderas="sect4">Valgfri</bridgehead>
       <para role="optional">
-        <xref linkend="wayland"/>, and
+        <xref linkend="wayland"/>, og
         <ulink url="https://gitlab.freedesktop.org/drm/igt-gpu-tools">intel-gpu-tools</ulink>
       </para>
 
     </sect2>
 
     <sect2 role="installation">
-      <title>Installation of libva</title>
+      <title>Installasjon av libva</title>
       <!-- libva*.2 have been around for a long time...
       <caution>
         <para>
-          If you are reinstalling this package, you will need
-          to remove the older versions of the libraries.  These are in the
-          form of libva*.1 and any symbolic links pointing to them.  In
-          addition, any packages that use these files need to be rebuilt.
+          Hvis du installerer denne pakken på nytt, må du fjerne de eldre 
+          versjonene av bibliotekene. Disse er i formen libva*.1 og eventuelle 
+          symbolske lenker som peker til dem. I tillegg må alle pakker som 
+          bruker disse filene bygges opp på nytt.
         </para>
       </caution>
       -->
       <para>
-        Install <application>libva</application> by running the following
-        commands:
+        Installer <application>libva</application> ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>cd build &amp;&amp;
@@ -113,11 +113,11 @@ meson setup --prefix=/usr --buildtype=release &amp;&amp;
 ninja</userinput></screen>
 
       <para>
-        This package does not come with a test suite.
+        Denne pakken leveres ikke med en testpakke.
       </para>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -125,11 +125,11 @@ ninja</userinput></screen>
     </sect2>
 
     <sect2 role="installation">
-      <title>lib32 Installation of libva</title>
+      <title>lib32 Installasjon av libva</title>
       
       <para>
-        Install lib32-<application>libva</application> by running the following
-        commands:
+        Installer lib32-<application>libva</application> ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -142,7 +142,7 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
@@ -153,29 +153,29 @@ ldconfig</userinput></screen>
     </sect2>
 
     <sect2 role="commands">
-      <title>Command Explanations</title>
+      <title>Parameterforklaringer</title>
 
       &options-meson;
 
     </sect2>
 
     <sect2 role="content">
-      <title>Contents</title>
+      <title>Innhold</title>
 
       <segmentedlist>
-        <segtitle>Installed Programs</segtitle>
-        <segtitle>Installed Libraries</segtitle>
-        <segtitle>Installed Directory</segtitle>
+        <segtitle>Installerte Programmer</segtitle>
+        <segtitle>Installerte Biblioteker</segtitle>
+        <segtitle>Installert Mappe</segtitle>
 
         <seglistitem>
           <seg>
-            None
+            Ingen
           </seg>
           <seg>
             libva-drm,
             libva-glx,
             libva,
-            libva-wayland, and
+            libva-wayland, og
             libva-x11
           </seg>
           <seg>
@@ -185,7 +185,7 @@ ldconfig</userinput></screen>
       </segmentedlist>
 
       <variablelist>
-        <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+        <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
         <?dbfo list-presentation="list"?>
         <?dbhtml list-presentation="table"?>
 
@@ -193,8 +193,8 @@ ldconfig</userinput></screen>
           <term><filename class="libraryfile">libva</filename></term>
           <listitem>
             <para>
-              contains API functions which provide access to hardware
-              accelerated video processing
+              inneholder API funksjoner som gir tilgang til 
+              maskinvareakselerert videobehandling
             </para>
             <indexterm zone="libva libva-lib">
               <primary sortas="c-libva">libva</primary>
