@@ -82,11 +82,13 @@
     <para role="optional">
       <ulink url="&gnu-http;/autogen/">autogen</ulink>,
       <ulink url="https://cmocka.org/">cmocka</ulink> og
-      <ulink url="https://ftp.debian.org/debian/pool/main/d/datefudge/">datefudge</ulink>
+      <ulink
+      url="https://ftp.debian.org/debian/pool/main/d/datefudge/">datefudge</ulink>
       (brukes under testpakken hvis DANE biblioteket er bygget),
       <ulink url="https://github.com/smuellerDD/leancrypto">leancrypto</ulink>,
-      <ulink url="https://github.com/open-quantum-safe/liboqs">liboqs</ulink>, og
-      <ulink url="&sourceforge-dl;/trousers/">Trousers</ulink> (Trusted Platform Modul støtte)
+      og <ulink
+      url="&sourceforge-dl;/trousers/">Trousers</ulink> (Pålitelig plattform 
+      Modulstøtte)
     </para>
 
     <note><para>

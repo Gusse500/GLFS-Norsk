@@ -256,12 +256,12 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       <para>
         Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi
         kjerneversjonen er inkompatibel med den gjeldende kjerneversjonen. Hvis 
-		dette skjer, kan dette i de fleste tilfeller fikses ved å nedgradere 
-		kjernen. Når en ny driverutgivelse kommer, vil driveren mest sannsynlig 
-		støtte kjerneversjonen på det tidspunktet. Øverst i denne delen er den 
-		anbefalte kjerneserien som skal brukes med denne driveren nevnt for å gi 
-		en idé om hva den ideelle kjerneversjonen er å bygge mot. Kjerneversjonen 
-		som brukes for kjerneparametere og lignende i denne boken er
+        dette skjer, kan dette i de fleste tilfeller fikses ved å nedgradere 
+        kjernen. Når en ny driverutgivelse kommer, vil driveren mest sannsynlig 
+        støtte kjerneversjonen på det tidspunktet. Øverst i denne delen er den 
+        anbefalte kjerneserien som skal brukes med denne driveren nevnt for å gi 
+        en idé om hva den ideelle kjerneversjonen er å bygge mot. Kjerneversjonen 
+        som brukes for kjerneparametere og lignende i denne boken er
         linux-&linux-version;. Per nå er det ingen uoverensstemmelser mellom alternativene.
       </para>
     </note>
