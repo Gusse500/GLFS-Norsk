@@ -119,7 +119,7 @@
 <!ENTITY cmake-major-version          "4.0">
 <!ENTITY cmake-minor-version          "3">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
-<!ENTITY libunwind-version            "1.8.1">
+<!ENTITY libunwind-version            "1.8.2">
 <!ENTITY nettle-version               "3.10.1">
 <!ENTITY gnutls-version               "3.8.9">
 <!ENTITY pixman-version               "0.46.2">
