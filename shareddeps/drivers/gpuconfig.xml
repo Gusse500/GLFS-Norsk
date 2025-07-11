@@ -5,80 +5,80 @@
   %general-entities;
 ]>
 
-<sect1 id="gpuconfig" xreflabel="GPU Kernel Options and Firmware">
+<sect1 id="gpuconfig" xreflabel="GPU Kjernealternativer og Fastvare">
   <?dbhtml filename="gpuconfig.html"?>
 
 
-  <title>GPU Kernel Options and Firmware</title>
+  <title>GPU Kjernealternativer og Fastvare</title>
 
   <para>
-    The Linux kernel has multiple drivers for all sorts of hardware,
-    including GPUs, and most open source drivers are in the kernel.
-    This includes AMD, i915, and Nouveau. There are other drivers
-    as well that can be useful for certain users. Firmware is also
-    necessary for many drivers.
+    Linuxkjernen har flere drivere for alle typer maskinvare, inkludert 
+    GPU-er, og de fleste drivere med åpen kildekode finnes i kjernen. 
+    Dette inkluderer AMD, i915 og Nouveau. Det finnes også andre drivere 
+    som kan være nyttige for visse brukere. Fastvare er også nødvendig 
+    for mange drivere.
   </para>
 
   <sect2 role="kernel" id="gpu-kernel" xreflabel='GPU Kernel Configuration'>
-    <title>Kernel Configuration</title>
+    <title>Kjernekonfigurasjon</title>
 
     <para>
-      The kernel options below enable GPU and virtual GPU drivers.
-      Enable the ones you need and recompile the kernel if necessary.
+      Kjernealternativene nedenfor aktiverer GPU og virtuelle GPU drivere. 
+      Aktiver de du trenger, og kompiler kjernen på nytt om nødvendig.
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gpuconfig-kernel.xml"/>
 
     <note>
     <para>
-      There are comments for the options above, corresponding with Mesa's
-      Gallium3D dri driver names.
+      Det finnes kommentarer til alternativene ovenfor, som samsvarer med 
+      Mesas Gallium3D dri drivernavn.
     </para>
 
     <para>
-      For the GPUs supported by the Iris Gallium3D driver, with
-      <option>CONFIG_DRM_I915</option> enabled and
-      <option>CONFIG_DRM_XE_FORCE_PROBE</option> set to
-      the string <literal>*</literal>, the i915 driver will be used
-      if it supports the GPU, and the Xe driver will be used if it
-      supports the GPU but the i915 driver does not.  If you are sure
-      your GPU is supported by the i915 driver, you can disable the
-      Xe driver to save some build time.  If your GPU is supported
-      by both drivers and you want to use the Xe driver, you can disable
-      the i915 driver, or make the i915 driver deny your GPU via the
-      <option>CONFIG_DRM_I915_FORCE_PROBE</option> option, for example
-      setting it to <literal>!7d55</literal> would make i915 deny the
-      Meteor Lake integrated GPU (of which the PCI ID is
-      <literal>8086:7d55</literal>), leaving it for the Xe driver.
+      For GPU-er som støttes av Iris Gallium3D driveren, med
+      <option>CONFIG_DRM_I915</option> aktivert og
+      <option>CONFIG_DRM_XE_FORCE_PROBE</option> satt til 
+      strengen <literal>*</literal>, i915 driveren vil bli brukt hvis den 
+      støtter GPU-en, og Xe driveren vil bli brukt hvis den støtter GPU-en, 
+      men i915-driveren ikke gjør det. Hvis du er sikker på at GPU-en din 
+      støttes av i915 driveren, kan du deaktivere Xe driveren for å spare 
+      byggetid. Hvis GPU-en din støttes av begge driverne og du vil bruke 
+      Xe driveren, kan du deaktivere i915 driveren, eller få i915 driveren 
+      til å nekte GPU-en din via
+      <option>CONFIG_DRM_I915_FORCE_PROBE</option> alternativet, for eksempel å 
+      sette den til <literal>!7d55</literal> ville få i915 til å nekte 
+      Meteor Lake integrert GPU (hvorav PCI ID er
+      <literal>8086:7d55</literal>), som overlater den til Xe driveren.
     </para>
 
     <para>
-      Selecting <option>CONFIG_DRM_RADEON</option>,
+      Å velge <option>CONFIG_DRM_RADEON</option>,
       <option>CONFIG_DRM_AMDGPU</option>,
       <option>CONFIG_DRM_NOUVEAU</option>,
-      <option>CONFIG_DRM_I915</option>, or
-      <option>CONFIG_DRM_XE</option> as
-      <quote><literal>y</literal></quote> is not recommended. If it is, any
-      required firmware must be built as a part of the kernel image or the
-      initramfs for the driver to function correctly.
+      <option>CONFIG_DRM_I915</option>, eller
+      <option>CONFIG_DRM_XE</option> til
+      <quote><literal>y</literal></quote> anbefales ikke. Hvis det er tilfelle, 
+      må all nødvendig fastvare bygges som en del av kjernebildet eller 
+      initramfs for at driveren skal fungere riktig.
     </para>
 
     <para>
-      The sub-entries under <option>CONFIG_DRM_AMDGPU</option> are used
-      to ensure the AMDGPU kernel driver supports all GPUs using the
-      <literal>radeonsi</literal> driver.  They are not needed if you
-      won't need <option>CONFIG_DRM_AMDGPU</option> itself. They
-      may be unneeded for some GPU models.
+      Underpostene under <option>CONFIG_DRM_AMDGPU</option> brukes for å 
+      sikre at AMDGPU kjernedriveren støtter alle GPU-er som bruker
+      <literal>radeonsi</literal> driveren.  De er ikke nødvendige hvis du 
+      ikke trenger <option>CONFIG_DRM_AMDGPU</option>. 
+      De kan være unødvendige for enkelte GPU-modeller.
     </para>
 
     <para>
-      For <literal>LLVMPipe</literal> or <literal>LLVMPipe</literal>,
-      <option>CONFIG_DRM_VGEM</option> is required or Xorg clients will
-      probably fail with a cryptic message <computeroutput>
+      For <literal>LLVMPipe</literal> eller <literal>LLVMPipe</literal>,
+      <option>CONFIG_DRM_VGEM</option> er nødvendig, ellers vil Xorg klienter 
+      sannsynligvis mislykkes med en kryptisk melding <computeroutput>
       Error: couldn't get an RGB, Double-buffered visual</computeroutput>.
-      While this can be compiled as a module, it is more
-      convenient to just build it into the kernel, otherwise the module
-      will not be loaded automatically.
+      Selv om dette kan kompileres som en modul, er det mer praktisk å 
+      bare bygge det inn i kjernen, ellers vil ikke modulen lastes 
+      inn automatisk.
     </para>
     </note>
 
@@ -89,40 +89,40 @@
   </sect2>
 
   <sect2>
-    <title>Firmware</title>
+    <title>Fastvare</title>
 
     <sect3>
-      <title>ATI Firmware</title>
+      <title>ATI Fastvare</title>
 
       <para>
-        ATI Radeon GPUs require firmware to be able to use KMS (kernel
-        modesetting - the preferred option) as well as for Xorg. The firmware
-        is in
+        ATI Radeon GPU-er krever fastvare for å kunne bruke KMS (kernel 
+        modesetting – det foretrukne alternativet) samt for Xorg. 
+        Fastvaren er i
         <ulink url="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">linux-firmware</ulink>.
       </para>
 
       <para>
-        In order to save space, it is recommended to use
-        <xref linkend="pciutils"/> and it's packaged binary <command>
-        lspci</command> to identify what the VGA controller is. After
-        you find out that, check the RadeonFeature page of the Xorg
-        wiki for 
+        For å spare plass anbefales det å bruke
+        <xref linkend="pciutils"/> og sin pakket binærfil <command>
+        lspci</command> for å identifisere hva VGA kontrolleren er. 
+        Etter at du har funnet ut det, sjekk RadeonFeature siden på Xorg 
+        wikien  
         <ulink url="https://wiki.x.org/wiki/RadeonFeature/#index5h2">
-        Decoder ring for engineering vs marketing names</ulink> to
-        identify the family (you may need to know this for the Xorg
-        driver — Southern Islands and Sea Islands use the radeonsi
-        driver) and the specific model.
+        Decoder ring for engineering vs marketing names</ulink> for å 
+        identifisere familien (du må kanskje vite dette for Xorg driveren 
+        – Southern Islands og Sea Islands bruker Radeonsi driveren) og den 
+        spesifikke modellen.
       </para>
 
       <para>
-        Now that you know which controller you are using, consult the
+        Nå som du vet hvilken kontroller du bruker, se på
         <ulink url="https://wiki.gentoo.org/wiki/Radeon#Firmware">
-        Radeon Firmware</ulink> page of the Gentoo wiki which has a
-        table listing the required firmware blobs for the various
-        chipsets. Note that Southern Islands and Sea Islands chips
-        use different firmware for kernel 3.17 and later compared to
-        earlier kernels. Identify and download the required blobs
-        then install them:
+        Radeon Firmware</ulink> side på Gentoo wikien som har en tabell som 
+        viser de nødvendige firmware-blobene for de forskjellige brikkesettene. 
+        Merk at Southern Islands og Sea Islands brikkene bruker forskjellig 
+        firmware for kjerne 3.17 og senere sammenlignet med tidligere kjerner. 
+        Identifiser og last ned de nødvendige blobene og deretter 
+        installer dem:
       </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/lib/firmware/radeon &amp;&amp;
@@ -131,88 +131,88 @@ cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/radeon</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>RadeonSI Firmware</title>
+      <title>RadeonSI Fastvare</title>
 
       <para>
-        AMDGPU devices require firmware in order to be used in general.
-        Install <xref linkend="pciutils"/> to check the model name of
-        your card, and look for 'VGA compatible controller:'. If you have
-        an APU (Accelerated Processing Unit, i.e. CPU and video on the same
-        chip) that will probably tell you the name. If you have a separate
-        amdgpu video card you will need to search to determine which name it
-        uses (e.g. a card described as Advanced Micro Devices, Inc. [AMD/ATI]
-        Baffin [Radeon RX 550 640SP / RX 560/560X] need Polaris11 firmware.
-        There is a table of "Family, Chipset name, Product name and Firmware"
-        at the end of the Kernel sections in <ulink
+        AMDGPU enheter krever generelt fastvare for å kunne brukes.
+        Installer <xref linkend="pciutils"/> for å sjekke modellnavnet på 
+        kortet ditt, og se etter «VGA kompatibel kontroller:». Hvis du har en 
+        APU (Accelerated Processing Unit, dvs. CPU og video på samme brikke) 
+        vil det sannsynligvis fortelle deg navnet. Hvis du har et separat 
+        amdgpu grafikkkort, må du søke for å finne ut hvilket navn det bruker 
+        (f.eks. et kort beskrevet som Advanced Micro Devices, Inc. [AMD/ATI] 
+        Baffin [Radeon RX 550 640SP / RX 560/560X] trenger Polaris11 fastvare. 
+        Det finnes en tabell over «Familie, brikkesettnavn, produktnavn og 
+        fastvare» på slutten av kjerneseksjonene i <ulink
         url="https://wiki.gentoo.org/wiki/AMDGPU#Known_firmware_blobs">AMDGPU
-        </ulink> page of the Gentoo wiki.
+        </ulink> siden på Gentoo wikien.
       </para>
 
       <para>
-        Once you have identified the firmware name, install all the relevant
-        files for it. For example, the Baffin card mentioned above has 21
-        different polaris11* files, APUs such as renoir and picasso have at
-        least 12 files and might gain more in future updates (e.g. the raven
-        APU now has a 13th file, raven_ta.bin).
+        Når du har identifisert fastvarenavnet, installerer du alle relevante 
+        filer for det. For eksempel har Baffin kortet nevnt ovenfor 21 
+        forskjellige polaris11* filer, APU-er som Renoir og Picasso har minst 
+        12 filer og kan få flere i fremtidige oppdateringer (f.eks. har Raven 
+        APU-en nå en trettende fil, raven_ta.bin).
       </para>
 
 <screen role="root"><userinput>mkdir -pv /usr/lib/firmware/amdgpu &amp;&amp;
 cp -v &lt;YOUR_BLOBS&gt; /usr/lib/firmware/amdgpu</userinput></screen>
 
       <para>
-        If disk space is not a problem, you could install all the current
-        amdgpu firmware files and not worry about exactly which chipset is
-        installed.
+        Hvis diskplass ikke er et problem, kan du installere alle de nåværende 
+        amdgpu fastvarefilene og ikke bekymre deg for nøyaktig hvilket 
+        brikkesett som er installert.
       </para>
 
     </sect3>
 
     <sect3>
-      <title>i915 Firmware</title>
+      <title>i915 Fastvare</title>
 
       <para>
-        Intel integrated GPUs from Skylake onwards can use firmware for
-        GuC (the Graphics microcontroller), and also for the HuC
-        (HEVC/H265 microcontroller which offloads to the GPU) and the
-        DMC (Display Microcontroller) to provide additional low-power
-        states. The GuC and HuC have had a chequered history in the
-        kernel and updated firmware may be disabled by default,
-        depending on your kernel version. Further details may be found at
-        <ulink url="https://01.org/linuxgraphics/downloads/firmware/"/> and
+        Intels integrerte GPU-er fra Skylake og utover kan bruke fastvare for 
+        GuC (grafikkmikrokontrolleren), og også for HuC (HEVC/H265 
+        mikrokontroller som avlaster til GPU-en) og DMC (skjermmikrokontroller) 
+        for å gi ytterligere lavstrøms tilstander. GuC og HuC har hatt en 
+        varierende historikk i kjernen, og oppdatert fastvare kan være 
+        deaktivert som standard, avhengig av kjerneversjonen din. 
+        Ytterligere detaljer finner du på
+        <ulink url="https://01.org/linuxgraphics/downloads/firmware/"/> og
         <ulink url="https://wiki.archlinux.org/index.php/intel_graphics"/>.
       </para>
 
     </sect3>
 
     <sect3>
-      <title>NVIDIA Firmware</title>
+      <title>NVIDIA Fastvare</title>
 
       <para>
-        Some NVIDIA GPUs from Kepler onwards, including RTX and GTX 9xx series
-        onwards, require firmware signed by NVIDIA to work.
-        NVIDIA has now released firmware up to Blackwell (50xx) to
+        Noen NVIDIA GPU-er fra Kepler og utover, inkludert RTX og GTX 9xx serien 
+        og utover, krever firmware signert av NVIDIA for å fungere. NVIDIA har 
+        nå gitt ut firmware opp til Blackwell (50xx) til
         <ulink url="https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git">linux-firmware</ulink>.
-        Read
+        Les
         <ulink url='https://nouveau.freedesktop.org/CodeNames.html'>the
-        CodeNames page of the Nouveau wiki</ulink> to figure out the code
-        name of your NVIDIA GPU (for example, the code name of the GeForce RTX
-        5080 is GB203). The directory for the firmware files you need is named
-        as the result converting the code name to lowercase
-        (<filename class='directory'>gb203</filename> for the example). The
-        directory (or some of its contents) may be actually a symlink to
-        another directory (or some files in another directory).
+        CodeNames page of the Nouveau wiki</ulink> for å finne ut kodenavnet på 
+        NVIDIA GPU-en din (for eksempel kodenavnet til GeForce RTX 5080 er 
+        GB203). Mappen for fastvarefilene du trenger heter som et resultat av 
+        konverteringen av kodenavnet til små bokstaver
+        (<filename class='directory'>gb203</filename> (for eksempelet). Mappen 
+        (eller noe av innholdet) kan faktisk være en symbollenke til en annen 
+        mappe (eller noen filer i en annen mappe).
       </para>
 
       <para>
-        The <filename>WHENCE</filename> file in the <filename class="directory">
-        linux-firmware</filename> directory documents all the firmware files
-        and potential symlinks. Once you found what you need, look it up in
-        <filename>WHENCE</filename> and make the necessary symlinks. If you
-        cannot find your GPU listed in <filename>WHENCE</filename>, it means
-        your GPU either doesn't need firmware or the firmware has not been
-        released yet. If you don't want to bother and would rather install all
-        the firmware and symlinks, follow the instructions below in order to
-        install the newer firmware properly automatically:
+        <filename>WHENCE</filename> filen i <filename class="directory">
+        linux-firmware</filename> mappen dokumenterer alle fastvarefilene og 
+        potensielle symbolske lenker. Når du har funnet det du trenger, slå det 
+        opp i <filename>WHENCE</filename> og lag de nødvendige symbolske 
+        lenkene. Hvis du ikke finner GPU-en din oppført i <filename>WHENCE</filename>, 
+        betyr det at GPU-en din enten ikke trenger fastvare, eller at fastvaren 
+        ikke har blitt utgitt ennå. Hvis du ikke vil bry deg og heller vil 
+        installere all fastvaren og symbolske lenker, følg instruksjonene 
+        nedenfor for å installere den nyere fastvaren automatisk og riktig:
       </para>
 
 <screen role="root"><userinput>git clone https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git  &amp;&amp;
@@ -225,10 +225,10 @@ cp -vr DESTDIR/usr/lib/firmware/nvidia/* /usr/lib/firmware/nvidia               
 rm -rf DESTDIR</userinput></screen>
 
       <para>
-        For NVIDIA GPUs from Tesla to Kepler, the Nouveau driver requires some
-        extra firmware to support video decoding acceleration. These firmware
-        files are not released by NVIDIA but they can be extracted from the
-        NVIDIA runfile:
+        For NVIDIA GPU-er fra Tesla til Kepler krever Nouveau driveren noe 
+        ekstra fastvare for å støtte akselerasjon av videodekoding. Disse 
+        fastvarefilene er ikke utgitt av NVIDIA, men de kan hentes ut fra 
+        NVIDIA kjørefilen:
       </para>
 
 <screen role="root"><userinput>wget https://anduin.linuxfromscratch.org/BLFS/nvidia-firmware/extract_firmware.py        &amp;&amp;

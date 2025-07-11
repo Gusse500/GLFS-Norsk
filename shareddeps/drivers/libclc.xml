@@ -18,43 +18,43 @@
     </indexterm>
 
     <sect2 role="package">
-      <title>Introduction to libclc</title>
+      <title>Introduksjon til libclc</title>
 
       <para>
-        The <application>libclc</application> package contains library requirements
-        of the OpenCL C programming language (provides header files but no
-        libraries itself).
+        <application>libclc</application> pakken inneholder bibliotekkravene 
+        for programmeringsspråket OpenCL C (inneholder deklarasjonsfiler, 
+        men ingen biblioteker i seg selv).
       </para>
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Download (HTTP): <ulink url="&libclc-download-http;"/>
+            Nedlasting (HTTP): <ulink url="&libclc-download-http;"/>
           </para>
         </listitem>
         <listitem>
           <para>
-            Download (FTP): <ulink url="&libclc-download-ftp;"/>
+            Nedlasting (FTP): <ulink url="&libclc-download-ftp;"/>
           </para>
         </listitem>
       </itemizedlist>
 
-      <bridgehead renderas="sect3">libclc Dependencies</bridgehead>
+      <bridgehead renderas="sect3">libclc Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect4">Required</bridgehead>
+      <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
-        <xref linkend="llvm"/> (with Clang) and
+        <xref linkend="llvm"/> (med Clang) og
         <xref linkend="spirv-llvm-translator"/>
       </para>
 
     </sect2>
 
     <sect2 role="installation">
-      <title>Installation of libclc</title>
+      <title>Installasjon av libclc</title>
 
       <para>
-        Install <application>libclc</application> by running the following
-        commands:
+        Installer <application>libclc</application> ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -67,11 +67,11 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr \
 ninja</userinput></screen>
 
       <para>
-        To test the results, issue: <command>ninja test</command>.
+        For å teste resultatene, utsted: <command>ninja test</command>.
       </para>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -79,26 +79,26 @@ ninja</userinput></screen>
     </sect2>
 
     <sect2 role="commands">
-      <title>Command Explanations</title>
+      <title>Parameterforklaringer</title>
 
       &options-cmake;
 
     </sect2>
 
     <sect2 role="content">
-      <title>Contents</title>
+      <title>Innhold</title>
 
       <segmentedlist>
-        <segtitle>Installed Programs</segtitle>
-        <segtitle>Installed Library</segtitle>
-        <segtitle>Installed Directories</segtitle>
+        <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
         <seglistitem>
           <seg>
-            None
+            Ingen
           </seg>
           <seg>
-            None
+            Ingen
           </seg>
           <seg>
             /usr/{include,share}/clc
