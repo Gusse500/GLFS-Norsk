@@ -185,7 +185,11 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       Det anbefales på det sterkeste å bygge dem når de startes opp i LFS målet
       for å unngå <command>uname -r</command> rapportering av kjerneversjonen
       til verten i stedet for målet, noe som fører til at byggefiler ikke
-      kan finnes.
+      kan finnes. Dette kan omgås ved å spesifisere
+      <envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar> i
+      <command>make</command> kommandoen som vil overstyre kjerneversjonen som 
+      det skal bygges mot. Kjerneversjonen må allerede være bygget for at dette 
+      skal fungere.
     </para></note>
 
     <para>
@@ -204,11 +208,12 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     </para>
 
     <para>
-      Hvis du skal bygge <emphasis role="bold">open</emphasis>
-      kjernemoduler, sett <envar>NVIDIA_KERNEL_TYPE</envar> variabelen:
+      Hvis du skal bygge <emphasis role="bold">åpne</emphasis>
+      kjernemoduler, naviger til <filename
+      class="directory">kernel-open</filename> mappen:
     </para>
 
-<screen><userinput>export NVIDIA_KERNEL_TYPE="kernel-open"</userinput></screen>
+<screen><userinput>cd kernel-open</userinput></screen>
 
     <para>
       Hvis du i stedet skal bygge <emphasis
@@ -242,55 +247,47 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     </para>
 
     <para>
-      Bygg nå kjernemodulene ved å kjøre følgende kommandoer nedenfor
-      (kommandoene nedenfor vil navigere til riktig mappe basert på hva)
-      <envar>NVIDIA_KERNEL_TYPE</envar> er satt til):
+      Bygg nå kjernemodulene ved å kjøre følgende kommando:
     </para>
 
-<screen><userinput>pushd $NVIDIA_KERNEL_TYPE &amp;&amp;
-make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
+<screen><userinput>make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
 
     <note>
       <para>
         Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi
-        kjerneversjonen du bruker er <quote>for høy.</quote> Hvis dette
-        skjer, kan det være nødvendig å nedgradere kjernen til en lavere
-        versjon. Når en ny driverutgivelse kommer, vil driveren mest
-        sannsynlig støtte kjerneversjonen på det tidspunktet. Øverst i denne
-        delen er den anbefalte kjerneversjonen som skal brukes med denne 
-        driveren nevnt for å sikre at det ikke oppstår en byggefeil. Den 
-        nåværende kjerneversjonen som brukes for kjerneparametere og lignende i 
-        denne boken er linux-&linux-version;.
+        kjerneversjonen er inkompatibel med den gjeldende kjerneversjonen. Hvis 
+		dette skjer, kan dette i de fleste tilfeller fikses ved å nedgradere 
+		kjernen. Når en ny driverutgivelse kommer, vil driveren mest sannsynlig 
+		støtte kjerneversjonen på det tidspunktet. Øverst i denne delen er den 
+		anbefalte kjerneserien som skal brukes med denne driveren nevnt for å gi 
+		en idé om hva den ideelle kjerneversjonen er å bygge mot. Kjerneversjonen 
+		som brukes for kjerneparametere og lignende i denne boken er
+        linux-&linux-version;. Per nå er det ingen uoverensstemmelser mellom alternativene.
       </para>
     </note>
 
     <important>
       <para>
-        Når du oppdaterer kjernen, må du også installere
+        Når du gjenoppbygger/oppgraderer kjernen, må du også installere  .
         <application>NVIDIA</application> kjernemoduler på nytt.
       </para>
 
       <para>
-        Dette er fordi det er lim når kjernemoduler bygges. Dette limet
-        spiller ikke så stor rolle med førstepartsmoduler (moduler i kjernens
-        kildetre) ettersom modulene oppdateres samtidig som kjernen oppdateres.
-        På det tidspunktet er det nytt lim som holder dem sammen. Men når
-        det gjelder tredjepartsmoduler, oppdateres de ikke når kjernen
-        oppdateres, så dette limet tredjepartsmodulene hadde på kjernen bryter 
-        sammen. Dette fører til ødelagte kjernemoduler. Dette gjelder også hvis 
-        du forblir på samme kjerneversjon, men endrer noen alternativer, dette 
-        kan også bryte limet.
+        Kjernemoduler installeres i en versjonert mappe som, når de bygges mot 
+        en annen kjerneversjon, ikke lenger vil samsvare med den oppstartede 
+        kjerneversjonen og kan ikke brukes. Videre er det et innebygd lim, så 
+        eventuelle endringer i kjernen kan ødelegge denne limen. For 
+        kjernemoduler i Linux kildetreet, kjent som førstepartsmoduler, blir de 
+        oppdatert og gjenoppbygd sammen med kjernen, slik at det ikke oppstår
+        problemer for førstepartsmoduler. Tredjepartsmoduler blir imidlertid 
+        ikke det, og må oppdateres/gjenoppbygges.
       </para>
 
       <para>
-        Sørg for at når du installerer kjernemodulene på nytt, må du sørge for 
-        at du bruker den nye kjernen og har kjernekildekoden du bygde fra.
-        Ellers vil modulene ikke kunne bygges.
-      </para>
-
-      <para>
-        Når du oppgraderer kjernen, trenger du ikke å installere 
-        driverprogramvaren på nytt, bare kjernemodulene.
+        Når du gjenoppbygger/oppgraderer kjernen mot samme NVIDIA driverversjon, 
+        trenger du bare å installere kjernemodulene på nytt. Du må også 
+        installere driverprogramvaren på nytt hvis du oppgraderer fra en 
+        tidligere driverversjon.
       </para>
     </important>
 
@@ -298,11 +295,8 @@ make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
       Nå som &root; bruker:
     </para>
 
-<screen role="root"><userinput>for mod in nvidia{,-drm,-modeset,-peermem,-uvm}; do
-  rm -vf /usr/lib/modules/$(uname -r)/kernel/drivers/video/$mod.ko
-done
-make modules_install &amp;&amp;
-popd</userinput></screen>
+<screen role="root"><userinput>make modules_install &amp;&amp;
+cd ..</userinput></screen>
 
     <para>
       Installer fastvaren som &root; bruker:
@@ -446,7 +440,7 @@ done</userinput></screen>
       <para>
         <filename>/usr/lib/modprobe.d/nvidia_drm.conf</filename>
       </para>
-      <para>
+      <para revision="systemd">
         <filename>/usr/lib/modprobe.d/nvidia.conf</filename>
       </para>
     </sect3>
@@ -545,13 +539,18 @@ options nvidia_drm modeset=1
 # End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
 EOF</userinput></screen>
 
-      <para>
+      <!-- Cannot be used on SysVinit yet, and the kernel module will complain
+           as the ability to make use of sleep/hibernate is not yet
+           implemented. We must provide the files, but they do not work as of
+           yet. - Zeckma -->
+      <para revision="systemd">
         Når GPU-en går i hvilemodus/dvalemodus, mister den som standard alle 
         minnetildelinger. Du kan forhindre dette ved å angi to alternativer for 
-        NVIDIA modulen. som &root; bruker:
+        NVIDIA modulen. Hvis du ikke bruker hvilemodus/dvalemodus, kan du hoppe 
+		over å lage følgende konfigurasjonsfil. Ellers, som &root; bruker:
       </para>
 
-<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
+<screen revision="systemd" role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
 <literal># Begin /usr/lib/modprobe.d/nvidia.conf
 
 options nvidia NVreg_PreserveVideoMemoryAllocations=1
@@ -561,12 +560,12 @@ options nvidia NVreg_TemporaryFilePath=/var/tmp
 EOF</userinput></screen>
 
       <para>
-        Dessuten installerer ikke denne driveren DRI
+        Denne driveren installerer ikke DRI
         <footnote><para>
           Direct Rendering Infrastructure.
         </para></footnote>
         drivere eller driverstubber. På samme måte installerer den ikke en
-        <application>pkg-config</application> fil som sier hvor du finner de
+        <application>pkgconf</application> fil som sier hvor du finner de
         tilknyttede filene. Filene er ikke nødvendige med denne driveren. 
         Imidlertid forventer noen applikasjoner at <application>pkg-config</application> 
         filen eksisterer, nemlig <xref linkend="xorg-server"/>. Opprett en nå 

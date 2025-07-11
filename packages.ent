@@ -145,11 +145,11 @@
 <!ENTITY egl-gbm-version              "1.1.2.1">
 <!ENTITY egl-wayland-version          "1.1.19">
 <!ENTITY egl-x11-version              "1.0.2">
-<!ENTITY linux-version                "6.15">
+<!ENTITY linux-version                "6.15.5">
                                                 <!-- kernel version in
                                                      kernel-config
                                                      presently -->
-<!ENTITY nvidia-linux-version         "6.15">
+<!ENTITY nvidia-linux-version         "6.15.x">
                                                 <!-- kernel version of when the
                                                      NVIDIA driver version
                                                      listed was released -->
