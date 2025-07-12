@@ -18,22 +18,22 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to ply</title>
+    <title>Introduksjon til ply</title>
 
     <para>
-      The <application>ply</application> is a zero-dependency Python implementation
-      of the traditional parsing tools lex and yacc.
+      <application>ply</application> er en null-avhengighet Python 
+      implementering av de tradisjonelle parseverktøyene lex og yacc.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&ply-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&ply-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&ply-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&ply-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -41,17 +41,17 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of ply</title>
+    <title>Installasjon av ply</title>
 
     <para>
-      Build the module:
+      Bygg modulen:
     </para>
 
 <screen><userinput>pip3 wheel -w dist --no-build-isolation --no-deps --no-cache-dir $PWD</userinput></screen>
 
     <para>
-      Now install the <application>Python</application>
-      <systemitem class="username">root</systemitem> user:
+      Nå installer <application>Python</application> som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>pip3 install --no-index --find-links=dist --no-cache-dir --no-user ply</userinput></screen>
@@ -59,22 +59,22 @@
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          /usr/lib/python3.12/site-packages/ply and
+          /usr/lib/python3.12/site-packages/ply og
           /usr/lib/python3.12/site-packages/ply-&ply-version;.dist-info
         </seg>
       </seglistitem>

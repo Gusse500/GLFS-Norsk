@@ -18,50 +18,50 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to PCI Utils</title>
+    <title>Introduksjon til PCI Utils</title>
 
     <para>
-      The <application>PCI Utils</application> package contains
-      a set of programs for listing PCI devices, inspecting
-      their status and setting their configuration registers.
+      <application>PCI Utils</application> pakken inneholder et sett 
+      med programmer for å liste opp PCI enheter, inspisere statusen 
+      deres og sette konfigurasjonsregistrene deres.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&pciutils-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&pciutils-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&pciutils-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&pciutils-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">pciutils Dependencies</bridgehead>
+    <bridgehead renderas="sect3">pciutils Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-       <xref role="runtime" linkend="hwdata"/> (runtime)
+       <xref role="runtime" linkend="hwdata"/> (kjøretid)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of PCI Utils</title>
+    <title>Installasjon av PCI Utils</title>
 
     <para>
-      Prevent the installation of the <filename>pci.ids</filename> file
-      to avoid a conflict with the <xref linkend='hwdata'/> package:
+      Forhindre installasjonen av <filename>pci.ids</filename> filen
+      for å unngå en konflikt med <xref linkend='hwdata'/> pakken:
     </para>
 
     <screen><userinput>sed -r '/INSTALL.*(PCI_IDS|update-pciids)/d' \
     -i Makefile</userinput></screen>
 
     <para>
-      Install <application>PCI Utils</application> by
-      running the following commands:
+      Installer <application>PCI Utils</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make PREFIX=/usr                \
@@ -69,11 +69,11 @@
      SHARED=yes</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make PREFIX=/usr                \
@@ -84,33 +84,33 @@
 chmod -v 755 /usr/lib/libpci.so</userinput></screen>
 
     <para>
-      Next, install the <xref linkend='hwdata'/> package for the
-      <filename>pci.ids</filename> file.
+      Deretter installerer du <xref linkend='hwdata'/> pakken for 
+      <filename>pci.ids</filename> filen.
     </para>
 
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <para>
-      <parameter>SHARED=yes</parameter>: This parameter enables building of
-      the shared library instead of the static one.
+      <parameter>SHARED=yes</parameter>: Denne parameteren aktiverer bygging 
+      av det delte biblioteket i stedet for det statiske.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
-          lspci, pcilmr, and setpci
+          lspci, pcilmr, og setpci
         </seg>
         <seg>
           libpci
@@ -122,7 +122,7 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -130,8 +130,8 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
         <term><command>lspci</command></term>
         <listitem>
           <para>
-            is a utility for displaying information about all PCI buses
-            in the system and all devices connected to them
+            er et verktøy for å vise informasjon om alle PCI busser 
+            i systemet og alle enheter som er koblet til dem
           </para>
           <indexterm zone="pciutils lspci">
             <primary sortas="b-lspci">lspci</primary>
@@ -143,7 +143,7 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
         <term><command>pcilmr</command></term>
         <listitem>
           <para>
-            is a utility for margining PCIe links
+            er et verktøy for å marginere PCIe lenker
           </para>
           <indexterm zone="pciutils pcilmr">
             <primary sortas="b-pcilmr">pcilmr</primary>
@@ -155,7 +155,7 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
         <term><command>setpci</command></term>
         <listitem>
           <para>
-            is a utility for querying and configuring PCI devices
+            er et verktøy for å spørre og konfigurere PCI enheter
           </para>
           <indexterm zone="pciutils setpci">
             <primary sortas="b-setpci">setpci</primary>
@@ -167,8 +167,8 @@ chmod -v 755 /usr/lib/libpci.so</userinput></screen>
       <term><filename class="libraryfile">libpci</filename></term>
       <listitem>
         <para>
-          is a library that allows applications to access the PCI
-          subsystem
+          er et bibliotek som lar applikasjoner få tilgang til PCI 
+          undersystemet
         </para>
         <indexterm zone="pciutils libpci">
           <primary sortas="c-libpci">libpci</primary>

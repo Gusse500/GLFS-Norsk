@@ -19,10 +19,10 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to rust-bindgen</title>
+    <title>Introduksjon til rust-bindgen</title>
 
     <para>
-      Automatically generates Rust FFI bindings to C (and some C++) libraries.
+      Genererer automatisk Rust FFI bindinger til C biblioteker (og noen C++ biblioteker).
     </para>
 
     &build-use-internet;
@@ -30,44 +30,44 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&rust-bindgen-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&rust-bindgen-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&rust-bindgen-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&rust-bindgen-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">rust-bindgen Dependencies</bridgehead>
+    <bridgehead renderas="sect3">rust-bindgen Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="llvm"/> with <application>Clang</application> and
+      <xref linkend="llvm"/> med <application>Clang</application> og
       <xref linkend="rustc"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of rust-bindgen</title>
+    <title>Installasjon av rust-bindgen</title>
     <para>
-      Install <application>rust-bindgen</application> by running the following
-      commands:
+      Installer <application>rust-bindgen</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>cargo build --release</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>install -v -m755 target/release/bindgen /usr/bin/</userinput></screen>
 
     <para>
-      Still as the &root; user, install the Bash and Zsh completion support
-      files
+      Fortsatt som &root; bruker, installer Bash og Zsh utførelse 
+      støttefilene 
     </para>
 
 <screen role='root'><userinput>bindgen --generate-shell-completions bash \
@@ -78,28 +78,28 @@ bindgen --generate-shell-completions zsh  \
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           bindgen
         </seg>
         <seg>
-          none
+          Ingen
         </seg>
         <seg>
-          none
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -107,8 +107,8 @@ bindgen --generate-shell-completions zsh  \
         <term><command>bindgen</command></term>
         <listitem>
           <para>
-            generates <application>Rust</application> FFI bindings to
-            C (and some C++) libraries
+            genererer <application>Rust</application> FFI bindinger til 
+            C biblioteker (og noen C++ biblioteker)
           </para>
           <indexterm zone="rust-bindgen bindgen">
             <primary sortas="b-bindgen">bindgen</primary>
