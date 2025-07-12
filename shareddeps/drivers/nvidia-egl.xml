@@ -5,43 +5,43 @@
   %general-entities;
 ]>
 
-<sect1 id="nvidia-egl" xreflabel="NVIDIA EGL Libraries">
+<sect1 id="nvidia-egl" xreflabel="NVIDIA EGL Biblioteker">
   <?dbhtml filename="nvidia-egl.html"?>
 
-  <title>NVIDIA EGL Libraries</title>
+  <title>NVIDIA EGL Biblioteker</title>
 
   <indexterm zone="nvidia-egl">
-    <primary sortas="a-nvidia-egl">NVIDIA EGL Libraries</primary>
+    <primary sortas="a-nvidia-egl">NVIDIA EGL Biblioteker</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to NVIDIA EGL Libraries</title>
+    <title>Introduksjon til NVIDIA EGL Biblioteker</title>
 
     <para>
-      The <application>NVIDIA EGL Libraries</application> allow the EGL drivers
-      for the <application>NVIDIA</application> driver to function properly. If
-      you are not installing <xref linkend="nvidia"/>, skip this package.
+      <application>NVIDIA EGL Biblioteker</application> gjør at EGL driverne 
+      for <application>NVIDIA</application> driveren skal fungere ordentlig. 
+      Hvis du ikke installerer <xref linkend="nvidia"/>, hopp over denne pakken.
     </para>
 
-    <bridgehead renderas="sect3">NVIDIA EGL Libraries Dependencies</bridgehead>
+    <bridgehead renderas="sect3">NVIDIA EGL Biblioteker Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       &gbm;,
       <xref linkend="libdrm"/>,
       <xref linkend="libglvnd"/>,
       <xref linkend="wayland"/>,
-      <xref linkend="wayland-protocols"/>, and
+      <xref linkend="wayland-protocols"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Downloading NVIDIA EGL Libraries</title>
+    <title>Nedlasting av NVIDIA EGL Biblioteker</title>
 
     <para>
-      First, create a list of files to be downloaded:
+      Først, lag en liste over filer som skal lastes ned:
     </para>
 
 <screen><userinput>cat &gt; nvidia-egl-list &lt;&lt; "EOF"
@@ -54,8 +54,8 @@ EOF</userinput></screen>
     <!-- Keep watch for egl-x11 dl link having a v<x.x.x> for a tag. -->
 
     <para>
-      To download the needed files using <xref linkend='wget'/>,
-      use the following commands:
+      For å laste ned de nødvendige filene ved hjelp av <xref linkend='wget'/>,
+      bruk følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir nvidia-egl &amp;&amp;
@@ -66,18 +66,18 @@ grep -v '^#' ../nvidia-egl-list | wget -i- -c \
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of NVIDIA EGL Libraries</title>
+    <title>Installasjon av NVIDIA EGL Biblioteker</title>
 
 &as_root;
 
     <para>
-      First, start a subshell that will exit on error:
+      Først starter du et underskall som avsluttes ved feil:
     </para>
 
 <screen><userinput>bash -e</userinput></screen>
 
     <para>
-      Install all of the libraries by running the following commands:
+      Installer alle bibliotekene ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>for package in $(grep -v '^#' ../nvidia-egl-list)
@@ -99,7 +99,7 @@ do
 done</userinput></screen>
 
     <para>
-      Finally, exit the shell that was started earlier:
+      Til slutt, avslutt skallet som ble startet tidligere:
     </para>
 
 <screen><userinput>exit</userinput></screen>
@@ -107,19 +107,19 @@ done</userinput></screen>
   </sect2>
   
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
-        <seg>None</seg>
+        <seg>Ingen</seg>
         <seg>
           libnvidia-egl-gbm,
           libnvidia-egl-wayland,
-          libnvidia-egl-xcb, and
+          libnvidia-egl-xcb, og
           libnvidia-egl-xlib
         </seg>
         <seg>
@@ -129,7 +129,7 @@ done</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -137,7 +137,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libnvidia-egl-gbm</filename></term>
         <listitem>
           <para>
-            provides GBM EGL application support
+            gir GBM EGL applikasjonsstøtte
           </para>
           <indexterm zone="nvidia-egl libnvidia-egl-gbm">
             <primary sortas="c-libnvidia-egl-gbm">libnvidia-egl-gbm</primary>
@@ -149,8 +149,8 @@ done</userinput></screen>
         <term><filename class="libraryfile">libnvidia-egl-wayland</filename></term>
         <listitem>
           <para>
-            provides client-side <application>Wayland</application> EGL
-            application support
+            tilbyr klientsiden <application>Wayland</application> EGL
+            applikasjonsstøtte
           </para>
           <indexterm zone="nvidia-egl libnvidia-egl-wayland">
             <primary sortas="c-libnvidia-egl-wayland">libnvidia-egl-wayland</primary>
@@ -162,7 +162,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libnvidia-egl-xcb</filename></term>
         <listitem>
           <para>
-            provides EGL XCB support
+            gir EGL XCB støtte
           </para>
           <indexterm zone="nvidia-egl libnvidia-egl-xcb">
             <primary sortas="c-libnvidia-egl-xcb">libnvidia-egl-xcb</primary>
@@ -174,7 +174,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libnvidia-egl-xlib</filename></term>
         <listitem>
           <para>
-            provides EGL XLib support
+            gir EGL XLib støtte
           </para>
           <indexterm zone="nvidia-egl libnvidia-egl-xlib">
             <primary sortas="c-libnvidia-egl-xlib">libnvidia-egl-xlib</primary>

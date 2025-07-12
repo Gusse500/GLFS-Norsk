@@ -18,58 +18,58 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Vulkan-Loader</title>
+    <title>Introduksjon til Vulkan-Loader</title>
 
     <para>
-      The <application>Vulkan-Loader</application> package contains a library
-      which provides the Vulkan API and provides core support for graphics
-      drivers for Vulkan.
+      <application>Vulkan-Loader</application> pakken inneholder et 
+      bibliotek som tilbyr Vulkan API og kjernestøtte for 
+      grafikkdrivere for Vulkan.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&vulkan-loader-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&vulkan-loader-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&vulkan-loader-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&vulkan-loader-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Vulkan-loader Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Vulkan-loader Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>,
-      <xref linkend="vkheaders"/>, and
+      <xref linkend="vkheaders"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="runtime">
-      <xref linkend="mesa"/> (runtime: for Vulkan drivers) and
+      <xref linkend="mesa"/> (kjøretid: for Vulkan drivere) og
       <xref linkend="wayland"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Vulkan-Loader</title>
+    <title>Installasjon av Vulkan-Loader</title>
 
     <note>
       <para>
-        If this package is being installed on a system where Mesa has already
-        been installed previously, please rebuild <xref linkend="mesa"/> after
-        this package to install Vulkan graphics drivers.
+        Hvis denne pakken installeres på et system der Mesa allerede har blitt 
+        installert tidligere, må du bygge opp igjen <xref linkend="mesa"/> etter 
+        denne pakken for å installere Vulkan grafikkdrivere.
       </para>
     </note>
 
     <para>
-      Install <application>Vulkan-Loader</application> by running the following
-      commands:
+      Installer <application>Vulkan-Loader</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -83,11 +83,11 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
 ninja</userinput></screen>
 
     <para>
-      This package does not come with a working test suite.
+      Denne pakken leveres ikke med en fungerende testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -95,11 +95,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Vulkan-Loader</title>
+    <title>lib32 Installasjon av Vulkan-Loader</title>
 
     <para>
-      Install lib32-<application>Vulkan-Loader</application> by running
-      the following commands:
+      Installer lib32-<application>Vulkan-Loader</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -115,7 +115,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -126,30 +126,30 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
     &cmake-skip-install-rpath;
 
     <para>
-      <option>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</option>: This
-      option allows building the library without Wayland.
+      <option>-D BUILD_WSI_WAYLAND_SUPPORT=OFF</option>: Dette alternativet 
+      tillater bygging av biblioteket uten Wayland.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           libvulkan
@@ -161,7 +161,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -169,7 +169,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libvulkan</filename></term>
         <listitem>
           <para>
-            provides the Vulkan API and core support for graphics drivers
+            gir Vulkan API og kjernestøtte for grafikkdrivere
           </para>
           <indexterm zone="libvk libvulkan">
             <primary sortas="c-libvulkan">libvulkan</primary>

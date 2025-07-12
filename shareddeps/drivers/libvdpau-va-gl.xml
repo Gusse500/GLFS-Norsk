@@ -22,48 +22,48 @@
     </indexterm>
 
     <sect2 role="package">
-      <title>Introduction to libvdpau-va-gl</title>
+      <title>Introduksjon til libvdpau-va-gl</title>
 
       <para>
-        The <application>libvdpau-va-gl</application> package contains a library
-        which implements the VDPAU library.  Libvdpau_va_gl uses OpenGL under the
-        hood to accelerate drawing and scaling and the VA-API (if available) to
-        accelerate video decoding. For now VA-API is available on some Intel
-        chips, and on some AMD video adapters with the help of the libvdpau
-        driver.
+        <application>libvdpau-va-gl</application> pakken inneholder et bibliotek 
+        som implementerer VDPAU biblioteket. Libvdpau_va_gl bruker OpenGL under 
+        panseret for å akselerere tegning og skalering, og VA-API (hvis 
+        tilgjengelig) for å akselerere videodekoding. Foreløpig er VA-API 
+        tilgjengelig på noen Intel brikker og på noen AMD videokort ved hjelp 
+        av libvdpau driveren.
       </para>
 
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Libvdpau-va-gl Driver Download (HTTP): <ulink url="&libvdpau-va-gl-download-http;"/>
+            Libvdpau-va-gl Driver Nedlasting (HTTP): <ulink url="&libvdpau-va-gl-download-http;"/>
           </para>
         </listitem>
         <listitem>
           <para>
-            Libvdpau-va-gl Driver Download (FTP): <ulink url="&libvdpau-va-gl-download-ftp;"/>
+            Libvdpau-va-gl Driver Nedlasting (FTP): <ulink url="&libvdpau-va-gl-download-ftp;"/>
           </para>
         </listitem>
       </itemizedlist>
 
-      <bridgehead renderas="sect3">libvdpau-va-gl Dependencies</bridgehead>
+      <bridgehead renderas="sect3">libvdpau-va-gl Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect4">Required</bridgehead>
+      <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
         <xref linkend="cmake"/>,
         <xref linkend="libvdpau"/>,
-        <xref linkend="libva"/>, and
+        <xref linkend="libva"/>, og
         &opengl;
       </para>
 
     </sect2>
 
     <sect2 role="installation">
-      <title>Installation of libvdpau-va-gl</title>
+      <title>Installasjon av libvdpau-va-gl</title>
 
       <para>
-        Install <application>libvdpau-va-gl</application> by running the following
-        commands:
+        Installer <application>libvdpau-va-gl</application> ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -77,12 +77,12 @@ cmake -D CMAKE_BUILD_TYPE=Release         \
 make</userinput></screen>
 
       <para>
-        To test the results, issue: <command>make check</command>.  The tests must
-        be run from an Xorg environment.
+        For å teste resultatene, utsted: <command>make check</command>.  
+        Testene må kjøres fra et Xorg miljø.
       </para>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -90,11 +90,11 @@ make</userinput></screen>
     </sect2>
 
     <sect2 role="installation">
-      <title>lib32 Installation of libvdpau-va-gl</title>
+      <title>lib32 Installasjon av libvdpau-va-gl</title>
 
       <para>
-        Install lib32-<application>libvdpau-va-gl</application> by running the
-        following commands:
+        Installer lib32-<application>libvdpau-va-gl</application> ved å kjøre 
+        følgende kommandoer:
       </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -108,7 +108,7 @@ cmake -D CMAKE_BUILD_TYPE=Release         \
 make</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install                    &amp;&amp;
@@ -119,18 +119,18 @@ ldconfig</userinput></screen>
     </sect2>
 
     <sect2 role="commands">
-      <title>Command Explanations</title>
+      <title>Parameterforklaringer</title>
 
       &options-cmake;
 
     </sect2>
 
     <sect2 role="configuration">
-      <title>Configuration</title>
+      <title>Konfigurering</title>
 
       <para>
-        To allow libvdpau to find libvdpau-va-gl, set an environment variable
-        as the &root; user:
+        For å tillate libvdpau å finne libvdpau-va-gl, sett en miljøvariabel 
+        som &root; bruker:
       </para>
 
 <screen role="root"><userinput>export VDPAU_DRIVER=va_gl &amp;&amp;
@@ -139,28 +139,28 @@ echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh</userinput></screen>
     </sect2>
 
     <sect2 role="content">
-      <title>Contents</title>
+      <title>Innhold</title>
 
       <segmentedlist>
-        <segtitle>Installed Programs</segtitle>
-        <segtitle>Installed Library</segtitle>
-        <segtitle>Installed Directories</segtitle>
+        <segtitle>Installerte Programmer</segtitle>
+        <segtitle>Installert Bibliotek</segtitle>
+        <segtitle>Installerte Mapper</segtitle>
 
         <seglistitem>
           <seg>
-            None
+            Ingen
           </seg>
           <seg>
             libvdpau_va_gl
           </seg>
           <seg>
-            None
+            Ingen
           </seg>
         </seglistitem>
       </segmentedlist>
 
       <variablelist>
-        <bridgehead renderas="sect2">Short Descriptions</bridgehead>
+        <bridgehead renderas="sect2">Korte Beskrivelser</bridgehead>
         <?dbfo list-presentation="list"?>
         <?dbhtml list-presentation="table"?>
 
@@ -168,8 +168,8 @@ echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh</userinput></screen>
           <term><filename class="libraryfile">libvdpau_va_gl</filename></term>
           <listitem>
             <para>
-              contains functions to implement the OpenGL backend to
-              the VDPAU (Video Decode and Presentation API for Unix) API
+              inneholder funksjoner for å implementere OpenGL backend til 
+              VDPAU (Video Decode and Presentation API for Unix) API
             </para>
             <indexterm zone="libvdpau-va-gl libvdpau-va-gl-lib">
               <primary sortas="c-libvdpau-va-gl">libvdpau</primary>
