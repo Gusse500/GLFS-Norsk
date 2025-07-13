@@ -18,82 +18,82 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Rustc</title>
+    <title>Introduksjon til Rustc</title>
 
     <para>
-      The Rust programming language is designed to be a safe, concurrent,
-      practical language.
+      Programmeringsspråket Rust er designet for å være et trygt, samtidig og 
+      praktisk språk.
     </para>
 
     <para>
-      As with many other programming languages,
-      <application>Rustc</application> (the Rust compiler) needs a binary from
-      which to bootstrap. It will download a stage0 binary at the start of the
-      build, so you cannot compile it without an Internet connection.
+      Som med mange andre programmeringsspråk,
+      <application>Rustc</application> (Rust kompilatoren) trenger en binærfil 
+      som den kan starte opp fra. Den laster ned en stage0 binærfil ved starten 
+      av byggingen, så du kan ikke kompilere den uten en internettforbindelse.
     </para>
 
     <note>
       <para>
-        Although GLFS usually installs in <filename
-        class="directory">/usr</filename>, when you later upgrade to a newer
-        version of <application>rust</application> the old libraries in <filename
-        class="directory">/usr/lib/rustlib</filename> will remain, with various
-        hashes in their names, but will not be usable and will waste space. The
-        editors recommend placing the files in the <filename
-        class="directory">/opt</filename> directory.  In particular, if you
-        have reason to rebuild with a modified configuration (e.g. using the
-        shipped LLVM after building with shared LLVM, perhaps to compile crates
-        for architectures which the GLFS LLVM build does not support)
-        it is possible for the install to leave a broken
-        <command>cargo</command> program. In such a situation, either remove
-        the existing installation first, or use a different prefix such as
-        /opt/rustc-&rustc-version;-build2.
+        Selv om GLFS vanligvis installeres i <filename
+        class="directory">/usr</filename>, når du senere oppgraderer til en 
+        nyere versjon av <application>rust</application> de gamle bibliotekene i 
+        <filename class="directory">/usr/lib/rustlib</filename> vil forbli, med 
+        forskjellige hasher i navnene sine, men vil ikke være brukbare og vil 
+        kaste bort plass. Redaktørene anbefaler å plassere filene i <filename
+        class="directory">/opt</filename> mappen.  Spesielt hvis du har grunn 
+        til å gjenoppbygge med en modifisert konfigurasjon (f.eks. ved å bruke 
+        den medfølgende LLVM-en etter å ha bygget med delt LLVM, kanskje for å 
+        kompilere crates for arkitekturer som GLFS LLVM bygget ikke støtter), 
+        er det mulig at installasjonen etterlater et ødelagt
+        <command>cargo</command> program. I en slik situasjon, fjern enten den 
+        eksisterende installasjonen først, eller bruk et annet prefiks, for 
+        eksempel /opt/rustc-&rustc-version;-build2.
       </para>
 
       <para>
-        If you prefer, you can of course change the prefix to <filename
-        class="directory">/usr</filename>.
+        Hvis du foretrekker det, kan du selvfølgelig endre prefikset til 
+        <filename class="directory">/usr</filename>.
       </para>
     </note>
 
     <para>
-      The current <application>rustbuild</application> build-system will use
-      all processors, although it does not scale well and often falls
-      back to just using one core while waiting for a library to compile.
-      However it can be mostly limited to a specified number of processors by
-      a combination of adding the switch <literal>--jobs &lt;N&gt;</literal>
-      (e.g. '--jobs 4' to limit to 4 processors) on each invocation of
-      <command>./x.py</command> <emphasis>and</emphasis> using an
-      environment variable <envar>CARGO_BUILD_JOBS=&lt;N&gt;</envar>. At the
-      moment this is not effective when some of the rustc tests are run.
+      Den nåværende <application>rustbuild</application> byggesystemet vil bruke 
+      alle prosessorer, selv om det ikke skalerer godt og ofte faller tilbake 
+      til å bare bruke én kjerne mens det venter på at et bibliotek skal 
+      kompileres. Det kan imidlertid stort sett begrenses til et spesifisert 
+      antall prosessorer ved en kombinasjon av å legge til bryteren 
+      <literal>--jobs &lt;N&gt;</literal> (f.eks. '--jobs 4' å begrense til 4 
+      prosessorer) på hver aktivering av <command>./x.py</command> <emphasis>og
+      </emphasis> ved hjelp av en miljøvariabel <envar>CARGO_BUILD_JOBS=&lt;N&gt;</envar>. 
+      For øyeblikket er ikke dette effektivt når noen av rustc testene kjøres.
     </para>
 
     <para>
-      The current version of rust's num_cpus crate now recognizes that cgroups
-      can be used to restrict which processors it is allowed to use. So if your
-      machine lacks DRAM (typically, less than 2GB DRAM per core) that might be
-      an alternative to taking CPUs offline.
+      Den nåværende versjonen av rusts num_cpus kart gjenkjenner nå at cgroups 
+      kan brukes til å begrense hvilke prosessorer den har lov til å bruke. Så 
+      hvis din maskin mangler DRAM (vanligvis mindre enn 2 GB DRAM per kjerne), 
+      kan det være et alternativ å koble CPU-er fra.
       <!--
       Read <xref linkend='build-in-cgroup'/> for how to use a cgroup.
       -->
     </para>
 
     <para>
-      At the moment Rust does not provide any guarantees of a stable ABI.
+      For øyeblikket gir ikke Rust noen garantier for et stabilt ABI.
     </para>
 
     <note>
       <para>
-        <application>Rustc</application> defaults to building for ALL supported
-        architectures, using a shipped copy of <application>LLVM</application>.
-        In GLFS the build is only for the X86 architecture family.
-        If you intend to develop Rust crates, this build may not be good
-        enough for your purposes.
+        <application>Rustc</application> standardinnstillingen er å bygge for 
+        ALLE støttede arkitekturer, ved å bruke en levert kopi av 
+        <application>LLVM</application>. I GLFS er byggingen kun for X86 
+        arkitekturfamilien. Hvis du har tenkt å utvikle Rust crates, er kanskje 
+        ikke denne byggingen god nok for dine formål.
       </para>
       <para>
-        The build times of this version when repeated on the same machine are
-        often reasonably consistent, but as with all compilations using
-        <command>rustc</command> there can be some very slow outliers.
+        Byggetidene for denne versjonen når den gjentas på samme maskin er ofte 
+		rimelig konsistente, men som med alle kompileringer som bruker
+        <command>rustc</command> det kan være noen veldig langsomme avvikere.
       </para>
     </note>
 
@@ -104,67 +104,67 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&rustc-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&rustc-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&rustc-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&rustc-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Påkrevd oppdatering:
           <ulink url="&dl-root;/rustc/rustc-&rustc-version;-upstream_fixes_llvm-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Rustc Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Rustc Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="cmake"/> and
+      <xref linkend="cmake"/> og
       <!-- Required for downloading stage 0 binaries.
            Otherwise it's recommended (if not installed, a vendored copy
            will be built). -->
       <xref linkend="curl"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="llvm"/>
-      (built with <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter> so that
-      <application>Rustc</application> can link to the system-installed
-      <application>LLVM</application> instead of building its shipped version)
+      (bygget med <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter> sånn at
+      <application>Rustc</application> kan lenke til det systeminstallerte
+      <application>LLVM</application> i stedet for å bygge den leverte versjonen)
     </para>
 
     <note>
       <para>
-        If a recommended dependency is not installed, a shipped copy in the
-        <application>Rustc</application> source tarball will be built and used.
+        Hvis en anbefalt avhengighet ikke er installert, vil en levert kopi i
+        <application>Rustc</application> kildekode tarballen vil bli bygget og brukt.
       </para>
     </note>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Rustc</title>
+    <title>Installasjon av Rustc</title>
 
     <para>
-      To install into the
-      <filename class="directory">/opt</filename> directory, remove any
-      existing <filename>/opt/rustc</filename> symlink
-      and create a new directory (i.e. with a different name if trying a
-      modified build of the same version).
-      As the <systemitem class="username">root</systemitem>
-      user:
+      For å installere i
+      <filename class="directory">/opt</filename> mappen, fjern eventuelle
+      eksisterende <filename>/opt/rustc</filename> symbolkoblinger
+      og opprett en ny mappe (dvs. med et annet navn hvis du prøver en 
+      modifisert versjon av samme versjon).
+      Som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>mkdir -pv /opt/rustc-&rustc-version; &amp;&amp;
@@ -172,16 +172,16 @@ ln -svfn rustc-&rustc-version; /opt/rustc</userinput></screen>
 
     <note>
       <para>
-        If multiple versions of <application>Rustc</application> are installed
-        in <filename class="directory">/opt</filename>, changing to another
-        version only requires changing the <filename> /opt/rustc</filename>
-        symbolic link and then running <command>ldconfig</command>.
+        Hvis flere versjoner av <application>Rustc</application> er installert
+        i <filename class="directory">/opt</filename>, å bytte til en annen 
+        versjon krever bare å endre <filename> /opt/rustc</filename>
+        symbolske lenke og deretter kjøre <command>ldconfig</command>.
       </para>
     </note>
 
     <para>
-      Create a suitable <filename>bootstrap.toml</filename> file which will
-      configure the build.
+      Lag en passende <filename>bootstrap.toml</filename> fil som vil 
+      konfigurere byggingen.
     </para>
 
 <screen><userinput>cat &gt; bootstrap.toml &lt;&lt; "EOF" &amp;&amp;
@@ -279,14 +279,14 @@ fi</userinput></screen>
 
     <note>
       <para>
-        The above commands will create bootstrap.toml differently depending
-        on if a few checks pass/fail. This was done to avoid confusion.
+        Kommandoene ovenfor vil opprette bootstrap.toml forskjellig avhengig av 
+        om noen få kontroller består/feiler. Dette ble gjort for å unngå forvirring.
       </para>
     </note>
 
 <!--
     <para>
-      Now apply a patch to fix building with <xref linkend="llvm"/>:
+      Bruk nå en oppdatering for å fikse bygging med <xref linkend="llvm"/>:
     </para>
 
 <screen><userinput>patch -Np1 -i ../rustc-&rustc-version;-upstream_fixes_llvm-1.patch</userinput></screen>
@@ -295,22 +295,22 @@ fi</userinput></screen>
 <!--
     <note>
       <para>
-        The <command>./x.py</command> commands may output a warning
-        message complaining <quote><computeroutput>no codegen-backends
+        <command>./x.py</command> kommandoer kan sende ut en advarselsmelding 
+        som klager på <quote><computeroutput>no codegen-backends
         config matched the requested path to build a codegen
-        backend</computeroutput></quote>. And the provided
-        <quote>suggestion</quote> (<computeroutput>add backend to
-        codegen-backends in bootstrap.toml</computeroutput>) will not silence
-        it.  This warning is <ulink
+        backend</computeroutput></quote>. Og det som er gitt
+        <quote>forslag</quote> (<computeroutput>legg til backend til
+        codegen-backends i bootstrap.toml</computeroutput>) vil ikke dempe den.
+        Denne advarselen er <ulink
         url='https://github.com/rust-lang/rust/issues/110692'>bogus</ulink>
-        and it should be ignored.
+        og det bør ignoreres.
       </para>
     </note>
 -->
 
     <para>
-      Compile <application>Rust</application> by running the following
-      commands:
+      Kompiler <application>Rust</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <!-- fixed in 1.58.0, retain as a reminder that fixed crates can be used
@@ -321,17 +321,17 @@ fi</userinput></screen>
 <screen><userinput>./x.py build</userinput></screen>
 
     <para>
-      Now, as the &root; user, install the package:
+      Nå, som &root; bruker, installer pakken:
     </para>
 
 <screen role='root'><userinput>./x.py install</userinput></screen>
 
     <para>
-      Still as the &root; user, fix the installation of the documentation
-      and symlink a <application>Zsh</application> completion file into the
-      correct location and move a <application>Bash</application> completion
-      file into the location recommended by the <application>Bash</application>
-      completion maintainers:
+      Fortsatt som &root; bruker, fiks installasjonen av dokumentasjonen og 
+      symbolkoble <application>Zsh</application> ferdigstillelsesfilen til 
+      riktig sted og flytt en <application>Bash</application> fullføringsfilen 
+      til stedet anbefalt av <application>Bash</application>
+      fullføringsvedlikeholdere:
     </para>
 
 <screen role='root'><userinput>rm -fv /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version;/*.old   &amp;&amp;
@@ -348,71 +348,71 @@ mv -v /etc/bash_completion.d/cargo \
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <para>
-      <command>ln -svfn rustc-&rustc-version; /opt/rustc</command>: If this is
-      not the first use of the <filename class="directory">/opt/rustc</filename>
-      symlink, overwrite it by forcing, and use the '-n' flag to avoid getting
-      confusing results from e.g. <command>ls -l</command>.
+      <command>ln -svfn rustc-&rustc-version; /opt/rustc</command>: Hvis dette 
+      ikke er førstegangs bruk av <filename class="directory">/opt/rustc</filename>
+      sybbollenke, overskriv den ved å tvinge den frem, og bruk '-n'-flagget for 
+      å unngå å få forvirrende resultater fra f.eks. <command>ls -l</command>.
     </para>
 
     <para>
-      <literal>targets = [...]</literal>: This builds the targets that will
-      be necessary for 32-bit Rust projects.
+      <literal>targets = [...]</literal>: Dette bygger målene som vil være 
+      nødvendige for 32-bits Rust prosjekter.
     </para>
 
     <para>
       <literal>tools = ["cargo", "clippy", "rustdoc", "rustfmt"]</literal>:
-      Only build the tools from the 'default' profile in binary command
-      <command>rustup</command> which are recommended for most users.
-      The other tools are unlikely to be useful unless using (old) code
-      analyzers or editing the standard library.
+      Bygg bare verktøyene fra standardprofilen i den binære kommandoen
+      <command>rustup</command> som anbefales for de fleste brukere. De andre 
+      verktøyene vil sannsynligvis ikke være nyttige med mindre man bruker 
+      (gamle) kodeanalysatorer eller redigerer standardbiblioteket.
     </para>
 
     <para>
-      <literal>channel = "stable"</literal>: This ensures only stable features
-      can be used, the default in <filename>bootstrap.toml</filename> is to use
-      development features, which is not appropriate for a released version.
+      <literal>channel = "stable"</literal>: Dette sikrer at bare stabile funksjoner 
+      kan brukes, standardinnstillingen i <filename>bootstrap.toml</filename> 
+      er å bruke utviklingsfunksjoner, noe som ikke er passende for en utgitt versjon.
     </para>
 
     <!-- comment while using shipped LLVM -->
     <para>
-      <literal>[target.x86_64-unknown-linux-gnu]</literal>: The syntax of
-      <filename>bootstrap.toml</filename> requires an
-      <literal>llvm-config</literal> entry for each target for which
-      system-LLVM is to be used. Change the target to
-      <literal>[target.i686-unknown-linux-gnu]</literal> if you are building
-      on 32-bit x86. This whole section may be omitted if you wish to build
-      against the shipped LLVM, or do not have clang, but the resulting build will
-      be larger and take longer.
+      <literal>[target.x86_64-unknown-linux-gnu]</literal>: Syntaksen til
+      <filename>bootstrap.toml</filename> krever en
+      <literal>llvm-config</literal> oppføring for hvert mål som system-LLVM 
+      skal brukes til. Endre målet til
+      <literal>[target.i686-unknown-linux-gnu]</literal> hvis du bygger på 
+      32-bit x86. Hele denne delen kan utelates hvis du ønsker å bygge mot den 
+      leverte LLVM-en, eller ikke ha clang, men den resulterende byggingen vil 
+      være større og ta lengre tid.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Rustc</title>
+    <title>Konfigurere Rustc</title>
 
     <sect3 id="rustc-config">
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        If you installed <application>Rustc</application> in
-        <filename class="directory">/opt</filename>, you need to update the
-        following configuration files so that <application>Rustc</application>
-        is correctly found by other packages and system processes.
+        Hvis du installerte <application>Rustc</application> i
+        <filename class="directory">/opt</filename>, du må oppdatere følgende 
+        konfigurasjonsfiler slik at <application>Rustc</application>
+        blir funnet riktig av andre pakker og systemprosesser.
       </para>
 
       <note>
         <para>
-          The following command depends on the files created in
+          Følgende kommando avhenger av filene som er opprettet i
           <xref linkend="bash-profile"/>.
         </para>
       </note>
 
       <para>
-        Create the <filename>/etc/profile.d/rustc.sh</filename> startup file as
-        the &root; user:
+        Opprett <filename>/etc/profile.d/rustc.sh</filename> oppstartsfil som
+        &root; bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/profile.d/rustc.sh &lt;&lt; "EOF"
@@ -424,8 +424,8 @@ pathprepend /opt/rustc/bin           PATH
 EOF</userinput></screen>
 
       <para>
-        Immediately after installation, update the current PATH
-        for your current shell:
+        Oppdater gjeldende PATH for ditt nåværende skall umiddelbart 
+        etter installasjon:
       </para>
 
       <screen><userinput>source /etc/profile.d/rustc.sh</userinput></screen>
@@ -435,33 +435,33 @@ EOF</userinput></screen>
 
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           cargo-clippy, cargo-fmt, cargo, clippy-driver, rust-gdb,
-          rust-gdbgui, rust-lldb, rustc, rustdoc, and rustfmt
+          rust-gdbgui, rust-lldb, rustc, rustdoc, og rustfmt
         </seg>
         <seg>
           librustc-driver-&lt;16-byte-hash&gt;,
-          libstd-&lt;16-byte-hash&gt;, and
+          libstd-&lt;16-byte-hash&gt;, og
           libtest-&lt;16-byte-hash&gt;
         </seg>
         <seg>
           ~/.cargo,
-          /opt/rustc, symbolic link to
+          /opt/rustc, symbolsk lenke til
           /opt/rustc-&rustc-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -469,7 +469,7 @@ EOF</userinput></screen>
         <term><command>cargo-clippy</command></term>
         <listitem>
           <para>
-            provides lint checks for a cargo package
+            tilbyr kodeanalyse for en cargo pakke
           </para>
           <indexterm zone="rustc cargo-clippy">
             <primary sortas="b-cargo-clippy">cargo-clippy</primary>
@@ -481,7 +481,7 @@ EOF</userinput></screen>
         <term><command>cargo-fmt</command></term>
         <listitem>
           <para>
-            formats all bin and lib files of the current crate using
+            formaterer alle bin og lib filer i gjeldende crate ved hjelp av
             rustfmt
           </para>
           <indexterm zone="rustc cargo-fmt">
@@ -494,8 +494,8 @@ EOF</userinput></screen>
         <term><command>cargo-miri</command></term>
         <listitem>
           <para>
-            is for use by Miri to interpret bin crates and tests. It is
-            not installed by default.
+            er til bruk for Miri for å tolke bin crates og tester. 
+            Det er ikke installert som standard.
           </para>
           <indexterm zone="rust cargo-miri">
             <primary sortas="b-cargo-miri">cargo-miri</primary>
@@ -507,7 +507,7 @@ EOF</userinput></screen>
         <term><command>cargo</command></term>
         <listitem>
           <para>
-            is the Package Manager for Rust
+            er pakkebehandleren for Rust
           </para>
           <indexterm zone="rustc cargo">
             <primary sortas="b-cargo">cargo</primary>
@@ -519,7 +519,7 @@ EOF</userinput></screen>
         <term><command>clippy-driver</command></term>
         <listitem>
           <para>
-            provides lint checks for Rust
+            gir kodeanalyse for rust
           </para>
           <indexterm zone="rustc clippy-driver">
             <primary sortas="b-clippy-driver">clippy-driver</primary>
@@ -531,8 +531,8 @@ EOF</userinput></screen>
         <term><command>miri</command></term>
         <listitem>
           <para>
-            is an interpreter for Rust's mid-level intermediate representation
-            (MIR). It is not installed by default.
+            er en tolk for Rusts mellomliggende representasjon (MIR). 
+            Den er ikke installert som standard.
           </para>
           <indexterm zone="rust miri">
             <primary sortas="b-miri">miri</primary>
@@ -544,9 +544,9 @@ EOF</userinput></screen>
         <term><command>rls</command></term>
         <listitem>
           <para>
-            is the Rust Language Server. This can run in the background to
-            provide IDEs, editors, and other tools with information about Rust
-            programs
+            er rust språkserveren. Denne kan kjøre i bakgrunnen for å gi 
+            IDE-er, redigeringsprogrammer og andre verktøy informasjon om Rust 
+            programmer
           </para>
           <indexterm zone="rust rls">
             <primary sortas="b-rls">rls</primary>
@@ -558,8 +558,8 @@ EOF</userinput></screen>
         <term><command>rust-analyzer</command></term>
         <listitem>
           <para>
-            is an implementation of Language Server Protocol for the Rust
-            programming language.
+            er en implementering av Language Server Protocol for 
+            programmeringsspråket Rust.
           </para>
           <indexterm zone="rust rust-analyzer">
             <primary sortas="b-rust-analyzer">rust-analyzer</primary>
@@ -571,8 +571,8 @@ EOF</userinput></screen>
         <term><command>rust-demangler</command></term>
         <listitem>
           <para>
-            converts a list of Rust mangled symbols into a
-            corresponding list of demangled symbols
+            konverterer en liste med rust mangled symboler til en 
+            tilsvarende liste med demangled symboler
           </para>
           <indexterm zone="rust rust-demangler">
             <primary sortas="b-rust-demangler">rust-demangler</primary>
@@ -584,8 +584,8 @@ EOF</userinput></screen>
         <term><command>rust-gdb</command></term>
         <listitem>
           <para>
-            is a wrapper script for gdb, pulling in Python pretty-printing
-            modules installed in
+            er et innpakningsskript for gdb, som trekker inn Python 
+            pretty-printing moduler som er installert i
             <filename class="directory">/opt/rustc-&rustc-version;/lib/rustlib/etc</filename>
           </para>
           <indexterm zone="rustc rust-gdb">
@@ -598,8 +598,8 @@ EOF</userinput></screen>
         <term><command>rust-gdbgui</command></term>
         <listitem>
           <para>
-            is a wrapper script for a graphical front end to gdb that runs in a
-            browser
+            er et innpakningsskript for en grafisk grensesnitt til gdb som 
+            kjører i en nettleser
           </para>
           <indexterm zone="rustc rust-gdbgui">
             <primary sortas="b-rust-gdbgui">rust-gdbgui</primary>
@@ -611,8 +611,8 @@ EOF</userinput></screen>
         <term><command>rust-lldb</command></term>
         <listitem>
           <para>
-            is a wrapper script for LLDB (the LLVM debugger)
-            pulling in the Python pretty-printing modules
+            er et innpakningsskript for LLDB (LLVM-feilsøkingsprogrammet) 
+            som henter inn Python pretty-printing modulene
           </para>
           <indexterm zone="rustc rust-lldb">
             <primary sortas="b-rust-lldb">rust-lldb</primary>
@@ -624,7 +624,7 @@ EOF</userinput></screen>
         <term><command>rustc</command></term>
         <listitem>
           <para>
-            is the Rust compiler
+            er Rust kompilatoren
           </para>
           <indexterm zone="rustc rustc-bin">
             <primary sortas="b-rustc-bin">rustc</primary>
@@ -636,7 +636,7 @@ EOF</userinput></screen>
         <term><command>rustdoc</command></term>
         <listitem>
           <para>
-            generates documentation from Rust source code
+            genererer dokumentasjon fra Rust kildekoden
           </para>
           <indexterm zone="rustc rustdoc">
             <primary sortas="b-rustdoc">rustdoc</primary>
@@ -648,7 +648,7 @@ EOF</userinput></screen>
         <term><command>rustfmt</command></term>
         <listitem>
           <para>
-            formats Rust code
+            formaterer Rust kode
           </para>
           <indexterm zone="rustc rustfmt">
             <primary sortas="b-rustfmt">rustfmt</primary>
@@ -660,7 +660,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libstd-&lt;16-byte-hash&gt;</filename></term>
         <listitem>
           <para>
-            is the Rust Standard Library, the foundation of portable Rust software
+            er Rust Standardbiblioteket, grunnlaget for flyttbar Rust programvare
           </para>
           <indexterm zone="rustc libstd">
             <primary sortas="c-libstd">libstd-&lt;16-byte-hash&gt;</primary>

@@ -18,32 +18,32 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to SPIRV-Headers</title>
+    <title>Introduksjon til SPIRV-Headers</title>
 
     <para>
-      The <application>SPIRV-Headers</application> package contains headers
-      that allow for applications to the SPIR-V language and instruction set
-      with Vulkan. SPIR-V is a binary intermediate language for representing
-      graphical shader stages and compute kernels for multiple Khronos APIs,
-      including OpenGL and Vulkan.
+      <application>SPIRV-Headers</application> pakken inneholder deklarasjoner 
+      som tillater applikasjoner til SPIR-V språket og instruksjonssettet med 
+      Vulkan. SPIR-V er et binært mellomliggende språk for å representere 
+      grafiske shader trinn og beregningskjerner for flere Khronos API-er, 
+      inkludert OpenGL og Vulkan.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&spirv-headers-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&spirv-headers-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&spirv-headers-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&spirv-headers-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">SPIRV-Headers Dependencies</bridgehead>
+    <bridgehead renderas="sect3">SPIRV-Headers Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>
     </para>
@@ -51,20 +51,20 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of SPIRV-Headers</title>
+    <title>Installasjon av SPIRV-Headers</title>
 
     <note>
       <para>
-        This tarball
-        <filename>SPIRV-Headers-&spirv-headers-version;.tar.gz</filename> will
-        extract to the directory
+        Denne tarballen
+        <filename>SPIRV-Headers-&spirv-headers-version;.tar.gz</filename> vil
+        pakkes ut til mappen
         <filename class="directory">SPIRV-Headers-vulkan-sdk-&spirv-headers-version;</filename>.
       </para>
     </note>
 
     <para>
-      Install <application>SPIRV-Headers</application> by running the following
-      commands:
+      Installer <application>SPIRV-Headers</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -74,11 +74,11 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr -G Ninja .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -86,29 +86,29 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          /usr/include/spirv and
+          /usr/include/spirv og
           /usr/share/cmake/SPIRV-Headers
         </seg>
       </seglistitem>
