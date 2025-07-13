@@ -5,71 +5,71 @@
   %general-entities;
 ]>
 
-<sect1 id="whatdriver" xreflabel="What Drivers to Install">
+<sect1 id="whatdriver" xreflabel="Hvilke drivere som skal installeres">
   <?dbhtml filename="whatdriver.html"?>
 
 
-  <title>What Drivers to Install</title>
+  <title>Hvilke drivere som skal installeres</title>
 
   <para>
-    On Linux, there are multiple drivers that one can install. Choosing
-    the one you need can be difficult if you do not know what drivers
-    are for what vendor and the perks and downsides of each option.
-    This section explains all of that to better help you decide what
-    you want or need.
+    På Linux finnes det flere drivere man kan installere. Å velge den du 
+    trenger kan være vanskelig hvis du ikke vet hvilke drivere som er for 
+    hvilken leverandør og fordelene og ulempene med hvert alternativ. 
+    Denne delen forklarer alt dette for å bedre hjelpe deg med å bestemme 
+    hva du ønsker eller trenger.
   </para>
 
   <note><para>
-    Gallium3D is a technology that <xref linkend="mesa"/> relies on for OpenGL.
-    In other words, Gallium3D drivers are just OpenGL drivers. Each Gallium3D
-    driver is meant for different systems except
-    <computeroutput>zink</computeroutput> which just feeds OpenGL instructions
-    to the main Vulkan driver you install for your system.
+    Gallium3D er en teknologi som <xref linkend="mesa"/> er avhengig av for 
+    OpenGL. Med andre ord, Gallium3D drivere er bare OpenGL drivere. Hver 
+    Gallium3D driver er ment for forskjellige systemer bortsett fra
+    <computeroutput>zink</computeroutput> som bare mater OpenGL instruksjoner 
+    til Vulkan hoveddriveren du installerer for systemet ditt.
   </para></note>
 
   <sect2>
     <title>AMD</title>
 
     <para>
-      There are 3 AMD GPU drivers: AMDGPU (Radeon Southern Islands and later),
-      ATI (r300 and r600), and AMDGPU PRO (proprietary AMDGPU driver).
+      Det finnes tre AMD GPU drivere: AMDGPU (Radeon Southern Islands og 
+      senere), ATI (r300 og r600) og AMDGPU PRO (proprietær AMDGPU driver).
     </para>
 
     <para>
       <emphasis>AMDGPU</emphasis> (<xref linkend="mesa"/>):
-      This driver is for AMD GPUs that are Southern Island Cards or
-      later. It is open source and is the most standard AMD GPU driver.
-      This driver is in the Linux kernel. There is one Gallium3D driver,
-      <computeroutput>radeonsi</computeroutput>, and one Vulkan driver,
+      Denne driveren er for AMD GPU-er som er Southern Island kort eller nyere.
+      Den er åpen kildekode og er den mest standard AMD GPU driveren. Denne 
+      driveren finnes i Linuxkjernen. Det finnes én Gallium3D driver,
+      <computeroutput>radeonsi</computeroutput>, og én Vulkan driver,
       <computeroutput>amd</computeroutput>.
     </para>
 
     <para>
       <emphasis>ATI</emphasis> (<xref linkend="mesa"/>):
-      This driver is for the ATI AMD GPUs which precede GCN GPUs.
-      It is open source and targets older GPUs. The driver is in the Linux
-      kernel. There are two Gallium3D drivers:
-      <computeroutput>r300</computeroutput> and
-      <computeroutput>r600</computeroutput>. For Vulkan, there is one driver,
+      Denne driveren er for ATI AMD GPU-er som kommer før GCN GPU-er. Den er 
+      åpen kildekode og retter seg mot eldre GPU-er. Driveren finnes i 
+      Linuxkjernen. Det finnes to Gallium3D drivere.:
+      <computeroutput>r300</computeroutput> og
+      <computeroutput>r600</computeroutput>. For Vulkan, er det en driver,
       <computeroutput>amd</computeroutput>.
     </para>
 
     <para>
       <emphasis>AMDGPU PRO</emphasis> (<xref linkend="amdgpu-pro"/>):
-      This driver is proprietary. Most users don't install this driver
-      as the open source drivers are already well off. However, it is
-      needed for hardware acceleration encoding, useful for those who
-      wish to record and edit videos. Performance in games varies between
-      the open source and proprietary drivers so the ending factor is if
-      you record and edit videos or not. You will need the firmware and
-      open source kernel driver for this driver.
+      Denne driveren er proprietær. De fleste brukere installerer ikke denne 
+      driveren siden åpen kildekode drivere allerede er velfungerende. Den er 
+      imidlertid nødvendig for maskinvareakselerasjonskoding, noe som er nyttig 
+      for de som ønsker å spille inn og redigere videoer. Ytelsen i spill 
+      varierer mellom åpen kildekode og proprietære drivere, så det avgjørende 
+      er om du spiller inn og redigerer videoer eller ikke. Du trenger 
+      fastvaren og åpen kildekode kjernedriveren for denne driveren.
     </para>
 
     <para>
-      Summary: If you are a regular user with a modern AMD GPU, use
-      <emphasis>AMDGPU</emphasis>. If you have an older card, go with
-      <emphasis>ATI</emphasis>. Use <emphasis>AMDGPU PRO</emphasis> if
-      you want an improvement with hardware acceleration encoding.
+      Sammendrag: Hvis du er en vanlig bruker med et moderne AMD GPU, bruk
+      <emphasis>AMDGPU</emphasis>. Hvis du har et eldre kort, velg 
+      <emphasis>ATI</emphasis>. Bruk <emphasis>AMDGPU PRO</emphasis> hvis
+      du ønsker en forbedring med maskinvareakselerasjonskoding.
     </para>
 
   </sect2>
@@ -78,30 +78,30 @@
     <title>Intel</title>
 
     <para>
-      Intel provides open source drivers, but for sake of simplicity, all
-      the relevant open source drivers will be classified as one -
-      <emphasis>i915</emphasis>. There is another driver called <emphasis>
+      Intel tilbyr drivere med åpen kildekode, men for enkelhets skyld vil alle 
+      relevante drivere med åpen kildekode bli klassifisert som én -
+      <emphasis>i915</emphasis>. Det er en annen driver som heter <emphasis>
       uvesafb</emphasis>.
     </para>
 
     <para>
       <emphasis>i915</emphasis> (<xref linkend="mesa"/>):
-      This driver, or rather collection of drivers,
-      is for most Intel integrated and discrete GPUs. It is a single option
-      in the Linux kernel but has various Gallium3D and Vulkan drivers.
-      There is a good list on the <xref linkend="mesa"/> page under
-      <quote>Command Explanations</quote> that will explain what Gallium3D and
-      Vulkan driver you will need.
+      Denne driveren, eller rettere sagt samlingen av drivere, er for de fleste 
+      integrerte og separate GPU-er fra Intel. Den er et enkelt alternativ i 
+      Linuxkjernen, men har diverse Gallium3D og Vulkan drivere. Det finnes en 
+      god liste på <xref linkend="mesa"/> siden under
+      <quote>Parameterforklaringer</quote> som vil forklare hvilken Gallium3D 
+      og Vulkan driver du trenger.
     </para>
 
     <para>
-      <emphasis>uvesafb</emphasis> (not in this book):
-      This driver is for the Intel GMA 3600
-      series, a family of integrated video adapters based on the PowerVR
-      SGX 545 graphics core. This driver was in the kernel since 3.5 but
-      no longer since 4.15. This driver is not included in the book
-      because of its lack of use by most people, but has a good Arch Linux
-      wiki page at <ulink url="https://wiki.archlinux.org/title/Intel_GMA_3600"/>.
+      <emphasis>uvesafb</emphasis> (ikke i denne boken):
+      Denne driveren er for Intel GMA 3600 serien, en familie av integrerte 
+      skjermkort basert på PowerVR SGX 545 grafikkjernen. Denne driveren var i 
+      kjernen siden 3.5, men ikke lenger siden 4.15. Denne driveren er ikke 
+      inkludert i boken på grunn av manglende bruk av folk flest, men har en 
+      god Arch Linux wikiside på 
+      <ulink url="https://wiki.archlinux.org/title/Intel_GMA_3600"/>.
     </para>
 
   </sect2>
@@ -110,75 +110,75 @@
     <title>NVIDIA</title>
 
     <para>
-      The situation revolving around NVIDIA is more unfortunate than
-      the two vendors listed above and more complicated. NVIDIA does not
-      support open source drivers besides their own open source kernel
-      modules. Therefore performance with the open source driver,
-      <emphasis>Nouveau</emphasis>, is slightly worse than NVIDIA's proprietary
-      driver. Installing the proprietary driver can also be easier.
+      Situasjonen rundt NVIDIA er mer uheldig enn de to leverandørene som er 
+      nevnt ovenfor og mer komplisert. NVIDIA støtter ikke drivere med åpen 
+      kildekode, i tillegg til sine egne kjernemoduler med åpen kildekode. 
+      Derfor er ytelsen med driveren med åpen kildekode,
+      <emphasis>Nouveau</emphasis>, er litt dårligere enn NVIDIAs proprietære 
+      driver. Det kan også være enklere å installere den proprietære driveren.
     </para>
 
     <para>
       <emphasis>Nouveau</emphasis> (<xref linkend="mesa"/>):
-      This driver is open source but has generally worse performance than
-      <emphasis>NVIDIA</emphasis>. The driver is in the Linux kernel. It has
-      one Gallium3D driver, <computeroutput>nouveau</computeroutput>, and one
+      Denne driveren er åpen kildekode, men har generelt dårligere ytelse enn
+      <emphasis>NVIDIA</emphasis>. Driveren finnes i Linuxkjernen. Den har én 
+      Gallium3D driver, <computeroutput>nouveau</computeroutput>, og en
       Vulkan driver, <computeroutput>nouveau</computeroutput>
       <footnote><para>
-        The <computeroutput>nouveau</computeroutput> Vulkan driver is also
-        known as NVK, although the argument for NVK in
-        <parameter>-D vulkan-drivers=</parameter> is just
-        <computeroutput>nouveau</computeroutput> and does not have an alias.
-      </para></footnote>. The Gallium3D driver is known for its lackluster
-      performance. The Vulkan driver is much more performant. For this reason,
-      if you want to use <emphasis>Nouveau</emphasis>, it is highly recommended
-      to install the Vulkan driver as well the
-      <computeroutput>zink</computeroutput> Gallium3D driver so that OpenGL
-      instructions can be fed into the Vulkan driver.
+        <computeroutput>nouveau</computeroutput> Vulkan driver er også kjent 
+        som NVK, selv om argumentet for NVK i 
+        <parameter>-D vulkan-drivers=</parameter> er bare
+        <computeroutput>nouveau</computeroutput> og har ikke et alias.
+      </para></footnote>. Gallium3D driveren er kjent for sin svake ytelse. 
+      Vulkan driveren er mye mer effektiv. Av denne grunn, hvis du vil bruke 
+      <emphasis>Nouveau</emphasis>, anbefales det på det sterkeste å installere 
+      Vulkan driveren i tillegg til
+      <computeroutput>zink</computeroutput> Gallium3D driveren slik at 
+      OpenGL instruksjoner kan mates inn i Vulkan driveren.
     </para>
 
 <!--
     <para>
       <emphasis>NVK</emphasis> (<xref linkend="mesa"/>):
-      This driver is a Vulkan driver that is now fairly performant. It targets
-      Turing and later NVIDIA GPUs. It does provide much better performance
-      than <emphasis>Nouveau</emphasis> and is still improving. If you want to
-      compile this driver, you are going to need <xref linkend="rustc"/>, and
-      if you are doing multilib, are going to need the i686-unknown-linux-gnu
-      target. Also make sure to install <emphasis>Nouveau</emphasis> if you
-      want to install this driver.
+      Denne driveren er en Vulkan-driver som nå er ganske effektiv. Den er 
+      rettet mot Turing og senere NVIDIA GPU-er. Den gir mye bedre ytelse enn 
+      <emphasis>Nouveau</emphasis> og forbedres fortsatt. Hvis du vil kompilere 
+      denne driveren, trenger du <xref linkend="rustc"/>, og hvis du bruker 
+      multilib, trenger du målet i686-unknown-linux-gnu. Sørg også for å 
+      installere <emphasis>Nouveau</emphasis> hvis du vil installere denne 
+      driveren.
     </para>
 -->
 
 <!--
     <para>
       <emphasis>Zink</emphasis> (<xref linkend="mesa"/>):
-      This driver is a Gallium3D driver converting OpenGL calls to Vulkan
-      calls, drastically improving performance. It isn't specifically related
-      to <emphasis>Nouveau</emphasis> but as performance with
-      <emphasis>Nouveau</emphasis> is not the best,
-      using the <emphasis>Zink</emphasis> driver with
-      <emphasis>NVK</emphasis> is a great idea. You can find out how to use
-      <emphasis>Zink</emphasis> instead in <xref linkend="whatnow"/>.
+      Denne driveren er en Gallium3D-driver som konverterer OpenGL-kall til 
+      Vulkan-kall, noe som forbedrer ytelsen drastisk. Den er ikke spesifikt 
+      relatert til <emphasis>Nouveau</emphasis> men som ytelse med
+      <emphasis>Nouveau</emphasis> er ikke den beste, 
+      ved å bruke <emphasis>Zink</emphasis> driver med
+      <emphasis>NVK</emphasis> er en god idé. Du kan finne ut hvordan du bruker
+      <emphasis>Zink</emphasis> i stedet i <xref linkend="whatnow"/>.
     </para>
 -->
 
     <para>
       <emphasis>NVIDIA</emphasis> (<xref linkend="nvidia"/>):
-      This is the proprietary driver and the performance of this driver is
-      better than the open source alternative. It allows the use of NVIDIA's
-      CUDA project which is useful for hardware acceleration, improving
-      performance of games and workstation applications. This driver has a lot
-      of issues to this day but still provides better performance, thus its
-      installation is provided in this book. Firmware isn't needed as it is
-      provided by this driver.
+      Dette er den proprietære driveren, og ytelsen til denne driveren er bedre 
+      enn alternativet med åpen kildekode. Den tillater bruk av NVIDIAs CUDA 
+      prosjekt, som er nyttig for maskinvareakselerasjon og forbedring av 
+      ytelsen til spill og arbeidsstasjonsapplikasjoner. Denne driveren har 
+      mange problemer den dag i dag, men gir fortsatt bedre ytelse, og derfor er 
+      installasjonen beskrevet i denne boken. Fastvare er ikke nødvendig, da den 
+      leveres av denne driveren.
     </para>
 
     <para>
-      Summary: If you want good performance and care about workstation use
-      cases, install <emphasis>NVIDIA</emphasis>. If you don't want to use the
-      proprietary NVIDIA driver, use <emphasis>Nouveau</emphasis>. Installing
-      <computeroutput>zink</computeroutput> is a good idea, too.
+      Sammendrag: Hvis du ønsker god ytelse og bruker en arbeidsstasjoner 
+      installer <emphasis>NVIDIA</emphasis>. Hvis du ikke vil bruke den 
+      proprietære NVIDIA driveren, bruk <emphasis>Nouveau</emphasis>. 
+      Installering av <computeroutput>zink</computeroutput> er også en god idé.
     </para>
 
   </sect2>

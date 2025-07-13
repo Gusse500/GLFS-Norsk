@@ -18,11 +18,11 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to SPIRV-Tools</title>
+    <title>Introduksjon til SPIRV-Tools</title>
 
     <para>
-      The <application>SPIRV-Tools</application> package contains libraries
-      and utilities for processing SPIR-V modules.
+      <application>SPIRV-Tools</application> pakken inneholder biblioteker og 
+      verktøy for behandling av SPIR-V moduler.
     </para>
 
     &long-build-time;
@@ -30,41 +30,41 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&spirv-tools-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&spirv-tools-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&spirv-tools-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&spirv-tools-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">SPIRV-Tools Dependencies</bridgehead>
+    <bridgehead renderas="sect3">SPIRV-Tools Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="cmake"/> and
+      <xref linkend="cmake"/> og
       <xref linkend="spirv-headers"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of SPIRV-Tools</title>
+    <title>Installasjon av SPIRV-Tools</title>
 
     <note>
       <para>
-        This tarball
-        <filename>SPIRV-Tools-&spirv-tools-version;.tar.gz</filename> will
-        extract to the directory
+        Denne tarballen
+        <filename>SPIRV-Tools-&spirv-tools-version;.tar.gz</filename> vil
+        pakkes ut til mappen
         <filename class="directory">SPIRV-Tools-vulkan-sdk-&spirv-tools-version;</filename>.
       </para>
     </note>
 
     <para>
-      Install <application>SPIRV-Tools</application> by running the following
-      commands:
+      Installer <application>SPIRV-Tools</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -81,11 +81,11 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.
+      For å teste resultatene, utsted: <command>ninja test</command>.
     </para>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -93,11 +93,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of SPIRV-Tools</title>
+    <title>lib32 Installasjon av SPIRV-Tools</title>
 
     <para>
-      Install lib32-<application>SPIRV-Tools</application> by running the following
-      commands:
+      Installer lib32-<application>SPIRV-Tools</application> ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -115,7 +115,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr     \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -126,41 +126,41 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
     <para>
-      <parameter>-D SPIRV_WERROR=OFF</parameter>: This switch stops the build
-      system from treating warnings as errors.
+      <parameter>-D SPIRV_WERROR=OFF</parameter>: Denne bryteren hindrer 
+      byggesystemet i å behandle advarsler som feil.
     </para>
 
     <para>
-      <parameter>-D BUILD_SHARED_LIBS=ON</parameter>: This switch forces the
-      build system to install shared libraries instead of static libraries.
+      <parameter>-D BUILD_SHARED_LIBS=ON</parameter>: Denne bryteren tvinger 
+      byggesystemet å installere delte biblioteker i stedet for statiske biblioteker.
     </para>
     
     <para>
-      <parameter>-D SPIRV_TOOLS_BUILD_STATIC=OFF</parameter>: This switch
-      disables building static versions of the libraries.
+      <parameter>-D SPIRV_TOOLS_BUILD_STATIC=OFF</parameter>: Denne bryteren 
+      deaktiverer bygging av statiske versjoner av bibliotekene.
     </para>
 
     <para>
-      <parameter>-D SPIRV-Headers_SOURCE_DIR</parameter>: This switch tells the
-      build system that <xref linkend="spirv-headers" role="nodep"/> is
-      installed in /usr. This is needed since the build system tries to use an
-      internal copy by default.
+      <parameter>-D SPIRV-Headers_SOURCE_DIR</parameter>: Denne bryteren 
+      forteller byggesystemet at <xref linkend="spirv-headers" role="nodep"/> er
+      installert i /usr. Dette er nødvendig siden byggesystemet prøver å bruke 
+      en intern kopi som standard.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -172,7 +172,7 @@ ldconfig</userinput></screen>
           spirv-lint,
           spirv-objdump,
           spirv-opt,
-          spirv-reduce, and
+          spirv-reduce, og
           spirv-val
         </seg>
         <seg>
@@ -181,18 +181,18 @@ ldconfig</userinput></screen>
           libSPIRV-Tools-lint,
           libSPIRV-Tools-opt,
           libSPIRV-Tools-reduce,
-          libSPIRV-Tools-shared, and
+          libSPIRV-Tools-shared, og
           libSPIRV-Tools
         </seg>
         <seg>
-          /usr/include/spirv-tools and
+          /usr/include/spirv-tools og
           /usr/lib/cmake/SPIRV-Tools
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -200,7 +200,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-as</command></term>
         <listitem>
           <para>
-            creates a SPIR-V binary module from SPIR-V assembly text
+            oppretter en SPIR-V binærmodul fra SPIR-V assemblertekst
           </para>
           <indexterm zone="spirv-tools spirv-as">
             <primary sortas="b-spirv-as">spirv-as</primary>
@@ -212,7 +212,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-cfg</command></term>
         <listitem>
           <para>
-            shows the control flow graph in "dot" format
+            viser kontrollflytgrafen i "dot" format
           </para>
           <indexterm zone="spirv-tools spirv-cfg">
             <primary sortas="b-spirv-cfg">spirv-cfg</primary>
@@ -224,7 +224,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-dis</command></term>
         <listitem>
           <para>
-            disassembles a SPIR-V binary module
+            disassembler en SPIR-V binærmodul
           </para>
           <indexterm zone="spirv-tools spirv-dis">
             <primary sortas="b-spirv-dis">spirv-dis</primary>
@@ -236,7 +236,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-lesspipe.sh</command></term>
         <listitem>
           <para>
-            automatically disassembles a .SPV file for 'less'
+            disassembler automatisk en .SPV fil for 'less'
           </para>
           <indexterm zone="spirv-tools spirv-lesspipe.sh">
             <primary sortas="b-spirv-lesspipe.sh">spirv-lesspipe.sh</primary>
@@ -248,7 +248,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-link</command></term>
         <listitem>
           <para>
-            links SPIR-V binary files together
+            kobler SPIR-V binærfiler sammen
           </para>
           <indexterm zone="spirv-tools spirv-link">
             <primary sortas="b-spirv-link">spirv-link</primary>
@@ -260,7 +260,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-lint</command></term>
         <listitem>
           <para>
-            checks a SPIR-V binary module for errors
+            sjekker en SPIR-V binærmodul for feil
           </para>
           <indexterm zone="spirv-tools spirv-lint">
             <primary sortas="b-spirv-lint">spirv-lint</primary>
@@ -272,7 +272,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-objdump</command></term>
         <listitem>
           <para>
-            dumps information from a SPIR-V binary
+            dumper informasjon fra en SPIR-V binærfil
           </para>
           <indexterm zone="spirv-tools spirv-objdump">
             <primary sortas="b-spirv-objdump">spirv-objdump</primary>
@@ -284,7 +284,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-opt</command></term>
         <listitem>
           <para>
-            performs optimizations on SPIR-V binary files
+            utfører optimaliseringer på SPIR-V binærfiler
           </para>
           <indexterm zone="spirv-tools spirv-opt">
             <primary sortas="b-spirv-opt">spirv-opt</primary>
@@ -296,7 +296,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-reduce</command></term>
         <listitem>
           <para>
-            reduces a SPIR-V binary file
+            reduserer en SPIR-V binærfil
           </para>
           <indexterm zone="spirv-tools spirv-reduce">
             <primary sortas="b-spirv-reduce">spirv-reduce</primary>
@@ -308,7 +308,7 @@ ldconfig</userinput></screen>
         <term><command>spirv-val</command></term>
         <listitem>
           <para>
-            validates a SPIR-V binary file
+            validerer en SPIR-V binærfil
           </para>
           <indexterm zone="spirv-tools spirv-val">
             <primary sortas="b-spirv-val">spirv-val</primary>
@@ -320,7 +320,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libSPIRV-Tools</filename></term>
         <listitem>
           <para>
-            contains functions for processing SPIR-V modules
+            inneholder funksjoner for behandling av SPIR-V moduler
           </para>
           <indexterm zone="spirv-tools libSPIRV-Tools">
             <primary sortas="c-libSPIRV-Tools">libSPIRV-Tools</primary>
