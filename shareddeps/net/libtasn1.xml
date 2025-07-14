@@ -19,22 +19,22 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libtasn1</title>
+    <title>Introduksjon til libtasn1</title>
 
     <para>
-      <application>libtasn1</application> is a highly portable C library
-      that encodes and decodes DER/BER data following an ASN.1 schema.
+      <application>libtasn1</application> er et svært portabelt C bibliotek 
+      som koder og dekoder DER/BER data etter et ASN.1 skjema.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libtasn1-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&libtasn1-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&libtasn1-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&libtasn1-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -42,30 +42,30 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libtasn1</title>
+    <title>Installasjon av libtasn1</title>
 
     <para>
-      Install <application>libtasn1</application> by running the
-      following commands:
+      Installer <application>libtasn1</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr --disable-static &amp;&amp;
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem>
-      user:
+      Nå, som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      You can install the API documentation using the following command as the
-      <systemitem class="username">root</systemitem> user:
+      Du kan installere API dokumentasjonen ved å bruke følgende kommando som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make -C doc/reference install-data-local</userinput></screen>
@@ -73,11 +73,11 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of libtasn1</title>
+    <title>lib32 Installasjon av libtasn1</title>
     
     <para>
-      Install <application>lib32-libtasn1</application>
-      by running the following commands:
+      Installer <application>lib32-libtasn1</application>
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -91,7 +91,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Now as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -102,7 +102,7 @@ ldconfig</userinput></screen>
   </sect2>
   
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
@@ -111,28 +111,28 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
-          asn1Coding, asn1Decoding and asn1Parser
+          asn1Coding, asn1Decoding og asn1Parser
         </seg>
         <seg>
           libtasn1
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -140,7 +140,7 @@ ldconfig</userinput></screen>
         <term><command>asn1Coding</command></term>
         <listitem>
           <para>
-            is an ASN.1 DER encoder
+            er en ASN.1 DER koder
           </para>
           <indexterm zone="libtasn1 asn1Coding">
             <primary sortas="b-asn1Coding">asn1Coding</primary>
@@ -152,7 +152,7 @@ ldconfig</userinput></screen>
         <term><command>asn1Decoding</command></term>
         <listitem>
           <para>
-            is an ASN.1 DER decoder
+            er en ASN.1 DER dekoder
           </para>
           <indexterm zone="libtasn1 asn1Decoding">
             <primary sortas="b-asn1Decoding">asn1Decoding</primary>
@@ -164,7 +164,7 @@ ldconfig</userinput></screen>
         <term><command>asn1Parser</command></term>
         <listitem>
           <para>
-            is an ASN.1 syntax tree generator for
+            er en ASN.1 syntakstregenerator for
             <application>libtasn1</application>
           </para>
           <indexterm zone="libtasn1 asn1Parser">
@@ -177,8 +177,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libtasn1</filename></term>
         <listitem>
           <para>
-            is a library for Abstract Syntax Notation One (ASN.1) and
-            Distinguish Encoding Rules (DER) manipulation
+            er et bibliotek for manipulering av Abstract Syntax Notation One 
+            (ASN.1) og Distinguished Encoding Rules (DER).
           </para>
           <indexterm zone="libtasn1 libtasn1-lib">
             <primary sortas="c-libtasn1">libtasn1</primary>

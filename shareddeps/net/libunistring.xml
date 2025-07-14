@@ -19,25 +19,25 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libunistring</title>
+    <title>Introduksjon til libunistring</title>
 
     <para>
-      <application>libunistring</application> is a library that provides
-      functions for manipulating Unicode strings and for manipulating C
-      strings according to the Unicode standard.
-    </para>
+      <application>libunistring</application> er et bibliotek som tilbyr 
+      funksjoner for å manipulere Unicode strenger og for å manipulere 
+      C strenger i henhold til Unicode standarden.
+</para>
 
     &long-build-time;
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libunistring-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&libunistring-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&libunistring-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&libunistring-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -45,11 +45,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libunistring</title>
+    <title>Installasjon av libunistring</title>
 
     <para>
-      Install <application>libunistring</application> by running the following
-      commands:
+      Installer <application>libunistring</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr    \
@@ -59,11 +59,11 @@
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -71,11 +71,11 @@ make</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>lib32 Installation of lib32-libunistring</title>
+    <title>lib32 Installasjon av lib32-libunistring</title>
 
     <para>
-      Install <application>lib32-libunistring</application>
-      by running the following commands:
+      Installer <application>lib32-libunistring</application>
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -89,7 +89,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Now as the <systemitem class="username">root</systemitem> user:
+      Nå som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -100,7 +100,7 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
@@ -109,25 +109,25 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
-        <seg>None</seg>
+        <seg>Ingen</seg>
         <seg>libunistring</seg>
         <seg>
-          /usr/include/unistring and
+          /usr/include/unistring og
           /usr/share/doc/libunistring-&libunistring-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -135,7 +135,7 @@ ldconfig</userinput></screen>
         <term><command>libunistring</command></term>
         <listitem>
           <para>
-            provides the unicode string library API
+            tilbyr Unicode strengbibliotekets API
           </para>
           <indexterm zone="libunistring libunistring-lib">
             <primary sortas="c-libunistring-lib">libunistring</primary>
