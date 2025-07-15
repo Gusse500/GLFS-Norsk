@@ -20,81 +20,81 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Python 3</title>
+    <title>Introduksjon til Python 3</title>
 
     <para>
-      The <application>Python 3</application> package contains the
-      <application>Python</application> development environment.
-      This is useful for object-oriented programming, writing scripts,
-      prototyping large programs or developing entire applications.
+      <application>Python 3</application> pakken inneholder
+      <application>Python</application> utviklingsmiljø. Dette er nyttig 
+      for objektorientert programmering, skriptskriving, prototyping av store 
+      programmer eller utvikling av hele applikasjoner.
     </para>
 
     <note>
       <para>
-        <application>Python 3</application> was installed in LFS.
-        The only reason to rebuild it here is if <xref linkend="sqlite"/> is
-        installed or if upgrading.
+        <application>Python 3</application> ble installert i LFS. Den eneste 
+        grunnen til å gjenoppbygge det her er hvis <xref linkend="sqlite"/> er 
+        installert eller hvis du oppgraderer.
       </para>
     </note>
 
     <important>
       <para>
-         If upgrading to a new Python-3 minor version (for example,
-         from Python-3.11.x to Python-3.12.0), you will need to reinstall
-         any Python3 modules you have installed.  You should also
-         reinstall packages that generate Python3 modules.
+         Hvis du oppgraderer til en ny Python-3-minor versjon (for eksempel, 
+         fra Python-3.11.x til Python-3.12.0), må du installere alle Python3 
+         moduler du har installert på nytt. Du bør også installere pakker som 
+         genererer Python3 moduler på nytt.
       </para>
 
-      <para>Before you upgrade, you can get a list of modules installed
-        with <command>pip3 list</command>.  The list may be incomplete as
-        some Python modules are not installed with <command>pip3</command>,
-        for example the <literal>xcbgen</literal> module installed by
-        <xref role='nodep' linkend='xcb-proto'/>.  Use <command>ls
+      <para>Før du oppgraderer, kan du få en liste over installerte moduler
+        med <command>pip3 list</command>.  Listen kan være ufullstendig ettersom 
+        noen Python moduler ikke er installert med <command>pip3</command>,
+        for eksempel <literal>xcbgen</literal> modulen installert av
+        <xref role='nodep' linkend='xcb-proto'/>.  Bruk <command>ls
         /usr/lib/python3.<replaceable>minor</replaceable>/site-packages</command>
-        for a comprehensive list.
+        for en uttømmende liste.
       </para>
 
       <para>
-         The Python modules from LFS will also have to be reinstalled:
+         Python modulene fra LFS må også installeres på nytt.:
          <ulink url="&lfs-root;/chapter08/flit-core.html">flit-core</ulink>,
          <ulink url="&lfs-root;/chapter08/wheel.html">wheel</ulink>,
          <ulink url="&lfs-root;/chapter08/setuptools.html">setuptools</ulink>,
          <ulink url="&lfs-root;/chapter08/meson.html">meson</ulink>,
          <ulink url="&lfs-root;/chapter08/markupsafe.html">MarkupSafe</ulink>,
-         and <ulink url="&lfs-root;/chapter08/jinja2.html">Jinja2</ulink>.
+         og <ulink url="&lfs-root;/chapter08/jinja2.html">Jinja2</ulink>.
       </para>
     </important>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&python3-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&python3-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&python3-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&python3-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Python 3 Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Python 3 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="sqlite"/> (required if building <ulink
-      url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink> or <ulink
+      <xref linkend="sqlite"/> (påkrevd hvis det bygges <ulink
+      url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink> eller <ulink
       url="&blfs-svn;/xsoft/thunderbird.html">Thunderbird</ulink>)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Python 3</title>
+    <title>Installasjon av Python 3</title>
 
     <para>
-      Install <application>Python 3</application> by running the following
-      commands:
+      Installer <application>Python 3</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>CXX="/usr/bin/g++"               \
@@ -105,7 +105,7 @@
 make</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -113,87 +113,89 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <para>
-      <command> CXX="/usr/bin/g++" ./configure ...</command>: Avoid an annoying
-      message during configuration.
+      <command> CXX="/usr/bin/g++" ./configure ...</command>: Unngå en 
+      irriterende melding under konfigurasjonen.
     </para>
 
     <para>
-      <parameter>--with-system-expat</parameter>: This switch enables linking
-      against the system version of <application>Expat</application>.
+      <parameter>--with-system-expat</parameter>: Denne bryteren aktiverer 
+      kobling mot systemversjonen av <application>Expat</application>.
     </para>
 
 <!--
     <para>
-      <parameter>- -with-ensurepip=yes</parameter> : This switch enables building
-      the <command>pip</command> and <command>setuptools</command> packaging
-      programs. <command>setuptools</command> is needed for building some
-      Python modules.
+      <parameter>- -with-ensurepip=yes</parameter> : Denne bryteren aktiverer 
+      bygging av <command>pip</command> og <command>setuptools</command> 
+      pakkeprogrammer. <command>setuptools</command> er nødvendig for å bygge 
+      noen Python moduler.
     </para>
 -->
 
     <para>
-      <parameter>--enable-optimizations</parameter>: This switch enables
-      stable, but expensive, optimizations.
-    </para>
+      <parameter>--enable-optimizations</parameter>: Denne bryteren aktiverer 
+      stabile, men dyre, optimaliseringer.
+</para>
 
     <para>
-      <option>--with-lto</option>: This optional switch enables thick Link
-      Time Optimization. Unusually, it creates a much larger <filename
+      <option>--with-lto</option>: Denne valgfrie bryteren aktiverer tykk Link 
+      Time Optimization. Uvanlig nok skaper den en mye større <filename
       class="libraryfile">/usr/lib/python&python3-majorver;/config-&python3-majorver;-&lt;arch&gt;-linux-gnu/libpython&python3-majorver;.a</filename>
-      with a small increase in the time to compile
-      <application>Python</application>. Run-time results do not appear to show
-      any benefit from doing this.
+      med en liten økning i kompileringstiden
+      <application>Python</application>. Kjøretidsresultatene ser ikke ut til å 
+      vise noen fordeler ved å gjøre dette.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
+<!--
           2to3 (symlink) and
           2to3-&python3-majorver;,
+-->
 
           <!--
           easy_install-&python3-majorver;,
           -->
 
-          idle3 (symlink) and
+          idle3 (symbollenke) og
           idle&python3-majorver;,
 
           pip3 and
           pip&python3-majorver;,
 
-          pydoc3 (symlink) and
+          pydoc3 (symbollenke) og
           pydoc&python3-majorver;,
 
-          python3 (symlink) and
-          python&python3-majorver;, and
+          python3 (symbollenke) og
+          python&python3-majorver;, og
 
-          python3-config (symlink) and
+          python3-config (symbollenke) og
           python&python3-majorver;-config
         </seg>
         <seg>
-          libpython&python3-majorver; and libpython3
+          libpython&python3-majorver; og libpython3
         </seg>
         <seg>
-          /usr/include/python&python3-majorver; and
+          /usr/include/python&python3-majorver; og
           /usr/lib/python&python3-majorver;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
       <!--
@@ -201,8 +203,8 @@ make</userinput></screen>
         <term><command>2to3</command></term>
         <listitem>
           <para>
-            is designed to assist in the transition between python2 and python3
-            by automatically converting code to be Python3 compatible.
+            er utviklet for å hjelpe til med overgangen mellom python2 og python3 
+            ved automatisk å konvertere kode slik at den er kompatibel med Python3.
           </para>
           <indexterm zone="python3 2to3">
             <primary sortas="b-2to3">2to3</primary>
@@ -215,8 +217,8 @@ make</userinput></screen>
         <term><command>easy_install</command></term>
         <listitem>
           <para>
-            is a frontend to pip3 to make it easier to configure python modules
-            through the PIP package manager
+            er et brukergrensesnitt til pip3 for å gjøre det enklere å 
+            konfigurere Python moduler gjennom PIP pakkebehandleren
           </para>
           <indexterm zone="python3 easy_install">
             <primary sortas="python3 easy_install">easy_install</primary>
@@ -228,10 +230,10 @@ make</userinput></screen>
         <term><command>idle3</command></term>
         <listitem>
           <para>
-            is a wrapper script that opens a <application>Python</application>
-            aware GUI editor. For this script to run, you must have installed
-            <application>Tk</application> before Python so that the Tkinter
-            Python module is built
+            er et innpakningsskript som åpner en <application>Python</application>
+            bevisst GUI-editor. For at dette skriptet skal kjøre, må du ha installert
+            <application>Tk</application> før Python slik at Tkinter Python 
+            modulen er bygget
           </para>
           <indexterm zone="python3 idle3">
             <primary sortas="b-idle3">idle3</primary>
@@ -243,8 +245,8 @@ make</userinput></screen>
         <term><command>pydoc3</command></term>
         <listitem>
           <para>
-            is the <application>Python</application> documentation
-            tool
+            er <application>Python</application> 
+            dokumentasjonsverktøy
           </para>
           <indexterm zone="python3 pydoc3">
             <primary sortas="b-pydoc3">pydo3c</primary>
@@ -256,8 +258,8 @@ make</userinput></screen>
         <term><command>python3</command></term>
         <listitem>
           <para>
-            is an interpreted, interactive, object-oriented programming
-            language
+            er et tolket, interaktivt, objektorientert 
+            programmeringsspråk
           </para>
           <indexterm zone="python3 python3-prog">
             <primary sortas="b-python3">python3</primary>
@@ -269,8 +271,8 @@ make</userinput></screen>
         <term><command>python&python3-majorver;</command></term>
         <listitem>
           <para>
-            is a version-specific name for the <command>python</command>
-            program
+            er et versjonsspesifikt navn for <command>python</command>
+            programmet
           </para>
           <indexterm zone="python3 python-ver">
             <primary sortas="b-python&python3-majorver;">python&python3-majorver;</primary>
@@ -282,8 +284,8 @@ make</userinput></screen>
         <term><command>pyvenv</command></term>
         <listitem>
           <para>
-            creates virtual <application>Python</application> environments in
-            one or more target directories.
+            skaper virtuelle <application>Python</application> miljøer i én 
+			eller flere målmapper.
           </para>
           <indexterm zone="python3 pyvenv">
             <primary
