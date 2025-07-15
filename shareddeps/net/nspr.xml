@@ -18,22 +18,22 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to NSPR</title>
+    <title>Introduksjon til NSPR</title>
 
     <para>
-      <application>Netscape Portable Runtime</application> (NSPR) provides a
-      platform-neutral API for system level and libc like functions.
+      <application>Netscape Portable Runtime</application> (NSPR) tilbyr et 
+      plattformnøytralt API for systemnivå og libc lignende funksjoner.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&nspr-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&nspr-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&nspr-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&nspr-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -41,10 +41,10 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of NSPR</title>
+    <title>Installasjon av NSPR</title>
 
     <para>
-      Install <application>NSPR</application> by running the following commands:
+      Installer <application>NSPR</application> ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>cd nspr &amp;&amp;
@@ -60,24 +60,24 @@ sed -i 's|$(LIBRARY) ||'  config/rules.mk         &amp;&amp;
 make</userinput></screen>
 
     <para>
-      The test suite is designed for testing changes to nss or nspr and is
-      not particularly useful for checking a released version (e.g. it needs
-      to be run on a non-optimized build with both nss and nspr directories
-      existing alongside each other).
+      Testpakken er designet for å teste endringer i nss eller nspr og er ikke 
+      spesielt nyttig for å sjekke en utgitt versjon (f.eks. må den kjøres på 
+      en ikke-optimalisert versjon med både nss og nspr mapper som eksisterer 
+      side om side).
     </para>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-     <title>lib32 Installation of NSPR</title>
+     <title>lib32 Installasjon av NSPR</title>
 
      <para>
-       Install <application>lib32-NSPR</application> by running the following commands:
+       Installer <application>lib32-NSPR</application> ved å kjøre følgende kommandoer:
      </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -93,7 +93,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -104,59 +104,59 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
       <command>sed -ri '/^RELEASE/s/^/#/' pr/src/misc/Makefile.in</command>:
-      This sed disables installing two unneeded scripts.
+      Denne sed-en deaktiverer installasjon av to unødvendige skript.
     </para>
 
     <para>
-      <command>sed -i 's#$(LIBRARY) ##' config/rules.mk</command>: This sed disables
-      installing the static libraries.
+      <command>sed -i 's#$(LIBRARY) ##' config/rules.mk</command>: Denne sed 
+      deaktiverer installasjon av statiske biblioteker.
     </para>
 
     <para>
-      <parameter>--with-mozilla</parameter>: This parameter adds Mozilla support
-      to the libraries (required if you want to build any other Mozilla
-      products and link them to these libraries).
+      <parameter>--with-mozilla</parameter>: Denne parameteren legger til 
+      Mozilla støtte til bibliotekene (påkrevd hvis du vil bygge andre Mozilla 
+      produkter og koble dem til disse bibliotekene).
     </para>
 
     <para>
-      <parameter>--with-pthreads</parameter>: This parameter forces use of the
-      system pthread library.
+      <parameter>--with-pthreads</parameter>: Denne parameteren fremtvinger 
+      bruk av systemets pthread bibliotek.
     </para>
 
     <para>
-      <parameter>--enable-64bit</parameter>: The --enable-64bit parameter is
-      <emphasis>required</emphasis> on an x86_64 system to prevent
-      <command>configure</command> failing with a claim that this is a system
-      without pthread support.
+      <parameter>--enable-64bit</parameter>: --enable-64bit parameteren er
+      <emphasis>påkrevd</emphasis> på et x86_64 system for å forhindre at
+      <command>configure</command> mislykkes med en påstand om at dette er et 
+      system uten pthread støtte.
     </para>
 
     <para>
-      <parameter>--disable-64bit</parameter>: This parameter disables building
-      for 64-bit in the lib32 installation.
+      <parameter>--disable-64bit</parameter>: Denne parameteren deaktiverer 
+      bygging for 64-bit i lib32 installasjonen.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
           nspr-config
         </seg>
         <seg>
-          libnspr4, libplc4, and libplds4
+          libnspr4, libplc4, og libplds4
         </seg>
         <seg>
           /usr/include/nspr
@@ -165,7 +165,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -173,7 +173,7 @@ ldconfig</userinput></screen>
         <term><command>nspr-config</command></term>
         <listitem>
           <para>
-            provides compiler and linker options to other packages that use
+            gir kompilator og lenke alternativer til andre pakker som bruker
             <application>NSPR</application>
           </para>
           <indexterm zone="nspr nspr-config">
@@ -186,10 +186,10 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libnspr4</filename></term>
         <listitem>
           <para>
-            contains functions that provide platform independence for non-GUI
-            operating system facilities such as threads, thread synchronization,
-            normal file and network I/O, interval timing and calendar time,
-            basic memory management and shared library linking
+            inneholder funksjoner som gir plattformuavhengighet for ikke-GUI 
+            operativsystemfasiliteter som tråder, trådsynkronisering, normal fil 
+            og nettverks I/O, intervalltiming og kalendertid, grunnleggende 
+            minnehåndtering og kobling av delte biblioteker
           </para>
           <indexterm zone="nspr libnspr4">
             <primary sortas="c-libnspr4">libnspr4</primary>
@@ -201,8 +201,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libplc4</filename></term>
         <listitem>
           <para>
-            contains functions that implement many of the features offered by
-            libnspr4
+            inneholder funksjoner som implementerer mange av funksjonene som 
+            tilbys av libnspr4
           </para>
           <indexterm zone="nspr libplc4">
             <primary sortas="c-libplc4">libplc4</primary>
@@ -214,7 +214,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libplds4</filename></term>
         <listitem>
           <para>
-            contains functions that provide data structures
+            inneholder funksjoner som gir datastrukturer
           </para>
           <indexterm zone="nspr libplds4">
             <primary sortas="c-libplds4">libplds4</primary>

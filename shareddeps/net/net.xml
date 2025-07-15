@@ -8,11 +8,11 @@
 <chapter id="net">
   <?dbhtml filename="net.html"?>
 
-  <title>Networking</title>
+  <title>Nettverksbygging</title>
 
   <para>
-    This chapter covers networking/internet dependencies and setup that
-    packages later in this book may depend on or are useful in their own right.
+    Dette kapittelet dekker nettverks-/internettavhengigheter og oppsett som 
+    pakker senere i denne boken kan være avhengige av eller er nyttige i seg selv.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="netconnect.xml"/>
