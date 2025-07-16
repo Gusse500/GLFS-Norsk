@@ -22,7 +22,7 @@
     <title>Introduksjon til Wget</title>
 
     <para>
-      <application>Wget</application> Pakken inneholder et verktøy som er 
+      <application>Wget</application> pakken inneholder et verktøy som er 
       nyttig for ikke-interaktiv nedlasting av filer fra nettet.
     </para>
 

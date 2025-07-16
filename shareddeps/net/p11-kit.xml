@@ -19,11 +19,11 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to p11-kit</title>
+    <title>Introduksjon til p11-kit</title>
 
     <para>
-      The <application>p11-kit</application> package provides a way to load and
-      enumerate PKCS #11 (a Cryptographic Token Interface Standard) modules.
+      <application>p11-kit</application> pakken gir en måte å laste inn og 
+      liste PKCS #11 moduler (en standard for kryptografisk tokengrensesnitt).
     </para>
 
     &long-build-time;
@@ -31,43 +31,43 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&p11-kit-download-http;"/>
+          Nedlasting (HTTP): <ulink url="&p11-kit-download-http;"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Download (FTP): <ulink url="&p11-kit-download-ftp;"/>
+          Nedlasting (FTP): <ulink url="&p11-kit-download-ftp;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">p11-kit Dependencies</bridgehead>
+    <bridgehead renderas="sect3">p11-kit Avhengigheter</bridgehead>
 
     <!-- There is a check for libsystemd. It seems to install a systemd service
     in /usr/lib/systemd/user.-->
-    <bridgehead renderas="sect4">Required (for <xref linkend="steam"/>, otherwise recommended)</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd (for <xref linkend="steam"/>, ellers anbefalt)</bridgehead>
     <para role="required">
-       <xref linkend="libtasn1"/> and <xref role="runtime" linkend="nss"/>
+       <xref linkend="libtasn1"/> og <xref role="runtime" linkend="nss"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of p11-kit</title>
+    <title>Installasjon av p11-kit</title>
 
     <!-- https://github.com/p11-glue/p11-kit/pull/535
          The issue causes test failures in glib-networking and libsoup 
          Fixed in version 0.25.1
 
     <para>
-      Fix an issue causing some PKCS 11 modules fail to load:
+      Fiks et problem som forårsaket at noen PKCS 11 moduler ikke lastes inn:
     </para>
 
 <screen><userinput>sed 's/if (gi/&amp; \&amp;\&amp; gi != C_GetInterface/' \
     -i p11-kit/modules.c</userinput></screen>-->
 
     <para>
-      Prepare the distribution specific anchor hook:
+      Forbered den distribusjonsspesifikke ankerkroken:
     </para>
 
 <screen><userinput>sed '20,$ d' -i trust/trust-extract-compat &amp;&amp;
@@ -81,8 +81,8 @@ cat &gt;&gt; trust/trust-extract-compat &lt;&lt; "EOF"
 EOF</userinput></screen>
 
     <para>
-      Install <application>p11-kit</application> by running the following
-      commands:
+      Installer <application>p11-kit</application> ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir p11-build &amp;&amp;
@@ -96,11 +96,11 @@ meson setup ..            \
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>LC_ALL=C ninja test</command>.
+      For å teste resultatene, utsted: <command>LC_ALL=C ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
@@ -111,11 +111,11 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
 
 <!--
   <sect2>
-    <title>lib32 Installation of p11-kit</title>
+    <title>lib32 Installasjon av p11-kit</title>
 
     <para>
-      Install <application>lib32-p11-kit</application>
-      by running the following commands:
+      Installer <application>lib32-p11-kit</application>
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -131,7 +131,7 @@ meson setup ..                                   \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -143,32 +143,32 @@ ldconfig</userinput></screen>
 -->
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D trust_paths=/etc/pki/anchors</parameter>: this switch
-      sets the location of trusted certificates used by libp11-kit.so.
+      <parameter>-D trust_paths=/etc/pki/anchors</parameter>: denne bryteren 
+      angir plasseringen til klarerte sertifikater som brukes av libp11-kit.so.
     </para>
 
     <para>
-      <option>-D hash_impl=freebl</option>: Use this switch if you want to
-      use the Freebl library from <application>NSS</application> for SHA1 and
+      <option>-D hash_impl=freebl</option>: Bruk denne bryteren hvis du vil 
+      bruke Freebl biblioteket fra <application>NSS</application> for SHA1 og
       MD5 hashing.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring p11-kit</title>
+    <title>Konfigurere p11-kit</title>
 
     <para>
-      Make system CAs available transparently to NSS aware
-      applications by running the following commands as the
-      <systemitem class="username">root</systemitem> user:
+      Gjør systemets CA-er tilgjengelige transparent for NSS bevisste 
+      applikasjoner ved å kjøre følgende kommandoer som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so</userinput></screen>
@@ -176,32 +176,32 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          p11-kit, trust, and update-ca-certificates
+          p11-kit, trust, og update-ca-certificates
         </seg>
         <seg>
-          libp11-kit and p11-kit-proxy
+          libp11-kit og p11-kit-proxy
         </seg>
         <seg>
           /etc/pkcs11,
           /usr/include/p11-kit-1,
           /usr/lib/pkcs11,
-          /usr/libexec/p11-kit, and
+          /usr/libexec/p11-kit, og
           /usr/share/p11-kit
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -209,8 +209,8 @@ ldconfig</userinput></screen>
         <term><command>p11-kit</command></term>
         <listitem>
           <para>
-            is a command line tool that can be used to perform operations
-            on PKCS#11 modules configured on the system
+            er et kommandolinjeverktøy som kan brukes til å utføre operasjoner 
+            på PKCS#11 moduler som er konfigurert på systemet
           </para>
           <indexterm zone="p11-kit p11-kit-prog">
             <primary sortas="b-p11-kit">p11-kit</primary>
@@ -222,8 +222,8 @@ ldconfig</userinput></screen>
         <term><command>trust</command></term>
         <listitem>
           <para>
-            is a command line tool to examine and modify the shared trust
-            policy store
+            er et kommandolinjeverktøy for å undersøke og endre det delte 
+            tillitssertifikatlageret
           </para>
           <indexterm zone="p11-kit trust">
             <primary sortas="b-trust">trust</primary>
@@ -235,12 +235,12 @@ ldconfig</userinput></screen>
         <term><command>update-ca-certificates</command></term>
         <listitem>
           <para>
-            is a command line tool to both extract local certificates from an
-            updated anchor store, and regenerate all anchors and certificate
-            stores on the system. This is done unconditionally on BLFS using
-            the <parameter>--force</parameter> and <parameter>--get</parameter>
-            flags to <command>make-ca</command> and should likely not be used
-            for automated updates
+            er et kommandolinjeverktøy for både å trekke ut lokale sertifikater 
+            fra et oppdatert ankerlager, og regenerere alle ankere og sertifikatlagre 
+            på systemet. Dette gjøres ubetinget på BLFS ved hjelp av
+            <parameter>--force</parameter> og <parameter>--get</parameter>
+            flagg til <command>make-ca</command> og bør sannsynligvis ikke 
+            brukes til automatiske oppdateringer
           </para>
           <indexterm zone="p11-kit update-ca-certificates">
             <primary sortas="b-update-ca-certificates">update-ca-certificates</primary>
@@ -252,8 +252,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libp11-kit</filename></term>
         <listitem>
           <para>
-            contains functions used to coordinate initialization and
-            finalization of any PKCS#11 module
+            inneholder funksjoner som brukes til å koordinere initialisering 
+            og ferdigstillelse av enhver PKCS#11 modul
           </para>
           <indexterm zone="p11-kit libp11-kit">
             <primary sortas="c-libp11-kit">libp11-kit</primary>
@@ -265,7 +265,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">p11-kit-proxy</filename></term>
         <listitem>
           <para>
-            is the PKCS#11 proxy module
+            er PKCS#11 proxy modulen
           </para>
           <indexterm zone="p11-kit p11-kit-proxy">
             <primary sortas="c-p11-kit-proxy">p11-kit-proxy</primary>
