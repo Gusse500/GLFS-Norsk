@@ -25,7 +25,7 @@
       <title>Introduksjon til libvdpau</title>
 
       <para>
-        <application>libvdpau</application> pakken inneholder et bibliotek 
+        libvdpau pakken inneholder et bibliotek 
         som implementerer VDPAU biblioteket.
       </para>
 
@@ -101,7 +101,7 @@
       <title>Installasjon av libvdpau</title>
 
       <para>
-        Installer <application>libvdpau</application> ved å kjøre følgende 
+        Installer libvdpau ved å kjøre følgende 
         kommandoer:
       </para>
 
@@ -130,7 +130,7 @@ ninja</userinput></screen>
       <title>lib32 Installasjon av libvdpau</title>
 
       <para>
-        Installer lib32-<application>libvdpau</application> ved å kjøre følgende 
+        Installer lib32-libvdpau ved å kjøre følgende 
         kommandoer:
       </para>
 

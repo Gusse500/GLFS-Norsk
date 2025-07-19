@@ -22,7 +22,7 @@
     <title>Introduction to LAME</title>
 
     <para>
-      The <application>LAME</application> package contains an MP3
+      The LAME package contains an MP3
       encoder and optionally, an MP3 frame analyzer. This is useful
       for creating and analyzing compressed audio files.
     </para>
@@ -64,7 +64,7 @@
 <screen><userinput>sed -i -e 's/^\(\s*hardcode_libdir_flag_spec\s*=\).*/\1/' configure</userinput></screen>
 
     <para>
-      Install <application>LAME</application> by running
+      Install LAME by running
       the following commands:
     </para>
 
@@ -91,7 +91,7 @@ make</userinput></screen>
     <title>lib32 Installation of LAME</title>
 
     <para>
-      Install lib32-<application>LAME</application> by running
+      Install lib32-LAME by running
       the following commands:
     </para>
 

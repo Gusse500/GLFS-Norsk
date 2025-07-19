@@ -21,8 +21,8 @@
     <title>Introduksjon til Cython</title>
 
     <para>
-      <application>Cython</application> pakken inneholder en kompilator for å 
-      skrive C utvidelser for <application>Python</application> språket.
+      Cython pakken inneholder en kompilator for å 
+      skrive C utvidelser for Python språket.
     </para>
 
     &long-build-time;
@@ -91,7 +91,7 @@
         <term><command>cydbg</command></term>
         <listitem>
           <para>
-            er <application>Cython</application> feilsøkingsverktøy
+            er Cython feilsøkingsverktøy
           </para>
           <indexterm zone="cython cydbg">
             <primary sortas="b-cydbg">cydbg</primary>
@@ -103,8 +103,8 @@
         <term><command>cython</command></term>
         <listitem>
           <para>
-            er en kompilator for kode skrevet i <application>Cython
-            </application> språket. Den sender ut et C/C++ program som kan 
+            er en kompilator for kode skrevet i Cython
+             språket. Den sender ut et C/C++ program som kan 
             kompileres med en C/C++ kompilator
           </para>
           <indexterm zone="cython cython-bin">
@@ -117,9 +117,9 @@
         <term><command>cythonize</command></term>
         <listitem>
           <para>
-            er en kompilator for kode skrevet i <application>Cython
-            </application> språket. Den sender ut en utvidelsesmodul som kan 
-            importeres direkte fra <application>Python</application>
+            er en kompilator for kode skrevet i Cython
+             språket. Den sender ut en utvidelsesmodul som kan 
+            importeres direkte fra Python
           </para>
           <indexterm zone="cython cythonize">
             <primary sortas="b-cythonize">cythonize</primary>

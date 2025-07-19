@@ -65,19 +65,19 @@
     </warning>
 
     <para>
-      For å teste <application>Xorg</application> installasjon, utsted
+      For å teste Xorg installasjon, utsted
       <command>startx</command>. Denne kommandoen åpner et rudimentær 
       vindusbehandling kalt <emphasis>twm</emphasis> med tre xterm vinduer og 
       ett xclock vindu. Xterm vinduet øverst til venstre er en innloggingsterminal 
       og kjøre <emphasis>exit</emphasis> fra denne terminalen vil gå ut av 
-      <application>X Window</application> økten. Det tredje xterm vinduet kan 
+      X Window økten. Det tredje xterm vinduet kan 
       være skjult på systemet ditt av de to andre xtermene.
     </para>
 
     <note>
       <para>
-        Ved testing av <application>Xorg</application> med
-        <application>twm</application> vindusbehandleren, vil det være flere 
+        Ved testing av Xorg med
+        twm vindusbehandleren, vil det være flere 
         advarsler i Xorg loggfilen, <!--<filename revision="sysv">
         /var/log/Xorg.0.log</filename><filename revision="systemd">-->
         $HOME/.local/share/xorg/Xorg.0.log<!--</filename>-->, om manglende 
@@ -99,7 +99,7 @@
 
     <para>
       Vanligvis er det ingen spesifikk konfigurasjon som kreves for
-      <application>Xorg</application>, men tilpasning er mulig. For detaljer, 
+      Xorg, men tilpasning er mulig. For detaljer, 
       se <xref linkend='xconfig'/> under.
     </para>
 
@@ -113,8 +113,8 @@
     <para>
       DRI er et rammeverk som lar programvare få tilgang til grafikkmaskinvare 
       på en trygg og effektiv måte. Det er installert i
-      <application>X</application> som standard (ved bruk av
-      <application>Mesa</application>) hvis du har et støttet skjermkort.
+      X som standard (ved bruk av
+      Mesa) hvis du har et støttet skjermkort.
     </para>
 
     <para>
@@ -294,12 +294,12 @@ usermod -a -G video &lt;user running xorg&gt;</userinput></screen>
     <para>
       For å bruke PRIME for GPU bytte, må du sørge for at du bruker Linux Kernel 
       3.4 eller nyere (anbefales). Du trenger de nyeste DRI og DDX driverne for 
-      maskinvaren din og <application>Xorg Server</application>
+      maskinvaren din og Xorg Server
       1.13 eller senere.
     </para>
 
     <para>
-      <application>Xorg Server</application> burde laste begge GPU driverne 
+      Xorg Server burde laste begge GPU driverne 
       automatisk. Du kan sjekke det ved å kjøre:
     </para>
 
@@ -327,7 +327,7 @@ Provider 1: id: 0x56 cap: 0xf, Source Output, Sink Output, Source Offload, Sink 
 
     <note>
       <para>
-        Med <application>Xorg</application> modussettingsdriveren, som er 
+        Med Xorg modussettingsdriveren, som er 
         DRI3 kompatibel, er kommandoen ovenfor ikke lenger nødvendig. 
         Det skader imidlertid ikke.
       </para>

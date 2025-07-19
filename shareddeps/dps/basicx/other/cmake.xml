@@ -21,11 +21,11 @@
     <title>Introduksjon til CMake</title>
 
     <para>
-      <application>CMake</application> pakken inneholder et moderne 
+      CMake pakken inneholder et moderne 
       verktøysett som brukes til å generere Makefiles. Det er en etterfølger av den 
       automatisk genererte <command>configure</command> skriptet og har som mål å 
       være plattform- og kompilatoruavhengig. En betydelig bruker av
-      <application>CMake</application> er <application>KDE</application>
+      CMake er KDE
       siden versjon 4.
     </para>
 
@@ -87,7 +87,7 @@
 -->
 
     <para>
-      Installer <application>CMake</application> ved å kjøre følgende 
+      Installer CMake ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -156,13 +156,13 @@ make</userinput></screen>
     <para>
       <parameter>--no-system-jsoncpp</parameter> og
       <parameter>--no-system-cppdap</parameter>: Disse bryterne fjerner
-      <application>JSON-C++</application> biblioteket fra listen over systembiblioteker. 
+      JSON-C++ biblioteket fra listen over systembiblioteker. 
       En samlet versjon av det biblioteket brukes i stedet.
     </para>
 
     <para>
       <parameter>--no-system-librhash</parameter>: Denne bryteren fjerner
-      <application>librhash</application> biblioteket fra listen over systembiblioteker. 
+      librhash biblioteket fra listen over systembiblioteker. 
       En samlet versjon av det biblioteket brukes i stedet.
     </para>
 
@@ -174,7 +174,7 @@ make</userinput></screen>
 
     <para>
       <option>--parallel=</option>: Denne bryteren gjør det mulig å utføre
-      <application>CMake</application> bootstrap med flere jobber 
+      CMake bootstrap med flere jobber 
       samtidig.
     </para>
 
@@ -237,7 +237,7 @@ make</userinput></screen>
         <term><command>cpack</command></term>
         <listitem>
           <para>
-            er <application>CMake</application> pakkeprogram
+            er CMake pakkeprogram
           </para>
           <indexterm zone="cmake cpack">
             <primary sortas="b-cpack">cpack</primary>

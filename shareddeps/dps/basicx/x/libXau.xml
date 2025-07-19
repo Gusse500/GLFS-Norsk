@@ -22,7 +22,7 @@
     <title>Introduksjon til libXau</title>
 
     <para>
-      <application>libXau</application> pakken inneholder et bibliotek 
+      libXau pakken inneholder et bibliotek 
       som implementerer X11 autorisasjonsprotokollen. Dette er nyttig for 
       å begrense klienttilgang til skjermen.
     </para>
@@ -53,7 +53,7 @@
     <title>Installasjon av libXau</title>
 
     <para>
-      Installer <application>libXau</application> ved å kjøre følgende 
+      Installer libXau ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -76,7 +76,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libXau</title>
 
     <para>
-      Installer lib32-<application>libXau</application> ved å kjøre følgende 
+      Installer lib32-libXau ved å kjøre følgende 
       kommandoer:
     </para>
 

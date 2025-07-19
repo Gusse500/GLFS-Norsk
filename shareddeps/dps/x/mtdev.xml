@@ -21,7 +21,7 @@
     <title>Introduksjon til mtdev</title>
 
     <para>
-      <application>mtdev</application> pakken inneholder Multitouch Protocol 
+      mtdev pakken inneholder Multitouch Protocol 
       Translation Library som brukes til å transformere alle varianter av 
       kjerne MT (Multitouch) hendelser til den slottede type B 
       protokollen.
@@ -46,7 +46,7 @@
     <title>Installasjon av mtdev</title>
 
     <para>
-      Installer <application>mtdev</application> ved å kjøre følgende 
+      Installer mtdev ved å kjøre følgende 
       kommandoer:
     </para>
 

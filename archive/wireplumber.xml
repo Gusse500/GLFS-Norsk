@@ -21,8 +21,8 @@
     <title>Introduksjon til Wireplumber</title>
 
     <para>
-      <application>Wireplumber</application> Pakken inneholder en økt og
-      retningslinje behandler for <application>Pipewire</application>.
+      Wireplumber Pakken inneholder en økt og
+      retningslinje behandler for Pipewire.
     </para>
 
     <itemizedlist spacing="compact">
@@ -58,7 +58,7 @@
     <title>Installasjon av Wireplumber</title>
 
     <para>
-      Installer <application>Wireplumber</application> ved å kjøre følgende 
+      Installer Wireplumber ved å kjøre følgende 
       kommandoer:
     </para>
 

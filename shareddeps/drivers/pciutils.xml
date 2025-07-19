@@ -21,7 +21,7 @@
     <title>Introduksjon til PCI Utils</title>
 
     <para>
-      <application>PCI Utils</application> pakken inneholder et sett 
+      PCI Utils pakken inneholder et sett 
       med programmer for å liste opp PCI enheter, inspisere statusen 
       deres og sette konfigurasjonsregistrene deres.
     </para>
@@ -60,7 +60,7 @@
     -i Makefile</userinput></screen>
 
     <para>
-      Installer <application>PCI Utils</application> ved å kjøre følgende 
+      Installer PCI Utils ved å kjøre følgende 
       kommandoer:
     </para>
 

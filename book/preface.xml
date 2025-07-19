@@ -12,11 +12,11 @@
 
   <para>
     En gang etter min første installasjon av LFS, hadde jeg et spørsmål som andre hadde: 
-    hvordan installerer jeg <application>Steam</application> på dette systemet? Jeg holdt 
+    hvordan installerer jeg Steam på dette systemet? Jeg holdt 
     den tanken i bakhodet mens jeg gikk for Beyond LFS, en bok som 
     dekket en god del pakker jeg trengte. Imidlertid var spørsmålet om
-    <application>Steam</application> ennå ikke oppklart. Så jeg prøvde bare 
-    å installere <application>Steam</application> tarballen. Fordi jeg ikke 
+    Steam ennå ikke oppklart. Så jeg prøvde bare 
+    å installere Steam tarballen. Fordi jeg ikke 
     hadde 32-bits biblioteker, endte dette med en fiasko.
   </para>
 
@@ -34,12 +34,12 @@
     Rahul Chandra nevnte i samme tråd skriptene sine for distroen sin, 
     Tucana. Disse skriptene ga meg en grunnleggende idé om hvordan jeg skulle gjøre lib32 
     installasjoner for BLFS pakker som var nødvendige for
-    <application>Steam.</application>. Selv om dette ikke akkurat var vanskelig, 
+    Steam.. Selv om dette ikke akkurat var vanskelig, 
     var det et stort tidssvinn, siden jeg måtte skrive inn alle lib32 
     kompileringsalternativene manuelt for å kunne bygge 32-bits biblioteker. Selv etter 
     å ha bygget alle de nødvendige 32-bits bibliotekene, var noen flere rettelser og filer 
     nødvendige. Etter omtrent en uke klarte jeg å få
-    <application>Steam</application> til å fungere. Jeg innså at dette var mye arbeid, 
+    Steam til å fungere. Jeg innså at dette var mye arbeid, 
     og mange brukere som ville gjøre det samme ville bli sittende fast 
     og ikke vite hva de skulle gjøre. I verste fall ville de gi opp før de i det hele tatt nådde målet 
     sitt. Jeg hadde laget en ganske mangelfull <ulink
@@ -54,7 +54,7 @@
     En stund etterpå bestemte jeg meg for å gjøre en <ulink
     url="https://www.youtube.com/playlist?list=PL_vcsK5qbWSv-70zpfFcol_D9yovtf6N6">strømmeserie</ulink> 
     som inkluderte installasjon av
-    <application>Wine</application>, ikke bare <application>Steam</application>.
+    Wine, ikke bare Steam.
     Den generelle ideen min var å samle alt strømmeopptaket (omtrent 40 GB) 
     til én enkelt videomasterguide. Etter en stund kom jeg til 
     konklusjonen at for en installasjonsguide for to komplekse pakker på et LFS 

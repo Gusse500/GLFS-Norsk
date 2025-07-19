@@ -22,7 +22,7 @@
     <title>Introduction to x265</title>
 
     <para>
-      <application>x265</application> package provides a library for encoding
+      x265 package provides a library for encoding
       video streams into the H.265/HEVC format.
     </para>
 
@@ -70,7 +70,7 @@
   -i source/CMakeLists.txt</userinput></screen>
 
     <para>
-      Install <application>x265</application> by running the following
+      Install x265 by running the following
       commands:
     </para>
 
@@ -128,7 +128,7 @@ rm -vf /usr/lib/libx265.a</userinput></screen>
     <title>lib32-Installation of x265</title>
 
     <para>
-      Install lib32-<application>x265</application> by running the following
+      Install lib32-x265 by running the following
       commands:
     </para>
 

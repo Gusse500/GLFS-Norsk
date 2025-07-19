@@ -19,7 +19,7 @@
     <title>Introduction to Xorg Inndata Drivere</title>
 
     <para>
-      <application>Xorg Inndata Drivere</application> siden inneholder 
+      Xorg Inndata Drivere siden inneholder 
       instruksjoner for å bygge Xorg inndatadrivere som er nødvendige for 
       at Xorg serveren skal kunne svare på brukerinndata.
     </para>

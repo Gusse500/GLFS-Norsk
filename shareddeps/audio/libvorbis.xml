@@ -22,7 +22,7 @@
     <title>Introduksjon til libvorbis</title>
 
     <para>
-      <application>libvorbis</application> Pakken inneholder et generelt 
+      libvorbis Pakken inneholder et generelt 
       lyd og musikk kodingsformat. Dette er nyttig for å lage 
       (koding) og spille (dekoding) lyd i et åpent (patentfritt) 
       format.
@@ -70,7 +70,7 @@
 <screen><userinput>sed -i '/components.png \\/{n;d}' doc/Makefile.in</userinput></screen>
 -->
     <para>
-      Installer <application>libvorbis</application> ved å kjøre følgende 
+      Installer libvorbis ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -94,7 +94,7 @@ install -v -m644 doc/Vorbis* /usr/share/doc/libvorbis-&libvorbis-version;</useri
     <title>lib32 Installasjon av libvorbis</title>
 
     <para>
-      Installer lib32-<application>libvorbis</application> ved å kjøre følgende 
+      Installer lib32-libvorbis ved å kjøre følgende 
       kommandoer:
     </para>
 

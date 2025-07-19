@@ -21,7 +21,7 @@
     <title>Introduksjon til libxcvt</title>
 
     <para>
-      <application>libxcvt</application> er et bibliotek som tilbyr en frittstående 
+      libxcvt er et bibliotek som tilbyr en frittstående 
       versjon av X serverimplementeringen av VESA CVT standard timing 
       modelines generator. Det er ment å være en direkte erstatning for 
       versjonen som tidligere ble levert av Xorg serveren.
@@ -54,7 +54,7 @@
     <title>Installasjon av libxcvt</title>
 
     <para>
-      Installer <application>libxcvt</application> ved å kjøre følgende 
+      Installer libxcvt ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -80,7 +80,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av libxcvt</title>
 
     <para>
-      Installer lib32-<application>libxcvt</application> ved å kjøre følgende 
+      Installer lib32-libxcvt ved å kjøre følgende 
       kommandoer:
     </para>
 

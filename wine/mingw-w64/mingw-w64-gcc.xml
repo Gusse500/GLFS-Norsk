@@ -21,7 +21,7 @@
     <title>Introduksjon til MinGW-w64-GCC</title>
 
     <para>
-      <application>MinGW-w64-GCC</application> har blitt bygget statisk på før, 
+      MinGW-w64-GCC har blitt bygget statisk på før, 
       og den bør bygges om for å støtte dynamisk lenking. Denne delen vil være 
       dedikert til å fullføre MinGW-w64-verktøykjeden.
     </para>
@@ -64,7 +64,7 @@
     <title>x86_64 Installasjon av MinGW-w64-GCC</title>
 
     <para>
-      Installer x86_64 <application>MinGW-w64-GCC</application> ved å kjøre 
+      Installer x86_64 MinGW-w64-GCC ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -96,7 +96,7 @@ strip /usr/libexec/gcc/x86_64-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2
     <title>i686 Installasjon av MinGW-w64-GCC</title>
 
     <para>
-      Installer i686 <application>MinGW-w64-GCC</application> ved å kjøre 
+      Installer i686 MinGW-w64-GCC ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -129,7 +129,7 @@ strip /usr/libexec/gcc/i686-w64-mingw32/&mingw-w64-gcc-version;/{cc1*,collect2,l
     <title>Teste Verktøykjeden</title>
 
     <para>
-      Nå som <application>MinGW-w64</application> kryssverktøykjede er ferdig 
+      Nå som MinGW-w64 kryssverktøykjede er ferdig 
       installert, det er på tide å teste installasjonen for å forsikre deg om 
       at alt fungerer som forventet.
     </para>
@@ -165,7 +165,7 @@ g++ -m32 main.cpp     &amp;&amp;
 rm -v a.out main.{c,cpp}</userinput></screen>
 
     <para>
-      Test nå <application>MinGW-w64</application> krysskompilatoren.
+      Test nå MinGW-w64 krysskompilatoren.
     </para>
 
     <para>
@@ -216,7 +216,7 @@ rm -v a.exe main.{c,cpp}</userinput></screen>
 
     <para>
       <command>mkdir build; cd build</command>: 
-      <application>GCC</application> dokumentasjonen anbefaler at man bygger 
+      GCC dokumentasjonen anbefaler at man bygger 
       pakken i en dedikert byggemappe.
     </para>
 

@@ -59,7 +59,7 @@
     <title>x86_64 MinGW-w64</title>
     
     <para>
-      Install x86_64 <application>MinGW-w64</application>
+      Install x86_64 MinGW-w64
       by running the following commands:
     </para>
 
@@ -110,7 +110,7 @@ make</userinput></screen>
     <title>i686 MinGW-w64</title>
 
     <para>
-      Install i686 <application>MinGW-w64</application>
+      Install i686 MinGW-w64
       by running the following commands:
     </para>
 

@@ -21,7 +21,7 @@
     <title>Introduksjon til Wayland-Protocols</title>
 
     <para>
-      <application>Wayland-Protocols</application> pakken inneholder flere 
+      Wayland-Protocols pakken inneholder flere 
       Wayland protokoller som legger til funksjonalitet utover protokoller som 
       allerede finnes i Wayland kjernen.
     </para>
@@ -52,7 +52,7 @@
     <title>Installasjon av Wayland-Protocols</title>
 
     <para>
-      Installer <application>Wayland-Protocols</application> ved å kjøre følgende 
+      Installer Wayland-Protocols ved å kjøre følgende 
       kommandoer:
     </para>
 

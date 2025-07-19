@@ -21,8 +21,8 @@
     <title>Introduksjon til Statisk MinGW-w64-GCC</title>
 
     <para>
-      <application>MinGW-w64-GCC</application> gir
-      <application>GCC</application> kompilatorer for MinGW-w64, som lar 
+      MinGW-w64-GCC gir
+      GCC kompilatorer for MinGW-w64, som lar 
       brukere og applikasjoner kompilere kode målrettet Windows. Dette vil 
       bli gjort i trinn for å unngå behovet for allerede eksisterende 
       binærfiler. Dette er den statiske byggingen, som vil ha begrenset 
@@ -62,7 +62,7 @@
       <title>x86_64 Installasjon av Statisk MinGW-w64-GCC</title>
 
       <para>
-        Installer x86_64 Statisk <application>MinGW-w64-GCC</application> ved å
+        Installer x86_64 Statisk MinGW-w64-GCC ved å
         kjøre følgende kommandoer:
       </para>
 
@@ -90,7 +90,7 @@ make all-gcc</userinput></screen>
       <title>i686 Installasjon av Statisk MinGW-w64-GCC</title>
 
       <para>
-        Installer i686 Statisk <application>MinGW-w64-GCC</application> ved å
+        Installer i686 Statisk MinGW-w64-GCC ved å
         kjøre følgende kommandoer:
       </para>
 
@@ -123,7 +123,7 @@ make all-gcc</userinput></screen>
 
     <para>
       <command>mkdir build; cd build</command>: 
-      <application>GCC</application> dokumentasjonen anbefaler at man bygger 
+      GCC dokumentasjonen anbefaler at man bygger 
       pakken i en dedikert byggemappe.
     </para>
 

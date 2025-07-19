@@ -21,9 +21,9 @@
     <title>Introduksjon til D-Bus - Pass 1</title>
 
     <para>
-      <application>D-Bus</application> er et meldingsbussystem, en enkel måte 
+      D-Bus er et meldingsbussystem, en enkel måte 
       for applikasjoner å kommunisere med hverandre.
-      <application>D-Bus</application> leverer både en systemdaemon (for 
+      D-Bus leverer både en systemdaemon (for 
       hendelser som <quote>ny maskinvareenhet lagt til</quote> or <quote>skriverkøen 
       er endret</quote>) og en daemon for per-bruker påloggingsøkt (for generelle 
       IPC behov blant brukerapplikasjoner). Meldingsbussen er også bygget oppå 
@@ -59,7 +59,7 @@
     &dbus-m64;
 
     <para>
-      Generer <application>D-Bus</application> UUID for å unngå 
+      Generer D-Bus UUID for å unngå 
       advarsler når du kompilerer noen pakker med følgende kommando som
       <systemitem class="username">root</systemitem> bruker:
     </para>

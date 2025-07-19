@@ -21,7 +21,7 @@
     <title>Introduction to Steam</title>
 
     <para>
-      The <application>Steam</application> package provides a digital software
+      The Steam package provides a digital software
       delivery system, store, and launcher through VALVE's proprietary runtime.
     </para>
 
@@ -63,7 +63,7 @@
 <screen><userinput>ln -sf /usr/bin/true steamdeps</userinput></screen>
 
     <para>
-      Then install <application>Steam</application> by running
+      Then install Steam by running
       the following command as the <systemitem class="username">root
       </systemitem> user:
     </para>
@@ -78,9 +78,9 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
 
     <para>
       <command>ln -sf /usr/bin/true steamdeps</command>: This command
-      makes the <filename>steamdeps</filename> <application>Python
-      </application> script always exit with code 0 as it uses APT and its
-      <application> Python</application> module, which isn't installed in LFS
+      makes the <filename>steamdeps</filename> Python
+       script always exit with code 0 as it uses APT and its
+       Python module, which isn't installed in LFS
       and shouldn't be.
     </para>
 
@@ -111,8 +111,8 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
       </listitem>
       <listitem>
         <para>Are launching in an X11 instance or have
-        <application>Xwayland</application> running in a
-        <application>Wayland</application> session</para>
+        Xwayland running in a
+        Wayland session</para>
       </listitem>
       <listitem>
         <para>Have a working internet connection</para>
@@ -122,23 +122,23 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
     <para>
       After you have made sure of the points above, now you can launch
       <command>steam</command>. This will download the runtime for the
-      <application>Steam</application> client. Afterwards, you will be brought
+      Steam client. Afterwards, you will be brought
       to the login screen. Make extra sure you have the symlink made in
       <xref linkend="make-ca"/> or you will not be able to get past this point.
       Then, everything should work as normal and you can go ahead and allow
-      <application>Proton</application> as you normally would on any given
+      Proton as you normally would on any given
       Linux distribution.
     </para>
 
     <para>
       If you find that launching any game doesn't open a window but still shows
       that it is running, there is a good chance that
-      <application>Steam</application> made a change that is incompatible with
+      Steam made a change that is incompatible with
       your current version of the kernel and you need to upgrade. Even a
       version difference between linux-6.12.3 and linux-6.12.8 can be enough
-      for <application>Steam</application> or any of its runtime components
+      for Steam or any of its runtime components
       to refuse opening a window, although this usually doesn't prevent
-      <application>Steam</application> itself from launching. Even if you don't
+      Steam itself from launching. Even if you don't
       upgrade this package, components downloaded by this package will get
       updated as time goes on.
     </para>
@@ -183,7 +183,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
           <para>
             is launcher shell script that unpacks
             <filename>bootstraplinux_ubuntu12_32.tar.xz</filename> and properly
-            launches <application>Steam</application>
+            launches Steam
           </para>
           <indexterm zone="steam bin_steam.sh">
             <primary sortas="b-bin_steam.sh">bin_steam.sh</primary>
@@ -195,7 +195,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><command>bin_steamdeps.sh</command></term>
         <listitem>
           <para>
-            is a <application>Python</application> script which checks
+            is a Python script which checks
             for dependencies using APT
           </para>
           <indexterm zone="steam bin_steamdeps.sh">
@@ -235,7 +235,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <listitem>
           <para>
             is a tarball containing 32-bit software that fetches the
-            <application>Steam</application> runtime from VALVE's servers
+            Steam runtime from VALVE's servers
           </para>
           <indexterm zone="steam bootstrap-steam">
             <primary sortas="b-bootstrap-steam">bootstraplinux_ubuntu12_32.tar.xz</primary>

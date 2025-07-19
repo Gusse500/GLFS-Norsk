@@ -20,7 +20,7 @@
     <title>Introduction to libaom</title>
 
     <para>
-      The <application>libaom</application> package contains a reference
+      The libaom package contains a reference
       version of the Alliance for Open Media video codec. This codec is a
       patent free alternative to H.265, and is starting to be used throughout
       the internet.
@@ -51,7 +51,7 @@
     <title>Installation of libaom</title>
 
     <para>
-      Install <application>libaom</application> by running the following
+      Install libaom by running the following
       commands:
     </para>
 
@@ -85,7 +85,7 @@ rm -v /usr/lib/libaom.a</userinput></screen>
     <title>lib32 Installation of libaom</title>
 
     <para>
-      Install lib32-<application>libaom</application> by running the following
+      Install lib32-libaom by running the following
       commands:
     </para>
 
@@ -125,7 +125,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D ENABLE_DOCS=no</parameter>: This switch disables building
-      the documentation because <application>doxygen</application> is not
+      the documentation because doxygen is not
       installed.
     </para>
 

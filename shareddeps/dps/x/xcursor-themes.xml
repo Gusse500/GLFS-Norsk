@@ -21,7 +21,7 @@
     <title>Introduksjon til xcursor-themes</title>
 
     <para>
-      <application>xcursor-themes</application> pakken inneholder de animerte 
+      xcursor-themes pakken inneholder de animerte 
       markørtemaene redglass og whiteglass.
     </para>
 
@@ -51,7 +51,7 @@
     <title>Installasjon av xcursor-themes</title>
 
     <para>
-      Installer <application>xcursor-themes</application> ved å kjøre følgende 
+      Installer xcursor-themes ved å kjøre følgende 
       kommandoer:
     </para>
 

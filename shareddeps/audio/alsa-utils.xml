@@ -22,7 +22,7 @@
     <title>Introduksjon til ALSA Verktøy</title>
 
     <para>
-      <application>ALSA Verktøy</application> pakken inneholder
+      ALSA Verktøy pakken inneholder
       diverse verktøy som er nyttige for å kontrollere lydkortet
       ditt.
     </para>
@@ -78,7 +78,7 @@
 -->
 
     <para>
-      Installer <application>ALSA Verktøy</application> ved å
+      Installer ALSA Verktøy ved å
       kjøre følgende kommandoer:
     </para>
 
@@ -109,7 +109,7 @@ make</userinput></screen>
     <para>
       <parameter>--disable-alsaconf</parameter>: Denne bryteren deaktiverer bygging av
       <command>alsaconf</command> konfigurasjonsverktøy som er inkompatibelt
-      med <application>Udev</application>.
+      med Udev.
     </para>
 
     <para>
@@ -166,7 +166,7 @@ make</userinput></screen>
 
       <para>
         <filename>alsactl</filename> programmet kjøres vanligvis fra en
-        standard <application>udev</application> regel. Første gang den
+        standard udev regel. Første gang den
         kjøres, vil den klage over at det ikke er noen tilstand i
         <filename>/var/lib/alsa/asound.state</filename>. Du kan forhindre
         dette ved å kjøre følgende kommando som
@@ -177,7 +177,7 @@ make</userinput></screen>
 
       <para>
         Voluminnstillingene bør gjenopprettes fra den lagrede tilstanden av
-        <application>Udev</application> når enheten oppdages
+        Udev når enheten oppdages
         (under oppstart eller når den er koblet til USB-enheter).
       </para>
 <!-- not needed with elogind or systemd-logind

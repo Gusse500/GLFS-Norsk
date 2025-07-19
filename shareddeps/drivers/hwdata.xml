@@ -21,7 +21,7 @@
     <title>Introduksjon til hwdata</title>
 
     <para>
-      <application>hwdata</application> Pakken inneholder gjeldende 
+      hwdata Pakken inneholder gjeldende 
       PCI og leverandør ID data.
     </para>
 
@@ -44,7 +44,7 @@
     <title>Installasjon av hwdata</title>
 
     <para>
-      Installer <application>hwdata</application> ved å
+      Installer hwdata ved å
       kjøre følgende kommandoer:
     </para>
 

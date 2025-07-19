@@ -22,7 +22,7 @@
     <title>Introduksjon til xorgproto</title>
 
     <para>
-      <application>xorgproto</application> pakken inneholder 
+      xorgproto pakken inneholder 
       deklarasjonsfilene som kreves for å bygge X Vindussystemet, og for at 
       andre applikasjoner kan bygge mot det installerte X Vindussystemet.
     </para>
@@ -53,7 +53,7 @@
     <title>Installasjon av xorgproto</title>
 
     <para>
-      Installer <application>xorgproto</application> ved å kjøre 
+      Installer xorgproto ved å kjøre 
       følgende kommandoer:
     </para>
 

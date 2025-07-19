@@ -71,7 +71,7 @@
     <screen><userinput>find -type f | xargs touch</userinput></screen>
 
     <para>
-      Install <application>libvpx</application> by running the
+      Install libvpx by running the
       following commands:
     </para>
 
@@ -104,7 +104,7 @@ make</userinput></screen>
     <title>lib32-Installation of libvpx</title>
 
     <para>
-      Install lib32-<application>libvpx</application> by running the
+      Install lib32-libvpx by running the
       following commands:
     </para>
 
@@ -149,7 +149,7 @@ ldconfig</userinput></screen>
 
     <para>
       <command>mkdir libvpx-build &amp;&amp; cd libvpx-build</command>:
-      The <application>libvpx</application> developers
+      The libvpx developers
       recommend building in a dedicated build directory.
     </para>
 

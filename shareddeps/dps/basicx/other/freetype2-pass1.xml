@@ -25,15 +25,15 @@
     <title>Introduksjon til to FreeType2 - Pass 1</title>
 
     <para>
-      <application>FreeType2</application> Pakken inneholder 
+      FreeType2 Pakken inneholder 
       et bibliotek som lar applikasjoner gjengi 
-      <application>TrueType</application> fonter på riktig måte.
+      TrueType fonter på riktig måte.
     </para>
 
     <para>
       Denne pakken har en sirkulær avhengighet av <xref
       linkend="harfbuzz"/>, så denne pakken må installeres først,
-      <application>harfBuzz</application> for det andre, så til slutt denne 
+      harfBuzz for det andre, så til slutt denne 
       pakken igjen. Dette er første omgang.
     </para>
 
@@ -132,9 +132,9 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
 
     <para>
       <option>--without-harfbuzz</option>: Hvis
-      <application>harfbuzz</application> er installert før
-      <application>freetype</application> uten
-      <application>freetype</application> støtte, bruk denne bryteren for å 
+      harfbuzz er installert før
+      freetype uten
+      freetype støtte, bruk denne bryteren for å 
       unngå en byggefeil.
     </para>
 
@@ -182,7 +182,7 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
         <term><command>freetype-config</command></term>
         <listitem>
           <para>
-            brukes til å få <application>FreeType</application> kompilering 
+            brukes til å få FreeType kompilering 
             og lenkeinformasjon
           </para>
           <indexterm zone="freetype2-pass1 freetype-config-pass1">

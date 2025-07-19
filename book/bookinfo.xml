@@ -49,8 +49,8 @@
   <abstract>
     <para>
       Denne boken introduserer og veileder leseren gjennom tillegg til 
-      systemet som <application>Steam</application>,
-      <application>Wine</application>, og deres avhengigheter etter 
+      systemet som Steam,
+      Wine, og deres avhengigheter etter 
       LFS eller Multilib-LFS boken på x86_64-systemer.
     </para>
   </abstract>

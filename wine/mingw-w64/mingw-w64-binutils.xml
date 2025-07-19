@@ -51,7 +51,7 @@
     <title>x86_64 MinGW-w64-Binutils</title>
     
     <para>
-      Install x86_64 <application>MinGW-w64-Binutils</application>
+      Install x86_64 MinGW-w64-Binutils
       by running the following commands:
     </para>
 
@@ -82,7 +82,7 @@ cd ..</userinput></screen>
     <title>i686 MinGW-w64-Binutils</title>
 
     <para>
-      Install i686 <application>MinGW-w64-Binutils</application>
+      Install i686 MinGW-w64-Binutils
       by running the following commands:
     </para>
 
@@ -161,7 +161,7 @@ rm -rf DESTDIR</userinput></screen>
           {i686,x86_64}-w64-mingw32-windmc,
           {i686,x86_64}-w64-mingw32-windres,
           ar, as, dlltool, ld, ld.bfd, nm, objcopy, ranlib,
-          readelf, and strip (<application>MinGW-w64</application>
+          readelf, and strip (MinGW-w64
           specific binaries besides formatting include:
           {i686,x86_64}-w64-mingw32-dllwrap,
           {i686,x86_64}-w64-mingw32-windmc,
@@ -180,7 +180,7 @@ rm -rf DESTDIR</userinput></screen>
     </segmentedlist>
 
     <para>
-      Only binutils specific to <application>MinGW-w64</application>
+      Only binutils specific to MinGW-w64
       will be explained. For the rest, see
       <ulink url="&mlfs-m32-root;/chapter08/binutils.html">
       Binutils</ulink>.

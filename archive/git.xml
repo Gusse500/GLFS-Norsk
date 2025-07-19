@@ -23,18 +23,18 @@
     <title>Introduksjon til Git</title>
 
     <para>
-      <application>Git</application> er et gratis og åpen kildekode, distribuert 
+      Git er et gratis og åpen kildekode, distribuert 
       versjonskontrollsystem designet for å håndtere alt fra små til svært store 
       prosjekter med hastighet og effektivitet. Hver
-      <application>Git</application> klone er et fullverdig arkiv med 
+      Git klone er et fullverdig arkiv med 
       komplett historikk og full revisjonssporingsfunksjonalitet, ikke avhengig 
       av nettverkstilgang eller en sentral server. Forgrening og sammenslåing er raskt og 
-      enkelt å gjøre. <application>Git</application> brukes til versjonskontroll av 
-      filer, omtrent som verktøy som <application>Mercurial</application>,
-      <application>Bazaar</application>, <application>Subversion</application>,
+      enkelt å gjøre. Git brukes til versjonskontroll av 
+      filer, omtrent som verktøy som Mercurial,
+      Bazaar, Subversion,
       <ulink url="https://www.nongnu.org/cvs/">CVS</ulink>,
-      <application>Perforce</application>, og
-      <application>Team Foundation Server</application>.
+      Perforce, og
+      Team Foundation Server.
     </para>
 
     <itemizedlist spacing="compact">
@@ -71,7 +71,7 @@
 
     <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="curl"/> (påkrevd for å bruke <application>Git</application> over
+      <xref linkend="curl"/> (påkrevd for å bruke Git over
       http, https, ftp eller ftps)
     </para>
 
@@ -81,7 +81,7 @@
     <title>Installasjon av Git</title>
 
     <para>
-      Installer <application>Git</application> ved å kjøre følgende 
+      Installer Git ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -91,7 +91,6 @@
 make</userinput></screen>
 
 <!--
-    <para>
     <para>
       Testpakken kan kjøres i parallellmodus. For å kjøre testpakken, utfør:
       <command>make test -k |&amp; tee test.log</command>.  Hvis noen tester 
@@ -243,14 +242,14 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
     <para>
       <parameter>--with-gitconfig=/etc/gitconfig</parameter>: Dette setter
       <filename>/etc/gitconfig</filename> som filen som lagrer
-      standard, systemomfattende, <application>Git</application>
+      standard, systemomfattende, Git
       innstillinger.
     </para>
 
     <para>
       <parameter>--with-python=python3</parameter>: Bruk denne bryteren for å bruke
-      <application>Python 3</application>, i stedet for EOL-en
-      <application>Python 2</application>. Python brukes til
+      Python 3, i stedet for EOL-en
+      Python 2. Python brukes til
       <command>git p4</command> grensesnitt til Perforce repositorier, 
       og også brukt i noen tester.
     </para>
@@ -258,7 +257,7 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
 <!--
     <para>
       <option>- -with-libpcre2</option>: Bruk denne bryteren hvis
-      <application>PCRE2</application> er installert.
+      PCRE2 er installert.
     </para>
 -->
 
@@ -355,7 +354,7 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>git-cvsserver</command></term>
         <listitem>
           <para>
-            er en CVS serveremulator for <application>Git</application>
+            er en CVS serveremulator for Git
           </para>
           <indexterm zone="git git-cvsserver">
             <primary sortas="b-git-cvsserver">git-cvsserver</primary>
@@ -367,7 +366,7 @@ sed -i '/^\* link:/s|howto/|&amp;html/|' /usr/share/doc/git-&git-version;/howto-
         <term><command>gitk</command></term>
         <listitem>
           <para>
-            er en grafisk <application>Git</application> nettleser for arkivet
+            er en grafisk Git nettleser for arkivet
             (trenger <ulink url="&blfs-svn;/general/tk.html">Tk</ulink>)
           </para>
           <indexterm zone="git gitk">

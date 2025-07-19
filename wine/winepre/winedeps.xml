@@ -27,16 +27,16 @@
 
   <para>
     Hvis du ikke vil ha et WoW64 bygg, følg instruksjonene normalt og hopp over 
-    lib32 instruksjonene. Når du kommer til <application>
-    MinGW-w64</application> seksjonen, følg kun instruksjonene for x86_64.
+    lib32 instruksjonene. Når du kommer til 
+    MinGW-w64 seksjonen, følg kun instruksjonene for x86_64.
   </para>
 
   <para>
     Hvis du kun vil ha et 32-biters bygg, følg kun lib32-instruksjonene. Når du 
-    kommer til <application>MinGW-w64</application>, følg instruksjonene for 
+    kommer til MinGW-w64, følg instruksjonene for 
     i686. For å kunne fortsette på BLFS, anbefales det imidlertid å gjøre de 
     vanlige installasjonene også, bortsett fra
-    <application>MinGW-w64</application>.
+    MinGW-w64.
   </para>
 
   <para>

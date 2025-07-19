@@ -21,7 +21,7 @@
     <title>Introduksjon til libxkbcommon</title>
 
     <para>
-      <application>libxkbcommon</application> er en tastekartkompilator og 
+      libxkbcommon er en tastekartkompilator og 
       et støttebibliotek som behandler et redusert delsett av tastekart som 
       definert av XKB spesifikasjonen.
     </para>
@@ -73,7 +73,7 @@
 <screen><userinput>sed -i "s/sizeof(dtdstr)/ARRAY_SIZE(dtdstr) - 1/" src/registry.c</userinput></screen>
 
     <para>
-      Installer <application>libxkbcommon</application> ved å kjøre følgende 
+      Installer libxkbcommon ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -105,7 +105,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av libxkbcommon</title>
 
     <para>
-      Installer lib32-<application>libxkbcommon</application> ved å kjøre følgende 
+      Installer lib32-libxkbcommon ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -191,7 +191,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxkbcommon</filename></term>
         <listitem>
           <para>
-            inneholder <application>libxkbcommon</application> API funksjoner
+            inneholder libxkbcommon API funksjoner
           </para>
           <indexterm zone="libxkbcommon libxkbcommon-lib">
             <primary sortas="c-libxkbcommon">libxkbcommon</primary>
@@ -203,7 +203,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxkbcommon-x11</filename></term>
         <listitem>
           <para>
-            inneholder <application>libxkbcommon</application> X11 spesifikke API
+            inneholder libxkbcommon X11 spesifikke API
             funksjoner
           </para>
           <indexterm zone="libxkbcommon libxkbcommon-x11">

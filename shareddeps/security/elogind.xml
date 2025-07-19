@@ -22,13 +22,13 @@
     <title>Introduction to elogind</title>
 
     <para>
-      <application>elogind</application> is the
-      <application>systemd</application> project's "logind", extracted to
+      elogind is the
+      systemd project's "logind", extracted to
       be a standalone daemon.  It integrates with <xref linkend="linux-pam"/>
       to track all the users logged in to a system, and whether they
       are logged in graphically, on the console, or remotely.
-      <application>Elogind</application> exposes this information via the
-      standard org.freedesktop.login1 <application>D-Bus</application>
+      Elogind exposes this information via the
+      standard org.freedesktop.login1 D-Bus
       interface, and also through the file system using systemd's standard
       <filename class="directory">/run/systemd</filename> layout.
     </para>
@@ -77,7 +77,7 @@
     <title>Installation of elogind</title>
 
     <para>
-      Install <application>elogind</application> by running the following
+      Install elogind by running the following
       commands:
     </para>
 
@@ -107,7 +107,7 @@ ln -sfvn elogind /usr/include/systemd</userinput></screen>
     <title>lib32 Installation of elogind</title>
 
     <para>
-      Install lib32-<application>elogind</application> by running the following
+      Install lib32-elogind by running the following
       commands:
     </para>
 
@@ -163,14 +163,14 @@ ldconfig</userinput></screen>
       <parameter>-D cgroup-controller=elogind</parameter>: This switch is
       necessary to build this package when the kernel is not built with
       <option>CONFIG_CGROUPS</option> enabled.  Note that
-      <application>elogind</application> strictly needs
+      elogind strictly needs
       a kernel with <option>CONFIG_CGROUPS</option> enabled at runtime,
       but this switch will allow building the package first.
     </para>
 
     <para>
       <parameter>-D dbuspolicydir=/etc/dbus-1/system.d</parameter>: This switch
-      sets the location of the <application>D-Bus</application> policy
+      sets the location of the D-Bus policy
       directory.
     </para>
 
@@ -226,7 +226,7 @@ ldconfig</userinput></screen>
 
       <para>
         Each user will need to register a user session using
-        <application>Linux-PAM</application> at login. The
+        Linux-PAM at login. The
         <filename>/etc/pam.d/system-session</filename> file needs to
         be modified and a new file must be created in order for
         <command>elogind</command> to work correctly. Run the following

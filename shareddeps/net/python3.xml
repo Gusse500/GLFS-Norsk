@@ -23,15 +23,15 @@
     <title>Introduksjon til Python 3</title>
 
     <para>
-      <application>Python 3</application> pakken inneholder
-      <application>Python</application> utviklingsmiljø. Dette er nyttig 
+      Python 3 pakken inneholder
+      Python utviklingsmiljø. Dette er nyttig 
       for objektorientert programmering, skriptskriving, prototyping av store 
       programmer eller utvikling av hele applikasjoner.
     </para>
 
     <note>
       <para>
-        <application>Python 3</application> ble installert i LFS. Den eneste 
+        Python 3 ble installert i LFS. Den eneste 
         grunnen til å gjenoppbygge det her er hvis <xref linkend="sqlite"/> er 
         installert eller hvis du oppgraderer.
       </para>
@@ -93,7 +93,7 @@
     <title>Installasjon av Python 3</title>
 
     <para>
-      Installer <application>Python 3</application> ved å kjøre følgende 
+      Installer Python 3 ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -122,7 +122,7 @@ make</userinput></screen>
 
     <para>
       <parameter>--with-system-expat</parameter>: Denne bryteren aktiverer 
-      kobling mot systemversjonen av <application>Expat</application>.
+      kobling mot systemversjonen av Expat.
     </para>
 
 <!--
@@ -144,7 +144,7 @@ make</userinput></screen>
       Time Optimization. Uvanlig nok skaper den en mye større <filename
       class="libraryfile">/usr/lib/python&python3-majorver;/config-&python3-majorver;-&lt;arch&gt;-linux-gnu/libpython&python3-majorver;.a</filename>
       med en liten økning i kompileringstiden
-      <application>Python</application>. Kjøretidsresultatene ser ikke ut til å 
+      Python. Kjøretidsresultatene ser ikke ut til å 
       vise noen fordeler ved å gjøre dette.
     </para>
 
@@ -230,9 +230,9 @@ make</userinput></screen>
         <term><command>idle3</command></term>
         <listitem>
           <para>
-            er et innpakningsskript som åpner en <application>Python</application>
+            er et innpakningsskript som åpner en Python
             bevisst GUI-editor. For at dette skriptet skal kjøre, må du ha installert
-            <application>Tk</application> før Python slik at Tkinter Python 
+            Tk før Python slik at Tkinter Python 
             modulen er bygget
           </para>
           <indexterm zone="python3 idle3">
@@ -245,7 +245,7 @@ make</userinput></screen>
         <term><command>pydoc3</command></term>
         <listitem>
           <para>
-            er <application>Python</application> 
+            er Python 
             dokumentasjonsverktøy
           </para>
           <indexterm zone="python3 pydoc3">
@@ -284,7 +284,7 @@ make</userinput></screen>
         <term><command>pyvenv</command></term>
         <listitem>
           <para>
-            skaper virtuelle <application>Python</application> miljøer i én 
+            skaper virtuelle Python miljøer i én 
 			eller flere målmapper.
           </para>
           <indexterm zone="python3 pyvenv">

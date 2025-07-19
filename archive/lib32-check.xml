@@ -22,7 +22,7 @@
     <title>Introduksjon til lib32-Check</title>
 
     <para>
-      <application>Check</application> pakken var allerede installert i
+      Check pakken var allerede installert i
       LFS, men lib32 instruksjonene mangler fra MLFS, som er nødvendige for
       lib32-<xref linkend="pulseaudio"/>. Hvis du bruker multilib, installer
 	  dette.
@@ -47,7 +47,7 @@
     <title>lib32 Installasjon av Check</title>
     
     <para>
-      Installer lib32-<application>Check</application> ved å kjøre følgende
+      Installer lib32-Check ved å kjøre følgende
 	  kommandoer:
     </para>
 
@@ -107,7 +107,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libcheck.so</filename></term>
         <listitem>
           <para>
-            inneholder funksjoner som tillater <application>Check</application> å
+            inneholder funksjoner som tillater Check å
             bli kalt fra et testprogram 
           </para>
           <indexterm zone="lib32-check libcheck">

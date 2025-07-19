@@ -65,8 +65,8 @@
 <!--
     <para>
       First apply an upstream patch so that delay-load import libraries are
-      unbroken with <xref linkend="mingw-w64-binutils"/> due to <application>
-      Binutils</application> merging .idata sections into read-only .rdata
+      unbroken with <xref linkend="mingw-w64-binutils"/> due to 
+      Binutils merging .idata sections into read-only .rdata
       sections for PE formatted software upstream:
     </para>
 
@@ -83,7 +83,7 @@
       <title>WoW64</title>
 
       <para>
-        Install WoW64 <application>Wine</application> by running
+        Install WoW64 Wine by running
         the following commands:
       </para>
 
@@ -121,7 +121,7 @@ make install</userinput></screen>
       <title>64-bit Only</title>
 
       <para>
-        Install 64-bit only <application>Wine</application> by running
+        Install 64-bit only Wine by running
         the following commands:
       </para>
 
@@ -155,7 +155,7 @@ make</userinput></screen>
 -->
 
       <para>
-        Install 32-bit only <application>Wine</application> by running
+        Install 32-bit only Wine by running
         the following commands:
       </para>
 
@@ -212,12 +212,12 @@ make</userinput></screen>
     <para>
       As for Direct3D 12, you may also wish to install
       <xref linkend="vkd3d-proton"/> which replaces
-      <application>VKD3D</application> provided by
-      <application>Wine</application>. <application>VKD3D</application> is less
+      VKD3D provided by
+      Wine. VKD3D is less
       aggressive with optimizations and is geared for general use, whereas
-      <application>VKD3D-Proton</application> has aggressive optimizations and
+      VKD3D-Proton has aggressive optimizations and
       is geared towards gaming. Despite the name, it can be used with
-      <application>Wine</application> and works quite well.
+      Wine and works quite well.
     </para>
 
     <para>
@@ -303,7 +303,7 @@ make</userinput></screen>
         <term><command>msiexec</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> MSI installer;
+            is the Wine MSI installer;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine msiexec">
@@ -316,7 +316,7 @@ make</userinput></screen>
         <term><command>notepad</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> text editor;
+            is the Wine text editor;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine notepad">
@@ -329,7 +329,7 @@ make</userinput></screen>
         <term><command>regedit</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> registry editor;
+            is the Wine registry editor;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine regedit">
@@ -342,7 +342,7 @@ make</userinput></screen>
         <term><command>regsvr32</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> DLL Registration Server;
+            is the Wine DLL Registration Server;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine regsvr32">
@@ -355,7 +355,7 @@ make</userinput></screen>
         <term><command>widl</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> Interface Definition
+            is the Wine Interface Definition
             Language (IDL) compiler
           </para>
           <indexterm zone="wine widl">
@@ -380,7 +380,7 @@ make</userinput></screen>
         <term><command>wineboot</command></term>
         <listitem>
           <para>
-            performs <application>Wine</application> initialization, startup,
+            performs Wine initialization, startup,
             and shutdown tasks;
             symlink to <command>wine</command>
           </para>
@@ -394,7 +394,7 @@ make</userinput></screen>
         <term><command>winebuild</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> DLL builder
+            is the Wine DLL builder
           </para>
           <indexterm zone="wine winebuild">
             <primary sortas="b-winebuild">winebuild</primary>
@@ -406,7 +406,7 @@ make</userinput></screen>
         <term><command>winecfg</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> Configuration Editor;
+            is the Wine Configuration Editor;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winecfg">
@@ -419,7 +419,7 @@ make</userinput></screen>
         <term><command>wineconsole</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> console;
+            is the Wine console;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine wineconsole">
@@ -432,8 +432,8 @@ make</userinput></screen>
         <term><command>wine{cpp,g++,gcc}</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> C and C++
-            <application>MinGW-w64</application> Compatible Compiler
+            is the Wine C and C++
+            MinGW-w64 Compatible Compiler
           </para>
           <indexterm zone="wine winecompilers">
             <primary sortas="b-winecompilers">winecompilers</primary>
@@ -445,7 +445,7 @@ make</userinput></screen>
         <term><command>winedbg</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> debugger;
+            is the Wine debugger;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winedbg">
@@ -458,7 +458,7 @@ make</userinput></screen>
         <term><command>winedump</command></term>
         <listitem>
           <para>
-            is a <application>Wine</application> DLL tool
+            is a Wine DLL tool
           </para>
           <indexterm zone="wine winedump">
             <primary sortas="b-winedump">winedump</primary>
@@ -470,7 +470,7 @@ make</userinput></screen>
         <term><command>winefile</command></term>
         <listitem>
           <para>
-            is a <application>Wine</application> File Manager;
+            is a Wine File Manager;
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winefile">
@@ -496,10 +496,10 @@ make</userinput></screen>
         <term><command>winemine</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> <application>Minesweeper
-            </application> game; it is also just an example and not meant
-            to be an accurate implementation of <application>Minesweeper;
-            </application>
+            is the Wine Minesweeper
+             game; it is also just an example and not meant
+            to be an accurate implementation of Minesweeper;
+            
             symlink to <command>wine</command>
           </para>
           <indexterm zone="wine winemine">
@@ -525,7 +525,7 @@ make</userinput></screen>
         <term><command>wineserver</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> server
+            is the Wine server
           </para>
           <indexterm zone="wine wineserver">
             <primary sortas="b-wineserver">wineserver</primary>
@@ -537,7 +537,7 @@ make</userinput></screen>
         <term><command>wmc</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> Message Compiler
+            is the Wine Message Compiler
           </para>
           <indexterm zone="wine wmc">
             <primary sortas="b-wmc">wmc</primary>
@@ -549,7 +549,7 @@ make</userinput></screen>
         <term><command>wrc</command></term>
         <listitem>
           <para>
-            is the <application>Wine</application> Resource Compiler
+            is the Wine Resource Compiler
           </para>
           <indexterm zone="wine wrc">
             <primary sortas="b-wrc">wrc</primary>

@@ -33,12 +33,12 @@
 
     <para>
 	Kompilatoren og tilhørende verktøy på denne siden er kjent som
-	<application>GNAT</application> teknologi, utviklet av Adacore
-	selskapet, ved hjelp av <application>GCC</application> backend.
+	GNAT teknologi, utviklet av Adacore
+	selskapet, ved hjelp av GCC backend.
 	Siden deler av Ada kompilatoren er skrevet i Ada, er det en sirkulær
 	avhengighet av en Ada kompilator. Instruksjonene nedenfor installerer
 	en binær kompilator. Du trenger ikke å gjøre det hvis du allerede har bygget
-	<application>GNAT</application> verktøy. Neste avsnitt dekker hvordan man
+	GNAT verktøy. Neste avsnitt dekker hvordan man
 	bygger GNAT når den sirkulære avhengigheten er oppfylt.
     </para>
 
@@ -68,7 +68,7 @@
 	<ulink url="https://www.linuxfromscratch.org/blfs/view/svn/basicnet/links.html">
 	links</ulink>. Du kan bruke
 	<xref linkend="wget"/> men ikke <xref linkend="curl"/>.
-	Hvis du ender opp med å bruke <application>wget</application>
+	Hvis du ender opp med å bruke wget
 	Uavhengig av anbefalingen mot det, vennligst kjør
 	følgende kommando før du pakker ut:
     </para>
@@ -81,9 +81,9 @@
     <important>
     <para>
 	Hvis du bruker multilib, bare last ned x86_64
-	<application>GNAT</application> binær tarball.
+	GNAT binær tarball.
 	Instruksjonene i neste avsnitt for multilib vil
-	fungere som forventet og <application>GCC</application>
+	fungere som forventet og GCC
 	vil fortsatt ha støtte for flere biblioteker.
     </para>
     </important>
@@ -94,7 +94,7 @@
     <title>Installasjon av GNAT Binærfiler</title>
 
     <para>
-	Installer x86_64 <application>GNAT</application>
+	Installer x86_64 GNAT
 	binærfiler ved å kjøre følgende kommandoer som
 	<systemitem class="username">root</systemitem> bruker
 	mens du fortsatt er i mappen som tar-ballen er i:
@@ -111,7 +111,7 @@ cd $GNATTBPATH                                                   &amp;&amp;
 unset GNATTBPATH</userinput></screen>
 
     <para>
-	Eller installer x86 <application>GNAT</application>
+	Eller installer x86 GNAT
 	binærfiler ved å kjøre følgende kommandoer som
 	<systemitem class="username">root</systemitem> bruker
 	mens du fortsatt er i mappen som tar-ballen er i:
@@ -129,7 +129,7 @@ unset GNATTBPATH</userinput></screen>
 
     <para>
 	Juster nå <filename>PATH</filename> variabelen så
-	<application>GNAT</application> programvare kan finnes
+	GNAT programvare kan finnes
 	og brukes:
     </para>
 
@@ -138,7 +138,7 @@ export PATH=/opt/gnat/bin:$PATH_HOLD</userinput></screen>
 
     <para>
 	Forsikre deg om at <command>ld</command> og <command>as</command>
-	fra <application>GNAT</application> pakken ikke
+	fra GNAT pakken ikke
 	brukes for å forhindre problemer med aldring ved å utstede
 	følgende som <systemitem class="username">root
 	</systemitem> bruker:

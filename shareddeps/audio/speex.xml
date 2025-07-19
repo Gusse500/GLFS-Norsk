@@ -21,7 +21,7 @@
     <title>Introduksjon til Speex</title>
 
     <para>
-      <application>Speex</application> er et lydkomprimeringsformat 
+      Speex er et lydkomprimeringsformat 
       utviklet spesielt for tale. Det er godt tilpasset internett 
       applikasjoner og tilbyr nyttige funksjoner som ikke finnes i de 
       fleste andre kodeker.
@@ -76,7 +76,7 @@
     </para>
 
     <para>
-      Installer <application>Speex</application> ved å kjøre 
+      Installer Speex ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -121,7 +121,7 @@ popd</userinput></screen>
     <title>lib32 Installasjon av Speex</title>
 
     <para>
-      Installer lib32-<application>Speex</application> ved å kjøre 
+      Installer lib32-Speex ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -216,7 +216,7 @@ popd</userinput></screen>
         <term><command>speexdec</command></term>
         <listitem>
           <para>
-            dekoder en <application>Speex</application> fil og 
+            dekoder en Speex fil og 
             produserer en WAV eller RAW fil
           </para>
           <indexterm zone="speex speexdec">
@@ -229,7 +229,7 @@ popd</userinput></screen>
         <term><command>speexenc</command></term>
         <listitem>
           <para>
-            koder en WAV eller RAW fil ved hjelp av <application>Speex</application>
+            koder en WAV eller RAW fil ved hjelp av Speex
           </para>
           <indexterm zone="speex speexenc">
             <primary sortas="b-speexenc">speexenc</primary>
@@ -254,7 +254,7 @@ popd</userinput></screen>
         <listitem>
           <para>
             er et talebehandlingsbibliotek som går sammen med
-            <application>Speex</application> codec
+            Speex codec
           </para>
           <indexterm zone="speex libspeexdsp">
             <primary sortas="c-libspeexdsp">libspeexdsp.so</primary>

@@ -23,7 +23,7 @@
     <title>Introduksjon til libidn2</title>
 
     <para>
-      <application>libidn2</application> er en pakke designet for 
+      libidn2 er en pakke designet for 
       internasjonalisert strenghåndtering basert på standarder fra Internet 
       Engineering Task Force (IETF) sin IDN arbeidsgruppe, designet for 
       internasjonaliserte domenenavn.
@@ -56,7 +56,7 @@
     <title>Installasjon av libidn2</title>
 
     <para>
-      Installer <application>libidn2</application> ved å kjøre følgende 
+      Installer libidn2 ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -79,7 +79,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av lib32-libidn2</title>
 
     <para>
-      Installer <application>lib32-libidn2</application>
+      Installer lib32-libidn2
       ved å kjøre følgende kommandoer:
     </para>
 

@@ -23,10 +23,10 @@
     <title>Introduction to ICU</title>
 
     <para>
-      The <application>International Components for Unicode</application> (ICU)
+      The International Components for Unicode (ICU)
       package is a mature, widely used set of C/C++ libraries providing Unicode
       and Globalization support for software applications.
-      <application>ICU</application> is widely portable and gives applications
+      ICU is widely portable and gives applications
       the same results on all platforms.
     </para>
 
@@ -111,7 +111,7 @@
 <screen><userinput>patch -p1 -i ../icu4c-&icu-version;-fix_enumeration-1.patch</userinput></screen>
 -->
     <para>
-      Install <application>ICU</application> by running the following commands:
+      Install ICU by running the following commands:
     </para>
 
 <!-- Review comments at:
@@ -140,7 +140,7 @@ make</userinput></screen>
     <title>lib32 Installation of ICU</title>
 
     <para>
-      Install lib32-<application>ICU</application> by running the following commands:
+      Install lib32-ICU by running the following commands:
     </para>
 
 <screen><userinput>make clean &amp;&amp;

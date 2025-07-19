@@ -25,7 +25,7 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
     <title>Introduction to Shared Mime Info</title>
 
     <para>
-      The <application>Shared Mime Info</application> package contains a
+      The Shared Mime Info package contains a
       MIME database. This allows central updates of MIME information for all
       supporting applications.
     </para>
@@ -67,7 +67,7 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
     <title>Installation of Shared Mime Info</title>
 
     <para>
-      Install <application>Shared Mime Info</application> by running the
+      Install Shared Mime Info by running the
       following commands:
     </para>
 
@@ -92,7 +92,7 @@ ninja</userinput></screen>
 
     <para role="optional">
       If you have followed the instructions above to build
-      <application>xdgmime</application>, to test the result issue
+      xdgmime, to test the result issue
       <command>ninja test</command>.
     </para>
 

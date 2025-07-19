@@ -21,7 +21,7 @@
     <title>Introduction to SDL2</title>
 
     <para>
-      The Simple DirectMedia Layer Version 2 (<application>SDL2</application>
+      The Simple DirectMedia Layer Version 2 (SDL2
       for short) is a cross-platform library designed to make it easy to write
       multimedia software, such as games and emulators.
     </para>
@@ -90,7 +90,7 @@
 -->
 
     <para>
-      Install <application>SDL2</application> by running the
+      Install SDL2 by running the
       following commands:
     </para>
 
@@ -118,7 +118,7 @@ rm -v /usr/lib/libSDL2*.a</userinput></screen>
     <title>lib32 Installation of SDL2</title>
 
     <para>
-      Install lib32-<application>SDL2</application> by running the
+      Install lib32-SDL2 by running the
       following commands:
     </para>
 
@@ -147,7 +147,7 @@ ldconfig</userinput></screen>
     <title>Testing SDL2</title>
 
     <para>
-      If you wish to, test the installation of <application>SDL2</application>
+      If you wish to, test the installation of SDL2
       using the included test programs.  None of the resulting binaries need
       to be installed.  Issue the following commands to build the test
       programs:

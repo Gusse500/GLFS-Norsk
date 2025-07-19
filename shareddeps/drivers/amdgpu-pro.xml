@@ -27,7 +27,7 @@
     </para></important>
 
     <para>
-      <application>AMDGPU PRO</application> proprietære driver inneholder 
+      AMDGPU PRO proprietære driver inneholder 
       brukerland drivere og biblioteker, som tilbyr koding av 
       maskinvareakselerasjon, støtte for EGL, OpenGL, GLES og Vulkan <emphasis>FOR</emphasis> 
       AMDGPU kort. Hvis du ikke har et AMDGPU kort, kan du hoppe over denne siden.

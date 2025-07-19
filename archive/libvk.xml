@@ -21,7 +21,7 @@
     <title>Introduksjon til Vulkan-Loader</title>
 
     <para>
-      <application>Vulkan-Loader</application> pakken inneholder et 
+      Vulkan-Loader pakken inneholder et 
       bibliotek som tilbyr Vulkan API og kjernestøtte for 
       grafikkdrivere for Vulkan.
     </para>
@@ -68,7 +68,7 @@
     </note>
 
     <para>
-      Installer <application>Vulkan-Loader</application> ved å kjøre følgende 
+      Installer Vulkan-Loader ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -98,7 +98,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Vulkan-Loader</title>
 
     <para>
-      Installer lib32-<application>Vulkan-Loader</application> ved å kjøre 
+      Installer lib32-Vulkan-Loader ved å kjøre 
       følgende kommandoer:
     </para>
 

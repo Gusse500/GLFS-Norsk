@@ -25,7 +25,7 @@
       <title>Introduksjon til Xorg Evdev Driver</title>
 
       <para>
-        <application>Xorg Evdev Driver</application> pakken inneholder en 
+        Xorg Evdev Driver pakken inneholder en 
         generisk Linux inndatadriver for Xorg X serveren. Den håndterer 
         tastatur, mus, berøringsplater og Wacom enheter, men for avansert 
         håndtering av berøringsplater og Wacom kreves det flere drivere.
@@ -84,7 +84,7 @@
       <title>Installasjon av Xorg Evdev Driver</title>
 
       <para>
-        Installer <application>Xorg Evdev Driver</application> ved å kjøre 
+        Installer Xorg Evdev Driver ved å kjøre 
         følgende kommandoer:
       </para>
 

@@ -22,7 +22,7 @@
     <title>Introduction to x264</title>
 
     <para>
-      <application>x264</application> package provides a library for encoding
+      x264 package provides a library for encoding
       video streams into the H.264/MPEG-4 AVC format.
     </para>
 
@@ -67,7 +67,7 @@
 -->
 
     <para>
-      Install <application>x264</application> by running the following
+      Install x264 by running the following
       commands:
     </para>
 
@@ -94,7 +94,7 @@ make</userinput></screen>
     <title>lib32 Installation of x264</title>
 
     <para>
-      Install lib32-<application>x264</application> by running the following
+      Install lib32-x264 by running the following
       commands:
     </para>
 

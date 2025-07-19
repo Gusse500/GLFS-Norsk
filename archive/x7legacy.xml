@@ -46,11 +46,11 @@
     <title>Introduksjon til Xorg Legacy</title>
 
     <para>
-      <application>Xorg</application>&apos;s forfader (X11R1, i 1987) 
+      Xorg&apos;s forfader (X11R1, i 1987) 
       først tilbød kun bitmap-fonter, med et verktøy
       (<command>bdftopcf</command>) for å hjelpe til med installasjonen. Med 
-      introduksjonen av <application>xorg-server-1.19.0</application> og
-      <application>libXfont2</application> mange vil ikke trenge dem.
+      introduksjonen av xorg-server-1.19.0 og
+      libXfont2 mange vil ikke trenge dem.
       Det finnes fortsatt noen gamle pakker som kan kreve, eller dra nytte av, 
       disse utdaterte skrifttypene, og derfor vises følgende pakker her.
     </para>

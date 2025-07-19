@@ -18,8 +18,8 @@
     <title>Introduksjon til NVIDIA EGL Biblioteker</title>
 
     <para>
-      <application>NVIDIA EGL Biblioteker</application> gjør at EGL driverne 
-      for <application>NVIDIA</application> driveren skal fungere ordentlig. 
+      NVIDIA EGL Biblioteker gjør at EGL driverne 
+      for NVIDIA driveren skal fungere ordentlig. 
       Hvis du ikke installerer <xref linkend="nvidia"/>, hopp over denne pakken.
     </para>
 
@@ -149,7 +149,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libnvidia-egl-wayland</filename></term>
         <listitem>
           <para>
-            tilbyr klientsiden <application>Wayland</application> EGL
+            tilbyr klientsiden Wayland EGL
             applikasjonsstøtte
           </para>
           <indexterm zone="nvidia-egl libnvidia-egl-wayland">

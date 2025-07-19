@@ -12,7 +12,7 @@
 
   <para>
     This chapter covers preliminary material for understanding what
-    <application>Wine</application> is and what it requires.
+    Wine is and what it requires.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatiswine.xml"/>

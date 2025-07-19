@@ -21,7 +21,7 @@
     <title>Introduksjon til Xorg Biblioteker</title>
 
     <para>
-      <application>Xorg</application> biblioteker tilbyr bibliotekrutiner 
+      Xorg biblioteker tilbyr bibliotekrutiner 
       som brukes i alle X Vindu applikasjoner.
     </para>
 
@@ -106,7 +106,7 @@ libXpresent-&libXpresent-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
-      <application>libFS</application> er kommentert ut og vil ikke bli bygget 
+      libFS er kommentert ut og vil ikke bli bygget 
       med mindre du fjerner kommenteringen. Det er ikke nødvendig for 
       noen pakker i LFS bøkene og bare nødvendig for noen Xorg apper.
     </para>
@@ -141,10 +141,10 @@ grep -v '^#' ../lib-&xorg-version;-list | wget -i- -c \
 <screen><userinput>grep -A9 summary *make_check.log</userinput></screen>
 
     <para>
-      GLFS utviklerne har bekreftet at <application>libX11</application>,
-      <application>libXt</application>, <application>libXmu</application>,
-      <application>libXpm</application>, og
-      <application>libxshmfence</application> distribueres med fungerende 
+      GLFS utviklerne har bekreftet at libX11,
+      libXt, libXmu,
+      libXpm, og
+      libxshmfence distribueres med fungerende 
       testpakker.
     </para>
 
@@ -296,7 +296,7 @@ done</userinput></screen>
 
     <para>
       <parameter>--disable-open-zfile</parameter>: Allow
-      <application>libXpm</application> å bygge uten
+      libXpm å bygge uten
       den valgrie <command>compress</command> kommandoen tilstede.
     </para>
 

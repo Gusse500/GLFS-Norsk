@@ -21,7 +21,7 @@
     <title>Introduksjon til Xorg Applikasjoner</title>
 
     <para>
-      <application>Xorg</application> applikasjonene gir de forventede 
+      Xorg applikasjonene gir de forventede 
       applikasjonene som var tilgjengelige i tidligere X Vindu 
       implementeringer.
     </para>
@@ -144,7 +144,7 @@ done</userinput></screen>
     <para>
       Fjern et udokumentert skript som er rapportert å være ødelagt
       (<command>xkeystone</command> levert av
-      <application>xrandr</application> pakken):
+      xrandr pakken):
     </para>
 
     <screen><userinput>as_root rm -f /usr/bin/xkeystone</userinput></screen>
@@ -156,9 +156,9 @@ done</userinput></screen>
 
     <para>
       <command>sed -e 's/\$(CPP) \$(DEFS)/$(CPP) -P $(DEFS)/' -i
-      man/Makefile.in</command>: med <application>gcc-5</application> 
+      man/Makefile.in</command>: med gcc-5 
       oppførselen til <command>cpp</command> ble endret for å sende ut linjenumre.
-      Det resulterer i uavsluttete <application>sed</application> kommandoer i
+      Det resulterer i uavsluttete sed kommandoer i
       <filename>filenames.sed</filename>. Legge til <literal>-P</literal> 
       gjenoppretter den gamle oppførselen.
     </para>

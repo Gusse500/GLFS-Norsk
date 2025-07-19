@@ -27,7 +27,7 @@
       <title>Introduksjon til Libinput</title>
 
       <para>
-        <application>libinput</application> er et bibliotek som håndterer 
+        libinput er et bibliotek som håndterer 
         inndataenheter for skjermservere og andre applikasjoner som trenger 
         å håndtere inndataenheter direkte.
       </para>
@@ -59,7 +59,7 @@
       <title>Installasjon av Libinput</title>
 
       <para>
-        Installer <application>libinput</application> ved å kjøre følgende 
+        Installer libinput ved å kjøre følgende 
         kommandoer:
       </para>
 
@@ -153,7 +153,7 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
           <listitem>
             <para>
               er et sett med verktøy for å samhandle med
-              <application>libinput</application> biblioteket
+              libinput biblioteket
             </para>
             <indexterm zone="libinput libinput-prog">
               <primary sortas="b-libinput-prog">libinput</primary>

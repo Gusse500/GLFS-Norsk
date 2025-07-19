@@ -27,8 +27,8 @@
       boken, men snarere i BLFS boken. Det er flere grunner
       til dette, men den viktigste grunnen er at pakkene som ikke er i
       boken ikke er viktige for hovedpakkene i boken, som
-      er <application>Steam</application> og
-      <application>Wine</application>. De er fortsatt oppført uansett hvis brukere
+      er Steam og
+      Wine. De er fortsatt oppført uansett hvis brukere
       ønsker mer støtte fra de spesifikke pakkene som ikke er spesifikke for hovedpakkene
       som for eksempel medieavspilling. En annen grunn til at
       pakker ikke er med i boken er at pakkene krever mye
@@ -64,10 +64,10 @@
 <!--
     <para>
       <xref linkend="mingw-w64-binutils"/>: Mens
-      <application>Binutils</application>-2.44 finnes og kan installeres
+      Binutils-2.44 finnes og kan installeres
       uten problemer, på MinGW-w64 siden av sakene, <xref linkend="wine"/>
-      er uforenlig med <application>MinGW-w64-Binutils</application>-2.44.
-      Ikke samsvarende <application>Binutils</application> versjoner er finjustert
+      er uforenlig med MinGW-w64-Binutils-2.44.
+      Ikke samsvarende Binutils versjoner er finjustert
       slik at én verktøykjedes versjon ikke samsvarer med en annen, men er separate
       verktøykjeder.
     </para>
@@ -75,8 +75,8 @@
 
 <!--
     <para>
-      <xref linkend="nvidia"/>: Nyere versjoner av <application>NVIDIA
-      </application> har mange problemer. For eksempel krever den nyeste
+      <xref linkend="nvidia"/>: Nyere versjoner av NVIDIA
+       har mange problemer. For eksempel krever den nyeste
       versjonen at brukere deaktiverer støtte for framebuffer emulering i kjernen for å
       kunne installere og bruke driveren. Den forrige krever en
       <command>sed</command> kommando etter utpakking av runfilen.

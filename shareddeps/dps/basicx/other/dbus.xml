@@ -21,7 +21,7 @@
     <title>Introduksjon til D-Bus</title>
 
     <para revision="systemd">
-      Selv om <application>D-Bus</application> ble bygget i LFS, er det noen 
+      Selv om D-Bus ble bygget i LFS, er det noen 
       funksjoner levert av pakken som andre GLFS pakker trenger, men 
       avhengighetene deres passet ikke inn i LFS.
     </para>
@@ -128,7 +128,7 @@
 
       <para>
         Hvis noen pakker installerer en
-        <application>D-Bus</application> <filename>.service</filename>
+        D-Bus <filename>.service</filename>
         fil utenfor standard <filename
         class="directory">/usr/share/dbus-1/services</filename> mappen,
         den mappen bør legges til i den lokale sesjonskonfigurasjonen. 
@@ -171,8 +171,8 @@ EOF</userinput></screen>
 
       <para revision="sysv">
         Merk at dette oppstartsskriptet bare starter den systemomfattende
-        <application>D-Bus</application> nissen. Hver bruker som trenger tilgang til
-        <application>D-Bus</application> tjenestene må også kjøre en 
+        D-Bus nissen. Hver bruker som trenger tilgang til
+        D-Bus tjenestene må også kjøre en 
         øktnisse. Det finnes mange metoder du kan bruke for å starte en 
         øktnisse ved å bruke <command>dbus-launch</command> kommandoen. Gjennomgå
         <command>dbus-launch</command> manualsiden for detaljer om 
@@ -295,7 +295,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-daemon</command></term>
         <listitem>
           <para>
-            er <application>D-Bus</application> meldingsbussnisse
+            er D-Bus meldingsbussnisse
           </para>
           <indexterm zone="dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
@@ -322,7 +322,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <listitem>
           <para>
             brukes til å overvåke meldinger som går gjennom en
-            <application>D-Bus</application> meldingsbuss
+            D-Bus meldingsbuss
           </para>
           <indexterm zone="dbus dbus-monitor">
             <primary sortas="b-dbus-monitor">dbus-monitor</primary>
@@ -334,7 +334,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-run-session</command></term>
         <listitem>
           <para>
-            starter en prosess som en ny <application>D-Bus</application> økt
+            starter en prosess som en ny D-Bus økt
           </para>
           <indexterm zone="dbus dbus-run-session">
             <primary sortas="b-dbus-run-session">dbus-run-session</primary>
@@ -346,7 +346,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-send</command></term>
         <listitem>
           <para>
-            brukes til å sende en melding til en <application>D-Bus</application>
+            brukes til å sende en melding til en D-Bus
             meldingsbuss
           </para>
           <indexterm zone="dbus dbus-send">
@@ -359,9 +359,9 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-test-tool</command></term>
         <listitem>
           <para>
-            er en <application>D-Bus</application> trafikkgenerator og testverktøy; 
+            er en D-Bus trafikkgenerator og testverktøy; 
             det er et flerbruksverktøy for feilsøking og profilering
-            <application>D-Bus</application>
+            D-Bus
           </para>
           <indexterm zone="dbus dbus-test-tool">
             <primary sortas="b-dbus-test-tool">dbus-test-tool</primary>
@@ -374,7 +374,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <listitem>
           <para>
             brukes til å oppdatere miljøet som brukes til
-            <application>D-Bus</application> økttjenester; 
+            D-Bus økttjenester; 
             den oppdaterer listen over miljøvariabler som brukes av
             <command>dbus-daemon --session</command> når den aktiverer økttjenester 
             uten å bruke systemd
@@ -403,8 +403,8 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <listitem>
           <para>
             inneholder API funksjonene som brukes av
-            <application>D-Bus</application> øktnissen.
-            <application>D-Bus</application> er først et bibliotek som tilbyr 
+            D-Bus øktnissen.
+            D-Bus er først et bibliotek som tilbyr 
             én-til-én kommunikasjon mellom to applikasjoner;
             <command>dbus-daemon</command> er et program som bruker dette 
             biblioteket til å implementere en meldingsbussnisse

@@ -25,7 +25,7 @@
       <title>Introduksjon til Xorg Libinput Driver</title>
 
       <para>
-        <application>X.Org Libinput Driver</application> er et tynt omslag 
+        X.Org Libinput Driver er et tynt omslag 
         rundt libinput og tillater bruk av libinput for inndataenheter i X. 
         Denne driveren kan brukes som en drop-in-erstatning for evdev og 
         synaptics.
@@ -58,7 +58,7 @@
       <title>Installasjon av Xorg Libinput Driver</title>
 
       <para>
-        Installer <application>Xorg Libinput Driver</application> ved å kjøre 
+        Installer Xorg Libinput Driver ved å kjøre 
         følgende kommandoer:
       </para>
 

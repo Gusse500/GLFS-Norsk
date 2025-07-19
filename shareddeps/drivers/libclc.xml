@@ -21,7 +21,7 @@
       <title>Introduksjon til libclc</title>
 
       <para>
-        <application>libclc</application> pakken inneholder bibliotekkravene 
+        libclc pakken inneholder bibliotekkravene 
         for programmeringsspråket OpenCL C (inneholder deklarasjonsfiler, 
         men ingen biblioteker i seg selv).
       </para>
@@ -53,7 +53,7 @@
       <title>Installasjon av libclc</title>
 
       <para>
-        Installer <application>libclc</application> ved å kjøre følgende 
+        Installer libclc ved å kjøre følgende 
         kommandoer:
       </para>
 

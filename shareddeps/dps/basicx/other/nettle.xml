@@ -21,7 +21,7 @@
     <title>Introduksjon til Nettle</title>
 
     <para>
-      <application>Nettle</application> Pakken inneholder et lavnivåkryptografisk 
+      Nettle Pakken inneholder et lavnivåkryptografisk 
       bibliotek som er designet for å passe enkelt inn i mange sammenhenger.
     </para>
 
@@ -44,7 +44,7 @@
     <title>Installasjon av Nettle</title>
 
     <para>
-      Installer <application>Nettle</application> ved å kjøre følgende 
+      Installer Nettle ved å kjøre følgende 
       kommandoer:
     </para>
 

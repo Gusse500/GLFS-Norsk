@@ -22,7 +22,7 @@
     <title>Introduksjon til libunistring</title>
 
     <para>
-      <application>libunistring</application> er et bibliotek som tilbyr 
+      libunistring er et bibliotek som tilbyr 
       funksjoner for å manipulere Unicode strenger og for å manipulere 
       C strenger i henhold til Unicode standarden.
 </para>
@@ -48,7 +48,7 @@
     <title>Installasjon av libunistring</title>
 
     <para>
-      Installer <application>libunistring</application> ved å kjøre følgende 
+      Installer libunistring ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -74,7 +74,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av lib32-libunistring</title>
 
     <para>
-      Installer <application>lib32-libunistring</application>
+      Installer lib32-libunistring
       ved å kjøre følgende kommandoer:
     </para>
 

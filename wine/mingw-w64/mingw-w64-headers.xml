@@ -64,7 +64,7 @@
     <title>x86_64 MinGW-w64-headers</title>
     
     <para>
-      Install x86_64 <application>MinGW-w64-headers</application>
+      Install x86_64 MinGW-w64-headers
       by running the following commands:
     </para>
 
@@ -88,7 +88,7 @@ cd    build-x86_64-headers &amp;&amp;
     <title>i686 MinGW-w64-headers</title>
 
     <para>
-      Install i686 <application>MinGW-w64-headers</application>
+      Install i686 MinGW-w64-headers
       by running the following commands:
     </para>
 

@@ -22,7 +22,7 @@
     <title>Introduction to NASM</title>
 
     <para>
-      <application>NASM</application> (Netwide Assembler) is an 80x86
+      NASM (Netwide Assembler) is an 80x86
       assembler designed for portability and modularity. It includes a
       disassembler as well.
     </para>
@@ -63,7 +63,7 @@
 <screen><userinput>tar -xf ../nasm-&nasm-version;-xdoc.tar.xz --strip-components=1</userinput></screen>
 
     <para>
-      Install <application>NASM</application> by running
+      Install NASM by running
       the following commands:
     </para>
 

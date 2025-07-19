@@ -21,7 +21,7 @@
     <title>Introduksjon til Vulkan-headers</title>
 
     <para>
-      <application>Vulkan-Headers</application> pakken inneholder et sett med 
+      Vulkan-Headers pakken inneholder et sett med 
       deklarasjonsfiler som er nødvendige for å bygge og koble applikasjoner 
       mot Vulkan API.
     </para>
@@ -52,7 +52,7 @@
     <title>Installasjon av Vulkan-Headers</title>
 
     <para>
-      Installer <application>Vulkan-Headers</application> ved å kjøre følgende 
+      Installer Vulkan-Headers ved å kjøre følgende 
       kommandoer:
     </para>
 

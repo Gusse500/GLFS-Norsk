@@ -21,7 +21,7 @@
     <title>Introduksjon til SPIRV-Headers</title>
 
     <para>
-      <application>SPIRV-Headers</application> pakken inneholder deklarasjoner 
+      SPIRV-Headers pakken inneholder deklarasjoner 
       som tillater applikasjoner til SPIR-V språket og instruksjonssettet med 
       Vulkan. SPIR-V er et binært mellomliggende språk for å representere 
       grafiske shader trinn og beregningskjerner for flere Khronos API-er, 
@@ -63,7 +63,7 @@
     </note>
 
     <para>
-      Installer <application>SPIRV-Headers</application> ved å kjøre følgende 
+      Installer SPIRV-Headers ved å kjøre følgende 
       kommandoer:
     </para>
 

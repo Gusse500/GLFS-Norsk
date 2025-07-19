@@ -21,7 +21,7 @@
     <title>Introduksjon til Xwayland</title>
 
     <para>
-      <application>Xwayland</application> pakken er en Xorg server som 
+      Xwayland pakken er en Xorg server som 
       kjører oppå Wayland serveren. Den har blitt separert fra hovedpakken 
       for Xorg serveren. Den tillater kjøring av X-klienter i en 
       Wayland økt.
@@ -66,7 +66,7 @@
     <title>Installasjon av Xwayland</title>
 
     <para>
-      Installer <application>xwayland</application> ved å kjøre følgende 
+      Installer xwayland ved å kjøre følgende 
       kommandoer:
     </para>
 

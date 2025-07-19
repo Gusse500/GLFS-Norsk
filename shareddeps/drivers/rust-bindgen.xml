@@ -44,7 +44,7 @@
 
     <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="llvm"/> med <application>Clang</application> og
+      <xref linkend="llvm"/> med Clang og
       <xref linkend="rustc"/>
     </para>
 
@@ -53,7 +53,7 @@
   <sect2 role="installation">
     <title>Installasjon av rust-bindgen</title>
     <para>
-      Installer <application>rust-bindgen</application> ved å kjøre følgende 
+      Installer rust-bindgen ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -107,7 +107,7 @@ bindgen --generate-shell-completions zsh  \
         <term><command>bindgen</command></term>
         <listitem>
           <para>
-            genererer <application>Rust</application> FFI bindinger til 
+            genererer Rust FFI bindinger til 
             C biblioteker (og noen C++ biblioteker)
           </para>
           <indexterm zone="rust-bindgen bindgen">

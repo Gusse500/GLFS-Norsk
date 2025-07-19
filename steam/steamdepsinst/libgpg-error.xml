@@ -21,9 +21,9 @@
     <title>Introduction to libgpg-error</title>
 
     <para>
-      The <application>libgpg-error</application> package contains a
+      The libgpg-error package contains a
       library that defines common error values for all
-      <application>GnuPG</application> components.
+      GnuPG components.
     </para>
 
     <itemizedlist spacing="compact">
@@ -45,7 +45,7 @@
     <title>Installation of libgpg-error</title>
 
     <para>
-      Install <application>libgpg-error</application> by running the
+      Install libgpg-error by running the
       following commands:
     </para>
 
@@ -104,7 +104,7 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
         <term><command>gpg-error</command></term>
         <listitem>
           <para>
-            is used to determine <application>libgpg-error</application>
+            is used to determine libgpg-error
             error codes
           </para>
           <indexterm zone="libgpg-error gpg-error">
@@ -142,7 +142,7 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
         <term><filename class="libraryfile">libgpg-error</filename></term>
         <listitem>
           <para>
-            contains the <application>libgpg-error</application> API
+            contains the libgpg-error API
             functions
           </para>
           <indexterm zone="libgpg-error libgpg-error-lib">

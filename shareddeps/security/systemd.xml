@@ -25,11 +25,11 @@
     <title>Introduction to Systemd</title>
 
     <para>
-      While <application>Systemd</application> was installed when
+      While Systemd was installed when
       building LFS, there are many features provided by the package that
       were not included in the initial installation because
-      <application>Linux-PAM</application> was not yet installed.
-      The <application>Systemd</application> package needs to be
+      Linux-PAM was not yet installed.
+      The Systemd package needs to be
       rebuilt to provide a working <command>systemd-logind</command> service,
       which provides many additional features for dependent packages.
     </para>
@@ -70,13 +70,13 @@
     <note>
       <para>
         <xref linkend='linux-pam'/> is not strictly required to build
-        <application>Systemd</application>, but the main reason to rebuild
-        <application>Systemd</application> in GLFS (it's already built in
+        Systemd, but the main reason to rebuild
+        Systemd in GLFS (it's already built in
         LFS anyway) is for the <command>systemd-logind</command> daemon and
         the
         <filename class='libraryfile'>pam_systemd.so</filename> PAM module.
         <xref linkend='linux-pam'/> is required for them.  All packages in
-        GLFS book with a dependency on <application>Systemd</application>
+        GLFS book with a dependency on Systemd
         expect that it has been rebuilt with <xref linkend='linux-pam'/>.
       </para>
     </note>
@@ -102,7 +102,7 @@
        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
 
     <para>
-      Rebuild <application>Systemd</application> by running the
+      Rebuild Systemd by running the
       following commands:
     </para>
 
@@ -136,7 +136,7 @@ ninja</userinput></screen>
       <para>
         For the best test results, make sure you run the test suite from
         a system that is booted by the same
-        <application>Systemd</application> version you are rebuilding.
+        Systemd version you are rebuilding.
       </para>
     </note>
 
@@ -161,7 +161,7 @@ ninja</userinput></screen>
     <title>lib32 Installation of Systemd</title>
 
     <para>
-      Rebuild lib32-<application>Systemd</application> by running the
+      Rebuild lib32-Systemd by running the
       following commands:
     </para>
 
@@ -343,7 +343,7 @@ EOF</userinput></screen>
         <listitem>
           <para>
             is a PAM module used to register user sessions with the
-            <application>systemd</application> login manager,
+            systemd login manager,
             <command>systemd-logind</command>
           </para>
           <indexterm zone="systemd pam_systemd">

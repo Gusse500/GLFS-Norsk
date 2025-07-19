@@ -12,8 +12,8 @@
   <title>Binær støtte</title>
 
   <para>
-    Nå som du har <application>Steam</application> og/eller
-    <application>Wine</application>, Du har nå god støtte for å kjøre
+    Nå som du har Steam og/eller
+    Wine, Du har nå god støtte for å kjøre
     kun binære applikasjoner. Det finnes imidlertid AppImages og Flatpaks. Denne
     boken går ikke gjennom og vil ikke gå gjennom hvordan du får den støtten. Du kan
     imidlertid finne ut hvordan du får den støtten ved å se på et annet prosjekt
@@ -27,7 +27,7 @@
   <para>
     Etter å ha fulgt instruksjonene, skal du kunne kjøre AppImages og bruke Flatpak.
     Du kan til og med bruke Flatpak til å installere
-    <application>Steam</application> hvis du ønsker det. Den metoden er ikke dekket i
+    Steam hvis du ønsker det. Den metoden er ikke dekket i
     denne boken.
   </para>
 

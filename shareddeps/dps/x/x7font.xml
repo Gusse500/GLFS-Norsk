@@ -21,8 +21,8 @@
     <title>Introduksjon til Xorg Fonter</title>
 
     <para>
-      <application>Xorg</application> fontpakker tilbyr noen skalerbare fonter 
-      og støttepakker for <application>Xorg</application>
+      Xorg fontpakker tilbyr noen skalerbare fonter 
+      og støttepakker for Xorg
       applikasjoner. Mange vil ønske å installere andre TTF eller OTF fonter i 
       tillegg til, eller i stedet for, disse. Noen er oppført på <ulink
       url="&blfs-svn;/x/TTF-and-OTF-fonts.html">TTF-and-OTF-fonts</ulink>.

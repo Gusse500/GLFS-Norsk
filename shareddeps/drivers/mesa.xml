@@ -20,14 +20,14 @@
     <title>Introduksjon til Mesa</title>
 
     <para>
-      <application>Mesa</application> tilbyr et bredt utvalg av grafikk 
+      Mesa tilbyr et bredt utvalg av grafikk 
       programvare, som OpenGL biblioteker og drivere, Vulkan drivere 
       og andre drivere.
     </para>
 
     <para>
       Alle driverne fra denne pakken fungerer med <xref linkend="libglvnd"/>.
-      Pakken vil automatisk oppdage en <application>libglvnd</application>
+      Pakken vil automatisk oppdage en libglvnd
       installasjon hvis tilgjengelig og vil lenke mot bibliotekene levert av 
       den pakken. Dermed vil ikke OpenGL bibliotekene levert av denne pakken 
       bli bygget, bare driverne for OpenGL.
@@ -43,7 +43,7 @@
 
     <note>
       <para>
-        <application>Mesa</application> oppdateres relativt ofte. Du kan bruke 
+        Mesa oppdateres relativt ofte. Du kan bruke 
         den nyeste tilgjengelige &mesa-major-minor;.x mesa versjonen.
       </para>
     </note>
@@ -112,8 +112,8 @@
           <para>
             <xref role="first" linkend="libva"/> (For å gi VA-API støtte for noen 
             Gallium3D-drivere, merk at det er en sirkulær avhengighet. Du må 
-            bygge <application>libva</application> først uten EGL og GLX støtte, 
-            installer denne pakken og gjenoppbygg <application>libva</application>)
+            bygge libva først uten EGL og GLX støtte, 
+            installer denne pakken og gjenoppbygg libva)
           </para>
         </listitem>
         <listitem>
@@ -159,7 +159,7 @@
       <xref linkend="nettle"/>,
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
-      (provides more than 300 demos to test <application>Mesa</application>),
+      (provides more than 300 demos to test Mesa),
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile plattformer), og
       <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
@@ -172,7 +172,7 @@
     <title>Installasjon av Mesa</title>
     
     <para>
-      Installer <application>Mesa</application> ved å kjøre følgende 
+      Installer Mesa ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -219,7 +219,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Mesa</title>
 
     <para>
-      Installer lib32-<application>Mesa</application> ved å kjøre følgende 
+      Installer lib32-Mesa ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -316,7 +316,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             <literal>virgl</literal> (for QEMU virtuelle GPU
-            med <application>virglrender</application> støtte)
+            med virglrender støtte)
           </para>
         </listitem>
         <listitem>
@@ -332,7 +332,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             <literal>llvmpipe</literal> (<literal>softpipe</literal> men bruker
-            <application>LLVM</application> for å øke ytelsen)
+            LLVM for å øke ytelsen)
           </para>
         </listitem>
         <listitem>
@@ -398,7 +398,7 @@ ldconfig</userinput></screen>
           <para>
             <literal>nouveau</literal> (for GTX 16XX, RTX 20XX, eller nyere NVIDIA GPUer;
             denne driveren utvikles og er allerede ganske effektiv, men mindre enn 
-            <application>NVIDIA</application> driver; det er imidlertid en god 
+            NVIDIA driver; det er imidlertid en god 
             erstatning, spesielt når den brukes med <literal>zink</literal>)
           </para>
         </listitem>
@@ -627,7 +627,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
-            er <application>Mesa</application> Graphics Buffer
+            er Mesa Graphics Buffer
             Manager bibliotek
           </para>
           <indexterm zone="mesa libgbm">
@@ -640,7 +640,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libglapi</filename></term>
         <listitem>
           <para>
-            er <application>Mesa</application> implementering av OpenGL 
+            er Mesa implementering av OpenGL 
             API; gitt hvis <xref linkend="libglvnd"/> ikke er installert
           </para>
           <indexterm zone="mesa libglapi">

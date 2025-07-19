@@ -21,7 +21,7 @@
     <title>Introduksjon til Cbindgen</title>
 
     <para>
-      <application>Cbindgen</application> kan brukes til å generere C bindinger 
+      Cbindgen kan brukes til å generere C bindinger 
       for Rust kode.
     </para>
 
@@ -52,7 +52,7 @@
   <sect2 role="installation">
     <title>Installasjon av cbindgen</title>
     <para>
-      Installer <application>cbindgen</application> ved å kjøre følgende 
+      Installer cbindgen ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -102,7 +102,7 @@
         <term><command>cbindgen</command></term>
         <listitem>
           <para>
-            genererer C bindinger for <application>Rust</application> kode
+            genererer C bindinger for Rust kode
           </para>
           <indexterm zone="cbindgen cbindgen-prog">
             <primary sortas="b-cbindgen">cbindgen</primary>

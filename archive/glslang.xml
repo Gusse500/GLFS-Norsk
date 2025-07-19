@@ -21,7 +21,7 @@
     <title>Introduksjon til Glslang</title>
 
     <para>
-      <application>Glslang</application> pakken inneholder et brukergrensesnitt 
+      Glslang pakken inneholder et brukergrensesnitt 
       og en validator for OpenGL, OpenGL ES og Vulkan shadere.
     </para>
 
@@ -75,7 +75,7 @@
 -->
 
     <para>
-      Installer <application>Glslang</application> ved å kjøre følgende 
+      Installer Glslang ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -107,7 +107,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Glslang</title>
 
     <para>
-      Installer lib32-<application>Glslang</application> ved å kjøre følgende 
+      Installer lib32-Glslang ved å kjøre følgende 
       kommandoer:
     </para>
 

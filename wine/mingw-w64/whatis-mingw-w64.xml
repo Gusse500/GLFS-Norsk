@@ -11,16 +11,16 @@
   <title>Hva er MinGW-w64 Verktøykjeden?</title>
 
   <para>
-    <application>MinGW-w64</application> i seg selv er en pakke som tilbyr deklarasjoner, 
+    MinGW-w64 i seg selv er en pakke som tilbyr deklarasjoner, 
     C kjøretidsbiblioteker og mye mer. Når støtte for det er innebygd i kompilatorer 
-    som <application>GCC</application>, muliggjør det bygging av programvare rettet 
+    som GCC, muliggjør det bygging av programvare rettet 
     mot Windows, for eksempel programmer og biblioteker. Denne programvaren er 
     ment å brukes på Windows, men kan også brukes på Linux.
   </para>
 
   <note><para>
-    <application>LLVM</application> kan også brukes til verktøykjeden. Denne 
-    boken vil bruke <application>GCC</application> i stedet fordi den har 
+    LLVM kan også brukes til verktøykjeden. Denne 
+    boken vil bruke GCC i stedet fordi den har 
     enklere instruksjoner, raskere byggetider og sparer diskplass.
   </para></note>
 
@@ -40,10 +40,10 @@
     bruker et Unix lignende operativsystem, har vi ikke slike DLL-er installert 
     på systemet, og de ble aldri kompilert i LFS eller tidligere i denne boken. 
     <xref linkend="nvidia"/> installerer DLL filer, men er strengt tatt ment for
-    <application>Wine</application> og Proton som en måte å eksponere DLSS på.
-    <application>MinGW-w64</application> installerer bare statiske biblioteker, 
+    Wine og Proton som en måte å eksponere DLSS på.
+    MinGW-w64 installerer bare statiske biblioteker, 
     som er nyttige når man kompilerer Windows programvare, men er ubrukelige 
-    under kjøring. <application>Wine</application> må kompilere de dynamiske 
+    under kjøring. Wine må kompilere de dynamiske 
     bibliotekene for at mesteparten av Windows programvaren skal fungere.
   </para>
 
@@ -51,11 +51,11 @@
     Hvis du er en utvikler og ønsker å sikte deg inn på Windows, bør denne 
     verktøykjeden være ganske nyttig. Du trenger ikke å følge noen av kapitlene 
     etter dette hvis du bare vil ha MinGW-w64 verktøykjeden. Det anbefales å 
-    fortsatt installere <application>Wine</application> for 
+    fortsatt installere Wine for 
     tilregnelighetskontroller knyttet til den innebygde programvaren du utvikler, 
     selv om det ikke er en perfekt erstatning for et nøyaktig Windows miljø. 
     Selv om den innebygde programvaren kan fungere fint med 
-    <application>Wine</application>, kan den være helt ødelagt på Windows.
+    Wine, kan den være helt ødelagt på Windows.
   </para>
 
   <para>

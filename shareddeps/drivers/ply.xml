@@ -21,7 +21,7 @@
     <title>Introduksjon til ply</title>
 
     <para>
-      <application>ply</application> er en null-avhengighet Python 
+      ply er en null-avhengighet Python 
       implementering av de tradisjonelle parseverktøyene lex og yacc.
     </para>
 
@@ -50,7 +50,7 @@
 <screen><userinput>pip3 wheel -w dist --no-build-isolation --no-deps --no-cache-dir $PWD</userinput></screen>
 
     <para>
-      Nå installer <application>Python</application> som
+      Nå installer Python som
       <systemitem class="username">root</systemitem> bruker:
     </para>
 

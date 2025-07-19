@@ -21,7 +21,7 @@
     <title>Introduksjon til libepoxy</title>
 
     <para>
-      <application>libepoxy</application> er et bibliotek for håndtering av 
+      libepoxy er et bibliotek for håndtering av 
       OpenGL funksjonspekere.
     </para>
 
@@ -51,7 +51,7 @@
     <title>Installasjon av libepoxy</title>
 
     <para>
-      Installer <application>libepoxy</application> ved å kjøre følgende 
+      Installer libepoxy ved å kjøre følgende 
       kommandoer:
     </para>
 

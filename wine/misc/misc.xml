@@ -11,8 +11,8 @@
   <title>Miscellaneous</title>
 
   <para>
-    This chapter covers miscellaneous dependencies of <application>
-    Wine</application> that don't fit in any given category.
+    This chapter covers miscellaneous dependencies of 
+    Wine that don't fit in any given category.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libxkbcommon.xml"/>

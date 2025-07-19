@@ -24,14 +24,14 @@
     </para>
 
     <para>
-      Så, <application>Mesa</application> kom inn og implementerte drivere og 
+      Så, Mesa kom inn og implementerte drivere og 
       funksjoner for OpenGL. De implementerer også GLX og EGL som gir 
-      grensesnitt til vindussystemer som <application>Xorg</application>.
+      grensesnitt til vindussystemer som Xorg.
       Metoden deres håndterer imidlertid ikke anropene på en leverandørnøytral måte. 
       For det meste er denne tilnærmingen grei og fører ikke til noen problemer.
-      <application>NVIDIA</application> har bestemt at dette var en dårlig nok 
+      NVIDIA har bestemt at dette var en dårlig nok 
       tilnærming til å rettferdiggjøre en ny implementering av OpenGL kalt
-      <application>libglvnd</application>. Den tilbyr bare implementeringene for 
+      libglvnd. Den tilbyr bare implementeringene for 
       OpenGL, OpenGL ES, GLX og EGL. Dette har ført til eldre OpenGL kontra ny 
       OpenGL på Linux.
     </para>
@@ -50,7 +50,7 @@
 
     <para>
       Dette er bare et problem for pakker som kun inneholder binære filer, og noen
-      <application>CMake</application> byggesystemer. For denne boken og i BLFS, 
+      CMake byggesystemer. For denne boken og i BLFS, 
       bør du ikke støte på noen av disse problemene med mindre du ønsker å bruke
       <xref linkend="nvidia"/>, som spesifikt krever <xref
       linkend="libglvnd"/>. SLFS har som mål å omgå problemer som oppstår fra 
@@ -62,7 +62,7 @@
       url="https://www.shipofharkinian.com/">Ship of Harkinian</ulink>, en PC 
       portering av Nintendo 64 spillet, Legend of Zelda: Ocarina of Time, 
       lenker mot nye OpenGL og vil bare bli ødelagt med
-      <application>Mesa</application> installert; dessuten fører det også til 
+      Mesa installert; dessuten fører det også til 
       mange problemer å prøve å omgå problemet ved å bygge fra kildekode. 
       Imidlertid er binærfilen til PC porteringen laget av statisk rekompilering 
       av Nintendo 64 spillet, Legend of Zelda: Majora's Mask, kalt <ulink
@@ -75,11 +75,11 @@
       Hvis du bare vil ha eldre OpenGL, kan du bare installere <xref
       linkend="mesa"/>. Hvis du ønsker ny OpenGL, støtte for noen binære fil
       pakker, <xref linkend="nvidia"/>, og komme forbi noen
-      <application>CMake</application> byggesystemer, installer <xref
+      CMake byggesystemer, installer <xref
       linkend="libglvnd"/>. Hvis du ønsker en driver fra <xref
       linkend="mesa"/>, kan du bygge det etter
-      <application>libglvnd</application>. <application>Mesa</application> vil
-      automatisk oppdage <application>libglvnd</application> og vil hoppe over 
+      libglvnd. Mesa vil
+      automatisk oppdage libglvnd og vil hoppe over 
       å bygge OpenGL implementeringene sine.
     </para>
 
@@ -113,11 +113,11 @@
 
       <para>
         GLES, nærmere bestemt v2 og v3, brukes noen ganger, men for det meste i 
-        ett område. Et slikt område er i <application>Wayland</application>
+        ett område. Et slikt område er i Wayland
         kompositorer og kompositorerbiblioteker, som for eksempel
-        <application>Hyprland</application>, <application>Mutter</application>,
-        <application>Wayfire</application>, og
-        <application>Wlroots</application>. Selv om kompositore kan bruke 
+        Hyprland, Mutter,
+        Wayfire, og
+        Wlroots. Selv om kompositore kan bruke 
         Vulkan, krever de fleste kompositore GLES rendering og tilbyr ikke en 
         Vulkan løsning, eller noen annen rendering API løsning. GLESv1 er 
         derimot en utdatert spesifikasjon av GLES API som har blitt faset ut i 
@@ -131,12 +131,12 @@
       <title>Historien om Wayland og GLES</title>
 
       <para>
-        Når <application>Wayland</application> sett med protokoller ble laget, måtte 
+        Når Wayland sett med protokoller ble laget, måtte 
         det lages en referanseimplementering for å vise hva som var mulig, og 
         hvordan man oppretter en kompositor for den nye protokollen. Resultatet var
-        <application>Weston</application>. For rendering APIet sitt brukte den, 
+        Weston. For rendering APIet sitt brukte den, 
         og bruker, GLES og EGL. Dette ble gjort slik at avhengigheten av 
-        bibliotekene fra <application>X</application> Vindussystemet var ikke 
+        bibliotekene fra X Vindussystemet var ikke 
         nødvendig, at et Wayland basert oppsett var mulig. En liten fordel med å 
         bruke GLES var at det kunne kjøre på innebygde systemer som Raspberry Pis.
       </para>
@@ -168,7 +168,7 @@
       </para>
 
       <para>
-        På den annen side, hvis du bruker <application>X</application>
+        På den annen side, hvis du bruker X
         I vindussystemet vil GLES nesten aldri bli brukt, og støtten for 
         APIet kan deaktiveres uten særlig bekymring. Du fjerner imidlertid 
         muligheten til å bruke Wayland kompositorer som krever GLES gjengivelse 

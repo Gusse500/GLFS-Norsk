@@ -22,7 +22,7 @@
     <title>Introduksjon til libxcb</title>
 
     <para>
-      <application>libxcb</application> pakken inneholder et grensesnitt til 
+      libxcb pakken inneholder et grensesnitt til 
       X Vindussystem protokollen, som erstatter det nåværende Xlib grensesnittet. 
       Xlib kan også bruke XCB som et transportlag, slik at programvare kan sende 
       forespørsler og motta svar med begge deler.
@@ -56,7 +56,7 @@
     <title>Installasjon av libxcb</title>
 
     <para>
-      Installer <application>libxcb</application> ved å kjøre følgende 
+      Installer libxcb ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -90,7 +90,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libxcb</title>
 
     <para>
-      Installer lib32-<application>libxcb</application> ved å kjøre følgende 
+      Installer lib32-libxcb ved å kjøre følgende 
       kommandoer:
     </para>
 

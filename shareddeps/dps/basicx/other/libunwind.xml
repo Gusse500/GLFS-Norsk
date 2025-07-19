@@ -21,7 +21,7 @@
     <title>Introduksjon til libunwind</title>
 
     <para>
-      <application>libunwind</application> Pakken inneholder et portabelt og 
+      libunwind Pakken inneholder et portabelt og 
       effektivt C programmeringsgrensesnitt (API) for å bestemme kallkjeden til 
       et program. API et gir i tillegg muligheten til å manipulere den bevarte 
       (kalle-lagret) tilstanden til hver kallramme og gjenoppta kjøringen 
@@ -64,7 +64,7 @@
 <screen><userinput>patch -Np1 -i ../libunwind-&libunwind-version;-fix_malloc.patch</userinput></screen>
 
     <para>
-      Installer <application>libunwind</application> ved å kjøre følgende 
+      Installer libunwind ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -89,7 +89,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libunwind</title>
 
     <para>
-      Installer lib32-<application>libunwind</application> ved å kjøre følgende 
+      Installer lib32-libunwind ved å kjøre følgende 
       kommandoer:
     </para>
 

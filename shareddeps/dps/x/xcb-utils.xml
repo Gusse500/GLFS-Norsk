@@ -21,7 +21,7 @@
     <title>Introduksjon til XCB Verktøy</title>
 
     <para>
-      <application>XCB</application> samling av verktøy gir nyttige biblioteker 
+      XCB samling av verktøy gir nyttige biblioteker 
       som utviklere kan bruke til X Vindusbehandler og Wayland kompositor 
       utvikling. De installerte pakkene nedenfor burde være gode nok for de 
       fleste pakker.

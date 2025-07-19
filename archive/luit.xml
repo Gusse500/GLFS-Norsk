@@ -21,7 +21,7 @@
     <title>Introduksjon til luit</title>
 
     <para>
-      <application>luit</application> pakken er et filter
+      luit pakken er et filter
 	  som kan kjøres mellom et vilkårlig program og en UTF-8
 	  terminalemulator. Den vil konvertere programutdata fra den lokale
 	  koden til UTF-8, og konvertere terminalinndata fra
@@ -54,7 +54,7 @@
     <title>Installasjon av luit</title>
 
     <para>
-      Installer <application>luit</application> ved å kjøre
+      Installer luit ved å kjøre
       følgende kommandoer:
     </para>
 

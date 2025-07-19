@@ -22,7 +22,7 @@
     <title>Introduksjon til PulseAudio</title>
 
     <para>
-      <application>PulseAudio</application> er et lydsystem for POSIX operativsystemer, 
+      PulseAudio er et lydsystem for POSIX operativsystemer, 
       som betyr at det er en proxy for lydapplikasjoner. Det lar deg utføre 
       avanserte operasjoner på lyddataene dine når de sendes mellom 
       applikasjonen din og maskinvaren din. Ting som å overføre lyden til en 
@@ -100,7 +100,7 @@
 <screen><userinput>sed '/doxygen/d' -i meson.build</userinput></screen>
 -->
     <para>
-      Installer <application>PulseAudio</application> ved å kjøre følgende 
+      Installer PulseAudio ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -129,7 +129,7 @@ ninja</userinput></screen>
       url="https://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/SystemWide/"/>
       for mer informasjon. 
       Fortsatt som <systemitem class="username">root</systemitem>
-      bruker, fjern <application>D-Bus</application> konfigurasjonsfilen 
+      bruker, fjern D-Bus konfigurasjonsfilen 
       for den systemomfattende daemonen for å unngå å opprette unødvendige 
       systembrukere og grupper:
     </para>
@@ -142,7 +142,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av PulseAudio</title>
 
     <para>
-      Installer lib32-<application>PulseAudio</application> ved å kjøre følgende 
+      Installer lib32-PulseAudio ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -191,7 +191,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D tests=false</parameter>: Denne bryteren deaktiverer bygging 
-      av tester som krever <application>Check</application>.
+      av tester som krever Check.
     </para>
 
 <!--
@@ -252,7 +252,7 @@ ldconfig</userinput></screen>
 -->
       <para>
         Du må kanskje konfigurere lydsystemet. Du kan starte
-        <application>pulseaudio</application> i kommandolinjemodus ved bruk av
+        pulseaudio i kommandolinjemodus ved bruk av
         <command>pulseaudio -C</command> og deretter liste opp diverse 
         informasjon og endre innstillinger. Se
         <command>man pulse-cli-syntax</command>.
@@ -270,7 +270,7 @@ ldconfig</userinput></screen>
 <screen role="root"><userinput>usermod -a -G audio <replaceable>&lt;username&gt;</replaceable></userinput></screen>
 
       <para>
-        Hvis <application>pulseaudio</application> fungerte, men du har ikke lenger 
+        Hvis pulseaudio fungerte, men du har ikke lenger 
         lyd. Etter å ha sjekket for maskinvareproblemer (høyttalere eller hodetelefoner 
         ikke tilkoblet, ekstern forsterker ikke tilkoblet), må du kanskje 
         fikse det.
@@ -278,7 +278,7 @@ ldconfig</userinput></screen>
 
       <para>
         Et forslag er å lukke applikasjonen, for eksempel
-        <application>firefox</application> der lyden har sluttet å virke, deretter
+        firefox der lyden har sluttet å virke, deretter
         kjør: <command>pactl list short sinks</command> etterfulgt av:
         <command>pacmd set-default-sink &lt;sink #&gt;</command> og deretter 
         start programmet på nytt.
@@ -345,7 +345,7 @@ ldconfig</userinput></screen>
         <term><command>esdcompat</command></term>
         <listitem>
           <para>
-            er <application>PulseAudio</application> ESD innpakningsskript.
+            er PulseAudio ESD innpakningsskript.
           </para>
           <indexterm zone="pulseaudio esdcompat">
             <primary sortas="b-esdcompat">esdcompat</primary>
@@ -359,7 +359,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             spiller av eller tar opp rå eller kodede lydstrømmer på en
-            <application>PulseAudio</application> lydserver
+            PulseAudio lydserver
           </para>
           <indexterm zone="pulseaudio pacat">
             <primary sortas="b-pacat">pacat</primary>
@@ -371,7 +371,7 @@ ldconfig</userinput></screen>
         <term><command>pacmd</command></term>
         <listitem>
           <para>
-            er et verktøy som brukes til å omkonfigurere en <application>PulseAudio</application>
+            er et verktøy som brukes til å omkonfigurere en PulseAudio
             lydserver under kjøretid
           </para>
           <indexterm zone="pulseaudio pacmd">
@@ -384,7 +384,7 @@ ldconfig</userinput></screen>
         <term><command>pactl</command></term>
         <listitem>
           <para>
-            brukes til å kontrollere en kjørende <application>PulseAudio</application>
+            brukes til å kontrollere en kjørende PulseAudio
             lydserver
           </para>
           <indexterm zone="pulseaudio pactl">
@@ -397,7 +397,7 @@ ldconfig</userinput></screen>
         <term><command>padsp</command></term>
         <listitem>
           <para>
-            er <application>PulseAudio</application> OSS Innpakning
+            er PulseAudio OSS Innpakning
           </para>
           <indexterm zone="pulseaudio padsp">
             <primary sortas="b-padsp">padsp</primary>
@@ -422,7 +422,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             brukes til å spille av lydfiler på en
-            <application>PulseAudio</application> lydserver
+            PulseAudio lydserver
           </para>
           <indexterm zone="pulseaudio paplay">
             <primary sortas="b-paplay">paplay</primary>
@@ -459,7 +459,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             er et verktøy som kan brukes til å fortelle en lokal
-            <application>PulseAudio</application> lydserver for å midlertidig 
+            PulseAudio lydserver for å midlertidig 
             suspendere tilgang til lydenhetene, slik at andre applikasjoner 
             får direkte tilgang til dem
           </para>
@@ -473,7 +473,7 @@ ldconfig</userinput></screen>
         <term><command>pax11publish</command></term>
         <listitem>
           <para>
-            er <application>PulseAudio</application>
+            er PulseAudio
             X11 Credential Verktøy
           </para>
           <indexterm zone="pulseaudio pax11publish">
@@ -487,7 +487,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             er et skallskript som skriver ut diverse informasjon relatert til
-            <application>Pulseaudio</application> serveren i bruk for øyeblikket
+            Pulseaudio serveren i bruk for øyeblikket
           </para>
           <indexterm zone="pulseaudio pa-info">
             <primary sortas="b-pa-info">pa-info</primary>
@@ -513,7 +513,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             er et equalizer grensesnitt for
-            <application>PulseAudio</application> equalizer sinks
+            PulseAudio equalizer sinks
             (Krever fftw ved byggetid)
           </para>
           <indexterm zone="pulseaudio qpaeq">
@@ -527,7 +527,7 @@ ldconfig</userinput></screen>
         <term><command>start-pulseaudio-kde</command></term>
         <listitem>
           <para>
-            Starter <application>PulseAudio</application> og laster
+            Starter PulseAudio og laster
             module-device-manager for å bruke KDE rutingsregler.
           </para>
           <indexterm zone="pulseaudio start-pulseaudio-kde">
@@ -540,7 +540,7 @@ ldconfig</userinput></screen>
         <term><command>start-pulseaudio-x11</command></term>
         <listitem>
           <para>
-            starter <application>PulseAudio</application> og registrerer den til 
+            starter PulseAudio og registrerer den til 
             X11 øktbehandleren
           </para>
           <indexterm zone="pulseaudio start-pulseaudio-x11">

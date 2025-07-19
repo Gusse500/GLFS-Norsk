@@ -34,8 +34,8 @@
 
   <para>
     Følgende seksjon er Delte avhengigheter. Enhver bruker 
-    som ønsker <application>Steam</application> og/eller
-    <application>Wine</application> vil lese dette kapittelet 
+    som ønsker Steam og/eller
+    Wine vil lese dette kapittelet 
     siden begge prosjektene bruker pakkene. Mesteparten av dette kapittelet er 
     nødvendig. Det anbefales imidlertid å sjekke avhengighetslistene 
     til Steam og Wine for å se nøyaktig hva du trenger fra en 
@@ -47,7 +47,7 @@
   <para>
     Den neste delen er Steam, som dekker alle pakkene, 
     oppdateringene, konfigurasjonen og oppsettet som er nødvendig for å få
-    <application>Steam</application> fungerer og er i stand til å 
+    Steam fungerer og er i stand til å 
     spille følgende: Linux-spill, Windows-spill via Proton, 
     og spill som bruker OpenGL, Vulkan og Direct3D.
   </para>
@@ -55,11 +55,11 @@
   <para>
     Følgende avsnitt som de fleste brukere trenger er Wine. Brukere 
     bør følge hvert trinn i dette kapittelet hvis de vil installere
-    WoW64 <application>Wine</application>, men mer informasjon dekkes 
+    WoW64 Wine, men mer informasjon dekkes 
     i det kapittelet. Wine kapittelet tar for øyeblikket ikke for seg 
     ettermontering og vil håndtere det på en lignende måte som Arch: bygg 
     MinGW-w64 verktøykjeden, installer lyd- og videokomponentene, og til slutt
-    <application>Wine</application>.
+    Wine.
   </para>
 
   <para>

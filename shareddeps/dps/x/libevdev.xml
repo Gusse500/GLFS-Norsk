@@ -25,7 +25,7 @@
       <title>Introduksjon til libevdev</title>
 
       <para>
-        <application>libevdev</application> Pakken inneholder vanlige 
+        libevdev Pakken inneholder vanlige 
         funksjoner for Xorg inndatadrivere.
       </para>
 
@@ -64,7 +64,7 @@
       <title>Installasjon av libevdev</title>
 
       <para>
-        Installer <application>libevdev</application> ved å kjøre følgende 
+        Installer libevdev ved å kjøre følgende 
       kommandoer:
       </para>
 
@@ -105,7 +105,7 @@ ninja</userinput></screen>
 
       <para>
         <parameter>-D tests=disabled</parameter>: Denne bryteren deaktiverer 
-        bygging av tester, ettersom de er avhengige av <application>Check</application>.
+        bygging av tester, ettersom de er avhengige av Check.
       </para>
 
     </sect3>

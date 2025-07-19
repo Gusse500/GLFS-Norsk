@@ -22,7 +22,7 @@
     <title>Introduksjon til SQLite</title>
 
     <para>
-      <application>SQLite</application> pakken er et programvarebibliotek som 
+      SQLite pakken er et programvarebibliotek som 
       implementerer en selvstendig, serverløs, transaksjonsbasert 
       SQL databasemotor uten konfigurasjon. Denne pakken kreves av <ulink
       url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>.
@@ -47,7 +47,7 @@
     <title>Installasjon av SQLite</title>
 
     <para>
-      Installer <application>SQLite</application> ved å kjøre følgende 
+      Installer SQLite ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -126,7 +126,7 @@ make</userinput></screen>
         <term><command>sqlite3</command></term>
         <listitem>
           <para>
-            er en terminalbasert grensesnitt til <application>SQLite</application>
+            er en terminalbasert grensesnitt til SQLite
             bibliotek som kan evaluere spørringer interaktivt og vise 
             resultatene
           </para>
@@ -140,7 +140,7 @@ make</userinput></screen>
         <term><filename class="libraryfile">libsqlite3</filename></term>
         <listitem>
           <para>
-            inneholder <application>SQLite</application> API funksjoner
+            inneholder SQLite API funksjoner
           </para>
           <indexterm zone="sqlite libsqlite3">
             <primary sortas="c-libsqlite3">libsqlite3</primary>

@@ -24,7 +24,7 @@
     <title>Introduction to Xdg-user-dirs</title>
 
     <para>
-      <application>Xdg-user-dirs</application> is a tool to help manage <quote>well
+      Xdg-user-dirs is a tool to help manage <quote>well
       known</quote> user directories like the desktop folder and the music folder.
       It also handles localization (i.e. translation) of the filenames.
     </para>
@@ -48,7 +48,7 @@
     <title>Installation of Xdg-user-dirs</title>
 
     <para>
-      Install <application>xdg-user-dirs</application> by running the following
+      Install xdg-user-dirs by running the following
       commands:
     </para>
 

@@ -21,7 +21,7 @@
     <title>Introduksjon til Pixman</title>
 
     <para>
-      <application>Pixman</application> Pakken inneholder et bibliotek som 
+      Pixman Pakken inneholder et bibliotek som 
       tilbyr lavnivå pikselmanipuleringsfunksjoner som bildekomposisjon 
       og trapesrasterisering.
     </para>
@@ -45,7 +45,7 @@
     <title>Installasjon av Pixman</title>
 
     <para>
-      Installer <application>Pixman</application> ved å kjøre følgende 
+      Installer Pixman ved å kjøre følgende 
       kommandoer:
     </para>
 

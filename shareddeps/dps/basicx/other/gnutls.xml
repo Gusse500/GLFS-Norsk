@@ -21,9 +21,9 @@
     <title>Introduksjon til GnuTLS</title>
 
     <para>
-      <application>GnuTLS</application> Pakken inneholder biblioteker og 
+      GnuTLS Pakken inneholder biblioteker og 
       brukerområdeverktøy som gir et sikkert lag over pålitelige transportlag. 
-      For øyeblikket <application>GnuTLS</application> biblioteket implementerer 
+      For øyeblikket GnuTLS biblioteket implementerer 
       de foreslåtte standardene fra IETFs TLS arbeidsgruppe. Siterer fra
       <ulink url="https://datatracker.ietf.org/doc/rfc8446/">
         TLS 1.3 protocol specification
@@ -39,7 +39,7 @@
     </para>
 
     <para>
-      <application>GnuTLS</application> støtter TLS 1.3, TLS 1.2, 
+      GnuTLS støtter TLS 1.3, TLS 1.2, 
       TLS 1.1, TLS 1.0 og (valgfritt) SSL 3.0-protokoller. Den støtter også 
       TLS utvidelser, inkludert servernavn og maksimal poststørrelse. I tillegg 
       støtter biblioteket autentisering ved hjelp av SRP protokollen, X.509 
@@ -95,7 +95,7 @@
  <!-- Note that if you do not install <xref linkend="libtasn1"/>, an older
        3.8.0 includes minitasn1 4.19 which is currnet at the moment. ken -->
       Merk at hvis du ikke installerer <xref linkend="libtasn1"/>, en 
-      versjon sendt i <application>GnuTLS</application> tarballen vil bli
+      versjon sendt i GnuTLS tarballen vil bli
       brukt i stedet.
     </para></note>
 
@@ -105,7 +105,7 @@
     <title>Installasjon av GnuTLS</title>
 
     <para>
-      Installer <application>GnuTLS</application> ved å kjøre 
+      Installer GnuTLS ved å kjøre 
       følgende kommandoer:
     </para>
 

@@ -28,7 +28,7 @@
     <title>Introduksjon til NSS</title>
 
     <para>
-      Network Security Services (<application>NSS</application>) pakken er et 
+      Network Security Services (NSS) pakken er et 
       sett med biblioteker som er utviklet for å støtte utvikling på tvers av 
       plattformer av sikkerhetsaktiverte klient og serverapplikasjoner. 
       Applikasjoner bygget med NSS kan støtte SSL v2 og v3, TLS, PKCS #5, 
@@ -122,7 +122,7 @@ fi</userinput></screen>
     </important>
 
     <para>
-      Installer <application>NSS</application> ved å kjøre følgende kommandoer:
+      Installer NSS ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>patch -Np1 -i ../nss-standalone-1.patch &amp;&amp;
@@ -181,7 +181,7 @@ fi</userinput></screen>
     </important>
 
     <para>
-      Installer <application>lib32-NSS</application> ved å kjøre følgende kommandoer:
+      Installer lib32-NSS ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>cd ../nss                                         &amp;&amp;
@@ -235,13 +235,13 @@ ldconfig</userinput></screen>
       <parameter>USE_SYSTEM_ZLIB=1</parameter>: Dette alternativet sendes til
       <command>make</command> for å sikre at
       <filename class="libraryfile">libssl3.so</filename> biblioteket er koblet 
-      til systemets installerte <application>zlib</application> i stedet for 
+      til systemets installerte zlib i stedet for 
       versjonen i treet.
     </para>
 
     <para>
       <parameter>ZLIB_LIBS=-lz</parameter>: Dette alternativet gir 
-      lenkerflaggene som trengs for å lenke til systemets <application>zlib</application>.
+      lenkerflaggene som trengs for å lenke til systemets zlib.
     </para>
 
     <para>
@@ -258,7 +258,7 @@ ldconfig</userinput></screen>
     <para>
       <command>$([ -f /usr/lib{,32}/libsqlite3.so ] &amp;&amp; echo
       NSS_USE_SYSTEM_SQLITE=1)</command>: Dette tester om
-      <application>sqlite</application> er installert, og i så fall
+      sqlite er installert, og i så fall
       <command>echo</command>s alternativet NSS_USE_SYSTEM_SQLITE=1 til
       <command>make</command> sånn at
       <filename class="libraryfile">libsoftokn3.so</filename> vil lenke mot 

@@ -23,7 +23,7 @@
     <title>Introduction to Desktop File Utils</title>
 
     <para>
-      The <application>Desktop File Utils</application> package contains
+      The Desktop File Utils package contains
       command line utilities for working with <ulink
       url="https://standards.freedesktop.org/desktop-entry-spec/latest/">
       Desktop entries</ulink>. These utilities are used by Desktop
@@ -69,7 +69,7 @@
     <!-- Works around a bug in meson's symlink creation exposed by this package -->
 
     <para>
-      Install <application>Desktop File Utils</application> by
+      Install Desktop File Utils by
       running the following commands:
     </para>
 
@@ -123,8 +123,8 @@ ninja</userinput></screen>
         class="directory">/usr/share</filename>. These locations can be
         extended with the environment variables <envar>XDG_CONFIG_DIRS</envar>
         and <envar>XDG_DATA_DIRS</envar>, respectively. The
-        <application>GNOME</application>, <application>KDE</application> and
-        <application>XFCE</application> environments respect these
+        GNOME, KDE and
+        XFCE environments respect these
         settings.
       </para>
 

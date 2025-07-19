@@ -18,12 +18,12 @@
     <title>Introduksjon til VKD3D-Proton</title>
 
     <para>
-      <application>VKD3D-Proton</application> pakken inneholder DLL filer som 
+      VKD3D-Proton pakken inneholder DLL filer som 
       konverterer Direct3D 12-kall til Vulkan. Som standard i
-      <application>Wine</application>, Direct3D 12 kall konverteres også til 
+      Wine, Direct3D 12 kall konverteres også til 
       Vulkan; denne pakken gjør imidlertid mer aggressive optimaliseringer 
       rettet mot spilling og erstatter standardimplementeringen som tilbys av
-      <application>Wine</application>, <application>VKD3D</application>.
+      Wine, VKD3D.
     </para>
 
     <bridgehead renderas="sect3">VKD3D-Proton Avhengigheter</bridgehead>
@@ -129,7 +129,7 @@ mv -T SPIRV-Tools-*                                                         \
       <title>64-bit Installasjon</title>
 
       <para>
-        Installer 64-bit <application>VKD3D-Proton</application> ved å kjøre 
+        Installer 64-bit VKD3D-Proton ved å kjøre 
         følgende kommandoer:
       </para>
 
@@ -157,7 +157,7 @@ install -vDm644 build-win64/DESTDIR/bin/*.dll \
       <title>32-bit Installasjon</title>
 
       <para>
-        Installer 32-bit <application>VKD3D-Proton</application> ved å kjøre 
+        Installer 32-bit VKD3D-Proton ved å kjøre 
         følgende kommandoer:
       </para>
 
@@ -187,8 +187,8 @@ install -vDm644 build-win32/DESTDIR/bin/*.dll \
     <title>Sette opp VKD3D-Proton</title>
 
     <para>Selv om VKD3D-Proton DLL filene er installert, er de ennå ikke i
-    <application>Wine</application> prefikset. Lag symbolske lenker slik at de 
-    kan finnes av <application>Wine</application>, samtidig som det er mulig å 
+    Wine prefikset. Lag symbolske lenker slik at de 
+    kan finnes av Wine, samtidig som det er mulig å 
     oppdatere denne pakken uten å måtte kopiere alt på nytt. I tillegg til dette 
     må registeret oppdateres for å bruke de nye DLL-ene. Gjør dette for hver 
     arkitektur du har installert.</para>
@@ -248,7 +248,7 @@ done</userinput></screen>
 
     <para>
       <command>wine reg add ...</command>: Denne kommandoen overstyrer 
-      registeret slik at <application>Wine</application> vil bruke de nye DLL 
+      registeret slik at Wine vil bruke de nye DLL 
       filene i stedet for de gamle.
     </para>
 

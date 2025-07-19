@@ -26,7 +26,7 @@
     <title>Introduksjon til xterm</title>
 
     <para>
-      <application>xterm</application> er en terminalemulator 
+      xterm er en terminalemulator 
       for X Window-systemet.
     </para>
 
@@ -97,7 +97,7 @@
     <title>Installasjon av xterm</title>
 
     <para>
-      Installer <application>xterm</application> ved å kjøre 
+      Installer xterm ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -155,7 +155,7 @@ cp -v *.desktop /usr/share/applications/</userinput></screen>
     <para>
       <command>make install-ti</command>: This command installs corrected
       terminfo description files for use with
-      <application>xterm</application>.
+      xterm.
     </para>
 -->
   </sect2>

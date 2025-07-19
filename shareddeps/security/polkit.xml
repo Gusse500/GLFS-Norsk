@@ -22,7 +22,7 @@
     <title>Introduction to Polkit</title>
 
     <para>
-      <application>Polkit</application> is a toolkit for defining and handling
+      Polkit is a toolkit for defining and handling
       authorizations. It is used for allowing unprivileged processes to
       communicate with privileged processes.
     </para>
@@ -77,10 +77,10 @@
         Since <phrase revision="sysv"><command>elogind</command></phrase>
         <phrase revision="systemd"><command>systemd-logind</command></phrase>
         uses PAM to register user sessions, it is a good idea to build
-        <application>Polkit</application> with PAM support so
+        Polkit with PAM support so
         <phrase revision="sysv"><command>elogind</command></phrase>
         <phrase revision="systemd"><command>systemd-logind</command></phrase>
-        can track <application>Polkit</application> sessions.
+        can track Polkit sessions.
       </para>
     </note>
 
@@ -116,7 +116,7 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
         -g polkitd -s /bin/false polkitd</userinput></screen>
 
     <para>
-      Install <application>Polkit</application> by running the following
+      Install Polkit by running the following
       commands:
     </para>
 
@@ -172,7 +172,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
     <para>
       <parameter>-D os_type=lfs</parameter>: This switch ensures that
       even if distribution auto detection fails, the distribution/OS type
-      will be hardcoded in <application>Polkit</application>.
+      will be hardcoded in Polkit.
     </para>
 
     <para>
@@ -182,9 +182,9 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
 
     <para>
       <option>-D authfw=shadow</option>: This switch enables the
-      package to use the <application>Shadow</application> rather than the
-      <application>Linux PAM</application> Authentication framework. Use it
-      if you have not installed <application>Linux PAM</application>.
+      package to use the Shadow rather than the
+      Linux PAM Authentication framework. Use it
+      if you have not installed Linux PAM.
     </para>
 
     <para>
@@ -293,7 +293,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>polkitd</command></term>
         <listitem>
           <para>
-            provides the org.freedesktop.PolicyKit1 <application>D-Bus</application>
+            provides the org.freedesktop.PolicyKit1 D-Bus
             service on the system message bus
           </para>
           <indexterm zone="polkit polkitd">
@@ -306,7 +306,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><filename class="libraryfile">libpolkit-agent-1</filename></term>
         <listitem>
           <para>
-            contains the <application>Polkit</application> authentication
+            contains the Polkit authentication
             agent API functions
           </para>
           <indexterm zone="polkit libpolkit-agent-1">
@@ -319,7 +319,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><filename class="libraryfile">libpolkit-gobject-1</filename></term>
         <listitem>
           <para>
-            contains the <application>Polkit</application> authorization API functions
+            contains the Polkit authorization API functions
           </para>
           <indexterm zone="polkit libpolkit-gobject-1">
             <primary sortas="c-libpolkit-gobject-1">libpolkit-gobject-1</primary>

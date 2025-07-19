@@ -71,7 +71,7 @@
     <title>lib32 Installasjon av glibc</title>
 
     <para>
-      Installer lib32-<application>glibc</application> ved å kjøre følgende kommandoer:
+      Installer lib32-glibc ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>patch -Np1 -i ../glibc-&glibc-version;-fhs-1.patch &amp;&amp;

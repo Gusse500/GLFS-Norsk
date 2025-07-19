@@ -35,7 +35,7 @@
 
     <para>
       Det første alternativet er å installere selve GNU
-      <application>which</application> pakken.
+      which pakken.
     </para>
 
     <itemizedlist spacing="compact">
@@ -57,7 +57,7 @@
     <title>Installasjon av Which</title>
 
     <para>
-      Installer <application>which</application> ved å kjøre følgende 
+      Installer which ved å kjøre følgende 
       kommandoer:
     </para>
 

@@ -21,10 +21,10 @@
     <title>Introduksjon til GNAT</title>
 
     <para>
-	<application>GNAT</application> er en del av
-	<application>GCC</application>. Det kalles ofte
+	GNAT er en del av
+	GCC. Det kalles ofte
 	GCC-Ada på grunn av dette. Ikke mange pakker er avhengige
-	av <application>GNAT</application> bortsett fra
+	av GNAT bortsett fra
 	<xref linkend="wine"/>, selv om noen pakker
 	eventuelt er valgfritt avhengige av den.
     </para>
@@ -137,7 +137,7 @@ else
 fi</userinput></screen>
 
     <para>
-      Nå installer <application>GNAT</application> ved å kjøre følgende
+      Nå installer GNAT ved å kjøre følgende
       kommandoer:
     </para>
 
@@ -166,8 +166,8 @@ sed -e 's/{ target nonpic } //' \
 
     <para>
 	Hvis du har installert tilleggspakker som f.eks.
-	<application>valgrind</application> og <application>gdb
-	</application>, <application>gcc</application> delen av
+	valgrind og gdb
+	, gcc delen av
 	testpakken vil kjøre flere tester enn i LFS. Noen av disse vil
 	rapportere FAIL og andre XPASS (bestått når det forventes at det vil FAIL)).
 	Fra gcc-&gcc-version;, omtrent 74 FAIL oppstår i “guality”
@@ -209,7 +209,7 @@ ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/&gcc-version;/liblto_plugin.so \
     <title>Opprydding og testing</title>
 
     <para>
-      Nå som <application>GNAT</application> er installert,
+      Nå som GNAT er installert,
       Det er på tide å rydde opp og teste installasjonen for å forsikre
       deg om at alt fungerer som forventet.
     </para>
@@ -289,7 +289,7 @@ rm -v testgnat*</userinput></screen>
 
     <para>
       <command>mkdir build; cd build</command>: 
-      <application>GCC</application> dokumentasjonen anbefaler
+      GCC dokumentasjonen anbefaler
       at man bygger pakken i en dedikert byggemappe.
     </para>
 
@@ -307,9 +307,9 @@ rm -v testgnat*</userinput></screen>
 
     <para>
       <parameter>--with-system-zlib</parameter>: Bruker systemets
-      <application>zlib</application> i stedet for den medfølgende.
-      <application>zlib</application> brukes til komprimering
-      og dekomprimering <application>GCC</application> sin mellomliggende
+      zlib i stedet for den medfølgende.
+      zlib brukes til komprimering
+      og dekomprimering GCC sin mellomliggende
       språk i LTO (Link Time Optimization) objektfiler.
     </para>
 
@@ -356,7 +356,7 @@ rm -v testgnat*</userinput></screen>
 
     <para>
       <command>mv -v /usr/lib/*gdb.py ...</command>: Installasjonsfasen
-      legger inn noen filer som brukes av <application>gdb</application> under
+      legger inn noen filer som brukes av gdb under
       <filename class="directory">/usr/lib</filename> mappen. Dette genererer
       falske feilmeldinger når du utfører <command>ldconfig</command>. Denne
       kommandoen flytter filene til et annet sted.
@@ -456,7 +456,7 @@ rm -v testgnat*</userinput></screen>
         <listitem>
           <para>
             er nyttig for å gi filer nytt navn for å oppfylle standarden
-            <application>Ada</application> standard filnavngivningskonvensjoner.
+            Ada standard filnavngivningskonvensjoner.
           </para>
           <indexterm zone="gnat gnatchop">
             <primary sortas="b-gnatchop">gnatchop</primary>
@@ -469,7 +469,7 @@ rm -v testgnat*</userinput></screen>
         <listitem>
           <para>
             brukes til å fjerne filer tilknyttet et
-            <application>GNAT</application> prosjekt.
+            GNAT prosjekt.
           </para>
           <indexterm zone="gnat gnatclean">
             <primary sortas="b-gnatclean">gnatclean</primary>
@@ -482,7 +482,7 @@ rm -v testgnat*</userinput></screen>
         <listitem>
           <para>
             er ment for å finne definisjoner og/eller referanser til
-            spesifiserte enheter i et <application>GNAT</application> prosjekt.
+            spesifiserte enheter i et GNAT prosjekt.
           </para>
           <indexterm zone="gnat gnatfind">
             <primary sortas="b-gnatfind">gnatfind</primary>
@@ -531,7 +531,7 @@ rm -v testgnat*</userinput></screen>
         <term><command>gnatmake</command></term>
         <listitem>
           <para>
-            er <application>Ada</application> kompilatoren,
+            er Ada kompilatoren,
             som utfører kompilering, binding og lenking.
           </para>
           <indexterm zone="gnat gnatmake">
@@ -545,7 +545,7 @@ rm -v testgnat*</userinput></screen>
         <listitem>
           <para>
             vil liste opp filene som er knyttet til et
-            <application>GNAT</application> prosjekt.
+            GNAT prosjekt.
           </para>
           <indexterm zone="gnat gnatname">
             <primary sortas="b-gnatname">gnatname</primary>
@@ -557,7 +557,7 @@ rm -v testgnat*</userinput></screen>
         <term><command>gnatprep</command></term>
         <listitem>
           <para>
-            er <application>GNAT</application> eksterne forprosessor.
+            er GNAT eksterne forprosessor.
           </para>
           <indexterm zone="gnat gnatprep">
             <primary sortas="b-gnatprep">gnatprep</primary>

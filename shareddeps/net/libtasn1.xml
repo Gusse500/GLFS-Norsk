@@ -22,7 +22,7 @@
     <title>Introduksjon til libtasn1</title>
 
     <para>
-      <application>libtasn1</application> er et svært portabelt C bibliotek 
+      libtasn1 er et svært portabelt C bibliotek 
       som koder og dekoder DER/BER data etter et ASN.1 skjema.
     </para>
 
@@ -45,7 +45,7 @@
     <title>Installasjon av libtasn1</title>
 
     <para>
-      Installer <application>libtasn1</application> ved å kjøre følgende 
+      Installer libtasn1 ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -76,7 +76,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libtasn1</title>
     
     <para>
-      Installer <application>lib32-libtasn1</application>
+      Installer lib32-libtasn1
       ved å kjøre følgende kommandoer:
     </para>
 
@@ -165,7 +165,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             er en ASN.1 syntakstregenerator for
-            <application>libtasn1</application>
+            libtasn1
           </para>
           <indexterm zone="libtasn1 asn1Parser">
             <primary sortas="b-asn1Parser">asn1Parser</primary>

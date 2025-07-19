@@ -21,7 +21,7 @@
     <title>Introduksjon til xinit</title>
 
     <para>
-      <application>xinit</application> pakken inneholder et brukbart skript for 
+      xinit pakken inneholder et brukbart skript for 
       å starte xserveren.
     </para>
 
@@ -51,7 +51,7 @@
     <title>Installasjon av xinit</title>
 
     <para>
-      Installer <application>xinit</application> ved å kjøre følgende 
+      Installer xinit ved å kjøre følgende 
       kommandoer:
     </para>
 

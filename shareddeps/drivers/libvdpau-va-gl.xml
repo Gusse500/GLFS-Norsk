@@ -25,7 +25,7 @@
       <title>Introduksjon til libvdpau-va-gl</title>
 
       <para>
-        <application>libvdpau-va-gl</application> pakken inneholder et bibliotek 
+        libvdpau-va-gl pakken inneholder et bibliotek 
         som implementerer VDPAU biblioteket. Libvdpau_va_gl bruker OpenGL under 
         panseret for å akselerere tegning og skalering, og VA-API (hvis 
         tilgjengelig) for å akselerere videodekoding. Foreløpig er VA-API 
@@ -62,7 +62,7 @@
       <title>Installasjon av libvdpau-va-gl</title>
 
       <para>
-        Installer <application>libvdpau-va-gl</application> ved å kjøre følgende 
+        Installer libvdpau-va-gl ved å kjøre følgende 
         kommandoer:
       </para>
 
@@ -93,7 +93,7 @@ make</userinput></screen>
       <title>lib32 Installasjon av libvdpau-va-gl</title>
 
       <para>
-        Installer lib32-<application>libvdpau-va-gl</application> ved å kjøre 
+        Installer lib32-libvdpau-va-gl ved å kjøre 
         følgende kommandoer:
       </para>
 

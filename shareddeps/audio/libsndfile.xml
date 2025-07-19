@@ -22,7 +22,7 @@
     <title>Introduksjon til libsndfile</title>
 
     <para>
-      <application>Libsndfile</application> er et bibliotek med C rutiner for 
+      Libsndfile er et bibliotek med C rutiner for 
       lesing og skriving av filer som inneholder samplede lyddata.
     </para>
 
@@ -69,7 +69,7 @@
 <screen><userinput>sed '/typedef enum/,/bool ;/d' -i src/ALAC/alac_{en,de}coder.c</userinput></screen>
 
     <para>
-      Installer <application>libsndfile</application> ved å kjøre følgende 
+      Installer libsndfile ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -93,7 +93,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libsndfile</title>
 
     <para>
-      Installer lib32-<application>libsndfile</application> ved å kjøre følgende 
+      Installer lib32-libsndfile ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -280,7 +280,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libsndfile</filename></term>
         <listitem>
           <para>
-            inneholder <application>libsndfile</application> API funksjoner
+            inneholder libsndfile API funksjoner
           </para>
           <indexterm zone="libsndfile libsndfile-lib">
             <primary sortas="c-libsndfile">libsndfile</primary>

@@ -27,7 +27,7 @@
     og ikke låse deg inne i det ved et uhell uten en hard omstart. 
     Installasjonen av disse komponentene er ikke dekket i denne boken, da de 
     spesifikke komponentene vil avhenge av om du planlegger å bruke
-    <application>X11</application>, <application>Wayland</application>, eller
+    X11, Wayland, eller
     begge. Denne siden fungerer som et enkelt dytt som hjelper deg i riktig retning. 
     Når du er ferdig med å sette opp det grafiske miljøet, kan du 
     komme tilbake og fortsette med de neste kapitlene.
@@ -53,7 +53,7 @@
       Det anbefales å lese seg opp på BLFS siden <ulink
       url="&blfs-svn;/x/xorg-config.html">Xorg-7 Testing og
       Konfigurasjon</ulink>. Den er ganske omfattende. Men å bruke <xref
-      linkend="nvidia"/> med <application>X11</application> krever et 
+      linkend="nvidia"/> med X11 krever et 
       litt annerledes oppsett, og det kan være ekstra informasjon du ønsker å 
       vite.
     </para>
@@ -63,9 +63,9 @@
 
       <para>
         Ved å bruke en konvensjonell <filename>/etc/X11/xorg.conf</filename>
-        kan føre til problemer, hvis <application>X11</application> klarer i 
-        det hele tatt å starte. For å bruke <application>NVIDIA</application>
-        driver ved oppstart av <application>X11</application>, kjør følgende 
+        kan føre til problemer, hvis X11 klarer i 
+        det hele tatt å starte. For å bruke NVIDIA
+        driver ved oppstart av X11, kjør følgende 
         kommando som &root; bruker:
       </para>
 
@@ -118,8 +118,8 @@
 
       <para>
         Hvis du kompilerte Zink i <xref linkend="mesa"/>, sjansene er at
-        <application>X11</application> eller hvilken som helst
-        <application>Wayland</application> kompositorer vil bruke Gallium3D 
+        X11 eller hvilken som helst
+        Wayland kompositorer vil bruke Gallium3D 
         driver ment for din GPU spesielt. Du kan overstyre dette ved å 
         sette følgende variabel:
       </para>
@@ -242,7 +242,7 @@
           En kompositor snakker med <xref linkend="xorg-server"/> og kan endre 
           hva som vises på skjermen. Kompositorer kan legge til animasjoner, rammer, 
           skygger, opasitet osv. i vinduer. De kan også aktivere vsync. 
-          Selv om kompositorer ikke er nødvendige på <application>X11</application>,
+          Selv om kompositorer ikke er nødvendige på X11,
           Gjør de det grafiske miljøet penere. Disse visuelle forbedringene 
           kan være GPU intensive hvis GPU-en er svak eller grafikkdriveren 
           ikke er så kraftig<footnote><para>Hvis du bestemmer deg for å bruke 
@@ -276,9 +276,9 @@
     <title>Wayland</title>
 
     <para>
-      Wayland er mye enklere å sette opp enn <application>X11</application>.
+      Wayland er mye enklere å sette opp enn X11.
       Du bør fortsatt lese X11-delen ovenfor, ettersom mye av informasjonen 
-      også er relevant for <application>Wayland</application>. Det er imidlertid 
+      også er relevant for Wayland. Det er imidlertid 
       noen få endringer.
     </para>
 
@@ -288,10 +288,10 @@
       <para>
         Du trenger bare å bekymre deg for oppdateringsfrekvensen hvis den er 
         aktuell for deg. Du trenger ikke å bekymre deg for å sørge for at
-        <application>NVIDIA</application> driveren brukes ved oppstart
-        <application>Wayland</application>. Les imidlertid gjennom 
+        NVIDIA driveren brukes ved oppstart
+        Wayland. Les imidlertid gjennom 
         installasjonsinstruksjonene for det valgte grafiske miljøet, da de 
-        kan inneholde informasjon om <application>NVIDIA</application>.
+        kan inneholde informasjon om NVIDIA.
         Resultatene kan være mangelfull, og noen ganger vil ikke miljøet klare å 
         starte. Gjør researchen din først.
       </para>
@@ -302,9 +302,9 @@
       <title>Vindusbehandlere, Skrivebordsmiljøer og Kompositorprogrammer</title>
 
       <para>
-        I motsetning til på <application>X11</application>, vindusbehandleren og 
+        I motsetning til på X11, vindusbehandleren og 
         kompositorprogrammet vil alltid være kombinert på
-        <application>Wayland</application>. Minimale grafiske miljøer 
+        Wayland. Minimale grafiske miljøer 
         kalles kompositorer i stedet for vindusbehandlere, men skrivebordsmiljøer 
         kalles fortsatt skrivebordsmiljøer. For kompositorere er de eneste 
         tilleggskomponentene som må installeres en terminal og eventuelt 
@@ -315,10 +315,10 @@
         <title>Kompositorer</title>
 
         <para>
-          Mange <application>X11</application> vindusbehandlere støtter ikke
-          <application>Wayland</application>. Det finnes noen uoffisielle 
+          Mange X11 vindusbehandlere støtter ikke
+          Wayland. Det finnes noen uoffisielle 
           porter som bruker visse gjenbrukbare rammeverk som ville
-          bli kalt en <application>X11</application> kompositor, som
+          bli kalt en X11 kompositor, som
           <ulink url="https://gitlab.freedesktop.org/wlroots/wlroots/">
           wlroots</ulink> (disse kalles kompositorbiblioteker). Du kan 
           prøve noen porter hvis du ønsker det, men noen av dem gjør sine egne ting 
@@ -326,7 +326,7 @@
         </para>
 
         <para>
-          Opprinnelig <application>Wayland</application> kompositorer inkluderer
+          Opprinnelig Wayland kompositorer inkluderer
           <ulink url="&slfs-website;/wm/hypr.html">Hyprland</ulink>,
           <ulink url="https://github.com/swaywm/sway">Sway</ulink>, og
           <ulink url="&slfs-website;/wm/wf.html">Wayfire</ulink>.
@@ -342,8 +342,8 @@
         <para>
           Bruk <ulink url="&blfs-svn;/gnome/gnome.html">GNOME</ulink> eller
           <ulink url="&blfs-svn;/kde/kde.html">KDE Plasma</ulink>. De har
-          god <application>Wayland</application> støtte. Som med
-          <application>X11</application>, kan du starte disse ved hjelp av en 
+          god Wayland støtte. Som med
+          X11, kan du starte disse ved hjelp av en 
           skjermbehandler.
         </para>
 

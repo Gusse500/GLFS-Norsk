@@ -21,21 +21,21 @@
     <title>Introduction to GBM</title>
 
     <para>
-      <application>GBM</application>
+      GBM
         <footnote><para>
           Graphics Buffer Manager.
         </para></footnote>
       biblioteket tilbyr API funksjoner for grafisk gjengivelse og leveres av
-      <application>Mesa</application>. De fleste drivere på Linux distribusjoner 
-      kommer fra <application>Mesa</application>, så <application>GBM</application>
+      Mesa. De fleste drivere på Linux distribusjoner 
+      kommer fra Mesa, så GBM
       vil bli installert sammen med disse driverne. På den annen side, <xref
-      linkend="nvidia"/> trenger ikke den fulle <application>Mesa</application>
-      stabelen, men den trenger fortsatt <application>GBM</application> biblioteket. 
+      linkend="nvidia"/> trenger ikke den fulle Mesa
+      stabelen, men den trenger fortsatt GBM biblioteket. 
       Som sådan kan du installere akkurat det du trenger. Du trenger ikke å 
       installere hele <xref linkend="mesa"/> stabelen hvis du vil installere <xref
       linkend="nvidia"/>, men du kan hvis du ønsker det. Det kan være lurt å 
       gjøre det for å ha et reserveprogram (Zink Gallium3D + Nouveau Vulkan). 
-      Hvis du ikke installerer <application>NVIDIA</application>, hopp til <xref
+      Hvis du ikke installerer NVIDIA, hopp til <xref
       linkend="llvm"/> og fortsett til du kommer frem til <xref
       linkend="mesa"/> for å få en fullstendig installasjon av drivere og 
       andre biblioteker.
@@ -43,7 +43,7 @@
 
     <note>
       <para>
-        <application>Mesa</application> oppdateres relativt ofte. Du kan bruke
+        Mesa oppdateres relativt ofte. Du kan bruke
         den nyeste tilgjengelige &mesa-major-minor;.x mesa versjonen.
       </para>
     </note>
@@ -84,7 +84,7 @@
     <title>Installasjon av GBM</title>
     
     <para>
-      Installer <application>GBM</application> ved å kjøre følgende 
+      Installer GBM ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -122,7 +122,7 @@ fi</userinput></screen>
     <title>lib32 Installasjon av GBM</title>
 
     <para>
-      Installer lib32-<application>GBM</application> ved å kjøre følgende 
+      Installer lib32-GBM ved å kjøre følgende 
       kommandoer:
     </para>
 

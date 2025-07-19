@@ -17,8 +17,8 @@
 
 
   <para>
-    <application>Xorg</application> er en fritt omdistribuerbar, 
-    åpen kildekode implementering av <application>X</application> Vindussystem. 
+    Xorg er en fritt omdistribuerbar, 
+    åpen kildekode implementering av X Vindussystem. 
     Dette systemet tilbyr et klient/server-grensesnitt mellom skjermmaskinvare 
     (mus, tastatur og videoskjermer) og skrivebordsmiljøet, 
     samtidig som det sørger for både vindusinfrastruktur og en 
@@ -28,15 +28,15 @@
   <para>
     Denne delen installerer imidlertid ikke <xref linkend="xorg-server"/>, men 
     installerer i stedet grunnleggende programvare som mye annen programvare er 
-    avhengig av, inkludert <application>Xorg</application> server, kompositorer, 
+    avhengig av, inkludert Xorg server, kompositorer, 
     vindusbehandlere eller skrivebordsmiljøer, og <xref linkend="xwayland"/>.
   </para>
   
   <note><para>
-    <application>Xwayland</application> er en nødvendig del av Wayland hvis du 
-	vil bruke <application>Xorg</application>-bare programvare som <xref
+    Xwayland er en nødvendig del av Wayland hvis du 
+	vil bruke Xorg-bare programvare som <xref
     linkend="steam"/>. <xref linkend="wine"/> har en eksperimentell
-    <application>Wayland</application> modus, men det er fortsatt en god idé å 
+    Wayland modus, men det er fortsatt en god idé å 
     installere <xref linkend="xwayland"/> foreløpig.
   </para></note>
     
@@ -50,7 +50,7 @@
     nedlastingsstedet. For å hjelpe med en så stor oppgave, er installasjon 
     av <xref linkend="wget"/> sterkt anbefalt 
     for nedlasting av nødvendige filer. En komplett
-    <application>wget</application> filliste er gitt for hver side 
+    wget filliste er gitt for hver side 
     som inkluderer flere pakker.
   </para>
 
@@ -74,12 +74,12 @@
       sammen. Videre inneholder wget fillistene kommentarer for spesifikke 
       pakker som er utdaterte eller ikke anbefales å installere. Nyere pakker er 
       sannsynligvis ment for neste utgivelse av 
-      <application>Xorg</application> og har allerede vist seg å være 
+      Xorg og har allerede vist seg å være 
       inkompatible med gjeldende versjoner av programvare installert i GLFS. 
-      Den installerte størrelsen på <application>Xorg</application> kan reduseres 
+      Den installerte størrelsen på Xorg kan reduseres 
       betraktelig ved å bare installere pakkene du trenger og bruker, 
       men GLFS boken kan ikke ta hensyn til alle avhengigheter og bygge 
-      alternativer for de enkelte <application>Xorg</application> pakker. 
+      alternativer for de enkelte Xorg pakker. 
       Instruksjonene forutsetter at alle pakker er bygget.
     </para>
   </note>
@@ -97,7 +97,7 @@
     pakke må installeres. Den siste løsningen er å bygge og installere 
     hver pakke som <systemitem class="username">root
     </systemitem> bruker. Dette anbefales ikke, men er et alternativ hvis du 
-    ikke vil installere <application>sudo</application> og ikke vil 
+    ikke vil installere sudo og ikke vil 
     skrive inn et passord igjen og igjen.
   </para>
 
@@ -149,9 +149,9 @@ EOF
 chmod 644 /etc/profile.d/xorg.sh</userinput></screen>
 
     <para>
-      Hvis du har installert <application>sudo</application>, sørg for at
+      Hvis du har installert sudo, sørg for at
       <envar>XORG_CONFIG</envar> er tilgjengelig
-      i <application>sudo</application> miljøet. Som
+      i sudo miljøet. Som
       <systemitem class="username">root</systemitem> brukeren, kjør følgende 
       kommando:
     </para>

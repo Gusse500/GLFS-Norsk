@@ -22,7 +22,7 @@
     <title>Introduction to fdk-aac</title>
 
     <para>
-      The <application>fdk-aac</application> package provides the Fraunhofer FDK
+      The fdk-aac package provides the Fraunhofer FDK
       AAC library, which is purported to be a high quality Advanced Audio Coding
       implementation.
     </para>
@@ -46,7 +46,7 @@
     <title>Installation of fdk-aac</title>
 
     <para>
-      Install <application>fdk-aac</application> by running the following
+      Install fdk-aac by running the following
       commands:
     </para>
 
@@ -69,7 +69,7 @@ make</userinput></screen>
     <title>lib32 Installation of fdk-aac</title>
 
     <para>
-      Install lib32-<application>fdk-aac</application> by running the following
+      Install lib32-fdk-aac by running the following
       commands:
     </para>
 

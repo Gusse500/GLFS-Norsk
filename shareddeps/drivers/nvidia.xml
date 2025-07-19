@@ -20,7 +20,7 @@
     <title>Introduksjon til NVIDIA</title>
 
     <para>
-      <application>NVIDIA</application> proprietære driver inneholder
+      NVIDIA proprietære driver inneholder
       fastvare, kjernedrivere, userland drivere knyttet til OpenGL,
       Vulkan og maskinvareakselerasjon, og tilbyr nyttige verktøy for
       NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste pakke.
@@ -159,7 +159,7 @@
     </para></important>
 
     <para>
-      Pakk ut <application>NVIDIA</application> driver runfile
+      Pakk ut NVIDIA driver runfile
       og naviger til den utpakkede mappen:
     </para>
 
@@ -169,7 +169,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 <!--
     <para>
       Installer en oppdatering for den proprietære kjernemodultypen for driveren for
-      kompatibilitet med <application>linux-6.15</application>:
+      kompatibilitet med linux-6.15:
     </para>
 
 <screen><userinput>patch -d kernel -Np1 -i ../../NVIDIA-&nvidia-version;-kernel_gpl_cachyos-1.patch</userinput></screen>
@@ -269,7 +269,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     <important>
       <para>
         Når du gjenoppbygger/oppgraderer kjernen, må du også installere  .
-        <application>NVIDIA</application> kjernemoduler på nytt.
+        NVIDIA kjernemoduler på nytt.
       </para>
 
       <para>
@@ -366,7 +366,7 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
   <sect2 revision="sysv">
     <title>Installation of NVIDIA-Powerd</title>
     <para>
-      If you want <application>NVIDIA-Powerd</application>, which can suspend
+      If you want NVIDIA-Powerd, which can suspend
       and hibernate if asked to, then run the following commands as the &root;
       user to install the daemon and the bootscripts:
     </para>
@@ -385,7 +385,7 @@ rm -rf NVIDIA-sysv-bootscripts-&nv-sysv-bs;</userinput></screen>
   <sect2 revision="systemd">
     <title>Installasjon av NVIDIA-Powerd</title>
     <para>
-      Hvis du vil ha <application>NVIDIA-Powerd</application>, som kan settes i 
+      Hvis du vil ha NVIDIA-Powerd, som kan settes i 
       dvalemodus og gå i hvilemodus, kjør følgende kommandoer som &root; bruker 
       for å installere daemonen og Systemd enhetsfilene:
     </para>
@@ -565,9 +565,9 @@ EOF</userinput></screen>
           Direct Rendering Infrastructure.
         </para></footnote>
         drivere eller driverstubber. På samme måte installerer den ikke en
-        <application>pkgconf</application> fil som sier hvor du finner de
+        pkgconf fil som sier hvor du finner de
         tilknyttede filene. Filene er ikke nødvendige med denne driveren. 
-        Imidlertid forventer noen applikasjoner at <application>pkg-config</application> 
+        Imidlertid forventer noen applikasjoner at pkg-config 
         filen eksisterer, nemlig <xref linkend="xorg-server"/>. Opprett en nå 
         som &root; bruker:
       </para>
@@ -590,7 +590,7 @@ EOF</userinput></screen>
         bibliotek i <filename class="libraryfile">/usr/lib/dri</filename>. Hvis 
         du er bekymret for at et program vil prøve å lenke mot ikke-eksisterende 
         biblioteker, kan du kompilere <xref linkend="mesa"/> å få disse 
-        bibliotekene og en ekte <application>pkg-config</application> fil. Merk 
+        bibliotekene og en ekte pkg-config fil. Merk 
         at disse bibliotekene ikke vil bli brukt når denne driveren er i bruk.
       </para>
 
@@ -747,9 +747,9 @@ EOF</userinput></screen>
         <term><command>nvidia-xconfig</command></term>
         <listitem>
           <para>
-            manipulerer <application>X11</application> konfigurasjonsfiler
-            for å tillate <application>NVIDIA</application> driveren å brukes
-            ved oppstart av <application>X11</application>
+            manipulerer X11 konfigurasjonsfiler
+            for å tillate NVIDIA driveren å brukes
+            ved oppstart av X11
           </para>
           <indexterm zone="nvidia nvidia-xconfig">
             <primary sortas="b-nvidia-xconfig">nvidia-xconfig</primary>
@@ -761,7 +761,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libcudadebugger</filename></term>
         <listitem>
           <para>
-            tillater feilsøking av <application>CUDA</application> applikasjoner
+            tillater feilsøking av CUDA applikasjoner
           </para>
           <indexterm zone="nvidia libcudadebugger">
             <primary sortas="c-libcudadebugger">libcudadebugger</primary>
@@ -774,7 +774,7 @@ EOF</userinput></screen>
         <listitem>
           <para>
             gir støtte for applikasjoner som bruker
-            <application>CUDA</application>
+            CUDA
           </para>
           <indexterm zone="nvidia libcuda">
             <primary sortas="c-libcuda">libcuda</primary>
@@ -786,7 +786,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libEGL_nvidia</filename></term>
         <listitem>
           <para>
-            gir <application>NVIDIA</application> implementeringen
+            gir NVIDIA implementeringen
             av EGL
           </para>
           <indexterm zone="nvidia libEGL_nvidia">
@@ -799,7 +799,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libGLESv2_nvidia</filename></term>
         <listitem>
           <para>
-            gir <application>NVIDIA</application> implementeringen
+            gir NVIDIA implementeringen
             av OpenGL ES v2
           </para>
           <indexterm zone="nvidia libGLESv2_nvidia">
@@ -812,7 +812,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libGLX_nvidia</filename></term>
         <listitem>
           <para>
-            gir <application>NVIDIA</application> implementeringen
+            gir NVIDIA implementeringen
             av GLX
           </para>
           <indexterm zone="nvidia libGLX_nvidia">
@@ -825,7 +825,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libglxserver_nvidia</filename></term>
         <listitem>
           <para>
-            er <application>NVIDIA</application> X11 GLX utvidelsesmodul
+            er NVIDIA X11 GLX utvidelsesmodul
           </para>
           <indexterm zone="nvidia libglxserver_nvidia">
             <primary sortas="c-libglxserver_nvidia">libglxserver_nvidia</primary>
@@ -923,7 +923,7 @@ EOF</userinput></screen>
         <listitem>
           <para>
             gir et grensesnitt for å fange opp og eventuelt kode
-            rammebufferen til en <application>X11</application> serverskjerm
+            rammebufferen til en X11 serverskjerm
           </para>
           <indexterm zone="nvidia libnvidia-fbc">
             <primary sortas="c-libnvidia-fbc">libnvidia-fbc</primary>
@@ -987,7 +987,7 @@ EOF</userinput></screen>
         <listitem>
           <para>
             for at <command>nvidia-settings</command>; bruker
-            <application>GTK-3</application>
+            GTK-3
           </para>
           <indexterm zone="nvidia libnvidia-gtk3">
             <primary sortas="c-liblnvidia-gtk3">libnvidia-gtk3</primary>
@@ -1035,7 +1035,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libnvidia-opencl</filename></term>
         <listitem>
           <para>
-            gir <application>NVIDIA</application> sin implementering av
+            gir NVIDIA sin implementering av
             OpenCL API standarden
           </para>
           <indexterm zone="nvidia libnvidia-opencl">
@@ -1100,8 +1100,8 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libnvidia-tls</filename></term>
         <listitem>
           <para>
-            gir TLS support for <application>NVIDIA
-            </application> OpenGL implementeringer
+            gir TLS support for NVIDIA
+             OpenGL implementeringer
           </para>
           <indexterm zone="nvidia libnvidia-tls">
             <primary sortas="c-libnvidia-tls">libnvidia-tls</primary>
@@ -1114,7 +1114,7 @@ EOF</userinput></screen>
         <listitem>
           <para>
             er nødvendig for <command>nvidia-settings</command> på
-            <application>Wayland</application>
+            Wayland
           </para>
           <indexterm zone="nvidia libnvidia-wayland-client">
             <primary sortas="c-libnvidia-wayland-client">libnvidia-wayland-client</primary>
@@ -1126,7 +1126,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libvdpau_nvidia</filename></term>
         <listitem>
           <para>
-            gir <application>NVIDIA</application> implementering for
+            gir NVIDIA implementering for
             VDPAU API
           </para>
           <indexterm zone="nvidia libvdpau_nvidia">
@@ -1151,7 +1151,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">nvngx</filename></term>
         <listitem>
           <para>
-            gir DLSS støtte for bruk med <application>Wine</application>
+            gir DLSS støtte for bruk med Wine
           </para>
           <indexterm zone="nvidia nvngx">
             <primary sortas="c-nvngx">nvngx</primary>
@@ -1175,7 +1175,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">nvidia-drm_gbm</filename></term>
         <listitem>
           <para>
-            er <application>NVIDIA</application> GBM driveren
+            er NVIDIA GBM driveren
           </para>
           <indexterm zone="nvidia nvidia-drm_gbm">
             <primary sortas="c-nvidia-drm_gbm">nvidia-drm_gbm</primary>
@@ -1187,8 +1187,8 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">nvidia_drv</filename></term>
         <listitem>
           <para>
-            er <application>NVIDIA</application> <application>X11
-            </application> driveren
+            er NVIDIA X11
+             driveren
           </para>
           <indexterm zone="nvidia nvidia_drv">
             <primary sortas="c-nvidia_drv">nvidia_drv</primary>

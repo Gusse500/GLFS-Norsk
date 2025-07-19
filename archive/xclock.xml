@@ -26,7 +26,7 @@
     <title>Introduksjon til xclock</title>
 
     <para>
-      <application>xclock</application> Pakken inneholder et enkelt 
+      xclock Pakken inneholder et enkelt 
       klokkeprogram som brukes i standardkonfigurasjonen av xinit.
     </para>
 
@@ -82,7 +82,7 @@
     <title>Installasjon av xclock</title>
 
     <para>
-      Installer <application>xclock</application> ved å kjøre 
+      Installer xclock ved å kjøre 
       følgende kommandoer:
     </para>
 

@@ -22,7 +22,7 @@
     <title>Introduksjon til FLAC</title>
 
     <para>
-      <application>FLAC</application> er en lyd CODEC som ligner på 
+      FLAC er en lyd CODEC som ligner på 
       MP3, men uten tap, som betyr at lyd komprimeres uten å miste 
       informasjon.
     </para>
@@ -69,7 +69,7 @@
     <title>Installasjon av FLAC</title>
 
     <para>
-      Installer <application>FLAC</application> ved å kjøre 
+      Installer FLAC ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -100,7 +100,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av FLAC</title>
 
     <para>
-      Installer lib32-<application>FLAC</application> ved å kjøre 
+      Installer lib32-FLAC ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -204,7 +204,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libxmms-flac.{so,a}</filename></term>
         <listitem>
           <para>
-            er et programtillegg for <application>XMMS</application>.
+            er et programtillegg for XMMS.
           </para>
           <indexterm zone="flac libxmms-flac">
             <primary sortas="c-libxmms-flac">libxmms-flac.{so,a}</primary>

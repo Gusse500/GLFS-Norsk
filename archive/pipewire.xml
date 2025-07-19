@@ -21,7 +21,7 @@
     <title>Introduksjon til Pipewire</title>
 
     <para>
-      <application>pipewire</application> Pakken inneholder en server og et
+      pipewire Pakken inneholder en server og et
       brukerområde API for å håndtere multimediepipelines. Dette inkluderer et
       universelt API for å koble til multimedieenheter, samt deling av
       multimediefiler mellom applikasjoner.
@@ -103,7 +103,7 @@
 -->
 
     <para>
-      Installer <application>pipewire</application> ved å kjøre følgende
+      Installer pipewire ved å kjøre følgende
       kommandoer:
     </para>
 

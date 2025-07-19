@@ -22,7 +22,7 @@
     <title>Introduksjon til libXdmcp</title>
 
     <para>
-      <application>libXdmcp</application> pakken inneholder et bibliotek som 
+      libXdmcp pakken inneholder et bibliotek som 
       implementerer X Skjermbehandling Kontrollprotokoll. Dette er nyttig 
       for å la klienter samhandle med X Skjermbehandleren.
     </para>
@@ -53,7 +53,7 @@
     <title>Installasjon av libXdmcp</title>
 
     <para>
-      Installer <application>libXdmcp</application> ved å kjøre følgende 
+      Installer libXdmcp ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -76,7 +76,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libXdmcp</title>
 
     <para>
-      Installer lib32-<application>libXdmcp</application> ved å kjøre følgende 
+      Installer lib32-libXdmcp ved å kjøre følgende 
       kommandoer:
     </para>
 

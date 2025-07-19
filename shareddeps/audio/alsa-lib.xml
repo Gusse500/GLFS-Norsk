@@ -22,9 +22,9 @@
     <title>Introduksjon til ALSA biblioteket</title>
 
     <para>
-      <application>ALSA Library</application> pakken inneholder
-      ALSA biblioteket som brukes av programmer (inkludert <application>ALSA
-      Verktøy</application>) krever tilgang til ALSA
+      ALSA Library pakken inneholder
+      ALSA biblioteket som brukes av programmer (inkludert ALSA
+      Verktøy) krever tilgang til ALSA
       lydgrensesnittet.
     </para>
 
@@ -115,7 +115,7 @@ esac</userinput></screen>
 -->
 
     <para>
-      Installer <application>ALSA Library</application> ved å
+      Installer ALSA Library ved å
       kjøre følgende kommandoer:
     </para>
 
@@ -123,7 +123,7 @@ esac</userinput></screen>
 make</userinput></screen>
 
    <para>
-     Hvis du har <application>Doxygen</application> installert og du ønsker å
+     Hvis du har Doxygen installert og du ønsker å
      bygge bibliotekets API dokumentasjon, kjør følgende
      kommandoer fra toppnivåmappen i kildetreet:
    </para>

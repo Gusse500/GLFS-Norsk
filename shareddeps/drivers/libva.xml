@@ -25,7 +25,7 @@
       <title>Introduksjon til libva</title>
 
       <para>
-        <application>libva</application> pakken inneholder et bibliotek som gir 
+        libva pakken inneholder et bibliotek som gir 
         tilgang til maskinvareakselerert videobehandling, ved bruk av maskinvare 
         for å akselerere videobehandling for å avlaste den sentrale 
         prosessorenheten (CPU) for å dekode og kode komprimert digital video. 
@@ -102,7 +102,7 @@
       </caution>
       -->
       <para>
-        Installer <application>libva</application> ved å kjøre følgende 
+        Installer libva ved å kjøre følgende 
         kommandoer:
       </para>
 
@@ -128,7 +128,7 @@ ninja</userinput></screen>
       <title>lib32 Installasjon av libva</title>
       
       <para>
-        Installer lib32-<application>libva</application> ved å kjøre følgende 
+        Installer lib32-libva ved å kjøre følgende 
         kommandoer:
       </para>
 

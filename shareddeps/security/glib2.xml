@@ -22,7 +22,7 @@
     <title>Introduction to GLib</title>
 
     <para>
-      The <application>GLib</application> package contains low-level
+      The GLib package contains low-level
       libraries useful for providing data structure handling for C, portability
       wrappers and interfaces for runtime functionality such as an
       event loop, threads, dynamic loading and an object system.
@@ -160,7 +160,7 @@ fi</userinput></screen>
     </warning>
 
     <para>
-      Install <application>GLib</application> by running the following
+      Install GLib by running the following
       commands:
     </para>
 
@@ -378,7 +378,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             is a simple tool used for working with
-            <application>D-Bus</application> objects
+            D-Bus objects
           </para>
           <indexterm zone="glib2 gdbus">
             <primary sortas="b-gdbus">gdbus</primary>
@@ -391,7 +391,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             is used to generate code and/or documentation for one or
-            more <application>D-Bus</application> interfaces
+            more D-Bus interfaces
           </para>
           <indexterm zone="glib2 gdbus-codegen">
             <primary sortas="b-gdbus-codegen">gdbus-codegen</primary>
@@ -439,7 +439,7 @@ ldconfig</userinput></screen>
         <term><command>gio</command></term>
         <listitem>
           <para>
-            is a utility that makes many <application>GIO</application>
+            is a utility that makes many GIO
             features available from the command line
           </para>
           <indexterm zone="glib2 gio">
@@ -506,7 +506,7 @@ ldconfig</userinput></screen>
         <term><command>glib-gettextize</command></term>
         <listitem>
           <para>
-            is a variant of the <application>gettext</application>
+            is a variant of the gettext
             internationalization utility
           </para>
           <indexterm zone="glib2 glib-gettextize">

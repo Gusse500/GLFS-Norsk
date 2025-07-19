@@ -21,7 +21,7 @@
     <title>Introduksjon til xbitmaps</title>
 
     <para>
-      <application>xbitmaps</application> pakken inneholder bitmap bilder som 
+      xbitmaps pakken inneholder bitmap bilder som 
       brukes av flere applikasjoner bygget i Xorg kapittelet.
     </para>
 
@@ -51,7 +51,7 @@
     <title>Installasjon av xbitmaps</title>
 
     <para>
-      Installer <application>xbitmaps</application> ved å kjøre følgende 
+      Installer xbitmaps ved å kjøre følgende 
       kommandoer:
     </para>
 

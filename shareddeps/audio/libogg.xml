@@ -22,7 +22,7 @@
     <title>Introduksjon til libogg</title>
 
     <para>
-      <application>libogg</application> Pakken inneholder Ogg filstrukturen. 
+      libogg Pakken inneholder Ogg filstrukturen. 
       Dette er nyttig for å opprette (koding) eller spille (dekoding) av en 
       enkel fysisk bitstrøm.
     </para>
@@ -46,7 +46,7 @@
     <title>Installasjon av libogg</title>
 
     <para>
-      Installer <application>libogg</application> ved å kjøre følgende 
+      Installer libogg ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -72,7 +72,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av libogg</title>
 
     <para>
-      Installer lib32-<application>libogg</application> ved å kjøre følgende 
+      Installer lib32-libogg ved å kjøre følgende 
       kommandoer:
     </para>
 

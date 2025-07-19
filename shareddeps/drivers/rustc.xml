@@ -27,7 +27,7 @@
 
     <para>
       Som med mange andre programmeringsspråk,
-      <application>Rustc</application> (Rust kompilatoren) trenger en binærfil 
+      Rustc (Rust kompilatoren) trenger en binærfil 
       som den kan starte opp fra. Den laster ned en stage0 binærfil ved starten 
       av byggingen, så du kan ikke kompilere den uten en internettforbindelse.
     </para>
@@ -36,7 +36,7 @@
       <para>
         Selv om GLFS vanligvis installeres i <filename
         class="directory">/usr</filename>, når du senere oppgraderer til en 
-        nyere versjon av <application>rust</application> de gamle bibliotekene i 
+        nyere versjon av rust de gamle bibliotekene i 
         <filename class="directory">/usr/lib/rustlib</filename> vil forbli, med 
         forskjellige hasher i navnene sine, men vil ikke være brukbare og vil 
         kaste bort plass. Redaktørene anbefaler å plassere filene i <filename
@@ -57,7 +57,7 @@
     </note>
 
     <para>
-      Den nåværende <application>rustbuild</application> byggesystemet vil bruke 
+      Den nåværende rustbuild byggesystemet vil bruke 
       alle prosessorer, selv om det ikke skalerer godt og ofte faller tilbake 
       til å bare bruke én kjerne mens det venter på at et bibliotek skal 
       kompileres. Det kan imidlertid stort sett begrenses til et spesifisert 
@@ -84,9 +84,9 @@
 
     <note>
       <para>
-        <application>Rustc</application> standardinnstillingen er å bygge for 
+        Rustc standardinnstillingen er å bygge for 
         ALLE støttede arkitekturer, ved å bruke en levert kopi av 
-        <application>LLVM</application>. I GLFS er byggingen kun for X86 
+        LLVM. I GLFS er byggingen kun for X86 
         arkitekturfamilien. Hvis du har tenkt å utvikle Rust crates, er kanskje 
         ikke denne byggingen god nok for dine formål.
       </para>
@@ -141,14 +141,14 @@
     <para role="recommended">
       <xref linkend="llvm"/>
       (bygget med <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter> sånn at
-      <application>Rustc</application> kan lenke til det systeminstallerte
-      <application>LLVM</application> i stedet for å bygge den leverte versjonen)
+      Rustc kan lenke til det systeminstallerte
+      LLVM i stedet for å bygge den leverte versjonen)
     </para>
 
     <note>
       <para>
         Hvis en anbefalt avhengighet ikke er installert, vil en levert kopi i
-        <application>Rustc</application> kildekode tarballen vil bli bygget og brukt.
+        Rustc kildekode tarballen vil bli bygget og brukt.
       </para>
     </note>
 
@@ -172,7 +172,7 @@ ln -svfn rustc-&rustc-version; /opt/rustc</userinput></screen>
 
     <note>
       <para>
-        Hvis flere versjoner av <application>Rustc</application> er installert
+        Hvis flere versjoner av Rustc er installert
         i <filename class="directory">/opt</filename>, å bytte til en annen 
         versjon krever bare å endre <filename> /opt/rustc</filename>
         symbolske lenke og deretter kjøre <command>ldconfig</command>.
@@ -309,7 +309,7 @@ fi</userinput></screen>
 -->
 
     <para>
-      Kompiler <application>Rust</application> ved å kjøre følgende 
+      Kompiler Rust ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -328,9 +328,9 @@ fi</userinput></screen>
 
     <para>
       Fortsatt som &root; bruker, fiks installasjonen av dokumentasjonen og 
-      symbolkoble <application>Zsh</application> ferdigstillelsesfilen til 
-      riktig sted og flytt en <application>Bash</application> fullføringsfilen 
-      til stedet anbefalt av <application>Bash</application>
+      symbolkoble Zsh ferdigstillelsesfilen til 
+      riktig sted og flytt en Bash fullføringsfilen 
+      til stedet anbefalt av Bash
       fullføringsvedlikeholdere:
     </para>
 
@@ -397,9 +397,9 @@ mv -v /etc/bash_completion.d/cargo \
       <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        Hvis du installerte <application>Rustc</application> i
+        Hvis du installerte Rustc i
         <filename class="directory">/opt</filename>, du må oppdatere følgende 
-        konfigurasjonsfiler slik at <application>Rustc</application>
+        konfigurasjonsfiler slik at Rustc
         blir funnet riktig av andre pakker og systemprosesser.
       </para>
 

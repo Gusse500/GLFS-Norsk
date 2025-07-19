@@ -21,7 +21,7 @@
     <title>Introduksjon til Mako</title>
 
     <para>
-      <application>Mako</application> er en Python modul som implementerer 
+      Mako er en Python modul som implementerer 
       hyperrask og lett laging av maler for Python plattformen.
     </para>
 

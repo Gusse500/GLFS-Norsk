@@ -22,7 +22,7 @@
     <title>Introduksjon til XKeyboard-Config</title>
 
     <para>
-      <application>XKeyboard-Config</application> pakken inneholder 
+      XKeyboard-Config pakken inneholder 
       tastaturkonfigurasjonsdatabasen for X Vindussystemet.
     </para>
 
@@ -52,7 +52,7 @@
     <title>Installasjon av XKeyboard-Config</title>
 
     <para>
-      Installer <application>XKeyboard-Config</application> ved å kjøre følgende 
+      Installer XKeyboard-Config ved å kjøre følgende 
       kommandoer:
     </para>
 

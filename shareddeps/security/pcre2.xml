@@ -22,10 +22,10 @@
     <title>Introduction to PCRE2</title>
 
     <para>
-      The <application>PCRE2</application> package contains a new generation of
-      the <application>Perl Compatible Regular Expression</application>
+      The PCRE2 package contains a new generation of
+      the Perl Compatible Regular Expression
       libraries. These are useful for implementing regular expression pattern
-      matching using the same syntax and semantics as <application>Perl</application>.
+      matching using the same syntax and semantics as Perl.
     </para>
 
     <itemizedlist spacing="compact">
@@ -47,7 +47,7 @@
     <title>Installation of PCRE2</title>
 
     <para>
-      Install <application>PCRE2</application> by running the following
+      Install PCRE2 by running the following
       commands:
     </para>
 
@@ -74,7 +74,7 @@ make</userinput></screen>
     <title>lib32 Installation of PCRE2</title>
 
     <para>
-      Install lib32-<application>PCRE2</application> by running the
+      Install lib32-PCRE2 by running the
       following commands:
     </para>
 
@@ -127,19 +127,19 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>--enable-pcre2grep-libz</parameter>: This switch adds support
-      for reading .gz compressed files to <application>pcre2grep</application>.
+      for reading .gz compressed files to pcre2grep.
     </para>
 
     <para>
       <parameter>--enable-pcre2grep-libbz2</parameter>: This switch adds
       support for reading .bz2 compressed files to
-      <application>pcre2grep</application>.
+      pcre2grep.
     </para>
 
     <para>
       <parameter>--enable-pcre2test-libreadline</parameter>: This switch adds
       line editing and history features to the
-      <application>pcre2test</application> program.
+      pcre2test program.
     </para>
 
     &static-libraries;
@@ -186,9 +186,9 @@ ldconfig</userinput></screen>
         <term><command>pcre2grep</command></term>
         <listitem>
           <para>
-            is a version of <application>grep</application>
+            is a version of grep
             that understands
-            <application>Perl compatible regular expressions.</application>
+            Perl compatible regular expressions.
           </para>
           <indexterm zone="pcre2 pcre2grep">
             <primary sortas="b-pcre2grep">pcre2grep</primary>
@@ -201,7 +201,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             can test a
-            <application>Perl compatible regular expression.</application>
+            Perl compatible regular expression.
           </para>
           <indexterm zone="pcre2 pcre2test">
             <primary sortas="b-pcre2test">pcre2</primary>
@@ -214,7 +214,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             outputs compilation information to programs linking against the
-            <application>PCRE2</application> libraries
+            PCRE2 libraries
           </para>
           <indexterm zone="pcre2 pcre2-config">
             <primary sortas="b-pcre2-config">pcre2-config</primary>

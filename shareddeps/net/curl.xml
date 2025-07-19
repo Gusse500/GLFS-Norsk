@@ -21,7 +21,7 @@
     <title>Introduksjon til cURL</title>
 
     <para>
-      <application>cURL</application> pakken inneholder et verktøy
+      cURL pakken inneholder et verktøy
       og et bibliotek som brukes til å overføre filer med URL-syntaks til hvilken som helst av
       følgende protokoller: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP,
       HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTSP, SMB, SMBS,
@@ -90,7 +90,7 @@
 -->
 
     <para>
-      Installer <application>cURL</application> ved å kjøre følgende
+      Installer cURL ved å kjøre følgende
       kommandoer:
     </para>
 
@@ -136,7 +136,7 @@ cp -v -R docs -T /usr/share/doc/curl-&curl-version;</userinput></screen>
     <title>lib32 Installasjon av cURL</title>
     
     <para>
-      Installer <application>lib32-cURL</application>
+      Installer lib32-cURL
       ved å kjøre følgende kommandoer:
     </para>
 
@@ -185,34 +185,34 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>--with-openssl</parameter>: Denne parameteren velger
-      <application>OpenSSL</application> som SSL/TLS implementering.
+      OpenSSL som SSL/TLS implementering.
       Dette alternativet er ikke nødvendig hvis <option>--with-gnutls</option> er
       valgt i stedet.
     </para>
 
     <para>
       <option>--with-gssapi</option>: Denne parameteren legger til
-      <application>Kerberos 5</application> støtte for
+      Kerberos 5 støtte for
       <filename class="libraryfile">libcurl</filename>.
     </para>
 
     <para>
       <option>--with-gnutls</option>: Bruk denne bryteren til å
-      bygge med <application>GnuTLS</application> støtte
-      istedenfor <application>OpenSSL</application> for SSL/TLS. Dette krever at
+      bygge med GnuTLS støtte
+      istedenfor OpenSSL for SSL/TLS. Dette krever at
       <xref linkend="gnutls"/> er installert allerede.
     </para>
 
     <para>
       <option>--with-ca-bundle=/etc/pki/tls/certs/ca-bundle.crt</option>: Bruk
       denne bryteren i stedet for <parameter>--with-ca-path</parameter> hvis det
-      bygges med <application>GnuTLS</application> støtte
-      istedenfor <application>OpenSSL</application> for SSL/TLS.
+      bygges med GnuTLS støtte
+      istedenfor OpenSSL for SSL/TLS.
     </para>
 
     <para>
       <option>--with-libssh2</option>: Denne parameteren legger til
-      <application>SSH</application> støtte for cURL. Dette er deaktivert
+      SSH støtte for cURL. Dette er deaktivert
       som standard.
     </para>
 

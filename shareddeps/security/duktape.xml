@@ -22,7 +22,7 @@
     <title>Introduction to duktape</title>
 
     <para>
-      <application>duktape</application> is an embeddable Javascript
+      duktape is an embeddable Javascript
       engine, with a focus on portability and compact footprint.
     </para>
 
@@ -47,7 +47,7 @@
     <title>Installation of duktape</title>
 
     <para>
-      Install <application>duktape</application> by running the
+      Install duktape by running the
       following commands:
     </para>
 

@@ -22,7 +22,7 @@
     <title>Introduksjon til Fontconfig</title>
 
     <para>
-      <application>Fontconfig</application> pakken inneholder 
+      Fontconfig pakken inneholder 
       et bibliotek og støtteprogrammer som brukes til å konfigurere og 
       tilpasse skrifttilgang.
     </para>
@@ -70,7 +70,7 @@
     <title>Installasjon av Fontconfig</title>
 
     <para>
-      Installer <application>Fontconfig</application> ved å kjøre følgende 
+      Installer Fontconfig ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -98,7 +98,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Fontconfig</title>
 
     <para>
-      Installer lib32-<application>Fontconfig</application> ved å kjøre 
+      Installer lib32-Fontconfig ved å kjøre 
       følgende kommandoer:
     </para>
 
@@ -161,7 +161,7 @@ ldconfig</userinput></screen>
       <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        Hovedkonfigurasjonsfilen for <application>Fontconfig</application> er
+        Hovedkonfigurasjonsfilen for Fontconfig er
         <filename>/etc/fonts/fonts.conf</filename>. Vanligvis vil du ikke 
         redigere denne filen. Den vil også lese <filename>/etc/fonts/local.conf</filename>
         og eventuelle filer i <filename class="directory">/etc/fonts/conf.d</filename>.
@@ -169,7 +169,7 @@ ldconfig</userinput></screen>
         (eller oppdater) <filename>/etc/fonts/local.conf</filename> fil med din 
         lokale informasjon eller legg til en ny fil i
         <filename class="directory">/etc/fonts/conf.d</filename>. Standard 
-        plassering av fonter i <application>Fontconfig</application> er:
+        plassering av fonter i Fontconfig er:
       </para>
 
       <itemizedlist spacing="compact">
@@ -192,7 +192,7 @@ ldconfig</userinput></screen>
       </itemizedlist>
 
       <para>
-        <application>Fontconfig</application> sender også mange eksempler 
+        Fontconfig sender også mange eksempler 
         på konfigurasjonsfiler i
         <filename class="directory">/usr/share/fontconfig/conf.avail</filename>
         mappen. Symbolkoble spesifikke filer til
@@ -211,7 +211,7 @@ ldconfig</userinput></screen>
       </indexterm>
 
       <para>
-        Mer informasjon om konfigurering av <application>Fontconfig</application>
+        Mer informasjon om konfigurering av Fontconfig
         finnes i brukerhåndboken i <ulink
         url="file:///usr/share/doc/fontconfig-&fontconfig-version;/fontconfig-user.html"/>.
       </para>
@@ -366,7 +366,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libfontconfig</filename></term>
         <listitem>
           <para>
-            inneholder funksjoner som brukes av <application>Fontconfig</application>
+            inneholder funksjoner som brukes av Fontconfig
             programmer og også av andre programmer for å konfigurere eller 
             tilpasse skrifttype tilgang
           </para>

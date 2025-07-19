@@ -21,7 +21,7 @@
     <title>Introduksjon til Libdrm</title>
 
     <para>
-      <application>Libdrm</application> tilbyr et brukerrombibliotek for tilgang 
+      Libdrm tilbyr et brukerrombibliotek for tilgang 
       til Direct Rendering Manager (DRM) på operativsystemer som støtter ioctl 
       grensesnittet. Libdrm er et lavnivåbibliotek, vanligvis brukt av 
       grafikkdrivere som Mesa DRI driverne, X driverne, libva og lignende 
@@ -68,7 +68,7 @@
 -->
 
     <para>
-      Installer <application>libdrm</application> ved å kjøre følgende 
+      Installer libdrm ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -96,7 +96,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Libdrm</title>
 
     <para>
-      Installer lib32-<application>libdrm</application> ved å kjøre følgende 
+      Installer lib32-libdrm ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -138,7 +138,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D udev=true</parameter>: Denne parameteren aktiverer støtte for 
-      bruk av<application>Udev</application> istedenfor <command>mknod</command>.
+      bruk avUdev istedenfor <command>mknod</command>.
     </para>
 
     <para>

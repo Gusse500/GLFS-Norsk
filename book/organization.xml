@@ -26,17 +26,17 @@
 
   <para>
     Denne delen er dedikert til å dekke avhengigheter som deles 
-    mellom <application>Steam</application> og <application>Wine.
-    </application> Det viser seg at det er ganske mange 
-    avhengigheter de begge er avhengige av. Noe spesifikt for <application>
-    Steam</application> eller <application>Wine</application> er dekket 
+    mellom Steam og Wine.
+     Det viser seg at det er ganske mange 
+    avhengigheter de begge er avhengige av. Noe spesifikt for 
+    Steam eller Wine er dekket 
     i sine respektive kapitler.
   </para>
 
   <bridgehead renderas="sect2">Del III - Steam</bridgehead>
 
   <para>
-    Denne delen beskriver hvordan du installerer <application>Steam</application>
+    Denne delen beskriver hvordan du installerer Steam
     og den lineære avhengighetslinjen som kreves, samt noe 
     konfigurasjon for visse pakker.
   </para>
@@ -44,10 +44,10 @@
   <bridgehead renderas="sect2">Del IV - Wine</bridgehead>
 
   <para>
-    Denne delen går gjennom installasjon av en verktøykjede kalt <application>
-    MinGW-w64</application>, noen av pakkene som er nødvendige for både å kompilere
-    og bruke <application>Wine</application>, og til slutt hvordan man kompilerer
-    og konfigurerer <application>Wine</application>.
+    Denne delen går gjennom installasjon av en verktøykjede kalt 
+    MinGW-w64, noen av pakkene som er nødvendige for både å kompilere
+    og bruke Wine, og til slutt hvordan man kompilerer
+    og konfigurerer Wine.
   </para>
 
   <bridgehead renderas="sect2">Del V - Livskvalitet</bridgehead>

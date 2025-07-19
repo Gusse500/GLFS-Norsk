@@ -25,10 +25,10 @@
       <title>Introduksjon til Xorg Wacom Driver</title>
 
       <para>
-        <application>Xorg Wacom Driver</application> Pakken inneholder X.Org X11 
+        Xorg Wacom Driver Pakken inneholder X.Org X11 
         driveren og SDK-en for Wacom og Wacom lignende nettbrett. Det er ikke 
         nødvendig å bruke et Wacom nettbrett,
-        <application>xf86-input-evdev</application> driveren kan håndtere disse 
+        xf86-input-evdev driveren kan håndtere disse 
         enhetene uten problemer.
       </para>
 
@@ -76,7 +76,7 @@
       <title>Installation of Xorg Wacom Driver</title>
 
       <para>
-        Installer <application>Xorg Wacom Driver</application> ved å kjøre 
+        Installer Xorg Wacom Driver ved å kjøre 
         følgende kommandoer:
       </para>
 

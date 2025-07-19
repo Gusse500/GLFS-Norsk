@@ -18,7 +18,7 @@
     <title>Introduction to the GStreamer Suite</title>
 
     <para>
-      <application>GStreamer</application> is a streaming media framework that
+      GStreamer is a streaming media framework that
       enables applications to share a common set of plugins for tasks such as
       video encoding and decoding, audio encoding and decoding, audio and video
       filters, audio visualisation, web streaming and anything else that
@@ -450,7 +450,7 @@ done</userinput></screen>
         <listitem>
           <para>
             is a tool that prints out information on available
-            <application>GStreamer</application> plugins,
+            GStreamer plugins,
             information about a particular plugin, or information
             about a particular element
           </para>
@@ -465,7 +465,7 @@ done</userinput></screen>
         <listitem>
           <para>
             is a tool that builds and runs basic
-            <application>GStreamer</application> pipelines
+            GStreamer pipelines
           </para>
           <indexterm zone="gstreamer-suite gst-launch-1.0">
             <primary sortas="b-gst-launch-1.0">gst-launch-1.0</primary>
@@ -491,7 +491,7 @@ done</userinput></screen>
         <listitem>
           <para>
             is a tool used to gather statistics about
-            <application>GStreamer</application> operations
+            GStreamer operations
           </para>
           <indexterm zone="gstreamer-suite gst-stats-1.0">
             <primary sortas="b-gst-stats-1.0">gst-stats-1.0</primary>
@@ -528,8 +528,8 @@ done</userinput></screen>
         <term><command>gst-typefind-1.0</command></term>
         <listitem>
           <para>
-            uses the <application>GStreamer</application> type finding system
-            to determine the relevant <application>GStreamer</application>
+            uses the GStreamer type finding system
+            to determine the relevant GStreamer
             plugin to parse or decode files, and the corresponding MIME type
           </para>
           <indexterm zone="gstreamer-suite gst-typefind-1.0">
@@ -605,7 +605,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libgstreamer-1.0</filename></term>
         <listitem>
           <para>
-            provides all of the core <application>GStreamer</application>
+            provides all of the core GStreamer
             services, including initialization, plugin management and types,
             as well as the object hierarchy that defines elements and bins,
             along with some more specialized elements

@@ -22,9 +22,9 @@
     <title>Introduksjon til util-macros</title>
 
     <para>
-      <application>util-macros</application> pakken inneholder
-      <application>m4</application> makroer som brukes av alle
-      <application>Xorg</application> pakkene.
+      util-macros pakken inneholder
+      m4 makroer som brukes av alle
+      Xorg pakkene.
     </para>
 
     <itemizedlist spacing="compact">
@@ -55,7 +55,7 @@
     <title>Installasjon av util-macros</title>
 
     <para>
-      Installer <application>util-macros</application> ved å kjøre følgende 
+      Installer util-macros ved å kjøre følgende 
       kommandoer:
     </para>
 

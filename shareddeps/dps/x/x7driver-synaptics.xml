@@ -25,7 +25,7 @@
       <title>Introduksjon til Xorg Synaptics Driver</title>
 
       <para>
-        <application>Xorg Synaptics Driver</application> pakken inneholder 
+        Xorg Synaptics Driver pakken inneholder 
         X.Org Input Driver, støtteprogrammer og SDK for Synaptics 
         berøringsplater. Selv om evdev driveren kan håndtere berøringsplater 
         veldig bra, er denne driveren nødvendig hvis du vil bruke avanserte 
@@ -60,7 +60,7 @@
       <title>Installasjon av Xorg Synaptics Driver</title>
 
       <para>
-        Installer <application>Xorg Synaptics Driver</application> ved å kjøre 
+        Installer Xorg Synaptics Driver ved å kjøre 
         følgende kommandoer:
       </para>
 

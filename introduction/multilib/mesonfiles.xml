@@ -15,16 +15,16 @@
     <title>Introduksjon til Meson Verktøykjedefiler</title>
     
     <para>
-      De fleste applikasjoner som er avhengige av <application>Meson</application>
+      De fleste applikasjoner som er avhengige av Meson
       byggesystemer har god støtte for krysskompilering, dvs. kompilering av 
       32-biters binærfiler på et 64-biters system. Det kan være så enkelt som å sette opp
       <envar>CC</envar>, <envar>CXX</envar>, og <envar>PKG_CONFIG_PATH
       </envar> variabler før du bruker <userinput>meson setup ..
       </userinput> kommandoen for å kompilere 32-bit binærfiler på et 64-bit system.
       Noen prosjekter er imidlertid mer kompliserte av mange forskjellige 
-      grunner, noe som fører til behovet for <application>Meson
-      </application> verktøykjedefiler. De spesifiserer kompilatorer, 
-      alternativer som skal kalles, <application>pkg-conf</application>
+      grunner, noe som fører til behovet for Meson
+       verktøykjedefiler. De spesifiserer kompilatorer, 
+      alternativer som skal kalles, pkg-conf
       binær (eller rettere sagt symbollenke som bruker en bestemt personlighetfil),
       <command>llvm-config</command> å bruke, osv. Dette er nødvendig for mange 
       Meson prosjekter, spesielt hvis du har fulgt BLFS før denne boken. 
@@ -32,7 +32,7 @@
     </para>
 
     <para>
-      Det er to <application>Meson</application> filer: kryss verktøykjedefilen 
+      Det er to Meson filer: kryss verktøykjedefilen 
       og den opprinnelige verktøykjedefilen. Det finnes forskjellige situasjoner 
       for bruk av begge.
     </para>

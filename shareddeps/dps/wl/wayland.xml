@@ -21,7 +21,7 @@
     <title>Introduksjon til Wayland</title>
 
     <para>
-      <application>Wayland</application> er et prosjekt for å definere en 
+      Wayland er et prosjekt for å definere en 
       protokoll for at en kompositor skal kunne kommunisere med klientene sine, 
       samt en bibliotekimplementering av protokollen.
     </para>
@@ -52,7 +52,7 @@
     <title>Installasjon av Wayland</title>
 
     <para>
-      Installer <application>Wayland</application> ved å kjøre følgende 
+      Installer Wayland ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -87,7 +87,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Wayland</title>
 
     <para>
-      Installer lib32-<application>Wayland</application> ved å kjøre følgende 
+      Installer lib32-Wayland ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -181,7 +181,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             inneholder API funksjoner for å skrive 
-            <application>Wayland</application> applikasjoner
+            Wayland applikasjoner
           </para>
           <indexterm zone="wayland libwayland-client">
             <primary sortas="c-libwayland-client">libwayland-client</primary>
@@ -194,7 +194,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             inneholder API funksjoner for å administrere markører i 
-            <application>Wayland</application> applikasjoner
+            Wayland applikasjoner
           </para>
           <indexterm zone="wayland libwayland-cursor">
             <primary sortas="c-libwayland-cursor">libwayland-cursor</primary>
@@ -207,7 +207,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             inneholder API funksjoner for håndtering av OpenGL kall i
-            <application>Wayland</application> applikasjoner
+            Wayland applikasjoner
           </para>
           <indexterm zone="wayland libwayland-egl">
             <primary sortas="c-libwayland-egl">libwayland-egl</primary>
@@ -220,7 +220,7 @@ ldconfig</userinput></screen>
         <listitem>
           <para>
             inneholder API funksjoner for å skrive 
-            <application>Wayland</application> kompositorer
+            Wayland kompositorer
           </para>
           <indexterm zone="wayland libwayland-server">
             <primary sortas="c-libwayland-server">libwayland-server</primary>

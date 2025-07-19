@@ -21,7 +21,7 @@
     <title>Introduksjon til PyYAML</title>
 
     <para>
-      <application>PyYAML</application> er en Python modul som implementerer 
+      PyYAML er en Python modul som implementerer 
       neste generasjons YAML analysator og sender.
     </para>
 

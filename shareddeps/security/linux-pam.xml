@@ -23,7 +23,7 @@
     <title>Introduction to Linux PAM</title>
 
     <para>
-      The <application>Linux PAM</application> package contains
+      The Linux PAM package contains
       Pluggable Authentication Modules used by the local
       system administrator to control how application programs authenticate
       users.
@@ -81,7 +81,7 @@
     <title>Installation of Linux PAM</title>
 
     <para>
-      Compile and link <application>Linux PAM</application> by
+      Compile and link Linux PAM by
       running the following commands:
     </para>
 
@@ -175,7 +175,7 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
     <title>lib32 Installation of Linux PAM</title>
 
     <para>
-      Install lib32-<application>Linux-PAM</application> by
+      Install lib32-Linux-PAM by
       running the following commands:
     </para>
 
@@ -318,7 +318,7 @@ session     required        pam_deny.so
 EOF</userinput></screen>
 
       <para>
-        The <application>PAM</application> man page (<command>man
+        The PAM man page (<command>man
         pam</command>) provides a good starting point to learn
         about the several fields, and allowable entries. The
         Linux-PAM System Administrators' Guide at

@@ -21,7 +21,7 @@
     <title>Introduksjon til ALSA Programtillegg</title>
 
     <para>
-      <application>ALSA Programtillegg</application> Pakken inneholder
+      ALSA Programtillegg Pakken inneholder
       programtillegg for diverse lydbiblioteker og lydservere.
     </para>
 
@@ -65,7 +65,7 @@
     <title>Installasjon av ALSA Programtillegg</title>
 
     <para>
-      Installer <application>ALSA Programtillegg</application> ved å
+      Installer ALSA Programtillegg ved å
       kjøre følgende kommandoer:
     </para>
 
@@ -88,7 +88,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av ALSA Programtillegg</title>
 
     <para>
-      Installer 32-bit <application>ALSA Programtillegg</application> ved å
+      Installer 32-bit ALSA Programtillegg ved å
       kjøre følgende kommandoer:
     </para>
 
@@ -170,8 +170,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_oss</filename></term>
         <listitem>
           <para>
-            Tillater opprinnelige <application>ALSA</application> applikasjoner til å
-            kjøre på <application>OSS</application>
+            Tillater opprinnelige ALSA applikasjoner til å
+            kjøre på OSS
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_oss">
             <primary sortas="c-libasound_module_pcm_oss">libasound_module_pcm_oss</primary>
@@ -208,7 +208,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_jack</filename></term>
         <listitem>
           <para>
-            Tillater opprinnelige <application>ALSA</application> applikasjoner til å
+            Tillater opprinnelige ALSA applikasjoner til å
             virke med <command>jackd</command>
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_jack">
@@ -221,8 +221,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libasound_module_pcm_pulse</filename></term>
         <listitem>
           <para>
-            Tillater opprinnelige <application>ALSA</application> applikasjoner
-            å få tilgang til en <application>PulseAudio</application> lyd
+            Tillater opprinnelige ALSA applikasjoner
+            å få tilgang til en PulseAudio lyd
             nisse
           </para>
           <indexterm zone="alsa-plugins libasound_module_pcm_pulse">

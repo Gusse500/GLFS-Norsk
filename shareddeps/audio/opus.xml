@@ -21,7 +21,7 @@
     <title>Introduksjon til Opus</title>
 
     <para>
-      <application>Opus</application> er et tapsfylt lydkomprimeringsformat 
+      Opus er et tapsfylt lydkomprimeringsformat 
       utviklet av Internet Engineering Task Force (IETF) som er 
       spesielt egnet for interaktiv tale og lyd overføring over 
       Internett. Denne pakken inneholder Opus utviklingsbiblioteket og 
@@ -55,7 +55,7 @@
     <title>Installasjon av Opus</title>
 
     <para>
-      Installer <application>Opus</application> ved å kjøre følgende 
+      Installer Opus ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -84,7 +84,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av Opus</title>
 
     <para>
-      Installer lib32-<application>Opus</application> ved å kjøre følgende 
+      Installer lib32-Opus ved å kjøre følgende 
       kommandoer:
     </para>
 

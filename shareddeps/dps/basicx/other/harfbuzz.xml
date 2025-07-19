@@ -22,7 +22,7 @@
     <title>Introduksjon til HarfBuzz</title>
 
     <para>
-      <application>HarfBuzz</application> Pakken inneholder en OpenType 
+      HarfBuzz Pakken inneholder en OpenType 
       tekstformingsmotor.
     </para>
 
@@ -58,7 +58,7 @@
     <title>Installasjon av HarfBuzz</title>
 
     <para>
-      Installer <application>HarfBuzz</application> ved å kjøre følgende 
+      Installer HarfBuzz ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -89,7 +89,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av HarfBuzz</title>
 
     <para>
-      Installer lib32-<application>HarfBuzz</application> ved å kjøre følgende 
+      Installer lib32-HarfBuzz ved å kjøre følgende 
       kommandoer:
     </para>
 
@@ -125,14 +125,14 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D cairo=disabled</parameter>: Denne bryteren tvinger denne pakken 
-      til ikke å lenke mot <application>Cairo</application> for lib32 bygget,
-      ettersom den feilaktig vil tro at lib32-<application>Cairo</application>
+      til ikke å lenke mot Cairo for lib32 bygget,
+      ettersom den feilaktig vil tro at lib32-Cairo
       er installert hvis 64-bits sversjonen er installert.
     </para>
 
     <para>
       <parameter>-D graphite2=disabled</parameter>: Denne bryteren deaktiverer
-      <application>Graphite2</application> støtte, som ikke er i GLFS.
+      Graphite2 støtte, som ikke er i GLFS.
     </para>
 
     <para>
@@ -143,7 +143,7 @@ ldconfig</userinput></screen>
 <!--
     <para>
       <parameter>-Dbenchmark=disabled</parameter>: Denne bryteren deaktiverer 
-      nedlasting og bygging av <application>google-benchmark</application>
+      nedlasting og bygging av google-benchmark
       delprosjekt, som krever <xref linkend="git"/>, og er ikke nyttig 
       for ikke-utviklere.
     </para>
