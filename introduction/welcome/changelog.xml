@@ -44,6 +44,10 @@
       <para>16. juli 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libxml2: 2.14.4 -&gt; 2.14.5 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/284">#284</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Vulkan-SDK: 1.4.313.0 -&gt; 1.4.321.0. Fikser
           <ulink url="&glfs-issues;/283">#283</ulink>.</para>
         </listitem>

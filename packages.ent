@@ -44,7 +44,7 @@
 <!ENTITY icu-patch                    "0">
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.14">
-<!ENTITY libxml2-version              "&libxml2-minor;.4">
+<!ENTITY libxml2-version              "&libxml2-minor;.5">
 <!ENTITY shared-mime-info-version     "2.4">
 <!ENTITY desktop-file-utils-version   "0.28">
 <!ENTITY polkit-version               "126">
@@ -143,14 +143,10 @@
 <!ENTITY egl-gbm-version              "1.1.2.1">
 <!ENTITY egl-wayland-version          "1.1.19">
 <!ENTITY egl-x11-version              "1.0.2">
+<!-- kernel version in kernel-config presently -->
 <!ENTITY linux-version                "6.15.5">
-                                                <!-- kernel version in
-                                                     kernel-config
-                                                     presently -->
+<!-- kernel version of when the NVIDIA driver version listed was released -->
 <!ENTITY nvidia-linux-version         "6.15.x">
-                                                <!-- kernel version of when the
-                                                     NVIDIA driver version
-                                                     listed was released -->
 <!ENTITY nvidia-version               "575.64.03">
 <!ENTITY nv-manifest-version          "1">
 <!ENTITY nv-sysv-bs                   "1">
