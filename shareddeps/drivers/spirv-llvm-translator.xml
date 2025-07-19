@@ -45,9 +45,8 @@
     <para role="required">
       <xref linkend="cmake"/>,
       <xref linkend="libxml2"/>,
-      <xref linkend="llvm"/> (med Clang),
-      <xref linkend="spirv-headers"/>, og
-      <xref linkend="spirv-tools"/>
+      <xref linkend="llvm"/> (med Clang), og
+      <xref linkend="vulkan-sdk"/>
     </para>
 
   </sect2>
@@ -130,7 +129,7 @@ ldconfig</userinput></screen>
     
     <para>
       <parameter>-D LLVM_EXTERNAL_SPIRV_HEADERS_*</parameter>: Disse bryterne 
-      forteller byggesystemet at <xref linkend="spirv-headers" role="nodep"/> er
+      forteller byggesystemet at <xref linkend="vulkan-sdk" role="nodep"/> er
       installert i /usr. Dette er nødvendig siden byggesystemet prøver å laste 
       ned og bruke de nedlastede deklarasjonene i stedet for de på systemet 
       hvis bryteren ikke kalles.

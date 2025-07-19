@@ -36,7 +36,7 @@
       linkend="nvidia"/>, men du kan hvis du ønsker det. Det kan være lurt å 
       gjøre det for å ha et reserveprogram (Zink Gallium3D + Nouveau Vulkan). 
       Hvis du ikke installerer <application>NVIDIA</application>, hopp til <xref
-      linkend="spirv-headers"/> og fortsett til du kommer frem til <xref
+      linkend="llvm"/> og fortsett til du kommer frem til <xref
       linkend="mesa"/> for å få en fullstendig installasjon av drivere og 
       andre biblioteker.
     </para>

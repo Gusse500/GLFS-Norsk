@@ -15,40 +15,35 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to DXVK</title>
+    <title>Introduksjon til DXVK</title>
 
     <para>
-      The <application>DXVK</application> package contains DLL files which
-      converts Direct3D 8-11 calls to Vulkan. By default in
-      <application>Wine</application>, Direct3D 8-11 calls are converted to
-      OpenGL calls in a poor manner, leading to bad performance. As such,
-      many people install this package.
+      <application>DXVK</application> pakken inneholder DLL filer som 
+      konverterer Direct3D 8-11 kall til Vulkan. Som standard i
+      <application>Wine</application>, Direct3D 8-11 kall konverteres til 
+      OpenGL kall på en dårlig måte, noe som fører til dårlig ytelse. Derfor 
+      installerer mange denne pakken.
     </para>
 
     &long-build-time;
 
-    <bridgehead renderas="sect3">DXVK Dependencies</bridgehead>
+    <bridgehead renderas="sect3">DXVK Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="glslang"/>,
-      <xref linkend="mingw-w64-gcc"/> (compiled with POSIX thread support), and
+      <xref linkend="mingw-w64-gcc"/> (kompilert med POSIX trådstøtte),
+      <xref linkend="vulkan-sdk"/>, og
       <xref linkend="wine"/>
-    </para>
-
-    <bridgehead renderas="sect4">Required (Runtime)</bridgehead>
-    <para role="runtime">
-      <xref linkend="libvk"/>
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Downloading DXVK</title>
+    <title>Laste ned DXVK</title>
 
     <para>
-      This package depends on submodules and multiple of them will need to be
-      downloaded. Create a list of the needed tarballs that will be downloaded:
+      Denne pakken er avhengig av undermoduler, og flere av dem må lastes ned. 
+      Lag en liste over nødvendige tar filer som skal lastes ned:
     </para>
 
 <screen><userinput>cat &gt; dxvk-&dxvk-version;-list &lt;&lt; "EOF"
@@ -59,7 +54,7 @@ KhronosGroup/Vulkan-Headers/archive/&dxvk-vulkan;.tar.gz</literal>
 EOF</userinput></screen>
 
     <para>
-      Download the tarballs using <xref linkend="wget"/>:
+      Last ned tarballene ved å bruke <xref linkend="wget"/>:
     </para>
 
 <screen><userinput>mkdir dxvk &amp;&amp;
@@ -70,10 +65,10 @@ grep -v '^#' ../dxvk-&dxvk-version;-list | wget -i- -c \
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of DXVK</title>
+    <title>Installasjon av DXVK</title>
 
     <para>
-      Extract all the tarballs:
+      Pakk ut alle tarballene:
     </para>
 
 <screen><userinput>for i in *.tar.?z*; do
@@ -82,8 +77,8 @@ grep -v '^#' ../dxvk-&dxvk-version;-list | wget -i- -c \
 done</userinput></screen>
 
     <para>
-      Now that the tarballs have been extracted, the submodules need to be
-      moved in place. Do so now:
+      Nå som tarballene er pakket ut, må undermodulene flyttes på plass. 
+      Gjør det nå:
     </para>
 
 <screen><userinput>mv -T libdisplay-info-*                       \
@@ -94,24 +89,24 @@ mv -T Vulkan-Headers-*                        \
       dxvk-&dxvk-version;/include/vulkan</userinput></screen>
 
     <para>
-      Go into the <filename class="directory">dxvk-&dxvk-version;</filename>
-      directory:
+      Gå inn i <filename class="directory">dxvk-&dxvk-version;</filename>
+      mappen:
     </para>
 
 <screen><userinput>cd dxvk-&dxvk-version;</userinput></screen>
 
     <note><para>
-      If you are doing multilib, it is recommended to install 32-bit along with
-      64-bit <application>DXVK</application> as there are plenty of 32-bit
-      Direct3D applications.
+      Hvis du bruker multilib, anbefales det å installere 32-bit sammen med
+      64-bit <application>DXVK</application> siden det finnes mange 32-biters 
+      Direct3D applikasjoner.
     </para></note>
 
     <sect3>
-      <title>64-bit Installation</title>
+      <title>64-bit Installasjon</title>
 
       <para>
-        Install 64-bit <application>DXVK</application> by running
-        the following commands:
+        Installer 64-bit <application>DXVK</application> ved å kjøre 
+        følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build-win64 &amp;&amp;
@@ -123,7 +118,7 @@ meson setup .. --cross-file=../build-win64.txt \
 
 ninja</userinput></screen>
 
-      <para>Now as the &root; user:</para>
+      <para>Nå som &root; bruker:</para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
 cd ..         &amp;&amp;
@@ -135,11 +130,11 @@ install -vDm644 build-win64/DESTDIR/bin/*.dll \
     </sect3>
 
     <sect3>
-      <title>32-bit Installation</title>
+      <title>32-bit Installasjon</title>
 
       <para>
-        Install 32-bit <application>DXVK</application> by running
-        the following commands:
+        Installer 32-bit <application>DXVK</application> ved å kjøre 
+        følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build-win32 &amp;&amp;
@@ -151,7 +146,7 @@ meson setup .. --cross-file ../build-win32.txt \
 
 ninja</userinput></screen>
 
-      <para>Now as the &root; user:</para>
+      <para>Nå som &root; bruker:</para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
 cd ..         &amp;&amp;
@@ -165,37 +160,37 @@ install -vDm644 build-win32/DESTDIR/bin/*.dll \
   </sect2>
 
   <sect2 role="configuration">
-    <title>Setting Up DXVK</title>
+    <title>Sette opp DXVK</title>
 
     <note><para>
-      This section requires a running graphical environment. If you are not
-      ready yet, you may skip this section and return back once you are in a
-      graphical environment.
+      Denne delen krever et kjørende grafisk miljø. Hvis du ikke er 
+      klar ennå, kan du hoppe over denne delen og gå tilbake når du 
+      er i et grafisk miljø.
     </para></note>
 
     <para>
-      First, create the <application>Wine</application> prefix if it is not
-      already made:
+      Først, opprett <application>Wine</application> prefiks hvis det ikke 
+      allerede er opprettet:
     </para>
 
     <screen><userinput>WINEPREFIX=~/.wine wineboot -u</userinput></screen>
 
     <note><para>
-      <command>wineboot</command> may report an error in the output, but this
-      is normal and frequent. Usually, these errors are non-fatal and you won't
-      need to typically worry about them. <application>Wine</application> is
-      very verbose.
+      <command>wineboot</command> kan rapportere en feil i utdataene, men dette 
+      er normalt og hyppig. Vanligvis er disse feilene ikke fatale, og du trenger 
+      vanligvis ikke å bekymre deg for dem. <application>Wine</application> er 
+      veldig detaljert.
     </para></note>
 
-    <para>While the DXVK DLL files have been installed, they are not yet in the
-    <application>Wine</application> prefix. Create symlinks so that they can be
-    found by <application>Wine</application>, whilst allowing updating of this
-    package without having to copy everything over again. Along with this, the
-    registry must be updated to use the new DLLs. Do this for each
-    archetecture you have installed.</para>
+    <para>Selv om DXVK DLL filene er installert, er de ennå ikke i
+    <application>Wine</application> prefiks. Lag symbolske lenker slik at de kan 
+    finnes av <application>Wine</application>, samtidig som det er mulig å 
+    oppdatere denne pakken uten å måtte kopiere alt på nytt. I tillegg til dette
+    må registeret oppdateres for å bruke de nye DLL-ene. Gjør dette for hver 
+    arkitektur du har installert.</para>
 
     <sect3>
-      <title>64-bit Setup</title>
+      <title>64-bit Oppsett</title>
 
       <para>For 64-bit:</para>
 
@@ -210,7 +205,7 @@ done</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>32-bit Setup</title>
+      <title>32-bit Oppsett</title>
 
       <para>For 32-bit:</para>
 
@@ -231,54 +226,55 @@ done</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <para>
-      <command>git checkout v&dxvk-version;</command>: This command switches to
-      a stable release in the commit history.
+      <command>git checkout v&dxvk-version;</command>: Denne kommandoen bytter 
+      til en stabil utgivelse i commit historikken.
     </para>
 
     <para>
-      <parameter>--cross-file=../build-win{32,64}.txt</parameter>: This
-      parameter changes what Win archetecture to build for.
+      <parameter>--cross-file=../build-win{32,64}.txt</parameter>: Denne 
+      parameteren endrer hvilken Win arkitektur det skal bygges for.
     </para>
 
     &meson-buildtype-release;
 
     <para>
-      <command>WINEPREFIX=~/.wine wineboot -u</command>: This command creates a
-      <application>Wine</application> prefix and copies over any missing files
-      to it. It will not reset an existing prefix.
+      <command>WINEPREFIX=~/.wine wineboot -u</command>: Denne kommandoen 
+      oppretter en <application>Wine</application> prefiks og kopierer 
+      eventuelle manglende filer til det. Det vil ikke tilbakestille et 
+      eksisterende prefiks.
     </para>
 
     <para>
-      <command>wine reg add ...</command>: This command overrides the
-      registry so that <application>Wine</application> will use the new DLL
-      files instead of the old ones.
+      <command>wine reg add ...</command>: Denne kommandoen overstyrer 
+      registeret slik at <application>Wine</application> vil bruke de nye DLL 
+      filene i stedet for de gamle.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           d3d10core,
           d3d11,
           d3d8,
           d3d9, and
-          dxgi (all DLLs)
+          dxgi (alle DLL-er)
         </seg>
         <seg>
           /usr/lib/dxvk/{win32,win64}
@@ -287,7 +283,7 @@ done</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -295,7 +291,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">d3d10core</filename></term>
         <listitem>
           <para>
-            converts Direct3D 10 calls to Vulkan
+            konverterer Direct3D 10 kall til Vulkan
           </para>
           <indexterm zone="dxvk d3d10core">
             <primary sortas="c-d3d10core">d3d10core</primary>
@@ -307,7 +303,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">d3d11</filename></term>
         <listitem>
           <para>
-            converts Direct3D 11 calls to Vulkan
+            konverterer Direct3D 11 kall til Vulkan
           </para>
           <indexterm zone="dxvk d3d11">
             <primary sortas="c-d3d11">d3d11</primary>
@@ -319,7 +315,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">d3d8</filename></term>
         <listitem>
           <para>
-            converts Direct3D 8 calls to Vulkan
+            konverterer Direct3D 8 kall til Vulkan
           </para>
           <indexterm zone="dxvk d3d8">
             <primary sortas="c-d3d8">d3d8</primary>
@@ -331,7 +327,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">d3d9</filename></term>
         <listitem>
           <para>
-            converts Direct3D 9 calls to Vulkan
+            konverterer Direct3D 9 kall til Vulkan
           </para>
           <indexterm zone="dxvk d3d9">
             <primary sortas="c-d3d9">d3d9</primary>
@@ -343,7 +339,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">dxgi</filename></term>
         <listitem>
           <para>
-            handles the Direct3D Graphics Infrastructure
+            håndterer Direct3D grafikkinfrastrukturen
           </para>
           <indexterm zone="dxvk dxgi">
             <primary sortas="c-dxgi">dxgi</primary>

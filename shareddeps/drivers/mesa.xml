@@ -105,11 +105,6 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="glslang"/> (påkrevd for Vulkan støtte)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
             <xref linkend="libclc"/> (påkrevd for Intel Iris Gallium3D)
           </para>
         </listitem>
@@ -140,7 +135,8 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libvk"/> (påkrevd for Zink Gallium3D driver)
+            <xref linkend="vulkan-sdk"/> (påkrevd for Vulkan og Zink
+            Gallium3D støtte)
           </para>
         </listitem>
         <listitem>

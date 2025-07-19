@@ -21,8 +21,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="hwdata.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutgl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libglvnd.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vkheaders.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvk.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vulkan-sdk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
@@ -32,9 +31,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-headers.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-tools.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glslang.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rustc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cbindgen.xml"/>

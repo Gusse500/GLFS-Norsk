@@ -5,83 +5,83 @@
   %general-entities;
 ]>
 
-<sect1 id="winedeps" xreflabel="Wine Dependencies">
+<sect1 id="winedeps" xreflabel="Wine Avhengigheter">
   <?dbhtml filename="winedeps.html"?>
 
 
-  <title>Wine Dependencies</title>
+  <title>Wine Avhengigheter</title>
 
   <para>
-    Wine has three build formats and depending on what build you want,
-    you will have to pay attention to what you install and its format.
+    Wine har tre byggeformater, og avhengig av hvilken byggefil du ønsker, må 
+    du være oppmerksom på hva du installerer og formatet.
   </para>
 
   <para>
-    The three build types are: 32-bit, 64-bit, and WoW64. 32-bit and 64-bit
-    are self-explanatory, but WoW64 needs explanation. WoW64 is a compatibility
-    layer created by Microsoft when applications and computers were becoming 64-bit.
-    This layer allows users to emulate 32-bit Windows applications on a 64-bit
-    CPU. Knowing this, a Wine WoW64 build can be explained as a build type that
-    allows the user to execute Windows 32-bit and 64-bit applications.
+    De tre byggetypene er: 32-bit, 64-bit og WoW64. 32-bit og 64-bit er 
+    selvforklarende, men WoW64 trenger forklaring. WoW64 er et 
+    kompatibilitetslag laget av Microsoft da applikasjoner og datamaskiner ble 
+    64-bit. Dette laget lar brukere emulere 32-bit Windowsapplikasjoner på en 
+    64-bit CPU. Med dette i bakhodet kan en Wine WoW64 bygg forklares som en 
+    byggetype som lar brukeren kjøre Windows 32-bit og 64-bit applikasjoner.
   </para>
 
   <para>
-    If you don't want a WoW64 build, follow the instructions
-    normally and skip the lib32 instructions. When you reach the <application>
-    MinGW-w64</application> section, follow only the x86_64 instructions.
+    Hvis du ikke vil ha et WoW64 bygg, følg instruksjonene normalt og hopp over 
+    lib32 instruksjonene. Når du kommer til <application>
+    MinGW-w64</application> seksjonen, følg kun instruksjonene for x86_64.
   </para>
 
   <para>
-    If you want a 32-bit only build, follow only the lib32
-    instructions. When you reach <application>MinGW-w64</application>, follow
-    the i686 instructions. However, for the sake of continuing onto BLFS, it is
-    recommended to do the normal installations as well, save for
+    Hvis du kun vil ha et 32-biters bygg, følg kun lib32-instruksjonene. Når du 
+    kommer til <application>MinGW-w64</application>, følg instruksjonene for 
+    i686. For å kunne fortsette på BLFS, anbefales det imidlertid å gjøre de 
+    vanlige installasjonene også, bortsett fra
     <application>MinGW-w64</application>.
   </para>
 
   <para>
-    And finally, if you want a WoW64 build, follow all the
-    instructions on the dependency pages unless instructed otherwise or are
-    presented with options.
+    Og til slutt, hvis du ønsker et WoW64 bygg, følg alle instruksjonene på 
+    avhengighetssidene med mindre du får beskjed om noe annet eller får 
+    presentert alternativer.
   </para>
 
   <sect2>
-    <title>Required</title>
+    <title>Påkrevd</title>
 
     <para>
-      Audio (<xref linkend="alsa-plugins"/> and/or
+      Audio (<xref linkend="alsa-plugins"/> og/eller
       <xref linkend="pulseaudio"/>), <xref linkend="dbus"/>,
-      Display server (<xref linkend="xorg-server"/> or
+      Skjermserver (<xref linkend="xorg-server"/> eller
       <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
       <xref linkend="fontconfig"/>,
       <xref linkend="freetype2-pass2"/>,
       <xref linkend="gnutls"/>,
-      <xref linkend="libunwind"/> (if 64-bit/WoW64; not used by Wine 32-bit),
-      &opengl;, and
+      <xref linkend="libunwind"/> (hvis 64-bit/WoW64; ikke brukt av Wine 32-bit),
+      &opengl;, og
       <xref linkend="mingw-w64-gcc"/>
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Recommended</title>
+    <title>Anbefalt</title>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          <xref linkend="gstreamer-suite"/>: allows consuming and working with
-          multimedia such as music and videos. Most games and some software
-          work without it, although some will need it for WMA decoding.
+          <xref linkend="gstreamer-suite"/>: tillater bruk av og arbeid med 
+          multimedia som musikk og videoer. De fleste spill og noe programvare 
+          fungerer uten den, selv om noen vil trenge den for WMA dekoding.
         </para>
       </listitem>
       <listitem>
         <para>
-          <xref linkend="sdl2"/>: for input and other neat stuff.
+          <xref linkend="sdl2"/>: for inndata og andre fine ting.
         </para>
       </listitem>
       <listitem>
         <para>
-          <xref linkend="libvk"/>: for Vulkan support.
+          <xref linkend="vulkan-sdk"/>: for Vulkan støtte.
         </para>
       </listitem>
     </itemizedlist>
@@ -89,7 +89,7 @@
   </sect2>
 
   <sect2>
-    <title>Optional</title>
+    <title>Valgfri</title>
 
     <para>
       <ulink url="https://aur.archlinux.org/packages/libcapi/">
@@ -106,7 +106,7 @@
       url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
       OpenCL</ulink>,
       <ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
-      <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, and
+      <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, og
       <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
     </para>
 
