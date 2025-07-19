@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>17. juli 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Vulkan-SDK; XCB-Utils; GStreamer-Suite: Merk BLFS 
+          pakkenes ekvivalenter.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>16. juli 2025</para>
       <itemizedlist>
         <listitem>

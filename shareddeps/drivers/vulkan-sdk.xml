@@ -86,6 +86,26 @@
       </para></listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">BLFS ekvivalente pakker</bridgehead>
+    <para>Denne kombinerte siden installerer det som i BLFS ville vært:</para>
+    <itemizedlist>
+      <listitem><para>
+        <ulink url="&blfs-svn;/x/vulkan-headers.html">Vulkan-Headers</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/x/vulkan-loader.html">Vulkan-Loader</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/general/spirv-headers.html">SPIRV-Headers</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/general/spirv-tools.html">SPIRV-Tools</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/x/glslang.html">Glslang</ulink>
+      </para></listitem>
+    </itemizedlist>
+
   </sect2>
 
   <sect2>

@@ -5,52 +5,52 @@
   %general-entities;
 ]>
 
-<sect1 id="gstreamer-suite" xreflabel="GStreamer-Suite-&gstreamer10-version;">
+<sect1 id="gstreamer-suite" xreflabel="GStreamer-Pakken-&gstreamer10-version;">
   <?dbhtml filename="gstreamer-suite.html"?>
 
   <title>GStreamer Suite &gstreamer10-version;</title>
 
   <indexterm zone="gstreamer-suite">
-    <primary sortas="a-gstreamer-suite">GStreamer Suite</primary>
+    <primary sortas="a-gstreamer-suite">GStreamer Pakken</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to the GStreamer Suite</title>
+    <title>Introduksjon til GStreamer Pakken</title>
 
     <para>
-      GStreamer is a streaming media framework that
-      enables applications to share a common set of plugins for tasks such as
-      video encoding and decoding, audio encoding and decoding, audio and video
-      filters, audio visualisation, web streaming and anything else that
-      streams in real-time or otherwise. This page provides most of the set of
-      packages for ease of installation as they mostly have the same
-      instructions.
+      GStreamer er et rammeverk for strømming av medier som lar 
+      applikasjoner dele et felles sett med programtillegg for oppgaver 
+      som videokoding og dekoding, lydkoding og dekoding, lyd og videofiltre, 
+      lydvisualisering, nettstrømming og alt annet som strømmer i sanntid 
+      eller på annen måte. Denne siden inneholder mesteparten av 
+      pakkesettet for enkel installasjon, ettersom de stort sett har de 
+      samme instruksjonene.
     </para>
 
     &long-build-time;
 
-    <bridgehead renderas="sect3">GStreamer Suite Dependencies</bridgehead>
+    <bridgehead renderas="sect3">GStreamer Pakken Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="ffmpeg"/> (for libav support),
-      <xref linkend="glib2"/> (GObject Introspection required for GNOME), and
+      <xref linkend="ffmpeg"/> (for libav støtte),
+      <xref linkend="glib2"/> (GObject Introspection påkrevd for GNOME), og
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="alsa-lib"/>,
       <ulink url="&blfs-svn;/multimedia/cdparanoia.html">CDParanoia-III</ulink>
-      (for building the CDDA plugin),
+      (for bygging av CDDA programtillegget),
       <ulink url="&blfs-svn;/x/cairo.html">Cairo</ulink>,
       <xref linkend="flac"/>,
       <ulink url="&blfs-svn;/x/gdk-pixbuf.html">gdk-pixbuf</ulink>,
       &gobject-introspection;,
       <ulink url="&blfs-svn;/general/iso-codes.html">ISO Codes</ulink>,
       <xref linkend="lame"/>,
-      <ulink url="&blfs-svn;/multimedia/liba52.html">liba53</ulink> (needed to
-      play DVD's),
+      <ulink url="&blfs-svn;/multimedia/liba52.html">liba53</ulink> (nødvendig 
+      for å spille av DVD-er),
       <ulink url="&blfs-svn;/multimedia/libdvdread.html">libdvdread</ulink>,
       <ulink url="&blfs-svn;/multimedia/libdvdnav.html">libdvdnav</ulink>,
       <ulink url="&blfs-svn;/general/libgudev.html">libgudev</ulink>,
@@ -70,19 +70,19 @@
       <ulink url="&blfs-svn;/multimedia/soundtouch.html">SoundTouch</ulink>
       <xref linkend="wayland-protocols"/>,
       <xref linkend="x264"/>,
-      <xref linkend="xorg7-lib"/>, and
+      <xref linkend="xorg7-lib"/>, og
       <ulink url="&blfs-svn;/general/yasm.html">yasm</ulink>
    </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/aalib.html">AAlib</ulink>,
       <ulink url="&blfs-svn;/x/graphene.html">graphene</ulink>,
-      <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for examples),
-      <ulink url="&blfs-svn;/general/gsl.html">gsl</ulink> (used by one test if
-      installed),
+      <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for eksempler),
+      <ulink url="&blfs-svn;/general/gsl.html">gsl</ulink> (brukt av én test 
+      hvis installert),
       <ulink url="&blfs-svn;/multimedia/libcdio.html">libcdio</ulink> (for
-      CD-ROM drive access),
+      CD-ROM stasjonstilgang),
       <ulink url="&blfs-svn;/multimedia/libdv.html">libdv</ulink>,
       <ulink url="&blfs-svn;/multimedia/libmpeg2.html">libmpeg2</ulink>,
       <ulink url="&blfs-svn;/basicnet/libnsl.html">libnsl</ulink>,
@@ -90,7 +90,7 @@
       <xref linkend="opus"/>,
       <ulink url="https://&lfs-domainname;/blfs/view/12.1/x/qt5.html">Qt-5</ulink>,
       <ulink url="&blfs-svn;/x/qt6.html">Qt-6</ulink>,
-      <xref linkend="rustc"/> (for IEEE 1588:2008 PTP clock support),
+      <xref linkend="rustc"/> (for IEEE 1588:2008 PTP clock støtte),
       <xref linkend="sdl2"/>,
       <xref linkend="speex"/>,
       <ulink url="&blfs-svn;/multimedia/taglib.html">taglib</ulink>,
@@ -112,24 +112,47 @@
       <ulink url="http://libvisual.org/">libvisual</ulink>,
       <ulink url="https://gstreamer.freedesktop.org/src/orc/">Orc</ulink>,
       <ulink url="https://wiki.xiph.org/Tremor">Tremor</ulink>,
-      <ulink url="https://www.twolame.org/">TwoLame</ulink>, and
+      <ulink url="https://www.twolame.org/">TwoLame</ulink>, og
       <ulink url="https://wavpack.com/">WavPack</ulink>
     </para>
 
     <note><para>
-      The optional list is not complete. See <ulink
+      Den valgfrie listen er ikke fullstendig. Se <ulink
       url="&blfs-svn;/multimedia/gst10-plugins-bad.html">
-      BLFS' gst-plugins-bad</ulink> for dependencies that are missing from the
-      list.
+      BLFS' gst-plugins-bad</ulink> for avhengigheter som mangler fra 
+      listen.
     </para></note>
+
+    <bridgehead renderas="sect3">BLFS ekvivalente pakker</bridgehead>
+    <para>Denne kombinerte siden installerer det som i BLFS ville vært:</para>
+    <itemizedlist>
+      <listitem><para>
+        <ulink url="&blfs-svn;/multimedia/gstreamer10.html">gstreamer</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/multimedia/gst10-plugins-base.html">gst-plugins-base</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/multimedia/gst10-plugins-good.html">gst-plugins-good</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/multimedia/gst10-plugins-bad.html">gst-plugins-bad</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/multimedia/gst10-plugins-ugly.html">gst-plugins-ugly</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/multimedia/gst10-libav.html">gst-libav</ulink>
+      </para></listitem>
+    </itemizedlist>
 
   </sect2>
 
   <sect2>
-    <title>Downloading the GStreamer Suite</title>
+    <title>Laste ned GStreamer Pakken</title>
 
     <para>
-      First create a list of files that will be downloaded:
+      Først opprett en liste over filer som skal lastes ned:
     </para>
 
 <screen><userinput>cat &gt; gstreamer-suite-&gstreamer10-version;-list &lt;&lt; EOF
@@ -142,8 +165,8 @@ gst-libav/gst-libav-&gst10-libav-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
-      To download the needed files using <xref linkend="wget"/>, use the
-      following commands: 
+      For å laste ned de nødvendige filene ved hjelp av <xref linkend="wget"/>, 
+      bruk følgende kommandoer: 
     </para>
 
 <screen><userinput>mkdir gstreamer-suite &amp;&amp;
@@ -154,16 +177,16 @@ grep -v '^#' ../gstreamer-suite-&gstreamer10-version;-list | wget -i- -c \
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of the GStreamer Suite</title>
+    <title>Installasjon av GStreamer Pakken</title>
 
     &as_root;
 
     <para>
-      First do a test to see if the suite is installed, and if it is, remove
-      the previous installation
+      Først må du teste om pakken er installert, og hvis den er det, fjern den 
+      forrige installasjonen
       <footnote><para>
-        Removal of previous installation is required or else processes may
-        hang or not function properly due to mixed versions being installed.
+        Fjerning av tidligere installasjon er nødvendig, ellers kan prosesser henge 
+        seg opp eller ikke fungere som de skal på grunn av at blandede versjoner er installert.
       </para></footnote>:
     </para>
 
@@ -173,13 +196,13 @@ if test x"$?" = x"0"; then
 fi</userinput></screen>
 
     <para>
-      Now start a subshell that will exit on error:
+      Nå start et underskall som avsluttes ved feil:
     </para>
 
 <screen><userinput>bash -e</userinput></screen>
 
     <para>
-      Install all of the packages by running the following commands:
+      Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>for package in $(grep -v '^#' ../gstreamer-suite-&gstreamer10-version;-list)
@@ -221,7 +244,7 @@ do
 done</userinput></screen>
 
     <para>
-      Finally, exit the shell that was started earlier:
+      Til slutt, avslutt skallet som ble startet tidligere:
     </para>
 
 <screen><userinput>exit</userinput></screen>
@@ -229,11 +252,11 @@ done</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of the GStreamer Suite</title>
+    <title>lib32 Installasjon av GStreamer Pakken</title>
 
     <para>
-      First do a test to see if the suite is installed, and if it is, remove
-      the previous installation:
+      Først må du teste om pakken er installert, og hvis den er det, fjern den 
+      forrige installasjonen:
     </para>
 
 <screen><userinput>i686-pc-linux-gnu-pkg-config gstreamer-1.0
@@ -242,13 +265,13 @@ if test x"$?" = x"0"; then
 fi</userinput></screen>
 
     <para>
-      Now start a subshell that will exit on error:
+      Nå start et underskall som avsluttes ved feil:
     </para>
 
 <screen><userinput>bash -e</userinput></screen>
 
     <para>
-      Install all of the packages by running the following commands:
+      Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>for package in $(grep -v '^#' ../gstreamer-suite-&gstreamer10-version;-list)
@@ -299,7 +322,7 @@ do
 done</userinput></screen>
 
     <para>
-      Finally, exit the shell that was started earlier:
+      Til slutt, avslutt skallet som ble startet tidligere:
     </para>
 
 <screen><userinput>exit</userinput></screen>
@@ -307,43 +330,43 @@ done</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D gpl=enabled</parameter>: Without this switch, plugins with
-      dependencies on (A)GPL licensed libraries are not built.
+      <parameter>-D gpl=enabled</parameter>: Uten denne bryteren bygges ikke 
+      programtillegg med avhengigheter av (A)GPL lisensierte biblioteker.
     </para>
 
     <para>
-      <parameter>-D qt{5,6}=disabled</parameter>: On a multilib system, while
-      Qt-5 or Qt-6 may be installed, it is far less likely for them to be
-      installed for lib32. <command>meson</command> falsely detects them being
-      installed if 64-bit installations are detected, which leads to linker
-      errors. If you have installed lib32-Qt-{5,6}, remove these parameters.
+      <parameter>-D qt{5,6}=disabled</parameter>: På et multilib system, selv om 
+      Qt-5 eller Qt-6 kan installeres, er det langt mindre sannsynlig at de blir 
+      installert for lib32. <command>meson</command> oppdager feilaktig at de er 
+      installert hvis 64-bits installasjoner oppdages, noe som fører til linkerfeil. 
+      Hvis du har installert lib32-Qt-{5,6}, fjern disse parameterne.
     </para>
 
     <para>
-      <command>$([ -f /usr/lib32/libmp3lame.so ] ...</command>: This command
-      searches for a library from one of the recommended dependencies, and if
-      it can't find the library, the command invokes <parameter>-D lame=disabled
-      </parameter> to disable LAME support for the 32-bit build as
-      <command>meson</command> can't detect if it is the right architecture or
-      not.
+      <command>$([ -f /usr/lib32/libmp3lame.so ] ...</command>: Denne kommandoen 
+      søker etter et bibliotek fra en av de anbefalte avhengighetene, og hvis 
+      den ikke finner biblioteket, starter kommandoen <parameter>-D lame=disabled
+      </parameter> å deaktivere LAME støtte for 32-biters byggingen som
+      <command>meson</command> ikke kan avgjøre om det er riktig arkitektur 
+      eller ikke.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -355,7 +378,7 @@ done</userinput></screen>
           gst-stats-1.0,
           gst-tester-1.0,
           gst-transcoder-1.0,
-          gst-typefind-1.0, and
+          gst-typefind-1.0, og
           playout
         </seg>
         <seg>
@@ -397,7 +420,7 @@ done</userinput></screen>
           libgstvideo-1.0,
           libgstwayland-1.0,
           libgstwebrtc-1.0,
-          and several plugins under /usr/lib{,32}/gstreamer-1.0
+          og flere programtillegg under /usr/lib{,32}/gstreamer-1.0
         </seg>
         <seg>
           /usr/include/gstreamer-1.0/gst/{allocators,app,audio,fft,gl,pbutils},
@@ -408,14 +431,14 @@ done</userinput></screen>
           /usr/include/gstreamer-1.0/gst/{transcoder,uridownloader,va},
           /usr/include/gstreamer-1.0/gst/{wayland,webrtc},
           /usr/share/gst-plugins-base,
-          /usr/share/gstreamer-1.0/presets, and
+          /usr/share/gstreamer-1.0/presets, og
           /usr/{include,lib{,32},libexec,share}/gstreamer-1.0
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -423,8 +446,8 @@ done</userinput></screen>
         <term><command>gst-device-monitor-1.0</command></term>
         <listitem>
           <para>
-            is a command line tool that can be used to test
-            GStreamer's device monitoring functionality
+            er et kommandolinjeverktøy som kan brukes til å teste 
+            GStreamers enhetsovervåkingsfunksjonalitet
           </para>
           <indexterm zone="gstreamer-suite gst-device-monitor-1.0">
             <primary sortas="b-gst-device-monitor-1.0">gst-device-monitor-1.0</primary>
@@ -436,8 +459,8 @@ done</userinput></screen>
         <term><command>gst-discoverer-1.0</command></term>
         <listitem>
           <para>
-            is a tool that can be used to print basic metadata and
-            stream information about a media file
+            er et verktøy som kan brukes til å skrive ut grunnleggende 
+            metadata og strømme informasjon om en mediefil
           </para>
           <indexterm zone="gstreamer-suite gst-discoverer-1.0">
             <primary sortas="b-gst-discoverer-1.0">gst-discoverer-1.0</primary>
@@ -449,10 +472,10 @@ done</userinput></screen>
         <term><command>gst-inspect-1.0</command></term>
         <listitem>
           <para>
-            is a tool that prints out information on available
-            GStreamer plugins,
-            information about a particular plugin, or information
-            about a particular element
+            er et verktøy som skriver ut informasjon om tilgjengelige 
+            GStreamer programtillegg, 
+            informasjon om et bestemt programtillegg, eller informasjon om 
+            et bestemt element
           </para>
           <indexterm zone="gstreamer-suite gst-inspect-1.0">
             <primary sortas="b-gst-inspect-1.0">gst-inspect-1.0</primary>
@@ -464,8 +487,8 @@ done</userinput></screen>
         <term><command>gst-launch-1.0</command></term>
         <listitem>
           <para>
-            is a tool that builds and runs basic
-            GStreamer pipelines
+            er et verktøy som bygger og kjører grunnleggende 
+            GStreamer pipeliner
           </para>
           <indexterm zone="gstreamer-suite gst-launch-1.0">
             <primary sortas="b-gst-launch-1.0">gst-launch-1.0</primary>
@@ -477,8 +500,8 @@ done</userinput></screen>
         <term><command>gst-play-1.0</command></term>
         <listitem>
           <para>
-            is a command line tool that can be used to test basic
-            playback using the playbin element
+            er et kommandolinjeverktøy som kan brukes til å teste grunnleggende 
+            avspilling ved hjelp av playbin elementet
           </para>
           <indexterm zone="gstreamer-suite gst-play-1.0">
             <primary sortas="b-gst-play-1.0">gst-play-1.0</primary>
@@ -490,8 +513,8 @@ done</userinput></screen>
         <term><command>gst-stats-1.0</command></term>
         <listitem>
           <para>
-            is a tool used to gather statistics about
-            GStreamer operations
+            er et verktøy som brukes til å samle inn statistikk om 
+            GStreamer operasjoner
           </para>
           <indexterm zone="gstreamer-suite gst-stats-1.0">
             <primary sortas="b-gst-stats-1.0">gst-stats-1.0</primary>
@@ -503,8 +526,8 @@ done</userinput></screen>
         <term><command>gst-tester-1.0</command></term>
         <listitem>
           <para>
-            runs a test plan in TAP compatible format while integrating with
-            the meson test harness
+            kjører en testplan i TAP kompatibelt format samtidig som den 
+            integreres med meson testselen
           </para>
           <indexterm zone="gstreamer-suite gst-tester-1.0">
             <primary sortas="b-gst-tester-1.0">gst-tester-1.0</primary>
@@ -516,7 +539,7 @@ done</userinput></screen>
         <term><command>gst-transcoder-1.0</command></term>
         <listitem>
           <para>
-            is used to transcode a stream into a different format
+            brukes til å transkode en strøm til et annet format
           </para>
           <indexterm zone="gstreamer-suite gst-transcoder-1.0">
             <primary sortas="b-gst-transcoder-1.0">gst-transcoder-1.0</primary>
@@ -528,9 +551,9 @@ done</userinput></screen>
         <term><command>gst-typefind-1.0</command></term>
         <listitem>
           <para>
-            uses the GStreamer type finding system
-            to determine the relevant GStreamer
-            plugin to parse or decode files, and the corresponding MIME type
+            bruker GStreamer typesøkingssystemet for å bestemme den relevante 
+            GStreamer programtilleggmodulen for å analysere eller dekode filer, 
+            og den tilhørende MIME typen
           </para>
           <indexterm zone="gstreamer-suite gst-typefind-1.0">
             <primary sortas="b-gst-typefind-1.0">gst-typefind-1.0</primary>
@@ -542,8 +565,8 @@ done</userinput></screen>
         <term><command>playout</command></term>
         <listitem>
           <para>
-            is an example application used to sequentially play a list of
-            audio-video files
+            er et eksempelprogram som brukes til å spille av en liste med 
+            lyd og videofiler sekvensielt
           </para>
           <indexterm zone="gstreamer-suite playout">
             <primary sortas="b-playout">playout</primary>
@@ -555,8 +578,8 @@ done</userinput></screen>
         <term><filename class="libraryfile">libgstbase-1.0</filename></term>
         <listitem>
           <para>
-            provides some base classes to be extended by elements and utility
-            classes that are most useful for plugin developers
+            gir noen basisklasser som kan utvides med elementer og 
+            verktøyklasser som er mest nyttige for programtillutviklere
           </para>
           <indexterm zone="gstreamer-suite libgstbase-1.0">
             <primary sortas="c-libgstbase-1.0">libgstbase-1.0</primary>
@@ -568,8 +591,8 @@ done</userinput></screen>
         <term><filename class="libraryfile">libgstcheck-1.0</filename></term>
         <listitem>
           <para>
-            provides functionality for writing unit tests that use the check
-            framework
+            tilbyr funksjonalitet for å skrive enhetstester som bruker 
+            check rammeverket
           </para>
           <indexterm zone="gstreamer-suite libgstcheck-1.0">
             <primary sortas="c-libgstcheck-1.0">libgstcheck-1.0</primary>
@@ -581,7 +604,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libgstcontroller-1.0</filename></term>
         <listitem>
           <para>
-            provides functionality to animate element properties over time
+            gir funksjonalitet for å animere elementegenskaper over tid
           </para>
           <indexterm zone="gstreamer-suite libgstcontroller-1.0">
             <primary sortas="c-libgstcontroller-1.0">libgstcontroller-1.0</primary>
@@ -593,7 +616,7 @@ done</userinput></screen>
         <term><filename class="libraryfile">libgstnet-1.0</filename></term>
         <listitem>
           <para>
-            provides network elements and objects
+            tilbyr nettverkselementer og objekter
           </para>
           <indexterm zone="gstreamer-suite libgstnet-1.0">
             <primary sortas="c-libgstnet-1.0">libgstnet-1.0</primary>
@@ -605,10 +628,10 @@ done</userinput></screen>
         <term><filename class="libraryfile">libgstreamer-1.0</filename></term>
         <listitem>
           <para>
-            provides all of the core GStreamer
-            services, including initialization, plugin management and types,
-            as well as the object hierarchy that defines elements and bins,
-            along with some more specialized elements
+            tilbyr alle kjernetjenestene i GStreamer, inkludert initialisering, 
+            programtilleggadministrasjon og typer, samt objekthierarkiet som 
+            definerer elementer og bins, sammen med noen mer spesialiserte 
+            elementer
           </para>
           <indexterm zone="gstreamer-suite libgstreamer-1.0">
             <primary sortas="c-libgstreamer-1.0">libgstreamer-1.0</primary>

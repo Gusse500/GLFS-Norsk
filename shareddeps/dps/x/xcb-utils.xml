@@ -48,6 +48,19 @@
       <xref linkend="xcb-proto"/>
     </para>
 
+    <bridgehead renderas="sect3">BLFS ekvivalente pakker</bridgehead>
+    <para>Denne kombinerte siden installerer det som i BLFS ville vært:</para>
+    <itemizedlist>
+      <listitem><para>
+        <ulink url="&blfs-svn;/x/xcb-util.html">xcb-util</ulink>
+      </para></listitem>
+      <listitem><para>
+        <ulink url="&blfs-svn;/x/xcb-utilities.html">XCB Utilities</ulink>
+      </para></listitem>
+    </itemizedlist>
+    <para>I tillegg installerer denne siden xcb-util-errors, som ikke dekkes av 
+    BLFS. Dette er nødvendig for noen pakker som Hyprland.</para>
+
   </sect2>
 
   <sect2>
