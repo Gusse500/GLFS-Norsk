@@ -219,6 +219,13 @@ make</userinput></screen>
       The choice of what to install is up to you.
     </para>
 
+    <para>
+      In some cases, some Windows applications will expect files not provided
+      in this installation. In such cases, you can install <ulink
+      url="&slfs-website;/general/winetricks.html">Winetricks</ulink> from SLFS
+      to install those missing files.
+    </para>
+
   </sect2>
 
   <sect2 role="content">
