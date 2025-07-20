@@ -163,13 +163,6 @@
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY ply-version                  "3.11">
-<!ENTITY amdgpu-pro-major-version     "24.20">
-<!ENTITY amdgpu-pro-major-short-version "&amdgpu-pro-major-version;">
-<!ENTITY amdgpu-pro-minor-version     "2044449">
-<!ENTITY amdgpu-pro-ubuntu-version    "22.04">
-<!ENTITY amdgpu-pro-repo-folder-version "6.2.3">
-<!ENTITY amdgpu-pro-amf-version       "1.4.35">
-<!ENTITY amdgpu-pro-libamdenc-version "1.0">
 <!ENTITY libvdpau-va-gl-version       "0.4.2">
 <!-- X11 -->
 <!ENTITY xcb-util-version             "0.4.1">

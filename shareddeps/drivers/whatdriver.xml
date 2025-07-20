@@ -31,8 +31,8 @@
     <title>AMD</title>
 
     <para>
-      Det finnes tre AMD GPU drivere: AMDGPU (Radeon Southern Islands og 
-      senere), ATI (r300 og r600) og AMDGPU PRO (proprietær AMDGPU driver).
+      Det er to AMD GPU drivere: AMDGPU (Radeon Southern Islands og
+      senere) og ATI (r300 og r600).
     </para>
 
     <para>
@@ -55,21 +55,8 @@
     </para>
 
     <para>
-      <emphasis>AMDGPU PRO</emphasis> (<xref linkend="amdgpu-pro"/>):
-      Denne driveren er proprietær. De fleste brukere installerer ikke denne 
-      driveren siden åpen kildekode drivere allerede er velfungerende. Den er 
-      imidlertid nødvendig for maskinvareakselerasjonskoding, noe som er nyttig 
-      for de som ønsker å spille inn og redigere videoer. Ytelsen i spill 
-      varierer mellom åpen kildekode og proprietære drivere, så det avgjørende 
-      er om du spiller inn og redigerer videoer eller ikke. Du trenger 
-      fastvaren og åpen kildekode kjernedriveren for denne driveren.
-    </para>
-
-    <para>
-      Sammendrag: Hvis du er en vanlig bruker med et moderne AMD GPU, bruk
-      <emphasis>AMDGPU</emphasis>. Hvis du har et eldre kort, velg 
-      <emphasis>ATI</emphasis>. Bruk <emphasis>AMDGPU PRO</emphasis> hvis
-      du ønsker en forbedring med maskinvareakselerasjonskoding.
+      Sammendrag: Hvis du har et moderne AMD GPU, bruk <emphasis>AMDGPU</emphasis>.
+      Hvis du har et eldre kort, velg <emphasis>ATI</emphasis>.
     </para>
 
   </sect2>

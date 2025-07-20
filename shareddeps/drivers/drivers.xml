@@ -41,6 +41,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ply.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mesa.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau-va-gl.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="amdgpu-pro.xml"/>
 
 </chapter>
