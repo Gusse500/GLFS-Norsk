@@ -3,4 +3,5 @@ version.ent
 blfs-bootscripts*
 xxx
 *.swp
+*.bak
 local.mk
