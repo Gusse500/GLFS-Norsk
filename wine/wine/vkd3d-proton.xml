@@ -65,7 +65,7 @@ EOF</userinput></screen>
 <screen><userinput>mkdir vkd3d-proton &amp;&amp;
 cd    vkd3d-proton &amp;&amp;
 grep -v '^#' ../vkd3d-proton-&vkd3d-proton-version;-list | wget -i- -c \
-    -B https://github.com</userinput></screen>
+    -B https://github.com/</userinput></screen>
 
   </sect2>
 

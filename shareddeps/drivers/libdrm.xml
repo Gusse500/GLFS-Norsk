@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libdrm-download-http "https://dri.freedesktop.org/libdrm/libdrm-&libdrm-version;.tar.xz">
-  <!ENTITY libdrm-download-ftp  " ">
+  <!ENTITY libdrm-download "https://dri.freedesktop.org/libdrm/libdrm-&libdrm-version;.tar.xz">
 ]>
 
 <sect1 id="libdrm" xreflabel="libdrm-&libdrm-version;">
@@ -31,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libdrm-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libdrm-download-ftp;"/>
+          Nedlasting: <ulink url="&libdrm-download;"/>
         </para>
       </listitem>
     </itemizedlist>

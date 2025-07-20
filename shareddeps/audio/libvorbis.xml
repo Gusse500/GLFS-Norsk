@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libvorbis-download-http "https://downloads.xiph.org/releases/vorbis/libvorbis-&libvorbis-version;.tar.xz">
-  <!ENTITY libvorbis-download-ftp  " ">
+  <!ENTITY libvorbis-root "https://downloads.xiph.org/releases/vorbis">
+  <!ENTITY libvorbis-download "&libvorbis-root;/libvorbis-&libvorbis-version;.tar.xz">
 ]>
 
 <sect1 id="libvorbis" xreflabel="libvorbis-&libvorbis-version;">
@@ -31,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libvorbis-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libvorbis-download-ftp;"/>
+          Nedlasting: <ulink url="&libvorbis-download;"/>
         </para>
       </listitem>
     </itemizedlist>

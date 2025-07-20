@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY wine-download-http "https://dl.winehq.org/wine/source/&wine-major-version;.x/wine-&wine-version;.tar.xz">
-  <!ENTITY wine-download-ftp  " ">
+  <!ENTITY wine-root "https://dl.winehq.org/wine/source">
+  <!ENTITY wine-download "&wine-root;/&wine-major-version;.x/wine-&wine-version;.tar.xz">
 ]>
 
 <sect1 id="wine" xreflabel="Wine-&wine-version;">
@@ -29,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&wine-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&wine-download-ftp;"/>
+          Download: <ulink url="&wine-download;"/>
         </para>
       </listitem>
     </itemizedlist>

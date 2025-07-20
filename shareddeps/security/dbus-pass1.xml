@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY dbus-download-http "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
-  <!ENTITY dbus-download-ftp  " ">
+  <!ENTITY dbus-download "https://dbus.freedesktop.org/releases/dbus/dbus-&dbus-version;.tar.xz">
 ]>
 
 <sect1 id="dbus-pass1" xreflabel="D-Bus-&dbus-version; - Pass 1" revision="sysv">
@@ -41,12 +40,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&dbus-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&dbus-download-ftp;"/>
+          Nedlasting: <ulink url="&dbus-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY pciutils-download-http "https://mj.ucw.cz/download/linux/pci/pciutils-&pciutils-version;.tar.gz">
-  <!ENTITY pciutils-download-ftp  " ">
+  <!ENTITY pciutils-download "https://mj.ucw.cz/download/linux/pci/pciutils-&pciutils-version;.tar.gz">
 ]>
 
 <sect1 id="pciutils" xreflabel="pciutils-&pciutils-version;">
@@ -29,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&pciutils-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&pciutils-download-ftp;"/>
+          Nedlasting: <ulink url="&pciutils-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,10 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY wayland-protocols-download-http "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/&wayland-protocols-version;/downloads/wayland-protocols-&wayland-protocols-version;.tar.xz">
-  <!ENTITY wayland-protocols-download-ftp  " ">
+  <!ENTITY wp-root
+    "https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases">
+  <!ENTITY wayland-protocols-download
+    "&wp-root;/&wayland-protocols-version;/downloads/wayland-protocols-&wayland-protocols-version;.tar.xz">
 ]>
 
 <sect1 id="wayland-protocols" xreflabel="Wayland-Protocols-&wayland-protocols-version;">
@@ -29,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&wayland-protocols-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&wayland-protocols-download-ftp;"/>
+          Nedlasting: <ulink url="&wayland-protocols-download;"/>
         </para>
       </listitem>
     </itemizedlist>

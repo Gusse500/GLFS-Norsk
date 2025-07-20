@@ -45,7 +45,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&glibc-download-http;"/>
+          Nedlasting: <ulink url="&glibc-download-http;"/>
         </para>
       </listitem>
       <listitem>

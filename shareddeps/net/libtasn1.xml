@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libtasn1-download-http "&gnu-http;/libtasn1/libtasn1-&libtasn1-version;.tar.gz">
-  <!ENTITY libtasn1-download-ftp  " ">
+  <!ENTITY libtasn1-download "&gnu-http;/libtasn1/libtasn1-&libtasn1-version;.tar.gz">
 ]>
 
 <sect1 id="libtasn1" xreflabel="libtasn1-&libtasn1-version;">
@@ -29,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libtasn1-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libtasn1-download-ftp;"/>
+          Nedlasting: <ulink url="&libtasn1-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -57,15 +51,14 @@ make</userinput></screen>
     </para>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem>
-      bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
       Du kan installere API dokumentasjonen ved å bruke følgende kommando som
-      <systemitem class="username">root</systemitem> bruker:
+      &root; bruker:
     </para>
 
 <screen role="root"><userinput>make -C doc/reference install-data-local</userinput></screen>
@@ -91,7 +84,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;

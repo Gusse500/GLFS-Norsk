@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY x7apps-download-http "&xorg-download-http;/app/">
-  <!ENTITY x7apps-download-ftp  " ">
+  <!ENTITY x7apps-download "&xorg-dl;/app/">
 ]>
 
 <sect1 id="xorg7-app" xreflabel="Xorg Applikasjoner">
@@ -21,9 +20,8 @@
     <title>Introduksjon til Xorg Applikasjoner</title>
 
     <para>
-      Xorg applikasjonene gir de forventede 
-      applikasjonene som var tilgjengelige i tidligere X Vindu 
-      implementeringer.
+      Xorg applikasjonene gir de forventede applikasjonene som var tilgjengelige 
+      i tidligere X Vindu implementeringer.
     </para>
 
     &long-build-time;
@@ -31,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&x7apps-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&x7apps-download-ftp;"/>
+          Nedlasting: <ulink url="&x7apps-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -104,7 +97,7 @@ EOF</userinput></screen>
 <screen><userinput>mkdir app &amp;&amp;
 cd app &amp;&amp;
 grep -v '^#' ../app-&xorg-version;-list | wget -i- -c \
-    -B &xorg-download-http;/app/</userinput></screen>
+    -B &x7apps-download;</userinput></screen>
 
   </sect2>
 

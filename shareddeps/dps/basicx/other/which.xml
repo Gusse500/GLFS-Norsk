@@ -4,15 +4,13 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-<!--  <!ENTITY which-download-http "http://www.xs4all.nl/~carlo17/which/which-&which-version;.tar.gz">-->
+<!--  <!ENTITY which-download "http://www.xs4all.nl/~carlo17/which/which-&which-version;.tar.gz">-->
 
-  <!ENTITY which-download-http "&gnu-http;/which/which-&which-version;.tar.gz">
-  <!ENTITY which-download-ftp  " ">
+  <!ENTITY which-download "&gnu-http;/which/which-&which-version;.tar.gz">
 ]>
 
 <sect1 id="which" xreflabel="Which-&which-version;">
   <?dbhtml filename="which.html"?>
-
 
   <title>Which-&which-version; og Alternativer</title>
 
@@ -41,12 +39,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&which-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&which-download-ftp;"/>
+          Nedlasting: <ulink url="&which-download;"/>
         </para>
       </listitem>
     </itemizedlist>

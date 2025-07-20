@@ -6,7 +6,8 @@
 
   <!ENTITY certhost              "https://hg-edge.mozilla.org/">
   <!ENTITY certpath              "/lib/ckfw/builtins/certdata.txt">
-  <!ENTITY make-ca-download      "https://github.com/lfs-book/make-ca/archive/v&make-ca-version;/make-ca-&make-ca-version;.tar.gz">
+  <!ENTITY make-ca-root          "https://github.com/lfs-book/make-ca/archive">
+  <!ENTITY make-ca-download      "&make-ca-root;/v&make-ca-version;/make-ca-&make-ca-version;.tar.gz">
 ]>
 
 <sect1 id="make-ca" xreflabel="make-ca-&make-ca-version;">
@@ -45,7 +46,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&make-ca-download;"/>
+          Nedlasting: <ulink url="&make-ca-download;"/>
         </para>
       </listitem>
     </itemizedlist>

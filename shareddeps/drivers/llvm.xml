@@ -4,12 +4,12 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY llvm-download-http "https://github.com/llvm/llvm-project/releases/download/llvmorg-&llvm-version;/">
+  <!ENTITY llvm-root "https://github.com/llvm/llvm-project/releases/download">
+  <!ENTITY llvm-download "&llvm-root;/llvmorg-&llvm-version;/">
 ]>
 
 <sect1 id="llvm" xreflabel="LLVM-&llvm-version;">
   <?dbhtml filename="llvm.html" ?>
-
 
   <title>LLVM-&llvm-version;</title>
 
@@ -55,7 +55,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&llvm-download-http;"/>
+          Nedlasting: <ulink url="&llvm-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -104,7 +104,7 @@ EOF</userinput></screen>
 <screen><userinput>mkdir llvm &amp;&amp;
 cd llvm &amp;&amp;
 grep -v '^#' ../llvm-&llvm-version;-list | wget -i- -c \
-    -B &llvm-download-http;</userinput></screen>
+    -B &llvm-download;</userinput></screen>
 
   </sect2>
 

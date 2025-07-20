@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY alsa-plugins-download-http "&alsa-download-http;/plugins/alsa-plugins-&alsa-plugins-version;.tar.bz2">
-  <!ENTITY alsa-plugins-download-ftp  " ">
+  <!ENTITY alsa-plugins-download "&alsa-download-http;/plugins/alsa-plugins-&alsa-plugins-version;.tar.bz2">
 ]>
 
 <sect1 id="alsa-plugins" xreflabel="alsa-plugins-&alsa-plugins-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&alsa-plugins-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&alsa-plugins-download-ftp;"/>
+          Nedlasting: <ulink url="&alsa-plugins-download;"/>
         </para>
       </listitem>
     </itemizedlist>

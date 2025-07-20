@@ -87,25 +87,23 @@
   <para>
     I tillegg, på grunn av det store antallet repeterende kommandoer, 
     oppfordres du til å delvis automatisere byggingen. Instruksjoner har blitt 
-    gitt som bruker
-    <ulink url="&blfs-svn;/postlfs/sudo.html">sudo</ulink> pakken.
+    gitt som bruker BLFS sin
+    <ulink url="&blfs-svn;/postlfs/sudo.html">sudo</ulink> pakke.
     Det anbefales at du bruker <parameter>:NOPASSWD</parameter>
     konfigurasjonsalternativ for brukeren som skal bygge xorg pakkene. 
     Det finnes andre løsninger i tilfelle du ikke har installert det. 
     Du kan bruke <command>su</command> verktøyet, og bruke <parameter>-c
     </parameter>. Dette krever at du skriver inn passordet ditt hver gang en 
     pakke må installeres. Den siste løsningen er å bygge og installere 
-    hver pakke som <systemitem class="username">root
-    </systemitem> bruker. Dette anbefales ikke, men er et alternativ hvis du 
-    ikke vil installere sudo og ikke vil 
-    skrive inn et passord igjen og igjen.
+    hver pakke som &root; bruker.
   </para>
 
   <sect2 id="xorg-env" xreflabel="Xorg build environment">
     <title>Sette opp Xorg Byggemiljøet</title>
 
     <para>
-      Sette <envar>XORG_PREFIX</envar> variabel for kompatibilitet med BLFS 
+      Sett <envar>XORG_PREFIX</envar> variabelen for kompatibilitet med 
+      installasjonsinstruksjoner utenfor denne boken (BLFS og SLFS)
       med følgende kommando:
     </para>
 
@@ -114,9 +112,9 @@
     <note>
       <para><envar>XORG_PREFIX</envar> variabelen vil ikke bli brukt i denne 
       boken, men det er en nødvendig variabel å angi hvis du har tenkt å følge 
-      visse BLFS instruksjoner. Hvis du bare kopierer og limer BLFS 
-      instruksjoner, kan du klare deg uten variabelen, men sørg for å erstatte 
-      variabelen i instruksjonene med <filename>/usr</filename>.</para>
+      instruksjoner fra BLFS eller SLFS. Hvis du ikke bare kopierer og limer inn 
+      nevnte instruksjoner, kan du klare deg uten variabelen, men sørg for å 
+      erstatte variabelen i instruksjonene med <filename>/usr</filename>.</para>
     </note>
 
     <para>
@@ -149,10 +147,8 @@ EOF
 chmod 644 /etc/profile.d/xorg.sh</userinput></screen>
 
     <para>
-      Hvis du har installert sudo, sørg for at
-      <envar>XORG_CONFIG</envar> er tilgjengelig
-      i sudo miljøet. Som
-      <systemitem class="username">root</systemitem> brukeren, kjør følgende 
+      Hvis du har installert sudo, sørg for at <envar>XORG_CONFIG</envar> er
+      tilgjengelig i sudo miljøet. Som &root; bruker, kjør følgende
       kommando:
     </para>
 

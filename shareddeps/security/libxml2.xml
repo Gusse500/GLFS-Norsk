@@ -5,7 +5,7 @@
   %general-entities;
 
   <!ENTITY libxml2-dl-root "https://download.gnome.org/sources/libxml2">
-  <!ENTITY libxml2-download-http
+  <!ENTITY libxml2-download
     "&libxml2-dl-root;/&libxml2-minor;/libxml2-&libxml2-version;.tar.xz">
 ]>
 
@@ -31,7 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libxml2-download-http;"/>
+          Download: <ulink url="&libxml2-download;"/>
         </para>
       </listitem>
     </itemizedlist>

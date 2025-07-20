@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY ply-download-http "https://files.pythonhosted.org/packages/source/p/ply/ply-&ply-version;.tar.gz">
-  <!ENTITY ply-download-ftp  " ">
+  <!ENTITY ply-download "&pymodules-dl;/p/ply/ply-&ply-version;.tar.gz">
 ]>
 
 <sect1 id="ply" xreflabel="ply-&ply-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&ply-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&ply-download-ftp;"/>
+          Nedlasting: <ulink url="&ply-download;"/>
         </para>
       </listitem>
     </itemizedlist>

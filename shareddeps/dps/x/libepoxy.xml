@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY libepoxy-download-http "&gnome-download-http;/libepoxy/&libepoxy-minor;/libepoxy-&libepoxy-version;.tar.xz">
-  <!ENTITY libepoxy-download-ftp  " ">
+  <!ENTITY libepoxy-download "&gnome-download-http;/libepoxy/&libepoxy-minor;/libepoxy-&libepoxy-version;.tar.xz">
 ]>
 
 <sect1 id="libepoxy" xreflabel="libepoxy-&libepoxy-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libepoxy-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libepoxy-download-ftp;"/>
+          Nedlasting: <ulink url="&libepoxy-download;"/>
         </para>
       </listitem>
     </itemizedlist>

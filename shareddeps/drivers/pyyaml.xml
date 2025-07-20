@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY pyyaml-download-http "https://files.pythonhosted.org/packages/source/P/PyYAML/pyyaml-&pyyaml-version;.tar.gz">
-  <!ENTITY pyyaml-download-ftp  " ">
+  <!ENTITY pyyaml-download "&pymodules-dl;/P/PyYAML/pyyaml-&pyyaml-version;.tar.gz">
 ]>
 
 <sect1 id="pyyaml" xreflabel="PyYAML-&pyyaml-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&pyyaml-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&pyyaml-download-ftp;"/>
+          Nedlasting: <ulink url="&pyyaml-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,13 +4,11 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY xorgproto-download-http "https://xorg.freedesktop.org/archive/individual/proto/xorgproto-&xorgproto-version;.tar.xz">
-  <!ENTITY xorgproto-download-ftp  " ">
+  <!ENTITY xorgproto-download "&xorg-dl;/proto/xorgproto-&xorgproto-version;.tar.xz">
 ]>
 
 <sect1 id="xorgproto" xreflabel="xorgproto-&xorgproto-version;">
   <?dbhtml filename="xorgproto.html"?>
-
 
   <title>xorgproto-&xorgproto-version;</title>
 
@@ -30,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xorgproto-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xorgproto-download-ftp;"/>
+          Nedlasting: <ulink url="&xorgproto-download;"/>
         </para>
       </listitem>
     </itemizedlist>

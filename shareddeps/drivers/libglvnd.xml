@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libglvnd-download-https "https://gitlab.freedesktop.org/glvnd/libglvnd/-/archive/v&libglvnd-version;/libglvnd-v&libglvnd-version;.tar.gz">
-  <!ENTITY libglvnd-download-ftp  " ">
+  <!ENTITY libglvnd-root "https://gitlab.freedesktop.org/glvnd/libglvnd/-/archive">
+  <!ENTITY libglvnd-download
+    "&libglvnd-root;/v&libglvnd-version;/libglvnd-v&libglvnd-version;.tar.gz">
 ]>
 
 <sect1 id="libglvnd" xreflabel="libglvnd-&libglvnd-version;">
@@ -34,12 +35,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libglvnd-download-https;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libglvnd-download-ftp;"/>
+          Nedlasting: <ulink url="&libglvnd-download;"/>
         </para>
       </listitem>
     </itemizedlist>

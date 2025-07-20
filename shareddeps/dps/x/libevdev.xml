@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY libevdev-download-http "https://www.freedesktop.org/software/libevdev/libevdev-&libevdev-version;.tar.xz">
-  <!ENTITY libevdev-download-ftp  " ">
+  <!ENTITY libevdev-download "https://www.freedesktop.org/software/libevdev/libevdev-&libevdev-version;.tar.xz">
 ]>
 
   <!-- Begin Xorg libevdev Driver -->
@@ -32,12 +31,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&libevdev-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&libevdev-download-ftp;"/>
+            Nedlasting: <ulink url="&libevdev-download;"/>
           </para>
         </listitem>
       </itemizedlist>

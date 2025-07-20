@@ -4,16 +4,13 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libvdpau-download-http "https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/&libvdpau-version;/libvdpau-&libvdpau-version;.tar.bz2">
-  <!ENTITY libvdpau-download-ftp  " ">
+  <!ENTITY libvdpau-root "https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive">
+  <!ENTITY libvdpau-download
+    "&libvdpau-root;/&libvdpau-version;/libvdpau-&libvdpau-version;.tar.bz2">
 ]>
 
   <sect1 id="libvdpau" xreflabel="libvdpau-&libvdpau-version;">
   <?dbhtml filename="libvdpau.html"?>
-
-    <sect1info>
-      <date>$Date$</date>
-    </sect1info>
 
     <title>libvdpau-&libvdpau-version;</title>
 
@@ -53,12 +50,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&libvdpau-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&libvdpau-download-ftp;"/>
+            Nedlasting: <ulink url="&libvdpau-download;"/>
           </para>
         </listitem>
       </itemizedlist>

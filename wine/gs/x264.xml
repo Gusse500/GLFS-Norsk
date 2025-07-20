@@ -4,13 +4,11 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY x264-download-http "&sources-anduin-http;/x264/x264-&x264-version;.tar.xz">
-  <!ENTITY x264-download-ftp  " ">
+  <!ENTITY x264-download "&sources-anduin-http;/x264/x264-&x264-version;.tar.xz">
 ]>
 
 <sect1 id="x264" xreflabel="x264-&x264-version;">
   <?dbhtml filename="x264.html"?>
-
 
   <title>x264-&x264-version;</title>
 
@@ -29,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&x264-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&x264-download-ftp;"/>
+          Download: <ulink url="&x264-download;"/>
         </para>
       </listitem>
     </itemizedlist>

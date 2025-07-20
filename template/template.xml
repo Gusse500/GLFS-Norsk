@@ -8,13 +8,12 @@
   <!ENTITY TEMPLATE-version "">
   -->
 
-  <!ENTITY TEMPLATE-download-http "https://">
+  <!ENTITY TEMPLATE-download "https://">
 ]>
 
 <!-- Try to keep the indentation used in this file-->
 <sect1 id="TEMPLATE" xreflabel="TEMPLATE-&TEMPLATE-version;">
   <?dbhtml filename="TEMPLATE.html"?>
-
 
   <!-- No other tags inside any title.
        Use Title Case in All Titles
@@ -44,7 +43,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&TEMPLATE-download-http;"/>
+          Download: <ulink url="&TEMPLATE-download;"/>
         </para>
       </listitem>
     </itemizedlist>

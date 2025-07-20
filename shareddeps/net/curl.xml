@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY curl-download-http "https://curl.se/download/curl-&curl-version;.tar.xz">
-  <!ENTITY curl-download-ftp  " ">
+  <!ENTITY curl-download "https://curl.se/download/curl-&curl-version;.tar.xz">
 ]>
 
 <sect1 id="curl" xreflabel="cURL-&curl-version;">
@@ -33,12 +32,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&curl-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&curl-download-ftp;"/>
+          Nedlasting: <ulink url="&curl-download;"/>
         </para>
       </listitem>
     </itemizedlist>

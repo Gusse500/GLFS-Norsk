@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY nasm-download-http "https://www.nasm.us/pub/nasm/releasebuilds/&nasm-version;/nasm-&nasm-version;.tar.xz">
-  <!ENTITY nasm-download-ftp  " ">
+  <!ENTITY nasm-root "https://www.nasm.us/pub/nasm/releasebuilds">
+  <!ENTITY nasm-download "&nasm-root;/&nasm-version;/nasm-&nasm-version;.tar.xz">
 ]>
 
 <sect1 id="nasm" xreflabel="NASM-&nasm-version;">
@@ -30,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&nasm-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&nasm-download-ftp;"/>
+          Download: <ulink url="&nasm-download;"/>
         </para>
       </listitem>
     </itemizedlist>

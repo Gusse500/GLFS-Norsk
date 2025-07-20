@@ -32,7 +32,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&gnat-download-http;"/>
+          Nedlasting: <ulink url="&gnat-download-http;"/>
         </para>
       </listitem>
       <listitem>

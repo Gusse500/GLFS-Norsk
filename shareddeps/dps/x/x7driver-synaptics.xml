@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xorg-synaptics-driver-download-http "&xorg-download-http;/driver/xf86-input-synaptics-&xorg-synaptics-driver-version;.tar.xz">
-  <!ENTITY xorg-synaptics-driver-download-ftp  " ">
+  <!ENTITY xorg-synaptics-driver-download
+    "&xorg-dl;/driver/xf86-input-synaptics-&xorg-synaptics-driver-version;.tar.xz">
 ]>
 
 <!-- Begin Xorg Synaptics Driver -->
@@ -36,12 +36,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&xorg-synaptics-driver-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&xorg-synaptics-driver-download-ftp;"/>
+            Nedlasting: <ulink url="&xorg-synaptics-driver-download;"/>
           </para>
         </listitem>
       </itemizedlist>

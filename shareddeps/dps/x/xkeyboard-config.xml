@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xkeyboard-config-download-http
-  "&xorg-download-http;/data/xkeyboard-config/xkeyboard-config-&xkeyboard-config-version;.tar.xz">
-  <!ENTITY xkeyboard-config-download-ftp  " ">
+  <!ENTITY xkbc-root "&xorg-dl;/data/xkeyboard-config">
+  <!ENTITY xkeyboard-config-download
+  "&xkbc-root;/xkeyboard-config-&xkeyboard-config-version;.tar.xz">
 ]>
 
 <sect1 id="xkeyboard-config" xreflabel="xkeyboard-config-&xkeyboard-config-version;">
@@ -29,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xkeyboard-config-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xkeyboard-config-download-ftp;"/>
+          Nedlasting: <ulink url="&xkeyboard-config-download;"/>
         </para>
       </listitem>
     </itemizedlist>

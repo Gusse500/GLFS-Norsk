@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xcursor-themes-download-http "&xorg-download-http;/data/xcursor-themes-&xcursor-themes-version;.tar.xz">
-  <!ENTITY xcursor-themes-download-ftp  " ">
+  <!ENTITY xcursor-themes-download "&xorg-dl;/data/xcursor-themes-&xcursor-themes-version;.tar.xz">
 ]>
 
 <sect1 id="xcursor-themes" xreflabel="xcursor-themes-&xcursor-themes-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xcursor-themes-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xcursor-themes-download-ftp;"/>
+          Nedlasting: <ulink url="&xcursor-themes-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY rust-bindgen-download-http
-    "https://github.com/rust-lang/rust-bindgen/archive/v&rust-bindgen-version;/rust-bindgen-&rust-bindgen-version;.tar.gz">
-  <!ENTITY rust-bindgen-download-ftp  " ">
+  <!ENTITY rb-root "https://github.com/rust-lang/rust-bindgen/archive">
+  <!ENTITY rust-bindgen-download
+    "&rb-root;/v&rust-bindgen-version;/rust-bindgen-&rust-bindgen-version;.tar.gz">
 ]>
 
 <sect1 id="rust-bindgen" xreflabel="rust-bindgen-&rust-bindgen-version;">
@@ -30,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&rust-bindgen-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&rust-bindgen-download-ftp;"/>
+          Nedlasting: <ulink url="&rust-bindgen-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY lame-download-http "&sourceforge-dl;/lame/lame-&lame-version;.tar.gz">
-  <!ENTITY lame-download-ftp  " ">
+  <!ENTITY lame-download "&sourceforge-dl;/lame/lame-&lame-version;.tar.gz">
 ]>
 
 <sect1 id="lame" xreflabel="LAME-&lame-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&lame-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&lame-download-ftp;"/>
+          Download: <ulink url="&lame-download;"/>
         </para>
       </listitem>
     </itemizedlist>

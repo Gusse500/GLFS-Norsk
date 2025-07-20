@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY gbm-download-http "https://mesa.freedesktop.org/archive/mesa-&mesa-version;.tar.xz">
-  <!ENTITY gbm-download-ftp  " ">
+  <!ENTITY gbm-download "https://mesa.freedesktop.org/archive/mesa-&mesa-version;.tar.xz">
 ]>
 
 <sect1 id="gbm" xreflabel="GBM fra Mesa-&mesa-version;">
@@ -41,22 +40,10 @@
       andre biblioteker.
     </para>
 
-    <note>
-      <para>
-        Mesa oppdateres relativt ofte. Du kan bruke
-        den nyeste tilgjengelige &mesa-major-minor;.x mesa versjonen.
-      </para>
-    </note>
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&gbm-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&gbm-download-ftp;"/>
+          Nedlasting: <ulink url="&gbm-download;"/>
         </para>
       </listitem>
     </itemizedlist>

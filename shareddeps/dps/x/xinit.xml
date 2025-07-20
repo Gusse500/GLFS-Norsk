@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xinit-download-http "&xorg-download-http;/app/xinit-&xinit-version;.tar.xz">
-  <!ENTITY xinit-download-ftp  " ">
+  <!ENTITY xinit-download "&xorg-dl;/app/xinit-&xinit-version;.tar.xz">
 ]>
 
 <sect1 id="xinit" xreflabel="xinit-&xinit-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xinit-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xinit-download-ftp;"/>
+          Nedlasting: <ulink url="&xinit-download;"/>
         </para>
       </listitem>
     </itemizedlist>

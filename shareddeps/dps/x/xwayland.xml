@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xwayland-download-http "&xorg-download-http;/xserver/xwayland-&xwayland-version;.tar.xz">
-  <!ENTITY xwayland-download-ftp  " ">
+  <!ENTITY xwayland-download "&xorg-dl;/xserver/xwayland-&xwayland-version;.tar.xz">
 ]>
 
 <sect1 id="xwayland" xreflabel="Xwayland-&xwayland-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xwayland-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xwayland-download-ftp;"/>
+          Nedlasting: <ulink url="&xwayland-download;"/>
         </para>
       </listitem>
     </itemizedlist>

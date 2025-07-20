@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-<!ENTITY libclc-download-http "https://github.com/llvm/llvm-project/releases/download/llvmorg-&libclc-version;/libclc-&libclc-version;.src.tar.xz">
-  <!ENTITY libclc-download-ftp  " ">
+  <!ENTITY libclc-root "https://github.com/llvm/llvm-project/releases/download">
+  <!ENTITY libclc-download
+    "&libclc-root;/llvmorg-&libclc-version;/libclc-&libclc-version;.src.tar.xz">
 ]>
 
   <sect1 id="libclc" xreflabel="libclc-&libclc-version;">
@@ -29,12 +30,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&libclc-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&libclc-download-ftp;"/>
+            Nedlasting: <ulink url="&libclc-download;"/>
           </para>
         </listitem>
       </itemizedlist>

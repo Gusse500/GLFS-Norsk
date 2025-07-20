@@ -4,9 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY libpng-download-http "&sourceforge-dl;/libpng/libpng-&libpng-version;.tar.xz">
-  <!ENTITY libpng-download-ftp  " ">
-
+  <!ENTITY libpng-download "&sourceforge-dl;/libpng/libpng-&libpng-version;.tar.xz">
   <!ENTITY apng-patch
         "&sourceforge-dl;/sourceforge/libpng-apng/libpng-&apng-version;-apng.patch.gz">
 ]>
@@ -33,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libpng-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libpng-download-ftp;"/>
+          Nedlasting: <ulink url="&libpng-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -47,11 +40,8 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Anbefalt oppdatering for å inkludere animert png funksjonalitet i
-          libpng (kreves for å bruke systemets
-          libpng i
-          Firefox,
-          Seamonkey, og
+          Anbefalt oppdatering for å inkludere animert png funksjonalitet i 
+          libpng (kreves for å bruke systemets libpng i Firefox, Seamonkey, og
           Thunderbird): <ulink url="&apng-patch;"/>
         </para>
       </listitem>

@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY libxcb-download-http "https://xorg.freedesktop.org/archive/individual/lib/libxcb-&libxcb-version;.tar.xz">
-  <!ENTITY libxcb-download-ftp  " ">
+  <!ENTITY libxcb-download "&xorg-dl;/lib/libxcb-&libxcb-version;.tar.xz">
 ]>
 
 <sect1 id="libxcb" xreflabel="libxcb-&libxcb-version;">
@@ -31,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libxcb-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libxcb-download-ftp;"/>
+          Nedlasting: <ulink url="&libxcb-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,16 +4,13 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libvdpau-va-gl-download-http "https://github.com/i-rinat/libvdpau-va-gl/archive/v&libvdpau-va-gl-version;/libvdpau-va-gl-&libvdpau-va-gl-version;.tar.gz">
-  <!ENTITY libvdpau-va-gl-download-ftp  " ">
+  <!ENTITY vdpauvagl-root "https://github.com/i-rinat/libvdpau-va-gl/archive">
+  <!ENTITY libvdpau-va-gl-download
+    "&vdpauvagl-root;/v&libvdpau-va-gl-version;/libvdpau-va-gl-&libvdpau-va-gl-version;.tar.gz">
 ]>
 
   <sect1 id="libvdpau-va-gl" xreflabel="libvdpau-va-gl-&libvdpau-va-gl-version;">
   <?dbhtml filename="libvdpau-va-gl.html"?>
-
-    <sect1info>
-      <date>$Date$</date>
-    </sect1info>
 
     <title>libvdpau-va-gl-&libvdpau-va-gl-version;</title>
 
@@ -36,12 +33,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Libvdpau-va-gl Driver Nedlasting (HTTP): <ulink url="&libvdpau-va-gl-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Libvdpau-va-gl Driver Nedlasting (FTP): <ulink url="&libvdpau-va-gl-download-ftp;"/>
+            Nedlasting: <ulink url="&libvdpau-va-gl-download;"/>
           </para>
         </listitem>
       </itemizedlist>

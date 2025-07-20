@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY x7fonts-download-http "&xorg-download-http;/font/">
-  <!ENTITY x7fonts-download-ftp  " ">
+  <!ENTITY x7fonts-download "&xorg-dl;/font/">
 ]>
 
 <sect1 id="xorg7-font" xreflabel="Xorg Fonter">
@@ -31,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&x7fonts-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&x7fonts-download-ftp;"/>
+          Nedlasting: <ulink url="&x7fonts-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -78,7 +72,7 @@ EOF</userinput></screen>
 <screen><userinput>mkdir font &amp;&amp;
 cd font &amp;&amp;
 grep -v '^#' ../font-&xorg-version;-list | wget -i- -c \
-    -B &xorg-download-http;/font/</userinput></screen>
+    -B &x7fonts-download;</userinput></screen>
 
   </sect2>
 

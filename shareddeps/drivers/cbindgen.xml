@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY cbindgen-download-http "https://github.com/mozilla/cbindgen/archive/v&cbindgen-version;/cbindgen-&cbindgen-version;.tar.gz">
-  <!ENTITY cbindgen-download-ftp  " ">
+  <!ENTITY cbindgen-root "https://github.com/mozilla/cbindgen/archive">
+  <!ENTITY cbindgen-download "&cbindgen-root;/v&cbindgen-version;/cbindgen-&cbindgen-version;.tar.gz">
 ]>
 
 <sect1 id="cbindgen" xreflabel="Cbindgen-&cbindgen-version;">
@@ -30,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&cbindgen-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&cbindgen-download-ftp;"/>
+          Nedlasting: <ulink url="&cbindgen-download;"/>
         </para>
       </listitem>
     </itemizedlist>

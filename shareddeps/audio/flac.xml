@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY flac-download-http "https://github.com/xiph/flac/releases/download/&flac-version;/flac-&flac-version;.tar.xz">
-  <!ENTITY flac-download-ftp  " ">
+  <!ENTITY flac-root "https://github.com/xiph/flac/releases/download">
+  <!ENTITY flac-download "&flac-root;/&flac-version;/flac-&flac-version;.tar.xz">
 ]>
 
 <sect1 id="flac" xreflabel="FLAC-&flac-version;">
@@ -30,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&flac-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&flac-download-ftp;"/>
+          Nedlasting: <ulink url="&flac-download;"/>
         </para>
       </listitem>
     </itemizedlist>

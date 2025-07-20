@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY p11-kit-download-http "https://github.com/p11-glue/p11-kit/releases/download/&p11-kit-version;/p11-kit-&p11-kit-version;.tar.xz">
-  <!ENTITY p11-kit-download-ftp  " ">
+  <!ENTITY p11-kit-root     "https://github.com/p11-glue/p11-kit/releases/download">
+  <!ENTITY p11-kit-download "&p11-kit-root;/&p11-kit-version;/p11-kit-&p11-kit-version;.tar.xz">
 ]>
 
 <sect1 id="p11-kit" xreflabel="p11-kit-&p11-kit-version;">
@@ -31,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&p11-kit-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&p11-kit-download-ftp;"/>
+          Nedlasting: <ulink url="&p11-kit-download;"/>
         </para>
       </listitem>
     </itemizedlist>

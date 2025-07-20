@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY glib2-download-http "&gnome-download-http;/glib/&glib2-minor;/glib-&glib2-version;.tar.xz">
-  <!ENTITY glib2-download-ftp  " ">
+  <!ENTITY glib2-download "&gnome-download-http;/glib/&glib2-minor;/glib-&glib2-version;.tar.xz">
 ]>
 
 <sect1 id="glib2" xreflabel="GLib-&glib2-version;">
@@ -33,12 +32,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&glib2-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&glib2-download-ftp;"/>
+          Download: <ulink url="&glib2-download;"/>
         </para>
       </listitem>
     </itemizedlist>

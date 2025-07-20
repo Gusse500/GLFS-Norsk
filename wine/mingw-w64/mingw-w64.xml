@@ -4,8 +4,10 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY mingw-w64-download-http "https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/mingw-w64-v&mingw-w64-version;.tar.bz2">
-  <!ENTITY mingw-w64-download-ftp  " ">
+  <!ENTITY mingw-w64-pj-root "https://sourceforge.net/projects/mingw-w64">
+  <!ENTITY mingw-w64-dir     "files/mingw-w64/mingw-w64-release">
+  <!ENTITY mingw-w64-download
+    "&mingw-w64-pj-root;/&mingw-w64-dir;/mingw-w64-v&mingw-w64-version;.tar.bz2">
 ]>
 
 <sect1 id="mingw-w64" xreflabel="MinGW-w64-&mingw-w64-version;">
@@ -31,12 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&mingw-w64-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&mingw-w64-download-ftp;"/>
+          Download: <ulink url="&mingw-w64-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -45,9 +42,9 @@
 
     <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
-        <xref linkend="mingw-w64-binutils"/>,
-        <xref linkend="mingw-w64-headers"/>, and
-        <xref linkend="mingw-w64-gcc-static"/>
+      <xref linkend="mingw-w64-binutils"/>,
+      <xref linkend="mingw-w64-headers"/>, and
+      <xref linkend="mingw-w64-gcc-static"/>
     </para>
 
   </sect2>

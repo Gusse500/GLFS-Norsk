@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libpsl-download-http "https://github.com/rockdaboot/libpsl/releases/download/&libpsl-version;/libpsl-&libpsl-version;.tar.gz">
-  <!ENTITY libpsl-download-ftp  " ">
+  <!ENTITY libpsl-root     "https://github.com/rockdaboot/libpsl/releases/download">
+  <!ENTITY libpsl-download "&libpsl-root;/&libpsl-version;/libpsl-&libpsl-version;.tar.gz">
 ]>
 
 <sect1 id="libpsl" xreflabel="libpsl-&libpsl-version;">
@@ -29,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libpsl-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libpsl-download-ftp;"/>
+          Nedlasting: <ulink url="&libpsl-download;"/>
         </para>
       </listitem>
     </itemizedlist>

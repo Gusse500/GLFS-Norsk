@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY polkit-download-http "https://github.com/polkit-org/polkit/archive/&polkit-version;/polkit-&polkit-version;.tar.gz">
-  <!ENTITY polkit-download-ftp  " ">
+  <!ENTITY polkit-root "https://github.com/polkit-org/polkit/archive">
+  <!ENTITY polkit-download "&polkit-root;/&polkit-version;/polkit-&polkit-version;.tar.gz">
 ]>
 
 <sect1 id="polkit" xreflabel="Polkit-&polkit-version;">
@@ -30,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&polkit-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&polkit-download-ftp;"/>
+          Download: <ulink url="&polkit-download;"/>
         </para>
       </listitem>
     </itemizedlist>

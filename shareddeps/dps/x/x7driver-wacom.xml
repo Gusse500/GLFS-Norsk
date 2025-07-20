@@ -4,8 +4,10 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xorg-wacom-driver-download-http "https://github.com/linuxwacom/xf86-input-wacom/releases/download/xf86-input-wacom-&xorg-wacom-driver-version;/xf86-input-wacom-&xorg-wacom-driver-version;.tar.bz2">
-  <!ENTITY xorg-wacom-driver-download-ftp  " ">
+  <!ENTITY xorgwacom-root
+    "https://github.com/linuxwacom/xf86-input-wacom/releases/download">
+  <!ENTITY xorg-wacom-driver-download
+    "&xorgwacom-root;/xf86-input-wacom-&xorg-wacom-driver-version;/xf86-input-wacom-&xorg-wacom-driver-version;.tar.bz2">
 ]>
 
   <!-- Begin Xorg Wacom Driver -->
@@ -35,12 +37,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&xorg-wacom-driver-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&xorg-wacom-driver-download-ftp;"/>
+            Nedlasting: <ulink url="&xorg-wacom-driver-download;"/>
           </para>
         </listitem>
       </itemizedlist>

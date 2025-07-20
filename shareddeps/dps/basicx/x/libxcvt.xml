@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY libxcvt-download-http "&xorg-download-http;/lib/libxcvt-&libxcvt-version;.tar.xz">
-  <!ENTITY libxcvt-download-ftp  " ">
+  <!ENTITY libxcvt-download "&xorg-dl;/lib/libxcvt-&libxcvt-version;.tar.xz">
 ]>
 
 <sect1 id="libxcvt" xreflabel="libxcvt-&libxcvt-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libxcvt-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libxcvt-download-ftp;"/>
+          Nedlasting: <ulink url="&libxcvt-download;"/>
         </para>
       </listitem>
     </itemizedlist>

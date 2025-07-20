@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY gnutls-download-http "&gnupg-http;/gnutls/v3.8/gnutls-&gnutls-version;.tar.xz">
-  <!ENTITY gnutls-download-ftp  " ">
+  <!ENTITY gnutls-download "&gnupg-http;/gnutls/v3.8/gnutls-&gnutls-version;.tar.xz">
 ]>
 
 <sect1 id="gnutls" xreflabel="GnuTLS-&gnutls-version;">
@@ -53,12 +52,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&gnutls-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&gnutls-download-ftp;"/>
+          Nedlasting: <ulink url="&gnutls-download;"/>
         </para>
       </listitem>
     </itemizedlist>

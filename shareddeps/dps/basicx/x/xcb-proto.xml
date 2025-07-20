@@ -4,13 +4,11 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY xcb-proto-download-http "https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-&xcb-proto-version;.tar.xz">
-  <!ENTITY xcb-proto-download-ftp  " ">
+  <!ENTITY xcb-proto-download "&xorg-dl;/proto/xcb-proto-&xcb-proto-version;.tar.xz">
 ]>
 
 <sect1 id="xcb-proto" xreflabel="xcb-proto-&xcb-proto-version;">
   <?dbhtml filename="xcb-proto.html"?>
-
 
   <title>xcb-proto-&xcb-proto-version;</title>
 
@@ -30,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xcb-proto-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xcb-proto-download-ftp;"/>
+          Nedlasting: <ulink url="&xcb-proto-download;"/>
         </para>
       </listitem>
     </itemizedlist>

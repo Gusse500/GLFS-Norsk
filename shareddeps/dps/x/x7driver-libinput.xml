@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xorg-libinput-driver-download-http "&xorg-download-http;/driver/xf86-input-libinput-&xorg-libinput-driver-version;.tar.xz">
-  <!ENTITY xorg-libinput-driver-download-ftp  " ">
+  <!ENTITY xorg-libinput-driver-download
+    "&xorg-dl;/driver/xf86-input-libinput-&xorg-libinput-driver-version;.tar.xz">
 ]>
 
   <!-- Begin Xorg input-libinput Driver -->
@@ -34,12 +34,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&xorg-libinput-driver-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&xorg-libinput-driver-download-ftp;"/>
+            Nedlasting: <ulink url="&xorg-libinput-driver-download;"/>
           </para>
         </listitem>
       </itemizedlist>

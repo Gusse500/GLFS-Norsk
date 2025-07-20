@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY harfbuzz-download-http
-           "https://github.com/harfbuzz/harfbuzz/releases/download/&harfbuzz-version;/harfbuzz-&harfbuzz-version;.tar.xz">
-  <!ENTITY harfbuzz-download-ftp  " ">
+  <!ENTITY harfbuzz-root "https://github.com/harfbuzz/harfbuzz/releases/download">
+  <!ENTITY harfbuzz-download
+    "&harfbuzz-root;/&harfbuzz-version;/harfbuzz-&harfbuzz-version;.tar.xz">
 ]>
 
 <sect1 id="harfbuzz" xreflabel="HarfBuzz-&harfbuzz-version;">
@@ -31,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&harfbuzz-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&harfbuzz-download-ftp;"/>
+          Nedlasting: <ulink url="&harfbuzz-download;"/>
         </para>
       </listitem>
     </itemizedlist>

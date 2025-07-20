@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libgpg-error-download-http "&gnupg-http;/libgpg-error/libgpg-error-&libgpg-error-version;.tar.bz2">
-  <!ENTITY libgpg-error-download-ftp  " ">
+  <!ENTITY libgpg-error-download "&gnupg-http;/libgpg-error/libgpg-error-&libgpg-error-version;.tar.bz2">
 ]>
 
 <sect1 id="libgpg-error" xreflabel="libgpg-error-&libgpg-error-version;">
@@ -29,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libgpg-error-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&libgpg-error-download-ftp;"/>
+          Download: <ulink url="&libgpg-error-download;"/>
         </para>
       </listitem>
     </itemizedlist>

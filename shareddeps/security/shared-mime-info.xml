@@ -4,16 +4,15 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY shared-mime-info-download-http
-           "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/&shared-mime-info-version;/shared-mime-info-&shared-mime-info-version;.tar.gz">
-  <!ENTITY shared-mime-info-download-ftp  " ">
+  <!ENTITY smi-root "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive">
+  <!ENTITY shared-mime-info-download
+    "&smi-root;/&shared-mime-info-version;/shared-mime-info-&shared-mime-info-version;.tar.gz">
   <!ENTITY xdgmime-download-http "&sources-anduin-http;/xdgmime/xdgmime.tar.xz">
 ]>
 
 <sect1 id="shared-mime-info"
 xreflabel="shared-mime-info-&shared-mime-info-version;">
   <?dbhtml filename="shared-mime-info.html" ?>
-
 
   <title>shared-mime-info-&shared-mime-info-version;</title>
 
@@ -33,12 +32,7 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&shared-mime-info-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&shared-mime-info-download-ftp;"/>
+          Download: <ulink url="&shared-mime-info-download;"/>
         </para>
       </listitem>
     </itemizedlist>

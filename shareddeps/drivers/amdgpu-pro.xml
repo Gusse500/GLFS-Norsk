@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY amdgpu-pro-download-http
+  <!ENTITY amdgpu-pro-download
     "https://repo.radeon.com/amdgpu/&amdgpu-pro-repo-folder-version;/ubuntu/pool/proprietary/">
 ]>
 
@@ -88,7 +88,7 @@ EOF</userinput></screen>
 cd    x86_64-amdgpu-pro                                                            &amp;&amp;
 
 grep -v '^#' ../x86_64-amdgpu-pro-wget-list | wget -i- -c \
-    -B &amdgpu-pro-download-http; &amp;&amp;
+    -B &amdgpu-pro-download; &amp;&amp;
 for deb in *.deb; do
   ar x $deb                                                                        &amp;&amp;
   tar -xf data.tar.xz                                                              &amp;&amp;
@@ -153,7 +153,7 @@ EOF</userinput></screen>
 cd    i386-amdgpu-pro                                                              &amp;&amp;
 
 grep -v '^#' ../i386-amdgpu-pro-wget-list | wget -i- -c \
-    -B &amdgpu-pro-download-http; &amp;&amp;
+    -B &amdgpu-pro-download; &amp;&amp;
 for deb in *.deb; do
   ar x $deb                                                                        &amp;&amp;
   tar -xf data.tar.xz                                                              &amp;&amp;

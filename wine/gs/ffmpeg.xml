@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY ffmpeg-download-http "https://ffmpeg.org/releases/ffmpeg-&ffmpeg-version;.tar.xz">
-  <!ENTITY ffmpeg-download-ftp  " ">
+  <!ENTITY ffmpeg-download "https://ffmpeg.org/releases/ffmpeg-&ffmpeg-version;.tar.xz">
 ]>
 
 <sect1 id="ffmpeg" xreflabel="FFmpeg-&ffmpeg-version;">
@@ -36,12 +35,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&ffmpeg-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&ffmpeg-download-ftp;"/>
+          Download: <ulink url="&ffmpeg-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,13 +4,11 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY alsa-utils-download-http "&alsa-download-http;/utils/alsa-utils-&alsa-utils-version;.tar.bz2">
-  <!ENTITY alsa-utils-download-ftp  " ">
+  <!ENTITY alsa-utils-download "&alsa-download-http;/utils/alsa-utils-&alsa-utils-version;.tar.bz2">
 ]>
 
 <sect1 id="alsa-utils" xreflabel="alsa-utils-&alsa-utils-version;">
   <?dbhtml filename="alsa-utils.html"?>
-
 
   <title>alsa-utils-&alsa-utils-version;</title>
 
@@ -30,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&alsa-utils-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&alsa-utils-download-ftp;"/>
+          Nedlasting: <ulink url="&alsa-utils-download;"/>
         </para>
       </listitem>
     </itemizedlist>

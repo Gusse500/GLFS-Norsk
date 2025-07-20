@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libsndfile-download-http
-    "https://github.com/libsndfile/libsndfile/releases/download/&libsndfile-version;/libsndfile-&libsndfile-version;.tar.xz">
-  <!ENTITY libsndfile-download-ftp  " ">
+  <!ENTITY lsf-dl-root "https://github.com/libsndfile/libsndfile/releases/download">
+  <!ENTITY libsndfile-download
+    "&lsf-dl-root;/&libsndfile-version;/libsndfile-&libsndfile-version;.tar.xz">
 ]>
 
 <sect1 id="libsndfile" xreflabel="libsndfile-&libsndfile-version;">
@@ -29,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libsndfile-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libsndfile-download-ftp;"/>
+          Nedlasting: <ulink url="&libsndfile-download;"/>
         </para>
       </listitem>
     </itemizedlist>

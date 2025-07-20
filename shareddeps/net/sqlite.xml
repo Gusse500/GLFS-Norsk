@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY sqlite-download-http "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-dl-version;.tar.gz">
-  <!ENTITY sqlite-download-ftp  " ">
+  <!ENTITY sqlite-download "https://sqlite.org/&sqlite-year;/sqlite-autoconf-&sqlite-dl-version;.tar.gz">
 ]>
 
 <sect1 id="sqlite" xreflabel="SQLite-&sqlite-version;">
@@ -31,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&sqlite-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&sqlite-download-ftp;"/>
+          Nedlasting: <ulink url="&sqlite-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -47,8 +41,7 @@
     <title>Installasjon av SQLite</title>
 
     <para>
-      Installer SQLite ved å kjøre følgende 
-      kommandoer:
+      Installer SQLite ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr     \

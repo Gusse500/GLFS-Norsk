@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY mingw-w64-gcc-static-download-http "&gnu-http;/gcc/gcc-&mingw-w64-gcc-version;/gcc-&mingw-w64-gcc-version;.tar.xz">
-  <!ENTITY mingw-w64-gcc-static-download-ftp  " ">
+  <!ENTITY mingw-w64-gcc-static-download
+    "&gnu-http;/gcc/gcc-&mingw-w64-gcc-version;/gcc-&mingw-w64-gcc-version;.tar.xz">
 ]>
 
 <sect1 id="mingw-w64-gcc-static" xreflabel="Statisk MinGW-w64-GCC-&mingw-w64-gcc-version;">
@@ -35,12 +35,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&mingw-w64-gcc-static-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&mingw-w64-gcc-static-download-ftp;"/>
+          Nedlasting: <ulink url="&mingw-w64-gcc-static-download;"/>
         </para>
       </listitem>
     </itemizedlist>

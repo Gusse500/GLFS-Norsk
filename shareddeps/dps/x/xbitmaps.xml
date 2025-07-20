@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xbitmaps-download-http "&xorg-download-http;/data/xbitmaps-&xbitmaps-version;.tar.xz">
-  <!ENTITY xbitmaps-download-ftp  " ">
+  <!ENTITY xbitmaps-download "&xorg-dl;/data/xbitmaps-&xbitmaps-version;.tar.xz">
 ]>
 
 <sect1 id="xbitmaps" xreflabel="xbitmaps-&xbitmaps-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xbitmaps-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xbitmaps-download-ftp;"/>
+          Nedlasting: <ulink url="&xbitmaps-download;"/>
         </para>
       </listitem>
     </itemizedlist>

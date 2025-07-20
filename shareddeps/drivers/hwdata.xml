@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY hwdata-download-http "https://github.com/vcrhonek/hwdata/archive/v&hwdata-version;/hwdata-&hwdata-version;.tar.gz">
-  <!ENTITY hwdata-download-ftp  " ">
+  <!ENTITY hwdata-root "https://github.com/vcrhonek/hwdata/archive">
+  <!ENTITY hwdata-download
+    "&hwdata-root;/v&hwdata-version;/hwdata-&hwdata-version;.tar.gz">
 ]>
 
 <sect1 id="hwdata" xreflabel="hwdata-&hwdata-version;">
@@ -28,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&hwdata-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&hwdata-download-ftp;"/>
+          Nedlasting: <ulink url="&hwdata-download;"/>
         </para>
       </listitem>
     </itemizedlist>

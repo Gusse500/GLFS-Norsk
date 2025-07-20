@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY opus-download-http "https://downloads.xiph.org/releases/opus/opus-&opus-version;.tar.gz">
-  <!ENTITY opus-download-ftp  " ">
+  <!ENTITY opus-download "https://downloads.xiph.org/releases/opus/opus-&opus-version;.tar.gz">
 ]>
 
 <sect1 id="opus" xreflabel="Opus-&opus-version;">
@@ -31,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&opus-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&opus-download-ftp;"/>
+          Nedlasting: <ulink url="&opus-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -31,7 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&lib32-check-download-http;"/>
+          Nedlasting: <ulink url="&lib32-check-download-http;"/>
         </para>
       </listitem>
       <listitem>

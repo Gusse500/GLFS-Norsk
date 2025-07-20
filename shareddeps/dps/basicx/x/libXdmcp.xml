@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY libXdmcp-download-http "&xorg-download-http;/lib/libXdmcp-&libXdmcp-version;.tar.xz">
-  <!ENTITY libXdmcp-download-ftp  " ">
+  <!ENTITY libXdmcp-download "&xorg-dl;/lib/libXdmcp-&libXdmcp-version;.tar.xz">
 ]>
 
 <sect1 id="libXdmcp" xreflabel="libXdmcp-&libXdmcp-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libXdmcp-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libXdmcp-download-ftp;"/>
+          Nedlasting: <ulink url="&libXdmcp-download;"/>
         </para>
       </listitem>
     </itemizedlist>

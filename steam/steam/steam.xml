@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY steam-download-http "https://repo.steampowered.com/steam/archive/precise/steam_&steam-version;.tar.gz">
-  <!ENTITY steam-download-ftp  " ">
+  <!ENTITY steam-repo "https://repo.steampowered.com/steam/archive">
+  <!ENTITY steam-type "precise">
+  <!ENTITY steam-download "&steam-repo;/&steam-type;/steam_&steam-version;.tar.gz">
 ]>
 
 <sect1 id="steam" xreflabel="Steam-&steam-version;">
@@ -28,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&steam-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&steam-download-ftp;"/>
+          Download: <ulink url="&steam-download;"/>
         </para>
       </listitem>
     </itemizedlist>

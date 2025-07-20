@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY cython-download-http "https://github.com/cython/cython/releases/download/&cython-version;/cython-&cython-version;.tar.gz">
-  <!ENTITY cython-download-ftp  " ">
+  <!ENTITY cython-root "https://github.com/cython/cython/releases/download">
+  <!ENTITY cython-download
+    "&cython-root;/&cython-version;/cython-&cython-version;.tar.gz">
 ]>
 
 <sect1 id="cython" xreflabel="Cython-&cython-version;">
@@ -30,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&cython-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&cython-download-ftp;"/>
+          Nedlasting: <ulink url="&cython-download;"/>
         </para>
       </listitem>
     </itemizedlist>

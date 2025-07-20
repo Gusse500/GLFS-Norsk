@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY nettle-download-http "&gnu-http;/nettle/nettle-&nettle-version;.tar.gz">
-  <!ENTITY nettle-download-ftp  " ">
+  <!ENTITY nettle-download "&gnu-http;/nettle/nettle-&nettle-version;.tar.gz">
 ]>
 
 <sect1 id="nettle" xreflabel="Nettle-&nettle-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&nettle-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&nettle-download-ftp;"/>
+          Nedlasting: <ulink url="&nettle-download;"/>
         </para>
       </listitem>
     </itemizedlist>

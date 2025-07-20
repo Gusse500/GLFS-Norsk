@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY fdk-aac-download-http "&sourceforge-dl;/opencore-amr/fdk-aac-&fdk-aac-version;.tar.gz">
-  <!ENTITY fdk-aac-download-ftp  " ">
+  <!ENTITY fdk-aac-download "&sourceforge-dl;/opencore-amr/fdk-aac-&fdk-aac-version;.tar.gz">
 ]>
 
 <sect1 id="fdk-aac" xreflabel="fdk-aac-&fdk-aac-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&fdk-aac-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&fdk-aac-download-ftp;"/>
+          Download: <ulink url="&fdk-aac-download;"/>
         </para>
       </listitem>
     </itemizedlist>

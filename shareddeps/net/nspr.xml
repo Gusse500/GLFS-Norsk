@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY nspr-download-http "&mozilla-http;/nspr/releases/v&nspr-version;/src/nspr-&nspr-version;.tar.gz">
-  <!ENTITY nspr-download-ftp  " ">
+  <!ENTITY nspr-download "&mozilla-http;/nspr/releases/v&nspr-version;/src/nspr-&nspr-version;.tar.gz">
 ]>
 
 <sect1 id="nspr" xreflabel="NSPR-&nspr-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&nspr-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&nspr-download-ftp;"/>
+          Nedlasting: <ulink url="&nspr-download;"/>
         </para>
       </listitem>
     </itemizedlist>

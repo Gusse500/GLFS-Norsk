@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY pixman-download-http "https://www.cairographics.org/releases/pixman-&pixman-version;.tar.gz">
-  <!ENTITY pixman-download-ftp  " ">
+  <!ENTITY pixman-download "https://www.cairographics.org/releases/pixman-&pixman-version;.tar.gz">
 ]>
 
 <sect1 id="pixman" xreflabel="Pixman-&pixman-version;">
@@ -29,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&pixman-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&pixman-download-ftp;"/>
+          Nedlasting: <ulink url="&pixman-download;"/>
         </para>
       </listitem>
     </itemizedlist>

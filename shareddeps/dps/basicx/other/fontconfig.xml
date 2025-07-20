@@ -4,9 +4,10 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY fontconfig-gitlab "https://gitlab.freedesktop.org/fontconfig/fontconfig">
-  <!ENTITY fontconfig-download-http
-    "&fontconfig-gitlab;/-/archive/&fontconfig-version;/fontconfig-&fontconfig-version;.tar.gz">
+  <!ENTITY fontconfig-gl "https://gitlab.freedesktop.org/fontconfig/fontconfig">
+  <!ENTITY fontconfig-root "&fontconfig-gl;/-/archive">
+  <!ENTITY fontconfig-download
+    "&fontconfig-root;/&fontconfig-version;/fontconfig-&fontconfig-version;.tar.gz">
 ]>
 
 <sect1 id="fontconfig" xreflabel="Fontconfig-&fontconfig-version;">
@@ -32,7 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&fontconfig-download-http;"/>
+          Nedlasting: <ulink url="&fontconfig-download;"/>
         </para>
       </listitem>
     </itemizedlist>

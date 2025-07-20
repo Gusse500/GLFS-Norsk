@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY rustc-download-http "https://static.rust-lang.org/dist/rustc-&rustc-version;-src.tar.xz">
-  <!ENTITY rustc-download-ftp  " ">
+  <!ENTITY rustc-download "https://static.rust-lang.org/dist/rustc-&rustc-version;-src.tar.xz">
 ]>
 
 <sect1 id="rustc" xreflabel="rustc-&rustc-version;">
@@ -36,7 +35,7 @@
       <para>
         Selv om GLFS vanligvis installeres i <filename
         class="directory">/usr</filename>, når du senere oppgraderer til en 
-        nyere versjon av rust de gamle bibliotekene i 
+        nyere versjon av Rustc, de gamle bibliotekene i 
         <filename class="directory">/usr/lib/rustlib</filename> vil forbli, med 
         forskjellige hasher i navnene sine, men vil ikke være brukbare og vil 
         kaste bort plass. Redaktørene anbefaler å plassere filene i <filename
@@ -104,12 +103,8 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&rustc-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&rustc-download-ftp;"/>
+          Nedlasting: <ulink url="&rustc-download;"/>
+
         </para>
       </listitem>
     </itemizedlist>

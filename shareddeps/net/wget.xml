@@ -4,9 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY wget-download-http
-           "&gnu-http;/wget/wget-&wget-version;.tar.gz">
-  <!ENTITY wget-download-ftp  " ">
+  <!ENTITY wget-download "&gnu-http;/wget/wget-&wget-version;.tar.gz">
 ]>
 
 <sect1 id="wget" xreflabel="Wget-&wget-version;">
@@ -29,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&wget-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&wget-download-ftp;"/>
+          Nedlasting: <ulink url="&wget-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY x265-download-http "https://bitbucket.org/multicoreware/x265_git/downloads/x265_&x265-version;.tar.gz">
-  <!ENTITY x265-download-ftp  " ">
+  <!ENTITY x265-root "https://bitbucket.org/multicoreware/x265_git/downloads">
+  <!ENTITY x265-download "&x265-root;/x265_&x265-version;.tar.gz">
 ]>
 
 <sect1 id="x265" xreflabel="x265-&x265-version;">
@@ -29,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&x265-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&x265-download-ftp;"/>
+          Download: <ulink url="&x265-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY libXau-download-http "&xorg-download-http;/lib/libXau-&libXau-version;.tar.xz">
-  <!ENTITY libXau-download-ftp  " ">
+  <!ENTITY libXau-download "&xorg-dl;/lib/libXau-&libXau-version;.tar.xz">
 ]>
 
 <sect1 id="libXau" xreflabel="libXau-&libXau-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libXau-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libXau-download-ftp;"/>
+          Nedlasting: <ulink url="&libXau-download;"/>
         </para>
       </listitem>
     </itemizedlist>

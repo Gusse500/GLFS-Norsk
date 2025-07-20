@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libvpx-download-http "https://github.com/webmproject/libvpx/archive/v&libvpx-version;/libvpx-&libvpx-version;.tar.gz">
-  <!ENTITY libvpx-download-ftp  " ">
+  <!ENTITY libvpx-root "https://github.com/webmproject/libvpx/archive">
+  <!ENTITY libvpx-download "&libvpx-root;/v&libvpx-version;/libvpx-&libvpx-version;.tar.gz">
 ]>
 
 <sect1 id="libvpx" xreflabel="libvpx-&libvpx-version;">
@@ -32,12 +32,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libvpx-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&libvpx-download-ftp;"/>
+          Download: <ulink url="&libvpx-download;"/>
         </para>
       </listitem>
     </itemizedlist>

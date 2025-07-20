@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY libunwind-download-http "https://github.com/libunwind/libunwind/releases/download/v&libunwind-version;/libunwind-&libunwind-version;.tar.gz">
-  <!ENTITY libunwind-download-ftp  " ">
+  <!ENTITY libunwind-root "https://github.com/libunwind/libunwind/releases/download">
+  <!ENTITY libunwind-download
+    "&libunwind-root;/v&libunwind-version;/libunwind-&libunwind-version;.tar.gz">
 ]>
 
 <sect1 id="libunwind" xreflabel="libunwind-&libunwind-version;">
@@ -32,12 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libunwind-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libunwind-download-ftp;"/>
+          Nedlasting: <ulink url="&libunwind-download;"/>
         </para>
       </listitem>
     </itemizedlist>

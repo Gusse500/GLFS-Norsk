@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libaom-download-http "https://storage.googleapis.com/aom-releases/libaom-&libaom-version;.tar.gz">
+  <!ENTITY libaom-download "https://storage.googleapis.com/aom-releases/libaom-&libaom-version;.tar.gz">
 ]>
 
 <sect1 id="libaom" xreflabel="libaom-&libaom-version;">
@@ -33,7 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&libaom-download-http;"/>
+          Download: <ulink url="&libaom-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY mingw-w64-binutils-download-http "https://sourceware.org/pub/binutils/releases/binutils-&binutils-version;.tar.xz">
-  <!ENTITY mingw-w64-binutils-download-ftp  " ">
+  <!ENTITY binutils-root "https://sourceware.org/pub/binutils/releases">
+  <!ENTITY mingw-w64-binutils-download
+    "&binutils-root;/binutils-&binutils-version;.tar.xz">
 ]>
 
 <sect1 id="mingw-w64-binutils" xreflabel="MinGW-w64-Binutils-&binutils-version;">
@@ -32,12 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&mingw-w64-binutils-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&mingw-w64-binutils-download-ftp;"/>
+          Download: <ulink url="&mingw-w64-binutils-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xcb-utils-download-http "https://xcb.freedesktop.org/dist/">
-  <!ENTITY xcb-utils-download-ftp  " ">
+  <!ENTITY xcb-utils-download "https://xcb.freedesktop.org/dist/">
 ]>
 
 <sect1 id="xcb-utils" xreflabel="XCB Verktøy">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xcb-utils-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xcb-utils-download-ftp;"/>
+          Nedlasting: <ulink url="&xcb-utils-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -88,7 +82,7 @@ EOF</userinput></screen>
 <screen><userinput>mkdir xcb-utils &amp;&amp;
 cd xcb-utils &amp;&amp;
 grep -v '^#' ../xcb-utils-list | wget -i- -c \
-    -B &xcb-utils-download-http;</userinput></screen>
+    -B &xcb-utils-download;</userinput></screen>
 
   </sect2>
 

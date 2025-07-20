@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY pulseaudio-download-http
-           "https://www.freedesktop.org/software/pulseaudio/releases/pulseaudio-&pulseaudio-version;.tar.xz">
-  <!ENTITY pulseaudio-download-ftp  " ">
+  <!ENTITY pa-root "https://www.freedesktop.org/software/pulseaudio/releases">
+  <!ENTITY pulseaudio-download
+    "&pa-root;/pulseaudio-&pulseaudio-version;.tar.xz">
 ]>
 
 <sect1 id="pulseaudio" xreflabel="PulseAudio-&pulseaudio-version;">
@@ -33,12 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&pulseaudio-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&pulseaudio-download-ftp;"/>
+          Nedlasting: <ulink url="&pulseaudio-download;"/>
         </para>
       </listitem>
     </itemizedlist>

@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY yaml-download-http "https://github.com/yaml/libyaml/releases/download/&yaml-version;/yaml-&yaml-version;.tar.gz">
-  <!ENTITY yaml-download-ftp  " ">
+  <!ENTITY yaml-root "https://github.com/yaml/libyaml/releases/download">
+  <!ENTITY yaml-download "&yaml-root;/&yaml-version;/yaml-&yaml-version;.tar.gz">
 ]>
 
 <sect1 id="libyaml" xreflabel="libyaml-&yaml-version;">
@@ -29,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&yaml-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&yaml-download-ftp;"/>
+          Nedlasting: <ulink url="&yaml-download;"/>
         </para>
       </listitem>
     </itemizedlist>

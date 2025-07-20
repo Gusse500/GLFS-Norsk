@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY mtdev-download-http "https://bitmath.org/code/mtdev/mtdev-&mtdev-version;.tar.bz2">
-  <!ENTITY mtdev-download-ftp  " ">
+  <!ENTITY mtdev-download "https://bitmath.org/code/mtdev/mtdev-&mtdev-version;.tar.bz2">
 ]>
 
 <sect1 id="mtdev" xreflabel="mtdev-&mtdev-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&mtdev-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&mtdev-download-ftp;"/>
+          Nedlasting: <ulink url="&mtdev-download;"/>
         </para>
       </listitem>
     </itemizedlist>

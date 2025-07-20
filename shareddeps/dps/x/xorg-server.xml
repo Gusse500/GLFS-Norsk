@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY xorg-server-download-http "&xorg-download-http;/xserver/xorg-server-&xorg-server-version;.tar.xz">
-  <!ENTITY xorg-server-download-ftp  " ">
+  <!ENTITY xorg-server-download "&xorg-dl;/xserver/xorg-server-&xorg-server-version;.tar.xz">
   <!ENTITY modesetting_drv
            "<filename class='libraryfile'>modesetting_drv</filename>">
   <!ENTITY BLFS113 "https://www.linuxfromscratch.org/blfs/view/11.3/x/x7driver.html">
@@ -25,19 +24,13 @@
     <title>Introduksjon til Xorg Server</title>
 
     <para>
-      Xorg Serveren er kjernen i 
-      X Vindussystemet.
+      Xorg Serveren er kjernen i X Vindussystemet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&xorg-server-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&xorg-server-download-ftp;"/>
+          Nedlasting: <ulink url="&xorg-server-download;"/>
         </para>
       </listitem>
     </itemizedlist>

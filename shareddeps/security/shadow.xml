@@ -4,8 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY shadow-download-http "https://github.com/shadow-maint/shadow/releases/download/&shadow-version;/shadow-&shadow-version;.tar.xz">
-  <!ENTITY shadow-download-ftp  " ">
+  <!ENTITY shadow-root "https://github.com/shadow-maint/shadow/releases/download">
+  <!ENTITY shadow-download "&shadow-root;/&shadow-version;/shadow-&shadow-version;.tar.xz">
 ]>
 
 <sect1 id="shadow" xreflabel="Shadow-&shadow-version;">
@@ -33,15 +33,11 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&shadow-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&shadow-download-ftp;"/>
+          Download: <ulink url="&shadow-download;"/>
         </para>
       </listitem>
     </itemizedlist>
+
 <!--
     <bridgehead renderas="sect3">Additional Downloads</bridgehead>
     <itemizedlist spacing="compact">

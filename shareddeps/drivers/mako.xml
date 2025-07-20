@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY mako-download-http "https://files.pythonhosted.org/packages/source/M/Mako/mako-&mako-version;.tar.gz">
-  <!ENTITY mako-download-ftp  " ">
+  <!ENTITY mako-download "&pymodules-dl;/M/Mako/mako-&mako-version;.tar.gz">
 ]>
 
 <sect1 id="mako" xreflabel="mako-&mako-version;">
@@ -28,12 +27,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&mako-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&mako-download-ftp;"/>
+          Nedlasting: <ulink url="&mako-download;"/>
         </para>
       </listitem>
     </itemizedlist>

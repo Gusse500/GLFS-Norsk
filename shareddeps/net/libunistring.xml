@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libunistring-download-http "&gnu-http;/libunistring/libunistring-&libunistring-version;.tar.xz">
-  <!ENTITY libunistring-download-ftp  " ">
+  <!ENTITY libunistring-download "&gnu-http;/libunistring/libunistring-&libunistring-version;.tar.xz">
 ]>
 
 <sect1 id="libunistring" xreflabel="libunistring-&libunistring-version;">
@@ -32,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libunistring-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libunistring-download-ftp;"/>
+          Nedlasting: <ulink url="&libunistring-download;"/>
         </para>
       </listitem>
     </itemizedlist>

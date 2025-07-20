@@ -4,13 +4,11 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY util-macros-download-http "&xorg-download-http;/util/util-macros-&util-macros-version;.tar.xz">
-  <!ENTITY util-macros-download-ftp  " ">
+  <!ENTITY util-macros-download "&xorg-dl;/util/util-macros-&util-macros-version;.tar.xz">
 ]>
 
 <sect1 id="util-macros" xreflabel="util-macros-&util-macros-version;">
   <?dbhtml filename="util-macros.html"?>
-
 
   <title>util-macros-&util-macros-version;</title>
 
@@ -30,12 +28,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&util-macros-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&util-macros-download-ftp;"/>
+          Nedlasting: <ulink url="&util-macros-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -47,7 +40,6 @@
       <xref linkend="xorg-env"/> (bør være satt for at følgende instruksjoner 
       skal fungere)
     </para>
-
 
   </sect2>
 

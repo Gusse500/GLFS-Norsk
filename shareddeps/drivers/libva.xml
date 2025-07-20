@@ -4,16 +4,12 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libva-download-http "https://github.com/intel/libva/archive/&libva-version;/libva-&libva-version;.tar.gz">
-  <!ENTITY libva-download-ftp  " ">
+  <!ENTITY libva-root "https://github.com/intel/libva/archive">
+  <!ENTITY libva-download "&libva-root;/&libva-version;/libva-&libva-version;.tar.gz">
 ]>
 
   <sect1 id="libva" xreflabel="libva-&libva-version;">
   <?dbhtml filename="libva.html"?>
-
-    <sect1info>
-      <date>$Date$</date>
-    </sect1info>
 
     <title>libva-&libva-version;</title>
 
@@ -40,12 +36,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            Nedlasting (HTTP): <ulink url="&libva-download-http;"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            Nedlasting (FTP): <ulink url="&libva-download-ftp;"/>
+            Nedlasting: <ulink url="&libva-download;"/>
           </para>
         </listitem>
       </itemizedlist>

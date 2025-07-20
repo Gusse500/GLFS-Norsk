@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY speex-download-http "https://downloads.xiph.org/releases/speex/speex-&speex-version;.tar.gz">
-  <!ENTITY speexdsp-download-http "https://downloads.xiph.org/releases/speex/speexdsp-&speexdsp-version;.tar.gz">
+  <!ENTITY speex-root "https://downloads.xiph.org/releases/speex">
+  <!ENTITY speex-download "&speex-root;/speex-&speex-version;.tar.gz">
+  <!ENTITY speexdsp-download "&speex-root;/speexdsp-&speexdsp-version;.tar.gz">
 ]>
 
 <sect1 id="speex" xreflabel="Speex-&speex-version;">
@@ -31,16 +32,12 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&speex-download-http;"/>
+          Speex nedlasting: <ulink url="&speex-download;"/>
         </para>
       </listitem>
-    </itemizedlist>
-
-    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
-    <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&speexdsp-download-http;"/>
+          Speexdsp nedlasting: <ulink url="&speexdsp-download;"/>
         </para>
       </listitem>
     </itemizedlist>

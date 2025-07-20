@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libidn2-download-http "&gnu-http;/libidn/libidn2-&libidn2-version;.tar.gz">
-  <!ENTITY libidn2-download-ftp  " ">
+  <!ENTITY libidn2-download "&gnu-http;/libidn/libidn2-&libidn2-version;.tar.gz">
 ]>
 
 <!-- Try to keep the indentation used in this file-->
@@ -32,12 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libidn2-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libidn2-download-ftp;"/>
+          Nedlasting: <ulink url="&libidn2-download;"/>
         </para>
       </listitem>
     </itemizedlist>

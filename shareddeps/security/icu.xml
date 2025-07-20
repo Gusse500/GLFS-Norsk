@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY icu-download-http
-           "https://github.com/unicode-org/icu/releases/download/release-&icu-major;-&icu-minor;/icu4c-&icu-major;_&icu-minor;-src.tgz">
-  <!ENTITY icu-download-ftp  " ">
+  <!ENTITY icu-root "https://github.com/unicode-org/icu/releases/download">
+  <!ENTITY icu-download
+    "&icu-root;/release-&icu-major;-&icu-minor;/icu4c-&icu-major;_&icu-minor;-src.tgz">
 ]>
 
 <sect1 id="icu" xreflabel="ICU-&icu-version;">
@@ -70,12 +70,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&icu-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&icu-download-ftp;"/>
+          Download: <ulink url="&icu-download;"/>
         </para>
       </listitem>
     </itemizedlist>

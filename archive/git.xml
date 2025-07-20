@@ -40,7 +40,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&git-download-http;"/>
+          Nedlasting: <ulink url="&git-download-http;"/>
         </para>
       </listitem>
       <listitem>

@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY duktape-download-http "https://duktape.org/duktape-&duktape-version;.tar.xz">
-  <!ENTITY duktape-download-ftp  " ">
+  <!ENTITY duktape-download "https://duktape.org/duktape-&duktape-version;.tar.xz">
 ]>
 
 <sect1 id="duktape" xreflabel="duktape-&duktape-version;">
@@ -31,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&duktape-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&duktape-download-ftp;"/>
+          Download: <ulink url="&duktape-download;"/>
         </para>
       </listitem>
     </itemizedlist>

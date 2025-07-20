@@ -4,22 +4,19 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY xdg-user-dirs-download-http "https://user-dirs.freedesktop.org/releases/xdg-user-dirs-&xdg-user-dirs-version;.tar.gz">
-  <!ENTITY xdg-user-dirs-download-ftp  " ">
+  <!ENTITY xud-root "https://user-dirs.freedesktop.org/releases">
+  <!ENTITY xdg-user-dirs-download "&xud-root;/xdg-user-dirs-&xdg-user-dirs-version;.tar.gz">
 ]>
 
 <sect1 id="xdg-user-dirs" xreflabel="Xdg-user-dirs-&xdg-user-dirs-version;">
   <?dbhtml filename="xdg-user-dirs.html"?>
 
-  <!-- No other tags inside any title.
-       Use Title Case in All Titles -->
   <title>Xdg-user-dirs-&xdg-user-dirs-version;</title>
 
   <indexterm zone="xdg-user-dirs">
     <primary sortas="a-xdg-user-dirs">xdg-user-dirs</primary>
   </indexterm>
 
-  <!--Required section-->
   <sect2 role="package">
     <title>Introduction to Xdg-user-dirs</title>
 
@@ -32,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download (HTTP): <ulink url="&xdg-user-dirs-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Download (FTP): <ulink url="&xdg-user-dirs-download-ftp;"/>
+          Download: <ulink url="&xdg-user-dirs-download;"/>
         </para>
       </listitem>
     </itemizedlist>

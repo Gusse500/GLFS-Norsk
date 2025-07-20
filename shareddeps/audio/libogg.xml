@@ -4,8 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libogg-download-http "https://downloads.xiph.org/releases/ogg/libogg-&libogg-version;.tar.xz">
-  <!ENTITY libogg-download-ftp  " ">
+  <!ENTITY libogg-download "https://downloads.xiph.org/releases/ogg/libogg-&libogg-version;.tar.xz">
 ]>
 
 <sect1 id="libogg" xreflabel="libogg-&libogg-version;">
@@ -30,12 +29,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&libogg-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&libogg-download-ftp;"/>
+          Nedlasting: <ulink url="&libogg-download;"/>
         </para>
       </listitem>
     </itemizedlist>

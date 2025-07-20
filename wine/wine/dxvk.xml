@@ -60,7 +60,7 @@ EOF</userinput></screen>
 <screen><userinput>mkdir dxvk &amp;&amp;
 cd    dxvk &amp;&amp;
 grep -v '^#' ../dxvk-&dxvk-version;-list | wget -i- -c \
-    -B https://github.com</userinput></screen>
+    -B https://github.com/</userinput></screen>
 
   </sect2>
 

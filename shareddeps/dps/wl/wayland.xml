@@ -4,8 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../../general.ent">
   %general-entities;
 
-  <!ENTITY wayland-download-http "https://gitlab.freedesktop.org/wayland/wayland/-/releases/&wayland-version;/downloads/wayland-&wayland-version;.tar.xz">
-  <!ENTITY wayland-download-ftp  " ">
+  <!ENTITY wayland-root "https://gitlab.freedesktop.org/wayland/wayland/-/releases">
+  <!ENTITY wayland-download
+    "&wayland-root;/&wayland-version;/downloads/wayland-&wayland-version;.tar.xz">
 ]>
 
 <sect1 id="wayland" xreflabel="Wayland-&wayland-version;">
@@ -29,12 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&wayland-download-http;"/>
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          Nedlasting (FTP): <ulink url="&wayland-download-ftp;"/>
+          Nedlasting: <ulink url="&wayland-download;"/>
         </para>
       </listitem>
     </itemizedlist>

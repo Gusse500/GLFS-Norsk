@@ -30,7 +30,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting (HTTP): <ulink url="&pipewire-download-http;"/>
+          Nedlasting: <ulink url="&pipewire-download-http;"/>
         </para>
       </listitem>
       <listitem>
