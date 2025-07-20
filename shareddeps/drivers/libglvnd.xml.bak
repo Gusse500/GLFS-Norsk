@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY libglvnd-root "https://gitlab.freedesktop.org/glvnd/libglvnd/-/archive">
+  <!ENTITY libglvnd-download
+    "&libglvnd-root;/v&libglvnd-version;/libglvnd-v&libglvnd-version;.tar.gz">
+]>
+
+<sect1 id="libglvnd" xreflabel="libglvnd-&libglvnd-version;">
+  <?dbhtml filename="libglvnd.html"?>
+
+  <title>libglvnd-&libglvnd-version;</title>
+
+  <indexterm zone="libglvnd">
+    <primary sortas="a-glvnd">libglvnd</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til libglvnd</title>
+
+    <para>
+      Pakken libglvnd sender API kall til en gitt driverleverandør under 
+      kjøretid. Noen av bibliotekene er rett og slett innpakning til 
+      hovedavsenderen. Drivere som er bygget med libglvnd i tankene, gir sine 
+      egne OpenGL implementeringer. For <xref linkend="mesa"/>, vil den installere
+      <filename class="libraryfile">libEGL_mesa</filename> og <filename
+      class="libraryfile">libGLX_mesa</filename>. For <xref linkend="nvidia"/>,
+      vil den gi <filename class="libraryfile">libEGL_nvidia</filename>,
+      <filename class="libraryfile">libGLESv2_nvidia</filename>, og
+      <filename class="libraryfile">libGLX_nvidia</filename>. Hver 
+      implementering er spesifikk for driveren den kommer fra.
+    </para>
+
+    <para>
+      Fordelen med å gjøre det på den måten er at en driver ikke trenger å 
+      adlyde arkitekturen en OpenGL leverandør bruker, og heller ikke bli 
+      absorbert av leverandøren.
+    </para>
+
+    <important><para>
+      Les <xref linkend="aboutgl"/> for å avgjøre om du vil installere OpenGL 
+      implementeringer fra denne leverandøren.
+    </para></important>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&libglvnd-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">libglvnd Avhengigheter</bridgehead>
+
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
+    <para role="recommended">
+      <xref linkend="xorg7-lib"/>
+      <footnote><para>
+        Hvis <xref linkend="xorg7-lib"/> ikke er installert, vil denne pakken 
+        ikke tilby <filename class="libraryfile">libGL</filename> eller <filename
+        class="libraryfile">libGLX</filename>. <filename
+        class="libraryfile">libOpenGL</filename> vil fortsatt bli bygget. Mange 
+        byggesystemer vil forvente at <filename
+        class="libraryfile">libGL</filename> er til stede, så det er sterkt 
+        anbefalt å installere <xref linkend="xorg7-lib"/> før du installerer 
+        denne pakken.
+      </para></footnote>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av libglvnd</title>
+
+    <para>
+      Installer libglvnd ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            -D gles1=false      \
+            -D hgl=false        \
+            .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som <systemitem class="username">root</systemitem> bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installasjon av libglvnd</title>
+
+    <para>
+      Installer lib32-libglvnd ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+meson setup --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --buildtype=release      \
+            -D gles1=false           \
+            -D hgl=false             \
+            .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som <systemitem class="username">root</systemitem> bruker:
+    </para>
+
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-meson;
+
+    &meson-buildtype-release;
+
+    <para>
+      <parameter>-D gles1=false</parameter>: Dette deaktiverer en utdatert 
+      versjon av OpenGL ES.
+    </para>
+
+    <para>
+      <parameter>-D hgl=false</parameter>: Dette deaktiverer målretting mot 
+      Haiku som standard, ettersom denne veiledningen er for Linux, ikke Haiku.
+    </para>
+
+    <para>
+      <option>-D gles2=false</option>: Hvis du ikke trenger OpenGL ES, bruk 
+      dette alternativet. Sørg for å lese <xref linkend="aboutgles"/>.
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>Liste over pakker med problemer</title>
+
+    <para>
+      Selv om installasjon av denne pakken kan bidra til å forhindre mange 
+      problemer senere, kan den ha noen forbehold, og alle er relatert til BLFS. 
+      BLFS forventer naturligvis at den eneste OpenGL leverandøren er
+      Mesa, så instruksjonene vil dermed anta at 
+      denne pakken ikke er installert. Følgende har kjente 
+      problemer og løsninger:
+    </para>
+
+    <itemizedlist>
+      <listitem>
+        <para>Mesa: I BLFS er en oppdatering oppført 
+        i <ulink url="&blfs-svn;/x/mesa.html">Mesa</ulink> side og vil 
+        instruere deg om å bruke den. Dette vil forårsake et problem med mindre 
+        du eksplisitt ber byggesystemet om ikke å lenke mot denne pakkens 
+        biblioteker, som betyr at det må bygge sine egne OpenGL implementeringer, 
+        noe som vil forårsake problemer i seg selv. Den nøyaktige feilen 
+        oppdateringen forårsaker er en lenkefeil i det siste settet med trinn 
+        når den bygger demoene, da den forventer funksjoner som ikke finnes i de 
+        spesifikke bibliotekene fra denne pakken den prøver å lenke mot.</para>
+        <para>Enten ikke bruk den oppdateringen, eller følg denne boken sin <xref
+        linkend="mesa"/> side i stedet. Siden 
+        Mesa byggesystemet som automatisk oppdager om
+        libglvnd er installert, 
+        installasjonsinstruksjonene endres ikke så mye mellom denne boken og 
+        BLFS. De viktigste forskjellene er lib32-støtte og at demoens 
+        oppdateringen ikke er oppført.</para>
+      </listitem>
+      <listitem>
+        <para>GLU: I BLFS, <ulink
+        url="&blfs-svn;/x/glu.html">GLU</ulink> siden angir eksplisitt GL 
+        leverandøren til Mesa siden byggesystemet 
+        ellers vil forvente libglvnd og
+        <filename class="libraryfile">libOpenGL</filename> skal installeres. 
+        Selv om instruksjonene på BLFS siden fører til en vellykket kompilering, 
+        fungerer ikke det resulterende biblioteket som det skal. Du bør følge
+        <ulink url="&slfs-website;/general/glu.html">SLFS GLU</ulink> siden
+        i stedet. Den sjekker også om leverandøren er
+        Mesa.</para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>Ingen</seg>
+        <seg>
+          libEGL,
+          libGL,
+          libGLESv2,
+          libGLX,
+          libGLdispatch, og
+          libOpenGL
+        </seg>
+        <seg>
+          /usr/include/{EGL,GLES{2,3},glvnd,KHR}
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="glvnd-libEGL">
+        <term><filename class="libraryfile">libEGL</filename></term>
+        <listitem>
+          <para>
+            inneholder EGL vindusystem API funksjoner
+          </para>
+          <indexterm zone="libglvnd glvnd-libEGL">
+            <primary sortas="b-glvnd-libEGL">libEGL</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="glvnd-libGL">
+        <term><filename class="libraryfile">libGL</filename></term>
+        <listitem>
+          <para>
+            er <quote>legacy</quote> OpenGL bibliotek; kall på wrapper
+            bibliotek <filename class="libraryfile">libGLdispatch
+            </filename> og <filename class="libraryfile">libGLX</filename>
+          </para>
+          <indexterm zone="libglvnd glvnd-libGL">
+            <primary sortas="b-glvnd-libGL">libGL</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="glvnd-libGLESv2">
+        <term><filename class="libraryfile">libGLESv2</filename></term>
+        <listitem>
+          <para>
+            eksponerer OpenGL ES 2.x og 3.x inngangspunkter; kall på wrapper bibliotek
+            <filename class="libraryfile">libGLdispatch</filename>
+          </para>
+          <indexterm zone="libglvnd glvnd-libGLESv2">
+            <primary sortas="b-glvnd-libGLESv2">libGLESv2</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="glvnd-libGLX">
+        <term><filename class="libraryfile">libGLX</filename></term>
+        <listitem>
+          <para>
+            sender GLX utvidelser til riktig leverandør
+          </para>
+          <indexterm zone="libglvnd glvnd-libGLX">
+            <primary sortas="b-glvnd-libGLX">libGLX</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="glvnd-libGLdispatch">
+        <term><filename class="libraryfile">libGLdispatch</filename></term>
+        <listitem>
+          <para>
+            sender OpenGL og TLS til riktig leverandør
+          </para>
+          <indexterm zone="libglvnd glvnd-libGLdispatch">
+            <primary sortas="b-glvnd-libGLdispatch">libGLdispatch</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="glvnd-libOpenGL">
+        <term><filename class="libraryfile">libOpenGL</filename></term>
+        <listitem>
+          <para>
+            er <quote>ny</quote> OpenGL bibliotek og eksponerer OpenGL
+            inngangspunkter; kalling av wrapper bibliotek <filename
+            class="libraryfile"> libGLdispatch</filename>
+          </para>
+          <indexterm zone="libglvnd glvnd-libOpenGL">
+            <primary sortas="b-glvnd-libOpenGL">libOpenGL</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
