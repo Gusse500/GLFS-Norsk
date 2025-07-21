@@ -20,45 +20,45 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to ICU</title>
+    <title>Introduksjon til ICU</title>
 
     <para>
-      The International Components for Unicode (ICU)
-      package is a mature, widely used set of C/C++ libraries providing Unicode
-      and Globalization support for software applications.
-      ICU is widely portable and gives applications
-      the same results on all platforms.
+      Pakken International Components for Unicode (ICU) er et modent, mye 
+      brukt sett med C/C++ biblioteker som gir Unicode og 
+      globaliseringsstøtte for programvare. ICU er allment 
+      portabel og gir applikasjoner de samme resultatene på 
+      alle plattformer.
     </para>
 
     <warning>
       <para>
-        Upgrading this package to a new major version (for example, from
-        72.1 to &icu-version;) will require rebuilding many other
-        packages. If some packages that use the libraries built by
-        icu4c-&icu-major; are rebuilt, they will use the new libraries while
-        current packages will use the previous libraries.  If the Linux
-        application loader
+        Oppgradere denne pakken til en ny hovedversjon (for eksempel fra
+        72.1 to &icu-version;) vil kreve gjenoppbygging av mange andre pakker. 
+        Hvis noen pakker som bruker bibliotekene bygget av
+        icu4c-&icu-major; gjenoppbygges, vil de bruke de nye bibliotekene, mens 
+        nåværende pakker vil bruke de tidligere bibliotekene. Hvis Linux 
+        applikasjonslasteren
         (<filename class='libraryfile'>/usr/lib/ld-linux-x86-64.so.2</filename>)
-        determines that both the old and new libraries are needed, and a
-        symbol (name of data or function) exists in both versions of the
-        library, all references to the symbol will be resolved to the
-        version appearing earlier in the breadth-first sequence of the
-        dependency graph.  This may result in the application failing if
-        the definition of the data or the behavior of the function referred
-        by the symbol differs between two versions.  To avoid the issue, users
-        will need to rebuild every package linked to an ICU library as soon
-        as possible once ICU is updated to a new major version.
+        bestemmer at både det gamle og det nye biblioteket er nødvendig, og et 
+        symbol (navn på data eller funksjon) finnes i begge versjoner av 
+        biblioteket, vil alle referanser til symbolet bli løst til versjonen som 
+        vises tidligere i bredde-først-sekvensen av avhengighetsgrafen. Dette 
+        kan føre til at applikasjonen mislykkes hvis definisjonen av dataene 
+        eller oppførselen til funksjonen referert til av symbolet er forskjellig 
+        mellom to versjoner. For å unngå problemet, må brukere gjenoppbygge hver 
+        pakke som er koblet til et ICU bibliotek så snart som mulig når ICU er 
+        oppdatert til en ny hovedversjon.
       </para>
 
       <para>
-        To determine what external libraries are needed (directly or indirectly)
-        by an application or a library, run:
+        For å finne ut hvilke eksterne biblioteker som trengs (direkte eller 
+        indirekte) av et program eller et bibliotek, kjør:
       </para>
 
 <screen><userinput>ldd &lt;application or library&gt; </userinput></screen>
 
       <para>
-        or to see only programs and libraries that directly use a library:
+        eller for å bare se programmer og biblioteker som bruker et bibliotek direkte:
       </para>
 
 <screen><userinput>readelf -d  &lt;application or library&gt; | grep NEEDED</userinput></screen>
@@ -70,16 +70,16 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&icu-download;"/>
+          Nedlasting: <ulink url="&icu-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&patch-root;/icu4c-&icu-version;-fix_enumeration-1.patch"/>
         </para>
       </listitem>
@@ -89,24 +89,24 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of ICU</title>
+    <title>Installasjon av ICU</title>
 
     <note>
       <para>
-        This package expands to the directory
+        Denne pakken utvides til mappen
         <filename class='directory'>icu</filename>.
       </para>
     </note>
 
 <!--
     <para>
-      First, fix a regression in version 58.1:
+      Først, fiks en regresjon i versjon 58.1:
     </para>
 
 <screen><userinput>patch -p1 -i ../icu4c-&icu-version;-fix_enumeration-1.patch</userinput></screen>
 -->
     <para>
-      Install ICU by running the following commands:
+      Installer ICU ved å kjøre følgende kommandoer:
     </para>
 
 <!-- Review comments at:
@@ -120,11 +120,11 @@ sed '/fdef U_CHARSET_I/i#define U_CHARSET_IS_UTF8 1' -i common/unicode/platform.
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -132,10 +132,10 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of ICU</title>
+    <title>lib32 Installasjon av ICU</title>
 
     <para>
-      Install lib32-ICU by running the following commands:
+      Installer lib32-ICU ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>make clean &amp;&amp;
@@ -145,11 +145,11 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -160,41 +160,41 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           derb, escapesrc, genbrk, genccode, gencfu, gencmn, gencnval,
           gendict, gennorm2,
           genrb, gensprep, icu-config, icuexportdata, icuinfo, icupkg,
-          makeconv, pkgdata, and uconv
+          makeconv, pkgdata, og uconv
         </seg>
         <seg>
           libicudata, libicui18n, libicuio,
-          libicutest, libicutu, and libicuuc
+          libicutest, libicutu, og libicuuc
         </seg>
         <seg>
           /usr/include/unicode,
-          /usr/lib/icu, and
+          /usr/lib/icu, og
           /usr/share/icu
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -202,7 +202,7 @@ ldconfig</userinput></screen>
         <term><command>derb</command></term>
         <listitem>
           <para>
-            disassembles a resource bundle
+            demonterer en ressurspakke
           </para>
           <indexterm zone="icu derb">
             <primary sortas="b-derb">derb</primary>
@@ -214,8 +214,8 @@ ldconfig</userinput></screen>
         <term><command>escapesrc</command></term>
         <listitem>
           <para>
-            converts <quote>\u</quote> escaped characters into unicode
-            characters
+            konverterer <quote>\u</quote> escape tegn til 
+            Unicode tegn
           </para>
           <indexterm zone="icu escapesrc">
             <primary sortas="b-escapesrc">escapesrc</primary>
@@ -227,8 +227,8 @@ ldconfig</userinput></screen>
         <term><command>genbrk</command></term>
         <listitem>
           <para>
-            compiles ICU break iteration rules source files into binary data
-            files
+            kompilerer kildefiler for ICU brudd i iterasjonsregler til 
+            binære datafiler
           </para>
           <indexterm zone="icu genbrk">
             <primary sortas="b-genbrk">genbrk</primary>
@@ -240,8 +240,8 @@ ldconfig</userinput></screen>
         <term><command>genccode</command></term>
         <listitem>
           <para>
-            generates C or platform specific assembly code from an ICU data
-            file
+            genererer C eller plattform spesifikk assemblerkode fra en ICU 
+            datafil
           </para>
           <indexterm zone="icu genccode">
             <primary sortas="b-genccode">genccode</primary>
@@ -253,8 +253,8 @@ ldconfig</userinput></screen>
         <term><command>gencfu</command></term>
         <listitem>
           <para>
-            reads in Unicode confusable character definitions and writes out the
-            binary data
+            leser inn Unicode forvirrende tegndefinisjoner og skriver ut 
+            binære data
           </para>
           <indexterm zone="icu gencfu">
             <primary sortas="b-gencfu">gencfu</primary>
@@ -266,7 +266,7 @@ ldconfig</userinput></screen>
         <term><command>gencmn</command></term>
         <listitem>
           <para>
-            generates an ICU memory-mappable data file
+            genererer en ICU minnetilordnbar datafil
           </para>
           <indexterm zone="icu gencmn">
             <primary sortas="b-gencmn">gencmn</primary>
@@ -278,7 +278,7 @@ ldconfig</userinput></screen>
         <term><command>gencnval</command></term>
         <listitem>
           <para>
-            compiles the converter's aliases file
+            kompilerer konverterens aliasfil
           </para>
           <indexterm zone="icu gencnval">
             <primary sortas="b-gencnval">gencnval</primary>
@@ -290,7 +290,7 @@ ldconfig</userinput></screen>
         <term><command>gendict</command></term>
         <listitem>
           <para>
-            compiles word lists into ICU string trie dictionaries
+            kompilerer ordlister i ICU strengtrieordbøker
           </para>
           <indexterm zone="icu gendict">
             <primary sortas="b-gendict">gendict</primary>
@@ -302,7 +302,7 @@ ldconfig</userinput></screen>
         <term><command>gennorm2</command></term>
         <listitem>
           <para>
-            builds binary data files with Unicode normalization data
+            bygger binære datafiler med Unicode normaliseringsdata
           </para>
           <indexterm zone="icu gennorm2">
             <primary sortas="b-gennorm2">gennorm2</primary>
@@ -314,7 +314,7 @@ ldconfig</userinput></screen>
         <term><command>genrb</command></term>
         <listitem>
           <para>
-            compiles a resource bundle
+            kompilerer en ressurspakke
           </para>
           <indexterm zone="icu genrb">
             <primary sortas="b-genrb">genrb</primary>
@@ -326,7 +326,7 @@ ldconfig</userinput></screen>
         <term><command>gensprep</command></term>
         <listitem>
           <para>
-            compiles StringPrep data from filtered RFC 3454 files
+            kompilerer StringPrep data fra filtrerte RFC 3454 filer
           </para>
           <indexterm zone="icu gensprep">
             <primary sortas="b-gensprep">gensprep</primary>
@@ -338,7 +338,7 @@ ldconfig</userinput></screen>
         <term><command>icu-config</command></term>
         <listitem>
           <para>
-            outputs ICU build options
+            skriver ut ICU byggealternativer
           </para>
           <indexterm zone="icu icu-config">
             <primary sortas="b-icu-config">icu-config</primary>
@@ -350,7 +350,7 @@ ldconfig</userinput></screen>
         <term><command>icuinfo</command></term>
         <listitem>
           <para>
-            outputs configuration information about the current ICU
+            sender ut konfigurasjonsinformasjon om gjeldende ICU
           </para>
           <indexterm zone="icu icuinfo">
             <primary sortas="b-icuinfo">icuinfo</primary>
@@ -362,7 +362,7 @@ ldconfig</userinput></screen>
         <term><command>icupkg</command></term>
         <listitem>
           <para>
-            extracts or modifies an ICU .dat archive
+            trekker ut eller endrer et ICU .dat arkiv
           </para>
           <indexterm zone="icu icupkg">
             <primary sortas="b-icupkg">icupkg</primary>
@@ -374,7 +374,7 @@ ldconfig</userinput></screen>
         <term><command>makeconv</command></term>
         <listitem>
           <para>
-            compiles a converter table
+            kompilerer en konverteringstabell
           </para>
           <indexterm zone="icu makeconv">
             <primary sortas="b-makeconv">makeconv</primary>
@@ -386,7 +386,7 @@ ldconfig</userinput></screen>
         <term><command>pkgdata</command></term>
         <listitem>
           <para>
-            packages data for use by ICU
+            pakker data til bruk av ICU
           </para>
           <indexterm zone="icu pkgdata">
             <primary sortas="b-pkgdata">pkgdata</primary>
@@ -398,7 +398,7 @@ ldconfig</userinput></screen>
         <term><command>uconv</command></term>
         <listitem>
           <para>
-            converts data from one encoding to another
+            konverterer data fra én koding til en annen
           </para>
           <indexterm zone="icu uconv">
             <primary sortas="b-uconv">uconv</primary>
@@ -410,7 +410,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicudata</filename></term>
         <listitem>
           <para>
-            is the data library
+            er databiblioteket
           </para>
           <indexterm zone="icu libicudata">
             <primary sortas="c-libicudata">libicudata</primary>
@@ -422,7 +422,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicui18n</filename></term>
         <listitem>
           <para>
-            is the internationalization (i18n) library
+            er internasjonaliseringsbiblioteket (i18n)
           </para>
           <indexterm zone="icu libicui18n">
             <primary sortas="c-libicui18n">libicui18n</primary>
@@ -434,7 +434,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicuio</filename></term>
         <listitem>
           <para>
-            is the ICU I/O (unicode stdio) library
+            er ICU I/O biblioteket (unicode stdio)
           </para>
           <indexterm zone="icu libicuio">
             <primary sortas="c-libicuio">libicuio</primary>
@@ -446,7 +446,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicule</filename></term>
         <listitem>
           <para>
-            is the layout engine.
+            er layoutmotoren.
           </para>
           <indexterm zone="icu libicule">
             <primary sortas="c-libicule">libicule</primary>
@@ -458,7 +458,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libiculx</filename></term>
         <listitem>
           <para>
-            is the layout extensions engine.
+            er layoututvidelsesmotoren.
           </para>
           <indexterm zone="icu libiculx">
             <primary sortas="c-libiculx">libiculx</primary>
@@ -470,7 +470,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicutest</filename></term>
         <listitem>
           <para>
-            is the test library
+            er testbiblioteket
           </para>
           <indexterm zone="icu libicutest">
             <primary sortas="c-libicutest">libicutest</primary>
@@ -482,7 +482,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicutu</filename></term>
         <listitem>
           <para>
-            is the tool utility library
+            er verktøybiblioteket
           </para>
           <indexterm zone="icu libicutu">
             <primary sortas="c-libicutu">libicutu</primary>
@@ -494,7 +494,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libicuuc</filename></term>
         <listitem>
           <para>
-            is the common library
+            er fellesbiblioteket
           </para>
           <indexterm zone="icu libicuuc">
             <primary sortas="c-libicuuc">libicuuc</primary>

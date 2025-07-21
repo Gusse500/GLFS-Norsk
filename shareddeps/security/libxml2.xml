@@ -19,11 +19,11 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libxml2</title>
+    <title>Introduksjon til libxml2</title>
 
     <para>
-      The libxml2 package contains libraries
-      and utilities used for parsing XML files.
+      libxml2 pakken inneholder biblioteker og 
+      verktøy som brukes til å analysere XML filer.
     </para>
 
     &abi-break;
@@ -31,26 +31,26 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&libxml2-download;"/>
+          Nedlasting: <ulink url="&libxml2-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&dl-root;/libxml2/libxml2-&libxml2-version;-fix_parse_blanks-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">libxml2 Dependencies</bridgehead>
+    <bridgehead renderas="sect3">libxml2 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="icu"/>
     </para>
@@ -58,19 +58,19 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libxml2</title>
+    <title>Installasjon av libxml2</title>
 
 <!--
     <para>
-      First, apply a patch from upstream:
+      Først, påfør en oppdatering fra oppstrøms:
     </para>
 
 <screen><userinput>patch -Np1 -i ../libxml2-&libxml2-version;-fix_parse_blanks-1.patch</userinput></screen>
 -->
 
     <para>
-      Install libxml2 by running the following
-      commands:
+      Installer libxml2 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr           \
@@ -83,14 +83,14 @@
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      Finally, prevent some packages from unnecessarily linking to ICU using
-      the following commands as the &root; user:
+      Til slutt, forhindre at noen pakker unødvendig lenker til ICU ved å bruke 
+      følgende kommandoer som &root; bruker:
     </para>
 
 <screen role="root"><userinput>rm -vf /usr/lib/libxml2.la &amp;&amp;
@@ -99,11 +99,11 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of libxml2</title>
+    <title>lib32 Installasjon av libxml2</title>
 
     <para>
-      Install lib32-libxml2 by running the following
-      commands:
+      Installer lib32-libxml2 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -120,7 +120,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -132,49 +132,49 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     &static-libraries;
 
     <para>
-      <parameter>--with-history</parameter>: This switch enables
-      Readline support when running
-      <command>xmlcatalog</command> or <command>xmllint</command> in shell mode.
+      <parameter>--with-history</parameter>: Denne bryteren aktiverer 
+      Readline støtte når den kjører <command>xmlcatalog</command> 
+      eller <command>xmllint</command> i skallmodus.
     </para>
 
     <para>
-      <parameter>--with-icu</parameter>: This switch enables support for
-      ICU, which provides additional Unicode support.
-      This is needed for some packages outside of GLFS, such as for QtWebEngine.
+      <parameter>--with-icu</parameter>: Denne bryteren aktiverer støtte for 
+      ICU, som gir ytterligere Unicode støtte. Dette er nødvendig for noen 
+      pakker utenfor GLFS, for eksempel for QtWebEngine.
     </para>
 
     <para>
-      <parameter>PYTHON=/usr/bin/python3</parameter>: Allows building
-      the libxml2 module with Python3 instead of Python2.
+      <parameter>PYTHON=/usr/bin/python3</parameter>: Tillater bygging av 
+      libxml2 modulen med Python3 i stedet for Python2.
     </para>
 
     <para>
-      <parameter>--without-python</parameter>: This switch disables building
-      this package for 32-bit on a 64-bit system with Python support as it
-      cannot find Python.
+      <parameter>--without-python</parameter>: Denne bryteren deaktiverer 
+      byggingen av denne pakken for 32-bit på et 64-bit system med Python 
+      støtte, ettersom den ikke finner Python.
     </para>
 
 <!--
     <para>
-      <option>- -with-icu</option>: Add this switch if you have built
-      <xref linkend="icu"/>, for better unicode support.
+      <option>- -with-icu</option>: Legg til denne bryteren hvis du har bygget
+      <xref linkend="icu"/>, for bedre Unicode støtte.
     </para>
 
     <note>
       <para>
-        If the <option>- -with-icu</option> switch is used, the BLFS editors
-        recommend removing unneeded references to the ICU libraries. This
-        will prevent many packages that use libxml2 from unnecessarily linking
-        to the ICU libraries.  This, in turn, will prevent the need for
-        rebuilding many packages when upgrading ICU to a new major version.
-        After installing libxml2, as the &root; user, issue:
+        Hvis <option>- -with-icu</option> bryteren brukes, anbefaler BLFS 
+        redaktørene å fjerne unødvendige referanser til ICU bibliotekene. 
+        Dette vil forhindre at mange pakker som bruker libxml2 unødvendig lenker 
+        til ICU bibliotekene. Dette vil igjen forhindre behovet for å 
+        gjenoppbygge mange pakker når du oppgraderer ICU til en ny hovedversjon. 
+        Etter å ha installert libxml2, som &root; bruker, utsted:
       </para>
 
 <screen role="nodump"><userinput>rm -vf /usr/lib/libxml2.la &amp;&amp;
@@ -185,17 +185,17 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           xml2-config,
-          xmlcatalog, and
+          xmlcatalog, og
           xmllint
         </seg>
         <seg>
@@ -204,14 +204,14 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
         <seg>
           /usr/include/libxml2,
           /usr/lib/cmake/libxml2,
-          /usr/share/doc/libxml2-&libxml2-version;, and
+          /usr/share/doc/libxml2-&libxml2-version;, og
           /usr/share/gtk-doc/html/libxml2
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -219,8 +219,8 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
         <term><command>xml2-config</command></term>
         <listitem>
           <para>
-            determines the compile and linker flags that should be used to
-            compile and link programs that use
+            bestemmer kompilerings og lenker flaggene som skal brukes til å 
+            kompilere og lenke programmer som bruker
             <filename class="libraryfile">libxml2</filename>
           </para>
           <indexterm zone="libxml2 xml2-config">
@@ -233,7 +233,7 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
         <term><command>xmlcatalog</command></term>
         <listitem>
           <para>
-            is used to monitor and manipulate XML and SGML catalogs
+            brukes til å overvåke og manipulere XML og SGML kataloger
           </para>
           <indexterm zone="libxml2 xmlcatalog">
             <primary sortas="b-xmlcatalog">xmlcatalog</primary>
@@ -245,8 +245,8 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
         <term><command>xmllint</command></term>
         <listitem>
           <para>
-            parses XML files and outputs reports (based upon options) to detect
-            errors in XML coding
+            analyserer XML filer og sender ut rapporter (basert på alternativer) 
+            for å oppdage feil i XML koding
           </para>
           <indexterm zone="libxml2 xmllint">
             <primary sortas="b-xmllint">xmllint</primary>
@@ -258,8 +258,8 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
         <term><filename class="libraryfile">libxml2</filename></term>
         <listitem>
           <para>
-            provides functions for programs to parse files that use the XML
-            format
+            tilbyr funksjoner for programmer for å analysere filer som bruker 
+            XML formatet
           </para>
           <indexterm zone="libxml2 libxml2-lib">
             <primary sortas="c-libxml2">libxml2</primary>
