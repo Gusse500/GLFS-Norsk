@@ -19,45 +19,45 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to elogind</title>
+    <title>Introduksjon til elogind</title>
 
     <para>
-      elogind is the
-      systemd project's "logind", extracted to
-      be a standalone daemon.  It integrates with <xref linkend="linux-pam"/>
-      to track all the users logged in to a system, and whether they
-      are logged in graphically, on the console, or remotely.
-      Elogind exposes this information via the
+      elogind er systemd prosjektets «innlogging», 
+      utviklet for å være en frittstående daemon. 
+      Den integreres med <xref linkend="linux-pam"/>
+      å spore alle brukerne som er logget inn på et system, og om de er logget 
+      inn grafisk, på konsollen eller eksternt. Elogin eksponerer denne 
+      informasjonen via
       standard org.freedesktop.login1 D-Bus
-      interface, and also through the file system using systemd's standard
-      <filename class="directory">/run/systemd</filename> layout.
+      grensesnittet, og også gjennom filsystemet ved hjelp av systemds standard
+      <filename class="directory">/run/systemd</filename> oppsett.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&elogind-download;"/>
+          Nedlasting: <ulink url="&elogind-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">elogind Dependencies</bridgehead>
+    <bridgehead renderas="sect3">elogind Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref role="runtime" revision="sysv" linkend="dbus-pass1"/> (runtime),
-      <xref linkend="linux-pam"/><phrase revision="sysv">,</phrase> and
-      <xref role="runtime" linkend="polkit"/> (runtime)
+      <xref role="runtime" revision="sysv" linkend="dbus-pass1"/> (kjøretid),
+      <xref linkend="linux-pam"/><phrase revision="sysv">,</phrase> og
+      <xref role="runtime" linkend="polkit"/> (kjøretid)
     </para>
 
   </sect2>
 
   <sect2 role="kernel" id="elogind-kernel">
-    <title>Kernel Configuration</title>
+    <title>Kjernekonfigurasjon</title>
 
     <para>
-      Enable the following options in the kernel configuration and recompile the
-      kernel if necessary:
+      Aktiver følgende alternativer i kjernekonfigurasjonen og kompiler 
+      kjernen på nytt om nødvendig:
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -69,11 +69,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of elogind</title>
+    <title>Installasjon av elogind</title>
 
     <para>
-      Install elogind by running the following
-      commands:
+      Installer elogind ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -89,7 +89,7 @@ meson setup ..                               \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install                                           &amp;&amp;
@@ -99,11 +99,11 @@ ln -sfvn elogind /usr/include/systemd</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of elogind</title>
+    <title>lib32 Installasjon av elogind</title>
 
     <para>
-      Install lib32-elogind by running the following
-      commands:
+      Installer lib32-elogind ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -119,7 +119,7 @@ meson setup ..                               \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                       &amp;&amp;
@@ -131,71 +131,71 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <!--
     <para>
-      <command>sed ... meson.build</command>: This change allows the
-      package to be built without polkit being installed (it is still a
-      runtime dependency) but able to use polkit after that package is
-      installed.
+      <command>sed ... meson.build</command>: Denne endringen tillater at 
+      pakken kan bygges uten at polkit er installert (det er fortsatt en 
+      kjøretids avhengighet), men at polkit kan brukes etter at pakken er 
+      installert.
     </para>
 
     <para>
-      <command>sed ... src/login/logind.c</command>: This change allows the
-      elogind daemon to exit when it is disconnected from dbus (for example
-      when dbus is killed).
+      <command>sed ... src/login/logind.c</command>: Denne endringen tillater 
+      at elogind daemonen avsluttes når den kobles fra dbus (for eksempel når 
+      dbus avsluttes).
     </para>
     -->
     <para>
       <parameter>-D docdir=/usr/share/doc/elogind-&elogind-version;</parameter>:
-      This is needed to install documentation in a versioned directory.
+      Dette er nødvendig for å installere dokumentasjon i en versjonsmappe.
     </para>
 
     <para>
-      <parameter>-D cgroup-controller=elogind</parameter>: This switch is
-      necessary to build this package when the kernel is not built with
-      <option>CONFIG_CGROUPS</option> enabled.  Note that
-      elogind strictly needs
-      a kernel with <option>CONFIG_CGROUPS</option> enabled at runtime,
-      but this switch will allow building the package first.
+      <parameter>-D cgroup-controller=elogind</parameter>: Denne bryteren er 
+      nødvendig for å bygge denne pakken når kjernen ikke er bygget med
+      <option>CONFIG_CGROUPS</option> aktivert. Merk at 
+      elogind strengt tatt trenger 
+      en kjerne med <option>CONFIG_CGROUPS</option> aktivert under kjøring, 
+      men denne bryteren vil tillate bygging av pakken først.
     </para>
 
     <para>
-      <parameter>-D dbuspolicydir=/etc/dbus-1/system.d</parameter>: This switch
-      sets the location of the D-Bus policy
-      directory.
+      <parameter>-D dbuspolicydir=/etc/dbus-1/system.d</parameter>: Denne 
+      bryteren angir plasseringen til D-Bus-policy 
+      mappen.
     </para>
 
     <para>
-      <parameter>-D dev-kvm-mode=0660</parameter>: The LFS udev rule sets the
-      mode of <filename class='devicefile'>/dev/kvm</filename> to 0660.
-      This option ensures the elogind udev rules consistent with the LFS
-      configuration.
+      <parameter>-D dev-kvm-mode=0660</parameter>: LFS udev regelen angir 
+      modusen til <filename class='devicefile'>/dev/kvm</filename> til 0660.
+      Dette alternativet sikrer at elogind udev reglene er konsistente med 
+      LFS konfigurasjonen.
     </para>
 
     <para>
-      <option>-D default-kill-user-processes=false</option>: Determines whether
-      the processes of a user should be killed when the user logs out. The
-      default is <emphasis>true</emphasis>, but this defeats the traditional
-      use of <command>screen</command> or <command>tmux</command>. This can
-      also be changed in the configuration file (see below).
+      <option>-D default-kill-user-processes=false</option>: Bestemmer om 
+      prosessene til en bruker skal avsluttes når brukeren logger ut. 
+      Standardverdien er <emphasis>true</emphasis>, men dette motvirker den 
+      tradisjonelle bruken av <command>screen</command> eller <command>tmux</command>. 
+      Dette kan også endres i konfigurasjonsfilen (se nedenfor).
     </para>
 
     <para>
-      <command>ln -s ...</command>: These commands install symlinks so that
-      software packages can find the systemd-compatible library and headers.
+      <command>ln -s ...</command>: Disse kommandoene installerer symbollenker slik 
+      at programvarepakker kan finne det systemd kompatible biblioteket og deklarasjonene.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-  <title>Configuring elogind</title>
+  <title>Konfigurere elogind</title>
 
     <sect3 id="elogind-config">
-      <title>Config File</title>
+      <title>Konfigurasjonsfil</title>
       <para>
         <filename>/etc/elogind/logind.conf</filename>
       </para>
@@ -206,26 +206,26 @@ ldconfig</userinput></screen>
       </indexterm>
     </sect3>
 
-    <sect3><title>Configuration Information</title>
+    <sect3><title>Konfigurasjonsinformasjon</title>
 
       <para>
-        The installed file <filename>/etc/elogind/logind.conf</filename>
-        contains all the possible options with their defaults, commented
-        out. You may wish to disable automatically killing user processes when the user logs
-        out, by running, as the <systemitem class="username">root</systemitem>
-        user:
+        Den installerte filen <filename>/etc/elogind/logind.conf</filename>
+        inneholder alle mulige alternativer med standardverdiene, kommentert ut. 
+        Du kan ønske å deaktivere automatisk avslutning av brukerprosesser når 
+        brukeren logger ut, ved å kjøre, som 
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>sed -e '/\[Login\]/a KillUserProcesses=no' \
     -i /etc/elogind/logind.conf</userinput></screen>
 
       <para>
-        Each user will need to register a user session using
-        Linux-PAM at login. The
-        <filename>/etc/pam.d/system-session</filename> file needs to
-        be modified and a new file must be created in order for
-        <command>elogind</command> to work correctly. Run the following
-        commands as the <systemitem class="username">root</systemitem> user:
+        Hver bruker må registrere en brukerøkt ved hjelp av 
+        Linux-PAM ved innlogging.
+        <filename>/etc/pam.d/system-session</filename> filen må endres, 
+        og en ny fil må opprettes for at
+        <command>elogind</command> for at den skal fungere riktig. Kjør følgende 
+        kommandoer som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>cat &gt;&gt; /etc/pam.d/system-session &lt;&lt; "EOF" &amp;&amp;
@@ -256,26 +256,26 @@ password required    pam_deny.so
 EOF</userinput></screen>
 
     <note>
-      <para>Now continue on until you reach <xref linkend="dbus"/>,
-      install it, and follow the configuration instructions on that page to see
-      if elogind is working properly.</para>
+      <para>Fortsett nå til du kommer til <xref linkend="dbus"/>,
+      installer den, og følg konfigurasjonsinstruksjonene på den siden for å se 
+      om elogind fungerer som den skal.</para>
     </note>
 
     </sect3>
   </sect2>
 
   <sect2 role="content" revision="sysv">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           busctl,
-          elogind-inhibit, and
+          elogind-inhibit, og
           loginctl
         </seg>
         <seg>
@@ -284,14 +284,14 @@ EOF</userinput></screen>
         <seg>
           /usr/lib/elogind,
           /etc/elogind,
-          /usr/include/elogind, and
+          /usr/include/elogind, og
           /usr/share/doc/elogind-&elogind-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -299,7 +299,7 @@ EOF</userinput></screen>
         <term><command>busctl</command></term>
         <listitem>
           <para>
-            is used to introspect and monitor the D-Bus bus
+            brukes til å introspektere og overvåke D-Bus bussen
           </para>
           <indexterm zone="elogind busctl">
             <primary sortas="b-busctl">busctl</primary>
@@ -311,8 +311,8 @@ EOF</userinput></screen>
         <term><command>elogind-inhibit</command></term>
         <listitem>
           <para>
-            is used to execute a program with a shutdown, sleep or idle
-            inhibitor lock taken
+            brukes til å kjøre et program med en avstengnings, hvile eller 
+            inaktiv funksjon inhibitorlås aktivert
           </para>
           <indexterm zone="elogind elogind-inhibit">
             <primary sortas="b-elogind-inhibit">elogind-inhibit</primary>
@@ -324,8 +324,8 @@ EOF</userinput></screen>
         <term><command>loginctl</command></term>
         <listitem>
           <para>
-            is used to introspect and control the state of the elogind Login
-            Manager
+            brukes til å introspektere og kontrollere tilstanden til elogind 
+            påloggingsadministratoren.
           </para>
           <indexterm zone="elogind loginctl">
             <primary sortas="b-loginctl">loginctl</primary>
@@ -337,7 +337,7 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libelogind</filename></term>
         <listitem>
           <para>
-            is the main elogind utility library
+            er det viktigste elogind verktøybiblioteket
           </para>
           <indexterm zone="elogind libelogind">
             <primary sortas="c-libelogind">libelogind</primary>

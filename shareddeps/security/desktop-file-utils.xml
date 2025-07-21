@@ -19,29 +19,29 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Desktop File Utils</title>
+    <title>Introduksjon til Skrivebord Filverktøy</title>
 
     <para>
-      The Desktop File Utils package contains
-      command line utilities for working with <ulink
+      Skrivebord Filverktøy pakken inneholder 
+      kommandolinjeverktøy for å jobbe med <ulink
       url="https://standards.freedesktop.org/desktop-entry-spec/latest/">
-      Desktop entries</ulink>. These utilities are used by Desktop
-      Environments and other applications to manipulate the MIME-types
-      application databases and help adhere to the Desktop Entry
-      Specification.
+      Desktop entries</ulink>. Disse verktøyene brukes av 
+      skrivebordsmiljøer og andre applikasjoner for å manipulere 
+      MIME-typer applikasjonsdatabaser og bidra til å overholde 
+      skrivebordsoppføringsspesifikasjonen .
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&dfu-download;"/>
+          Nedlasting: <ulink url="&dfu-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Desktop File Utils Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Skrivebord Filverktøy Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="glib2"/>
     </para>
@@ -49,22 +49,22 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Desktop File Utils</title>
+    <title>Installasjon av Skrivebord Filverktøy</title>
 
     <warning>
       <para>
-        If you are upgrading from a previous version of desktop-file-utils that
-        used the Autotools method of installing and configuring the package,
-        you must remove the desktop-file-edit symlink by using the following
-        commands.
+        Hvis du oppgraderer fra en tidligere versjon av desktop-file-utils 
+        som brukte Autotools metoden for å installere og konfigurere pakken, 
+        må du fjerne den symbolske lenken desktop-file-edit ved å bruke 
+        følgende kommandoer.
       </para>
 <screen role="root"><userinput>rm -fv /usr/bin/desktop-file-edit</userinput></screen>
     </warning>
     <!-- Works around a bug in meson's symlink creation exposed by this package -->
 
     <para>
-      Install Desktop File Utils by
-      running the following commands:
+      Installer Skrivebord Filverktøy ved å
+      kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -74,11 +74,11 @@ meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -86,7 +86,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
@@ -95,41 +95,41 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Desktop File Utils</title>
+    <title>Konfigurere Skrivebord Filverktøy</title>
 
     <sect3>
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        The <ulink
+        <ulink
         url="https://standards.freedesktop.org/basedir-spec/basedir-spec-latest.html">XDG
-        Base Directory</ulink> specification defines the standard locations for
-        applications to place data and configuration files. These files can be
-        used, for instance, to define the menu structure and menu items in a
-        desktop environment.
+        Base Directory</ulink> spesifikasjonen definerer standardplasseringene 
+        for applikasjoner for å plassere data og konfigurasjonsfiler. Disse 
+        filene kan for eksempel brukes til å definere menystrukturen og 
+        menyelementene i et skrivebordsmiljø.
       </para>
 
       <para>
-        The default location for configuration files to be installed
-        is <filename class="directory">/etc/xdg</filename>, and the default
-        locations for data files are <filename
-        class="directory">/usr/local/share</filename> and <filename
-        class="directory">/usr/share</filename>. These locations can be
-        extended with the environment variables <envar>XDG_CONFIG_DIRS</envar>
-        and <envar>XDG_DATA_DIRS</envar>, respectively. The
-        GNOME, KDE and
-        XFCE environments respect these
-        settings.
+        Standardplasseringen for installasjon av konfigurasjonsfiler
+        er <filename class="directory">/etc/xdg</filename>, og standard 
+        plasseringene for datafiler er <filename
+        class="directory">/usr/local/share</filename> og <filename
+        class="directory">/usr/share</filename>. Disse plasseringene kan 
+        utvides med miljøvariablene <envar>XDG_CONFIG_DIRS</envar>
+        og <envar>XDG_DATA_DIRS</envar>, henholdsvis. 
+        GNOME, KDE og 
+        XFCE miljøene respekterer disse 
+        innstillingene.
       </para>
 
       <para>
-        When a package installs a <filename>.desktop</filename> file
-        to a location in one of the base data directories, the database
-        that maps MIME-types to available applications can be updated. For
-        instance, the cache file at
-        <filename>/usr/share/applications/mimeinfo.cache</filename> can
-        be rebuilt by executing the following command as the <systemitem
-        class="username">root</systemitem> user:
+        Når en pakke installerer en <filename>.desktop</filename> fil
+        til en plassering i en av basisdatamappene, kan databasen som tilordner 
+        MIME-typer til tilgjengelige applikasjoner oppdateres. For eksempel, 
+        hurtigbufferfilen på
+        <filename>/usr/share/applications/mimeinfo.cache</filename> kan
+        gjenoppbygges ved å kjøre følgende kommando som <systemitem
+        class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>install -vdm755 /usr/share/applications &amp;&amp;
@@ -140,12 +140,12 @@ update-desktop-database /usr/share/applications</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -154,16 +154,16 @@ update-desktop-database /usr/share/applications</userinput></screen>
           update-desktop-database
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -171,7 +171,7 @@ update-desktop-database /usr/share/applications</userinput></screen>
         <term><command>desktop-file-edit</command></term>
         <listitem>
           <para>
-            is used to modify an existing desktop file entry
+            brukes til å endre en eksisterende filoppføring på skrivebordet
           </para>
           <indexterm zone="desktop-file-utils desktop-file-edit">
             <primary sortas="b-desktop-file-edit">desktop-file-edit</primary>
@@ -183,9 +183,9 @@ update-desktop-database /usr/share/applications</userinput></screen>
         <term><command>desktop-file-install</command></term>
         <listitem>
           <para>
-            is used to install a new desktop file entry. It is
-            also used to rebuild or modify the MIME-types application
-            database
+            brukes til å installere en ny skrivebordsfiloppføring. 
+            Den brukes også til å gjenoppbygge eller endre MIME-type 
+            applikasjonsdatabasen
           </para>
           <indexterm zone="desktop-file-utils desktop-file-install">
             <primary sortas="b-desktop-file-install">desktop-file-install</primary>
@@ -197,7 +197,7 @@ update-desktop-database /usr/share/applications</userinput></screen>
         <term><command>desktop-file-validate</command></term>
         <listitem>
           <para>
-            is used to verify the integrity of a desktop file
+            brukes til å bekrefte integriteten til en skrivebordsfil
           </para>
           <indexterm zone="desktop-file-utils desktop-file-validate">
             <primary sortas="b-desktop-file-validate">desktop-file-validate</primary>
@@ -209,7 +209,7 @@ update-desktop-database /usr/share/applications</userinput></screen>
         <term><command>update-desktop-database</command></term>
         <listitem>
           <para>
-            is used to update the MIME-types application database
+            brukes til å oppdatere applikasjonsdatabasen for MIME-typer
           </para>
           <indexterm zone="desktop-file-utils update-desktop-database">
             <primary sortas="b-update-desktop-database">update-desktop-database</primary>
