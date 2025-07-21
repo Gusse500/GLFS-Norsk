@@ -19,91 +19,91 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Polkit</title>
+    <title>Introduksjon til Polkit</title>
 
     <para>
-      Polkit is a toolkit for defining and handling
-      authorizations. It is used for allowing unprivileged processes to
-      communicate with privileged processes.
+      Polkit er et verktøysett for å definere og håndtere autorisasjoner. 
+      Det brukes til å tillate uprivilegerte prosesser å kommunisere med 
+      privilegerte prosesser.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&polkit-download;"/>
+          Nedlasting: <ulink url="&polkit-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Påkrevd oppdatering:
           <ulink url="&patch-root;/polkit-&polkit-version;-security_fixes-1.patch"/>
         </para>
       </listitem>
       <listitem>
         <para>
-          Required patch:
+          Påkrevd oppdatering:
           <ulink url="&patch-root;/polkit-&polkit-version;-js91-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Polkit Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Polkit Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="duktape"/> and
+      <xref linkend="duktape"/> og
       <xref linkend="glib2"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="linux-pam"/><phrase revision="sysv"> and
+      <xref linkend="linux-pam"/><phrase revision="sysv"> og
       <xref linkend="elogind"/></phrase>
     </para>
 
     <note>
       <para>
-        Since <phrase revision="sysv"><command>elogind</command></phrase>
+        Siden <phrase revision="sysv"><command>elogind</command></phrase>
         <phrase revision="systemd"><command>systemd-logind</command></phrase>
-        uses PAM to register user sessions, it is a good idea to build
-        Polkit with PAM support so
+        bruker PAM til å registrere brukerøkter, er det lurt å bygge Polkit med 
+        PAM støtte slik at
         <phrase revision="sysv"><command>elogind</command></phrase>
         <phrase revision="systemd"><command>systemd-logind</command></phrase>
-        can track Polkit sessions.
+        kan spore Polkit økter.
       </para>
     </note>
 
-    <bridgehead renderas="sect4" revision="systemd">Required Runtime Dependencies</bridgehead>
+    <bridgehead renderas="sect4" revision="systemd">Påkrevd Kjøretidsavhengigheter</bridgehead>
     <para role="required" revision="systemd">
       <xref role="runtime" linkend="systemd"/>
     </para>
 
     <bridgehead renderas="sect4" id="polkit-agent" xreflabel="Polkit Authentication Agent">
-      Optional Runtime Dependencies
+      Valgfri Kjøretidsavhengigheter
     </bridgehead>
     <para role="optional">
-      One polkit authentication agent for using polkit in the graphical
-      environment; this will greatly depend on what desktop you are running.
+      Én polkit autentiseringsagent for bruk av polkit i det grafiske miljøet; 
+      dette vil i stor grad avhenge av hvilket skrivebord du kjører.
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Polkit</title>
+    <title>Installasjon av Polkit</title>
 
     <para>
-      There should be a dedicated user and group to take control
-      of the <command>polkitd</command> daemon after it is
-      started. <emphasis>IF</emphasis> you have not already created a
-      dedicated user and group for <command>polkitd</command>,
-      issue the following commands as the
-      <systemitem class="username">root</systemitem> user:
+      Det bør være en dedikert bruker og gruppe som tar kontroll 
+      over <command>polkitd</command> daemon etter at den er
+      startet. <emphasis>HVIS</emphasis> du ikke har allerede opprettet en 
+      dedikert bruker og gruppe for <command>polkitd</command>,
+      utfør følgende kommandoer som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>groupadd -fg 27 polkitd &amp;&amp;
@@ -111,8 +111,8 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
         -g polkitd -s /bin/false polkitd</userinput></screen>
 
     <para>
-      Install Polkit by running the following
-      commands:
+      Installer Polkit ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen revision="systemd"><userinput>mkdir build &amp;&amp;
@@ -143,13 +143,13 @@ meson setup ..                     \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
     <para revision="sysv">
-      Remove some files that aren't useful on a SysV system as the &root; user:
+      Fjern noen filer som ikke er nyttige på et SysV system som &root; bruker:
     </para>
 
 <screen role="root" revision="sysv"><userinput>rm -v /tmp/*.service &amp;&amp;
@@ -158,66 +158,65 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D os_type=lfs</parameter>: This switch ensures that
-      even if distribution auto detection fails, the distribution/OS type
-      will be hardcoded in Polkit.
+      <parameter>-D os_type=lfs</parameter>: Denne bryteren sikrer at 
+      selv om automatisk deteksjon av distribusjon mislykkes, 
+      vil distribusjons/OS typen bli hardkodet i Polkit.
     </para>
 
     <para>
-      <parameter>-D man=false</parameter>: This option disables generating and
-      installing manual pages.
+      <parameter>-D man=false</parameter>: Dette alternativet deaktiverer 
+      generering og installasjon av manualsider.
     </para>
 
     <para>
-      <option>-D authfw=shadow</option>: This switch enables the
-      package to use the Shadow rather than the
-      Linux PAM Authentication framework. Use it
-      if you have not installed Linux PAM.
+      <option>-D authfw=shadow</option>: Denne bryteren lar pakken 
+      bruke Shadow i stedet for Linux PAM autentiseringsrammeverket. 
+      Bruk den hvis du ikke har installert Linux PAM.
     </para>
 
     <para>
-      <option>-D introspection=false</option>: This option disables GObject
-      Introspection support if you are sure you don't need it.
+      <option>-D introspection=false</option>: Dette alternativet deaktiverer 
+      støtte for GObject Introspection hvis du er sikker på at du ikke trenger det.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           pkaction, pkcheck, <!--pk-example-frobnicate,--> pkexec,
-          pkttyagent, and polkitd
+          pkttyagent, og polkitd
         </seg>
         <seg>
-          libpolkit-agent-1 and
+          libpolkit-agent-1 og
           libpolkit-gobject-1
         </seg>
         <seg>
           /etc/polkit-1,
           /usr/include/polkit-1,
           /usr/lib/polkit-1,
-          /usr/share/gtk-doc/html/polkit-1, and
+          /usr/share/gtk-doc/html/polkit-1, og
           /usr/share/polkit-1
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -225,7 +224,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>pkaction</command></term>
         <listitem>
           <para>
-            is used to obtain information about registered PolicyKit actions
+            brukes til å innhente informasjon om registrerte PolicyKit handlinger
           </para>
           <indexterm zone="polkit pkaction">
             <primary sortas="b-pkaction">pkaction</primary>
@@ -237,7 +236,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>pkcheck</command></term>
         <listitem>
           <para>
-            is used to check whether a process is authorized for action
+            brukes til å sjekke om en prosess er autorisert for handling
           </para>
           <indexterm zone="polkit pkcheck">
             <primary sortas="b-pkcheck">pkcheck</primary>
@@ -250,8 +249,8 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>pk-example-frobnicate</command></term>
         <listitem>
           <para>
-            is an example program to test the <command>pkexec</command>
-            command
+            er et eksempelprogram for å teste <command>pkexec</command>
+            kommandoen
           </para>
           <indexterm zone="polkit pk-example-frobnicate">
             <primary sortas="b-pk-example-frobnicate">pk-example-frobnicate</primary>
@@ -264,7 +263,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>pkexec</command></term>
         <listitem>
           <para>
-            allows an authorized user to execute a command as another user
+            lar en autorisert bruker utføre en kommando som en annen bruker
           </para>
           <indexterm zone="polkit pkexec">
             <primary sortas="b-pkexec">pkexec</primary>
@@ -276,7 +275,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>pkttyagent</command></term>
         <listitem>
           <para>
-            is used to start a textual authentication agent for the subject
+            brukes til å starte en tekstlig autentiseringsagent for emnet
           </para>
           <indexterm zone="polkit pkttyagent">
             <primary sortas="b-pkttyagent">pkttyagent</primary>
@@ -288,8 +287,8 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><command>polkitd</command></term>
         <listitem>
           <para>
-            provides the org.freedesktop.PolicyKit1 D-Bus
-            service on the system message bus
+            gir org.freedesktop.PolicyKit1 D-Bus
+            tjenesten på systemmeldingsbussen
           </para>
           <indexterm zone="polkit polkitd">
             <primary sortas="b-polkitd">polkitd</primary>
@@ -301,8 +300,8 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><filename class="libraryfile">libpolkit-agent-1</filename></term>
         <listitem>
           <para>
-            contains the Polkit authentication
-            agent API functions
+            inneholder Polkit autentiseringsagent 
+            API funksjonene
           </para>
           <indexterm zone="polkit libpolkit-agent-1">
             <primary sortas="c-libpolkit-agent-1">libpolkit-agent-1</primary>
@@ -314,7 +313,7 @@ rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
         <term><filename class="libraryfile">libpolkit-gobject-1</filename></term>
         <listitem>
           <para>
-            contains the Polkit authorization API functions
+            inneholder Polkit autorisasjons API funksjonene
           </para>
           <indexterm zone="polkit libpolkit-gobject-1">
             <primary sortas="c-libpolkit-gobject-1">libpolkit-gobject-1</primary>

@@ -19,29 +19,29 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Linux PAM</title>
+    <title>Introduksjon til Linux PAM</title>
 
     <para>
-      The Linux PAM package contains
-      Pluggable Authentication Modules used by the local
-      system administrator to control how application programs authenticate
-      users.
+      Linux PAM pakken inneholder pluggbare 
+      autentiseringsmoduler som brukes av den 
+      lokale systemadministratoren for å kontrollere 
+      hvordan applikasjonsprogrammer autentiserer brukere.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&linux-pam-download;"/>
+          Nedlasting: <ulink url="&linux-pam-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
-    <title>Optional Documentation</title>
+    <title>Valgfri dokumentasjon</title>
       <listitem>
         <para>
-          Download: <ulink url="&linux-pam-docs-download;"/>
+          Nedlasting: <ulink url="&linux-pam-docs-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -49,17 +49,17 @@
   </sect2>
 
   <sect2 role="kernel" id="linux-pam-kernel">
-    <title>Kernel Configuration</title>
+    <title>Kjernekonfigurasjon</title>
 
     <para>
-      For the PAM module <filename
-      class='libraryfile'>pam_loginuid.so</filename> (referred by
-      the PAM configuration file <filename>system-session</filename> if
-      <phrase revision='sysv'><xref linkend='elogind'/> is
-      built</phrase><phrase revision='systemd'><xref linkend='systemd'/> is
-      rebuilt with PAM support</phrase> later) to work,
-      a kernel configuration parameter need to be set or the module will
-      just do nothing:
+      For PAM modulen <filename
+      class='libraryfile'>pam_loginuid.so</filename> (referert av 
+      PAM konfigurasjonsfilen <filename>system-session</filename> hvis
+      <phrase revision='sysv'><xref linkend='elogind'/> er
+      bygget</phrase><phrase revision='systemd'><xref linkend='systemd'/> er
+      gjenoppbygd med PAM støtte</phrase> senere) for å fungere, 
+      må en kjernekonfigurasjonsparameter angis, 
+      ellers vil modulen bare ikke gjøre noe:
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -72,11 +72,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Linux PAM</title>
+    <title>Installasjon av Linux PAM</title>
 
     <para>
-      Compile and link Linux PAM by
-      running the following commands:
+      Kompiler og koble Linux PAM ved 
+      å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -90,34 +90,34 @@ meson setup ..        \
 ninja</userinput></screen>
 
     <para>
-      To test the results, a suitable <filename>/etc/pam.d/other</filename>
-      configuration file must exist.
+      For å teste resultatene, en passende <filename>/etc/pam.d/other</filename>
+      konfigurasjonsfil må eksistere.
     </para>
 
     <caution>
-      <title>Reinstallation or Upgrade of Linux PAM</title>
+      <title>Ny installasjon eller oppgradering av Linux PAM</title>
       <para>
-        If you have a system with Linux PAM installed and working, be careful
-        when modifying the files in
-        <filename class="directory">/etc/pam.d</filename>, since your system
-        may become totally unusable. If you want to run the tests, you do not
-        need to create another <filename>/etc/pam.d/other</filename> file. The
-        existing file can be used for the tests.
+        Hvis du har et system med Linux PAM installert og som fungerer, vær 
+        forsiktig når du endrer filene i
+        <filename class="directory">/etc/pam.d</filename>, siden systemet ditt 
+        kan bli helt ubrukelig. Hvis du vil kjøre testene, trenger du ikke å 
+        opprette en ny <filename>/etc/pam.d/other</filename> fil. Den 
+        eksisterende filen kan brukes til testene.
       </para>
 
       <para>
-         You should also be aware that <command>ninja install</command>
-         overwrites the configuration files in
-         <filename class="directory">/etc/security</filename> as well as
-         <filename>/etc/environment</filename>. If you
-         have modified those files, be sure to back them up.
+         Du bør også være klar over at <command>ninja install</command>
+         overskriver konfigurasjonsfilene i
+         <filename class="directory">/etc/security</filename> så vel som
+         <filename>/etc/environment</filename>. Hvis du har endret disse filene, 
+         må du sørge for å sikkerhetskopiere dem.
       </para>
     </caution>
 
     <para>
-      For a first-time installation, create a configuration file by issuing the
-      following commands as the <systemitem class="username">root</systemitem>
-      user:
+      For førstegangsinstallasjon, opprett en konfigurasjonsfil ved å bruke 
+      følgende kommandoer som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>install -v -m755 -d /etc/pam.d &amp;&amp;
@@ -130,35 +130,35 @@ session  required       pam_deny.so</literal>
 EOF</userinput></screen>
 
     <para>
-      Now run the tests by issuing <command>ninja test</command>.
-      Be sure the tests produced no errors before continuing the
-      installation.
+      Kjør nå testene ved å utstede <command>ninja test</command>.
+      Sørg for at testene ikke ga noen feil før du fortsetter 
+      installasjonen.
     </para>
 
     <para>
-      For a first-time installation, remove the configuration file
-      created earlier by issuing the following command as the
-      &root; user:
+      For førstegangsinstallasjon, fjern konfigurasjonsfilen som ble opprettet 
+      tidligere ved å kjøre følgende kommando som
+      &root; bruker:
     </para>
 
 <screen role="root"><userinput>rm -fv /etc/pam.d/other</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
 chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
 
     <para revision="sysv">
-      Now remove an unneeded directory as the &root; user:
+      Fjern nå en unødvendig mappe som &root; bruker:
     </para>
 
 <screen role="root" revision="sysv"><userinput>rm -rf /usr/lib/systemd</userinput></screen>
 
     <para>
-      If you downloaded the optional documentation, run the following command
-      as the &root; user:
+      Hvis du lastet ned den valgfrie dokumentasjonen, kjør følgende kommando 
+      som &root; bruker:
     </para>
 
 <screen role="root"><userinput>tar -C / -xvf ../../Linux-PAM-&linux-pam-docs-version;-docs.tar.xz</userinput></screen>
@@ -166,11 +166,11 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Linux PAM</title>
+    <title>lib32 Installasjon av Linux PAM</title>
 
     <para>
-      Install lib32-Linux-PAM by
-      running the following commands:
+      Installer lib32-Linux-PAM ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -185,8 +185,8 @@ meson setup ..                         \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem>
-      user:
+      Nå, som <systemitem class="username">root</systemitem>
+      bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -197,25 +197,25 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     <para>
-      <parameter>-D docs=disabled</parameter>: This options disables building
-      documentation that requires Docbook XML and XSLT packages.
+      <parameter>-D docs=disabled</parameter>: Dette alternativet deaktiverer 
+      bygging av dokumentasjon som krever Docbook XML og XSLT pakker.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Linux-PAM</title>
+    <title>Konfigurere Linux-PAM</title>
 
     <sect3 id="pam-config">
-      <title>Configuration Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
-        <filename>/etc/security/*</filename> and
+        <filename>/etc/security/*</filename> og
         <filename>/etc/pam.d/*</filename>
       </para>
 
@@ -230,12 +230,12 @@ ldconfig</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        Configuration information is placed in
+        Konfigurasjonsinformasjonen plasseres i
         <filename class="directory">/etc/pam.d/</filename>.
-        Here is a sample file:
+        Her er en eksempelfil:
       </para>
 
 <screen><literal># Begin /etc/pam.d/other
@@ -248,8 +248,8 @@ password        required        pam_unix.so     nullok
 # End /etc/pam.d/other</literal></screen>
 
       <para>
-        Now create some generic configuration files.  As the
-        <systemitem class="username">root</systemitem> user:
+        Lag nå noen generiske konfigurasjonsfiler. Som
+        <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>install -vdm755 /etc/pam.d &amp;&amp;
@@ -290,10 +290,10 @@ EOF
 </userinput></screen>
 
       <para>
-        Next, add a restrictive <filename>/etc/pam.d/other</filename>
-        configuration file.  With this file, programs that are PAM aware will
-        not run unless a configuration file specifically for that application
-        exists.
+        Legg deretter til en restriktiv <filename>/etc/pam.d/other</filename>
+        konfigurasjonsfil. Med denne filen vil programmer som er PAM bevisste 
+        ikke kjøre med mindre det finnes en konfigurasjonsfil spesifikt for 
+        det programmet.
       </para>
 
 <screen role="root"><userinput>cat &gt; /etc/pam.d/other &lt;&lt; "EOF"
@@ -312,20 +312,20 @@ session     required        pam_deny.so
 EOF</userinput></screen>
 
       <para>
-        The PAM man page (<command>man
-        pam</command>) provides a good starting point to learn
-        about the several fields, and allowable entries. The
-        Linux-PAM System Administrators' Guide at
+        PAM manualsiden (<command>man
+        pam</command>) gir et godt utgangspunkt for å lære om de 
+        forskjellige feltene og tillatte oppføringer. 
+        Linux-PAM System Administrators' Guide på
         <filename>/usr/share/doc/Linux-PAM-1.7.0/Linux-PAM_SAG.txt</filename>
-        is recommended for additional information.
+        anbefales for ytterligere informasjon.
       </para>
 
       <important>
         <para>
-          You should now reinstall the <xref linkend="shadow"/>
-          <phrase revision="sysv">package.</phrase>
-          <phrase revision="systemd"> and <xref linkend="systemd"/>
-          packages.</phrase>
+          Du bør nå installere på nytt <xref linkend="shadow"/>
+          <phrase revision="sysv">pakken.</phrase>
+          <phrase revision="systemd"> og <xref linkend="systemd"/>
+          pakkene.</phrase>
         </para>
       </important>
 
@@ -334,33 +334,33 @@ EOF</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           faillock, mkhomedir_helper, pam_namespace_helper,
-          pam_timestamp_check, pwhistory_helper, unix_chkpwd and
+          pam_timestamp_check, pwhistory_helper, unix_chkpwd og
           unix_update
         </seg>
         <seg>
-          libpam, libpamc, and libpam_misc
+          libpam, libpamc, og libpam_misc
         </seg>
         <seg>
           /etc/security,
           /usr/lib/security,
-          /usr/include/security and
+          /usr/include/security og
           /usr/share/doc/Linux-PAM-&linux-pam-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -368,7 +368,7 @@ EOF</userinput></screen>
         <term><command>faillock</command></term>
         <listitem>
           <para>
-            displays and modifies the authentication failure record files
+            viser og endrer filene for autentiseringsfeilregistrering
           </para>
           <indexterm zone="linux-pam faillock">
             <primary sortas="b-faillock">faillock</primary>
@@ -380,7 +380,7 @@ EOF</userinput></screen>
         <term><command>mkhomedir_helper</command></term>
         <listitem>
           <para>
-            is a helper binary that creates home directories
+            er en hjelpebinærfil som oppretter hjemmemapper
           </para>
           <indexterm zone="linux-pam mkhomedir_helper">
             <primary sortas="b-mkhomedir_helper">mkhomedir_helper</primary>
@@ -392,8 +392,8 @@ EOF</userinput></screen>
         <term><command>pam_namespace_helper</command></term>
         <listitem>
           <para>
-            is a helper program used to configure a private namespace for a
-            user session
+            er et hjelpeprogram som brukes til å konfigurere et privat navnerom 
+            for en brukerøkt
           </para>
           <indexterm zone="linux-pam pam_namespace_helper">
             <primary sortas="b-pam_namespace_helper">pam_namespace_helper</primary>
@@ -405,8 +405,8 @@ EOF</userinput></screen>
         <term><command>pwhistory_helper</command></term>
         <listitem>
           <para>
-            is a helper program that transfers password hashes from passwd or
-            shadow to opasswd
+            er et hjelpeprogram som overfører passord hasher 
+            fra passwd eller shadow til opasswd
           </para>
           <indexterm zone="linux-pam pwhistory_helper">
             <primary sortas="b-pwhistory_helper">pwhistory_helper</primary>
@@ -418,7 +418,7 @@ EOF</userinput></screen>
         <term><command>pam_tally</command></term>
         <listitem>
           <para>
-            is used to interrogate and manipulate the login counter file.
+            brukes til å avhøre og manipulere påloggingstellerfilen.
           </para>
           <indexterm zone="linux-pam pam_tally">
             <primary sortas="b-pam_tally">pam_tally</primary>
@@ -430,9 +430,9 @@ EOF</userinput></screen>
         <term><command>pam_tally2</command></term>
         <listitem>
           <para>
-            is used to interrogate and manipulate the login counter file, but
-            does not have some limitations that <command>pam_tally</command>
-            does.
+            brukes til å avhøre og manipulere påloggingstellerfilen, men har 
+            ingen begrensninger som <command>pam_tally</command>
+            har.
           </para>
           <indexterm zone="linux-pam pam_tally2">
             <primary sortas="b-pam_tally2">pam_tally2</primary>
@@ -445,7 +445,7 @@ EOF</userinput></screen>
         <term><command>pam_timestamp_check</command></term>
         <listitem>
           <para>
-            is used to check if the default timestamp is valid
+            brukes til å sjekke om standard tidsstempel er gyldig
           </para>
           <indexterm zone="linux-pam pam_timestamp_check">
             <primary sortas="b-pam_timestamp_check">pam_timestamp_check</primary>
@@ -457,7 +457,7 @@ EOF</userinput></screen>
         <term><command>unix_chkpwd</command></term>
         <listitem>
           <para>
-            is a helper binary that verifies the password of the current user
+            er en hjelpebinærfil som bekrefter passordet til den nåværende brukeren
           </para>
           <indexterm zone="linux-pam unix_chkpwd">
             <primary sortas="b-unix_chkpwd">unix_chkpwd</primary>
@@ -469,7 +469,7 @@ EOF</userinput></screen>
         <term><command>unix_update</command></term>
         <listitem>
           <para>
-            is a helper binary that updates the password of a given user
+            er en hjelpebinærfil som oppdaterer passordet til en gitt bruker
           </para>
           <indexterm zone="linux-pam unix_update">
             <primary sortas="b-unix_update">unix_update</primary>
@@ -481,8 +481,8 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">libpam</filename></term>
         <listitem>
           <para>
-            provides the interfaces between applications and the
-            PAM modules
+            sørger for grensesnitt mellom applikasjoner og
+            PAM moduler
           </para>
           <indexterm zone="linux-pam libpam">
             <primary sortas="c-libpam">libpam</primary>

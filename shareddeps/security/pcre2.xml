@@ -19,19 +19,19 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to PCRE2</title>
+    <title>Introduksjon til PCRE2</title>
 
     <para>
-      The PCRE2 package contains a new generation of
-      the Perl Compatible Regular Expression
-      libraries. These are useful for implementing regular expression pattern
-      matching using the same syntax and semantics as Perl.
+      PCRE2-pakken inneholder en ny generasjon av Perl Compatible 
+      Regular Expression biblioteker. Disse er nyttige for å 
+      implementere matching av regulære uttrykksmønstre ved å 
+      bruke samme syntaks og semantikk som Perl.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&pcre2-download;"/>
+          Nedlasting: <ulink url="&pcre2-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -39,11 +39,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of PCRE2</title>
+    <title>Installasjon av PCRE2</title>
 
     <para>
-      Install PCRE2 by running the following
-      commands:
+      Installer PCRE2 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr                       \
@@ -59,18 +59,18 @@
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of PCRE2</title>
+    <title>lib32 Installasjon av PCRE2</title>
 
     <para>
-      Install lib32-PCRE2 by running the
-      following commands:
+      Installer lib32-PCRE2 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -90,7 +90,7 @@ PKG_CONFIG_PATH="/usr/lib32/pkgconfig"          \
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -100,71 +100,71 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--enable-unicode</parameter>: This switch enables Unicode
-      support and includes the functions for handling UTF-8/16/32 character
-      strings in the library.
+      <parameter>--enable-unicode</parameter>: Denne bryteren aktiverer Unicode 
+      støtte og inkluderer funksjonene for håndtering av UTF-8/16/32 
+      tegnstrenger i biblioteket.
     </para>
 
     <para>
-      <parameter>--enable-pcre2-16</parameter>: This switch enables 16 bit
-      character support.
+      <parameter>--enable-pcre2-16</parameter>: Denne bryteren aktiverer støtte 
+      for 16-bits tegn.
     </para>
 
     <para>
-      <parameter>--enable-pcre2-32</parameter>: This switch enables 32 bit
-      character support.
+      <parameter>--enable-pcre2-32</parameter>: Denne bryteren aktiverer støtte 
+      for 32-bits tegn.
     </para>
 
     <para>
-      <parameter>--enable-pcre2grep-libz</parameter>: This switch adds support
-      for reading .gz compressed files to pcre2grep.
+      <parameter>--enable-pcre2grep-libz</parameter>: Denne bryteren legger til 
+      støtte for å lese .gzkomprimerte filer til pcre2grep.
     </para>
 
     <para>
-      <parameter>--enable-pcre2grep-libbz2</parameter>: This switch adds
-      support for reading .bz2 compressed files to
+      <parameter>--enable-pcre2grep-libbz2</parameter>: Denne bryteren legger 
+      til støtte for å lese .bz2-komprimerte filer til 
       pcre2grep.
     </para>
 
     <para>
-      <parameter>--enable-pcre2test-libreadline</parameter>: This switch adds
-      line editing and history features to the
-      pcre2test program.
+      <parameter>--enable-pcre2test-libreadline</parameter>: Denne bryteren 
+      legger til linjeredigerings- og historikkfunksjoner til 
+      pcre2test programmet.
     </para>
 
     &static-libraries;
 
     <para>
-      <parameter>--enable-jit</parameter>: this option enables Just-in-time
-      compiling, which can greatly speed up pattern matching.
+      <parameter>--enable-jit</parameter>: Dette alternativet aktiverer Just-in-time 
+      kompilering, noe som kan øke hastigheten på mønstergjenkjenning betraktelig.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
           pcre2-config,
           pcre2grep,
-          and pcre2test.
+          og pcre2test.
         </seg>
         <seg>
           libpcre2-8,
           libpcre2-16,
           libpcre2-32,
-          and libpcre2-posix
+          og libpcre2-posix
         </seg>
         <seg>
           /usr/share/doc/pcre2-&pcre2-version;
@@ -173,7 +173,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -181,9 +181,9 @@ ldconfig</userinput></screen>
         <term><command>pcre2grep</command></term>
         <listitem>
           <para>
-            is a version of grep
-            that understands
-            Perl compatible regular expressions.
+            er en versjon av grep 
+            som forstår 
+            Perl kompatible regulære uttrykk.
           </para>
           <indexterm zone="pcre2 pcre2grep">
             <primary sortas="b-pcre2grep">pcre2grep</primary>
@@ -195,8 +195,8 @@ ldconfig</userinput></screen>
         <term><command>pcre2test</command></term>
         <listitem>
           <para>
-            can test a
-            Perl compatible regular expression.
+            kan teste et 
+            Perl kompatibelt regulært uttrykk.
           </para>
           <indexterm zone="pcre2 pcre2test">
             <primary sortas="b-pcre2test">pcre2</primary>
@@ -208,8 +208,8 @@ ldconfig</userinput></screen>
         <term><command>pcre2-config</command></term>
         <listitem>
           <para>
-            outputs compilation information to programs linking against the
-            PCRE2 libraries
+            sender ut kompileringsinformasjon til programmer som lenker mot 
+            PCRE2 bibliotekene
           </para>
           <indexterm zone="pcre2 pcre2-config">
             <primary sortas="b-pcre2-config">pcre2-config</primary>
