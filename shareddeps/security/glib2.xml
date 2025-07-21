@@ -18,13 +18,13 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to GLib</title>
+    <title>Introduksjon til GLib</title>
 
     <para>
-      The GLib package contains low-level
-      libraries useful for providing data structure handling for C, portability
-      wrappers and interfaces for runtime functionality such as an
-      event loop, threads, dynamic loading and an object system.
+      GLib pakken inneholder lavnivåbiblioteker som er nyttige for å håndtere 
+      datastrukturer for C, portabilitets innpakninger og grensesnitt for 
+      kjøretidsfunksjonalitet, som for eksempel en hendelsesløkke, tråder, 
+      dynamisk lasting og et objektsystem.
     </para>
 
     &long-build-time;
@@ -32,20 +32,20 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&glib2-download;"/>
+          Nedlasting: <ulink url="&glib2-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
 
     <para>
-      <emphasis role="strong">GObject Introspection (Recommended)</emphasis>
+      <emphasis role="strong">GObject Introspection (Anbefalt)</emphasis>
     </para>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download:
+          Nedlasting:
           <ulink url="&gnome-download-http;/gobject-introspection/&gi-minor;/gobject-introspection-&gobject-introspection-version;.tar.xz"/>
         </para>
       </listitem>
@@ -53,13 +53,13 @@
 
 <!--
     <para>
-      <emphasis role="strong">Required patch to fix issues with
+      <emphasis role="strong">Nødvendig oppdatering for å fikse problemer med
       gobject-introspection-1.84.x:</emphasis>
     </para>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Påkrevd oppdatering:
           <ulink url="&dl-root;/glib/glib-&glib2-version;-upstream_fixes-1.patch"/>
         </para>
       </listitem>
@@ -67,83 +67,83 @@
 -->
 
     <para>
-      <emphasis role="strong">Patch for Log Level Selection (Optional)</emphasis>
+      <emphasis role="strong">Oppdatering for valg av loggnivå (valgfritt)</emphasis>
     </para>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Optional patch:
+          Valgfri oppdatering:
           <ulink url="&dl-root;/glib/glib-skip_warnings-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">GLib Dependencies</bridgehead>
+    <bridgehead renderas="sect3">GLib Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="pcre2"/> (if not built, Meson will try to fetch a tarball
-      of PCRE2 source code from the internet)
+      <xref linkend="pcre2"/> (hvis ikke bygget, vil Meson prøve å hente en 
+      tarball med PCRE2 kildekode fra internett)
   </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
-      <ulink url="&blfs-svn;/general/libxslt.html">libxslt</ulink> (for man-pages)
+      <ulink url="&blfs-svn;/general/libxslt.html">libxslt</ulink> (for manualsider)
     </para>
 
-    <bridgehead renderas="sect4">Additional Runtime Dependencies</bridgehead>
+    <bridgehead renderas="sect4">Ytterligere Kjøretids Avhengigheter</bridgehead>
     <para role="recommended">
-      <xref role="runtime" linkend="shared-mime-info"/> and
+      <xref role="runtime" linkend="shared-mime-info"/> og
       <xref role="runtime" linkend="desktop-file-utils"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of GLib</title>
+    <title>Installasjon av GLib</title>
 
 <!--
     <para>
-      First, fix a runtime issue caused by gobject-introspection-1.84.x:
+      Først, fiks et kjøretidsproblem forårsaket av gobject-introspection-1.84.x:
     </para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../glib-&glib2-version;-upstream_fixes-1.patch</userinput></screen>
 -->
 
     <para>
-      If desired, apply the optional patch. In many cases, applications that
-      use this library, either  directly or indirectly via other libraries.
-      This patch enables the use of an environment variable,
-      <envar>GLIB_LOG_LEVEL</envar>, that suppresses unwanted messages. The
-      value of the variable is a digit that corresponds to:
+      Hvis ønskelig, installer den valgfrie oppdateringen. I mange tilfeller, 
+      applikasjoner som bruker dette biblioteket, enten direkte eller indirekte 
+      via andre biblioteker. Denne oppdateringen muliggjør bruk av en 
+      miljøvariabel, <envar>GLIB_LOG_LEVEL</envar>, som undertrykker uønskede 
+      meldinger. Verdien til variabelen er et siffer som tilsvarer:
     </para>
 
     <simplelist>
-      <member>1  Alert</member>
-      <member>2  Critical</member>
-      <member>3  Error</member>
-      <member>4  Warning</member>
-      <member>5  Notice</member>
+      <member>1  Varsel</member>
+      <member>2  Kritisk</member>
+      <member>3  Feil</member>
+      <member>4  Advarsel</member>
+      <member>5  Merknad</member>
     </simplelist>
 
     <para>
-      For instance <userinput>export GLIB_LOG_LEVEL=4</userinput> will skip
-      output of Warning and Notice messages (and Info/Debug messages if they
-      are turned on).  If <envar>GLIB_LOG_LEVEL</envar> is not defined, normal
-      message output will not be affected.
+      For eksempel <userinput>export GLIB_LOG_LEVEL=4</userinput> vil hoppe over 
+      utdata av Advarsel og Merknads meldinger (og info-/feilsøkingsmeldinger 
+      hvis de er aktivert). Hvis <envar>GLIB_LOG_LEVEL</envar> ikke er definert, 
+      vil ikke normal meldingsutdata bli påvirket.
     </para>
 
 <screen><userinput>patch -Np1 -i ../glib-skip_warnings-1.patch</userinput></screen>
 
     <warning>
       <para>
-        If a previous version of glib is installed, move the headers out of the
-        way so that later packages do not encounter conflicts:
+        Hvis en tidligere versjon av glib er installert, flytt deklarasjonene ut 
+        av veien slik at senere pakker ikke støter på konflikter:
       </para>
 
 <screen role="root"><userinput remap="pre">if [ -e /usr/include/glib-2.0 ]; then
@@ -154,8 +154,8 @@ fi</userinput></screen>
     </warning>
 
     <para>
-      Install GLib by running the following
-      commands:
+      Installer GLib ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -173,15 +173,15 @@ meson setup ..                  \
 ninja</userinput></screen>
 
     <para>
-      As the <systemitem class="username">root</systemitem> user,
-      install this package for the first time to allow building GObject
-      Introspection:
+      Som <systemitem class="username">root</systemitem> bruker,
+      installer denne pakken for første gang for å tillate bygging av 
+      GObject Introspeksjon:
     </para>
 
     <screen role="root"><userinput>ninja install</userinput></screen>
 
     <para>
-      Build GObject Introspection:
+      Bygg GObject Introspeksjon:
     </para>
 
 <screen><userinput>tar xf ../../gobject-introspection-&gobject-introspection-version;.tar.xz &amp;&amp;
@@ -191,23 +191,23 @@ meson setup gobject-introspection-&gobject-introspection-version; gi-build \
 ninja -C gi-build</userinput></screen>
 
     <para>
-      As the &root; user, install GObject Introspection for generating the
-      introspection data of GLib libraries (required by various packages using
-      Glib, especially some GNOME packages):
+      Som &root; bruker, installer GObject Introspection for å generere 
+      introspeksjonsdata for GLib biblioteker (kreves av forskjellige pakker 
+      som bruker Glib, spesielt noen GNOME pakker):
     </para>
 
 <screen role="root"><userinput>ninja -C gi-build install</userinput></screen>
 
     <para>
-      Now generate the introspection data:
+      Generer nå introspeksjonsdataene:
     </para>
 
 <screen><userinput>meson configure -D introspection=enabled &amp;&amp;
 ninja</userinput></screen>
 
     <para>
-      As the &root; user, install this package again for the introspection
-      data:
+      Som &root; bruker, installer denne pakken på nytt for 
+      introspeksjonsdata:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -215,10 +215,10 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2>
-    <title>lib32 Installation of GLib</title>
+    <title>lib32 Installasjon av GLib</title>
 
     <para>
-      Install lib32-GLib by running the following commands:
+      Installer lib32-GLib ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -236,7 +236,7 @@ meson setup ..                  \
 ninja</userinput></screen>
 
     <para>
-      Now, as the &root; user:
+      Nå. som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -247,50 +247,50 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D man-pages=disabled</parameter>: This switch causes the
-      build to create and install the package man pages.
+      <parameter>-D man-pages=disabled</parameter>: Denne bryteren får byggingen 
+      til å opprette og installere manualsidene for pakken.
     </para>
 
     <para>
-      <parameter>-D tests=false</parameter>: This switch causes tests
-      to be built. It is disabled because it is beyond the scope of GLFS.
-      If you'd like to test glib, reference
+      <parameter>-D tests=false</parameter>: Denne bryteren forårsaker at 
+      tester blir bygget. Den er deaktivert fordi den er utenfor omfanget av 
+      GLFS. Hvis du vil teste glib, se
       <ulink url="&blfs-svn;/general/glib2.html">
-      BLFS's glib page</ulink>.
+      BLFS sin glib side</ulink>.
     </para>
 
     <para>
-      <parameter>-D glib_debug=disabled</parameter>: This switch causes the
-      build to not include some expensive checks for debugging in the built
-      programs and libraries.
+      <parameter>-D glib_debug=disabled</parameter>: Denne bryteren fører til 
+      at bygget ikke inkluderer noen dyre kontroller for feilsøking i de 
+      byggete programmene og bibliotekene.
     </para>
 
     <para>
-      <parameter>-D sysprof=disabled</parameter>: This switch disables the
-      tracing support for sysprof.  Remove this option if you want the
-      tracing support.  Note that if sysprof is not installed, removing
-      this option will cause the build system to download a copy of sysprof
-      from the Internet.
+      <parameter>-D sysprof=disabled</parameter>: Denne bryteren deaktiverer 
+      sporingsstøtten for sysprof. Fjern dette alternativet hvis du vil ha 
+      sporingsstøtten. Merk at hvis sysprof ikke er installert, vil fjerning av 
+      dette alternativet føre til at byggesystemet laster ned en kopi av 
+      sysprof fra Internett.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
-    <bridgehead renderas="sect3">GLib Contents</bridgehead>
+    <bridgehead renderas="sect3">GLib Innhold</bridgehead>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -301,14 +301,14 @@ ldconfig</userinput></screen>
           glib-genmarshal,        glib-gettextize,
           glib-mkenums,           gobject-query,
           gresource,              gsettings,
-          gtester, and            gtester-report
+          gtester, og            gtester-report
         </seg>
         <seg>
           libgio-2.0,
           libgirepository-2.0,
           libglib-2.0,
           libgmodule-2.0,
-          libgobject-2.0, and
+          libgobject-2.0, og
           libgthread-2.0
         </seg>
         <seg>
@@ -317,40 +317,40 @@ ldconfig</userinput></screen>
           /usr/lib/gio,
           /usr/lib/glib-2.0,
           /usr/share/glib-2.0, and
-          /usr/share/doc/glib-&glib2-version; (optional)
+          /usr/share/doc/glib-&glib2-version; (valgfri)
         </seg>
       </seglistitem>
     </segmentedlist>
 
-    <bridgehead renderas="sect3">GObject Introspection Contents</bridgehead>
+    <bridgehead renderas="sect3">GObject Introspection Innhold</bridgehead>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <!-- g-ir-doc-tool is installed if Mako and Markdown are present -->
       <seglistitem>
         <seg>
-          g-ir-annotation-tool, g-ir-compiler, g-ir-doc-tool (optional),
-          g-ir-generate, g-ir-inspect, and g-ir-scanner
+          g-ir-annotation-tool, g-ir-compiler, g-ir-doc-tool (valgfri),
+          g-ir-generate, g-ir-inspect, og g-ir-scanner
         </seg>
         <seg>
-          libgirepository-1.0 and
+          libgirepository-1.0 og
           _giscanner.&python3-lib-suffix;
         </seg>
         <seg>
           /usr/include/gobject-introspection-1.0,
           /usr/lib/girepository-1.0,
           /usr/lib/gobject-introspection,
-          /usr/share/gir-1.0, and
+          /usr/share/gir-1.0, og
           /usr/share/gobject-introspection-1.0
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -358,8 +358,8 @@ ldconfig</userinput></screen>
         <term><command>gapplication</command></term>
         <listitem>
           <para>
-            can be used to start applications and to send
-            messages to already-running instances of other applications
+            kan brukes til å starte applikasjoner og til å sende 
+            meldinger til allerede kjørende instanser av andre applikasjoner
           </para>
           <indexterm zone="glib2 gapplication">
             <primary sortas="b-gapplication">application</primary>
@@ -371,8 +371,8 @@ ldconfig</userinput></screen>
         <term><command>gdbus</command></term>
         <listitem>
           <para>
-            is a simple tool used for working with
-            D-Bus objects
+            er et enkelt verktøy som brukes til å jobbe med 
+            D-Bus objekter
           </para>
           <indexterm zone="glib2 gdbus">
             <primary sortas="b-gdbus">gdbus</primary>
@@ -384,8 +384,8 @@ ldconfig</userinput></screen>
         <term><command>gdbus-codegen</command></term>
         <listitem>
           <para>
-            is used to generate code and/or documentation for one or
-            more D-Bus interfaces
+            brukes til å generere kode og/eller dokumentasjon for ett eller 
+            flere D-Bus grensesnitt
           </para>
           <indexterm zone="glib2 gdbus-codegen">
             <primary sortas="b-gdbus-codegen">gdbus-codegen</primary>
@@ -397,7 +397,7 @@ ldconfig</userinput></screen>
         <term><command>gi-compile-repository</command></term>
         <listitem>
           <para>
-            converts one or more GIR files into one or more typelib files
+            konverterer én eller flere GIR filer til én eller flere typelib filer
           </para>
           <indexterm zone="glib2 gi-compile-repository">
             <primary sortas="b-gi-compile-repository">gi-compile-repository</primary>
@@ -409,7 +409,7 @@ ldconfig</userinput></screen>
         <term><command>gi-decompile-typelib</command></term>
         <listitem>
           <para>
-            is a GIR decompiler that uses the repository API
+            er en GIR dekompilator som bruker depots API
           </para>
           <indexterm zone="glib2 gi-decompile-typelib">
             <primary sortas="b-gi-decompile-typelib">gi-decompile-typelib</primary>
@@ -421,7 +421,7 @@ ldconfig</userinput></screen>
         <term><command>gi-inspect-typelib</command></term>
         <listitem>
           <para>
-            is a utility that gives information about a GI typelib
+            er et verktøy som gir informasjon om en GI typebibliotek
           </para>
           <indexterm zone="glib2 gi-inspect-typelib">
             <primary sortas="b-gi-inspect-typelib">gi-inspect-typelib</primary>
@@ -433,8 +433,8 @@ ldconfig</userinput></screen>
         <term><command>gio</command></term>
         <listitem>
           <para>
-            is a utility that makes many GIO
-            features available from the command line
+            er et verktøy som gjør mange GIO 
+            funksjoner tilgjengelige fra kommandolinjen
           </para>
           <indexterm zone="glib2 gio">
             <primary sortas="b-gio">gio</primary>
@@ -446,9 +446,9 @@ ldconfig</userinput></screen>
         <term><command>gio-querymodules</command></term>
         <listitem>
           <para>
-            is used to create a <filename>giomodule.cache</filename> file in
-            the listed directories. This file lists the implemented extension
-            points for each module that has been found
+            brukes til å lage en <filename>giomodule.cache</filename> fil i de 
+            oppførte mappene. Denne filen viser de implementerte 
+            utvidelsespunktene for hver modul som er funnet
           </para>
           <indexterm zone="glib2 gio-querymodules">
             <primary sortas="b-gio-querymodules">gio-querymodules</primary>
@@ -460,9 +460,9 @@ ldconfig</userinput></screen>
         <term><command>glib-compile-resources</command></term>
         <listitem>
           <para>
-            is used to read the resource description from a file and
-            the files that it references to create a binary resource
-            bundle that is suitable for use with the GResource API
+            brukes til å lese ressursbeskrivelsen fra en fil og filene den 
+            refererer til for å opprette en binær ressurspakke som er egnet 
+            for bruk med GResource API
           </para>
           <indexterm zone="glib2 glib-compile-resources">
             <primary sortas="b-glib-compile-resources">glib-compile-resources</primary>
@@ -474,9 +474,9 @@ ldconfig</userinput></screen>
         <term><command>glib-compile-schemas</command></term>
         <listitem>
           <para>
-            is used to compile all the GSettings XML schema files
-            in a directory into a binary file with the name
-            <filename>gschemas.compiled</filename> that can be used by GSettings
+            brukes til å kompilere alle GSettings XML skjemafilene i en mappe 
+            til en binærfil med navnet
+            <filename>gschemas.compiled</filename> som kan brukes av GSettings
           </para>
           <indexterm zone="glib2 glib-compile-schemas">
             <primary sortas="b-glib-compile-resources">glib-compile-schemas</primary>
@@ -488,7 +488,7 @@ ldconfig</userinput></screen>
         <term><command>glib-genmarshal</command></term>
         <listitem>
           <para>
-            is a C code marshaller generation utility for GLib closures
+            er et C kode marshaller genereringsverktøy for GLib lukkinger
           </para>
           <indexterm zone="glib2 glib-genmarshal">
             <primary sortas="b-glib-genmarshal">glib-genmarshal</primary>
@@ -500,8 +500,8 @@ ldconfig</userinput></screen>
         <term><command>glib-gettextize</command></term>
         <listitem>
           <para>
-            is a variant of the gettext
-            internationalization utility
+            er en variant av 
+            internasjonaliseringsverktøyet gettext
           </para>
           <indexterm zone="glib2 glib-gettextize">
             <primary sortas="b-glib-gettextize">glib-gettextize</primary>
@@ -513,7 +513,7 @@ ldconfig</userinput></screen>
         <term><command>glib-mkenums</command></term>
         <listitem>
           <para>
-            is a C language enum description generation utility
+            er et verktøy for generering av enumbeskrivelser i C språket
           </para>
           <indexterm zone="glib2 glib-mkenums">
             <primary sortas="b-glib-mkenums">glib-mkenums</primary>
@@ -525,7 +525,7 @@ ldconfig</userinput></screen>
         <term><command>gobject-query</command></term>
         <listitem>
           <para>
-            is a small utility that draws a tree of types
+            er et lite verktøy som tegner et tre av typer
           </para>
           <indexterm zone="glib2 gobject-query">
             <primary sortas="b-gobject-query">gobject-query</primary>
@@ -537,7 +537,7 @@ ldconfig</userinput></screen>
         <term><command>gresource</command></term>
         <listitem>
           <para>
-            offers a simple command line interface to GResource
+            tilbyr et enkelt kommandolinjegrensesnitt til GResource
           </para>
           <indexterm zone="glib2 gresource">
             <primary sortas="b-gresource">gresource</primary>
@@ -549,7 +549,7 @@ ldconfig</userinput></screen>
         <term><command>gsettings</command></term>
         <listitem>
           <para>
-            offers a simple command line interface to GSettings
+            tilbyr et enkelt kommandolinjegrensesnitt til GSettings
           </para>
           <indexterm zone="glib2 gsettings">
             <primary sortas="b-gsettings">gsettings</primary>
@@ -561,7 +561,7 @@ ldconfig</userinput></screen>
         <term><command>gtester</command></term>
         <listitem>
           <para>
-            is a test running utility
+            er et verktøy for testkjøring
           </para>
           <indexterm zone="glib2 gtester">
             <primary sortas="b-gtester">gtester</primary>
@@ -573,7 +573,7 @@ ldconfig</userinput></screen>
         <term><command>gtester-report</command></term>
         <listitem>
           <para>
-            is a test report formatting utility
+            er et formateringsverktøy for testrapporter
           </para>
           <indexterm zone="glib2 gtester-report">
             <primary sortas="b-gtester-report">gtester-report</primary>
@@ -585,9 +585,9 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgio-2.0</filename></term>
         <listitem>
           <para>
-            is a library providing useful classes for general purpose I/O,
-            networking, IPC, settings, and other high level application
-            functionality
+            er et bibliotek som tilbyr nyttige klasser for generell I/O, 
+            nettverk, IPC, innstillinger og annen applikasjonsfunksjonalitet 
+            på høyt nivå
           </para>
           <indexterm zone="glib2 libgio">
             <primary sortas="c-libgio">libgio-2.0</primary>
@@ -599,8 +599,8 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgirepository-2.0</filename></term>
         <listitem>
           <para>
-            is a library providing access to typelibs and introspection data
-            which describes C APIs
+            er et bibliotek som gir tilgang til typebiblioteker og 
+            introspeksjonsdata som beskriver C API
           </para>
           <indexterm zone="glib2 libgirepository">
             <primary sortas="c-libgirepository2">libgirepository-2.0</primary>
@@ -612,9 +612,9 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libglib-2.0</filename></term>
         <listitem>
           <para>
-            is a general-purpose, portable utility library, which provides
-            many useful data types, macros, type conversions, string
-            utilities, file utilities, a mainloop abstraction, and so on
+            er et allsidig, flyttbart verktøybibliotek som tilbyr mange nyttige 
+            datatyper, makroer, typekonverteringer, strengverktøy, filverktøy, 
+            en hovedløkkeabstraksjon og så videre
           </para>
           <indexterm zone="glib2 libglib">
             <primary sortas="c-libglib">libglib-2.0</primary>
@@ -626,7 +626,7 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgmodule-2.0</filename></term>
         <listitem>
           <para>
-            provides portable API for dynamically loading modules
+            tilbyr flyttbart API for dynamisk lasting av moduler
           </para>
           <indexterm zone="glib2 libgmodule">
             <primary sortas="c-libgmodule">libgmodule-2.0</primary>
@@ -638,7 +638,7 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgobject-2.0</filename></term>
         <listitem>
           <para>
-            provides the GLib base type system and object class
+            gir GLib basistypesystemet og objektklassen
           </para>
           <indexterm zone="glib2 libgobject">
             <primary sortas="c-libgobject">libgobject-2.0</primary>
@@ -650,9 +650,9 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgthread-2.0</filename></term>
         <listitem>
           <para>
-            is a skeleton library for backwards compatibility; it used to
-            be the GLib thread library but the functionalities has been
-            merged info <systemitem class='library'>libglib-2.0</systemitem>
+            er et skjelettbibliotek for bakoverkompatibilitet; det pleide å 
+            være GLib trådbiblioteket, men funksjonalitetene har blitt slått 
+            sammen inn i <systemitem class='library'>libglib-2.0</systemitem>
           </para>
           <indexterm zone="glib2 libgthread">
             <primary sortas="c-libgthread">libgthread-2.0</primary>
@@ -664,7 +664,7 @@ ldconfig</userinput></screen>
         <term><command>g-ir-annotation-tool</command></term>
         <listitem>
           <para>
-            creates or extracts annotation data from GI typelibs
+            oppretter eller trekker ut annotasjonsdata fra GI typebiblioteker
           </para>
           <indexterm zone="glib2 g-ir-annotation-tool">
             <primary sortas="b-g-ir-annotation-tool">g-ir-annotation-tool</primary>
@@ -676,8 +676,8 @@ ldconfig</userinput></screen>
         <term><command>g-ir-compiler</command></term>
         <listitem>
           <para>
-            is a counterpart of <command>gi-compile-repository</command>
-            for the old
+            er en motpart til <command>gi-compile-repository</command>
+            for det gamle
             <systemitem class='library'>libgirepository-1.0</systemitem>
             API
           </para>
@@ -691,9 +691,9 @@ ldconfig</userinput></screen>
         <term><command>g-ir-doc-tool</command></term>
         <listitem>
           <para>
-            generates Mallard files that can be viewed with
-            <command>yelp</command> or rendered to HTML with
-            <command>yelp-build</command> from
+            genererer Mallard filer som kan vises med
+            <command>yelp</command> eller gjengitt til HTML med
+            <command>yelp-build</command> fra
             <ulink url="&gnome-download-http;/yelp-tools">yelp-tools</ulink>
           </para>
           <indexterm zone="glib2 g-ir-doc-tool">
@@ -706,8 +706,8 @@ ldconfig</userinput></screen>
         <term><command>g-ir-inspect</command></term>
         <listitem>
           <para>
-            is a counterpart of <command>gi-inspect-typelib</command>
-            for the old
+            er en motpart til <command>gi-inspect-typelib</command>
+            for det gamle
             <systemitem class='library'>libgirepository-1.0</systemitem>
             API
           </para>
@@ -721,8 +721,8 @@ ldconfig</userinput></screen>
         <term><command>g-ir-generate</command></term>
         <listitem>
           <para>
-            is a counterpart of <command>gi-decompile-typelib</command>
-            for the old
+            er en motpart til <command>gi-decompile-typelib</command>
+            for det gamle
             <systemitem class='library'>libgirepository-1.0</systemitem>
             API
           </para>
@@ -736,8 +736,8 @@ ldconfig</userinput></screen>
         <term><command>g-ir-scanner</command></term>
         <listitem>
           <para>
-            is a tool which generates GIR XML files by parsing headers and
-            introspecting GObject based libraries
+            er et verktøy som genererer GIR XML filer ved å analysere 
+            deklarasjoner og introspektere GObject baserte biblioteker
           </para>
           <indexterm zone="glib2 g-ir-scanner">
             <primary sortas="b-g-ir-scanner">g-ir-scanner</primary>
@@ -749,9 +749,9 @@ ldconfig</userinput></screen>
         <term><filename class='libraryfile'>libgirepository-1.0</filename></term>
         <listitem>
           <para>
-            is a counterpart of
+            er en motpart til
             <systemitem class='library'>libgirepository-2.0</systemitem>
-            with the old 1.0 API
+            med det gamle 1.0 API
           </para>
           <indexterm zone="glib2 libgirepository-1.0">
             <primary sortas="c-libgirepository1">libgirepository-1.0</primary>
