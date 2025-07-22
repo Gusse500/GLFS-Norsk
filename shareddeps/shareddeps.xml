@@ -5,10 +5,10 @@
   %general-entities;
 ]>
 
-<part id="shareddeps" xreflabel="Shared Dependencies">
+<part id="shareddeps" xreflabel="Delte Avhengigheter">
   <?dbhtml filename="shareddeps.html" dir="shareddeps"?>
 
-  <title>Shared Dependencies</title>
+  <title>Delte Avhengigheter</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/net.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/security.xml"/>

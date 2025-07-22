@@ -19,22 +19,22 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Steam</title>
+    <title>Introduksjon til Steam</title>
 
     <para>
-      The Steam package provides a digital software
-      delivery system, store, and launcher through VALVE's proprietary runtime.
+      Steam pakken tilbyr et digitalt programvareleveringssystem, 
+      en butikk og lansering gjennom VALVEs proprietære kjøretid.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&steam-download;"/>
+          Nedlasting: <ulink url="&steam-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Steam Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Steam Avhengigheter</bridgehead>
 
     <para>
       <xref linkend="steamdeps"/>
@@ -43,25 +43,25 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Steam</title>
+    <title>Installasjon av Steam</title>
 
     <para>
-      First enable namespaces in the kernel and recompile if necessary:
+      Aktiver først navnerom i kjernen og kompiler på nytt om nødvendig:
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="steam-kernel.xml"/>
 
     <para>
-      Now make a file always exit with exit code 0 as it otherwise does nothing
-      on an LFS system besides give a passive error:
+      Gjør nå sånn at en fil alltid avsluttes med avslutningskode 0, da den 
+      ellers ikke gjør noe på et LFS system bortsett fra å gi en passiv feil:
     </para>
 
 <screen><userinput>ln -sf /usr/bin/true steamdeps</userinput></screen>
 
     <para>
-      Then install Steam by running
-      the following command as the <systemitem class="username">root
-      </systemitem> user:
+      Installer deretter Steam ved å kjøre 
+      følgende kommando som <systemitem class="username">root
+      </systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -70,106 +70,106 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <para>
-      <command>ln -sf /usr/bin/true steamdeps</command>: This command
-      makes the <filename>steamdeps</filename> Python
-       script always exit with code 0 as it uses APT and its
-       Python module, which isn't installed in LFS
-      and shouldn't be.
+      <command>ln -sf /usr/bin/true steamdeps</command>: Denne kommandoen 
+      gjør at <filename>steamdeps</filename> Python
+      skriptet alltid avsluttes med kode 0 siden det bruker APT og 
+      Python modulen, som ikke er installert i LFS og 
+      ikke skal være det.
     </para>
 
     <para>
-      <command>mv -v /usr/share/doc/steam{,-&steam-version;}</command>: This
-      command ensures the doc folder for this package is consistent with the
-      other packages.
+      <command>mv -v /usr/share/doc/steam{,-&steam-version;}</command>: Denne 
+      kommandoen sørger for at doc mappen for denne pakken er konsistent med de 
+      andre pakkene.
     </para>
 
   </sect2>
 
   <sect2>
-    <title>Using Steam</title>
+    <title>Bruke Steam</title>
 
     <para>
-      Before executing <command>steam</command>, you need to ensure you:
+      Før kjøring av <command>steam</command>, du må forsikre at du:
     </para>
 
     <itemizedlist>
       <listitem>
-        <para>Made the symlink in <xref
+        <para>Lagde den symbolske lenken i <xref
         linkend="p11-kit"/></para>
       </listitem>
       <listitem>
-        <para>Added the symlink creation instruction in the
-        <command>make-ca</command> script as detailed in <xref
+        <para>La til instruksjonen for opprettelse av symbolske lenker i
+        <command>make-ca</command> skript som beskrevet i <xref
         linkend="make-ca"/></para>
       </listitem>
       <listitem>
-        <para>Are launching in an X11 instance or have
-        Xwayland running in a
-        Wayland session</para>
+        <para>Starter i en X11 instans 
+        eller har Xwayland kjørende i en 
+        Wayland økt</para>
       </listitem>
       <listitem>
-        <para>Have a working internet connection</para>
+        <para>Ha en fungerende internettforbindelse</para>
       </listitem>
     </itemizedlist>
 
     <para>
-      After you have made sure of the points above, now you can launch
-      <command>steam</command>. This will download the runtime for the
-      Steam client. Afterwards, you will be brought
-      to the login screen. Make extra sure you have the symlink made in
-      <xref linkend="make-ca"/> or you will not be able to get past this point.
-      Then, everything should work as normal and you can go ahead and allow
-      Proton as you normally would on any given
-      Linux distribution.
+      Etter at du har forsikret deg om punktene ovenfor, kan du nå starte
+      <command>steam</command>. Dette vil laste ned kjøretidsfilen for 
+      Steam klienten. Etterpå blir du tatt til innloggingsskjermen. 
+      Sørg for at du har opprettet den symbolske lenken i
+      <xref linkend="make-ca"/> ellers vil du ikke klare å komme forbi dette 
+      punktet. Da skal alt fungere som normalt, og du kan fortsette og tillate 
+      Proton som du vanligvis ville gjort på en hvilken som helst 
+      Linux distribusjon.
     </para>
 
     <para>
-      If you find that launching any game doesn't open a window but still shows
-      that it is running, there is a good chance that
-      Steam made a change that is incompatible with
-      your current version of the kernel and you need to upgrade. Even a
-      version difference between linux-6.12.3 and linux-6.12.8 can be enough
-      for Steam or any of its runtime components
-      to refuse opening a window, although this usually doesn't prevent
-      Steam itself from launching. Even if you don't
-      upgrade this package, components downloaded by this package will get
-      updated as time goes on.
+      Hvis du opplever at oppstart av et spill ikke åpner et vindu, 
+      men fortsatt viser at det kjører, er det stor sjanse for at 
+      Steam har gjort en endring som er inkompatibel med din nåværende 
+      versjon av kjernen, og du må oppgradere. Selv en versjonsforskjell 
+      mellom linux-6.12.3 og linux-6.12.8 kan være nok til at Steam 
+      eller noen av kjøretidskomponentene nekter å åpne et vindu, 
+      selv om dette vanligvis ikke hindrer at Steam selv starter. 
+      Selv om du ikke oppgraderer denne pakken, vil komponenter 
+      som lastes ned av denne pakken bli oppdatert etter hvert 
+      som tiden går.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Tarballs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Tarball</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          bin_steam.sh, bin_steamdeps.sh, steam (link to bin_steam.sh), and
-          steamdeps (link to /usr/bin/true)
+          bin_steam.sh, bin_steamdeps.sh, steam (lenke til bin_steam.sh), og
+          steamdeps (lenke til /usr/bin/true)
         </seg>
         <seg>
           bootstraplinux_ubuntu12_32.tar.xz
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          /usr/lib/steam and
+          /usr/lib/steam og
           /usr/share/doc/steam-&steam-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -177,9 +177,9 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><command>bin_steam.sh</command></term>
         <listitem>
           <para>
-            is launcher shell script that unpacks
-            <filename>bootstraplinux_ubuntu12_32.tar.xz</filename> and properly
-            launches Steam
+            er et starte skallskript som pakker ut
+            <filename>bootstraplinux_ubuntu12_32.tar.xz</filename> og starter 
+            Steam riktig
           </para>
           <indexterm zone="steam bin_steam.sh">
             <primary sortas="b-bin_steam.sh">bin_steam.sh</primary>
@@ -191,8 +191,8 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><command>bin_steamdeps.sh</command></term>
         <listitem>
           <para>
-            is a Python script which checks
-            for dependencies using APT
+            er et Python skript som sjekker 
+            for avhengigheter ved hjelp av APT
           </para>
           <indexterm zone="steam bin_steamdeps.sh">
             <primary sortas="b-bin_steamdeps.sh">bin_steamdeps.sh</primary>
@@ -204,7 +204,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><command>steam</command></term>
         <listitem>
           <para>
-            is a symlink to <command>bin_steam.sh</command>
+            er en symbolsk lenke til <command>bin_steam.sh</command>
           </para>
           <indexterm zone="steam steam-bin">
             <primary sortas="b-steam-bin">steam</primary>
@@ -216,9 +216,9 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><command>steamdeps</command></term>
         <listitem>
           <para>
-            is symlink to <filename>/usr/bin/true</filename>, making the file
-            report <computeroutput>true</computeroutput>, or exit code 0 when
-            ran
+            er en symbolsk lenke til <filename>/usr/bin/true</filename>, som 
+            gjør at filen rapporterer <computeroutput>true</computeroutput>, 
+            eller exit kode 0 når den kjøres
           </para>
           <indexterm zone="steam steam-steamdeps">
             <primary sortas="b-steam-steamdeps">steamdeps</primary>
@@ -230,8 +230,8 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         <term><filename>bootstraplinux_ubuntu12_32.tar.xz</filename></term>
         <listitem>
           <para>
-            is a tarball containing 32-bit software that fetches the
-            Steam runtime from VALVE's servers
+            er en tarball som inneholder 32-bits programvare som henter 
+            Steam kjøretiden fra VALVEs servere
           </para>
           <indexterm zone="steam bootstrap-steam">
             <primary sortas="b-bootstrap-steam">bootstraplinux_ubuntu12_32.tar.xz</primary>

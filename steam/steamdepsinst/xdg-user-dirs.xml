@@ -18,18 +18,18 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Xdg-user-dirs</title>
+    <title>Introduksjon til Xdg-user-dirs</title>
 
     <para>
-      Xdg-user-dirs is a tool to help manage <quote>well
-      known</quote> user directories like the desktop folder and the music folder.
-      It also handles localization (i.e. translation) of the filenames.
+      Xdg-user-dirs er et verktøy som hjelper med å håndtere <quote>godt 
+      kjente</quote> brukermapper som skrivebordsmappen og musikkmappen. Den 
+      håndterer også lokalisering (dvs. oversettelse) av filnavnene.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&xdg-user-dirs-download;"/>
+          Nedlasting: <ulink url="&xdg-user-dirs-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -37,11 +37,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Xdg-user-dirs</title>
+    <title>Installasjon av Xdg-user-dirs</title>
 
     <para>
-      Install xdg-user-dirs by running the following
-      commands:
+      Installer xdg-user-dirs ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr           \
@@ -50,37 +50,37 @@
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--disable-documentation</parameter>: Disable the
-      installation of the man pages.
+      <parameter>--disable-documentation</parameter>: Deaktiver installasjonen 
+      av manualsidene.
     </para>
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Xdg-user-dirs</title>
+    <title>Konfigurere Xdg-user-dirs</title>
 
     <sect3 id="xdg-user-dirs-config">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
       <para>
         <filename>~/.config/user-dirs.dirs</filename>,
-        <filename>/etc/xdg/user-dirs.conf</filename>, and
-        <filename>/etc/xdg/user-dirs.defaults</filename>. Those default
-        locations can be overridden by <envar>XDG_CONFIG_HOME</envar> and
+        <filename>/etc/xdg/user-dirs.conf</filename>, og
+        <filename>/etc/xdg/user-dirs.defaults</filename>. Disse standard 
+        plasseringene kan overstyres av <envar>XDG_CONFIG_HOME</envar> og
         <envar>XDG_CONFIG_DIRS</envar>
       </para>
 
@@ -102,28 +102,28 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          xdg-user-dir and xdg-user-dirs-update
+          xdg-user-dir og xdg-user-dirs-update
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -131,7 +131,7 @@ make</userinput></screen>
         <term><command>xdg-user-dir</command></term>
         <listitem>
           <para>
-            looks up the current path for one of the XDG user directories
+            slår opp gjeldende sti for en av XDG brukermappene
           </para>
           <indexterm zone="xdg-user-dirs xdg-user-dir">
             <primary sortas="b-xdg-user-dir">xdg-user-dir</primary>
@@ -143,7 +143,7 @@ make</userinput></screen>
         <term><command>xdg-user-dirs-update</command></term>
         <listitem>
           <para>
-            creates localized versions of the user directories
+            oppretter lokaliserte versjoner av brukermappene
           </para>
           <indexterm zone="xdg-user-dirs xdg-user-dirs-update">
             <primary sortas="b-xdg-user-dirs-update">xdg-user-dirs-update</primary>

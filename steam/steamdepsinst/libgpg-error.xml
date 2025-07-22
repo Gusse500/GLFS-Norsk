@@ -17,18 +17,18 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libgpg-error</title>
+    <title>Introduksjon til libgpg-error</title>
 
     <para>
-      The libgpg-error package contains a
-      library that defines common error values for all
-      GnuPG components.
+      Pakken libgpg-error inneholder 
+      et bibliotek som definerer felles 
+      feilverdier for alle GnuPG komponenter.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&libgpg-error-download;"/>
+          Nedlasting: <ulink url="&libgpg-error-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -36,22 +36,22 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libgpg-error</title>
+    <title>Installasjon av libgpg-error</title>
 
     <para>
-      Install libgpg-error by running the
-      following commands:
+      Installer libgpg-error ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr &amp;&amp;
 make</userinput></screen>
 
     <para>
-      To test the results, issue: <command>make check</command>.
+      For å teste resultatene, utsted: <command>make check</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -60,37 +60,37 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          gpg-error, gpgrt-config, and yat2m
+          gpg-error, gpgrt-config, og yat2m
         </seg>
         <seg>
           libgpg-error
         </seg>
         <seg>
           /usr/share/common-lisp/source/gpg-error,
-          /usr/share/libgpg-error, and
+          /usr/share/libgpg-error, og
           /usr/share/doc/libgpg-error-&libgpg-error-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -98,8 +98,8 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
         <term><command>gpg-error</command></term>
         <listitem>
           <para>
-            is used to determine libgpg-error
-            error codes
+            brukes til å bestemme libgpg-error 
+            feilkoder
           </para>
           <indexterm zone="libgpg-error gpg-error">
             <primary sortas="b-gpg-error">gpg-error</primary>
@@ -111,8 +111,8 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
         <term><command>gpgrt-config</command></term>
         <listitem>
           <para>
-            is a <command>pkg-config</command> style tool for querying the
-            information about installed version of libgpg-error
+            er et <command>pkg-config</command> lignende verktøy for å spørre 
+            etter informasjon om installert versjon av libgpg-error
           </para>
           <indexterm zone="libgpg-error gpgrt-config">
             <primary sortas="b-gpgrt-config">gpgrt-config</primary>
@@ -124,7 +124,7 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
         <term><command>yat2m</command></term>
         <listitem>
           <para>
-            extracts man pages from a Texinfo source
+            trekker ut manualsider fra en Texinfo kilde
           </para>
           <indexterm zone="libgpg-error yat2m">
             <primary sortas="b-yat2m">yat2m</primary>
@@ -136,8 +136,8 @@ install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/RE
         <term><filename class="libraryfile">libgpg-error</filename></term>
         <listitem>
           <para>
-            contains the libgpg-error API
-            functions
+            inneholder libgpg-error API
+            funksjoner
           </para>
           <indexterm zone="libgpg-error libgpg-error-lib">
             <primary sortas="c-libgpg-error">libgpg-error</primary>

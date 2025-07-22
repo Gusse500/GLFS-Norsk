@@ -11,8 +11,8 @@
   <title>Steam</title>
 
   <para>
-    This chapter covers the installation of Steam itself and any potential
-    post-installation configuration.
+    Dette kapittelet dekker selve installasjonen av Steam 
+    og eventuell konfigurasjon etter installasjon.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="steam.xml"/>

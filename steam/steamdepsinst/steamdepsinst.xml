@@ -8,11 +8,11 @@
 <chapter id="SteamDepsInst">
   <?dbhtml filename="steamdepsinst.html"?>
 
-  <title>Installing Steam Dependencies</title>
+  <title>Installere Steam Avhengigheter</title>
 
   <para>
-    This chapter covers installing Steam specific
-    dependencies.
+    Dette kapittelet dekker installasjon av Steam spesifikke 
+    avhengigheter.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xdg-user-dirs.xml"/>
