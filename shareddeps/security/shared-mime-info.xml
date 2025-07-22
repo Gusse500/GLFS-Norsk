@@ -21,61 +21,61 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Shared Mime Info</title>
+    <title>Introduksjon til Shared Mime Info</title>
 
     <para>
-      The Shared Mime Info package contains a
-      MIME database. This allows central updates of MIME information for all
-      supporting applications.
+      Pakken Shared Mime Info inneholder en MIME-database. 
+      Dette tillater sentrale oppdateringer av MIME-informasjon 
+      for alle støttende applikasjoner.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&shared-mime-info-download;"/>
+          Nedlasting: <ulink url="&shared-mime-info-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Optional download, required to run the test suite:
+          Valgfri nedlasting, kreves for å kjøre testpakken:
           <ulink url="&xdgmime-download-http;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Shared Mime Info Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Shared Mime Info Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="glib2"/> and
+      <xref linkend="glib2"/> og
       <xref linkend="libxml2"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Shared Mime Info</title>
+    <title>Installasjon av Shared Mime Info</title>
 
     <para>
-      Install Shared Mime Info by running the
-      following commands:
+      Installer Shared Mime Info kjøre følgende 
+      kommandoer:
     </para>
 
     <para>
-      If you wish to run the test suite, you must first extract the
-      <filename>xdgmime</filename> tarball into the current directory,
-      and compile it so that <command>meson</command> can find it:
+      Hvis du ønsker å kjøre testpakken, må du først pakke ut
+      <filename>xdgmime</filename> tarballen inn i gjeldende mappe,
+      og kompilere det slik at <command>meson</command> kan finne det:
     </para>
 
 <screen remap="test"><userinput>tar -xf ../xdgmime.tar.xz &amp;&amp;
 make -C xdgmime</userinput></screen>
 
     <para>
-      Now build the package:
+      Bygg nå pakken:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -85,13 +85,13 @@ meson setup --prefix=/usr --buildtype=release -D update-mimedb=true .. &amp;&amp
 ninja</userinput></screen>
 
     <para role="optional">
-      If you have followed the instructions above to build
-      xdgmime, to test the result issue
+      Hvis du har fulgt instruksjonene ovenfor for å bygge 
+      xdgmime, for å teste resultat utsted
       <command>ninja test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -99,34 +99,34 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D update-mimedb=true</parameter>: This parameter tells
-      the build system to run <command>update-mime-database</command> during
-      installation. Otherwise, this must be done manually in order to be
-      able to use the MIME database.
+      <parameter>-D update-mimedb=true</parameter>: Denne parameteren forteller 
+      byggesystemet at det skal kjøre <command>update-mime-database</command> 
+      under installasjonen. Ellers må dette gjøres manuelt for å kunne bruke 
+      MIME databasen.
     </para>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installert Programm</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
           update-mime-database
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/share/mime
@@ -135,7 +135,7 @@ ninja</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -143,7 +143,7 @@ ninja</userinput></screen>
         <term><command>update-mime-database</command></term>
         <listitem>
           <para>
-            assists in adding MIME data to the database
+            hjelper med å legge til MIME data i databasen
           </para>
           <indexterm zone="shared-mime-info update-mime-database">
             <primary sortas="b-update-mime-database">update-mime-database</primary>

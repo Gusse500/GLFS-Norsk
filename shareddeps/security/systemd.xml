@@ -26,83 +26,83 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Systemd</title>
+    <title>Introduksjon til Systemd</title>
 
     <para>
-      While Systemd was installed when
-      building LFS, there are many features provided by the package that
-      were not included in the initial installation because
-      Linux-PAM was not yet installed.
-      The Systemd package needs to be
-      rebuilt to provide a working <command>systemd-logind</command> service,
-      which provides many additional features for dependent packages.
+      Selv om Systemd ble installert da LFS ble bygget, 
+      er det mange funksjoner i pakken som ikke var 
+      inkludert i den første installasjonen fordi Linux-PAM 
+      ikke var installert ennå. Systemd pakken må bygges opp 
+      igjen for å gi en fungerende <command>systemd-logind</command> 
+      tjeneste, som tilbyr mange tilleggsfunksjoner 
+      for avhengige pakker.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&systemd-download;"/>
+          Nedlasting: <ulink url="&systemd-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--  Comment out (instead of remove) in case a patch will be needed.
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-         Required patch:
+         Påkrevd oppdatering:
          <ulink url="&patch-root;/systemd-&systemd-version;-upstream_fixes-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
-    <bridgehead renderas="sect3">Systemd Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Systemd Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="recommended">
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
 
     <note>
       <para>
-        <xref linkend='linux-pam'/> is not strictly required to build
-        Systemd, but the main reason to rebuild
-        Systemd in GLFS (it's already built in
-        LFS anyway) is for the <command>systemd-logind</command> daemon and
-        the
-        <filename class='libraryfile'>pam_systemd.so</filename> PAM module.
-        <xref linkend='linux-pam'/> is required for them.  All packages in
-        GLFS book with a dependency on Systemd
-        expect that it has been rebuilt with <xref linkend='linux-pam'/>.
+        <xref linkend='linux-pam'/> er ikke strengt tatt nødvendig for å bygge 
+        Systemd, men hovedgrunnen til å gjenoppbygge Systemd i GLFS (det er 
+        allerede innebygd i LFS uansett) er for 
+        <command>systemd-logind</command> daemon 
+        og 
+        <filename class='libraryfile'>pam_systemd.so</filename> PAM modulen.
+        <xref linkend='linux-pam'/> er nødvendig for dem. Alle pakker i 
+        GLFS boken med en avhengighet av Systemd forventer at den er 
+        gjenoppbygd med <xref linkend='linux-pam'/>.
       </para>
     </note>
 
     <para role="recommended">
-      <xref linkend="linux-pam"/> and
-      <xref role="runtime" linkend="polkit"/> (runtime)
+      <xref linkend="linux-pam"/> og
+      <xref role="runtime" linkend="polkit"/> (kjøretid)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Systemd</title>
+    <title>Installasjon av Systemd</title>
 
     <para>
-      Remove two unneeded groups,
-      <systemitem class="groupname">render</systemitem> and
-      <systemitem class="groupname">sgx</systemitem>, from the default udev
-      rules:
+      Fjern to unødvendige grupper,
+      <systemitem class="groupname">render</systemitem> og
+      <systemitem class="groupname">sgx</systemitem>, fra standard udev 
+      regler:
     </para>
 
 <screen><userinput remap="pre">sed -i -e 's/GROUP="render"/GROUP="video"/' \
        -e 's/GROUP="sgx", //' rules.d/50-udev-default.rules.in</userinput></screen>
 
     <para>
-      Rebuild Systemd by running the
-      following commands:
+      Gjenoppbygg Systemd ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -133,23 +133,23 @@ ninja</userinput></screen>
 
     <note>
       <para>
-        For the best test results, make sure you run the test suite from
-        a system that is booted by the same
-        Systemd version you are rebuilding.
+        For best mulig testresultat, sørg for at du kjører testpakken 
+        fra et system som startes opp med samme Systemd versjon 
+        som du gjenoppbygger.
       </para>
     </note>
 
     <para>
-      To test the results, issue: <command>ninja test</command>.
-      The test named <filename>test-stat-util</filename> is known to fail
-      if some kernel features are not enabled.
-      If the test suite is run as the &root; user, some
-      other tests may fail because they depend on various kernel
-      configuration options.
+      For å teste resultatene, utsted: <command>ninja test</command>.
+      Testen som heter <filename>test-stat-util</filename> er kjent for å 
+      feile hvis noen kjernefunksjoner ikke er aktivert. Hvis testpakken 
+      kjøres som &root; bruker, noen 
+      andre tester kan mislykkes fordi de er avhengige av ulike 
+      kjernekonfigurasjonsalternativer.
     </para>
 
    <para>
-     Now, as the &root; user:
+     Nå, som &root; bruker:
    </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -157,11 +157,11 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of Systemd</title>
+    <title>lib32 Installasjon av Systemd</title>
 
     <para>
-      Rebuild lib32-Systemd by running the
-      following commands:
+      Gjenoppbygg lib32-Systemd ved å kjøre 
+      følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -186,7 +186,7 @@ meson setup .. --cross-file lib32 \
 LANG=en_US.UTF-8 ninja</userinput></screen>
 
    <para>
-     Now, as the &root; user:
+     Nå, som &root; bruker:
    </para>
 
 <screen role="root"><userinput>LANG=en_US.UTF-8 DESTDIR=$PWD/DESTDIR ninja install          &amp;&amp;
@@ -199,48 +199,48 @@ rm -rf DESTDIR</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-meson;
 
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D pamconfdir=/etc/pam.d</parameter>: Forces the PAM files to
-      be installed in /etc/pam.d rather than /usr/lib/pam.d.
+      <parameter>-D pamconfdir=/etc/pam.d</parameter>: Tvinger PAM filene til å 
+      bli installert i /etc/pam.d i stedet for /usr/lib/pam.d.
     </para>
 
     <para>
-      <parameter>-D userdb=false</parameter>: Removes a daemon that does not
-      offer any use under a GLFS configuration.
+      <parameter>-D userdb=false</parameter>: Fjerner en daemon som ikke 
+      tilbyr noen bruk under en GLFS konfigurasjon.
     </para>
 
     <para>
-      <parameter>-D homed=disabled</parameter>: Removes a daemon that does not
-      offer any use under a traditional GLFS configuration, especially using
-      accounts created with <command>useradd</command>. The dependencies needed
-      won't be installed in this book.
+      <parameter>-D homed=disabled</parameter>: Fjerner en daemon som ikke 
+      tilbyr noen bruk under en tradisjonell GLFS konfigurasjon, spesielt ved 
+      bruk av kontoer opprettet med <command>useradd</command>. Avhengighetene 
+      som trengs vil ikke bli installert i denne boken.
     </para>
 
     <para>
-      <parameter>-D ukify=disabled</parameter>: Removes a script for
-      combining a kernel, an initramfs, and a kernel command line etc.
-      into an UEFI application which can be loaded by the UEFI firmware
-      to start the embedded Linux kernel. It is not needed if you followed
-      <ulink url="&blfs-svn;/postlfs/grub-setup.html">BLFS' Grub UEFI
-      Setup</ulink>.
+      <parameter>-D ukify=disabled</parameter>: Fjerner et skript for å 
+      kombinere en kjerne, en initramfs og en kjernekommandolinje osv. inn i et 
+      UEFI program som kan lastes inn av UEFI fastvaren for å starte den 
+      innebygde Linuxkjernen. Det er ikke nødvendig hvis du fulgte 
+      instruksjonene i<ulink url="&blfs-svn;/postlfs/grub-setup.html">BLFS' 
+      Grub UEFI Oppsett</ulink>.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Systemd</title>
+    <title>Konfigurere Systemd</title>
 
     <para>
-      The <filename>/etc/pam.d/system-session</filename> file needs to
-      be modified and a new file needs to be created in order for
-      <command>systemd-logind</command> to work correctly. Run the following
-      commands as the <systemitem class="username">root</systemitem> user:
+      <filename>/etc/pam.d/system-session</filename> filen må endres 
+      og en ny fil må opprettes for at
+      <command>systemd-logind</command> skal fungere riktig. Kjør følgende 
+      kommandoer som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>grep 'pam_systemd' /etc/pam.d/system-session ||
@@ -278,52 +278,52 @@ EOF</userinput></screen>
          rebuilt systemd right away (like "exec bash -&dash;login" in LFS),
          so just add it.  -->
     <para>
-      As the &root; user, replace the running <command>systemd</command>
-      manager (the <command>init</command> process) with the
-      <command>systemd</command> executable newly built and installed:
+      Som &root; bruker, erstatt den kjørende <command>systemd</command>
+      behandleren (<command>init</command> prosessen) med
+      <command>systemd</command> kjørbar som er nybygd og installert:
     </para>
 
     <screen role='root'><userinput>systemctl daemon-reexec</userinput></screen>
 
     <important>
       <para>
-        Now ensure <xref linkend='shadow'/> has been already rebuilt with
-        <xref linkend='linux-pam'/> support first, then logout, and login
-        again. This ensures the running login session registered with
-        <command>systemd-logind</command> and a per-user Systemd instance
-        running for each user owning a login session. Many GLFS packages
-        listing Systemd as a dependency need the
-        <command>systemd-logind</command> integration and/or a running
-        per-user Systemd instance.
+        Først forsikre at <xref linkend='shadow'/> allerede er gjenoppbygd med
+        <xref linkend='linux-pam'/> støtte, deretter logg ut og logg inn igjen. 
+        Dette sikrer at den kjørende innloggingsøkten som er registrert med
+        <command>systemd-logind</command> og en Systemd instans per bruker som 
+        kjører for hver bruker som eier en påloggingsøkt. Mange GLFS pakker som 
+        oppgir Systemd som en avhengighet, trenger
+        <command>systemd-logind</command> integrasjon og/eller en kjørende 
+        Systemd instans per bruker.
       </para>
     </important>
 
     <warning>
       <para>
-        If you are upgrading from a previous version of Systemd and an
-        initrd is used for system boot, you should generate a new initrd before
-        rebooting the system.
+        Hvis du oppgraderer fra en tidligere versjon av Systemd og en initrd 
+        brukes til systemoppstart, bør du generere en ny initrd før du starter 
+        systemet på nytt.
       </para>
     </warning>
 
   </sect2>
 
   <sect2 role="content" revision="systemd">
-    <title>Contents</title>
+    <title>Innhold</title>
 
       <para>
-        A list of the installed files, along with their short
-        descriptions can be found at
+        En liste over de installerte filene, sammen med korte 
+        beskrivelser, finner du på
         <ulink url="&lfs-website;/lfs/view/systemd/chapter08/systemd.html#contents-systemd"/>.
       </para>
 
       <para>
-        Listed below are the newly installed library
-        along with a short description.
+        Nedenfor er det nylig installerte biblioteket 
+        listet opp sammen med en kort beskrivelse.
       </para>
 
     <segmentedlist>
-      <segtitle>Installed Libraries</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
 
       <seglistitem>
         <seg>
@@ -333,7 +333,7 @@ EOF</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -341,8 +341,8 @@ EOF</userinput></screen>
         <term><filename class="libraryfile">pam_systemd</filename></term>
         <listitem>
           <para>
-            is a PAM module used to register user sessions with the
-            systemd login manager,
+            er en PAM modul som brukes til å registrere brukerøkter med 
+            systemd påloggingsbehandleren,
             <command>systemd-logind</command>
           </para>
           <indexterm zone="systemd pam_systemd">
