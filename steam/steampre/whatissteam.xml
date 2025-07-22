@@ -5,31 +5,31 @@
   %general-entities;
 ]>
 
-<sect1 id="whatissteam" xreflabel="What is Steam?">
+<sect1 id="whatissteam" xreflabel="Hva er Steam?">
   <?dbhtml filename="whatissteam.html"?>
 
-  <title>What is Steam?</title>
+  <title>Hva er Steam?</title>
 
   <para>
-    Steam is a set of tools that can purchase, download, and execute a variety
-    of games and software, including Windows applications without the need of
-    Wine via the Steam tool Proton. This can be a replacement for Wine although
-    some applications might not work as expected. Most games are built for
-    Windows but most work fine with Proton. It works on regular Linux
-    distributions, including LFS without all the setup required for Wine.
+    Steam er et sett med verktøy som kan kjøpe, laste ned og kjøre en rekke 
+    spill og programvare, inkludert Windows applikasjoner uten behov for Wine 
+    via Steamverktøyet Proton. Dette kan være en erstatning for Wine, selv om 
+    noen applikasjoner kanskje ikke fungerer som forventet. De fleste spill er 
+    bygget for Windows, men de fleste fungerer fint med Proton. Det fungerer på 
+    vanlige Linuxdistribusjoner, inkludert LFS uten alt oppsettet som kreves for Wine.
   </para>
 
   <para>
-    As Steam is a complex set of tools that is capable of launching
-    complex software, it depends on many tools, libraries, and graphics
-    APIs to function and perform as it should.
+    Siden Steam er et komplekst sett med verktøy som er i stand til å starte 
+    kompleks programvare, er det avhengig av mange verktøy, biblioteker og 
+    grafikk API-er for å fungere og yte som det skal.
   </para>
 
   <para>
-    Please check <xref linkend="steamdeps"/> to find what you will need
-    before proceeding, although most of <xref linkend="shareddeps"/>
-    is a straight shot. There is some choice involved such as choosing
-    if you want ALSA or PulseAudio, X11 or Wayland, etc.
+    Vennligst sjekk <xref linkend="steamdeps"/> å finne det du trenger før du 
+    fortsetter, selv om mesteparten av <xref linkend="shareddeps"/>
+    er rett frem. Er det noen valgmuligheter involvert, som å velge om du vil 
+    ha ALSA eller PulseAudio, X11 eller Wayland, osv.
   </para>
 
 </sect1>
