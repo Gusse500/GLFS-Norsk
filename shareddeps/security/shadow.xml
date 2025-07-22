@@ -19,39 +19,39 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Shadow</title>
+    <title>Introduksjon til Shadow</title>
 
     <para>
-      Shadow was indeed installed in LFS and there is
-      no reason to reinstall it unless you installed
-      Linux-PAM after your LFS system was completed.
-      If you have installed Linux-PAM,
-      reinstalling Shadow will allow programs such as
-      <command>login</command> and <command>su</command> to utilize PAM.
+      Shadow ble faktisk installert i LFS, og det er ingen 
+      grunn til å installere det på nytt med mindre du 
+      installerte Linux-PAM etter at LFS-systemet ditt var 
+      ferdig. Hvis du har installert Linux-PAM, vil det å 
+      installere Shadow på nytt tillate programmer som
+      <command>login</command> og <command>su</command> å bruke PAM.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&shadow-download;"/>
+          Nedlasting: <ulink url="&shadow-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&patch-root;/shadow-&shadow-version;-useradd_segfault-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
-    <bridgehead renderas="sect3">Shadow Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Shadow Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="linux-pam"/>
     </para>
@@ -59,29 +59,29 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Shadow</title>
+    <title>Installasjon av Shadow</title>
 
     <important>
       <para>
-        The installation commands shown below are for installations where
-        Linux-PAM has been installed and
-        Shadow is being reinstalled to support the
-        Linux-PAM installation.
+        Installasjonskommandoene som vises nedenfor 
+        er for installasjoner der Linux-PAM er installert 
+        og Shadow installeres på nytt for å støtte 
+        Linux-PAM installasjonen.
       </para>
     </important>
 
     <warning>
       <para>
-        If reinstalling shadow for a version update, be sure to 
-        reaccomplish the Linux-PAM configuration below.  The installation
-        of shadow overwrites many of the files in 
+        Hvis du installerer shadow på nytt for en versjonsoppdatering, 
+        må du sørge for å fullføre Linux-PAM konfigurasjonen nedenfor på nytt. 
+        Installasjonen av shadow overskriver mange av filene i 
         <filename class="directory">/etc/pam.d/</filename>.
       </para>
     </warning>
 
     <para>
-      Reinstall Shadow by running the following
-      commands:
+      Installer Shadow på nytt ved å kjøre følgende 
+      kommandoer:
     </para>
 <!--
 <screen><userinput>patch -Np1 -i ../shadow-4.10-useradd_segfault-1.patch &amp;&amp;
@@ -105,18 +105,18 @@ This is the default:            - -with-group-name-max-length=32 &amp;&amp;-->
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make exec_prefix=/usr pamddir= install</userinput></screen>
 
     <para>
-      The man pages were installed in LFS, but if reinstallation is
-      desired, run (as the <systemitem class="username">root</systemitem> user):
+      Manualsidene ble installert i LFS, men hvis ny installasjon er ønskelig, 
+      kjør (som <systemitem class="username">root</systemitem> bruker):
     </para>
 
 <screen role="root"><userinput>make -C man install-man</userinput></screen>
@@ -124,68 +124,68 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <command>sed -i 's/groups$(EXEEXT) //' src/Makefile.in</command>: This sed
-      is used to suppress the installation of the <command>groups</command>
-      program as the version from the Coreutils
-      package installed during LFS is preferred.
+      <command>sed -i 's/groups$(EXEEXT) //' src/Makefile.in</command>: Denne 
+      sed brukes til å undertrykke installasjonen av <command>groups</command>
+      siden programversjonen fra Coreutils pakken som ble 
+      installert under LFS er å foretrekke.
     </para>
 
     <para>
-      <command>find man -name Makefile.in -exec ... {} \;</command>: The
-      first command is used to suppress the installation of the
-      <command>groups</command> man pages so the existing ones installed from
-      the Coreutils package are not replaced.
-      The two other commands prevent installation of manual pages that
-      are already installed by Man-pages in LFS.
+      <command>find man -name Makefile.in -exec ... {} \;</command>: Den første 
+      kommandoen brukes til å undertrykke installasjonen av
+      <command>groups</command> manualsider slik at de eksisterende som er 
+      installert fra Coreutils pakken ikke erstattes. De to andre kommandoene 
+      forhindrer installasjon av manualsider som allerede er installert av 
+      i LFS.
     </para>
 
     <para>
       <command>sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' -e
         's@/var/spool/mail@/var/mail@' -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'
-        -i etc/login.defs</command>: Instead of using the default 'DES'
-      method, this command modifies the installation to use the much more
-      secure 'YESCRYPT' method of hashing passwords, which also allows
-      passwords longer than eight characters.  The command also changes the
-      obsolete <filename class="directory">/var/spool/mail</filename> location
-      for user mailboxes that Shadow uses by
-      default to the <filename class="directory">/var/mail</filename>
-      location. It also changes the default path to be consistent with that
-      set in LFS.
+        -i etc/login.defs</command>: I stedet for å bruke standardmetoden «DES» 
+      endrer denne kommandoen installasjonen til å bruke den mye sikrere 
+      «YESCRYPT» metoden for hashing av passord, som også tillater passord 
+      som er lengre enn åtte tegn. Kommandoen endrer også den foreldede 
+      <filename class="directory">/var/spool/mail</filename> location
+      for brukerpostbokser som Shadow bruker som standard til 
+      <filename class="directory">/var/mail</filename>
+      plassering. Den endrer også standardbanen slik at den er i samsvar med 
+      den som er angitt i LFS.
     </para>
 
     <para>
-      <parameter>--without-libbsd</parameter>: Prevents looking for the
-      <command>readpassphrase</command> function, which can be found only in
-      <filename class="libraryfile">libbsd</filename>, which is not in GLFS.
-      An internal implementation of <command>readpassphrase</command> is used
-      instead.
+      <parameter>--without-libbsd</parameter>: Hindrer å lete etter
+      <command>readpassphrase</command> funksjon, som bare finnes i
+      <filename class="libraryfile">libbsd</filename>, som ikke er i GLFS. 
+      En intern implementering av <command>readpassphrase</command> brukes 
+      i stedet.
     </para>
 
     <para>
-      <parameter>pamddir=</parameter>: Prevents installation of the shipped
-      PAM configuration files into
-      <filename class='directory'>/etc/pam.d</filename>. The shipped
-      configuration does not work with the GLFS PAM configuration and we
-      will create these configuration files explicitly.
+      <parameter>pamddir=</parameter>: Forhindrer installasjon av de 
+      medfølgende PAM konfigurasjonsfilene i
+      <filename class='directory'>/etc/pam.d</filename>. Den leverte 
+      konfigurasjonen fungerer ikke med GLFS PAM konfigurasjonen, og vi vil 
+      opprette disse konfigurasjonsfilene eksplisitt.
     </para>
 
 <!-- This is the default
     <para>
-      <parameter>-\-with-group-name-max-length=32</parameter>: The maximum
-      user name is 32 characters. Make the maximum group name the same.
+      <parameter>-\-with-group-name-max-length=32</parameter>: Maksimumslengden 
+      for brukernavn er 32 tegn. Gjør det maksimale gruppenavnet likt.
     </para>
     -->
 <!--
     <para>
-      <parameter>-\-without-su</parameter>: Don't reinstall
-      <command>su</command> because upstream recommends using the
-      <command>su</command> command from <xref linkend='util-linux'/>
-      when Linux-PAM is available.
+      <parameter>-\-without-su</parameter>: Ikke installer på nytt
+      <command>su</command> fordi upstream anbefaler å bruke
+      <command>su</command> kommandoen fra <xref linkend='util-linux'/>
+      når Linux-PAM er tilgjengelig.
     </para>
 -->
   </sect2>
@@ -196,30 +196,30 @@ make</userinput></screen>
     <title>Configuring Shadow</title>
 
     <para>
-      Shadow's stock configuration for the
-      <command>useradd</command> utility may not be desirable for your
-      installation. One default parameter causes <command>useradd</command> to
-      create a mailbox file for any newly created user.
-      <command>useradd</command> will make the group ownership of this file to
-      the <systemitem class="groupname">mail</systemitem> group with 0660
-      permissions. If you would prefer that these mailbox files are not created
-      by <command>useradd</command>, issue the following command as the
-      <systemitem class="username">root</systemitem> user:
+      Shadows standardkonfigurasjon for
+      <command>useradd</command> verktøyet er kanskje ikke ønskelig for din 
+      installasjon. Én standardparameter forårsaker <command>useradd</command> 
+      å opprette en postboksfil for enhver nyopprettet bruker.
+      <command>useradd</command> vil gjøre gruppeeierskapet til denne filen til
+      <systemitem class="groupname">mail</systemitem> gruppe med 0660 
+      tillatelser. Hvis du foretrekker at disse postboksfilene ikke opprettes av 
+      <command>useradd</command>, utfør følgende kommando som
+      <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>sed -i 's/yes/no/' /etc/default/useradd</userinput></screen>
   </sect2>
 -->
   <sect2 role="configuration">
-    <title>Configuring Linux-PAM to Work with Shadow</title>
+    <title>Konfigurere Linux-PAM til å fungere med Shadow</title>
 
     <sect3 id="pam.d">
-      <title>Config Files</title>
+      <title>Konfigurasjonsfiler</title>
 
       <para>
-        <filename>/etc/pam.d/*</filename> or alternatively
+        <filename>/etc/pam.d/*</filename> eller alternativt
         <filename>/etc/pam.conf</filename>,
-        <filename>/etc/login.defs</filename> and
+        <filename>/etc/login.defs</filename> og
         <filename>/etc/security/*</filename>
       </para>
 
@@ -241,19 +241,19 @@ make</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>Configuration Information</title>
+      <title>Konfigurasjonsinformasjon</title>
 
       <para>
-        Configuring your system to use Linux-PAM can
-        be a complex task. The information below will provide a basic setup so
-        that Shadow's login and password
-        functionality will work effectively with
-        Linux-PAM. Review the information and links
-        on the <xref linkend="linux-pam"/> page for further configuration
-        information. For information specific to integrating
-        Shadow, Linux-PAM
-        and libpwquality, you can visit the
-        following link:
+        Å konfigurere systemet ditt til å bruke Linux-PAM kan 
+        være en kompleks oppgave. Informasjonen nedenfor gir et 
+        grunnleggende oppsett slik at Shadows påloggings og 
+        passord funksjonalitet fungerer effektivt med Linux-PAM. 
+        Se gjennom informasjonen og lenkene på 
+        <xref linkend="linux-pam"/> side for ytterligere 
+        konfigurasjonsinformasjon informasjon. For informasjon 
+        spesifikk for integrering av Shadow, Linux-PAM og 
+        libpwquality, kan du besøke følgende 
+        lenke:
       </para>
 
       <itemizedlist spacing="compact">
@@ -266,17 +266,17 @@ make</userinput></screen>
       </itemizedlist>
 
       <sect4 id="pam-login-defs">
-        <title>Configuring /etc/login.defs</title>
+        <title>Konfigurere /etc/login.defs</title>
 
         <para>
-          The <command>login</command> program currently performs many functions
-          which Linux-PAM modules should now handle.
-          The following <command>sed</command> command will comment out the
-          appropriate lines in <filename>/etc/login.defs</filename>, and stop
-          <command>login</command> from performing these functions (a backup
-          file named <filename>/etc/login.defs.orig</filename> is also created
-          to preserve the original file's contents). Issue the following
-          commands as the <systemitem class="username">root</systemitem> user:
+          <command>login</command> programmet utfører for tiden mange funksjoner 
+          som Linux-PAM-moduler nå skal håndtere. Følgende <command>sed</command> 
+          kommando vil kommentere ut de aktuelle linjene i 
+          <filename>/etc/login.defs</filename>, og stoppe <command>login</command> 
+          fra å utføre disse funksjonene (en sikkerhetskopifil med navnet 
+          <filename>/etc/login.defs.orig</filename> opprettes også for å bevare 
+          innholdet i den opprinnelige filen). Utfør følgende kommandoer 
+          som <systemitem class="username">root</systemitem> bruker:
         </para>
 
         <indexterm zone="shadow pam-login-defs">
@@ -306,25 +306,25 @@ done</userinput></screen>
       </sect4>
 
       <sect4>
-        <title>Configuring the /etc/pam.d/ Files</title>
+        <title>Konfigurere /etc/pam.d/ Filen</title>
 
         <para>
-          As mentioned previously in the Linux-PAM
-          instructions, Linux-PAM has two supported
-          methods for configuration. The commands below assume that you've
-          chosen to use a directory based configuration, where each program has
-          its own configuration file.  You can optionally use a single
-          <filename>/etc/pam.conf</filename> configuration file by using the
-          text from the files below, and supplying the program name as an
-          additional first field for each line.
+          Som nevnt tidligere i Linux-PAM instruksjonene, har Linux-PAM to 
+          støttede metoder for konfigurasjon. Kommandoene nedenfor forutsetter 
+          at du har valgt å bruke en mappebasert konfigurasjon, der hvert 
+          program har sin egen konfigurasjonsfil. Du kan eventuelt bruke en 
+          enkelt
+          <filename>/etc/pam.conf</filename> konfigurasjonsfil ved å bruke 
+          teksten fra filene nedenfor, og oppgi programnavnet som et ekstra 
+          første felt for hver linje.
         </para>
 
         <para>
-          As the <systemitem class="username">root</systemitem> user, create
-          the following Linux-PAM configuration files
-          in the <filename class="directory">/etc/pam.d/</filename> directory
-          (or add the contents to the <filename>/etc/pam.conf</filename> file)
-          using the following commands:
+          Som <systemitem class="username">root</systemitem> bruker, opprett
+          følgende Linux-PAM konfigurasjonsfiler
+          i <filename class="directory">/etc/pam.d/</filename> mappen
+          (eller legg innholdet til <filename>/etc/pam.conf</filename> filen)
+          ved å bruke følgende kommandoer:
         </para>
       </sect4>
 
@@ -423,7 +423,7 @@ EOF</userinput></screen>
       </sect4>
 
       <sect4>
-        <title>'chpasswd' and 'newusers'</title>
+        <title>'chpasswd' og 'newusers'</title>
 
 <screen role="root"><userinput>cat &gt; /etc/pam.d/chpasswd &lt;&lt; "EOF"
 <literal># Begin /etc/pam.d/chpasswd
@@ -460,7 +460,7 @@ EOF</userinput></screen>
       </sect4>
 
       <sect4>
-        <title>Other shadow utilities</title>
+        <title>Andre shadow verktøy</title>
 
 <screen role="root"><userinput>for PROGRAM in chfn chgpasswd chsh groupadd groupdel \
                groupmems groupmod useradd userdel usermod
@@ -471,40 +471,40 @@ done</userinput></screen>
 
         <warning>
           <para>
-            At this point, you should do a simple test to see if
-            Shadow is working as expected. Open
-            another terminal and log in as
-            <systemitem class="username">root</systemitem>, and then run
-            <command>login</command> and login as another user.  If you do
-            not see any errors, then all is well and you should proceed with
-            the rest of the configuration. If you did receive errors, stop
-            now and double check the above configuration files manually.
-            Any error is the sign of an error in the above procedure.
-            You can also run the
-            test suite from the Linux-PAM package
-            to assist you in determining the problem. If you cannot find and
-            fix the error, you should recompile
-            Shadow adding the
-            <option>--without-libpam</option> switch to the
-            <command>configure</command> command in the above instructions
-            (also move the <filename>/etc/login.defs.orig</filename> backup
-            file to <filename>/etc/login.defs</filename>). If you fail to do
-            this and the errors remain, you will be unable to log into your
-            system.
+            På dette tidspunktet bør du gjøre en enkel test for å se om 
+            Shadow fungerer som forventet. Åpne en annen terminal og logg 
+            inn som
+            <systemitem class="username">root</systemitem>, og så kjør
+            <command>login</command> og logg inn som en annen bruker. 
+            Hvis du ikke ser noen feil, er alt i orden, og du bør 
+            fortsette med resten av konfigurasjonen. Hvis du fikk feil, 
+            stopp nå og dobbeltsjekk konfigurasjonsfilene 
+            ovenfor manuelt. Enhver feil er et tegn 
+            på en feil i prosedyren ovenfor. 
+            Du kan også kjøre testpakken fra Linux-PAM pakken for 
+            å hjelpe deg med å finne problemet. Hvis du ikke finner 
+            og fikser feilen, bør du kompilere Shadow på nytt ved å 
+            legge til
+            <option>--without-libpam</option> bryteren til
+            <command>configure</command> kommandoen i instruksjonene ovenfor 
+            (flytt også <filename>/etc/login.defs.orig</filename> sikkerhetskopi 
+            filen til <filename>/etc/login.defs</filename>). Hvis du ikke gjør 
+            dette og feilmeldingene vedvarer, vil du ikke kunne logge deg på 
+            systemet ditt.
           </para>
         </warning>
       </sect4>
 
       <sect4 id="pam-access">
-        <title>Configuring Login Access</title>
+        <title>Konfigurere Innloggingstilgang</title>
 
         <para>
-          Instead of using the <filename>/etc/login.access</filename> file for
-          controlling access to the system, Linux-PAM
-          uses the <filename class='libraryfile'>pam_access.so</filename> module
-          along with the <filename>/etc/security/access.conf</filename> file.
-          Rename the <filename>/etc/login.access</filename> file using the
-          following command:
+          I stedet for å bruke <filename>/etc/login.access</filename> filen for 
+          å kontrollere tilgang til systemet, Linux-PAM bruker 
+          <filename class='libraryfile'>pam_access.so</filename> modulen
+          sammen med <filename>/etc/security/access.conf</filename> filen.
+          Gi nytt navn til <filename>/etc/login.access</filename> filen ved å 
+          bruke følgende kommando:
         </para>
 
         <indexterm zone="shadow pam-access">
@@ -525,15 +525,15 @@ done</userinput></screen>
       </sect4>
 
       <sect4 id="pam-limits">
-        <title>Configuring Resource Limits</title>
+        <title>Konfigurere ressursgrenser</title>
 
         <para>
-          Instead of using the <filename>/etc/limits</filename> file for
-          limiting usage of system resources,
-          Linux-PAM uses the
-          <filename class='libraryfile'>pam_limits.so</filename> module along
-          with the <filename>/etc/security/limits.conf</filename> file. Rename
-          the <filename>/etc/limits</filename> file using the following command:
+          I stedet for å bruke <filename>/etc/limits</filename> filen for å 
+          begrense bruken av systemressurser,
+          Linux-PAM bruker
+          <filename class='libraryfile'>pam_limits.so</filename> modulen sammen
+          med <filename>/etc/security/limits.conf</filename> filen. Gi nytt navn
+          til <filename>/etc/limits</filename> filen ved å bruke følgende kommando:
         </para>
 
         <indexterm zone="shadow pam-limits">
@@ -544,10 +544,10 @@ done</userinput></screen>
 
         <caution>
           <para>
-          Be sure to test the login capabilities of the system before logging
-          out.  Errors in the configuration can cause a permanent
-          lockout requiring a boot from an external source to correct the
-          problem.
+          Sørg for å teste systemets påloggingsmuligheter før du logger ut. 
+          Feil i konfigurasjonen kan forårsake permanent utlåsing som krever 
+          oppstart fra en ekstern kilde for å rette 
+          problemet.
           </para>
         </caution>
 
@@ -557,11 +557,11 @@ done</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <para>
-      A list of the installed files, along with their short descriptions can be
-      found at
+      En liste over de installerte filene, sammen med korte beskrivelser, 
+      finner du på
       <ulink url="&mlfs-m32-root;/chapter08/shadow.html#contents-shadow"/>.
     </para>
 

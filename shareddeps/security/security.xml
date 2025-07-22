@@ -8,11 +8,11 @@
 <chapter id="security">
   <?dbhtml filename="security.html"?>
 
-  <title>Security</title>
+  <title>Sikkerhet</title>
 
   <para>
-    This chapter covers packages that do or allow doing tasks in a secure way
-    or are dependencies of said packages.
+    Dette kapittelet dekker pakker som utfører eller tillater utførelse av 
+    oppgaver på en sikker måte, eller som er avhengigheter av nevnte pakker.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dbus-pass1.xml"/>
