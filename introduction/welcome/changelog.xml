@@ -41,6 +41,38 @@
     -->
 
     <listitem>
+      <para>21. juli 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: 3.113.1 -&gt; 3.114.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GStreamer-Suite: 1.26.3 -&gt; 1.26.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.2.1 -&gt; 11.3.2. Fikser
+          <ulink url="&glfs-issues;/290">#290</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSPR: 4.36 -&gt; 4.37. Fikser
+          <ulink url="&glfs-issues;/289">#289</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Pixman: 0.46.2 -&gt; 0.46.4. Fikser
+          <ulink url="&glfs-issues;/288">#288</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.50.2 -&gt; 3.50.3. Fikser
+          <ulink url="&glfs-issues;/287">#287</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - cURL: 8.14.1 -&gt; 8.15.0. Fikser
+          <ulink url="&glfs-issues;/285">#285</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>17. juli 2025</para>
       <itemizedlist>
         <listitem>
