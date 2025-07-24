@@ -19,27 +19,27 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to NASM</title>
+    <title>Introduksjon til NASM</title>
 
     <para>
-      NASM (Netwide Assembler) is an 80x86
-      assembler designed for portability and modularity. It includes a
-      disassembler as well.
+      NASM (Netwide Assembler) er en 80x86 
+      assembler designet for portabilitet og modularitet. 
+      Den inkluderer også en disassembler.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&nasm-download;"/>
+          Nedlasting: <ulink url="&nasm-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Optional documentation: <ulink
+          Valgfri dokumentasjon: <ulink
           url="https://www.nasm.us/pub/nasm/releasebuilds/&nasm-version;/nasm-&nasm-version;-xdoc.tar.xz"/>
         </para>
       </listitem>
@@ -48,36 +48,36 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of NASM</title>
+    <title>Installasjon av NASM</title>
 
     <para>
-      If you downloaded the optional documentation, put it into the
-      source tree:
+      Hvis du lastet ned den valgfrie dokumentasjonen, legg den inn i 
+      kildetreet:
     </para>
 
 <screen><userinput>tar -xf ../nasm-&nasm-version;-xdoc.tar.xz --strip-components=1</userinput></screen>
 
     <para>
-      Install NASM by running
-      the following commands:
+      Installer NASM ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr &amp;&amp;
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      If you downloaded the optional documentation, install it with the
-      following instructions as the &root; user:
+      Hvis du lastet ned den valgfrie dokumentasjonen, installer den med 
+      følgende instruksjoner som &root; bruker:
     </para>
 
 <screen role="root"><userinput>install -m755 -d         /usr/share/doc/nasm-&nasm-version;/html  &amp;&amp;
@@ -87,29 +87,29 @@ cp -v doc/*.{txt,ps,pdf} /usr/share/doc/nasm-&nasm-version;</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
-        <seg>nasm and ndisasm</seg>
-        <seg>None</seg>
+        <seg>nasm og ndisasm</seg>
+        <seg>Ingen</seg>
         <seg>/usr/share/doc/nasm-&nasm-version;</seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -117,7 +117,7 @@ cp -v doc/*.{txt,ps,pdf} /usr/share/doc/nasm-&nasm-version;</userinput></screen>
         <term><command>nasm</command></term>
         <listitem>
           <para>
-            is a portable 80x86 assembler
+            er en portabel 80x86 assembler
           </para>
           <indexterm zone="nasm nasm-prog">
             <primary sortas="b-nasm">nasm</primary>
@@ -129,7 +129,7 @@ cp -v doc/*.{txt,ps,pdf} /usr/share/doc/nasm-&nasm-version;</userinput></screen>
         <term><command>ndisasm</command></term>
         <listitem>
           <para>
-            is an 80x86 binary file disassembler
+            er en 80x86 binær fildisassembler
           </para>
           <indexterm zone="nasm ndisasm">
             <primary sortas="b-ndisasm">ndisasm</primary>

@@ -19,12 +19,12 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libvpx</title>
+    <title>Introduksjon til libvpx</title>
 
     <para>
-      This package, from the WebM project, provides the reference
-      implementations of the VP8 Codec (used in most current HTML5 video)
-      and of the next-generation VP9 Codec.
+      Denne pakken, fra WebM prosjektet, inneholder referanseimplementeringene 
+      av VP8 kodeken (brukt i de fleste nåværende HTML5 videoer) og neste 
+      generasjons VP9 kodek.
     </para>
 
     &test-use-internet;
@@ -32,42 +32,42 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&libvpx-download;"/>
+          Nedlasting: <ulink url="&libvpx-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">libvpx Dependencies</bridgehead>
+    <bridgehead renderas="sect3">libvpx Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="nasm"/> and
-      <xref linkend="which"/> (so <command>configure</command> can find nasm)
+      <xref linkend="nasm"/> og
+      <xref linkend="which"/> (så <command>configure</command> kan finne nasm)
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
-      <xref linkend="curl"/> (to download test files)
+      <xref linkend="curl"/> (for å laste ned testfiler)
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libvpx</title>
+    <title>Installasjon av libvpx</title>
 
     <!-- https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/4367
          (invalid bug report caused by this issue) -->
     <para>
-      If upgrading from a previous version of libvpx, update the timestamps
-      of all the files to prevent the build system from retaining the files
-      from the old installation:
+      Hvis du oppgraderer fra en tidligere versjon av libvpx, må du oppdatere 
+      tidsstemplene til alle filene for å forhindre at byggesystemet beholder 
+      filene fra den gamle installasjonen:
     </para>
 
     <screen><userinput>find -type f | xargs touch</userinput></screen>
 
     <para>
-      Install libvpx by running the
-      following commands:
+      Installer libvpx ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>sed -i 's/cp -p/cp/' build/make/Makefile &amp;&amp;
@@ -81,14 +81,14 @@ cd    libvpx-build            &amp;&amp;
 make</userinput></screen>
 
     <para>
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>LD_LIBRARY_PATH=. make test</command>.
-      The test suite downloads many files as part of its test process.
-      A few parts of it will use all available cores.
+      Testpakken laster ned mange filer som en del av testprosessen. 
+      Noen deler av den vil bruke alle tilgjengelige kjerner.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -96,11 +96,11 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32-Installation of libvpx</title>
+    <title>lib32 Installasjon av libvpx</title>
 
     <para>
-      Install lib32-libvpx by running the
-      following commands:
+      Installer lib32-libvpx ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -115,14 +115,14 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
 make</userinput></screen>
 
     <para>
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>LD_LIBRARY_PATH=. make test</command>.
-      The test suite downloads many files as part of its test process.
-      A few parts of it will use all available cores.
+      Testpakken laster ned mange filer som en del av testprosessen. 
+      Noen deler av den vil bruke alle tilgjengelige kjerner.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -133,64 +133,64 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-subconfigure;
 
     <para>
-      <command>sed ... </command>: This command
-      corrects the ownership and permissions of installed files.
+      <command>sed ... </command>: Denne kommandoen korrigerer eierskapet og 
+      tillatelsene til installerte filer.
     </para>
 
     <para>
       <command>mkdir libvpx-build &amp;&amp; cd libvpx-build</command>:
-      The libvpx developers
-      recommend building in a dedicated build directory.
+      libvpx utviklerne anbefaler å 
+      bygge i en dedikert byggemappe.
     </para>
 
     &static-libraries;
 
     <para>
-      <option>--disable-vp8</option>: This switch prevents building support for
-      the VP8 codec.
+      <option>--disable-vp8</option>: Denne bryteren hindrer bygging av 
+      støtte for VP8 kodeken.
     </para>
 
     <para>
-      <option>--disable-vp9</option>: This switch prevents building support for
-      the VP9 codec.
+      <option>--disable-vp9</option>: Denne bryteren hindrer bygging av 
+      støtte for VP9 kodeken.
     </para>
 
     <para>
-      <option>--target=generic-gnu</option>: This switch disables
-      optimizations specific to x86 and x86-64, allowing to build this
-      package without <command>nasm</command> and <command>yasm</command>
-      installed.
+      <option>--target=generic-gnu</option>: Denne bryteren deaktiverer 
+      optimaliseringer spesifikke for x86 og x86-64, slik at du kan bygge denne 
+      pakken uten <command>nasm</command> og <command>yasm</command>
+      installert.
     </para>
 
     <para>
-      <command>LD_LIBRARY_PATH=.</command>: This is needed for the test suite
-      to use the library that was just built.
+      <command>LD_LIBRARY_PATH=.</command>: Dette er nødvendig for at 
+      testpakken skal kunne bruke biblioteket som nettopp ble bygget.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
-        <seg>vpxdec and vpxenc</seg>
+        <seg>vpxdec og vpxenc</seg>
         <seg>libvpx</seg>
         <seg>/usr/include/vpx</seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -198,7 +198,7 @@ ldconfig</userinput></screen>
         <term><command>vpxdec</command></term>
         <listitem>
           <para>
-            is the WebM Project VP8 and VP9 decoder
+            er WebM Project VP8 og VP9 dekoderen
           </para>
           <indexterm zone="libvpx vpxdec">
             <primary sortas="b-vpxdec">vpxdec</primary>
@@ -210,7 +210,7 @@ ldconfig</userinput></screen>
         <term><command>vpxenc</command></term>
         <listitem>
           <para>
-            is the WebM project VP8 and VP9 encoder
+            er WebM prosjektet VP8 og VP9 koderen
           </para>
           <indexterm zone="libvpx vpxenc">
             <primary sortas="b-vpxenc">vpxenc</primary>
@@ -222,7 +222,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libvpx</filename></term>
         <listitem>
           <para>
-            provides functions to use the VP8 and VP9 video codecs
+            tilbyr funksjoner for å bruke VP8 og VP9 videokodekene
           </para>
           <indexterm zone="libvpx libvpx-lib">
             <primary sortas="c-libvpx">libvpx</primary>
