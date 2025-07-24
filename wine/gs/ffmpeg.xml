@@ -18,46 +18,46 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to FFmpeg</title>
+    <title>Introduksjon til FFmpeg</title>
 
     <para>
-      FFmpeg is a solution to record, convert and
-      stream audio and video. It is a very fast video and audio converter and it
-      can also acquire from a live audio/video source. Designed to be intuitive,
-      the command-line interface (<command>ffmpeg</command>) tries to figure out
-      all the parameters, when possible. FFmpeg can
-      also convert from any sample rate to any other, and resize video on the
-      fly with a high quality polyphase filter.
-      FFmpeg can use a Video4Linux compatible video
-      source and any Open Sound System audio source.
+      FFmpeg er en løsning for å ta opp, konvertere og strømme lyd og video. Det 
+      er en veldig rask video- og lydkonverterer, og den kan også hente inn 
+      filer fra en direkte lyd-/videokilde. Kommandolinjegrensesnittet er 
+      designet for å være intuitivt. (<command>ffmpeg</command>) prøver å finne 
+      ut alle parameterne når det er mulig. FFmpeg kan også konvertere fra en 
+      hvilken som helst samplingsfrekvens til en hvilken som helst annen, og 
+      endre størrelse på video på farten med et polyfasefilter av høy kvalitet. 
+      FFmpeg kan bruke en Video4Linux kompatibel videokilde og en hvilken som 
+      helst Open Sound System lydkilde.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&ffmpeg-download;"/>
+          Nedlasting: <ulink url="&ffmpeg-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Nødvendig oppdatering:
           <ulink url="&dl-root;/ffmpeg/ffmpeg-&ffmpeg-version;-chromium_method-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">FFmpeg Dependencies</bridgehead>
+    <bridgehead renderas="sect3">FFmpeg Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="pkgconf"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="libaom"/>,
       <ulink url="&blfs-svn;/multimedia/libass.html">libass</ulink>,
@@ -68,58 +68,58 @@
       <xref linkend="libvpx"/>,
       <xref linkend="opus"/>,
       <xref linkend="x264"/>,
-      <xref linkend="x265"/>, and
+      <xref linkend="x265"/>, og
       <xref linkend="nasm"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended for desktop use</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt for skrivebord bruk</bridgehead>
     <para role="recommended">
       <xref linkend="alsa-lib"/>,
-      <xref linkend="libva"/>, and
+      <xref linkend="libva"/>, og
       <xref linkend="sdl2"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended for systems with Intel Video</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt for systemer med Intel-video</bridgehead>
     <para role="recommended">
-      <xref linkend="libvdpau"/> and
+      <xref linkend="libvdpau"/> og
       <xref linkend="libvdpau-va-gl"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional for systems with NVIDIA</bridgehead>
+    <bridgehead renderas="sect4">Valgfritt for systemer med NVIDIA</bridgehead>
     <para role="optional">
-      <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink> and
+      <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink> og
       <ulink url="&slfs-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
-      Full list of optional dependencies are in the
-      <ulink url="&blfs-svn;/multimedia/ffmpeg.html">BLFS FFmpeg page</ulink>.
+      Fullstendig liste over valgfrie avhengigheter finnes i
+      <ulink url="&blfs-svn;/multimedia/ffmpeg.html">BLFS FFmpeg siden</ulink>.
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of FFmpeg</title>
+    <title>Installasjon av FFmpeg</title>
 
     <para>
-      First, apply a patch that adds an API necessary for some packages to
-      build:
+      Først, installer en oppdatering som legger til et API som er nødvendig 
+      for at noen pakker skal kunne bygges:
       <!-- qtwebengine -->
     </para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../ffmpeg-&ffmpeg-version;-chromium_method-1.patch</userinput></screen>
 
     <para>
-      Now fix an issue caused by the latest version of <xref linkend="x265"/>:
+      Nå fiks et problem forårsaket av den nyeste versjonen av <xref linkend="x265"/>:
     </para>
 
 <screen><userinput remap="pre">sed -e 's/X265_BUILD >= 210/(&amp;) \&amp;\&amp; (X265_BUILD &lt; 213)/' \
     -i libavcodec/libx265.c</userinput></screen>
 
     <para>
-      Install FFmpeg by running the following
-      commands:
+      Installer FFmpeg ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr        \
@@ -147,7 +147,7 @@ make &amp;&amp;
 gcc tools/qt-faststart.c -o tools/qt-faststart</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -159,11 +159,11 @@ install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-&ffmpeg-version;</userinput>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of FFmpeg</title>
+    <title>lib32 Installasjon av FFmpeg</title>
 
     <para>
-      Install lib32-FFmpeg by running the following
-      commands:
+      Installer lib32-FFmpeg ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -193,7 +193,7 @@ install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-&ffmpeg-version;</userinput>
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -204,185 +204,185 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--enable-libfreetype</parameter>: Enables
-      Freetype support.
+      <parameter>--enable-libfreetype</parameter>: Aktiverer
+      Freetype støtte.
     </para>
 
     <para>
-      <parameter>--enable-gpl</parameter>: Enables the use of GPL code and
-      permits support for postprocessing, swscale and many other features.
+      <parameter>--enable-gpl</parameter>: Aktiverer bruk av GPL kode og støtte 
+      for etterbehandling, swscale og mange andre funksjoner.
     </para>
 
     <para>
-      <parameter>--enable-version3</parameter>: Enables the use of (L)GPL
-      version 3 code.
+      <parameter>--enable-version3</parameter>: Aktiverer bruk av (L)GPL 
+      versjon 3 kode.
     </para>
 
     <para>
-      <parameter>--enable-nonfree</parameter>: Enables the use of nonfree code.
-      Note that the resulting libraries and binaries will be unredistributable.
+      <parameter>--enable-nonfree</parameter>: Aktiverer bruk av ikke-fri kode. 
+      Merk at de resulterende bibliotekene og binærfilene ikke vil kunne distribueres på nytt.
     </para>
 
     &static-libraries;
 
     <para>
-      <parameter>--enable-shared</parameter>: Enables building shared
-      libraries, otherwise only static libraries are built and installed.
+      <parameter>--enable-shared</parameter>: Aktiverer bygging av delte 
+      biblioteker, ellers bygges og installeres bare statiske biblioteker.
     </para>
 
     <para>
-      <parameter>--disable-debug</parameter>: Disables building debugging
-      symbols into the programs and libraries.
+      <parameter>--disable-debug</parameter>: Deaktiverer bygging av 
+      feilsøkingssymboler i programmene og bibliotekene.
     </para>
 
     <para>
-      <parameter>--enable-libaom</parameter>: Enables AV1 audio and video
-      decoding via <filename class="libraryfile">libaom</filename>.
+      <parameter>--enable-libaom</parameter>: Aktiverer AV1 lyd og video 
+      dekoding via <filename class="libraryfile">libaom</filename>.
     </para>
 
     <para>
-      <parameter>--enable-libfdk-aac</parameter>: Enables AAC audio encoding via
+      <parameter>--enable-libfdk-aac</parameter>: Aktiverer AAC lydkoding via
       <filename class="libraryfile">libfdk-aac</filename>.
     </para>
 
     <para>
-      <parameter>--enable-libmp3lame</parameter>: Enables MP3 audio encoding
+      <parameter>--enable-libmp3lame</parameter>: Aktiverer MP3 lydkoding
       via <filename class="libraryfile">libmp3lame</filename>.
     </para>
 <!--
     <para>
       <parameter>- -enable-libvorbis</parameter>
-      <parameter>- -enable-libtheora</parameter>: Enables
-      Theora video encoding via <filename
-      class="libraryfile">libvorbis</filename> and <filename
+      <parameter>- -enable-libtheora</parameter>: Aktiverer
+      Theora videokoding via <filename
+      class="libraryfile">libvorbis</filename> og <filename
       class="libraryfile">libtheora</filename>.
     </para>
 -->
     <para>
       <parameter>--enable-libvorbis</parameter>
-      <parameter>--enable-libvpx</parameter>: Enables WebM
-      encoding via <filename class="libraryfile">libvorbis</filename> and
+      <parameter>--enable-libvpx</parameter>: Aktiverer WebM
+      koding via <filename class="libraryfile">libvorbis</filename> og
       <filename class="libraryfile">libvpx</filename>.
     </para>
 
     <para>
-      <parameter>--enable-libx264</parameter>: Enables high-quality
-      H.264/MPEG-4 AVC encoding via <filename
+      <parameter>--enable-libx264</parameter>: Aktiverer høykvalitets
+      H.264/MPEG-4 AVC koding via <filename
       class="libraryfile">libx264</filename>.
     </para>
 
     <para>
-      <parameter>--enable-libx265</parameter>: Enables high-quality
-      H.265/HEVC encoding via <filename
+      <parameter>--enable-libx265</parameter>: Aktiverer høykvalitets
+      H.265/HEVC koding via <filename
       class="libraryfile">libx265</filename>.
     </para>
 
     <para>
       <parameter>--enable-openssl</parameter>:
-      Enables HTTPS protocol for network streams.
+      Aktiverer HTTPS protokollen for nettverksstrømmer.
     </para>
 
     <para>
-      <option>--enable-libdrm</option>: Use this switch if
-      <xref linkend="libdrm"/> is installed to build the <quote>kmsgrab</quote>
-      input module which is useful for screen capturing or streaming.
+      <option>--enable-libdrm</option>: Bruk denne bryteren hvis
+      <xref linkend="libdrm"/> er installert for å bygge <quote>kmsgrab</quote>
+      inndatamodul som er nyttig for skjermopptak eller strømming.
     </para>
 
     <para>
-      <option>--enable-nvenc --enable-nvdec</option>: These options enable
-      hardware acceleration for NVIDIA GPUs, and depend on the optional
-      dependencies for systems with NVIDIA.
+      <option>--enable-nvenc --enable-nvdec</option>: Disse alternativene 
+      aktiverer maskinvareakselerasjon for NVIDIA GPU-er, og avhenger av de 
+      valgfrie avhengighetene for systemer med NVIDIA.
     </para>
 
     <!--
     <para>
-      <parameter>- -disable-vulkan</parameter>: Disables Vulkan for the
-      current version of <xref linkend="vulkan-loader"/> due to
-      an API conflict.
+      <parameter>- -disable-vulkan</parameter>: Deaktiverer Vulkan for 
+      gjeldende versjon av <xref linkend="vulkan-loader"/> på grunn av 
+      en API konflikt.
     </para>
     -->
 
     <para>
-      <parameter>--ignore-tests=...</parameter>: Disables tests that fail to
-      run on
-      BLFS without the optional packages. Currently the AV1 test is disabled 
-      as it needs dav1d to do AV1 decoding on the CPU. The test might work if 
-      you have a GPU that can decode AV1, but this was not tested.
+      <parameter>--ignore-tests=...</parameter>: Deaktiverer tester som ikke 
+      klarer å kjøre på BLFS uten de valgfrie pakkene. AV1 testen er for 
+      øyeblikket deaktivert, da den trenger dav1d for å utføre AV1 dekoding på 
+      CPU-en. Testen kan fungere hvis du har en GPU som kan dekode AV1, men 
+      dette ble ikke testet.
     </para>
 
     <para>
-      <option>--enable-gnutls</option>: Use this option instead of
-      <parameter>--enable-openssl</parameter>, if you want to use
-      GnuTLS instead of
-      OpenSSL for HTTPS protocol.
+      <option>--enable-gnutls</option>: Bruk dette alternativet i stedet for
+      <parameter>--enable-openssl</parameter>, hvis du vil bruke 
+      GnuTLS i stedet for 
+      OpenSSL for HTTPS protokollen.
     </para>
 
     <para>
-      <option>--disable-doc</option>: Disables building html documentation.
-      This is only needed if doxygen is installed and you
-      do not want to build the html documentation.
+      <option>--disable-doc</option>: Deaktiverer bygging av HTML dokumentasjon. 
+      Dette er bare nødvendig hvis doxygen er installert og du ikke ønsker å 
+      bygge HTML dokumentasjonen.
     </para>
 
     <para>
-      <option>--enable-libpulse</option>: Enables support for
-      Pulseaudio for audio output.
+      <option>--enable-libpulse</option>: Aktiverer støtte for
+      Pulseaudio for lydutdata.
     </para>
 
     <para>
-      <command>gcc tools/qt-faststart.c -o tools/qt-faststart</command>: This
-      builds the <command>qt-faststart</command> program which can modify
-      QuickTime formatted movies (<filename class="extension">.mov</filename>
-      or <filename class="extension">.mp4</filename>) so that the header
-      information is located at the beginning of the file instead of the end.
-      This allows the movie file to begin playing before the entire file has
-      been downloaded.
+      <command>gcc tools/qt-faststart.c -o tools/qt-faststart</command>: Dette
+      bygger <command>qt-faststart</command> programmet som kan endre
+      QuickTime formaterte filmer (<filename class="extension">.mov</filename>
+      eller <filename class="extension">.mp4</filename>) slik at 
+      deklarasjonsinformasjonen er plassert i begynnelsen av filen i stedet for 
+      på slutten. Dette gjør at filmfilen kan begynne å spilles av før hele 
+      filen er lastet ned.
     </para>
 
     <note>
       <para>
-        Support for some of the dependency packages requires using options
-        passed to the <command>configure</command> script. View the output
-        from <command>./configure --help</command> for complete information
-        about enabling dependency packages.
+        Støtte for noen av avhengighetspakkene krever bruk av alternativer som 
+        sendes til <command>configure</command> skriptet. Se utdataene
+        fra <command>./configure --help</command> for fullstendig informasjon 
+        om aktivering av avhengighetspakker.
       </para>
     </note>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          ffmpeg, ffplay, ffprobe, <!--ffserver,--> and qt-faststart
+          ffmpeg, ffplay, ffprobe, <!--ffserver,--> og qt-faststart
         </seg>
         <seg>
           libavcodec, libavdevice, libavfilter,
           libavformat, libavutil, libpostproc,
-          libswresample, and libswscale
+          libswresample, og libswscale
         </seg>
         <seg>
           /usr/include/libav{codec,device,filter,format,util},
           /usr/include/libpostproc,
           /usr/include/libsw{resample,scale},
-          /usr/share/doc/ffmpeg-&ffmpeg-version;, and
+          /usr/share/doc/ffmpeg-&ffmpeg-version;, og
           /usr/share/ffmpeg
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -390,8 +390,8 @@ ldconfig</userinput></screen>
         <term><command>ffmpeg</command></term>
         <listitem>
           <para>
-            is a command-line tool to convert video files, network streams and
-            input from a TV card to several video formats
+            er et kommandolinjeverktøy for å konvertere videofiler, 
+            nettverksstrømmer og inndata fra et TV-kort til flere videoformater
           </para>
           <indexterm zone="ffmpeg ffmpeg-prog">
             <primary sortas="b-ffmpeg">ffmpeg</primary>
@@ -403,8 +403,8 @@ ldconfig</userinput></screen>
         <term><command>ffplay</command></term>
         <listitem>
           <para>
-            is a very simple and portable media player using the
-            <filename>ffmpeg</filename> libraries and the SDL library
+            er en veldig enkel og portabel mediespiller som bruker
+            <filename>ffmpeg</filename> biblioteker og SDL biblioteket
           </para>
           <indexterm zone="ffmpeg ffplay">
             <primary sortas="b-ffplay">ffplay</primary>
@@ -416,8 +416,8 @@ ldconfig</userinput></screen>
         <term><command>ffprobe</command></term>
         <listitem>
           <para>
-            gathers information from multimedia streams and prints it in a human
-            and machine-readable fashion
+            samler informasjon fra multimediestrømmer og skriver den ut på en 
+            menneskelig og maskinlesbar måte
           </para>
           <indexterm zone="ffmpeg ffprobe">
             <primary sortas="b-ffprobe">ffprobe</primary>
@@ -429,7 +429,7 @@ ldconfig</userinput></screen>
         <term><command>qt-faststart</command></term>
         <listitem>
           <para>
-            moves the index file to the front of quicktime (mov/mp4) videos
+            flytter indeksfilen til forsiden av QuickTime videoer (mov/mp4)
           </para>
           <indexterm zone="ffmpeg qt-faststart">
             <primary sortas="b-qt-faststart">qt-faststart</primary>
@@ -441,8 +441,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libavcodec</filename></term>
         <listitem>
           <para>
-            is a library containing the FFmpeg codecs
-            (both encoding and decoding)
+            er et bibliotek som inneholder FFmpeg kodekene 
+            (både koding og dekoding)
           </para>
           <indexterm zone="ffmpeg libavcodec">
             <primary sortas="c-libavcodec">libavcodec</primary>
@@ -454,7 +454,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libavdevice</filename></term>
         <listitem>
           <para>
-            is the FFmpeg device handling library
+            er FFmpeg biblioteket for enhetshåndtering
           </para>
           <indexterm zone="ffmpeg libavdevice">
             <primary sortas="c-libavdevice">libavdevice</primary>
@@ -466,8 +466,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libavfilter</filename></term>
         <listitem>
           <para>
-            is a library of filters that can alter video or audio between the
-            decoder and the encoder (or output)
+            er et bibliotek med filtre som kan endre video eller lyd mellom 
+            dekoderen og koderen (eller utgangen)
           </para>
           <indexterm zone="ffmpeg libavfilter">
             <primary sortas="c-libavfilter">libavfilter</primary>
@@ -479,9 +479,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libavformat</filename></term>
         <listitem>
           <para>
-            is a library containing the file formats handling (mux and demux
-            code for several formats) used by <command>ffplay</command> as well
-            as allowing the generation of  audio or video streams
+            er et bibliotek som inneholder filformathåndteringen (mux og demux 
+            kode for flere formater) som brukes av <command>ffplay</command> 
+            samt å tillate generering av lyd eller videostrømmer
           </para>
           <indexterm zone="ffmpeg libavformat">
             <primary sortas="c-libavformat">libavformat</primary>
@@ -493,7 +493,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libavresample</filename></term>
         <listitem>
           <para>
-            is a library containing functions for resampling audio and video.
+            er et bibliotek som inneholder funksjoner for resampling av lyd og video.
           </para>
           <indexterm zone="ffmpeg libavresample">
             <primary sortas="c-libavresample">libavresample</primary>
@@ -505,7 +505,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libavutil</filename></term>
         <listitem>
           <para>
-            is the FFmpeg utility library
+            er FFmpeg verktøybiblioteket
           </para>
           <indexterm zone="ffmpeg libavutil">
             <primary sortas="c-libavutil">libavutil</primary>
@@ -517,7 +517,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libpostproc</filename></term>
         <listitem>
           <para>
-            is the FFmpeg post processing library
+            er FFmpegs etterbehandlingsbibliotek
           </para>
           <indexterm zone="ffmpeg libpostproc">
             <primary sortas="c-libpostproc">libpostproc</primary>
@@ -529,8 +529,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libswresample</filename></term>
         <listitem>
           <para>
-            is the FFmpeg audio rescaling library,
-            it contains functions for converting audio sample formats
+            er FFmpeg biblioteket for omskalering av lyd, det inneholder 
+            funksjoner for å konvertere lydeksempelformater
           </para>
           <indexterm zone="ffmpeg libswresample">
             <primary sortas="c-libswresample">libswresample</primary>
@@ -542,7 +542,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libswscale</filename></term>
         <listitem>
           <para>
-            is the FFmpeg image rescaling library
+            er FFmpeg biblioteket for bildereskalering
           </para>
           <indexterm zone="ffmpeg libswscale">
             <primary sortas="c-libswscale">libswscale</primary>

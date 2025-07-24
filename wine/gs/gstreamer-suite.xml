@@ -8,7 +8,7 @@
 <sect1 id="gstreamer-suite" xreflabel="GStreamer-Pakken-&gstreamer10-version;">
   <?dbhtml filename="gstreamer-suite.html"?>
 
-  <title>GStreamer Suite &gstreamer10-version;</title>
+  <title>GStreamer Pakken &gstreamer10-version;</title>
 
   <indexterm zone="gstreamer-suite">
     <primary sortas="a-gstreamer-suite">GStreamer Pakken</primary>

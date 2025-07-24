@@ -12,8 +12,8 @@
 
   <para>
     Dette kapittelet dekker hvordan du installerer GStreamer 
-	og dens avhengigheter. GStreamer brukes i
-    Wine for avspilling av noe kodek.
+    og dens avhengigheter. GStreamer brukes i 
+    Wine til avspilling av noen kodeker.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nasm.xml"/>

@@ -17,13 +17,13 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to libaom</title>
+    <title>Introduksjon til libaom</title>
 
     <para>
-      The libaom package contains a reference
-      version of the Alliance for Open Media video codec. This codec is a
-      patent free alternative to H.265, and is starting to be used throughout
-      the internet.
+      libaom pakken inneholder en referanseversjon av videokodeken 
+      Alliance for Open Media. Denne kodeken er et patentfritt 
+      alternativ til H.265, og begynner å bli brukt over hele 
+      internett.
     </para>
 
     &test-use-internet;
@@ -33,14 +33,14 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&libaom-download;"/>
+          Nedlasting: <ulink url="&libaom-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">libaom Dependencies</bridgehead>
+    <bridgehead renderas="sect3">libaom Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="nasm"/>
     </para>
@@ -48,11 +48,11 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of libaom</title>
+    <title>Installasjon av libaom</title>
 
     <para>
-      Install libaom by running the following
-      commands:
+      Installer libaom ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>mkdir aom-build &amp;&amp;
@@ -67,13 +67,13 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr \
 ninja</userinput></screen>
 
     <para>
-      To test the results, issue: <command>ninja testdata &amp;&amp; ninja
-      runtests</command>. Note that the tests take an extremely long time to
-      run.
+      For å teste resultatene, utsted: <command>ninja testdata &amp;&amp; ninja
+      runtests</command>. Merk at testene tar ekstremt lang tid å 
+      kjøre.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
@@ -82,11 +82,11 @@ rm -v /usr/lib/libaom.a</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of libaom</title>
+    <title>lib32 Installasjon av libaom</title>
 
     <para>
-      Install lib32-libaom by running the following
-      commands:
+      Installer lib32-libaom ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -102,7 +102,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr   \
 ninja</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -114,34 +114,34 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
     <para>
-      <parameter>-D BUILD_SHARED_LIBS=1</parameter>: This switch builds shared
-      versions of the libraries.
+      <parameter>-D BUILD_SHARED_LIBS=1</parameter>: Denne bryteren bygger 
+      delte versjoner av bibliotekene.
     </para>
 
     <para>
-      <parameter>-D ENABLE_DOCS=no</parameter>: This switch disables building
-      the documentation because doxygen is not
-      installed.
+      <parameter>-D ENABLE_DOCS=no</parameter>: Denne bryteren 
+      deaktiverer bygging av dokumentasjonen fordi doxygen 
+      ikke er installert.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
 
       <seglistitem>
         <seg>
-          aomdec and aomenc
+          aomdec og aomenc
         </seg>
         <seg>
           libaom
@@ -153,7 +153,7 @@ ldconfig</userinput></screen>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -161,7 +161,7 @@ ldconfig</userinput></screen>
         <term><command>aomdec</command></term>
         <listitem>
           <para>
-            offers various decoders supported by this package, including one
+            tilbyr diverse dekodere som støttes av denne pakken, inkludert én 
             for AV1
           </para>
           <indexterm zone="libaom aomdec">
@@ -174,7 +174,7 @@ ldconfig</userinput></screen>
         <term><command>aomenc</command></term>
         <listitem>
           <para>
-            offers various encoders supported by this package, including one
+            tilbyr diverse kodere som støttes av denne pakken, inkludert én
             for AV1
           </para>
           <indexterm zone="libaom aomenc">
@@ -187,8 +187,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libaom</filename></term>
         <listitem>
           <para>
-            contains functions that provide a reference implementation of the
-            AV1 codec
+            inneholder funksjoner som gir en referanseimplementering av 
+            AV1 kodeken
           </para>
           <indexterm zone="libaom libaom-lib">
             <primary sortas="c-libaom">libaom</primary>

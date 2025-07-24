@@ -18,48 +18,48 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to LAME</title>
+    <title>Introduksjon til LAME</title>
 
     <para>
-      The LAME package contains an MP3
-      encoder and optionally, an MP3 frame analyzer. This is useful
-      for creating and analyzing compressed audio files.
+      LAME pakken inneholder en MP3 koder og eventuelt en 
+      MP3 rammeanalysator. Dette er nyttig for å lage og 
+      analysere komprimerte lydfiler.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&lame-download;"/>
+          Nedlasting: <ulink url="&lame-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">LAME Dependencies</bridgehead>
+    <bridgehead renderas="sect3">LAME Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="https://dmalloc.com/">Dmalloc</ulink>,
       <ulink url="https://linux.softpedia.com/get/Programming/Debuggers/Electric-Fence-3305.shtml/">Electric Fence</ulink>,
-      <xref linkend="libsndfile"/> and
+      <xref linkend="libsndfile"/> og
       <xref linkend="nasm"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of LAME</title>
+    <title>Installasjon av LAME</title>
 
     <!-- Taken from Fedora -->
     <para>
-      Prevent the source code directory from being mistakenly hardcoded as a
-      shared library search path in the installed programs:
+      Forhindre at kildekodemappen feilaktig blir hardkodet som en søkesti for 
+      delt bibliotek i de installerte programmene:
     </para>
 
 <screen><userinput>sed -i -e 's/^\(\s*hardcode_libdir_flag_spec\s*=\).*/\1/' configure</userinput></screen>
 
     <para>
-      Install LAME by running
-      the following commands:
+      Installer LAME ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr   \
@@ -69,12 +69,12 @@
 make</userinput></screen>
 
     <para>
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>LD_LIBRARY_PATH=libmp3lame/.libs make test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make pkghtmldir=/usr/share/doc/lame-&lame-version; install</userinput></screen>
@@ -82,11 +82,11 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installation of LAME</title>
+    <title>lib32 Installasjon av LAME</title>
 
     <para>
-      Install lib32-LAME by running
-      the following commands:
+      Installer lib32-LAME ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -102,12 +102,12 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      To test the results, issue:
+      For å teste resultatene, utsted:
       <command>LD_LIBRARY_PATH=libmp3lame/.libs make test</command>.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -118,49 +118,49 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--enable-mp3rtp</parameter>: This switch enables building
-      the encode-to-RTP program.
+      <parameter>--enable-mp3rtp</parameter>: Denne bryteren aktiverer bygging 
+      av kode-til-RTP programmet.
     </para>
 
     &static-libraries;
 
     <para>
-      <parameter>--enable-nasm</parameter>: This option enables the use of
-      <xref linkend="nasm"/> to compile optimized assembly routines for
-      32-bit. This is not enabled for x86_64 as it has no effect.
+      <parameter>--enable-nasm</parameter>: Dette alternativet aktiverer bruk av
+      <xref linkend="nasm"/> for å kompilere optimaliserte assemblerrutiner for 
+      32-bit. Dette er ikke aktivert for x86_64 da det ikke har noen effekt.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          lame and mp3rtp
+          lame og mp3rtp
         </seg>
         <seg>
           libmp3lame
         </seg>
         <seg>
-          /usr/include/lame and
+          /usr/include/lame og
           /usr/share/doc/lame-&lame-version;
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -168,8 +168,8 @@ ldconfig</userinput></screen>
         <term><command>lame</command></term>
         <listitem>
           <para>
-            creates MP3 audio files from raw
-            PCM or <filename>.wav</filename> data
+            lager MP3 lydfiler fra rå
+            PCM eller <filename>.wav</filename> data
           </para>
           <indexterm zone="lame lame-prog">
             <primary sortas="b-lame">lame</primary>
@@ -181,7 +181,7 @@ ldconfig</userinput></screen>
         <term><command>mp3rtp</command></term>
         <listitem>
           <para>
-            is used to encode MP3 with RTP streaming of the output
+            brukes til å kode MP3 med RTP strømming av utdataen
           </para>
           <indexterm zone="lame mp3rtp">
             <primary sortas="b-mp3rtp">mp3rtp</primary>
@@ -193,8 +193,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libmp3lame</filename></term>
         <listitem>
           <para>
-            provides the functions necessary to convert raw PCM and WAV files
-            to MP3 files
+            tilbyr funksjonene som er nødvendige for å konvertere rå PCM og 
+            WAV filer til MP3 filer
           </para>
           <indexterm zone="lame libmp3lame">
             <primary sortas="c-libmp3lame">libmp3lame</primary>
