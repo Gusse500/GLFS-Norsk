@@ -19,34 +19,34 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to x265</title>
+    <title>Introduksjon til x265</title>
 
     <para>
-      x265 package provides a library for encoding
-      video streams into the H.265/HEVC format.
+      x265 pakken tilbyr et bibliotek for koding av videostrømmer i 
+      H.265/HEVC formatet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&x265-download;"/>
+          Nedlasting: <ulink url="&x265-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">x265 Dependencies</bridgehead>
+    <bridgehead renderas="sect3">x265 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>
     </para>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="nasm"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="https://github.com/numactl/numactl">numactl</ulink>
     </para>
@@ -54,19 +54,19 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of x265</title>
+    <title>Installasjon av x265</title>
 
     <para>
-      First, change the CMake policy to allow building with CMake-4.0 and
-      newer:
+      Først, endre CMake policyen for å tillate bygging med 
+      CMake-4.0 og nyere:
     </para>
 
 <screen><userinput>sed -r '/cmake_policy.*(0025|0054)/d' \
   -i source/CMakeLists.txt</userinput></screen>
 
     <para>
-      Install x265 by running the following
-      commands:
+      Installer x265 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <!-- the default build is Release, no need to specify that -->
@@ -81,7 +81,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr        \
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <!-- To editors: hard coded versions "209", "212", and "3.6" are not a
@@ -91,27 +91,27 @@ make</userinput></screen>
          the LFS package management page). 
     <important>
       <para>
-        If downgrading from the bleeding-edge x265-20240812 (it had been
-        mistakenly used in the BLFS development book for several days),
-        remove the shared library from x265-20240812 as the &root; user:
+        Hvis du nedgraderer fra den nyeste x265-20240812 (den hadde blitt 
+        feilaktig brukt i BLFS utviklingsboken i flere dager), fjern det delte 
+        biblioteket fra x265-20240812 som &root; bruker:
       </para>
 
       <screen role='root'><userinput>rm -fv /usr/lib/libx265.212</userinput></screen>
 
       <para>
-        This is for preventing <command>ldconfig</command> from recreating
-        the symlink <filename>libx265</filename> with the target
-        <filename>/usr/lib/libx265.212</filename> which seems to be
-        <quote>a newer version</quote> of <filename>libx265.209</filename>
-        from x265-3.6.
+        Dette er for å forhindre <command>ldconfig</command> fra å gjenskape 
+        den symbolske lenken <filename>libx265</filename> med målet
+        <filename>/usr/lib/libx265.212</filename> som ser ut til å være
+        <quote>en nyere versjon</quote> av <filename>libx265.209</filename>
+        fra x265-3.6.
       </para>
     </important>
     -->
 
     <para>
-      To install the package, first remove any old library versions.
-      After installation, remove a static library.
-      As the &root; user:
+      For å installere pakken, fjern først eventuelle gamle bibliotekversjoner. 
+      Etter installasjon, fjern et statisk bibliotek. 
+      Som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -120,11 +120,11 @@ rm -vf /usr/lib/libx265.a</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32-Installation of x265</title>
+    <title>lib32 Installasjon av x265</title>
 
     <para>
-      Install lib32-x265 by running the following
-      commands:
+      Installer lib32-x265 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -139,13 +139,13 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr        \
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      To install the package, first remove any old library versions.
-      After installation, remove a static library.
-      As the &root; user:
+      For å installere pakken, fjern først eventuelle gamle bibliotekversjoner. 
+      Etter installasjon, fjern et statisk bibliotek. 
+      Som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -157,41 +157,41 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-cmake;
 
     <para>
-      <parameter>-D GIT_ARCHETYPE=1</parameter>: This switch is needed
-      because the build system will not generate a pkg-config file or install
-      a shared library unless <ulink
-      url='&blfs-svn;/general/git.html'>Git</ulink> is installed. Git isn't
-      required for anything else in this package, so this switch is used to
-      work around it for users who do not want to install Git as a build
-      dependency.
+      <parameter>-D GIT_ARCHETYPE=1</parameter>: Denne bryteren er nødvendig 
+      fordi byggesystemet ikke vil generere en pkg-config fil eller installere 
+      et delt bibliotek med mindre <ulink
+      url='&blfs-svn;/general/git.html'>Git</ulink> er installert. Git er ikke 
+      nødvendig for noe annet i denne pakken, så denne bryteren brukes til å 
+      omgå det for brukere som ikke ønsker å installere Git som en 
+      byggeavhengighet.
     </para>
 
     &cmake-policy-version;
 
     <para>
-      <parameter>-W no-dev</parameter>: This switch is used to suppress warnings
-      intended for the package developers.
+      <parameter>-W no-dev</parameter>: Denne bryteren brukes til å undertrykke 
+      advarsler beregnet på pakkeutviklerne.
     </para>
 
     <para>
-      <command>rm -vf /usr/lib{,32}/libx265.a</command>: This removes an
-      unnecessary static library.
+      <command>rm -vf /usr/lib{,32}/libx265.a</command>: Dette fjerner et 
+      unødvendig statisk bibliotek.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Program</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -201,13 +201,13 @@ ldconfig</userinput></screen>
           libx265
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -215,8 +215,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libx265</filename></term>
         <listitem>
           <para>
-            provides the functions used to encode video streams into the
-            H.265/HEVC format
+            tilbyr funksjonene som brukes til å kode videostrømmer i
+            H.265/HEVC formatet
           </para>
           <indexterm zone="x265 libx265">
             <primary sortas="c-libx265">libx265</primary>

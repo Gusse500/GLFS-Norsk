@@ -17,51 +17,51 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to x264</title>
+    <title>Introduksjon til x264</title>
 
     <para>
-      x264 package provides a library for encoding
-      video streams into the H.264/MPEG-4 AVC format.
+      x264 pakken tilbyr et bibliotek for koding av videostrømmer i 
+      H.264/MPEG-4 AVC formatet.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&x264-download;"/>
+          Nedlasting: <ulink url="&x264-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">x264 Dependencies</bridgehead>
+    <bridgehead renderas="sect3">x264 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Recommended</bridgehead>
+    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="nasm"/>
     </para>
 
-    <bridgehead renderas="sect4">Optional</bridgehead>
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="https://github.com/FFMS/ffms2">ffms2</ulink>,
-      <ulink url="https://github.com/gpac/gpac/releases/">gpac</ulink> or
+      <ulink url="https://github.com/gpac/gpac/releases/">gpac</ulink> eller
       <ulink url="https://github.com/l-smash/l-smash">liblsmash</ulink>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of x264</title>
+    <title>Installasjon av x264</title>
 
 <!--
     <note>
       <para>
-        This package tarball expands to <filename class='directory'>x264</filename>.
+        Denne pakkens tarball utvides til <filename class='directory'>x264</filename>.
       </para>
     </note>
 -->
 
     <para>
-      Install x264 by running the following
-      commands:
+      Installer x264 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr \
@@ -71,11 +71,11 @@
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -84,11 +84,11 @@ make</userinput></screen>
 
 
   <sect2 role="installation">
-    <title>lib32 Installation of x264</title>
+    <title>lib32 Installasjon av x264</title>
 
     <para>
-      Install lib32-x264 by running the following
-      commands:
+      Installer lib32-x264 ved å kjøre følgende 
+      kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -103,11 +103,11 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      This package does not come with a test suite.
+      Denne pakken leveres ikke med en testpakke.
     </para>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -118,46 +118,46 @@ ldconfig</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-configure;
 
     <para>
-      <parameter>--disable-cli</parameter>: This switch disables building the
-      command-line encoder which is redundant since it requires FFmpeg for
-      most of the input formats.
+      <parameter>--disable-cli</parameter>: Denne bryteren deaktiverer bygging 
+      av kommandolinjekoderen, som er overflødig siden den krever FFmpeg for de 
+      fleste inndataformatene.
     </para>
 
     <para>
-      <option>--disable-asm</option>: Use this switch if you didn't install
-      NASM.
+      <option>--disable-asm</option>: Bruk denne bryteren hvis du ikke 
+      installerte NASM.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Library</segtitle>
-      <segtitle>Installed Directory</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           libx264
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -165,8 +165,8 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libx264</filename></term>
         <listitem>
           <para>
-            provides the functions used to encode video streams into the
-            H.264/MPEG-4 AVC format
+            tilbyr funksjonene som brukes til å kode videostrømmer i 
+            H.264/MPEG-4 AVC formatet
           </para>
           <indexterm zone="x264 libx264">
             <primary sortas="c-libx264">libx264</primary>
