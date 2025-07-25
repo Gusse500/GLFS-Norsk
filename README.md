@@ -34,18 +34,19 @@ mens for systemd ville det være i `~/public_html/glfs-systemd`.
 Som standard vil hver pakke og seksjon være sin egen side, og deretter koble 
 alt sammen for en smidig opplevelse.
 
-Du kan angi en sti til GLFS temaer ved å kjøre `make GLFS_THEME_PATH=<path>`.
-Standardinnstillingen er `stylesheets/lfs-xsl`.
+Du kan angi en sti til GLFS temaer ved å kjøre `make THEME_PATH=<path>`.
+Standardinnstillingen er `stylesheets/lfs-xsl`. Du finner mer på
+https://github.com/glfs-book/lfs-themes.
 
 Det mørke temaet er også standard, men du kan bytte tema ved å 
-kjøre `make GLFS_THEME=<theme>`. `<theme>` kan være lik:
+kjøre `make THEME=<theme>`. `<theme>` kan være lik:
 - `light`
 - `dark`
 
-Merk at hvis du setter `GLFS_THEME_PATH`, du kan sette `GLFS_THEME` til mer enn
+Merk at hvis du setter `THEME_PATH`, du kan sette `THEME` til mer enn
 bare det som er tilgjengelige alternativer vist ovenfor, men bare de tilgjengelige temaene
 som er i den banen.
 
 Standardverdier kan endres i en fil som ikke spores (`local.mk`) ved å deklarere
-variabler som finnes i `Makefile` i `local.mk`, slik som `REV` og `GLFS_THEME`.
+variabler som finnes i `Makefile` i `local.mk`, slik som `REV` og `THEME`.
 Denne filen må opprettes manuelt.

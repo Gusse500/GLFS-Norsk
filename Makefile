@@ -12,15 +12,15 @@
 
 # Adjust these to suit your installation, or include the variables
 # you wish to change in local.mk, which must be created manually.
-AUTO_CLEAN      ?= 1
-GLFS_THEME_PATH ?= stylesheets/lfs-xsl
-GLFS_THEME      ?= dark
-RENDERTMP       := $(shell mktemp -d)
-HTML_ROOT       ?= $(HOME)/public_html
-DUMP_ROOT       ?= $(HOME)
-CHUNK_QUIET     ?= 1
-ROOT_ID          =
-SHELL            = /bin/bash
+AUTO_CLEAN  ?= 1
+THEME_PATH  ?= stylesheets/lfs-xsl
+THEME       ?= dark
+RENDERTMP   := $(shell mktemp -d)
+HTML_ROOT   ?= $(HOME)/public_html
+DUMP_ROOT   ?= $(HOME)
+CHUNK_QUIET ?= 1
+ROOT_ID      =
+SHELL        = /bin/bash
 
 ALLXML := $(filter-out $(RENDERTMP)/%, \
 	$(wildcard *.xml */*.xml */*/*.xml */*/*/*.xml */*/*/*/*.xml))
@@ -80,29 +80,29 @@ help:
 	@echo ""
 	@echo "Parametere:"
 	@echo ""
-	@echo "  REV=<rev>              Bygg variant av boken"
-	@echo "                         Gyldige verdier for REV er:"
-	@echo "                         * sysv    - Bygg boken for SysV"
-	@echo "                         * systemd - Bygg boken for systemd"
-	@echo "                         Standard er 'sysv'"
+	@echo "  REV=<rev>            Bygg variant av boken"
+	@echo "                        Gyldige verdier for REV er:"
+	@echo "                        * sysv    - Bygg boken for SysV"
+	@echo "                        * systemd - Bygg boken for systemd"
+	@echo "                        Standard er 'sysv'"
 	@echo ""
-	@echo "  BASEDIR=<dir>          Plasser utdataene i mappen <dir>."
-	@echo "                         Standard er"
-	@echo "                         '$(HTML_ROOT)/glfs' hvis REV=sysv (eller ikke-satt)"
-	@echo "                         eller"
-	@echo "                         '$(HTML_ROOT)/glfs-systemd' hvis REV=systemd"
+	@echo "  BASEDIR=<dir>        Plasser utdataene i mappen <dir>."
+	@echo "                       Standard er"
+	@echo "                       '$(HTML_ROOT)/glfs' hvis REV=sysv (eller ikke-satt)"
+	@echo "                       eller til"
+	@echo "                       '$(HTML_ROOT)/glfs-systemd' hvis REV=systemd"
 	@echo ""
-	@ech V=<val>              Hvis <val> er en ikke-tom verdi, alle"
+	@echo "  V=<val>              Hvis <val> er en ikke-tom verdi, alle"
 	@echo "                       trinnene for å produsere resultatet vises."
 	@echo "                       Standard er ikke-satt."
 	@echo ""
-	@echo "  GLFS_THEME_PATH=<PATH> Angir stien til temaer (CSS filer)."
-	@echo "                         'stylesheets/lfs-xsl' er standard."
+	@echo "  THEME_PATH=<PATH>    Angir stien til temaer (CSS filer)."
+	@echo "                       stylesheets/lfs-xsl' er standard."
 	@echo ""
-	@echo "  GLFS_THEME=<theme>     Setter temaet for boken, dvs. light/dark."
-	@echo "                         'dark' er standard."
+	@echo "  THEME=<theme>        Setter temaet for boken, dvs. light/dark."
+	@echo "                       'dark' er standard."
 	@echo ""
-	@echo "Mål:"
+	@echo "Targets:"
 	@echo "  help                 Vis denne hjelpeteksten."
 	@echo ""
 	@echo "  glfs                 Bygger målene 'html' og 'wget-list'."
@@ -138,7 +138,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       mkdir -p $(BASEDIR)/stylesheets;          \
    fi;
 
-	$(Q)cp $(GLFS_THEME_PATH)/$(GLFS_THEME).lfs.css $(BASEDIR)/stylesheets/lfs.css
+	$(Q)cp $(THEME_PATH)/$(THEME).lfs.css $(BASEDIR)/stylesheets/lfs.css
 	$(Q)cp stylesheets/lfs-xsl/lfs-print.css $(BASEDIR)/stylesheets
 	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
 
@@ -166,7 +166,7 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
 
-	@echo "Kopiering over eldre HTML..."
+	@echo "Kopierer over eldre HTML..."
 	$(Q)if [ ! -e $(BASEDIR)/archive ]; then \
 		mkdir -p $(BASEDIR)/archive;          \
 	fi;
@@ -179,7 +179,7 @@ $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
 	$(Q)[ -d $(RENDERTMP) ] || mkdir -p $(RENDERTMP)
 	$(Q)trap '$(CLEAN)' EXIT
 
-	@echo "Gjengir boken for $(REV)..."
+	@echo "Renderer boken for $(REV)..."
 	$(Q)xsltproc --nonet                               \
                 --xinclude                            \
                 --output $(RENDERTMP)/$(GLFSHTML2)    \
@@ -245,33 +245,6 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
 
 	$(Q)$(CLEAN)
 
-bootscripts:
-	$(Q)trap '$(CLEAN)' EXIT
-	@VERSION=`grep "bootscripts-version " general.ent | cut -d\" -f2`; \
-   BOOTSCRIPTS="glfs-bootscripts-$$VERSION";                          \
-   if [ ! -e $$BOOTSCRIPTS.tar.xz ]; then                             \
-     rm -rf $(RENDERTMP)/$$BOOTSCRIPTS;                               \
-     mkdir $(RENDERTMP)/$$BOOTSCRIPTS;                                \
-     cp -a ../bootscripts/* $(RENDERTMP)/$$BOOTSCRIPTS;               \
-     rm -rf ../bootscripts/archive;                                   \
-     tar  -cJhf $$BOOTSCRIPTS.tar.xz -C $(RENDERTMP) $$BOOTSCRIPTS;   \
-   fi
-
-	$(Q)$(CLEAN)
-
-systemd-units:
-	$(Q)trap '$(CLEAN)' EXIT
-		@VERSION=`grep "systemd-units-version " general.ent | cut -d\" -f2`; \
-	UNITS="glfs-systemd-units-$$VERSION";                                   \
-	if [ ! -e $$UNITS.tar.xz ]; then                                        \
-		rm -rf $(RENDERTMP)/$$UNITS;                                         \
-		mkdir $(RENDERTMP)/$$UNITS;                                          \
-		cp -a ../systemd-units/* $(RENDERTMP)/$$UNITS;                       \
-		tar -cJhf $$UNITS.tar.xz -C $(RENDERTMP) $$UNITS;                    \
-	fi
-
-	$(Q)$(CLEAN)
-
 test-options:
 	$(Q)trap '$(CLEAN)' EXIT
 	$(Q)xsltproc --xinclude --nonet stylesheets/test-options.xsl index.xml
@@ -287,7 +260,7 @@ $(DUMPDIR): $(RENDERTMP)/$(GLFSFULL) version
 	$(Q)$(CLEAN)
 
 .PHONY: glfs all world html validate profile-html wget-list test-links \
-   dump-commands bootscripts systemd-units version test-options
+   dump-commands version test-options
 
 version:
 	$(Q)REV=$(REV) STAB=$(STAB) ./git-version.sh
