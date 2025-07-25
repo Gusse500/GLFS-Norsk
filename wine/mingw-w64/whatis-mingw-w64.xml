@@ -11,9 +11,9 @@
   <title>Hva er MinGW-w64 Verktøykjeden?</title>
 
   <para>
-    MinGW-w64 i seg selv er en pakke som tilbyr deklarasjoner, 
-    C kjøretidsbiblioteker og mye mer. Når støtte for det er innebygd i kompilatorer 
-    som GCC, muliggjør det bygging av programvare rettet 
+    MinGW-w64 i seg selv er en pakke som tilbyr deklarasjoner, C 
+    kjøretidsbiblioteker og mye mer. Når støtte for det er innebygd i 
+    kompilatorer som GCC, muliggjør det bygging av programvare rettet 
     mot Windows, for eksempel programmer og biblioteker. Denne programvaren er 
     ment å brukes på Windows, men kan også brukes på Linux.
   </para>
@@ -25,8 +25,8 @@
   </para></note>
 
   <para>
-    <xref linkend="wine"/> avhenger av denne funksjonaliteten for å bygge DLL-er (
-    dynamiske lenkebiblioteker), eller tilsvarende dynamiske Linux biblioteker, 
+    <xref linkend="wine"/> avhenger av denne funksjonaliteten for å bygge DLL-er 
+    (dynamiske lenkebiblioteker), eller tilsvarende dynamiske Linux biblioteker, 
     lagt til med suffikset <filename class="extension">.so</filename>, eller 
     delte objekter.
   </para>
@@ -52,9 +52,9 @@
     verktøykjeden være ganske nyttig. Du trenger ikke å følge noen av kapitlene 
     etter dette hvis du bare vil ha MinGW-w64 verktøykjeden. Det anbefales å 
     fortsatt installere Wine for 
-    tilregnelighetskontroller knyttet til den innebygde programvaren du utvikler, 
-    selv om det ikke er en perfekt erstatning for et nøyaktig Windows miljø. 
-    Selv om den innebygde programvaren kan fungere fint med 
+    tilregnelighetskontroller knyttet til den innebygde programvaren du 
+    utvikler, selv om det ikke er en perfekt erstatning for et nøyaktig Windows 
+    miljø. Selv om den innebygde programvaren kan fungere fint med 
     Wine, kan den være helt ødelagt på Windows.
   </para>
 

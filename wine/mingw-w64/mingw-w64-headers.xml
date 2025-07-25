@@ -20,17 +20,17 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to MinGW-w64-headers</title>
+    <title>Introduksjon til MinGW-w64-headers</title>
 
     <para>
-      MinGW-w64-headers provides header files for Windows. The rest of the
-      MinGW-w64 will be compiled later.
+      MinGW-w64-headers tilbyr deklarasjonsfiler for Windows. Resten av 
+      MinGW-w64 vil bli kompilert senere.
     </para>
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&mingw-w64-download;"/>
+          Nedlasting: <ulink url="&mingw-w64-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -38,22 +38,22 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of MinGW-w64-headers</title>
+    <title>Installasjon av MinGW-w64-headers</title>
 
     <note>
       <para>
-        If you haven't read <xref linkend="winedeps"/> and are confused by
-        the separate sections (x86_64 xxx and i686 xxx), please read that page
-        to figure out what sections to follow.
+        Hvis du ikke har lest <xref linkend="winedeps"/> og er forvirret av de 
+        separate seksjonene (x86_64 xxx og i686 xxx), vennligst les den siden 
+        for å finne ut hvilke avsnitt du skal følge.
       </para>
 
       <para>
-        The <userinput>make install</userinput> command for each following
-        x86_64 section will be followed by
-        <userinput>&amp;&amp; cd ..</userinput> in case you wish to also follow
-        the i686 sections. It navigates to the parent directory (out of the
-        build directory), allowing you to create another build directory and run
-        the configure scripts from there.
+        <userinput>make install</userinput> kommando for hver av følgende
+        x86_64 seksjonen vil bli etterfulgt av
+        <userinput>&amp;&amp; cd ..</userinput> i tilfelle du også ønsker å 
+        følge i686-delene. Den navigerer til den overordnede mappen (fra 
+        byggemappen), slik at du kan opprette en annen byggemappe og kjøre 
+        konfigurasjonsskriptene derfra.
       </para>
     </note>
 
@@ -61,8 +61,8 @@
     <title>x86_64 MinGW-w64-headers</title>
     
     <para>
-      Install x86_64 MinGW-w64-headers
-      by running the following commands:
+      Installer x86_64 MinGW-w64-headers
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build-x86_64-headers &amp;&amp;
@@ -74,7 +74,7 @@ cd    build-x86_64-headers &amp;&amp;
                                --with-default-msvcrt=msvcrt</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp; cd ..</userinput></screen>
@@ -85,8 +85,8 @@ cd    build-x86_64-headers &amp;&amp;
     <title>i686 MinGW-w64-headers</title>
 
     <para>
-      Install i686 MinGW-w64-headers
-      by running the following commands:
+      Installer i686 MinGW-w64-headers
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build-i686-headers &amp;&amp;
@@ -98,7 +98,7 @@ cd    build-i686-headers &amp;&amp;
                                --with-default-msvcrt=msvcrt</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -108,27 +108,27 @@ cd    build-i686-headers &amp;&amp;
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <note><para>
-      Run <command>../mingw-w64-headers/configure --help</command> for a full
-      list of options.
+      Kjør <command>../mingw-w64-headers/configure --help</command> for en 
+      fullstendig liste over alternativer.
     </para></note>
 
     <para>
-      <parameter>--prefix=/usr/*</parameter>: This option installs
-      the files to their respective architecture for better separation
-      of architectures.
+      <parameter>--prefix=/usr/*</parameter>: Dette alternativet installerer 
+      filene til deres respektive arkitektur for bedre separasjon av 
+      arkitekturer.
     </para>
 
     <para>
-      <parameter>--host=*</parameter>: This option builds files for
-      the architecture passed to it.
+      <parameter>--host=*</parameter>: Dette alternativet bygger filer for 
+      arkitekturen som sendes til det.
     </para>
 
     <para>
-      <parameter>--enable-sdk=all</parameter>: This option enables
-      the full SDK.
+      <parameter>--enable-sdk=all</parameter>: Dette alternativet aktiverer 
+      hele SDK-et.
     </para>
 
     &mingw-w64-msvcrt;
@@ -136,19 +136,19 @@ cd    build-i686-headers &amp;&amp;
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/{i686,x86_64}-w64-mingw32/include

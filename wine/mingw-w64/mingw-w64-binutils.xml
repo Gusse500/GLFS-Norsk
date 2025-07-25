@@ -19,13 +19,13 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to MinGW-w64-Binutils</title>
+    <title>Introduksjon til MinGW-w64-Binutils</title>
 
     <para>
-      MinGW-w64-Binutils is a collection of software that can change
-      the state of Windows binaries or make them executable. These
-      Binutils are specific to MinGW-w64, and using regular Binutils
-      will not work for the proceeding packages.
+      MinGW-w64-Binutils er en samling programvare som kan endre tilstanden til 
+      Windows binærfiler eller gjøre dem kjørbare. Disse Binutils er spesifikke 
+      for MinGW-w64, og bruk av vanlige Binutils vil ikke fungere for de neste 
+      pakkene.
     </para>
 
     &long-build-time;
@@ -33,7 +33,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&mingw-w64-binutils-download;"/>
+          Nedlasting: <ulink url="&mingw-w64-binutils-download;"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -41,14 +41,14 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of MinGW-w64-Binutils</title>
+    <title>Installasjon av MinGW-w64-Binutils</title>
 
   <sect3>
     <title>x86_64 MinGW-w64-Binutils</title>
     
     <para>
-      Install x86_64 MinGW-w64-Binutils
-      by running the following commands:
+      Installer x86_64 MinGW-w64-Binutils
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build-x86_64 &amp;&amp;
@@ -63,7 +63,7 @@ cd    build-x86_64 &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
@@ -78,8 +78,8 @@ cd ..</userinput></screen>
     <title>i686 MinGW-w64-Binutils</title>
 
     <para>
-      Install i686 MinGW-w64-Binutils
-      by running the following commands:
+      Installer i686 MinGW-w64-Binutils
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build-i686 &amp;&amp;
@@ -94,7 +94,7 @@ cd    build-i686 &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make   DESTDIR=$PWD/DESTDIR install          &amp;&amp;
@@ -107,43 +107,43 @@ rm -rf DESTDIR</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-subconfigure;
 
     <para>
-      <parameter>--disable-nls</parameter>: This option disables
-      NLS support, disabling output diagnostics in languages other than
-      American English. Omit <parameter>--disable-nls</parameter> and
-      invoke <option>--enable-nls</option> to enable NLS support.
+      <parameter>--disable-nls</parameter>: Dette alternativet deaktiverer 
+      NLS støtte, og deaktiverer dermed utdatadiagnostikk på andre språk enn 
+      amerikansk engelsk. Utelat <parameter>--disable-nls</parameter> og
+      påkall <option>--enable-nls</option> for å aktivere NLS støtte.
     </para>
 
     <para>
-      <parameter>--disable-werror</parameter>: This option makes it so
-      warnings won't be considered errors.
+      <parameter>--disable-werror</parameter>: Dette alternativet gjør at 
+      advarsler ikke blir ansett som feil.
     </para>
 
     <para>
-      <parameter>--target=*</parameter>: This option builds files for
-      the architecture passed to it.
+      <parameter>--target=*</parameter>: Dette alternativet bygger filer for 
+      arkitekturen som sendes til det.
     </para>
 
     <para>
       <command>rm -v DESTDIR/usr/lib/bfd-plugins/libdep.so</command>:
-      This command removes an libary that conflicts with the original library
-      provided by the original compilation of
-      <ulink url="&mlfs-m32-root;/chapter08/binutils.html">Binutils</ulink>.
+      Denne kommandoen fjerner et bibliotek som er i konflikt med det 
+      opprinnelige biblioteket som ble levert av den opprinnelige kompileringen 
+      av <ulink url="&mlfs-m32-root;/chapter08/binutils.html">Binutils</ulink>.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
@@ -157,33 +157,33 @@ rm -rf DESTDIR</userinput></screen>
           {i686,x86_64}-w64-mingw32-windmc,
           {i686,x86_64}-w64-mingw32-windres,
           ar, as, dlltool, ld, ld.bfd, nm, objcopy, ranlib,
-          readelf, and strip (MinGW-w64
-          specific binaries besides formatting include:
+          readelf, og strip (MinGW-w64
+          spesifikke binærfiler i tillegg til formatering inkluderer:
           {i686,x86_64}-w64-mingw32-dllwrap,
           {i686,x86_64}-w64-mingw32-windmc,
           {i686,x86_64}-w64-mingw32-windres,
-          and dlltool)
+          og dlltool)
         </seg>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
           /usr/{i686,x86_64}-w64-mingw32/bin,
-          /usr/{i686,x86_64}-w64-mingw32/lib/ldscripts, and
+          /usr/{i686,x86_64}-w64-mingw32/lib/ldscripts, og
           /usr/share/info/{i686,x86_64}-w64-mingw32
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <para>
-      Only binutils specific to MinGW-w64
-      will be explained. For the rest, see
+      Bare binutils spesifikke for MinGW-w64 
+      vil bli forklart. For resten, se
       <ulink url="&mlfs-m32-root;/chapter08/binutils.html">
       Binutils</ulink>.
     </para>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -191,7 +191,7 @@ rm -rf DESTDIR</userinput></screen>
       <term><command>{i686,x86_64}-w64-mingw32-dllwrap</command></term>
         <listitem>
           <para>
-            ancient tool for generating PE style DLLs
+            et gammelt verktøy for å generere DLL-er i PE stil
           </para>
           <indexterm zone="mingw-w64-binutils dllwrap">
             <primary sortas="b-dllwrap">dllwrap</primary>
@@ -203,7 +203,7 @@ rm -rf DESTDIR</userinput></screen>
       <term><command>{i686,x86_64}-w64-mingw32-windmc</command></term>
         <listitem>
           <para>
-            generates Windows message resources
+            genererer Windows meldingsressurser
           </para>
           <indexterm zone="mingw-w64-binutils windmc">
             <primary sortas="b-windmc">windmc</primary>
@@ -215,7 +215,7 @@ rm -rf DESTDIR</userinput></screen>
       <term><command>{i686,x86_64}-w64-mingw32-windres</command></term>
         <listitem>
           <para>
-            manipulates Windows resources
+            manipulerer Windows ressurser
           </para>
           <indexterm zone="mingw-w64-binutils windres">
             <primary sortas="b-windres">windres</primary>
@@ -227,7 +227,7 @@ rm -rf DESTDIR</userinput></screen>
       <term><command>dlltool</command></term>
         <listitem>
           <para>
-            creates files needed to build and use DLLs
+            oppretter filer som trengs for å bygge og bruke DLL-er
           </para>
           <indexterm zone="mingw-w64-binutils dlltool">
             <primary sortas="b-dlltool">dlltool</primary>

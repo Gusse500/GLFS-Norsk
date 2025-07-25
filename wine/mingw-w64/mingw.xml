@@ -8,10 +8,10 @@
 <chapter id="MinGW-w64">
   <?dbhtml filename="mingw.html"?>
 
-  <title>The MinGW-w64 Toolchain</title>
+  <title>MinGW-w64 Verktøykjeden</title>
 
   <para>
-    This chapter covers what the MinGW-w64 toolchain is and how to install it.
+    Dette kapittelet dekker hva MinGW-w64 verktøykjeden er og hvordan du installerer den.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatis-mingw-w64.xml"/>

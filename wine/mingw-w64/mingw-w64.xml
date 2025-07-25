@@ -20,12 +20,12 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to MinGW-w64</title>
+    <title>Introduksjon til MinGW-w64</title>
 
     <para>
-      MinGW-w64's headers have been installed already, but not the rest of
-      the project, including useful libraries. This building process will
-      cover the rest of the MinGW-w64 project.
+      MinGW-w64s deklarasjoner er allerede installert, men ikke resten av 
+      prosjektet, inkludert nyttige biblioteker. Denne byggeprosessen vil dekke 
+      resten av MinGW-w64 prosjektet.
     </para>
 
     &long-build-time;
@@ -33,31 +33,31 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&mingw-w64-download;"/>
+          Nedlasting: <ulink url="&mingw-w64-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">MinGW-w64 Dependencies</bridgehead>
+    <bridgehead renderas="sect3">MinGW-w64 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="mingw-w64-binutils"/>,
-      <xref linkend="mingw-w64-headers"/>, and
+      <xref linkend="mingw-w64-headers"/>, og
       <xref linkend="mingw-w64-gcc-static"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of MinGW-w64</title>
+    <title>Installasjon av MinGW-w64</title>
 
   <sect3>
     <title>x86_64 MinGW-w64</title>
     
     <para>
-      Install x86_64 MinGW-w64
-      by running the following commands:
+      Installer x86_64 MinGW-w64
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build-x86_64 &amp;&amp;
@@ -72,15 +72,15 @@ cd    build-x86_64 &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      Now build the winpthreads library after installing the bulk of MinGW-w64
-      to prevent the build from linking against libraries that weren't
-      installed but now are (this library enables POSIX thread support):
+      Bygg nå winpthreads biblioteket etter å ha installert mesteparten av MinGW-w64 
+      for å forhindre at byggingen lenker mot biblioteker som ikke var installert, 
+      men som nå er det (dette biblioteket muliggjør støtte for POSIX-tråder):
     </para>
 
 <screen><userinput>cd ..                          &amp;&amp;
@@ -96,7 +96,7 @@ cd    build-x86_64-winpthreads &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now install the winpthreads library as the &root; user:
+      Installer nå winpthreads biblioteket som &root; bruker:
     </para>
 
     <screen role="root"><userinput>make install &amp;&amp; cd ..</userinput></screen>
@@ -107,8 +107,8 @@ make</userinput></screen>
     <title>i686 MinGW-w64</title>
 
     <para>
-      Install i686 MinGW-w64
-      by running the following commands:
+      Installer i686 MinGW-w64
+      ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build-i686 &amp;&amp;
@@ -123,15 +123,15 @@ cd    build-i686 &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now, as the <systemitem class="username">root</systemitem> user:
+      Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
 
     <para>
-      Now build the winpthreads library after installing the bulk of MinGW-w64
-      to prevent the build from linking against libraries that weren't
-      installed but now are (this library enables POSIX thread support):
+      Bygg nå winpthreads biblioteket etter å ha installert mesteparten av MinGW-w64 
+      for å forhindre at byggingen lenker mot biblioteker som ikke var installert, 
+      men som nå er det (dette biblioteket muliggjør støtte for POSIX-tråder):
     </para>
 
 <screen><userinput>cd ..                        &amp;&amp;
@@ -147,7 +147,7 @@ cd    build-i686-winpthreads &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Now install the winpthreads library as the &root; user:
+      Installer nå winpthreads biblioteket som &root; bruker:
     </para>
 
     <screen role="root"><userinput>make install</userinput></screen>
@@ -157,28 +157,28 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     <note><para>
-      Run <command>../configure --help</command> and
+      Kjør <command>../configure --help</command> og
       <command>../mingw-w64-libraries/winpthreads/configure --help</command>
-      respectively for a full list of options.
+      henholdsvis for en fullstendig liste over alternativer.
     </para></note>
 
     <para>
-      <parameter>--prefix=/usr/*</parameter>: This option installs
-      the files to their respective architecture for better separation
-      of architectures.
+      <parameter>--prefix=/usr/*</parameter>: Dette alternativet installerer 
+      filene til deres respektive arkitektur for bedre separasjon av 
+      arkitekturer.
     </para>
 
     <para>
-      <parameter>--host=*</parameter>: This option builds files for
-      the architecture passed to it.
+      <parameter>--host=*</parameter>: Dette alternativet bygger filer for 
+      arkitekturen som sendes til det.
     </para>
 
     <para>
-      <parameter>--enable-experimental</parameter>: This option enables
-      experimental features.
+      <parameter>--enable-experimental</parameter>: Dette alternativet aktiverer 
+      eksperimentelle funksjoner.
     </para>
 
     &mingw-w64-msvcrt;
@@ -186,23 +186,23 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
-          None
+          Ingen
         </seg>
         <seg>
-          libwinpthread-1 (DLL; in /usr/{i686,x86_64}-w64-mingw32/bin) and
-          hundreds of static libraries and headers needed by Windows. To see
-          the whole list of libraries, visit <ulink
+          libwinpthread-1 (DLL; in /usr/{i686,x86_64}-w64-mingw32/bin) og
+          hundrevis av statiske biblioteker og deklarasjoner som Windows 
+          trenger. For å se hele listen over biblioteker, besøk <ulink
           url="https://archlinux.org/packages/extra/any/mingw-w64-crt/"/>,
-          and see <emphasis>"Package Contents"</emphasis>.
+          og se <emphasis>"Package Contents"</emphasis>.
         </seg>
         <seg>
           /usr/{i686,x86_64}-w64-mingw32/{bin,lib}
