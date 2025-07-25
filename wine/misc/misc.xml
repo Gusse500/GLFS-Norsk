@@ -8,11 +8,11 @@
 <chapter id="Misc">
   <?dbhtml filename="misc.html"?>
 
-  <title>Miscellaneous</title>
+  <title>Diverse</title>
 
   <para>
-    This chapter covers miscellaneous dependencies of 
-    Wine that don't fit in any given category.
+    Dette kapittelet dekker diverse avhengigheter av 
+    Wine som ikke passer inn i noen gitt kategori.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libxkbcommon.xml"/>
