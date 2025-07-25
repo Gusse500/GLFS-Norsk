@@ -43,7 +43,7 @@ kjøre `make THEME=<theme>`. `<theme>` kan være lik:
 - `light`
 - `dark`
 
-Merk at hvis du setter `THEME_PATH`, du kan sette `THEME` til mer enn
+Merk at hvis du setter `THEME_PATH`,  kan du sette `THEME` til mer enn
 bare det som er tilgjengelige alternativer vist ovenfor, men bare de tilgjengelige temaene
 som er i den banen.
 
