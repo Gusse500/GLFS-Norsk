@@ -18,10 +18,10 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduction to Wine</title>
+    <title>Introduksjon til Wine</title>
 
     <para>
-      Wine is a compatibility layer for running Windows programs on Unix.
+      Wine er et kompatibilitetslag for å kjøre Windows programmer på Unix.
     </para>
 
     &long-build-time;
@@ -29,24 +29,24 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Download: <ulink url="&wine-download;"/>
+          Nedlasting: <ulink url="&wine-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
 <!--
-    <bridgehead renderas="sect3">Additional Downloads</bridgehead>
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Required patch:
+          Påkrevd oppdatering:
           <ulink url="&dl-root;/wine/wine-&wine-version;-avoid_idata_section-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
 -->
 
-    <bridgehead renderas="sect3">Wine Dependencies</bridgehead>
+    <bridgehead renderas="sect3">Wine Avhengigheter</bridgehead>
 
     <para>
       <xref linkend="winedeps"/>
@@ -55,31 +55,31 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installation of Wine</title>
+    <title>Installasjon av Wine</title>
 
 <!--
     <para>
-      First apply an upstream patch so that delay-load import libraries are
-      unbroken with <xref linkend="mingw-w64-binutils"/> due to 
-      Binutils merging .idata sections into read-only .rdata
-      sections for PE formatted software upstream:
+      Først må du bruke en oppstrømsoppdatering slik at importbiblioteker med 
+      forsinket lasting er ubrutt med <xref linkend="mingw-w64-binutils"/> på 
+      grunn av at Binutils slår sammen .idata-seksjoner til skrivebeskyttede 
+      .rdata-seksjoner for PE-formatert programvare oppstrøms:
     </para>
 
 <screen><userinput>patch -Np1 -i ../wine-&wine-version;-avoid_idata_section-1.patch</userinput></screen>
 -->
 
     <para>
-      Wine has three build types. Scroll down to the build type you want.
-      Visit <xref linkend="winedeps"/> for more information about each
-      build type.
+      Wine har tre byggetyper. Bla ned til byggetypen du ønsker.
+      Besøk <xref linkend="winedeps"/> for mer informasjon om 
+      hver byggetype.
     </para>
 
     <sect3>
       <title>WoW64</title>
 
       <para>
-        Install WoW64 Wine by running
-        the following commands:
+        Installer WoW64 Wine ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>mkdir build-win64 &amp;&amp;
@@ -103,7 +103,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>make install      &amp;&amp;
@@ -113,11 +113,11 @@ make install</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>64-bit Only</title>
+      <title>Bare 64-bit</title>
 
       <para>
-        Install 64-bit only Wine by running
-        the following commands:
+        Installer bare 64-bit Wine ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -130,7 +130,7 @@ cd    build &amp;&amp;
 make</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -138,20 +138,20 @@ make</userinput></screen>
     </sect3>
 
     <sect3>
-      <title>32-bit Only</title>
+      <title>Bare 32-bit</title>
 
 <!--
       <note><para>
-        If you're on 64-bit, invoke
-        <userinput>PKG_CONFIG_PATH=/usr/lib32/pkgconfig</userinput> at the
-        beginning of the <command>../configure</command> command to build for
-        32-bit.
+        Hvis du bruker 64-bit, påkall
+        <userinput>PKG_CONFIG_PATH=/usr/lib32/pkgconfig</userinput> på
+        begynnelsen av <command>../configure</command> kommandoen for å bygge 
+        for 32-bit.
       </para></note>
 -->
 
       <para>
-        Install 32-bit only Wine by running
-        the following commands:
+        Installer bare 32-bit Wine ved å kjøre følgende 
+        kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -163,7 +163,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
       <para>
-        Now, as the <systemitem class="username">root</systemitem> user:
+        Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -173,106 +173,106 @@ make</userinput></screen>
   </sect2>
 
   <sect2 role="commands">
-    <title>Command Explanations</title>
+    <title>Parameterforklaringer</title>
 
     &options-subconfigure;
 
     <para>
-      <parameter>--disable-tests</parameter>: This parameter disables building
-      tests.
+      <parameter>--disable-tests</parameter>: Denne parameteren deaktiverer 
+      bygging av tester.
     </para>
 
     <para>
-      <parameter>--with-wine64=../build-win64</parameter>: This option
-      allows Wine during the compilation stage to use files built in
-      the wine64 stage to enable support for both 32-bit and 64-bit.
+      <parameter>--with-wine64=../build-win64</parameter>: Dette alternativet 
+      lar Wine bruke filer innebygd i wine64 fasen under kompileringsfasen å 
+      aktivere støtte for både 32-bit og 64-bit.
     </para>
 
   </sect2>
 
   <sect2 role="configuration">
-    <title>Configuring Wine</title>
+    <title>Konfigurere Wine</title>
     
     <para>
-      This installation should be good enough for most people but there may be
-      a few things that you wish to change or do in relation to this package.
+      Denne installasjonen burde være god nok for de fleste, men det kan være 
+      noen ting du ønsker å endre eller gjøre i forbindelse med denne pakken.
       The <ulink url="https://wiki.archlinux.org/title/Wine">Arch Wiki
-      page</ulink> for Wine covers most of the things you may wish to do. In
-      relation to gaming and Vulkan, you may wish to install
-      <xref linkend="dxvk"/> which converts Direct3D 8-11 calls to Vulkan,
-      unlike WineD3D which converts Direct3D calls to OpenGL in a poor manner
-      and is much slower.
+      siden</ulink> for Wine dekker det meste du måtte ønske å gjøre. I 
+      forbindelse med spilling og Vulkan, kan det være lurt å installere
+      <xref linkend="dxvk"/> som konverterer Direct3D 8-11 kall til Vulkan, 
+      i motsetning til WineD3D som konverterer Direct3D kall til OpenGL på 
+      en dårlig måte og er mye tregere.
     </para>
 
     <para>
-      As for Direct3D 12, you may also wish to install
-      <xref linkend="vkd3d-proton"/> which replaces
-      VKD3D provided by
-      Wine. VKD3D is less
-      aggressive with optimizations and is geared for general use, whereas
-      VKD3D-Proton has aggressive optimizations and
-      is geared towards gaming. Despite the name, it can be used with
-      Wine and works quite well.
+      Når det gjelder Direct3D 12, kan det også være lurt å 
+      installere <xref linkend="vkd3d-proton"/> som 
+      erstatter VKD3D levert av Wine. VKD3D er mindre 
+      aggressiv med optimaliseringer og er rettet mot 
+      generell bruk, mens VKD3D-Proton har aggressive 
+      optimaliseringer og er rettet mot spilling. Til 
+      tross for navnet kan den brukes med Wine og 
+      fungerer ganske bra.
     </para>
 
     <para>
-      The choice of what to install is up to you.
+      Valget om hva du skal installere er opp til deg.
     </para>
 
     <para>
-      In some cases, some Windows applications will expect files not provided
-      in this installation. In such cases, you can install <ulink
-      url="&slfs-website;/general/winetricks.html">Winetricks</ulink> from SLFS
-      to install those missing files.
+      I noen tilfeller vil noen Windows programmer forvente filer som ikke er 
+      inkludert i denne installasjonen. I slike tilfeller kan du installere <ulink
+      url="&slfs-website;/general/winetricks.html">Winetricks</ulink> fra SLFS
+      for å installere de manglende filene.
     </para>
 
   </sect2>
 
   <sect2 role="content">
-    <title>Contents</title>
+    <title>Innhold</title>
 
     <segmentedlist>
-      <segtitle>Installed Programs</segtitle>
-      <segtitle>Installed Libraries</segtitle>
-      <segtitle>Installed Directories</segtitle>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
 
       <seglistitem>
         <seg>
           function_grep.pl,
-          msidb (link to wine),
-          msiexec (link to wine),
-          notepad (link to wine),
-          regedit (link to wine),
-          regsvr32 (link to wine),
+          msidb (lenke til wine),
+          msiexec (lenke til wine),
+          notepad (lenke til wine),
+          regedit (lenke til wine),
+          regsvr32 (lenke til wine),
           widl,
           wine,
-          wineboot (link to wine),
+          wineboot (lenke til wine),
           winebuild,
-          winecfg (link to wine),
-          wineconsole (link to wine),
-          winecpp (link to winegcc),
-          winedbg (link to wine),
+          winecfg (lenke til wine),
+          wineconsole (lenke til wine),
+          winecpp (lenke til winegcc),
+          winedbg (lenke til wine),
           winedump,
-          winefile (link to wine),
-          wineg++ (link to winegcc),
+          winefile (lenke til wine),
+          wineg++ (lenke til winegcc),
           winegcc,
           winemaker,
-          winemine (link to wine),
-          winepath (link to wine),
+          winemine (lenke til wine),
+          winepath (lenke til wine),
           wineserver,
-          wmc, and
+          wmc, og
           wrc
         </seg>
-        <seg>Various dynamic and static libraries</seg>
+        <seg>Ulike dynamiske og statiske biblioteker</seg>
         <seg>
           /usr/include/wine/windows, /usr/lib/wine/x86_64-windows,
-          /usr/lib32/wine/i686-unix, and /usr/share/wine
+          /usr/lib32/wine/i686-unix, og /usr/share/wine
         </seg>
       </seglistitem>
     </segmentedlist>
 
     <variablelist>
-      <bridgehead renderas="sect3">Short Descriptions</bridgehead>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
@@ -280,7 +280,7 @@ make</userinput></screen>
         <term><command>function_grep.pl</command></term>
         <listitem>
           <para>
-            is a Perl script that does the same job as <command>grep</command>
+            er et Perl skript som gjør samme jobb som <command>grep</command>
           </para>
           <indexterm zone="wine function_grep.pl">
             <primary sortas="b-function_grep.pl">function_grep.pl</primary>
@@ -292,8 +292,8 @@ make</userinput></screen>
         <term><command>msidb</command></term>
         <listitem>
           <para>
-            handles MSI databases;
-            symlink to <command>wine</command>
+            håndterer MSI databaser;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine msidb">
             <primary sortas="b-msidb">msidb</primary>
@@ -305,8 +305,8 @@ make</userinput></screen>
         <term><command>msiexec</command></term>
         <listitem>
           <para>
-            is the Wine MSI installer;
-            symlink to <command>wine</command>
+            er Wine MSI installasjonsprogrammet;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine msiexec">
             <primary sortas="b-msiexec">msiexec</primary>
@@ -318,8 +318,8 @@ make</userinput></screen>
         <term><command>notepad</command></term>
         <listitem>
           <para>
-            is the Wine text editor;
-            symlink to <command>wine</command>
+            er tekstredigereren til Wine;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine notepad">
             <primary sortas="b-notepad">notepad</primary>
@@ -331,8 +331,8 @@ make</userinput></screen>
         <term><command>regedit</command></term>
         <listitem>
           <para>
-            is the Wine registry editor;
-            symlink to <command>wine</command>
+            er Wine registerredigereren;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine regedit">
             <primary sortas="b-regedit">regedit</primary>
@@ -344,8 +344,8 @@ make</userinput></screen>
         <term><command>regsvr32</command></term>
         <listitem>
           <para>
-            is the Wine DLL Registration Server;
-            symlink to <command>wine</command>
+            er Wine DLL registreringsserveren;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine regsvr32">
             <primary sortas="b-regsvr32">regsvr32</primary>
@@ -357,8 +357,8 @@ make</userinput></screen>
         <term><command>widl</command></term>
         <listitem>
           <para>
-            is the Wine Interface Definition
-            Language (IDL) compiler
+            er Wine Grensesnittdefinisjon 
+            Språk (IDL)kompilatoren
           </para>
           <indexterm zone="wine widl">
             <primary sortas="b-widl">widl</primary>
@@ -370,7 +370,7 @@ make</userinput></screen>
         <term><command>wine</command></term>
         <listitem>
           <para>
-            runs Windows programs on Unix
+            kjører Windows programmer på Unix
           </para>
           <indexterm zone="wine wine-bin">
             <primary sortas="b-wine-bin">wine-bin</primary>
@@ -382,9 +382,9 @@ make</userinput></screen>
         <term><command>wineboot</command></term>
         <listitem>
           <para>
-            performs Wine initialization, startup,
-            and shutdown tasks;
-            symlink to <command>wine</command>
+            utfører initialisering, oppstart 
+            og avslutning av Wine;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine wineboot">
             <primary sortas="b-wineboot">wineboot</primary>
@@ -396,7 +396,7 @@ make</userinput></screen>
         <term><command>winebuild</command></term>
         <listitem>
           <para>
-            is the Wine DLL builder
+            er Wine DLL byggeren
           </para>
           <indexterm zone="wine winebuild">
             <primary sortas="b-winebuild">winebuild</primary>
@@ -408,8 +408,8 @@ make</userinput></screen>
         <term><command>winecfg</command></term>
         <listitem>
           <para>
-            is the Wine Configuration Editor;
-            symlink to <command>wine</command>
+            er konfigurasjonsredigereren for Wine;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine winecfg">
             <primary sortas="b-winecfg">winecfg</primary>
@@ -421,8 +421,8 @@ make</userinput></screen>
         <term><command>wineconsole</command></term>
         <listitem>
           <para>
-            is the Wine console;
-            symlink to <command>wine</command>
+            er Wine konsollen;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine wineconsole">
             <primary sortas="b-wineconsole">wineconsole</primary>
@@ -434,8 +434,8 @@ make</userinput></screen>
         <term><command>wine{cpp,g++,gcc}</command></term>
         <listitem>
           <para>
-            is the Wine C and C++
-            MinGW-w64 Compatible Compiler
+            er Wine C og C++ 
+            MinGW-w64 kompatibel kompilator
           </para>
           <indexterm zone="wine winecompilers">
             <primary sortas="b-winecompilers">winecompilers</primary>
@@ -447,8 +447,8 @@ make</userinput></screen>
         <term><command>winedbg</command></term>
         <listitem>
           <para>
-            is the Wine debugger;
-            symlink to <command>wine</command>
+            er Wine feilsøkingsprogrammet;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine winedbg">
             <primary sortas="b-winedbg">winedbg</primary>
@@ -460,7 +460,7 @@ make</userinput></screen>
         <term><command>winedump</command></term>
         <listitem>
           <para>
-            is a Wine DLL tool
+            er et Wine DLL verktøy
           </para>
           <indexterm zone="wine winedump">
             <primary sortas="b-winedump">winedump</primary>
@@ -472,8 +472,8 @@ make</userinput></screen>
         <term><command>winefile</command></term>
         <listitem>
           <para>
-            is a Wine File Manager;
-            symlink to <command>wine</command>
+            er en Wine filbehandler;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine winefile">
             <primary sortas="b-winefile">winefile</primary>
@@ -485,8 +485,8 @@ make</userinput></screen>
         <term><command>winemaker</command></term>
         <listitem>
           <para>
-            generates a build infrastructure for compiling Windows programs
-            on Unix
+            genererer en byggeinfrastruktur for kompilering av Windows 
+            programmer på Unix
           </para>
           <indexterm zone="wine winemaker">
             <primary sortas="b-winemaker">winemaker</primary>
@@ -498,11 +498,11 @@ make</userinput></screen>
         <term><command>winemine</command></term>
         <listitem>
           <para>
-            is the Wine Minesweeper
-             game; it is also just an example and not meant
-            to be an accurate implementation of Minesweeper;
+            er Wine Minesveiper 
+            spillet; det er også bare et eksempel og ikke ment å være en 
+            nøyaktig implementering av Minesveiper;
             
-            symlink to <command>wine</command>
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine winemine">
             <primary sortas="b-winemine">winemine</primary>
@@ -514,8 +514,8 @@ make</userinput></screen>
         <term><command>winepath</command></term>
         <listitem>
           <para>
-            is a tool to convert Unix paths to/from Win32 paths;
-            symlink to <command>wine</command>
+            er et verktøy for å konvertere Unix stier til/fra Win32 stier;
+            symbolsk lenke til <command>wine</command>
           </para>
           <indexterm zone="wine winepath">
             <primary sortas="b-winepath">winepath</primary>
@@ -527,7 +527,7 @@ make</userinput></screen>
         <term><command>wineserver</command></term>
         <listitem>
           <para>
-            is the Wine server
+            er Wine serveren
           </para>
           <indexterm zone="wine wineserver">
             <primary sortas="b-wineserver">wineserver</primary>
@@ -539,7 +539,7 @@ make</userinput></screen>
         <term><command>wmc</command></term>
         <listitem>
           <para>
-            is the Wine Message Compiler
+            er Wine meldingskompilatoren
           </para>
           <indexterm zone="wine wmc">
             <primary sortas="b-wmc">wmc</primary>
@@ -551,7 +551,7 @@ make</userinput></screen>
         <term><command>wrc</command></term>
         <listitem>
           <para>
-            is the Wine Resource Compiler
+            er Wine ressurskompilatoren
           </para>
           <indexterm zone="wine wrc">
             <primary sortas="b-wrc">wrc</primary>

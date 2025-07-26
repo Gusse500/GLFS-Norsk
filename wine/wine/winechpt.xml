@@ -11,8 +11,8 @@
   <title>Wine</title>
 
   <para>
-    This chapter covers the installation of Wine and
-    some packages that help with its performance in graphical environments.
+    Dette kapittelet dekker installasjon av Wine og noen pakker som hjelper 
+    med ytelsen i grafiske miljøer.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="wine.xml"/>
