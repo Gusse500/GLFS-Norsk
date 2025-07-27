@@ -5,34 +5,34 @@
   %general-entities;
 ]>
 
-<sect1 id="whatiswine" xreflabel="What is Wine?">
+<sect1 id="whatiswine" xreflabel="Hva er Wine?">
   <?dbhtml filename="whatiswine.html"?>
 
 
-  <title>What is Wine?</title>
+  <title>Hva er Wine?</title>
 
   <para>
-    Wine is an application that allows users
-    to execute Windows software via a compatibilty layer. Although the
-    acronym of WINE (Wine Is Not Emulation) describes itself as not an
-    emulator but as a compatabilty layer, many still see it as one.
+    Wine er et program som lar brukere kjøre Windows programvare via et 
+    kompatibilitetslag. Selv om forkortelsen WINE (Wine Is Not Emulation) 
+    beskriver seg selv ikke som en emulator, men som et kompatibilitetslag, 
+    ser mange det fortsatt som et.
   </para>
 
   <para>
-    Wine is geared towards running normal
-    Windows software whereas Steam's Proton
-    is more geared towards playing games at high performance. Trying
-    to run regular Windows software may be troublesome with 
-    Proton but is no trouble to Wine.
-    Even some games run better on Wine but
-    struggle or simply don't launch with Proton.
+    Wine er rettet mot å kjøre vanlig Windows programvare, 
+    mens Steams Proton er mer rettet mot å spille spill 
+    med høy ytelse. Å prøve å kjøre vanlig Windows 
+    programvare kan være problematisk med Proton, 
+    men det er ikke noe problem for Wine. Selv noen 
+    spill kjører bedre på Wine, men sliter eller starter 
+    rett og slett ikke med Proton.
   </para>
 
   <para>
-    As Wine deals with a foreign format,
-    it is to be expected that it depends on an extra toolchain as well as
-    other dependencies. Please check <xref linkend="winedeps"/> before
-    continuing with this section.
+    Siden Wine håndterer et fremmed format, er det å forvente at det er 
+    avhengig av en ekstra verktøykjede samt andre avhengigheter. 
+    Vennligst sjekk <xref linkend="winedeps"/> før du fortsetter 
+    med denne delen.
   </para>
 
 </sect1>

@@ -8,11 +8,11 @@
 <chapter id="WinePre">
   <?dbhtml filename="winepre.html"?>
 
-  <title>Wine Preliminaries</title>
+  <title>Wine Forberedelser</title>
 
   <para>
-    This chapter covers preliminary material for understanding what
-    Wine is and what it requires.
+    Dette kapittelet dekker innledende materiale for 
+    å forstå hva Wine er og hva den krever.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="whatiswine.xml"/>
