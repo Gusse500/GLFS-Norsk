@@ -41,6 +41,27 @@
     -->
 
     <listitem>
+      <para>28. juli 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.3.2 -&gt; 11.3.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - xdpyinfo (Xorg Applikasjoner): 1.3.4 -&gt;
+          1.4.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - xdriinfo (Xorg Applikasjoner): 1.0.7 -&gt;
+          1.0.8.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - xgamma (Xorg Applikasjoner): 1.0.7 -&gt;
+          1.0.8.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>23. juli 2025</para>
       <itemizedlist>
         <listitem>
