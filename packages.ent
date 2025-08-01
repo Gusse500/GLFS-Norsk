@@ -253,7 +253,7 @@
 
 <!-- WINE -->
 
-<!ENTITY binutils-version             "2.44">
+<!ENTITY binutils-version             "2.45">
 <!ENTITY gcc-version                  "15.1.0">
 <!ENTITY mingw-w64-version            "13.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
