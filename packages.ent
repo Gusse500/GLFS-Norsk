@@ -146,7 +146,7 @@
 <!-- kernel version in kernel-config presently -->
 <!ENTITY linux-version                "6.15.5">
 <!-- kernel version of when the NVIDIA driver version listed was released -->
-<!ENTITY nvidia-linux-version         "6.15.x">
+<!ENTITY nvidia-linux-version         "6.15.x - 6.16.x">
 <!ENTITY nvidia-version               "575.64.05">
 <!ENTITY nv-manifest-version          "1">
 <!ENTITY nv-sysv-bs                   "1">

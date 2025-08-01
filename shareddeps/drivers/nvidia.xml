@@ -31,7 +31,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Anbefalt kjerneversjon å bruke: linux-&nvidia-linux-version;
+          Anbefalt kjerneversjon å bruke: linux &nvidia-linux-version;
         </para>
       </listitem>
       <listitem>
@@ -189,9 +189,12 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       til verten i stedet for målet, noe som fører til at byggefiler ikke
       kan finnes. Dette kan omgås ved å spesifisere
       <envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar> i
-      <command>make</command> kommandoen som vil overstyre kjerneversjonen som 
-      det skal bygges mot. Kjerneversjonen må allerede være bygget for at dette 
-      skal fungere.
+      hver <command>make</command> kommando som vil overstyre kjerneversjonen 
+      som skal bygges mot og installeres til. Kjerneversjonen må allerede være 
+      bygget for at dette skal fungere. Hvis kjerneversjonen ikke har et tredje 
+      siffer, som 6.16 i stedet for 6.16.1, legg til et <envar>.0</envar> på
+      enden, som <envar>6.16.0</envar>. Den skal samsvare med versjonen som 
+      finnes i <filename class="directory">/usr/lib/modules</filename>.
     </para></note>
 
     <para>
