@@ -37,5 +37,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/nettle.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/gnutls.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/pixman.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/mtdev.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/libevdev.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/libinput.xml"/>
 
 </chapter>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-  <!ENTITY % general-entities SYSTEM "../../../general.ent">
+  <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
   <!ENTITY mtdev-download "https://bitmath.org/code/mtdev/mtdev-&mtdev-version;.tar.bz2">
@@ -20,10 +20,10 @@
     <title>Introduksjon til mtdev</title>
 
     <para>
-      mtdev pakken inneholder Multitouch Protocol 
-      Translation Library som brukes til å transformere alle varianter av 
-      kjerne MT (Multitouch) hendelser til den slottede type B 
-      protokollen.
+      mtdev pakken inneholder Multitouch Protocol Translation Library som brukes 
+      til å transformere alle varianter av kjerne MT (Multitouch) hendelser til 
+      den slottede type B protokollen. Pakker som <xref linkend="libinput"/> 
+      bruke den.
     </para>
 
     <itemizedlist spacing="compact">

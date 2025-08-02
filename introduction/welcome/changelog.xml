@@ -41,6 +41,25 @@
     -->
 
     <listitem>
+      <para>1. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SQLite: 3.50.3 -&gt; 3.50.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libinput: 1.28.1 -&gt; 1.29.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 20.1.4 -&gt; 20.1.5.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - mtdev; libevdev; libinput: Flytt til Grunnleggende 
+          X11 Programvare og ut av Xorg inndata drivere.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>31. juli 2025</para>
       <itemizedlist>
         <listitem>

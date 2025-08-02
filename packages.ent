@@ -3,10 +3,10 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.37">
-<!ENTITY sqlite-version               "3.50.3">
+<!ENTITY sqlite-version               "3.50.4">
 <!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3500300">
-<!ENTITY sqlite-doc-version           "3500300">
+<!ENTITY sqlite-dl-version            "3500400">
+<!ENTITY sqlite-doc-version           "3500400">
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "13">
 <!ENTITY python3-patch                "5">
@@ -16,8 +16,6 @@
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
 <!ENTITY nss-dir                      "3_114">
 <!ENTITY nss-minor-version            "114">
-<!--<!ENTITY nss-micro-version            "1">-->
-<!--<!ENTITY nss-version                  "3.&nss-minor-version;.&nss-micro-version;">-->
 <!ENTITY nss-version                  "3.&nss-minor-version;">
 <!ENTITY p11-kit-version              "0.25.5">
 <!ENTITY make-ca-version              "1.16.1">
@@ -123,6 +121,9 @@
 <!ENTITY nettle-version               "3.10.1">
 <!ENTITY gnutls-version               "3.8.10">
 <!ENTITY pixman-version               "0.46.4">
+<!ENTITY mtdev-version                "1.1.7">
+<!ENTITY libevdev-version             "1.13.4">
+<!ENTITY libinput-version             "1.29.0">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.24.0">
 <!ENTITY wayland-protocols-version    "1.45">
@@ -159,7 +160,7 @@
 <!ENTITY rustc-change-id              "140732">
 <!ENTITY cbindgen-version             "0.29.0">
 <!ENTITY rust-bindgen-version         "0.72.0">
-<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.4">
+<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.5">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY ply-version                  "3.11">
@@ -230,11 +231,8 @@
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
 <!ENTITY xorg-server-version          "21.1.18">
 <!ENTITY xwayland-version             "24.1.8">
-<!ENTITY mtdev-version                "1.1.7">
 <!-- BEGIN X7DRIVER -->
-<!ENTITY libevdev-version             "1.13.4">
 <!ENTITY xorg-evdev-driver-version    "2.11.0">
-<!ENTITY libinput-version             "1.28.1">
 <!ENTITY xorg-libinput-driver-version "1.5.0">
 <!ENTITY xorg-synaptics-driver-version "1.10.0">
 <!ENTITY xorg-wacom-driver-version    "1.2.3">

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../../../general.ent">
+  %general-entities;
+
+<!--
+  <!ENTITY libinput-download "https://www.freedesktop.org/software/libinput/libinput-&libinput-version;.tar.xz">
+-->
+  <!ENTITY libinput-root "https://gitlab.freedesktop.org/libinput/libinput/-/archive">
+  <!ENTITY libinput-download
+    "&libinput-root;/&libinput-version;/libinput-&libinput-version;.tar.gz"
+>
+]>
+
+<sect1 id="libinput" xreflabel="libinput-&libinput-version;">
+  <?dbhtml filename="libinput.html"?>
+
+  <title>libinput-&libinput-version;</title>
+
+  <indexterm zone="libinput">
+    <primary sortas="a-libinput">libinput</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til Libinput</title>
+
+    <para>
+      libinput er et bibliotek som håndterer inndataenheter for skjermservere og 
+      andre applikasjoner som trenger å håndtere inndataenheter direkte. Xorg og 
+      Wayland kompositorer bruker denne pakken flittig.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&libinput-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">libinput Avhengigheter</bridgehead>
+
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
+    <para role="required">
+      <xref linkend="libevdev"/> og
+      <xref linkend="mtdev"/>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av Libinput</title>
+
+    <para>
+      Installer libinput ved å kjøre følgende 
+      kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            -D debug-gui=false        \
+            -D tests=false            \
+            -D libwacom=false         \
+            .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+    <para>
+      Hvis du har sendt <option>-D documentation=true</option> til
+      <command>meson</command>, kan du installere den genererte dokumentasjonen
+      ved å kjøre følgende kommandoer som &root; bruker:
+    </para>
+
+<!-- seems the api doc is not generated because the directory is not a git
+     repository... -->
+<screen role="root"
+        remap="doc"><userinput>install -v -dm755      /usr/share/doc/libinput-&libinput-version;/html &amp;&amp;
+cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-meson;
+
+    &meson-buildtype-release;
+
+    <para>
+      <parameter>-D debug-gui=false</parameter>: Denne bryteren
+      deaktiverer opprettelsen av en visuell feilsøkingshjelper for libinput. Fjern
+      hvis du ønsker den, og du har GTK3 installert.
+    </para>
+
+    <para>
+      <parameter>-D libwacom=false</parameter>: Fjern dette alternativet hvis du 
+      har libwacom installert, eller hvis du installerer
+      GNOME.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          libinput
+          <!-- libinput-debug-events, libinput-list-devices, libinput-measure*,
+          libinput-record, libinput-replay Library Executables -->
+        </seg>
+        <seg>
+          libinput
+        </seg>
+        <seg>
+          /etc/libinput,
+          /usr/libexec/libinput,
+          /usr/share/libinput, og (valgfri)
+          /usr/share/doc/libinput-&libinput-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libinput-prog">
+        <term><command>libinput</command></term>
+        <listitem>
+          <para>
+            er et sett med verktøy for å samhandle med
+            libinput biblioteket
+          </para>
+          <indexterm zone="libinput libinput-prog">
+            <primary sortas="b-libinput-prog">libinput</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libinput-lib">
+        <term><filename class="libraryfile">libinput</filename></term>
+        <listitem>
+          <para>
+            inneholder API funksjoner for håndtering av inndataenheter
+          </para>
+          <indexterm zone="libinput libinput-lib">
+            <primary sortas="c-libinput-lib">libinput</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

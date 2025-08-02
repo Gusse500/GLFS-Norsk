@@ -133,7 +133,7 @@ mapper i roten av kildekoden:
 - `shareddeps/`
 - `steam/`
 - `wine/`
-- `changelog.xml` (link to `introduction/welcome/changelog.xml`)
+- `changelog.xml` (lenke til `introduction/welcome/changelog.xml`)
 - `index.xml`
 
 Noen pakker i mappene må kanskje oppdateres hver gang en versjon 
@@ -194,12 +194,12 @@ eller kodeblokker. Det er greit. Men hvis du kan unngå det, vær så snill å h
 tegngrensen.
 3. Bruk oxford-komma (subjekt1, subjekt2 og subjekt3) i stedet for 
 (subjekt1, subjekt2 og subjekt3).
-4. Rediger `changelog.xml` etter behov. Se avsnitt 3.1.2.9.
+4. Rediger `changelog.xml` etter behov. Se avsnitt 3.1.2.8.
 
 ## 3.2. Gjør en oppdatering
 Først trenger du
-[Git](https://glfs-book.github.io/glfs/shareddeps/git.html) for å klone,
-trekke og pushe. Når du har installert det, må du forke dette
+[Git](https://lfs.freding.no/blfs/view/svn/general/git.html) for å 
+klone, trekke og pushe. Når du har installert det, må du forke dette
 repositoriet til Github kontoen din. Når du har forket det, må du
 klone forkingen:
 ```Bash
@@ -212,7 +212,7 @@ git checkout --track origin -b <branch_name>
 ```
 Gjør nå en redigering slik du synes passer. Hvis det ikke er en redigering i en intern fil som
 ikke er `packages.ent` eller retting av en enkel skrivefeil, lag en endringsloggoppføring (se
-avsnitt 3.1.2.9). Når du har gjort en, kopier teksten du lagde, formater
+avsnitt 3.1.2.8). Når du har gjort en, kopier teksten du lagde, formater
 teksten du kopierte til ren tekst som ikke blir rotet til i en git commit
 melding, og utfør deretter en testrendering. Se om renderingen ser fin ut, om den ble gjengitt.
 
