@@ -194,7 +194,7 @@ eller kodeblokker. Det er greit. Men hvis du kan unngå det, vær så snill å h
 tegngrensen.
 3. Bruk oxford-komma (subjekt1, subjekt2 og subjekt3) i stedet for 
 (subjekt1, subjekt2 og subjekt3).
-4. Rediger `changelog.xml` etter behov. Se avsnitt 3.1.2.9.
+4. Rediger `changelog.xml` etter behov. Se avsnitt 3.1.2.8.
 
 ## 3.2. Gjør en oppdatering
 Først trenger du
