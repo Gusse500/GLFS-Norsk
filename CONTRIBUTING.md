@@ -212,7 +212,7 @@ git checkout --track origin -b <branch_name>
 ```
 Gjør nå en redigering slik du synes passer. Hvis det ikke er en redigering i en intern fil som
 ikke er `packages.ent` eller retting av en enkel skrivefeil, lag en endringsloggoppføring (se
-avsnitt 3.1.2.9). Når du har gjort en, kopier teksten du lagde, formater
+avsnitt 3.1.2.8). Når du har gjort en, kopier teksten du lagde, formater
 teksten du kopierte til ren tekst som ikke blir rotet til i en git commit
 melding, og utfør deretter en testrendering. Se om renderingen ser fin ut, om den ble gjengitt.
 
