@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>1. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - mtdev; libevdev; libinput: Flytt til Grunnleggende 
+          X11 Programvare og ut av Xorg inndata drivere.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>31. juli 2025</para>
       <itemizedlist>
         <listitem>

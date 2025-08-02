@@ -26,7 +26,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libepoxy.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xorg-server.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xwayland.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mtdev.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x7driver.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xinit.xml"/>
 

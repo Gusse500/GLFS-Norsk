@@ -1,0 +1,173 @@
+@ -0,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../../../general.ent">
+  %general-entities;
+
+  <!ENTITY libevdev-download "https://www.freedesktop.org/software/libevdev/libevdev-&libevdev-version;.tar.xz">
+]>
+
+<sect1 id="libevdev" xreflabel="libevdev-&libevdev-version;">
+  <?dbhtml filename="libevdev.html"?>
+
+  <title>libevdev-&libevdev-version;</title>
+
+  <indexterm zone="libevdev">
+    <primary sortas="a-libevdev">libevdev</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til libevdev</title>
+
+    <para>
+      libevdev pakken tilbyr funksjoner for å kommunisere med evdev grensesnittet 
+      for generisk inndata. Samtidig abstraherer den også detaljer som ioctls 
+      til fordel for å tilby et enkelt grensesnitt for håndtering av inndata.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&libevdev-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="kernel" id="libevdev-kernel">
+    <title>Kjernekonfigurasjon</title>
+
+    <para>
+      Aktiver følgende alternativer i kjernekonfigurasjonen og kompiler 
+      kjernen på nytt om nødvendig:
+    </para>
+
+    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
+      href="libevdev-kernel.xml"/>
+
+    <indexterm zone="libevdev libevdev-kernel">
+      <primary sortas="d-libevdev">libevdev</primary>
+    </indexterm>
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av libevdev</title>
+
+    <para>
+      Installer libevdev ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup ..                  \
+      --prefix=/usr             \
+      --buildtype=release       \
+      -D documentation=disabled \
+      -D tests=disabled &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-meson;
+
+    <para>
+      <parameter>-D tests=disabled</parameter>: Denne bryteren deaktiverer 
+      bygging av tester siden de er avhengige av Check.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installert Mappe</segtitle>
+
+      <seglistitem>
+        <seg>
+          libevdev-tweak-device, mouse-dpi-tool, og touchpad-edge-detector
+        </seg>
+        <seg>
+          libevdev
+        </seg>
+        <seg>
+          /usr/include/libevdev-1.0
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect4">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libevdev-tweak-device">
+        <term><command>libevdev-tweak-device</command></term>
+        <listitem>
+          <para>
+            er et verktøy for å endre noen egenskaper for kjerneenheter
+          </para>
+          <indexterm zone="libevdev libevdev-tweak-device">
+            <primary sortas="b-libevdev-tweak-device">libevdev-tweak-device</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mouse-dpi-tool">
+        <term><command>mouse-dpi-tool</command></term>
+        <listitem>
+          <para>
+            er et verktøy for å estimere oppløsningen til en mus
+          </para>
+          <indexterm zone="libevdev mouse-dpi-tool">
+            <primary sortas="b-mouse-dpi-tool">mouse-dpi-tool</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="touchpad-edge-detector">
+        <term><command>touchpad-edge-detector</command></term>
+        <listitem>
+          <para>
+            touchpad-edge-detector er et verktøy som leser 
+            berøringsplatehendelsene fra kjernen og beregner minimum og 
+            maksimum for henholdsvis x og y koordinatene
+          </para>
+          <indexterm zone="libevdev touchpad-edge-detector">
+            <primary sortas="b-touchpad-edge-detector">touchpad-edge-detector</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libevdev-lib">
+        <term><filename class="libraryfile">libevdev</filename></term>
+        <listitem>
+          <para>
+            inneholder API funksjoner for evdev generisk inndatagrensesnitt
+          </para>
+          <indexterm zone="libevdev libevdev-lib">
+            <primary sortas="c-libevdev-lib">ebvdev</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

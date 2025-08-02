@@ -8,7 +8,6 @@
 <sect1 id="xorg7-input-driver" xreflabel="Xorg Inndata Drivere">
   <?dbhtml filename="x7driver.html"?>
 
-
   <title>Xorg Inndata Drivere</title>
 
   <indexterm zone="xorg7-input-driver">
@@ -30,17 +29,7 @@
       <itemizedlist spacing="compact">
         <listitem>
           <para>
-            <xref linkend="libevdev"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
             <xref linkend="xorg-evdev-driver"/>
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="libinput"/>
           </para>
         </listitem>
         <listitem>
@@ -76,16 +65,10 @@
   </sect2>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="libevdev.xml"/>
-
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
     href="x7driver-evdev.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
     href="libinput.xml"/>
-
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-    href="x7driver-libinput.xml"/>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
     href="x7driver-synaptics.xml"/>
