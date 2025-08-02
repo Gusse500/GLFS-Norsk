@@ -133,7 +133,7 @@ mapper i roten av kildekoden:
 - `shareddeps/`
 - `steam/`
 - `wine/`
-- `changelog.xml` (link to `introduction/welcome/changelog.xml`)
+- `changelog.xml` (lenke til `introduction/welcome/changelog.xml`)
 - `index.xml`
 
 Noen pakker i mappene må kanskje oppdateres hver gang en versjon 
@@ -198,8 +198,8 @@ tegngrensen.
 
 ## 3.2. Gjør en oppdatering
 Først trenger du
-[Git](https://glfs-book.github.io/glfs/shareddeps/git.html) for å klone,
-trekke og pushe. Når du har installert det, må du forke dette
+[Git](https://lfs.freding.no/blfs/view/svn/general/git.html) for å 
+klone, trekke og pushe. Når du har installert det, må du forke dette
 repositoriet til Github kontoen din. Når du har forket det, må du
 klone forkingen:
 ```Bash
