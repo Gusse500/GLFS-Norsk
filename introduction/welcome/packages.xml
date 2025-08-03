@@ -11,21 +11,22 @@
 
   <title>Hente kildepakkene</title>
 
-  <para>Innenfor GLFS-instruksjonene har hver pakke to referanser for å
-  finne kildefilene for pakken&mdash;en HTTP lenke og en FTP lenke
-  (noen pakker viser kanskje bare én av disse lenkene). Vi har gjort vårt ytterste for
-  å sikre at disse lenkene er nøyaktige. Imidlertid er World Wide Web i
-  kontinuerlig endring. Pakker flyttes eller oppdateres noen ganger, og den nøyaktige URL-adressen
-  som er spesifisert er ikke alltid tilgjengelig.</para>
+  <para>Innenfor GLFS instruksjonene har hver pakke en referanse for å finne 
+  kildefilene for pakken&mdash;en lenke (noen pakker viser kanskje ikke noen, i 
+  så fall er det en gruppe pakker som er ment å installeres i bulk, og boken vil 
+  instruere deg i hvordan du installerer alle nødvendige filer). Vi har gjort 
+  vårt ytterste for å sikre at disse lenkene er nøyaktige. Imidlertid er 
+  internett i kontinuerlig endring. Pakker flyttes eller oppdateres noen ganger, 
+  og den nøyaktige URL-adressen som er spesifisert er ikke alltid 
+  tilgjengelig.</para>
 
   <para>BLFS teamet la merke til dette problemet med BLFS, så de har, med hjelp
-  fra Oregon State University Open Source Lab, gjort et HTTP/FTP
+  med hjelp fra Oregon State University Open Source Lab, har laget et
   nettsted tilgjengelig gjennom verdensomspennende speil. Se <ulink
-  url="https://www.linuxfromscratch.org/blfs/download.html#sources">
-  https://www.linuxfromscratch.org/blfs/download.html#sources</ulink> for en
-  liste. Disse nettstedene har alle kildene til de nøyaktige versjonene av pakkene
-  som brukes i BLFS. Hvis du ikke finner BLFS- eller GLFS-pakken du trenger på de
-  oppførte adressene, kan du hente den fra disse nettstedene.</para>
+  url="https://www.linuxfromscratch.org/blfs/download.html#sources"/>
+  for en liste. Disse nettstedene har alle kildene til de nøyaktige versjonene 
+  av pakkene som brukes i BLFS. Hvis du ikke finner BLFS eller GLFS pakken du 
+  trenger på de oppførte adressene, kan du hente den fra disse nettstedene.</para>
 
   <para>Vi vil imidlertid gjerne be om en tjeneste. Selv om dette er en offentlig
   ressurs du kan bruke, må du ikke misbruke den. De har allerede hatt én
