@@ -64,10 +64,6 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr \
 make</userinput></screen> -->
 
     <para>
-      For å teste resultatene, utsted: <command>make check</command>.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 

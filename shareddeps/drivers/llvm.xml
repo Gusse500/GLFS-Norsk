@@ -171,9 +171,7 @@ mv projects/compiler-rt-&llvm-version;.src projects/compiler-rt</userinput></scr
 <screen><userinput>grep -rl '#!.*python' | xargs sed -i '1s/python$/python3/'</userinput></screen>
 
     <para>
-      Sørg for å installere <command>FileCheck</command> programmet som er 
-      nødvendig for testpakken til noen pakker (for eksempel
-      <xref linkend="rustc"/>): 
+      Sørg for å installere <command>FileCheck</command>: 
     </para>
 
     <screen><userinput>sed 's/utility/tool/' -i utils/FileCheck/CMakeLists.txt</userinput></screen>

@@ -40,12 +40,6 @@
       <xref linkend="xorg-env"/> (nødvendig for instruksjonene nedenfor)
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
-    <para role="optional">
-      <xref linkend="libxml2"/>
-      (nødvendig for å kjøre testene)
-    </para>
-
   </sect2>
 
   <sect2 role="installation">
@@ -57,10 +51,6 @@
     </para>
 
 <screen><userinput>PYTHON=python3 ./configure $XORG_CONFIG</userinput></screen>
-
-    <para>
-      For å teste resultatene, utsted: <command>make check</command>.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

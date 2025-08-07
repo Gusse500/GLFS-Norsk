@@ -138,8 +138,8 @@
             --enable-libvpx      \
             --enable-libx264     \
             --enable-libx265     \
-            --enable-openssl     \
-            --ignore-tests=enhanced-flv-av1 \
+            --enable-openssl<!--     \
+            - -ignore-tests=enhanced-flv-av1-->     \
             --docdir=/usr/share/doc/ffmpeg-&ffmpeg-version; &amp;&amp;
 
 make &amp;&amp;
@@ -187,8 +187,8 @@ install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-&ffmpeg-version;</userinput>
             --enable-libvpx                           \
             --enable-libx264                          \
             --enable-libx265                          \
-            --enable-openssl                          \
-            --ignore-tests=enhanced-flv-av1 &amp;&amp;
+            --enable-openssl<!--                          \
+            - -ignore-tests=enhanced-flv-av1--> &amp;&amp;
 
 make</userinput></screen>
 
@@ -307,13 +307,15 @@ ldconfig</userinput></screen>
     </para>
     -->
 
+<!--
     <para>
-      <parameter>--ignore-tests=...</parameter>: Deaktiverer tester som ikke 
+      <parameter>- -ignore-tests=...</parameter>: Deaktiverer tester som ikke 
       klarer å kjøre på BLFS uten de valgfrie pakkene. AV1 testen er for 
       øyeblikket deaktivert, da den trenger dav1d for å utføre AV1 dekoding på 
       CPU-en. Testen kan fungere hvis du har en GPU som kan dekode AV1, men 
       dette ble ikke testet.
     </para>
+-->
 
     <para>
       <option>--enable-gnutls</option>: Bruk dette alternativet i stedet for

@@ -14,7 +14,7 @@
     Når du leser gjennom noen av avsnittene i denne boken, kan du legge merke
     til at mange av pakkene som er lenket i noen av avsnittene ikke er i
     denne boken, men heller i BLFS, noen valgfrie avhengigheter er ikke
-    oppført, noen pakker kan være utdaterte, og noen pakker som har testpakker
+    oppført, noen pakker kan være utdaterte, og pakker som har testpakker
     har ikke testinstruksjoner. Disse valgene er svært
     bevisste.
   </para>
@@ -90,7 +90,7 @@
   </sect2>
 
   <sect2>
-    <title>Enkelte pakketestinstruksjoner er ikke inkludert</title>
+    <title>Pakketestinstruksjoner er ikke inkludert</title>
 
     <para>
       Mange pakker har testpakker som kan teste en gitt versjon for
@@ -101,8 +101,10 @@
       pakkene som har testpakker ikke involvert i kritiske
       komponenter i systemet og har en tendens til ikke å ha feil som
       oppstår som et resultat av en versjon, men snarere den utgitte kildekoden.
-      Hvis du vil teste en gitt pakke, har
-      BLFS gode instruksjoner for det på hver pakke og dekker
+      Den siste grunnen er at GLFS-editorene ikke kjører testpakkene og i 
+      stedet ser resultatene av en komplett GLFS bygg. Hvis du vil kjøre 
+      testpakker av en gitt pakke, 
+      har BLFS gode instruksjoner for det på hver pakke og dekker
       alle nødvendige avhengigheter, samt instruksjoner om hvordan du
       installerer disse avhengighetene.
     </para>

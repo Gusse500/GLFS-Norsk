@@ -27,8 +27,6 @@
       generasjons VP9 kodek.
     </para>
 
-    &test-use-internet;
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -43,11 +41,6 @@
     <para role="recommended">
       <xref linkend="nasm"/> og
       <xref linkend="which"/> (så <command>configure</command> kan finne nasm)
-    </para>
-
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
-    <para role="optional">
-      <xref linkend="curl"/> (for å laste ned testfiler)
     </para>
 
   </sect2>
@@ -81,13 +74,6 @@ cd    libvpx-build            &amp;&amp;
 make</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted:
-      <command>LD_LIBRARY_PATH=. make test</command>.
-      Testpakken laster ned mange filer som en del av testprosessen. 
-      Noen deler av den vil bruke alle tilgjengelige kjerner.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -113,13 +99,6 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
              --disable-static &amp;&amp;
 
 make</userinput></screen>
-
-    <para>
-      For å teste resultatene, utsted:
-      <command>LD_LIBRARY_PATH=. make test</command>.
-      Testpakken laster ned mange filer som en del av testprosessen. 
-      Noen deler av den vil bruke alle tilgjengelige kjerner.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
@@ -165,11 +144,6 @@ ldconfig</userinput></screen>
       optimaliseringer spesifikke for x86 og x86-64, slik at du kan bygge denne 
       pakken uten <command>nasm</command> og <command>yasm</command>
       installert.
-    </para>
-
-    <para>
-      <command>LD_LIBRARY_PATH=.</command>: Dette er nødvendig for at 
-      testpakken skal kunne bruke biblioteket som nettopp ble bygget.
     </para>
 
   </sect2>

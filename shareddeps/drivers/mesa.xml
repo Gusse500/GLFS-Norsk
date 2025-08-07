@@ -196,11 +196,6 @@ meson setup                    \
 ninja</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted:
-      <command>meson configure -D build-tests=true &amp;&amp; ninja test</command>.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -479,14 +474,6 @@ ldconfig</userinput></screen>
       Denne pakken kan være sta og liker å lenke mot LLVM biblioteker i
       <filename>/lib</filename>, selv på en multilib installasjon, så denne kommandoen 
       forteller denne pakken at den skal lenke mot biblioteker i riktig mappe.
-    </para>
-
-    <para>
-      <command>meson configure -D build-tests=true</command>: Denne kommandoen vil 
-      konfigurere bygget på nytt for å angi <option>-D build-tests=true</option>, men
-      behold de andre alternativene som er spesifisert i <command>meson setup</command>
-      kommandoen uendret. Den tillater <command>ninja test</command> å bygge og 
-      kjøre enhetstester.
     </para>
 
   </sect2>

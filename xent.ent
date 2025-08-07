@@ -26,12 +26,6 @@
   <xref role='required' linkend='make-ca'/> før du bygger denne 
   pakken.</para></note>">
 
-<!ENTITY test-use-internet
-  "<note><para>En internettforbindelse er nødvendig for noen tester av 
-  denne pakken. Systemsertifikatlageret må kanskje konfigureres 
-  med <xref role='nodep' linkend='make-ca'/> før du tester denne 
-  pakken.</para></note>">
-
 <!ENTITY options-configure
   "<note><para>Kjør <command>./configure --help</command> for en fullstendig liste 
   over alternativer.</para></note>">

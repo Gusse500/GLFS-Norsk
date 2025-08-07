@@ -124,10 +124,6 @@ make</userinput></screen>
 <screen remap="doc"><userinput>make doc</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted: <command>make check</command>.
-    </para>
-
-    <para>
       Nå, som &root; bruker, installer pakken og anbefalte
       konfigurasjonsfiler:
     </para>

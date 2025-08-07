@@ -105,12 +105,6 @@ meson setup --prefix=/usr .. &amp;&amp;
 ninja</userinput></screen>
 
       <para>
-        For å teste resultatene, utsted: <command>ninja test</command>.
-        Det finnes bare én test for denne pakken, dlclose, og det er kjent at 
-        den mislykkes på enkelte systemer.
-      </para>
-
-      <para>
         Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 

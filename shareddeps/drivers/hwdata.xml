@@ -47,10 +47,6 @@
 <screen><userinput>./configure --prefix=/usr --disable-blacklist</userinput></screen>
 
     <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
-
-    <para>
       Nå, som &root; brukere:
     </para>
 

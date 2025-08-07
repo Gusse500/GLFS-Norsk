@@ -81,10 +81,10 @@
     <para role="optional">
       <xref linkend="libunwind"/>,
       <xref linkend="nettle"/>,
-      <xref linkend="xcb-utils"/> (for å bygge Xephyr),
-      <xref linkend="xkeyboard-config"/> (for tester),
-      <ulink url="https://gitlab.freedesktop.org/xorg/test/rendercheck">rendercheck</ulink> (for tester), og
-      <ulink url="https://www.x.org/archive/individual/doc/">xorg-sgml-doctools</ulink> (for å bygge dokumentasjon)
+      <xref linkend="xcb-utils"/> (for å bygge Xephyr), og
+      <ulink
+        url="https://www.x.org/archive/individual/doc/">xorg-sgml-doctools</ulink>
+      (for å bygge dokumentasjon)
     </para>
   </sect2>
 
@@ -92,12 +92,11 @@
     <title>Kjernekonfigurasjon</title>
 
     <para>
-      Hvis GPU-en din støtter 3D akselerasjon og brukerland grafikkdriveren 
-      installerte kan du bruke 3D funksjonaliteten, du bør allerede ha aktivert 
-      de nødvendige kjernekonfigurasjonsalternativene. Ellers må du finne 
-      kjernekonfigurasjonsalternativet til DRM driveren for GPU-en og aktivere 
-      det. Det er verdt å merke seg at de virtuelle GPU-ene som tilbys av noen 
-      virtuelle maskinadministratorer:
+      Hvis GPU-en din støtter 3D akselerasjon og brukerland grafikkdriveren installerte 
+	  kan du bruke 3D funksjonaliteten, bør du allerede ha aktivert de nødvendige 
+	  kjernekonfigurasjonsalternativene. Ellers må du finne kjernekonfigurasjonsalternativet 
+	  til DRM driveren for GPU-en og aktivere det. Det er verdt å merke seg at 
+	  de virtuelle GPU-ene tilbys av noen virtuelle maskinadministratorer:
     </para>
 
     <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
@@ -179,12 +178,6 @@ meson setup ..              \
       -D xkb_output_dir=/var/lib/xkb &amp;&amp;
 
 ninja</userinput></screen>
-
-    <para>
-      For å teste resultatene, utsted: <command>ninja test</command>. Du trenger 
-      å kjøre <command>ldconfig</command> som &root; bruker først eller kan noen 
-      tester mislykkes.
-    </para>
 
     <para>
       Nå, som &root; bruker:

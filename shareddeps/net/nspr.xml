@@ -54,13 +54,6 @@ sed -i 's|$(LIBRARY) ||'  config/rules.mk         &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Testpakken er designet for å teste endringer i nss eller nspr og er ikke 
-      spesielt nyttig for å sjekke en utgitt versjon (f.eks. må den kjøres på 
-      en ikke-optimalisert versjon med både nss og nspr mapper som eksisterer 
-      side om side).
-    </para>
-
-    <para>
       Nå, som &root; bruker:
     </para>
 

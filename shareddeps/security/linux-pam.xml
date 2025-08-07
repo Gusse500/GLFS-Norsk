@@ -89,20 +89,13 @@ meson setup ..        \
 
 ninja</userinput></screen>
 
-    <para>
-      For å teste resultatene, en passende <filename>/etc/pam.d/other</filename>
-      konfigurasjonsfil må eksistere.
-    </para>
-
     <caution>
       <title>Ny installasjon eller oppgradering av Linux PAM</title>
       <para>
         Hvis du har et system med Linux PAM installert og som fungerer, vær 
         forsiktig når du endrer filene i
         <filename class="directory">/etc/pam.d</filename>, siden systemet ditt 
-        kan bli helt ubrukelig. Hvis du vil kjøre testene, trenger du ikke å 
-        opprette en ny <filename>/etc/pam.d/other</filename> fil. Den 
-        eksisterende filen kan brukes til testene.
+        kan bli helt ubrukelig.
       </para>
 
       <para>
@@ -113,35 +106,6 @@ ninja</userinput></screen>
          må du sørge for å sikkerhetskopiere dem.
       </para>
     </caution>
-
-    <para>
-      For førstegangsinstallasjon, opprett en konfigurasjonsfil ved å bruke 
-      følgende kommandoer som <systemitem class="username">root</systemitem>
-      bruker:
-    </para>
-
-<screen role="root"><userinput>install -v -m755 -d /etc/pam.d &amp;&amp;
-
-cat &gt; /etc/pam.d/other &lt;&lt; "EOF"
-<literal>auth     required       pam_deny.so
-account  required       pam_deny.so
-password required       pam_deny.so
-session  required       pam_deny.so</literal>
-EOF</userinput></screen>
-
-    <para>
-      Kjør nå testene ved å utstede <command>ninja test</command>.
-      Sørg for at testene ikke ga noen feil før du fortsetter 
-      installasjonen.
-    </para>
-
-    <para>
-      For førstegangsinstallasjon, fjern konfigurasjonsfilen som ble opprettet 
-      tidligere ved å kjøre følgende kommando som
-      &root; bruker:
-    </para>
-
-<screen role="root"><userinput>rm -fv /etc/pam.d/other</userinput></screen>
 
     <para>
       Nå, som &root; bruker:

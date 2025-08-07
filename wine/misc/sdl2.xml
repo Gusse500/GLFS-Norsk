@@ -91,14 +91,6 @@
 <screen><userinput>./configure --prefix=/usr &amp;&amp;
 make</userinput></screen>
 
-    <note>
-      <para>
-        Hvis du ønsker å bygge og kjøre pakkeregresjonstester, 
-        må du ikke slette de statiske bibliotekene nedenfor 
-        før etter at testene er bygget.
-      </para>
-    </note>
-
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
@@ -134,29 +126,6 @@ rm -v DESTDIR/usr/lib32/libSDL2*.a    &amp;&amp;
 cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
 rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
-
-  </sect2>
-
-  <sect2 role="testing">
-    <title>Teste SDL2</title>
-
-    <para>
-      Hvis du ønsker det, kan du teste installasjonen av SDL2 ved 
-      hjelp av de inkluderte testprogrammene. Ingen av de resulterende 
-      binærfilene trenger å installeres. Kjør følgende kommandoer for 
-      å bygge testprogrammene:
-    </para>
-
-<screen><userinput>cd test &amp;&amp;
-./configure &amp;&amp;
-make</userinput></screen>
-
-    <para>
-      Hvert av testprogrammene (de er oppført i
-      <filename>README</filename> filen i denne mappen) må kjøres individuelt. 
-      Mange av dem må avsluttes manuelt. I tillegg må høyttalerne være på med 
-      volumet på et passende nivå.
-    </para>
 
   </sect2>
 

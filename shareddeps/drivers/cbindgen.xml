@@ -54,12 +54,6 @@
 <screen><userinput>cargo build --release</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted: <command>cargo test --release</command>.
-      Tre tester i <filename>profile.rs</filename> er kjent for å mislykkes fordi 
-      de prøver å bruke noen ustabile Rust funksjoner som er deaktivert i GLFS.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 

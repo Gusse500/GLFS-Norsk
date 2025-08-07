@@ -26,8 +26,6 @@
       internett.
     </para>
 
-    &test-use-internet;
-
     &long-build-time;
 
     <itemizedlist spacing="compact">
@@ -65,12 +63,6 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr \
       -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>
-
-    <para>
-      For å teste resultatene, utsted: <command>ninja testdata &amp;&amp; ninja
-      runtests</command>. Merk at testene tar ekstremt lang tid å 
-      kjøre.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

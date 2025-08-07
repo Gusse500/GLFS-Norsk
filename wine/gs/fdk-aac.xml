@@ -48,10 +48,6 @@
 make</userinput></screen>
 
     <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -75,10 +71,6 @@ CC="gcc -m32" CXX="g++ -m32"         \
             --disable-static &amp;&amp;
 
 make</userinput></screen>
-
-    <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
