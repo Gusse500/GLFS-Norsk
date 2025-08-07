@@ -50,17 +50,6 @@
   <sect2 role="installation">
     <title>Installasjon av p11-kit</title>
 
-    <!-- https://github.com/p11-glue/p11-kit/pull/535
-         The issue causes test failures in glib-networking and libsoup 
-         Fixed in version 0.25.1
-
-    <para>
-      Fiks et problem som forårsaket at noen PKCS 11 moduler ikke lastes inn:
-    </para>
-
-<screen><userinput>sed 's/if (gi/&amp; \&amp;\&amp; gi != C_GetInterface/' \
-    -i p11-kit/modules.c</userinput></screen>-->
-
     <para>
       Forbered den distribusjonsspesifikke ankerkroken:
     </para>
@@ -91,11 +80,7 @@ meson setup ..            \
 ninja</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted: <command>LC_ALL=C ninja test</command>.
-    </para>
-
-    <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install &amp;&amp;

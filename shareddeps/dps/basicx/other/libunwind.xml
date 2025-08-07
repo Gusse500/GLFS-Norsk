@@ -68,12 +68,6 @@
 make</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted: <command>make check</command>. 
-      To tester, run-coredump-unwind og run-coredump-unwind-mdi, blir 
-      hoppet over.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 

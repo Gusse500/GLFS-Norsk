@@ -84,12 +84,6 @@ meson setup ..            \
 ninja</userinput></screen>
 
     <para>
-      For å teste resultatene, sørg for at <command>Xvfb</command> og
-      <xref linkend='xkeyboard-config'/> er tilgjengelige, deretter utsted:
-      <command>ninja test</command>.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 

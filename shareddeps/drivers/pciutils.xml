@@ -63,10 +63,6 @@
      SHARED=yes</userinput></screen>
 
     <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 

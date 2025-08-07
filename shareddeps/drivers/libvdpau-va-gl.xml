@@ -69,11 +69,6 @@ cmake -D CMAKE_BUILD_TYPE=Release         \
 make</userinput></screen>
 
       <para>
-        For å teste resultatene, utsted: <command>make check</command>.  
-        Testene må kjøres fra et Xorg miljø.
-      </para>
-
-      <para>
         Nå, som <systemitem class="username">root</systemitem> bruker:
       </para>
 

@@ -37,16 +37,6 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Valgfri nedlasting, kreves for å kjøre testpakken:
-          <ulink url="&xdgmime-download-http;"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
     <bridgehead renderas="sect3">Shared Mime Info Avhengigheter</bridgehead>
 
     <bridgehead renderas="sect4">Påkrevd</bridgehead>
@@ -65,30 +55,11 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
       kommandoer:
     </para>
 
-    <para>
-      Hvis du ønsker å kjøre testpakken, må du først pakke ut
-      <filename>xdgmime</filename> tarballen inn i gjeldende mappe,
-      og kompilere det slik at <command>meson</command> kan finne det:
-    </para>
-
-<screen remap="test"><userinput>tar -xf ../xdgmime.tar.xz &amp;&amp;
-make -C xdgmime</userinput></screen>
-
-    <para>
-      Bygg nå pakken:
-    </para>
-
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
 meson setup --prefix=/usr --buildtype=release -D update-mimedb=true .. &amp;&amp;
 ninja</userinput></screen>
-
-    <para role="optional">
-      Hvis du har fulgt instruksjonene ovenfor for å bygge 
-      xdgmime, for å teste resultat utsted
-      <command>ninja test</command>.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

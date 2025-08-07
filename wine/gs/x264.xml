@@ -71,10 +71,6 @@
 make</userinput></screen>
 
     <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -101,10 +97,6 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
             --disable-cli &amp;&amp;
 
 make</userinput></screen>
-
-    <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

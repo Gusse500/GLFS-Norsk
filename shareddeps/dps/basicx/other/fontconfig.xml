@@ -28,8 +28,6 @@
       tilpasse skrifttilgang.
     </para>
 
-    &test-use-internet;
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -56,15 +54,6 @@
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
-    <para role="optional">
-      <ulink url="&blfs-svn;/general/bubblewrap.html">bubblewrap</ulink>
-      (brukt av noen tester),
-      <xref linkend="curl"/>, og
-      &unzip;
-      (begge brukes av noen tester for nedlasting og utpakking av testfiler)
-    </para>
-
   </sect2>
 
   <sect2 role="installation">
@@ -80,12 +69,6 @@ cd    build &amp;&amp;
 
 meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
 ninja</userinput></screen>
-
-    <para>
-      For å teste resultatene, utsted: <command>ninja test</command>.  Én test 
-      er kjent for å mislykkes hvis kjernen ikke støtter brukernavneområder. Noen 
-      tester vil laste ned noen fontfiler via Internett.
-    </para>
 
     <para>
       Nå, som &root; bruker:

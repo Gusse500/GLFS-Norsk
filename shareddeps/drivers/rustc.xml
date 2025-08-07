@@ -64,7 +64,6 @@
       <literal>--jobs &lt;N&gt;</literal> (f.eks. '--jobs 4' å begrense til 4 
       prosessorer) på hver aktivering av <command>./x.py</command> <emphasis>og
       </emphasis> ved hjelp av en miljøvariabel <envar>CARGO_BUILD_JOBS=&lt;N&gt;</envar>. 
-      For øyeblikket er ikke dette effektivt når noen av rustc testene kjøres.
     </para>
 
     <para>

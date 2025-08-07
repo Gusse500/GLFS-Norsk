@@ -75,15 +75,6 @@
 make</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted: <command>make check</command>. Merk at hvis 
-      du sendte <option>--enable-exhaustive-tests</option> og
-      <option>--enable-valgrind-testing</option> parametere til
-      <command>configure</command> og deretter kjøre testpakken, vil det ta 
-      <emphasis>veldig</emphasis> lang tid (opptil 300 SBU) og bruke omtrent 375 MB 
-      diskplass.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -128,8 +119,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>--disable-thorough-tests</parameter>: Denne parameteren brukes 
-      for at testpakken skal fullføres innen rimelig tid. 
-      Fjern den hvis du ønsker mer omfattende tester.
+      slik at bare grunnleggende tester bygges. Tester kan ikke deaktiveres fullstendig.
     </para>
 
   </sect2>

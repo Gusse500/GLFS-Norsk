@@ -99,29 +99,6 @@
 make</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted: <command>bin/ctest
-      -j<replaceable>$(nproc)</replaceable></command>. Erstatt
-      <replaceable>$(nproc)</replaceable> med et heltall mellom 1 og 
-      antallet systemlogiske kjerner hvis du ikke vil bruke alle.
-      <!--
-        One test, RunCMake.FindBoost, is known to fail.
-        Now cmake-3.27.0.  All tests pass.
-      -->
-    </para>
-
-    <para>
-      Hvis du vil undersøke et problem med en gitt "problem1-test",
-      bruk <command>bin/ctest -R "problem1-test"</command> og, for å utelate det, bruk
-      <command>bin/ctest -E "problem1-test"</command>. Disse alternativene kan 
-      brukes sammen:
-      <command>bin/ctest -R "problem1-test" -E "problem2-test"</command>.
-      Alternativet <option>-N</option> kan brukes til å vise alle 
-      tilgjengelige tester, og du kan kjøre <command>bin/ctest</command> for et 
-      delsett av tester ved å bruke navn eller tall atskilt med mellomrom som 
-      alternativer. Alternativ <option>--help</option> kan brukes til å vise alle alternativer.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 

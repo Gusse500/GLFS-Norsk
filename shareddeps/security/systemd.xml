@@ -131,23 +131,6 @@ meson setup ..                 \
 
 ninja</userinput></screen>
 
-    <note>
-      <para>
-        For best mulig testresultat, sørg for at du kjører testpakken 
-        fra et system som startes opp med samme Systemd versjon 
-        som du gjenoppbygger.
-      </para>
-    </note>
-
-    <para>
-      For å teste resultatene, utsted: <command>ninja test</command>.
-      Testen som heter <filename>test-stat-util</filename> er kjent for å 
-      feile hvis noen kjernefunksjoner ikke er aktivert. Hvis testpakken 
-      kjøres som &root; bruker, noen 
-      andre tester kan mislykkes fordi de er avhengige av ulike 
-      kjernekonfigurasjonsalternativer.
-    </para>
-
    <para>
      Nå, som &root; bruker:
    </para>

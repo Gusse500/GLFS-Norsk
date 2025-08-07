@@ -41,6 +41,30 @@
     -->
 
     <listitem>
+      <para>5. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.397 -&gt; 0.398.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>4. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 575.64.05 -&gt; 580.65.06
+          <superscript>BETA</superscript>. Fikser
+          <ulink url="&glfs-issues;/293">#293</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - *: Fjern tester. Fikser
+          <ulink url="&glfs-issues;/292">#292</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>1. august 2025</para>
       <itemizedlist>
         <listitem>

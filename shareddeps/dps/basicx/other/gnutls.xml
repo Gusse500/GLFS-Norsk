@@ -72,19 +72,6 @@
       <xref linkend="p11-kit"/>
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
-    <para role="optional">
-      <ulink url="&gnu-http;/autogen/">autogen</ulink>,
-      <ulink url="https://cmocka.org/">cmocka</ulink> og
-      <ulink
-      url="https://ftp.debian.org/debian/pool/main/d/datefudge/">datefudge</ulink>
-      (brukes under testpakken hvis DANE biblioteket er bygget),
-      <ulink url="https://github.com/smuellerDD/leancrypto">leancrypto</ulink>,
-      og <ulink
-      url="&sourceforge-dl;/trousers/">Trousers</ulink> (Pålitelig plattform 
-      Modulstøtte)
-    </para>
-
     <note><para>
  <!-- Note that if you do not install <xref linkend="libtasn1"/>, an older
        3.8.0 includes minitasn1 4.19 which is currnet at the moment. ken -->
@@ -92,6 +79,14 @@
       versjon sendt i GnuTLS tarballen vil bli
       brukt i stedet.
     </para></note>
+
+    <bridgehead renderas="sect4">Valgfri</bridgehead>
+    <para role="optional">
+      <ulink url="https://github.com/smuellerDD/leancrypto">leancrypto</ulink>
+      og <ulink
+      url="&sourceforge-dl;/trousers/">Trousers</ulink> (Pålitelig plattform 
+      modulstøtte)
+    </para>
 
   </sect2>
 
@@ -115,10 +110,6 @@ make</userinput></screen>
      disable-rpath option: rpath pointing to the build tree when libraries
      are first linked, but rpath removed when libraries are relinked at
      install time. -->
-
-    <para>
-      For å teste resultatene, utsted: <command>make check</command>.
-    </para>
 
     <para>
       Nå, som &root; bruker:

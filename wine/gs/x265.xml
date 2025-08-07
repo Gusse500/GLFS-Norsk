@@ -80,10 +80,6 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr        \
 
 make</userinput></screen>
 
-    <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
-
     <!-- To editors: hard coded versions "209", "212", and "3.6" are not a
          bug.  This <important> block should be removed when we update x265
          to 3.7 (or 4.0 or whatever new version).  The problem only happens
@@ -137,10 +133,6 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr        \
       -W no-dev ../source &amp;&amp;
 
 make</userinput></screen>
-
-    <para>
-      Denne pakken leveres ikke med en testpakke.
-    </para>
 
     <para>
       For å installere pakken, fjern først eventuelle gamle bibliotekversjoner. 

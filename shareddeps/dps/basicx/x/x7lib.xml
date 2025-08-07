@@ -43,10 +43,8 @@
     </para>
     <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
-      <ulink url="&slfs-website;/general/ncompress.html">ncompress</ulink>
-      (for noen tester) og
       <ulink url="&w3m-url;">W3m</ulink> (for å generere ytterligere PDF eller 
-	  tekstdokumentasjon for libXfont pakken).
+	  tekstdokumentasjon for libXfont pakken)
     </para>
 <!--
     <bridgehead renderas="sect4" revision="systemd">Anbefalt ved kjøretid</bridgehead>
@@ -123,26 +121,6 @@ grep -v '^#' ../lib-&xorg-version;-list | wget -i- -c \
 &as_root;
 
     <para>
-      Noen biblioteker leveres med en testpakke. Hvis du ønsker å kjøre dem, 
-      kan du enten kommentere ut <command>rm -rf ...</command> nedenfor, slik at 
-      du kan gå tilbake til den tilsvarende mappen etter at alle bibliotekene er 
-      installert, og kjøre <command>make check</command>, eller gjør individuelle bygg, 
-      og kjør testene for hver av de som er distribuert med fungerende testpakker. 
-      Alternativt kan du fjerne kommenteringen fra linjen #<command>make check
-      ...</command>, og til slutt, sjekk testresultatene med:
-    </para>
-
-<screen><userinput>grep -A9 summary *make_check.log</userinput></screen>
-
-    <para>
-      GLFS utviklerne har bekreftet at libX11,
-      libXt, libXmu,
-      libXpm, og
-      libxshmfence distribueres med fungerende 
-      testpakker.
-    </para>
-
-    <para>
       Først starter du et underskall som avsluttes ved feil:
     </para>
 
@@ -180,7 +158,6 @@ do
       cd    build
         meson setup --prefix=/usr --buildtype=release ..
         ninja
-        #ninja test
         as_root ninja install
       popd     # $packagedir
       rm -rf $packagedir
@@ -193,7 +170,6 @@ do
   esac
 
   make
-  #make check 2>&amp;1 | tee ../$packagedir-make_check.log
   as_root make install
   popd
   rm -rf $packagedir
@@ -243,7 +219,6 @@ do
         CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
         meson setup --prefix=/usr $libdir --buildtype=release ..
         ninja
-        #ninja test
         DESTDIR=$PWD/DESTDIR ninja install
         as_root cp -vr DESTDIR/usr/lib32/* /usr/lib32
         rm -rf DESTDIR
@@ -261,7 +236,6 @@ do
   esac
 
   make
-  #make check 2>&amp;1 | tee ../$packagedir-make_check.log
   make DESTDIR=$PWD/DESTDIR install
   as_root cp -vr DESTDIR/usr/lib32/* /usr/lib32
   rm -rf DESTDIR

@@ -69,11 +69,6 @@
 make</userinput></screen>
 
     <para>
-      For å teste resultatene, utsted:
-      <command>LD_LIBRARY_PATH=libmp3lame/.libs make test</command>.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -100,11 +95,6 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
             --enable-nasm &amp;&amp;
 
 make</userinput></screen>
-
-    <para>
-      For å teste resultatene, utsted:
-      <command>LD_LIBRARY_PATH=libmp3lame/.libs make test</command>.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

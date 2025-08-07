@@ -79,8 +79,6 @@
       <ulink url="&blfs-svn;/general/aalib.html">AAlib</ulink>,
       <ulink url="&blfs-svn;/x/graphene.html">graphene</ulink>,
       <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for eksempler),
-      <ulink url="&blfs-svn;/general/gsl.html">gsl</ulink> (brukt av én test 
-      hvis installert),
       <ulink url="&blfs-svn;/multimedia/libcdio.html">libcdio</ulink> (for
       CD-ROM stasjonstilgang),
       <ulink url="&blfs-svn;/multimedia/libdv.html">libdv</ulink>,

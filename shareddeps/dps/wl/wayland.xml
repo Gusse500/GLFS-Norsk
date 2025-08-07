@@ -63,15 +63,6 @@ meson setup ..            \
 ninja</userinput></screen>
 
     <para>
-      <!-- If XDG_RUNTIME_DIR is set but the value is a non-exist path,
-           19 tests will fail.  Unfortunately BLFS /etc/profile sets
-           XDG_RUNTIME_DIR but does not create it.  For now simply unset
-           the variable.  -->
-      For å teste resultatene, utsted:
-      <command>env -u XDG_RUNTIME_DIR ninja test</command>.
-    </para>
-
-    <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
@@ -97,15 +88,6 @@ meson setup ..                       \
       -D documentation=false &amp;&amp;
 
 ninja</userinput></screen>
-
-    <para>
-      <!-- If XDG_RUNTIME_DIR is set but the value is a non-exist path,
-           19 tests will fail.  Unfortunately BLFS /etc/profile sets
-           XDG_RUNTIME_DIR but does not create it.  For now simply unset
-           the variable.  -->
-      For å teste resultatene, utsted:
-      <command>env -u XDG_RUNTIME_DIR ninja test</command>.
-    </para>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

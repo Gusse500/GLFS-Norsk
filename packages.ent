@@ -129,7 +129,7 @@
 <!ENTITY wayland-protocols-version    "1.45">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.397">
+<!ENTITY hwdata-version               "0.398">
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-sdk                   "1.4.321.0">
 <!ENTITY libdrm-version               "2.4.125">
@@ -148,7 +148,8 @@
 <!ENTITY linux-version                "6.16">
 <!-- kernel version of when the NVIDIA driver version listed was released -->
 <!ENTITY nvidia-linux-version         "6.15.x - 6.16.x">
-<!ENTITY nvidia-version               "575.64.05">
+<!ENTITY nvidia-version               "580.65.06">
+<!ENTITY nvidia-full-name             "&nvidia-version; <superscript>BETA</superscript>">
 <!ENTITY nv-manifest-version          "1">
 <!ENTITY nv-sysv-bs                   "1">
 <!ENTITY llvm-maj-version             "20">
