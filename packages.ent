@@ -129,7 +129,7 @@
 <!ENTITY wayland-protocols-version    "1.45">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.397">
+<!ENTITY hwdata-version               "0.398">
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-sdk                   "1.4.321.0">
 <!ENTITY libdrm-version               "2.4.125">
