@@ -12,7 +12,7 @@
 <sect1 id="nvidia" xreflabel="NVIDIA-&nvidia-version;">
   <?dbhtml filename="nvidia.html"?>
 
-  <title>NVIDIA-&nvidia-version;</title>
+  <title>NVIDIA-&nvidia-full-name;</title>
 
   <indexterm zone="nvidia">
     <primary sortas="a-nvidia">NVIDIA</primary>
