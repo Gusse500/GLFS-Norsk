@@ -53,12 +53,14 @@
   <sect2 role="installation">
     <title>Installasjon av Statisk MinGW-w64-GCC</title>
 
+<!--
     <para>
       Sørg for kompatibilitet med glibc-2.42 eller nyere:
     </para>
 
 <screen><userinput remap="pre">sed -i '/struct_termio_sz/d' \
   libsanitizer/sanitizer_common/*</userinput></screen>
+-->
 
     <sect3>
       <title>x86_64 Installasjon av Statisk MinGW-w64-GCC</title>

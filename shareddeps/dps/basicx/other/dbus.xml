@@ -27,10 +27,14 @@
 
     <para revision="sysv">
       D-Bus ble allerede kompilert før, men ikke et nyttig program,
-      <command>dbus-launch</command>. Denne gjennomgangen dekker det, og noe oppsett 
-      som kreves. Fjern den tidligere utpakkede kildekoden du bygde fra 
-      og utpakk den fra tarballen på nytt for å få et rent kildekodetre.
+      <command>dbus-launch</command>. Denne gjennomgangen dekker det, og noe 
+      oppsett som kreves.
     </para>
+
+    <note revision="sysv"><para>
+      Fjern den tidligere utpakkede kildekoden du bygde fra og pakk den ut fra 
+      tarballen på nytt for å få et rent kildekodetre.
+    </para></note>
 
     <itemizedlist spacing="compact">
       <listitem>

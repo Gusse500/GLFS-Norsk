@@ -20,8 +20,10 @@
     <title>Introduksjon til Wget</title>
 
     <para>
-      Wget pakken inneholder et verktøy som er 
-      nyttig for ikke-interaktiv nedlasting av filer fra nettet.
+      Wget pakken inneholder et verktøy som er nyttig for ikke-interaktiv 
+      nedlasting av filer fra nettet. Den brukes på sider i denne boken, BLFS og 
+      SLFS som slår pakker sammen, som nedlasting av Xorg eller KDE pakker, 
+      eller når en pakke er avhengig av en mengde undermoduler.
     </para>
 
     <itemizedlist spacing="compact">

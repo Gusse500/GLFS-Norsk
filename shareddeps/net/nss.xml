@@ -110,7 +110,7 @@ patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></scre
 
 <screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
 if [ -f /usr/lib/libsqlite3.so ]; then
-  rm -vf /usr/lib/libsqlite3.so
+  rm -vf /usr/lib/libsqlite3.*
 fi</userinput></screen>
 
     </important>
@@ -169,7 +169,7 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
 
 <screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
 if [ -f /usr/lib32/libsqlite3.so ]; then
-  rm -vf /usr/lib32/libsqlite3.so
+  rm -vf /usr/lib32/libsqlite3.*
 fi</userinput></screen>
 
     </important>
