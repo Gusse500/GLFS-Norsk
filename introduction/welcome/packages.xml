@@ -68,6 +68,21 @@
 
 <screen><userinput>wget -N --input-file=wget-list --continue</userinput></screen>
 
+    <para>
+      For å bekrefte at alle filer er lastet ned, kan du kjøre følgende:
+    </para>
+
+<screen><userinput>for file in $(grep -v '^#' wget-list); do
+  if [ ! -f $(basename $file) ]; then
+    echo "$(basename $file) NOT found"
+  fi
+done</userinput></screen>
+
+    <para>
+      Hvis alle filene ble lastet ned, skal det ikke være noe utdata fra 
+      kommandoene ovenfor.
+    </para>    
+
   </sect2>
 
 </sect1>
