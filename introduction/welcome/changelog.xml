@@ -41,6 +41,32 @@
     -->
 
     <listitem>
+      <para>9. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Python: 3.13.5 -&gt; 3.13.6 (sikkerhet; se <ulink
+          url="https://lfs.freding.no/blfs/advisories/consolidated.html#sa-12.3-087">BLFS
+          SA-12.3-087</ulink> for mer informasjon).</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.0.3 -&gt; 4.1.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.88.0 -&gt; 1.89.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-GCC: 15.1.0 -&gt; 15.2.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.10.0 -&gt; 1.11.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GStreamer-Suite: 1.26.4 -&gt; 1.26.5.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>5. august 2025</para>
       <itemizedlist>
         <listitem>
