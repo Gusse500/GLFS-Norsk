@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>11. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - glib: 2.84.3 -> 2.84.4 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/298">#298</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>9. august 2025</para>
       <itemizedlist>
         <listitem>
