@@ -69,19 +69,19 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          <xref linkend="gstreamer-suite"/>: tillater bruk av og arbeid med 
+          <xref linkend="gstreamer-suite"/>: Tillater bruk av og arbeid med 
           multimedia som musikk og videoer. De fleste spill og noe programvare 
           fungerer uten den, selv om noen vil trenge den for WMA dekoding.
         </para>
       </listitem>
       <listitem>
         <para>
-          <xref linkend="sdl2"/>: for inndata og andre fine ting.
+          &sdl2;: For inndatahåndtering og andre funksjoner.
         </para>
       </listitem>
       <listitem>
         <para>
-          <xref linkend="vulkan-sdk"/>: for Vulkan støtte.
+          <xref linkend="vulkan-sdk"/>: For Vulkan støtte.
         </para>
       </listitem>
     </itemizedlist>
