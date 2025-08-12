@@ -62,13 +62,6 @@
     <title>Installasjon av libxkbcommon</title>
 
     <para>
-      Først, fiks et problem når libxml2-2.14 og nyere er installert ved å kjøre 
-      følgende kommando:
-    </para>
-
-<screen><userinput>sed -i "s/sizeof(dtdstr)/ARRAY_SIZE(dtdstr) - 1/" src/registry.c</userinput></screen>
-
-    <para>
       Installer libxkbcommon ved å kjøre følgende 
       kommandoer:
     </para>

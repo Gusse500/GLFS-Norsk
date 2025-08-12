@@ -287,5 +287,8 @@ export -f as_root</userinput></screen>
 <!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> eller <xref linkend='mesa'/>)">
 <!ENTITY gbm    "GBM (<xref linkend='gbm'/> eller <xref linkend='mesa'/>)">
 
+<!ENTITY sdl2 "SDL2 (<xref linkend='sdl2'/> eller <ulink
+               url='&slfs-website;/graph/sdl2.html'>sdl2-compat</ulink>)">
+
 <!ENTITY % xinclude-entities SYSTEM "xent.ent">
 %xinclude-entities;

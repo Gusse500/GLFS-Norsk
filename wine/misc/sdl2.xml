@@ -25,6 +25,14 @@
       multimedieprogramvare, for eksempel spill og emulatorer.
     </para>
 
+    <note><para>
+      Hvis du vil, kan du i stedet installere <ulink
+      url="&slfs-website;/graph/sdl3.html">SDL3</ulink> og
+      <ulink url="&slfs-website;/graph/sdl2.html">sdl2-compat</ulink> som
+      passende erstatninger for denne pakken. Wine og
+      <command>ffplay</command> fra FFmpeg er kjent for å fungere med sdl2-compat.
+    </para></note>
+
     &long-build-time;
 
     <itemizedlist spacing="compact">
