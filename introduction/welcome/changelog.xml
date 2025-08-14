@@ -41,6 +41,24 @@
     -->
 
     <listitem>
+      <para>13. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 580.65.06 <superscript>BETA</superscript>
+          -&gt; 580.76.05.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - egl-wayland (NVIDIA EGL Bibliotek): 1.1.19 -&gt;
+          1.1.20.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - egl-x11 (NVIDIA EGL Bibliotek): 1.0.2 -&gt;
+          1.0.3.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>11. august 2025</para>
       <itemizedlist>
         <listitem>

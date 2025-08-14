@@ -142,14 +142,15 @@
 <!ENTITY mesa-version                 "&mesa-major-minor;.5">
 <!ENTITY eglexternalplatform-version  "1.2.1">
 <!ENTITY egl-gbm-version              "1.1.2.1">
-<!ENTITY egl-wayland-version          "1.1.19">
-<!ENTITY egl-x11-version              "1.0.2">
+<!ENTITY egl-wayland-version          "1.1.20">
+<!ENTITY egl-x11-version              "1.0.3">
 <!-- kernel version in kernel-config presently -->
-<!ENTITY linux-version                "6.16">
+<!ENTITY linux-version                "6.16.0">
 <!-- kernel version of when the NVIDIA driver version listed was released -->
 <!ENTITY nvidia-linux-version         "6.15.x - 6.16.x">
-<!ENTITY nvidia-version               "580.65.06">
-<!ENTITY nvidia-full-name             "&nvidia-version; <superscript>BETA</superscript>">
+<!ENTITY nvidia-version               "580.76.05">
+<!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
+<!ENTITY nvidia-full-name             "&nvidia-version;">
 <!ENTITY nv-manifest-version          "1">
 <!ENTITY nv-sysv-bs                   "1">
 <!ENTITY llvm-maj-version             "20">
