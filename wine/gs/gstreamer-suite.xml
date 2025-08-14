@@ -219,7 +219,7 @@ do
       extraflags="--wrap-mode=nodownload"
     ;;
     gst-plugins-bad-[0-9]* )
-      extraflags="-D gpl=enabled"
+      extraflags="-D gpl=enabled -D gsm=disabled"
     ;;
     gst-plugins-ugly-[0-9]* )
       extraflags="-D gpl=enabled"
@@ -292,7 +292,7 @@ do
       extraflags+=" -D qt5=disabled -D qt6=disabled"
     ;;
     gst-plugins-bad-[0-9]* )
-      extraflags="-D gpl=enabled"
+      extraflags="-D gpl=enabled -D gsm=disabled"
     ;;
     gst-plugins-ugly-[0-9]* )
       extraflags="-D gpl=enabled"
@@ -337,6 +337,11 @@ done</userinput></screen>
     <para>
       <parameter>-D gpl=enabled</parameter>: Uten denne bryteren bygges ikke 
       programtillegg med avhengigheter av (A)GPL lisensierte biblioteker.
+    </para>
+
+    <para>
+      <parameter>-D gsm=disabled</parameter>: Denne bryteren deaktiverer kobling 
+	  til GSM biblioteket hvis det er installert, da det vil føre til byggefeil.
     </para>
 
     <para>
