@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
    "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
-  <!ENTITY % general-entities SYSTEM "../../../general.ent">
+  <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
   <!ENTITY xcb-utils-download "https://xcb.freedesktop.org/dist/">
@@ -20,10 +20,9 @@
     <title>Introduksjon til XCB Verktøy</title>
 
     <para>
-      XCB samling av verktøy gir nyttige biblioteker 
-      som utviklere kan bruke til X Vindusbehandler og Wayland kompositor 
-      utvikling. De installerte pakkene nedenfor burde være gode nok for de 
-      fleste pakker.
+      XCB samling av verktøy gir nyttige biblioteker som utviklere kan bruke 
+      til X Vindusbehandler og Wayland kompositor utvikling. De installerte 
+      pakkene nedenfor burde være gode nok for de fleste pakker.
     </para>
 
     <itemizedlist spacing="compact">
@@ -52,8 +51,6 @@
         <ulink url="&blfs-svn;/x/xcb-utilities.html">XCB Utilities</ulink>
       </para></listitem>
     </itemizedlist>
-    <para>I tillegg installerer denne siden xcb-util-errors, som ikke dekkes av 
-    BLFS. Dette er nødvendig for noen pakker som Hyprland.</para>
 
   </sect2>
 
@@ -70,8 +67,7 @@ xcb-util-image-&xcb-util-image-version;.tar.xz
 xcb-util-keysyms-&xcb-util-keysyms-version;.tar.xz
 xcb-util-renderutil-&xcb-util-renderutil-version;.tar.xz
 xcb-util-wm-&xcb-util-wm-version;.tar.xz
-xcb-util-cursor-&xcb-util-cursor-version;.tar.xz
-xcb-util-errors-&xcb-util-errors-version;.tar.xz</literal>
+xcb-util-cursor-&xcb-util-cursor-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
@@ -134,8 +130,8 @@ done</userinput></screen>
         <seg>Ingen</seg>
         <seg>
           libxcb-util, libxcb-image, libxcb-keysyms,
-          libxcb-render-util, libxcb-ewmh, libxcb-icccm,
-          libxcb-cursor, og libxcb-errors
+          libxcb-render-util, libxcb-ewmh, libxcb-icccm, og
+          libxcb-cursor
         </seg>
         <seg>Ingen</seg>
       </seglistitem>
@@ -227,18 +223,6 @@ done</userinput></screen>
           </para>
           <indexterm zone="xcb-utils libxcb-cursor">
             <primary sortas="c-libxcb-cursor">libxcb-cursor</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libxcb-errors">
-        <term><filename class="libraryfile">libxcb-errors</filename></term>
-        <listitem>
-          <para>
-            gir menneskelig lesbare feil og koder
-          </para>
-          <indexterm zone="xcb-utils libxcb-errors">
-            <primary sortas="c-libxcb-errors">libxcb-errors</primary>
           </indexterm>
         </listitem>
       </varlistentry>

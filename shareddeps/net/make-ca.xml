@@ -322,6 +322,8 @@ export _PIP_STANDALONE_CERT=/etc/pki/tls/certs/ca-bundle.crt
 # End /etc/profile.d/pythoncerts.sh</literal>
 EOF</userinput></screen>
 
+    &source-profile;
+
     <note><para>
       Hvis du kopierer profilskriptene til et nytt system, må du installere 
       denne pakken før du installerer Python moduler fra noen av LFS bøkene, 

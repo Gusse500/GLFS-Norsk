@@ -458,12 +458,12 @@ done</userinput></screen>
 
       <para>
         Bruk av denne driveren kan føre til kompromisser. Så langt ser disse 
-        problemene ut til å være begrenset til Wayland, skrivebordsmiljøer og 
-        skjermbehandlere. Listen nedenfor dokumenterer de kjente pakkene som har 
-        problemer med denne driveren.
+        begrenset til Wayland og vindusbehandlere. Listen nedenfor dokumenterer 
+        de kjente pakkene som har problemer med denne driveren.
       </para>
 
       <itemizedlist>
+<!-- Fixed in BLFS at 4e1859c178
         <listitem revision="sysv">
           <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>: Bruk av denne
           pakken på SysVinit systemer vil føre til feil, ettersom GDM ikke
@@ -478,6 +478,7 @@ done</userinput></screen>
           Dette må foreløpig startes via en TTY eller en annen skjermbehandler 
           enn GDM på SysVinit systemer.
         </para></listitem>
+-->
         <listitem>
           <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
           Kompiler denne pakken med
@@ -485,9 +486,11 @@ done</userinput></screen>
           <parameter>-D egl_device=true</parameter> for å aktivere oppstart med
           Wayland. Sørg for at <xref linkend="nvidia-egl"/> er
           installert.</para>
+<!--
           <para revision="sysv">På SysVinit systemer kan Mutter bare
           startes via en TTY eller en annen skjermbehandler enn GDM
           per nå.</para>
+-->
         </listitem>
         <listitem>
           <para>

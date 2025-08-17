@@ -1,3 +1,7 @@
+<!ENTITY source-profile
+  "<para>Nå henter du hovedprofilen:</para>
+   <screen><userinput>source /etc/profile</userinput></screen>">
+
 <!ENTITY abi-break
   "<important><para>Updating denne pakken er kjent 
   å bryte ABI.</para></important>">

@@ -103,7 +103,6 @@
       <listitem>
         <para>
           Nedlasting: <ulink url="&rustc-download;"/>
-
         </para>
       </listitem>
     </itemizedlist>
@@ -417,12 +416,7 @@ pathprepend /opt/rustc/bin           PATH
 # End /etc/profile.d/rustc.sh</literal>
 EOF</userinput></screen>
 
-      <para>
-        Oppdater gjeldende PATH for ditt nåværende skall umiddelbart 
-        etter installasjon:
-      </para>
-
-      <screen><userinput>source /etc/profile.d/rustc.sh</userinput></screen>
+    &source-profile;
 
     </sect3>
   </sect2>

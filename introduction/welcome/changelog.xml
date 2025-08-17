@@ -41,6 +41,79 @@
     -->
 
     <listitem>
+      <para>17. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - XCB Utils: Flyttet xcb-util-errors til SLFS.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - XCB Utils: Flyttet til Grunnleggende X11 programvare.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>16. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - x264: 20240812 -&gt; 20250815.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.114 -&gt; 3.115. Fikser
+          <ulink url="&glfs-issues;/302">#302</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>15. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.12 -&gt; 10.13.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.3.3 -&gt; 11.4.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.1.5 -&gt; 25.1.8. Fikser
+          <ulink url="&glfs-issues;/286">#286</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Cython: 3.1.2 -&gt; 3.1.3.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - Python: 3.13.6 -&gt; 3.13.7.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - systemd: 257.6 -&gt; 257.8.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - NVIDIA: Oppdaterte dokumentasjonen angående GNOME etter at 
+		  endringer ble utført i BLFS for å tillate at GDM skal fungere riktig. Fikser
+          <ulink url="&glfs-issues;/256">#256</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>13. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 580.65.06 <superscript>BETA</superscript>
+          -&gt; 580.76.05.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - egl-wayland (NVIDIA EGL Bibliotek): 1.1.19 -&gt;
+          1.1.20.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - egl-x11 (NVIDIA EGL Bibliotek): 1.0.2 -&gt;
+          1.0.3.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>11. august 2025</para>
       <itemizedlist>
         <listitem>
