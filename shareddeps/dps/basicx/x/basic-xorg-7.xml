@@ -146,6 +146,8 @@ export XORG_PREFIX XORG_CONFIG</literal>
 EOF
 chmod 644 /etc/profile.d/xorg.sh</userinput></screen>
 
+    &source-profile;
+
     <para>
       Hvis du har installert sudo, sørg for at <envar>XORG_CONFIG</envar> er
       tilgjengelig i sudo miljøet. Som &root; bruker, kjør følgende
