@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>17. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - XCB Utils: Flyttet xcb-util-errors til SLFS.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - XCB Utils: Flyttet til Grunnleggende X11 programvare.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>16. august 2025</para>
       <itemizedlist>
         <listitem>

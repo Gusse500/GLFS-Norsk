@@ -17,7 +17,6 @@
     nemlig libinput og libevdev.
   </para>
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xcb-utils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xbitmaps.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x7app.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xcursor-themes.xml"/>
