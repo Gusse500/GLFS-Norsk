@@ -77,11 +77,15 @@
     <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/aalib.html">AAlib</ulink>,
+      <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink> (for GPU
+      akselerasjon med NVIDIA GPU-er),
       <ulink url="&blfs-svn;/x/graphene.html">graphene</ulink>,
       <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for eksempler),
       <ulink url="&blfs-svn;/multimedia/libcdio.html">libcdio</ulink> (for
       CD-ROM stasjonstilgang),
       <ulink url="&blfs-svn;/multimedia/libdv.html">libdv</ulink>,
+      <ulink url="&slfs-website;/general/libvpl.html">libvpl</ulink> (for
+      GPU akselerasjon med Intel GPU-er),
       <ulink url="&blfs-svn;/multimedia/libmpeg2.html">libmpeg2</ulink>,
       <ulink url="&blfs-svn;/basicnet/libnsl.html">libnsl</ulink>,
       <xref linkend="libunwind"/>,
