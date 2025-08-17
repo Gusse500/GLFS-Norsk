@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>15. august 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - NVIDIA: Oppdaterte dokumentasjonen angående GNOME etter at 
+		  endringer ble utført i BLFS for å tillate at GDM skal fungere riktig. Fikser
+          <ulink url="&glfs-issues;/256">#256</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>13. august 2025</para>
       <itemizedlist>
         <listitem>
