@@ -274,7 +274,7 @@ EOF</userinput></screen>
         Dette skriptet angir en miljøvariabel som er nødvendig for 
         støtte for morsmål. En fullstendig diskusjon om hvordan du 
         bestemmer denne variabelen finner du på <ulink
-        url="&lfs-website;/~thomas/multilib/chapter09/locale.html">
+        url="&mlfs-m32-root;/chapter09/locale.html">
         Configuring the System Locale</ulink> siden.
       </para>
 
