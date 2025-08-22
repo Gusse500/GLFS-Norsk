@@ -108,26 +108,26 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                 \
-      --prefix=/usr            \
-      --buildtype=release      \
-      -D default-dnssec=no     \
-      -D firstboot=false       \
-      -D install-tests=false   \
-      -D ldconfig=false        \
-      -D man=auto              \
-      -D sysusers=false        \
-      -D rpmmacrosdir=no       \
-      -D homed=disabled        \
-      -D userdb=false          \
-      -D mode=release          \
-      -D pam=enabled           \
-      -D pamconfdir=/etc/pam.d \
-      -D dev-kvm-mode=0660     \
-      -D nobody-group=nogroup  \
-      -D sysupdate=disabled    \
-      -D ukify=disabled        \
-      -D docdir=/usr/share/doc/systemd-&systemd-version; &amp;&amp;
+meson setup --prefix=/usr            \
+            --buildtype=release      \
+            -D default-dnssec=no     \
+            -D firstboot=false       \
+            -D install-tests=false   \
+            -D ldconfig=false        \
+            -D man=auto              \
+            -D sysusers=false        \
+            -D rpmmacrosdir=no       \
+            -D homed=disabled        \
+            -D userdb=false          \
+            -D mode=release          \
+            -D pam=enabled           \
+            -D pamconfdir=/etc/pam.d \
+            -D dev-kvm-mode=0660     \
+            -D nobody-group=nogroup  \
+            -D sysupdate=disabled    \
+            -D ukify=disabled        \
+            -D docdir=/usr/share/doc/systemd-&systemd-version; \
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -148,23 +148,24 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-LANG=en_US.UTF-8                  \
-meson setup .. --cross-file lib32 \
-      --prefix=/usr               \
-      --libdir=/usr/lib32         \
-      --buildtype=release         \
-      -D default-dnssec=no        \
-      -D firstboot=false          \
-      -D install-tests=false      \
-      -D ldconfig=false           \
-      -D man=disabled             \
-      -D sysusers=false           \
-      -D rpmmacrosdir=no          \
-      -D homed=disabled           \
-      -D userdb=false             \
-      -D mode=release             \
-      -D pam=enabled              \
-      -D pamconfdir=/etc/pam.d &amp;&amp;
+LANG=en_US.UTF-8                     \
+meson setup --cross-file lib32       \
+            --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --buildtype=release      \
+            -D default-dnssec=no     \
+            -D firstboot=false       \
+            -D install-tests=false   \
+            -D ldconfig=false        \
+            -D man=disabled          \
+            -D sysusers=false        \
+            -D rpmmacrosdir=no       \
+            -D homed=disabled        \
+            -D userdb=false          \
+            -D mode=release          \
+            -D pam=enabled           \
+            -D pamconfdir=/etc/pam.d \
+            .. &amp;&amp;
 
 LANG=en_US.UTF-8 ninja</userinput></screen>
 
@@ -268,6 +269,12 @@ EOF</userinput></screen>
 
     <screen role='root'><userinput>systemctl daemon-reexec</userinput></screen>
 
+    <note><para>
+      Hvis du er i en chroot, vil kommandoen ovenfor bli ignorert med en melding, men 
+      den vil ikke returnere en feil. Hvis den kjøres i en Bash økt som avsluttes ved 
+      feil, vil ikke kommandoen ovenfor stoppe den. Det er trygt å kjøre den.
+    </para></note>
+
     <important>
       <para>
         Først forsikre at <xref linkend='shadow'/> allerede er gjenoppbygd med
@@ -297,7 +304,7 @@ EOF</userinput></screen>
       <para>
         En liste over de installerte filene, sammen med korte 
         beskrivelser, finner du på
-        <ulink url="&lfs-website;/lfs/view/systemd/chapter08/systemd.html#contents-systemd"/>.
+        <ulink url="&mlfs-m32-root;/chapter08/systemd.html#contents-systemd"/>.
       </para>
 
       <para>
