@@ -55,13 +55,13 @@
         indirekte) av et program eller et bibliotek, kjør:
       </para>
 
-<screen><userinput>ldd &lt;application or library&gt; </userinput></screen>
+<screen role='nodump'><userinput>ldd &lt;application or library&gt; </userinput></screen>
 
       <para>
         eller for å bare se programmer og biblioteker som bruker et bibliotek direkte:
       </para>
 
-<screen><userinput>readelf -d  &lt;application or library&gt; | grep NEEDED</userinput></screen>
+<screen role='nodump'><userinput>readelf -d  &lt;application or library&gt; | grep NEEDED</userinput></screen>
 
     </warning>
 
