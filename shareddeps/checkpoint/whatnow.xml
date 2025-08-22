@@ -46,6 +46,19 @@
     av nødvendige variabler i filene i den delen.
   </para>
 
+  <para>
+    Til slutt ville det være lurt å opprette en vanlig bruker og legge den til i 
+    tre grupper (<literal>audio</literal>, <literal>input</literal>, og
+    <literal>video</literal>) som &root; bruker:
+  </para>
+
+<screen role="root"><literal>useradd -mG audio,input,video <replaceable>&lt;username&gt;</replaceable></literal></screen>
+
+  <para>
+    Mye programvare krever at brukeren er en del av disse gruppene for å få 
+    tilgang til de riktige APIene og enhetene.
+  </para>
+
   <sect2>
     <title>X11</title>
 
