@@ -262,7 +262,7 @@ ldconfig</userinput></screen>
         <systemitem class="username">root</systemitem> bruker:
       </para>
 
-<screen role="root"><userinput>usermod -a -G audio <replaceable>&lt;username&gt;</replaceable></userinput></screen>
+<screen role="root"><literal>usermod -a -G audio <replaceable>&lt;username&gt;</replaceable></literal></screen>
 
       <para>
         Hvis pulseaudio fungerte, men du har ikke lenger 

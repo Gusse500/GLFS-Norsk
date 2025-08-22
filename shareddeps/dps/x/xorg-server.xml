@@ -257,7 +257,7 @@ fi</userinput></screen>
       &root; bruker:  
     </para>
 
-<screen role="root"><userinput>usermod -a -G input,video <replaceable>&lt;username&gt;</replaceable></userinput></screen>
+<screen role="root"><literal>usermod -a -G input,video <replaceable>&lt;username&gt;</replaceable></literal></screen>
 
   </sect2>
 
