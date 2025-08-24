@@ -68,13 +68,15 @@
 mkdir libvpx-build            &amp;&amp;
 cd    libvpx-build            &amp;&amp;
 
-../configure --prefix=/usr    \
-             --enable-shared  \
-             --disable-static &amp;&amp;
+../configure --prefix=/usr         \
+             --enable-shared       \
+             --disable-static      \
+             --disable-examples    \
+             --disable-unit-tests &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -96,7 +98,9 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
              --libdir=/usr/lib32      \
              --target=x86-linux-gcc   \
              --enable-shared          \
-             --disable-static &amp;&amp;
+             --disable-static         \
+             --disable-examples       \
+             --disable-unit-tests    &amp;&amp;
 
 make</userinput></screen>
 
@@ -128,6 +132,16 @@ ldconfig</userinput></screen>
     </para>
 
     &static-libraries;
+
+    <para>
+      <parameter>--disable-examples</parameter>: Denne parameteren deaktiverer 
+      bygging av eksempler som tar litt tid å bygge.
+    </para>
+
+    <para>
+      <parameter>--disable-unit-tests</parameter>: Denne parameteren deaktiverer 
+      bygging av eksempler som tar litt tid å bygge.
+    </para>
 
     <para>
       <option>--disable-vp8</option>: Denne bryteren hindrer bygging av 
