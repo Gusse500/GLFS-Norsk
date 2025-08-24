@@ -21,8 +21,8 @@
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable        "8a7c3d0a96b382fd7ebd96e9833b604b86797a67">
-<!ENTITY mlfs-extra-commits "b138633c16ebfb181e7621e276e8196c73c024a9">
+<!ENTITY mlfs-stable        "248daaf65eac6116217a98473cbe64ccfd7e68a6">
+<!ENTITY mlfs-extra-commits "">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
@@ -132,7 +132,7 @@
 <![ %release; [
   <!ENTITY important-stability "<para>
   Dette er den stabile utgaven av denne boken, og den er kjent for å ha fungerende 
-  instruksjoner og samsvarer med LFS og BLFS &xlfs-version;. Eksterne lenker 
+  instruksjoner og samsvarer med LFS, BLFS og SLFS &xlfs-version;. Eksterne lenker 
   vil peke til stabile kilder. Lenker som peker til MLFS er imidlertid 
   problematiske ettersom MLFS er en rullerende utgivelse, ikke stabil, så informasjonen der kan 
   være foran resultatene som vises i denne boken, og instruksjoner i den 
@@ -167,7 +167,7 @@ git checkout multilib</userinput></screen>
   <!ENTITY multilib-rendering1 "<para>
   Lenkene ovenfor er imidlertid rullerende utgivelser og gjengis ofte. 
   Den kjente versjonen av MLFS som fungerer med denne versjonen av GLFS er
-  &mlfs-stable; med &mlfs-extra-commits; slått sammen. Du kan gjengi den ved å 
+  &mlfs-stable;<!-- med &mlfs-extra-commits; slått sammen-->. Du kan gjengi den ved å 
   følge instruksjonene nedenfor.
 </para>">
 <![ %sysv; [
@@ -180,8 +180,8 @@ git checkout multilib</userinput></screen>
 <screen><userinput>git clone https://github.com/Gusse500/LFS-Norsk.git mlfs &amp;&amp;
 cd mlfs &amp;&amp;
 git checkout multilib &amp;&amp;
-git checkout &mlfs-stable; &amp;&amp;
-git merge --no-commit &mlfs-extra-commits;</userinput></screen>
+git checkout &mlfs-stable;<!-- &amp;&amp;
+git merge -&dash;no-commit &mlfs-extra-commits;--></userinput></screen>
 <para>
   Nå inspiserer <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
   avhengigheter for å gjengi boken. Når du har sørget for at du har 
@@ -193,8 +193,8 @@ git merge --no-commit &mlfs-extra-commits;</userinput></screen>
   <!ENTITY multilib-rendering2 "<para>
   Bytt nå til den stabile git hashen:
 </para>
-<screen><userinput>git checkout &mlfs-stable; &amp;&amp;
-git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
+<screen><userinput>git checkout &mlfs-stable;<!-- &amp;&amp;
+git merge -&dash;no-commit &mlfs-extra-commits;--></userinput></screen>">
 ]]>
 ]]>
 <!ENTITY read-book "<para>
