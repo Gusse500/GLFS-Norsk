@@ -21,8 +21,8 @@
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable        "248daaf65eac6116217a98473cbe64ccfd7e68a6">
-<!ENTITY mlfs-extra-commits "">
+<!ENTITY mlfs-stable        "6fac5d60ac4da40e5d027ffcac5c0d0f32171f5f">
+<!ENTITY mlfs-extra-commits "99d3c4a4c703a522509e087fb7c9dd7893241978">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
@@ -180,8 +180,8 @@ git checkout multilib</userinput></screen>
 <screen><userinput>git clone https://github.com/Gusse500/LFS-Norsk.git mlfs &amp;&amp;
 cd mlfs &amp;&amp;
 git checkout multilib &amp;&amp;
-git checkout &mlfs-stable;<!-- &amp;&amp;
-git merge -&dash;no-commit &mlfs-extra-commits;--></userinput></screen>
+git checkout &mlfs-stable; &amp;&amp;
+git merge --no-commit &mlfs-extra-commits;</userinput></screen>
 <para>
   Nå inspiserer <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
   avhengigheter for å gjengi boken. Når du har sørget for at du har 
@@ -193,8 +193,8 @@ git merge -&dash;no-commit &mlfs-extra-commits;--></userinput></screen>
   <!ENTITY multilib-rendering2 "<para>
   Bytt nå til den stabile git hashen:
 </para>
-<screen><userinput>git checkout &mlfs-stable;<!-- &amp;&amp;
-git merge -&dash;no-commit &mlfs-extra-commits;--></userinput></screen>">
+<screen><userinput>git checkout &mlfs-stable; &amp;&amp;
+git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
 ]]>
 ]]>
 <!ENTITY read-book "<para>
