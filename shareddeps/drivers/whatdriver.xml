@@ -165,7 +165,10 @@
       Sammendrag: Hvis du ønsker god ytelse og bruker en arbeidsstasjoner 
       installer <emphasis>NVIDIA</emphasis>. Hvis du ikke vil bruke den 
       proprietære NVIDIA driveren, bruk <emphasis>Nouveau</emphasis>. 
-      Installering av <computeroutput>zink</computeroutput> er også en god idé.
+      Installering av <computeroutput>zink</computeroutput> er også en god idé.  
+      Så lenge du installerer <xref linkend="libglvnd"/>, vil du kunne 
+      installere alle disse driverne side om side, slik at du kan bytte mellom 
+      dem hvis du vil, men det er ikke et krav.
     </para>
 
   </sect2>
