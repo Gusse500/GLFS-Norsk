@@ -47,7 +47,7 @@
       eksempel GLSL til SPIR-V. I noen tilfeller kan pakker kompilere shadere og 
       gjøre dem om til headerfiler som inkluderes i C/C++ fil(er). I OpenGL 
       trenger ikke denne prosessen glslang i det hele tatt, ettersom OpenGL 
-      funksjonsmappen kan kompilere shadere fra en streng og avgrenset for 
+      funksjoner kan direkte kompilere shadere fra en streng og avgrenses for 
       utførelse på hver ramme. Med Vulkan er en separat shaderkompilator 
       nødvendig for å legge til rette for shaderkompilering.
     </para>
