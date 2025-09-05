@@ -666,7 +666,7 @@ EOF</userinput></screen>
           libnvidia-rtcore,
           libnvidia-tls,
           libnvidia-wayland-client,
-          libOpenCL.so,
+          libOpenCL,
           libvdpau_nvidia,
           nvidia-drm_gbm,
           nvidia_drv, og
@@ -1129,6 +1129,18 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="nvidia libnvidia-wayland-client">
             <primary sortas="c-libnvidia-wayland-client">libnvidia-wayland-client</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libOpenCL">
+        <term><filename class="libraryfile">libOpenCL</filename></term>
+        <listitem>
+          <para>
+            er OpenCL lasteren som åpner en gitt OpenCL driver
+          </para>
+          <indexterm zone="nvidia libOpenCL">
+            <primary sortas="c-libOpenCL">libOpenCL</primary>
           </indexterm>
         </listitem>
       </varlistentry>
