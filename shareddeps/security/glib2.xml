@@ -85,11 +85,13 @@
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
+<!--
     <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="pcre2"/> (hvis ikke bygget, vil Meson prøve å hente en 
       tarball med PCRE2 kildekode fra internett)
-  </para>
+    </para>
+-->
 
     <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">

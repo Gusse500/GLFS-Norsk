@@ -1,12 +1,4 @@
-<!-- SHARED DEPENDENCIES -->
-
-<!-- Networking -->
-<!ENTITY libtasn1-version             "4.20.0">
-<!ENTITY nspr-version                 "4.37">
-<!ENTITY sqlite-version               "3.50.4">
-<!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3500400">
-<!ENTITY sqlite-doc-version           "3500400">
+<!-- PYTHON ENTITIES -->
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "13">
 <!ENTITY python3-patch                "7">
@@ -14,6 +6,19 @@
 <!ENTITY python3-version              "&python3-majorver;.&python3-patch;">
 <!ENTITY python3-lib-suffix           "cpython-&python3-major;&python3-minor;-&lt;arch&gt;-linux-gnu">
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
+
+<!-- SHARED DEPENDENCIES -->
+
+<!-- Networking -->
+<!ENTITY libtasn1-version             "4.20.0">
+<!ENTITY nspr-version                 "4.37">
+<!--
+<!ENTITY sqlite-version               "3.50.4">
+<!ENTITY sqlite-year                  "2025">
+<!ENTITY sqlite-dl-version            "3500400">
+<!ENTITY sqlite-doc-version           "3500400">
+-->
+
 <!ENTITY nss-dir                      "3_115">
 <!ENTITY nss-minor-version            "115">
 <!ENTITY nss-version                  "3.&nss-minor-version;">
@@ -32,7 +37,7 @@
 <!ENTITY elogind-version              "255.17">
 <!ENTITY systemd-version              "257.8">
 <!ENTITY duktape-version              "2.7.0">
-<!ENTITY pcre2-version                "10.45">
+<!--<!ENTITY pcre2-version                "10.45">-->
 <!ENTITY glib2-minor                  "2.84">
 <!ENTITY glib2-version                "&glib2-minor;.4">
 <!ENTITY gi-minor                      "1.84">
@@ -154,7 +159,7 @@
 <!ENTITY linux-version                "6.16.1">
 <!-- kernel version of when the NVIDIA driver version listed was released -->
 <!ENTITY nvidia-linux-version         "6.15.x - 6.16.x">
-<!ENTITY nvidia-version               "580.76.05">
+<!ENTITY nvidia-version               "580.82.07">
 <!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
 <!ENTITY nvidia-full-name             "&nvidia-version;">
 <!ENTITY nv-manifest-version          "1">

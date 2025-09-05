@@ -18,8 +18,10 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="netconnect.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libtasn1.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nspr.xml"/>
+<!--  
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="sqlite.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="python3.xml"/>
+  -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nss.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="p11-kit.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="make-ca.xml"/>
