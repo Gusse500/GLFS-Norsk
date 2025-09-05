@@ -1,12 +1,4 @@
-<!-- SHARED DEPENDENCIES -->
-
-<!-- Networking -->
-<!ENTITY libtasn1-version             "4.20.0">
-<!ENTITY nspr-version                 "4.37">
-<!ENTITY sqlite-version               "3.50.4">
-<!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3500400">
-<!ENTITY sqlite-doc-version           "3500400">
+<!-- PYTHON ENTITIES -->
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "13">
 <!ENTITY python3-patch                "7">
@@ -14,6 +6,19 @@
 <!ENTITY python3-version              "&python3-majorver;.&python3-patch;">
 <!ENTITY python3-lib-suffix           "cpython-&python3-major;&python3-minor;-&lt;arch&gt;-linux-gnu">
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
+
+<!-- SHARED DEPENDENCIES -->
+
+<!-- Networking -->
+<!ENTITY libtasn1-version             "4.20.0">
+<!ENTITY nspr-version                 "4.37">
+<!--
+<!ENTITY sqlite-version               "3.50.4">
+<!ENTITY sqlite-year                  "2025">
+<!ENTITY sqlite-dl-version            "3500400">
+<!ENTITY sqlite-doc-version           "3500400">
+-->
+
 <!ENTITY nss-dir                      "3_115">
 <!ENTITY nss-minor-version            "115">
 <!ENTITY nss-version                  "3.&nss-minor-version;">

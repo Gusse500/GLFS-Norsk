@@ -72,12 +72,14 @@
       <xref linkend="nspr"/>
     </para>
 
+<!--
     <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="sqlite"/> (påkrevd for <ulink
       url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>; sørg for å 
       installere <xref linkend="python3"/>) på nytt
     </para>
+-->
 
   </sect2>
 
@@ -101,6 +103,7 @@ patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></scre
 
 -->
 
+<!--
     <important>
       <para>
         Hvis du gjenoppbygger NSS og ikke har installert <xref
@@ -108,12 +111,13 @@ patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></scre
         bibliotek som &root; bruker:
       </para>
 
-<screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
+<screen role="root"><userinput remap="pre">sqlite3 - -version > /dev/null 2>&amp;1 || 
 if [ -f /usr/lib/libsqlite3.so ]; then
   rm -vf /usr/lib/libsqlite3.*
 fi</userinput></screen>
 
     </important>
+-->
 
     <para>
       Installer NSS ved å kjøre følgende kommandoer:
@@ -123,13 +127,13 @@ fi</userinput></screen>
 
 cd nss &amp;&amp;
 
-make BUILD_OPT=1                     \
-  NSPR_INCLUDE_DIR=/usr/include/nspr \
-  USE_SYSTEM_ZLIB=1                  \
-  ZLIB_LIBS=-lz                      \
-  NSS_ENABLE_WERROR=0                \
-  USE_64=1                           \
-  $([ -f /usr/lib/libsqlite3.so ] &amp;&amp; echo NSS_USE_SYSTEM_SQLITE=1)</userinput></screen>
+make BUILD_OPT=1                        \
+     NSPR_INCLUDE_DIR=/usr/include/nspr \
+     USE_SYSTEM_ZLIB=1                  \
+     ZLIB_LIBS=-lz                      \
+     NSS_ENABLE_WERROR=0                \
+     USE_64=1                           \
+     NSS_USE_SYSTEM_SQLITE=1</userinput></screen>
 
     <para>
       Nå, som &root; bruker:
@@ -147,6 +151,7 @@ install -v -m755 Linux*/bin/{certutil,nss-config,pk12util} /usr/bin &amp;&amp;
 
 install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></screen>
 
+<!--
     <important>
       <para>
         Hvis du installerer <xref linkend="sqlite"/> etter å ha bygget denne 
@@ -155,24 +160,27 @@ install -v -m644 Linux*/lib/pkgconfig/nss.pc  /usr/lib/pkgconfig</userinput></sc
         denne pakken på nytt, ellers vil det oppstå en feil under kompileringen.
       </para>
     </important>
+-->
 
   </sect2>
 
   <sect2 role="installation">
     <title>lib32 Installasjon av NSS</title>
 
+<!--
     <important>
       <para>
         Hvis du gjenoppbygger NSS, kjør følgende kommando for å fjerne et 
         problematisk bibliotek som &root; bruker:
       </para>
 
-<screen role="root"><userinput remap="pre">sqlite3 --version > /dev/null 2>&amp;1 || 
+<screen role="root"><userinput remap="pre">sqlite3 - -version > /dev/null 2>&amp;1 || 
 if [ -f /usr/lib32/libsqlite3.so ]; then
   rm -vf /usr/lib32/libsqlite3.*
 fi</userinput></screen>
 
     </important>
+-->
 
     <para>
       Installer lib32-NSS ved å kjøre følgende kommandoer:
@@ -182,13 +190,15 @@ fi</userinput></screen>
 find -name "Linux*.OBJ" -type d -exec rm -rf {} + &amp;&amp;
 rm -rf ../dist                                    &amp;&amp;
 
-CC="gcc -m32" CXX="g++ -m32"   \
-make BUILD_OPT=1                      \
-NSPR_INCLUDE_DIR=/usr/include/nspr  \
-  USE_SYSTEM_ZLIB=1                   \
-  ZLIB_LIBS=-lz                       \
-  NSS_ENABLE_WERROR=0                 \
-$([ -f /usr/lib32/libsqlite3.so ] &amp;&amp; echo NSS_USE_SYSTEM_SQLITE=1)</userinput></screen>
+CC="gcc -m32" CXX="g++ -m32"            \
+make BUILD_OPT=1                        \
+     NSPR_INCLUDE_DIR=/usr/include/nspr \
+     USE_SYSTEM_ZLIB=1                  \
+     ZLIB_LIBS=-lz                      \
+     NSS_ENABLE_WERROR=0<!--                 \
+     NSS_USE_SYSTEM_SQLITE=1--></userinput></screen>
+<!-- SQLite is not enabled here as a lib32 version of SQLite isn't built in
+     MLFS. -->
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:
@@ -250,13 +260,8 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <command>$([ -f /usr/lib{,32}/libsqlite3.so ] &amp;&amp; echo
-      NSS_USE_SYSTEM_SQLITE=1)</command>: Dette tester om
-      sqlite er installert, og i så fall
-      <command>echo</command>s alternativet NSS_USE_SYSTEM_SQLITE=1 til
-      <command>make</command> sånn at
-      <filename class="libraryfile">libsoftokn3.so</filename> vil lenke mot 
-      systemversjonen av sqlite.
+      <parameter>NSS_USE_SYSTEM_SQLITE=1</parameter>: Dette alternativet 
+      aktiverer SQLite støtte som ble bygget i LFS/MLFS.
     </para>
 
   </sect2>
