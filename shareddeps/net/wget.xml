@@ -49,9 +49,8 @@
     <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="gnutls"/>,
-      <xref linkend="libidn2"/>,
-      <xref linkend="libunistring"/>, og
-      <xref linkend="pcre2"/>
+      <xref linkend="libidn2"/>, og
+      <xref linkend="libunistring"/>
     </para>
 
   </sect2>
