@@ -21,8 +21,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="hwdata.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutgl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libglvnd.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glu.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vulkan-sdk.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glu.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
