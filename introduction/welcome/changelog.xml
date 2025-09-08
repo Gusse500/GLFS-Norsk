@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>8. september 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Ikke støtte Mesa OpenGL; GLU: Flyttet fra
+          SLFS.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>7. september 2025</para>
       <itemizedlist>
         <listitem>
