@@ -4,7 +4,8 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY rb-root "https://github.com/rust-lang/rust-bindgen/archive">
+  <!-- We need refs/tags so refs aren't ambiguous. Needed with 0.72.1. -->
+  <!ENTITY rb-root "https://github.com/rust-lang/rust-bindgen/archive/refs/tags">
   <!ENTITY rust-bindgen-download
     "&rb-root;/v&rust-bindgen-version;/rust-bindgen-&rust-bindgen-version;.tar.gz">
 ]>

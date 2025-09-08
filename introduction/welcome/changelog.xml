@@ -41,6 +41,38 @@
     -->
 
     <listitem>
+      <para>7. september 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - FFmpeg: 7.1.1 -&gt; 8.0. Fikser
+          <ulink url="&glfs-issues;/307">#307</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL2: 2.32.8 -&gt; 2.32.10.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - rust-bindgen: 0.72.0 -&gt; 0.72.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libinput: 1.29.0 -&gt; 1.29.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.1 -&gt; 4.1.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libXfixes (Xorg bibliotek): 6.0.1 -&gt; 6.0.2.
+          Fikser <ulink url="&glfs-issues;/306">#306</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.4.1 -&gt; 11.4.5.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.115 -&gt; 3.115.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>5. september 2025</para>
       <itemizedlist>
         <listitem>
