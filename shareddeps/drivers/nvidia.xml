@@ -266,8 +266,18 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 
 <screen><userinput>make KERNEL_UNAME=<replaceable>`uname -r`</replaceable> NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
 
-    <note>
-      <para>
+    <note><para>
+      Kildekoden du bygde kjernen fra må være på samme sted som du bygde kjernen 
+      fra. Hvis du for eksempel bygde kjernen i <filename
+      class="directory">/sources/linux-&linux-version;</filename>, kildekoden 
+      skal bli værende der og må ikke slettes før tredjeparts modulene er 
+      bygget. Noen Linux distribusjoner omgår dette ved å installere 
+      utviklingsfiler i <filename 
+      class="directory">/usr/src</filename>, men det er utenfor rammen av 
+      denne boken.
+    </para></note>
+
+    <note><para>
         Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi
         modulkoden er inkompatibel med den gjeldende kjerneversjonen. Hvis 
         dette skjer, kan dette i de fleste tilfeller fikses ved å nedgradere 
@@ -277,8 +287,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
         en idé om hva den ideelle kjerneversjonen er å bygge mot. Kjerneversjonen 
         som brukes for kjerneparametere og lignende i denne boken er
         linux-&linux-version;. Per nå er det ingen uoverensstemmelser mellom alternativene.
-      </para>
-    </note>
+    </para></note>
 
     <important>
       <para>
@@ -289,10 +298,10 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       <para>
         Kjernemoduler installeres i en versjonert mappe som, når de bygges mot 
         en annen kjerneversjon, ikke lenger vil samsvare med den oppstartede 
-        kjerneversjonen og kan ikke brukes. Videre er det et innebygd lim, så 
-        eventuelle endringer i kjernen kan ødelegge denne limen. For 
+        kjerneversjonen og kan ikke brukes. Videre er det en limmekanisme bygget, 
+        så eventuelle endringer i kjernen kan ødelegge denne limmekanismen. For 
         kjernemoduler i Linux kildetreet, kjent som førstepartsmoduler, blir de 
-        oppdatert og gjenoppbygd sammen med kjernen, slik at det ikke oppstår
+        oppdatert og gjenoppbygd sammen med kjernen, slik at det ikke oppstår 
         problemer for førstepartsmoduler. Tredjepartsmoduler blir imidlertid 
         ikke det, og må oppdateres/gjenoppbygges.
       </para>
