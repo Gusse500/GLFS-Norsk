@@ -195,10 +195,8 @@ make BUILD_OPT=1                        \
      NSPR_INCLUDE_DIR=/usr/include/nspr \
      USE_SYSTEM_ZLIB=1                  \
      ZLIB_LIBS=-lz                      \
-     NSS_ENABLE_WERROR=0<!--                 \
-     NSS_USE_SYSTEM_SQLITE=1--></userinput></screen>
-<!-- SQLite is not enabled here as a lib32 version of SQLite isn't built in
-     MLFS. -->
+     NSS_ENABLE_WERROR=0                \
+     NSS_USE_SYSTEM_SQLITE=1</userinput></screen>
 
     <para>
       Nå, som <systemitem class="username">root</systemitem> bruker:

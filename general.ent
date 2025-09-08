@@ -284,7 +284,7 @@ export -f as_root</userinput></screen>
 
 <!ENTITY gobject-introspection "<xref linkend='glib2'/> (med GObject Introspection)">
 
-<!ENTITY opengl "OpenGL (<xref linkend='libglvnd'/> eller <xref linkend='mesa'/>)">
+<!ENTITY opengl "<xref linkend='libglvnd'/>">
 <!ENTITY gbm    "GBM (<xref linkend='gbm'/> eller <xref linkend='mesa'/>)">
 
 <!ENTITY sdl2 "SDL2 (<xref linkend='sdl2'/> eller <ulink

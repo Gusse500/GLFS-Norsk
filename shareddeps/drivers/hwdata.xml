@@ -22,8 +22,7 @@
     <title>Introduksjon til hwdata</title>
 
     <para>
-      hwdata Pakken inneholder gjeldende 
-      PCI og leverandør ID data.
+      hwdata Pakken inneholder gjeldende PCI og leverandør ID data.
     </para>
 
     <itemizedlist spacing="compact">
@@ -40,8 +39,7 @@
     <title>Installasjon av hwdata</title>
 
     <para>
-      Installer hwdata ved å
-      kjøre følgende kommandoer:
+      Installer hwdata ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr --disable-blacklist</userinput></screen>

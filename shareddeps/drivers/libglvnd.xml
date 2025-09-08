@@ -31,18 +31,15 @@
       vil den gi <filename class="libraryfile">libEGL_nvidia</filename>,
       <filename class="libraryfile">libGLESv2_nvidia</filename>, og
       <filename class="libraryfile">libGLX_nvidia</filename>. Hver 
-      implementering er spesifikk for driveren den kommer fra.
-    </para>
-
-    <para>
-      Fordelen med å gjøre det på den måten er at en driver ikke trenger å 
-      adlyde arkitekturen en OpenGL leverandør bruker, og heller ikke bli 
-      absorbert av leverandøren.
+      implementeringen er spesifikk for driveren den kommer fra. Fordelen med å 
+      gjøre det på denne måten er at en driver ikke trenger å adlyde arkitekturen en 
+      OpenGL leverandør bruker, og den trenger heller ikke å bli absorbert av leverandøren..
     </para>
 
     <important><para>
-      Les <xref linkend="aboutgl"/> for å avgjøre om du vil installere OpenGL 
-      implementeringer fra denne leverandøren.
+      Les <xref linkend="aboutgl"/> for viktig informasjon angående libglvnd vs. 
+      Mesas OpenGL implementeringer. Kort sagt, denne pakken er sterkt 
+      anbefalt.
     </para></important>
 
     <itemizedlist spacing="compact">
@@ -91,7 +88,7 @@ meson setup --prefix=/usr       \
 ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
@@ -118,7 +115,7 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
@@ -149,53 +146,6 @@ ldconfig</userinput></screen>
       <option>-D gles2=false</option>: Hvis du ikke trenger OpenGL ES, bruk 
       dette alternativet. Sørg for å lese <xref linkend="aboutgles"/>.
     </para>
-
-  </sect2>
-
-  <sect2>
-    <title>Liste over pakker med problemer</title>
-
-    <para>
-      Selv om installasjon av denne pakken kan bidra til å forhindre mange 
-      problemer senere, kan den ha noen forbehold, og alle er relatert til BLFS. 
-      BLFS forventer naturligvis at den eneste OpenGL leverandøren er
-      Mesa, så instruksjonene vil dermed anta at 
-      denne pakken ikke er installert. Følgende har kjente 
-      problemer og løsninger:
-    </para>
-
-    <itemizedlist>
-      <listitem>
-        <para>Mesa: I BLFS er en oppdatering oppført 
-        i <ulink url="&blfs-svn;/x/mesa.html">Mesa</ulink> side og vil 
-        instruere deg om å bruke den. Dette vil forårsake et problem med mindre 
-        du eksplisitt ber byggesystemet om ikke å lenke mot denne pakkens 
-        biblioteker, som betyr at det må bygge sine egne OpenGL implementeringer, 
-        noe som vil forårsake problemer i seg selv. Den nøyaktige feilen 
-        oppdateringen forårsaker er en lenkefeil i det siste settet med trinn 
-        når den bygger demoene, da den forventer funksjoner som ikke finnes i de 
-        spesifikke bibliotekene fra denne pakken den prøver å lenke mot.</para>
-        <para>Enten ikke bruk den oppdateringen, eller følg denne boken sin <xref
-        linkend="mesa"/> side i stedet. Siden 
-        Mesa byggesystemet som automatisk oppdager om
-        libglvnd er installert, 
-        installasjonsinstruksjonene endres ikke så mye mellom denne boken og 
-        BLFS. De viktigste forskjellene er lib32-støtte og at demoens 
-        oppdateringen ikke er oppført.</para>
-      </listitem>
-      <listitem>
-        <para>GLU: I BLFS, <ulink
-        url="&blfs-svn;/x/glu.html">GLU</ulink> siden angir eksplisitt GL 
-        leverandøren til Mesa siden byggesystemet 
-        ellers vil forvente libglvnd og
-        <filename class="libraryfile">libOpenGL</filename> skal installeres. 
-        Selv om instruksjonene på BLFS siden fører til en vellykket kompilering, 
-        fungerer ikke det resulterende biblioteket som det skal. Du bør følge
-        <ulink url="&slfs-website;/general/glu.html">SLFS GLU</ulink> siden
-        i stedet. Den sjekker også om leverandøren er
-        Mesa.</para>
-      </listitem>
-    </itemizedlist>
 
   </sect2>
 

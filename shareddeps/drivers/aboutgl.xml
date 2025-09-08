@@ -24,53 +24,65 @@
     </para>
 
     <para>
-      Så, Mesa kom inn og implementerte drivere og 
-      funksjoner for OpenGL. De implementerer også GLX og EGL som gir 
-      grensesnitt til vindussystemer som Xorg.
-      Metoden deres håndterer imidlertid ikke anropene på en leverandørnøytral måte. 
-      For det meste er denne tilnærmingen grei og fører ikke til noen problemer.
-      NVIDIA har bestemt at dette var en dårlig nok 
-      tilnærming til å rettferdiggjøre en ny implementering av OpenGL kalt
-      libglvnd. Den tilbyr bare implementeringene for 
-      OpenGL, OpenGL ES, GLX og EGL. Dette har ført til eldre OpenGL kontra ny 
-      OpenGL på Linux.
+      Så Mesa implementerte biblioteker, drivere og funksjoner for OpenGL. De 
+      implementerer også GLX og EGL som gir grensesnitt til vindussystemer som 
+      Xorg. Metoden deres sender imidlertid ikke kallene på en leverandørnøytral 
+      måte. Denne tilnærmingen er vanligvis grei inntil du trenger å installere 
+      en driver utenfor Mesas økosystem. Enten vil ikke en slik driver fungere, 
+      og/eller driveren vil kreve <xref linkend="libglvnd"/> å bli installert. 
+      libglvnd tilbyr kun implementeringene for OpenGL, OpenGL ES, GLX og EGL. 
+      Dette har ført til eldre OpenGL kontra ny OpenGL på Linux.
     </para>
 
     <para>
       Det finnes <filename class="libraryfile">libGL</filename> som nå regnes 
       som eldre OpenGL og leveres av både <xref linkend="mesa"/>
-      og <xref linkend="libglvnd"/>. I mellomtiden er det <filename
-      class="libraryfile">libOpenGL</filename> som regnes som den nye OpenGL 
-      og leveres kun av <xref linkend="libglvnd"/>. Apper og 
-      biblioteker som lenker mot den gamle OpenGL vil fungere med begge 
-      leverandørene, men lenking mot den nye OpenGL, som bare har dispatching 
-      funksjoner, vil føre til at disse binærfilene blir ødelagt på systemer 
-      med bare <xref linkend="mesa"/> installert.
+      og <xref linkend="libglvnd"/>. Det er hardkodet for å håndtere <filename
+      class="libraryfile">libGLX</filename>, ment for Xorg biblioteker og apper. 
+      I mellomtiden finnes det <filename class="libraryfile">libOpenGL</filename>
+      som regnes som den nye OpenGL. Den leveres kun av <xref
+      linkend="libglvnd"/>. Apper og biblioteker som lenker mot den eldre OpenGL 
+      vil fungere med begge leverandørene, men å lenke mot den nye OpenGL, som 
+      bare har forsendelsesfunksjoner, vil føre til at disse binærfilene blir 
+      ødelagte på systemer med bare <xref linkend="mesa"/> installert.
     </para>
 
     <para>
-      Dette er bare et problem for pakker som kun inneholder binære filer, og noen
-      CMake byggesystemer. For denne boken og i BLFS, 
-      bør du ikke støte på noen av disse problemene med mindre du ønsker å bruke
-      <xref linkend="nvidia"/>, som spesifikt krever <xref
-      linkend="libglvnd"/>. SLFS har som mål å omgå problemer som oppstår fra 
-      pakker som har gjenstridige byggesystemer, som i tilfellet med <ulink
-      url="&slfs-website;/general/obs-studio.html">OBS-Studio</ulink>.
-      For pakker som kun inneholder binærfiler, er det vanligvis ulikt om 
-      utviklerne lenker mot ny eller eldre OpenGL. Et spilleksempel er med
-      porteringer og rekompileringer: binærfilen for <ulink
-      url="https://www.shipofharkinian.com/">Ship of Harkinian</ulink>, en PC 
-      portering av Nintendo 64 spillet, Legend of Zelda: Ocarina of Time, 
-      lenker mot nye OpenGL og vil bare bli ødelagt med
-      Mesa installert; dessuten fører det også til 
-      mange problemer å prøve å omgå problemet ved å bygge fra kildekode. 
-      Imidlertid er binærfilen til PC porteringen laget av statisk rekompilering 
-      av Nintendo 64 spillet, Legend of Zelda: Majora's Mask, kalt <ulink
-      url="https://github.com/Zelda64Recomp/Zelda64Recomp">Zelda 64:
-      Recompiled</ulink>, lenker mot eldre OpenGL og fungerer med begge 
-      OpenGL leverandørene.
+      Programvare som kun inneholder binærfiler er en god kandidat for at disse 
+      problemene skal oppstå, noe som vanligvis stammer fra at byggesystemer 
+      foretrekker <filename class="libraryfile">libOpenGL</filename> over 
+      <filename class="libraryfile">libGL</filename>. Byggesystemer kan også 
+      klage over at libglvnds biblioteker ikke finnes. Noen ganger er det med 
+      vilje, andre ganger utilsiktet. I begge tilfeller er det usannsynlig at 
+      oppstrømsfiler vil fikse disse problemene. Et prosjekt som krever libglvnd 
+      spesifikt kan ha sine grunner, for eksempel at det avhenger av 
+      forsendelsesfunksjonen fordi det er en driver, eller at de fleste Linux 
+      distribusjoner sender libglvnd, noe som ikke gir noen grunn til å støtte 
+      Mesas OpenGL drivere. Disse problemene kan kombineres i ett enkelt 
+      tilfelle. Et spilleksempel er med porteringer og rekompileringer: 
+      binærfilen for <ulink url="https://www.shipofharkinian.com/">Ship of 
+      Harkinian</ulink>, En PC portering av Nintendo 64-spillet, Legend of 
+      Zelda: Ocarina of Time, lenker mot ny OpenGL og vil bli ødelagt med bare 
+      Mesa installert; dessuten fører det til mange problemer å prøve å omgå 
+      problemet ved å bygge fra kildekoden. Imidlertid fører binærfilen til PC 
+      porteringen som ble laget av statisk rekompilering av Nintendo 64-spillet, 
+      Legend of Zelda: Majora's Mask, kalt <ulink  url="https://github.com/Zelda64Recomp/Zelda64Recomp">
+      Zelda 64: Recompiled</ulink>, kobler seg mot eldre OpenGL og fungerer med 
+      begge OpenGL leverandører.
     </para>
 
+    <para>
+      Alle disse problemene førte til beslutningen om å kutte ut støtten for 
+      Mesas OpenGL implementeringer og bruke libglvnd i stedet. Dette påvirker 
+      nå også Supplerende LFS<footnote><para>
+        <ulink url="&slfs-website;"/>
+      </para></footnote> også. Beyond LFS vil ikke ha noen problemer med 
+      installasjon av Mesas OpenGL biblioteker. Uansett kan du fortsatt 
+      installere Mesas OpenGL hvis du ønsker det, men du vil støte på problemer 
+      utenfor BLFS. Valget er opp til deg.
+    </para>
+
+<!--
     <para>
       Hvis du bare vil ha eldre OpenGL, kan du bare installere <xref
       linkend="mesa"/>. Hvis du ønsker ny OpenGL, støtte for noen binære fil
@@ -87,6 +99,7 @@
       Når du er i tvil, installer <xref linkend="libglvnd"/>. Førstegangsbyggere 
 	  oppfordres på det sterkeste å installere denne.
     </para></note>
+-->
 
     <important><para>
       Det anbefales ikke å bytte mellom leverandører. Du bør velge nøye hvilken 
@@ -112,17 +125,14 @@
       </para>
 
       <para>
-        GLES, nærmere bestemt v2 og v3, brukes noen ganger, men for det meste i 
-        ett område. Et slikt område er i Wayland
-        kompositorer og kompositorerbiblioteker, som for eksempel
-        Hyprland, Mutter,
-        Wayfire, og
-        Wlroots. Selv om kompositore kan bruke 
-        Vulkan, krever de fleste kompositore GLES rendering og tilbyr ikke en 
-        Vulkan løsning, eller noen annen rendering API løsning. GLESv1 er 
-        derimot en utdatert spesifikasjon av GLES API som har blitt faset ut i 
-        mange år. Denne boken deaktiverer bygging for GLESv1 siden den er 
-        utdatert. Du kan bygge API spesifikasjonen hvis du ønsker det.
+        GLES, spesielt v2 og v3 brukes noen ganger, men hovedsakelig på ett 
+        område: i Wayland kompositorer og kompositorbiblioteker. Disse inkluderer 
+        Hyprland, Mutter, Wayfire og Wlroots. Selv om kompositorer kan bruke Vulkan, 
+        krever de fleste kompositorer GLES gjengivelse og tilbyr ikke en Vulkan løsning, 
+        eller noen annen gjengivelses-API løsning. GLESv1 er derimot en utdatert 
+        spesifikasjon av GLES API som har blitt faset ut i mange år. Denne boken 
+        deaktiverer bygging for GLESv1 ettersom den er utdatert. Du kan bygge API 
+        spesifikasjonen hvis du ønsker det.
       </para>
 
     </sect3>

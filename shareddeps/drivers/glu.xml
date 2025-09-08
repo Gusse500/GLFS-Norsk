@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY glu-download "https://archive.mesa3d.org/glu/glu-&glu-version;.tar.xz">
+]>
+
+<sect1 id="glu" xreflabel="GLU-&glu-version;">
+  <?dbhtml filename="glu.html"?>
+
+  <title>GLU-&glu-version;</title>
+
+  <indexterm zone="glu">
+    <primary sortas="a-GLU">GLU</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til GLU</title>
+
+    <para>
+      Denne pakken inneholder GL Verktøy biblioteket. Denne pakken er ikke 
+      nødvendig for noen andre i boken, men denne pakken i BLFS har instruksjoner 
+      som ikke vil fungere på et system med libglvnd. Installasjonen er derfor 
+      gitt her. Hvis du vil, kan du hoppe over denne pakken. Men når du er i BLFS 
+      eller SLFS, og en pakke viser GLU som en avhengighet, bruk denne siden for 
+      installasjonen for å sikre kompatibilitet i stedet for den i BLFS.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&glu-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">GLU Avhengigheter</bridgehead>
+
+    <bridgehead renderas="sect4">Påkrevd</bridgehead>
+    <para role="required">
+      &opengl;
+    </para>
+
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av GLU</title>
+
+    <para>
+      Installer GLU ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=$XORG_PREFIX   \
+            --buildtype=release     \
+            $(! pkgconf libglvnd   &amp;&amp;
+            echo -D gl_provider=gl) \
+            .. &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install &amp;&amp;
+rm -vf /usr/lib/libGLU.a</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    <para>
+      <command>$(! pkgconf ...)</command>: Disse kommandoene sjekker om OpenGL 
+      leverandøren ikke er libglvnd. Hvis den ikke er det, tvinger det
+      byggesystemet til å bruke <filename class="libraryfile">libGL</filename> 
+      istedenfor <filename class="libraryfile">libOpenGL</filename>.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          libGLU
+        </seg>
+        <seg>
+          Ingen
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libGLU">
+        <term><filename class="libraryfile">libGLU</filename></term>
+        <listitem>
+          <para>
+            er GL Verktøy biblioteket
+          </para>
+          <indexterm zone="glu libGLU">
+            <primary sortas="c-libGLU">libGLU</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
