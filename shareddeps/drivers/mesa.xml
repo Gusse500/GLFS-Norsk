@@ -20,9 +20,8 @@
     <title>Introduksjon til Mesa</title>
 
     <para>
-      Mesa tilbyr et bredt utvalg av grafikk 
-      programvare, som OpenGL biblioteker og drivere, Vulkan drivere 
-      og andre drivere.
+      Mesa inneholder flere biblioteker og drivere for flere API-er som OpenGL 
+      og Vulkan.
     </para>
 
     <important><para>
@@ -193,15 +192,14 @@ meson setup --prefix=/usr            \
 ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
     <para>
       Hvis ønskelig, installer den valgfrie dokumentasjonen ved å kjøre 
-      følgende kommandoer som
-      <systemitem class="username">root</systemitem> bruker:
+      følgende kommandoer som &root; bruker:
     </para>
 
 <screen role="root"
@@ -236,7 +234,7 @@ sed -i 's/\/usr\/lib\//\/usr\/lib32\//g' ./build.ninja &amp;&amp;
 BINDGEN_EXTRA_CLANG_ARGS="-m32" ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install                     &amp;&amp;
@@ -456,11 +454,15 @@ ldconfig</userinput></screen>
       dette alternativet. Sørg for å lese <xref linkend="aboutgles"/>.
     </para>
 
+<!-- No available values for this option anymore, dri2 has been completely
+     removed. Hide this now. -->
+<!--
     <para>
       <option>-D legacy-x11="..."</option> Denne parameteren kontrollerer hvilke 
       eldre X11 funksjoner som får innebygd støtte. Tilgjengelige Linux alternativer 
       er ingen (standard) og dri2. Disse funksjonene er sjelden nødvendig lenger.
     </para>
+-->
 
     <para>
       <option>-D libgbm-external=true</option>: Dette lenker mot 
@@ -505,9 +507,8 @@ ldconfig</userinput></screen>
         <seg>
           libEGL_mesa,
           libGLX_mesa,
-          libgallium-&mesa-version;,
-          libgbm, og
-          libxatracker
+          libgallium-&mesa-version;, og
+          libgbm
         </seg>
         <seg>
           <!-- Begin DRI Driver Stubs -->
@@ -519,7 +520,6 @@ ldconfig</userinput></screen>
           nouveau_dri,
           r300_dri,
           r600_dri,
-          r600_drv_video,
           radeonsi_dri,
           swrast_dri,
           virtio_gpu_dri,
@@ -530,6 +530,7 @@ ldconfig</userinput></screen>
         <seg>
           <!-- Begin VA-API Drivers -->
           nouveau_drv_video,
+          r600_drv_video,
           radeonsi_drv_video, og
           virtio_gpu_drv_video
           <!-- End VA-API Drivers -->
@@ -550,20 +551,24 @@ ldconfig</userinput></screen>
           <!-- End VDPAU Drivers -->
         </seg>
         <seg>
+          <!-- Begin Vulkan drivers -->
           libvulkan_intel_hasvk,
           libvulkan_intel,
           libvulkan_lvp,
           libvulkan_nouveau, og
           libvulkan_radeon
+          <!-- End Vulkan drivers -->
         </seg>
         <seg>
+          <!-- Begin directories -->
           <!-- /usr/include/GL is installed by xorg-protos -->
-          /usr/{include/{EGL,GLES2,GLES3,KHR},
-          /usr/lib/{dri,gbm,vdpau}},
+          /usr/include/{EGL,GLES2,GLES3,KHR},
+          /usr/lib/{dri,gbm,vdpau},
           /usr/share/drirc.d (inneholder løsninger for diverse applikasjoner, 
           spesielt nettlesere og spill),
           /usr/share/vulkan,
           and /usr/share/doc/mesa-&mesa-version;
+          <!-- End directories -->
         </seg>
       </seglistitem>
     </segmentedlist>
@@ -634,18 +639,6 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="mesa libgbm">
             <primary sortas="c-libgbm">libgbm</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libxatracker">
-        <term><filename class="libraryfile">libxatracker</filename></term>
-        <listitem>
-          <para>
-            er XA tilstandssporing for VMWare vmwgfx driveren
-          </para>
-          <indexterm zone="mesa libxatracker">
-            <primary sortas="c-libxatracker">libxatracker</primary>
           </indexterm>
         </listitem>
       </varlistentry>

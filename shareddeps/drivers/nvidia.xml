@@ -28,6 +28,10 @@
       NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste pakke.
     </para>
 
+    <note revision="sysv"><para>
+      NVIDIA-Powerd støttes kun på Systemd.
+    </para></note>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -574,10 +578,10 @@ options nvidia_drm modeset=1
 # End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
 EOF</userinput></screen>
 
-      <!-- Cannot be used on SysVinit yet, and the kernel module will complain
+      <!-- Cannot be used on SysVinit and the kernel module will complain
            as the ability to make use of sleep/hibernate is not yet
-           implemented. We must provide the files, but they do not work as of
-           yet. - Zeckma -->
+           implemented. We must provide the files, but they do not work.
+           - Zeckma -->
       <para revision="systemd">
         Når GPU-en går i hvilemodus/dvalemodus, mister den som standard alle 
         minnetildelinger. Du kan forhindre dette ved å angi to alternativer for 

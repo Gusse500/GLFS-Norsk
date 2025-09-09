@@ -41,8 +41,41 @@
     -->
 
     <listitem>
+      <para>9. september 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.5 -&gt; 2.14.6.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - FreeType2: 2.13.3 -&gt; 2.14.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libXScrnSaver (Xorg bibliotek): 1.2.4 -&gt;
+          1.2.5.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libXres (Xorg bibliotek): 1.2.2 -&gt;
+          1.2.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libXpresent (Xorg bibliotek): 1.0.1 -&gt;
+          1.0.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.1.8 -&gt; 25.2.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Støtte kun Powerd på Systemd.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>8. september 2025</para>
       <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: Legg til avinstalleringsalternativ.</para>
+        </listitem>
         <listitem>
           <para>[zeckma] - Ikke støtte Mesa OpenGL; GLU: Flyttet fra
           SLFS.</para>
