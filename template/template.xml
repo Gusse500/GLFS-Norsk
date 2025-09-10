@@ -208,7 +208,7 @@ make</userinput></screen>
     </para>
 
 <screen role="root"
-        remap="doc"><userinput>install -vdm 755 /usr/share/doc/template-&template-version; &amp;&amp;
+        remap="doc"><userinput>&install-dir; /usr/share/doc/template-&template-version; &amp;&amp;
 mv doc/* /usr/share/doc/template-&template-version;</userinput></screen>
   </sect2>
 

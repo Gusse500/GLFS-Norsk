@@ -185,7 +185,7 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install &amp;&amp;
 mkdir -pv /etc/X11/xorg.conf.d</userinput><userinput revision="sysv"> &amp;&amp;
-install -vdm1777 /tmp/.{ICE,X11}-unix &amp;&amp;
+&install-sudir; /tmp/.{ICE,X11}-unix &amp;&amp;
 if [ -z "$(grep .ICE-unix /etc/sysconfig/createfiles)" ]; then
 cat &gt;&gt; /etc/sysconfig/createfiles &lt;&lt; "EOF"
 <literal>/tmp/.ICE-unix dir 1777 root root</literal>

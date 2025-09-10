@@ -111,7 +111,7 @@
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
-install -vdm755 /etc/ssl/local</userinput></screen>
+&install-dir; /etc/ssl/local</userinput></screen>
 
    <note>
      <para>

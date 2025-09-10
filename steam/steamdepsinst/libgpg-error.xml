@@ -51,7 +51,7 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
-install -v -m644 -D README /usr/share/doc/libgpg-error-&libgpg-error-version;/README</userinput></screen>
+&install-file; README -t /usr/share/doc/libgpg-error-&libgpg-error-version;/</userinput></screen>
 
   </sect2>
 

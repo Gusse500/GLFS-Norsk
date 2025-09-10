@@ -59,7 +59,7 @@
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
-<screen role="root"><userinput>install -v -m755 target/release/bindgen /usr/bin/</userinput></screen>
+<screen role="root"><userinput>&install-exec; target/release/bindgen -t /usr/bin/</userinput></screen>
 
     <para>
       Fortsatt som &root; bruker, installer Bash og Zsh utførelse 

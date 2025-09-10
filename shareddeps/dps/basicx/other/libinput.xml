@@ -84,7 +84,7 @@ ninja</userinput></screen>
 <!-- seems the api doc is not generated because the directory is not a git
      repository... -->
 <screen role="root"
-        remap="doc"><userinput>install -v -dm755      /usr/share/doc/libinput-&libinput-version;/html &amp;&amp;
+        remap="doc"><userinput>&install-dir; /usr/share/doc/libinput-&libinput-version;/html &amp;&amp;
 cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinput></screen>
 
   </sect2>

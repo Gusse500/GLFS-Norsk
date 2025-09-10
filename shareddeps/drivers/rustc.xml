@@ -328,12 +328,11 @@ fi</userinput></screen>
     </para>
 
 <screen role='root'><userinput>rm -fv /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version;/*.old   &amp;&amp;
-install -vm644 README.md                                \
-               /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version; &amp;&amp;
-
-install -vdm755 /usr/share/zsh/site-functions      &amp;&amp;
+&install-file; README.md \
+  -t /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version;/ &amp;&amp;
+&install-dir; /usr/share/zsh/site-functions &amp;&amp;
 ln -sfv /opt/rustc/share/zsh/site-functions/_cargo \
-        /usr/share/zsh/site-functions              &amp;&amp;
+        /usr/share/zsh/site-functions &amp;&amp;
 
 mv -v /etc/bash_completion.d/cargo \
       /usr/share/bash-completion/completions</userinput></screen>

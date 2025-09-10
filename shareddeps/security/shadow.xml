@@ -279,7 +279,7 @@ make</userinput></screen>
           <primary sortas="e-etc-login.defs">/etc/login.defs</primary>
         </indexterm>
 
-<screen role="root"><userinput>install -v -m644 /etc/login.defs /etc/login.defs.orig &amp;&amp;
+<screen role="root"><userinput>&install-file; /etc/login.defs /etc/login.defs.orig &amp;&amp;
 for FUNCTION in FAIL_DELAY               \
                 FAILLOG_ENAB             \
                 LASTLOG_ENAB             \
@@ -461,7 +461,7 @@ EOF</userinput></screen>
 <screen role="root"><userinput>for PROGRAM in chfn chgpasswd chsh groupadd groupdel \
                groupmems groupmod useradd userdel usermod
 do
-    install -v -m644 /etc/pam.d/chage /etc/pam.d/${PROGRAM}
+    &install-file; /etc/pam.d/chage /etc/pam.d/${PROGRAM}
     sed -i "s/chage/$PROGRAM/" /etc/pam.d/${PROGRAM}
 done</userinput></screen>
 

@@ -148,8 +148,8 @@ ninja</userinput></screen>
 cd ..         &amp;&amp;
 
 mkdir   -pv     /usr/lib/vkd3d-proton/win64 &amp;&amp;
-install -vDm644 build-win64/DESTDIR/bin/*.dll \
-                /usr/lib/vkd3d-proton/win64</userinput></screen>
+&install-exec; build-win64/DESTDIR/bin/*.dll \
+             -t /usr/lib/vkd3d-proton/win64/</userinput></screen>
 
     </sect3>
 
@@ -176,8 +176,8 @@ ninja</userinput></screen>
 cd ..         &amp;&amp;
 
 mkdir   -pv     /usr/lib/vkd3d-proton/win32 &amp;&amp;
-install -vDm644 build-win32/DESTDIR/bin/*.dll \
-                /usr/lib/vkd3d-proton/win32</userinput></screen>
+&install-exec; build-win32/DESTDIR/bin/*.dll \
+             -t /usr/lib/vkd3d-proton/win32/</userinput></screen>
 
     </sect3>
 

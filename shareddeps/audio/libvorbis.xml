@@ -77,7 +77,8 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
-install -v -m644 doc/Vorbis* /usr/share/doc/libvorbis-&libvorbis-version;</userinput></screen>
+&install-file; doc/Vorbis* \
+  -t /usr/share/doc/libvorbis-&libvorbis-version;/</userinput></screen>
 
   </sect2>
 
