@@ -22,8 +22,8 @@
     <title>Introduksjon til libglvnd</title>
 
     <para>
-      Pakken libglvnd sender API kall til en gitt driverleverandør under 
-      kjøretid. Noen av bibliotekene er rett og slett innpakning til 
+      Pakken libglvnd sender OpenGL API kall til en gitt driverleverandør under 
+      kjøring. Noen av bibliotekene er rett og slett innpakninger til 
       hovedavsenderen. Drivere som er bygget med libglvnd i tankene, gir sine 
       egne OpenGL implementeringer. For <xref linkend="mesa"/>, vil den installere
       <filename class="libraryfile">libEGL_mesa</filename> og <filename
