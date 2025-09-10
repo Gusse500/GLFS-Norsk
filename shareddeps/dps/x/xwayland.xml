@@ -82,7 +82,7 @@ ninja</userinput></screen>
     </para>
 
 <screen role="root"><userinput>ninja install</userinput><userinput revision="sysv"> &amp;&amp;
-install -vdm1777 /tmp/.X11-unix &amp;&amp;
+&install-sudir; /tmp/.X11-unix &amp;&amp;
 if [ -z "$(grep .X11-unix /etc/sysconfig/createfiles)" ]; then
 cat &gt;&gt; /etc/sysconfig/createfiles &lt;&lt; "EOF"
 <literal>/tmp/.X11-unix dir 1777 root root</literal>
@@ -95,7 +95,7 @@ fi</userinput></screen>
       fra denne pakken. Som &root; bruker:
     </para>
 
-<screen role="nodump"><userinput>install -vm755 hw/vfb/Xvfb /usr/bin</userinput></screen>
+<screen role="nodump"><userinput>&install-exec; hw/vfb/Xvfb -t /usr/bin/</userinput></screen>
 
   </sect2>
 

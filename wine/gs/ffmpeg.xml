@@ -159,9 +159,9 @@ gcc tools/qt-faststart.c -o tools/qt-faststart</userinput></screen>
 
 <screen role="root"><userinput>make install &amp;&amp;
 
-install -v -m755    tools/qt-faststart /usr/bin &amp;&amp;
-install -v -m755 -d           /usr/share/doc/ffmpeg-&ffmpeg-version; &amp;&amp;
-install -v -m644    doc/*.txt /usr/share/doc/ffmpeg-&ffmpeg-version;</userinput></screen>
+&install-exec; tools/qt-faststart -t /usr/bin/ &amp;&amp;
+&install-dir;              /usr/share/doc/ffmpeg-&ffmpeg-version; &amp;&amp;
+&install-file; doc/*.txt -t /usr/share/doc/ffmpeg-&ffmpeg-version;/</userinput></screen>
 
   </sect2>
 

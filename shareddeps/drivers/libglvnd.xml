@@ -22,18 +22,18 @@
     <title>Introduksjon til libglvnd</title>
 
     <para>
-      Pakken libglvnd sender API kall til en gitt driverleverandør under 
-      kjøretid. Noen av bibliotekene er rett og slett innpakning til 
-      hovedavsenderen. Drivere som er bygget med libglvnd i tankene, gir sine 
-      egne OpenGL implementeringer. For <xref linkend="mesa"/>, vil den installere
+      Pakken libglvnd sender OpenGL API kall til en gitt driverleverandør under 
+      kjøring. Noen av bibliotekene er rett og slett innpakninger til 
+      hovedavsenderen. Drivere som er bygget med libglvnd i tankene, gir sin 
+      egen OpenGL funksjonalitet. For <xref linkend="mesa"/>, vil den installere
       <filename class="libraryfile">libEGL_mesa</filename> og <filename
       class="libraryfile">libGLX_mesa</filename>. For <xref linkend="nvidia"/>,
       vil den gi <filename class="libraryfile">libEGL_nvidia</filename>,
       <filename class="libraryfile">libGLESv2_nvidia</filename>, og
-      <filename class="libraryfile">libGLX_nvidia</filename>. Hver 
-      implementeringen er spesifikk for driveren den kommer fra. Fordelen med å 
-      gjøre det på denne måten er at en driver ikke trenger å adlyde arkitekturen en 
-      OpenGL leverandør bruker, og den trenger heller ikke å bli absorbert av leverandøren..
+      <filename class="libraryfile">libGLX_nvidia</filename>. Hver gjengivelse 
+      er spesifikk for driveren den kommer fra. Fordelen med å gjøre det på 
+      denne måten er at en driver ikke trenger å adlyde arkitekturen en OpenGL 
+      leverandør bruker, og den trenger heller ikke å bli absorbert av leverandøren.
     </para>
 
     <important><para>

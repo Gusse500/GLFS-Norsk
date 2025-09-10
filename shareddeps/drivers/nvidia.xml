@@ -352,11 +352,9 @@ cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-version;</userinput></scre
       bruker:
     </para>
 
-<screen role="root"><userinput>mkdir -pv /usr/share/nvidia              &amp;&amp;
-install -vm755 ../install-NVIDIA-&nv-manifest-version;        \
-               /usr/sbin/nvidia-install  &amp;&amp;
-install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
-               /usr/share/nvidia/manifest</userinput></screen>
+<screen role="root"><userinput>&install-dir; /usr/share/nvidia &amp;&amp;
+&install-exec; ../install-NVIDIA-&nv-manifest-version; /usr/sbin/nvidia-install &amp;&amp;
+&install-file; ../manifest-NVIDIA-&nv-manifest-version; /usr/share/nvidia/manifest</userinput></screen>
 
     <para>
       Se nå hvilke alternativer som finnes og hva du vil installere ved å kjøre
@@ -392,7 +390,7 @@ install -vm644 ../manifest-NVIDIA-&nv-manifest-version;       \
       user to install the daemon and the bootscripts:
     </para>
 <screen role="root"><userinput>mkdir -pv /usr/share/dbus-1/system.d        &amp;&amp;
-install -vm755 nvidia-powerd /usr/bin       &amp;&amp;
+&install-exec; nvidia-powerd -t /usr/bin/       &amp;&amp;
 cp -v nvidia-dbus.conf                       \
       /usr/share/dbus-1/system.d            &amp;&amp;
 tar -xf ../NVIDIA-sysv-bootscripts-&nv-sysv-bs;.tar.xz &amp;&amp;
@@ -410,18 +408,18 @@ rm -rf NVIDIA-sysv-bootscripts-&nv-sysv-bs;</userinput></screen>
       dvalemodus og gå i hvilemodus, kjør følgende kommandoer som &root; bruker 
       for å installere daemonen og Systemd enhetsfilene:
     </para>
-<screen role="root"><userinput>mkdir -pv /usr/lib/systemd/system             \
-          /usr/lib/systemd/system-sleep       \
-          /usr/share/dbus-1/system.d         &amp;&amp;
-install -vm755 nvidia-powerd /usr/bin        &amp;&amp;
-install -vm755 systemd/nvidia-sleep.sh        \
-               /usr/bin                      &amp;&amp;
-install -vm755 systemd/system-sleep/nvidia    \
-               /usr/lib/systemd/system-sleep &amp;&amp;
-cp -v systemd/system/*.service                \
-      /usr/lib/systemd/system                &amp;&amp;
-cp -v nvidia-dbus.conf                        \
-      /usr/share/dbus-1/system.d             &amp;&amp;
+<screen role="root"><userinput>mkdir -pv /usr/lib/systemd/system               \
+          /usr/lib/systemd/system-sleep         \
+          /usr/share/dbus-1/system.d           &amp;&amp;
+&install-exec; nvidia-powerd -t /usr/bin/     &amp;&amp;
+&install-exec; systemd/nvidia-sleep.sh         \
+             -t /usr/bin/                      &amp;&amp;
+&install-exec; systemd/system-sleep/nvidia     \
+             -t /usr/lib/systemd/system-sleep/ &amp;&amp;
+cp -v systemd/system/*.service                  \
+      /usr/lib/systemd/system                  &amp;&amp;
+cp -v nvidia-dbus.conf                          \
+      /usr/share/dbus-1/system.d               &amp;&amp;
 
 cat &gt; systemd-homed-override.conf &lt;&lt; "EOF" &amp;&amp;
 <literal>[Service]

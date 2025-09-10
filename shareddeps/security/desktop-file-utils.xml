@@ -128,7 +128,7 @@ ninja</userinput></screen>
         class="username">root</systemitem> bruker:
       </para>
 
-<screen role="root"><userinput>install -vdm755 /usr/share/applications &amp;&amp;
+<screen role="root"><userinput>&install-dir; /usr/share/applications &amp;&amp;
 update-desktop-database /usr/share/applications</userinput></screen>
 
     </sect3>

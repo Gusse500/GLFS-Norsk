@@ -278,6 +278,12 @@ export -f as_root</userinput></screen>
 
 <!ENTITY install-wheel "pip3 install --no-index --find-links=dist --no-cache-dir --no-user">
 
+<!ENTITY install-base "install -vDm">
+<!ENTITY install-dir  "install -vdm755">
+<!ENTITY install-sudir  "install -vdm1755">
+<!ENTITY install-exec "&install-base;755">
+<!ENTITY install-file "&install-base;644">
+
 <!ENTITY berkeley-db "<ulink url='https://anduin.linuxfromscratch.org/BLFS/bdb/db-5.3.28.tar.gz'>Berkeley DB</ulink> (utdatert)">
 
 <!ENTITY unzip "<ulink url='&blfs-svn;/general/libarchive.html'>libarchive</ulink>">
