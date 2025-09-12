@@ -96,12 +96,7 @@ ninja</userinput></screen>
       Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>ninja install &amp;&amp;
-mkdir -pv /usr/include/GL/internal &amp;&amp;
-cp -v ../include/GL/internal/dri_interface.h /usr/include/GL/internal
-if test -d /usr/include/EGL; then
-  cp -v ../include/EGL/eglmesaext.h /usr/include/EGL
-fi</userinput></screen>
+<screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
 
@@ -197,6 +192,7 @@ ldconfig</userinput></screen>
       bruken av libunwind.
     </para>
 
+<!--
     <para>
       <command>cp -v ../include/GL/internal/dri_interface.h ...</command>: Denne
       kommandoen kopierer over en deklarasjonsfil som trengs av <xref
@@ -210,6 +206,7 @@ ldconfig</userinput></screen>
       url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> og muligens andre
       pakker.
     </para>
+-->
 
   </sect2>
 

@@ -7,6 +7,8 @@
   <!ENTITY nv-root "https://us.download.nvidia.com/XFree86/Linux-x86_64">
   <!ENTITY nvidia-download
     "&nv-root;/&nvidia-version;/NVIDIA-Linux-x86_64-&nvidia-version;.run">
+  <!ENTITY mesa-raw-repo
+    "https://gitlab.freedesktop.org/mesa/mesa/-/raw/&mesa-major-minor;">
 ]>
 
 <sect1 id="nvidia" xreflabel="NVIDIA-&nvidia-version;">
@@ -630,6 +632,21 @@ EOF</userinput></screen>
         bibliotekene og en ekte pkg-config fil. Merk 
         at disse bibliotekene ikke vil bli brukt når denne driveren er i bruk.
       </para>
+
+      <para>
+        Som med situasjonen angående DRI, finnes det et par deklarasjonsfiler 
+        som bare er installert av <xref linkend="mesa"/> men kan brukes uten 
+        problemer. En er for å deklarere DRI grensesnittet og en for å deklarere 
+        Mesas EGL EXT system som brukes av noe programvare som GNOMEs mutter. 
+        Bruk <xref linkend="wget"/>, til å laste ned og installere dem som
+        &root; bruker:
+      </para>
+
+<screen role="root"><userinput>&install-dir; /usr/include/GL/internal /usr/include/EGL &amp;&amp;
+wget &mesa-raw-repo;/include/GL/internal/dri_interface.h \
+  -O /usr/include/GL/internal/dri_interface.h &amp;&amp;
+wget &mesa-raw-repo;/include/EGL/eglmesaext.h \
+  -O /usr/include/EGL/eglmesaext.h</userinput></screen>
 
       <note><para>
         Du bør hoppe over til <xref linkend="xcb-utils"/> etter at du er ferdig
