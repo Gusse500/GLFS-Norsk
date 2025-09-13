@@ -291,7 +291,7 @@ export -f as_root</userinput></screen>
 <!ENTITY gobject-introspection "<xref linkend='glib2'/> (med GObject Introspection)">
 
 <!ENTITY opengl "<xref linkend='libglvnd'/>">
-<!ENTITY gbm    "GBM (<xref linkend='gbm'/> eller <xref linkend='mesa'/>)">
+<!ENTITY gbm    "GBM (<xref linkend='libgbm'/> eller <xref linkend='mesa'/>)">
 
 <!ENTITY sdl2 "SDL2 (<xref linkend='sdl2'/> eller <ulink
                url='&slfs-website;/graph/sdl2.html'>sdl2-compat</ulink>)">

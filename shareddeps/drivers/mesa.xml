@@ -630,15 +630,15 @@ ldconfig</userinput></screen>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libgbm">
+      <varlistentry id="mesa-libgbm">
         <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
             er Mesa Graphics Buffer
             Manager bibliotek
           </para>
-          <indexterm zone="mesa libgbm">
-            <primary sortas="c-libgbm">libgbm</primary>
+          <indexterm zone="mesa mesa-libgbm">
+            <primary sortas="c-mesa-libgbm">libgbm</primary>
           </indexterm>
         </listitem>
       </varlistentry>
