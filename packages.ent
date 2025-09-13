@@ -283,7 +283,7 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 
 <!ENTITY wine-major-version           "10">
-<!ENTITY wine-version                 "&wine-major-version;.14">
+<!ENTITY wine-version                 "&wine-major-version;.15">
 
 <!ENTITY dxvk-version                 "2.7.1">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
