@@ -24,12 +24,8 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vulkan-sdk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glu.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libgbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cython.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libyaml.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pyyaml.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="gbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm.xml"/>
@@ -40,6 +36,10 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libclc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ply.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cython.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libyaml.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pyyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mesa.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau-va-gl.xml"/>
 
