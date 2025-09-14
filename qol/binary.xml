@@ -8,27 +8,22 @@
 <sect1 id="binary" xreflabel="Binær støtte">
   <?dbhtml filename="binary.html"?>
 
-
   <title>Binær støtte</title>
 
   <para>
-    Nå som du har Steam og/eller
-    Wine, Du har nå god støtte for å kjøre
+    Nå som du har Steam og/eller Wine, Du har nå god støtte for å kjøre
     kun binære applikasjoner. Det finnes imidlertid AppImages og Flatpaks. Denne
     boken går ikke gjennom og vil ikke gå gjennom hvordan du får den støtten. Du kan
     imidlertid finne ut hvordan du får den støtten ved å se på et annet prosjekt
     GLFS utviklingsteamet jobber med:
-    <ulink url="&slfs-website;">SLFS</ulink>. 
-    den spesifikke delen du vil se for å få den støtten er
-    <ulink url="&slfs-website;/binary/binary.html">
-    Binary Support</ulink>.
+    <ulink url="&slfs-website;">SLFS</ulink>. Den har Fuse2 som er nødvendig for 
+    AppImages. Den har også Flatpak.
   </para>
 
   <para>
-    Etter å ha fulgt instruksjonene, skal du kunne kjøre AppImages og bruke Flatpak.
-    Du kan til og med bruke Flatpak til å installere
-    Steam hvis du ønsker det. Den metoden er ikke dekket i
-    denne boken.
+    Etter å ha fulgt instruksjonene, skal du kunne kjøre AppImages og bruke 
+    Flatpak. Du kan til og med bruke Flatpak til å installere Steam hvis du 
+    ønsker det. Den metoden er ikke dekket i denne boken.
   </para>
 
 </sect1>
