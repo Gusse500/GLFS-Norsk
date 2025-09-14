@@ -157,7 +157,7 @@
 <!ENTITY linux-version                "6.16.1">
 <!-- kernel version of when the NVIDIA driver version listed was released -->
 <!ENTITY nvidia-linux-version         "6.15.x - 6.16.x">
-<!ENTITY nvidia-version               "580.82.07">
+<!ENTITY nvidia-version               "580.82.09">
 <!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
 <!ENTITY nvidia-full-name             "&nvidia-version;">
 <!ENTITY nv-manifest-version          "1">
