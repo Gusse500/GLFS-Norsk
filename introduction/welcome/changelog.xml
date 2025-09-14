@@ -41,6 +41,20 @@
     -->
 
     <listitem>
+      <para>13. september 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - p11-kit: 0.25.5 -&gt; 0.25.7. Fikser
+          <ulink url="&glfs-issues;/311">#311</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - xcb-util-cursor: 0.1.5 -&gt; 0.1.6 (XCB Verktøy).
+          Fikser <ulink url="&glfs-issues;/310">#310</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>12. september 2025</para>
       <itemizedlist>
         <listitem>
