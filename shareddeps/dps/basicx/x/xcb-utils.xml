@@ -4,7 +4,7 @@
   <!ENTITY % general-entities SYSTEM "../../../../general.ent">
   %general-entities;
 
-  <!ENTITY xcb-utils-download "https://xcb.freedesktop.org/dist/">
+  <!ENTITY xcb-utils-download "https://xorg.freedesktop.org/archive/individual/lib/">
 ]>
 
 <sect1 id="xcb-utils" xreflabel="XCB Verktøy">
