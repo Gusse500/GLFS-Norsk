@@ -10,7 +10,6 @@
 <sect1 id="ffmpeg" xreflabel="FFmpeg-&ffmpeg-version;">
   <?dbhtml filename="ffmpeg.html"?>
 
-
   <title>FFmpeg-&ffmpeg-version;</title>
 
   <indexterm zone="ffmpeg">
@@ -59,14 +58,14 @@
 
     <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="libaom"/>,
-      <ulink url="&blfs-svn;/multimedia/libass.html">libass</ulink>,
+      <xref linkend="dav1d"/>,
       <xref linkend="fdk-aac"/>,
       <xref linkend="freetype2-pass2"/>,
       <xref linkend="lame"/>,
       <xref linkend="libvorbis"/>,
       <xref linkend="libvpx"/>,
       <xref linkend="opus"/>,
+      <xref linkend="svt-av1"/>,
       <xref linkend="x264"/>,
       <xref linkend="x265"/>, og
       <xref linkend="nasm"/>
@@ -118,13 +117,6 @@
 <screen><userinput remap="pre">patch -Np1 -i ../ffmpeg-&ffmpeg-version;-chromium_method-1.patch</userinput></screen>
 
     <para>
-      Nå fiks et problem forårsaket av den nyeste versjonen av <xref linkend="x265"/>:
-    </para>
-
-<screen><userinput remap="pre">sed -e 's/X265_BUILD >= 210/(&amp;) \&amp;\&amp; (X265_BUILD &lt; 213)/' \
-    -i libavcodec/libx265.c</userinput></screen>
-
-    <para>
       Installer FFmpeg ved å kjøre følgende 
       kommandoer:
     </para>
@@ -136,17 +128,17 @@
             --disable-static     \
             --enable-shared      \
             --disable-debug      \
-            --enable-libaom      \
+            --enable-libdav1d    \
             --enable-libfdk-aac  \
             --enable-libfreetype \
             --enable-libmp3lame  \
             --enable-libopus     \
+            --enable-libsvtav1   \
             --enable-libvorbis   \
             --enable-libvpx      \
             --enable-libx264     \
             --enable-libx265     \
-            --enable-openssl<!--     \
-            - -ignore-tests=enhanced-flv-av1-->     \
+            --enable-openssl     \
             --docdir=/usr/share/doc/ffmpeg-&ffmpeg-version; &amp;&amp;
 
 make &amp;&amp;
@@ -154,7 +146,7 @@ make &amp;&amp;
 gcc tools/qt-faststart.c -o tools/qt-faststart</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -185,22 +177,22 @@ gcc tools/qt-faststart.c -o tools/qt-faststart</userinput></screen>
             --disable-static                          \
             --enable-shared                           \
             --disable-debug                           \
-            --enable-libaom                           \
+            --enable-libdav1d                         \
             --enable-libfdk-aac                       \
             --enable-libfreetype                      \
             --enable-libmp3lame                       \
             --enable-libopus                          \
+            --enable-libsvtav1                        \
             --enable-libvorbis                        \
             --enable-libvpx                           \
             --enable-libx264                          \
             --enable-libx265                          \
-            --enable-openssl<!--                          \
-            - -ignore-tests=enhanced-flv-av1--> &amp;&amp;
+            --enable-openssl &amp;&amp;
 
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -248,59 +240,6 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <parameter>--enable-libaom</parameter>: Aktiverer AV1 lyd og video 
-      dekoding via <filename class="libraryfile">libaom</filename>.
-    </para>
-
-    <para>
-      <parameter>--enable-libfdk-aac</parameter>: Aktiverer AAC lydkoding via
-      <filename class="libraryfile">libfdk-aac</filename>.
-    </para>
-
-    <para>
-      <parameter>--enable-libmp3lame</parameter>: Aktiverer MP3 lydkoding
-      via <filename class="libraryfile">libmp3lame</filename>.
-    </para>
-<!--
-    <para>
-      <parameter>- -enable-libvorbis</parameter>
-      <parameter>- -enable-libtheora</parameter>: Aktiverer
-      Theora videokoding via <filename
-      class="libraryfile">libvorbis</filename> og <filename
-      class="libraryfile">libtheora</filename>.
-    </para>
--->
-    <para>
-      <parameter>--enable-libvorbis</parameter>
-      <parameter>--enable-libvpx</parameter>: Aktiverer WebM
-      koding via <filename class="libraryfile">libvorbis</filename> og
-      <filename class="libraryfile">libvpx</filename>.
-    </para>
-
-    <para>
-      <parameter>--enable-libx264</parameter>: Aktiverer høykvalitets
-      H.264/MPEG-4 AVC koding via <filename
-      class="libraryfile">libx264</filename>.
-    </para>
-
-    <para>
-      <parameter>--enable-libx265</parameter>: Aktiverer høykvalitets
-      H.265/HEVC koding via <filename
-      class="libraryfile">libx265</filename>.
-    </para>
-
-    <para>
-      <parameter>--enable-openssl</parameter>:
-      Aktiverer HTTPS protokollen for nettverksstrømmer.
-    </para>
-
-    <para>
-      <option>--enable-libdrm</option>: Bruk denne bryteren hvis
-      <xref linkend="libdrm"/> er installert for å bygge <quote>kmsgrab</quote>
-      inndatamodul som er nyttig for skjermopptak eller strømming.
-    </para>
-
-    <para>
       <option>--enable-nvenc --enable-nvdec</option>: Disse alternativene 
       aktiverer maskinvareakselerasjon for NVIDIA GPU-er, og avhenger av de 
       valgfrie avhengighetene for systemer med NVIDIA grafikkkort.
@@ -319,24 +258,6 @@ ldconfig</userinput></screen>
 	  avhengighetene for systemer med Intel grafikkort.
     </para>
 
-    <!--
-    <para>
-      <parameter>- -disable-vulkan</parameter>: Deaktiverer Vulkan for 
-      gjeldende versjon av <xref linkend="vulkan-loader"/> på grunn av 
-      en API konflikt.
-    </para>
-    -->
-
-<!--
-    <para>
-      <parameter>- -ignore-tests=...</parameter>: Deaktiverer tester som ikke 
-      klarer å kjøre på BLFS uten de valgfrie pakkene. AV1 testen er for 
-      øyeblikket deaktivert, da den trenger dav1d for å utføre AV1 dekoding på 
-      CPU-en. Testen kan fungere hvis du har en GPU som kan dekode AV1, men 
-      dette ble ikke testet.
-    </para>
--->
-
     <para>
       <option>--enable-gnutls</option>: Bruk dette alternativet i stedet for
       <parameter>--enable-openssl</parameter>, hvis du vil bruke 
@@ -348,11 +269,6 @@ ldconfig</userinput></screen>
       <option>--disable-doc</option>: Deaktiverer bygging av HTML dokumentasjon. 
       Dette er bare nødvendig hvis doxygen er installert og du ikke ønsker å 
       bygge HTML dokumentasjonen.
-    </para>
-
-    <para>
-      <option>--enable-libpulse</option>: Aktiverer støtte for
-      Pulseaudio for lydutdata.
     </para>
 
     <para>
