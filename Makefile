@@ -76,7 +76,7 @@ glfs: html wget-list
 
 help:
 	@echo ""
-	@echo "make <parametere> <mål>"
+	@echo "make <parametere> <targets>"
 	@echo ""
 	@echo "Parametere:"
 	@echo ""

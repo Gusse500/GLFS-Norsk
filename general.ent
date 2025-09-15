@@ -239,7 +239,7 @@ alternativer som kan brukes til å gjøre dette:</para>
   sudo pakken.</para></listitem>
 
   <listitem><para>Use <command>su -c &quot;command arguments&quot;</command>
-  ((anførselstegn kreves) som vil be om root passordet for hver iterasjon 
+  (anførselstegn kreves) som vil be om root passordet for hver iterasjon 
   av løkken.</para></listitem>
 
   </orderedlist>
