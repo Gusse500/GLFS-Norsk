@@ -22,7 +22,7 @@
 <!ENTITY nss-dir                      "3_115_1">
 <!ENTITY nss-minor-version            "115.1">
 <!ENTITY nss-version                  "3.&nss-minor-version;">
-<!ENTITY p11-kit-version              "0.25.7">
+<!ENTITY p11-kit-version              "0.25.8">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.3">
 <!ENTITY libidn2-version              "2.3.8">
