@@ -3,7 +3,7 @@
    <screen><userinput>source /etc/profile</userinput></screen>">
 
 <!ENTITY abi-break
-  "<important><para>Updating denne pakken er kjent 
+  "<important><para>Oppdatering av denne pakken er kjent 
   å bryte ABI.</para></important>">
 
 <!ENTITY parallel_issues
@@ -54,7 +54,7 @@
   "<!-- https://wiki.debian.org/RpathIssue/
         https://security.stackexchange.com/questions/161799/ -->
   <para><parameter>-D CMAKE_SKIP_INSTALL_RPATH=ON</parameter>:
-  Denne bryteren gjør at <command>cmake</command> fjern hardkodede biblioteksøk 
+  Denne bryteren gjør at <command>cmake</command> fjerner hardkodede biblioteksøk 
   stier (rpath) når du installerer en binær kjørbar fil eller et delt bibliotek. 
   Denne pakken trenger ikke rpath når den er installert på standard 
   plassering, og rpath kan noen ganger forårsake uønskede effekter eller til og 

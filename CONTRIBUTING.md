@@ -145,7 +145,7 @@ med instruksjonene.
 Denne mappen inneholder XML filer som gjengis på slutten av boken. 
 Trenger sjelden å oppdateres.
 #### 3.1.2.2. `book/`
-Denne katalogen inneholder XML filer som er gjengitt i begynnelsen av boken. 
+Denne mappen inneholder XML filer som er gjengitt i begynnelsen av boken. 
 Trenger sjelden å oppdateres.
 #### 3.1.2.3. `introduction/`
 Denne mappen inneholder XML filer gjengitt for introduksjonsdelen av 
@@ -198,7 +198,7 @@ tegngrensen.
 
 ## 3.2. Gjør en oppdatering
 Først trenger du
-[Git](https://lfs.freding.no/blfs/view/svn/general/git.html) for å 
+[Git](https://linuxfromscratch.org/blfs/view/stable/general/git.html) for å 
 klone, trekke og pushe. Når du har installert det, må du forke dette
 repositoriet til Github kontoen din. Når du har forket det, må du
 klone forkingen:
