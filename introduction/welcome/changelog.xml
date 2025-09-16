@@ -44,6 +44,9 @@
       <para>15. september 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - GStreamer-Suite: 1.26.5 -&gt; 1.26.6.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - FreeType2: 2.14.0 -&gt; 2.14.1.</para>
         </listitem>
         <listitem>
