@@ -37,7 +37,7 @@
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Anbefalt kjerneversjon å bruke: linux &nvidia-linux-version;
+          Anbefalt kjerneversjon(er) å bruke: linux &nvidia-linux-version;
         </para>
       </listitem>
       <listitem>
@@ -275,7 +275,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     <note><para>
       Kildekoden du bygde kjernen fra må være på samme sted som du bygde kjernen 
       fra. Hvis du for eksempel bygde kjernen i <filename
-      class="directory">/sources/linux-&linux-version;</filename>, kildekoden 
+      class="directory">/sources/linux-6.16.1</filename>, kildekoden 
       skal bli værende der og må ikke slettes før tredjeparts modulene er 
       bygget. Noen Linux distribusjoner omgår dette ved å installere 
       utviklingsfiler i <filename 
@@ -290,9 +290,7 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
         kjernen. Når en ny driverutgivelse kommer, vil driveren mest sannsynlig 
         støtte kjerneversjonen på det tidspunktet. Øverst i denne delen er den 
         anbefalte kjerneserien som skal brukes med denne driveren nevnt for å gi 
-        en idé om hva den ideelle kjerneversjonen er å bygge mot. Kjerneversjonen 
-        som brukes for kjerneparametere og lignende i denne boken er
-        linux-&linux-version;. Per nå er det ingen uoverensstemmelser mellom alternativene.
+        en idé om hva den ideelle kjerneversjonen er å bygge mot.
     </para></note>
 
     <important>
