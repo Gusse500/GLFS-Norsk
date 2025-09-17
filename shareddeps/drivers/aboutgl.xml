@@ -14,98 +14,153 @@
     <title>Hva er OpenGL?</title>
 
     <para>
-      OpenGL er et grafikk API som ble utviklet av Silicon Graphics, Inc. som 
-      startet som IRIS GL. Det ble utviklet for å være plattformuavhengig, da 
-      det å få grafikk til å fungere tidligere hadde vært forskjellig på hvert 
-      sett med maskinvare. På grunn av press fra andre konkurrenter, åpnet SGI 
-      IRIS GL og kalte det OpenGL. I dag administreres OpenGL av Khronos Group, 
-      som også administrerer Vulkan. De definerer imidlertid standardene for APIene, 
-      men lager ikke drivere for APIene, og implementerer heller ikke kallene.
+      OpenGL er et API for 3D grafikk på relativt høyt nivå. Spesifikasjonen er 
+      definert av Khronos Group og implementert av forskjellige leverandører. 
+      Mesa var den første store som implementerte spesifikasjonen.
     </para>
 
     <para>
-      Så Mesa implementerte biblioteker, drivere og funksjoner for OpenGL. De 
-      implementerer også GLX og EGL som gir grensesnitt til vindussystemer som 
-      Xorg. Metoden deres sender imidlertid ikke kallene på en leverandørnøytral 
-      måte. Denne tilnærmingen er vanligvis grei inntil du trenger å installere 
-      en driver utenfor Mesas økosystem. Enten vil ikke en slik driver fungere, 
-      og/eller driveren vil kreve <xref linkend="libglvnd"/> å bli installert. 
-      libglvnd tilbyr kun implementeringene for OpenGL, OpenGL ES, GLX og EGL. 
-      Dette har ført til eldre OpenGL kontra ny OpenGL på Linux.
+      Implementeringen ble knyttet til vindussystemer (og førte dermed til flere 
+      implementeringer) og drivere begrenset til de som var innenfor Mesas 
+      arkitektur. Hovedproblemet med dette er at de viktigste OpenGL bibliotekene
+      <footnote><para>
+        <filename class="libraryfile">libGL</filename>,
+        <filename class="libraryfile">libGLX</filename>, osv.
+      </para></footnote>
+      inneholdt implementeringene av OpenGL. Drivere utenfor Mesa som ikke var 
+      med i prosjektet av en gitt grunn, måtte tilpasse seg arkitekturen deres 
+      eller erstatte kjernebibliotekene med sine egne.
     </para>
 
     <para>
-      Det finnes <filename class="libraryfile">libGL</filename> som nå regnes 
-      som eldre OpenGL og leveres av både <xref linkend="mesa"/>
-      og <xref linkend="libglvnd"/>. Det er hardkodet for å håndtere <filename
-      class="libraryfile">libGLX</filename>, ment for Xorg biblioteker og apper. 
-      I mellomtiden finnes det <filename class="libraryfile">libOpenGL</filename>
-      som regnes som den nye OpenGL. Den leveres kun av <xref
-      linkend="libglvnd"/>. Apper og biblioteker som lenker mot den eldre OpenGL 
-      vil fungere med begge leverandørene, men å lenke mot den nye OpenGL, som 
-      bare har forsendelsesfunksjoner, vil føre til at disse binærfilene blir 
-      ødelagte på systemer med bare <xref linkend="mesa"/> installert.
+      NVIDIA, etter å ha prøvd å passe inn i deres arkitektur, bestemte seg for 
+      å lage nye kjerne OpenGL biblioteker basert på aritgers <ulink
+      url="https://github.com/aritger/linux-opengl-abi-proposal/blob/master/linux-opengl-abi-proposal.txt">
+      new OpenGL ABI proposal</ulink>. Resultatet var libglvnd prosjektet, som 
+      inneholder kjernebiblioteker i OpenGL som sender hvert API kall på riktig 
+      måte til en OpenGL drivers implementering av det. Ingen driver måtte 
+      lenger passe inn i en spesifikk arkitektur diktert av kjernebibliotekene i 
+      OpenGL. Dette førte til flere problemer da masseovergangen var fullført.
     </para>
 
-    <para>
-      Programvare som kun inneholder binærfiler er en god kandidat for at disse 
-      problemene skal oppstå, noe som vanligvis stammer fra at byggesystemer 
-      foretrekker <filename class="libraryfile">libOpenGL</filename> over 
-      <filename class="libraryfile">libGL</filename>. Byggesystemer kan også 
-      klage over at libglvnds biblioteker ikke finnes. Noen ganger er det med 
-      vilje, andre ganger utilsiktet. I begge tilfeller er det usannsynlig at 
-      oppstrømsfiler vil fikse disse problemene. Et prosjekt som krever libglvnd 
-      spesifikt kan ha sine grunner, for eksempel at det avhenger av 
-      forsendelsesfunksjonen fordi det er en driver, eller at de fleste Linux 
-      distribusjoner sender libglvnd, noe som ikke gir noen grunn til å støtte 
-      Mesas OpenGL drivere. Disse problemene kan kombineres i ett enkelt 
-      tilfelle. Et spilleksempel er med porteringer og rekompileringer: 
-      binærfilen for <ulink url="https://www.shipofharkinian.com/">Ship of 
-      Harkinian</ulink>, En PC portering av Nintendo 64-spillet, Legend of 
-      Zelda: Ocarina of Time, lenker mot ny OpenGL og vil bli ødelagt med bare 
-      Mesa installert; dessuten fører det til mange problemer å prøve å omgå 
-      problemet ved å bygge fra kildekoden. Imidlertid fører binærfilen til PC 
-      porteringen som ble laget av statisk rekompilering av Nintendo 64-spillet, 
-      Legend of Zelda: Majora's Mask, kalt <ulink  url="https://github.com/Zelda64Recomp/Zelda64Recomp">
-      Zelda 64: Recompiled</ulink>, kobler seg mot eldre OpenGL og fungerer med 
-      begge OpenGL leverandører.
-    </para>
+    <sect3>
+      <title>libOpenGL</title>
 
-    <para>
-      Alle disse problemene førte til beslutningen om å kutte ut støtten for 
-      Mesas OpenGL implementeringer og bruke libglvnd i stedet. Dette påvirker 
-      nå også Supplerende LFS<footnote><para>
-        <ulink url="&slfs-website;"/>
-      </para></footnote> også. Beyond LFS vil ikke ha noen problemer med 
-      installasjon av Mesas OpenGL biblioteker. Uansett kan du fortsatt 
-      installere Mesas OpenGL hvis du ønsker det, men du vil støte på problemer 
-      utenfor BLFS. Valget er opp til deg.
-    </para>
+      <para>
+        Mesa kan tilby:
+        <itemizedlist>
+          <listitem>
+            <para><filename class="libraryfile">libGL</filename></para>
+          </listitem>
+          <listitem>
+            <para><filename class="libraryfile">libGLX</filename></para>
+          </listitem>
+          <listitem>
+            <para><filename class="libraryfile">libEGL</filename></para>
+          </listitem>
+          <listitem>
+            <para><filename class="libraryfile">libGLESv1_CM</filename></para>
+          </listitem>
+          <listitem>
+            <para><filename class="libraryfile">libGLESv2</filename></para>
+          </listitem>
+        </itemizedlist>
+        <filename class="libraryfile">libGL</filename> er knyttet til <filename
+        class="libraryfile">libGLX</filename>. Dette er et mindre problem med 
+        vindussystemer som ikke er Xorg, og det generelle målet å ha et system 
+        uten Xorg/GLX. libglvnd gir dermed <filename
+        class="libraryfile">libOpenGL</filename> som ikke er knyttet til noe 
+        vindussystem. Byggesystemer som sjekker for OpenGL har en tendens til å 
+        velge <filename class="libraryfile">libOpenGL</filename> over <filename
+        class="libraryfile">libGL</filename>. Det bygde resultatet vil i så fall 
+        bli koblet mot <filename class="libraryfile">libOpenGL</filename>. Å 
+        prøve å kjøre det på et system med Mesas kjerne OpenGL biblioteker 
+        installert vil føre til feil.
+      </para>
 
-<!--
-    <para>
-      Hvis du bare vil ha eldre OpenGL, kan du bare installere <xref
-      linkend="mesa"/>. Hvis du ønsker ny OpenGL, støtte for noen binære fil
-      pakker, <xref linkend="nvidia"/>, og komme forbi noen
-      CMake byggesystemer, installer <xref
-      linkend="libglvnd"/>. Hvis du ønsker en driver fra <xref
-      linkend="mesa"/>, kan du bygge det etter
-      libglvnd. Mesa vil
-      automatisk oppdage libglvnd og vil hoppe over 
-      å bygge OpenGL implementeringene sine.
-    </para>
+      <para>
+        I de fleste tilfeller, hvis <filename class="libraryfile">libOpenGL</filename> 
+        ikke er funnet under bygging av et prosjekt, <filename
+        class="libraryfile">libGL</filename> velges i stedet. Imidlertid, i noen 
+        prosjekter som støtter Wayland, vil byggesystemet nekte å konfigurere. 
+        Dette er fordi noen byggesystemer ikke liker å kombinere
+        <filename class="libraryfile">libGL</filename> med <filename
+        class="libraryfile">libEGL</filename>.
+      </para>
 
-    <note><para>
-      Når du er i tvil, installer <xref linkend="libglvnd"/>. Førstegangsbyggere 
-	  oppfordres på det sterkeste å installere denne.
-    </para></note>
--->
+    </sect3>
 
-    <important><para>
-      Det anbefales ikke å bytte mellom leverandører. Du bør velge nøye hvilken 
-      leverandør du skal installere fra. Hvis du vil bytte, kan det være best 
-      å bygge systemet på nytt.
-    </para></important>
+    <sect3>
+      <title>Forskjellige Sonames</title>
+
+      <para>
+        Et soname er feltet etter filtypen til et bibliotek (delt objekt). Et 
+        eksempel er <filename class="libraryfile">libGL.so.1</filename>.
+        Etter <literal>libGL.so</literal> er <literal>.1</literal>.
+        <literal>1</literal> ville være soname. Når et program eller bibliotek 
+        er koblet mot et bibliotek, kobler det mot navnet på biblioteket med 
+        soname. Når det eneste eksisterende biblioteket på systemet har et annet 
+        soname, vil programvaren ikke fungere fordi biblioteket ikke kan 
+        finnes.
+      </para>
+
+      <para>
+        sonameene til Mesa og libglvnds kjernebiblioteker i OpenGL er 
+        forskjellige, spesielt når det gjelder <filename
+        class="libraryfile">libGLX</filename>. De fleste binærfiler er lenket 
+        mot libglvnds kjernebiblioteker i OpenGL, så sonameene de forventer vil 
+        ofte avvike fra Mesas kjernebiblioteker i OpenGL. AppImages har en 
+        tendens til å falle inn under dette.
+      </para>
+
+    </sect3>
+
+    <sect3>
+      <title>Holdningen til de fleste Linux distribusjoner, BLFS, GLFS, og SLFS</title>
+
+      <para>
+        De fleste Linux distribusjoner har allerede byttet til libglvnd. Noen 
+        distribusjoner, som i tilfellet med Debian, tilbyr også Mesas kjerne 
+        OpenGL biblioteker. Dermed har brukeren et alternativ i slike tilfeller. 
+        De fleste tilfeller vil ikke være slik. Den generelle holdningen basert 
+        på flertallet er at libglvnd nå er standard OpenGL leverandør for Linux.
+      </para>
+
+      <para>
+        Dette har vært tilfelle i flere år. BLFS har vært et unntak ved at det 
+        ikke har libglvnd, ikke har instruksjoner for å tillate libglvnd, og 
+        bare støtter Mesa. Forsøk på å få dette endret har blitt avvist. 
+        Standpunktet som vil stå i minst et par år fremover vil være at BLFS 
+        ikke vil støtte libglvnd. Som et resultat forårsaker dette problemer 
+        for libglvnd brukere.
+      </para>
+
+      <para>
+        Til tross for at BLFS ikke støtter libglvnd, er denne boken og 
+        Supplerende LFS
+        <footnote><para>
+          <ulink url="&slfs-website;"/>
+        </para></footnote>
+        støtter og foretrekker libglvnd fremfor Mesas kjernebiblioteker i OpenGL. 
+        Problemene som er beskrevet i forrige avsnitt, utgjør problemer som oppstår i 
+        denne boken og i SLFS, og for brukere av denne boken. Mesas kjernebiblioteker i 
+        OpenGL begrenser mengden programvare en bruker kan kjøre betraktelig.
+      </para>
+
+      <para>
+        Du kan fortsatt installere Mesas kjernebiblioteker i OpenGL hvis du 
+        ønsker det, men du vil støte på problemer utenfor BLFS. Valget er opp 
+        til deg. Instruksjoner er gitt for hver rute, men standardinstruksjonene 
+        er satt opp for libglvnd.
+      </para>
+
+      <important><para>
+        Det anbefales ikke å bytte mellom leverandører. Du bør velge svært nøye hvilken 
+        leverandør du skal installere fra. Hvis du vil bytte, kan det være best å 
+        bygge systemet på nytt på grunn av problemer med kobling og kjøretid.
+      </para></important>
+
+    </sect3>
 
   </sect2>
 
