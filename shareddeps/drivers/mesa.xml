@@ -25,12 +25,12 @@
     </para>
 
     <important><para>
-      Denne pakken kan installere sine egne OpenGL biblioteker, men støttes ikke 
-      av denne bokens redigeringsredaktører på grunn av deres diverse problemer. Les <xref
-      linkend="aboutgl"/> for mer informasjon. Hvis du ikke vil installere
-      <xref linkend="libglvnd"/> og ønsker å installere denne pakkens OpenGL 
-      implementeringer, vil Parameterforklaringer instruere deg til å fjerne en 
-      gitt parameter for å gjøre det.
+      Denne pakken kan installere sine egne kjerne OpenGL bibliotekene, men 
+      støttes ikke av denne bokens redigeringsredaktører på grunn av deres 
+      diverse problemer. Les <xref linkend="aboutgl"/> for mer informasjon. 
+      Hvis du ikke vil installere <xref linkend="libglvnd"/> og ønsker å 
+      installere denne pakkens kjerne OpenGL bibliotekene, vil Parameterforklaringer 
+      instruere deg til å fjerne en gitt parameter for å gjøre det.
     </para></important>
 
 <!--
@@ -264,7 +264,8 @@ ldconfig</userinput></screen>
       mislykkes med konfigurasjonstrinnet hvis <xref linkend="libglvnd"/> ikke 
       ble funnet. Hvis du vil akseptere risikoen ved å bruke OpenGL bibliotekene 
       til denne pakken og ikke har installert libglvnd, fjern denne parameteren. 
-      Les <xref linkend="aboutgl"/> for mer informasjon.
+      Les <xref linkend="aboutgl"/> for mer informasjon. Bytting anbefales 
+      ikke.
     </para>
 
     <para>

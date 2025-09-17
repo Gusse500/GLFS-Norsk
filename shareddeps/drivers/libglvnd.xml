@@ -30,7 +30,7 @@
       class="libraryfile">libGLX_mesa</filename>. For <xref linkend="nvidia"/>,
       vil den gi <filename class="libraryfile">libEGL_nvidia</filename>,
       <filename class="libraryfile">libGLESv2_nvidia</filename>, og
-      <filename class="libraryfile">libGLX_nvidia</filename>. Hver gjengivelse 
+      <filename class="libraryfile">libGLX_nvidia</filename>. Hver implementering 
       er spesifikk for driveren den kommer fra. Fordelen med å gjøre det på 
       denne måten er at en driver ikke trenger å adlyde arkitekturen en OpenGL 
       leverandør bruker, og den trenger heller ikke å bli absorbert av leverandøren.
@@ -38,7 +38,7 @@
 
     <important><para>
       Les <xref linkend="aboutgl"/> for viktig informasjon angående libglvnd vs. 
-      Mesas OpenGL implementeringer. Kort sagt, denne pakken er sterkt 
+      Mesas OpenGL kjernebiblioteker. Kort sagt, denne pakken er sterkt 
       anbefalt.
     </para></important>
 
@@ -194,7 +194,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGL</filename></term>
         <listitem>
           <para>
-            er <quote>legacy</quote> OpenGL bibliotek; kall på wrapper
+            er OpenGL bibliotek knyttet til GLX; kall på wrapper
             bibliotek <filename class="libraryfile">libGLdispatch
             </filename> og <filename class="libraryfile">libGLX</filename>
           </para>
@@ -245,9 +245,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libOpenGL</filename></term>
         <listitem>
           <para>
-            er <quote>ny</quote> OpenGL bibliotek og eksponerer OpenGL
-            inngangspunkter; kalling av wrapper bibliotek <filename
-            class="libraryfile"> libGLdispatch</filename>
+            er OpenGL biblioteket som ikke er knyttet til noe vindussystem og 
+            eksponerer OpenGL inngangspunkter; kalling av wrapper bibliotek 
+            <filename class="libraryfile"> libGLdispatch</filename>
           </para>
           <indexterm zone="libglvnd glvnd-libOpenGL">
             <primary sortas="b-glvnd-libOpenGL">libOpenGL</primary>
