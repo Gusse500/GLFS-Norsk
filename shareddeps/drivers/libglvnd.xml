@@ -194,7 +194,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libGL</filename></term>
         <listitem>
           <para>
-            er <quote>legacy</quote> OpenGL bibliotek; kall på wrapper
+            er OpenGL bibliotek knyttet til GLX; kall på wrapper
             bibliotek <filename class="libraryfile">libGLdispatch
             </filename> og <filename class="libraryfile">libGLX</filename>
           </para>
@@ -245,9 +245,9 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libOpenGL</filename></term>
         <listitem>
           <para>
-            er <quote>ny</quote> OpenGL bibliotek og eksponerer OpenGL
-            inngangspunkter; kalling av wrapper bibliotek <filename
-            class="libraryfile"> libGLdispatch</filename>
+            er OpenGL biblioteket som ikke er knyttet til noe vindussystem og 
+            eksponerer OpenGL inngangspunkter; kalling av wrapper bibliotek 
+            <filename class="libraryfile"> libGLdispatch</filename>
           </para>
           <indexterm zone="libglvnd glvnd-libOpenGL">
             <primary sortas="b-glvnd-libOpenGL">libOpenGL</primary>
