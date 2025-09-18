@@ -125,8 +125,8 @@
 <!ENTITY xcb-util-renderutil-version  "0.3.10">
 <!ENTITY xcb-util-wm-version          "0.4.2">
 <!ENTITY xcb-util-cursor-version      "0.1.6">
-<!ENTITY cmake-major-version          "4.1.1">
-<!ENTITY cmake-minor-version          "0">
+<!ENTITY cmake-major-version          "4.1">
+<!ENTITY cmake-minor-version          "1">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY libunwind-version            "1.8.2">
 <!ENTITY nettle-version               "3.10.1">
