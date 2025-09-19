@@ -120,7 +120,7 @@
 <!ENTITY systemd-units-version        "20241211">
 
 <!ENTITY blfs-wiki                    "https://wiki.&lfs-domainname;/blfs/wiki">
-<!ENTITY blfs-svn                     "&norsklfs-domainname;/blfs/view/&blfs-version;">
+<!ENTITY blfs-svn                     "&lfs-website;/blfs/view/&blfs-version;">
 
 <![ %development; [
   <!ENTITY important-stability "<para>
@@ -131,6 +131,7 @@
 </para>">
 ]]>
 <![ %release; [
+ <!ENTITY important-stability "<para>
   Dette er den stabile utgaven av denne boken, og den er kjent for å ha fungerende 
   instruksjoner og samsvarer med LFS, BLFS og SLFS &xlfs-version;. Eksterne lenker 
   vil peke til stabile kilder. Lenker som peker til MLFS er imidlertid 
