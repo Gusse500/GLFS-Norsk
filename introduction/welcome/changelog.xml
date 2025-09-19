@@ -41,6 +41,21 @@
     -->
 
     <listitem>
+      <para>18. september 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: 3.115.1 -&gt; 3.116.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.14.6 -&gt; 2.15.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.4.5 -&gt; 11.5.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>16. september 2025</para>
       <itemizedlist>
         <listitem>
