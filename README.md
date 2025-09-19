@@ -9,6 +9,10 @@ Gå til (https://lfs.freding.no/glfs/index.html) og begynne å bla gjennom boken
 
 Boken er under rullende utgivelse på nett.
 
+Det finnes også [Releases](https://github.com/glfs-book/glfs/releases) som du
+kan lastes ned. Alle inneholder både SysV og Systemd utgavene av 
+boken, chunked HTML.
+
 # Installasjon
 
 Hvordan konverterer jeg disse XML-filene til HTML selv? Du må ha installert programvare 
