@@ -21,8 +21,8 @@
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable        "6fac5d60ac4da40e5d027ffcac5c0d0f32171f5f">
-<!ENTITY mlfs-extra-commits "99d3c4a4c703a522509e087fb7c9dd7893241978">
+<!ENTITY mlfs-stable        "fb19711bba73ad08bb855201b52ed0804ce13223">
+<!ENTITY mlfs-extra-commits "ee4c60dca20d543fd1124bb75b2c8cf0d6f6f803">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
@@ -39,36 +39,38 @@
 
 <!ENTITY copyrightdate   "2024-&year;">
 <!ENTITY copyholder      "The GLFS Development Team">
-<!ENTITY lfs-domainname  "lfs.freding.no">
-<!ENTITY glfs-domainname "lfs.freding.no">
+<!ENTITY lfs-domainname  "linuxfromscratch.org">
+<!ENTITY norsklfs-domainname  "lfs.freding.no">
+<!ENTITY glfs-domainname "glfs-book.github.io">
+<!ENTITY norskglfs-domainname "lfs.freding.no">
 
 <!ENTITY maintainer-fullname  "The GLFS Team">
 <!ENTITY maintainer-firstname "GLFS">
 <!ENTITY maintainer-address   "zeckma.tech@gmail.com;">
 
-<!ENTITY lfs-website  "https://www.&lfs-domainname;">
-<!ENTITY glfs-website "https://&glfs-domainname;/glfs">
+<!ENTITY lfs-website  "https://www.&norsklfs-domainname;">
+<!ENTITY glfs-website "https://&norskglfs-domainname;/glfs">
 <!ENTITY slfs-website "https://glfs-book.github.io/slfs">
 <!-- downloads_root must have an entity because it is needed for scripts
      Note:  s/_/-/ in comment to avoid grep error
      It is also needed for systemd units
      -->
-<!ENTITY downloads-root       "&lfs-website;/blfs/downloads/&blfs-version;">
-<!--<!ENTITY downloads-root-systemd "https://www.linuxfromscratch.org/blfs/downloads/systemd">
+<!ENTITY downloads-root       "&norsklfs-domainname;/blfs/downloads/&blfs-version;">
+<!--<!ENTITY downloads-root-systemd "https://www.lfs.freding.no/blfs/downloads/systemd">
 <!ENTITY downloads-project    "https://downloads.&lfs-domainname;">-->
 
 <!ENTITY sources-anduin-http  "https://anduin.linuxfromscratch.org/BLFS">
 <!ENTITY sources-anduin-ftp   "ftp://anduin.linuxfromscratch.org/BLFS">
 
 <!ENTITY hints-root           "https://www.linuxfromscratch.org/hints/">
-<!ENTITY patch-downloads      "https://www.linuxfromscratch.org/patches/downloads">
+<!ENTITY patch-downloads      "https://www.lfs.freding.no/patches/downloads">
 <!ENTITY dl-root              "&glfs-website;/download">
 <!ENTITY misc-dl-root         "https://github.com/glfs-book/glfs-misc-downloads/releases/download">
-<!ENTITY errata               "https://www.&lfs-domainname;/blfs/errata/&blfs-version;/">
+<!ENTITY errata               "https://www.&norsklfs-domainname;/blfs/errata/&blfs-version;/">
 <!ENTITY blfs-ticket-root     "https://wiki.linuxfromscratch.org/blfs/query/">
-<!ENTITY lfs-root             "&lfs-website;/lfs/view/&lfs-version;">
+<!ENTITY lfs-root             "&norsklfs-domainname;/lfs/view/&lfs-version;">
 
-<!ENTITY mlfs-base            "&lfs-website;/lfs/multilib.html">
+<!ENTITY mlfs-base            "&norsklfs-domainname;/lfs/multilib.html">
 <![ %sysv; [
 <!ENTITY mlfs-root            "&mlfs-base;">
 <!ENTITY lfs-filename         "lfs-book">
@@ -79,7 +81,7 @@
 ]]>
 <!ENTITY mlfs-m32-root        "&mlfs-root;">
 
-<!ENTITY lfs-dev              "&lfs-website;/lfs/view/development">
+<!ENTITY lfs-dev              "&norsklfs-domainname;/lfs/view/development">
 <!ENTITY lfs-ticket-root      "https://wiki.linuxfromscratch.org/lfs/query/">
 <!ENTITY gnu-http             "https://ftp.gnu.org/gnu">
 <!ENTITY gnu-ftp              "ftp://ftp.gnu.org/gnu">
@@ -118,7 +120,7 @@
 <!ENTITY systemd-units-version        "20241211">
 
 <!ENTITY blfs-wiki                    "https://wiki.linuxfromscratch.org/blfs/wiki">
-<!ENTITY blfs-svn                     "&lfs-website;/blfs/view/&blfs-version;">
+<!ENTITY blfs-svn                     "&norsklfs-domainname;/blfs/view/&blfs-version;">
 
 <![ %development; [
   <!ENTITY important-stability "<para>
