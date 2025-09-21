@@ -67,7 +67,8 @@
       &opengl;,
       <ulink url="&blfs-svn;/x/pango.html">Pango</ulink>,
       <xref linkend="pulseaudio"/>,
-      <ulink url="&blfs-svn;/multimedia/soundtouch.html">SoundTouch</ulink>
+      <ulink url="&blfs-svn;/multimedia/soundtouch.html">SoundTouch</ulink>,
+      <xref linkend="svt-av1"/>,
       <xref linkend="wayland-protocols"/>,
       <xref linkend="x264"/>,
       <xref linkend="xorg7-lib"/>, og
