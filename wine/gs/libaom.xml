@@ -20,10 +20,12 @@
     <title>Introduksjon til libaom</title>
 
     <para>
-      libaom pakken inneholder en referanseversjon av videokodeken 
-      Alliance for Open Media. Denne kodeken er et patentfritt 
-      alternativ til H.265, og begynner å bli brukt over hele 
-      internett.
+      libaom pakken inneholder en referanseversjon av Alliance for Open Media 
+      videokodeken. Denne kodeken er et patentfritt alternativ til H.265. Selv 
+      om den er tregere enn dav1d og SVT-AV1, tilbyr denne pakken både en koder 
+      og dekoder med støtte for chroma undersampling utenfor YUV420. SVT-AV1 
+      støtter bare YUV420, så hvis du trenger å gå utenfor den, installer denne 
+      pakken.
     </para>
 
     &long-build-time;

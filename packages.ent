@@ -145,7 +145,7 @@
 <!ENTITY vulkan-sdk                   "1.4.321.0">
 <!ENTITY glu-version                  "9.0.3">
 <!ENTITY libdrm-version               "2.4.125">
-<!ENTITY libgbm-version               "1.0.0">
+<!ENTITY libgbm-version               "1.0.1">
 <!ENTITY libvdpau-version             "1.5">
 <!ENTITY mesa-major-minor             "25.2">
 <!ENTITY mesa-version                 "&mesa-major-minor;.2">
@@ -249,7 +249,7 @@
 
 <!-- STEAM -->
 
-<!ENTITY xdg-user-dirs-version        "0.18">
+<!ENTITY xdg-user-dirs-version        "0.19">
 <!ENTITY libgpg-error-version         "1.55">
 <!ENTITY steam-version                "1.0.0.84">
 
@@ -268,6 +268,7 @@
 <!ENTITY nasm-version                 "2.16.03">
 <!ENTITY svt-av1-version              "3.1.2">
 <!ENTITY dav1d-version                "1.5.1">
+<!ENTITY libaom-version               "3.12.1">
 <!ENTITY fdk-aac-version              "2.0.3">
 <!ENTITY lame-version                 "3.100">
 <!ENTITY libvpx-version               "1.15.2">

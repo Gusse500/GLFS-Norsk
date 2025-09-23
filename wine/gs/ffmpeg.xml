@@ -62,6 +62,7 @@
       <xref linkend="fdk-aac"/>,
       <xref linkend="freetype2-pass2"/>,
       <xref linkend="lame"/>,
+      <xref linkend="libaom"/>,
       <xref linkend="libvorbis"/>,
       <xref linkend="libvpx"/>,
       <xref linkend="opus"/>,
@@ -128,6 +129,7 @@
             --disable-static     \
             --enable-shared      \
             --disable-debug      \
+            --enable-libaom      \
             --enable-libdav1d    \
             --enable-libfdk-aac  \
             --enable-libfreetype \
@@ -177,6 +179,7 @@ gcc tools/qt-faststart.c -o tools/qt-faststart</userinput></screen>
             --disable-static                          \
             --enable-shared                           \
             --disable-debug                           \
+            --enable-libaom                           \
             --enable-libdav1d                         \
             --enable-libfdk-aac                       \
             --enable-libfreetype                      \
