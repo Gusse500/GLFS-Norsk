@@ -44,6 +44,9 @@
       <para>22. september 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libaom: Brakt tilbake inn.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libgbm: 1.0.0 -&gt; 1.0.1.</para>
         </listitem>
       </itemizedlist>
