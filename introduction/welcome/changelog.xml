@@ -44,6 +44,9 @@
       <para>22. september 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - xdg-user-dirs: 0.18 -&gt; 0.19.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libaom: Brakt tilbake inn.</para>
         </listitem>
         <listitem>
