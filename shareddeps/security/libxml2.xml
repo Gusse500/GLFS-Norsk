@@ -36,17 +36,15 @@
       </listitem>
     </itemizedlist>
 
-<!--
     <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
         <para>
           Nødvendig oppdatering:
-          <ulink url="&dl-root;/libxml2/libxml2-&libxml2-version;-fix_parse_blanks-1.patch"/>
+          <ulink url="&dl-root;/libxml2/libxml2-&libxml2-version;-upstream_fix-1.patch"/>
         </para>
       </listitem>
     </itemizedlist>
--->
 
     <bridgehead renderas="sect3">libxml2 Avhengigheter</bridgehead>
 
@@ -60,13 +58,12 @@
   <sect2 role="installation">
     <title>Installasjon av libxml2</title>
 
-<!--
     <para>
-      Først, påfør en oppdatering fra oppstrøms:
+      Først, installer en oppdatering fra oppstrøms for å fikse en feil ved 
+      parsing av attributtverdier som ennå ikke er normalisert:
     </para>
 
-<screen><userinput>patch -Np1 -i ../libxml2-&libxml2-version;-fix_parse_blanks-1.patch</userinput></screen>
--->
+<screen><userinput>patch -Np1 -i ../libxml2-&libxml2-version;-upstream_fix-1.patch</userinput></screen>
 
     <para>
       Installer libxml2 ved å kjøre følgende 
