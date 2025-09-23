@@ -145,7 +145,7 @@
 <!ENTITY vulkan-sdk                   "1.4.321.0">
 <!ENTITY glu-version                  "9.0.3">
 <!ENTITY libdrm-version               "2.4.125">
-<!ENTITY libgbm-version               "1.0.0">
+<!ENTITY libgbm-version               "1.0.1">
 <!ENTITY libvdpau-version             "1.5">
 <!ENTITY mesa-major-minor             "25.2">
 <!ENTITY mesa-version                 "&mesa-major-minor;.2">
