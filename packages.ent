@@ -174,7 +174,7 @@
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY ply-version                  "3.11">
 <!ENTITY mako-version                 "1.3.10">
-<!ENTITY cython-version               "3.1.3">
+<!ENTITY cython-version               "3.1.4">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY libvdpau-va-gl-version       "0.4.2">
