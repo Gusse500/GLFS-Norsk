@@ -22,7 +22,7 @@
 <!ENTITY nss-dir                      "3_116">
 <!ENTITY nss-minor-version            "116">
 <!ENTITY nss-version                  "3.&nss-minor-version;">
-<!ENTITY p11-kit-version              "0.25.8">
+<!ENTITY p11-kit-version              "0.25.10">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.3">
 <!ENTITY libidn2-version              "2.3.8">
@@ -128,7 +128,7 @@
 <!ENTITY cmake-major-version          "4.1">
 <!ENTITY cmake-minor-version          "1">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
-<!ENTITY libunwind-version            "1.8.2">
+<!ENTITY libunwind-version            "1.8.3">
 <!ENTITY nettle-version               "3.10.1">
 <!ENTITY gnutls-version               "3.8.10">
 <!ENTITY pixman-version               "0.46.4">
@@ -174,7 +174,7 @@
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY ply-version                  "3.11">
 <!ENTITY mako-version                 "1.3.10">
-<!ENTITY cython-version               "3.1.3">
+<!ENTITY cython-version               "3.1.4">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY libvdpau-va-gl-version       "0.4.2">
@@ -274,7 +274,7 @@
 <!ENTITY libvpx-version               "1.15.2">
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.1">
-<!ENTITY ffmpeg-version               "8.0">
+<!ENTITY ffmpeg-version               "7.1.2">
 <!ENTITY gstreamer10-version          "1.26.6">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
