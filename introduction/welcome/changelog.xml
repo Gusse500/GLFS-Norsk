@@ -44,7 +44,13 @@
       <para>24. september 2025</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - FFmpeg: 8.0 -&gt; 7.1.2.</para>
+          <para>[zeckma] - p11-kit: 0.25.8 -&gt; 0.25.10.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libunwind: 1.8.2 -&gt; 1.8.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - FFmpeg: 8.0 -&gt; 7.1.2 (sikkerhet).</para>
         </listitem>
       </itemizedlist>
     </listitem>
