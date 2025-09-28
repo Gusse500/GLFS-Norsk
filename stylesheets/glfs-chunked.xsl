@@ -39,6 +39,7 @@
       </xsl:choose>)
     </span>
   </p>
+</xsl:template>
   
 <xsl:template match="para[@role='optional']">
   <p>
@@ -50,6 +51,6 @@
       </xsl:choose>)
     </span>
   </p>
-
 </xsl:template>
+
 </xsl:stylesheet>
