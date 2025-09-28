@@ -43,6 +43,26 @@
     </xsl:choose>
   </xsl:template>
 
+    <!-- para role="required/recommended/optional": this makes it so dependency
+         lists are collapsable so they can take up less space in rendered
+         output. HTML only, but we only render HTML at the moment. -->
+
+  <xsl:template match="para[@role='required' or
+                            @role='recommended' or
+                            @role='optional']">
+    <details open="true">
+      <summary>
+        <xsl:value-of select="concat(translate(substring(@role, 1, 1),
+                              'abcdefghijklmnopqrstuvwxyz',
+                              'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                              substring(@role, 2))"/>
+      </summary>
+      <br/>
+      <xsl:apply-templates/>
+    </details>
+    <br/>
+  </xsl:template>
+
     <!-- footnote/para[1]: this template is in {docbook-xsl}/xhtml/footnote.xsl
          which is imported. This means that template has less precedence
          than the above one. To have higher precedence, it must be at

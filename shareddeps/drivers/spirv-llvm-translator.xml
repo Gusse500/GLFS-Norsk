@@ -36,7 +36,6 @@
 
     <bridgehead renderas="sect3">SPIRV-LLVM-Translator Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>,
       <xref linkend="libxml2"/>,

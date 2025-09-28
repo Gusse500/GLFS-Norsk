@@ -41,14 +41,12 @@
 
     <bridgehead renderas="sect3">Vulkan-loader Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>,
       <xref linkend="vkheaders"/>, og
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="runtime">
       <xref linkend="mesa"/> (kjøretid: for Vulkan drivere) og
       <xref linkend="wayland"/>

@@ -70,12 +70,10 @@
 
     <bridgehead renderas="sect3">xterm Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="luit"/>
     </para>
 
-    <bridgehead renderas="sect4">Påkrevd (ved kjøretid)</bridgehead>
     <para role="required">
       En monospace TTF- eller OTF-skrifttype som
       <xref role="runtime" linkend="dejavu-fonts"/>

@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>27. september 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 11.5.0 -&gt; 11.5.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - *: Gjør avhengighetslister sammenleggbare.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>24. september 2025</para>
       <itemizedlist>
         <listitem>

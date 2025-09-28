@@ -51,7 +51,6 @@
 
     <bridgehead renderas="sect3">cURL Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="libpsl"/>
     </para>
@@ -65,7 +64,6 @@
       </para>
     </note>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="libidn2"/>
     </para>

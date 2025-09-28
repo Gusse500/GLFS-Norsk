@@ -40,14 +40,12 @@
 
     <bridgehead renderas="sect3">Wireplumber Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="elogind"/>,
       <xref linkend="glib2"/>, og
       <xref linkend="pipewire"/>
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <ulink url="&blfs-svn;/general/lua.html">Lua</ulink>
     </para>

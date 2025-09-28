@@ -29,7 +29,6 @@
 
     <bridgehead renderas="sect3">DXVK Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="mingw-w64-gcc"/> (kompilert med POSIX trådstøtte),
       <xref linkend="vulkan-sdk"/>, og

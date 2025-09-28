@@ -51,57 +51,79 @@
 
     <bridgehead renderas="sect3">FFmpeg Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="pkgconf"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="dav1d"/>,
-      <xref linkend="fdk-aac"/>,
-      <xref linkend="freetype2-pass2"/>,
-      <xref linkend="lame"/>,
-      <xref linkend="libaom"/>,
-      <xref linkend="libvorbis"/>,
-      <xref linkend="libvpx"/>,
-      <xref linkend="opus"/>,
-      <xref linkend="svt-av1"/>,
-      <xref linkend="x264"/>,
-      <xref linkend="x265"/>, og
-      <xref linkend="nasm"/>
+      En komplett liste over anbefalte avhengigheter finnes i
+      <ulink url="&blfs-svn;/multimedia/ffmpeg.html">BLFS FFmpeg siden</ulink>.
+      <itemizedlist>
+        <para>For kodeker, indevs/outdevs og tilkoblinger</para>
+        <listitem>
+          <para>
+            <xref linkend="dav1d"/>,
+            <xref linkend="fdk-aac"/>,
+            <xref linkend="freetype2-pass2"/>,
+            <xref linkend="lame"/>,
+            <xref linkend="libaom"/>,
+            <xref linkend="libvorbis"/>,
+            <xref linkend="libvpx"/>,
+            <xref linkend="opus"/>,
+            <xref linkend="svt-av1"/>,
+            <xref linkend="x264"/>,
+            <xref linkend="x265"/>, og
+            <xref linkend="nasm"/>
+          </para>
+        </listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <para>For skrivebordbruk</para>
+        <listitem>
+          <para>
+            <xref linkend="alsa-lib"/>,
+            <xref linkend="libva"/>, og
+            &sdl2;
+          </para>
+        </listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <para>For systemer med Intel grafikkort</para>
+        <listitem>
+          <para>
+            <xref linkend="libvdpau"/> og
+            <xref linkend="libvdpau-va-gl"/>
+          </para>
+        </listitem>
+      </itemizedlist>
     </para>
-
-    <bridgehead renderas="sect4">Anbefalt for skrivebord bruk</bridgehead>
-    <para role="recommended">
-      <xref linkend="alsa-lib"/>,
-      <xref linkend="libva"/>, og
-      &sdl2;
-    </para>
-
-    <bridgehead renderas="sect4">Anbefalt for systemer med Intel grafikkort</bridgehead>
-    <para role="recommended">
-      <xref linkend="libvdpau"/> og
-      <xref linkend="libvdpau-va-gl"/>
-    </para>
-
-    <bridgehead renderas="sect4">Valgfritt for systemer med NVIDIA grafikkort</bridgehead>
-    <para role="optional">
-      <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink> og
-      <ulink url="&slfs-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
-    </para>
-
-    <bridgehead renderas="sect4">Valgfri for systemer med Intel grafikkort</bridgehead>
-    <para role="optional">
-      <ulink url="&slfs-website;/general/intel-mediasdk.html">Intel-MediaSDK</ulink>,
-      <ulink url="&slfs-website;/general/intel-onevpl.html">intel-onevpl</ulink>, og
-      <ulink url="&slfs-website;/general/libvpl.html">libvpl</ulink>
-    </para>
-
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       En komplett liste over valgfrie avhengigheter finnes i
       <ulink url="&blfs-svn;/multimedia/ffmpeg.html">BLFS FFmpeg siden</ulink>.
+      <itemizedlist>
+        <para>For systemer med NVIDIA grafikkort</para>
+        <listitem>
+          <para>
+            <ulink
+              url="&slfs-website;/general/cuda.html">CUDA</ulink> og
+            <ulink
+              url="&slfs-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
+          </para>
+        </listitem>
+      </itemizedlist>
+      <itemizedlist>
+        <para>For systemer med Intel grafikkort</para>
+        <listitem>
+          <para>
+            <ulink
+              url="&slfs-website;/general/intel-mediasdk.html">Intel-MediaSDK</ulink>,
+            <ulink
+              url="&slfs-website;/general/intel-onevpl.html">intel-onevpl</ulink>, og
+            <ulink
+              url="&slfs-website;/general/libvpl.html">libvpl</ulink>
+          </para>
+        </listitem>
+      </itemizedlist>
     </para>
 
   </sect2>

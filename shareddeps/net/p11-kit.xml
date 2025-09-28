@@ -37,12 +37,9 @@
     </itemizedlist>
 
     <bridgehead renderas="sect3">p11-kit Avhengigheter</bridgehead>
-
-    <!-- There is a check for libsystemd. It seems to install a systemd service
-    in /usr/lib/systemd/user.-->
-    <bridgehead renderas="sect4">Påkrevd (for <xref linkend="steam"/>, ellers anbefalt)</bridgehead>
     <para role="required">
        <xref linkend="libtasn1"/> og <xref role="runtime" linkend="nss"/>
+       (begge påkrevd for <xref linkend="steam"/>)
     </para>
 
   </sect2>

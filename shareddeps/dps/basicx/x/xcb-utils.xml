@@ -35,7 +35,6 @@
 
     <bridgehead renderas="sect3">XCB Verktøy Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libxcb"/> og
       <xref linkend="xcb-proto"/>

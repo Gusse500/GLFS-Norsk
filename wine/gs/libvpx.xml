@@ -37,7 +37,6 @@
 
     <bridgehead renderas="sect3">libvpx Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="nasm"/> og
       <xref linkend="which"/> (så <command>configure</command> kan finne nasm)

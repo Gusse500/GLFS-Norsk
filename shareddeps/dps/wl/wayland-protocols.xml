@@ -38,7 +38,6 @@
 
     <bridgehead renderas="sect3">Wayland-Protocols Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="wayland"/>
     </para>

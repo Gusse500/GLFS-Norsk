@@ -28,7 +28,6 @@
 
     <bridgehead renderas="sect3">VKD3D-Proton Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="dxvk"/>
       (for <filename class="libraryfile">dxgi</filename> og

@@ -61,7 +61,6 @@
 
     <bridgehead renderas="sect3">TEMPLATE Dependencies</bridgehead>
 
-    <bridgehead renderas="sect4">Required</bridgehead>
     <para role="required">
       <xref linkend="GLFS_DEPENDENCY"/> <!-- notice no period as this is not
       a sentence. If there are more than two, they must be separated by commas
@@ -82,7 +81,6 @@
     </para>
 
     <!-- As required -->
-    <bridgehead renderas="sect4">Recommended</bridgehead>
     <para role="recommended">
       <xref linkend="GLFS_DEPENDENCY"/> <!-- notice no period as this is not
       a sentence. See above for the use of "and" and commas. Normally, neither
@@ -95,7 +93,6 @@
     </para>
 
     <!-- As required -->
-    <bridgehead renderas="sect4">Optional</bridgehead>
     <para role="optional">
       <xref linkend="GLFS_DEPENDENCY"/> and
       <ulink url="http://www.some.url/">EXTERNAL DEPENDENCY</ulink>

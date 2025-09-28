@@ -36,12 +36,10 @@
 
     <bridgehead renderas="sect3">Xorg Biblioteker Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="fontconfig"/> og
       <xref linkend="libxcb"/>
     </para>
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&w3m-url;">W3m</ulink> (for å generere ytterligere PDF eller 
 	  tekstdokumentasjon for libXfont pakken)

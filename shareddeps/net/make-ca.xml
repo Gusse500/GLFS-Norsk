@@ -65,7 +65,6 @@
 
     <bridgehead renderas="sect3">make-ca Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="p11-kit"/>, <xref linkend="libtasn1"/>,
       og <xref role="runtime" linkend="nss"/>

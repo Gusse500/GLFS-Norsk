@@ -35,7 +35,6 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/doxygen.html">doxygen</ulink> og
       <ulink url="&blfs-svn;/general/texlive.html">texlive</ulink>

@@ -80,28 +80,18 @@
 
     <bridgehead renderas="sect3">GLib Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-<!--
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
-    <para role="recommended">
-      <xref linkend="pcre2"/> (hvis ikke bygget, vil Meson prøve å hente en 
-      tarball med PCRE2 kildekode fra internett)
-    </para>
--->
-
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
-    <para role="optional">
-      <ulink url="&blfs-svn;/general/libxslt.html">libxslt</ulink> (for manualsider)
-    </para>
-
-    <bridgehead renderas="sect4">Ytterligere Kjøretids Avhengigheter</bridgehead>
     <para role="recommended">
       <xref role="runtime" linkend="shared-mime-info"/> og
       <xref role="runtime" linkend="desktop-file-utils"/>
+      (begge ved kjøretid)
+    </para>
+
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/libxslt.html">libxslt</ulink> (for manualsider)
     </para>
 
   </sect2>

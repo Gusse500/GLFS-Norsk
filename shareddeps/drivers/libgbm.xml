@@ -42,7 +42,6 @@
 
     <bridgehead renderas="sect3">libgbm Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libdrm"/>
     </para>
