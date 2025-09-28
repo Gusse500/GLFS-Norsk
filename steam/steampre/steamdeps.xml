@@ -45,7 +45,6 @@
     Zenity</ulink>, <ulink url="&blfs-svn;/general/lsof.html">lsof</ulink>,
     og <xref linkend="libgpg-error"/>
   </para>
-    </para>
 
   <para role="optional">
     <ulink url="&blfs-svn;/general/lsb-tools.html">LSB-Tools</ulink>
