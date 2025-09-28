@@ -17,39 +17,4 @@
     <!-- Do section labels include the component label? 1 = yes, 0 = no -->
   <xsl:param name="section.label.includes.component.label" select="0"/>
 
-<xsl:template match="para[@role='required']">
-  <p>
-    <xsl:value-of select="."/>
-    <span class="role">
-      (<xsl:choose>
-         <xsl:when test="@role='required'">Påkrevd</xsl:when>
-         <xsl:otherwise><xsl:value-of select="@role"/></xsl:otherwise>
-      </xsl:choose>)
-    </span>
-  </p>
-</xsl:template>
-
-<xsl:template match="para[@role='recommended']">
-  <p>
-    <xsl:value-of select="."/>
-    <span class="role">
-      (<xsl:choose>
-         <xsl:when test="@role='recommended'">Anbefalt</xsl:when>
-         <xsl:otherwise><xsl:value-of select="@role"/></xsl:otherwise>
-      </xsl:choose>)
-    </span>
-  </p>
-  
-<xsl:template match="para[@role='optional']">
-  <p>
-    <xsl:value-of select="."/>
-    <span class="role">
-      (<xsl:choose>
-         <xsl:when test="@role='optional'">Valgfri</xsl:when>
-         <xsl:otherwise><xsl:value-of select="@role"/></xsl:otherwise>
-      </xsl:choose>)
-    </span>
-  </p>
-
-</xsl:template>
 </xsl:stylesheet>
