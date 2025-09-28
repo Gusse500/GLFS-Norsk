@@ -157,6 +157,14 @@ h4 {
   font-style: italic;
 }
 
+summary {
+  font-style: italic;
+  font-weight: bold;
+}
+
+summary:hover {
+  cursor: pointer;
+}
 
 /* Navigation */
 div.navheader, div.navfooter {
