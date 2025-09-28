@@ -44,12 +44,10 @@
 
     <bridgehead renderas="sect3">GNAT Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
 	<xref linkend="gnat-binary"/>
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="https://www.linuxfromscratch.org/blfs/view/svn/general/gdb.html">
       GDB</ulink>,

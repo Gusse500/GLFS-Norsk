@@ -57,15 +57,11 @@
 
       <bridgehead renderas="sect3">libvdpau Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
         <xref linkend="xorg7-lib"/>
       </para>
 
-      <bridgehead renderas="sect4">Anbefalt (Kjøretid)</bridgehead>
-      <!-- "nodep" to prevent BLFS tool from blindly installing all the
-           drivers -->
-      <para role='nodep'>
+      <para role="recommended">
         VDPAU driveren som passer til maskinvaren i systemet ditt:
         <xref linkend='libvdpau-va-gl'/>
         <footnote><para>

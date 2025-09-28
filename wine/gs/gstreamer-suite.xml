@@ -31,14 +31,12 @@
 
     <bridgehead renderas="sect3">GStreamer Pakken Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="ffmpeg"/> (for libav støtte),
       <xref linkend="glib2"/> (GObject Introspection påkrevd for GNOME), og
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="alsa-lib"/>,
       <ulink url="&blfs-svn;/multimedia/cdparanoia.html">CDParanoia-III</ulink>
@@ -76,7 +74,6 @@
       <ulink url="&blfs-svn;/general/yasm.html">yasm</ulink>
    </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/aalib.html">AAlib</ulink>,
       <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink> (for GPU

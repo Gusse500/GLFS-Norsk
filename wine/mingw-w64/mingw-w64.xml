@@ -40,7 +40,6 @@
 
     <bridgehead renderas="sect3">MinGW-w64 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="mingw-w64-binutils"/>,
       <xref linkend="mingw-w64-headers"/>, og

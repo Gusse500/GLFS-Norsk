@@ -35,7 +35,6 @@
 
     <bridgehead renderas="sect3">util-macros Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg-env"/> (bør være satt for at følgende instruksjoner 
       skal fungere)

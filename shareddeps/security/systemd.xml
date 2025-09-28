@@ -59,12 +59,10 @@
 -->
     <bridgehead renderas="sect3">Systemd Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="recommended">
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
 
     <note>
       <para>

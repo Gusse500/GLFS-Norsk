@@ -36,7 +36,6 @@
 
     <bridgehead renderas="sect3">Xwayland Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <!-- Not runtime as mesa/nvidia provide DRI needed at configuration. -->
       En brukerland grafikkdriver (<xref linkend='mesa'/> og/eller
@@ -48,7 +47,6 @@
       <xref linkend="xorg7-font"/> (bare font-util)
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="libepoxy"/> og
       &opengl;

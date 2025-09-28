@@ -34,7 +34,6 @@
 
     <bridgehead renderas="sect3">xcursor-themes Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg7-app"/>
     </para>

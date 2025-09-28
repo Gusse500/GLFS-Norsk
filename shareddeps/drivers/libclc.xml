@@ -37,7 +37,6 @@
 
       <bridgehead renderas="sect3">libclc Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
         <xref linkend="llvm"/> (med Clang) og
         <xref linkend="spirv-llvm-translator"/>

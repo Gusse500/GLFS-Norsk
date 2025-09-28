@@ -35,7 +35,6 @@
 
     <bridgehead renderas="sect3">xorgproto Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="util-macros"/>
     </para>

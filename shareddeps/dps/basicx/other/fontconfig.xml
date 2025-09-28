@@ -48,7 +48,6 @@
 -->
     <bridgehead renderas="sect3">Fontconfig avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="freetype2-pass2"/> og
       <xref linkend="mesonfiles"/> (for lib32)

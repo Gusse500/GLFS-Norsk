@@ -43,7 +43,6 @@
 
     <bridgehead renderas="sect3">SPIRV-Headers Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="cmake"/>
     </para>

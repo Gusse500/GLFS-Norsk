@@ -35,7 +35,6 @@
 
     <bridgehead renderas="sect3">AMDGPU PRO Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="xorg7-lib"/>,
       <xref linkend="gpuconfig"/>,
@@ -44,7 +43,6 @@
       installasjonsinstruksjonene)
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="vulkan-sdk"/> og
       <xref linkend="wayland"/>

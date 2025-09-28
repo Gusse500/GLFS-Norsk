@@ -34,7 +34,6 @@
 
     <bridgehead renderas="sect3">FreeType2 avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="freetype2-pass1"/>,
       <xref linkend="harfbuzz"/>,
@@ -42,7 +41,6 @@
       <xref linkend="which"/>
     </para>
 
-    <bridgehead renderas="sect4">Valgfri (for dokumentasjon)</bridgehead>
     <para role="optional">
       <ulink url="https://pypi.org/project/docwriter/">docwriter</ulink>
     </para>

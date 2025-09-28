@@ -35,7 +35,6 @@
 
     <bridgehead renderas="sect3">pciutils Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
        <xref role="runtime" linkend="hwdata"/> (kjøretid)
     </para>

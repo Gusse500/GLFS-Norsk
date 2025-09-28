@@ -77,7 +77,6 @@
 
     <bridgehead renderas="sect3">Mesa Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="libdrm"/>,
       <xref linkend="libxcb"/>,
@@ -86,7 +85,6 @@
       <xref linkend="xorg7-lib"/>
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
 
       <itemizedlist spacing="compact">
@@ -148,7 +146,6 @@
       </itemizedlist>
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       &gbm;,
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,

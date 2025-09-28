@@ -54,7 +54,6 @@
 
     <bridgehead renderas="sect3">Xorg Server Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <!-- Not runtime as mesa/nvidia provide DRI needed at configuration. -->
       En brukerland grafikkdriver (<xref linkend='mesa'/> og/eller
@@ -65,7 +64,6 @@
       <xref role="runtime" linkend="xkeyboard-config"/>
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend='dbus'/>,
       <phrase revision="sysv">
@@ -77,7 +75,6 @@
       og <xref role='runtime' linkend='xorg-libinput-driver'/> (kjøretid)
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="libunwind"/>,
       <xref linkend="nettle"/>,

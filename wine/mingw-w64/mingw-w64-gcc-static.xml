@@ -42,7 +42,6 @@
 
     <bridgehead renderas="sect3">Statisk MinGW-w64-GCC Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
       <xref linkend="mingw-w64-binutils"/> og
       <xref linkend="mingw-w64-headers"/>

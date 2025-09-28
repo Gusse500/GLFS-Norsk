@@ -56,7 +56,6 @@
 
     <bridgehead renderas="sect3">Pipewire Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <ulink url="&blfs-svn;/general/bluez.html">BlueZ</ulink>,
       <xref linkend="dbus-pass2"/>,
@@ -68,7 +67,6 @@
       <xref role="runtime" linkend="wireplumber"/> (kjøretid)
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="alsa-lib"/>,
       <xref linkend="libdrm"/> (for ett eksempel og libcamera støtte),

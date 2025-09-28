@@ -55,13 +55,13 @@
 
     <bridgehead renderas="sect3">Polkit Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Påkrevd</bridgehead>
     <para role="required">
-      <xref linkend="duktape"/> og
-      <xref linkend="glib2"/>
+      <xref linkend="duktape"/><phrase revision="systemd">,</phrase>
+      <phrase revision="sysv">og</phrase>
+      <xref linkend="glib2"/><phrase revision="systemd">, og
+      <xref role="runtime" linkend="systemd"/> (kjøretid)</phrase>
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="linux-pam"/><phrase revision="sysv"> og
       <xref linkend="elogind"/></phrase>
@@ -79,17 +79,10 @@
       </para>
     </note>
 
-    <bridgehead renderas="sect4" revision="systemd">Påkrevd Kjøretidsavhengigheter</bridgehead>
-    <para role="required" revision="systemd">
-      <xref role="runtime" linkend="systemd"/>
-    </para>
-
-    <bridgehead renderas="sect4" id="polkit-agent" xreflabel="Polkit Authentication Agent">
-      Valgfri Kjøretidsavhengigheter
-    </bridgehead>
     <para role="optional">
-      Én polkit autentiseringsagent for bruk av polkit i det grafiske miljøet; 
-      dette vil i stor grad avhenge av hvilket skrivebord du kjører.
+      En polkit autentiseringsagent for bruk av polkit i det grafiske miljøet 
+      under kjøring; dette vil i stor grad avhenge av hvilket skrivebord du 
+      kjører, som KDE Plasma, GNOME, Hyprland osv.
     </para>
 
   </sect2>

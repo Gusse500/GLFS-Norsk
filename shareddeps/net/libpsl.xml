@@ -36,13 +36,11 @@
 
     <bridgehead renderas="sect3">libpsl Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="libidn2"/> og
       <xref linkend='libunistring'/>
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="icu"/> (kan brukes i stedet for libidn2)
     </para>

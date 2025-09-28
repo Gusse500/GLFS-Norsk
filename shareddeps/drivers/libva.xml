@@ -43,21 +43,13 @@
 
       <bridgehead renderas="sect3">libva Avhengigheter</bridgehead>
 
-      <bridgehead renderas="sect4">Påkrevd</bridgehead>
       <para role="required">
         <xref linkend="xorg-env"/> og
         <xref linkend="libdrm"/>
       </para>
 
-      <bridgehead renderas="sect4">Anbefalt</bridgehead>
       <para role="recommended">
-        &opengl;
-      </para>
-
-      <bridgehead renderas="sect4">Anbefalt (Kjøretid)</bridgehead>
-      <!-- "nodep" to prevent BLFS tool from blindly installing all the
-           drivers -->
-      <para role='nodep'>
+        &opengl; og
         VA API driveren som passer for maskinvaren i systemet ditt:
         <ulink url="&blfs-svn;/multimedia/intel-vaapi-driver.html">intel-vaapi-driver</ulink>
         (for Intel GPU-er levert med Haswell CPU-er eller tidligere),
@@ -72,7 +64,6 @@
         <xref linkend="mesa"/> side for informasjon om hvordan du bryter den)
       </para>
 
-      <bridgehead renderas="sect4">Valgfri</bridgehead>
       <para role="optional">
         <xref linkend="wayland"/>, og
         <ulink url="https://gitlab.freedesktop.org/drm/igt-gpu-tools">intel-gpu-tools</ulink>

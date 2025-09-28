@@ -54,13 +54,11 @@
 
     <bridgehead renderas="sect3">ALSA biblioteks avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt (kjøretid)</bridgehead>
-    <para role="runtime">
+    <para role="recommended">
       <phrase revision="sysv"><xref linkend="elogind"/></phrase>
-      <phrase revision="systemd"><xref linkend="systemd"/></phrase>
+      <phrase revision="systemd"><xref linkend="systemd"/></phrase> (kjøretid)
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="&blfs-svn;/general/doxygen.html">
       Doxygen</ulink> og

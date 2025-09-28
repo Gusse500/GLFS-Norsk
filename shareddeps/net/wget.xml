@@ -36,17 +36,11 @@
 
     <bridgehead renderas="sect3">Wget Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
-      <xref linkend="libpsl"/>
+      <xref linkend="libpsl"/> og
+      <xref role="runtime" linkend="make-ca"/> (kjøretid)
     </para>
 
-    <bridgehead renderas="sect4">Anbefalt ved kjøretid</bridgehead>
-    <para role="recommended">
-      <xref role="runtime" linkend="make-ca"/>
-    </para>
-
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <xref linkend="gnutls"/>,
       <xref linkend="libidn2"/>, og

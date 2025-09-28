@@ -34,12 +34,10 @@
 
     <bridgehead renderas="sect3">x264 Avhengigheter</bridgehead>
 
-    <bridgehead renderas="sect4">Anbefalt</bridgehead>
     <para role="recommended">
       <xref linkend="nasm"/>
     </para>
 
-    <bridgehead renderas="sect4">Valgfri</bridgehead>
     <para role="optional">
       <ulink url="https://github.com/FFMS/ffms2">ffms2</ulink>,
       <ulink url="https://github.com/gpac/gpac/releases/">gpac</ulink> eller

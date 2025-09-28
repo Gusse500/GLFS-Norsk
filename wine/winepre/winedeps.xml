@@ -45,71 +45,56 @@
     presentert alternativer.
   </para>
 
-  <sect2>
-    <title>Påkrevd</title>
+  <para role="required">
+    Audio (<xref linkend="alsa-plugins"/> og/eller
+    <xref linkend="pulseaudio"/>), <xref linkend="dbus"/>,
+    Skjermserver (<xref linkend="xorg-server"/> eller
+    <xref linkend="wayland"/> med <xref linkend="xwayland"/>),
+    <xref linkend="fontconfig"/>,
+    <xref linkend="freetype2-pass2"/>,
+    <xref linkend="gnutls"/>,
+    <xref linkend="libunwind"/> (hvis 64-bit/WoW64; ikke brukt av Wine 32-bit),
+    &opengl;, og
+    <xref linkend="mingw-w64-gcc"/>
+  </para>
 
-    <para>
-      Audio (<xref linkend="alsa-plugins"/> og/eller
-      <xref linkend="pulseaudio"/>), <xref linkend="dbus"/>,
-      Skjermserver (<xref linkend="xorg-server"/> eller
-      <xref linkend="wayland"/> w/ <xref linkend="xwayland"/>),
-      <xref linkend="fontconfig"/>,
-      <xref linkend="freetype2-pass2"/>,
-      <xref linkend="gnutls"/>,
-      <xref linkend="libunwind"/> (hvis 64-bit/WoW64; ikke brukt av Wine 32-bit),
-      &opengl;, og
-      <xref linkend="mingw-w64-gcc"/>
-    </para>
+  <para role="recommended"><itemizedlist spacing="compact">
+    <listitem>
+      <para>
+        <xref linkend="gstreamer-suite"/>: Tillater konsumering og arbeid med 
+        multimedia som musikk og videoer. De fleste spill og noe programvare 
+        fungerer uten det, selv om noen vil trenge det for WMA dekoding.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        &sdl2;: For håndtering av inndata og andre funksjoner.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend="vulkan-sdk"/>: For Vulkan støtte.
+      </para>
+    </listitem>
+  </itemizedlist></para>
 
-  </sect2>
-
-  <sect2>
-    <title>Anbefalt</title>
-
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          <xref linkend="gstreamer-suite"/>: Tillater bruk av og arbeid med 
-          multimedia som musikk og videoer. De fleste spill og noe programvare 
-          fungerer uten den, selv om noen vil trenge den for WMA dekoding.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          &sdl2;: For inndatahåndtering og andre funksjoner.
-        </para>
-      </listitem>
-      <listitem>
-        <para>
-          <xref linkend="vulkan-sdk"/>: For Vulkan støtte.
-        </para>
-      </listitem>
-    </itemizedlist>
-
-  </sect2>
-
-  <sect2>
-    <title>Valgfri</title>
-
-    <para>
-      <ulink url="https://aur.archlinux.org/packages/libcapi/">
-      libcapi</ulink>,
-      <ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>,
-      <ulink url="https://archlinux.org/packages/extra/x86_64/gphoto2/">
-      gphoto2</ulink>,
-      <ulink url="&blfs-svn;/basicnet/samba.html">Samba</ulink>,
-      <ulink url="&blfs-svn;/pst/sane.html">SANE</ulink>,
-      <ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
-      <ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
-      smbclient</ulink>,
-      <ulink
-      url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
-      OpenCL</ulink>,
-      <ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
-      <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, og
-      <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
-    </para>
-
-  </sect2>
+  <para role="optional">
+    <ulink url="https://aur.archlinux.org/packages/libcapi/">
+    libcapi</ulink>,
+    <ulink url="&blfs-svn;/pst/cups.html">Cups</ulink>,
+    <ulink url="https://archlinux.org/packages/extra/x86_64/gphoto2/">
+    gphoto2</ulink>,
+    <ulink url="&blfs-svn;/basicnet/samba.html">Samba</ulink>,
+    <ulink url="&blfs-svn;/pst/sane.html">SANE</ulink>,
+    <ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
+    <ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
+    smbclient</ulink>,
+    <ulink
+    url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
+    OpenCL</ulink>,
+    <ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
+    <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, og
+    <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>
+  </para>
 
 </sect1>
