@@ -96,6 +96,7 @@
           </para>
         </listitem>
       </itemizedlist>
+    </para>
     <para role="optional">
       En komplett liste over valgfrie avhengigheter finnes i
       <ulink url="&blfs-svn;/multimedia/ffmpeg.html">BLFS FFmpeg siden</ulink>.
