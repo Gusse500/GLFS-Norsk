@@ -12,13 +12,6 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.37">
-<!--
-<!ENTITY sqlite-version               "3.50.4">
-<!ENTITY sqlite-year                  "2025">
-<!ENTITY sqlite-dl-version            "3500400">
-<!ENTITY sqlite-doc-version           "3500400">
--->
-
 <!ENTITY nss-dir                      "3_116">
 <!ENTITY nss-minor-version            "116">
 <!ENTITY nss-version                  "3.&nss-minor-version;">
@@ -37,10 +30,9 @@
 <!ENTITY elogind-version              "255.17">
 <!ENTITY systemd-version              "257.8">
 <!ENTITY duktape-version              "2.7.0">
-<!-- <!ENTITY pcre2-version                "10.45"> -->
-<!ENTITY glib2-minor                  "2.84">
-<!ENTITY glib2-version                "&glib2-minor;.4">
-<!ENTITY gi-minor                      "1.84">
+<!ENTITY glib2-minor                   "2.86">
+<!ENTITY glib2-version                 "&glib2-minor;.0">
+<!ENTITY gi-minor                      "&glib2-minor;">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "77">
 <!ENTITY icu-minor                    "1">
@@ -215,9 +207,6 @@
 <!ENTITY xwininfo-version             "1.1.6">
 <!ENTITY xwud-version                 "1.0.7">
 <!-- END X7APP -->
-<!--
-<!ENTITY luit-version                 "20240910">
--->
 <!ENTITY xcursor-themes-version       "1.0.7">
 <!-- BEGIN X7FONTS -->
 <!ENTITY encodings-version            "1.1.0">
