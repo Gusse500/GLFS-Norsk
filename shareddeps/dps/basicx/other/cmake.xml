@@ -68,13 +68,12 @@
   <sect2 role="installation">
     <title>Installasjon av CMake</title>
 
- <!--
     <para>
-      Først, tilpass FindBoost modulen til å bruke Boost-1.80.0:
+      Først, fiks støtte for <xref linkend="curl"/> på grunn av en typekonflikt:
     </para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../cmake-&cmake-version;-upstream_fix-1.patch</userinput></screen>
--->
+<screen><userinput remap="pre">sed -i 's/curl_proxytype/long/' \
+  Source/CTest/cmCTestCurl.h</userinput></screen>
 
     <para>
       Installer CMake ved å kjøre følgende 
