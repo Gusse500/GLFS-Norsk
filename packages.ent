@@ -20,7 +20,7 @@
 <!ENTITY libunistring-version         "1.4">
 <!ENTITY libidn2-version              "2.3.8">
 <!ENTITY libpsl-version               "0.21.5">
-<!ENTITY curl-version                 "8.15.0">
+<!ENTITY curl-version                 "8.16.0">
 <!ENTITY wget-version                 "1.25.0">
 <!-- Security -->
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
@@ -257,7 +257,7 @@
 <!ENTITY nasm-version                 "2.16.03">
 <!ENTITY svt-av1-version              "3.1.2">
 <!ENTITY dav1d-version                "1.5.1">
-<!ENTITY libaom-version               "3.12.1">
+<!ENTITY libaom-version               "3.13.1">
 <!ENTITY fdk-aac-version              "2.0.3">
 <!ENTITY lame-version                 "3.100">
 <!ENTITY libvpx-version               "1.15.2">
