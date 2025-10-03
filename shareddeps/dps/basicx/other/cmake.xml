@@ -68,12 +68,14 @@
   <sect2 role="installation">
     <title>Installasjon av CMake</title>
 
+<!--
     <para>
       Først, fiks støtte for <xref linkend="curl"/> på grunn av en typekonflikt:
     </para>
 
 <screen><userinput remap="pre">sed -i 's/curl_proxytype/long/' \
   Source/CTest/cmCTestCurl.h</userinput></screen>
+-->
 
     <para>
       Installer CMake ved å kjøre følgende 
