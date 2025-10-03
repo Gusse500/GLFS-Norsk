@@ -40,6 +40,15 @@
     </listitem>
     -->
 
+    <listitem revision="systemd">
+      <para>2. oktober 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Systemd: 257.8 -&gt; 258.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
    <listitem>
       <para>1. oktober 2025</para>
       <itemizedlist>

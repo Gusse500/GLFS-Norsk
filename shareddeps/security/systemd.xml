@@ -63,7 +63,6 @@
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 
-
     <note>
       <para>
         <xref linkend='linux-pam'/> er ikke strengt tatt nødvendig for å bygge 
@@ -87,6 +86,14 @@
 
   <sect2 role="installation">
     <title>Installasjon av Systemd</title>
+
+    <warning>
+      <para>
+        Hvis en tidligere versjon av systemd er installert, fjern en tjeneste 
+        som &root; bruker som vil generere feil ved følgende oppstarter:
+      </para>
+<screen role="root"><userinput remap="pre">rm -v /usr/lib/systemd/system/systemd-update-utmp-runlevel.service</userinput></screen>
+    </warning>
 
     <para>
       Fjern to unødvendige grupper,
@@ -116,7 +123,6 @@ meson setup --prefix=/usr            \
             -D sysusers=false        \
             -D rpmmacrosdir=no       \
             -D homed=disabled        \
-            -D userdb=false          \
             -D mode=release          \
             -D pam=enabled           \
             -D pamconfdir=/etc/pam.d \
@@ -190,11 +196,6 @@ rm -rf DESTDIR</userinput></screen>
     <para>
       <parameter>-D pamconfdir=/etc/pam.d</parameter>: Tvinger PAM filene til å 
       bli installert i /etc/pam.d i stedet for /usr/lib/pam.d.
-    </para>
-
-    <para>
-      <parameter>-D userdb=false</parameter>: Fjerner en daemon som ikke 
-      tilbyr noen bruk under en GLFS konfigurasjon.
     </para>
 
     <para>
