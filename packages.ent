@@ -30,9 +30,11 @@
 <!ENTITY elogind-version              "255.17">
 <!ENTITY systemd-version              "258">
 <!ENTITY duktape-version              "2.7.0">
-<!ENTITY glib2-minor                   "2.86">
-<!ENTITY glib2-version                 "&glib2-minor;.0">
-<!ENTITY gi-minor                      "&glib2-minor;">
+<!ENTITY glib2-major                   "2">
+<!ENTITY glib2-minor                   "86">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.0">
+<!ENTITY gi-major                      "1">
+<!ENTITY gi-minor                      "&gi-major;.&glib2-minor;">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "77">
 <!ENTITY icu-minor                    "1">
