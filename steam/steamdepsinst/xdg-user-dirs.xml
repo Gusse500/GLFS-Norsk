@@ -4,8 +4,10 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY xud-root "https://user-dirs.freedesktop.org/releases">
-  <!ENTITY xdg-user-dirs-download "&xud-root;/xdg-user-dirs-&xdg-user-dirs-version;.tar.gz">
+  <!ENTITY xud-root
+    "https://gitlab.freedesktop.org/xdg/xdg-user-dirs/-/archive">
+  <!ENTITY xdg-user-dirs-download
+    "&xud-root;/v&xdg-user-dirs-version;/xdg-user-dirs-v&xdg-user-dirs-version;.tar.gz">
 ]>
 
 <sect1 id="xdg-user-dirs" xreflabel="Xdg-user-dirs-&xdg-user-dirs-version;">
