@@ -12,9 +12,10 @@
 <!-- Networking -->
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.37">
-<!ENTITY nss-dir                      "3_116">
-<!ENTITY nss-minor-version            "116">
-<!ENTITY nss-version                  "3.&nss-minor-version;">
+<!ENTITY nss-major                    "3">
+<!ENTITY nss-minor                    "117">
+<!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
+<!ENTITY nss-version                  "&nss-major;.&nss-minor;">
 <!ENTITY p11-kit-version              "0.25.10">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4">
@@ -134,7 +135,7 @@
 <!ENTITY wayland-protocols-version    "1.45">
 <!-- Graphics Drivers -->
 <!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.399">
+<!ENTITY hwdata-version               "0.400">
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-sdk                   "1.4.321.0">
 <!ENTITY glu-version                  "9.0.3">
@@ -221,7 +222,7 @@
 <!ENTITY font-util-version            "1.4.1">
 <!ENTITY font-xfree86-type1-version   "1.0.5">
 <!-- END X7FONTS -->
-<!ENTITY xkeyboard-config-version     "2.45">
+<!ENTITY xkeyboard-config-version     "2.46">
 <!ENTITY % gnome-entities SYSTEM      "gnome.ent">
 %gnome-entities;
 <!ENTITY libepoxy-minor               "1.5">
@@ -256,7 +257,7 @@
 <!ENTITY libxkbcommon-version         "1.11.0">
 <!ENTITY sdl2-version                 "2.32.10">
 
-<!ENTITY nasm-version                 "2.16.03">
+<!ENTITY nasm-version                 "3.00">
 <!ENTITY svt-av1-version              "3.1.2">
 <!ENTITY dav1d-version                "1.5.1">
 <!ENTITY libaom-version               "3.13.1">
