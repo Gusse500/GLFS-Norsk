@@ -74,7 +74,6 @@
             --disable-static        \
             --with-history          \
             --with-icu              \
-            PYTHON=/usr/bin/python3 \
             --docdir=/usr/share/doc/libxml2-&libxml2-version; &amp;&amp;
 make</userinput></screen>
 
@@ -111,8 +110,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
             --sysconfdir=/etc        \
             --disable-static         \
             --with-history           \
-            --with-icu               \
-            --without-python &amp;&amp;
+            --with-icu &amp;&amp;
 make</userinput></screen>
 
     <para>
@@ -144,17 +142,6 @@ ldconfig</userinput></screen>
       <parameter>--with-icu</parameter>: Denne bryteren aktiverer støtte for 
       ICU, som gir ytterligere Unicode støtte. Dette er nødvendig for noen 
       pakker utenfor GLFS, for eksempel for QtWebEngine.
-    </para>
-
-    <para>
-      <parameter>PYTHON=/usr/bin/python3</parameter>: Tillater bygging av 
-      libxml2 modulen med Python3 i stedet for Python2.
-    </para>
-
-    <para>
-      <parameter>--without-python</parameter>: Denne bryteren deaktiverer 
-      byggingen av denne pakken for 32-bit på et 64-bit system med Python 
-      støtte, ettersom den ikke finner Python.
     </para>
 
 <!--
