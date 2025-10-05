@@ -50,7 +50,7 @@ make</userinput></screen>
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
-chmod -vm755 /usr/lib/lib{hogweed,nettle}.so &amp;&amp;
+chmod -v 755 /usr/lib/lib{hogweed,nettle}.so &amp;&amp;
 &install-dir; /usr/share/doc/nettle-&nettle-version; &amp;&amp;
 &install-file; nettle.{html,pdf} -t /usr/share/doc/nettle-&nettle-version;/</userinput></screen>
 
