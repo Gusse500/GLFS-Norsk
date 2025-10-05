@@ -41,6 +41,27 @@
     -->
 
     <listitem>
+      <para>4. oktober 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.15 -&gt; 10.16.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NASM: 2.16.03 -&gt; 3.00.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - XKeyboard-Config: 2.45 -&gt; 2.46.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.399 -&gt; 0.400.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.116 -&gt; 3.117.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2. oktober 2025</para>
       <itemizedlist>
         <listitem>

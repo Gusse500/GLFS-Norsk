@@ -105,7 +105,7 @@ ldconfig</userinput></screen>
     &options-configure;
 
     <para>
-      <option>--disable-libav</option>: Deaktiver FFMpeg støtte, da
+      <parameter>--disable-libav</parameter>: Deaktiver FFMpeg støtte, da
       pakken ikke bygger når FFmpeg er installert..
     </para>
 
