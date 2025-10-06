@@ -35,6 +35,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/dav1d/dav1d-&dav1d-version;-nasm-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">dav1d Avhengigheter</bridgehead>
 
     <para role="recommended">
@@ -45,6 +55,13 @@
 
   <sect2 role="installation">
     <title>Installasjon av dav1d</title>
+
+    <para>
+      Operandrekkefølgen i et par assembly filer er feil. Bruk en oppdatering 
+      for å sette dem i riktig rekkefølge for å forhindre byggefeil:
+    </para>
+
+<screen remap="pre"><userinput>patch -Np1 -i ../dav1d-&dav1d-version;-nasm-1.patch</userinput></screen>
 
     <para>
       Installer dav1d ved å kjøre følgende kommandoer:
