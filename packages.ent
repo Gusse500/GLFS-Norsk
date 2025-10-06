@@ -257,7 +257,7 @@
 <!ENTITY libxkbcommon-version         "1.11.0">
 <!ENTITY sdl2-version                 "2.32.10">
 
-<!ENTITY nasm-version                 "3.00">
+<!ENTITY nasm-version                 "2.16.03">
 <!ENTITY svt-av1-version              "3.1.2">
 <!ENTITY dav1d-version                "1.5.1">
 <!ENTITY libaom-version               "3.13.1">
