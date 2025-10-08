@@ -44,6 +44,18 @@
       <para>7. oktober 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Vulkan-SDK: 1.4.321.0 -&gt; 1.4.328.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM: 20.1.8 -&gt; 21.1.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.89.0 -&gt; 1.90.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPRIV-LLVM-Translator: 20.1.5 -&gt; 21.1.1.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libgbm: 1.0.1 -&gt; 1.0.2.</para>
         </listitem>
       </itemizedlist>
