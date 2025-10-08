@@ -232,9 +232,6 @@ channel = "stable"
 # Uncomment if FileCheck has been installed.
 #codegen-tests = false
 
-# Disable the need for lld.
-lld = false
-
 # If you didn't build in NVPTX support, you can uncomment this.
 #llvm-bitcode-linker = false
 
