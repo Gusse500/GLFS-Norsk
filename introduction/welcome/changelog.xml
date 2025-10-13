@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>12. oktober 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.11.0 -&gt; 1.12.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NASM: 2.16.03 -&gt; 3.01.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>10. oktober 2025</para>
       <itemizedlist>
         <listitem>
