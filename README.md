@@ -1,4 +1,4 @@
-# Gaming Linux From Scatch (GLFS)
+# Gaming Linux From Scratch (GLFS)
 
 Gaming Linux From Scratch er en bok som dekker hvordan man installerer 
 pakker som Steam og Wine etter Linux From Scratch boken.
