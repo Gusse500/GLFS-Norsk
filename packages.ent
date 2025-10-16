@@ -139,7 +139,7 @@
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-sdk                   "1.4.328.1">
 <!ENTITY glu-version                  "9.0.3">
-<!ENTITY libdrm-version               "2.4.126">
+<!ENTITY libdrm-version               "2.4.127">
 <!ENTITY libgbm-version               "1.0.2">
 <!ENTITY libvdpau-version             "1.5">
 <!ENTITY mesa-major-minor             "25.2">
