@@ -69,6 +69,14 @@
 -->
 
     <para>
+      Fjern først et unødvendig anrop til <command>git</command> i
+      <filename>meson.build</filename>:
+    </para>
+
+<screen
+  remap="pre"><userinput>sed -i "/'git'/,+3d" meson.build</userinput></screen>
+
+    <para>
       Installer libxml2 ved å kjøre følgende 
       kommandoer:
     </para>
