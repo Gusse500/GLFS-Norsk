@@ -1,0 +1,15 @@
+diff -Naur libaom-3.13.1/build/cmake/aom_optimization.cmake libaom-3.13.1.mod/build/cmake/aom_optimization.cmake
+--- libaom-3.13.1/build/cmake/aom_optimization.cmake	2025-09-05 16:10:37.000000000 -0600
++++ libaom-3.13.1.mod/build/cmake/aom_optimization.cmake	2025-10-19 11:39:42.887727210 -0600
+@@ -213,7 +213,10 @@
+ # the -Ox argument (multipass optimization).
+ function(test_nasm)
+   execute_process(COMMAND ${CMAKE_ASM_NASM_COMPILER} -hf
+-                  OUTPUT_VARIABLE nasm_helptext)
++                  OUTPUT_VARIABLE nasm_hf)
++  execute_process(COMMAND ${CMAKE_ASM_NASM_COMPILER} -hO
++                  OUTPUT_VARIABLE nasm_ho)
++  set(nasm_helptext "${nasm_hf};${nasm_ho}")
+ 
+   if(NOT "${nasm_helptext}" MATCHES "-Ox")
+     message(

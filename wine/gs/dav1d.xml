@@ -58,12 +58,14 @@
   <sect2 role="installation">
     <title>Installasjon av dav1d</title>
 
+<!--
     <para>
       Operandrekkefølgen i et par assembly filer er feil. Bruk en oppdatering 
       for å sette dem i riktig rekkefølge for å forhindre byggefeil:
     </para>
 
 <screen remap="pre"><userinput>patch -Np1 -i ../dav1d-&dav1d-version;-nasm-1.patch</userinput></screen>
+-->
 
     <para>
       Installer dav1d ved å kjøre følgende kommandoer:
