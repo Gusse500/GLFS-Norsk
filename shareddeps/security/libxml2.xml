@@ -36,6 +36,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -45,6 +46,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">libxml2 Avhengigheter</bridgehead>
 
@@ -57,39 +59,34 @@
   <sect2 role="installation">
     <title>Installasjon av libxml2</title>
 
+<!--
     <para>
       Først, installer en oppdatering fra oppstrøms for å fikse en feil ved 
       parsing av attributtverdier som ennå ikke er normalisert:
     </para>
 
 <screen><userinput>patch -Np1 -i ../libxml2-&libxml2-version;-upstream_fix-1.patch</userinput></screen>
+-->
 
     <para>
       Installer libxml2 ved å kjøre følgende 
       kommandoer:
     </para>
 
-<screen><userinput>./configure --prefix=/usr           \
-            --sysconfdir=/etc       \
-            --disable-static        \
-            --with-history          \
-            --with-icu              \
-            --docdir=/usr/share/doc/libxml2-&libxml2-version; &amp;&amp;
-make</userinput></screen>
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            -D history=enabled  \
+            -D icu=enabled &amp;&amp;
+ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>make install</userinput></screen>
-
-    <para>
-      Til slutt, forhindre at noen pakker unødvendig lenker til ICU ved å bruke 
-      følgende kommandoer som &root; bruker:
-    </para>
-
-<screen role="root"><userinput>rm -vf /usr/lib/libxml2.la &amp;&amp;
-sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
+<screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
 
@@ -101,24 +98,21 @@ sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
       kommandoer:
     </para>
 
-<screen><userinput>make distclean &amp;&amp;
+<screen><userinput>rm -rf * &amp;&amp;
 CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-./configure --prefix=/usr            \
+meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \
-            --host=i686-pc-linux-gnu \
-            --sysconfdir=/etc        \
-            --disable-static         \
-            --with-history           \
-            --with-icu &amp;&amp;
-make</userinput></screen>
+            --buildtype=release      \
+            -D history=enabled       \
+            -D icu=enabled &amp;&amp;
+ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
-rm -vf DESTDIR/usr/lib32/libxml2.la   &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
 cp -Rv DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
 rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
@@ -128,42 +122,19 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Parameterforklaringer</title>
 
-    &options-configure;
-
-    &static-libraries;
+    &options-meson;
 
     <para>
-      <parameter>--with-history</parameter>: Denne bryteren aktiverer 
-      Readline støtte når den kjører <command>xmlcatalog</command> 
-      eller <command>xmllint</command> i skallmodus.
+      <parameter>-D history=enabled</parameter>: Denne bryteren aktiverer 
+      Readline støtte når den kjører <command>xmlcatalog</command> eller
+      <command>xmllint</command> i skallmodus.
     </para>
 
     <para>
-      <parameter>--with-icu</parameter>: Denne bryteren aktiverer støtte for 
+      <parameter>-D icu=enabled</parameter>: Denne bryteren aktiverer støtte for 
       ICU, som gir ytterligere Unicode støtte. Dette er nødvendig for noen 
       pakker utenfor GLFS, for eksempel for QtWebEngine.
     </para>
-
-<!--
-    <para>
-      <option>- -with-icu</option>: Legg til denne bryteren hvis du har bygget
-      <xref linkend="icu"/>, for bedre Unicode støtte.
-    </para>
-
-    <note>
-      <para>
-        Hvis <option>- -with-icu</option> bryteren brukes, anbefaler BLFS 
-        redaktørene å fjerne unødvendige referanser til ICU bibliotekene. 
-        Dette vil forhindre at mange pakker som bruker libxml2 unødvendig lenker 
-        til ICU bibliotekene. Dette vil igjen forhindre behovet for å 
-        gjenoppbygge mange pakker når du oppgraderer ICU til en ny hovedversjon. 
-        Etter å ha installert libxml2, som &root; bruker, utsted:
-      </para>
-
-<screen role="nodump"><userinput>rm -vf /usr/lib/libxml2.la &amp;&amp;
-sed '/libs=/s/xml2.*/xml2"/' -i /usr/bin/xml2-config</userinput></screen>
-    </note>
--->
 
   </sect2>
 
