@@ -94,7 +94,8 @@ ninja</userinput></screen>
       Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>ninja install</userinput></screen>
+<screen role="root"><userinput>ninja install &amp;&amp;
+sed 's/--static/--shared/' -i /usr/bin/xml2-config</userinput></screen>
 
   </sect2>
 
