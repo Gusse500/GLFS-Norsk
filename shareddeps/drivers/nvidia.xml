@@ -218,6 +218,32 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
 <!-- proprietary is the exception, not the rule -->
 <screen><computeroutput>export NVIDIA_KERNEL_TYPE="kernel"</computeroutput></screen>
 
+    <note><para>
+      Hvis den nåværende kjernen som kjører er en annen versjon enn den du 
+      sikter deg inn på, sannsynligvis som et resultat av at du er i en chroot 
+      eller ikke har startet på nytt etter en kjerneoppgradering ennå, vil 
+      bygging av kjernemodulene føre til en byggefeil eller installere moduler 
+      for en kjerne som ikke er målet. Standardvariabelen som 
+      kjernebyggesystemet bruker for å sjekke kjerneversjonen vil bruke 
+      <command>uname -r</command>, som igjen rapporterer kjerneversjonen av den 
+      for øyeblikket kjørende vertskjernen og ikke målet. Dette kan omgås ved å 
+      spesifisere <envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar>
+      som vil overstyre kjerneversjonen som skal bygges mot og installeres til. 
+      Målkjerneversjonen må allerede være bygget for at dette skal fungere. Hvis 
+      kjerneversjonen ikke har et tredje siffer, som 6.16 i stedet for 6.16.1, 
+      legg til et <envar>.0</envar> på slutten, som
+      <envar>6.16.0</envar>. Den skal samsvare med versjonen som finnes i <filename
+      class="directory">/usr/lib/modules</filename>.
+    </para>
+    <para>
+      Hvis tilfellet ovenfor gjelder deg, enten du er i en chroot eller ikke har 
+      startet på nytt etter en kjerneoppgradering, spesifiser kjernemålet ved å 
+      eksportere variabelen nå på forhånd for å unngå å måtte spesifisere den 
+      for hver kommando:
+    </para>
+<screen><userinput>export KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></userinput></screen>
+    </note>
+
     <para>
       Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av
       brukstilfellet ditt, kan du hoppe over å bygge en eller to moduler. UVM
@@ -240,35 +266,11 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       ingenting. Legg til noe i den etter eget ønske.
     </para>
 
-    <note><para>
-      Å bygge kjernemodulene i en chroot vil sannsynligvis føre til en 
-      byggefeil. Det anbefales å bygge dem når de startes opp i LFS målet. 
-      Standardvariabelen som kjernebyggesystemet bruker for å sjekke 
-      kjerneversjonen, er <command>uname -r</command>, som 
-      rapporterer kjerneversjonen til verten i stedet for målet. Dette 
-      fører til at byggefiler ikke kan bli funnet. Dette kan omgås ved å 
-      spesifisere
-      <envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar> i
-      hver <command>make</command> kommando som vil overstyre kjerneversjonen 
-      som skal bygges mot og installeres til. Kjerneversjonen må allerede være 
-      bygget for at dette skal fungere. Hvis kjerneversjonen ikke har et tredje 
-      siffer, som 6.16 i stedet for 6.16.1, legg til en <envar>.0</envar> på
-      enden, som <envar>6.16.0</envar>. Den skal samsvare med versjonen som 
-      finnes i <filename class="directory">/usr/lib/modules</filename>. 
-      <command>make</command> kommandoen spesifiserer
-      <envar>KERNEL_UNAME=`uname -r`</envar> slik det vanligvis ville gjort med 
-      byggesystemet. Rediger det om nødvendig. <literal>`</literal> tegn angir 
-      en kommando som returnerer en utdata når den er omgitt av tegn. Når du 
-      spesifiserer en kjerneversjon til den, fjern tegnene rundt 
-      <literal>`</literal> tegn slik at versjonen ikke blir analysert som en 
-      kommando, som ikke returnerer noe.
-    </para></note>
-
     <para>
       Bygg nå kjernemodulene ved å kjøre følgende kommando:
     </para>
 
-<screen><userinput>make KERNEL_UNAME=<replaceable>`uname -r`</replaceable> NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
+<screen><userinput>make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
 
     <note><para>
       Kildekoden du bygde kjernen fra må være på samme sted som du bygde kjernen 
@@ -282,13 +284,14 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     </para></note>
 
     <note><para>
-        Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi
-        modulkoden er inkompatibel med den gjeldende kjerneversjonen. Hvis 
-        dette skjer, kan dette i de fleste tilfeller fikses ved å nedgradere 
-        kjernen. Når en ny driverutgivelse kommer, vil driveren mest sannsynlig 
-        støtte kjerneversjonen på det tidspunktet. Øverst i denne delen er den 
-        anbefalte kjerneserien som skal brukes med denne driveren nevnt for å gi 
-        en idé om hva den ideelle kjerneversjonen er å bygge mot.
+      Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi 
+      modulkoden er inkompatibel med den gjeldende kjerneversjonen. 
+      Hvis dette skjer, kan det i de fleste tilfeller fikses ved å 
+      nedgradere kjernen. Når en ny driverutgivelse kommer, vil 
+      driveren mest sannsynlig støtte den aktuelle kjerneversjonen. 
+      Øverst i denne delen er den anbefalte kjerneserien som skal 
+      brukes med denne driveren nevnt for å gi en idé om hva den 
+      ideelle kjerneversjonen å bygge mot er.
     </para></note>
 
     <important>
@@ -320,8 +323,14 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
       Nå som &root; bruker:
     </para>
 
-<screen role="root"><userinput>make KERNEL_UNAME=<replaceable>`uname -r`</replaceable> modules_install &amp;&amp;
+<screen role="root"><userinput>make modules_install &amp;&amp;
 cd ..</userinput></screen>
+
+    <para>
+      Hvis du satte <envar>KERNEL_UNAME</envar> variabelen, fjern den nå:
+    </para>
+
+    <screen><userinput>unset KERNEL_UNAME</userinput></screen>
 
     <para>
       Installer fastvaren som &root; bruker:
