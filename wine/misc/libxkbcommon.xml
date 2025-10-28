@@ -6,13 +6,13 @@
 
   <!ENTITY lxkbc-root "https://github.com/xkbcommon/libxkbcommon/archive">
   <!ENTITY libxkbcommon-download
-    "&lxkbc-root;/xkbcommon-&libxkbcommon-version;.tar.gz">
+    "&lxkbc-root;/&libxkbcommon-version;/libxkbcommon-&libxkbcommon-version;.tar.gz">
 ]>
 
-<sect1 id="libxkbcommon" xreflabel="libxkbcommon-&libxkbcommon-version;">
+<sect1 id="libxkbcommon" xreflabel="libxkbcommon-&libxkbcommon-minor; (&libxkbcommon-real;)">
   <?dbhtml filename="libxkbcommon.html"?>
 
-  <title>libxkbcommon-&libxkbcommon-version;</title>
+  <title>libxkbcommon-&libxkbcommon-minor; (&libxkbcommon-real;)</title>
 
   <indexterm zone="libxkbcommon">
     <primary sortas="a-libxkbcommon">libxkbcommon</primary>
@@ -25,6 +25,14 @@
       libxkbcommon er en tastekartkompilator og 
       et støttebibliotek som behandler et redusert delsett av tastekart som 
       definert av XKB spesifikasjonen.
+    </para>
+
+    <para>
+      Denne pakken vil bli lastet ned ved hjelp av et Git snapshot. Dette er det 
+      samme snapshotet som brukes til libxkbcommon-&libxkbcommon-real;. Den 
+      brukes fordi oppstrøms tagger utgis på en dårlig måte som både er 
+      utilfredsstillende for pålitelige nedlastingsfilnavn og utpakkede mapper. 
+      En git hash sikrer en viss pålitelighet for versjonen.
     </para>
 
     <itemizedlist spacing="compact">
