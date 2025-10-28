@@ -33,7 +33,7 @@
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "86">
-<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.0">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.1">
 <!ENTITY gi-major                      "1">
 <!ENTITY gi-minor                      "&gi-major;.&glib2-minor;">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
@@ -128,8 +128,8 @@
 <!ENTITY gnutls-version               "3.8.10">
 <!ENTITY pixman-version               "0.46.4">
 <!ENTITY mtdev-version                "1.1.7">
-<!ENTITY libevdev-version             "1.13.4">
-<!ENTITY libinput-version             "1.29.1">
+<!ENTITY libevdev-version             "1.13.5">
+<!ENTITY libinput-version             "1.29.2">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.24.0">
 <!ENTITY wayland-protocols-version    "1.45">
@@ -162,14 +162,14 @@
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
      at the very bottom: change_id. -->
 <!ENTITY rustc-change-id              "144675">
-<!ENTITY cbindgen-version             "0.29.0">
+<!ENTITY cbindgen-version             "0.29.2">
 <!ENTITY rust-bindgen-version         "0.72.1">
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.1.1">
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY libva-version                "2.22.0">
 <!ENTITY ply-version                  "3.11">
 <!ENTITY mako-version                 "1.3.10">
-<!ENTITY cython-version               "3.1.4">
+<!ENTITY cython-version               "3.1.6">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!ENTITY libvdpau-va-gl-version       "0.4.2">
@@ -254,7 +254,13 @@
 <!ENTITY mingw-w64-version            "13.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 
-<!ENTITY libxkbcommon-version         "1.12.0">
+<!-- xkbcommon is terrible in regards to tagging, ending up with poorly named
+     tarballs and/or extracted directories. BLFS solved this by using a mirror.
+     We're solving this by using the git hash to get around the naming issue
+     entirely. -->
+<!ENTITY libxkbcommon-minor           "bdf069">
+<!ENTITY libxkbcommon-version         "bdf069f960dfdb5b44ae626d9ba7499142c2cb1e">
+<!ENTITY libxkbcommon-real            "1.12.2">
 <!ENTITY sdl2-version                 "2.32.10">
 
 <!ENTITY nasm-version                 "3.01">

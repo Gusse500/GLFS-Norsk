@@ -41,6 +41,30 @@
     -->
 
     <listitem>
+      <para>27. oktober 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.12.0 -&gt; bdf069 (1.12.2).</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.1.4 -&gt; 3.1.6.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cbindgen: 0.29.0 -&gt; 0.29.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libinput: 1.29.1 -&gt; 1.29.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libevdev: 1.13.4 -&gt; 1.13.5.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLib2: 2.86.0 -&gt; 2.86.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>18. oktober 2025</para>
       <itemizedlist>
         <listitem>
