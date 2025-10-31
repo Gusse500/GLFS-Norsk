@@ -258,9 +258,9 @@
      tarballs and/or extracted directories. BLFS solved this by using a mirror.
      We're solving this by using the git hash to get around the naming issue
      entirely. -->
-<!ENTITY libxkbcommon-minor           "bdf069">
-<!ENTITY libxkbcommon-version         "bdf069f960dfdb5b44ae626d9ba7499142c2cb1e">
-<!ENTITY libxkbcommon-real            "1.12.2">
+<!ENTITY libxkbcommon-minor           "f4f732">
+<!ENTITY libxkbcommon-version         "f4f732790c35632427f857395f37c93e19729a2b">
+<!ENTITY libxkbcommon-real            "1.12.3">
 <!ENTITY sdl2-version                 "2.32.10">
 
 <!ENTITY nasm-version                 "3.01">

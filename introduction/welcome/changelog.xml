@@ -44,6 +44,10 @@
       <para>30. oktober 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libxkbcommon: bdf069 (1.12.2) -&gt;
+          f4f732 (1.12.3).</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Xorg-Server: 21.1.18 -&gt; 21.1.20 (sikkerhet). Se
           <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22323">BLFS
           ticket #22323</ulink>.</para>
