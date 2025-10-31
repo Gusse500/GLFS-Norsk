@@ -41,6 +41,22 @@
     -->
 
     <listitem>
+      <para>30. oktober 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Xorg-Server: 21.1.18 -&gt; 21.1.20 (sikkerhet). Se
+          <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22323">BLFS
+          ticket #22323</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xwayland: 24.1.8 -&gt; 24.1.9 (sikkerhet). Se
+          <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22324">BLFS
+          ticket #22324</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>27. oktober 2025</para>
       <itemizedlist>
         <listitem>
