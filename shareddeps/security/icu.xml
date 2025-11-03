@@ -6,7 +6,7 @@
 
   <!ENTITY icu-root "https://github.com/unicode-org/icu/releases/download">
   <!ENTITY icu-download
-    "&icu-root;/release-&icu-major;-&icu-minor;/icu4c-&icu-major;_&icu-minor;-src.tgz">
+    "&icu-root;/release-&icu-major;.&icu-minor;/icu4c-&icu-major;.&icu-minor;-sources.tgz">
 ]>
 
 <sect1 id="icu" xreflabel="ICU-&icu-version;">
