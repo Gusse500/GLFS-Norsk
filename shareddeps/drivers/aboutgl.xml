@@ -33,9 +33,10 @@
     </para>
 
     <para>
-      NVIDIA, etter å ha prøvd å passe inn i deres arkitektur, bestemte seg for 
-      å lage nye kjerne OpenGL biblioteker basert på aritgers <ulink
-      url="https://github.com/aritger/linux-opengl-abi-proposal/blob/master/linux-opengl-abi-proposal.txt">
+      Etter å ha levert sine egne OpenGL kjernebiblioteker som var i konflikt med Mesa sine, 
+      noe som tvang distribusjoner til å forene seg gjennom forskjellige metoder, 
+      bestemte NVIDIA seg for å lage nye OpenGL kjernebiblioteker basert på aritger's <ulink
+      url="https://github.com/aritger/linux-opengl-abi-proposal/blob/mastedser/linux-opengl-abi-proposal.txt">
       new OpenGL ABI proposal</ulink>. Resultatet var libglvnd prosjektet, som 
       inneholder kjernebiblioteker i OpenGL som sender hvert API kall på riktig 
       måte til en OpenGL drivers implementering av det. Ingen driver måtte 
