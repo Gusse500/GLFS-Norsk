@@ -41,6 +41,30 @@
     -->
 
     <listitem>
+      <para>3. november 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.90.0 -&gt; 1.91.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdrm: 2.4.127 -&gt; 2.4.128.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - ICU: 77.1 -&gt; 78.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2. november 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.17 -&gt; 10.18.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>30. oktober 2025</para>
       <itemizedlist>
         <listitem>

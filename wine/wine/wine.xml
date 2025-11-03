@@ -24,6 +24,16 @@
       Wine er et kompatibilitetslag for å kjøre Windows programmer på Unix.
     </para>
 
+    <note><para>
+      Du trenger ikke å bygge om <xref linkend="dxvk"/> eller <xref
+      linkend="vkd3d-proton"/> etter oppdatering av Wine. Dette er fordi disse 
+      pakkene bygger mot de statiske MinGW-w64 bibliotekene som er innebygd i 
+      den pakken, og ikke mot DLL-ene som følger med i denne pakken. Når du 
+      oppdaterer denne pakken, trenger du ikke bekymre deg for mye annet enn 
+      kanskje å måtte laste ned mono på nytt, noe som håndteres automatisk hver 
+      gang du kjører Wine etter oppdatering.
+    </para></note>
+
     &long-build-time;
 
     <itemizedlist spacing="compact">
