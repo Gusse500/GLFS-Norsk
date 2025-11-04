@@ -150,7 +150,7 @@
 <!ENTITY egl-x11-version              "1.0.3">
 <!-- Known working linux versions for NVIDIA. -->
 <!ENTITY nvidia-linux-version         "6.15.x - 6.17.x">
-<!ENTITY nvidia-version               "580.95.05">
+<!ENTITY nvidia-version               "580.105.08">
 <!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
 <!ENTITY nvidia-full-name             "&nvidia-version;">
 <!ENTITY nv-manifest-version          "1">
