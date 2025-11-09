@@ -234,11 +234,6 @@ done</userinput></screen>
     &options-meson;
 
     <para>
-      <command>git checkout v&vkd3d-proton-version;</command>: Denne kommandoen 
-      bytter til en stabil utgivelse i commit historikken.
-    </para>
-
-    <para>
       <parameter>--cross-file=../build-win{32,64}.txt</parameter>: Denne 
       parameteren endrer hvilken Win arkitektur det skal bygges for.
     </para>

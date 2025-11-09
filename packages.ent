@@ -21,7 +21,7 @@
 <!ENTITY libunistring-version         "1.4.1">
 <!ENTITY libidn2-version              "2.3.8">
 <!ENTITY libpsl-version               "0.21.5">
-<!ENTITY curl-version                 "8.16.0">
+<!ENTITY curl-version                 "8.17.0">
 <!ENTITY wget-version                 "1.25.0">
 <!-- Security -->
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
@@ -258,9 +258,9 @@
      tarballs and/or extracted directories. BLFS solved this by using a mirror.
      We're solving this by using the git hash to get around the naming issue
      entirely. -->
-<!ENTITY libxkbcommon-minor           "f4f732">
-<!ENTITY libxkbcommon-version         "f4f732790c35632427f857395f37c93e19729a2b">
-<!ENTITY libxkbcommon-real            "1.12.3">
+<!ENTITY libxkbcommon-minor           "3049d3">
+<!ENTITY libxkbcommon-version         "3049d310694fd70f1269bf48a1200aa4259e79b1">
+<!ENTITY libxkbcommon-real            "1.13.0">
 <!ENTITY sdl2-version                 "2.32.10">
 
 <!ENTITY nasm-version                 "3.01">
