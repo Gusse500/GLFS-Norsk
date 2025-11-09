@@ -231,7 +231,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>
-           curl og curl-config
+           curl, curl-config, og wcurl
         </seg>
         <seg>
            libcurl
@@ -269,6 +269,18 @@ ldconfig</userinput></screen>
           </para>
           <indexterm zone="curl curl-config">
             <primary sortas="b-curl-config">curl-config</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="wcurl">
+        <term><command>wcurl</command></term>
+        <listitem>
+         <para>
+           er en innpakning rundt cURL som emulerer wget oppførsel
+         </para>
+          <indexterm zone="curl wcurl">
+            <primary sortas="b-wcurl">wcurl</primary>
           </indexterm>
         </listitem>
       </varlistentry>
