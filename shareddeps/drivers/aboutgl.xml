@@ -250,10 +250,9 @@
         Hvis du har bestemt deg for å deaktivere GLES støtte, er det ganske 
         enkelt å ikke bygge inn støtte for APIet. <quote>Parameterforklaringer</quote>, 
         for både <xref linkend="libglvnd"/> og <xref linkend="mesa"/>, vil
-        forklare alternativene som kreves for å deaktivere støtten. Videre,
-        <xref linkend="nvidia"/> installerer drivere for GLES. 
-        Installasjonsinstruksjonene for den driveren vil forklare hvordan du 
-        sletter dem hvis du ikke trenger GLES.
+        forklare alternativene som kreves for å deaktivere støtten. 
+        Installasjonsskriptet for <xref linkend="nvidia"/> vil installere en 
+        driver for GLES som standard, men kan deaktiveres.
       </para>
 
       <para>
