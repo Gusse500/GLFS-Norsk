@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>12. november 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - cURL: Fiks oppdateringen for CVE-2025-11563. Se
+          <ulink url="https://www.linuxfromscratch.org/blfs/ticket/22348">BLFS
+          ticket #22348</ulink> for mer informasjon.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>8. november 2025</para>
       <itemizedlist>
         <listitem>
