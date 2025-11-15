@@ -64,7 +64,7 @@
           <para>
             <xref linkend="dav1d"/>,
             <xref linkend="fdk-aac"/>,
-            <xref linkend="freetype2-pass2"/>,
+            <xref linkend="freetype2"/>,
             <xref linkend="lame"/>,
             <xref linkend="libaom"/>,
             <xref linkend="libvorbis"/>,

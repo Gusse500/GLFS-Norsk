@@ -41,6 +41,37 @@
     -->
 
     <listitem>
+      <para>14. november 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 10.18 -&gt; 10.19.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - FreeType2: Fjern gjentatte bygginger, last inn 
+          HarfBuzz dynamisk.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.1.6 -&gt; 3.2.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 21.1.1 -&gt; 21.1.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.400 -&gt; 0.401.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 12.1.0 -&gt; 12.2.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSPR: 4.37 -&gt; 4.38.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: 2.45 -&gt; 2.45.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>12. november 2025</para>
       <itemizedlist>
         <listitem>
