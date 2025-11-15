@@ -9,29 +9,26 @@
   <!ENTITY freetype2-doc-download "&sourceforge-dl;/freetype/freetype-doc-&freetype2-doc-version;.tar.xz">
 ]>
 
-<sect1 id="freetype2-pass1" xreflabel="FreeType-&freetype2-version; - Pass 1">
-  <?dbhtml filename="freetype2-pass1.html"?>
+<sect1 id="freetype2" xreflabel="FreeType-&freetype2-version;">
+  <?dbhtml filename="freetype2.html"?>
 
-  <title>FreeType-&freetype2-version; - Pass 1</title>
+  <title>FreeType-&freetype2-version;</title>
 
-  <indexterm zone="freetype2-pass1">
-    <primary sortas="a-FreeType-pass1">FreeType-Pass-1</primary>
+  <indexterm zone="freetype2">
+    <primary sortas="a-FreeType">FreeType</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduksjon til to FreeType2 - Pass 1</title>
+    <title>Introduksjon til to FreeType2</title>
 
     <para>
-      FreeType2 Pakken inneholder 
-      et bibliotek som lar applikasjoner gjengi 
-      TrueType fonter på riktig måte.
+      FreeType2 Pakken inneholder et bibliotek som lar applikasjoner 
+      gjengi TrueType fonter på riktig måte.
     </para>
 
     <para>
-      Denne pakken har en sirkulær avhengighet av <xref
-      linkend="harfbuzz"/>, så denne pakken må installeres først,
-      harfBuzz for det andre, så til slutt denne 
-      pakken igjen. Dette er første omgang.
+      Sørg for å installere <xref linkend="harfbuzz"/> etter denne installasjonen, 
+      ettersom mange pakker forventer at denne pakken har HarfBuzz støtte.
     </para>
 
     <itemizedlist spacing="compact">
@@ -55,7 +52,8 @@
     <bridgehead renderas="sect3">FreeType2 avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="libpng"/> og
+      <xref linkend="harfbuzz"/> (kjøretid),
+      <xref linkend="libpng"/>, og
       <xref linkend="which"/>
     </para>
 
@@ -66,7 +64,7 @@
   </sect2>
  
   <sect2 role="installation">
-    <title>Installasjon av FreeType2 - Pass 1</title>
+    <title>Installasjon av FreeType2</title>
 
     <para>
       Hvis du lastet ned tilleggsdokumentasjonen, pakker du den ut i 
@@ -91,7 +89,21 @@ sed -r "s:.*(#.*SUBPIXEL_RENDERING) .*:\1:" \
       <command>sed -r</command> kommandoen er den som aktiverer SR.
     </para></note>
 
-    &freetype-m64;
+    <para>
+      Installer <application>FreeType2</application> ved å kjøre følgende 
+      kommandoer:
+    </para>
+<screen><userinput>./configure --prefix=/usr            \
+            --disable-static         \
+            --enable-freetype-config \
+            --with-harfbuzz=dynamic &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+    <screen role='root'><userinput>make install</userinput></screen>
 
     <para>
       Hvis du lastet ned den valgfrie dokumentasjonen, installer den som
@@ -104,9 +116,30 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installasjon av FreeType2 - Pass 1</title>
+    <title>lib32 Installasjon av FreeType2</title>
 
-    &freetype-m32;
+    <para>
+      Installer lib32-<application>FreeType2</application> ved å kjøre 
+      følgende kommandoer:
+    </para>
+
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+./configure --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu \
+            --disable-static         \
+            --with-harfbuzz=dynamic &amp;&amp;
+
+make</userinput></screen>
+<para>
+  Nå, som &root; bruker:
+</para>
+<screen role='root'><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
 
   </sect2>
 
@@ -115,20 +148,18 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
 
     &options-configure;
 
+    &static-libraries;
+
     <para>
       <parameter>--enable-freetype-config</parameter>: Denne bryteren 
       sørger for at manualsiden for freetype-config er installert.
     </para>
 
     <para>
-      <option>--without-harfbuzz</option>: Hvis
-      harfbuzz er installert før
-      freetype uten
-      freetype støtte, bruk denne bryteren for å 
-      unngå en byggefeil.
+      <parameter>--with-harfbuzz=dynamic</parameter>: Denne bryteren sikrer at 
+      denne pakken ikke trenger å bli gjenoppbygd etter at HarfBuzz er lastet 
+      inn, men i stedet lastes inn dynamisk hvis den er tilgjengelig.
     </para>
-
-    &static-libraries;
 
     <!-- No longer valid with 2.10.1, /usr/bin/freetype-config is installed
          by the 'make install' command.
@@ -168,28 +199,28 @@ rm -v /usr/share/doc/freetype-&freetype2-version;/freetype-config.1</userinput><
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
-      <varlistentry id="freetype-config-pass1">
+      <varlistentry id="freetype-config">
         <term><command>freetype-config</command></term>
         <listitem>
           <para>
             brukes til å få FreeType kompilering 
             og lenkeinformasjon
           </para>
-          <indexterm zone="freetype2-pass1 freetype-config-pass1">
-            <primary sortas="b-freetype-config-pass1">freetype2-config</primary>
+          <indexterm zone="freetype2 freetype-config">
+            <primary sortas="b-freetype-config">freetype2-config</primary>
           </indexterm>
         </listitem>
       </varlistentry>
 
-      <varlistentry id="libfreetype-pass1">
+      <varlistentry id="libfreetype">
         <term><filename class="libraryfile">libfreetype</filename></term>
         <listitem>
           <para>
             inneholder funksjoner for gjengivelse av ulike skrifttyper, som 
             for eksempel TrueType og Type1
           </para>
-          <indexterm zone="freetype2-pass1 libfreetype-pass1">
-            <primary sortas="c-libfreetype-pass1">libfreetype</primary>
+          <indexterm zone="freetype2 libfreetype">
+            <primary sortas="c-libfreetype">libfreetype</primary>
           </indexterm>
         </listitem>
       </varlistentry>

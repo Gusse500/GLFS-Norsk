@@ -42,7 +42,7 @@
       <xref linkend="glib2"/> (påkrevd for Pango; GObject Introspection
       påkrevd for bygging av GNOME),
       <xref linkend="icu"/>,
-      <xref role="first" linkend="freetype2-pass1"/>, og
+      <xref role="first" linkend="freetype2"/>, og
       <xref linkend="mesonfiles"/> (for lib32)
     </para>
 

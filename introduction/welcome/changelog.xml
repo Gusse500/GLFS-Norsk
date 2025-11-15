@@ -44,6 +44,10 @@
       <para>14. november 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - FreeType2: Fjern gjentatte bygginger, last inn 
+          HarfBuzz dynamisk.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Cython: 3.1.6 -&gt; 3.2.1.</para>
         </listitem>
         <listitem>
