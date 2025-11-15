@@ -44,6 +44,9 @@
       <para>14. november 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wine: 10.18 -&gt; 10.19.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - FreeType2: Fjern gjentatte bygginger, last inn 
           HarfBuzz dynamisk.</para>
         </listitem>
