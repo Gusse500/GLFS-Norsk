@@ -273,7 +273,7 @@
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "7.1.2">
-<!ENTITY gstreamer10-version          "1.26.7">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.26.8">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
