@@ -45,10 +45,10 @@
       Bygg modulen:
     </para>
 
-<screen><userinput>pip3 wheel -w dist --no-build-isolation --no-deps --no-cache-dir $PWD</userinput></screen>
+<screen><userinput>pip3 -v wheel -w dist --no-build-isolation --no-deps --no-cache-dir $PWD</userinput></screen>
 
     <para>
-      Installer modulen som <systemitem class="username">root</systemitem> bruker:
+      Installer modulen som &root; bruker:
     </para>
 
 <screen role="root"><userinput>pip3 install --no-index --find-links=dist --no-cache-dir --no-user Cython</userinput></screen>

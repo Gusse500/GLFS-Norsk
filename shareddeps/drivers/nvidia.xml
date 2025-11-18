@@ -639,19 +639,22 @@ EOF</userinput></screen>
       </para>
 
       <para>
-        Som med situasjonen angående DRI, finnes det et par deklarasjonsfiler 
+        Som med situasjonen angående DRI, finnes det noen få deklarasjonsfiler 
         som bare er installert av <xref linkend="mesa"/> men kan brukes uten 
-        problemer. En er for å deklarere DRI grensesnittet og en for å deklarere 
-        Mesas EGL EXT system som brukes av noe programvare som GNOMEs mutter. 
-        Bruk <xref linkend="wget"/>, til å laste ned og installere dem som
-        &root; bruker:
+        problemer. En er for å deklarere DRI grensesnittet, en for å deklarere 
+        Mesas EGL EXT system som brukes av noe programvare som GNOME sin 
+        mutter, og en annen for å deklarere EGL EXT systemet for ANGLE, med 
+        modifikasjoner tilpasset det. Bruk <xref linkend="wget"/>, last de ned 
+        og installer dem som &root; bruker:
       </para>
 
 <screen role="root"><userinput>&install-dir; /usr/include/GL/internal /usr/include/EGL &amp;&amp;
 wget &mesa-raw-repo;/include/GL/internal/dri_interface.h \
   -O /usr/include/GL/internal/dri_interface.h &amp;&amp;
 wget &mesa-raw-repo;/include/EGL/eglmesaext.h \
-  -O /usr/include/EGL/eglmesaext.h</userinput></screen>
+  -O /usr/include/EGL/eglmesaext.h &amp;&amp;
+wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
+  -O /usr/include/EGL/eglext_angle.h</userinput></screen>
 
       <note><para>
         Du bør hoppe over til <xref linkend="xcb-utils"/> etter at du er ferdig
