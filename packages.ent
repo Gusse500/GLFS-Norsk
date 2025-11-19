@@ -261,7 +261,8 @@
 <!ENTITY libxkbcommon-minor           "3049d3">
 <!ENTITY libxkbcommon-version         "3049d310694fd70f1269bf48a1200aa4259e79b1">
 <!ENTITY libxkbcommon-real            "1.13.0">
-<!ENTITY sdl2-version                 "2.32.10">
+<!ENTITY sdl3-version                 "3.2.26">
+<!ENTITY sdl2-version                 "2.32.58">
 
 <!ENTITY nasm-version                 "3.01">
 <!ENTITY svt-av1-version              "3.1.2">
