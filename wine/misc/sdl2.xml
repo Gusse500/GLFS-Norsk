@@ -4,133 +4,101 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY sdl2-download "https://www.libsdl.org/release/SDL2-&sdl2-version;.tar.gz">
+  <!ENTITY sdl2-download "https://www.libsdl.org/release/sdl2-compat-&sdl2-version;.tar.gz">
 ]>
 
-<sect1 id="sdl2" xreflabel="SDL2-&sdl2-version;">
+<sect1 id="sdl2" xreflabel="sdl2-compat-&sdl2-version;">
   <?dbhtml filename="sdl2.html"?>
 
-  <title>SDL2-&sdl2-version;</title>
+  <title>sdl2-compat-&sdl2-version;</title>
 
   <indexterm zone="sdl2">
-    <primary sortas="a-SDL2">SDL2</primary>
+    <primary sortas="a-SDL2">sdl2-compat</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduksjon til SDL2</title>
+    <title>Introduksjon til sdl2-compat</title>
 
     <para>
-      Simple DirectMedia Layer versjon 2 (forkortet SDL2) er et bibliotek på 
-      tvers av plattformer som er utformet for å gjøre det enkelt å skrive 
-      multimedieprogramvare, for eksempel spill og emulatorer.
+      Pakken sdl2-compat tilbyr et kompatibilitetslag for pakker som krever 
+      SDL2, og bruker SDL3 som bakstykke.
     </para>
-
-    <note><para>
-      Hvis du vil, kan du i stedet installere <ulink
-      url="&slfs-website;/graph/sdl3.html">SDL3</ulink> og
-      <ulink url="&slfs-website;/graph/sdl2.html">sdl2-compat</ulink> som
-      passende erstatninger for denne pakken. Wine og
-      <command>ffplay</command> fra FFmpeg er kjent for å fungere med sdl2-compat.
-    </para></note>
-
-    &long-build-time;
 
     <itemizedlist spacing="compact">
       <listitem>
         <para>
-          Nedlasting: <ulink url="&sdl2-download;"/>
+          Nedlasting (HTTP): <ulink url="&sdl2-download;"/>
         </para>
       </listitem>
     </itemizedlist>
 
-<!--
-    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Påkrevd oppdatering (for i686 systemer):
-           <ulink url="&patch-root;/SDL2-&sdl2-version;-opengl_include_fix-1.patch"/>
-        </para>
-      </listitem>
-    </itemizedlist>
--->
-    <bridgehead renderas="sect3">SDL2 Avhengigheter</bridgehead>
+    <bridgehead renderas="sect3">sdl2-compat Avhengigheter</bridgehead>
 
-    <para role="recommended">
-      <xref linkend="libxkbcommon"/>,
-      <xref linkend="wayland-protocols"/>, og
-      <xref linkend="xorg7-lib"/> (Hvis disse ikke er til stede, bygges ikke de tilsvarende modulene)
-    </para>
-
-    <para role="optional">
-      <xref linkend="alsa-lib"/>,
-      <ulink url="&blfs-svn;/general/ibus.html">ibus</ulink>,
-      <ulink url="&blfs-svn;/multimedia/libsamplerate.html">libsamplerate</ulink>,
-      <ulink url="&blfs-svn;/general/nasm.html">nasm</ulink>,
-      <ulink url="&blfs-svn;/multimedia/pipewire.html">pipewire</ulink>,
-      <xref linkend="pulseaudio"/>,
-      en vindusbehandler eller et skrivebordsmiljø,
-      <ulink url="https://pkgs.fedoraproject.org/repo/pkgs/directfb/">DirectFB</ulink>,
-      <ulink url="https://fcitx-im.org/">fcitx</ulink>,
-      <ulink url="https://jackaudio.org/">jack</ulink>, og
-      <ulink url="https://sndio.org/">sndio</ulink>
+     <para role="required">
+      <xref linkend="cmake"/> og
+      <xref linkend="sdl3"/>
     </para>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installasjon av SDL2</title>
-
-<!--
-    <para>
-      Først, fiks et altfor restriktivt byggealternativ:
-    </para>
-
-<screen><userinput remap="pre">sed -i "s/-Werror=declaration-after-statement//" configure</userinput></screen>
--->
+    <title>Installasjon av sdl2-compat</title>
 
     <para>
-      Installer SDL2 ved å kjøre følgende 
+      Installer sdl2-compat ved å kjøre følgende 
       kommandoer:
     </para>
 
-<screen><userinput>./configure --prefix=/usr &amp;&amp;
-make</userinput></screen>
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+cmake -D CMAKE_INSTALL_PREFIX=/usr   \
+      -D CMAKE_BUILD_TYPE=Release    \
+      -D CMAKE_SKIP_INSTALL_RPATH=ON \
+      -D SDL2COMPAT_STATIC=OFF       \
+      -D SDL2COMPAT_TESTS=OFF        \
+      -W no-dev -G Ninja ..         &amp;&amp;
+
+ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>make install              &amp;&amp;
-rm -v /usr/lib/libSDL2*.a</userinput></screen>
+<screen role="root"><userinput>ninja install &amp;&amp;
+rm -vf /usr/lib/libSDL2_test.a</userinput></screen>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installasjon av SDL2</title>
+    <title>lib32 Installasjon av sdl2-compat</title>
 
     <para>
-      Installer lib32-SDL2 ved å kjøre følgende 
+      Installer lib32-sdl2-compat ved å kjøre følgende 
       kommandoer:
     </para>
 
-<screen><userinput>make distclean &amp;&amp;
+<screen><userinput>rm -rf * &amp;&amp;
 CC="gcc -m32" CXX="g++ -m32"         \
 PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-./configure --prefix=/usr            \
-            --libdir=/usr/lib32      \
-            --host=i686-pc-linux-gnu &amp;&amp;
+cmake -D CMAKE_INSTALL_PREFIX=/usr   \
+      -D CMAKE_INSTALL_LIBDIR=lib32  \
+      -D CMAKE_BUILD_TYPE=Release    \
+      -D CMAKE_SKIP_INSTALL_RPATH=ON \
+      -D SDL2COMPAT_STATIC=OFF       \
+      -D SDL2COMPAT_TESTS=OFF        \
+      -W no-dev -G Ninja ..         &amp;&amp;
 
-make</userinput></screen>
+ninja</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
-rm -v DESTDIR/usr/lib32/libSDL2*.a    &amp;&amp;
-cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
-rm -rf DESTDIR                        &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install      &amp;&amp;
+rm -vf DESTDIR/usr/lib32/libSDL2_test.a &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32   &amp;&amp;
+rm -rf DESTDIR                          &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
@@ -138,28 +106,21 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Parameterforklaringer</title>
 
-    &options-configure;
+    &cmake-skip-install-rpath;
 
     <para>
-      <command>rm -v /usr/lib/libSDL2*.a</command>: Normalt sett kan statiske 
-      biblioteker deaktiveres med <option>--disable-static</option>
-      alternativ til configure, men det ødelegger byggingen i denne pakken.
+      <parameter>-D SDL2COMPAT_STATIC=OFF</parameter>: Denne parameteren 
+      deaktiverer bygging av statiske biblioteker.
     </para>
 
     <para>
-      <option>--disable-alsa-shared</option>: Denne bryteren deaktiverer 
-      dynamisk lasting av delte ALSA biblioteker.
+      <parameter>-D SDL2COMPAT_TESTS=OFF</parameter>: Denne parameteren 
+      deaktiverer bygging av testene.
     </para>
 
     <para>
-      <option>--disable-sdl-dlopen</option>: Denne bryteren deaktiverer bruk av 
-      dlopen for lasting av delte objekter. Dynamisk lasting av bildebiblioteker 
-      som libpng underveis fungerer ikke.
-    </para>
-
-    <para>
-      <option>--disable-x11-shared</option>: Denne bryteren deaktiverer 
-      dynamisk lasting av delte X11 biblioteker.
+      <command>rm -vf /usr/lib/libSDL2_test.a</command>: Denne kommandoen 
+      fjerner et ubrukelig statisk bibliotek.
     </para>
 
   </sect2>
@@ -203,9 +164,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libSDL2</filename></term>
         <listitem>
           <para>
-            inneholder funksjoner som gir lavnivåtilgang til lyd, tastatur, mus, 
-            joystick, 3D-maskinvare via OpenGL og 2D-rammebuffer på tvers av 
-            flere plattformer
+            tilbyr kompatibilitetsfunksjoner for SDL2 applikasjoner som bruker SDL3
           </para>
           <indexterm zone="sdl2 libsdl2">
             <primary sortas="c-libsdl2">libSDL2</primary>

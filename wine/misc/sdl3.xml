@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY sdl3-download "https://www.libsdl.org/release/SDL3-&sdl3-version;.tar.gz">
+]>
+
+<sect1 id="sdl3" xreflabel="SDL3-&sdl3-version;">
+  <?dbhtml filename="sdl3.html"?>
+
+  <title>SDL3-&sdl3-version;</title>
+
+  <indexterm zone="sdl3">
+    <primary sortas="a-SDL3">SDL3</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til SDL3</title>
+
+    <para>
+      The Simple DirectMedia Layer Version 3 (SDL3 (forkortet) er et 
+      plattformuavhengig bibliotek designet for å gjøre det enkelt å skrive 
+      multimedie programvare, som spill og emulatorer. Det er den nye versjonen 
+      av SDL og tilbyr flere funksjoner enn SDL2.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting (HTTP): <ulink url="&sdl3-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">SDL3 Avhengigheter</bridgehead>
+
+    <para role="required">
+      <xref linkend="cmake"/>
+    </para>
+
+    <para role="recommended">
+      <xref linkend="alsa-lib"/>,
+      &gbm;,
+      <xref linkend="libxkbcommon"/>,
+      &opengl;,
+      <xref linkend="pulseaudio"/>,
+      <xref linkend="vulkan-sdk"/>,
+      <xref linkend="wayland-protocols"/>, og
+      <xref linkend="xorg7-lib"/> (hvis disse ikke er til stede, 
+      blir ikke de tilsvarende modulene bygget)
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av SDL3</title>
+
+    <para>
+      Installer SDL3 ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+cmake -D CMAKE_INSTALL_PREFIX=/usr \
+      -D CMAKE_BUILD_TYPE=Release  \
+      -D SDL_TEST_LIBRARY=OFF      \
+      -D SDL_STATIC=OFF            \
+      -D SDL_RPATH=OFF             \
+      -W no-dev -G Ninja ..       &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installasjon av SDL3</title>
+
+    <para>
+      Installer lib32-SDL3 ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+cmake -D CMAKE_INSTALL_PREFIX=/usr   \
+      -D CMAKE_INSTALL_LIBDIR=lib32  \
+      -D CMAKE_BUILD_TYPE=Release    \
+      -D SDL_TEST_LIBRARY=OFF        \
+      -D SDL_STATIC=OFF              \
+      -D SDL_RPATH=OFF               \
+      -W no-dev -G Ninja ..         &amp;&amp;
+
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install      &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32   &amp;&amp;
+rm -rf DESTDIR                          &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    <para>
+      <parameter>-D SDL_TEST_LIBRARY=OFF</parameter>: Denne parameteren 
+      deaktiverer bygging av et unødvendig statisk bibliotek beregnet for 
+      testene. Det bygges i testkompilasjonen.
+    </para>
+
+    <para>
+      <parameter>-D SDL_STATIC=OFF</parameter>: Denne parameteren deaktiverer 
+      bygging av statiske biblioteker.
+    </para>
+
+    <para>
+      <parameter>-D SDL_RPATH=OFF</parameter>: Denne parameteren deaktiverer 
+      installasjon med rpath. Ellers kan det forårsake sikkerhetsproblemer.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>Ingen</seg>
+        <seg>libSDL3</seg>
+        <seg>/usr/include/SDL3 og
+             /usr/lib/cmake/SDL3</seg>
+        <!-- We technically have /usr/share/licenses/sdl3, but I don't think
+             we really need to document its presence. -->
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libsdl3">
+        <term><filename class="libraryfile">libSDL3</filename></term>
+        <listitem>
+          <para>
+            inneholder funksjoner som gir lavnivåtilgang til lyd, tastatur, 
+            mus, joystick, 3D-maskinvare via OpenGL og 2D rammebuffer 
+            på tvers av flere plattformer
+          </para>
+          <indexterm zone="sdl3 libsdl3">
+            <primary sortas="c-libsdl3">libSDL3</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

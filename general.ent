@@ -282,7 +282,7 @@ export -f as_root</userinput></screen>
 
 <!ENTITY install-base "install -vDm">
 <!ENTITY install-dir  "install -vdm755">
-<!ENTITY install-sudir  "install -vdm1755">
+<!ENTITY install-sudir "install -vdm1755">
 <!ENTITY install-exec "&install-base;755">
 <!ENTITY install-file "&install-base;644">
 
@@ -295,8 +295,7 @@ export -f as_root</userinput></screen>
 <!ENTITY opengl "<xref linkend='libglvnd'/>">
 <!ENTITY gbm    "GBM (<xref linkend='libgbm'/> eller <xref linkend='mesa'/>)">
 
-<!ENTITY sdl2 "SDL2 (<xref linkend='sdl2'/> eller <ulink
-               url='&slfs-website;/graph/sdl2.html'>sdl2-compat</ulink>)">
+<!ENTITY sdl2 "<xref linkend='sdl2'/>">
 
 <!ENTITY % xinclude-entities SYSTEM "xent.ent">
 %xinclude-entities;
