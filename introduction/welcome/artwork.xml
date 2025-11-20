@@ -345,7 +345,8 @@
 
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/favicon-high.ico" format="BMP"/>
+          <imagedata fileref="../images/favicon-high.ico" format="BMP"
+          width="300"/>
         </imageobject>
       </mediaobject>
 
