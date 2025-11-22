@@ -44,6 +44,10 @@
       <para>21. november 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Steam: 1.0.0.84 -&gt; 1.0.0.85. Fikser
+          <ulink url="&glfs-issues;/320">#320</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.117 -&gt; 3.118.1.</para>
         </listitem>
         <listitem>
