@@ -44,6 +44,10 @@
       <para>21. november 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - VKD3D-Proton: 2.14.1 -&gt; 3.0. Fikser
+          <ulink url="&glfs-issues;/319">#319</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Steam: 1.0.0.84 -&gt; 1.0.0.85. Fikser
           <ulink url="&glfs-issues;/320">#320</ulink>.</para>
         </listitem>
