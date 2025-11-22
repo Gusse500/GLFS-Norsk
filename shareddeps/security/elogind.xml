@@ -5,7 +5,7 @@
   %general-entities;
 
   <!ENTITY elogind-root     "https://github.com/elogind/elogind/archive">
-  <!ENTITY elogind-download "&elogind-root;/v&elogind-version;/elogind-&elogind-version;.tar.gz">
+  <!ENTITY elogind-download "&elogind-root;/V&elogind-version;/elogind-&elogind-version;.tar.gz">
 ]>
 
 <sect1 id="elogind" revision="sysv" xreflabel="elogind-&elogind-version;">

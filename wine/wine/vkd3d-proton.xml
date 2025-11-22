@@ -52,9 +52,11 @@
 KhronosGroup/SPIRV-Headers/archive/&vkd3d-proton-spirv;.tar.gz
 KhronosGroup/Vulkan-Headers/archive/&vkd3d-proton-vulkan;.tar.gz
 HansKristian-Work/dxil-spirv/archive/&vkd3d-proton-dxil-spirv;.tar.gz
-KhronosGroup/SPIRV-Cross/archive/&vkd3d-proton-spirv-cross;.tar.gz
-KhronosGroup/SPIRV-Headers/archive/&vkd3d-proton-dxil-spirv-headers;.tar.gz
-KhronosGroup/SPIRV-Tools/archive/&vkd3d-proton-spirv-tools;.tar.gz</literal>
+KhronosGroup/SPIRV-Cross/archive/&vkd3d-proton-spirv-cross;.tar.gz<!--
+KhronosGroup/SPIRV-Headers/archive/&vkd3d-proton-dxil-spirv-headers;.tar.gz-->
+KhronosGroup/SPIRV-Tools/archive/&vkd3d-proton-spirv-tools;.tar.gz
+doitsujin/dxbc-spirv/archive/&vkd3d-proton-dxbc;.tar.gz
+KhronosGroup/SPIRV-Headers/archive/&vkd3d-proton-dxbc-spirv;.tar.gz</literal>
 EOF</userinput></screen>
 
     <para>
@@ -85,18 +87,22 @@ done</userinput></screen>
       Gjør det nå:
     </para>
 
-<screen><userinput>mv -T SPIRV-Headers-&vkd3d-proton-spirv;                \
-      vkd3d-proton-&vkd3d-proton-version;/khronos/SPIRV-Headers                            &amp;&amp;
-mv -T Vulkan-Headers-*                                                      \
-      vkd3d-proton-&vkd3d-proton-version;/khronos/Vulkan-Headers                           &amp;&amp;
-mv -T dxil-spirv-*                                                          \
-      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv                           &amp;&amp;
-mv -T SPIRV-Cross-*                                                         \
-      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/SPIRV-Cross   &amp;&amp;
-mv -T SPIRV-Headers-&vkd3d-proton-dxil-spirv-headers;                \
-      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/spirv-headers &amp;&amp;
-mv -T SPIRV-Tools-*                                                         \
-      vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/SPIRV-Tools</userinput></screen>
+<screen><userinput>cp -RT SPIRV-Headers-&vkd3d-proton-spirv;             \
+       vkd3d-proton-&vkd3d-proton-version;/khronos/SPIRV-Headers                            &amp;&amp;
+mv -T  Vulkan-Headers-*                                                   \
+       vkd3d-proton-&vkd3d-proton-version;/khronos/Vulkan-Headers                           &amp;&amp;
+mv -T  dxil-spirv-*                                                       \
+       vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv                           &amp;&amp;
+mv -T  SPIRV-Cross-*                                                      \
+       vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/SPIRV-Cross   &amp;&amp;
+mv -T  SPIRV-Headers-&vkd3d-proton-spirv;             \
+       vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/spirv-headers &amp;&amp;
+mv -T  SPIRV-Tools-*                                                      \
+       vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/third_party/SPIRV-Tools   &amp;&amp;
+mv -T  dxbc-spirv-*                                                       \
+       vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/subprojects/dxbc-spirv    &amp;&amp;
+mv -T  SPIRV-Headers-&vkd3d-proton-dxbc-spirv;             \
+       vkd3d-proton-&vkd3d-proton-version;/subprojects/dxil-spirv/subprojects/dxbc-spirv/submodules/spirv_headers</userinput></screen>
 <!-- Submodules will be the death of me and alignment. -->
 
 
@@ -108,6 +114,7 @@ mv -T SPIRV-Tools-*                                                         \
 
 <screen><userinput>cd vkd3d-proton-&vkd3d-proton-version;</userinput></screen>
 
+<!--
     <para>
       Rett generering av en ødelagt versjon som oppretter en ødelagt 
       deklarasjonsfil under kompilering:
@@ -115,6 +122,7 @@ mv -T SPIRV-Tools-*                                                         \
 
 <screen><userinput>sed "165s/.*/  command : \['echo', '0'\],/" \
   -i meson.build</userinput></screen>
+-->
 
     <note><para>
       Hvis du bruker multilib, er det opp til deg om du vil installere 32-biters 
