@@ -23,8 +23,8 @@
     <title>Introduksjon til libgbm</title>
 
     <para>
-      libgbm biblioteket tilbyr API funksjoner for å administrere den grafiske 
-      bufferen. Det brukes av forskjellige biblioteker og applikasjoner som 
+      libgbm biblioteket tilbyr API funksjoner for å administrere minnebuffere.  
+      Det brukes av forskjellige biblioteker og applikasjoner som 
       Wayland kompositorer. Mesa leverer libgbm, men krever avhengigheter som 
       ikke er nødvendige for å installere bare libgbm. Denne pakken lar deg 
       installere bare biblioteket. Hvis du har tenkt å installere <xref
@@ -135,7 +135,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
-            er Grafikkbufferbehandling biblioteket
+            er biblioteket for generisk bufferhåndtering
           </para>
           <indexterm zone="libgbm lib-libgbm">
             <primary sortas="c-lib-libgbm">libgbm</primary>
