@@ -466,9 +466,7 @@ ldconfig</userinput></screen>
     <para>
       <option>-D libgbm-external=true</option>: Dette lenker mot 
       systeminstallerte <filename class="libraryfile">libgbm</filename> og
-      deaktiverer bygging av GBM hvis den er installert. Når du oppdaterer denne 
-      pakken, anbefales det å også oppdatere GBM slik at dette alternativet 
-      ikke brukes.
+      deaktiverer bygging av GBM hvis den er installert.
     </para>
 
     <para>
@@ -511,19 +509,7 @@ ldconfig</userinput></screen>
         </seg>
         <seg>
           <!-- Begin DRI Driver Stubs -->
-          libdril_dri og symbolske lenker til den:
-          crocus_dri,
-          i915_dri,
-          iris_dri,
-          kms_swrast_dri,
-          nouveau_dri,
-          r300_dri,
-          r600_dri,
-          radeonsi_dri,
-          swrast_dri,
-          virtio_gpu_dri,
-          vmwgfx_dri, og
-          zink_dri
+          libdril_dri og flere symbolske lenker til den
           <!-- End DRI Driver Stubs -->
         </seg>
         <seg>
@@ -561,7 +547,6 @@ ldconfig</userinput></screen>
         <seg>
           <!-- Begin directories -->
           <!-- /usr/include/GL is installed by xorg-protos -->
-          /usr/include/{EGL,GLES2,GLES3,KHR},
           /usr/lib/{dri,gbm,vdpau},
           /usr/share/drirc.d (inneholder løsninger for diverse applikasjoner, 
           spesielt nettlesere og spill),
@@ -633,8 +618,7 @@ ldconfig</userinput></screen>
         <term><filename class="libraryfile">libgbm</filename></term>
         <listitem>
           <para>
-            er Mesa Graphics Buffer
-            Manager bibliotek
+            er Mesa versjonen av Generic Buffer Management biblioteket
           </para>
           <indexterm zone="mesa mesa-libgbm">
             <primary sortas="c-mesa-libgbm">libgbm</primary>
