@@ -28,6 +28,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nv-codec-headers.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rustc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cbindgen.xml"/>
