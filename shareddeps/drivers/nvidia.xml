@@ -92,9 +92,8 @@
         <listitem>
           <para>
             <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink>
-            (for NVENC, NVDEC, Optical Flow, og annen maskinvare
-            akselerasjon ikke levert av VDPAU; installer etter å ha fulgt denne
-            siden)
+            (for å bygge inn direkte CUDA støtte i diverse pakker som FFmpeg 
+            eller OBS-Studio; installer etter å ha fulgt denne siden)
           </para>
         </listitem>
 <!-- NOT READY
@@ -108,12 +107,14 @@
         <listitem>
           <para>
             <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for
-            <command>nvidia-settings</command>)
+            <command>nvidia-settings</command>; Installer etter å ha fulgt 
+            denne siden)
           </para>
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libvdpau"/> (for å bruke VDPAU driver)
+            <xref linkend="nvidia-vaapi-driver"/> (for VA-API støtte; installer
+            etter å ha fulgt denne siden)
           </para>
         </listitem>
         <listitem>
@@ -135,7 +136,8 @@
           <para>
             <xref linkend="xorg-server"/> (nødvendig for å kjøre
             <command>nvidia-xconfig</command>, som i <xref
-            linkend="whatnow"/>)
+            linkend="whatnow"/>; installer etter å ha fulgt denne siden)
+
           </para>
         </listitem>
       </itemizedlist>
