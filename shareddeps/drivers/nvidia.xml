@@ -137,7 +137,6 @@
             <xref linkend="xorg-server"/> (nødvendig for å kjøre
             <command>nvidia-xconfig</command>, som i <xref
             linkend="whatnow"/>; installer etter å ha fulgt denne siden)
-
           </para>
         </listitem>
       </itemizedlist>
@@ -715,7 +714,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libnvidia-tls,
           libnvidia-wayland-client,
           libOpenCL,
-          libvdpau_nvidia,
           nvidia-drm_gbm,
           nvidia_drv, og
           for <xref linkend="wine"/> (_nvngx,
@@ -1189,19 +1187,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           </para>
           <indexterm zone="nvidia libOpenCL">
             <primary sortas="c-libOpenCL">libOpenCL</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libvdpau_nvidia">
-        <term><filename class="libraryfile">libvdpau_nvidia</filename></term>
-        <listitem>
-          <para>
-            gir NVIDIA implementering for
-            VDPAU API
-          </para>
-          <indexterm zone="nvidia libvdpau_nvidia">
-            <primary sortas="c-libvdpau_nvidia">libvdpau_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>
