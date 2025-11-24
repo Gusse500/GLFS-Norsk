@@ -18,7 +18,7 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduksjon til nv-codec-headers (ffnvcodec)</title>
+    <title>Introduksjon til nv-codec-headers</title>
 
     <para>
       Pakken nv-codec-headers inneholder deklarasjoner for samhandling med 
@@ -38,7 +38,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installasjon av nv-codec-headers (ffnvcodec)</title>
+    <title>Installasjon av nv-codec-headers</title>
 
     <para>
       Installer nv-codec-headers ved å kjøre følgende 
