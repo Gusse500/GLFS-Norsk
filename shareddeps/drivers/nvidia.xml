@@ -661,6 +661,27 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
 
   </sect2>
 
+  <sect2>
+    <title>Fortsette</title>
+
+    <para>
+      Hvis du legger alle filene som i konfigurasjonsdelen, burde du ikke trenge 
+      Mesa for noen pakker i boken eller i BLFS. OpenGL, DRI og EGL filene som 
+      er oppgitt her, burde være passende. GNOME og KDE er kjent for å fungere 
+      med denne konfigurasjonen.
+    </para>
+
+    <para>
+      Resten av dette kapittelet kan ende opp med pakker du ikke vil 
+      hente med mindre du trenger dem senere, som i tilfellet med LLVM og Rustc 
+      som trengs for GTK og Firefox. Uansett har du alt du trenger for de 
+      påfølgende kapitlene. Du kan installere <xref linkend="nvidia-vaapi-driver"/> 
+      hvis du ønsker det, så hoppe over til <xref linkend="x"/>, 
+      eller du kan hoppe over til <xref linkend="x"/> med en gang.
+    </para>
+
+  </sect2>
+
   <sect2 role="content">
     <title>Innhold</title>
 
