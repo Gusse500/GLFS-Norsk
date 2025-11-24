@@ -115,6 +115,8 @@ ldconfig</userinput></screen>
   <sect2 role="commands">
     <title>Parameterforklaringer</title>
 
+    &options-cmake;
+
     <para>
       <parameter>-D SDL_TEST_LIBRARY=OFF</parameter>: Denne parameteren 
       deaktiverer bygging av et unødvendig statisk bibliotek beregnet for 
