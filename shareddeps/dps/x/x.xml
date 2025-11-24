@@ -13,8 +13,7 @@
   <para>
     Dette kapittelet dekker X11 pakker i tillegg til den grunnleggende X11 
     programvaren. Det kan være noen pakker du fortsatt trenger her hvis du 
-    bruker Wayland, som for eksempel XCB Utils, Xwayland og inndata drivere, 
-    nemlig libinput og libevdev.
+    bruker Wayland, nemlig Xwayland og dets avhengigheter libevdev.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="xbitmaps.xml"/>

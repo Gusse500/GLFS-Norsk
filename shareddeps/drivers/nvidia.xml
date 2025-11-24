@@ -137,7 +137,6 @@
             <xref linkend="xorg-server"/> (nødvendig for å kjøre
             <command>nvidia-xconfig</command>, som i <xref
             linkend="whatnow"/>; installer etter å ha fulgt denne siden)
-
           </para>
         </listitem>
       </itemizedlist>
@@ -662,6 +661,27 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
 
   </sect2>
 
+  <sect2>
+    <title>Fortsette</title>
+
+    <para>
+      Hvis du legger alle filene som i konfigurasjonsdelen, burde du ikke trenge 
+      Mesa for noen pakker i boken eller i BLFS. OpenGL, DRI og EGL filene som 
+      er oppgitt her, burde være passende. GNOME og KDE er kjent for å fungere 
+      med denne konfigurasjonen.
+    </para>
+
+    <para>
+      Resten av dette kapittelet kan ende opp med pakker du ikke vil 
+      hente med mindre du trenger dem senere, som i tilfellet med LLVM og Rustc 
+      som trengs for GTK og Firefox. Uansett har du alt du trenger for de 
+      påfølgende kapitlene. Du kan installere <xref linkend="nvidia-vaapi-driver"/> 
+      hvis du ønsker det, så hoppe over til <xref linkend="x"/>, 
+      eller du kan hoppe over til <xref linkend="x"/> med en gang.
+    </para>
+
+  </sect2>
+
   <sect2 role="content">
     <title>Innhold</title>
 
@@ -715,7 +735,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libnvidia-tls,
           libnvidia-wayland-client,
           libOpenCL,
-          libvdpau_nvidia,
           nvidia-drm_gbm,
           nvidia_drv, og
           for <xref linkend="wine"/> (_nvngx,
@@ -1189,19 +1208,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           </para>
           <indexterm zone="nvidia libOpenCL">
             <primary sortas="c-libOpenCL">libOpenCL</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libvdpau_nvidia">
-        <term><filename class="libraryfile">libvdpau_nvidia</filename></term>
-        <listitem>
-          <para>
-            gir NVIDIA implementering for
-            VDPAU API
-          </para>
-          <indexterm zone="nvidia libvdpau_nvidia">
-            <primary sortas="c-libvdpau_nvidia">libvdpau_nvidia</primary>
           </indexterm>
         </listitem>
       </varlistentry>

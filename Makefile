@@ -19,13 +19,10 @@ RENDERTMP   := $(shell mktemp -d)
 HTML_ROOT   ?= $(HOME)/public_html
 DUMP_ROOT   ?= $(HOME)
 CHUNK_QUIET ?= 1
-ROOT_ID      =
 SHELL        = /bin/bash
 
-ALLXML := $(filter-out $(RENDERTMP)/%, \
-	$(wildcard *.xml */*.xml */*/*.xml */*/*/*.xml */*/*/*/*.xml))
-ALLXSL := $(filter-out $(RENDERTMP)/%, \
-	$(wildcard *.xsl */*.xsl */*/*.xsl */*/*/*.xsl */*/*/*/*.xsl))
+ALLXML := $(shell find . -mindepth 1 -name '*.xml' ! -path '$(RENDERTMP)/*')
+ALLXSL := $(shell find . -mindepth 1 -name '*.xsl' ! -path '$(RENDERTMP)/*')
 
 ifdef V
   Q =
@@ -76,9 +73,9 @@ glfs: html wget-list
 
 help:
 	@echo ""
-	@echo "make <parametere> <targets>"
+	@echo "make <parameters> <targets>"
 	@echo ""
-	@echo "Parametere:"
+	@echo "Parameters:"
 	@echo ""
 	@echo "  REV=<rev>            Bygg variant av boken"
 	@echo "                        Gyldige verdier for REV er:"
@@ -128,36 +125,29 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
 	@echo "Generering av delte XHTML filer..."
 	$(Q)xsltproc --nonet                                    \
 					--stringparam chunk.quietly $(CHUNK_QUIET) \
-					--stringparam rootid "$(ROOT_ID)"          \
 					--stringparam base.dir $(BASEDIR)/         \
 					stylesheets/glfs-chunked.xsl               \
 					$(RENDERTMP)/$(GLFSHTML)
-
+	
 	@echo "Kopiering av CSS kode, bilder og nedlastinger..."
-	$(Q)if [ ! -e $(BASEDIR)/stylesheets ]; then \
-      mkdir -p $(BASEDIR)/stylesheets;          \
-   fi;
-
+	$(Q)mkdir -p $(BASEDIR)/stylesheets
+	
 	$(Q)cp $(THEME_PATH)/$(THEME).lfs.css $(BASEDIR)/stylesheets/lfs.css
 	$(Q)cp stylesheets/lfs-xsl/lfs-print.css $(BASEDIR)/stylesheets
 	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
-
-	$(Q)if [ ! -e $(BASEDIR)/images ]; then \
-      mkdir -p $(BASEDIR)/images;          \
-   fi;
+	
+	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp -R images/* $(BASEDIR)/images
-
+	
 	$(Q)cd $(BASEDIR)/; sed -e "s@../images@images@g"           \
                            -i *.html
-
-	$(Q)if [ ! -e $(BASEDIR)/download ]; then \
-		mkdir -p $(BASEDIR)/download;          \
-   fi;
+	
+	$(Q)mkdir -p $(BASEDIR)/download
 	$(Q)rm -rf $(BASEDIR)/download/*
 	$(Q)cp -R download/* $(BASEDIR)/download
 	$(Q)rm -rf $(BASEDIR)/patches
 	$(Q)ln -sf download $(BASEDIR)/patches
-
+	
 	@echo "Kjører Tidy og obfuscate.sh på delt XHTML..."
 	$(Q)for filename in `find $(BASEDIR) -name "*.html"`; do       \
       tidy -config tidy.conf $$filename;                          \
@@ -165,20 +155,18 @@ $(BASEDIR)/index.html: $(RENDERTMP)/$(GLFSHTML) version wget-list
       bash obfuscate.sh $$filename;                               \
       sed -i -e "1,20s@text/html@application/xhtml+xml@g" $$filename; \
    done;
-
+	
 	@echo "Kopierer over eldre HTML..."
-	$(Q)if [ ! -e $(BASEDIR)/archive ]; then \
-		mkdir -p $(BASEDIR)/archive;          \
-	fi;
+	$(Q)mkdir -p $(BASEDIR)/archive
 	$(Q)cp -R archive/*.html $(BASEDIR)/archive
-
+	
 	$(Q)$(CLEAN)
 
 validate: $(RENDERTMP)/$(GLFSFULL)
 $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
-	$(Q)[ -d $(RENDERTMP) ] || mkdir -p $(RENDERTMP)
+	$(Q)mkdir -p $(RENDERTMP)
 	$(Q)trap '$(CLEAN)' EXIT
-
+	
 	@echo "Renderer boken for $(REV)..."
 	$(Q)xsltproc --nonet                               \
                 --xinclude                            \
@@ -186,7 +174,7 @@ $(RENDERTMP)/$(GLFSFULL): general.ent packages.ent $(ALLXML) $(ALLXSL) version
                 --stringparam profile.revision $(REV) \
                 stylesheets/lfs-xsl/profile.xsl       \
                 index.xml
-
+	
 	@echo "Validerer boken..."
 	$(Q)xmllint --nonet                             \
                --noent                             \
@@ -221,7 +209,7 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
                 --output $(BASEDIR)/test-links \
                 stylesheets/wget-list.xsl      \
                 $(RENDERTMP)/$(GLFSFULL)
-
+	
 	@echo "Sjekk av nettadresser, første omgang..."
 	$(Q)rm -f $(BASEDIR)/{good,bad,true_bad}_urls
 	$(Q)for URL in `cat $(BASEDIR)/test-links`; do                     \
@@ -232,7 +220,7 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
             echo $$URL >> $(BASEDIR)/good_urls 2>&1;                  \
          fi;                                                          \
    done
-
+	
 	@echo "Sjekk av nettadresser, andre omgang..."
 	$(Q)for URL2 in `cat $(BASEDIR)/bad_urls`; do                       \
          wget --spider --tries=2 --timeout=60 $$URL2 >>/dev/null 2>&1; \
@@ -242,7 +230,7 @@ $(BASEDIR)/test-links: $(RENDERTMP)/$(GLFSFULL) version
            echo $$URL2 >> $(BASEDIR)/good_urls 2>&1;                   \
          fi; \
    done
-
+	
 	$(Q)$(CLEAN)
 
 test-options:
