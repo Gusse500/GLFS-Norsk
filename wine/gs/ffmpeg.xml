@@ -87,15 +87,6 @@
           </para>
         </listitem>
       </itemizedlist>
-      <itemizedlist>
-        <para>For systemer med Intel grafikkort</para>
-        <listitem>
-          <para>
-            <xref linkend="libvdpau"/> og
-            <xref linkend="libvdpau-va-gl"/>
-          </para>
-        </listitem>
-      </itemizedlist>
     </para>
     <para role="optional">
       En komplett liste over valgfrie avhengigheter finnes i
@@ -106,8 +97,7 @@
           <para>
             <ulink
               url="&slfs-website;/general/cuda.html">CUDA</ulink> og
-            <ulink
-              url="&slfs-website;/general/nv-codec-headers.html">nv-codec-headers</ulink>
+            <xref linkend="nv-codec-headers"/>
           </para>
         </listitem>
       </itemizedlist>

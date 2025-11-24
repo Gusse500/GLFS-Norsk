@@ -41,6 +41,23 @@
     -->
 
     <listitem>
+      <para>23. november 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - VDPAU (libvdpau, libvdpau-va-gl): Fjernet. Fikser
+          <ulink url="&glfs-issues;/318">#318</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA-VA-API-Driver: Lagt til. Fikser
+          <ulink url="&glfs-issues;/321">#321</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - nv-codec-headers (ffnvcodec): Flyttet fra SLFS.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>21. november 2025</para>
       <itemizedlist>
         <listitem>

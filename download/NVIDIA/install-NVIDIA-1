@@ -11,7 +11,6 @@ X11_64=1 X11_32=1
 EGL_64=1 EGL_32=1
 GLESV2_64=1 GLESV2_32=1
 VULKAN=1 VULKAN_EGL=0
-VDPAU_64=1 VDPAU_32=1
 OPENCL_64=1 OPENCL_32=1
 CUDA_64=1 CUDA_32=1
 NGX=1
@@ -34,8 +33,6 @@ while [ $# -gt 0 ]; do
     --no-glesv2-lib32 )      GLESV2_32=0                       ;;
     --no-vulkan )            VULKAN=0                          ;;
     --vulkan-use-egl )       VULKAN_EGL=1                      ;;
-    --no-vdpau-64bit )       VDPAU_64=0                        ;;
-    --no-vdpau-lib32 )       VDPAU_32=0                        ;;
     --no-opencl-64bit )      OPENCL_64=0                       ;;
     --no-opencl-lib32 )      OPENCL_32=0                       ;;
     --no-cuda-64bit )        CUDA_64=0                         ;;
@@ -70,8 +67,6 @@ echo "                                      instead of libGLX_nvidia (this can c
 echo "                                      various crashes in X11 Vulkan apps,"
 echo "                                      including the Steam Proton compatibility"
 echo "                                      layer for Direct3D games)"
-echo "  --no-vdpau-64bit                    do not install the VDPAU 64-bit libraries"
-echo "  --no-vdpau-lib32                    do not install the VDPAU lib32 libraries"
 echo "  --no-opencl-64bit                   do not install the OpenCL 64-bit loader"
 echo "                                      and driver"
 echo "  --no-opencl-lib32                   do not install the OpenCL lib32 loader and"
@@ -142,7 +137,7 @@ if [ $MANIFEST_FILE_VERSION != $MANIFEST_VERSION ]; then
 fi
 
 manifest_uninstall() {
-  for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,vdpau-64,vdpau-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
+  for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
     for bin in $(cat $NV_MANIFEST | grep $type | cut -d':' -f2-); do
       find $LIBDIR $LIB32 $BINDIR -name "$bin.so*" -exec $RM_BIN {} \;
       find $LIBDIR $LIB32 $BINDIR -name "$bin" -exec $RM_BIN {} \;
@@ -283,21 +278,6 @@ if [ $VULKAN = 1 ]; then
   fi
 fi
 
-if [ $VDPAU_64 = 1 ]; then
-  echo "Installing 64-bit VDPAU libraries..."
-  mkdir -pv $LIBDIR/vdpau
-  for lib in $(cat $NV_MANIFEST | grep vdpau-64: | cut -d':' -f2-); do
-    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR/vdpau
-  done
-fi
-if [ $VDPAU_32 = 1 ]; then
-  echo "Installing lib32 VDPAU libraries..."
-  mkdir -pv $LIB32/vdpau
-  for lib in $(cat $NV_MANIFEST | grep vdpau-32: | cut -d':' -f2-); do
-    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32/vdpau
-  done
-fi
-
 if [ $OPENCL_64 = 1 ]; then
   echo "Installing 64-bit OpenCL libraries..."
   mkdir -pv $LIBDIR $OPENCLICDDIR
@@ -405,7 +385,7 @@ fi
 
 echo "Writing to $SHAREDIR/nvidia/installed_files..."
 mkdir -pv $SHAREDIR/nvidia
-for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,vdpau-64,vdpau-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
+for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
   for bin in $(cat $NV_MANIFEST | grep $type | cut -d':' -f2-); do
     find $LIBDIR $LIB32 $BINDIR -name "$bin.so*" >> $SHAREDIR/nvidia/installed_files1
     find $LIBDIR $LIB32 $BINDIR -name "$bin" >> $SHAREDIR/nvidia/installed_files1

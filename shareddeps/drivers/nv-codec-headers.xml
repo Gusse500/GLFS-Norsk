@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY nv-codec-headers-download
+    "https://github.com/FFmpeg/nv-codec-headers/releases/download/n&nv-codec-headers-version;/nv-codec-headers-&nv-codec-headers-version;.tar.gz">
+]>
+
+<sect1 id="nv-codec-headers" xreflabel="nv-codec-headers-&nv-codec-headers-version; (ffnvcodec)">
+  <?dbhtml filename="nv-codec-headers.html"?>
+
+  <title>nv-codec-headers-&nv-codec-headers-version; (ffnvcodec)</title>
+
+  <indexterm zone="nv-codec-headers">
+    <primary sortas="a-nv-codec-headers">nv-codec-headers (ffnvcodec)</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til nv-codec-headers (ffnvcodec)</title>
+
+    <para>
+      Pakken nv-codec-headers inneholder deklarasjoner for samhandling med 
+      NVIDIA codec API-er. Denne pakken heter også ffnvcodec. Hvis du ikke vil 
+      bruke eller målrette <xref linkend="nvidia"/>, 
+      hopp over denne pakken.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&nv-codec-headers-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av nv-codec-headers (ffnvcodec)</title>
+
+    <para>
+      Installer nv-codec-headers ved å kjøre følgende 
+      kommandoer som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make PREFIX=/usr install</userinput></screen>
+
+    <para>
+      Hvis du bruker multilib, lag en symlink for pkgconfig 
+      filen som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ln -sfv /usr/lib{,32}/pkgconfig/ffnvcodec.pc</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
+
+      <seglistitem>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          /usr/include/ffnvcodec
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+</sect1>

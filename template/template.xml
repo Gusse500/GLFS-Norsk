@@ -35,11 +35,6 @@
       This is useful for...
     </para>
 
-    <!-- if it builds but hasn't been tested: -->
-    &lfs1?_built;
-    <!-- if it works: -->
-    &lfs1?_checked;
-
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -66,7 +61,7 @@
       a sentence. If there are more than two, they must be separated by commas
       with the last member having "and" in front of it. The use of a serial
       comma is preferred (a comma after the next to last member before the
-      "and"). BLFS_DEPENDENCY should be an "id" attribute defined somewhere
+      "and"). GLFS_DEPENDENCY should be an "id" attribute defined somewhere
       in the book (usually in a <sect1>). -->
       <xref role="runtime" linkend="RUNTIME_DEPENDENCY"/> (runtime)
       <!-- Specifying that a dependency is a runtime one may avoid circular
@@ -213,15 +208,7 @@ mv doc/* /usr/share/doc/template-&template-version;</userinput></screen>
   <sect2 role="commands">
     <title>Command Explanations</title>
 
-    <note><para>
-      Invoke <userinput>command</userinput> for a full list of options.
-    </para></note>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/static-libraries.xml"/>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude"
-      href="../../xincludes/gtk-doc-rebuild.xml"/>
+    &options-configure;
 
     <para>
       <command>COMMAND</command>: This command does something.
@@ -329,17 +316,17 @@ EOF</userinput></screen>
 
       <seglistitem>
         <seg>
-          PROGRAM1, PROGRAM2 and PROGRAM3<!-- no period here since it is not
+          PROGRAM1, PROGRAM2, and PROGRAM3<!-- no period here since it is not
           a sentence -->
         </seg>
         <seg>
-          libLIBRARY1.so, libLIBRARY2.so and libLIBRARY3.so<!-- no period here
+          libLIBRARY1, libLIBRARY2, and libLIBRARY3<!-- no period here
           since it is not a sentence -->
         </seg>
         <seg>
           /etc/TEMPLATE, /usr/include/TEMPLATE, /usr/lib/TEMPLATE,
           /usr/share/TEMPLATE-&TEMPLATE-version;,
-          /usr/share/doc/TEMPLATE-&TEMPLATE-version; and
+          /usr/share/doc/TEMPLATE-&TEMPLATE-version;, and
           /var/lib/TEMPLATE<!-- no period here
           since it is not a sentence -->
         </seg>
@@ -380,16 +367,19 @@ EOF</userinput></screen>
       </varlistentry>
 
       <varlistentry id="libLIBRARY1">
-        <term><filename class="libraryfile">libLIBRARY1.so</filename></term>
+        <term><filename class="libraryfile">libLIBRARY1</filename></term>
         <listitem>
           <para>
             contains functions that ..... (no period at the end)
           </para>
           <indexterm zone="TEMPLATE libLIBRARY1">
-            <primary sortas="c-libLIBRARY1">libLIBRARY1.so</primary>
+            <primary sortas="c-libLIBRARY1">libLIBRARY1</primary>
           </indexterm>
         </listitem>
       </varlistentry>
+
     </variablelist>
+
   </sect2>
+
 </sect1>
