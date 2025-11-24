@@ -656,11 +656,6 @@ wget &mesa-raw-repo;/include/EGL/eglmesaext.h \
 wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
   -O /usr/include/EGL/eglext_angle.h</userinput></screen>
 
-      <note><para>
-        Du bør hoppe over til <xref linkend="xcb-utils"/> etter at du er ferdig
-        med denne siden med mindre du ønsker å installere ekstra programvare.
-      </para></note>
-
     </sect3>
 
   </sect2>

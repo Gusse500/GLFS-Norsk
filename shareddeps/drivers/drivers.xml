@@ -25,17 +25,18 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glu.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libgbm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvdpau.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nv-codec-headers.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-vaapi-driver.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rustc.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cbindgen.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rust-bindgen.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-llvm-translator.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libclc.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ply.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cython.xml"/>

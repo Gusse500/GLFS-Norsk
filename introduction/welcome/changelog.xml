@@ -44,6 +44,10 @@
       <para>23. november 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA-VA-API-Driver: Lagt til. Fikser
+          <ulink url="&glfs-issues;/321">#321</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - nv-codec-headers (ffnvcodec): Flyttet fra SLFS.</para>
         </listitem>
       </itemizedlist>

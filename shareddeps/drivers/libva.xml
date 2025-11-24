@@ -49,19 +49,7 @@
       </para>
 
       <para role="recommended">
-        &opengl; og
-        VA API driveren som passer for maskinvaren i systemet ditt:
-        <ulink url="&blfs-svn;/multimedia/intel-vaapi-driver.html">intel-vaapi-driver</ulink>
-        (for Intel GPU-er levert med Haswell CPU-er eller tidligere),
-        <ulink url="&blfs-svn;/multimedia/intel-media-driver.html">intel-media-driver</ulink>
-        (for Intel GPU-er levert med Broadwell CPU-er eller nyere), og
-        <xref linkend="mesa"/> (gir <literal>r600</literal>,
-        <literal>radeonsi</literal>, og <literal>nouveau</literal> VA API
-        drivere, for ATI/AMD Radeon HD 2xxx GPU-er og senere, og
-        <ulink url='https://nouveau.freedesktop.org/VideoAcceleration.html'>
-        støttede
-        NVIDIA GPU-er</ulink>; det er en sirkulær avhengighet, les
-        <xref linkend="mesa"/> side for informasjon om hvordan du bryter den)
+        &opengl;
       </para>
 
       <para role="optional">
@@ -127,6 +115,43 @@ ninja</userinput></screen>
 cp -vr DESTDIR/usr/lib32/* /usr/lib32                  &amp;&amp;
 rm -rf DESTDIR                                         &amp;&amp;
 ldconfig</userinput></screen>
+
+    </sect2>
+
+    <sect2 role="using">
+      <title>Bruke VA-API</title>
+
+      <para>
+        For å bruke VA-API trenger du en VA-API-driver. Hvilken du trenger 
+        avhenger av GPU-en din og driveren som brukes for den GPU-en. Driverne 
+        trengs under kjøring. For VA-API-drivere som kommer fra Mesa, er det en 
+        sirkulær avhengighet. Les fra <xref linkend="mesa"/> siden
+        for å se hvordan man bryter den.
+      </para>
+
+      <itemizedlist>
+        <listitem>
+          <para>For Intel iGPUs, Haswell CPUer eller tidligere, installer
+          <ulink url="&blfs-svn;/multimedia/intel-vaapi-driver.html">intel-vaapi-driver</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>For Intel iGPUs, Broadwell CPUer eller nyere, installer
+          <ulink url="&blfs-svn;/multimedia/intel-media-driver.html">intel-media-driver</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>For ATI/AMD Radeon HD 2xxx GPU-er og senere, installer
+          <xref linkend="mesa"/>.</para>
+        </listitem>
+        <listitem>
+          <para>For <ulink url='https://nouveau.freedesktop.org/VideoAcceleration.html'>
+          støttede NVIDIA GPU-er</ulink>, som bruker Mesas åpen kildekode 
+          drivere, installer <xref linkend="mesa"/>.</para>
+        </listitem>
+        <listitem>
+          <para>For NVIDIA GPU-er, som bruker <xref linkend="nvidia"/>, installer
+          <xref linkend="nvidia-vaapi-driver"/>.</para>
+        </listitem>
+      </itemizedlist>
 
     </sect2>
 
