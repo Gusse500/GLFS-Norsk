@@ -48,9 +48,10 @@
 <!ENTITY maintainer-firstname "GLFS">
 <!ENTITY maintainer-address   "zeckma.tech@gmail.com;">
 
-<!ENTITY lfs-website  "https://www.&norsklfs-domainname;">
+<!ENTITY lfs-website  "https://www.&lfs-domainname;">
+<!ENTITY norsk-lfs-website  "https://www.&norsklfs-domainname;">
 <!ENTITY glfs-website "https://&norskglfs-domainname;/glfs">
-<!ENTITY slfs-website "https://glfs-book.github.io/slfs">
+<!ENTITY slfs-website "https://lfs.freding.no/slfs">
 <!-- downloads_root must have an entity because it is needed for scripts
      Note:  s/_/-/ in comment to avoid grep error
      It is also needed for systemd units
