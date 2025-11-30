@@ -41,11 +41,12 @@
     -->
 
     <listitem>
-      <para>24. november 2025</para>
+      <para>29. november 2025</para>
       <itemizedlist>
         <listitem>
           <para>[zeckma] - libatomic_ops: Lagt til. Fikser
           <ulink url="&glfs-issues;/326">#326</ulink>.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
