@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY laops-dl-root
+    "https://github.com/bdwgc/libatomic_ops/releases/download">
+  <!ENTITY libatomic_ops-download
+    "&laops-dl-root;/v&libatomic_ops-version;/libatomic_ops-&libatomic_ops-version;.tar.gz">
+]>
+
+<sect1 id="libatomic_ops" xreflabel="libatomic_ops-&libatomic_ops-version;">
+  <?dbhtml filename="libatomic_ops.html"?>
+
+  <title>libatomic_ops-&libatomic_ops-version;</title>
+
+  <indexterm zone="libatomic_ops">
+    <primary sortas="a-libatomic_ops">libatomic_ops</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til libatomic_ops</title>
+
+    <para>
+      <application>libatomic_ops</application> tilbyr implementeringer for 
+      oppdateringsoperasjoner for atomic minne på en rekke arkitekturer. Dette 
+      tillater direkte bruk av disse i rimelig portabel kode. I motsetning til 
+      tidligere lignende pakker, tar denne eksplisitt hensyn til 
+      minnebarrieresemantikk, og tillater konstruksjon av kode som involverer 
+      minimal overhead på tvers av en rekke arkitekturer. Noen systemer, som 
+      diverse Intel CPUer, støtter heller ikke native atomic operasjoner, og 
+      denne pakken tilbyr en erstatning.
+    </para>
+
+    <para>
+      Mange systemer trenger ikke denne pakken i GLFS eller SLFS, men kan være 
+      nødvendig i BLFS. Noen Intel systemer trenger imidlertid denne pakken for 
+      å levere atomics, som trengs av <xref linkend="libdrm"/>. Ellers vil ikke 
+      libdrm modulen for Intel plattformen bli bygget, noe som forårsaker en 
+      kaskade av problemer for pakker som <xref linkend="mesa"/>. Hvis du vet at 
+      plattformen din støtter Atomics, kan du trygt hoppe over denne pakken.
+    </para>
+
+    <bridgehead renderas="sect3">Pakkeinformasjon</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&libatomic_ops-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av libatomic_ops</title>
+
+    <para>
+      Installer libatomic_ops ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>./configure --prefix=/usr    \
+            --enable-shared  \
+            --disable-static \
+            --docdir=/usr/share/doc/libatomic_ops-&libatomic_ops-version; &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av lib32-libatomic_ops</title>
+
+    <para>
+      Installer lib32-libatomic_ops ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+./configure --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu \
+            --enable-shared          \
+            --disable-static &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-configure;
+
+    <para>
+      <parameter>--enable-shared</parameter>: Denne bryteren aktiverer bygging av
+      <filename class="libraryfile">libatomic_ops</filename> delte biblioteker.
+    </para>
+
+    &static-libraries;
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          libatomic_ops og libatomic_ops_gpl
+        </seg>
+        <seg>
+          /usr/include/libatomic_ops og
+          /usr/share/doc/libatomic_ops-&libatomic_ops-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libatomic_ops-lib">
+        <term><filename class="libraryfile">libatomic_ops</filename></term>
+        <listitem>
+          <para>
+            inneholder funksjoner for atomic minneoperasjoner under MIT 
+            lisensen
+          </para>
+          <indexterm zone="libatomic_ops libatomic_ops-lib">
+            <primary sortas="c-libatomic_ops">libatomic_ops</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libatomic_ops_gpl">
+        <term><filename class="libraryfile">libatomic_ops_gpl</filename></term>
+        <listitem>
+          <para>
+            inneholder stakk og malloc implementeringer under GPL lisensen
+          </para>
+          <indexterm zone="libatomic_ops libatomic_ops_gpl">
+            <primary sortas="c-libatomic_ops_gpl">libatomic_ops_gpl</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

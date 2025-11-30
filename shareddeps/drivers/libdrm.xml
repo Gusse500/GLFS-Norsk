@@ -38,12 +38,9 @@
     <bridgehead renderas="sect3">libdrm Avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="xorg7-lib"/> (for Intel KMS API støtte påkrevd av Mesa)
-    </para>
-
-    <para role="optional">
-      <ulink url="&blfs-svn;/general/libatomic_ops.html">libatomic_ops</ulink>
-      (kreves av arkitekturer uten opprinnelige atomic operasjoner)
+      <xref linkend="libatomic_ops"/> (kreves av arkitekturer uten innebygde 
+      atomic operasjoner) og <xref linkend="xorg7-lib"/> (for Intel KMS API
+      støtte som kreves av Mesa)
     </para>
 
   </sect2>

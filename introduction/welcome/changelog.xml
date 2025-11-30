@@ -44,6 +44,15 @@
       <para>24. november 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libatomic_ops: Lagt til. Fikser
+          <ulink url="&glfs-issues;/326">#326</ulink>.</para>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>24. november 2025</para>
+      <itemizedlist>
+        <listitem>
           <para>[renodr] - Oppgrader Python-versjonen til 3.14.</para>
         </listitem>
         <listitem>
