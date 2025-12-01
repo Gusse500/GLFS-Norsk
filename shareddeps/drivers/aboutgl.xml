@@ -10,278 +10,100 @@
 
   <title>Om OpenGL</title>
 
+  <para>
+    OpenGL er et eldre grafikk API på høyt nivå som de fleste grafikkpakker på 
+    Linux bruker i dag.
+  </para>
+
+  <para>
+    I BLFS, OpenGL biblioteker (<filename class="libraryfile">libGL</filename>
+    og andre) installeres fra Mesa. Dette står i kontrast til flere Linux 
+    distribusjoner som installerer disse bibliotekene fra <xref
+    linkend="libglvnd"/>. GLFS, i motsetning til BLFS, har tatt samme avgjørelse 
+    som disse distribusjonene og forventer at du installerer <xref
+    linkend="libglvnd"/>. Til tross for dette, <xref linkend="mesa"/> er 
+    nødvendig for mange systemer fordi det tilbyr nødvendige drivere, ikke bare 
+    OpenGL biblioteker. GLFS sørger for at instruksjonene i den pakken ber om 
+    libglvnd støtte slik at Mesa ikke bygger sine egne OpenGL biblioteker.
+  </para>
+
+  <note><para>
+    I BLFS støtter pakkene libglvnd, men BLFS nevner det ikke. Når BLFS sier at 
+    en pakke er avhengig av Mesa, betyr det at pakken vil trenge OpenGL 
+    biblioteker. (<xref linkend="libglvnd"/>) og/eller libgbm (<xref
+    linkend="libgbm"/> eller libgbm fra <xref linkend="mesa"/>). Enkelte sider 
+    vil også lenke til GLU. Du må imidlertid installere denne bokens versjon av
+    <xref linkend="glu"/> for å sikre kompatibilitet med libglvnd.
+  </para></note>
+
+  <para>
+    Hvis du ikke har installert noen pakker som er avhengige av OpenGL ennå, kan 
+    du gå videre og installere <xref linkend="libglvnd"/> og driveren for GPU-en 
+    din. Hvis du har installert Mesa fra BLFS, har du sannsynligvis OpenGL 
+    bibliotekene som leveres av Mesa. Hovedproblemene du vil støte på ved 
+    overføring er forskjeller i soname i <filename class="libraryfile">libGL</filename> 
+    samt potensielle ABI problemer. Som et resultat vil mange pakker kreve ny 
+    installasjon for å bruke de riktige bibliotekene. Av den grunn anbefales 
+    ikke overgang, og det kan være bedre å installere LFS og dens delprosjekter 
+    på nytt med libglvnd i tankene.
+  </para>
+
+  <para>
+    Selv om du kan installere de fleste pakkene i GLFS med Mesas OpenGL 
+    biblioteker, og til og med aktivere installasjon av disse bibliotekene fra 
+    Mesa i denne boken ved å fjerne et dokumentert alternativ, anbefales det 
+    sterkt at du ikke gjør det. Verken GLFS eller SLFS støtter den konfigurasjonen.
+  </para>
+
+  <para>
+    Det finnes mer informasjon om OpenGL og libglvnd. Hvis du bare vil lese 
+    boken slik det er tiltenkt, kan du hoppe over til installasjonen av 
+    libglvnd.
+  </para>
+
   <sect2>
-    <title>Hva er OpenGL?</title>
+    <title>Hvorfor installerer GLFS libglvnd</title>
 
     <para>
-      OpenGL er et API for 3D grafikk på relativt høyt nivå. Spesifikasjonen er 
-      definert av Khronos Group og implementert av forskjellige leverandører. 
-      Mesa var den første store som implementerte spesifikasjonen.
+      Hovedgrunnen til at GLFS forventer at brukere skal installere libglvnd er 
+      at <xref linkend="nvidia"/> og flere pakker og AppImages krever libglvnd 
+      enten direkte eller indirekte. For NVIDIA krever libglvnd direkte, mens 
+      AppImages lider av problemet nevnt tidligere i denne delen: forskjeller i 
+      soname-er, samt et manglende bibliotek. <filename
+      class="libraryfile">libGL</filename> har et soname som er forskjellig fra 
+      Mesa og <filename class="libraryfile">libGLX</filename> er ikke inkludert 
+      fra Mesa. Dette ødelegger de fleste AppImages. Som med andre pakker, kan 
+      byggesystemene deres føre til at konfigurasjonen feiler uten libglvnd som
+      <filename class="libraryfile">libOpenGL</filename> finnes ikke, og 
+      byggesystemene vil ikke kombinere <filename
+      class="libraryfile">libGL</filename> med <filename
+      class="libraryfile">libEGL</filename>.
     </para>
 
     <para>
-      Implementeringen ble knyttet til vindussystemer (og førte dermed til flere 
-      implementeringer) og drivere begrenset til de som var innenfor Mesas 
-      arkitektur. Hovedproblemet med dette er at de viktigste OpenGL bibliotekene
-      <footnote><para>
-        <filename class="libraryfile">libGL</filename>,
-        <filename class="libraryfile">libGLX</filename>, osv.
-      </para></footnote>
-      inneholdt implementeringene av OpenGL. Drivere utenfor Mesa som ikke var 
-      med i prosjektet av en gitt grunn, måtte tilpasse seg arkitekturen deres 
-      eller erstatte kjernebibliotekene med sine egne.
+      Disse problemene lekker inn i Supplemental LFS, som med Hyprland og 
+      OBS-Studio. Flatpak kan lide av det samme problemet. BLFS kan lide av dem 
+      på et tidspunkt, avhengig av når prosjekter gjør endringer som krever 
+      libglvnd i en eller annen form.
     </para>
+
+  </sect2>
+  <sect2>
+    <title>Vil BLFS tilby libglvnd</title>
 
     <para>
-      Etter å ha levert sine egne OpenGL kjernebiblioteker som var i konflikt med Mesa sine, 
-      noe som tvang distribusjoner til å forene seg gjennom forskjellige metoder, 
-      bestemte NVIDIA seg for å lage nye OpenGL kjernebiblioteker basert på aritger's <ulink
-      url="https://github.com/aritger/linux-opengl-abi-proposal/blob/mastedser/linux-opengl-abi-proposal.txt">
-      new OpenGL ABI proposal</ulink>. Resultatet var libglvnd prosjektet, som 
-      inneholder kjernebiblioteker i OpenGL som sender hvert API kall på riktig 
-      måte til en OpenGL drivers implementering av det. Ingen driver måtte 
-      lenger passe inn i en spesifikk arkitektur diktert av kjernebibliotekene i 
-      OpenGL. Dette førte til flere problemer da masseovergangen var fullført.
+      Med det økende antallet pakker som begynner å kreve libglvnd, 
+      er det et spørsmål om tid før BLFS må ta i bruk libglvnd. 
+      Det har vært forsøk på å få libglvnd inn i BLFS så snart 
+      som mulig for å unngå fremtidige problemer. Det viktigste 
+      fremstøtet finner du her <ulink
+      url="https://lists.linuxfromscratch.org/sympa/arc/blfs-dev/2025-09/msg00002.html">thread</ulink>.
+      Tråden nevner at Mesa leverer <filename
+      class="libraryfile">libGLX</filename>, dette er feil. Uansett, 
+      forespørselen ble avvist. Inntil BLFS har en pakke som krever libglvnd, 
+      vil den sannsynligvis ikke flytte fra Mesas OpenGL biblioteker.
     </para>
-
-    <sect3>
-      <title>libOpenGL</title>
-
-      <para>
-        Mesa kan tilby:
-        <itemizedlist>
-          <listitem>
-            <para><filename class="libraryfile">libGL</filename></para>
-          </listitem>
-          <listitem>
-            <para><filename class="libraryfile">libGLX</filename></para>
-          </listitem>
-          <listitem>
-            <para><filename class="libraryfile">libEGL</filename></para>
-          </listitem>
-          <listitem>
-            <para><filename class="libraryfile">libGLESv1_CM</filename></para>
-          </listitem>
-          <listitem>
-            <para><filename class="libraryfile">libGLESv2</filename></para>
-          </listitem>
-        </itemizedlist>
-        <filename class="libraryfile">libGL</filename> er knyttet til <filename
-        class="libraryfile">libGLX</filename>. Dette er et mindre problem med 
-        vindussystemer som ikke er Xorg, og det generelle målet å ha et system 
-        uten Xorg/GLX. libglvnd gir dermed <filename
-        class="libraryfile">libOpenGL</filename> som ikke er knyttet til noe 
-        vindussystem. Byggesystemer som sjekker for OpenGL har en tendens til å 
-        velge <filename class="libraryfile">libOpenGL</filename> over <filename
-        class="libraryfile">libGL</filename>. Det bygde resultatet vil i så fall 
-        bli koblet mot <filename class="libraryfile">libOpenGL</filename>. Å 
-        prøve å kjøre det på et system med Mesas kjerne OpenGL biblioteker 
-        installert vil føre til feil.
-      </para>
-
-      <para>
-        I de fleste tilfeller, hvis <filename class="libraryfile">libOpenGL</filename> 
-        ikke er funnet under bygging av et prosjekt, <filename
-        class="libraryfile">libGL</filename> velges i stedet. Imidlertid, i noen 
-        prosjekter som støtter Wayland, vil byggesystemet nekte å konfigurere. 
-        Dette er fordi noen byggesystemer ikke liker å kombinere
-        <filename class="libraryfile">libGL</filename> med <filename
-        class="libraryfile">libEGL</filename>.
-      </para>
-
-    </sect3>
-
-    <sect3>
-      <title>Forskjellige Sonames</title>
-
-      <para>
-        Et soname er feltet etter filtypen til et bibliotek (delt objekt). Et 
-        eksempel er <filename class="libraryfile">libGL.so.1</filename>.
-        Etter <literal>libGL.so</literal> er <literal>.1</literal>.
-        <literal>1</literal> ville være soname. Når et program eller bibliotek 
-        er koblet mot et bibliotek, kobler det mot navnet på biblioteket med 
-        soname. Når det eneste eksisterende biblioteket på systemet har et annet 
-        soname, vil programvaren ikke fungere fordi biblioteket ikke kan 
-        finnes.
-      </para>
-
-      <para>
-        sonameene til Mesa og libglvnds kjernebiblioteker i OpenGL er 
-        forskjellige, spesielt når det gjelder <filename
-        class="libraryfile">libGLX</filename>. De fleste binærfiler er lenket 
-        mot libglvnds kjernebiblioteker i OpenGL, så sonameene de forventer vil 
-        ofte avvike fra Mesas kjernebiblioteker i OpenGL. AppImages har en 
-        tendens til å falle inn under dette.
-      </para>
-
-    </sect3>
-
-    <sect3>
-      <title>Holdningen til de fleste Linux distribusjoner, BLFS, GLFS, og SLFS</title>
-
-      <para>
-        De fleste Linux distribusjoner har allerede byttet til libglvnd. Noen 
-        distribusjoner, som i tilfellet med Debian, tilbyr også Mesas kjerne 
-        OpenGL biblioteker. Dermed har brukeren et alternativ i slike tilfeller. 
-        De fleste tilfeller vil ikke være slik. Den generelle holdningen basert 
-        på flertallet er at libglvnd nå er standard OpenGL leverandør for Linux.
-      </para>
-
-      <para>
-        Dette har vært tilfelle i flere år. BLFS har vært et unntak ved at det 
-        ikke har libglvnd, ikke har instruksjoner for å tillate libglvnd, og 
-        bare støtter Mesa. Forsøk på å få dette endret har blitt avvist. 
-        Standpunktet som vil stå i minst et par år fremover vil være at BLFS 
-        ikke vil støtte libglvnd. Som et resultat forårsaker dette problemer 
-        for libglvnd brukere.
-      </para>
-
-      <para>
-        Til tross for at BLFS ikke støtter libglvnd, er denne boken og 
-        Supplerende LFS
-        <footnote><para>
-          <ulink url="&slfs-website;"/>
-        </para></footnote>
-        støtter og foretrekker libglvnd fremfor Mesas kjernebiblioteker i OpenGL. 
-        Problemene som er beskrevet i forrige avsnitt, utgjør problemer som oppstår i 
-        denne boken og i SLFS, og for brukere av denne boken. Mesas kjernebiblioteker i 
-        OpenGL begrenser mengden programvare en bruker kan kjøre betraktelig.
-      </para>
-
-      <para>
-        Du kan fortsatt installere Mesas kjernebiblioteker i OpenGL hvis du 
-        ønsker det, men du vil støte på problemer utenfor BLFS. Valget er opp 
-        til deg. Instruksjoner er gitt for hver rute, men standardinstruksjonene 
-        er satt opp for libglvnd.
-      </para>
-
-      <important><para>
-        Det anbefales ikke å bytte mellom leverandører. Du bør velge svært nøye hvilken 
-        leverandør du skal installere fra. Hvis du vil bytte, kan det være best å 
-        bygge systemet på nytt på grunn av problemer med kobling og kjøretid.
-      </para></important>
-
-    </sect3>
 
   </sect2>
 
-  <sect2 id="aboutgles">
-    <title>Om GLES (OpenGL ES)</title>
-
-    <sect3>
-      <title>Hva er GLES?</title>
-
-      <para>
-        GLES, eller OpenGL ES, eller OpenGL for innebygde systemer, er hva det 
-        fulle navnet antyder: det er en nedskalert versjon av OpenGL, et 
-        delsett, med et litt annet API her og der. Det brukes hovedsakelig for 
-        enheter med ARM brikker som smarttelefoner og nettbrett, men brukes 
-        også i spillkonsoller. På Linux skrivebordet har du vanligvis 
-        skrivebord, eller full, OpenGL, EGL, GLX og GLESv{1,2,3}.
-      </para>
-
-      <para>
-        GLES, spesielt v2 og v3 brukes noen ganger, men hovedsakelig på ett 
-        område: i Wayland kompositorer og kompositorbiblioteker. Disse inkluderer 
-        Hyprland, Mutter, Wayfire og Wlroots. Selv om kompositorer kan bruke Vulkan, 
-        krever de fleste kompositorer GLES gjengivelse og tilbyr ikke en Vulkan løsning, 
-        eller noen annen gjengivelses-API løsning. GLESv1 er derimot en utdatert 
-        spesifikasjon av GLES API som har blitt faset ut i mange år. Denne boken 
-        deaktiverer bygging for GLESv1 ettersom den er utdatert. Du kan bygge API 
-        spesifikasjonen hvis du ønsker det.
-      </para>
-
-    </sect3>
-
-    <sect3>
-      <title>Historien om Wayland og GLES</title>
-
-      <para>
-        Når Wayland sett med protokoller ble laget, måtte 
-        det lages en referanseimplementering for å vise hva som var mulig, og 
-        hvordan man oppretter en kompositor for den nye protokollen. Resultatet var
-        Weston. For rendering APIet sitt brukte den, 
-        og bruker, GLES og EGL. Dette ble gjort slik at avhengigheten av 
-        bibliotekene fra X Vindussystemet var ikke 
-        nødvendig, at et Wayland basert oppsett var mulig. En liten fordel med å 
-        bruke GLES var at det kunne kjøre på innebygde systemer som Raspberry Pis.
-      </para>
-
-      <para>
-        Dermed fulgte kompositorer og kompositorbiblioteker etter og gjorde det 
-        samme. Imidlertid kan ethvert renderings API brukes så lenge det kan 
-        sendes gjennom EGL. Desktop OpenGL og Vulkan kan brukes uten problemer. 
-        I dag er situasjonen den samme, og de fleste kompositorer godtar ikke 
-        noe annet renderings API enn GLES.
-      </para>
-
-    </sect3>
-
-    <sect3>
-      <title>Trenger jeg GLES?</title>
-
-      <para>
-        Hvis du ønsker å bruke Wayland kompositorer, og skal bruke en som ikke 
-        støtter Vulkan gjengivelse, må du sannsynligvis bygge GLES v2 og v3, 
-        ellers vil ikke OpenGL og EGL gjengivelse være et alternativ. Det er 
-        svært få Wayland kompositorer som støtter Vulkan og ikke krever GLES. 
-        Hvis du finner en, som <ulink
-        url="https://codeberg.org/dwl/dwl">dwl</ulink>, trenger du egentlig ikke 
-        GLES utover kompositoren. Wayland klienter, som er applikasjoner, vil 
-        vanligvis bare bruke OpenGL og/eller Vulkan med EGL. Dette betyr at du 
-        vil kunne hoppe over GLES støtte, men vil fjerne muligheten til å bruke 
-        andre Wayland kompositorer som krever GLES gjengivelse.
-      </para>
-
-      <para>
-        På den annen side, hvis du bruker X
-        I vindussystemet vil GLES nesten aldri bli brukt, og støtten for 
-        APIet kan deaktiveres uten særlig bekymring. Du fjerner imidlertid 
-        muligheten til å bruke Wayland kompositorer som krever GLES gjengivelse 
-        hvis du ønsker å bytte til Wayland i fremtiden.
-      </para>
-
-    </sect3>
-
-    <sect3>
-      <title>Deaktivere GLES</title>
-
-      <para>
-        Hvis du har bestemt deg for å deaktivere GLES støtte, er det ganske 
-        enkelt å ikke bygge inn støtte for APIet. <quote>Parameterforklaringer</quote>, 
-        for både <xref linkend="libglvnd"/> og <xref linkend="mesa"/>, vil
-        forklare alternativene som kreves for å deaktivere støtten. 
-        Installasjonsskriptet for <xref linkend="nvidia"/> vil installere en 
-        driver for GLES som standard, men kan deaktiveres.
-      </para>
-
-      <para>
-        Hvis du allerede har installert GLES fra en av OpenGL leverandørene, er 
-		det ganske enkelt å fjerne alle relaterte filer. Du kan følge 
-		instruksjonene nedenfor. Som &root; brukeren for å fjerne APIet:
-      </para>
-
-<screen role="root"><userinput>for libdir in /usr/lib*; do
-  rm -vf  $libdir/pkgconfig/gles*
-  rm -vrf /usr/include/GLES*
-  rm -vf  $libdir/libGLES*
-done
-ldconfig</userinput></screen>
-
-      <para>
-        Kompiler eventuelle pakker på nytt for å fjerne avhengigheten av GLES.
-      </para>
-
-      <para>
-        Hvis du har bestemt deg for å angre avgjørelsen din og ønsker å bygge 
-        støtte for GLES, kan du bare kompilere OpenGL på nytt fra den opprinnelige 
-        OpenGL leverandøren du valgte uten alternativet som trengs for å deaktivere 
-        GLESv2. Du kan imidlertid beholde alternativet for å deaktivere GLESv1, 
-        ettersom v1 er en utdatert spesifikasjon og ikke nødvendig i dag.
-      </para>
-
-    </sect3>
-
-  </sect2>
-      
 </sect1>
