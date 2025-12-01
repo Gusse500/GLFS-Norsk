@@ -38,7 +38,7 @@
 
     <important><para>
       Les <xref linkend="aboutgl"/> for viktig informasjon angående libglvnd vs. 
-      Mesas OpenGL kjernebiblioteker. Kort sagt, denne pakken er sterkt 
+      Mesas OpenGL biblioteker. Kort sagt, denne pakken er sterkt 
       anbefalt.
     </para></important>
 
@@ -143,7 +143,7 @@ ldconfig</userinput></screen>
 
     <para>
       <option>-D gles2=false</option>: Hvis du ikke trenger OpenGL ES, bruk 
-      dette alternativet. Sørg for å lese <xref linkend="aboutgles"/>.
+      dette alternativet.
     </para>
 
   </sect2>
@@ -167,7 +167,7 @@ ldconfig</userinput></screen>
           libOpenGL
         </seg>
         <seg>
-          /usr/include/{EGL,GLES{2,3},glvnd,KHR}
+          /usr/include/{EGL,GL,GLES{2,3},glvnd,KHR}
         </seg>
       </seglistitem>
     </segmentedlist>

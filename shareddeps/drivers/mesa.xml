@@ -25,11 +25,11 @@
     </para>
 
     <important><para>
-      Denne pakken kan installere sine egne kjerne OpenGL bibliotekene, men 
+      Denne pakken kan installere sine egne OpenGL biblioteker, men 
       støttes ikke av denne bokens redigeringsredaktører på grunn av deres 
       diverse problemer. Les <xref linkend="aboutgl"/> for mer informasjon. 
       Hvis du ikke vil installere <xref linkend="libglvnd"/> og ønsker å 
-      installere denne pakkens kjerne OpenGL bibliotekene, vil Parameterforklaringer 
+      installere denne pakkens OpenGL biblioteker, vil Parameterforklaringer 
       instruere deg til å fjerne en gitt parameter for å gjøre det.
     </para></important>
 
@@ -445,7 +445,7 @@ ldconfig</userinput></screen>
     <para>
       <option>-D gles2=disabled</option>: Hvis du ikke sendte
       <parameter>-D glvnd=enabled</parameter> og ikke trenger OpenGL ES, bruk 
-      dette alternativet. Sørg for å lese <xref linkend="aboutgles"/>.
+      dette alternativet.
     </para>
 
 <!-- No available values for this option anymore, dri2 has been completely

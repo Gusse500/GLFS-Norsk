@@ -41,6 +41,22 @@
     -->
 
     <listitem>
+      <para>30. november 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - aboutgl: Nok en omskriving, gjort kortere.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 10.19 -&gt; 10.20. Fikser
+          <ulink url="&glfs-issues;/323">#323</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libinput: 1.29.2 -&gt; 1.30.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>29. november 2025</para>
       <itemizedlist>
         <listitem>
