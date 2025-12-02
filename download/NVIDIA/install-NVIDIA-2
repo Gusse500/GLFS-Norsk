@@ -1,0 +1,412 @@
+#!/bin/sh
+# Script to install the NVIDIA driver for GLFS.
+# By Zeckma <zeckma.tech@gmail.com>
+# 2025-06-14
+
+MANIFEST_VERSION=2
+OPENCL_VERSION="1.0.0"
+NVVM70_VERSION="4"
+MANDATORY_64=1 MANDATORY_32=1
+X11_64=1 X11_32=1
+EGL_64=1 EGL_32=1
+GLESV2_64=1 GLESV2_32=1
+VULKAN=1 VULKAN_EGL=0
+OPENCL_64=1 OPENCL_32=1
+CUDA_64=1 CUDA_32=1
+NGX=1
+NV_RT=1
+NV_SETTINGS=1
+NV_XCONF=1
+NV_SMI=1
+UNINSTALL_ONLY=0
+DESTDIR= PREFIX=/usr NV_X_RUN_DIR=$PWD
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --no-mandatory-64bit )   MANDATORY_64=0                    ;;
+    --no-mandatory-lib32 )   MANDATORY_32=0                    ;;
+    --no-x11-64bit )         X11_64=0                          ;;
+    --no-x11-lib32 )         X11_32=0                          ;;
+    --no-egl-64bit )         EGL_64=0                          ;;
+    --no-egl-lib32 )         EGL_32=0                          ;;
+    --no-glesv2-64bit )      GLESV2_64=0                       ;;
+    --no-glesv2-lib32 )      GLESV2_32=0                       ;;
+    --no-vulkan )            VULKAN=0                          ;;
+    --vulkan-use-egl )       VULKAN_EGL=1                      ;;
+    --no-opencl-64bit )      OPENCL_64=0                       ;;
+    --no-opencl-lib32 )      OPENCL_32=0                       ;;
+    --no-cuda-64bit )        CUDA_64=0                         ;;
+    --no-cuda-lib32 )        CUDA_32=0                         ;;
+    --no-ngx )               NGX=0                             ;;
+    --no-raytracing )        NV_RT=0                           ;;
+    --no-nvidia-settings )   NV_SETTINGS=0                     ;;
+    --no-nvidia-xconfig )    NV_XCONF=0                        ;;
+    --no-nvidia-smi )        NV_SMI=0                          ;;
+    --uninstall )            UNINSTALL_ONLY=1                  ;;
+    --destdir=* )            DESTDIR="${1#--destdir=}"         ;;
+    --prefix=* )             PREFIX="${1#--prefix=}"           ;;
+    --ex-run-dir=* )         NV_X_RUN_DIR="${1#--ex-run-dir=}" ;;
+    --manifest=* )           NV_MANIFEST="${1#--manifest=}"    ;;
+    --help | -h )
+echo "Usage: nvidia-install [OPTIONS]"
+echo "  --uninstall                         uninstall all installed NVIDIA"
+echo "                                      drivers"
+echo "  --no-mandatory-64bit                do not install the mandatory 64-bit"
+echo "                                      libraries"
+echo "  --no-mandatory-lib32                do not install the mandatory"
+echo "                                      lib32 libraries"
+echo "  --no-x11-64bit                      do not install the X11 64-bit libraries"
+echo "  --no-x11-lib32                      do not install the X11 lib32 libraries"
+echo "  --no-egl-64bit                      do not install the EGL 64-bit libraries"
+echo "  --no-egl-lib32                      do not install the EGL lib32 libraries"
+echo "  --no-glesv2-64bit                   do not install the GLESv2 64-bit libraries"
+echo "  --no-glesv2-lib32                   do not install the GLESv2 lib32 libraries"
+echo "  --no-vulkan                         do not install the Vulkan ICD file"
+echo "  --vulkan-use-egl                    make the Vulkan driver use libEGL_nvidia"
+echo "                                      instead of libGLX_nvidia (this can cause"
+echo "                                      various crashes in X11 Vulkan apps,"
+echo "                                      including the Steam Proton compatibility"
+echo "                                      layer for Direct3D games)"
+echo "  --no-opencl-64bit                   do not install the OpenCL 64-bit loader"
+echo "                                      and driver"
+echo "  --no-opencl-lib32                   do not install the OpenCL lib32 loader and"
+echo "                                      driver"
+echo "  --no-cuda-64bit                     do not install the CUDA compatibility 64-bit"
+echo "                                      libraries"
+echo "  --no-cuda-lib32                     do not install the CUDA compatibility lib32"
+echo "                                      libraries"
+echo "  --no-ngx                            do not install NGX, which provides DLSS"
+echo "  --no-raytracing                     do not install the raytracing core and"
+echo "                                      engine"
+echo "  --no-nvidia-settings                do not install nvidia-settings"
+echo "  --no-nvidia-xconfig                 do not install nvidia-xconfig"
+echo "  --no-nvidia-smi                     do not install nvidia-smi"
+echo "  --destdir=DESTDIR                   specify DESTDIR, not set by default"
+echo "  --prefix=PREFIX                     specify PREFIX, /usr set by default"
+echo "  --ex-run-dir=NVIDIA-XXX.XX.XX       specify the extracted runfile directory"
+echo "                                      to install the libraries and configuration"
+echo "                                      files from, set as current working directory"
+echo "                                      by default"
+echo "  --manifest=manifest                 specify manifest file location,"
+echo "                                      PREFIX/share/nvidia/manifest set by default"
+echo "  -h, --help                          display this help and exit"
+      exit ;;
+    * ) echo "Unknown option: $1"; exit ;;
+  esac
+  shift 1
+done
+
+if [ -z $NV_MANIFEST ]; then
+  NV_MANIFEST=$PREFIX/share/nvidia/manifest
+fi
+LIBDIR=$DESTDIR$PREFIX/lib
+LIB32=$DESTDIR$PREFIX/lib32
+BINDIR=$DESTDIR$PREFIX/bin
+SHAREDIR=$DESTDIR$PREFIX/share
+SYSCONFDIR=$DESTDIR/etc
+XDRIV=$LIBDIR/xorg/modules/drivers
+XEXT=$LIBDIR/xorg/modules/extensions
+NVWINEDIR=$LIBDIR/nvidia/wine
+DOCDIR=$SHAREDIR/doc
+EGLGLVNDDIR=$SHAREDIR/glvnd/egl_vendor.d
+VKICDDIR=$SHAREDIR/vulkan/icd.d
+XCONFD=$SYSCONFDIR/X11/xorg.conf.d
+OPENCLICDDIR=$SYSCONFDIR/OpenCL/vendors
+
+INSTALL_BIN="install -vm755"
+INSTALL_SBIN="install -vm4755"
+# Most libraries have 755 perms instead of 644.
+# Let's ensure these libraries follow suite.
+INSTALL_LIB="$INSTALL_BIN"
+RM_BIN="rm -rvf"
+
+if [ ! -d $NV_X_RUN_DIR ]; then
+  echo "Directory $NV_X_RUN_DIR doesn't exist, cannot install software from it."
+  exit
+fi
+if [ ! -f $NV_MANIFEST ]; then
+  echo "$NV_MANIFEST doesn't exist, don't have a accurate file listing."
+  exit
+fi
+MANIFEST_FILE_VERSION=$(cat ${NV_MANIFEST} | grep manifest-version: | awk '{ print $2 }')
+if [ $MANIFEST_FILE_VERSION != $MANIFEST_VERSION ]; then
+  echo "Manifest versions $MANIFEST_FILE_VERSION and $MANIFEST_VERSION do not"
+  echo "match and thus will lead to incompatibility. Install new script and"
+  echo "manifest file together."
+  exit
+fi
+
+manifest_uninstall() {
+  for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
+    for bin in $(cat $NV_MANIFEST | grep $type | cut -d':' -f2-); do
+      find $LIBDIR $LIB32 $BINDIR -name "$bin.so*" -exec $RM_BIN {} \;
+      find $LIBDIR $LIB32 $BINDIR -name "$bin" -exec $RM_BIN {} \;
+    done
+  done
+  find $LIBDIR $LIB32 $BINDIR -name "nvidia-drm_gbm" -exec $RM_BIN {} \;
+  find $LIBDIR $LIB32 $BINDIR -name "nvidia-modprobe" -exec $RM_BIN {} \;
+  find $SHAREDIR -name "nvidia-application-profiles*" -exec $RM_BIN {} \;
+  find $XEXT -name "libglxserver_nvidia.so*" -exec $RM_BIN {} \;
+  find $XEXT -name "nvidia_drv.so*" -exec $RM_BIN {} \;
+  find $EGLGLVNDDIR -name "*_nvidia.json" -exec $RM_BIN {} \;
+  find $VKICDDIR -name "*nvidia*.json" -exec $RM_BIN {} \;
+  find $NVWINEDIR -name "*nvngx*.dll" -exec $RM_BIN {} \;
+  find $SHAREDIR/nvidia -name "*nvoptix*" -exec $RM_BIN {} \;
+  find $BINDIR -name "nvidia-settings" -exec $RM_BIN {} \;
+  find $SHAREDIR/applications -name "nvidia-settings.desktop" -exec $RM_BIN {} \;
+  find $SHAREDIR/pixmaps -name "nvidia-settings.png" -exec $RM_BIN {} \;
+  find $BINDIR -name "nvidia-xconfig" -exec $RM_BIN {} \;
+  find $BINDIR -name "nvidia-smi" -exec $RM_BIN {} \;
+  $RM_BIN $DOCDIR/nvidia*
+}
+
+file_uninstall() {
+  for i in $(cat $SHAREDIR/nvidia/installed_files); do
+    $RM_BIN $i
+  done
+}
+
+if ls /usr/lib/libnvidia-cfg.so* 1> /dev/null 2>&1; then
+  echo "Uninstalling previously installed NVIDIA drivers..."
+  if [ -f $SHAREDIR/nvidia/installed_files ]; then
+    file_uninstall
+  else
+    manifest_uninstall
+  fi
+fi
+rm -f $SHAREDIR/nvidia/installed_files
+
+if [ $UNINSTALL_ONLY = "1" ]; then
+  echo "Uninstallation of NVIDIA complete!"
+  exit
+fi
+
+echo "Continuing onto the installation..."
+
+NVIDIA_VERSION=$(cat $NV_X_RUN_DIR/README.txt | grep Version: | awk '{ print $5 }')
+echo "Installing NVIDIA-$NVIDIA_VERSION..."
+
+# Make sure that when there's an error to bail out.
+set -e
+
+if [ $MANDATORY_64 = 1 ]; then
+  echo "Installing 64-bit mandatory software..."
+  mkdir -pv $BINDIR $LIBDIR/gbm $SHAREDIR/nvidia
+  for lib in $(cat $NV_MANIFEST | grep mandatory-64: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+  ln -svf libnvidia-allocator.so.$NVIDIA_VERSION   \
+    $LIBDIR/libnvidia-allocator.so.1
+  ln -svrf $LIBDIR/libnvidia-allocator.so.1        \
+    $LIBDIR/gbm/nvidia-drm_gbm.so
+  $INSTALL_SBIN $NV_X_RUN_DIR/nvidia-modprobe    \
+    $BINDIR
+  cp -v $NV_X_RUN_DIR/nvidia-application-profiles* \
+    $SHAREDIR/nvidia
+fi
+if [ $MANDATORY_32 = 1 ]; then
+  echo "Installing lib32 mandatory software..."
+  mkdir -pv $LIB32/gbm
+  for lib in $(cat $NV_MANIFEST | grep mandatory-32: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+  done
+  ln -svf libnvidia-allocator.so.$NVIDIA_VERSION \
+    $LIB32/libnvidia-allocator.so.1
+  ln -svrf $LIB32/libnvidia-allocator.so.1       \
+    $LIB32/gbm/nvidia-drm_gbm.so
+fi
+
+if [ $X11_64 = 1 ]; then
+  echo "Installing 64-bit X11 libraries..."
+  mkdir -pv $XDRIV $XEXT $XCONFD
+  for lib in $(cat $NV_MANIFEST | grep x11-64: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+  $INSTALL_LIB $NV_X_RUN_DIR/nvidia_drv.so $XDRIV
+  $INSTALL_LIB $NV_X_RUN_DIR/libglxserver_nvidia.so.$NVIDIA_VERSION \
+    $XEXT
+  ln -svf libglxserver_nvidia.so.$NVIDIA_VERSION                      \
+    $XEXT/libglxserver_nvidia.so
+  cp -v $NV_X_RUN_DIR/nvidia-drm-outputclass.conf $XCONFD
+fi
+if [ $X11_32 = 1 ]; then
+  echo "Installing lib32 X11 libraries..."
+  mkdir -pv $LIB32
+  for lib in $(cat $NV_MANIFEST | grep x11-32: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+  done
+fi
+
+if [ $EGL_64 = 1 ]; then
+  echo "Installing 64-bit EGL libraries..."
+  mkdir -pv $LIBDIR $EGLGLVNDDIR
+  for lib in $(cat $NV_MANIFEST | grep egl-64: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+  cp -v $NV_X_RUN_DIR/10_nvidia.json $EGLGLVNDDIR
+fi
+if [ $EGL_32 = 1 ]; then
+  echo "Installing lib32 EGL libraries..."
+  mkdir -pv $LIB32
+  for lib in $(cat $NV_MANIFEST | grep egl-32: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+  done
+fi
+
+if [ $GLESV2_64 = 1 ]; then
+  echo "Installing 64-bit GLESv2 libraries..."
+  mkdir -pv $LIBDIR
+  for lib in $(cat $NV_MANIFEST | grep glesv2-64: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+fi
+if [ $GLESV2_32 = 1 ]; then
+  echo "Installing lib32 GLESv2 libraries..."
+  mkdir -pv $LIB32
+  for lib in $(cat $NV_MANIFEST | grep glesv2-32: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+  done
+fi
+
+if [ $VULKAN = 1 ]; then
+  echo "Installing the Vulkan ICD..."
+  mkdir -pv $VKICDDIR
+  cp -v $NV_X_RUN_DIR/nvidia_icd.json $VKICDDIR
+  if [ $VULKAN_EGL = 1 ]; then
+    echo "Choosing EGL over GLX for Vulkan..."
+    sed -i 's/GLX/EGL/' $VKICDDIR/nvidia_icd.json
+  fi
+fi
+
+if [ $OPENCL_64 = 1 ]; then
+  echo "Installing 64-bit OpenCL libraries..."
+  mkdir -pv $LIBDIR $OPENCLICDDIR
+  for lib in $(cat $NV_MANIFEST | grep opencl-64: | cut -d':' -f2-); do
+    if [ $lib = "libOpenCL" ]; then
+      $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$OPENCL_VERSION $LIBDIR
+    else
+      $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+    fi
+  done
+  cp -v $NV_X_RUN_DIR/nvidia.icd $OPENCLICDDIR
+fi
+if [ $OPENCL_32 = 1 ]; then
+  echo "Installing lib32 OpenCL libraries..."
+  mkdir -pv $LIB32
+  for lib in $(cat $NV_MANIFEST | grep opencl-32: | cut -d':' -f2-); do
+    if [ $lib = "libOpenCL" ]; then
+      $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$OPENCL_VERSION $LIB32
+    else
+      $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+    fi
+  done
+fi
+
+if [ $CUDA_64 = 1 ]; then
+  echo "Installing 64-bit CUDA libraries..."
+  mkdir -pv $LIBDIR
+  for lib in $(cat $NV_MANIFEST | grep cuda-64: | cut -d':' -f2-); do
+  if [ $lib = "libnvidia-nvvm70" ]; then
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVVM70_VERSION $LIBDIR
+  else
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  fi
+  done
+  $INSTALL_LIB $NV_X_RUN_DIR/libnvidia-api.so.1 $LIBDIR
+  ln -svf libnvidia-api.so.1 $LIBDIR/libnvidia-api.so
+fi
+if [ $CUDA_32 = 1 ]; then
+  echo "Installing lib32 CUDA libraries..."
+  mkdir -pv $LIB32
+  for lib in $(cat $NV_MANIFEST | grep cuda-32: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+  done
+fi
+
+if [ $NGX = 1 ]; then
+  echo "Installing NGX (DLSS) libraries..."
+  mkdir -pv $NVWINEDIR
+  for lib in $(cat $NV_MANIFEST | grep ngx: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+  $INSTALL_LIB $NV_X_RUN_DIR/*nvngx*.dll $NVWINEDIR
+fi
+
+if [ $NV_RT = 1 ]; then
+  echo "Installing raytracing libraries..."
+  mkdir -pv $SHAREDIR/nvidia $LIBDIR
+  for lib in $(cat $NV_MANIFEST | grep rt: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+  $INSTALL_BIN $NV_X_RUN_DIR/nvoptix.bin $SHAREDIR/nvidia
+fi
+
+if [ $NV_SETTINGS = 1 ]; then
+  echo "Installing nvidia-settings..."
+  mkdir -pv $BINDIR $LIBDIR $SHAREDIR/applications $SHAREDIR/pixmaps
+  for lib in $(cat $NV_MANIFEST | grep settings: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+  $INSTALL_BIN $NV_X_RUN_DIR/nvidia-settings $BINDIR
+  cp -v $NV_X_RUN_DIR/nvidia-settings.desktop $SHAREDIR/applications
+  cp -v $NV_X_RUN_DIR/nvidia-settings.png $SHAREDIR/pixmaps
+fi
+
+if [ $NV_XCONF = 1 ]; then
+  echo "Installing nvidia-xconfig..."
+  mkdir -pv $BINDIR
+  $INSTALL_BIN $NV_X_RUN_DIR/nvidia-xconfig $BINDIR
+fi
+
+if [ $NV_SMI = 1 ]; then
+  echo "Installing nvidia-smi..."
+  mkdir -pv $BINDIR
+  $INSTALL_BIN $NV_X_RUN_DIR/nvidia-smi $BINDIR
+fi
+
+echo "Installing documentation..."
+mkdir -pv $DOCDIR/nvidia-$NVIDIA_VERSION
+cp -R $NV_X_RUN_DIR/html $DOCDIR/nvidia-$NVIDIA_VERSION
+
+echo "Running /sbin/ldconfig..."
+if [ $(id -u) = "0" ]; then
+  # $LIBDIR and $LIB32 are not passed here. The cache should always be built in
+  # this case, and if a DESTDIR is given, it should be a path ldconfig will
+  # look in.
+  /sbin/ldconfig
+else
+  # This is mainly for maintainers who will want to have symlinks in a
+  # distribution, who should run this as a non-root process and should provide
+  # a DESTDIR. ldconfig will then make symlinks in $LIBDIR and $LIB32.
+  # ldconfig should still be ran after installing from that distribution to
+  # build the library cache.
+  /sbin/ldconfig -n $LIBDIR $LIB32
+fi
+
+echo "Writing to $SHAREDIR/nvidia/installed_files..."
+mkdir -pv $SHAREDIR/nvidia
+for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
+  for bin in $(cat $NV_MANIFEST | grep $type | cut -d':' -f2-); do
+    find $LIBDIR $LIB32 $BINDIR -name "$bin.so*" >> $SHAREDIR/nvidia/installed_files1
+    find $LIBDIR $LIB32 $BINDIR -name "$bin" >> $SHAREDIR/nvidia/installed_files1
+  done
+done
+find $LIBDIR $LIB32 $BINDIR -name "nvidia-drm_gbm" >> $SHAREDIR/nvidia/installed_files1
+find $LIBDIR $LIB32 $BINDIR -name "nvidia-modprobe" >> $SHAREDIR/nvidia/installed_files1
+find $SHAREDIR -name "nvidia-application-profiles*" >> $SHAREDIR/nvidia/installed_files1
+find $XEXT -name "libglxserver_nvidia.so*" >> $SHAREDIR/nvidia/installed_files1
+find $XEXT -name "nvidia_drv.so*" >> $SHAREDIR/nvidia/installed_files1
+find $EGLGLVNDDIR -name "*_nvidia.json" >> $SHAREDIR/nvidia/installed_files1
+find $VKICDDIR -name "*nvidia*.json" >> $SHAREDIR/nvidia/installed_files1
+find $NVWINEDIR -name "*nvngx*.dll" >> $SHAREDIR/nvidia/installed_files1
+find $SHAREDIR/nvidia -name "*nvoptix*" >> $SHAREDIR/nvidia/installed_files1
+find $BINDIR -name "nvidia-settings" >> $SHAREDIR/nvidia/installed_files1
+find $SHAREDIR/applications -name "nvidia-settings.desktop" >> $SHAREDIR/nvidia/installed_files1
+find $SHAREDIR/pixmaps -name "nvidia-settings.png" >> $SHAREDIR/nvidia/installed_files1
+find $BINDIR -name "nvidia-xconfig" >> $SHAREDIR/nvidia/installed_files1
+find $BINDIR -name "nvidia-smi" >> $SHAREDIR/nvidia/installed_files1
+find $DOCDIR/nvidia* >> $SHAREDIR/nvidia/installed_files1
+cat $SHAREDIR/nvidia/installed_files1 | sort > $SHAREDIR/nvidia/installed_files
+rm -f $SHAREDIR/nvidia/installed_files1
+
+echo "Installation of NVIDIA-$NVIDIA_VERSION complete!"
