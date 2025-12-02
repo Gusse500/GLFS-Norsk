@@ -17,10 +17,9 @@
 
   <para>
     I BLFS, OpenGL biblioteker (<filename class="libraryfile">libGL</filename>
-    og andre) installeres fra Mesa. Dette står i kontrast til flere Linux 
-    distribusjoner som installerer disse bibliotekene fra <xref
-    linkend="libglvnd"/>. GLFS, i motsetning til BLFS, har tatt samme avgjørelse 
-    som disse distribusjonene og forventer at du installerer <xref
+    og andre) er installert fra Mesa. Flere Linux distribusjoner installerer 
+    disse bibliotekene fra <xref linkend="libglvnd"/>. GLFS har tatt den samme 
+    avgjørelsen som disse distribusjonene og forventer at du installerer <xref
     linkend="libglvnd"/>. Til tross for dette, <xref linkend="mesa"/> er 
     nødvendig for mange systemer fordi det tilbyr nødvendige drivere, ikke bare 
     OpenGL biblioteker. GLFS sørger for at instruksjonene i den pakken ber om 
@@ -28,12 +27,12 @@
   </para>
 
   <note><para>
-    I BLFS støtter pakkene libglvnd, men BLFS nevner det ikke. Når BLFS sier at 
-    en pakke er avhengig av Mesa, betyr det at pakken vil trenge OpenGL 
-    biblioteker. (<xref linkend="libglvnd"/>) og/eller libgbm (<xref
-    linkend="libgbm"/> eller libgbm fra <xref linkend="mesa"/>). Enkelte sider 
-    vil også lenke til GLU. Du må imidlertid installere denne bokens versjon av
-    <xref linkend="glu"/> for å sikre kompatibilitet med libglvnd.
+    Alle pakker støtter libglvnd i BLFS. Når BLFS sier at en pakke er avhengig 
+    av Mesa, betyr det at pakken trenger OpenGL biblioteker. (<xref
+    linkend="libglvnd"/>) og/eller libgbm (<xref linkend="libgbm"/> eller libgbm
+    fra <xref linkend="mesa"/>). Enkelte sider vil også lenke til GLU. Du må 
+    imidlertid installere denne bokens versjon av <xref linkend="glu"/> for å 
+    sikre kompatibilitet med libglvnd.
   </para></note>
 
   <para>
@@ -85,23 +84,6 @@
       OBS-Studio. Flatpak kan lide av det samme problemet. BLFS kan lide av dem 
       på et tidspunkt, avhengig av når prosjekter gjør endringer som krever 
       libglvnd i en eller annen form.
-    </para>
-
-  </sect2>
-  <sect2>
-    <title>Vil BLFS tilby libglvnd</title>
-
-    <para>
-      Med det økende antallet pakker som begynner å kreve libglvnd, 
-      er det et spørsmål om tid før BLFS må ta i bruk libglvnd. 
-      Det har vært forsøk på å få libglvnd inn i BLFS så snart 
-      som mulig for å unngå fremtidige problemer. Det viktigste 
-      fremstøtet finner du her <ulink
-      url="https://lists.linuxfromscratch.org/sympa/arc/blfs-dev/2025-09/msg00002.html">thread</ulink>.
-      Tråden nevner at Mesa leverer <filename
-      class="libraryfile">libGLX</filename>, dette er feil. Uansett, 
-      forespørselen ble avvist. Inntil BLFS har en pakke som krever libglvnd, 
-      vil den sannsynligvis ikke flytte fra Mesas OpenGL biblioteker.
     </para>
 
   </sect2>

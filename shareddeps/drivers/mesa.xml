@@ -103,8 +103,7 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libglvnd"/> (for å tillate at OpenGL drivere utenfor 
-            Mesa kan installeres og sendes deretter; anbefales på det sterkeste)
+            <xref linkend="libglvnd"/> (for OpenGL hovedbibliotekene)
           </para>
         </listitem>
         <listitem>
