@@ -44,6 +44,11 @@
       <para>2. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libpng: 1.6.50 -&gt; 1.6.51 (sikkerhet). Se
+          BLFS billett <ulink
+          url="https://wiki.linuxfromscratch.org/blfs/ticket/22426">#22426</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - LLVM: 21.1.2 -&gt; 21.1.7.</para>
         </listitem>
         <listitem>
