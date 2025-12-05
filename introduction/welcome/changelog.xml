@@ -44,6 +44,10 @@
       <para>4. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - hwdata: 0.401 -&gt; 0.402. Fikser
+          <ulink url="&glfs-issues;/331">#331</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - GStreamer-Suite: 1.26.8 -&gt; 1.26.9. Fikser
           <ulink url="&glfs-issues;/329">#329</ulink>.</para>
         </listitem>
