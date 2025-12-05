@@ -191,7 +191,7 @@
 <!ENTITY xgamma-version               "1.0.8">
 <!ENTITY xhost-version                "1.0.10">
 <!ENTITY xinput-version               "1.6.4">
-<!ENTITY xkbcomp-version              "1.4.7">
+<!ENTITY xkbcomp-version              "1.5.0">
 <!ENTITY xkbevd-version               "1.1.6">
 <!ENTITY xkbutils-version             "1.0.6">
 <!ENTITY xkill-version                "1.0.6">
