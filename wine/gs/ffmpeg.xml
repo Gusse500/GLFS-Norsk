@@ -31,6 +31,16 @@
       helst Open Sound System lydkilde.
     </para>
 
+    <important><para>
+      Det finnes en kjent sikkerhetssårbarhet i FFmpeg-&ffmpeg-version;, en 
+      bruk-etter-frigjøring mens du bruker Subversion-1.x, som er i BLFS. Siden 
+      FFmpeg-8.x ikke er testet med alle pakker i BLFS ennå, vil GLFS forbli på 
+      FFmpeg-7.1 foreløpig. Hvis du forstår at bruk av FFmpeg-8.x kan forårsake 
+      problemer i BLFS og utenfor den, kan du bytte ut versjonen fra 
+      &ffmpeg-version; til 8.0.1 i instruksjonene og nedlastingslenkene, 
+      inkludert oppdateringen. GLFS har faktisk en oppdatering for 8.0.1.
+    </para></important>
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
