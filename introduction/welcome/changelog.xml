@@ -44,6 +44,14 @@
       <para>4. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - SDL3: 3.2.26 -&gt; 3.2.28. Fikser
+          <ulink url="&glfs-issues;/334">#334</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - sdl2-compat: 2.32.58 -&gt; 2.32.60. Fikser
+          <ulink url="&glfs-issues;/335">#335</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - hwdata: 0.401 -&gt; 0.402. Fikser
           <ulink url="&glfs-issues;/331">#331</ulink>.</para>
         </listitem>
