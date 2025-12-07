@@ -13,9 +13,9 @@
 <!ENTITY libtasn1-version             "4.20.0">
 <!ENTITY nspr-version                 "4.38.2">
 <!ENTITY nss-major                    "3">
-<!ENTITY nss-minor                    "118">
-<!ENTITY nss-dir                      "&nss-major;_&nss-minor;_1">
-<!ENTITY nss-version                  "&nss-major;.&nss-minor;.1">
+<!ENTITY nss-minor                    "119">
+<!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
+<!ENTITY nss-version                  "&nss-major;.&nss-minor;">
 <!ENTITY p11-kit-version              "0.25.10">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.1">
