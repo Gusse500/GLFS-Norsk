@@ -44,6 +44,10 @@
       <para>5. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - FFmpeg: 7.1.3 -&gt; 8.0.1 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/336">#336</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Cython: 3.2.1 -&gt; 3.2.2.</para>
         </listitem>
       </itemizedlist>
