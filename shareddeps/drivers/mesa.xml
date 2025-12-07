@@ -33,14 +33,12 @@
       instruere deg til å fjerne en gitt parameter for å gjøre det.
     </para></important>
 
-<!--
     <note>
       <para>
-        Mesa oppdateres relativt ofte. Du kan bruke 
-        den nyeste tilgjengelige &mesa-major-minor;.x mesa versjonen.
+        Mesa oppdateres relativt ofte. Det kan være lurt å bruke den nyeste 
+        tilgjengelige versjonen.
       </para>
     </note>
--->
 
     <note>
       <para>
@@ -143,6 +141,7 @@
 
     <para role="optional">
       &gbm;,
+      <ulink url="&blfs-svn;/general/libdisplay-info.html">libdisplay-info</ulink>,
       <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
       <xref linkend="libunwind"/>,
       <ulink url="&blfs-svn;/general/lm-sensors.html">lm-sensors</ulink>,
@@ -510,7 +509,7 @@ ldconfig</userinput></screen>
           nouveau_drv_video,
           r600_drv_video,
           radeonsi_drv_video, og
-          virtio_gpu_drv_video
+          virtio_gpu_drv_video (symbolsk lenke til libgallium-&mesa-version;)
           <!-- End VA-API Drivers -->
         </seg>
         <seg>

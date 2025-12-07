@@ -204,8 +204,7 @@ ninja</userinput></screen>
       Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>ninja install &amp;&amp;
-cp bin/FileCheck /usr/bin</userinput></screen>
+    <screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
 
