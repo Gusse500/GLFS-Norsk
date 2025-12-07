@@ -143,8 +143,8 @@
 <!ENTITY libdrm-version               "2.4.129">
 <!ENTITY libgbm-version               "1.0.2">
 <!ENTITY libva-version                "2.22.0">
-<!ENTITY mesa-major-minor             "25.2">
-<!ENTITY mesa-version                 "&mesa-major-minor;.2">
+<!ENTITY mesa-major-minor             "25.3">
+<!ENTITY mesa-version                 "&mesa-major-minor;.1">
 <!ENTITY eglexternalplatform-version  "1.2.1">
 <!ENTITY egl-gbm-version              "1.1.2.1">
 <!ENTITY egl-wayland-version          "1.1.20">
@@ -259,9 +259,9 @@
      tarballs and/or extracted directories. BLFS solved this by using a mirror.
      We're solving this by using the git hash to get around the naming issue
      entirely. -->
-<!ENTITY libxkbcommon-minor           "3049d3">
-<!ENTITY libxkbcommon-version         "3049d310694fd70f1269bf48a1200aa4259e79b1">
-<!ENTITY libxkbcommon-real            "1.13.0">
+<!ENTITY libxkbcommon-minor           "6f76d1">
+<!ENTITY libxkbcommon-version         "6f76d19db72b5d450e927b41e1e96cbe3252aba8">
+<!ENTITY libxkbcommon-real            "1.13.1">
 <!ENTITY sdl3-version                 "3.2.28">
 <!ENTITY sdl2-version                 "2.32.60">
 
