@@ -171,7 +171,7 @@
 <!ENTITY libclc-version               "&llvm-version;">
 <!ENTITY ply-version                  "3.11">
 <!ENTITY mako-version                 "1.3.10">
-<!ENTITY cython-version               "3.2.1">
+<!ENTITY cython-version               "3.2.2">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.2">
 <!-- X11 -->
