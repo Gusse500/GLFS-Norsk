@@ -239,15 +239,15 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr                      \
       -D CLANG_CONFIG_FILE_SYSTEM_DIR=/etc/clang        \
       -W no-dev -G Ninja .. &amp;&amp;
 
-ninja llvm-libraries clang-libraries lib32/LLVMgold.so</userinput></screen>
+ninja</userinput></screen>
 
     <para>
       Nå som &root; bruker:
     </para>
 
-<screen role="root"><userinput>rm -rf lib32/tools &amp;&amp;
-cp -Rv lib32/* /usr/lib32 &amp;&amp;
-ln -svf libLLVM.so.&llvm-maj-version;.1 /usr/lib32/libLLVM-&llvm-maj-version;.so &amp;&amp;
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
