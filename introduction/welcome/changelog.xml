@@ -44,6 +44,10 @@
       <para>8. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - GLib: 2.86.2 -&gt; 2.86.3 (sikkerhet). Fixes
+          <ulink url="&glfs-issues;/339">#339</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - libdrm: 2.4.129 -&gt; 2.4.130. Fikser
           <ulink url="&glfs-issues;/337">#337</ulink>.</para>
         </listitem>
