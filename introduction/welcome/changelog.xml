@@ -41,10 +41,33 @@
     -->
 
     <listitem>
+      <para>10. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - libinput: 1.30.0 -&gt; 1.30.1. Fikser
+          <ulink url="&glfs-issues;/340">#340</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - CMake: 4.2.0 -&gt; 4.2.1. Fikser
+          <ulink url="&glfs-issues;/341">#341</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - libgpg-error: 1.55 -&gt; 1.57. Fikser
+          <ulink url="&glfs-issues;/342">#342</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - gnome.ent: synkronisere med BLFS etter at GNOME 49 
+          nylig ble installert. Jeg tror ikke noe i GLFS bruker det, men fordi 
+          det er i dette treet, la oss oppdatere det likevel.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>8. desember 2025</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - GLib: 2.86.2 -&gt; 2.86.3 (sikkerhet). Fixes
+          <para>[renodr] - GLib: 2.86.2 -&gt; 2.86.3 (sikkerhet). Fikser
           <ulink url="&glfs-issues;/339">#339</ulink>.</para>
         </listitem>
         <listitem>
