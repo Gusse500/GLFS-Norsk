@@ -243,7 +243,7 @@
 <!-- STEAM -->
 
 <!ENTITY xdg-user-dirs-version        "0.19">
-<!ENTITY libgpg-error-version         "1.55">
+<!ENTITY libgpg-error-version         "1.57">
 <!ENTITY steam-version                "1.0.0.85">
 
 
