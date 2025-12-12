@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>11. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: 3.119 -&gt; 3.119.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Vulkan-SDK: 1.4.328.1 -&gt; 1.4.335.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>10. desember 2025</para>
       <itemizedlist>
         <listitem>

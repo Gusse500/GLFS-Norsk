@@ -220,7 +220,7 @@ docs = false
 locked-deps = true
 
 # Specify which extended tools (those from the default install).
-tools = ["cargo", "clippy", "rustdoc", "rustfmt"]
+tools = ["cargo", "clippy", "rustdoc", "rustfmt", "src"]
 
 [install]
 prefix = "/opt/rustc-&rustc-version;"
