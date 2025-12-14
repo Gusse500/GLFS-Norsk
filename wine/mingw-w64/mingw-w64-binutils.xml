@@ -46,8 +46,8 @@
     <!-- Remove when glibc updates in February. -->
     <important><para>
       Sørg for å bruke oppdateringen for glibc slik den finnes i <ulink
-      url="&mlfs-m32-root;">Chapter 8.5. Glibc</ulink>, eller bruk en tidligere 
-      versjon av Binutils.
+      url="&mlfs-m32-root;/chapter08/glibc.html">Chapter 8.5. Glibc</ulink>, 
+      eller bruk en tidligere versjon av Binutils.
     </para></important>
 
   <sect3>
