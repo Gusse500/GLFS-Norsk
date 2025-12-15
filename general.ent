@@ -64,7 +64,7 @@
 <!ENTITY sources-anduin-ftp   "ftp://anduin.linuxfromscratch.org/BLFS">
 
 <!ENTITY hints-root           "https://www.linuxfromscratch.org/hints/">
-<!ENTITY patch-downloads      "https://www.lfs.freding.no/patches/downloads">
+<!ENTITY patch-downloads      "https://www.linuxfromscratch.org/patches/downloads">
 <!ENTITY dl-root              "&glfs-website;/download">
 <!ENTITY misc-dl-root         "https://github.com/glfs-book/glfs-misc-downloads/releases/download">
 <!ENTITY errata               "https://www.&norsklfs-domainname;/blfs/errata/&blfs-version;/">
