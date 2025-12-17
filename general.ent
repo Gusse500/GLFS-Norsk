@@ -84,7 +84,7 @@
 
 <!ENTITY lfs-dev              "&norsklfs-domainname;/lfs/view/development">
 <!ENTITY lfs-ticket-root      "https://wiki.linuxfromscratch.org/lfs/query/">
-<!ENTITY gnu-http             "https://ftp.gnu.org/gnu">
+<!ENTITY gnu-http             "https://ftpmirror.gnu.org/gnu">
 <!ENTITY gnu-ftp              "ftp://ftp.gnu.org/gnu">
 <!ENTITY gnupg-http           "https://www.gnupg.org/ftp/gcrypt">
 <!ENTITY gnupg-ftp            "ftp://ftp.gnupg.org/gcrypt">
