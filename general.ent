@@ -40,16 +40,13 @@
 <!ENTITY copyrightdate   "2024-&year;">
 <!ENTITY copyholder      "The GLFS Development Team">
 <!ENTITY lfs-domainname  "linuxfromscratch.org">
-<!ENTITY norsklfs-domainname  "lfs.freding.no">
 <!ENTITY glfs-domainname "glfs-book.github.io">
-<!ENTITY norskglfs-domainname "lfs.freding.no">
 
 <!ENTITY maintainer-fullname  "The GLFS Team">
 <!ENTITY maintainer-firstname "GLFS">
 <!ENTITY maintainer-address   "zeckma.tech@gmail.com;">
 
 <!ENTITY lfs-website  "https://www.&lfs-domainname;">
-<!ENTITY norsk-lfs-website  "https://www.&norsklfs-domainname;">
 <!ENTITY glfs-website "https://&norskglfs-domainname;/glfs">
 <!ENTITY slfs-website "https://lfs.freding.no/slfs">
 <!-- downloads_root must have an entity because it is needed for scripts
@@ -299,3 +296,7 @@ export -f as_root</userinput></screen>
 
 <!ENTITY % xinclude-entities SYSTEM "xent.ent">
 %xinclude-entities;
+
+<!ENTITY norsklfs-domainname  "lfs.freding.no">
+<!ENTITY norskglfs-domainname "lfs.freding.no">
+<!ENTITY norsk-lfs-website  "https://www.&norsklfs-domainname;">
