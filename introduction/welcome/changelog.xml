@@ -41,6 +41,39 @@
     -->
 
     <listitem>
+      <para>16. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Opus: 1.5.2 -&gt; 1.6.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.46 -&gt; 1.47.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdrm: 2.4.130 -&gt; 2.4.131.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM: 21.1.7 -&gt; 21.1.8.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.91.0 -&gt; 1.92.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libgbm: 1.0.3 -&gt; 1.0.4. Fikser
+          <ulink url="&glfs-issues;/346">#346</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 580.105.08 -&gt; 580.119.02. Fikser
+          <ulink url="&glfs-issues;/343">#343</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.2.2 -&gt; 3.2.3. Fikser
+          <ulink url="&glfs-issues;/345">#345</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>11. desember 2025</para>
       <itemizedlist>
         <listitem>
