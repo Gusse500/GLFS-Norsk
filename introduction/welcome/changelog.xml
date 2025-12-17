@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>17. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - egl-x11 (NVIDIA EGL Bibliotek): 1.0.3 -&gt;
+          1.0.4.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>16. desember 2025</para>
       <itemizedlist>
         <listitem>

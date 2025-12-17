@@ -147,7 +147,7 @@
 <!ENTITY eglexternalplatform-version  "1.2.1">
 <!ENTITY egl-gbm-version              "1.1.2.1">
 <!ENTITY egl-wayland-version          "1.1.20">
-<!ENTITY egl-x11-version              "1.0.3">
+<!ENTITY egl-x11-version              "1.0.4">
 <!-- Known working linux versions for NVIDIA. -->
 <!ENTITY nvidia-linux-version         "6.15.x - 6.17.x">
 <!ENTITY nvidia-version               "580.119.02">
