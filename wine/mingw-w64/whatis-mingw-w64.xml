@@ -39,7 +39,7 @@
     eksempel biblioteker for DirectX/Direct3D eller OpenGL støtte. Siden vi 
     bruker et Unix lignende operativsystem, har vi ikke slike DLL-er installert 
     på systemet, og de ble aldri kompilert i LFS eller tidligere i denne boken. 
-    <xref linkend="nvidia"/> installerer DLL filer, men er strengt tatt ment for
+    NVIDIA installerer DLL filer, men er strengt tatt ment for
     Wine og Proton som en måte å eksponere DLSS på.
     MinGW-w64 installerer bare statiske biblioteker, 
     som er nyttige når man kompilerer Windows programvare, men er ubrukelige 

@@ -22,9 +22,7 @@
 
     <para>
       Pakken nv-codec-headers inneholder deklarasjoner for samhandling med 
-      NVIDIA codec API-er. Denne pakken heter også ffnvcodec. Hvis du ikke vil 
-      bruke eller målrette <xref linkend="nvidia"/>, 
-      hopp over denne pakken.
+      NVIDIA codec API-er. Denne pakken heter også ffnvcodec.
     </para>
 
     <itemizedlist spacing="compact">

@@ -65,10 +65,9 @@
     <para>
       Det anbefales å lese seg opp på BLFS siden <ulink
       url="&blfs-svn;/x/xorg-config.html">Xorg-7 Testing og
-      Konfigurasjon</ulink>. Den er ganske omfattende. Men å bruke <xref
-      linkend="nvidia"/> med X11 krever et 
-      litt annerledes oppsett, og det kan være ekstra informasjon du ønsker å 
-      vite.
+      Konfigurasjon</ulink>. Den er ganske omfattende. Men å bruke NVIDIA med 
+      X11 krever et litt annerledes oppsett, og det kan være ekstra informasjon 
+      du ønsker å vite.
     </para>
 
     <sect3>

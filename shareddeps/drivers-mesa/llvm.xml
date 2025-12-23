@@ -284,12 +284,11 @@ ldconfig</userinput></screen>
       <parameter>-D LLVM_TARGETS_TO_BUILD="X86;host;AMDGPU;NVPTX"</parameter>:
       Denne bryteren muliggjør bygging for x86, samme mål som verten, for 
       r600 AMD GPUen som brukes av <xref linkend="mesa"/> r600 og radeonsi
-      drivere, samt NVIDIA GPUer som brukes sammen med <ulink
-      url="&slfs-website;/general/cuda.html">CUDA</ulink>. Standardinnstillingen 
-      er alle målene. Du kan bruke en semikolonseparert liste. Gyldige mål er: 
-      host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, Lanai, LoongArch, Mips, 
-      MSP430, NVPTX, PowerPC, RISCV, Sparc, SystemZ, SystemZ, VE, WebAssembly, 
-      X86, XCore eller all.
+      drivere, samt NVIDIA GPUer som brukes sammen med CUDA. 
+      Standardinnstillingen er alle målene. Du kan bruke en semikolonseparert 
+      liste. Gyldige mål er: host, AArch64, AMDGPU, ARM, AVR, BPF, Hexagon, 
+      Lanai, LoongArch, Mips, MSP430, NVPTX, PowerPC, RISCV, Sparc, SystemZ, 
+      SystemZ, VE, WebAssembly, X86, XCore eller all.
     </para>
 
     <para>
@@ -1502,7 +1501,7 @@ done</userinput></screen>
           <para>
             lister installerte NVIDIA GPUer; ved kjøretid trenger den
             <filename class='libraryfile'>libcuda</filename>
-            fra <xref linkend="nvidia"/>
+            fra NVIDIA
           </para>
           <indexterm zone="llvm nvptx-arch">
             <primary sortas="b-nvptx-arch">nvptx-arch</primary>

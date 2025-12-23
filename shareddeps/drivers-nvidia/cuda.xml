@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY cuda-download
+    "https://developer.download.nvidia.com/compute/cuda/&cuda-version;/local_installers/cuda_&cuda-version;_&cuda-nvidia-version;_linux.run">
+]>
+
+<sect1 id="cuda" xreflabel="CUDA-&cuda-version;">
+  <?dbhtml filename="cuda.html"?>
+
+  <title>CUDA-&cuda-version;</title>
+
+  <indexterm zone="cuda">
+    <primary sortas="a-cuda">CUDA</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til CUDA</title>
+
+    <para>
+      Dette er CUDAs proprietære verktøysett, som tilbyr verktøy for å kjøre 
+      kode på Turing gjennom Blackwell NVIDIA GPU-er via r&nvidia-rev; NVIDIA 
+      driver. Dette er NVIDIAs tilnærming til maskinvareakselerasjon.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&cuda-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <important><para>
+      NVIDIA driverversjonen som er oppført i kjørefilnavnet er minimumskravet 
+      for NVIDIA driverversjon.
+    </para></important>
+
+    <note><para>
+      Nedlastingsstørrelsen er rundt 4G, så du bør vurdere om 
+      og når du vil laste ned denne kjørefilen. Av denne grunn 
+      anbefales det ikke å laste den ned når du bruker begrenset 
+      hotspot data. Størrelsen kan i stor grad tilskrives at den 
+      inneholder kompilatorer samt NVIDIA driveren. Driveren 
+      utgjør bare 10 % av runfilens størrelse.
+    </para></note>
+
+<!--
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&patch-root;/cuda/cuda-glibc-2.41-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+-->
+
+    <bridgehead renderas="sect3">CUDA Avhengigheter</bridgehead>
+
+    <para role="required">
+      <xref linkend="nvidia"/>
+    </para>
+
+    <para role="recommended">
+      <xref linkend="bash-profile"/>
+    </para>
+
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/gdb.html">GDB</ulink> og
+      <xref linkend="glu"/>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av CUDA</title>
+
+    <para>
+      Først opprett installasjonsmappen og symbollinken som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>mkdir -pv /opt/cuda-&cuda-version; &amp;&amp;
+ln -sfv cuda-&cuda-version; /opt/cuda</userinput></screen>
+
+    &as_root;
+
+    <para>
+      Start et underskall som avsluttes ved en feil:
+    </para>
+
+<screen role="nodump"><userinput>bash -e</userinput></screen>
+
+    <para>
+      Installer CUDA ved å kjøre følgende 
+      kommandoer:
+    </para>
+
+<screen role="root"><userinput>sh cuda_&cuda-version;_&cuda-nvidia-version;_linux.run     \
+  --target cuda_&cuda-version;_&cuda-nvidia-version;_linux \
+  --noexec
+pushd cuda_&cuda-version;_&cuda-nvidia-version;_linux/builds
+  rm -rf cuda_nsight cuda_sanitizer_api nsight_{compute,systems}
+  rm -rvf bin integration NVIDIA*.run
+  as_root cp version.json /opt/cuda-&cuda-version;
+  as_root cp EULA.txt     /opt/cuda-&cuda-version;
+  rm version.json EULA.txt
+  as_root mkdir -p /opt/cuda-&cuda-version;/bin
+  for lib in *; do
+    as_root cp -vR $lib/* /opt/cuda-&cuda-version;
+    rm -rf $lib
+  done
+  as_root ln -svf lib64 /opt/cuda-&cuda-version;/lib
+  for mf in $(find /opt/cuda-&cuda-version; -name Makefile); do
+    as_root sed -i "s|/usr/local/cuda|/opt/cuda-&cuda-version;|g" "$mf"
+  done
+popd
+rm -rf cuda_&cuda-version;_&cuda-nvidia-version;_linux</userinput></screen>
+
+    <para>
+      Avslutt nå underskall prosessen:
+    </para>
+
+<screen role="nodump"><userinput>exit</userinput></screen>
+
+    <para>
+      Som &root; bruker, tillat bruk av nye kompilatorer:
+    </para>
+
+<screen role="root"><userinput>sed -e "/.*unsupported GNU version.*/d" \
+    -e "/.*unsupported clang version.*/d" \
+    -i /opt/cuda-&cuda-version;/targets/x86_64-linux/include/crt/host_config.h</userinput></screen>
+
+    <important><para>
+      Dette støttes teknisk sett ikke, og det kan oppstå kompileringsfeil i 
+      andre pakker som et resultat. Det er imidlertid et bedre kompromiss enn å 
+      installere eldre kompilatorer bare for én pakke. Denne pakken er fortsatt 
+      under utvikling, men det tar lang tid å tilpasse seg nyere programvare.
+    </para></important>
+
+<!--
+    <para>
+      Til slutt, oppdater en deklarasjonsfil for å fikse bygging mot
+      glibc-2.41, igjen som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>patch -Np1 /opt/cuda-&cuda-version;/targets/x86_64-linux/include/crt/math_functions.h \
+  -i cuda-glibc-2.41-1.patch</userinput></screen>
+-->
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    <para>
+      <parameter>--target</parameter>: Denne parameteren angir 
+      utpakningsmappen.
+    </para>
+
+    <para>
+      <parameter>--noexec</parameter>: Denne parameteren sikrer at verktøysettet 
+      ikke utløses for installasjon.
+    </para>
+
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Konfigurere CUDA</title>
+
+    <para>
+      Sørg for at bibliotekene er mellomlagret som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>cat &gt; /etc/ld.so.conf.d/cuda.conf &lt;&lt; EOF &amp;&amp;
+<literal>/opt/cuda/lib64
+/opt/cuda/nvvm/lib64
+/opt/cuda/extras/CUPTI/lib64</literal>
+EOF
+
+ldconfig</userinput></screen>
+
+    <para>
+      For å kunne bruke verktøysettet må det nå inkluderes i banen.
+    </para>
+
+    <para>
+      Som &root; bruker, opprett profilen (avhengig av <xref
+      linkend="bash-profile"/>) for CUDA:
+    </para>
+
+<screen role="root"><userinput>cat &gt; /etc/profile.d/cuda.sh &lt;&lt; "EOF"
+<literal># Begin /etc/profile.d/cuda.sh
+
+pathprepend /opt/cuda/bin           PATH
+
+# End /etc/profile.d/cuda.sh</literal>
+EOF</userinput></screen>
+
+    &source-profile;
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <para>
+      For en fullstendig pakkeliste, sjekk <ulink
+      url="&arch-pkgs;/extra/x86_64/cuda/">Arch's CUDA package contents</ulink>
+      ettersom hele listen er for lang til å listes opp her.
+    </para>
+
+  </sect2>
+
+</sect1>

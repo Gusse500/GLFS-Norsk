@@ -55,10 +55,12 @@
                   or contains(@url, '.tgz') or contains(@url, '.tar')
                   or contains(@url, 'patch.txt') or contains(@url, '.zip')
                   or contains(@url, '.patch') or contains(@url, '/patch.'))
+                  and not(ancestor-or-self::*/@condition = 'pdf')">
+<!--
                   or contains (@url, '.run')
                   or contains(@url, 'install-NVIDIA')
                   or contains(@url, 'manifest-NVIDIA')
-                  and not(ancestor-or-self::*/@condition = 'pdf')">
+-->
       <xsl:choose>
         <!-- Fix SourceForge links-->
         <xsl:when test="contains(@url,'?download')">

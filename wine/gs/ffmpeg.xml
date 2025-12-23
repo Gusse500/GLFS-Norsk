@@ -88,6 +88,7 @@
         </listitem>
       </itemizedlist>
     </para>
+
     <para role="optional">
       En komplett liste over valgfrie avhengigheter finnes i
       <ulink url="&blfs-svn;/multimedia/ffmpeg.html">BLFS FFmpeg siden</ulink>.
@@ -95,8 +96,7 @@
         <para>For systemer med NVIDIA grafikkort</para>
         <listitem>
           <para>
-            <ulink
-              url="&slfs-website;/general/cuda.html">CUDA</ulink> og
+            &cuda; og
             <xref linkend="nv-codec-headers"/>
           </para>
         </listitem>

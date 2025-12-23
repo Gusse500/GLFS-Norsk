@@ -44,11 +44,11 @@
 <!ENTITY libxml2-version              "&libxml2-minor;.1">
 <!ENTITY shared-mime-info-version     "2.4">
 <!ENTITY desktop-file-utils-version   "0.28">
-<!ENTITY polkit-version               "126">
+<!ENTITY polkit-version               "127">
 <!-- Audio -->
 <!ENTITY alsa-download-http           "https://www.alsa-project.org/files/pub">
 <!ENTITY alsa-download-ftp            "ftp://ftp.alsa-project.org/pub">
-<!ENTITY alsa-version                 "1.2.14">
+<!ENTITY alsa-version                 "1.2.15.1">
 <!ENTITY alsa-lib-version             "&alsa-version;">
 <!ENTITY alsa-plugins-version         "1.2.12">
 <!ENTITY alsa-utils-version           "&alsa-version;">
@@ -66,7 +66,7 @@
 <!-- Basic X11 Software -->
 <!ENTITY xorg-version                 "7">      <!-- applies to all xorg packages -->
 <!ENTITY util-macros-version          "1.20.2">
-<!ENTITY xorgproto-version            "2024.1">
+<!ENTITY xorgproto-version            "2025.1">
 <!ENTITY libXau-version               "1.0.12">
 <!ENTITY libXdmcp-version             "1.1.5">
 <!ENTITY xcb-proto-version            "1.17.0">
@@ -132,9 +132,7 @@
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.24.0">
 <!ENTITY wayland-protocols-version    "1.47">
-<!-- Graphics Drivers -->
-<!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.402">
+<!-- Graphics APIs -->
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-sdk-version           "1.4.335.0">
 <!ENTITY glu-version                  "9.0.3">
@@ -142,21 +140,37 @@
 <!ENTITY libdrm-version               "2.4.131">
 <!ENTITY libgbm-version               "1.0.4">
 <!ENTITY libva-version                "2.22.0">
+<!-- Graphics Drivers - Preliminaries -->
+<!ENTITY pciutils-version             "3.14.0">
+<!ENTITY hwdata-version               "0.402">
+<!-- Graphics Drivers - NVIDIA -->
 <!ENTITY mesa-major-minor             "25.3">
 <!ENTITY mesa-version                 "&mesa-major-minor;.1">
 <!ENTITY eglexternalplatform-version  "1.2.1">
 <!ENTITY egl-gbm-version              "1.1.2.1">
 <!ENTITY egl-wayland-version          "1.1.20">
 <!ENTITY egl-x11-version              "1.0.4">
-<!-- Known working linux versions for NVIDIA. -->
-<!ENTITY nvidia-linux-version         "6.15.x - 6.17.x">
-<!ENTITY nvidia-version               "580.119.02">
-<!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
-<!ENTITY nvidia-full-name             "&nvidia-version;">
-<!ENTITY nv-manifest-version          "1">
-<!ENTITY nv-sysv-bs                   "1">
 <!ENTITY nv-codec-headers-version     "13.0.19.0">
 <!ENTITY nvidia-vaapi-driver-version  "0.0.14">
+<!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
+<!-- NVIDIA -->
+<!ENTITY nvidia-rev           "590">
+<!ENTITY nvidia-linux-version "6.17.x - 6.18.x">
+<!ENTITY nvidia-version       "&nvidia-rev;.48.01">
+<!ENTITY nvidia-full-name     "&nvidia-version;">
+<!ENTITY nv-manifest-version  "2">
+<!ENTITY nv-sysv-bs           "2">
+<!ENTITY cuda-version         "13.1.0">
+<!ENTITY cuda-nvidia-version  "590.44.01">
+<!-- NVIDIA r580 -->
+<!ENTITY nvidia-r580-linux-version "6.15.x - 6.17.x">
+<!ENTITY nvidia-r580-version       "580.119.02">
+<!ENTITY nvidia-r580-full-name     "&nvidia-r580-version;">
+<!ENTITY nv-r580-manifest-version  "1">
+<!ENTITY nv-r580-sysv-bs           "1">
+<!ENTITY cuda-r580-version         "13.0.2">
+<!ENTITY cuda-r580-nvidia-version  "580.95.05">
+<!-- Graphics Drivers - Mesa -->
 <!ENTITY llvm-maj-version             "21">
 <!ENTITY llvm-point-version           "8">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
@@ -289,7 +303,7 @@
 <!ENTITY dxvk-spirv                   "8b246ff75c6615ba4532fe4fde20f1be090c3764">
 <!ENTITY dxvk-vulkan                  "234c4b7370a8ea3239a214c9e871e4b17c89f4ab">
 
-<!ENTITY vkd3d-proton-version            "3.0">
+<!ENTITY vkd3d-proton-version            "3.0b">
 <!ENTITY vkd3d-proton-spirv              "3b9447dc98371e96b59a6225bd062a9867e1d203">
 <!ENTITY vkd3d-proton-vulkan             "b39ab380a44b6c8df462c34e976ea9ce2d2c336b">
 <!ENTITY vkd3d-proton-dxil-spirv         "4e36bab794afdb7d78f56b866971009ca894fe9c">

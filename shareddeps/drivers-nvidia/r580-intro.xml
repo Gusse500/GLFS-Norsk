@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="nvidia-r580-intro" xreflabel="Introduksjon til NVIDIA-r580">
+  <?dbhtml filename="nvidia-r580-intro.html"?>
+
+  <title>Introduksjon til NVIDIA-r580</title>
+
+  <para>
+    Denne underavsnittet er dedikert til å installere hovedrevisjonen r580 av 
+    NVIDIA driveren og dens komponenter. Se <xref linkend="nvidia-rev"/>
+    for mer informasjon om hvilke revisjoner som er tilgjengelige.
+  </para>
+
+  <itemizedlist>
+    <listitem>
+      <para><xref linkend="nvidia-r580"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="cuda-r580"/></para>
+    </listitem>
+  </itemizedlist>
+
+</sect1>

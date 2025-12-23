@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY nv-root "https://us.download.nvidia.com/XFree86/Linux-x86_64">
+  <!ENTITY nvidia-download
+    "&nv-root;/&nvidia-r580-version;/NVIDIA-Linux-x86_64-&nvidia-r580-version;.run">
+  <!ENTITY mesa-raw-repo
+    "https://gitlab.freedesktop.org/mesa/mesa/-/raw/&mesa-major-minor;">
+]>
+
+<sect1 id="nvidia-r580" xreflabel="NVIDIA-&nvidia-r580-version;">
+  <?dbhtml filename="nvidia-r580.html"?>
+
+  <title>NVIDIA-&nvidia-r580-full-name;</title>
+
+  <indexterm zone="nvidia-r580">
+    <primary sortas="a-nvidia-r580">NVIDIA-r580</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til NVIDIA-r580</title>
+
+    <para>
+      Dette er hovedutgivelsen r580 av NVIDIAs proprietære driver, som 
+      inneholder fastvare, kjernedrivere, brukerlanddrivere knyttet til OpenGL, 
+      Vulkan og maskinvareakselerasjon, og tilbyr nyttige verktøy for NVIDIA 
+      kort fra Maxwell til Blackwell.
+    </para>
+
+    <note revision="sysv"><para>
+      NVIDIA-Powerd støttes kun på Systemd.
+    </para></note>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Anbefalt(e) kjerneversjon(er) å bruke: linux &nvidia-r580-linux-version;
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&nvidia-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+<!--
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/NVIDIA/NVIDIA-&nvidia-r580-version;-kernel_gpl_cachyos-1.patch"/>
+        </para>
+      </listitem>
+-->
+      <listitem>
+        <para>
+          Nødvendig installasjonsskript:
+          <ulink url="&dl-root;/NVIDIA/install-NVIDIA-&nv-r580-manifest-version;"/>
+        </para>
+      </listitem>
+      <listitem>
+        <para>
+          Nødvendig manifestfil for installasjonsskriptet:
+          <ulink url="&dl-root;/NVIDIA/manifest-NVIDIA-&nv-r580-manifest-version;"/>
+        </para>
+      </listitem>
+<!-- NOT READY
+      <listitem revision="sysv">
+        <para>
+          Anbefalte SysVinit oppstartsskripter for NVIDIA-Powerd:
+          <ulink url="&dl-root;/NVIDIA/NVIDIA-sysv-bootscripts-&nv-r580-sysv-bs;.tar.xz"/>
+        </para>
+      </listitem>
+-->
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">NVIDIA-r580 Avhengigheter</bridgehead>
+
+    &nvidia-common-deps;
+
+  </sect2>
+
+  <sect2>
+    <title>Forberedelser til installasjon av NVIDIA-r580</title>
+
+    &nvidia-common-kernel;
+
+    <para>
+      Pakk ut NVIDIA-r580 driverfilen og naviger til 
+      den utpakkede mappen:
+    </para>
+
+<screen><userinput>sh NVIDIA-Linux-x86_64-&nvidia-r580-version;.run -x &amp;&amp;
+cd NVIDIA-Linux-x86_64-&nvidia-r580-version;</userinput></screen>
+
+<!--
+    <para>
+      Installer en oppdatering for den proprietære kjernemodultypen for 
+      driveren for kompatibilitet med Linux-6.15:
+    </para>
+
+<screen><userinput>patch -d kernel -Np1 -i ../../NVIDIA-&nvidia-r580-version;-kernel_gpl_cachyos-1.patch</userinput></screen>
+-->
+
+  </sect2>
+
+  <sect2>
+    <title>Installasjon av NVIDIA-r580 Kjernemoduler</title>
+
+    <para>
+      Nå må du bygge kjernemodulene for driveren. Det finnes 
+      to typer: <emphasis role="bold">open</emphasis> og
+      <emphasis role="bold">proprietary</emphasis>. Hvis du har 
+      NVIDIA Grace Hopper eller NVIDIA Blackwell kort, må du 
+      kompilere <emphasis role="bold">open</emphasis> kjernemoduler.
+      Hvis du har et Turing, Ampere, Ada Lovelace eller Hopper kort, 
+      anbefales det å bygge
+      <emphasis role="bold">open</emphasis> kjernemoduler.
+      Hvis du har et Maxwell, Pascal eller Volta kort, bygg
+      <emphasis role="bold">proprietary</emphasis> kjernemoduler.
+      Hvis du bruker både et eldre og et nyere kort, men ikke det nyeste kortet, 
+      bygg <emphasis role="bold">proprietary</emphasis> kjernemoduler.
+    </para>
+
+    <para>
+      Hvis du skal bygge <emphasis role="bold">open</emphasis>
+      kjernemoduler, naviger til <filename
+      class="directory">kernel-open</filename> mappen:
+    </para>
+
+<screen><userinput>cd kernel-open</userinput></screen>
+
+    <para>
+      Hvis du i stedet skal bygge <emphasis
+      role="bold">proprietary</emphasis> kjernemoduler, naviger til
+      <filename class="directory">kernel</filename> mappen:
+    </para>
+
+<!-- proprietary is the exception, not the rule -->
+<screen><computeroutput>cd kernel</computeroutput></screen>
+
+    &nvidia-common-build-modules;
+
+    <para>
+      Installer fastvaren som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>rm -rvf /usr/lib/firmware/nvidia/[0-9]* &amp;&amp;
+mkdir -pv /usr/lib/firmware/nvidia/&nvidia-r580-version; &amp;&amp;
+cp -v firmware/*.bin /usr/lib/firmware/nvidia/&nvidia-r580-version;</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installere NVIDIA-r580 Driverprogramvare</title>
+
+<!--
+    <note><para>
+      Hvis du har en eksisterende installasjon, kan det være lurt å følge 
+      <xref linkend="nvidia-r580-uninstalling"/> først før du går gjennom denne 
+      delen for å fjerne noen skrap og restbiblioteker. Dette er imidlertid 
+      ikke strengt nødvendig.
+    </para></note>
+-->
+
+    <para>
+      Installer installasjonsskriptet og manifestfilen for skriptet som &root;
+      bruker:
+    </para>
+
+<screen role="root"><userinput>&install-dir; /usr/share/nvidia &amp;&amp;
+&install-exec; ../install-NVIDIA-&nv-r580-manifest-version; /usr/sbin/nvidia-install &amp;&amp;
+&install-file; ../manifest-NVIDIA-&nv-r580-manifest-version; /usr/share/nvidia/manifest</userinput></screen>
+
+    <para>
+      Se nå hvilke alternativer som finnes og hva du vil installere ved å kjøre
+      <command>/sbin/nvidia-install --help</command>.
+    </para>
+
+    <para>
+      Hvis du vil gjøre standardinstallasjonen, kan du bare kjøre følgende 
+      kommando som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>/sbin/nvidia-install</userinput></screen>
+
+    <important><para>
+      Hvis du starter opp i systemet du kjører kommandoene for, kan det å gjøre 
+      det for kommandoen ovenfor i et grafisk miljø krasje det miljøet og føre 
+      deg tilbake til en TTY. Ikke gjør det, bare kjør den fra en TTY eller i en 
+      chroot der skjermen ikke er avhengig av bibliotekene som leveres av denne 
+      driveren. Når det gjelder TTY, drives den faktisk av kjernen eller dens 
+      moduler, ikke bibliotekene. Det er derfor det er trygt å kjøre kommandoen 
+      ovenfor i en TTY.&mdash;den overskriver ikke kjernemodulene.
+    </para></important>
+
+  </sect2>
+
+<!-- UNFINISHED, DOES NOT WORK!
+
+  <sect2 revision="sysv">
+    <title>Installasjon av NVIDIA-Powerd</title>
+    <para>
+      Hvis du vil ha NVIDIA-Powerd, som kan sette programmet i dvalemodus 
+      hvis du blir bedt om det, kjører du følgende kommandoer som &root;
+      brukeren for å installere daemonen og oppstartsskriptene:
+    </para>
+<screen role="root"><userinput>mkdir -pv /usr/share/dbus-1/system.d        &amp;&amp;
+&install-exec; nvidia-powerd -t /usr/bin/       &amp;&amp;
+cp -v nvidia-dbus.conf                       \
+      /usr/share/dbus-1/system.d            &amp;&amp;
+tar -xf ../NVIDIA-sysv-bootscripts-&nv-r580-sysv-bs;.tar.xz &amp;&amp;
+pushd NVIDIA-sysv-bootscripts-&nv-r580-sysv-bs;             &amp;&amp;
+  make install-nvidia-powerd                &amp;&amp;
+popd                                        &amp;&amp;
+rm -rf NVIDIA-sysv-bootscripts-&nv-r580-sysv-bs;</userinput></screen>
+  </sect2>
+-->
+
+  <sect2 revision="systemd">
+    <title>Installasjon av NVIDIA-Powerd</title>
+    <para>
+      Hvis du vil ha NVIDIA-Powerd, som kan sette i dvalemodus hvis du blir 
+      bedt om det, kjør følgende kommandoer som &root; bruker for å installere 
+      daemonen og Systemd enhetsfilene.:
+    </para>
+<screen role="root"><userinput>mkdir -pv /usr/lib/systemd/system               \
+          /usr/lib/systemd/system-sleep         \
+          /usr/share/dbus-1/system.d           &amp;&amp;
+&install-exec; nvidia-powerd -t /usr/bin/     &amp;&amp;
+&install-exec; systemd/nvidia-sleep.sh         \
+             -t /usr/bin/                      &amp;&amp;
+&install-exec; systemd/system-sleep/nvidia     \
+             -t /usr/lib/systemd/system-sleep/ &amp;&amp;
+cp -v systemd/system/*.service                  \
+      /usr/lib/systemd/system                  &amp;&amp;
+cp -v nvidia-dbus.conf                          \
+      /usr/share/dbus-1/system.d               &amp;&amp;
+
+cat &gt; systemd-homed-override.conf &lt;&lt; "EOF" &amp;&amp;
+<literal>[Service]
+Environment="SYSTEMD_HOME_LOCK_FREEZE_SESSION=false"</literal>
+EOF
+cat &gt; systemd-suspend-override.conf &lt;&lt; "EOF" &amp;&amp;
+<literal>[Service]
+Environment="SYSTEMD_SLEEP_FREEZE_USER_SESSIONS=false"</literal>
+EOF
+
+for service in {homed,suspend,suspend-then-hibernate,hibernate,hybrid-sleep}; do
+  mkdir -pv /usr/lib/systemd/system/systemd-"$service".service.d
+done &amp;&amp;
+cp -v systemd-homed-override.conf                                                       \
+      /usr/lib/systemd/system/systemd-homed.service.d/10-nvidia-no-freeze-session.conf &amp;&amp;
+for service in {suspend,suspend-then-hibernate,hibernate,hybrid-sleep}; do
+  cp -v systemd-suspend-override.conf \
+    /usr/lib/systemd/system/systemd-"$service".service.d/10-nvidia-no-freeze-session.conf
+done</userinput></screen>
+    <para>
+      Systemd enhetene må kjøres ved oppstart. Aktiver dem som
+      &root; bruker:
+    </para>
+<screen role="root"><userinput>for service in nvidia-{resume,hibernate,suspend}; do
+  systemctl enable $service
+done</userinput></screen>
+  </sect2>
+
+  <sect2 role="configuration">
+    <title>Konfigurere NVIDIA-r580</title>
+
+    <sect3 id="nvidia-config-r580">
+      <title>Konfigurasjonsfiler</title>
+      <para>
+        <filename>/usr/lib/modprobe.d/nouveau.conf</filename>
+      </para>
+      <para>
+        <filename>/usr/lib/modprobe.d/nvidia_drm.conf</filename>
+      </para>
+      <para revision="systemd">
+        <filename>/usr/lib/modprobe.d/nvidia.conf</filename>
+      </para>
+    </sect3>
+
+    <sect3>
+      <title>Liste over pakker med problemer</title>
+
+      <para>
+        Bruk av denne driveren kan føre til kompromisser. Så langt ser disse problemene 
+        ut til å være begrenset til Wayland og vindusbehandlere. Listen nedenfor 
+        dokumenterer de kjente pakkene som har problemer med denne driveren.
+      </para>
+
+      <itemizedlist>
+<!-- Fixed in BLFS at 4e1859c178
+        <listitem revision="sysv">
+          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>:Bruk av denne 
+          pakken på SysVinit systemer vil føre til feil, ettersom GDM ikke vil 
+          bruke Wayland for NVIDIA GPU-er, men et tillatelsesproblem med SysV 
+          forhindrer at X11 brukes. Du må starte
+          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> eller
+          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
+          gjennom terminalen i stedet. Les Mutter oppføringen.</para>
+        </listitem>
+        <listitem revision="sysv"><para>
+          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
+          Dette må foreløpig startes via en TTY eller en annen skjermbehandler 
+          enn GDM på SysVinit systemer.
+        </para></listitem>
+-->
+        <listitem>
+          <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
+          Kompiler denne pakken med
+          <parameter>-D wayland_eglstream=true</parameter> og
+          <parameter>-D egl_device=true</parameter> for å aktivere oppstart med 
+          Wayland. Sørg for at <xref linkend="nvidia-egl"/> er
+          installert.</para>
+<!--
+          <para revision="sysv">På SysVinit systemer kan Mutter bare startes 
+          via en TTY eller en annen skjermbehandler enn GDM per 
+          nå.</para>
+-->
+        </listitem>
+        <listitem>
+          <para>
+            <xref linkend="xorg-server"/>: Selv om denne pakken fungerer helt 
+            fint, vil TearFree oppdateringen og konfigurasjonsfilen være 
+            ubrukelig siden Xorg driveren (<filename class="libraryfile">nvidia_drv</filename>)
+            vil bli brukt i stedet for modusinnstillingsdriveren. TearFree 
+            oppdateringen og konfigurasjonsfilen er modusinnstillingsspesifikk. 
+            Derfor må du finne en annen måte å bli kvitt skjermriving hvis det 
+            er ditt ønske. Slike rettelser kan redusere ytelsen drastisk, slik 
+            at 144 FPS kan falle til 60 FPS.
+          </para>
+        </listitem>
+      </itemizedlist>
+
+    </sect3>
+
+    <sect3><title>Konfigurasjonsinformasjon</title>
+
+      <para>
+        For at driverne skal fungere ordentlig, må enhetsnoder opprettes på 
+        forhånd. Under visse forhold eller konfigurasjoner opprettes ikke disse 
+        automatisk når en skjermserver startes. Som &root; bruker, opprett en 
+        udev regel for alltid å opprette disse nodene ved oppstart:
+      </para>
+
+<screen role="root"><userinput>mkdir -pv /usr/lib/udev/rules.d &amp;&amp;
+cat &gt; /usr/lib/udev/rules.d/60-nvidia.rules &lt;&lt; "EOF"
+<literal># Always create NVIDIA device nodes at boot time.
+ACTION=="add|bind",                \
+  ATTR{vendor}=="0x10de",          \
+  ATTR{class}=="0x03[0-9]*",       \
+  DRIVER=="nvidia",                \
+  TEST!="/dev/nvidiactl",          \
+  RUN+="/usr/bin/nvidia-modprobe", \
+  RUN+="/usr/bin/nvidia-modprobe -c0 -u"</literal>
+EOF</userinput></screen>
+
+      <para>
+        Nouveau og NVIDIAFB støtte ble kompilert inn i kjernen for å sikre at 
+        NVIDIA kjernemodulene kunne bygges. Nouveau og NVIDIAFB er imidlertid i 
+        konflikt med NVIDIA kjernemodulene, så de bør svartelistes. I tillegg 
+        kan det ha blitt bygget andre moduler som kan komme i konflikt, og bør 
+        også deaktiveres. Som &root; bruker, opprett filen
+        <filename>/usr/lib/modprobe.d/nouveau.conf</filename> for å svarteliste 
+        Nouveau og NVIDIAFB, samt andre motstridende moduler:
+      </para>
+
+<screen role="root"><userinput>mkdir -pv /usr/lib/modprobe.d &amp;&amp;
+cat &gt; /usr/lib/modprobe.d/nouveau.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nouveau.conf
+
+blacklist nouveau
+blacklist nvidiafb
+blacklist nova_core
+blacklist nova_drm
+
+# End /usr/lib/modprobe.d/nouveau.conf</literal>
+EOF</userinput></screen>
+
+      <para>
+        DRM kjernemodulen bruker ikke modusinnstilling som standard, noe som er 
+        nødvendig for Wayland kompositorer. Gjør det mulig å bruke 
+        modusinnstilling som &root; bruker:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nvidia_drm.conf
+
+options nvidia_drm modeset=1
+
+# End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
+EOF</userinput></screen>
+
+      <!-- Cannot be used on SysVinit and the kernel module will complain
+           as the ability to make use of sleep/hibernate is not yet
+           implemented. We must provide the files, but they do not work.
+           - Zeckma -->
+      <para revision="systemd">
+        Når GPU-en går i hvilemodus/dvalemodus, mister den som standard alle 
+        minnetildelinger. Du kan forhindre dette ved å angi to alternativer for 
+        NVIDIA modulen. Hvis du ikke bruker hvilemodus/dvalemodus, kan du hoppe 
+        over å lage følgende konfigurasjonsfil. Ellers, som &root; bruker:
+      </para>
+
+<screen revision="systemd" role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia.conf &lt;&lt; "EOF"
+<literal># Begin /usr/lib/modprobe.d/nvidia.conf
+
+options nvidia NVreg_PreserveVideoMemoryAllocations=1
+options nvidia NVreg_TemporaryFilePath=/var/tmp
+
+# End /usr/lib/modprobe.d/nvidia.conf</literal>
+EOF</userinput></screen>
+
+      <para>
+        Denne driveren installerer ikke DRI
+        <footnote><para>
+          Direct Rendering Infrastructure.
+        </para></footnote>
+        drivere eller driverstubber. På samme måte installerer den ikke en 
+        pkgconf fil som forteller hvor du finner de tilknyttede filene. Filene 
+        er ikke nødvendige med denne driveren. Imidlertid forventer noen 
+        applikasjoner at pkg-config filen finnes, nemlig 
+        <xref linkend="xorg-server"/>. Opprett en nå som
+        &root; bruker:
+      </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
+<literal>prefix=/usr
+includedir=${prefix}/include
+
+dridriverdir=/usr/lib/dri
+
+Name: dri
+Description: Direct Rendering Infrastructure
+Version: &nvidia-r580-version;
+Requires.private: libdrm >=  2.4.109
+Cflags: -I${includedir}</literal>
+EOF</userinput></screen>
+
+      <para>
+        Programmer som krever denne filen vil vanligvis ikke lenke mot noe 
+        bibliotek i <filename class="libraryfile">/usr/lib/dri</filename>.
+        Hvis du er bekymret for at et program vil prøve å lenke mot 
+        ikke-eksisterende biblioteker, kan du kompilere <xref linkend="mesa"/> 
+        for å få disse bibliotekene og en ekte pkg-config fil. Merk at disse 
+        ibliotekene ikke vil bli brukt når denne driveren er i bruk.
+      </para>
+
+      <para>
+        Som med situasjonen angående DRI, finnes det noen få deklarasjonsfiler 
+        som bare er installert av <xref linkend="mesa"/> men kan utelates uten 
+        problemer. En er for å deklarere DRI grensesnittet, en for å deklarere 
+        Mesas EGL EXT-system som brukes av noe programvare som GNOMEs mutter, og 
+        en annen for å deklarere EGL EXT-systemet for ANGLE, med modifikasjoner 
+        tilpasset det. Bruk <xref linkend="wget"/>, last ned og installer dem 
+        som &root; bruker:
+      </para>
+
+<screen role="root"><userinput>&install-dir; /usr/include/GL/internal /usr/include/EGL &amp;&amp;
+wget &mesa-raw-repo;/include/GL/internal/dri_interface.h \
+  -O /usr/include/GL/internal/dri_interface.h &amp;&amp;
+wget &mesa-raw-repo;/include/EGL/eglmesaext.h \
+  -O /usr/include/EGL/eglmesaext.h &amp;&amp;
+wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
+  -O /usr/include/EGL/eglext_angle.h</userinput></screen>
+
+    </sect3>
+
+  </sect2>
+
+  <sect2>
+    <title>Fortsette</title>
+
+    <para>
+      Hvis du legger alle filene på plass i konfigurasjonsdelen, burde du ikke 
+      trenge Mesa for noen pakker i boken eller i BLFS. OpenGL, DRI og EGL 
+      filene som er oppgitt her, burde være passende. GNOME og KDE er kjent for 
+      å fungere med denne konfigurasjonen.
+    </para>
+
+    <para>
+      Med dette rene NVIDIA oppsettet kan du hoppe til <xref linkend="x"/> og
+      forvent problemfri bruk. Hvis du vil, kan du imidlertid også installere 
+      CUDA i denne underseksjonen, noe som er opp til deg..
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Fastvare</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          nvidia-install,
+          nvidia-modprobe,
+          nvidia-settings,
+          nvidia-smi, og
+          nvidia-xconfig
+        </seg>
+        <seg>
+          gsp_ga10x.bin og
+          gsp_tu10x.bin
+        </seg>
+        <seg>
+          libcudadebugger,
+          libcuda,
+          libEGL_nvidia,
+          libGLESv2_nvidia,
+          libGLX_nvidia,
+          libglxserver_nvidia,
+          libnvcuvid,
+          libnvoptix,
+          libnvidia-allocator,
+          libnvidia-api,
+          libnvidia-cfg,
+          libnvidia-eglcore,
+          libnvidia-encode,
+          libnvidia-fbc,
+          libnvidia-glcore,
+          libnvidia-glsi,
+          libnvidia-glvkspirv,
+          libnvidia-gpucomp,
+          libnvidia-gtk3,
+          libnvidia-ml,
+          libnvidia-ngx,
+          libnvidia-nvvm{70,},
+          libnvidia-opencl,
+          libnvidia-opticalflow,
+          libnvidia-pkcs11-openssl3,
+          libnvidia-pkcs11,
+          libnvidia-ptxjitcompiler,
+          libnvidia-rtcore,
+          libnvidia-tls,
+          libnvidia-wayland-client,
+          libOpenCL,
+          nvidia-drm_gbm,
+          nvidia_drv, og
+          for <xref linkend="wine"/> (_nvngx,
+          nvngx, og
+          nvngx_dlssg; alle tre er DLLer)
+        </seg>
+        <seg>
+          /usr/lib/firmware/nvidia/&nvidia-r580-version;,
+          /usr/lib/nvidia/wine,
+          /usr/share/glvnd/egl_vendor.d, og
+          /usr/share/nvidia
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+  </sect2>
+
+</sect1>
