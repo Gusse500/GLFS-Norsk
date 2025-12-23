@@ -44,6 +44,12 @@
       <para>21. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - xorgproto: 2024.1 -&gt; 2025.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Polkit: 126 -&gt; 127.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - shareddeps: Del grafikkdrivere inn i flere kapitler: 
           <quote>Graphics APIs</quote>; <quote>Grafikkdrivere,
           Forberedelser</quote>; <quote>Grafikkdrivere, NVIDIA</quote>; og

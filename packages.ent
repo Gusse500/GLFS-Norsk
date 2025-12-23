@@ -44,7 +44,7 @@
 <!ENTITY libxml2-version              "&libxml2-minor;.1">
 <!ENTITY shared-mime-info-version     "2.4">
 <!ENTITY desktop-file-utils-version   "0.28">
-<!ENTITY polkit-version               "126">
+<!ENTITY polkit-version               "127">
 <!-- Audio -->
 <!ENTITY alsa-download-http           "https://www.alsa-project.org/files/pub">
 <!ENTITY alsa-download-ftp            "ftp://ftp.alsa-project.org/pub">
@@ -66,7 +66,7 @@
 <!-- Basic X11 Software -->
 <!ENTITY xorg-version                 "7">      <!-- applies to all xorg packages -->
 <!ENTITY util-macros-version          "1.20.2">
-<!ENTITY xorgproto-version            "2024.1">
+<!ENTITY xorgproto-version            "2025.1">
 <!ENTITY libXau-version               "1.0.12">
 <!ENTITY libXdmcp-version             "1.1.5">
 <!ENTITY xcb-proto-version            "1.17.0">
