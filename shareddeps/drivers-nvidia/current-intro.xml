@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="nvidia-current-intro" xreflabel="Introduction to NVIDIA-r&nvidia-rev;">
+  <?dbhtml filename="nvidia-current-intro.html"?>
+
+  <title>Introduksjon til NVIDIA-r&nvidia-rev;</title>
+
+  <para>
+    Denne underavsnittet er dedikert til installasjon av r&nvidia-rev; major 
+    revisjon av NVIDIA driveren og dens komponenter. Denne versjonen vil ganske 
+    enkelt bli referert til som <quote>NVIDIA</quote> fra nå av. Se <xref
+    linkend="nvidia-rev"/> for mer informasjon om hvilke revisjoner som er 
+    tilgjengelige.
+  </para>
+
+  <itemizedlist>
+    <listitem>
+      <para><xref linkend="nvidia"/></para>
+    </listitem>
+    <listitem>
+      <para><xref linkend="cuda"/></para>
+    </listitem>
+  </itemizedlist>
+
+</sect1>

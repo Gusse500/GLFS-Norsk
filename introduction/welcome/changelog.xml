@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>22. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA-590.48.01; CUDA-13.1.0; CUDA-13.0.2: Lagt til.
+          Fikser <ulink url="&glfs-issues;/327">#327</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>21. desember 2025</para>
       <itemizedlist>
         <listitem>

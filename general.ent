@@ -119,6 +119,8 @@
 <!ENTITY blfs-wiki                    "https://wiki.linuxfromscratch.org/blfs/wiki">
 <!ENTITY blfs-svn                     "&norsklfs-domainname;/blfs/view/&blfs-version;">
 
+<!ENTITY arch-pkgs                    "https://archlinux.org/packages">
+
 <![ %development; [
   <!ENTITY important-stability "<para>
   Denne boken, som er tilgjengelig på nett, er i konstant strøm av oppdateringer, og oppdateres 
@@ -291,6 +293,14 @@ export -f as_root</userinput></screen>
 
 <!ENTITY opengl "<xref linkend='libglvnd'/>">
 <!ENTITY gbm    "GBM (<xref linkend='libgbm'/> eller <xref linkend='mesa'/>)">
+<!ENTITY nvidia-all "(<xref linkend='nvidia'/> or
+                      <xref linkend='nvidia-r580'/>)">
+<!ENTITY cuda-all   "(<xref linkend='cuda'/> or
+                      <xref linkend='cuda-r580'/>)">
+<!ENTITY nvidia "NVIDIA &nvidia-all;">
+<!ENTITY nvidia-emph "<emphasis>NVIDIA</emphasis> &nvidia-all;">
+<!ENTITY cuda "CUDA &cuda-all;">
+<!ENTITY cuda-emph "<emphasis>CUDA</emphasis> &cuda-all;">
 
 <!ENTITY sdl2 "<xref linkend='sdl2'/>">
 

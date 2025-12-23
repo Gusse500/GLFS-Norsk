@@ -25,11 +25,10 @@
     <title>Introduksjon til NVIDIA-VA-API-Driver</title>
 
     <para>
-      NVIDIA-VA-API-Driver pakken inneholder en VA-API driver for <xref
-      linkend="nvidia"/>, bruker NVDEC under panseret uten å kreve
+      NVIDIA-VA-API-Driver pakken inneholder en VA-API driver for NVIDIA, 
+      bruker NVDEC under panseret uten å kreve
       CUDA <command>nvcc</command> kompilator. Den støtter ikke koding, 
-      men dekoding for diverse kodeker. Hvis du ikke bruker 
-      <xref linkend="nvidia"/>, hopp over denne pakken.
+      men dekoding for diverse kodeker.
     </para>
 
     <itemizedlist spacing="compact">
@@ -55,7 +54,7 @@
     </para>
 
     <para role="optional">
-      <xref linkend="nvidia"/> (Kjørefilens åpne kjernemodulfiler 
+      &nvidia; (Kjørefilens åpne kjernemodulfiler 
       for deklarasjonsregenerering)
     </para>
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+]>
+
+<sect1 id="nvidia-rev" xreflabel="NVIDIA Revisjoner">
+  <?dbhtml filename="nvidia-rev.html"?>
+
+  <title>NVIDIA Revisjoner</title>
+
+  <para>
+    NVIDIA gir av og til ut nye, større revisjoner/grener for sine drivere. 
+    Vanligvis forårsaker ikke disse nye revisjonene store problemer, men det 
+    finnes noen revisjoner der utviklerne slutter å støtte eldre GPU-er. Dette 
+    betyr at eldre kort ikke kan kjøre fra nyere revisjoner.
+  </para>
+
+  <para>
+    Heldigvis ligger de eldre, større revisjonene fortsatt på nett og blir av 
+    og til oppdatert for å gi noen mindre feilrettinger. Dette utelukker 
+    vanligvis forbedret kompatibilitet med noen API-er, nemlig vindussystemer 
+    som Wayland.
+  </para>
+
+  <para>
+    For å gi bedre kompatibilitet med eldre og nyere GPU-er, inneholder denne boken 
+    separate sider for installasjon av ulike større revisjoner av NVIDIA og CUDA.
+  </para>
+
+  <para>
+    Dette kapittelet er lagt opp slik at du først installerer litt grunnleggende 
+    NVIDIA programvare som brukes av alle de store NVIDIA revisjonene før du 
+    installerer revisjonsspesifikke pakker.
+  </para>
+
+  <para>
+    Det fører imidlertid til en viktig avgjørelse: hvilken større revisjon bør 
+    installeres? Hvis GPU-en din støttes av den nyeste større revisjonen, bør du 
+    installere den i nesten alle tilfeller. Hvis GPU-en din ikke støttes, må du 
+    finne den nyeste revisjonen som gjør det. Hvis du har en samling GPU-er, 
+    både gamle og nye, bør du bruke en revisjon som støtter den eldre GPU-en, og 
+    deretter se om den revisjonen også støtter den nyere GPU-en.
+  </para>
+
+  <para>
+    Nedenfor finner du en oversikt over hver større revisjon i boken og hvilke 
+    GPU familier de støtter:
+  </para>
+
+  <itemizedlist>
+    <listitem>
+      <para>Nåværende (<link linkend="nvidia-current-intro">r&nvidia-rev;</link>)</para>
+      <itemizedlist>
+        <listitem>
+          <para>Blackwell (RTX 50xx)</para>
+        </listitem>
+        <listitem>
+          <para>Ada Lovelace (RTX 40xx)</para>
+        </listitem>
+        <listitem>
+          <para>Ampere (RTX 30xx)</para>
+        </listitem>
+        <listitem>
+          <para>Turing (T-series and GTX 16xx/20xx)</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+  <itemizedlist>
+    <listitem>
+      <para><link linkend="nvidia-r580-intro">r580</link></para>
+      <itemizedlist>
+        <listitem>
+          <para>Blackwell (RTX 50xx)</para>
+        </listitem>
+        <listitem>
+          <para>Ada Lovelace (RTX 40xx)</para>
+        </listitem>
+        <listitem>
+          <para>Ampere (RTX 30xx)</para>
+        </listitem>
+        <listitem>
+          <para>Turing (T-series and GTX 16xx/20xx)</para>
+        </listitem>
+        <listitem>
+          <para>Volta (V100/TITAN V)</para>
+        </listitem>
+        <listitem>
+          <para>Pascal (GTX 10xx)</para>
+        </listitem>
+        <listitem>
+          <para>Maxwell (GTX 9xx)</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+  </itemizedlist>
+
+</sect1>

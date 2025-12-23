@@ -16,9 +16,17 @@
     kapittelet for Mesa i stedet.
   </para>
 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-rev.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nv-codec-headers.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-vaapi-driver.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="current.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="current-intro.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cuda.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="r580.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="r580-intro.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-r580.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cuda-r580.xml"/>
 
 </chapter>

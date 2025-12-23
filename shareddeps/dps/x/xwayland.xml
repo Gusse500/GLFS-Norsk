@@ -39,7 +39,7 @@
     <para role="required">
       <!-- Not runtime as mesa/nvidia provide DRI needed at configuration. -->
       En brukerland grafikkdriver (<xref linkend='mesa'/> og/eller
-      <xref linkend='nvidia'/>),
+      &nvidia;),
       <xref linkend="libxcvt"/>,
       <xref linkend="pixman"/>,
       <xref linkend="wayland-protocols"/>,

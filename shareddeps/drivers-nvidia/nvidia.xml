@@ -27,7 +27,7 @@
       NVIDIA proprietære driver inneholder
       fastvare, kjernedrivere, userland drivere knyttet til OpenGL,
       Vulkan og maskinvareakselerasjon, og tilbyr nyttige verktøy for
-      NVIDIA kort. Hvis du ikke har et NVIDIA GPU, kan du gå til neste pakke.
+      Turing og senere NVIDIA kort.
     </para>
 
     <note revision="sysv"><para>
@@ -81,89 +81,14 @@
 
     <bridgehead renderas="sect3">NVIDIA Avhengigheter</bridgehead>
 
-    <para role="required">
-      &gbm;,
-      <xref linkend="libglvnd"/>, og
-      <xref linkend="xorg7-lib"/>
-    </para>
-
-    <para role="recommended">
-      <itemizedlist spacing="compact">
-        <listitem>
-          <para>
-            <ulink url="&slfs-website;/general/cuda.html">CUDA</ulink>
-            (for å bygge inn direkte CUDA støtte i diverse pakker som FFmpeg 
-            eller OBS-Studio; installer etter å ha fulgt denne siden)
-          </para>
-        </listitem>
-<!-- NOT READY
-        <listitem revision="sysv">
-          <para>
-            <xref linkend="dbus"/> og <xref linkend="elogind"/> (for
-            NVIDIA-Powerd støtte)
-          </para>
-        </listitem>
--->
-        <listitem>
-          <para>
-            <ulink url="&blfs-svn;/x/gtk3.html">GTK-3</ulink> (for
-            <command>nvidia-settings</command>; Installer etter å ha fulgt 
-            denne siden)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="nvidia-vaapi-driver"/> (for VA-API støtte; installer
-            etter å ha fulgt denne siden)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="nvidia-egl"/> (for EGL driverstøtte)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="vulkan-sdk"/> (for å bruke Vulkan drivere)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="wayland"/> (nødvendig for Wayland støtte)
-          </para>
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="xorg-server"/> (nødvendig for å kjøre
-            <command>nvidia-xconfig</command>, som i <xref
-            linkend="whatnow"/>; installer etter å ha fulgt denne siden)
-          </para>
-        </listitem>
-      </itemizedlist>
-    </para>
+    &nvidia-common-deps;
 
   </sect2>
 
   <sect2>
     <title>Forberedelser til NVIDIA installasjonen</title>
 
-    <para>
-      Første aktiver XFree86 DRI og Nouveau
-      <footnote><para>
-        Nyere versjoner av 
-        NVIDIA driverne vil ikke kunne kompileres med TTY støtte med mindre en 
-        grafikkdriver er inkludert i kjernen. Nouveau brukes her, men 
-        alternative grafikkdrivere kan også fungere.
-      </para></footnote>
-      støtte i kjernen og rekompilere om nødvendig.
-    </para>
-
-    <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-kernel.xml"/>
-
-    <important><para>
-      Bygg disse driverne som kjernemoduler slik at de kan bli svartelistet på
-      riktig måte.
-    </para></important>
+    &nvidia-common-kernel;
 
     <para>
       Pakk ut NVIDIA driver runfile
@@ -188,150 +113,16 @@ cd NVIDIA-Linux-x86_64-&nvidia-version;</userinput></screen>
     <title>Installasjon av NVIDIA kjernemodulene</title>
 
     <para>
-      Nå må du bygge kjernemodulene for driveren. Det finnes
-      to typer: <emphasis role="bold">open</emphasis> og
-      <emphasis role="bold">proprietary</emphasis>. Hvis du har
-      NVIDIA Grace Hopper eller NVIDIA Blackwell kort, må du
-      kompilere <emphasis role="bold">open</emphasis> kjernemoduler.
-      Hvis du har Turing, Ampere, Ada Lovelace,
-      eller Hopper kort, anbefales det å nå bygge
-      <emphasis role="bold">open</emphasis> kjernemoduler.
-      Hvis du har Maxwell, Pascal, eller Volta kort, bygg
-      <emphasis role="bold">proprietary</emphasis> kjernemoduler.
-      Hvis du bruker både et eldre og et nyere kort, men ikke de nyeste kortene,
-      bygg <emphasis role="bold">proprietary</emphasis> kjernemoduler.
-    </para>
-
-    <para>
-      Hvis du skal bygge <emphasis role="bold">åpne</emphasis>
-      kjernemoduler, naviger til <filename
+      Endre til <filename
       class="directory">kernel-open</filename> mappen:
     </para>
 
 <screen><userinput>cd kernel-open</userinput></screen>
 
-    <para>
-      Hvis du i stedet skal bygge <emphasis
-      role="bold">proprietary</emphasis> kjernemoduler, sett
-      <envar>NVIDIA_KERNEL_TYPE</envar> variabelen:
-    </para>
+<!-- With pre-turing axed, there is no longer any reason to build proprietary
+     kernel modules. -->
 
-<!-- proprietary is the exception, not the rule -->
-<screen><computeroutput>export NVIDIA_KERNEL_TYPE="kernel"</computeroutput></screen>
-
-    <note><para>
-      Hvis den nåværende kjernen som kjører er en annen versjon enn den du 
-      sikter deg inn på, sannsynligvis som et resultat av at du er i en chroot 
-      eller ikke har startet på nytt etter en kjerneoppgradering ennå, vil 
-      bygging av kjernemodulene føre til en byggefeil eller installere moduler 
-      for en kjerne som ikke er målet. Standardvariabelen som 
-      kjernebyggesystemet bruker for å sjekke kjerneversjonen vil bruke 
-      <command>uname -r</command>, som igjen rapporterer kjerneversjonen av den 
-      for øyeblikket kjørende vertskjernen og ikke målet. Dette kan omgås ved å 
-      spesifisere <envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar>
-      som vil overstyre kjerneversjonen som skal bygges mot og installeres til. 
-      Målkjerneversjonen må allerede være bygget for at dette skal fungere. Hvis 
-      kjerneversjonen ikke har et tredje siffer, som 6.16 i stedet for 6.16.1, 
-      legg til et <envar>.0</envar> på slutten, som
-      <envar>6.16.0</envar>. Den skal samsvare med versjonen som finnes i <filename
-      class="directory">/usr/lib/modules</filename>.
-    </para>
-    <para>
-      Hvis tilfellet ovenfor gjelder deg, enten du er i en chroot eller ikke har 
-      startet på nytt etter en kjerneoppgradering, spesifiser kjernemålet ved å 
-      eksportere variabelen nå på forhånd for å unngå å måtte spesifisere den 
-      for hver kommando:
-    </para>
-<screen><userinput>export KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></userinput></screen>
-    </note>
-
-    <para>
-      Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av
-      brukstilfellet ditt, kan du hoppe over å bygge en eller to moduler. UVM
-      modulen (UnifiedVirtual Memory) er til bruk med <ulink
-      url="&slfs-website;/general/cuda.html">CUDA</ulink>. Hvis du ikke vil 
-      bruke den, eller ønsker å bruke dens funksjoner, kan du hoppe over å bygge 
-      UVM kjernemodulen. Det finnes også PeerMem modulen som er for datasentre.
-      For spilling kan den trygt deaktiveres.
-    </para>
-
-    <para>
-      For UVM heter modulen <computeroutput>nvidia-uvm</computeroutput>.
-      For PeerMem vil den bli kalt
-      <computeroutput>nvidia-peermem</computeroutput>. For å hoppe over disse, 
-      legg til modulnavnene til <envar>NV_EXCLUDE_KERNEL_MODULES</envar> i
-      <command>make</command> kommandoen. Variabelen bør være separert, slik
-      som dette:
-      <computeroutput>NV_EXCLUDE_KERNEL_MODULES="nvidia-uvm nvidia-peermem"</computeroutput>.
-      <command>make</command> kommandoen vil ha variabelen satt til
-      ingenting. Legg til noe i den etter eget ønske.
-    </para>
-
-    <para>
-      Bygg nå kjernemodulene ved å kjøre følgende kommando:
-    </para>
-
-<screen><userinput>make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
-
-    <note><para>
-      Kildekoden du bygde kjernen fra må være på samme sted som du bygde kjernen 
-      fra. Hvis du for eksempel bygde kjernen i <filename
-      class="directory">/sources/linux-6.16.1</filename>, kildekoden 
-      skal bli værende der og må ikke slettes før tredjeparts modulene er 
-      bygget. Noen Linux distribusjoner omgår dette ved å installere 
-      utviklingsfiler i <filename 
-      class="directory">/usr/src</filename>, men det er utenfor rammen av 
-      denne boken.
-    </para></note>
-
-    <note><para>
-      Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi 
-      modulkoden er inkompatibel med den gjeldende kjerneversjonen. 
-      Hvis dette skjer, kan det i de fleste tilfeller fikses ved å 
-      nedgradere kjernen. Når en ny driverutgivelse kommer, vil 
-      driveren mest sannsynlig støtte den aktuelle kjerneversjonen. 
-      Øverst i denne delen er den anbefalte kjerneserien som skal 
-      brukes med denne driveren nevnt for å gi en idé om hva den 
-      ideelle kjerneversjonen å bygge mot er.
-    </para></note>
-
-    <important>
-      <para>
-        Når du gjenoppbygger/oppgraderer kjernen, må du også installere  .
-        NVIDIA kjernemoduler på nytt.
-      </para>
-
-      <para>
-        Kjernemoduler installeres i en versjonert mappe som, når de bygges mot 
-        en annen kjerneversjon, ikke lenger vil samsvare med den oppstartede 
-        kjerneversjonen og kan ikke brukes. Videre er det en limmekanisme bygget, 
-        så eventuelle endringer i kjernen kan ødelegge denne limmekanismen. For 
-        kjernemoduler i Linux kildetreet, kjent som førstepartsmoduler, blir de 
-        oppdatert og gjenoppbygd sammen med kjernen, slik at det ikke oppstår 
-        problemer for førstepartsmoduler. Tredjepartsmoduler blir imidlertid 
-        ikke det, og må oppdateres/gjenoppbygges.
-      </para>
-
-      <para>
-        Når du gjenoppbygger/oppgraderer kjernen mot samme NVIDIA driverversjon, 
-        trenger du bare å installere kjernemodulene på nytt. Du må også 
-        installere driverprogramvaren på nytt hvis du oppgraderer fra en 
-        tidligere driverversjon.
-      </para>
-    </important>
-
-    <para>
-      Nå som &root; bruker:
-    </para>
-
-<screen role="root"><userinput>make modules_install &amp;&amp;
-cd ..</userinput></screen>
-
-    <para>
-      Hvis du satte <envar>KERNEL_UNAME</envar> variabelen, fjern den nå:
-    </para>
-
-    <screen><userinput>unset KERNEL_UNAME</userinput></screen>
+    &nvidia-common-build-modules;
 
     <para>
       Installer fastvaren som &root; bruker:
@@ -672,12 +463,9 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
     </para>
 
     <para>
-      Resten av dette kapittelet kan ende opp med pakker du ikke vil 
-      hente med mindre du trenger dem senere, som i tilfellet med LLVM og Rustc 
-      som trengs for GTK og Firefox. Uansett har du alt du trenger for de 
-      påfølgende kapitlene. Du kan installere <xref linkend="nvidia-vaapi-driver"/> 
-      hvis du ønsker det, så hoppe over til <xref linkend="x"/>, 
-      eller du kan hoppe over til <xref linkend="x"/> med en gang.
+      Med dette rene NVIDIA oppsettet kan du hoppe til <xref linkend="x"/> og
+      forvente problemfri kjøring. Hvis du vil, kan du imidlertid også 
+      installere CUDA i denne underseksjonen, noe som er opp til deg.
     </para>
 
   </sect2>
@@ -732,6 +520,7 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libnvidia-pkcs11,
           libnvidia-ptxjitcompiler,
           libnvidia-rtcore,
+          libnvidia-tileiras,
           libnvidia-tls,
           libnvidia-wayland-client,
           libOpenCL,
@@ -1174,12 +963,25 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
         </listitem>
       </varlistentry>
 
+      <varlistentry id="libnvidia-tileiras">
+        <term><filename class="libraryfile">libnvidia-tileiras</filename></term>
+        <listitem>
+          <para>
+            tilbyr TileIR grensesnittet, som representerer CUDA kjerner til 
+            forskjellige programmeringsspråk
+          </para>
+          <indexterm zone="nvidia libnvidia-tileiras">
+            <primary sortas="c-libnvidia-tileiras">libnvidia-tileiras</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libnvidia-tls">
         <term><filename class="libraryfile">libnvidia-tls</filename></term>
         <listitem>
           <para>
             gir TLS support for NVIDIA
-             OpenGL implementeringer
+            OpenGL implementeringer
           </para>
           <indexterm zone="nvidia libnvidia-tls">
             <primary sortas="c-libnvidia-tls">libnvidia-tls</primary>

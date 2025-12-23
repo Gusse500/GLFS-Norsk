@@ -116,3 +116,191 @@ ninja</userinput></screen>
 
 <screen role='root'><userinput>chown -v root:messagebus /usr/libexec/dbus-daemon-launch-helper &amp;&amp;
 chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></screen>">
+
+<!ENTITY nvidia-common-deps "<para role='required'>
+  &gbm;,
+  <xref linkend='libglvnd'/>, og
+  <xref linkend='xorg7-lib'/>
+</para>
+<para role='recommended'>
+  <itemizedlist spacing='compact'>
+    <listitem>
+      <para>
+        <ulink url='&slfs-website;/general/cuda.html'>CUDA</ulink>
+        (for å bygge inn direkte CUDA støtte i diverse pakker som FFmpeg eller 
+        OBS-Studio; installer etter å ha fulgt denne siden)
+      </para>
+    </listitem>
+<!-- NOT READY
+    <listitem revision='sysv'>
+      <para>
+        <xref linkend='dbus'/> og <xref linkend='elogind'/> (for
+        NVIDIA-Powerd støtte)
+      </para>
+    </listitem>
+-->
+    <listitem>
+      <para>
+        <ulink url='&blfs-svn;/x/gtk3.html'>GTK-3</ulink> (for
+        <command>nvidia-settings</command>; installer etter å ha fulgt denne 
+        siden)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='nvidia-vaapi-driver'/> (for VA-API støtte; installer
+        etter å ha fulgt denne siden)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='nvidia-egl'/> (for EGL driver støtte)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='vulkan-sdk'/> (for å bruke Vulkan drivere)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='wayland'/> (påkrevd for Wayland støtte)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='xorg-server'/> (påkrevd for å kjøre
+        <command>nvidia-xconfig</command>, som i <xref
+        linkend='whatnow'/>; installere etter å ha fulgt denne siden)
+      </para>
+    </listitem>
+  </itemizedlist>
+</para>">
+
+<!ENTITY nvidia-common-kernel "<para>
+Først aktiverer du XFree86 DRI og Nouveau
+<footnote><para>
+  NVIDIAs kjernemoduler vil ikke kunne kompileres med TTY støtte med mindre en 
+  grafikkdriver er inkludert i kjernen. Nouveau brukes her, men alternative 
+  grafikkdrivere kan også fungere.
+</para></footnote>
+støtte i kjernen og kompiler på nytt om nødvendig.
+</para>
+
+<xi:include xmlns:xi='http://www.w3.org/2001/XInclude' href='nvidia-kernel.xml'/>
+
+<important><para>
+  Bygg disse driverne som kjernemoduler slik at de kan bli svartelistet på 
+  riktig måte.
+</para></important>">
+
+<!ENTITY nvidia-common-build-modules "<note><para>
+Hvis den nåværende kjernen som kjører er en annen versjon enn den du sikter mot, 
+sannsynligvis som et resultat av at du er i en chroot eller ikke har startet på 
+nytt etter en kjerneoppgradering ennå, vil bygging av kjernemodulene føre til en
+byggefeil eller installere moduler for en kjerne som ikke er
+målet. Standardvariabelen som kjernebyggesystemet bruker for å sjekke
+kjerneversjonen vil bruke <command>uname -r</command>, som igjen rapporterer 
+kjerneversjonen av den for øyeblikket kjørende vertskjernen og
+ikke målet. Dette kan omgås ved å spesifise
+<envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar>
+som vil overstyre kjerneversjonen som skal bygges mot og installeres til.
+Målkjerneversjonen må allerede være bygget for at dette skal fungere.
+Hvis kjerneversjonen ikke har et tredje siffer, som 6.16 i stedet for 6.16.1, 
+legg til et <envar>.0</envar> på slutten, som
+<envar>6.16.0</envar>. Den skal samsvare med versjonen som finnes i <filename
+class='directory'>/usr/lib/modules</filename>.
+</para>
+<para>
+  Hvis tilfellet ovenfor gjelder deg, enten du er i en chroot eller ikke har 
+  startet på nytt etter en kjerneoppgradering, spesifiser kjernemålet ved å 
+  eksportere variabelen nå på forhånd for å unngå å måtte spesifisere den for 
+  hver kommando:
+</para>
+<screen><userinput>export KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></userinput></screen>
+</note>
+
+<para>
+  Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av brukstilfellet ditt, 
+  kan du hoppe over å bygge en eller to moduler. UVM-modulen (Unified Virtual 
+  Memory) er til bruk med <ulink
+  url='&slfs-website;/general/cuda.html'>CUDA</ulink>. If you won't use
+  it, nor wish to use its capabilities, kan du hoppe over å bygge UVM 
+  kjernemodulen. Det finnes også PeerMem modulen som er for datasentre. For 
+  spilling kan den trygt deaktiveres.
+</para>
+<para>
+  For UVM heter modulen <computeroutput>nvidia-uvm</computeroutput>.
+  For PeerMem vil den bli kalt
+  <computeroutput>nvidia-peermem</computeroutput>. For å hoppe over disse, legg 
+  til modulnavnene til <envar>NV_EXCLUDE_KERNEL_MODULES</envar> for 
+  <command>make</command> kommandoen. Variabelen skal skilles, slik 
+  som:
+  <computeroutput>NV_EXCLUDE_KERNEL_MODULES=&quot;nvidia-uvm nvidia-peermem&quot;</computeroutput>.
+  <command>make</command> kommandoen vil ha variabelen satt til ingenting. Legg 
+  til noe i den etter eget ønske.
+</para>
+
+<para>
+  Bygg nå kjernemodulene ved å kjøre følgende kommando:
+</para>
+
+<screen><userinput>make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
+
+<note><para>
+  Kildekoden du bygde kjernen fra må være på samme sted som du bygde kjernen 
+  fra. Hvis du for eksempel bygde kjernen i <filename
+  class='directory'>/sources/linux-6.16.1</filename>, kildekoden skal bli 
+  værende der og må ikke slettes før tredjeparts modulene er bygget. Noen 
+  Linux distribusjoner omgår dette ved å installere utviklingsfiler 
+  i <filename
+  class='directory'>/usr/src</filename>, men det er utenfor rammen av denne 
+  boken.
+</para></note>
+<note><para>
+  Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi 
+  modulkoden er inkompatibel med den gjeldende kjerneversjonen. 
+  Hvis dette skjer, kan det i de fleste tilfeller fikses ved å nedgradere 
+  kjernen. Når en ny driverutgivelse kommer, vil driveren mest 
+  sannsynlig støtte den aktuelle kjerneversjonen. Øverst i denne delen er 
+  den anbefalte kjerneserien som skal brukes med denne driveren 
+  nevnt for å gi en idé om hva den ideelle kjerneversjonen å bygge 
+  mot er.
+</para></note>
+
+<important>
+  <para>
+    Når du gjenoppbygger/oppgraderer kjernen, må du også installere 
+    NVIDIA kjernemodulene på nytt.
+  </para>
+
+  <para>
+    Kjernemoduler installeres i en versjonert mappe som, når de bygges mot en 
+    annen kjerneversjon, ikke lenger vil samsvare med den oppstartede 
+    kjerneversjonen og kan ikke brukes. Videre er det en limmekanisme bygget, 
+    så eventuelle endringer i kjernen kan ødelegge den limmekanismen. For 
+    kjernemoduler i Linux kildetreet, kjent som førstepartsmoduler, 
+    blir de oppdatert og gjenoppbygd sammen med kjernen, slik at det ikke 
+    oppstår problemer for førstepartsmoduler. Tredjepartsmoduler blir 
+    imidlertid ikke det, og må oppdateres/gjenoppbygges.
+  </para>
+
+  <para>
+    WNår du gjenoppbygger/oppgraderer kjernen mot samme NVIDIA driverversjon, 
+    trenger du bare å installere kjernemodulene på nytt. Du må også installere 
+    driverprogramvaren på nytt hvis du oppgraderer fra en tidligere 
+    driverversjon.
+  </para>
+</important>
+<para>
+  Nå som &root; bruker:
+</para>
+
+<screen role='root'><userinput>make modules_install &amp;&amp;
+cd ..</userinput></screen>
+
+<para>
+  Hvis du satte <envar>KERNEL_UNAME</envar> variabelen, fjern den nå:
+</para>
+
+<screen><userinput>unset KERNEL_UNAME</userinput></screen>">

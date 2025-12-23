@@ -83,6 +83,20 @@ done</userinput></screen>
       kommandoene ovenfor.
     </para>    
 
+    <important><para>
+      Filene for &nvidia; og &cuda; lastes ikke ned fra prosessen ovenfor siden 
+      de er store filer og ville vært omtrent 9 GB i seg selv. Imidlertid, 
+      filer for pakker som <xref
+      linkend="nvidia-vaapi-driver"/> er lastet ned. Du kan laste ned filene nå 
+      på forhånd. For å gjøre det, les først <xref
+      linkend="nvidia-rev"/>, Bestem deg for en større NVIDIA revisjon, og last 
+      deretter ned filene på hver side i den revisjonsdelen.
+    </para><para>
+      Filer for en pakkebunt som <xref linkend="vulkan-sdk"/> eller <xref
+      linkend="llvm"/> vil heller ikke bli lastet ned av instruksjonene ovenfor. 
+      De blir i stedet lastet ned når du kommer til disse pakkene.
+    </para></important>
+
   </sect2>
 
 </sect1>

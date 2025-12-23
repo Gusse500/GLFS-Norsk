@@ -27,7 +27,7 @@
       hovedavsenderen. Drivere som er bygget med libglvnd i tankene, gir sin 
       egen OpenGL funksjonalitet. For <xref linkend="mesa"/>, vil den installere
       <filename class="libraryfile">libEGL_mesa</filename> og <filename
-      class="libraryfile">libGLX_mesa</filename>. For <xref linkend="nvidia"/>,
+      class="libraryfile">libGLX_mesa</filename>. For NVIDIA,
       vil den gi <filename class="libraryfile">libEGL_nvidia</filename>,
       <filename class="libraryfile">libGLESv2_nvidia</filename>, og
       <filename class="libraryfile">libGLX_nvidia</filename>. Hver implementering 

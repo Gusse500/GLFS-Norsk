@@ -65,7 +65,7 @@
 
     <para>
       Hovedgrunnen til at GLFS forventer at brukere skal installere libglvnd er 
-      at <xref linkend="nvidia"/> og flere pakker og AppImages krever libglvnd 
+      at NVIDIA og flere pakker og AppImages krever libglvnd 
       enten direkte eller indirekte. For NVIDIA krever libglvnd direkte, mens 
       AppImages lider av problemet nevnt tidligere i denne delen: forskjeller i 
       soname-er, samt et manglende bibliotek. <filename

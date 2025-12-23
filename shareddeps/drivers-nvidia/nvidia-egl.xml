@@ -19,8 +19,7 @@
 
     <para>
       NVIDIA EGL Biblioteker gjør at EGL driverne 
-      for NVIDIA driveren skal fungere ordentlig. 
-      Hvis du ikke installerer <xref linkend="nvidia"/>, hopp over denne pakken.
+      for NVIDIA driveren skal fungere ordentlig.
     </para>
 
     <bridgehead renderas="sect3">NVIDIA EGL Biblioteker Avhengigheter</bridgehead>
