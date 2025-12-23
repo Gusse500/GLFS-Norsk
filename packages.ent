@@ -132,9 +132,7 @@
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.24.0">
 <!ENTITY wayland-protocols-version    "1.47">
-<!-- Graphics Drivers -->
-<!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.402">
+<!-- Graphics APIs -->
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY vulkan-sdk-version           "1.4.335.0">
 <!ENTITY glu-version                  "9.0.3">
@@ -142,6 +140,10 @@
 <!ENTITY libdrm-version               "2.4.131">
 <!ENTITY libgbm-version               "1.0.4">
 <!ENTITY libva-version                "2.22.0">
+<!-- Graphics Drivers, Preliminaries -->
+<!ENTITY pciutils-version             "3.14.0">
+<!ENTITY hwdata-version               "0.402">
+<!-- Graphics Drivers, NVIDIA -->
 <!ENTITY mesa-major-minor             "25.3">
 <!ENTITY mesa-version                 "&mesa-major-minor;.1">
 <!ENTITY eglexternalplatform-version  "1.2.1">
@@ -157,6 +159,7 @@
 <!ENTITY nv-sysv-bs                   "1">
 <!ENTITY nv-codec-headers-version     "13.0.19.0">
 <!ENTITY nvidia-vaapi-driver-version  "0.0.14">
+<!-- Graphics Drivers, Mesa -->
 <!ENTITY llvm-maj-version             "21">
 <!ENTITY llvm-point-version           "8">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">

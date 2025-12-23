@@ -44,6 +44,12 @@
       <para>21. desember 2025</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - shareddeps: Del grafikkdrivere inn i flere kapitler: 
+          <quote>Graphics APIs</quote>; <quote>Grafikkdrivere,
+          Forberedelser</quote>; <quote>Grafikkdrivere, NVIDIA</quote>; og
+          <quote>Grafikkdrivere, Mesa</quote>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - ALSA: 1.2.14 -&gt; 1.2.15.1. Fikser
           <ulink url="&glfs-issues;/350">#350</ulink>.</para>
         </listitem>

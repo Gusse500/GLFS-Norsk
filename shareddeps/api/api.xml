@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+  "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+ <!ENTITY % general-entities SYSTEM "../../general.ent">
+ %general-entities;
+]>
+
+<chapter id="api">
+  <?dbhtml filename="api.html"?>
+
+  <title>Grafikk API-er</title>
+
+  <para>
+    Dette kapittelet dekker grafikk API-er og bibliotekene som muliggjør dem. 
+    Disse kan variere fra OpenGL til VA-API.
+  </para>
+
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutgl.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libglvnd.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vulkan-sdk.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glu.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libatomic_ops.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libgbm.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
+
+</chapter>
