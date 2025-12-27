@@ -106,11 +106,11 @@
         <listitem>
           <para>
             <ulink
-              url="&slfs-website;/general/intel-mediasdk.html">Intel-MediaSDK</ulink>,
+              url="&slfs-website;/graph/intel-mediasdk.html">Intel-MediaSDK</ulink>,
             <ulink
-              url="&slfs-website;/general/intel-onevpl.html">intel-onevpl</ulink>, og
+              url="&slfs-website;/graph/intel-onevpl.html">intel-onevpl</ulink>, og
             <ulink
-              url="&slfs-website;/general/libvpl.html">libvpl</ulink>
+              url="&slfs-website;/graph/libvpl.html">libvpl</ulink>
           </para>
         </listitem>
       </itemizedlist>
