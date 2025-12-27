@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>26. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libva: 2.22.0 -&gt; 2.23.0. Fikser
+          <ulink url="&glfs-issues;/351">#351</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>22. desember 2025</para>
       <itemizedlist>
         <listitem>
