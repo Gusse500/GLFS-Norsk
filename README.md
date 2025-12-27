@@ -1,52 +1,93 @@
-# Gaming Linux From Scratch (GLFS)
+<div align="center">
+  <img src="https://github.com/glfs-book/glfs/blob/trunk/images/glfs-logo.png?raw=true" width="25%">
+  <h1>GLFS</h1>
+</div>
 
-Gaming Linux From Scratch er en bok som dekker hvordan man installerer 
-pakker som Steam og Wine etter Linux From Scratch boken.
+<h2 align="center">
+Gaming Linux From Scratch
+</h2>
 
-# Hvor kan du lese
+Denne boken dekker installasjon av grafikkdrivere, Steam, Wine og mer etter en 
+Linux From Scratch installasjon.
 
-Gå til (https://lfs.freding.no/glfs/index.html) og begynne å bla gjennom boken!
+## Hvor kan du lese den
 
-Boken er under rullende utgivelse på nett.
+Gå til https://lfs.freding.no/glfs/ og begynne å bla gjennom boken!
 
-Det finnes også [Releases](https://github.com/glfs-book/glfs/releases) som du
-kan lastes ned. Alle inneholder både SysV og Systemd utgavene av 
-boken, chunked HTML.
+Nettboken er under rullende utgivelse, men det finnes en stabil versjon i GLFS 
+kildekoden via `stable` grenen.
 
-# Installasjon
+Du kan bytte til den ved å kjøre følgende kommando:
+```Bash
+git checkout stable
+```
 
-Hvordan konverterer jeg disse XML-filene til HTML selv? Du må ha installert programvare 
-som håndterer disse konverteringene. Les `INSTALL.md`-filen for å 
-finne ut hvilke programmer du må installere og hvor du kan få instruksjoner 
-for å installere programvaren.
+Deretter gjengir du boken ved å kjøre følgende kommando:
+```Bash
+make STAB=release
+```
 
-Etter det kan du bygge HTML koden med en enkel `make` kommando.
-Du kan endre revisjonen, f.eks. systemd vs. sysv, ved å legge til `REV=<rev>` til
-`make` kommandoen. `<rev>` kan være:
+Det finnes også [releases](https://github.com/glfs-book/glfs/releases) 
+tilgjengelig for nedlasting. Disse inneholder både SysV og Systemd utgavene av 
+boken som chunked HTML. Disse er på Engelsk
+
+## Installasjon
+
+Hvordan konverterer jeg disse XML filene til HTML selv? Du må ha installert 
+programvare som håndterer disse konverteringene. Vennligst les
+[INSTALL.md](./INSTALL.md) for å finne ut hvilke programmer du må installere og 
+hvor du kan få instruksjoner for å installere programvaren.
+
+Du kan deretter bygge HTML koden med en enkel `make` kommando. Du kan endre 
+revisjonen ved å sende `REV=<rev>` til `make` kommandoen. `<rev>` kan være:
 - `sysv` (standard)
 - `systemd`
 
-Eksempel: `make REV=systemd`.
+**Eksempel:**
+```Bash
+make REV=systemd
+```
 
-Standardmålet (sysv) bygger HTML koden i `~/public_html/glfs`,
-mens for systemd ville det være i `~/public_html/glfs-systemd`.
+Du kan bytte tema ved å sende `THEME=<theme>` til `make` kommandoen.
+`<theme>` kan være lik:
+- `dark` (standard)
+- `light`
+- hvilket som helst tema i `THEME_PATH`
 
-Som standard vil hver pakke og seksjon være sin egen side, og deretter koble 
-alt sammen for en smidig opplevelse.
+**Eksempel:**
+```Bash
+make THEME=dark
+```
 
-Du kan angi en sti til GLFS temaer ved å kjøre `make THEME_PATH=<path>`.
-Standardinnstillingen er `stylesheets/lfs-xsl`. Du finner mer på
+Du kan angi temabanen ved å sende `THEME_PATH=<path>` til `make` kommandoen.
+Standard er `stylesheets/lfs-xsl`. Flere temaer er tilgjengelige på
 https://github.com/glfs-book/lfs-themes.
 
-Det mørke temaet er også standard, men du kan bytte tema ved å 
-kjøre `make THEME=<theme>`. `<theme>` kan være lik:
-- `light`
-- `dark`
+**Eksempel:**
+```Bash
+make THEME_PATH=../lfs-themes/themes THEME=whitepink
+```
 
-Merk at hvis du setter `THEME_PATH`,  kan du sette `THEME` til mer enn
-bare det som er tilgjengelige alternativer vist ovenfor, men bare de tilgjengelige temaene
-som er i den banen.
+Som standard, `RENDERTMP`, som er en midlertidig mappe opprettet av
+`mktemp -d`, vil bli fjernet etter at hver fil er konvertert til et nytt format 
+(f.eks. HTML, wget-list, dumpede kommandoer osv.). Hvis du trenger å beholde 
+mappen, send `AUTO_CLEAN=0` til `make` kommandoen.
 
-Standardverdier kan endres i en fil som ikke spores (`local.mk`) ved å deklarere
-variabler som finnes i `Makefile` i `local.mk`, slik som `REV` og `THEME`.
-Denne filen må opprettes manuelt.
+**Eksempel:**
+```Bash
+make RENDERTMP=~/tmp AUTO_CLEAN=0
+```
+
+> [!MERK]
+> Andre variabler finnes. For en mer omfattende liste over dem, kjør `make help`,
+> og for en fullstendig liste, se Makefile.
+
+Standardverdiene for variablene i Makefile kan endres ved å deklarere dem i 
+`local.mk`. For eksempel, hvis `local.mk` inneholder `REV=systemd` og
+`THEME=light`, kalle `make` uten argumenter vil bygge systemd revisjonen med 
+light temaet. `local.mk` spores ikke og må opprettes manuelt.
+
+Standardmålet bygger SysV revisjonen som delt HTML i
+`~/public_html/glfs`, mens for Systemd ville det være i
+`~/public_html/glfs-systemd`. Som standard vil hver pakke og seksjon bli bygget 
+som sin egen side, og deretter koblet sammen.
