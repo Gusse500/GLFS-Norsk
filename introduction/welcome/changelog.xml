@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>28. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 12.2.0 -&gt; 12.3.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GStreamer-Suite: 1.26.9 -&gt; 1.26.10.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>26. desember 2025</para>
       <itemizedlist>
         <listitem>

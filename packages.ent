@@ -75,7 +75,7 @@
 <!ENTITY libpng-version               "1.6.52">
 <!ENTITY apng-version                 "1.6.51">
 <!ENTITY freetype2-version            "2.14.1">
-<!ENTITY harfbuzz-version             "12.2.0">
+<!ENTITY harfbuzz-version             "12.3.0">
 <!ENTITY fontconfig-version           "2.17.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -288,7 +288,7 @@
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "8.0.1">
-<!ENTITY gstreamer10-version          "1.26.9">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.26.10">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
