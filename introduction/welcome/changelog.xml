@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>31. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - libaom: bruk en alternativ metode for å forhindre at 
+          statiske biblioteker installeres. Dette følger den nye metoden fra 
+          BLFS. Fikser <ulink url="&glfs-issues;/354">#354</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>28. desember 2025</para>
       <itemizedlist>
         <listitem>

@@ -65,8 +65,13 @@
       hvordan hjelpeskjermene fungerer med NASM3:
     </para>
 
-<screen
-  remap="pre"><userinput>patch -Np1 -i ../libaom-&libaom-version;-nasm3-1.patch</userinput></screen>
+<screen><userinput remap="pre">patch -Np1 -i ../libaom-&libaom-version;-nasm3-1.patch</userinput></screen>
+
+    <para>
+      Deretter, hindre libaom i å installere statiske biblioteker:
+    </para>
+
+<screen><userinput remap="pre">sed -i 's/aom aom_static/aom/' build/cmake/aom_install.cmake</userinput></screen>
 
     <para>
       Installer libaom ved å kjøre følgende 
@@ -88,8 +93,7 @@ ninja</userinput></screen>
       Nå, som <systemitem class="username">root</systemitem> bruker:
     </para>
 
-<screen role="root"><userinput>ninja install &amp;&amp;
-rm -v /usr/lib/libaom.a</userinput></screen>
+<screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
 
@@ -119,7 +123,6 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
 cp -vR DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
-rm -v /usr/lib32/libaom.a             &amp;&amp;
 rm -rf DESTDIR                        &amp;&amp;
 ldconfig</userinput></screen>
 
