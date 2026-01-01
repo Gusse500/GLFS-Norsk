@@ -41,6 +41,25 @@
     -->
 
     <listitem>
+      <para>31. desember 2025</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - xauth: 1.1.4 -&gt; 1.1.5. Fikser
+          <ulink url="&glfs-issues;/355">#355</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - systemd: 258.1 -&gt; 259. Fikser
+          <ulink url="&glfs-issues;/353">#353</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - libaom: bruk en alternativ metode for å forhindre at 
+          statiske biblioteker installeres. Dette følger den nye metoden fra 
+          BLFS. Fikser <ulink url="&glfs-issues;/354">#354</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>28. desember 2025</para>
       <itemizedlist>
         <listitem>
