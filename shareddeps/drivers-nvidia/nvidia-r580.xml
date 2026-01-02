@@ -517,6 +517,7 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libcudadebugger,
           libcuda,
           libEGL_nvidia,
+          libGLESv1_CM_nvidia,
           libGLESv2_nvidia,
           libGLX_nvidia,
           libglxserver_nvidia,

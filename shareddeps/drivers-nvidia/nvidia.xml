@@ -495,6 +495,7 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libcudadebugger,
           libcuda,
           libEGL_nvidia,
+          libGLESv1_CM_nvidia,
           libGLESv2_nvidia,
           libGLX_nvidia,
           libglxserver_nvidia,
@@ -662,12 +663,25 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
         </listitem>
       </varlistentry>
 
+      <varlistentry id="libGLESv1_CM_nvidia">
+        <term><filename class="libraryfile">libGLESv1_CM_nvidia</filename></term>
+        <listitem>
+          <para>
+            gir NVIDIA implementeringen 
+            av OpenGL ES v1 fellesprofil
+          </para>
+          <indexterm zone="nvidia libGLESv1_CM_nvidia">
+            <primary sortas="c-libGLESv1_CM_nvidia">libGLESv1_CM_nvidia</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="libGLESv2_nvidia">
         <term><filename class="libraryfile">libGLESv2_nvidia</filename></term>
         <listitem>
           <para>
             gir NVIDIA implementeringen
-            av OpenGL ES v2
+            av OpenGL ES v2 og v3
           </para>
           <indexterm zone="nvidia libGLESv2_nvidia">
             <primary sortas="c-libGLESv2_nvidia">libGLESv2_nvidia</primary>

@@ -5,6 +5,8 @@ x11-64: libGLX_nvidia libnvidia-fbc
 x11-32: libGLX_nvidia libnvidia-fbc
 egl-64: libEGL_nvidia
 egl-32: libEGL_nvidia
+glesv1-64: libGLESv1_CM_nvidia
+glesv1-32: libGLESv1_CM_nvidia
 glesv2-64: libGLESv2_nvidia
 glesv2-32: libGLESv2_nvidia
 opencl-64: libOpenCL libnvidia-opencl

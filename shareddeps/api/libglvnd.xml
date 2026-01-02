@@ -29,12 +29,11 @@
       <filename class="libraryfile">libEGL_mesa</filename> og <filename
       class="libraryfile">libGLX_mesa</filename>. For NVIDIA,
       vil den gi <filename class="libraryfile">libEGL_nvidia</filename>,
-      <filename class="libraryfile">libGLESv2_nvidia</filename>, og
-      <filename class="libraryfile">libGLX_nvidia</filename>. Hver implementering 
-      er spesifikk for driveren den kommer fra. Fordelen med å gjøre det på 
-      denne måten er at en driver ikke trenger å adlyde arkitekturen en OpenGL 
-      leverandør bruker, og den trenger heller ikke å bli absorbert av 
-      leverandøren.
+      <filename class="libraryfile">libGLX_nvidia</filename>, og andre. Hver 
+      implementering er spesifikk for driveren den kommer fra. Fordelen med å
+      gjøre det på denne måten er at en driver ikke trenger å adlyde 
+      arkitekturen en OpenGL leverandør bruker, og den trenger heller ikke å 
+      bli absorbert av leverandøren.
     </para>
 
     <important><para>
@@ -81,7 +80,6 @@ cd    build &amp;&amp;
 
 meson setup --prefix=/usr       \
             --buildtype=release \
-            -D gles1=false      \
             -D hgl=false        \
             .. &amp;&amp;
 
@@ -108,7 +106,6 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
             --libdir=/usr/lib32      \
             --buildtype=release      \
-            -D gles1=false           \
             -D hgl=false             \
             .. &amp;&amp;
 
@@ -133,13 +130,13 @@ ldconfig</userinput></screen>
     &meson-buildtype-release;
 
     <para>
-      <parameter>-D gles1=false</parameter>: Dette deaktiverer en utdatert 
-      versjon av OpenGL ES.
+      <parameter>-D hgl=false</parameter>: Dette deaktiverer målretting mot 
+      Haiku som standard, ettersom denne veiledningen er for Linux, ikke Haiku.
     </para>
 
     <para>
-      <parameter>-D hgl=false</parameter>: Dette deaktiverer målretting mot 
-      Haiku som standard, ettersom denne veiledningen er for Linux, ikke Haiku.
+      <option>-D gles1=false</option>: Hvis du ikke trenger den eldre versjonen 
+      av OpenGL ES, bruk dette alternativet. Noen spill bruker fortsatt GLESv1.
     </para>
 
     <para>
@@ -162,13 +159,14 @@ ldconfig</userinput></screen>
         <seg>
           libEGL,
           libGL,
+          libGLESv1_CM,
           libGLESv2,
           libGLX,
           libGLdispatch, og
           libOpenGL
         </seg>
         <seg>
-          /usr/include/{EGL,GL,GLES{2,3},glvnd,KHR}
+          /usr/include/{EGL,GL,GLES{,2,3},glvnd,KHR}
         </seg>
       </seglistitem>
     </segmentedlist>
@@ -204,12 +202,30 @@ ldconfig</userinput></screen>
         </listitem>
       </varlistentry>
 
+      <varlistentry id="glvnd-libGLESv1_CM">
+        <term><filename class="libraryfile">libGLESv1_CM</filename></term>
+        <listitem>
+          <para>
+            eksponerer inngangspunktene for felles profiler i OpenGL ES 1.x; 
+            pakker inn bibliotekkall <filename
+            class="libraryfile">libGLdispatch</filename>
+          </para>
+          <indexterm zone="libglvnd glvnd-libGLESv1_CM">
+            <primary sortas="b-glvnd-libGLESv1_CM">libGLESv1_CM</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
       <varlistentry id="glvnd-libGLESv2">
         <term><filename class="libraryfile">libGLESv2</filename></term>
         <listitem>
           <para>
-            eksponerer OpenGL ES 2.x og 3.x inngangspunkter; kall på wrapper bibliotek
-            <filename class="libraryfile">libGLdispatch</filename>
+            eksponerer OpenGL ES 2.x og 3.x inngangspunkter; v2 og nyere fjernet 
+            profiler, og det er derfor <filename
+            class="libraryfile">libGLESv1_CM</filename> inneholder
+            <literal>_CM</literal> men dette biblioteket pakker ikke inn 
+            bibliotekkall <filename
+            class="libraryfile">libGLdispatch</filename>
           </para>
           <indexterm zone="libglvnd glvnd-libGLESv2">
             <primary sortas="b-glvnd-libGLESv2">libGLESv2</primary>
