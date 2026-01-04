@@ -174,7 +174,6 @@ meson setup --prefix=/usr            \
             -D platforms=x11,wayland \
             -D gallium-drivers=auto  \
             -D vulkan-drivers=auto   \
-            -D gles1=disabled        \
             -D video-codecs=all      \
             -D valgrind=disabled     \
             -D libunwind=disabled    \
@@ -215,7 +214,6 @@ meson setup --cross-file=lib32       \
             -D platforms=x11,wayland \
             -D gallium-drivers=auto  \
             -D vulkan-drivers=auto   \
-            -D gles1=disabled        \
             -D video-codecs=all      \
             -D valgrind=disabled     \
             -D libunwind=disabled    \
@@ -435,9 +433,9 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <option>-D gles1=disabled</option>: Dette flagget deaktiverer bygging av en 
-      utdatert spesifikasjon av OpenGL ES hvis <parameter>-D glvnd=enabled</parameter>
-      ikke ble sendt.
+      <option>-D gles1=disabled</option>: Hvis du ikke brukte
+      <parameter>-D glvnd=enabled</parameter> og ikke trenger GLESv1, bruk 
+      dette alternativet. Noen spill bruker fortsatt GLESv1.
     </para>
 
     <para>

@@ -79,14 +79,12 @@
     </warning>
 
     <para>
-      Installer Shadow på nytt ved å kjøre følgende 
-      kommandoer:
+      Først, deaktiver installasjonen av <command>groups</command>, manualsider,
+      bruk <emphasis>YESCRYPT</emphasis>, endre postboksplasseringer og fjern 
+      symbollenkede mapper fra <envar>PATH</envar>:
     </para>
-<!--
-<screen><userinput>patch -Np1 -i ../shadow-4.10-useradd_segfault-1.patch &amp;&amp;
--->
-<screen><userinput>sed -i 's/groups$(EXEEXT) //' src/Makefile.in          &amp;&amp;
 
+<screen><userinput remap="pre">sed -i 's/groups$(EXEEXT) //' src/Makefile.in                     &amp;&amp;
 find man -name Makefile.in -exec sed -i 's/groups\.1 / /'   {} \; &amp;&amp;
 find man -name Makefile.in -exec sed -i 's/getspnam\.3 / /' {} \; &amp;&amp;
 find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \; &amp;&amp;
@@ -94,24 +92,29 @@ find man -name Makefile.in -exec sed -i 's/passwd\.5 / /'   {} \; &amp;&amp;
 sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' \
     -e 's@/var/spool/mail@/var/mail@'                   \
     -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
-    -i etc/login.defs                                   &amp;&amp;
+    -i etc/login.defs</userinput></screen>
 
-./configure --sysconfdir=/etc   \
+    <para>
+      Installer Shadow på nytt ved å kjøre følgende 
+      kommandoer:
+    </para>
+
+<screen><userinput>./configure --sysconfdir=/etc   \
             --disable-static    \
-            --without-libbsd    \
-            --with-{b,yes}crypt &amp;&amp;<!--
-This is the default:            - -with-group-name-max-length=32 &amp;&amp;-->
+            --without-libbsd    \</userinput><userinput revision="sysv">
+            --disable-logind    \</userinput><userinput>
+            --with-{b,yes}crypt &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make exec_prefix=/usr pamddir= install</userinput></screen>
 
     <para>
       Manualsidene ble installert i LFS, men hvis ny installasjon er ønskelig, 
-      kjør (som <systemitem class="username">root</systemitem> bruker):
+      kjør (som &root; bruker):
     </para>
 
 <screen role="root"><userinput>make -C man install-man</userinput></screen>
@@ -159,6 +162,12 @@ make</userinput></screen>
       <filename class="libraryfile">libbsd</filename>, som ikke er i GLFS. 
       En intern implementering av <command>readpassphrase</command> brukes 
       i stedet.
+    </para>
+
+    <para revision="sysv">
+      <parameter>--disable-logind</parameter>: Dette alternativet er påkrevd 
+      for systemer uten <filename class="libraryfile">libsystemd</filename>.
+      <xref linkend="elogind"/> tilbyr ikke det biblioteket.
     </para>
 
     <para>

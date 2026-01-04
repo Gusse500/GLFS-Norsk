@@ -42,7 +42,6 @@
       &opengl;
     </para>
 
-
   </sect2>
 
   <sect2 role="installation">
@@ -55,20 +54,18 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=$XORG_PREFIX   \
-            --buildtype=release     \
-            $(! pkgconf libglvnd   &amp;&amp;
-            echo -D gl_provider=gl) \
+meson setup --prefix=$XORG_PREFIX                       \
+            --buildtype=release                         \
+            -D default_library=shared                   \
+            $(pkgconf opengl || echo -D gl_provider=gl) \
             .. &amp;&amp;
-
 ninja</userinput></screen>
 
     <para>
       Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>ninja install &amp;&amp;
-rm -vf /usr/lib/libGLU.a</userinput></screen>
+<screen role="root"><userinput>ninja install</userinput></screen>
 
   </sect2>
 
@@ -76,10 +73,14 @@ rm -vf /usr/lib/libGLU.a</userinput></screen>
     <title>Parameterforklaringer</title>
 
     <para>
-      <command>$(! pkgconf ...)</command>: Disse kommandoene sjekker om OpenGL 
-      leverandøren ikke er libglvnd. Hvis den ikke er det, tvinger det
-      byggesystemet til å bruke <filename class="libraryfile">libGL</filename> 
-      istedenfor <filename class="libraryfile">libOpenGL</filename>.
+      <parameter>-D default_library=shared</parameter>: Denne parameteren 
+      sikrer at bare det delte biblioteket installeres.
+    </para>
+
+    <para>
+      <command>$(pkgconf ...)</command>: Disse kommandoene sjekker om <filename
+      class="libraryfile">libOpenGL</filename> er tilgjengelig, ellers 
+      blir <filename class="libraryfile">libGL</filename> brukt i stedet.
     </para>
 
   </sect2>

@@ -9,6 +9,7 @@ NVVM70_VERSION="4"
 MANDATORY_64=1 MANDATORY_32=1
 X11_64=1 X11_32=1
 EGL_64=1 EGL_32=1
+GLESV1_64=1 GLESV1_32=1
 GLESV2_64=1 GLESV2_32=1
 VULKAN=1 VULKAN_EGL=0
 OPENCL_64=1 OPENCL_32=1
@@ -29,6 +30,8 @@ while [ $# -gt 0 ]; do
     --no-x11-lib32 )         X11_32=0                          ;;
     --no-egl-64bit )         EGL_64=0                          ;;
     --no-egl-lib32 )         EGL_32=0                          ;;
+    --no-glesv1-64bit )      GLESV1_64=0                       ;;
+    --no-glesv1-lib32 )      GLESV1_32=0                       ;;
     --no-glesv2-64bit )      GLESV2_64=0                       ;;
     --no-glesv2-lib32 )      GLESV2_32=0                       ;;
     --no-vulkan )            VULKAN=0                          ;;
@@ -137,7 +140,7 @@ if [ $MANIFEST_FILE_VERSION != $MANIFEST_VERSION ]; then
 fi
 
 manifest_uninstall() {
-  for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
+  for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv1-64,glesv1-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
     for bin in $(cat $NV_MANIFEST | grep $type | cut -d':' -f2-); do
       find $LIBDIR $LIB32 $BINDIR -name "$bin.so*" -exec $RM_BIN {} \;
       find $LIBDIR $LIB32 $BINDIR -name "$bin" -exec $RM_BIN {} \;
@@ -249,6 +252,21 @@ if [ $EGL_32 = 1 ]; then
   echo "Installing lib32 EGL libraries..."
   mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep egl-32: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
+  done
+fi
+
+if [ $GLESV1_64 = 1 ]; then
+  echo "Installing 64-bit GLESv1 libraries..."
+  mkdir -pv $LIBDIR
+  for lib in $(cat $NV_MANIFEST | grep glesv1-64: | cut -d':' -f2-); do
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
+  done
+fi
+if [ $GLESV1_32 = 1 ]; then
+  echo "Installing lib32 GLESv1 libraries..."
+  mkdir -pv $LIB32
+  for lib in $(cat $NV_MANIFEST | grep glesv1-32: | cut -d':' -f2-); do
     $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
 fi
@@ -385,7 +403,7 @@ fi
 
 echo "Writing to $SHAREDIR/nvidia/installed_files..."
 mkdir -pv $SHAREDIR/nvidia
-for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
+for type in {mandatory-64,mandatory-32,x11-64,x11-32,egl-64,egl-32,glesv1-64,glesv1-32,glesv2-64,glesv2-32,opencl-64,opencl-32,cuda-64,cuda-32,ngx,rt,settings}; do
   for bin in $(cat $NV_MANIFEST | grep $type | cut -d':' -f2-); do
     find $LIBDIR $LIB32 $BINDIR -name "$bin.so*" >> $SHAREDIR/nvidia/installed_files1
     find $LIBDIR $LIB32 $BINDIR -name "$bin" >> $SHAREDIR/nvidia/installed_files1
