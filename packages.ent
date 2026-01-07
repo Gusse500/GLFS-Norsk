@@ -142,7 +142,7 @@
 <!ENTITY libva-version                "2.23.0">
 <!-- Graphics Drivers - Preliminaries -->
 <!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.402">
+<!ENTITY hwdata-version               "0.403">
 <!-- Graphics Drivers - NVIDIA -->
 <!ENTITY mesa-major-minor             "25.3">
 <!ENTITY mesa-version                 "&mesa-major-minor;.1">
