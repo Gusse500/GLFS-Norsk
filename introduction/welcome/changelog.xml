@@ -39,8 +39,23 @@
       </itemizedlist>
     </listitem>
     -->
+
     <listitem>
-      <para>6. januar 2025</para>
+      <para>9. januar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - cURL: 8.17.0 -&gt; 8.18.0 (sikkerhet). Se <ulink
+          url="https://wiki.linuxfromscratch.org/blfs/ticket/22618">#22618</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libtasn1: 4.20.0 -&gt; 4.21.0 (sikkerhet). Se <ulink
+          url="https://wiki.linuxfromscratch.org/blfs/ticket/22620">#22620</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>6. januar 2026</para>
       <itemizedlist>
         <listitem>
           <para>[renodr] - hwdata: 0.402 -&gt; 0.403.</para>
@@ -49,7 +64,7 @@
     </listitem>
 
     <listitem>
-      <para>5. januar 2025</para>
+      <para>5. januar 2026</para>
       <itemizedlist>
         <listitem>
           <para>[renodr] - Cython: 3.2.3 -&gt; 3.2.4.</para>
@@ -58,7 +73,7 @@
     </listitem>
 
     <listitem>
-      <para>3. januar 2025</para>
+      <para>3. januar 2026</para>
       <itemizedlist>
         <listitem>
           <para>[zeckma] - SDL3: 3.2.30 -&gt; 3.4.0.</para>
@@ -67,7 +82,7 @@
     </listitem>
 
     <listitem>
-      <para>3. januar 2025</para>
+      <para>3. januar 2026</para>
       <itemizedlist>
         <listitem>
           <para>[zeckma] - Shadow: 4.18.0 -&gt; 4.19.0.</para>
@@ -87,7 +102,7 @@
     </listitem>
 
     <listitem>
-      <para>1. januar 2025</para>
+      <para>1. januar 2026</para>
       <itemizedlist>
         <listitem>
           <para>[zeckma] - libglvnd: Installer libGLESv1_CM.</para>

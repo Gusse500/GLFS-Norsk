@@ -10,7 +10,7 @@
 <!-- SHARED DEPENDENCIES -->
 
 <!-- Networking -->
-<!ENTITY libtasn1-version             "4.20.0">
+<!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.38.2">
 <!ENTITY nss-major                    "3">
 <!ENTITY nss-minor                    "119">
@@ -20,7 +20,7 @@
 <!ENTITY libunistring-version         "1.4.1">
 <!ENTITY libidn2-version              "2.3.8">
 <!ENTITY libpsl-version               "0.21.5">
-<!ENTITY curl-version                 "8.17.0">
+<!ENTITY curl-version                 "8.18.0">
 <!ENTITY wget-version                 "1.25.0">
 <!-- Security -->
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
