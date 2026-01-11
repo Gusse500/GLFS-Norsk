@@ -5,7 +5,7 @@
   %general-entities;
 
   <!ENTITY nss-url "archive.mozilla.org/pub/security/nss/releases">
-  <!ENTITY nss-download "https://&nss-url;/NSS_&nss-version;_RTM/src/nss-&nss-version;.tar.gz">
+  <!ENTITY nss-download "https://&nss-url;/NSS_&nss-dir;_RTM/src/nss-&nss-version;.tar.gz">
 ]>
 
 <sect1 id="nss" xreflabel="nss-&nss-version;">
