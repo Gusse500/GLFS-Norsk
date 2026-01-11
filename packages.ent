@@ -13,8 +13,9 @@
 <!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.38.2">
 <!ENTITY nss-major                    "3">
-<!ENTITY nss-minor                    "119">
-<!ENTITY nss-version                  "&nss-major;_&nss-minor;_1">
+<!ENTITY nss-minor                    "120">
+<!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
+<!ENTITY nss-version                  "&nss-major;.&nss-minor;">
 <!ENTITY p11-kit-version              "0.25.10">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.1">
@@ -37,7 +38,7 @@
 <!ENTITY gi-minor                      "&gi-major;.&glib2-minor;">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "78">
-<!ENTITY icu-minor                    "1">
+<!ENTITY icu-minor                    "2">
 <!ENTITY icu-patch                    "0">
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.15">
@@ -48,7 +49,7 @@
 <!-- Audio -->
 <!ENTITY alsa-download-http           "https://www.alsa-project.org/files/pub">
 <!ENTITY alsa-download-ftp            "ftp://ftp.alsa-project.org/pub">
-<!ENTITY alsa-version                 "1.2.15.1">
+<!ENTITY alsa-version                 "1.2.15.2">
 <!ENTITY alsa-lib-version             "&alsa-version;">
 <!ENTITY alsa-plugins-version         "1.2.12">
 <!ENTITY alsa-utils-version           "&alsa-version;">
