@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+
+  <!ENTITY inih-download
+    "https://github.com/benhoyt/inih/archive/r&inih-version;/inih-r&inih-version;.tar.gz">
+]>
+
+<sect1 id="inih" xreflabel="inih-&inih-version;">
+  <?dbhtml filename="inih.html"?>
+
+  <title>inih-&inih-version;</title>
+
+  <indexterm zone="inih">
+    <primary sortas="a-inih">inih</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til inih</title>
+
+    <para>
+      Denne pakken er en enkel .INI filparser skrevet i C.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&inih-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av inih</title>
+
+    <para>
+      Installer <application>inih</application> ved å kjøre 
+      følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr --buildtype=release .. &amp;&amp;
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installasjon av inih</title>
+
+    <para>
+      Installer lib32-inih ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+meson setup --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --buildtype=release      \
+            .. &amp;&amp;
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vR DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-meson;
+
+    &meson-buildtype-release;
+
+  </sect2>
+
+<!-- Tests are enabled by default and this option no longer exists. Hiding.
+     - zeckma -->
+<!--
+  <sect2 role="commands">
+    <title>Command Explanations</title>
+
+    <para>
+      <parameter>-D with_test_suite=true</parameter>: Aktiver bygging 
+      av testpakken.
+    </para>
+
+  </sect2>
+-->
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          libinih og libINIReader
+        </seg>
+        <seg>
+          Ingen
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libinih">
+        <term><filename class="libraryfile">libinih</filename></term>
+        <listitem>
+          <para>
+            er inih hovedbiblioteket
+          </para>
+          <indexterm zone="inih libinih">
+            <primary sortas="c-libinih">libinih</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libINIReader">
+        <term><filename class="libraryfile">libINIReader</filename></term>
+        <listitem>
+          <para>
+            er inih parserbiblioteket
+          </para>
+          <indexterm zone="inih libINIReader">
+            <primary sortas="c-libINIReader">libINIReader</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+    </variablelist>
+
+  </sect2>
+
+</sect1>
