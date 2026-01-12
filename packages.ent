@@ -313,3 +313,10 @@
 <!ENTITY vkd3d-proton-spirv-tools        "e9a8ceeddbf7e3aaadac2ab6f8a6ab6437872e88">
 <!ENTITY vkd3d-proton-dxbc               "a38b5d78ed29f5fe44c2a2e157d5f7c2516df6e5">
 <!ENTITY vkd3d-proton-dxbc-spirv         "c8ad050fcb29e42a2f57d9f59e97488f465c436d">
+
+
+
+<!-- QOL -->
+
+<!ENTITY inih-version                 "62">
+<!ENTITY gamemode-version             "1.8.2">

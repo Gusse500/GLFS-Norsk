@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../general.ent">
+  %general-entities;
+
+  <!ENTITY gm-root
+    "https://github.com/FeralInteractive/gamemode/releases/download">
+  <!ENTITY gamemode-download
+    "&gm-root;/&gamemode-version;/gamemode-&gamemode-version;.tar.xz">
+]>
+
+<sect1 id="gamemode" xreflabel="GameMode-&gamemode-version;">
+  <?dbhtml filename="gamemode.html" ?>
+
+  <title>GameMode-&gamemode-version;</title>
+
+  <indexterm zone="gamemode">
+    <primary sortas="a-gamemode">GameMode</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til GameMode</title>
+
+    <para>
+      GameMode pakken inneholder en daemon, verktøy og biblioteker som lar 
+      spill be om optimaliseringer som deretter midlertidig brukes på 
+      verten.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&gamemode-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">GameMode Avhengigheter</bridgehead>
+
+    <para role="required">
+      <xref linkend="dbus"/>
+    </para>
+
+    <para role="recommended">
+      <xref linkend="inih"/>,
+      &logind;, og
+      <xref linkend="polkit"/> (for daemonen)
+    </para>
+
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/appstream.html">AppStream</ulink>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av GameMode</title>
+
+    <para>
+      Installer GameMode ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr                      \
+            --libexecdir=/usr/libexec/gamemode \
+            --buildtype=release                \
+            .. &amp;&amp;
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install</userinput></screen>
+
+    <para>
+      Hvis du installerte de anbefalte avhengighetene og ikke har installert 
+      denne pakken bare som en avhengighet, aktiver daemonen for hver bruker som
+      &root; bruker:
+    </para>
+
+<screen role="root"><userinput>systemctl enable --global gamemoded</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installasjon av GameMode</title>
+
+    <para>
+      Installer lib32-GameMode ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>rm -rf * &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+meson setup --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --buildtype=release      \
+            .. &amp;&amp;
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vR DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-meson;
+
+    <para><parameter>--libexecdir=/usr/libexec/gamemode</parameter>: Denne 
+    parameteren sikrer at det ikke er noen binære konflikter i <filename
+    class="directory">/usr/libexec</filename>.</para>
+
+    &meson-buildtype-release;
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
+
+      <seglistitem>
+        <seg>
+          gamemoded, gamemodelist, gamemoderun
+        </seg>
+        <seg>
+          libgamemodeauto og libgamemode
+        </seg>
+        <seg>
+          /usr/libexec/gamemode
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="gamemoded">
+        <term><command>gamemoded</command></term>
+        <listitem>
+          <para>
+            er GameMode daemonen
+          </para>
+          <indexterm zone="gamemode gamemoded">
+            <primary sortas="b-gamemoded">gamemoded</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gamemodelist">
+        <term><command>gamemodelist</command></term>
+        <listitem>
+          <para>
+            finner kjørende prosesser for GameMode
+          </para>
+          <indexterm zone="gamemode gamemodelist">
+            <primary sortas="b-gamemodelist">gamemodelist</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="gamemoderun">
+        <term><command>gamemoderun</command></term>
+        <listitem>
+          <para>
+            laster inn GameMode for et program/spill
+          </para>
+          <indexterm zone="gamemode gamemoderun">
+            <primary sortas="b-gamemoderun">gamemoderun</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgamemodeauto">
+        <term><filename class="libraryfile">libgamemodeauto</filename></term>
+        <listitem>
+          <para>
+            ber automatisk om GameMode ved lasting
+          </para>
+          <indexterm zone="gamemode libgamemodeauto">
+            <primary sortas="c-libgamemodeauto">libgamemodeauto</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libgamemode">
+        <term><filename class="libraryfile">libgamemode</filename></term>
+        <listitem>
+          <para>
+            sender forespørsler til <command>gamemoded</command>
+          </para>
+          <indexterm zone="gamemode libgamemode">
+            <primary sortas="c-libgamemode">libgamemode</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
