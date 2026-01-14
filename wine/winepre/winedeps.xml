@@ -12,37 +12,56 @@
   <title>Wine Avhengigheter</title>
 
   <para>
-    Wine har tre byggeformater, og avhengig av hvilken byggefil du ønsker, må 
+    Wine har fire byggeformater, og avhengig av hvilken byggefil du ønsker, må 
     du være oppmerksom på hva du installerer og formatet.
   </para>
 
   <para>
-    De tre byggetypene er: 32-bit, 64-bit og WoW64. 32-bit og 64-bit er 
-    selvforklarende, men WoW64 trenger forklaring. WoW64 er et 
-    kompatibilitetslag laget av Microsoft da applikasjoner og datamaskiner ble 
-    64-bit. Dette laget lar brukere emulere 32-bit Windowsapplikasjoner på en 
-    64-bit CPU. Med dette i bakhodet kan en Wine WoW64 bygg forklares som en 
-    byggetype som lar brukeren kjøre Windows 32-bit og 64-bit applikasjoner.
+    De fire byggetypene er: WoW64, gamle WoW64, 64-bit og 32-bit. 32-bit og 
+    64-bit er selvforklarende, men begge WoW64 typene trenger forklaring. WoW64 
+    er et kompatibilitetslag laget av Microsoft da applikasjoner og datamaskiner 
+    ble 64-bit. Dette laget lar brukere emulere 32-bit Windowsapplikasjoner på 
+    en 64-bit CPU. For Wine har dette samme premiss; det lar deg kjøre både 
+    32-bit og 64-bit Window sapplikasjoner og spill på x86_64. Det finnes 
+    imidlertid to WoW64 typer.
   </para>
 
   <para>
-    Hvis du ikke vil ha et WoW64 bygg, følg instruksjonene normalt og hopp over 
-    lib32 instruksjonene. Når du kommer til 
-    MinGW-w64 seksjonen, følg kun instruksjonene for x86_64.
+    Den første er den nyere og standard WoW64 arkitekturen. Alt du trenger er 
+    64-bits biblioteker og både x86_64 og i686 MinGW-w64 verktøykjedene. Den 
+    eldre arkitekturen bruker 32-bits biblioteker for å få 32-bits støtte. Det 
+    er i motsetning til et mål skrivebordet har beveget seg mot: full 64-bit, og 
+    etterlater 32-bits biblioteker. Så den nye arkitekturen ble utviklet for å 
+    tilfredsstille det.
   </para>
 
   <para>
-    Hvis du kun vil ha et 32-biters bygg, følg kun lib32-instruksjonene. Når du 
-    kommer til MinGW-w64, følg instruksjonene for 
-    i686. For å kunne fortsette på BLFS, anbefales det imidlertid å gjøre de 
-    vanlige installasjonene også, bortsett fra
-    MinGW-w64.
+    WoW64 alternativet kan være et godt valg, og hvis du velger den løsningen, 
+    trenger du ikke MLFS i det hele tatt, eller noen 32-bits biblioteker fra 
+    denne boken, med mindre du vil ha eller allerede har installert Steam. Med 
+    det trenger du bare å gjøre de vanlige installasjonene av hver pakke, og for 
+    MinGW-w64 verktøykjeden må du fortsatt installere både x86_64 og i686 verktøykjedene.
   </para>
 
   <para>
-    Og til slutt, hvis du ønsker et WoW64 bygg, følg alle instruksjonene på 
-    avhengighetssidene med mindre du får beskjed om noe annet eller får 
-    presentert alternativer.
+    Hvis du har et problem med den nyere WoW64 arkitekturen eller stoler mer på 
+    det eldre systemet, trenger du både 64-biters og lib32 variantene av hver 
+    pakke, sammen med verktøykjedene x86_64 og i686 MinGW-w64.
+  </para>
+
+  <para>
+    For ren 64-bit, følg instruksjonene normalt og hopp over lib32 
+    instruksjonene. Når du installerer MinGW-w64-verktøykjeden, kan du bare 
+    følge x86_64 instruksjonene.
+  </para>
+
+  <para>
+    For ren 32-bit, følg kun lib32 instruksjonene. Når du kommer til MinGW-w64, 
+    følg i686 instruksjonene. For å fortsette på BLFS, anbefales det imidlertid 
+    å gjøre de vanlige installasjonene også, med unntak av MinGW-w64. I tillegg 
+    til dette kan Wine trenge programmer fra det gitte settet med pakker, og 
+    denne installasjonsmetoden er ikke testet uten de vanlige 64-bit 
+    installasjonene.
   </para>
 
   <para role="required">
