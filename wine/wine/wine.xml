@@ -5,7 +5,7 @@
   %general-entities;
 
   <!ENTITY wine-root "https://dl.winehq.org/wine/source">
-  <!ENTITY wine-download "&wine-root;/&wine-major-version;.x/wine-&wine-version;.tar.xz">
+  <!ENTITY wine-download "&wine-root;/&wine-major-version;.0/wine-&wine-version;.tar.xz">
 ]>
 
 <sect1 id="wine" xreflabel="Wine-&wine-version;">
@@ -79,7 +79,7 @@
 -->
 
     <para>
-      Wine har tre byggetyper. Bla ned til byggetypen du ønsker.
+      Wine har fire byggetyper. Bla ned til byggetypen du ønsker.
       Besøk <xref linkend="winedeps"/> for mer informasjon om 
       hver byggetype.
     </para>
@@ -88,8 +88,31 @@
       <title>WoW64</title>
 
       <para>
-        Installer WoW64 Wine ved å kjøre følgende 
-        kommandoer:
+        Installer WoW64 Wine ved å kjøre følgende kommandoer:
+      </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+../configure --prefix=/usr   \
+             --disable-tests \
+             --enable-archs=x86_64,i386 &amp;&amp;
+make</userinput></screen>
+
+      <para>
+        Nå, som &root; bruker:
+      </para>
+
+<screen role="root"><userinput>rm -rf /usr/lib/wine &amp;&amp;
+make install</userinput></screen>
+
+    </sect3>
+
+    <sect3>
+      <title>Gamle WoW64</title>
+
+      <para>
+        Installer gamle WoW64 Wine ved å kjøre følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build-win64 &amp;&amp;
@@ -113,11 +136,12 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
       <para>
-        Nå, som <systemitem class="username">root</systemitem> bruker:
+        Nå, som &root; bruker:
       </para>
 
-<screen role="root"><userinput>make install      &amp;&amp;
-cd ../build-win64 &amp;&amp;
+<screen role="root"><userinput>rm -rf /usr/lib/wine &amp;&amp;
+make install         &amp;&amp;
+cd ../build-win64    &amp;&amp;
 make install</userinput></screen>
 
     </sect3>
@@ -126,8 +150,7 @@ make install</userinput></screen>
       <title>Bare 64-bit</title>
 
       <para>
-        Installer bare 64-bit Wine ved å kjøre følgende 
-        kommandoer:
+        Installer bare 64-bit Wine ved å kjøre følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -140,10 +163,11 @@ cd    build &amp;&amp;
 make</userinput></screen>
 
       <para>
-        Nå, som <systemitem class="username">root</systemitem> bruker:
+        Nå, som &root; bruker:
       </para>
 
-<screen role="root"><userinput>make install</userinput></screen>
+<screen role="root"><userinput>rm -rf /usr/lib/wine &amp;&amp;
+make install</userinput></screen>
 
     </sect3>
 
@@ -160,8 +184,7 @@ make</userinput></screen>
 -->
 
       <para>
-        Installer bare 32-bit Wine ved å kjøre følgende 
-        kommandoer:
+        Installer bare 32-bit Wine ved å kjøre følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -173,10 +196,11 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
       <para>
-        Nå, som <systemitem class="username">root</systemitem> bruker:
+        Nå, som &root; bruker:
       </para>
 
-<screen role="root"><userinput>make install</userinput></screen>
+<screen role="root"><userinput>rm -rf /usr/lib/wine &amp;&amp;
+make install</userinput></screen>
 
     </sect3>
   
@@ -198,6 +222,14 @@ make</userinput></screen>
       aktivere støtte for både 32-bit og 64-bit.
     </para>
 
+    <para>
+      <command>rm -rf /usr/lib/wine</command>: Denne kommandoen fjerner 
+      potensielt motstridende Wine biblioteker før installasjon hvis Wine har 
+      blitt installert tidligere. Problemer oppstår vanligvis når man bytter fra 
+      én byggetype til en annen. Når dette er gjort, vil Wine si at det er en 
+      versjonsavvik, som kommer fra biblioteker som ikke lenger skal eksistere.
+    </para>
+
   </sect2>
 
   <sect2 role="configuration">
@@ -215,15 +247,19 @@ make</userinput></screen>
     </para>
 
     <para>
-      Når det gjelder Direct3D 12, kan det også være lurt å 
-      installere <xref linkend="vkd3d-proton"/> som 
-      erstatter VKD3D levert av Wine. VKD3D er mindre 
-      aggressiv med optimaliseringer og er rettet mot 
+      Når det gjelder Direct3D 12, kan det også være lurt å installere 
+      <xref linkend="vkd3d-proton"/> som erstatter VKD3D levert av Wine. 
+      VKD3D er mindre aggressiv med optimaliseringer og er rettet mot 
       generell bruk, mens VKD3D-Proton har aggressive 
       optimaliseringer og er rettet mot spilling. Til 
       tross for navnet kan den brukes med Wine og 
       fungerer ganske bra.
     </para>
+
+    <note><para>
+      Hvis du installerte den nyere WoW64 arkitekturen, trenger du fortsatt 
+      32-bit/i686 DLL-er for alt ekstra du ønsker å installere, som DXVK.
+    </para></note>
 
     <para>
       Valget om hva du skal installere er opp til deg.
@@ -275,8 +311,8 @@ make</userinput></screen>
         </seg>
         <seg>Ulike dynamiske og statiske biblioteker</seg>
         <seg>
-          /usr/include/wine/windows, /usr/lib/wine/x86_64-windows,
-          /usr/lib32/wine/i686-unix, og /usr/share/wine
+          /usr/include/wine, /usr/lib/wine, og
+          /usr/share/wine
         </seg>
       </seglistitem>
     </segmentedlist>
