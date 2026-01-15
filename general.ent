@@ -310,3 +310,4 @@ export -f as_root</userinput></screen>
 <!ENTITY norsklfs-domainname  "lfs.freding.no">
 <!ENTITY norskglfs-domainname "lfs.freding.no">
 <!ENTITY norsk-lfs-website  "https://www.&norsklfs-domainname;">
+<!ENTITY patch-root "lfs.freding.no/glfs/download">
