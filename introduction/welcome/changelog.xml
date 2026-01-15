@@ -44,6 +44,11 @@
       <para>14. januar 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libpng-1.6.52 -&gt; libpng-1.6.54 (sikkerhet). Se
+          BLFS <ulink
+          url="https://lfs.freding.no/blfs/advisories/consolidated.html#sa-12.4-076">SA-12.4-076</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - ALSA: 1.2.15.2 -&gt; 1.2.15.3.</para>
         </listitem>
       </itemizedlist>
