@@ -57,7 +57,7 @@
 <!ENTITY libvorbis-version            "1.3.7">
 <!ENTITY vorbistools-version          "1.4.2">
 <!ENTITY flac-version                 "1.5.0">
-<!ENTITY opus-version                 "1.6">
+<!ENTITY opus-version                 "1.6.1">
 <!ENTITY speex-version                "1.2.1">
 <!ENTITY speexdsp-version             "&speex-version;">
 <!ENTITY libsndfile-version           "1.2.2">
