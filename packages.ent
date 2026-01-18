@@ -161,11 +161,11 @@
 <!ENTITY nvidia-full-name     "&nvidia-version;">
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
-<!ENTITY cuda-version         "13.1.0">
-<!ENTITY cuda-nvidia-version  "590.44.01">
+<!ENTITY cuda-version         "13.1.1">
+<!ENTITY cuda-nvidia-version  "590.48.01">
 <!-- NVIDIA r580 -->
-<!ENTITY nvidia-r580-linux-version "6.15.x - 6.17.x">
-<!ENTITY nvidia-r580-version       "580.119.02">
+<!ENTITY nvidia-r580-linux-version "6.15.x - 6.18.x">
+<!ENTITY nvidia-r580-version       "580.126.09">
 <!ENTITY nvidia-r580-full-name     "&nvidia-r580-version;">
 <!ENTITY nv-r580-manifest-version  "1">
 <!ENTITY nv-r580-sysv-bs           "1">
