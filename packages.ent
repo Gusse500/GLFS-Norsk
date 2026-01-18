@@ -16,7 +16,7 @@
 <!ENTITY nss-minor                    "120">
 <!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
 <!ENTITY nss-version                  "&nss-major;.&nss-minor;">
-<!ENTITY p11-kit-version              "0.25.10">
+<!ENTITY p11-kit-version              "0.26.0">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.1">
 <!ENTITY libidn2-version              "2.3.8">
@@ -57,7 +57,7 @@
 <!ENTITY libvorbis-version            "1.3.7">
 <!ENTITY vorbistools-version          "1.4.2">
 <!ENTITY flac-version                 "1.5.0">
-<!ENTITY opus-version                 "1.6">
+<!ENTITY opus-version                 "1.6.1">
 <!ENTITY speex-version                "1.2.1">
 <!ENTITY speexdsp-version             "&speex-version;">
 <!ENTITY libsndfile-version           "1.2.2">
@@ -161,11 +161,11 @@
 <!ENTITY nvidia-full-name     "&nvidia-version;">
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
-<!ENTITY cuda-version         "13.1.0">
-<!ENTITY cuda-nvidia-version  "590.44.01">
+<!ENTITY cuda-version         "13.1.1">
+<!ENTITY cuda-nvidia-version  "590.48.01">
 <!-- NVIDIA r580 -->
-<!ENTITY nvidia-r580-linux-version "6.15.x - 6.17.x">
-<!ENTITY nvidia-r580-version       "580.119.02">
+<!ENTITY nvidia-r580-linux-version "6.15.x - 6.18.x">
+<!ENTITY nvidia-r580-version       "580.126.09">
 <!ENTITY nvidia-r580-full-name     "&nvidia-r580-version;">
 <!ENTITY nv-r580-manifest-version  "1">
 <!ENTITY nv-r580-sysv-bs           "1">

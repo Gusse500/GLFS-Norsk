@@ -41,6 +41,32 @@
     -->
 
     <listitem>
+      <para>17. januar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA-r580: 580.119.02 -&gt; 580.126.09. Fikser
+          <ulink url="&glfs-issues;/359">#359</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CUDA: 13.1.0 -&gt; 13.1.1. Fikser
+          <ulink url="&glfs-issues;/360">#360</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - p11-kit: 0.25.10 -&gt; 0.26.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>16. januar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Opus: 1.6 -&gt; 1.6.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>14. januar 2026</para>
       <itemizedlist>
         <listitem>
