@@ -10,7 +10,7 @@
         "&sourceforge-dl;/sourceforge/libpng-apng/libpng-&apng-version;-apng.patch.gz">
   -->
   <!ENTITY apng-patch
-        "&patch-root;/libpng/libpng-&apng-version;-apng.patch">
+        "&dl-root;/libpng/libpng-&apng-version;-apng.patch">
 ]>
 
 <sect1 id="libpng" xreflabel="libpng-&libpng-version;">
