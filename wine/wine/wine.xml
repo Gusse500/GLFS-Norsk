@@ -5,7 +5,7 @@
   %general-entities;
 
   <!ENTITY wine-root "https://dl.winehq.org/wine/source">
-  <!ENTITY wine-download "&wine-root;/&wine-major-version;.0/wine-&wine-version;.tar.xz">
+  <!ENTITY wine-download "&wine-root;/&wine-major-version;.x/wine-&wine-version;.tar.xz">
 ]>
 
 <sect1 id="wine" xreflabel="Wine-&wine-version;">
