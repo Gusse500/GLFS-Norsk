@@ -34,7 +34,7 @@
 
     <bridgehead renderas="sect3">PyYAML Avhengigheter</bridgehead>
 
-    <para role="required">
+    <para role="recommended">
       <xref linkend="cython"/> og <xref linkend="libyaml"/>
     </para>
 

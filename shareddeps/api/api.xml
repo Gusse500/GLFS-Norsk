@@ -17,11 +17,15 @@
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="aboutgl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libglvnd.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vulkan-sdk.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glu.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="vulkan-sdk.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-llvm-translator.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libatomic_ops.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libdrm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libgbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="opencl-headers.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ocl-icd.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libclc.xml"/>
 
 </chapter>

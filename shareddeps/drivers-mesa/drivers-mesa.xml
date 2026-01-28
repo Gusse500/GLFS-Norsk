@@ -16,17 +16,6 @@
     oppsett. For å gjøre det, les NVIDIA kapittelet.
   </para>
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="llvm.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rustc.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cbindgen.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="rust-bindgen.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="spirv-llvm-translator.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libclc.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ply.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mako.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cython.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libyaml.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pyyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mesa.xml"/>
 
 </chapter>

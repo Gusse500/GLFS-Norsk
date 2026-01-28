@@ -70,10 +70,8 @@ echo "                                      instead of libGLX_nvidia (this can c
 echo "                                      various crashes in X11 Vulkan apps,"
 echo "                                      including the Steam Proton compatibility"
 echo "                                      layer for Direct3D games)"
-echo "  --no-opencl-64bit                   do not install the OpenCL 64-bit loader"
-echo "                                      and driver"
-echo "  --no-opencl-lib32                   do not install the OpenCL lib32 loader and"
-echo "                                      driver"
+echo "  --no-opencl-64bit                   do not install the OpenCL 64-bit driver"
+echo "  --no-opencl-lib32                   do not install the OpenCL lib32 driver"
 echo "  --no-cuda-64bit                     do not install the CUDA compatibility 64-bit"
 echo "                                      libraries"
 echo "  --no-cuda-lib32                     do not install the CUDA compatibility lib32"
@@ -300,11 +298,7 @@ if [ $OPENCL_64 = 1 ]; then
   echo "Installing 64-bit OpenCL libraries..."
   mkdir -pv $LIBDIR $OPENCLICDDIR
   for lib in $(cat $NV_MANIFEST | grep opencl-64: | cut -d':' -f2-); do
-    if [ $lib = "libOpenCL" ]; then
-      $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$OPENCL_VERSION $LIBDIR
-    else
-      $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
-    fi
+    $INSTALL_LIB $NV_X_RUN_DIR/$lib.so.$NVIDIA_VERSION $LIBDIR
   done
   cp -v $NV_X_RUN_DIR/nvidia.icd $OPENCLICDDIR
 fi
@@ -312,11 +306,7 @@ if [ $OPENCL_32 = 1 ]; then
   echo "Installing lib32 OpenCL libraries..."
   mkdir -pv $LIB32
   for lib in $(cat $NV_MANIFEST | grep opencl-32: | cut -d':' -f2-); do
-    if [ $lib = "libOpenCL" ]; then
-      $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$OPENCL_VERSION $LIB32
-    else
-      $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
-    fi
+    $INSTALL_LIB $NV_X_RUN_DIR/32/$lib.so.$NVIDIA_VERSION $LIB32
   done
 fi
 
@@ -416,6 +406,7 @@ find $XEXT -name "libglxserver_nvidia.so*" >> $SHAREDIR/nvidia/installed_files1
 find $XEXT -name "nvidia_drv.so*" >> $SHAREDIR/nvidia/installed_files1
 find $EGLGLVNDDIR -name "*_nvidia.json" >> $SHAREDIR/nvidia/installed_files1
 find $VKICDDIR -name "*nvidia*.json" >> $SHAREDIR/nvidia/installed_files1
+find $OPENCLICDDIR -name "*nvidia*.icd" >> $SHAREDIR/nvidia/installed_files1
 find $NVWINEDIR -name "*nvngx*.dll" >> $SHAREDIR/nvidia/installed_files1
 find $SHAREDIR/nvidia -name "*nvoptix*" >> $SHAREDIR/nvidia/installed_files1
 find $BINDIR -name "nvidia-settings" >> $SHAREDIR/nvidia/installed_files1

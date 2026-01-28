@@ -12,6 +12,7 @@
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/net.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/security.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="tooling/tooling.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="audio/audio.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/basicx/basicx.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dps/wl/wl.xml"/>

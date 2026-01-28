@@ -524,7 +524,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libnvidia-tileiras,
           libnvidia-tls,
           libnvidia-wayland-client,
-          libOpenCL,
           nvidia-drm_gbm,
           nvidia_drv, og
           for <xref linkend="wine"/> (_nvngx,
@@ -1012,18 +1011,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           </para>
           <indexterm zone="nvidia libnvidia-wayland-client">
             <primary sortas="c-libnvidia-wayland-client">libnvidia-wayland-client</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="libOpenCL">
-        <term><filename class="libraryfile">libOpenCL</filename></term>
-        <listitem>
-          <para>
-            er OpenCL lasteren som åpner en gitt OpenCL driver
-          </para>
-          <indexterm zone="nvidia libOpenCL">
-            <primary sortas="c-libOpenCL">libOpenCL</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -31,7 +31,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/x7lib.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/libxcvt.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x/xcb-utils.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/cmake.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/dbus.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/libunwind.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="other/nettle.xml"/>

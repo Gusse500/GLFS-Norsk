@@ -545,7 +545,6 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
           libnvidia-rtcore,
           libnvidia-tls,
           libnvidia-wayland-client,
-          libOpenCL,
           nvidia-drm_gbm,
           nvidia_drv, og
           for <xref linkend="wine"/> (_nvngx,

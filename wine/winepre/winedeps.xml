@@ -108,9 +108,7 @@
     <ulink url="&blfs-svn;/postlfs/mitkrb.html">Kerberos</ulink>,
     <ulink url="https://archlinux.org/packages/extra/x86_64/smbclient/">
     smbclient</ulink>,
-    <ulink
-    url="https://archlinux.org/packages/?sort=&amp;q=opencl&amp;maintainer=&amp;flagged=">
-    OpenCL</ulink>,
+    <xref linkend="ocl-icd"/>,
     <ulink url="&blfs-svn;/basicnet/libpcap.html">libpcap</ulink>,
     <ulink url="&blfs-svn;/general/libusb.html">libusb</ulink>, og
     <ulink url="&blfs-svn;/multimedia/v4l-utils.html">v4l-utils</ulink>

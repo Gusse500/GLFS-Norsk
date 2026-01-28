@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY ruby-download "https://cache.ruby-lang.org/pub/ruby/&ruby-minor-version;/ruby-&ruby-version;.tar.xz">
+]>
+
+<sect1 id="ruby" xreflabel="Ruby-&ruby-version;">
+  <?dbhtml filename="ruby.html"?>
+
+  <title>Ruby-&ruby-version;</title>
+
+  <indexterm zone="ruby">
+    <primary sortas="a-Ruby">Ruby</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til Ruby</title>
+
+    <para>
+      Ruby pakken tilbyr et utviklingsmiljø og en 
+      tolk for skriptspråket Ruby.
+    </para>
+
+    &long-build-time;
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&ruby-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">Ruby Avhengigheter</bridgehead>
+
+    <para role="required">
+      <xref linkend="libyaml"/>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av Ruby</title>
+
+    <note>
+      <para>
+        Hvis du har installert en pakke som inneholder en Ruby gem, må du installere 
+        disse pakkene på nytt når du oppgraderer til en ny, mindre versjon av Ruby.
+      </para>
+    </note>
+
+    <para>
+      Installer Ruby ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>./configure --prefix=/usr         \
+            --disable-rpath       \
+            --enable-shared       \
+            --without-valgrind    \
+            --without-baseruby    \
+            ac_cv_func_qsort_r=no \
+            --docdir=/usr/share/doc/ruby-&ruby-version; &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+    <note>
+      <para>
+        Hvis du har installert Ruby-On-Rails applikasjoner og oppgradert Ruby 
+        ved å installere denne pakken, må du kanskje kjøre en oppdatering der 
+        som &root; bruker:
+      </para>
+
+<screen role="nodump"><userinput>cd /path/to/web/app
+bundle update rake</userinput></screen>
+
+      <para>
+        Du bør starte nettserveren som betjener applikasjonen på nytt.
+      </para>
+
+    </note>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    <para>
+      <parameter>--disable-rpath</parameter>: Denne bryteren deaktiverer innebygging av
+      <filename class='directory'>/usr/lib</filename> som et biblioteksøkesti 
+      inn i <command>ruby</command> programmet.  Det er ikke nødvendig å gjøre det
+      (fordi <filename class='directory'>/usr/lib</filename> er en system 
+      biblioteksti) og det kan føre til at testpakken kjører med systemet sin
+      <filename class='libraryfile'>libruby</filename> i stedet for den som 
+      nettopp ble bygget da Ruby ble installert.
+    </para>
+
+    <para>
+      <parameter>--enable-shared</parameter>: Denne bryteren aktiverer bygging av
+      <filename class="libraryfile">libruby</filename> delt bibliotek.
+    </para>
+
+    <para>
+      <parameter>--without-baseruby</parameter>: Denne bryteren hindrer bruk av 
+      systemet sin <command>ruby</command> hvis den allerede er installert. 
+      Byggesystemet vil bruke den nybygde versjonen i stedet.
+    </para>
+
+    <para>
+      <parameter>ac_cv_func_qsort_r=no</parameter>: Denne bryteren hindrer bruk 
+      av <function>qsort_r</function> funksjonen fra Glibc. Ruby foretar 
+      aggressiv optimalisering under forutsetning av noen 
+      implementeringsdetaljer i sorteringsalgoritmen, men antagelsen stemmer 
+      ikke med Glibc implementasjonen. Med denne bryteren vil Ruby bruke sin 
+      egen sorterings implementering i stedet.
+    </para>
+
+    <para>
+      <option>--disable-install-doc</option>: Denne bryteren deaktiverer 
+      bygging og installasjon av rdoc indekser og C API dokumenter.
+    </para>
+
+    <para>
+      <option>--disable-install-rdoc</option>: Denne bryteren deaktiverer 
+      bygging og installasjon av rdoc indekser.
+    </para>
+
+    <para>
+      <option>--disable-install-capi</option>: Denne bryteren deaktiverer 
+      bygging og installasjon av C API dokumenter.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          bundle,
+          bundler,
+          erb,
+          gem,
+          irb,
+          racc,
+          rake,
+          rbs,
+          rdbg,
+          rdoc,
+          ri,
+          ruby, og
+          typeprof
+        </seg>
+        <seg>
+          libruby.so
+        </seg>
+        <seg>
+          /usr/include/ruby-&ruby-minor-version;.0,
+          /usr/lib/ruby,
+          /usr/share/doc/ruby-&ruby-version; og
+          /usr/share/ri
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="ruby-tool">
+        <term><command>ruby</command></term>
+        <listitem>
+          <para>
+            er en tolk for skriptspråket Ruby
+          </para>
+          <indexterm zone="ruby ruby-tool">
+            <primary sortas="b-ruby">ruby</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libruby">
+        <term><filename role="libraryfile">libruby</filename></term>
+        <listitem>
+          <para>
+            inneholder API funksjonene som kreves av Ruby
+          </para>
+          <indexterm zone="ruby libruby">
+            <primary sortas="c-libruby">libruby</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
