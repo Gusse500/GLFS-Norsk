@@ -41,6 +41,25 @@
     -->
 
     <listitem>
+      <para>27. januar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - La til Verktøykapittelet og flyttet flere pakker 
+          som CMake og LLVM til det.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - OCL-ICD: Lagt til.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - OpenCL-Headers: Lagt til.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Ruby: Lagt til.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>26. januar 2026</para>
       <itemizedlist>
         <listitem>

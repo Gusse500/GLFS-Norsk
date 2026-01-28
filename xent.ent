@@ -159,6 +159,11 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
     </listitem>
     <listitem>
       <para>
+        <xref linkend='ocl-icd'/> (for bruk av OpenCL drivere)
+      </para>
+    </listitem>
+    <listitem>
+      <para>
         <xref linkend='vulkan-sdk'/> (for å bruke Vulkan drivere)
       </para>
     </listitem>

@@ -142,14 +142,13 @@
     <para role="optional">
       &gbm;,
       <ulink url="&blfs-svn;/general/libdisplay-info.html">libdisplay-info</ulink>,
-      <ulink url="&blfs-svn;/general/libgcrypt.html">libgcrypt</ulink>,
       <xref linkend="libunwind"/>,
       <ulink url="&blfs-svn;/general/lm-sensors.html">lm-sensors</ulink>,
       <!-- for libsensors according to Meson -->
-      <xref linkend="nettle"/>,
-      <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test Mesa),
+      <xref linkend="opencl-headers"/>,
+      <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile plattformer), og
       <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
@@ -424,6 +423,15 @@ ldconfig</userinput></screen>
     <para>
       <parameter>-D libunwind=disabled</parameter>: Denne parameteren deaktiverer
       bruken av libunwind.
+    </para>
+
+    <para>
+      <option>-D gallium-rusticl=true</option>: Dette alternativet aktiverer 
+      OpenCL for Gallium-driverne. I tillegg krever det at du spesifiserer 
+      hvilke drivere som får den støtten. Alternativet for det er
+      <option>-D gallium-rusticl-enable-drivers</option>, som du kan sette til
+      <literal>auto</literal> for enkelhets skyld. Forstå at Rusticl fortsatt 
+      har mange problemer.
     </para>
 
     <para>

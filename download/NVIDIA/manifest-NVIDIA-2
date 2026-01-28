@@ -9,8 +9,8 @@ glesv1-64: libGLESv1_CM_nvidia
 glesv1-32: libGLESv1_CM_nvidia
 glesv2-64: libGLESv2_nvidia
 glesv2-32: libGLESv2_nvidia
-opencl-64: libOpenCL libnvidia-opencl
-opencl-32: libOpenCL libnvidia-opencl
+opencl-64: libnvidia-opencl
+opencl-32: libnvidia-opencl
 cuda-64: libcuda libcudadebugger libnvidia-encode libnvidia-nvvm libnvidia-nvvm70 libnvidia-opticalflow libnvidia-ptxjitcompiler libnvidia-tileiras libnvcuvid
 cuda-32: libcuda libnvidia-encode libnvidia-ptxjitcompiler libnvidia-nvvm libnvidia-tileiras libnvcuvid
 ngx: libnvidia-ngx
