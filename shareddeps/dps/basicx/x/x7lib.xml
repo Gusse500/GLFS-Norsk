@@ -109,8 +109,8 @@ EOF</userinput></screen>
 <screen><userinput>mkdir lib &amp;&amp;
 cd lib &amp;&amp;
 grep -v '^#' ../lib-&xorg-version;-list | wget -i- -c \
-    -B &x7libs-download; &amp;&amp;
-wget &dl-root;/libXmu/libXmu-&libXmu-version;-upstream_fixes-1.patch</userinput></screen>
+    -B &x7libs-download;<!-- &amp;&amp;
+wget &dl-root;/libXmu/libXmu-&libXmu-version;-upstream_fixes-1.patch--></userinput></screen>
 
   </sect2>
 
@@ -146,12 +146,12 @@ do
     libXt-[0-9]* )
       ./configure $XORG_CONFIG $docdir \
                   --with-appdefaultdir=/etc/X11/app-defaults
-    ;;
+    ;;<!--
 
     libXmu-[0-9]* )
       patch -Np1 -i ../libXmu-&libXmu-version;-upstream_fixes-1.patch
       ./configure $XORG_CONFIG $docdir
-    ;;
+    ;;-->
 
     libXpm-[0-9]* )
       ./configure $XORG_CONFIG $docdir --disable-open-zfile
@@ -210,14 +210,14 @@ do
       CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
       ./configure $XORG_CONFIG $libdir $host $docdir                    \
                   --with-appdefaultdir=/etc/X11/app-defaults
-    ;;
+    ;;<!--
 
     libXmu-[0-9]* )
       patch -Np1 -i ../libXmu-&libXmu-version;-upstream_fixes-1.patch
       CC="gcc -m32" CXX="g++ -m32"         \
       PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
       ./configure $XORG_CONFIG $libdir $host $docdir
-    ;;
+    ;;-->
 
     libXpm-[0-9]* )
       CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
