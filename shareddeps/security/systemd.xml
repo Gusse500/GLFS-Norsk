@@ -29,13 +29,12 @@
     <title>Introduksjon til Systemd</title>
 
     <para>
-      Selv om Systemd ble installert da LFS ble bygget, 
-      er det mange funksjoner i pakken som ikke var 
-      inkludert i den første installasjonen fordi Linux-PAM 
-      ikke var installert ennå. Systemd pakken må bygges opp 
-      igjen for å gi en fungerende <command>systemd-logind</command> 
-      tjeneste, som tilbyr mange tilleggsfunksjoner 
-      for avhengige pakker.
+      Selv om Systemd ble installert da LFS ble bygget, er det mange funksjoner 
+      som tilbys av pakken som ikke var inkludert i den første installasjonen 
+      fordi Linux-PAM ikke var installert ennå. Systemd pakken må bygges opp 
+      igjen for å gi en fungerende
+      <command>systemd-logind</command> tjeneste, som tilbyr mange 
+      tilleggsfunksjoner for avhengige pakker.
     </para>
 
     <itemizedlist spacing="compact">
@@ -273,6 +272,56 @@ EOF</userinput></screen>
       den vil ikke returnere en feil. Hvis den kjøres i en Bash økt som avsluttes ved 
       feil, vil ikke kommandoen ovenfor stoppe den. Det er trygt å kjøre den.
     </para></note>
+
+    <para>
+      Et skrivebordsmiljø kjører ofte som en gruppe brukertjenester. Disse 
+      tjenestene opprettes av per-bruker instanser, i stedet for 
+      innloggingsskallet. For å sikre at disse tjenestene får miljøvariablene 
+      satt fra <filename
+      class='directory'>/etc/profile.d</filename>, som &root; bruker, installer 
+      en miljøgenerator for å dumpe alle relevante eksporterte 
+      miljøvariabler til per-bruker instanser når instansen 
+      starter å kjøre:
+    </para>
+
+<screen role='root'><userinput>install -vdm755 /etc/systemd/user-environment-generators &amp;&amp;
+cat &gt; /etc/systemd/user-environment-generators/50-profile.sh &lt;&lt; "EOF"
+<literal>#!/usr/bin/env -S -i /usr/bin/bash
+# SPDX-License-Identifier: MIT
+
+. /etc/profile
+
+# Systemd should have already set a better value for them.
+unset XDG_RUNTIME_DIR
+for i in $(locale); do
+  unset ${i%=*}
+done
+
+# Some shell magic that we don't want to expose.
+unset SHLVL
+
+python3 &lt;&lt; _EOF
+import os
+for var in os.environ:
+  # Simply unsetting them in shell does not work.
+  if var in ['LC_CTYPE', '_']:
+    continue
+
+  print(var + '=' + os.environ[var])
+_EOF</literal>
+EOF</userinput></screen>
+
+    <para>
+      Les <ulink role='man'
+      url='&man;systemd.environment-generator.7'>systemd.environment-generator(7)</ulink>
+      for detaljer om miljøgeneratorene. Merk at hvis du har redigert 
+      innholdet i
+      <filename class='directory'>/etc/profile.d</filename> når et 
+      skrivebordsmiljø kjører, må du kjøre <command>systemctl
+      --user --daemon-reload</command> kommandoen for å synkronisere endringen 
+      inn i systemd per-bruker instansen, og logg deretter ut og inn igjen for 
+      å synkronisere endringen inn i skrivebordsmiljøet.
+    </para>
 
     <important>
       <para>
