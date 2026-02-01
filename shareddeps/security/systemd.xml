@@ -284,8 +284,7 @@ EOF</userinput></screen>
       starter å kjøre:
     </para>
 
-<screen role='root'><userinput>install -vdm755 /etc/systemd/user-environment-generators &amp;&amp;
-cat &gt; /etc/systemd/user-environment-generators/50-profile.sh &lt;&lt; "EOF"
+<screen role='root'><userinput>install -vDm755 /dev/stdin /etc/systemd/user-environment-generators/50-profile.sh &lt;&lt; "EOF"
 <literal>#!/usr/bin/env -S -i /usr/bin/bash
 # SPDX-License-Identifier: MIT
 
@@ -318,7 +317,7 @@ EOF</userinput></screen>
       innholdet i
       <filename class='directory'>/etc/profile.d</filename> når et 
       skrivebordsmiljø kjører, må du kjøre <command>systemctl
-      --user --daemon-reload</command> kommandoen for å synkronisere endringen 
+      --user daemon-reload</command> kommandoen for å synkronisere endringen 
       inn i systemd per-bruker instansen, og logg deretter ut og inn igjen for 
       å synkronisere endringen inn i skrivebordsmiljøet.
     </para>

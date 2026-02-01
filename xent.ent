@@ -81,6 +81,10 @@
 <!ENTITY static-libraries
   "<para><parameter>--disable-static</parameter>: Denne bryteren forhindrer 
   installasjon av statiske versjoner av bibliotekene.</para>">
+<!ENTITY gnulib
+  "<para>Først, gjør en rettelse som kreves av glibc-2.43 eller nyere:</para>
+<screen><userinput remap='pre'>sed -r '/_GL_EXTERN_C/s/w?memchr|bsearch/(&amp;)/' \
+    -i $(find -name \*.in.h)</userinput></screen>">
 
 <!-- Save repetition for multiple passes of a package. -->
 <!ENTITY dbus-m64 "
