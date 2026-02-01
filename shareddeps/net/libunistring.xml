@@ -41,6 +41,9 @@
   <sect2 role="installation">
     <title>Installasjon av libunistring</title>
 
+    &gnulib;
+
+
     <para>
       Installer libunistring ved å kjøre følgende 
       kommandoer:
