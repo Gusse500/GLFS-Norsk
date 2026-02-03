@@ -310,8 +310,7 @@ EOF</userinput></screen>
       <seglistitem>
         <seg>
           faillock, mkhomedir_helper, pam_namespace_helper,
-          pam_timestamp_check, pwhistory_helper, unix_chkpwd og
-          unix_update
+          pam_timestamp_check, pwhistory_helper, and unix_chkpwd
         </seg>
         <seg>
           libpam, libpamc, og libpam_misc
@@ -427,18 +426,6 @@ EOF</userinput></screen>
           </para>
           <indexterm zone="linux-pam unix_chkpwd">
             <primary sortas="b-unix_chkpwd">unix_chkpwd</primary>
-          </indexterm>
-        </listitem>
-      </varlistentry>
-
-      <varlistentry id="unix_update">
-        <term><command>unix_update</command></term>
-        <listitem>
-          <para>
-            er en hjelpebinærfil som oppdaterer passordet til en gitt bruker
-          </para>
-          <indexterm zone="linux-pam unix_update">
-            <primary sortas="b-unix_update">unix_update</primary>
           </indexterm>
         </listitem>
       </varlistentry>
