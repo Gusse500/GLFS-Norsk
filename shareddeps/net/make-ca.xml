@@ -105,6 +105,14 @@
 </literal>EOF</userinput></screen>
 
     <para>
+      make-ca skriptet bruker et utdatert alternativ for en kommando som kan 
+      produsere uønsket oppførsel under visse forhold. Fiks det ved å kjøre 
+      følgende kommando:
+    </para>
+
+    <screen><userinput>sed '/mktemp/s/-t //' -i make-ca</userinput></screen>
+
+    <para>
       Nå for å installere make-ca skriptet, må det 
       installeres på riktig sted som &root; bruker:
     </para>
