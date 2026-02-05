@@ -31,7 +31,7 @@
       
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/legacy/tip.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/oldadmon/tip.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -61,7 +61,7 @@
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/legacy/note.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/oldadmon/note.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -83,7 +83,7 @@
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/legacy/important.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/oldadmon/important.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -105,7 +105,7 @@
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/legacy/caution.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/oldadmon/caution.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -127,7 +127,7 @@
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/legacy/warning.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/oldadmon/warning.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -145,11 +145,11 @@
     </sect3>
 
     <sect3>
-      <title>Nåværende - tip.png</title>
+      <title>Tidligere - tip.png</title>
       
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/tip.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/newadmon/tip.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -168,11 +168,11 @@
     </sect3>
 
     <sect3>
-      <title>Nåværende - note.png</title>
+      <title>Tidligere - note.png</title>
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/note.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/newadmon/note.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -192,11 +192,11 @@
     </sect3>
 
     <sect3>
-      <title>Nåværende - important.png</title>
+      <title>Tidligere - important.png</title>
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/important.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/newadmon/important.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -215,11 +215,11 @@
     </sect3>
 
     <sect3>
-      <title>Nåværende - caution.png</title>
+      <title>Tidligere - caution.png</title>
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/caution.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/newadmon/caution.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 
@@ -238,11 +238,11 @@
     </sect3>
 
     <sect3>
-      <title>Nåværende - warning.png</title>
+      <title>Tidligere - warning.png</title>
         
       <mediaobject>
         <imageobject>
-          <imagedata fileref="../images/warning.png" format="PNG"/>
+          <imagedata fileref="../images/legacy/newadmon/warning.png" format="PNG"/>
         </imageobject>
       </mediaobject>
 

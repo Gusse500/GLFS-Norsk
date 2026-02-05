@@ -38,6 +38,14 @@
   <sect2 role="installation">
     <title>Installasjon av libtasn1</title>
 
+<!-- For CSS and image testing purposes.
+    <tip><para>Example tip.</para></tip>
+    <note><para>Example note.</para></note>
+    <important><para>Example important.</para></important>
+    <caution><para>Example caution.</para></caution>
+    <warning><para>Example warning.</para></warning>
+-->
+
     <para>
       Installer libtasn1 ved å kjøre følgende 
       kommandoer:

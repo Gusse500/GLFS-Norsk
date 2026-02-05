@@ -14,7 +14,7 @@
 # you wish to change in local.mk, which must be created manually.
 AUTO_CLEAN  ?= 1
 THEME_PATH  ?= stylesheets/lfs-xsl
-THEME       ?= dark
+THEME       ?= dynamic
 RENDERTMP   := $(shell mktemp -d)
 HTML_ROOT   ?= $(HOME)/public_html
 DUMP_ROOT   ?= $(HOME)

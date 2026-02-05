@@ -48,9 +48,8 @@
   <abstract>
     <para>
       Denne boken introduserer og veileder leseren gjennom tillegg til 
-      systemet som Steam,
-      Wine, og deres avhengigheter etter 
-      LFS eller Multilib-LFS boken på x86_64-systemer.
+      systemet som Steam, Wine, og deres avhengigheter etter LFS eller 
+	  Multilib LFS boken på x86_64-systemer.
     </para>
   </abstract>
 
