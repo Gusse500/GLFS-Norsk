@@ -43,13 +43,6 @@
   <sect2 role="installation">
     <title>Installasjon av MinGW-w64-Binutils</title>
 
-    <!-- Remove when glibc updates in February. -->
-    <important><para>
-      Sørg for å bruke oppdateringen for glibc slik den finnes i <ulink
-      url="&mlfs-m32-root;/chapter08/glibc.html">Chapter 8.5. Glibc</ulink>, 
-      eller bruk en tidligere versjon av Binutils.
-    </para></important>
-
   <sect3>
     <title>x86_64 MinGW-w64-Binutils</title>
     
