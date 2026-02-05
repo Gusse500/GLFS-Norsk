@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>4. februar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Vulkan-SDK: 1.4.335.0 -&gt; 1.4.341.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 21.1.3 -&gt; 21.1.4.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>1. februar 2026</para>
       <itemizedlist>
         <listitem>
