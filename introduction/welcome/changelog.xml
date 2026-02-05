@@ -368,7 +368,8 @@
           <para>[zeckma] - HarfBuzz: 12.2.0 -&gt; 12.3.0.</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - GStreamer-Suite: 1.26.9 -&gt; 1.26.10.</para>
+          <para>[zeckma] - GStreamer-Suite: 1.26.9 -&gt; 1.26.10.
+          (sikkerhet).</para>
         </listitem>
       </itemizedlist>
     </listitem>
