@@ -41,6 +41,20 @@
     -->
 
     <listitem>
+      <para>6. februar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[tox] - sdl2-compat: 2.32.62 -&gt; 2.32.64.
+          Fikser <ulink url="&glfs-issues;/363">#363</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - hwdata: 0.403 -&gt; 0.404. Fikser
+          <ulink url="&glfs-issues;/364">#364</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>4. februar 2026</para>
       <itemizedlist>
         <listitem>
