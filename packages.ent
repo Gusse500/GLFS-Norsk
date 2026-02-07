@@ -285,7 +285,7 @@
 <!ENTITY libxkbcommon-version         "6f76d19db72b5d450e927b41e1e96cbe3252aba8">
 <!ENTITY libxkbcommon-real            "1.13.1">
 <!ENTITY sdl3-version                 "3.4.0">
-<!ENTITY sdl2-version                 "2.32.62">
+<!ENTITY sdl2-version                 "2.32.64">
 
 <!ENTITY nasm-version                 "3.01">
 <!ENTITY svt-av1-version              "4.0.1">
