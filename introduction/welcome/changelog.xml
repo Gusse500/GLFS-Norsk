@@ -44,6 +44,10 @@
       <para>8. februar 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - p11-kit: 0.26.1 -&gt; 0.26.2 (Sikkerhetsoppdatering). Fikser
+          <ulink url="&glfs-issues;/367">#367</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - systemd: 259 -&gt; 259.1. Fikser
           <ulink url="&glfs-issues;/369">#369</ulink>.</para>
         </listitem>

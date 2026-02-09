@@ -16,7 +16,7 @@
 <!ENTITY nss-minor                    "120">
 <!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
 <!ENTITY nss-version                  "&nss-major;.&nss-minor;">
-<!ENTITY p11-kit-version              "0.26.1">
+<!ENTITY p11-kit-version              "0.26.2">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.1">
 <!ENTITY libidn2-version              "2.3.8">
