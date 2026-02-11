@@ -46,6 +46,27 @@
         <listitem>
           <para>[zeckma] - MinGW-w64-Binutils: 2.45.1 -&gt; 2.46.</para>
         </listitem>
+        <listitem>
+          <para>[zeckma] - Shadow: 4.19.2 -&gt; 4.19.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libpng: 1.6.54 -&gt; 1.6.55 (sikkerhet).</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libX11: 1.8.12 -&gt; 1.8.13.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libfontenc: 1.1.8 -&gt; 1.1.9.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GnuTLS: 3.8.11 -&gt; 3.8.12 (sikkerhet).</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - font-alias: 1.0.5 -&gt; 1.0.6.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - ply: Arkivert.</para>
+        </listitem>
       </itemizedlist>
     </listitem>
 
