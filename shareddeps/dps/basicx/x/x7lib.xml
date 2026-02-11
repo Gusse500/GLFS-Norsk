@@ -138,6 +138,9 @@ do
   pushd $packagedir
   docdir="--docdir=/usr/share/doc/$packagedir"
   
+  do_build()   { make; }
+  do_install() { as_root make install; }
+
   case $packagedir in
     libXfont2-[0-9]* )
       ./configure $XORG_CONFIG $docdir --disable-devel-docs
@@ -158,14 +161,9 @@ do
     ;;
   
     libpciaccess* | libxkbfile*)
-      mkdir build
-      cd    build
-        meson setup --prefix=/usr --buildtype=release ..
-        ninja
-        as_root ninja install
-      popd     # $packagedir
-      rm -rf $packagedir
-      continue # for loop
+      meson setup --prefix=/usr --buildtype=release build
+      do_build()   { ninja -C build; }
+      do_install() { as_root ninja -C build install; }
     ;;
 
     * )
@@ -173,8 +171,10 @@ do
     ;;
   esac
 
-  make
-  as_root make install
+  do_build
+  do_install
+  unset do_build do_install
+
   popd
   rm -rf $packagedir
   as_root /sbin/ldconfig
@@ -200,6 +200,9 @@ do
   docdir="--docdir=/usr/share/doc/$packagedir"
   host="--host=i686-pc-linux-gnu"
   
+  do_build()        { make; }
+  do_dest_install() { make DESTDIR=$PWD/DESTDIR install; }
+
   case $packagedir in
     libXfont2-[0-9]* )
       CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
@@ -225,18 +228,11 @@ do
     ;;
   
     libpciaccess* | libxkbfile* )
-      mkdir build
-      cd    build
-        CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-        meson setup --prefix=/usr $libdir --buildtype=release ..
-        ninja
-        DESTDIR=$PWD/DESTDIR ninja install
-        as_root cp -vr DESTDIR/usr/lib32/* /usr/lib32
-        rm -rf DESTDIR
-        as_root /sbin/ldconfig
-      popd     # $packagedir
-      rm -rf $packagedir
-      continue # for loop
+      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+      meson setup --prefix=/usr $libdir --buildtype=release build
+
+      do_build()        { ninja -C build; }
+      do_dest_install() { DESTDIR=$PWD/DESTDIR ninja -C build install; }
     ;;
 
     * )
@@ -246,9 +242,11 @@ do
     ;;
   esac
 
-  make
-  make DESTDIR=$PWD/DESTDIR install
-  as_root cp -vr DESTDIR/usr/lib32/* /usr/lib32
+  do_build
+  do_dest_install
+  unset do_build do_dest_install
+
+  as_root cp -vR DESTDIR/usr/lib32/* /usr/lib32
   rm -rf DESTDIR
   popd
   rm -rf $packagedir

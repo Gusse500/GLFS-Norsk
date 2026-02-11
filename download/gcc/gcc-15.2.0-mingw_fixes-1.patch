@@ -1,0 +1,77 @@
+Submitted By:            Zeckma <zeckma_DOT_tech_AT_gmail_DOT_com>
+Date:                    2026-02-08
+Initial Package Version: 15.2.0
+Upstream Status:         Applied
+Origin:                  https://gcc.gnu.org/git/?p=gcc.git;a=commit;h=9e2c62a7d397b050427568c83ff5a4c21eb49365,
+                         adjusted to apply for base gcc-15.2.0.
+Description:             Fixes std::system_category().message(int) on MinGW32
+                         targets
+
+diff '--color=auto' -Naurp gcc-15.2.0.orig/libstdc++-v3/src/c++11/system_error.cc gcc-15.2.0/libstdc++-v3/src/c++11/system_error.cc
+--- gcc-15.2.0.orig/libstdc++-v3/src/c++11/system_error.cc	2025-08-08 00:51:45.835437571 -0600
++++ gcc-15.2.0/libstdc++-v3/src/c++11/system_error.cc	2026-02-08 14:52:09.590454540 -0700
+@@ -162,7 +162,8 @@ namespace
+       char* buf = nullptr;
+       auto len
+ 	= FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM
+-			| FORMAT_MESSAGE_ALLOCATE_BUFFER,
++			| FORMAT_MESSAGE_ALLOCATE_BUFFER
++			| FORMAT_MESSAGE_IGNORE_INSERTS,
+ 			nullptr,
+ 			i,
+ 			LANG_USER_DEFAULT,
+@@ -175,8 +176,8 @@ namespace
+ 	  void operator()(void* p) const { ::LocalFree(p); }
+ 	};
+ 	std::unique_ptr<char[], deleter> guard(buf);
+-	if (len > 3 && !__builtin_memcmp(buf + len - 3, ".\r\n", 3)) [[likely]]
+-	  len -= 3;
++	if (len > 2 && !__builtin_memcmp (buf + len - 2, "\r\n", 3)) [[likely]]
++	  len -= 2 + (buf[len - 3] == '.');
+ 	return string(buf, len);
+       }
+       return string("Unknown error code");
+diff '--color=auto' -Naurp gcc-15.2.0.orig/libstdc++-v3/testsuite/19_diagnostics/error_category/system_category.cc gcc-15.2.0/libstdc++-v3/testsuite/19_diagnostics/error_category/system_category.cc
+--- gcc-15.2.0.orig/libstdc++-v3/testsuite/19_diagnostics/error_category/system_category.cc	2025-08-08 00:51:45.856166737 -0600
++++ gcc-15.2.0/libstdc++-v3/testsuite/19_diagnostics/error_category/system_category.cc	2026-02-08 14:51:54.003319132 -0700
+@@ -21,6 +21,11 @@
+ #include <locale>
+ #include <testsuite_hooks.h>
+ 
++#if defined __MINGW32__ || defined __MINGW64__
++#define WIN32_LEAN_AND_MEAN
++#include <windows.h>
++#endif
++
+ void
+ test01()
+ {
+@@ -34,7 +39,7 @@ test02()
+   const std::error_category& cat = std::system_category();
+   std::error_condition cond;
+ 
+-#if defined __MING32__ || defined __MINGW64__
++#if defined __MINGW32__ || defined __MINGW64__
+   cond = cat.default_error_condition(8); // ERROR_NOT_ENOUGH_MEMORY
+   VERIFY( cond.value() == ENOMEM );
+   VERIFY( cond.category() == std::generic_category() );
+@@ -112,9 +117,17 @@ test03()
+   // set "C" locale to get expected message
+   auto loc = std::locale::global(std::locale::classic());
+ 
+-#if defined __MING32__ || defined __MINGW64__
++#if defined __MINGW32__ || defined __MINGW64__
++  // On Windows, set thread preferred UI languages to "en-US"
++  // to get expected message
++  ULONG num_langs = 1;
++  SetThreadPreferredUILanguages(MUI_LANGUAGE_NAME, L"en-US\0", &num_langs);
++
+   std::string msg = std::system_category().message(5); // ERROR_ACCESS_DENIED
+-  VERIFY(msg == "Access denied");
++  // Windows returns "Access is denied" but Wine returns "Access denied".
++  VERIFY(msg == "Access is denied" || msg == "Access denied");
++
++  SetThreadPreferredUILanguages(MUI_RESET_FILTERS, nullptr, nullptr);
+ #else
+   std::string msg = std::system_category().message(EBADF);
+   VERIFY( msg.find("file") != std::string::npos );

@@ -299,6 +299,11 @@ done
 # Some shell magic that we don't want to expose.
 unset SHLVL
 
+# Systemd does not want to pass functions to the environment
+for i in $(declare -pF | awk '{print $3}'); do
+  unset -f $i
+done
+
 python3 &lt;&lt; _EOF
 import os
 for var in os.environ:

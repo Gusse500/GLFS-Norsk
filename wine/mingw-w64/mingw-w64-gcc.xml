@@ -36,6 +36,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nødvendig oppdatering:
+          <ulink url="&dl-root;/gcc/gcc-&gcc-version;-mingw_fixes-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">MinGW-w64-GCC Avhengigheter</bridgehead>
 
     <para role="required">
@@ -54,14 +64,10 @@
       fullstendig hvis den er bygget feil.
     </para></note>
 
-<!--
     <para>
-      Sørg for kompatibilitet med glibc-2.42 eller nyere:
+      Hvis du bygger fra et nytt GCC kildetre, må du sørge for å installere 
+	  oppdateringen fra <xref linkend="mingw-w64-gcc-static"/>.
     </para>
-
-<screen><userinput remap="pre">sed -i '/struct_termio_sz/d' \
-  libsanitizer/sanitizer_common/*</userinput></screen>
--->
 
   <sect3>
     <title>x86_64 Installasjon av MinGW-w64-GCC</title>
