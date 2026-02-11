@@ -40,6 +40,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nødvendig oppdatering:
+          <ulink url="&dl-root;/gcc/gcc-&gcc-version;-mingw_fixes-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">Statisk MinGW-w64-GCC Avhengigheter</bridgehead>
 
     <para role="required">
@@ -52,14 +62,12 @@
   <sect2 role="installation">
     <title>Installasjon av Statisk MinGW-w64-GCC</title>
 
-<!--
     <para>
-      Sørg for kompatibilitet med glibc-2.42 eller nyere:
+      Fiks et MinGW-w64-problem i libstdc++:
     </para>
 
-<screen><userinput remap="pre">sed -i '/struct_termio_sz/d' \
-  libsanitizer/sanitizer_common/*</userinput></screen>
--->
+<screen><userinput
+  remap="pre">patch -Np1 -i ../gcc-&gcc-version;-mingw_fixes-1.patch</userinput></screen>
 
     <sect3>
       <title>x86_64 Installasjon av Statisk MinGW-w64-GCC</title>
