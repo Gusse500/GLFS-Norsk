@@ -29,10 +29,11 @@
   <note><para>
     Alle pakker støtter libglvnd i BLFS. Når BLFS sier at en pakke er avhengig 
     av Mesa, betyr det at pakken trenger OpenGL biblioteker. (<xref
-    linkend="libglvnd"/>) og/eller libgbm (<xref linkend="libgbm"/> eller libgbm
-    fra <xref linkend="mesa"/>). Enkelte sider vil også lenke til GLU. Du må 
-    imidlertid installere denne bokens versjon av <xref linkend="glu"/> for å 
-    sikre kompatibilitet med libglvnd.
+    linkend="libglvnd"/>), libgbm (<xref linkend="libgbm"/> eller libgbm
+    fra <xref linkend="mesa"/>), og/eller DRI (<xref linkend="dri"/>). Denne boken
+    installerer <xref linkend="libgbm"/> som standard. Enkelte sider vil også 
+    lenke til GLU. Du må imidlertid installere denne bokens versjon av <xref
+    linkend="glu"/> for å sikre kompatibilitet med libglvnd.
   </para></note>
 
   <para>

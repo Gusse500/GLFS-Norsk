@@ -291,7 +291,7 @@ export -f as_root</userinput></screen>
 <!ENTITY gobject-introspection "<xref linkend='glib2'/> (med GObject Introspection)">
 
 <!ENTITY opengl "<xref linkend='libglvnd'/>">
-<!ENTITY gbm    "GBM (<xref linkend='libgbm'/> eller <xref linkend='mesa'/>)">
+<!ENTITY gbm    "<xref linkend='libgbm'/>">
 <!ENTITY nvidia-all "(<xref linkend='nvidia'/> or
                       <xref linkend='nvidia-r580'/>)">
 <!ENTITY cuda-all   "(<xref linkend='cuda'/> or

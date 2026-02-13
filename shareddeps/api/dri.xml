@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY mesa-download
+    "https://mesa.freedesktop.org/archive/mesa-&mesa-version;.tar.xz">
+  <!ENTITY mesa-raw-repo
+    "https://gitlab.freedesktop.org/mesa/mesa/-/raw/&mesa-major-minor;">
+]>
+
+<sect1 id="dri" xreflabel="DRI fra Mesa-&mesa-version;">
+  <?dbhtml filename="dri.html"?>
+
+  <title>DRI fra Mesa-&mesa-version;</title>
+
+  <indexterm zone="dri">
+    <primary sortas="a-DRI">DRI</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til DRI</title>
+
+    <para>
+      DRI, eller Direct Rendering Infrastructure, er et rammeverk som gir 
+      direkte tilgang til maskinvare som kan generere grafikk for X.org. Selv 
+      om Wayland ikke bruker userland DRI, ønsker Xwayland, som er ansvarlig for 
+      å gi X.org applikasjonsstøtte til Wayland, DRI grensesnittet. Selv om Xorg 
+      Server og Xwayland ønsker grensesnittet, trenger de det strengt tatt ikke 
+      hvis koden for begge pakkene ble endret litt.
+    </para>
+
+    <para>
+      Likevel er det lurt å installere DRI grensesnittet. DRI kommer fra Mesa, 
+      og det finnes noen måter å installere grensesnittet og nødvendige 
+      deklarasjoner på. Du kan laste ned deklarasjonene og hoppe over 
+      nedlastingen av Mesa tarballen. Hvis du allerede har lastet ned tarballen, 
+      kan det være en bedre idé å installere filene derfra.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&mesa-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">DRI Avhengigheter</bridgehead>
+
+    <para role="recommended">
+      <xref linkend="wget"/> eller <xref linkend="curl"/> (hvis du laster ned 
+      filene i stedet for tarballen)
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av DRI fra Mesa Tarballen</title>
+
+    <para>
+      Hvis du har valgt å installere filene fra Mesa tarballen, pakker du den 
+      ut og går inn i den utpakkede mappen som normalt.
+    </para>
+
+    <para>
+      Etter det, installer deklarasjonene for grensesnittet, samt noen andre 
+      forventede deklarasjoner, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>&install-file; include/GL/internal/dri_interface.h \
+        -t      /usr/include/GL/internal/          &amp;&amp;
+&install-file; include/EGL/eglmesaext.h            \
+        -t      /usr/include/EGL/                  &amp;&amp;
+&install-file; include/EGL/eglext_angle.h          \
+        -t      /usr/include/EGL/</userinput></screen>
+
+    <para>
+      Nå som grensesnittet er installert, trenger du pkg-config filen som viser 
+      at grensesnittet er tilstede. Opprett den nå som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>cat &gt; dri.pc &lt;&lt; "EOF"
+<literal>prefix=/usr
+includedir=${prefix}/include
+
+dridriverdir=${prefix}/lib/dri
+
+Name: dri
+Description: Direct Rendering Infrastructure
+Version: MESA_VERSION
+Requires.private: libdrm >=  2.4.109
+Cflags: -I${includedir}</literal>
+EOF
+
+sed -i "s/MESA_VERSION/`cat VERSION`/" dri.pc &amp;&amp;
+&install-file; dri.pc -t /usr/lib/pkgconfig/ &amp;&amp;
+rm -vf dri.pc</userinput></screen>
+
+    <para>
+      Alle filene er nå installert.
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Laste ned DRI fra Mesa</title>
+
+    <para>
+      Hvis du valgte å laste ned DRI grensesnittet fra internett i stedet, er 
+      det ikke nødvendig med noe oppsett før du laster ned grensesnittet, 
+      bortsett fra å sørge for at du har en internettforbindelse, <xref linkend="make-ca"/> 
+      er intaller, og at <xref linkend="wget"/> kan brukes.
+      <xref linkend="curl"/> kan brukes i stedet for Wget hvis du ønsker det.
+    </para>
+
+    <para>
+      Filene som lastes ned kommer direkte fra GitLab/FreeDesktop repositoriet 
+      for Mesa fra en gren eller tagg som har samme hoved og underversjon av 
+      Mesa som for øyeblikket er i denne boken.
+    </para>
+
+    <para>
+      Last ned grensesnittet og andre nødvendige deklarasjoner som &root; 
+      bruker:
+    </para>
+
+<screen role="root"><userinput>&install-dir; /usr/include/GL/internal /usr/include/EGL &amp;&amp;
+wget &mesa-raw-repo;/include/GL/internal/dri_interface.h \
+  -O /usr/include/GL/internal/dri_interface.h &amp;&amp;
+wget &mesa-raw-repo;/include/EGL/eglmesaext.h \
+  -O /usr/include/EGL/eglmesaext.h &amp;&amp;
+wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
+  -O /usr/include/EGL/eglext_angle.h</userinput></screen>
+
+    <para>
+      Nå som grensesnittet er installert, trenger du pkg-config filen som 
+      bekrefter at det finnes på systemet. Opprett den nå som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
+<literal>prefix=/usr
+includedir=${prefix}/include
+
+dridriverdir=${prefix}/lib/dri
+
+Name: dri
+Description: Direct Rendering Infrastructure
+Version: &mesa-version;
+Requires.private: libdrm >=  2.4.109
+Cflags: -I${includedir}</literal>
+EOF</userinput></screen>
+
+    <para>
+      Alle filene er nå lastet ned og installert.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+      <seglistitem>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          /usr/include/GL/internal og /usr/include/EGL
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+  </sect2>
+
+</sect1>

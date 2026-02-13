@@ -395,59 +395,6 @@ options nvidia NVreg_TemporaryFilePath=/var/tmp
 # End /usr/lib/modprobe.d/nvidia.conf</literal>
 EOF</userinput></screen>
 
-      <para>
-        Denne driveren installerer ikke DRI
-        <footnote><para>
-          Direct Rendering Infrastructure.
-        </para></footnote>
-        drivere eller driverstubber. På samme måte installerer den ikke en
-        pkgconf fil som sier hvor du finner de
-        tilknyttede filene. Filene er ikke nødvendige med denne driveren. 
-        Imidlertid forventer noen applikasjoner at pkg-config 
-        filen eksisterer, nemlig <xref linkend="xorg-server"/>. Opprett en nå 
-        som &root; bruker:
-      </para>
-
-<screen role="root"><userinput>cat &gt; /usr/lib/pkgconfig/dri.pc &lt;&lt; "EOF"
-<literal>prefix=/usr
-includedir=${prefix}/include
-
-dridriverdir=/usr/lib/dri
-
-Name: dri
-Description: Direct Rendering Infrastructure
-Version: &nvidia-version;
-Requires.private: libdrm >=  2.4.109
-Cflags: -I${includedir}</literal>
-EOF</userinput></screen>
-
-      <para>
-        Programmer som krever denne filen vil vanligvis ikke lenke mot noe 
-        bibliotek i <filename class="libraryfile">/usr/lib/dri</filename>. Hvis 
-        du er bekymret for at et program vil prøve å lenke mot ikke-eksisterende 
-        biblioteker, kan du kompilere <xref linkend="mesa"/> å få disse 
-        bibliotekene og en ekte pkg-config fil. Merk 
-        at disse bibliotekene ikke vil bli brukt når denne driveren er i bruk.
-      </para>
-
-      <para>
-        Som med situasjonen angående DRI, finnes det noen få deklarasjonsfiler 
-        som bare er installert av <xref linkend="mesa"/> men kan brukes uten 
-        problemer. En er for å deklarere DRI grensesnittet, en for å deklarere 
-        Mesas EGL EXT system som brukes av noe programvare som GNOME sin 
-        mutter, og en annen for å deklarere EGL EXT systemet for ANGLE, med 
-        modifikasjoner tilpasset det. Bruk <xref linkend="wget"/>, last de ned 
-        og installer dem som &root; bruker:
-      </para>
-
-<screen role="root"><userinput>&install-dir; /usr/include/GL/internal /usr/include/EGL &amp;&amp;
-wget &mesa-raw-repo;/include/GL/internal/dri_interface.h \
-  -O /usr/include/GL/internal/dri_interface.h &amp;&amp;
-wget &mesa-raw-repo;/include/EGL/eglmesaext.h \
-  -O /usr/include/EGL/eglmesaext.h &amp;&amp;
-wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
-  -O /usr/include/EGL/eglext_angle.h</userinput></screen>
-
     </sect3>
 
   </sect2>
@@ -456,16 +403,15 @@ wget &mesa-raw-repo;/include/EGL/eglext_angle.h \
     <title>Fortsette</title>
 
     <para>
-      Hvis du legger alle filene som i konfigurasjonsdelen, burde du ikke trenge 
-      Mesa for noen pakker i boken eller i BLFS. OpenGL, DRI og EGL filene som 
-      er oppgitt her, burde være passende. GNOME og KDE er kjent for å fungere 
-      med denne konfigurasjonen.
+      Hvis du installerte <xref linkend="libglvnd"/>, <xref linkend="libgbm"/>,
+      og <xref linkend="dri"/>, burde du ikke trenge Mesa som en avhengighet 
+      for noen pakke i noen av LFS bøkene.
     </para>
 
     <para>
-      Med dette rene NVIDIA oppsettet kan du hoppe til <xref linkend="x"/> og
-      forvente problemfri kjøring. Hvis du vil, kan du imidlertid også 
-      installere CUDA i denne underseksjonen, noe som er opp til deg.
+      Med dette Mesa frie oppsettet, kan du hoppe til <xref linkend="x"/> og
+      forvent problemfri bruk. Hvis du vil, kan du imidlertid også installere 
+      CUDA i denne underseksjonen for å forbedre ytelsen, noe som er opp til deg.
     </para>
 
   </sect2>
