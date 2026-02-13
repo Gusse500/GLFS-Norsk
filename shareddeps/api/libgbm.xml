@@ -27,9 +27,7 @@
       Det brukes av forskjellige biblioteker og applikasjoner som 
       Wayland kompositorer. Mesa leverer libgbm, men krever avhengigheter som 
       ikke er nødvendige for å installere bare libgbm. Denne pakken lar deg 
-      installere bare biblioteket. Hvis du har tenkt å installere <xref
-      linkend="mesa"/>, kan du installere libgbm fra den pakken hvis du ønsker 
-      det. Det er ingen stor forskjell.
+      installere bare biblioteket.
     </para>
 
     <itemizedlist spacing="compact">

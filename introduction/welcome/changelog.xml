@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>12. februar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Lagt til DRI fra Mesa, og gjør den og libgbm til 
+		  standard.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>10. februar 2026</para>
       <itemizedlist>
         <listitem>

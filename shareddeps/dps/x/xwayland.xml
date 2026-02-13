@@ -37,9 +37,9 @@
     <bridgehead renderas="sect3">Xwayland Avhengigheter</bridgehead>
 
     <para role="required">
-      <!-- Not runtime as mesa/nvidia provide DRI needed at configuration. -->
       En brukerland grafikkdriver (<xref linkend='mesa'/> og/eller
-      &nvidia;),
+      &nvidia;) (kjøretid),
+      <xref linkend="dri"/>,
       <xref linkend="libxcvt"/>,
       <xref linkend="pixman"/>,
       <xref linkend="wayland-protocols"/>,
