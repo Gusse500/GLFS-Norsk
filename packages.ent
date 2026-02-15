@@ -64,7 +64,7 @@
 <!ENTITY mako-version                 "1.3.10">
 <!ENTITY cython-version               "3.2.4">
 <!ENTITY yaml-version                 "0.2.5">
-<!ENTITY pyyaml-version               "6.0.2">
+<!ENTITY pyyaml-version               "6.0.3">
 <!ENTITY ruby-minor-version           "4.0">
 <!ENTITY ruby-patch-version           "1">
 <!ENTITY ruby-version                 "&ruby-minor-version;.&ruby-patch-version;">
