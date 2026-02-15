@@ -33,7 +33,7 @@
 ]]>
 <![ %systemd; [
 <!ENTITY lfs-version   "&xlfs-version;-systemd">
-<!ENTITY blfs-version  "&xlfs-version;">
+<!ENTITY mlfs-version  "&xlfs-version;">
 <!ENTITY blfs-version  "&xlfs-version;-systemd">
 <!ENTITY patch-version "&xlfs-version;">
 ]]>
