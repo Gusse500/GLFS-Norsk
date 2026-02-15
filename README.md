@@ -12,24 +12,13 @@ Linux From Scratch installasjon.
 
 ## Hvor kan du lese den
 
-Gå til https://lfs.freding.no/glfs/ og begynne å bla gjennom boken!
+Gå til https://lfs.freding.no/glfs/view/systemd/index.html eller
+https://lfs.freding.no/glfs/ og begynne å bla gjennom boken!
 
-Nettboken er under rullende utgivelse, men det finnes en stabil versjon i GLFS 
-kildekoden via `stable` grenen.
-
-Du kan bytte til den ved å kjøre følgende kommando:
-```Bash
-git checkout stable
-```
-
-Deretter gjengir du boken ved å kjøre følgende kommando:
-```Bash
-make STAB=release
-```
+Du finner flere nettkopier på https://linuxfromscratch.org/glfs/view/.
 
 Det finnes også [releases](https://github.com/glfs-book/glfs/releases) 
-tilgjengelig for nedlasting. Disse inneholder både SysV og Systemd utgavene av 
-boken som chunked HTML. Disse er på Engelsk
+tilgjengelig for nedlasting.
 
 ## Installasjon
 
@@ -38,19 +27,12 @@ programvare som håndterer disse konverteringene. Vennligst les
 [INSTALL.md](./INSTALL.md) for å finne ut hvilke programmer du må installere og 
 hvor du kan få instruksjoner for å installere programvaren.
 
-Du kan deretter bygge HTML koden med en enkel `make` kommando. Du kan endre 
-revisjonen ved å sende `REV=<rev>` til `make` kommandoen. `<rev>` kan være:
-- `sysv` (standard)
-- `systemd`
-
-**Eksempel:**
-```Bash
-make REV=systemd
-```
+Du kan deretter bygge HTML koden med en enkel `make` kommando.
 
 Du kan bytte tema ved å sende `THEME=<theme>` til `make` kommandoen.
 `<theme>` kan være lik:
-- `dark` (standard)
+- `dynamic` (standard)
+- `dark`
 - `light`
 - hvilket som helst tema i `THEME_PATH`
 
@@ -87,7 +69,4 @@ Standardverdiene for variablene i Makefile kan endres ved å deklarere dem i
 `THEME=light`, kalle `make` uten argumenter vil bygge systemd revisjonen med 
 light temaet. `local.mk` spores ikke og må opprettes manuelt.
 
-Standardmålet bygger SysV revisjonen som delt HTML i
-`~/public_html/glfs`, mens for Systemd ville det være i
-`~/public_html/glfs-systemd`. Som standard vil hver pakke og seksjon bli bygget 
-som sin egen side, og deretter koblet sammen.
+Standardmålet gjengis som delt HTML i `~/public_html/glfs`.

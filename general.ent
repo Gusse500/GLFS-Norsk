@@ -2,7 +2,7 @@
 <!ENTITY % conditional-entities SYSTEM "conditional.ent">
 %conditional-entities;
 
-<!ENTITY xlfs-version "12.4">
+<!ENTITY xlfs-version "13.0">
 <!ENTITY % relnum     "&xlfs-version;">
 
 <![ %development; [
@@ -11,28 +11,38 @@
 %version-entities;
 <![ %sysv; [
 <!ENTITY lfs-version   "development">
+<!ENTITY mlfs-version  "dev-sysv">
 <!ENTITY blfs-version  "svn">
+<!ENTITY glfs-version  "dev-sysv">
+<!ENTITY slfs-version  "dev-sysv">
 <!ENTITY patch-version "svn">
 ]]>
 <![ %systemd; [
 <!ENTITY lfs-version   "systemd">
+<!ENTITY mlfs-version  "dev">
 <!ENTITY blfs-version  "systemd">
+<!ENTITY glfs-version  "dev">
+<!ENTITY slfs-version  "dev">
 <!ENTITY patch-version "svn">
 ]]>
 ]]><!-- End %development -->
 
-<!ENTITY mlfs-stable        "fb19711bba73ad08bb855201b52ed0804ce13223">
-<!ENTITY mlfs-extra-commits "ee4c60dca20d543fd1124bb75b2c8cf0d6f6f803">
 <![ %release; [
 <!ENTITY version       "%relnum;">
 <![ %sysv; [
 <!ENTITY lfs-version   "&xlfs-version;">
+<!ENTITY mlfs-version  "&xlfs-version;-sysv">
 <!ENTITY blfs-version  "&xlfs-version;">
+<!ENTITY glfs-version  "&xlfs-version;-sysv">
+<!ENTITY slfs-version  "&xlfs-version;-sysv">
 <!ENTITY patch-version "&xlfs-version;">
 ]]>
 <![ %systemd; [
 <!ENTITY lfs-version   "&xlfs-version;-systemd">
+<!ENTITY mlfs-version  "&xlfs-version;">
 <!ENTITY blfs-version  "&xlfs-version;-systemd">
+<!ENTITY glfs-version  "&xlfs-version;">
+<!ENTITY slfs-version  "&xlfs-version;">
 <!ENTITY patch-version "&xlfs-version;">
 ]]>
 ]]><!-- End %release -->
@@ -46,16 +56,10 @@
 <!ENTITY maintainer-firstname "GLFS">
 <!ENTITY maintainer-address   "zeckma.tech@gmail.com;">
 
-<!ENTITY lfs-website  "https://www.&lfs-domainname;">
-<!ENTITY glfs-website "https://&norskglfs-domainname;/glfs">
-<!ENTITY slfs-website "https://lfs.freding.no/slfs">
-<!-- downloads_root must have an entity because it is needed for scripts
-     Note:  s/_/-/ in comment to avoid grep error
-     It is also needed for systemd units
-     -->
-<!ENTITY downloads-root       "&norsklfs-domainname;/blfs/downloads/&blfs-version;">
-<!--<!ENTITY downloads-root-systemd "https://www.lfs.freding.no/blfs/downloads/systemd">
-<!ENTITY downloads-project    "https://downloads.&lfs-domainname;">-->
+<!ENTITY lfs-website    "https://www.&norsklfs-domainname;">
+<!ENTITY glfs-website   "&lfs-website;/glfs/view/&glfs-version;">
+<!ENTITY slfs-website   "&lfs-website;/slfs/view/&slfs-version;">
+<!ENTITY downloads-root "&lfs-website;/blfs/downloads/&blfs-version;">
 
 <!ENTITY sources-anduin-http  "https://anduin.linuxfromscratch.org/BLFS">
 <!ENTITY sources-anduin-ftp   "ftp://anduin.linuxfromscratch.org/BLFS">
@@ -68,15 +72,8 @@
 <!ENTITY blfs-ticket-root     "https://wiki.linuxfromscratch.org/blfs/query/">
 <!ENTITY lfs-root             "&norsklfs-domainname;/lfs/view/&lfs-version;">
 
-<!ENTITY mlfs-base            "&norsklfs-domainname;/lfs/multilib.html">
-<![ %sysv; [
-<!ENTITY mlfs-root            "&mlfs-base;">
-<!ENTITY lfs-filename         "mlfs-book">
-]]>
-<![ %systemd; [
-<!ENTITY mlfs-root            "&mlfs-base;">
-<!ENTITY lfs-filename         "mlfs-systemd">
-]]>
+<!ENTITY mlfs-base            "&lfs-website;/mlfs/view">
+<!ENTITY mlfs-root            "&mlfs-base;/&mlfs-version;">
 <!ENTITY mlfs-m32-root        "&mlfs-root;">
 
 <!ENTITY lfs-dev              "&norsklfs-domainname;/lfs/view/development">
@@ -120,111 +117,6 @@
 <!ENTITY blfs-svn                     "&norsklfs-domainname;/blfs/view/&blfs-version;">
 
 <!ENTITY arch-pkgs                    "https://archlinux.org/packages">
-
-<![ %development; [
-  <!ENTITY important-stability "<para>
-  Denne boken, som er tilgjengelig på nett, er i konstant strøm av oppdateringer, og oppdateres 
-  omtrent like ofte som BLFS Git/SVN-versjonen. Selv om det ikke finnes en synlig nettversjon 
-  av den stabile utgivelsen, kan du enten gjengi den selv ved å følge
-  <ulink url='&glfs-repo;'/>, eller du kan laste ned en <ulink
-  url='&glfs-repo;/releases'>release</ulink>.
-</para>">
-]]>
-<![ %release; [
-  <!ENTITY important-stability "<para>
-  Dette er den stabile utgaven av denne boken, og den er kjent for å ha fungerende 
-  instruksjoner og samsvarer med LFS, BLFS og SLFS &xlfs-version;. Eksterne lenker 
-  vil peke til stabile kilder. Lenker som peker til MLFS er imidlertid 
-  problematiske ettersom MLFS er en rullerende utgivelse, ikke stabil, så informasjonen der kan 
-  være foran resultatene som vises i denne boken, og instruksjoner i den 
-  nyere versjonen av boken kan føre til ødelagte instruksjoner i denne. 
-  Imidlertid, i <xref linkend='achievingml'/>, vil det vises hvordan du gjengir en 
-  stabil utgave av MLFS.
-</para>">
-]]>
-<![ %development; [
-  <!ENTITY multilib-rendering1 "<para>Du kan rendre MLFS hvis du ønsker det.</para>">
-<![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>Først, installer <ulink
-  url='&blfs-svn;/general/git.html'>Git</ulink>, så 
-  klon LFS repositoriet og bytt til
-  <computeroutput>multilib</computeroutput> branch:
-</para>
-<screen><userinput>git clone https://github.com/Gusse500/LFS-Norsk.git mlfs &amp;&amp;
-cd mlfs &amp;&amp;
-git checkout multilib</userinput></screen>
-<para>
-  Nå inspiserer <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
-  avhengigheter for å gjengi boken. Når du har sørget for at du har 
-  installert alt, gjengi boken: 
-</para>
-<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>">
-]]>
-<![ %systemd; [
-  <!ENTITY multilib-rendering2 " ">
-]]>
-]]>
-<![ %release; [
-  <!ENTITY multilib-rendering1 "<para>
-  Lenkene ovenfor er imidlertid rullerende utgivelser og gjengis ofte. 
-  Den kjente versjonen av MLFS som fungerer med denne versjonen av GLFS er
-  &mlfs-stable;<!-- med &mlfs-extra-commits; slått sammen-->. Du kan gjengi den ved å 
-  følge instruksjonene nedenfor.
-</para>">
-<![ %sysv; [
-  <!ENTITY multilib-rendering2 "<para>Først, installer <ulink
-  url='&blfs-svn;/general/git.html'>Git</ulink>, så 
-  klon LFS repositoriet og bytt til
-  <computeroutput>multilib</computeroutput> grenen, og bytt deretter til den stabile 
-  versjonen:
-</para>
-<screen><userinput>git clone https://github.com/Gusse500/LFS-Norsk.git mlfs &amp;&amp;
-cd mlfs &amp;&amp;
-git checkout multilib &amp;&amp;
-git checkout &mlfs-stable; &amp;&amp;
-git merge --no-commit &mlfs-extra-commits;</userinput></screen>
-<para>
-  Nå inspiserer <filename>INSTALL</filename> filen for å sjekke om det er nødvendig 
-  avhengigheter for å gjengi boken. Når du har sørget for at du har 
-  installert alt, gjengi boken: 
-</para>
-<screen><userinput>make -j1 ARCH=ml_32</userinput></screen>">
-]]>
-<![ %systemd; [
-  <!ENTITY multilib-rendering2 "<para>
-  Bytt nå til den stabile git hashen:
-</para>
-<screen><userinput>git checkout &mlfs-stable; &amp;&amp;
-git merge --no-commit &mlfs-extra-commits;</userinput></screen>">
-]]>
-]]>
-<!ENTITY read-book "<para>
- Dette vil gjengi boken i
- <filename class='directory'>~/public_html/&lfs-filename;</filename>.
- Du kan endre hvor mye multilib støtte du ønsker å gjengi boken 
- med ved å endre <envar>ARCH</envar> variabelens verdi. 
- Kommandoen ovenfor vil gjengi 64-bit og 32-bit støtte, men utelater 
- x32-bit støtte, som ikke er nødvendig for denne boken. Hvis du vil ha den 
- støtten også, fjern <computeroutput>ARCH=ml_32</computeroutput>.
- Du kan deretter peke på HTML koden ved hjelp av en nettleser som
- <ulink url='&blfs-svn;/xsoft/firefox.html'>Firefox</ulink> eller
- <ulink url='&blfs-svn;/basicnet/lynx.html'>Lynx</ulink>.
-</para>
-
-<para>
-  For <application>Firefox</application>, skriv inn i søkefeltet:
-
-<computeroutput>file:///home/<replaceable>&lt;username&gt;</replaceable>/public_html/&lfs-filename;/index.html</computeroutput>,
-
-  og erstatte <replaceable>&lt;username&gt;</replaceable>
-  med navnet på brukernavnet du brukte til å gjengi boken.
-</para>
-
-<para>
-  For <application>Lynx</application>, kjør følgende:
-</para>
-
-<screen><userinput>lynx ~/public_html/&lfs-filename;/index.html</userinput></screen>">
 
 <!ENTITY as_root "<note><para>Når du installerer flere pakker i et skript, 
 må installasjonen gjøres som root bruker. Det finnes tre generelle 

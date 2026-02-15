@@ -25,27 +25,27 @@
     </para>
 
     <para>
-      Som med mange andre programmeringsspråk,
-      Rustc (Rust kompilatoren) trenger en binærfil 
-      som den kan starte opp fra. Den laster ned en stage0 binærfil ved starten 
-      av byggingen, så du kan ikke kompilere den uten en internettforbindelse.
+      Som med mange andre programmeringsspråk trenger Rustc (Rust kompilatoren) 
+      en binærfil å starte opp fra. Den vil laste ned en stage0 binærfil ved 
+      starten av byggingen, så du må ha en internettforbindelse for å bygge 
+      denne pakken.
     </para>
 
     <note>
       <para>
         Selv om GLFS vanligvis installeres i <filename
         class="directory">/usr</filename>, når du senere oppgraderer til en 
-        nyere versjon av Rustc, de gamle bibliotekene i 
-        <filename class="directory">/usr/lib/rustlib</filename> vil forbli, med 
-        forskjellige hasher i navnene sine, men vil ikke være brukbare og vil 
+        nyere versjon av Rustc, de gamle bibliotekene i <filename
+        class="directory">/usr/lib/rustlib</filename> vil forbli, med 
+        forskjellige hasher i navnene sine, men de vil ikke være brukbare og vil 
         kaste bort plass. Redaktørene anbefaler å plassere filene i <filename
-        class="directory">/opt</filename> mappen.  Spesielt hvis du har grunn 
-        til å gjenoppbygge med en modifisert konfigurasjon (f.eks. ved å bruke 
-        den medfølgende LLVM-en etter å ha bygget med delt LLVM, kanskje for å 
-        kompilere crates for arkitekturer som GLFS LLVM bygget ikke støtter), 
-        er det mulig at installasjonen etterlater et ødelagt
-        <command>cargo</command> program. I en slik situasjon, fjern enten den 
-        eksisterende installasjonen først, eller bruk et annet prefiks, for 
+        class="directory">/opt</filename> mappen. Spesielt hvis du må 
+        gjenoppbygge med en modifisert konfigurasjon (f.eks. bruke den leverte 
+        LLVM-en etter å ha bygget med den delte LLVM-en, kanskje for å kompilere 
+        crater for arkitekturer som GLFS LLVM bygget ikke støtter), er det mulig 
+        at installasjonen etterlater en ødelagt
+        <command>cargo</command> program. Hvis dette skjer, bør du enten fjerne 
+        den eksisterende installasjonen først, eller bruke et annet prefiks, for 
         eksempel /opt/rustc-&rustc-version;-build2.
       </para>
 
@@ -56,42 +56,39 @@
     </note>
 
     <para>
-      Den nåværende rustbuild byggesystemet vil bruke 
-      alle prosessorer, selv om det ikke skalerer godt og ofte faller tilbake 
-      til å bare bruke én kjerne mens det venter på at et bibliotek skal 
-      kompileres. Det kan imidlertid stort sett begrenses til et spesifisert 
-      antall prosessorer ved en kombinasjon av å legge til bryteren 
-      <literal>--jobs &lt;N&gt;</literal> (f.eks. '--jobs 4' å begrense til 4 
-      prosessorer) på hver aktivering av <command>./x.py</command> <emphasis>og
-      </emphasis> ved hjelp av en miljøvariabel <envar>CARGO_BUILD_JOBS=&lt;N&gt;</envar>. 
+      Det nåværende rustbuild byggesystemet vil bruke alle prosessorer, selv om 
+      det ikke skalerer godt og ofte faller tilbake til å bare bruke én kjerne 
+      mens man venter på at et bibliotek skal kompileres. Det kan imidlertid 
+      stort sett begrenses til et spesifisert antall prosessorer ved en 
+      kombinasjon av å legge til bryteren <literal>--jobs &lt;N&gt;</literal>
+      (f.eks. '--jobs 4' for å begrense til 4 prosessorer) ved hver kalling av
+      <command>./x.py</command> <emphasis>og</emphasis> bruke
+      <envar>CARGO_BUILD_JOBS=&lt;N&gt;</envar> miljøvariabelen.
     </para>
 
     <para>
-      Den nåværende versjonen av rusts num_cpus kart gjenkjenner nå at cgroups 
-      kan brukes til å begrense hvilke prosessorer den har lov til å bruke. Så 
-      hvis din maskin mangler DRAM (vanligvis mindre enn 2 GB DRAM per kjerne), 
-      kan det være et alternativ å koble CPU-er fra.
-      <!--
-      Read <xref linkend='build-in-cgroup'/> for how to use a cgroup.
-      -->
+      Den nåværende versjonen av rusts num_cpus crate gjenkjenner nå at cgroups 
+      kan brukes til å begrense hvilke prosessorer den har lov til å bruke. Hvis 
+      din maskin mangler DRAM (vanligvis mindre enn 2 GB DRAM per kjerne), kan 
+      det være et alternativ til å koble CPU-er fra.
     </para>
 
     <para>
-      For øyeblikket gir ikke Rust noen garantier for et stabilt ABI.
+      For øyeblikket gir verken Rust eller Rustc noen garantier for et stabilt 
+      ABI.
     </para>
 
     <note>
       <para>
-        Rustc standardinnstillingen er å bygge for 
-        ALLE støttede arkitekturer, ved å bruke en levert kopi av 
-        LLVM. I GLFS er byggingen kun for X86 
-        arkitekturfamilien. Hvis du har tenkt å utvikle Rust crates, er kanskje 
-        ikke denne byggingen god nok for dine formål.
+        Rustc bygger som standard ALLE støttede arkitekturer, med en levert kopi 
+        av LLVM. I GLFS er byggingen kun for x86 arkitekturfamilien. Hvis du 
+        skal utvikle Rust crates, er denne byggingen kanskje ikke 
+        tilstrekkelig.
       </para>
       <para>
         Byggetidene for denne versjonen når den gjentas på samme maskin er ofte 
-		rimelig konsistente, men som med alle kompileringer som bruker
-        <command>rustc</command> det kan være noen veldig langsomme avvikere.
+        rimelig konsistente, men som med alle kompileringer som bruker
+        <command>rustc</command>, kan det være noen veldig langsomme avvikere.
       </para>
     </note>
 
@@ -132,8 +129,8 @@
     <para role="recommended">
       <xref linkend="llvm"/>
       (bygget med <parameter>-D LLVM_LINK_LLVM_DYLIB=ON</parameter> sånn at
-      Rustc kan lenke til det systeminstallerte
-      LLVM i stedet for å bygge den leverte versjonen)
+      Rustc kan koble til den systeminstallerte LLVM-en i stedet for å bygge 
+      dens leverte versjon)
     </para>
 
     <note>
@@ -179,21 +176,21 @@ ln -svfn rustc-&rustc-version; /opt/rustc</userinput></screen>
 <literal># See bootstrap.toml.example for more possible options,
 # and see src/bootstrap/defaults/bootstrap.dist.toml for a few options
 # automatically set when building from a release tarball.
-# We have to override a decent number of them.
+# A decent number of options need to be changed.
 
-# Tell x.py the editors have reviewed the content of this file
-# and updated it to follow the major changes of the building system,
-# so x.py will not warn us to do such a review.
+# Tell x.py that the editors have reviewed the content of this file
+# and updated it to follow the major changes of the building system.
+# x.py during the build process will warn about it if this is not set.
 change-id = &rustc-change-id;
 
 [llvm]
-# When using system llvm prefer shared libraries
+# When using system-installed LLVM, prefer the shared libraries.
 link-shared = true
 </literal>
 EOF
 if [ ! -f /usr/lib32/libc.so.6 ]; then
 cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF"
-<literal># If building the shipped LLVM source, only enable the x86 target
+<literal># If the shipped LLVM source will be built, only enable the x86 target
 # instead of all the targets supported by LLVM.
 targets = "X86"
 </literal>
@@ -213,13 +210,13 @@ EOF
 fi &amp;&amp;
 cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF" &amp;&amp;
 <literal>
-# omit docs to save time and space (default is to build them)
+# Omit the documentation to save time and space (the default is to build them).
 docs = false
 
-# Do not query new versions of dependencies online.
+# Do not look for new versions of dependencies online.
 locked-deps = true
 
-# Specify which extended tools (those from the default install).
+# Specify which extended tools to install.
 tools = ["cargo", "clippy", "rustdoc", "rustfmt", "src"]
 
 [install]
@@ -315,11 +312,10 @@ fi</userinput></screen>
 <screen role='root'><userinput>./x.py install</userinput></screen>
 
     <para>
-      Fortsatt som &root; bruker, fiks installasjonen av dokumentasjonen og 
-      symbolkoble Zsh ferdigstillelsesfilen til 
-      riktig sted og flytt en Bash fullføringsfilen 
-      til stedet anbefalt av Bash
-      fullføringsvedlikeholdere:
+      Fortsatt som &root; bruker, fiks installasjonen av dokumentasjonen, 
+      symbollenke en Zsh fullføringsfil til riktig sted, og flytte en Bash 
+      fullføringsfil til stedet som anbefales av Bash 
+      fullføringsvedlikeholderne:
     </para>
 
 <screen role='root'><userinput>rm -fv /opt/rustc-&rustc-version;/share/doc/rustc-&rustc-version;/*.old   &amp;&amp;
@@ -328,7 +324,6 @@ fi</userinput></screen>
 &install-dir; /usr/share/zsh/site-functions &amp;&amp;
 ln -sfv /opt/rustc/share/zsh/site-functions/_cargo \
         /usr/share/zsh/site-functions &amp;&amp;
-
 mv -v /etc/bash_completion.d/cargo \
       /usr/share/bash-completion/completions</userinput></screen>
 
@@ -340,7 +335,7 @@ mv -v /etc/bash_completion.d/cargo \
     <para>
       <command>ln -svfn rustc-&rustc-version; /opt/rustc</command>: Hvis dette 
       ikke er førstegangs bruk av <filename class="directory">/opt/rustc</filename>
-      sybbollenke, overskriv den ved å tvinge den frem, og bruk '-n'-flagget for 
+      symbollenke, overskriv den ved å tvinge den, og bruk '-n'-flagget for 
       å unngå å få forvirrende resultater fra f.eks. <command>ls -l</command>.
     </para>
 
@@ -350,17 +345,17 @@ mv -v /etc/bash_completion.d/cargo \
     </para>
 
     <para>
-      <literal>tools = ["cargo", "clippy", "rustdoc", "rustfmt"]</literal>:
-      Bygg bare verktøyene fra standardprofilen i den binære kommandoen
-      <command>rustup</command> som anbefales for de fleste brukere. De andre 
+      <literal>tools = ["cargo", "clippy", "rustdoc", "rustfmt",
+      "src"]</literal>: Bygg bare verktøyene fra standardprofilen fra kommandoen 
+      <command>rustup</command>, som anbefales for de fleste brukere. De andre 
       verktøyene vil sannsynligvis ikke være nyttige med mindre man bruker 
-      (gamle) kodeanalysatorer eller redigerer standardbiblioteket.
+      (gamle) kode analysatorer eller redigerer standardbiblioteket.
     </para>
 
     <para>
-      <literal>channel = "stable"</literal>: Dette sikrer at bare stabile funksjoner 
-      kan brukes, standardinnstillingen i <filename>bootstrap.toml</filename> 
-      er å bruke utviklingsfunksjoner, noe som ikke er passende for en utgitt versjon.
+      <literal>channel = "stable"</literal>: Dette sikrer at bare stabile 
+      funksjoner brukes. Standardinnstillingen er å bruke utviklingsfunksjoner, 
+      noe som ikke er passende for en utgitt versjon av Rustc.
     </para>
 
     <!-- comment while using shipped LLVM -->
@@ -431,8 +426,7 @@ EOF</userinput></screen>
         </seg>
         <seg>
           librustc-driver-&lt;16-byte-hash&gt;,
-          libstd-&lt;16-byte-hash&gt;, og
-          libtest-&lt;16-byte-hash&gt;
+          libstd-&lt;16-byte-hash&gt;
         </seg>
         <seg>
           ~/.cargo,
@@ -451,7 +445,7 @@ EOF</userinput></screen>
         <term><command>cargo-clippy</command></term>
         <listitem>
           <para>
-            tilbyr kodeanalyse for en cargo pakke
+            utfører lint sjekk på en cargo pakke
           </para>
           <indexterm zone="rustc cargo-clippy">
             <primary sortas="b-cargo-clippy">cargo-clippy</primary>
@@ -501,7 +495,7 @@ EOF</userinput></screen>
         <term><command>clippy-driver</command></term>
         <listitem>
           <para>
-            gir kodeanalyse for rust
+            utfører en lint sjekk på rustkode
           </para>
           <indexterm zone="rustc clippy-driver">
             <primary sortas="b-clippy-driver">clippy-driver</primary>
@@ -566,7 +560,7 @@ EOF</userinput></screen>
         <term><command>rust-gdb</command></term>
         <listitem>
           <para>
-            er et innpakningsskript for gdb, som trekker inn Python 
+            er et innpakningsskript for gdb, som henter inn Python 
             pretty-printing moduler som er installert i
             <filename class="directory">/opt/rustc-&rustc-version;/lib/rustlib/etc</filename>
           </para>

@@ -33,7 +33,7 @@
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "86">
-<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.3">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.4">
 <!ENTITY gi-major                      "1">
 <!ENTITY gi-minor                      "&gi-major;.&glib2-minor;">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
@@ -53,7 +53,7 @@
 <!ENTITY llvm-maj-version             "21">
 <!ENTITY llvm-point-version           "8">
 <!ENTITY llvm-version                 "&llvm-maj-version;.1.&llvm-point-version;">
-<!ENTITY rustc-version                "1.93.0">
+<!ENTITY rustc-version                "1.93.1">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
      at the very bottom: change_id. -->
 <!ENTITY rustc-change-id              "148795">
@@ -64,7 +64,7 @@
 <!ENTITY mako-version                 "1.3.10">
 <!ENTITY cython-version               "3.2.4">
 <!ENTITY yaml-version                 "0.2.5">
-<!ENTITY pyyaml-version               "6.0.2">
+<!ENTITY pyyaml-version               "6.0.3">
 <!ENTITY ruby-minor-version           "4.0">
 <!ENTITY ruby-patch-version           "1">
 <!ENTITY ruby-version                 "&ruby-minor-version;.&ruby-patch-version;">
@@ -170,7 +170,7 @@
 <!ENTITY hwdata-version               "0.404">
 <!-- Graphics Drivers - NVIDIA -->
 <!ENTITY mesa-major-minor             "25.3">
-<!ENTITY mesa-version                 "&mesa-major-minor;.1">
+<!ENTITY mesa-version                 "&mesa-major-minor;.5">
 <!ENTITY eglexternalplatform-version  "1.2.1">
 <!ENTITY egl-gbm-version              "1.1.2.1">
 <!ENTITY egl-wayland-version          "1.1.20">
