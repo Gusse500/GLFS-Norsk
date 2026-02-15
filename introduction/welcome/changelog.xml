@@ -44,6 +44,9 @@
       <para>14. februar 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Dropp SysVinit og lenke til ny MLFS plassering.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - PyYAML: 6.0.2 -&gt; 6.0.3. Fikser
           <ulink url="&glfs-issues;/372">#372</ulink>.</para>
         </listitem>
