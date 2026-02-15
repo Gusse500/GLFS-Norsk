@@ -12,20 +12,10 @@ Linux From Scratch installasjon.
 
 ## Hvor kan du lese den
 
-Gå til https://lfs.freding.no/glfs/ og begynne å bla gjennom boken!
+Gå til https://lfs.freding.no/glfs/view/systemd/index.html eller
+https://lfs.freding.no/glfs/ og begynne å bla gjennom boken!
 
-Nettboken er under rullende utgivelse, men det finnes en stabil versjon i GLFS 
-kildekoden via `stable` grenen.
-
-Du kan bytte til den ved å kjøre følgende kommando:
-```Bash
-git checkout stable
-```
-
-Deretter gjengir du boken ved å kjøre følgende kommando:
-```Bash
-make STAB=release
-```
+Du finner flere nettkopier på https://linuxfromscratch.org/glfs/view/.
 
 Det finnes også [releases](https://github.com/glfs-book/glfs/releases) 
 tilgjengelig for nedlasting.

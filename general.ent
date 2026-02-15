@@ -13,12 +13,16 @@
 <!ENTITY lfs-version   "development">
 <!ENTITY mlfs-version  "dev-sysv">
 <!ENTITY blfs-version  "svn">
+<!ENTITY glfs-version  "dev-sysv">
+<!ENTITY slfs-version  "dev-sysv">
 <!ENTITY patch-version "svn">
 ]]>
 <![ %systemd; [
 <!ENTITY lfs-version   "systemd">
 <!ENTITY mlfs-version  "dev">
 <!ENTITY blfs-version  "systemd">
+<!ENTITY glfs-version  "dev">
+<!ENTITY slfs-version  "dev">
 <!ENTITY patch-version "svn">
 ]]>
 ]]><!-- End %development -->
@@ -29,12 +33,16 @@
 <!ENTITY lfs-version   "&xlfs-version;">
 <!ENTITY mlfs-version  "&xlfs-version;-sysv">
 <!ENTITY blfs-version  "&xlfs-version;">
+<!ENTITY glfs-version  "&xlfs-version;-sysv">
+<!ENTITY slfs-version  "&xlfs-version;-sysv">
 <!ENTITY patch-version "&xlfs-version;">
 ]]>
 <![ %systemd; [
 <!ENTITY lfs-version   "&xlfs-version;-systemd">
 <!ENTITY mlfs-version  "&xlfs-version;">
 <!ENTITY blfs-version  "&xlfs-version;-systemd">
+<!ENTITY glfs-version  "&xlfs-version;">
+<!ENTITY slfs-version  "&xlfs-version;">
 <!ENTITY patch-version "&xlfs-version;">
 ]]>
 ]]><!-- End %release -->
@@ -49,8 +57,8 @@
 <!ENTITY maintainer-address   "zeckma.tech@gmail.com;">
 
 <!ENTITY lfs-website    "https://www.&norsklfs-domainname;">
-<!ENTITY glfs-website   "https://&norsklfs-domainname;/glfs">
-<!ENTITY slfs-website   "https://&norsklfs-domainname;/slfs">
+<!ENTITY glfs-website   "&lfs-website;/glfs/view/&glfs-version;">
+<!ENTITY slfs-website   "&lfs-website;/slfs/view/&slfs-version;">
 <!ENTITY downloads-root "&lfs-website;/blfs/downloads/&blfs-version;">
 
 <!ENTITY sources-anduin-http  "https://anduin.linuxfromscratch.org/BLFS">
