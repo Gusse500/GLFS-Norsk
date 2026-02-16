@@ -12,6 +12,8 @@
 
 # Adjust these to suit your installation, or include the variables
 # you wish to change in local.mk, which must be created manually.
+REV         ?= systemd
+STAB        ?= development
 AUTO_CLEAN  ?= 1
 THEME_PATH  ?= stylesheets/lfs-xsl
 THEME       ?= dynamic
@@ -30,9 +32,6 @@ else
   Q = @
 endif
 
-ifndef REV
-  REV = systemd
-endif
 ifneq ($(REV), systemd)
   ifneq ($(REV), sysv)
     $(feil REV må være 'systemd' (standard) eller 'sysv' (ikke vedlikeholdt))
@@ -41,9 +40,6 @@ endif
 
 # Used in the book, does not actually change if the book will render for the
 # stable git hash, just changes if text for stable release is rendered or not.
-ifndef STAB
-  STAB = development
-endif
 ifneq ($(STAB), development)
   ifneq ($(STAB), release)
     $(feil STAB må være 'development' (standard) eller 'release')
