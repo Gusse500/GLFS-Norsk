@@ -36,16 +36,6 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Nødvendig oppdatering:
-          <ulink url="&dl-root;/gcc/gcc-&gcc-version;-mingw_fixes-1.patch"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
     <bridgehead renderas="sect3">MinGW-w64-GCC Avhengigheter</bridgehead>
 
     <para role="required">
