@@ -1,3 +1,18 @@
+<![ %ghp; [
+<!ENTITY github-pages
+  "<note><para>Dette er GitHub Pages versjonen av denne boken, som brukes som en 
+  sikkerhetskopi av hovedversjonene av boken. Den kan være litt utdatert og er 
+  en rullerende utgivelse. Hvis du vil bruke hovedversjonen, gå til <ulink
+  url='&glfs-website;/'>here</ulink>. Flere utgivelser finnes på
+  <ulink url='&lfs-website;/glfs/view/'/>.</para></note>">
+]]>
+<!ENTITY github-pages "">
+
+<!-- Dette kan se rart ut, men DocBook ENTITIES defineres én gang og kan ikke 
+     omdefineres slik det ser ut, så den versjonen du vil at den skal vises må 
+     være den som er definert først. Så dette ender opp med å se ut som en 
+     if-else setning uten else. -->
+
 <!ENTITY source-profile
   "<para>Nå henter du hovedprofilen:</para>
    <screen><userinput>source /etc/profile</userinput></screen>">

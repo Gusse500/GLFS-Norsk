@@ -41,6 +41,23 @@
     -->
 
     <listitem>
+      <para>19. februar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Informer leseren om at GitHub Pages versjonen er en 
+          sikkerhetskopi.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libvpx: Legg til en sikkerhetsoppdatering. Se BLFS billett
+          <ulink url="&blfs-ticket-root;22827">#22827</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libgpg-error: 1.57 -&gt; 1.59.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>14. februar 2026</para>
       <itemizedlist>
         <listitem>
@@ -230,7 +247,6 @@
         <listitem>
           <para>[zeckma] - xkill: 1.0.6 -&gt; 1.0.7.</para>
         </listitem>
-
         <listitem>
           <para>[zeckma] - La til Verktøykapittelet og flyttet flere pakker 
           som CMake og LLVM til det.</para>
@@ -380,11 +396,11 @@
       <itemizedlist>
         <listitem>
           <para>[zeckma] - cURL: 8.17.0 -&gt; 8.18.0 (sikkerhet). Se <ulink
-          url="https://wiki.linuxfromscratch.org/blfs/ticket/22618">#22618</ulink>.</para>
+          url="&blfs-ticket-root;22618">#22618</ulink>.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - libtasn1: 4.20.0 -&gt; 4.21.0 (sikkerhet). Se <ulink
-          url="https://wiki.linuxfromscratch.org/blfs/ticket/22620">#22620</ulink>.</para>
+          url="&blfs-ticket-root;22620">#22620</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -691,7 +707,7 @@
         <listitem>
           <para>[zeckma] - libpng: 1.6.50 -&gt; 1.6.51 (sikkerhet). Se
           BLFS billett <ulink
-          url="https://wiki.linuxfromscratch.org/blfs/ticket/22426">#22426</ulink>.</para>
+          url="&blfs-ticket-root;22426">#22426</ulink>.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - LLVM: 21.1.2 -&gt; 21.1.7.</para>
@@ -724,6 +740,9 @@
         <listitem>
           <para>[zeckma] - libatomic_ops: Lagt til. Fikser
           <ulink url="&glfs-issues;/326">#326</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - *: Fjern etterfølgende mellomrom.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -778,9 +797,8 @@
           <para>[zeckma] - CMake: 4.1.2 -&gt; 4.2.0.</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - GnuTLS: 3.8.10 -&gt; 3.8.11 (sikkerhet) Se
-          <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22417">BLFS
-          ticket #22417</ulink>.</para>
+          <para>[zeckma] - GnuTLS: 3.8.10 -&gt; 3.8.11 (sikkerhet) Se BLFS
+          billett <ulink url="&blfs-ticket-root;22417">#22417</ulink>.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - Xorg Wacom Driver: 1.2.3 -&gt; 1.2.4.</para>
@@ -856,9 +874,9 @@
       <para>12. november 2025</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - cURL: Fiks oppdateringen for CVE-2025-11563. Se
-          <ulink url="https://www.linuxfromscratch.org/blfs/ticket/22348">BLFS
-          ticket #22348</ulink> for mer informasjon.</para>
+          <para>[renodr] - cURL: Fiks oppdateringen for CVE-2025-11563. Se BLFS
+          billett <ulink url="&blfs-ticket-root;22348">#22348</ulink> for mer
+          informasjon.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -870,9 +888,8 @@
           <para>[zeckma] - libxkbcommon: f4f732 (1.12.3) -&gt; 3049d3 (1.13.0).</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - cURL: 8.16.0 -&gt; 8.17.0 (sikkerhet). Se
-          <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22348">BLFS
-          ticket #22348</ulink>.</para>
+          <para>[zeckma] - cURL: 8.16.0 -&gt; 8.17.0 (sikkerhet). Se BLFS
+          billett <ulink url="&blfs-ticket-root;22348">#22348</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
@@ -919,13 +936,12 @@
         </listitem>
         <listitem>
           <para>[zeckma] - Xorg-Server: 21.1.18 -&gt; 21.1.20 (sikkerhet). Se
-          <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22323">BLFS
-          ticket #22323</ulink>.</para>
+          BLFS billett <ulink
+          url="&blfs-ticket-root;22323">#22323</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - Xwayland: 24.1.8 -&gt; 24.1.9 (sikkerhet). Se
-          <ulink url="https://wiki.linuxfromscratch.org/blfs/ticket/22324">BLFS
-          ticket #22324</ulink>.</para>
+          <para>[zeckma] - Xwayland: 24.1.8 -&gt; 24.1.9 (sikkerhet). Se BLFS
+          billett <ulink url="&blfs-ticket-root;22324">#22324</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
