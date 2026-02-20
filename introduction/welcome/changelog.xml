@@ -44,6 +44,10 @@
       <para>19. februar 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Informer leseren om at GitHub Pages versjonen er en 
+          sikkerhetskopi.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libvpx: Legg til en sikkerhetsoppdatering. Se BLFS billett
           <ulink url="&blfs-ticket-root;22827">#22827</ulink>.</para>
         </listitem>
@@ -243,7 +247,6 @@
         <listitem>
           <para>[zeckma] - xkill: 1.0.6 -&gt; 1.0.7.</para>
         </listitem>
-
         <listitem>
           <para>[zeckma] - La til Verktøykapittelet og flyttet flere pakker 
           som CMake og LLVM til det.</para>
@@ -737,6 +740,9 @@
         <listitem>
           <para>[zeckma] - libatomic_ops: Lagt til. Fikser
           <ulink url="&glfs-issues;/326">#326</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - *: Fjern etterfølgende mellomrom.</para>
         </listitem>
       </itemizedlist>
     </listitem>
