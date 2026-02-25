@@ -28,6 +28,8 @@
       hvordan applikasjonsprogrammer autentiserer brukere.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

@@ -42,6 +42,8 @@
       kompatibilitet og overgang.
     </para></important>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

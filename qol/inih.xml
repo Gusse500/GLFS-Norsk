@@ -24,6 +24,8 @@
       Denne pakken er en enkel .INI filparser skrevet i C.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

@@ -29,6 +29,8 @@
 
     &long-build-time;
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

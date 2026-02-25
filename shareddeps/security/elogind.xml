@@ -33,6 +33,8 @@
       <filename class="directory">/run/systemd</filename> oppsett.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

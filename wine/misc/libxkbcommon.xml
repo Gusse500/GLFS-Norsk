@@ -35,6 +35,8 @@
       En git hash sikrer en viss pålitelighet for versjonen.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

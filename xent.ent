@@ -21,6 +21,15 @@
   "<important><para>Oppdatering av denne pakken er kjent 
   å bryte ABI.</para></important>">
 
+<!ENTITY meson-cross
+  "<important><para>Installasjonsinstruksjonene for lib32 krever de nye Meson 
+  kryssfiler fra <ulink
+  url='&mlfs-m32-root;/chapter08/meson.html'>MLFS</ulink>, noen
+  <parameter>--libdir=/usr/lib32</parameter> har blitt flyttet til kryssfilene 
+  og vises ikke lenger i instruksjonene. Installer de nye kryssfilene slik at 
+  32-bits biblioteker ikke blir installert i <filename
+  class='directory'>/usr/lib</filename>.</para></important>">
+
 <!ENTITY parallel_issues
   "<note><para>Denne pakken kan av og til feile når man 
   bygger med flere prosessorer. Se <xref

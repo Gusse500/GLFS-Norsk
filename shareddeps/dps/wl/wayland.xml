@@ -27,6 +27,8 @@
       samt en bibliotekimplementering av protokollen.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

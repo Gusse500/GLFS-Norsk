@@ -37,6 +37,8 @@
       tilleggsfunksjoner for avhengige pakker.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

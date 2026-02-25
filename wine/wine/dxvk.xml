@@ -139,7 +139,7 @@ mkdir   -pv     /usr/lib/dxvk/win64 &amp;&amp;
 <screen><userinput>mkdir build-win32 &amp;&amp;
 cd    build-win32 &amp;&amp;
 
-meson setup --cross-file ../build-win32.txt \
+meson setup --cross-file=../build-win32.txt \
             --buildtype=release             \
             --prefix=$PWD/DESTDIR           \
             .. &amp;&amp;

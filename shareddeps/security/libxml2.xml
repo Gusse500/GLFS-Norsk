@@ -28,6 +28,8 @@
 
     &abi-break;
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>

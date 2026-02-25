@@ -29,6 +29,8 @@
 
     &long-build-time;
 
+    &meson-cross;
+
     <bridgehead renderas="sect3">GStreamer Pakken Avhengigheter</bridgehead>
 
     <para role="required">
