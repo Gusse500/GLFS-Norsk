@@ -32,9 +32,8 @@
     <bridgehead renderas="sect3">GStreamer Pakken Avhengigheter</bridgehead>
 
     <para role="required">
-      <xref linkend="ffmpeg"/> (for libav støtte),
-      <xref linkend="glib2"/> (GObject Introspection påkrevd for GNOME), og
-      <xref linkend="mesonfiles"/> (for lib32)
+      <xref linkend="ffmpeg"/> (for libav støtte) og
+      <xref linkend="glib2"/> (GObject Introspection påkrevd for GNOME)
     </para>
 
     <para role="recommended">
@@ -150,6 +149,7 @@
     url="&blfs-svn;/multimedia/gst10-plugins-rs.html">gst-plugins-rs</ulink>.
     Den tilbyr en GTK-4 binding og et dav1d programtillegg. Hvis du trenger dem, 
     se den lenkede siden i BLFS.</para>
+
   </sect2>
 
   <sect2>
@@ -240,7 +240,7 @@ do
     meson setup --prefix=/usr       \
                 --buildtype=release \
                 $(echo $extraflags) \
-                .. &amp;&amp;
+                ..
     ninja
     as_root ninja install
   popd
@@ -311,11 +311,10 @@ do
   mkdir build
   cd    build
     meson setup --prefix=/usr       \
-                --libdir=/usr/lib32 \
-                --cross-file=lib32  \
                 --buildtype=release \
+                --cross-file=lib32  \
                 $(echo $extraflags) \
-                .. &amp;&amp;
+                .. 
     ninja
     DESTDIR=$PWD/DESTDIR ninja install
     as_root cp -vR DESTDIR/usr/lib32/* /usr/lib32

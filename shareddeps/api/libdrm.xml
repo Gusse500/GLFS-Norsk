@@ -90,14 +90,12 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-meson setup --prefix=/usr            \
-            --buildtype=release      \
-            --libdir=/usr/lib32      \
-            -D tests=false           \
-            -D udev=true             \
-            -D valgrind=disabled     \
+meson setup --prefix=/usr        \
+            --buildtype=release  \
+            --cross-file=lib32   \
+            -D tests=false       \
+            -D udev=true         \
+            -D valgrind=disabled \
             .. &amp;&amp;
 
 ninja</userinput></screen>

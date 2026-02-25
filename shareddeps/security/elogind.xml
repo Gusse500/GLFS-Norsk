@@ -78,13 +78,13 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                               \
-      --prefix=/usr                          \
-      --buildtype=release                    \
-      -D docdir=/usr/share/doc/elogind-&elogind-version; \
-      -D cgroup-controller=elogind           \
-      -D dev-kvm-mode=0660                   \
-      -D dbuspolicydir=/etc/dbus-1/system.d &amp;&amp;
+meson setup --prefix=/usr                          \
+            --buildtype=release                    \
+            -D docdir=/usr/share/doc/elogind-&elogind-version; \
+            -D cgroup-controller=elogind           \
+            -D dev-kvm-mode=0660                   \
+            -D dbuspolicydir=/etc/dbus-1/system.d  \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
@@ -106,15 +106,13 @@ ln -sfvn elogind /usr/include/systemd</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"                 \
-PKG_CONFIG_PATH="/usr/lib32/pkgconfig"       \
-meson setup ..                               \
-      --prefix=/usr                          \
-      --libdir=/usr/lib32                    \
-      --buildtype=release                    \
-      -D cgroup-controller=elogind           \
-      -D dev-kvm-mode=0660                   \
-      -D dbuspolicydir=/etc/dbus-1/system.d &amp;&amp;
+meson setup --prefix=/usr                         \
+            --buildtype=release                   \
+            --cross-file=lib32                    \
+            -D cgroup-controller=elogind          \
+            -D dev-kvm-mode=0660                  \
+            -D dbuspolicydir=/etc/dbus-1/system.d \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>

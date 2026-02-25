@@ -82,11 +82,10 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..        \
-  --prefix=/usr       \
-  --buildtype=release \
-  -D docs=disabled &amp;&amp;
-
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            -D docs=disabled    \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <caution>
@@ -140,14 +139,11 @@ chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"           \
-PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-meson setup ..                         \
-  --prefix=/usr                        \
-  --libdir=/usr/lib32                  \
-  --buildtype=release                  \
-  -D docs=disabled &amp;&amp;
-
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            --cross-file=lib32  \
+            -D docs=disabled    \
+            ..  &amp;&amp;
 ninja</userinput></screen>
 
     <para>

@@ -80,10 +80,6 @@
 
     <bridgehead renderas="sect3">GLib Avhengigheter</bridgehead>
 
-    <para role="required">
-      <xref linkend="mesonfiles"/> (for lib32)
-    </para>
-
     <para role="recommended">
       <xref role="runtime" linkend="shared-mime-info"/> og
       <xref role="runtime" linkend="desktop-file-utils"/>
@@ -153,15 +149,14 @@ fi</userinput></screen>
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                  \
-      --prefix=/usr             \
-      --buildtype=release       \
-      -D introspection=disabled \
-      -D glib_debug=disabled    \
-      -D man-pages=disabled     \
-      -D tests=false            \
-      -D sysprof=disabled       &amp;&amp;
-
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            -D introspection=disabled \
+            -D glib_debug=disabled    \
+            -D man-pages=disabled     \
+            -D tests=false            \
+            -D sysprof=disabled       \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
@@ -214,16 +209,15 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-meson setup ..                  \
-      --cross-file=lib32        \
-      --prefix=/usr             \
-      --libdir=/usr/lib32       \
-      --buildtype=release       \
-      -D introspection=disabled \
-      -D glib_debug=disabled    \
-      -D man-pages=disabled     \
-      -D tests=false            \
-      -D sysprof=disabled       &amp;&amp;
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            --cross-file=lib32        \
+            -D introspection=disabled \
+            -D glib_debug=disabled    \
+            -D man-pages=disabled     \
+            -D tests=false            \
+            -D sysprof=disabled       \
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 

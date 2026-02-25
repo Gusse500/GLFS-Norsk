@@ -49,8 +49,7 @@
     <bridgehead renderas="sect3">Fontconfig avhengigheter</bridgehead>
 
     <para role="required">
-      <xref linkend="freetype2"/> og
-      <xref linkend="mesonfiles"/> (for lib32)
+      <xref linkend="freetype2"/>
     </para>
 
   </sect2>
@@ -87,9 +86,8 @@ ninja</userinput></screen>
 
 <screen><userinput>rm -rf * &amp;&amp;
 meson setup --prefix=/usr       \
-            --libdir=/usr/lib32 \
-            --cross-file=lib32  \
             --buildtype=release \
+            --cross-file=lib32  \
             .. &amp;&amp;
 
 ninja</userinput></screen>

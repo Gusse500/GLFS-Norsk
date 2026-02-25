@@ -54,10 +54,10 @@
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..            \
-      --prefix=/usr       \
-      --buildtype=release \
-      -D documentation=false &amp;&amp;
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            -D documentation=false \
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -78,13 +78,11 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-meson setup ..                       \
-      --prefix=/usr                  \
-      --libdir=/usr/lib32            \
-      --buildtype=release            \
-      -D documentation=false &amp;&amp;
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --cross-file=lib32     \
+            -D documentation=false \
+            .. &amp;&amp;
 
 ninja</userinput></screen>
 

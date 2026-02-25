@@ -101,12 +101,10 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-meson setup --prefix=/usr            \
-            --libdir=/usr/lib32      \
-            --buildtype=release      \
-            -D hgl=false             \
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            --cross-file=lib32  \
+            -D hgl=false        \
             .. &amp;&amp;
 
 ninja</userinput></screen>

@@ -111,28 +111,26 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
 <screen revision="systemd"><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                   \
-      --prefix=/usr              \
-      --buildtype=release        \
-      -D os_type=lfs             \
-      -D man=false               \
-      -D session_tracking=logind \
-      -D tests=false &amp;&amp;
-
+meson setup --prefix=/usr              \
+            --buildtype=release        \
+            -D os_type=lfs             \
+            -D man=false               \
+            -D session_tracking=logind \
+            -D tests=false             \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
 <screen revision="sysv"><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup ..                     \
-      --prefix=/usr                \
-      --buildtype=release          \
-      -D os_type=lfs               \
-      -D man=false                 \
-      -D session_tracking=elogind  \
-      -D systemdsystemunitdir=/tmp \
-      -D tests=false &amp;&amp;
-
+meson setup --prefix=/usr                \
+            --buildtype=release          \
+            -D os_type=lfs               \
+            -D man=false                 \
+            -D session_tracking=elogind  \
+            -D systemdsystemunitdir=/tmp \
+            -D tests=false               \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>

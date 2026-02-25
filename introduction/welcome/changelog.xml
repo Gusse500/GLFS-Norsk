@@ -44,6 +44,10 @@
       <para>24. februar 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - *: Bruk meson kryssfiler som standard (krever nyere 
+          filer fra <ulink url="&mlfs-m32-root;">MLFS</ulink>).</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.120 -&gt; 3.120.1.</para>
         </listitem>
       </itemizedlist>

@@ -85,14 +85,12 @@
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"           \
-PKG_CONFIG_PATH="/usr/lib32/pkgconfig" \
-meson setup --prefix=/usr              \
-            --libdir=/usr/lib32        \
-            --wrap-mode=nofallback     \
-            -D systemd=disabled        \
+meson setup --prefix=/usr          \
+            --buildtype=release    \
+            --cross-file=lib32     \
+            --wrap-mode=nofallback \
+            -D systemd=disabled    \
             .. &amp;&amp;
-
 ninja</userinput></screen>
 
     <para>

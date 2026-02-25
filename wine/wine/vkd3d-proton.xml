@@ -143,10 +143,10 @@ mv -T  SPIRV-Headers-&vkd3d-proton-dxbc-spirv;             \
 <screen><userinput>mkdir build-win64 &amp;&amp;
 cd    build-win64 &amp;&amp;
 
-meson setup .. --cross-file=../build-win64.txt \
-               --buildtype=release             \
-               --prefix=$PWD/DESTDIR &amp;&amp;
-
+meson setup --cross-file=../build-win64.txt \
+            --buildtype=release             \
+            --prefix=$PWD/DESTDIR           \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
       <para>Nå som &root; bruker:</para>
@@ -171,10 +171,10 @@ mkdir   -pv     /usr/lib/vkd3d-proton/win64 &amp;&amp;
 <screen><userinput>mkdir build-win32 &amp;&amp;
 cd    build-win32 &amp;&amp;
 
-meson setup .. --cross-file ../build-win32.txt \
-               --buildtype=release             \
-               --prefix=$PWD/DESTDIR &amp;&amp;
-
+meson setup --cross-file ../build-win32.txt \
+            --buildtype=release             \
+            --prefix=$PWD/DESTDIR           \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
       <para>Nå som &root; bruker:</para>

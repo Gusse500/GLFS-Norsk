@@ -108,11 +108,9 @@ sed 's/--static/--shared/' -i /usr/bin/xml2-config</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"         \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 meson setup --prefix=/usr            \
-            --libdir=/usr/lib32      \
             --buildtype=release      \
+            --cross-file=lib32       \
             -D history=enabled       \
             -D icu=enabled &amp;&amp;
 ninja</userinput></screen>

@@ -59,7 +59,8 @@
     <bridgehead renderas="sect3">Systemd Avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="mesonfiles"/> (for lib32)
+      <xref linkend="linux-pam"/> og
+      <xref role="runtime" linkend="polkit"/> (kjøretid)
     </para>
 
     <note>
@@ -75,11 +76,6 @@
         gjenoppbygd med <xref linkend='linux-pam'/>.
       </para>
     </note>
-
-    <para role="recommended">
-      <xref linkend="linux-pam"/> og
-      <xref role="runtime" linkend="polkit"/> (kjøretid)
-    </para>
 
   </sect2>
 
@@ -152,10 +148,9 @@ ninja</userinput></screen>
 
 <screen><userinput>rm -rf * &amp;&amp;
 LANG=en_US.UTF-8                     \
-meson setup --cross-file lib32       \
-            --prefix=/usr            \
-            --libdir=/usr/lib32      \
+meson setup --prefix=/usr            \
             --buildtype=release      \
+            --cross-file=lib32       \
             -D default-dnssec=no     \
             -D firstboot=false       \
             -D install-tests=false   \

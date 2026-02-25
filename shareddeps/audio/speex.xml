@@ -57,8 +57,7 @@
     <bridgehead renderas="sect3">Speex avhengigheter</bridgehead>
 
     <para role="required">
-      <xref linkend="libogg"/> og
-      <xref linkend="pkgconf"/> (for lib32)
+      <xref linkend="libogg"/>
     </para>
 
   </sect2>
