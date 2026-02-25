@@ -26,6 +26,8 @@
 
     &long-build-time;
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -228,8 +230,7 @@ do
     ;;
   
     libpciaccess* | libxkbfile* )
-      CC="gcc -m32" CXX="g++ -m32" PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
-      meson setup --prefix=/usr $libdir --buildtype=release build
+      meson setup --prefix=/usr --buildtype=release --cross-file=lib32 build
 
       do_build()        { ninja -C build; }
       do_dest_install() { DESTDIR=$PWD/DESTDIR ninja -C build install; }

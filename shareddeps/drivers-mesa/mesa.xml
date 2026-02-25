@@ -51,6 +51,8 @@
 
     &long-build-time;
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -89,7 +91,7 @@
         <listitem>
           <para>
             <xref linkend="cbindgen"/>, <xref linkend="make-ca"/>,
-            <xref linkend="mesonfiles"/>, <xref linkend="rust-bindgen"/>, og
+            <xref linkend="rust-bindgen"/>, og
             <xref linkend="rustc"/> (påkrevd for Nouveau Vulkan)
           </para>
         </listitem>
@@ -211,10 +213,9 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-meson setup --cross-file=lib32       \
-            --prefix=/usr            \
-            --libdir=/usr/lib32      \
+meson setup --prefix=/usr            \
             --buildtype=release      \
+            --cross-file=lib32       \
             -D glvnd=enabled         \
             -D libgbm-external=true  \
             -D platforms=x11,wayland \

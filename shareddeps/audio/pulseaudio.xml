@@ -30,6 +30,8 @@
       flere lyder til én, oppnås enkelt ved hjelp av en lydserver.
     </para>
 
+    &meson-cross;
+
     <itemizedlist spacing="compact">
       <listitem>
         <para>
@@ -41,8 +43,7 @@
     <bridgehead renderas="sect3">PulseAudio Avhengigheter</bridgehead>
 
     <para role="required">
-      <xref linkend="libsndfile"/> og
-      <xref linkend="mesonfiles"/> (for lib32)
+      <xref linkend="libsndfile"/>
     </para>
 
     <para role="recommended">
@@ -139,10 +140,9 @@ ninja</userinput></screen>
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
-meson setup --cross-file=lib32  \
-            --prefix=/usr       \
-            --libdir=/usr/lib32 \
+meson setup --prefix=/usr       \
             --buildtype=release \
+            --cross-file=lib32  \
             -D database=gdbm    \
             -D doxygen=false    \
             -D bluez5=disabled  \

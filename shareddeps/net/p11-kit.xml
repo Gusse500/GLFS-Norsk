@@ -69,11 +69,10 @@ EOF</userinput></screen>
 <screen><userinput>mkdir p11-build &amp;&amp;
 cd    p11-build &amp;&amp;
 
-meson setup ..            \
-      --prefix=/usr       \
-      --buildtype=release \
-      -D trust_paths=/etc/pki/anchors &amp;&amp;
-
+meson setup --prefix=/usr                   \
+            --buildtype=release             \
+            -D trust_paths=/etc/pki/anchors \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
@@ -85,39 +84,6 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
         /usr/bin/update-ca-certificates</userinput></screen>
 
   </sect2>
-
-<!--
-  <sect2>
-    <title>lib32 Installasjon av p11-kit</title>
-
-    <para>
-      Installer lib32-p11-kit
-      ved å kjøre følgende kommandoer:
-    </para>
-
-<screen><userinput>rm -rf * &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"                     \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig             \
-CFLAGS+=" -Wno-error=incompatible-pointer-types" \
-meson setup ..                                   \
-      - -prefix=/usr                              \
-      - -libdir=/usr/lib32                        \
-      - -buildtype=release                        \
-      -D trust_paths=/etc/pki/anchors &amp;&amp;
-
-ninja</userinput></screen>
-
-    <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
-    </para>
-
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
-cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
-rm -rf DESTDIR                        &amp;&amp;
-ldconfig</userinput></screen>
-
-  </sect2>
--->
 
   <sect2 role="commands">
     <title>Parameterforklaringer</title>
