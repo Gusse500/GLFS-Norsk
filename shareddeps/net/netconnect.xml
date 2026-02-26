@@ -22,28 +22,44 @@
     DHCP står for Dynamic Host Configuration Protocol. Det er en protokoll som 
     brukes av mange nettsteder for automatisk å gi informasjon som IP-adresser, 
     nettverksmasker og ruteinformasjon til datamaskiner. Hvis nettverket ditt 
-    bruker DHCP, trenger du en DHCP klient for å koble til den.
+    bruker DHCP, trenger du en DHCP klient for å koble til 
+    den.
   </para>
 
   <sect2>
     <title>Slik kobler du deg til internett</title>
 
-    <para>
+    <para revision="systemd">
+      Systemd tilbyr to daemoner for DHCP: én som håndterer 
+      nettverksgrensesnittet, og en annen som håndterer DNS løsning.
+      (<literal>systemd-networkd</literal> og
+      <literal>systemd-resolved</literal> henholdsvis). LFS boken dekker 
+      hvordan man setter opp begge.
+    </para>
+
+    <para revision="sysv">
       For å bruke DHCP trenger du en DHCP klient,
       <ulink url="&blfs-svn;/basicnet/dhcpcd.html">
-      dhcpcd</ulink>. Du ønsker kanskje også å koble til 
+      dhcpcd</ulink>. 
+    </para>
+
+    <para>
+      Du ønsker kanskje også å koble til
       internett trådløst. For å gjøre det, bør du først 
       konfigurere kjernen til å støtte det, instruksjonene 
-      for det er på
-      <ulink url="&blfs-svn;/basicnet/wireless-kernel.html"/>.
+      det er
+      <ulink url="&blfs-svn;/basicnet/wireless-kernel.html">her</ulink>.
       Etter det trenger du et verktøy for å koble til internett, 
       egnet er for eksempel
       <ulink url="&blfs-svn;/basicnet/iw.html">iw</ulink>,
       <ulink url="&blfs-svn;/basicnet/wireless_tools.html">
-      Wireless Tools</ulink>, og
+      Wireless Tools</ulink>, eller
       <ulink url="&blfs-svn;/basicnet/wpa_supplicant.html">
       wpa_supplicant</ulink>.
       Du trenger bare én av disse, hvilken er opp til deg.
+      <phrase revision="systemd">Sørg for at både
+      <literal>systemd-networkd</literal> og
+      <literal>systemd-resolved</literal> tjenestene er aktivert.</phrase>
     </para>
 
   </sect2>
