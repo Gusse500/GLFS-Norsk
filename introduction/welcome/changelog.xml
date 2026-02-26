@@ -44,6 +44,16 @@
       <para>24. februar 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - glib: Løs problemer med minnekorrupsjon med glibc-2.43.
+          Fikser <ulink url="&glfs-issues;379">#379</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>24. februar 2026</para>
+      <itemizedlist>
+        <listitem>
           <para>[zeckma] - *: Bruk meson kryssfiler som standard (krever nyere 
           filer fra <ulink url="&mlfs-m32-root;">MLFS</ulink>).</para>
         </listitem>

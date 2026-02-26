@@ -53,10 +53,9 @@
       </listitem>
     </itemizedlist>
 
-<!--
     <para>
-      <emphasis role="strong">Nødvendig oppdatering for å fikse problemer med
-      gobject-introspection-1.84.x:</emphasis>
+      <emphasis role="strong">Nødvendig oppdatering for å fikse problemer med 
+      minnekorrupsjon eksponert av glibc-2.43:</emphasis>
     </para>
     <itemizedlist spacing="compact">
       <listitem>
@@ -66,7 +65,6 @@
         </para>
       </listitem>
     </itemizedlist>
--->
 
     <para>
       <emphasis role="strong">Oppdatering for valg av loggnivå (valgfritt)</emphasis>
@@ -97,13 +95,12 @@
   <sect2 role="installation">
     <title>Installasjon av GLib</title>
 
-<!--
+
     <para>
-      Først, fiks et kjøretidsproblem forårsaket av gobject-introspection-1.84.x:
+      Først, fiks problemer med minnekorrupsjon som er eksponert av glibc-2.43:
     </para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../glib-&glib2-version;-upstream_fixes-1.patch</userinput></screen>
--->
 
     <para>
       Hvis ønskelig, installer den valgfrie oppdateringen. I mange tilfeller, 
