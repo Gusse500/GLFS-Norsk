@@ -52,7 +52,7 @@
       Først, lag en liste over filer som skal lastes ned:
     </para>
 
-<screen><userinput>cat &gt; app-&xorg-version;-list &lt;&lt; "EOF"
+<screen><userinput>cat &gt; x7app-&xorg-version;-list &lt;&lt; "EOF"
 <literal>iceauth-&iceauth-version;.tar.xz
 mkfontscale-&mkfontscale-version;.tar.xz
 sessreg-&sessreg-version;.tar.xz
@@ -93,9 +93,9 @@ EOF</userinput></screen>
       bruk følgende kommandoer:
     </para>
 
-<screen><userinput>mkdir app &amp;&amp;
-cd app &amp;&amp;
-grep -v '^#' ../app-&xorg-version;-list | wget -i- -c \
+<screen><userinput>mkdir x7app &amp;&amp;
+cd x7app &amp;&amp;
+grep -v '^#' ../x7app-&xorg-version;-list | wget -i- -c \
     -B &x7apps-download;</userinput></screen>
 
   </sect2>
@@ -115,7 +115,7 @@ grep -v '^#' ../app-&xorg-version;-list | wget -i- -c \
       Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in $(grep -v '^#' ../app-&xorg-version;-list)
+<screen><userinput>for package in $(grep -v '^#' ../x7app-&xorg-version;-list)
 do
   packagedir=${package%.tar.?z*}
   tar -xf $package

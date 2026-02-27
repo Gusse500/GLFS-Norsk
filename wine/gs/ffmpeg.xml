@@ -265,15 +265,17 @@ ldconfig</userinput></screen>
 
     <para>
       <option>--enable-libmfx</option>: Dette alternativet aktiverer 
-	  maskinvareakselerasjon for Intel GPU-er fra Broadwell til Tiger Lake, og 
-	  det avhenger av de valgfrie avhengighetene for systemer med Intel grafikkort.
+      maskinvareakselerasjon for Intel GPU-er fra Broadwell til Tiger Lake, og 
+      det avhenger av de valgfrie avhengighetene for systemer med Intel grafikkort.
+      Kan ikke brukes med <option>--enable-libvpl</option>.
     </para>
 
     <para>
       <option>--enable-libvpl</option>: Dette alternativet aktiverer 
-	  maskinvareakselerasjon for Intel GPU-er fra Tiger Lake og utover, 
-	  inkludert de separate grafikkortene. Det avhenger av de valgfrie 
-	  avhengighetene for systemer med Intel grafikkort.
+      maskinvareakselerasjon for Intel GPU-er fra Tiger Lake og utover, 
+      inkludert de separate grafikkortene. Det avhenger av de valgfrie 
+      avhengighetene for systemer med Intel grafikkort. Kan ikke brukes med
+      <option>--enable-libmfx</option>.
     </para>
 
     <para>

@@ -51,7 +51,7 @@
       bli brukt til å bekrefte integriteten til nedlastingene når den er fullført:
     </para>
 
-<screen><userinput>cat &gt; font-&xorg-version;-list &lt;&lt; "EOF"
+<screen><userinput>cat &gt; x7font-&xorg-version;-list &lt;&lt; "EOF"
 <literal>font-util-&font-util-version;.tar.xz
 encodings-&encodings-version;.tar.xz
 font-alias-&font-alias-version;.tar.xz
@@ -68,8 +68,8 @@ EOF</userinput></screen>
       bruk følgende kommandoer:
     </para>
 
-<screen><userinput>mkdir font &amp;&amp;
-cd font &amp;&amp;
+<screen><userinput>mkdir x7font &amp;&amp;
+cd x7font &amp;&amp;
 grep -v '^#' ../font-&xorg-version;-list | wget -i- -c \
     -B &x7fonts-download;</userinput></screen>
 
@@ -90,7 +90,7 @@ grep -v '^#' ../font-&xorg-version;-list | wget -i- -c \
       Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in $(grep -v '^#' ../font-&xorg-version;-list)
+<screen><userinput>for package in $(grep -v '^#' ../x7font-&xorg-version;-list)
 do
   packagedir=${package%.tar.?z*}
   tar -xf $package
