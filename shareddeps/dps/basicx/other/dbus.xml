@@ -55,7 +55,6 @@
       begge pakkene er installert.)</phrase>-->
     </para>
 
-    <bridgehead renderas="sect4" revision="systemd">Valgfri</bridgehead>
     <para role="optional" revision="systemd">
       <phrase revision="systemd"><xref role="runtime" linkend="systemd"/>
       (kjøretid, for registrering av tjenester lansert av D-Bus øktnissen som 
