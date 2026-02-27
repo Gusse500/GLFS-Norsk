@@ -62,7 +62,7 @@
       Først, lag en liste over filer som skal lastes ned:
     </para>
 
-<screen><userinput>cat &gt; lib-&xorg-version;-list &lt;&lt; "EOF"
+<screen><userinput>cat &gt; x7lib-&xorg-version;-list &lt;&lt; "EOF"
 <literal>xtrans-&xtrans-version;.tar.xz
 libX11-&libX11-version;.tar.xz
 libXext-&libXext-version;.tar.xz
@@ -108,9 +108,9 @@ EOF</userinput></screen>
       bruk følgende kommandoer:
     </para>
 
-<screen><userinput>mkdir lib &amp;&amp;
-cd lib &amp;&amp;
-grep -v '^#' ../lib-&xorg-version;-list | wget -i- -c \
+<screen><userinput>mkdir x7lib &amp;&amp;
+cd x7lib &amp;&amp;
+grep -v '^#' ../x7lib-&xorg-version;-list | wget -i- -c \
     -B &x7libs-download;<!-- &amp;&amp;
 wget &dl-root;/libXmu/libXmu-&libXmu-version;-upstream_fixes-1.patch--></userinput></screen>
 
@@ -131,7 +131,7 @@ wget &dl-root;/libXmu/libXmu-&libXmu-version;-upstream_fixes-1.patch--></userinp
       Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in $(grep -v '^#' ../lib-&xorg-version;-list)
+<screen><userinput>for package in $(grep -v '^#' ../x7lib-&xorg-version;-list)
 do
   packagedir=${package%.tar.?z*}
   echo "Building $packagedir"
@@ -187,7 +187,7 @@ done</userinput></screen>
       kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in $(grep -v '^#' ../lib-&xorg-version;-list)
+<screen><userinput>for package in $(grep -v '^#' ../x7lib-&xorg-version;-list)
 do
   case $package in xtrans* )
     continue
