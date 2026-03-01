@@ -41,10 +41,14 @@
     -->
 
     <listitem>
-      <para>24. februar 2026</para>
+      <para>25. februar 2026</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - glib: Løs problemer med minnekorrupsjon med glibc-2.43.
+          <para>[zeckma] - GS: 1.28.0 -&gt; 1.28.1 (sikkerhet). Se BLFS billett
+          <ulink url="&blfs-ticket-root;22868">#22868</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[renodr] - GLib: Løs problemer med minnekorrupsjon med glibc-2.43.
           Fikser <ulink url="&glfs-issues;379">#379</ulink>.</para>
         </listitem>
       </itemizedlist>
@@ -367,7 +371,7 @@
       <para>14. januar 2026</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - libpng-1.6.52 -&gt; libpng-1.6.54 (sikkerhet). Se
+          <para>[zeckma] - libpng: 1.6.52 -&gt; 1.6.54 (sikkerhet). Se
           BLFS <ulink
           url="https://lfs.freding.no/blfs/advisories/consolidated.html#sa-12.4-076">SA-12.4-076</ulink>.</para>
         </listitem>
