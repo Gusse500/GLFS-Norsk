@@ -227,7 +227,7 @@ do
       extraflags="--wrap-mode=nodownload"
     ;;
     gst-plugins-bad-[0-9]* )
-      extraflags="-D gpl=enabled -D gsm=disabled -D zxing=disabled"
+      extraflags="-D gpl=enabled -D gsm=disabled"
     ;;
     gst-plugins-ugly-[0-9]* )
       extraflags="-D gpl=enabled"
@@ -300,7 +300,7 @@ do
       extraflags+=" -D qt5=disabled -D qt6=disabled"
     ;;
     gst-plugins-bad-[0-9]* )
-      extraflags="-D gpl=enabled -D gsm=disabled -D zxing=disabled"
+      extraflags="-D gpl=enabled -D gsm=disabled"
     ;;
     gst-plugins-ugly-[0-9]* )
       extraflags="-D gpl=enabled"
@@ -347,9 +347,8 @@ done</userinput></screen>
     </para>
 
     <para>
-      <parameter>-D gsm=disabled -D zxing=disabled</parameter>: Denne bryteren 
-	  deaktiverer kobling til GSM og zxing cpp-bibliotekene hvis de er 
-	  installert, da begge vil forårsake byggefeil.
+      <parameter>-D gsm=disabled</parameter>: Denne bryteren deaktiverer kobling 
+	  til GSM biblioteket hvis det er installert, da det vil føre til byggefeil.
     </para>
 
     <para>
