@@ -80,6 +80,7 @@
 <!ENTITY lfs-ticket-root      "https://wiki.linuxfromscratch.org/lfs/query/">
 <!ENTITY gnu-http             "https://ftpmirror.gnu.org/gnu">
 <!ENTITY gnu-ftp              "ftp://ftp.gnu.org/gnu">
+<!ENTITY gnome-download-http  "https://download.gnome.org/sources">
 <!ENTITY gnupg-http           "https://www.gnupg.org/ftp/gcrypt">
 <!ENTITY gnupg-ftp            "ftp://ftp.gnupg.org/gcrypt">
 <!ENTITY gstreamer-dl         "https://gstreamer.freedesktop.org/src">
