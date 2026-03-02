@@ -312,6 +312,8 @@ for var in os.environ:
 _EOF</literal>
 EOF</userinput></screen>
 
+    <note>&install-stdin;</note>
+
     <para>
       Les <ulink role='man'
       url='&man;systemd.environment-generator.7'>systemd.environment-generator(7)</ulink>
