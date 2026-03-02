@@ -245,8 +245,6 @@
 <!ENTITY font-xfree86-type1-version   "1.0.5">
 <!-- END X7FONTS -->
 <!ENTITY xkeyboard-config-version     "2.46">
-<!ENTITY % gnome-entities SYSTEM      "gnome.ent">
-%gnome-entities;
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
 <!ENTITY xorg-server-version          "21.1.21">

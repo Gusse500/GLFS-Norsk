@@ -86,6 +86,27 @@
 <!ENTITY long-build-time
   "<note><para>Dette kan ta litt tid å bygge. Gjør gjerne noe annet 
   mens dette bygges.</para></note>">
+<!-- Put &install-stdin; in <note> tags. This is done for revision-specific
+     commands. Trying to put &install-stdin; in <phrase> outside a <para> leads
+     to a validation error. -->
+<!ENTITY install-stdin
+  "<para>Ovennevnte <command>install</command> command(er) trenger litt 
+  forklaring. Vanligvis i bøkene når konfigurasjonsfiler opprettes,
+  <command>cat</command> brukes. Den bruker en Bash funksjon som heter
+  <quote>heredoc</quote> som tar valgfritt flere linjer med inndata inntil et 
+  gitt begrep, og videresender det til noe. I
+  <command>cat</command> kommandoen, heredoc brukes til å mate inn
+  <filename>/dev/stdin</filename>, og <command>cat</command> skriver fra
+  <filename>/dev/stdin</filename> til den angitte filen.</para>
+  <para>Når det gjelder <command>install</command>, bruken er mer dyptgående og 
+  har mye mer på gang. I utgangspunktet gjør den det samme som
+  <command>cat</command> commands. Det heredocs til
+  <filename>/dev/stdin</filename> og videresendes til en fil;
+  <command>install</command> gjør skrivingen. På en enklere måte, kopierer den 
+  <filename>/dev/stdin</filename> til den angitte filen, som var fylt ut av 
+  heredoc. Den har blitt brukt over <command>cat</command> slik at 
+  tillatelsene kan angis og mappen filen må være i vil bli opprettet i 
+  prosessen.</para>">
 <!ENTITY meson-buildtype-release
   "<para><parameter>--buildtype=release</parameter>: Spesifiser en byggetype 
   som er egnet for stabile utgivelser av pakken, da standardtypen kan 
