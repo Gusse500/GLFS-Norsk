@@ -5,11 +5,18 @@
   %general-entities;
 ]>
 
-<sect1 id="netconnect" xreflabel="Koble til internett">
-  <?dbhtml filename="netconnect.html"?>
-
+<sect1 id="connect" xreflabel="Koble til internett">
+  <?dbhtml filename="connect.html"?>
 
   <title>Koble til internett</title>
+
+  <para>
+    Noen av instruksjonene i GLFS krever internettforbindelse, nærmere bestemt i
+    <xref linkend="rustc"/> og når du laster ned alle filene for en pakkebunt 
+    som <xref linkend="llvm"/> og <xref linkend="vulkan-sdk"/>. Dermed trenger 
+    du en internettforbindelse på LFS målet, enten i en chroot, TTY eller et 
+    GUI. Verktøy for nedlasting av filer vil bli installert i GLFS.
+  </para>
 
   <para>
     LFS boken dekker oppsett av nettverk ved å koble til et LAN med en statisk 
