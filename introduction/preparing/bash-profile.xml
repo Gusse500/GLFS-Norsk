@@ -313,6 +313,61 @@ EOF</userinput></screen>
 
     </sect3>
 
+    <sect3 id="dircolors.sh">
+      <title>/etc/profile.d/dircolors.sh</title>
+
+      <indexterm zone="bash-profile dircolors.sh">
+        <primary sortas="e-etc-profile.d-dircolors.sh">/etc/profile.d/dircolors.sh</primary>
+      </indexterm>
+
+      <para>
+        Dette skriptet bruker <filename>~/.dircolors</filename> og
+        <filename>/etc/dircolors</filename> filer for å kontrollere fargene på 
+        filnavn i en mappeliste. De kontrollerer fargelagt utdata for ting 
+        som <command>ls --color</command>.
+      </para>
+
+<screen role="root"><userinput>cat &gt; /etc/profile.d/dircolors.sh &lt;&lt; "EOF"
+<literal># Setup for /bin/ls and /bin/grep to support color
+if [ -f "/etc/dircolors" ] ; then
+        eval $(dircolors -b /etc/dircolors)
+fi
+
+if [ -f "$HOME/.dircolors" ] ; then
+        eval $(dircolors -b $HOME/.dircolors)
+fi</literal>
+EOF</userinput></screen>
+
+      <para>
+        Opprett nå <literal>dircolors</literal> data:
+      </para>
+
+<screen role="root"><userinput>dircolors -p > /etc/dircolors</userinput></screen>
+
+    </sect3>
+
+    <sect3 id="aliases.sh">
+      <title>/etc/profile.d/aliases.sh</title>
+
+      <indexterm zone="bash-profile aliases.sh">
+        <primary sortas="e-etc-profile.d-aliases.sh">/etc/profile.d/aliases.sh</primary>
+      </indexterm>
+
+      <para>
+        Dette skriptet bruker alias til noen verktøy for å gjøre at
+        <parameter>--color=auto</parameter> bruker <literal>dircolors</literal>
+        funksjonalitet som avhenger av skriptet i den siste delen.
+      </para>
+
+<screen role="root"><userinput>cat &gt; /etc/profile.d/aliases.sh &lt;&lt; "EOF"
+<literal># Make ls, grep, and diff use --color=auto
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+alias diff='diff --color=auto'</literal>
+EOF</userinput></screen>
+
+    </sect3>
+
     <sect3>
       <title>Innhenting av alle profilskriptene</title>
 
