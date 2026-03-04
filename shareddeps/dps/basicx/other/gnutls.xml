@@ -71,19 +71,10 @@
     </para>
 
     <note><para>
- <!-- Note that if you do not install <xref linkend="libtasn1"/>, an older
-       3.8.0 includes minitasn1 4.19 which is current at the moment. ken -->
       Merk at hvis du ikke installerer <xref linkend="libtasn1"/>, en 
       versjon sendt i GnuTLS tarballen vil bli
       brukt i stedet.
     </para></note>
-
-    <para role="optional">
-      <ulink url="https://github.com/smuellerDD/leancrypto">leancrypto</ulink>
-      og <ulink
-      url="&sourceforge-dl;/trousers/">Trousers</ulink> (Pålitelig plattform 
-      modulstøtte)
-    </para>
 
   </sect2>
 
