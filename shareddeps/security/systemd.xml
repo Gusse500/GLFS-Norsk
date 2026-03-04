@@ -317,14 +317,18 @@ EOF</userinput></screen>
     <para>
       Les <ulink role='man'
       url='&man;systemd.environment-generator.7'>systemd.environment-generator(7)</ulink>
-      for detaljer om miljøgeneratorene. Merk at hvis du har redigert 
-      innholdet i
-      <filename class='directory'>/etc/profile.d</filename> når et 
-      skrivebordsmiljø kjører, må du kjøre <command>systemctl
-      --user daemon-reload</command> kommandoen for å synkronisere endringen 
-      inn i systemd per-bruker instansen, og logg deretter ut og inn igjen for 
-      å synkronisere endringen inn i skrivebordsmiljøet.
+      for detaljer om miljøgeneratorene. 
     </para>
+
+    <note><para>
+      Hvis du har redigert innholdet i <filename
+      class='directory'>/etc/profile.d</filename> når et skrivebordsmiljø 
+	  kjører, må du synkronisere endringene som vanlig bruker (kommandoene 
+	  nedenfor må kjøres én gang for hver bruker unntatt &root; og må kjøres 
+	  som den brukeren):</para>
+<screen role='nodump'><userinput>systemctl --user unset-environment \
+  $(/etc/systemd/user-environment-generators/50-profile.sh | sed 's/=.*//')
+systemctl --user daemon-reload</userinput></screen></note>
 
     <important>
       <para>
