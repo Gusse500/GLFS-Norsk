@@ -73,6 +73,17 @@
     </listitem>
 
     <listitem>
+      <para>28. februar 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Vulkan-SDK: Lagt til Vulkan-Utility-Libraries og 
+          Vulkan-Tools. Fikser
+          <ulink url="&glfs-issues;/377">#377</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>24. februar 2026</para>
       <itemizedlist>
         <listitem>

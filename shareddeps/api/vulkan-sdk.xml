@@ -61,7 +61,7 @@
     </para>
 
     <para role="recommended">
-      <xref linkend="wayland"/>
+      <xref linkend="wayland"/> og <xref linkend="wayland-protocols"/>
     </para>
 
     <bridgehead renderas="sect3">BLFS ekvivalente pakker</bridgehead>
@@ -84,25 +84,11 @@
       </para></listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">BLFS ekvivalente pakker</bridgehead>
-    <para>Denne kombinerte siden installerer det som i BLFS ville vært:</para>
-    <itemizedlist>
-      <listitem><para>
-        <ulink url="&blfs-svn;/x/vulkan-headers.html">Vulkan-Headers</ulink>
-      </para></listitem>
-      <listitem><para>
-        <ulink url="&blfs-svn;/x/vulkan-loader.html">Vulkan-Loader</ulink>
-      </para></listitem>
-      <listitem><para>
-        <ulink url="&blfs-svn;/general/spirv-headers.html">SPIRV-Headers</ulink>
-      </para></listitem>
-      <listitem><para>
-        <ulink url="&blfs-svn;/general/spirv-tools.html">SPIRV-Tools</ulink>
-      </para></listitem>
-      <listitem><para>
-        <ulink url="&blfs-svn;/x/glslang.html">Glslang</ulink>
-      </para></listitem>
-    </itemizedlist>
+    <para>
+      I tillegg installeres Vulkan-Utility-Libraries og Vulkan-Tools for å gi 
+      mer støtte for flere pakker og flere måter å se om installasjonen er 
+      korrekt.
+    </para>
 
   </sect2>
 
@@ -116,6 +102,8 @@
 <screen><userinput>cat &gt; &vk-common;-list &lt;&lt; "EOF"
 <literal>Vulkan-Headers/archive/&vk-common;/Vulkan-Headers-&vk-common;.tar.gz
 Vulkan-Loader/archive/&vk-common;/Vulkan-Loader-&vk-common;.tar.gz
+Vulkan-Utility-Libraries/archive/&vk-common;/Vulkan-Utility-Libraries-&vk-common;.tar.gz
+Vulkan-Tools/archive/&vk-common;/Vulkan-Tools-&vk-common;.tar.gz
 SPIRV-Headers/archive/&vk-common;/SPIRV-Headers-&vk-common;.tar.gz
 SPIRV-Tools/archive/&vk-common;/SPIRV-Tools-&vk-common;.tar.gz
 glslang/archive/&vk-common;/glslang-&vk-common;.tar.gz</literal>
@@ -148,7 +136,7 @@ grep -v '^#' ../&vk-common;-list | wget -i- -c \
       Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in {Vulkan-{Headers,Loader},SPIRV-{Headers,Tools},glslang}
+<screen><userinput>for package in {Vulkan-{Headers,Loader,Utility-Libraries,Tools},SPIRV-{Headers,Tools},glslang}
 do
   longpackage=$package-&vk-common;.tar.?z*
   packagedir=${longpackage%.tar.?z*}
@@ -189,7 +177,7 @@ done</userinput></screen>
 
     <para>For multilib:</para>
 
-<screen><userinput>for package in {Vulkan-Loader,SPIRV-Tools,glslang}
+<screen><userinput>for package in {Vulkan-{Loader,Utility-Libraries,Tools},SPIRV-Tools,glslang}
 do
   longpackage=$package-&vk-common;.tar.?z*
   packagedir=${longpackage%.tar.?z*}
@@ -234,7 +222,13 @@ do
     esac
     ninja
     DESTDIR=$PWD/DESTDIR ninja install
-    as_root cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+    if [ $package != "Vulkan-Tools" ]; then
+      as_root cp -Rv DESTDIR/usr/lib32/* /usr/lib32
+    else
+      for bin in DESTDIR/usr/bin/*; do
+        as_root &install-exec; $bin /usr/bin/$(basename $bin)-m32
+      done
+    fi
     rm -rf DESTDIR
     as_root /sbin/ldconfig
   popd
@@ -270,8 +264,11 @@ done</userinput></screen>
           spirv-objdump,
           spirv-opt,
           spirv-reduce,
-          spirv-remap, og
-          spirv-val
+          spirv-remap,
+          spirv-val,
+          vkcube{,-m32},
+          vkcubepp{,-m32}, og
+          vulkaninfo{,-m32}
         </seg>
         <seg>
           libglslang,
@@ -284,8 +281,10 @@ done</userinput></screen>
           libSPIRV-Tools-reduce,
           libSPIRV-Tools-shared,
           libSPIRV-Tools,
-          libSPVRemapper, og
-          libvulkan
+          libSPVRemapper,
+          libvulkan,
+          libVulkanLayerSettings (static), og
+          libVulkanSafeStruct (static)
         </seg>
         <seg>
           /usr/include/glslang,
@@ -294,10 +293,11 @@ done</userinput></screen>
           /usr/include/vk_video,
           /usr/include/vulkan,
           /usr/lib/cmake/glslang,
-          /usr/lib/cmake/SPIRV-Tools,
+          /usr/lib/cmake/SPIRV-Tools*,
           /usr/lib/cmake/VulkanLoader,
-          /usr/share/cmake/VulkanHeaders,
-          /usr/share/cmake/SPIRV-Headers, og
+          /usr/lib/cmake/VulkanUtilityLibraries,
+          /usr/share/cmake/SPIRV-Headers,
+          /usr/share/cmake/VulkanHeaders, og
           /usr/share/vulkan
         </seg>
       </seglistitem>
@@ -316,6 +316,43 @@ done</userinput></screen>
           </para>
           <indexterm zone="vulkan-sdk glslang">
             <primary sortas="b-glslang">glslang</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="vkcube">
+        <term><command>vkcube</command></term>
+        <listitem>
+          <para>
+            er en grafisk Vulkan demo av en spinnende kube i C
+          </para>
+          <indexterm zone="vulkan-sdk vkcube">
+            <primary sortas="b-vkcube">vkcube</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="vkcubepp">
+        <term><command>vkcubepp</command></term>
+        <listitem>
+          <para>
+            er en grafisk Vulkan demo av en spinnende kube i C++
+          </para>
+          <indexterm zone="vulkan-sdk vkcubepp">
+            <primary sortas="b-vkcubepp">vkcubepp</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="vulkaninfo">
+        <term><command>vulkaninfo</command></term>
+        <listitem>
+          <para>
+            gir informasjon om GPU-en, driveren, lagene og alle utvidelsene 
+            deres
+          </para>
+          <indexterm zone="vulkan-sdk vulkaninfo">
+            <primary sortas="b-vulkaninfo">vulkaninfo</primary>
           </indexterm>
         </listitem>
       </varlistentry>
