@@ -194,7 +194,7 @@
 <!ENTITY nv-r580-manifest-version  "1">
 <!ENTITY nv-r580-sysv-bs           "1">
 <!ENTITY cuda-r580-version         "13.0.2">
-<!ENTITY cuda-r580-nvidia-version  "580.95.05">
+<!ENTITY cuda-r580-nvidia-version  "580.126.18">
 <!-- X11 -->
 <!ENTITY xbitmaps-version             "1.1.3">
 <!-- BEGIN X7APP -->
@@ -302,7 +302,7 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.2">
+<!ENTITY wine-version                 "&wine-major-version;.3">
 
 <!ENTITY dxvk-version                 "2.7.1">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
