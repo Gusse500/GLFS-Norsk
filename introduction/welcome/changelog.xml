@@ -44,6 +44,10 @@
       <para>6. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - FreeType: 2.14.1 -&gt; 2.14.2 (Sikkerhetsoppdatering).
+          Fikser <ulink url="&glfs-issues;/385">#385</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - xkeyboard-config: 2.46 -&gt; 2.47. Fikser
           <ulink url="&glfs-issues;/384">#384</ulink>.</para>
         </listitem>
