@@ -44,6 +44,10 @@
       <para>6. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - libunistring: 1.4.1 -&gt; 1.4.2. Fikser
+          <ulink url="&glfs-issues;/388">#388</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - Harfbuzz: 12.3.2 -&gt; 13.0.0. Fikser
           <ulink url="&glfs-issues;/387">#387</ulink>.</para>
         </listitem>

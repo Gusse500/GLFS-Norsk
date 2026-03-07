@@ -18,7 +18,7 @@
 <!ENTITY nss-version                  "&nss-major;.&nss-minor;.1">
 <!ENTITY p11-kit-version              "0.26.2">
 <!ENTITY make-ca-version              "1.16.1">
-<!ENTITY libunistring-version         "1.4.1">
+<!ENTITY libunistring-version         "1.4.2">
 <!ENTITY libidn2-version              "2.3.8">
 <!ENTITY libpsl-version               "0.21.5">
 <!ENTITY curl-version                 "8.18.0">
