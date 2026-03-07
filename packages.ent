@@ -18,7 +18,7 @@
 <!ENTITY nss-version                  "&nss-major;.&nss-minor;.1">
 <!ENTITY p11-kit-version              "0.26.2">
 <!ENTITY make-ca-version              "1.16.1">
-<!ENTITY libunistring-version         "1.4.1">
+<!ENTITY libunistring-version         "1.4.2">
 <!ENTITY libidn2-version              "2.3.8">
 <!ENTITY libpsl-version               "0.21.5">
 <!ENTITY curl-version                 "8.18.0">
@@ -42,7 +42,7 @@
 <!ENTITY icu-patch                    "0">
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.15">
-<!ENTITY libxml2-version              "&libxml2-minor;.1">
+<!ENTITY libxml2-version              "&libxml2-minor;.2">
 <!ENTITY shared-mime-info-version     "2.4">
 <!ENTITY desktop-file-utils-version   "0.28">
 <!ENTITY polkit-version               "127">
@@ -98,8 +98,8 @@
 <!ENTITY which-version                "2.23">
 <!ENTITY libpng-version               "1.6.55">
 <!ENTITY apng-version                 "1.6.54">
-<!ENTITY freetype2-version            "2.14.1">
-<!ENTITY harfbuzz-version             "12.3.2">
+<!ENTITY freetype2-version            "2.14.2">
+<!ENTITY harfbuzz-version             "13.0.0">
 <!ENTITY fontconfig-version           "2.17.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -167,7 +167,7 @@
 <!ENTITY libclc-version               "&llvm-version;">
 <!-- Graphics Drivers - Preliminaries -->
 <!ENTITY pciutils-version             "3.14.0">
-<!ENTITY hwdata-version               "0.404">
+<!ENTITY hwdata-version               "0.405">
 <!-- Graphics Drivers - NVIDIA -->
 <!ENTITY mesa-major-minor             "25.3">
 <!ENTITY mesa-version                 "&mesa-major-minor;.5">
@@ -244,7 +244,7 @@
 <!ENTITY font-util-version            "1.4.1">
 <!ENTITY font-xfree86-type1-version   "1.0.5">
 <!-- END X7FONTS -->
-<!ENTITY xkeyboard-config-version     "2.46">
+<!ENTITY xkeyboard-config-version     "2.47">
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
 <!ENTITY xorg-server-version          "21.1.21">
@@ -281,7 +281,7 @@
 <!ENTITY libxkbcommon-minor           "6f76d1">
 <!ENTITY libxkbcommon-version         "6f76d19db72b5d450e927b41e1e96cbe3252aba8">
 <!ENTITY libxkbcommon-real            "1.13.1">
-<!ENTITY sdl3-version                 "3.4.0">
+<!ENTITY sdl3-version                 "3.4.2">
 <!ENTITY sdl2-version                 "2.32.64">
 
 <!ENTITY nasm-version                 "3.01">
