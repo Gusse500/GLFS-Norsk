@@ -44,6 +44,10 @@
       <para>6. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - hwdata: 0.404 -&gt; 0.405. Fikser
+          <ulink url="&glfs-issues;/389">#389</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - libunistring: 1.4.1 -&gt; 1.4.2. Fikser
           <ulink url="&glfs-issues;/388">#388</ulink>.</para>
         </listitem>
