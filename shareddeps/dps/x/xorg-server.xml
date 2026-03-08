@@ -160,6 +160,8 @@
 
 <screen><userinput remap="pre">patch -Np1 -i ../xorg-server-tearfree_backport-3.patch</userinput></screen>
 
+    &x-nettle;
+
     <para>
       Installer serveren ved å kjøre følgende kommandoer:
     </para>
