@@ -53,6 +53,10 @@
       &opengl;
     </para>
 
+    <para role="optional">
+      <xref linkend="nettle"/>
+    </para>
+
   </sect2>
 
   <sect2 role="installation">
