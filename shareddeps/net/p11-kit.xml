@@ -71,6 +71,7 @@ cd    p11-build &amp;&amp;
 
 meson setup --prefix=/usr                   \
             --buildtype=release             \
+            -D test=false                   \
             -D trust_paths=/etc/pki/anchors \
             .. &amp;&amp;
 ninja</userinput></screen>
@@ -82,6 +83,33 @@ ninja</userinput></screen>
 <screen role="root"><userinput>ninja install &amp;&amp;
 ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
         /usr/bin/update-ca-certificates</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installasjon av p11-kit</title>
+
+    <para>
+      Installer lib32-p11-kit ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>rm -rf * &amp;&amp;
+meson setup --prefix=/usr                   \
+            --buildtype=release             \
+            --cross-file=lib32              \
+            -D test=false                   \
+            -D trust_paths=/etc/pki/anchors \
+            .. &amp;&amp;
+ninja</userinput></screen>
+
+    <para>
+      Nå som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
 
   </sect2>
 
@@ -114,7 +142,10 @@ ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
       <systemitem class="username">root</systemitem> bruker:
     </para>
 
-<screen role="root"><userinput>ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so</userinput></screen>
+<screen role="root"><userinput>for i in {,32}; do
+  ln -sfv ./pkcs11/p11-kit-trust.so \
+          /usr/lib"$i"/libnssckbi.so
+done</userinput></screen>
 
   </sect2>
 

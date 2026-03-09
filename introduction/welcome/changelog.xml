@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>8. mars 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - La til lib32 installasjonsinstruksjoner for gnutls,
+          Nettle, og p11-kit.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>7. mars 2026</para>
       <itemizedlist>
         <listitem>
