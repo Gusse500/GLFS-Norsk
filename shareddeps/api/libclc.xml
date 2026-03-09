@@ -4,9 +4,9 @@
   <!ENTITY % general-entities SYSTEM "../../general.ent">
   %general-entities;
 
-  <!ENTITY libclc-root "https://github.com/llvm/llvm-project/releases/download">
-  <!ENTITY libclc-download
-    "&libclc-root;/llvmorg-&libclc-version;/libclc-&libclc-version;.src.tar.xz">
+  <!ENTITY llvm-root       "https://github.com/llvm/llvm-project/releases/download">
+  <!ENTITY llvm-org        "&llvm-root;/llvmorg-&llvm-version;">
+  <!ENTITY libclc-download "&llvm-org;/llvm-project-&llvm-version;.src.tar.xz">
 ]>
 
   <sect1 id="libclc" xreflabel="libclc-&libclc-version;">
@@ -22,10 +22,15 @@
       <title>Introduksjon til libclc</title>
 
       <para>
-        libclc pakken inneholder bibliotekkravene 
-        for programmeringsspråket OpenCL C (inneholder deklarasjonsfiler, 
-        men ingen biblioteker i seg selv).
+        libclc pakken inneholder bibliotekkravene for programmeringsspråket 
+        OpenCL C (inneholder deklarasjonsfiler, men ingen biblioteker i seg selv).
       </para>
+
+      <note><para>
+        libclc pakken er en del av hoved LLVM tarballen. Du kan enten bruke den 
+        utpakkede mappen på nytt, eller fjerne den og deretter pakke ut 
+        tarballen på nytt.
+      </para></note>
 
       <itemizedlist spacing="compact">
         <listitem>
@@ -48,8 +53,14 @@
       <title>Installasjon av libclc</title>
 
       <para>
-        Installer libclc ved å kjøre følgende 
-        kommandoer:
+        Hvis du bruker den tidligere utpakkede LLVM mappen fra LLVM bygget på 
+        nytt, må du først fjerne byggemappen før du fortsetter.:
+      </para>
+
+      <screen remap="pre"><userinput>rm -rf build</userinput></screen>
+
+      <para>
+        Installer libclc ved å kjøre følgende kommandoer:
       </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -57,12 +68,12 @@ cd    build &amp;&amp;
 
 cmake -D CMAKE_INSTALL_PREFIX=/usr \
       -D CMAKE_BUILD_TYPE=Release  \
-      -G Ninja .. &amp;&amp;
+      -G Ninja ../libclc &amp;&amp;
 
 ninja</userinput></screen>
 
       <para>
-        Nå, som <systemitem class="username">root</systemitem> bruker:
+        Nå, som &root; bruker:
       </para>
 
 <screen role="root"><userinput>ninja install</userinput></screen>

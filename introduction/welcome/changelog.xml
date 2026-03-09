@@ -44,6 +44,18 @@
       <para>8. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - HarfBuzz: 13.0.0 -&gt; 13.0.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.93.1 -&gt; 1.94.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 21.1.3 -&gt; 22.1.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM; libclc: 21.1.8 -&gt; 22.1.0.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - La til lib32 installasjonsinstruksjoner for gnutls,
           Nettle, og p11-kit.</para>
         </listitem>
