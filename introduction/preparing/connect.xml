@@ -13,9 +13,9 @@
   <para>
     Noen av instruksjonene i GLFS krever internettforbindelse, nærmere bestemt i
     <xref linkend="rustc"/> og når du laster ned alle filene for en pakkebunt 
-    som <xref linkend="llvm"/> og <xref linkend="vulkan-sdk"/>. Dermed trenger 
-    du en internettforbindelse på LFS målet, enten i en chroot, TTY eller et 
-    GUI. Verktøy for nedlasting av filer vil bli installert i GLFS.
+    som <xref linkend="vulkan-sdk"/>. Dermed trenger du en internettforbindelse 
+    på LFS målet, enten i en chroot, TTY eller GUI. Verktøy for nedlasting av 
+    filer vil bli installert i GLFS.
   </para>
 
   <para>
