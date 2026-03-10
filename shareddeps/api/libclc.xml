@@ -23,7 +23,7 @@
 
       <para>
         libclc pakken inneholder bibliotekkravene for programmeringsspråket 
-        OpenCL C (inneholder deklarasjonsfiler, men ingen biblioteker i seg selv).
+        OpenCL C (tilbyr deklarasjonsfiler, men ingen biblioteker).
       </para>
 
       <note><para>
