@@ -85,7 +85,8 @@
     </para>
 
 <screen role="root"><userinput>mkdir -pv /opt/cuda-&cuda-version; &amp;&amp;
-ln -sfv cuda-&cuda-version; /opt/cuda</userinput></screen>
+ln -sfvn cuda-&cuda-version; /opt/cuda</userinput></screen>
+
 
     &as_root;
 

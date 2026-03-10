@@ -185,8 +185,8 @@
 <!ENTITY nvidia-full-name     "&nvidia-version; &nvidia-beta;">
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
-<!ENTITY cuda-version         "13.1.1">
-<!ENTITY cuda-nvidia-version  "590.48.01">
+<!ENTITY cuda-version         "13.2.0">
+<!ENTITY cuda-nvidia-version  "595.45.04">
 <!-- NVIDIA r580 -->
 <!ENTITY nvidia-r580-linux-version "6.15.x - 6.19.x">
 <!ENTITY nvidia-r580-version       "580.126.09">

@@ -44,6 +44,10 @@
       <para>9. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - CUDA: 13.1.1 -&gt; 13.2.0. Fikser
+          <ulink url="&glfs-issues;/391">#391</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA: 590.48.01 -&gt; 595.45.04 &nvidia-beta;.
           Fikser <ulink url="&glfs-issues;/381">#381</ulink>.</para>
         </listitem>
