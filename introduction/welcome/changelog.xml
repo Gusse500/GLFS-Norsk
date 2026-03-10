@@ -44,6 +44,10 @@
       <para>9. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA: 590.48.01 -&gt; 595.45.04 &nvidia-beta;.
+          Fikser <ulink url="&glfs-issues;/381">#381</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - egl-wayland2: Lagt til.</para>
         </listitem>
         <listitem>
@@ -54,6 +58,7 @@
           <ulink url="&glfs-issues;/390">#390</ulink>.</para>
         </listitem>
       </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>8. mars 2026</para>
