@@ -171,23 +171,24 @@
 <!ENTITY mesa-major-minor             "25.3">
 <!ENTITY mesa-version                 "&mesa-major-minor;.5">
 <!ENTITY eglexternalplatform-version  "1.2.1">
-<!ENTITY egl-gbm-version              "1.1.2.1">
+<!ENTITY egl-gbm-version              "1.1.3">
 <!ENTITY egl-wayland-version          "1.1.20">
-<!ENTITY egl-x11-version              "1.0.4">
+<!ENTITY egl-wayland2-version         "1.0.1">
+<!ENTITY egl-x11-version              "1.0.5">
 <!ENTITY nv-codec-headers-version     "13.0.19.0">
 <!ENTITY nvidia-vaapi-driver-version  "0.0.14">
 <!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
 <!-- NVIDIA -->
-<!ENTITY nvidia-rev           "590">
-<!ENTITY nvidia-linux-version "6.17.x - 6.18.x">
-<!ENTITY nvidia-version       "&nvidia-rev;.48.01">
-<!ENTITY nvidia-full-name     "&nvidia-version;">
+<!ENTITY nvidia-rev           "595">
+<!ENTITY nvidia-linux-version "6.17.x - 6.19.x">
+<!ENTITY nvidia-version       "&nvidia-rev;.45.04">
+<!ENTITY nvidia-full-name     "&nvidia-version; &nvidia-beta;">
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
-<!ENTITY cuda-version         "13.1.1">
-<!ENTITY cuda-nvidia-version  "590.48.01">
+<!ENTITY cuda-version         "13.2.0">
+<!ENTITY cuda-nvidia-version  "595.45.04">
 <!-- NVIDIA r580 -->
-<!ENTITY nvidia-r580-linux-version "6.15.x - 6.18.x">
+<!ENTITY nvidia-r580-linux-version "6.15.x - 6.19.x">
 <!ENTITY nvidia-r580-version       "580.126.09">
 <!ENTITY nvidia-r580-full-name     "&nvidia-r580-version;">
 <!ENTITY nv-r580-manifest-version  "1">
