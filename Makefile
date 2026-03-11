@@ -160,7 +160,7 @@ $(RENDERTMP)/$(GLFSHTML): $(RENDERTMP)/$(GLFSFULL) version
 
 downloads: $(BASEDIR)/download
 $(BASEDIR)/download: html
-	@echo "Copying downloadable content at $(BASEDIR)/download ..."
+	@echo "Kopiering av nedlastbart innhold på $(BASEDIR)/download ..."
 	$(Q)mkdir -p $(BASEDIR)/download
 	$(Q)rm -rf $(BASEDIR)/download/*
 	$(Q)cp -R download/* $(BASEDIR)/download
@@ -169,7 +169,7 @@ $(BASEDIR)/download: html
 
 wget-list: $(BASEDIR)/download/wget-list
 $(BASEDIR)/download/wget-list: $(RENDERTMP)/$(GLFSFULL) version html downloads
-	@echo "Generating wget list for $(REV) at $(BASEDIR)/download/wget-list ..."
+	@echo "Genererer wget list for $(REV) på $(BASEDIR)/download/wget-list ..."
 	$(Q)xsltproc --nonet                                \
                 --output $(BASEDIR)/download/wget-list \
                 stylesheets/wget-list.xsl              \
@@ -177,19 +177,19 @@ $(BASEDIR)/download/wget-list: $(RENDERTMP)/$(GLFSFULL) version html downloads
 
 legacy-html: $(BASEDIR)/archive
 $(BASEDIR)/archive: html
-	@echo "Copying legacy HTML..."
+	@echo "Kopiering av eldre HTML..."
 	$(Q)mkdir -p $(BASEDIR)/archive
 	$(Q)cp -R archive/*.html $(BASEDIR)/archive
 
 assets: $(BASEDIR)/stylesheets $(BASEDIR)/images
 $(BASEDIR)/stylesheets: html
-	@echo "Copying CSS ..."
+	@echo "Kopierer CSS ..."
 	$(Q)mkdir -p $(BASEDIR)/stylesheets
 	$(Q)cp $(THEME_PATH)/$(THEME).lfs.css $(BASEDIR)/stylesheets/lfs.css
 	$(Q)cp stylesheets/lfs-xsl/lfs-print.css $(BASEDIR)/stylesheets
 	$(Q)sed -i 's|../stylesheet|stylesheet|' $(BASEDIR)/index.html
 $(BASEDIR)/images: html
-	@echo "Copying images ..."
+	@echo "Kopierer bilder ..."
 	$(Q)mkdir -p $(BASEDIR)/images
 	$(Q)cp -R images/* $(BASEDIR)/images
 	$(Q)cd $(BASEDIR)/; sed -e "s@../images@images@g" -i *.html
