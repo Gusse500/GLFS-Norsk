@@ -44,6 +44,10 @@
       <para>14. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - NVIDIA-r580: 580.126.09 -&gt; 580.142 (sikkerhet).
+          Fikser <ulink url="&glfs-issues;/393">#393</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - cURL: 8.18.0 -&gt; 8.19.0 (sikkerher). Se
           BLFS billett <ulink
           url="&blfs-ticket-root;22938">#22938</ulink>.</para>
