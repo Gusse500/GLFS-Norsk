@@ -44,6 +44,10 @@
       <para>14. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Wine: 11.3 -&gt; 11.4.
+          Fikser <ulink url="&glfs-issues;/382">#382</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NVIDIA-r580: 580.126.09 -&gt; 580.142 (sikkerhet).
           Fikser <ulink url="&glfs-issues;/393">#393</ulink>.</para>
         </listitem>
