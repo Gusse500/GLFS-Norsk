@@ -41,6 +41,23 @@
     -->
 
     <listitem>
+      <para>14. mars 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - cURL: 8.18.0 -&gt; 8.19.0 (sikkerher). Se
+          BLFS billett <ulink
+          url="&blfs-ticket-root;22938">#22938</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 13.0.1 -&gt; 13.1.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 25.3.5 -&gt; 26.0.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>9. mars 2026</para>
       <itemizedlist>
         <listitem>
