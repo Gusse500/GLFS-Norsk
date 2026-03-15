@@ -361,20 +361,6 @@ blacklist nova_drm
 # End /usr/lib/modprobe.d/nouveau.conf</literal>
 EOF</userinput></screen>
 
-      <para>
-        DRM kjernemodulen bruker ikke modusinnstilling som standard, noe som er
-        nødvendig for Wayland kompositorer. Gjør at den bruker modusinnstilling 
-        som &root; bruker:
-      </para>
-
-<screen role="root"><userinput>cat &gt; /usr/lib/modprobe.d/nvidia_drm.conf &lt;&lt; "EOF"
-<literal># Begin /usr/lib/modprobe.d/nvidia_drm.conf
-
-options nvidia_drm modeset=1
-
-# End /usr/lib/modprobe.d/nvidia_drm.conf</literal>
-EOF</userinput></screen>
-
       <!-- Cannot be used on SysVinit and the kernel module will complain
            as the ability to make use of sleep/hibernate is not yet
            implemented. We must provide the files, but they do not work.
