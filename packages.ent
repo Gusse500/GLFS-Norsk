@@ -47,8 +47,8 @@
 <!ENTITY desktop-file-utils-version   "0.28">
 <!ENTITY polkit-version               "127">
 <!-- Tooling -->
-<!ENTITY cmake-major-version          "4.2">
-<!ENTITY cmake-minor-version          "3">
+<!ENTITY cmake-major-version          "4.3">
+<!ENTITY cmake-minor-version          "0">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY llvm-maj-version             "22">
 <!ENTITY llvm-min-version             "1">

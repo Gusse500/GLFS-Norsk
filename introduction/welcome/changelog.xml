@@ -38,7 +38,16 @@
         </listitem>
       </itemizedlist>
     </listitem>
-    -->
+-->
+
+    <listitem>
+      <para>18. mars 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - CMake: 4.2.3 -&gt; 4.3.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>14. mars 2026</para>
