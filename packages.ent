@@ -38,7 +38,7 @@
 <!ENTITY gi-minor                      "&gi-major;.&glib2-minor;">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "78">
-<!ENTITY icu-minor                    "2">
+<!ENTITY icu-minor                    "3">
 <!ENTITY icu-patch                    "0">
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.15">
@@ -98,7 +98,7 @@
 <!ENTITY libpng-version               "1.6.55">
 <!ENTITY apng-version                 "1.6.54">
 <!ENTITY freetype2-version            "2.14.2">
-<!ENTITY harfbuzz-version             "13.2.0">
+<!ENTITY harfbuzz-version             "13.2.1">
 <!ENTITY fontconfig-version           "2.17.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -287,13 +287,13 @@
 <!ENTITY nasm-version                 "3.01">
 <!ENTITY svt-av1-version              "4.0.1">
 <!ENTITY dav1d-version                "1.5.3">
-<!ENTITY libaom-version               "3.13.1">
+<!ENTITY libaom-version               "3.13.2">
 <!ENTITY fdk-aac-version              "2.0.3">
 <!ENTITY lame-version                 "3.100">
 <!ENTITY libvpx-version               "1.16.0">
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.1">
-<!ENTITY ffmpeg-version               "8.0.1">
+<!ENTITY ffmpeg-version               "8.1">
 <!ENTITY gstreamer10-version          "1.28.1">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
