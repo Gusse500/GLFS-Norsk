@@ -29,7 +29,7 @@
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY shadow-version               "4.19.3">
 <!ENTITY elogind-version              "255.22">
-<!ENTITY systemd-version              "259.1">
+<!ENTITY systemd-version              "259.5">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "86">
