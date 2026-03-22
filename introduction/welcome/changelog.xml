@@ -41,6 +41,26 @@
 -->
 
     <listitem>
+      <para>21. mars 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Systemd: 259.1 -&gt; 259.5 (sikkerhet). Se
+          BLFS billett <ulink
+          url="&blfs-ticket-root;22876">#22876</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 13.2.0 -&gt; 13.2.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libaom: 3.13.1 -&gt; 3.13.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - FFmpeg: 8.0.1 -&gt; 8.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>19. mars 2026</para>
       <itemizedlist>
         <listitem>
