@@ -74,7 +74,6 @@
 
 <!ENTITY mlfs-base            "&lfs-website;/mlfs/view">
 <!ENTITY mlfs-root            "&mlfs-base;/&mlfs-version;">
-<!ENTITY mlfs-m32-root        "&mlfs-root;">
 
 <!ENTITY lfs-dev              "&norsklfs-domainname;/lfs/view/development">
 <!ENTITY lfs-ticket-root      "https://wiki.linuxfromscratch.org/lfs/query/">

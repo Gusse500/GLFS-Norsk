@@ -16,7 +16,7 @@
 	finnes det en versjon som gir multilib støtte, fra normal binær utførelse 
 	til kompilering av 32-bit programvare fra den medfølgende verktøykjeden. 
 	Veiledningen kalles Multilib LFS, eller MLFS. Den kan leses <ulink 
-	url="&mlfs-m32-root;/">her</ulink>. Hvis du ikke allerede har bygget LFS med 
+	url="&mlfs-root;/">her</ulink>. Hvis du ikke allerede har bygget LFS med 
 	MLFS eller bygd inn multilib støtte, må du starte på nytt.
   </para>
 

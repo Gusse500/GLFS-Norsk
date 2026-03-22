@@ -141,7 +141,7 @@ rm -rf DESTDIR</userinput></screen>
       <command>rm -v DESTDIR/usr/lib/bfd-plugins/libdep.so</command>:
       Denne kommandoen fjerner et bibliotek som er i konflikt med det 
       opprinnelige biblioteket som ble levert av den opprinnelige kompileringen 
-      av <ulink url="&mlfs-m32-root;/chapter08/binutils.html">Binutils</ulink>.
+      av <ulink url="&mlfs-root;/chapter08/binutils.html">Binutils</ulink>.
     </para>
 
   </sect2>
@@ -187,7 +187,7 @@ rm -rf DESTDIR</userinput></screen>
     <para>
       Bare binutils spesifikke for MinGW-w64 
       vil bli forklart. For resten, se
-      <ulink url="&mlfs-m32-root;/chapter08/binutils.html">
+      <ulink url="&mlfs-root;/chapter08/binutils.html">
       Binutils</ulink>.
     </para>
 

@@ -273,9 +273,9 @@ EOF</userinput></screen>
       <para>
         Dette skriptet angir en miljøvariabel som er nødvendig for 
         støtte for morsmål. En fullstendig diskusjon om hvordan du 
-        bestemmer denne variabelen finner du på <ulink
-        url="&mlfs-m32-root;/chapter09/locale.html">
-        Configuring the System Locale</ulink> siden.
+        bestemmer denne variabelen finner du på siden <ulink
+        url="&mlfs-root;/chapter09/locale.html">
+        Konfigurere systemspråket</ulink>.
       </para>
 
 <screen role="root" revision="sysv"><userinput>cat &gt; /etc/profile.d/i18n.sh &lt;&lt; "EOF"

@@ -24,7 +24,7 @@
 <!ENTITY meson-cross
   "<important><para>Installasjonsinstruksjonene for lib32 krever de nye Meson 
   kryssfiler fra <ulink
-  url='&mlfs-m32-root;/chapter08/meson.html'>MLFS</ulink>, noen
+  url='&mlfs-root;/chapter08/meson.html'>MLFS</ulink>, noen
   <parameter>--libdir=/usr/lib32</parameter> har blitt flyttet til kryssfilene 
   og vises ikke lenger i instruksjonene. Installer de nye kryssfilene slik at 
   32-bits biblioteker ikke blir installert i <filename
