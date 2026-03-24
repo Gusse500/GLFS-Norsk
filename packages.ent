@@ -13,9 +13,9 @@
 <!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.38.2">
 <!ENTITY nss-major                    "3">
-<!ENTITY nss-minor                    "120">
-<!ENTITY nss-dir                      "&nss-major;_&nss-minor;_1">
-<!ENTITY nss-version                  "&nss-major;.&nss-minor;.1">
+<!ENTITY nss-minor                    "121">
+<!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
+<!ENTITY nss-version                  "&nss-major;.&nss-minor;">
 <!ENTITY p11-kit-version              "0.26.2">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.2">
@@ -159,7 +159,7 @@
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.0">
 <!ENTITY libatomic_ops-version        "7.10.0">
 <!ENTITY libdrm-version               "2.4.131">
-<!ENTITY libgbm-version               "1.0.4">
+<!ENTITY libgbm-version               "1.0.5">
 <!ENTITY libva-version                "2.23.0">
 <!ENTITY ocl-headers-version          "2025.07.22">
 <!ENTITY ocl-icd-version              "2.3.4">

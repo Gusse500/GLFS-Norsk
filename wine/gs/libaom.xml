@@ -38,6 +38,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -47,6 +48,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">libaom Avhengigheter</bridgehead>
 
@@ -59,6 +61,7 @@
   <sect2 role="installation">
     <title>Installasjon av libaom</title>
 
+<!--
     <para>
       Først må du sørge for at libaom får all nødvendig informasjon fra NASM 
       for å forhindre konfigurasjonsproblemer som følge av at NASM oppdaterer 
@@ -66,6 +69,7 @@
     </para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../libaom-&libaom-version;-nasm3-1.patch</userinput></screen>
+-->
 
     <para>
       Deretter, hindre libaom i å installere statiske biblioteker:
