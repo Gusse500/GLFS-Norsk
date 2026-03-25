@@ -48,11 +48,11 @@
 
     <para role="recommended">
       <xref linkend="alsa-lib"/>,
-      <phrase revision="sysv">
+      <phrase revision="openrc,sysv">
       <xref linkend="dbus-pass1"/> eller
       </phrase>
       <xref linkend="dbus"/>,
-      <phrase revision="sysv"><xref linkend="elogind"/>,</phrase>
+      <phrase revision="openrc,sysv"><xref linkend="elogind"/>,</phrase>
       <xref linkend="glib2"/>,
       <xref linkend="speex"/>,
       <phrase revision="systemd"><xref linkend="systemd"/>,</phrase> og
@@ -252,9 +252,9 @@ ldconfig</userinput></screen>
 
       <para>
         Videre, hvis denne pakken ikke ble bygget med
-        <phrase revision="sysv"><xref linkend="elogind"/> støtte,</phrase>
-        <phrase revision="systemd">
-        <xref linkend="systemd"/>,</phrase> legg til eventuelle ikke-root brukere i
+        <phrase revision="openrc,sysv"><xref linkend="elogind"/>
+        støtte,</phrase> <phrase revision="systemd"> <xref
+        linkend="systemd"/>,</phrase> legg til eventuelle ikke-root brukere i
         <systemitem class='groupname'>audio</systemitem> gruppen som
         <systemitem class="username">root</systemitem> bruker:
       </para>

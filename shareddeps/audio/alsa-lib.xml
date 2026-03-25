@@ -55,7 +55,7 @@
     <bridgehead renderas="sect3">ALSA biblioteks avhengigheter</bridgehead>
 
     <para role="recommended">
-      <phrase revision="sysv"><xref linkend="elogind"/></phrase>
+      <phrase revision="openrc,sysv"><xref linkend="elogind"/></phrase>
       <phrase revision="systemd"><xref linkend="systemd"/></phrase> (kjøretid)
     </para>
 
@@ -220,9 +220,9 @@ ldconfig</userinput></screen>
 
       <para>
         Videre, hvis denne pakken ikke ble bygget med
-        <phrase revision="sysv"><xref linkend="elogind"/> støtte,</phrase>
-        <phrase revision="systemd">
-        <xref linkend="systemd"/>,</phrase> legg til eventuelle ikke-root brukere i
+        <phrase revision="openrc,sysv"><xref linkend="elogind"/>
+        støtte,</phrase> <phrase revision="systemd"><xref
+        linkend="systemd"/>,</phrase> legg til eventuelle ikke-root brukere i
         <systemitem class='groupname'>audio</systemitem> gruppen som
         <systemitem class="username">root</systemitem> bruker:
       </para>

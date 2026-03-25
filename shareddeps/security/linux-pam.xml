@@ -57,7 +57,7 @@
       For PAM modulen <filename
       class='libraryfile'>pam_loginuid.so</filename> (referert av 
       PAM konfigurasjonsfilen <filename>system-session</filename> hvis
-      <phrase revision='sysv'><xref linkend='elogind'/> er
+     <phrase revision='openrc,sysv'><xref linkend='elogind'/> er
       bygget</phrase><phrase revision='systemd'><xref linkend='systemd'/> er
       gjenoppbygd med PAM støtte</phrase> senere) for å fungere, 
       må en kjernekonfigurasjonsparameter angis, 
@@ -117,11 +117,11 @@ ninja</userinput></screen>
 <screen role="root"><userinput>ninja install &amp;&amp;
 chmod -v 4755 /usr/sbin/unix_chkpwd</userinput></screen>
 
-    <para revision="sysv">
+    <para revision="openrc,sysv">
       Fjern nå en unødvendig mappe som &root; bruker:
     </para>
 
-<screen role="root" revision="sysv"><userinput>rm -rf /usr/lib/systemd</userinput></screen>
+<screen role="root" revision="openrc,sysv"><userinput>rm -rf /usr/lib/systemd</userinput></screen>
 
     <para>
       Hvis du lastet ned den valgfrie dokumentasjonen, kjør følgende kommando 
@@ -287,7 +287,7 @@ EOF</userinput></screen>
       <important>
         <para>
           Du bør nå installere på nytt <xref linkend="shadow"/>
-          <phrase revision="sysv">pakken.</phrase>
+          <phrase revision="openrc,sysv">pakken.</phrase>
           <phrase revision="systemd"> og <xref linkend="systemd"/>
           pakkene.</phrase>
         </para>

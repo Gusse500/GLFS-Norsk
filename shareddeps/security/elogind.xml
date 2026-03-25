@@ -8,7 +8,7 @@
   <!ENTITY elogind-download "&elogind-root;/V&elogind-version;/elogind-&elogind-version;.tar.gz">
 ]>
 
-<sect1 id="elogind" revision="sysv" xreflabel="elogind-&elogind-version;">
+<sect1 id="elogind" revision="openrc,sysv" xreflabel="elogind-&elogind-version;">
   <?dbhtml filename="elogind.html"?>
 
 
@@ -46,8 +46,9 @@
     <bridgehead renderas="sect3">elogind Avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref role="runtime" revision="sysv" linkend="dbus-pass1"/> (kjøretid),
-      <xref linkend="linux-pam"/><phrase revision="sysv">,</phrase> og
+      <xref role="runtime" revision="openrc,sysv" linkend="dbus-pass1"/>
+      (kjøretid),
+      <xref linkend="linux-pam"/><phrase revision="openrc,sysv">,</phrase> og
       <xref role="runtime" linkend="polkit"/> (kjøretid)
     </para>
 
@@ -263,7 +264,7 @@ EOF</userinput></screen>
     </sect3>
   </sect2>
 
-  <sect2 role="content" revision="sysv">
+  <sect2 role="content" revision="openrc,sysv">
     <title>Innhold</title>
 
     <segmentedlist>

@@ -153,7 +153,7 @@ cd     build &amp;&amp;
 
 meson setup --prefix=/usr          \
             --buildtype=release    \
-            --wrap-mode=nofallback \</userinput><userinput revision='sysv'>
+            --wrap-mode=nofallback \</userinput><userinput revision='openrc,sysv'>
             -D systemd=disabled    \</userinput><userinput>
             .. &amp;&amp;
 
@@ -189,7 +189,7 @@ chmod -v      4750       /usr/libexec/dbus-daemon-launch-helper</userinput></scr
       </para>
     </listitem>
 <!-- NOT READY
-    <listitem revision='sysv'>
+    <listitem revision='openrc,sysv'>
       <para>
         <xref linkend='dbus'/> og <xref linkend='elogind'/> (for
         NVIDIA-Powerd støtte)

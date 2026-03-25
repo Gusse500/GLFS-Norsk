@@ -101,7 +101,7 @@ sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' \
 
 <screen><userinput>./configure --sysconfdir=/etc   \
             --disable-static    \
-            --without-libbsd    \</userinput><userinput revision="sysv">
+            --without-libbsd    \</userinput><userinput revision="openrc,sysv">
             --disable-logind    \</userinput><userinput>
             --with-{b,yes}crypt &amp;&amp;
 make</userinput></screen>
@@ -164,7 +164,7 @@ make</userinput></screen>
       i stedet.
     </para>
 
-    <para revision="sysv">
+    <para revision="openrc,sysv">
       <parameter>--disable-logind</parameter>: Dette alternativet er påkrevd 
       for systemer uten <filename class="libraryfile">libsystemd</filename>.
       <xref linkend="elogind"/> tilbyr ikke det biblioteket.
