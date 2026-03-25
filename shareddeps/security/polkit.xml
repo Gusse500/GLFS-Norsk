@@ -57,23 +57,23 @@
 
     <para role="required">
       <xref linkend="duktape"/><phrase revision="systemd">,</phrase>
-      <phrase revision="sysv">og</phrase>
+      <phrase revision="openrc,sysv">og</phrase>
       <xref linkend="glib2"/><phrase revision="systemd">, og
       <xref role="runtime" linkend="systemd"/> (kjøretid)</phrase>
     </para>
 
     <para role="recommended">
-      <xref linkend="linux-pam"/><phrase revision="sysv"> og
+      <xref linkend="linux-pam"/><phrase revision="openrc,sysv"> og
       <xref linkend="elogind"/></phrase>
     </para>
 
     <note>
       <para>
-        Siden <phrase revision="sysv"><command>elogind</command></phrase>
+        Siden <phrase revision="openrc,sysv"><command>elogind</command></phrase>
         <phrase revision="systemd"><command>systemd-logind</command></phrase>
         bruker PAM til å registrere brukerøkter, er det lurt å bygge Polkit med 
         PAM støtte slik at
-        <phrase revision="sysv"><command>elogind</command></phrase>
+        <phrase revision="openrc,sysv"><command>elogind</command></phrase>
         <phrase revision="systemd"><command>systemd-logind</command></phrase>
         kan spore Polkit økter.
       </para>
@@ -111,24 +111,13 @@ useradd -c "PolicyKit Daemon Owner" -d /etc/polkit-1 -u 27 \
 <screen revision="systemd"><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=/usr              \
-            --buildtype=release        \
-            -D os_type=lfs             \
-            -D man=false               \
-            -D session_tracking=logind \
-            -D tests=false             \
-            .. &amp;&amp;
-ninja</userinput></screen>
-
-<screen revision="sysv"><userinput>mkdir build &amp;&amp;
-cd    build &amp;&amp;
-
 meson setup --prefix=/usr                \
             --buildtype=release          \
             -D os_type=lfs               \
-            -D man=false                 \
+            -D man=false                 \</userinput><userinput revision="openrc,sysv">
             -D session_tracking=elogind  \
-            -D systemdsystemunitdir=/tmp \
+            -D systemdsystemunitdir=/tmp \</userinput><userinput revision="systemd">
+            -D session_tracking=logind   \</userinput><userinput>
             -D tests=false               \
             .. &amp;&amp;
 ninja</userinput></screen>
@@ -139,11 +128,12 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
-    <para revision="sysv">
-      Fjern noen filer som ikke er nyttige på et SysV system som &root; bruker:
+    <para revision="openrc,sysv">
+      Fjern noen filer som ikke er nyttige på et ikke-Systemd system, som
+      &root; bruker:
     </para>
 
-<screen role="root" revision="sysv"><userinput>rm -v /tmp/*.service &amp;&amp;
+<screen role="root" revision="openrc,sysv"><userinput>rm -v /tmp/*.service &amp;&amp;
 rm -rf /usr/lib/{sysusers,tmpfiles}.d</userinput></screen>
 
   </sect2>

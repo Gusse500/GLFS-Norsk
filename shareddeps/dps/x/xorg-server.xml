@@ -66,7 +66,7 @@
 
     <para role="recommended">
       <xref linkend='dbus'/>,
-      <phrase revision="sysv">
+      <phrase revision="openrc,sysv">
       <xref role="runtime" linkend="elogind"/> (kjøretid;
       <systemitem class='library'>libelogind</systemitem> også referert til 
       under bygging, men det er ikke egentlig nyttig),</phrase>
@@ -223,8 +223,8 @@ fi</userinput></screen>
     <para>
       <option>-Dsystemd_logind=false</option>:
       Denne bryteren deaktiverer <phrase revision="systemd">systemd-logind</phrase>
-      <phrase revision="sysv">elogind</phrase> integrasjon, slik at Xorg Server 
-      kan fungere uten å ha <phrase revision="systemd">systemd</phrase>
+      <phrase revision="openrc,sysv">elogind</phrase> integrasjon, slik at Xorg 
+      Server kan fungere uten å ha <phrase revision="systemd">systemd</phrase>
       <phrase revision="elogind">elogind</phrase> PAM modulen konfigurert.
     </para>
 -->
@@ -248,10 +248,10 @@ fi</userinput></screen>
 
     <para>
       Videre, hvis denne pakken ikke ble bygget med
-      <phrase revision="sysv"><xref linkend="elogind"/> støtte,</phrase>
-      <phrase revision="systemd">
-      <xref linkend="systemd"/>,</phrase> legg til eventuelle ikke-root brukere 
-      i <systemitem class="groupname">input</systemitem> og
+      <phrase revision="openrc,sysv"><xref linkend="elogind"/>
+      støtte,</phrase> <phrase revision="systemd"><xref
+      linkend="systemd"/>,</phrase> legg til eventuelle ikke-root-brukere i
+      <systemitem class="groupname">input</systemitem> og
       <systemitem class="groupname">video</systemitem> gruppene som
       &root; bruker:  
     </para>

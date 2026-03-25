@@ -1,14 +1,20 @@
 #!/bin/sh
 
-if test x"$REV" = x"sysv"; then
-    SYSV="INCLUDE"
-    SYSTEMD="IGNORE"
-elif test x"$REV" = x"systemd"; then
-    SYSV="IGNORE"
+if test x"$REV" = x"systemd"; then
     SYSTEMD="INCLUDE"
+    OPENRC="IGNORE"
+    SYSV="IGNORE"
+elif test x"$REV" = x"openrc"; then
+    SYSTEMD="IGNORE"
+    OPENRC="INCLUDE"
+    SYSV="IGNORE"
+elif test x"$REV" = x"sysv"; then
+    SYSTEMD="IGNORE"
+    OPENRC="IGNORE"
+    SYSV="INCLUDE"
 else
-    echo Du må oppgi enten \"sysv\" eller \"systemd\" som argument for
-    echo \"REV\"
+    echo Du må oppgi enten \"systemd\", \"openrc\", eller \"sysv\" som et
+    echo argument for \"REV\"
     exit 1
 fi
 
@@ -30,8 +36,9 @@ else
     GHP="IGNORE"
 fi
 
-echo "<!ENTITY % sysv        \"$SYSV\">"        >  conditional.ent
-echo "<!ENTITY % systemd     \"$SYSTEMD\">"     >> conditional.ent
+echo "<!ENTITY % systemd     \"$SYSTEMD\">"     >  conditional.ent
+echo "<!ENTITY % openrc      \"$OPENRC\">"      >> conditional.ent
+echo "<!ENTITY % sysv        \"$SYSV\">"        >> conditional.ent
 echo "<!ENTITY % development \"$DEVELOPMENT\">" >> conditional.ent
 echo "<!ENTITY % release     \"$RELEASE\">"     >> conditional.ent
 echo "<!ENTITY % ghp         \"$GHP\">"         >> conditional.ent

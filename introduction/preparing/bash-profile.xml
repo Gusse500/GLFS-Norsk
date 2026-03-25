@@ -141,7 +141,15 @@ for script in /etc/profile.d/*.sh ; do
         fi
 done
 
-unset script
+unset script</literal></userinput><userinput revision="openrc"><literal>
+
+for envs in ~/.config/rc/env/*.env ; do
+        if [ -r $envs ] ; then
+                . $envs
+        fi
+done
+
+unset envs</literal></userinput><userinput><literal>
 
 # End /etc/profile</literal>
 EOF</userinput></screen>
@@ -278,7 +286,7 @@ EOF</userinput></screen>
         Konfigurere systemspråket</ulink>.
       </para>
 
-<screen role="root" revision="sysv"><userinput>cat &gt; /etc/profile.d/i18n.sh &lt;&lt; "EOF"
+<screen role="root" revision="openrc,sysv"><userinput>cat &gt; /etc/profile.d/i18n.sh &lt;&lt; "EOF"
 <literal># Set up i18n variables
 for i in $(locale); do
   unset ${i%=*}

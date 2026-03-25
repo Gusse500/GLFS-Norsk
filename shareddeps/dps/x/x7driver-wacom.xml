@@ -77,7 +77,8 @@
         følgende kommandoer:
       </para>
 
-<screen revision="sysv"><userinput>./configure $XORG_CONFIG --with-systemd-unit-dir=no &amp;&amp;
+<screen><userinput>./configure $XORG_CONFIG</userinput><userinput
+  revision="openrc,sysv"> --with-systemd-unit-dir=no</userinput><userinput> &amp;&amp;
 make</userinput></screen>
 
       <para>

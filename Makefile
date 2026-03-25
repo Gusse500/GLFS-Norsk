@@ -33,8 +33,10 @@ else
 endif
 
 ifneq ($(REV), systemd)
-  ifneq ($(REV), sysv)
-    $(feil REV må være 'systemd' (standard) eller 'sysv' (ikke vedlikeholdt))
+  ifneq ($(REV), openrc)
+    ifneq ($(REV), sysv)
+      $(feil REV må være 'systemd' (standard), 'openrc', eller 'sysv' (ikke vedlikeholdt))
+    endif
   endif
 endif
 
@@ -52,7 +54,15 @@ ifeq ($(REV), systemd)
   GLFSHTML        ?= glfs-html.xml
   GLFSHTML2       ?= glfs-html2.xml
   GLFSFULL        ?= glfs-full.xml
-else
+endif
+ifeq ($(REV), openrc)
+  BASEDIR         ?= $(HTML_ROOT)/glfs-openrc
+  DUMPDIR         ?= $(DUMP_ROOT)/glfs-openrc-commands
+  GLFSHTML        ?= glfs-openrc-html.xml
+  GLFSHTML2       ?= glfs-openrc-html2.xml
+  GLFSFULL        ?= glfs-openrc-full.xml
+endif
+ifeq ($(REV), sysv)
   BASEDIR         ?= $(HTML_ROOT)/glfs-sysv
   DUMPDIR         ?= $(DUMP_ROOT)/glfs-sysv-commands
   GLFSHTML        ?= glfs-sysv-html.xml
@@ -71,12 +81,14 @@ help:
 	@echo "  REV=<rev>            Bygg variant av boken"
 	@echo "                       Gyldige verdier for REV er:"
 	@echo "                       * systemd - Bygg boken for Systemd"
-	@echo "                       * sysv    - Bygg boken for SysV"
+	@echo "                       * openrc  - Bygg boken for OpenRC"
+	@echo "                       * sysv    - Bygg boken for SysVinit"
 	@echo "                       Standard er 'systemd'"
 	@echo ""
 	@echo "  BASEDIR=<dir>        Plasser utdataene i mappen <dir>."
 	@echo "                       Standard er"
-	@echo "                       '$(HTML_ROOT)/glfs' hvis REV=systemd (eller ikke satt)"
+	@echo "                       '$(HTML_ROOT)/glfs' hvis REV=systemd (eller ikke satt),"
+	@echo "                       '$(HTML_ROOT)/glfs-openrc' hvis REV=openrc,"
 	@echo "                       eller til"
 	@echo "                       '$(HTML_ROOT)/glfs-sysv' hvis REV=sysv"
 	@echo ""

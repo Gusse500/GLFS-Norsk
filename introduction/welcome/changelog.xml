@@ -41,6 +41,18 @@
 -->
 
     <listitem>
+      <para>24. mars 2026</para>
+      <itemizedlist>
+        <listitem revision="openrc">
+          <para>[zeckma] - OpenRC: Lagt til for Linux-PAM gjenoppbygging.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Gi OpenRC støtte i bokkilder.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>23. mars 2026</para>
       <itemizedlist>
         <listitem>
