@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY openrc-root     "https://github.com/OpenRC/openrc/archive">
+  <!ENTITY openrc-download "&openrc-root;/&openrc-version;/openrc-&openrc-version;.tar.gz">
+]>
+
+<sect1 id="openrc" revision="openrc" xreflabel="OpenRC-&openrc-version;">
+  <?dbhtml filename="openrc.html"?>
+
+  <title>OpenRC-&openrc-version;</title>
+
+  <indexterm zone="openrc">
+    <primary sortas="a-openrc">OpenRC</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til OpenRC</title>
+
+    <para>
+      OpenRC var allerede bygget i LFS/MLFS, men uten Linux-PAM støtte. Når PAM 
+      er aktivert i OpenRC, tillater det brukertjenester, noe noen pakker 
+      forventer, og gjør det mye enklere å bruke systemet.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&openrc-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">OpenRC Avhengigheter</bridgehead>
+
+    <para role="recommended">
+      <xref linkend="linux-pam"/>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av OpenRC</title>
+
+    <para>
+      Fix a script to allow a normal installation:
+    </para>
+
+<screen><userinput>sed -i '/set -u/d' tools/meson_final.sh</userinput></screen>
+
+    <para>
+      Installer OpenRC ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr       \
+            --buildtype=release \
+            .. &amp;&amp;
+ninja</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>ninja install &amp;&amp;
+mv -v /sbin/rc-update /bin</userinput></screen>
+
+    <para>
+      Brukertjenester kan aktiveres i OpenRC med litt oppsett. Noen operasjoner 
+      må utføres som &root; bruker, mens andre må gjøres for hver bruker. Sett 
+      opp litt grunnlag som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>mkdir -pv /etc/user/{init,conf}.d</userinput></screen>
+
+    <para>
+      Når du installerer en brukertjeneste, kan du aktivere den slik:
+    </para>
+
+<screen role="nodump"><userinput>&rc-user-add; <replaceable>&lt;SERVICE_NAME&gt;</replaceable> <replaceable>&lt;RUNLEVEL&gt;</replaceable></userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-meson;
+
+  </sect2>
+
+  <sect2 role="configuration">
+  <title>Konfigurere elogind</title>
+    <sect3><title>Konfigurasjonsinformasjon</title>
+
+    <para>
+      OpenRC og dens hjelpere må tilknyttes PAM. Hjelp det ved å opprette 
+      PAM konfigurasjoner som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>cat &gt;&gt; /etc/pam.d/system-session &lt;&lt; "EOF" &amp;&amp;
+<literal># Begin openrc addition
+
+session  optional    pam_openrc.so
+
+# End openrc addition</literal>
+EOF
+cat &gt; /etc/pam.d/system-login &lt;&lt; "EOF" &amp;&amp;
+<literal># Begin openrc addition
+
+session	 required   pam_env.so
+session	 optional   pam_elogind.so
+session	 optional   pam_openrc.so
+
+# End openrc addition</literal>
+EOF
+cat &gt; /etc/pam.d/openrc-user &lt;&lt; "EOF" &amp;&amp;
+<literal># Begin /etc/pam.d/openrc-user
+
+auth     required    pam_permit.so
+account  required    pam_unix.so
+session  required    pam_env.so
+session  required    pam_limits.so
+session  required    pam_unix.so
+session  optional    pam_elogind.so
+
+# End /etc/pam.d/openrc-user</literal>
+EOF
+
+for i in {start-stop,supervise}-daemon; do
+cat &gt; /etc/pam.d/$i &lt;&lt; "EOF"
+<literal>auth     sufficient   pam_permit.so
+account	 include      system-auth
+session	 optional     pam_loginuid.so
+session	 required     pam_limits.so
+session	 required     pam_env.so
+session	 required     pam_unix.so</literal>
+EOF
+done</userinput></screen>
+
+    </sect3>
+  </sect2>
+
+  <sect2 role="content" revision="openrc">
+    <title>Innhold</title>
+
+    <note><para>
+      Det er ikke noe nytt innhold bortsett fra en PAM modul. For en liste over 
+      originalt innhold, se MLFS OpenRCs <ulink
+      url="&mlfs-root;/chapter08/openrc.html#contents-openrc">Innhold</ulink>.
+    </para></note>
+
+  </sect2>
+
+</sect1>

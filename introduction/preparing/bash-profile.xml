@@ -141,7 +141,15 @@ for script in /etc/profile.d/*.sh ; do
         fi
 done
 
-unset script
+unset script</literal></userinput><userinput revision="openrc"><literal>
+
+for envs in ~/.config/rc/env/*.env ; do
+        if [ -r $envs ] ; then
+                . $envs
+        fi
+done
+
+unset envs</literal></userinput><userinput><literal>
 
 # End /etc/profile</literal>
 EOF</userinput></screen>

@@ -43,6 +43,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3" revision="openrc">Ytterligere Nedlastinger</bridgehead>
+    <itemizedlist spacing="compact" revision="openrc">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/elogind/elogind-&elogind-version;-openrc-user.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">elogind Avhengigheter</bridgehead>
 
     <para role="recommended">
@@ -72,6 +82,14 @@
 
   <sect2 role="installation">
     <title>Installasjon av elogind</title>
+
+    <para revision="openrc">
+      Det er spesiell håndtering for <literal>openrc-user</literal>, en hjelper 
+      for OpenRC som håndterer brukertjenester, som ødelegger funksjonaliteten 
+      og hevder at nødvendige variabler ikke er satt. Rett oppførselen:
+    </para>
+
+<screen revision="openrc"><userinput>patch -Np1 -i ../elogind-&elogind-version;-openrc-user.patch</userinput></screen>
 
     <para>
       Installer elogind ved å kjøre følgende 

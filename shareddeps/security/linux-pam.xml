@@ -287,7 +287,9 @@ EOF</userinput></screen>
       <important>
         <para>
           Du bør nå installere på nytt <xref linkend="shadow"/>
-          <phrase revision="openrc,sysv">pakken.</phrase>
+          <phrase revision="sysv">pakken.</phrase>
+          <phrase revision="openrc"> og <xref linkend="openrc"/>
+          pakkene.</phrase>
           <phrase revision="systemd"> og <xref linkend="systemd"/>
           pakkene.</phrase>
         </para>

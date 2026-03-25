@@ -47,6 +47,10 @@
     <bridgehead renderas="sect3">D-Bus avhengigheter</bridgehead>
 
     <para role="recommended">
+      <phrase revision="openrc">
+        <xref linkend="bash-profile"/>,
+        <xref linkend="openrc"/>, og
+      </phrase>
       <xref linkend="xorg7-lib"/> (for <command>dbus-launch</command> programmet)
       <!-- elogind cannot be used by dbus: dbus only uses the systemd service,
       not the logind one
@@ -184,7 +188,41 @@ rc-update add dbus boot</userinput></screen>
         revision="openrc">servicen</phrase><phrase
         revision="sysv">oppstartsskriptet</phrase> bare starter den 
         systemomfattende D-Bus daemonen. Hver bruker som trenger tilgang til 
-        D-Bus tjenester må også kjøre en sesjonsdaemon. Det finnes mange metoder 
+        D-Bus tjenester må også kjøre en sesjonsdaemon.
+      </para>
+
+      <para revision="openrc">
+        Du kan installere en brukertjeneste for D-Bus som &root; bruker:
+      </para>
+      <note revision="openrc"><para>
+        Følgende instruksjoner krever <xref linkend="openrc"/>.
+      </para></note>
+<screen role="root"
+  revision="openrc"><userinput>&install-exec; /dev/stdin /etc/user/init.d/dbus &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Starts a D-Bus user session
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
+
+description="starts a dbus user session"
+
+supervisor=supervise-daemon
+dbus_socket="${XDG_RUNTIME_DIR}/bus"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=$dbus_socket"
+command="/usr/bin/dbus-daemon"
+command_args="--session --syslog --nofork --address ${DBUS_SESSION_BUS_ADDRESS}"
+
+start_post() {
+  echo "export DBUS_SESSION_BUS_ADDRESS=${DBUS_SESSION_BUS_ADDRESS}" > ~/.config/rc/env/dbus.env
+}</literal>
+EOF</userinput></screen>
+      <para revision="openrc">
+        Som vanlig bruker, aktiver tjenesten:
+      </para>
+<screen revision="openrc"><userinput>&rc-user-add; dbus default</userinput></screen>
+
+      <para revision="sysv">
+        Det finnes mange metoder
         du kan bruke for å starte en sesjonsdaemon ved å bruke 
         <command>dbus-launch</command> kommandoen. Se gjennom 
         <command>dbus-launch</command> manualsiden for detaljer om tilgjengelige 
@@ -199,7 +237,7 @@ rc-update add dbus boot</userinput></screen>
         eksempler:
       </para>
 
-      <itemizedlist spacing="compact">
+      <itemizedlist spacing="compact" revision="systemd,sysv">
         <listitem>
           <para>
             Legg til <command>dbus-launch</command> til linjen i
