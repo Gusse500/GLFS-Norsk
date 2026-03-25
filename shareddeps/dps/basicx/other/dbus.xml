@@ -25,13 +25,13 @@
       avhengighetene deres passet ikke inn i LFS.
     </para>
 
-    <para revision="sysv">
+    <para revision="openrc,sysv">
       D-Bus ble allerede kompilert før, men ikke et nyttig program,
       <command>dbus-launch</command>. Denne gjennomgangen dekker det, og noe 
       oppsett som kreves.
     </para>
 
-    <note revision="sysv"><para>
+    <note revision="openrc,sysv"><para>
       Fjern den tidligere utpakkede kildekoden du bygde fra og pakk den ut fra 
       tarballen på nytt for å få et rent kildekodetre.
     </para></note>
@@ -50,14 +50,14 @@
       <xref linkend="xorg7-lib"/> (for <command>dbus-launch</command> programmet)
       <!-- elogind cannot be used by dbus: dbus only uses the systemd service,
       not the logind one
-      <phrase revision="sysv">og <xref linkend="elogind"/> (Dette er 
+      <phrase revision="openrc,sysv">and <xref linkend="elogind"/> (Dette er 
       sirkulære avhengigheter. Bygg først uten dem, og deretter igjen etter at 
       begge pakkene er installert.)</phrase>-->
     </para>
 
     <para role="optional" revision="systemd">
       <phrase revision="systemd"><xref role="runtime" linkend="systemd"/>
-      (kjøretid, for registrering av tjenester lansert av D-Bus øktnissen som 
+      (kjøretid, for registrering av tjenester lansert av D-Bus øktdaemonen som 
       systemd brukertjenester)</phrase>
     </para>
 
@@ -77,7 +77,7 @@
 
     &meson-wrap-nofallback;
 
-    <para revision="sysv">
+    <para revision="openrc,sysv">
       <parameter>-D systemd=disabled</parameter>: Ikke installer systemd støttefiler 
       selv om <filename class="libraryfile">libsystemd</filename> eksisterer
       (dvs. <xref linkend="elogind"/> pakken er installert).
@@ -149,7 +149,7 @@ EOF</userinput></screen>
     </sect3>
 
     <sect3  id="dbus-session">
-      <title>D-Bus Øktnisse</title>
+      <title>D-Bus Øktdaemon</title>
 
       <para revision="sysv">
         For å automatisk starte <command>dbus-daemon</command> når 
@@ -165,19 +165,34 @@ EOF</userinput></screen>
 
 <screen role="root" revision="sysv"><userinput>make install-dbus</userinput></screen>
 
-      <para revision="sysv">
-        Merk at dette oppstartsskriptet bare starter den systemomfattende
-        D-Bus nissen. Hver bruker som trenger tilgang til
-        D-Bus tjenestene må også kjøre en 
-        øktnisse. Det finnes mange metoder du kan bruke for å starte en 
-        øktnisse ved å bruke <command>dbus-launch</command> kommandoen. Gjennomgå
-        <command>dbus-launch</command> manualsiden for detaljer om 
-        tilgjengelige parametere og alternativer. Her er noen forslag og 
-        eksempler:
+      <para revision="openrc">
+        For å starte <command>dbus-daemon</command> automatisk når systemet 
+        startes på nytt, opprett og aktiver OpenRC tjenesten:
+      </para>
+
+      <indexterm zone="dbus dbus-session" revision="openrc">
+        <primary sortas="f-dbus">dbus</primary>
+      </indexterm>
+
+<screen role="root"
+  revision="openrc"><userinput>&install-exec; /usr/share/openrc/support/init.d.examples/dbus \
+  -t /etc/init.d/ &amp;&amp;
+rc-update add dbus boot</userinput></screen>
+
+      <para revision="openrc,sysv">
+        Merk at <phrase
+        revision="openrc">servicen</phrase><phrase
+        revision="sysv">oppstartsskriptet</phrase> bare starter den 
+        systemomfattende D-Bus daemonen. Hver bruker som trenger tilgang til 
+        D-Bus tjenester må også kjøre en sesjonsdaemon. Det finnes mange metoder 
+        du kan bruke for å starte en sesjonsdaemon ved å bruke 
+        <command>dbus-launch</command> kommandoen. Se gjennom 
+        <command>dbus-launch</command> manualsiden for detaljer om tilgjengelige 
+        parametere og alternativer. Her er noen forslag og eksempler:
       </para>
 
       <para revision="systemd">
-        Det finnes mange metoder du kan bruke for å starte en øktnisse 
+        Det finnes mange metoder du kan bruke for å starte en øktdaemon 
         ved å bruke <command>dbus-launch</command> kommandoen. Gjennomgå
         <command>dbus-launch</command> manualsiden for detaljer om 
         tilgjengelige parametere og alternativer. Her er noen forslag og 
@@ -208,8 +223,8 @@ EOF</userinput></screen>
             <command>dbus-launch</command> å spesifisere et program som skal kjøres. Dette 
             har fordelen (når man også bruker
             <parameter>--exit-with-x11</parameter> parameter) for å stoppe 
-            øktnissen når det angitte programmet stoppes. Du kan også 
-            starte øktnissen i systemet eller personlige oppstartsskript 
+            øktdaemonen når det angitte programmet stoppes. Du kan også 
+            starte øktdaemon i systemet eller personlige oppstartsskript 
             ved å legge til følgende linjer:
           </para>
 
@@ -218,7 +233,7 @@ eval `dbus-launch`
 export DBUS_SESSION_BUS_ADDRESS</literal></userinput></screen>
 
           <para>
-            Denne metoden vil ikke stoppe øktnissen når du avslutter 
+            Denne metoden vil ikke stoppe øktdaemonen når du avslutter 
             skallet ditt, derfor bør du legge til følgende linje i
             <filename>~/.bash_logout</filename> filen:
           </para>
@@ -231,10 +246,10 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
 
       <para>
         Nå ville det være lurt å starte på nytt og teste for å se om D-Bus,
-        <phrase revision="sysv">e</phrase>logind, osv. fungerer, og du kan 
-        logge inn. Kjør kommandoen <command>loginctl</command> etter å ha 
-        forsikret at D-Bus kjører. Resultatet skal indikere at en SESSION og en SEAT 
-        er opprettet.
+        <phrase revision="openrc,sysv">e</phrase>logind, osv. fungerer, og at du 
+        kan logge inn. Kjør kommandoen <command>loginctl</command> etter å ha 
+        forsikret at D-Bus kjører. Resultatet skal indikere at en SESSION og en 
+        SEAT er opprettet.
       </para>
 
     </sect3>
@@ -291,7 +306,7 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <term><command>dbus-daemon</command></term>
         <listitem>
           <para>
-            er D-Bus meldingsbussnisse
+            er D-Bus meldingsbuss daemon
           </para>
           <indexterm zone="dbus dbus-daemon">
             <primary sortas="b-dbus-daemon">dbus-daemon</primary>
@@ -399,11 +414,11 @@ kill $DBUS_SESSION_BUS_PID</literal></userinput></screen>
         <listitem>
           <para>
             inneholder API funksjonene som brukes av
-            D-Bus øktnissen.
+            D-Bus øktdaemonen.
             D-Bus er først et bibliotek som tilbyr 
             én-til-én kommunikasjon mellom to applikasjoner;
             <command>dbus-daemon</command> er et program som bruker dette 
-            biblioteket til å implementere en meldingsbussnisse
+            biblioteket til å implementere en meldingsbussdaemon
           </para>
           <indexterm zone="dbus libdbus-1">
             <primary sortas="c-libdbus-1">libdbus-1</primary>
