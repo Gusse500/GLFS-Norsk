@@ -114,7 +114,7 @@
 <!ENTITY pypi                 "https://pypi.python.org/pypi">
 <!ENTITY appstream-glib-url   "http://people.freedesktop.org/~hughsient/appstream-glib/releases">
 <!ENTITY elinks-url           "http://elinks.or.cz">
-<!ENTITY w3m-url              "http://w3m.sourceforge.net/">
+<!ENTITY w3m-url              "&slfs-website;/general/w3m.html">
 <!ENTITY sysprof-url          "https://wiki.gnome.org/Apps/Sysprof">
 <!ENTITY man                  "https://man.archlinux.org/man/">
 
