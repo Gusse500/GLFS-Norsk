@@ -180,21 +180,10 @@ mkdir -pv ~/.config/rc/env &amp;&amp;
 mkdir -pv ~/.config/rc/runlevels/{sysinit,boot,default,shutdown} &amp;&amp;
 rc-update --user add">
 
-<!ENTITY nvidia-common-deps "<para role='required'>
-  &gbm;,
+<!ENTITY nvidia-common-req "&gbm;,
   <xref linkend='libglvnd'/>, og
-  <xref linkend='xorg7-lib'/>
-</para>
-<para role='recommended'>
-  <itemizedlist spacing='compact'>
-    <listitem>
-      <para>
-        <ulink url='&slfs-website;/general/cuda.html'>CUDA</ulink>
-        (for å bygge inn direkte CUDA støtte i diverse pakker som FFmpeg eller 
-        OBS-Studio; installer etter å ha fulgt denne siden)
-      </para>
-    </listitem>
-<!-- NOT READY
+  <xref linkend='xorg7-lib'/>">
+<!ENTITY nvidia-common-rec "<!-- NOT READY
     <listitem revision='openrc,sysv'>
       <para>
         <xref linkend='dbus'/> og <xref linkend='elogind'/> (for
@@ -241,9 +230,7 @@ rc-update --user add">
         <command>nvidia-xconfig</command>, som i <xref
         linkend='whatnow'/>; installere etter å ha fulgt denne siden)
       </para>
-    </listitem>
-  </itemizedlist>
-</para>">
+    </listitem>">
 
 <!ENTITY nvidia-common-kernel "<para>
 Først aktiverer du XFree86 DRI og Nouveau
