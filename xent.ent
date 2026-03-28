@@ -278,9 +278,8 @@ class='directory'>/usr/lib/modules</filename>.
 <para>
   Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av brukstilfellet ditt, 
   kan du hoppe over å bygge en eller to moduler. UVM-modulen (Unified Virtual 
-  Memory) er til bruk med <ulink
-  url='&slfs-website;/general/cuda.html'>CUDA</ulink>. If you won't use
-  it, nor wish to use its capabilities, kan du hoppe over å bygge UVM 
+  Memory) modulen er til bruk med CUDA. Hvis du ikke vil bruke den, eller ikke 
+  ønsker å bruke dens funksjoner, kan du hoppe over å bygge UVM 
   kjernemodulen. Det finnes også PeerMem modulen som er for datasentre. For 
   spilling kan den trygt deaktiveres.
 </para>
