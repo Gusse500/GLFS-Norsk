@@ -300,60 +300,7 @@ done</userinput></screen>
       </para>
     </sect3>
 
-    <sect3>
-      <title>Liste over pakker med problemer</title>
-
-      <para>
-        Bruk av denne driveren kan føre til kompromisser. Så langt ser disse problemene 
-        ut til å være begrenset til Wayland og vindusbehandlere. Listen nedenfor 
-        dokumenterer de kjente pakkene som har problemer med denne driveren.
-      </para>
-
-      <itemizedlist>
-<!-- Fixed in BLFS at 4e1859c178
-        <listitem revision="sysv">
-          <para><ulink url="&blfs-svn;/x/gdm.html">GDM</ulink>:Bruk av denne 
-          pakken på SysVinit systemer vil føre til feil, ettersom GDM ikke vil 
-          bruke Wayland for NVIDIA GPU-er, men et tillatelsesproblem med SysV 
-          forhindrer at X11 brukes. Du må starte
-          <ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink> eller
-          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>
-          gjennom terminalen i stedet. Les Mutter oppføringen.</para>
-        </listitem>
-        <listitem revision="sysv"><para>
-          <ulink url="&blfs-svn;/gnome/gnome-session.html">gnome-session</ulink>:
-          Dette må foreløpig startes via en TTY eller en annen skjermbehandler 
-          enn GDM på SysVinit systemer.
-        </para></listitem>
--->
-        <listitem>
-          <para><ulink url="&blfs-svn;/gnome/mutter.html">Mutter</ulink>:
-          Kompiler denne pakken med
-          <parameter>-D wayland_eglstream=true</parameter> og
-          <parameter>-D egl_device=true</parameter> for å aktivere oppstart med 
-          Wayland. Sørg for at <xref linkend="nvidia-egl"/> er
-          installert.</para>
-<!--
-          <para revision="sysv">På SysVinit systemer kan Mutter bare startes 
-          via en TTY eller en annen skjermbehandler enn GDM per 
-          nå.</para>
--->
-        </listitem>
-        <listitem>
-          <para>
-            <xref linkend="xorg-server"/>: Selv om denne pakken fungerer helt 
-            fint, vil TearFree oppdateringen og konfigurasjonsfilen være 
-            ubrukelig siden Xorg driveren (<filename class="libraryfile">nvidia_drv</filename>)
-            vil bli brukt i stedet for modusinnstillingsdriveren. TearFree 
-            oppdateringen og konfigurasjonsfilen er modusinnstillingsspesifikk. 
-            Derfor må du finne en annen måte å bli kvitt skjermriving hvis det 
-            er ditt ønske. Slike rettelser kan redusere ytelsen drastisk, slik 
-            at 144 FPS kan falle til 60 FPS.
-          </para>
-        </listitem>
-      </itemizedlist>
-
-    </sect3>
+    &nvidia-issue-list;
 
     <sect3><title>Konfigurasjonsinformasjon</title>
 

@@ -358,3 +358,60 @@ cd ..</userinput></screen>
 </para>
 
 <screen><userinput>unset KERNEL_UNAME</userinput></screen>">
+
+<!ENTITY nvidia-issue-list "<sect3>
+  <title>Liste over pakker med problemer</title>
+
+  <para>
+    Bruk av denne driveren kan føre til kompromisser. Så langt ser disse 
+    problemene ut til å være begrenset til Wayland og vindusbehandlere. Listen 
+    nedenfor dokumenterer de kjente pakkene som har problemer med denne driveren.
+  </para>
+
+  <itemizedlist>
+    <listitem>
+      <para><ulink url='&blfs-svn;/gnome/mutter.html'>Mutter</ulink>:
+      Kompiler denne pakken med
+      <parameter>-D wayland_eglstream=true</parameter> og
+      <parameter>-D egl_device=true</parameter> for å aktivere oppstart med 
+      Wayland. Sørg for at <xref linkend='nvidia-egl'/> er
+      installert.</para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='xorg-server'/>: Selv om denne pakken fungerer helt fint, 
+        vil TearFree oppdateringen og konfigurasjonsfilen være ubrukelig siden 
+        Xorg driveren (<filename class='libraryfile'>nvidia_drv</filename>)
+        vil bli brukt i stedet for modusinnstillingsdriveren. TearFree 
+        oppdateringen og konfigurasjonsfilen er modusinnstillingsspesifikk. 
+        Derfor må du finne en annen måte å bli kvitt skjermriving hvis det er 
+        ditt ønske. Slike rettelser kan redusere ytelsen drastisk, slik at 144 
+        FPS kan falle til 60 FPS.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        EGL_EXT Enhetsforespørsel og Enumeration: libglvnd setter opp viktige 
+        utvidelser som er en del av EGL spesifikasjonen og leveres via 
+        deklarasjonsfiler. Disse deklarasjonsfilene tilbyr også 
+        funksjonsdeklarasjoner, slik at adressene deres kan hentes. NVIDIAs 
+        biblioteker tilbyr ikke to utvidelser: <literal>EGL_EXT_device_query</literal> og
+        <literal>EGL_EXT_device_enumeration</literal>. Driveren gir imidlertid 
+        funksjonsdefinisjoner for å spørre enheter via EGL. Dette betyr at når 
+        en pakke eksplisitt sjekker etter utvidelsene, hvis <xref
+        linkend='mesa'/> ikke er installert, vil pakken håndtere tilfellet for 
+        manglende utvidelser, uansett om funksjonene som håndterer 
+        enhetsspørringer faktisk finnes eller ikke.
+      </para>
+      <para>
+        De fleste pakker gjør ikke dette. Men hvis du støter på en slik 
+        situasjon, må du sørge for at pakken ikke sjekker etter disse 
+        utvidelsene for å forhindre potensielle feil. Niri, som bruker smithay, 
+        lider av dette. Dette blir forsøkt løst oppstrøms med smithay. Ideelt 
+        sett bør NVIDIA eksportere disse utvidelsene. Den gjør ikke det på noen 
+        måte, den tilbyr bare funksjonene som gjør enhetsspørring 
+        mulig.
+      </para>
+    </listitem>
+  </itemizedlist>
+</sect3>">
