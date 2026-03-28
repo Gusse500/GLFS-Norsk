@@ -180,21 +180,10 @@ mkdir -pv ~/.config/rc/env &amp;&amp;
 mkdir -pv ~/.config/rc/runlevels/{sysinit,boot,default,shutdown} &amp;&amp;
 rc-update --user add">
 
-<!ENTITY nvidia-common-deps "<para role='required'>
-  &gbm;,
+<!ENTITY nvidia-common-req "&gbm;,
   <xref linkend='libglvnd'/>, og
-  <xref linkend='xorg7-lib'/>
-</para>
-<para role='recommended'>
-  <itemizedlist spacing='compact'>
-    <listitem>
-      <para>
-        <ulink url='&slfs-website;/general/cuda.html'>CUDA</ulink>
-        (for å bygge inn direkte CUDA støtte i diverse pakker som FFmpeg eller 
-        OBS-Studio; installer etter å ha fulgt denne siden)
-      </para>
-    </listitem>
-<!-- NOT READY
+  <xref linkend='xorg7-lib'/>">
+<!ENTITY nvidia-common-rec "<!-- NOT READY
     <listitem revision='openrc,sysv'>
       <para>
         <xref linkend='dbus'/> og <xref linkend='elogind'/> (for
@@ -241,9 +230,7 @@ rc-update --user add">
         <command>nvidia-xconfig</command>, som i <xref
         linkend='whatnow'/>; installere etter å ha fulgt denne siden)
       </para>
-    </listitem>
-  </itemizedlist>
-</para>">
+    </listitem>">
 
 <!ENTITY nvidia-common-kernel "<para>
 Først aktiverer du XFree86 DRI og Nouveau
@@ -291,9 +278,8 @@ class='directory'>/usr/lib/modules</filename>.
 <para>
   Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av brukstilfellet ditt, 
   kan du hoppe over å bygge en eller to moduler. UVM-modulen (Unified Virtual 
-  Memory) er til bruk med <ulink
-  url='&slfs-website;/general/cuda.html'>CUDA</ulink>. If you won't use
-  it, nor wish to use its capabilities, kan du hoppe over å bygge UVM 
+  Memory) modulen er til bruk med CUDA. Hvis du ikke vil bruke den, eller ikke 
+  ønsker å bruke dens funksjoner, kan du hoppe over å bygge UVM 
   kjernemodulen. Det finnes også PeerMem modulen som er for datasentre. For 
   spilling kan den trygt deaktiveres.
 </para>
@@ -372,3 +358,60 @@ cd ..</userinput></screen>
 </para>
 
 <screen><userinput>unset KERNEL_UNAME</userinput></screen>">
+
+<!ENTITY nvidia-issue-list "<sect3>
+  <title>Liste over pakker med problemer</title>
+
+  <para>
+    Bruk av denne driveren kan føre til kompromisser. Så langt ser disse 
+    problemene ut til å være begrenset til Wayland og vindusbehandlere. Listen 
+    nedenfor dokumenterer de kjente pakkene som har problemer med denne driveren.
+  </para>
+
+  <itemizedlist>
+    <listitem>
+      <para><ulink url='&blfs-svn;/gnome/mutter.html'>Mutter</ulink>:
+      Kompiler denne pakken med
+      <parameter>-D wayland_eglstream=true</parameter> og
+      <parameter>-D egl_device=true</parameter> for å aktivere oppstart med 
+      Wayland. Sørg for at <xref linkend='nvidia-egl'/> er
+      installert.</para>
+    </listitem>
+    <listitem>
+      <para>
+        <xref linkend='xorg-server'/>: Selv om denne pakken fungerer helt fint, 
+        vil TearFree oppdateringen og konfigurasjonsfilen være ubrukelig siden 
+        Xorg driveren (<filename class='libraryfile'>nvidia_drv</filename>)
+        vil bli brukt i stedet for modusinnstillingsdriveren. TearFree 
+        oppdateringen og konfigurasjonsfilen er modusinnstillingsspesifikk. 
+        Derfor må du finne en annen måte å bli kvitt skjermriving hvis det er 
+        ditt ønske. Slike rettelser kan redusere ytelsen drastisk, slik at 144 
+        FPS kan falle til 60 FPS.
+      </para>
+    </listitem>
+    <listitem>
+      <para>
+        EGL_EXT Enhetsforespørsel og Enumeration: libglvnd setter opp viktige 
+        utvidelser som er en del av EGL spesifikasjonen og leveres via 
+        deklarasjonsfiler. Disse deklarasjonsfilene tilbyr også 
+        funksjonsdeklarasjoner, slik at adressene deres kan hentes. NVIDIAs 
+        biblioteker tilbyr ikke to utvidelser: <literal>EGL_EXT_device_query</literal> og
+        <literal>EGL_EXT_device_enumeration</literal>. Driveren gir imidlertid 
+        funksjonsdefinisjoner for å spørre enheter via EGL. Dette betyr at når 
+        en pakke eksplisitt sjekker etter utvidelsene, hvis <xref
+        linkend='mesa'/> ikke er installert, vil pakken håndtere tilfellet for 
+        manglende utvidelser, uansett om funksjonene som håndterer 
+        enhetsspørringer faktisk finnes eller ikke.
+      </para>
+      <para>
+        De fleste pakker gjør ikke dette. Men hvis du støter på en slik 
+        situasjon, må du sørge for at pakken ikke sjekker etter disse 
+        utvidelsene for å forhindre potensielle feil. Niri, som bruker smithay, 
+        lider av dette. Dette blir forsøkt løst oppstrøms med smithay. Ideelt 
+        sett bør NVIDIA eksportere disse utvidelsene. Den gjør ikke det på noen 
+        måte, den tilbyr bare funksjonene som gjør enhetsspørring 
+        mulig.
+      </para>
+    </listitem>
+  </itemizedlist>
+</sect3>">
