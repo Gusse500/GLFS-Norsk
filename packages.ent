@@ -182,8 +182,8 @@
 <!-- NVIDIA -->
 <!ENTITY nvidia-rev           "595">
 <!ENTITY nvidia-linux-version "6.17.x - 6.19.x">
-<!ENTITY nvidia-version       "&nvidia-rev;.45.04">
-<!ENTITY nvidia-full-name     "&nvidia-version; &nvidia-beta;">
+<!ENTITY nvidia-version       "&nvidia-rev;.58.03">
+<!ENTITY nvidia-full-name     "&nvidia-version;<!-- &nvidia-beta;-->">
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
 <!ENTITY cuda-version         "13.2.0">
