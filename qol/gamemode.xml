@@ -79,13 +79,14 @@ ninja</userinput></screen>
 
 <screen role="root"><userinput>ninja install</userinput></screen>
 
-    <para>
+    <para revision="systemd">
       Hvis du installerte de anbefalte avhengighetene og ikke har installert 
       denne pakken bare som en avhengighet, aktiver daemonen for hver bruker som
       &root; bruker:
     </para>
 
-<screen role="root"><userinput>systemctl enable --global gamemoded</userinput></screen>
+<screen role="root"
+  revision="systemd"><userinput>systemctl enable --global gamemoded</userinput></screen>
 
   </sect2>
 
@@ -136,6 +137,32 @@ ldconfig</userinput></screen>
     Dette brukes i lib32 bygget siden daemonen ikke tilbyr noen 
     biblioteker.</para>
 
+  </sect2>
+
+  <sect2 revision="openrc" id="gamemode-init">
+    <title>OpenRC Service</title>
+
+    <para>
+      For å automatisk starte <command>gamemoded</command> daemonen når systemet 
+      startes på nytt, installer OpenRC tjenesten:
+    </para>
+
+<screen role="root"><userinput>&install-exec; /dev/stdin /etc/user/init.d/gamemoded &lt;&lt; "EOF"
+<literal>#!/sbin/openrc-run
+# Starts the gamemoded daemon
+# Authors: Zeckma - zeckma@linuxfromscratch.com
+# Version: LFS &version;
+
+description="starts the gamemoded daemon"
+
+supervisor=supervise-daemon
+command_background=yes
+command="/usr/bin/gamemoded"</literal>
+EOF</userinput></screen>
+    <para>
+      Som vanlig bruker, aktiver tjenesten:
+    </para>
+<screen><userinput>&rc-user-add; gamemoded default</userinput></screen>
   </sect2>
 
   <sect2 role="content">

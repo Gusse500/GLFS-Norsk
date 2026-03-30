@@ -70,7 +70,7 @@ EOF</userinput></screen>
 
 <screen><userinput>mkdir x7font &amp;&amp;
 cd x7font &amp;&amp;
-grep -v '^#' ../font-&xorg-version;-list | wget -i- -c \
+grep -v '^#' ../x7font-&xorg-version;-list | wget -i- -c \
     -B &x7fonts-download;</userinput></screen>
 
   </sect2>

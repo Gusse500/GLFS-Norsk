@@ -41,6 +41,21 @@
 -->
 
     <listitem>
+      <para>28. mars 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 595.45.04 &nvidia-beta; -&gt; 595.58.03
+          (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/398">#398</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SVT-AV1: 4.0.1 -&gt; 4.1.0. Fikser
+          <ulink url="&glfs-issues;/395">#395</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>26. mars 2026</para>
       <itemizedlist>
         <listitem>
