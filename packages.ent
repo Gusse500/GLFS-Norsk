@@ -286,7 +286,7 @@
 <!ENTITY sdl2-version                 "2.32.64">
 
 <!ENTITY nasm-version                 "3.01">
-<!ENTITY svt-av1-version              "4.0.1">
+<!ENTITY svt-av1-version              "4.1.0">
 <!ENTITY dav1d-version                "1.5.3">
 <!ENTITY libaom-version               "3.13.2">
 <!ENTITY fdk-aac-version              "2.0.3">
