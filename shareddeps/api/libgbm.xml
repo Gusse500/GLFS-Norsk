@@ -82,7 +82,6 @@ meson setup --prefix=/usr       \
             --buildtype=release \
             --cross-file=lib32  \
             .. &amp;&amp;
-
 ninja</userinput></screen>
 
     <para>
@@ -119,7 +118,7 @@ ldconfig</userinput></screen>
           libgbm
         </seg>
         <seg>
-          Ingen
+          /usr/share/doc/libgbm-&libgbm-version;
         </seg>
       </seglistitem>
     </segmentedlist>
