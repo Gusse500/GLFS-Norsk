@@ -44,6 +44,14 @@
       <para>31. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - MinGW-w64: 13.0.0 -&gt; 14.0.0. Fikser
+          <ulink url="&glfs-issues;/401">#401</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 11.4 -&gt; 11.5. Fikser
+          <ulink url="&glfs-issues;/400">#400</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libgbm: 1.0.5 -&gt; 1.0.6. Fikser
           <ulink url="&glfs-issues;/399">#399</ulink>.</para>
         </listitem>

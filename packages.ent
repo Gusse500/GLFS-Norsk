@@ -272,7 +272,7 @@
 
 <!ENTITY binutils-version             "2.46">
 <!ENTITY gcc-version                  "15.2.0">
-<!ENTITY mingw-w64-version            "13.0.0">
+<!ENTITY mingw-w64-version            "14.0.0">
 <!ENTITY mingw-w64-gcc-version        "&gcc-version;">
 
 <!-- xkbcommon is terrible in regards to tagging, ending up with poorly named
@@ -303,7 +303,7 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.4">
+<!ENTITY wine-version                 "&wine-major-version;.5">
 
 <!ENTITY dxvk-version                 "2.7.1">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
