@@ -25,20 +25,29 @@
   <itemizedlist>
     <title>Endringsloggoppføringer:</title>
 
-<!-- changelog template
+<!-- ChangeLog Template
     <listitem>
-      <para>mmmm dd{nd,st,th}, yyyy</para>
+      <para>Month DD{nd,st,th}, YYYY</para>
       <itemizedlist>
         <listitem>
-          <para>[name] - newer entry.</para>
+          <para>[name] - Newer entry.</para>
         </listitem>
         <listitem>
-          <para>[name] - package: ver -&gt; ver. fixes
+          <para>[name] - Package: ver -&gt; ver. Fixes
           <ulink url="&glfs-issues;/num">#num</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
 -->
+
+    <listitem>
+      <para>31. mars 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - CMake: 4.3.0 -&gt; 4.3.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
 
     <listitem>
       <para>28. mars 2026</para>
