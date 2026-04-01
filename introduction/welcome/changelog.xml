@@ -44,6 +44,10 @@
       <para>31. mars 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - systemd: 259.5 -&gt; 260.1. Fikser
+          <ulink url="&glfs-issues;/402">#402</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - MinGW-w64: 13.0.0 -&gt; 14.0.0. Fikser
           <ulink url="&glfs-issues;/401">#401</ulink>.</para>
         </listitem>
