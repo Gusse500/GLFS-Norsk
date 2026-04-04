@@ -157,7 +157,7 @@
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY glu-version                  "9.0.3">
 <!ENTITY vulkan-sdk-version           "1.4.341.0">
-<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.0">
+<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.1">
 <!ENTITY libatomic_ops-version        "7.10.0">
 <!ENTITY libdrm-version               "2.4.131">
 <!ENTITY libgbm-version               "1.0.6">
