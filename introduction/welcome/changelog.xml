@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>3. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - Harfbuzz: 13.2.1 -&gt; 14.0.0. Fikser
+          <ulink url="&glfs-issues;/404">#404</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2. april 2026</para>
       <itemizedlist>
         <listitem>
