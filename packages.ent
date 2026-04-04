@@ -152,7 +152,7 @@
 <!ENTITY libinput-version             "1.30.1">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.24.0">
-<!ENTITY wayland-protocols-version    "1.47">
+<!ENTITY wayland-protocols-version    "1.48">
 <!-- Graphics APIs -->
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY glu-version                  "9.0.3">
