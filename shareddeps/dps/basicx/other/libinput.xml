@@ -97,14 +97,13 @@ cp -rv Documentation/* /usr/share/doc/libinput-&libinput-version;/html</userinpu
 
     <para>
       <parameter>-D debug-gui=false</parameter>: Denne bryteren
-      deaktiverer opprettelsen av en visuell feilsøkingshjelper for libinput. Fjern
-      hvis du ønsker den, og du har GTK3 installert.
+      deaktiverer opprettelsen av en visuell feilsøkingshjelper for libinput. Fjern 
+      denne bryteren hvis du vil ha feilsøkingshjelperen, og du har GTK3 installert.
     </para>
 
     <para>
       <parameter>-D libwacom=false</parameter>: Fjern dette alternativet hvis du 
-      har libwacom installert, eller hvis du installerer
-      GNOME.
+      har libwacom installert, eller hvis du installerer GNOME.
     </para>
 
   </sect2>

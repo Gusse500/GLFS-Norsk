@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>6. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - libinput: 1.30.1 -&gt; 1.31.1 (Sikkerhetsoppdatering).
+          Fikser <ulink url="&glfs-issues;/409">#409</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>3. april 2026</para>
       <itemizedlist>
         <listitem>
