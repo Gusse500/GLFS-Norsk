@@ -99,7 +99,7 @@
 <!ENTITY libpng-version               "1.6.56">
 <!ENTITY apng-version                 "1.6.55">
 <!ENTITY freetype2-version            "2.14.3">
-<!ENTITY harfbuzz-version             "14.0.0">
+<!ENTITY harfbuzz-version             "14.1.0">
 <!ENTITY fontconfig-version           "2.17.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -149,7 +149,7 @@
 <!ENTITY pixman-version               "0.46.4">
 <!ENTITY mtdev-version                "1.1.7">
 <!ENTITY libevdev-version             "1.13.6">
-<!ENTITY libinput-version             "1.30.1">
+<!ENTITY libinput-version             "1.31.1">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.24.0">
 <!ENTITY wayland-protocols-version    "1.48">
@@ -282,8 +282,8 @@
 <!ENTITY libxkbcommon-minor           "6f76d1">
 <!ENTITY libxkbcommon-version         "6f76d19db72b5d450e927b41e1e96cbe3252aba8">
 <!ENTITY libxkbcommon-real            "1.13.1">
-<!ENTITY sdl3-version                 "3.4.2">
-<!ENTITY sdl2-version                 "2.32.64">
+<!ENTITY sdl3-version                 "3.4.4">
+<!ENTITY sdl2-version                 "2.32.66">
 
 <!ENTITY nasm-version                 "3.01">
 <!ENTITY svt-av1-version              "4.1.0">
