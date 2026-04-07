@@ -44,6 +44,10 @@
       <para>6. april 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - sdl2-compat: 2.32.64 -&gt; 2.32.66. Fikser
+          <ulink url="&glfs-issues;/415">#415</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - SDL3: 3.4.2 -&gt; 3.4.4. Fikser
           <ulink url="&glfs-issues;/413">#413</ulink>.</para>
         </listitem>
