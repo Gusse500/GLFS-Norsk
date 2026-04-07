@@ -44,6 +44,10 @@
       <para>6. april 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - SDL3: 3.4.2 -&gt; 3.4.4. Fikser
+          <ulink url="&glfs-issues;/413">#413</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - harfbuzz: 14.0.0 -&gt; 14.1.0. Fikser
           <ulink url="&glfs-issues;/412">#412</ulink>.</para>
         </listitem>
