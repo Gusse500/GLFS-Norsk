@@ -166,7 +166,7 @@
 <!ENTITY ocl-icd-version              "2.3.4">
 <!ENTITY libclc-version               "&llvm-version;">
 <!-- Graphics Drivers - Preliminaries -->
-<!ENTITY pciutils-version             "3.14.0">
+<!ENTITY pciutils-version             "3.15.0">
 <!ENTITY hwdata-version               "0.406">
 <!-- Graphics Drivers - NVIDIA -->
 <!ENTITY mesa-major-minor             "26.0">

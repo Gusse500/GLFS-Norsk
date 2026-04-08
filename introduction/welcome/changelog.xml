@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>7. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - pciutils: 3.14.0 -&gt; 3.15.0. Fikser
+          <ulink url="&glfs-issues;/411">#411</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>6. april 2026</para>
       <itemizedlist>
         <listitem>
