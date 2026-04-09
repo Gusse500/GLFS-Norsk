@@ -295,7 +295,7 @@
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.1">
 <!ENTITY ffmpeg-version               "8.1">
-<!ENTITY gstreamer10-version          "1.28.1">  <!-- Even minors only -->
+<!ENTITY gstreamer10-version          "1.28.2">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-bad-version    "&gstreamer10-version;">
