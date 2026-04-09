@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>8. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[renodr] - GStreamer Pakken: 1.28.1 -&gt; 1.28.2 
+          (Sikkerhetsoppdatering. Fikser
+          <ulink url="&glfs-issues;/417">#417</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>7. april 2026</para>
       <itemizedlist>
         <listitem>
