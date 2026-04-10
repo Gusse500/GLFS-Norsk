@@ -44,8 +44,12 @@
       <para>8. april 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[renodr] - xdg-user-dirs: 0.19 -&gt; 0.20. Fikser
+          <ulink url="&glfs-issues;/418">#418</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - GStreamer Pakken: 1.28.1 -&gt; 1.28.2 
-          (Sikkerhetsoppdatering. Fikser
+          (Sikkerhetsoppdatering). Fikser
           <ulink url="&glfs-issues;/417">#417</ulink>.</para>
         </listitem>
       </itemizedlist>
