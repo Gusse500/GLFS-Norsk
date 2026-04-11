@@ -67,8 +67,23 @@ ninja</userinput></screen>
       Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>ninja install &amp;&amp;
-mv -v /sbin/rc-update /bin</userinput></screen>
+<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install &amp;&amp;
+
+mv -v DESTDIR/{s,}bin/rc-update                  &amp;&amp;
+mv -v DESTDIR/{s,}bin DESTDIR/usr                &amp;&amp;
+install -vDm755 DESTDIR/usr/bin/*  -t /usr/bin/  &amp;&amp;
+install -vDm755 DESTDIR/usr/sbin/* -t /usr/sbin/ &amp;&amp;
+rm -rf DESTDIR/usr/{s,}bin                       &amp;&amp;
+
+for conf in DESTDIR/etc/conf.d/*; do
+  if [ ! -e /etc/conf.d/$(basename $conf) ]; then
+    install -vDm644 $conf -t /etc/conf.d/
+  fi
+  rm -f $conf
+done &amp;&amp;
+
+cp -vR DESTDIR/* / &amp;&amp;
+rm -rf DESTDIR</userinput></screen>
 
     <para>
       Brukertjenester kan aktiveres i OpenRC med litt oppsett. Noen operasjoner 
