@@ -129,8 +129,6 @@ fi
 # Set up some environment variables.
 export HISTSIZE=1000
 export HISTIGNORE="&amp;:[bf]g:exit"
-
-# Set some defaults for graphical systems
 export XDG_DATA_DIRS=${XDG_DATA_DIRS:-/usr/share}
 export XDG_CONFIG_DIRS=${XDG_CONFIG_DIRS:-/etc/xdg}
 export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:-/tmp/xdg-$USER}
@@ -380,13 +378,15 @@ EOF</userinput></screen>
       <title>Innhenting av alle profilskriptene</title>
 
       <para>
-        Ved hver pålogging vil skriptene ovenfor bli hentet og opprette 
-        miljøvariabler og funksjoner. Imidlertid vil en kontinuerlig kjøring av 
-        denne boken, BLFS og/eller SLFS som startet før skriptene ovenfor ble 
-        opprettet, føre til at skriptene ikke hentes automatisk. De må hentes 
-        manuelt først før miljøvariablene og funksjonene er tilgjengelige for 
-        den gjeldende påloggingsøkten. Du bør sørge for å hente profilskriptene 
-        etter at du har opprettet dem.
+        Ved hver innlogging vil skriptene som er opprettet ovenfor, opprette 
+        miljøvariabler og funksjoner. Hvis du nettopp har fulgt LFS/MLFS og 
+        ønsker å fortsette til GLFS umiddelbart, bør disse filene hentes slik 
+        at viktig atferd og variabler gjenkjennes, ettersom de ikke hentes 
+        automatisk før du logger inn igjen. For å hente skriptene, må 
+        hovedskriptet (<filename>/etc/profile</filename>) bli hentet som 
+        deretter henter alle de andre skriptene. Dette gjør det ganske enkelt 
+        å hente inn nye endringer i skriptene. Denne handlingen vil bli gjort 
+        flere ganger i løpet av boken når miljøet må endres.
       </para>
 
       &source-profile;
