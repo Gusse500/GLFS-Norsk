@@ -142,9 +142,9 @@ ldconfig</userinput></screen>
       <systemitem class="username">root</systemitem> bruker:
     </para>
 
-<screen role="root"><userinput>for i in {,32}; do
+<screen role="root"><userinput>for lib in lib{,32}; do
   ln -sfv ./pkcs11/p11-kit-trust.so \
-          /usr/lib"$i"/libnssckbi.so
+          /usr/"$lib"/libnssckbi.so
 done</userinput></screen>
 
   </sect2>
