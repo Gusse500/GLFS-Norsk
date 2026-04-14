@@ -105,6 +105,7 @@ meson setup --prefix=/usr       \
             -D database=gdbm    \
             -D doxygen=false    \
             -D bluez5=disabled  \
+            -D man=false        \
             -D tests=false      \
             .. &amp;&amp;
 
@@ -146,6 +147,7 @@ meson setup --prefix=/usr       \
             -D database=gdbm    \
             -D doxygen=false    \
             -D bluez5=disabled  \
+            -D man=false        \
             -D tests=false      \
             .. &amp;&amp;
 
@@ -179,6 +181,13 @@ ldconfig</userinput></screen>
       en kjøretidsfeil hvis både dbus og SBC 
       er installert, men BlueZ ikke er installert. 
       Fjern denne hvis du har installert alle tre pakkene.
+    </para>
+
+    <para>
+      <parameter>-D man=false</parameter>: Denne bryteren deaktiverer generering 
+      av manualsider, som krever XML::Parser, iscenesatt for å gå inn i BLFS, 
+      som krever flere moduler. Hvis du har XML::Parser, kan du fjerne denne 
+      parameteren.
     </para>
 
     <para>

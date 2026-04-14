@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>14. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libpng: 1.6.56 -&gt; 1.6.57. Fikser
+          <ulink url="&glfs-issues;/419">#419</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>8. april 2026</para>
       <itemizedlist>
         <listitem>
