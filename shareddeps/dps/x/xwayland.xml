@@ -62,7 +62,9 @@
   <sect2 role="installation">
     <title>Installasjon av Xwayland</title>
 
+<!--
     &x-nettle;
+-->
 
     <para>
       Installer xwayland ved å kjøre følgende 
