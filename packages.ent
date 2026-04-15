@@ -1,7 +1,7 @@
 <!-- PYTHON ENTITIES -->
 <!ENTITY python3-major                "3">
 <!ENTITY python3-minor                "14">
-<!ENTITY python3-patch                "3">
+<!ENTITY python3-patch                "4">
 <!ENTITY python3-majorver             "&python3-major;.&python3-minor;">
 <!ENTITY python3-version              "&python3-majorver;.&python3-patch;">
 <!ENTITY python3-lib-suffix           "cpython-&python3-major;&python3-minor;-&lt;arch&gt;-linux-gnu">
@@ -28,15 +28,15 @@
 <!ENTITY linux-pam-version            "1.7.2">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY openrc-version               "0.63">
-<!ENTITY shadow-version               "4.19.3">
+<!ENTITY shadow-version               "4.19.4">
 <!ENTITY elogind-version              "255.22">
 <!ENTITY systemd-version              "260.1">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
-<!ENTITY glib2-minor                   "86">
-<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.5">
+<!ENTITY glib2-minor                   "88">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.0">
 <!ENTITY gi-major                      "1">
-<!ENTITY gi-minor                      "&gi-major;.&glib2-minor;">
+<!ENTITY gi-minor                      "&gi-major;.86">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
 <!ENTITY icu-major                    "78">
 <!ENTITY icu-minor                    "3">
@@ -66,7 +66,7 @@
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
 <!ENTITY ruby-minor-version           "4.0">
-<!ENTITY ruby-patch-version           "1">
+<!ENTITY ruby-patch-version           "2">
 <!ENTITY ruby-version                 "&ruby-minor-version;.&ruby-patch-version;">
 <!ENTITY ruby-gemdir                  "/usr/lib/ruby/gems/&ruby-minor-version;.0">
 <!-- Audio -->
@@ -78,7 +78,6 @@
 <!ENTITY alsa-utils-version           "1.2.15.2">
 <!ENTITY libogg-version               "1.3.6">
 <!ENTITY libvorbis-version            "1.3.7">
-<!ENTITY vorbistools-version          "1.4.2">
 <!ENTITY flac-version                 "1.5.0">
 <!ENTITY opus-version                 "1.6.1">
 <!ENTITY speex-version                "1.2.1">
@@ -248,8 +247,8 @@
 <!ENTITY xkeyboard-config-version     "2.47">
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
-<!ENTITY xorg-server-version          "21.1.21">
-<!ENTITY xwayland-version             "24.1.9">
+<!ENTITY xorg-server-version          "21.1.22">
+<!ENTITY xwayland-version             "24.1.10">
 <!-- BEGIN X7DRIVER -->
 <!ENTITY xorg-evdev-driver-version    "2.11.0">
 <!ENTITY xorg-libinput-driver-version "1.5.0">

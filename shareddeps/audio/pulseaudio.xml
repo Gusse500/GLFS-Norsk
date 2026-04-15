@@ -74,9 +74,10 @@
       <ulink url="https://www.lirc.org/">LIRC</ulink>,
       <ulink url="https://gstreamer.freedesktop.org/src/orc/">ORC</ulink>,
       <ulink url="https://sourceforge.net/projects/soxr/">soxr</ulink>,
-      <ulink url="https://tdb.samba.org/">TDB</ulink>, og
+      <ulink url="https://tdb.samba.org/">TDB</ulink>,
       <ulink url="https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/">
-      WebRTC AudioProcessing</ulink>
+      WebRTC AudioProcessing</ulink>, og
+      <ulink url="&perlmod;xml-parser">XML::Parser</ulink>
       <!--<ulink url="http://www.xenproject.org/">XEN</ulink>-->
     </para>
 
@@ -185,8 +186,7 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>-D man=false</parameter>: Denne bryteren deaktiverer generering 
-      av manualsider, som krever XML::Parser, iscenesatt for å gå inn i BLFS, 
-      som krever flere moduler. Hvis du har XML::Parser, kan du fjerne denne 
+      av manualsider, som krever XML::Parser. Hvis du har den, fjern denne 
       parameteren.
     </para>
 

@@ -44,7 +44,27 @@
       <para>14. april 2026</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - libpng: 1.6.56 -&gt; 1.6.57. Fikser
+          <para>[zeckma] - Shadow: 4.19.3 -&gt; 4.19.4.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLib: 2.86.5 -&gt; 2.88.0. Fikser
+          <ulink url="&glfs-issues;/416">#416</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Ruby: 4.0.1 -&gt; 4.0.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xorg-Server: 21.1.21 -&gt; 21.1.22 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23144">#23144</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xwayland: 24.1.9 -&gt; 24.1.10 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23145">#23145</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libpng: 1.6.56 -&gt; 1.6.57 (sikkerhet). Fikser
           <ulink url="&glfs-issues;/419">#419</ulink>.</para>
         </listitem>
       </itemizedlist>
