@@ -49,7 +49,7 @@
 <!ENTITY polkit-version               "127">
 <!-- Tooling -->
 <!ENTITY cmake-major-version          "4.3">
-<!ENTITY cmake-minor-version          "1">
+<!ENTITY cmake-minor-version          "2">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY llvm-maj-version             "22">
 <!ENTITY llvm-min-version             "1">
@@ -66,7 +66,7 @@
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
 <!ENTITY ruby-minor-version           "4.0">
-<!ENTITY ruby-patch-version           "2">
+<!ENTITY ruby-patch-version           "3">
 <!ENTITY ruby-version                 "&ruby-minor-version;.&ruby-patch-version;">
 <!ENTITY ruby-gemdir                  "/usr/lib/ruby/gems/&ruby-minor-version;.0">
 <!-- Audio -->
@@ -98,7 +98,7 @@
 <!ENTITY libpng-version               "1.6.57">
 <!ENTITY apng-version                 "&libpng-version;">
 <!ENTITY freetype2-version            "2.14.3">
-<!ENTITY harfbuzz-version             "14.1.0">
+<!ENTITY harfbuzz-version             "14.2.0">
 <!ENTITY fontconfig-version           "2.17.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -111,7 +111,7 @@
 <!ENTITY libXScrnSaver-version        "1.2.5">
 <!ENTITY libXt-version                "1.3.1">
 <!ENTITY libXmu-version               "1.3.1">
-<!ENTITY libXpm-version               "3.5.18">
+<!ENTITY libXpm-version               "3.5.19">
 <!ENTITY libXaw-version               "1.0.16">
 <!ENTITY libXfixes-version            "6.0.2">
 <!ENTITY libXcomposite-version        "0.4.7">
