@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>24. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: 3.121 -&gt; 3.123.1.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>23. april 2026</para>
       <itemizedlist>
         <listitem>
@@ -178,7 +187,7 @@
       <para>31. mars 2026</para>
       <itemizedlist>
         <listitem>
-          <para>[renodr] - freetype: 2.14.2 -&gt; 2.14.3 (Sikkerhetsoppdatering).
+          <para>[renodr] - FreeType2: 2.14.2 -&gt; 2.14.3 (Sikkerhetsoppdatering).
           Fikser <ulink url="&glfs-issues;/403">#403</ulink>.</para>
         </listitem>
         <listitem>
