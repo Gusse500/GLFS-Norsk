@@ -44,7 +44,19 @@
       <para>28. april 2026</para>
       <itemizedlist>
         <listitem>
-          <para>[zeckma] - Rustc: 1.94.0 -&gt; 1.95.0. Se BLFS billett
+          <para>[zeckma] - libxml2: 2.15.2 -&gt; 2.15.3 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23157">#23157</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - mako: 1.3.10 -&gt; 1.3.11.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libpng: 1.6.57 -&gt; 1.6.58.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.94.0 -&gt; 1.95.0 (sikkerhet).
+          Se BLFS billett
           <ulink url="&blfs-ticket-root;23048">#23048</ulink>.</para>
         </listitem>
         <listitem>
