@@ -213,9 +213,6 @@ cat &gt;&gt; bootstrap.toml &lt;&lt; "EOF" &amp;&amp;
 # Omit the documentation to save time and space (the default is to build them).
 docs = false
 
-# Do not look for new versions of dependencies online.
-locked-deps = true
-
 # Specify which extended tools to install.
 tools = ["cargo", "clippy", "rustdoc", "rustfmt", "src"]
 
