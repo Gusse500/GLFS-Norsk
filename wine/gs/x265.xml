@@ -54,12 +54,12 @@
     <title>Installasjon av x265</title>
 
     <para>
-      Først, endre CMake policyen for å tillate bygging med 
-      CMake-4.0 og nyere:
+      Rett bygging for 32-bit siden en ufullstendig sjekk ruter 32-bit 
+      gjennom PLT, noe 32-bit ikke kan gjøre:
     </para>
 
-<screen><userinput>sed -r '/cmake_policy.*(0025|0054)/d' \
-  -i source/CMakeLists.txt</userinput></screen>
+<screen remap="pre"><userinput>sed -i 's/FORMAT_ELF/UNIX64 &amp;&amp; FORMAT_ELF/' \
+  source/common/x86/cpu-a.asm</userinput></screen>
 
     <para>
       Installer x265 ved å kjøre følgende 
@@ -72,10 +72,9 @@ cd    bld &amp;&amp;
 
 cmake -D CMAKE_INSTALL_PREFIX=/usr        \
       -D GIT_ARCHETYPE=1                  \
-      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -W no-dev ../source &amp;&amp;
-
 make</userinput></screen>
+
 
     <!-- To editors: hard coded versions "209", "212", and "3.6" are not a
          bug.  This <important> block should be removed when we update x265
@@ -126,7 +125,6 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
 cmake -D CMAKE_INSTALL_PREFIX=/usr        \
       -D LIB_INSTALL_DIR=lib32            \
       -D GIT_ARCHETYPE=1                  \
-      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -W no-dev ../source &amp;&amp;
 
 make</userinput></screen>
@@ -159,8 +157,6 @@ ldconfig</userinput></screen>
       omgå det for brukere som ikke ønsker å installere Git som en 
       byggeavhengighet.
     </para>
-
-    &cmake-policy-version;
 
     <para>
       <parameter>-W no-dev</parameter>: Denne bryteren brukes til å undertrykke 

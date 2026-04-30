@@ -65,7 +65,7 @@
 <!ENTITY rustc-openssl-sys-nice       "0.9.114">
 <!ENTITY cbindgen-version             "0.29.2">
 <!ENTITY rust-bindgen-version         "0.72.1">
-<!ENTITY mako-version                 "1.3.11">
+<!ENTITY mako-version                 "1.3.12">
 <!ENTITY cython-version               "3.2.4">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
@@ -162,7 +162,7 @@
 <!ENTITY vulkan-sdk-version           "1.4.341.0">
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.1">
 <!ENTITY libatomic_ops-version        "7.10.0">
-<!ENTITY libdrm-version               "2.4.131">
+<!ENTITY libdrm-version               "2.4.133">
 <!ENTITY libgbm-version               "1.0.6">
 <!ENTITY libva-version                "2.23.0">
 <!ENTITY ocl-headers-version          "2025.07.22">
@@ -252,7 +252,7 @@
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
 <!ENTITY xorg-server-version          "21.1.22">
-<!ENTITY xwayland-version             "24.1.10">
+<!ENTITY xwayland-version             "24.1.11">
 <!-- BEGIN X7DRIVER -->
 <!ENTITY xorg-evdev-driver-version    "2.11.0">
 <!ENTITY xorg-libinput-driver-version "1.5.0">
@@ -296,7 +296,7 @@
 <!ENTITY lame-version                 "3.100">
 <!ENTITY libvpx-version               "1.16.0">
 <!ENTITY x264-version                 "20250815">
-<!ENTITY x265-version                 "4.1">
+<!ENTITY x265-version                 "4.2">
 <!ENTITY ffmpeg-version               "8.1">
 <!ENTITY gstreamer10-version          "1.28.2">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">

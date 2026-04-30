@@ -44,6 +44,20 @@
       <para>29. april 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Mako: 1.3.11 -&gt; 1.3.12.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libdrm: 2.4.131 -&gt; 2.4.133.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xwayland: 24.1.10 -&gt; 24.1.11.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - x265: 4.1 -&gt; 4.2 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23211">#23211</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - CUDA: 13.2.0 -&gt; 13.2.1. Fikser
           <ulink url="&glfs-issues;/421">#421</ulink>.</para>
         </listitem>
@@ -74,7 +88,7 @@
           <ulink url="&blfs-ticket-root;23157">#23157</ulink>.</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - mako: 1.3.10 -&gt; 1.3.11.</para>
+          <para>[zeckma] - Mako: 1.3.10 -&gt; 1.3.11.</para>
         </listitem>
         <listitem>
           <para>[zeckma] - libpng: 1.6.57 -&gt; 1.6.58.</para>
