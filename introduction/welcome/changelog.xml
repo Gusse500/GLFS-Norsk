@@ -44,6 +44,22 @@
       <para>29. april 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - CUDA: 13.2.0 -&gt; 13.2.1. Fikser
+          <ulink url="&glfs-issues;/421">#421</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CUDA-r580: 13.0.2 -&gt; 13.0.3. Fikser
+          <ulink url="&glfs-issues;/422">#422</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 595.58.03 -&gt; 595.71.05. Fikser
+          <ulink url="&glfs-issues;/424">#424</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA-r580: 580.142 -&gt; 580.159.03. Fikser
+          <ulink url="&glfs-issues;/425">#425</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - nghttp2: Lagt til for cURL og Rustc.</para>
         </listitem>
       </itemizedlist>

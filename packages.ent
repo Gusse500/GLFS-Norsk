@@ -185,20 +185,20 @@
 <!-- NVIDIA -->
 <!ENTITY nvidia-rev           "595">
 <!ENTITY nvidia-linux-version "6.17.x - 6.19.x">
-<!ENTITY nvidia-version       "&nvidia-rev;.58.03">
+<!ENTITY nvidia-version       "&nvidia-rev;.71.05">
 <!ENTITY nvidia-full-name     "&nvidia-version;<!-- &nvidia-beta;-->">
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
-<!ENTITY cuda-version         "13.2.0">
-<!ENTITY cuda-nvidia-version  "595.45.04">
+<!ENTITY cuda-version         "13.2.1">
+<!ENTITY cuda-nvidia-version  "595.58.03">
 <!-- NVIDIA r580 -->
 <!ENTITY nvidia-r580-linux-version "6.15.x - 6.19.x">
-<!ENTITY nvidia-r580-version       "580.142">
+<!ENTITY nvidia-r580-version       "580.159.03">
 <!ENTITY nvidia-r580-full-name     "&nvidia-r580-version;">
 <!ENTITY nv-r580-manifest-version  "1">
 <!ENTITY nv-r580-sysv-bs           "1">
-<!ENTITY cuda-r580-version         "13.0.2">
-<!ENTITY cuda-r580-nvidia-version  "580.126.18">
+<!ENTITY cuda-r580-version         "13.0.3">
+<!ENTITY cuda-r580-nvidia-version  "580.126.20">
 <!-- X11 -->
 <!ENTITY xbitmaps-version             "1.1.4">
 <!-- BEGIN X7APP -->
