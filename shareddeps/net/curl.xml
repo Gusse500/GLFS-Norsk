@@ -52,15 +52,16 @@
     <bridgehead renderas="sect3">cURL Avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="libpsl"/>
+      <xref linkend="libpsl"/> og
+      <xref linkend="nghttp2"/> (påkrevd for <xref linkend="rustc"/>)
     </para>
 
     <note>
       <para>
-        Selv om du kan bygge pakken uten libpsl, anbefaler 
-        oppstrømsutviklerne på det sterkeste å bygge støtte for libpsl. 
-        Det forhindrer nettsteder i å bruke superinformasjonskapsler som utgjør 
-        sikkerhetsrisikoer.
+        De anbefalte avhengighetene, selv om de ikke er strengt nødvendige, 
+        anbefales på det sterkeste for å beskytte mot superinformasjonskapsler 
+        som medfører sikkerhetsproblemer samt for å få HTTP/2 støtte som noen 
+        pakker og nettsteder krever.
       </para>
     </note>
 
@@ -82,8 +83,7 @@
 -->
 
     <para>
-      Installer cURL ved å kjøre følgende
-      kommandoer:
+      Installer cURL ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;

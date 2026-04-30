@@ -51,16 +51,14 @@
     <bridgehead renderas="sect3">CMake avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="curl"/>
+      <xref linkend="curl"/> og <xref linkend="nghttp2"/>
     </para>
 
     <para role="optional">
       <ulink url="&blfs-svn;/general/libarchive.html">
-      libarchive</ulink>,
+      libarchive</ulink> og
       <ulink url="&blfs-svn;/general/libuv.html">
-      libuv</ulink>, og
-      <ulink url="&blfs-svn;/basicnet/nghttp2.html">
-      nghttp2</ulink>
+      libuv</ulink>
     </para>
 
   </sect2>
@@ -92,7 +90,6 @@
             --no-system-librhash   \
             --no-system-libarchive \
             --no-system-libuv      \
-            --no-system-nghttp2    \
             --docdir=/share/doc/cmake-&cmake-version; &amp;&amp;
 
 make</userinput></screen>
@@ -135,7 +132,7 @@ make</userinput></screen>
     </para>
 
     <para>
-      <parameter>--no-system-{libarchive,libuv,nghttp2}</parameter>: Disse 
+      <parameter>--no-system-{libarchive,libuv}</parameter>: Disse 
       bryterne gjør det samme som ovenfor, men for pakkene som er oppført i disse 
       parameterne. De er ikke installert for øyeblikket.
     </para>
