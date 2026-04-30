@@ -121,7 +121,7 @@
       <!-- Required for downloading stage 0 binaries.
            Otherwise it's recommended (if not installed, a vendored copy
            will be built). -->
-      <xref linkend="curl"/>
+      <xref linkend="curl"/> (med <xref linkend="nghttp2"/>)
     </para>
 
     <para role="recommended">

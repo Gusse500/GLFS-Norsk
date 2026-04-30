@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY nghttp2-download "https://github.com/nghttp2/nghttp2/releases/download/v&nghttp2-version;/nghttp2-&nghttp2-version;.tar.xz">
+]>
+
+<sect1 id="nghttp2" xreflabel="nghttp2-&nghttp2-version;">
+  <?dbhtml filename="nghttp2.html"?>
+
+  <title>nghttp2-&nghttp2-version;</title>
+
+  <indexterm zone="nghttp2">
+    <primary sortas="a-nghttp2">nghttp2</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til nghttp2</title>
+
+    <para>
+      nghttp2 er en implementering av HTTP/2 og dens 
+      deklarasjons komprimeringsalgoritme, HPACK. Pakker bruker dette til å 
+      støtte HTTP/2, som i noen tilfeller er direkte nødvendig.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&nghttp2-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">nghttp2 Avhengigheter</bridgehead>
+
+    <para role="recommended">
+      <xref linkend="libxml2"/>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av nghttp2</title>
+
+    <para>
+      Installer nghttp2 ved å kjøre følgende 
+      kommandoer:
+    </para>
+
+<screen><userinput>./configure --prefix=/usr     \
+            --disable-static  \
+            --enable-lib-only \
+            --docdir=/usr/share/doc/nghttp2-&nghttp2-version; &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>lib32 Installasjon av nghttp2</title>
+
+    <para>
+      Installer lib32-nghttp2 ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>CC="gcc -m32" CXX="g++ -m32"         \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+./configure --prefix=/usr            \
+            --libdir=/usr/lib32      \
+            --host=i686-pc-linux-gnu \
+            --disable-static         \
+            --enable-lib-only       &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install    &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-configure;
+
+    &static-libraries;
+
+    <para>
+      <parameter>--enable-lib-only</parameter>: Ber byggesystemet om bare å 
+      bygge <filename class="libraryfile">libnghttp2</filename> ettersom hele 
+      pakken er unødvendig og trekker inn flere avhengigheter.
+    </para>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          Ingen
+        </seg>
+        <seg>
+          libnghttp2
+        </seg>
+        <seg>
+          /usr/include/nghttp2,
+          /usr/share/nghttp2, og
+          /usr/share/doc/nghttp2-&nghttp2-version;
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="libnghttp2">
+        <term><filename class="libraryfile">libnghttp2</filename></term>
+        <listitem>
+          <para>
+            er en C implementering av Hypertext Transfer Protocol v2
+          </para>
+          <indexterm zone="nghttp2 libnghttp2">
+            <primary sortas="c-libnghttp2">libnghttp2</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

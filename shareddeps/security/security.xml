@@ -24,8 +24,6 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="duktape.xml"/>
   <!--<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pcre2.xml"/>-->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="glib2.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="icu.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libxml2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="shared-mime-info.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="desktop-file-utils.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="polkit.xml"/>

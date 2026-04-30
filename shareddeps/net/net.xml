@@ -15,6 +15,9 @@
     pakker senere i denne boken kan være avhengige av eller er nyttige i seg selv.
   </para>
 
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="icu.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libxml2.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nghttp2.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libtasn1.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nspr.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nss.xml"/>

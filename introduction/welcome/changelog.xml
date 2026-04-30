@@ -41,6 +41,15 @@
     -->
 
     <listitem>
+      <para>29. april 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - nghttp2: Lagt til for cURL og Rustc.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>28. april 2026</para>
       <itemizedlist>
         <listitem>
