@@ -371,11 +371,26 @@ cd ..</userinput></screen>
   <itemizedlist>
     <listitem>
       <para><ulink url='&blfs-svn;/gnome/mutter.html'>Mutter</ulink>:
-      Kompiler denne pakken med
-      <parameter>-D wayland_eglstream=true</parameter> og
-      <parameter>-D egl_device=true</parameter> for å aktivere oppstart med 
-      Wayland. Sørg for at <xref linkend='nvidia-egl'/> er
-      installert.</para>
+      Kompiler denne pakken ved å bruke oppdateringer og sed kommandoer nevnt i 
+      BLFS først, og kjør deretter de påfølgende kommandoene.:</para>
+<screen role='nodump'><userinput>find -name \*.c \
+  -exec sed -i '/&lt;EGL\/eglmesaext.h&gt;/d' {} \; &amp;&amp;
+find -name \*.h \
+  -exec sed -i '/&lt;EGL\/eglmesaext.h&gt;/d' {} \; &amp;&amp;
+
+mkdir build &amp;&amp;
+cd    build &amp;&amp;
+
+meson setup --prefix=/usr             \
+            --buildtype=release       \
+            -D tests=disabled         \
+            -D profiler=false         \
+            -D bash_completion=false  \
+            -D wayland_eglstream=true \
+            -D egl_device=true        \
+            ..                       &amp;&amp;
+ninja</userinput></screen>
+      <para>Installer som &root; med <command>ninja install</command>.</para>
     </listitem>
     <listitem>
       <para>
