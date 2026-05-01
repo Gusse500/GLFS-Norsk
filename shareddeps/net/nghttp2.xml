@@ -22,7 +22,7 @@
     <para>
       nghttp2 er en implementering av HTTP/2 og dens 
       deklarasjons komprimeringsalgoritme, HPACK. Pakker bruker dette til å 
-      støtte HTTP/2, som i noen tilfeller er direkte nødvendig.
+      støtte HTTP/2, som begynner å bli mer vanlig brukt på internett.
     </para>
 
     <itemizedlist spacing="compact">
