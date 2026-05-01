@@ -44,6 +44,10 @@
       <para>30. april 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - DRI: Ikke installer
+          <filename>eglmesaext.h</filename>.</para>
+        </listitem>
+        <listitem>
           <para>[renodr] - Wine: 11.5 -&gt; 11.7. Fikser
           <ulink url="&glfs-issues;/410">#410</ulink>.</para>
         </listitem>
