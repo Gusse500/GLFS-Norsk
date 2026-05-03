@@ -41,6 +41,20 @@
     -->
 
     <listitem>
+      <para>1. mai 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 22.1.1 -&gt; 22.1.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GnuTLS: 3.8.12 -&gt; 3.8.13 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23219">#23219</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>30. april 2026</para>
       <itemizedlist>
         <listitem>

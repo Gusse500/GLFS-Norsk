@@ -57,6 +57,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -66,6 +67,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">GnuTLS Avhengigheter</bridgehead>
 
@@ -91,9 +93,11 @@
   <sect2 role="installation">
     <title>Installasjon av GnuTLS</title>
 
+<!--
     <para>Installer en oppdatering for å tillate bygging med Nettle-4.0 og nyere:</para>
 
 <screen><userinput>patch -Np1 -i ../gnutls-&gnutls-version;-nettle4_fixes-1.patch</userinput></screen>
+-->
 
     <para>
       Installer GnuTLS ved å kjøre følgende kommandoer:

@@ -58,7 +58,7 @@
       gjennom PLT, noe 32-bit ikke kan gjøre:
     </para>
 
-<screen remap="pre"><userinput>sed -i 's/FORMAT_ELF/UNIX64 &amp;&amp; FORMAT_ELF/' \
+<screen remap="pre"><userinput>sed -i 's/FORMAT_ELF/UNIX64 \&amp;\&amp; FORMAT_ELF/' \
   source/common/x86/cpu-a.asm</userinput></screen>
 
     <para>
