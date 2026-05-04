@@ -387,9 +387,12 @@ EOF</userinput></screen>
     <title>Fortsette</title>
 
     <para>
-      Hvis du installerte <xref linkend="libglvnd"/>, <xref linkend="libgbm"/>,
-      og <xref linkend="dri"/>, burde du ikke trenge Mesa som en avhengighet 
-      for noen pakke i noen av LFS bøkene.
+      Hvis du installerte <xref linkend="libglvnd"/> og <xref linkend="libgbm"/>,
+      burde du ikke trenge Mesa som en avhengighet for noen pakke i noen av LFS 
+      bøkene. Du må sørge for at du installerer <xref linkend="xorg-server"/>
+      og/eller <xref linkend="xwayland"/> fra denne boken, ettersom disse pakkene 
+      inkluderer viktige oppdateringer som omgår behovet for et Mesa spesifikt 
+      grensesnitt som brukes til å laste inn Mesa spesifikke drivere for programvaregjengivelse.
     </para>
 
     <para>
