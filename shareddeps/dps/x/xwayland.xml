@@ -34,12 +34,21 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/xwayland/xwayland-&xwayland-version;-dri.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">Xwayland Avhengigheter</bridgehead>
 
     <para role="required">
       En brukerland grafikkdriver (<xref linkend='mesa'/> og/eller
       &nvidia;) (kjøretid),
-      <xref linkend="dri"/>,
       <xref linkend="libxcvt"/>,
       <xref linkend="pixman"/>,
       <xref linkend="wayland-protocols"/>,
@@ -48,12 +57,13 @@
     </para>
 
     <para role="recommended">
-      &gbm;,
-      <xref linkend="libepoxy"/>, og
+      <xref linkend="libepoxy"/>,
+      &gbm;, og
       &opengl;
     </para>
 
     <para role="optional">
+      <xref linkend="mesa"/> (for å laste GLX llvmpipe/softpipe drivere) og
       <xref linkend="nettle"/>
     </para>
 
@@ -61,6 +71,13 @@
 
   <sect2 role="installation">
     <title>Installasjon av Xwayland</title>
+
+    <para>
+      Tillat bygging av pakken hvis DRI grensesnittet ikke er installert (brukes 
+      for Mesa programvaredrivere) ved å installere en oppdatering:
+    </para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../xwayland-&xwayland-version;-dri.patch</userinput></screen>
 
 <!--
     &x-nettle;
