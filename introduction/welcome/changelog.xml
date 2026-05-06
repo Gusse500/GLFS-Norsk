@@ -41,10 +41,63 @@
     -->
 
     <listitem>
+      <para>5. mai 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Wine: 11.7 -&gt; 11.8. Fikser
+          <ulink url="&glfs-issues;/426">#426</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - egl-wayland: 1.1.20 -&gt; 1.1.21. Fikser
+          <ulink url="&glfs-issues;/432">#432</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA-VA-API-Driver: 0.0.14 -&gt; 0.0.16. Fikser
+          <ulink url="&glfs-issues;/433">#433</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - iceauth: 1.0.10 -&gt; 1.0.11. Fikser
+          <ulink url="&glfs-issues;/434">#434</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - mkfontscale: 1.2.3 -&gt; 1.2.4. Fikser
+          <ulink url="&glfs-issues;/435">#435</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - setxkbmap: 1.3.4 -&gt; 1.3.5. Fikser
+          <ulink url="&glfs-issues;/436">#436</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL3: 3.4.4 -&gt; 3.4.8. Fikser
+          <ulink url="&glfs-issues;/438">#438</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - sdl2-compat: 2.32.66 -&gt; 2.32.68. Fikser
+          <ulink url="&glfs-issues;/439">#439</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>3. mai 2026</para>
       <itemizedlist>
         <listitem>
           <para>[zeckma] - DRI: Fjernet, Xserver versjoner tilpasset.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2. mai 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[tox] - cURL: 8.19.0 -&gt; 8.20.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/427">#427</ulink>. Se BLFS billett
+          <ulink url="&blfs-ticket-root;23216">#23216</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - libpciaccess: 0.18.1 -&gt; 0.19. Fikser
+          <ulink url="&glfs-issues;/428">#428</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
