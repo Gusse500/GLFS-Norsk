@@ -53,8 +53,9 @@
       <para>2. mai 2026</para>
       <itemizedlist>
         <listitem>
-          <para>[tox] - cURL: 8.19.0 -&gt; 8.20.0. Fikser
-          <ulink url="&glfs-issues;/427">#427</ulink>.</para>
+          <para>[tox] - cURL: 8.19.0 -&gt; 8.20.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/427">#427</ulink>. Se BLFS billett
+          <ulink url="&blfs-ticket-root;23216">#23216</ulink>.</para>
         </listitem>
         <listitem>
           <para>[tox] - libpciaccess: 0.18.1 -&gt; 0.19. Fikser
