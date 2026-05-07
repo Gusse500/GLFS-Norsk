@@ -44,6 +44,10 @@
       <para>5. mai 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - hwdata: 0.406 -&gt; 0.407. Fikser
+          <ulink url="&glfs-issues;/440">#440</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Wine: 11.7 -&gt; 11.8. Fikser
           <ulink url="&glfs-issues;/426">#426</ulink>.</para>
         </listitem>
