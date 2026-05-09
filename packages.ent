@@ -41,7 +41,7 @@
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "88">
-<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.0">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.1">
 <!ENTITY gi-major                      "1">
 <!ENTITY gi-minor                      "&gi-major;.86">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
@@ -266,7 +266,7 @@
 <!-- STEAM -->
 
 <!ENTITY xdg-user-dirs-version        "0.20">
-<!ENTITY libgpg-error-version         "1.60">
+<!ENTITY libgpg-error-version         "1.61">
 <!ENTITY steam-version                "1.0.0.85">
 
 
@@ -297,7 +297,7 @@
 <!ENTITY libvpx-version               "1.16.0">
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.2">
-<!ENTITY ffmpeg-version               "8.1">
+<!ENTITY ffmpeg-version               "8.1.1">
 <!ENTITY gstreamer10-version          "1.28.2">  <!-- Even minors only -->
 <!ENTITY gst10-plugins-base-version   "&gstreamer10-version;">
 <!ENTITY gst10-plugins-good-version   "&gstreamer10-version;">

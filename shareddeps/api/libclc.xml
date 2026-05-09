@@ -43,8 +43,12 @@
       <bridgehead renderas="sect3">libclc Avhengigheter</bridgehead>
 
       <para role="required">
-        <xref linkend="llvm"/> (med Clang) og
-        <xref linkend="spirv-llvm-translator"/>
+        <xref linkend="llvm"/> (med Clang)
+      </para>
+
+      <para role="recommended">
+        <xref linkend="spirv-llvm-translator"/> (påkrevd av noen Mesa
+        drivere)
       </para>
 
     </sect2>
