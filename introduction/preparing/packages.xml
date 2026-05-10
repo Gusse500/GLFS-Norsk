@@ -15,21 +15,21 @@
   filer med kildekode og oppdateringer for å løse diverse problemer. Hvis du 
   følger GLFS rett etter LFS eller MLFS, har du sannsynligvis ikke verktøyene 
   som er nødvendige på LFS målet for å laste ned noen av de nødvendige filene, 
-  eller en internettforbindelse. Hvis du har det, kan GLFS behandles som BLFS 
+  eller en nettverkstilkobling. Hvis du har det, kan GLFS behandles som BLFS 
   ved at du kan laste ned filer etter hvert, men det kan være ganske upraktisk.</para>
 
   <para>Uansett kan det være lurt å laste ned alle filene samtidig.</para>
 
   <para>For det første er det opp til deg hvilken mappe du velger å laste ned 
   til. Men du bør gjøre det i et miljø som har både <xref linkend="wget"/> og
-  en internettforbindelse. Hvis du følger GLFS i en chroot, kan du laste ned 
+  en nettverkstilkobling. Hvis du følger GLFS i en chroot, kan du laste ned 
   filene i <filename class="directory">$LFS/sources</filename>
   utenfor chrooten, og følg deretter GLFS i chrooten. Hvis du følger GLFS i en 
   TTY, kan du laste ned filene på en annen distribusjon, legge dem på en 
   lagringsenhet og koble lagringsenheten til LFS målet slik at filene er 
   tilgjengelige. Du kan også gjøre en kombinasjon av alt det ovennevnte eller 
   noe annet. Alt dette er hvis du ikke har <xref linkend="wget"/> og
-  en internettforbindelse på LFS målet. Hvis du har det, kan du følge 
+  en nettverkstilkobling på LFS målet. Hvis du har det, kan du følge 
   massenedlastingsprosessen normalt hvor du vil.</para>
 
   <para>Last ned Wget fillisten, og last deretter ned alle filene som er 

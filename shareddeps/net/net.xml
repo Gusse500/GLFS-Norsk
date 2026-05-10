@@ -11,8 +11,8 @@
   <title>Nettverksbygging</title>
 
   <para>
-    Dette kapittelet dekker nettverks-/internettavhengigheter og oppsett som 
-    pakker senere i denne boken kan være avhengige av eller er nyttige i seg selv.
+    Dette kapittelet dekker nettverksavhengigheter og oppsett som pakker senere 
+	i denne boken kan være avhengige av eller er nyttige i seg selv.
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="icu.xml"/>

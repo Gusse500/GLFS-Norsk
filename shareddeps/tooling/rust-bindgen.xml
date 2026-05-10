@@ -26,7 +26,7 @@
       Genererer automatisk Rust FFI bindinger til C biblioteker (og noen C++ biblioteker).
     </para>
 
-    &build-use-internet;
+    &build-use-network;
 
     <itemizedlist spacing="compact">
       <listitem>

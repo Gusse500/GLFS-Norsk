@@ -48,8 +48,8 @@
   <command>meson configure</command> kommandoen vil tilbakestille dette 
   alternativet.">
 
-<!ENTITY build-use-internet
-  "<note><para>En internettforbindelse er nødvendig for å bygge denne 
+<!ENTITY build-use-network
+  "<note><para>En nettverkstilkobling er nødvendig for å bygge denne 
   pakken. Systemsertifikatlageret må kanskje konfigureres med
   <xref role='required' linkend='make-ca'/> før du bygger denne 
   pakken.</para></note>">

@@ -111,7 +111,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
         Wayland økt</para>
       </listitem>
       <listitem>
-        <para>Ha en fungerende internettforbindelse</para>
+        <para>Ha en fungerende nettverkstilkobling</para>
       </listitem>
     </itemizedlist>
 
