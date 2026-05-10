@@ -11,17 +11,17 @@
   <title>Koble til internett</title>
 
   <para>
-    Noen av instruksjonene i GLFS krever internettforbindelse, nærmere bestemt i
-    <xref linkend="rustc"/> og når du laster ned alle filene for en pakkebunt 
-    som <xref linkend="vulkan-sdk"/>. Dermed trenger du en internettforbindelse 
-    på LFS målet, enten i en chroot, TTY eller GUI. Verktøy for nedlasting av 
-    filer vil bli installert i GLFS.
+    Noen av instruksjonene i GLFS krever en nettverkstilkobling til Internett, 
+	nærmere bestemt i <xref linkend="rustc"/> og når du laster ned alle filene 
+	for en pakkesamling som <xref linkend="vulkan-sdk"/>. Dermed trenger du en 
+	nettverkstilkobling på LFS målet, enten i en chroot, TTY, eller GUI. 
+	Verktøy for nedlasting av filer vil bli installert i GLFS.
   </para>
 
   <para>
     LFS boken dekker oppsett av nettverk ved å koble til et LAN med en statisk 
     IP-adresse. Det finnes andre metoder som brukes for å få en IP-adresse og 
-    koble til et LAN og andre nettverk (som internett). Den mest populære 
+    koble til et LAN og andre nettverk (som Internett). Den mest populære 
     metoden er DHCP.
   </para>
 
@@ -52,11 +52,11 @@
 
     <para>
       Du ønsker kanskje også å koble til
-      internett trådløst. For å gjøre det, bør du først 
+      Internett trådløst. For å gjøre det, bør du først 
       konfigurere kjernen til å støtte det, instruksjonene 
       det er
       <ulink url="&blfs-svn;/basicnet/wireless-kernel.html">her</ulink>.
-      Etter det trenger du et verktøy for å koble til internett, 
+      Etter det trenger du et verktøy for å koble til Internett, 
       egnet er for eksempel
       <ulink url="&blfs-svn;/basicnet/iw.html">iw</ulink>,
       <ulink url="&blfs-svn;/basicnet/wireless_tools.html">

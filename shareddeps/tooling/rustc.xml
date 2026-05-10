@@ -27,7 +27,7 @@
     <para>
       Som med mange andre programmeringsspråk trenger Rustc (Rust kompilatoren) 
       en binærfil å starte opp fra. Den vil laste ned en stage0 binærfil ved 
-      starten av byggingen, så du må ha en internettforbindelse for å bygge 
+      starten av byggingen, så du må ha en nettverkstilkobling for å bygge 
       denne pakken.
     </para>
 
@@ -92,7 +92,7 @@
       </para>
     </note>
 
-    &build-use-internet;
+    &build-use-network;
 
     &long-build-time;
 

@@ -103,7 +103,7 @@ rm -vf dri.pc</userinput></screen>
     <title>Laste ned DRI fra Mesa</title>
 
     <para>
-      Hvis du valgte å laste ned DRI grensesnittet fra internett i stedet, er 
+      Hvis du valgte å laste ned DRI grensesnittet fra Internett i stedet, er 
       det ikke nødvendig med noe oppsett før du laster ned grensesnittet, 
       bortsett fra å sørge for at du har en internettforbindelse, <xref linkend="make-ca"/> 
       er intaller, og at <xref linkend="wget"/> kan brukes.
