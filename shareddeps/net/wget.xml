@@ -53,6 +53,17 @@
     <title>Installasjon av Wget</title>
 
     <para>
+      Gjør pakken kompatibel med OpenSSL-4:
+    </para>
+
+<screen><userinput remap="pre">NEW_LINE="#if !defined OPENSSL_NO_SSL3_METHOD "
+NEW_LINE+="&amp;&amp; OPENSSL_VERSION_NUMBER &lt; 0x40000000L"
+
+sed -i "/SSL3/c $NEW_LINE" src/openssl.c
+
+unset NEW_LINE</userinput></screen>
+
+    <para>
       Installer Wget ved å kjøre følgende kommandoer:
     </para>
 

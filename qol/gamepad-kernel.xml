@@ -27,7 +27,7 @@
                                                               ...  [NINTENDO_FF]
       
       # For Playstation gamepad support:
-      &lt;*/M&gt;     <emphasis role='blue'>S</emphasis>ony PS2/3/4 accessories                              [HID_SONY]
+      &lt;*/M&gt;     <emphasis role='blue'>S</emphasis>ony PS2/3/4/5 accessories                            [HID_SONY]
       [ /*]       <emphasis role='blue'>S</emphasis>ony PS2/3/4 accessories force feedback support      [SONY_FF]
       
       # For Steam controllers:
