@@ -57,7 +57,9 @@
           <para>[zeckma] - MinGW-w64-GCC: 15.2.0 -&gt; 16.1.0.</para>
         </listitem>
         <listitem>
-          <para>[zeckma] - GStreamer: 1.28.2 -&gt; 1.28.3.</para>
+          <para>[zeckma] - GStreamer: 1.28.2 -&gt; 1.28.3 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23285">#23285</ulink>.</para>
         </listitem>
       </itemizedlist>
     </listitem>
