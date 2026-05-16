@@ -148,8 +148,8 @@
   parametere til <command>meson</command> kommandoen vist nedenfor):
 </para>
 
-<screen><userinput>mkdir  build &amp;&amp;
-cd     build &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
 meson setup --prefix=/usr          \
             --buildtype=release    \
