@@ -84,9 +84,8 @@
 
     <para>
       Disse problemene lekker inn i Supplemental LFS, som med Hyprland og 
-      OBS-Studio. Flatpak kan lide av det samme problemet. BLFS kan lide av dem 
-      på et tidspunkt, avhengig av når prosjekter gjør endringer som krever 
-      libglvnd i en eller annen form.
+      OBS-Studio. BLFS kan lide av lignende problemer, avhengig av når 
+      prosjekter gjør endringer som krever libglvnd i en eller annen form.
     </para>
 
   </sect2>
