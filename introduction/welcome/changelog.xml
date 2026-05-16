@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>15. mai 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - apng-patch: 1.6.57 -&gt; 1.6.58 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23307">#23307</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>12. mai 2026</para>
       <itemizedlist>
         <listitem>

@@ -100,7 +100,7 @@
 <!ENTITY libxcb-version               "1.17.0">
 <!ENTITY which-version                "2.23">
 <!ENTITY libpng-version               "1.6.58">
-<!ENTITY apng-version                 "1.6.57">
+<!ENTITY apng-version                 "1.6.58">
 <!ENTITY freetype2-version            "2.14.3">
 <!ENTITY harfbuzz-version             "14.2.0">
 <!ENTITY fontconfig-version           "2.17.1">
