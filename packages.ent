@@ -313,14 +313,14 @@
 <!ENTITY dxvk-spirv                   "8b246ff75c6615ba4532fe4fde20f1be090c3764">
 <!ENTITY dxvk-vulkan                  "234c4b7370a8ea3239a214c9e871e4b17c89f4ab">
 
-<!ENTITY vkd3d-proton-version            "3.0b">
-<!ENTITY vkd3d-proton-spirv              "3b9447dc98371e96b59a6225bd062a9867e1d203">
-<!ENTITY vkd3d-proton-vulkan             "b39ab380a44b6c8df462c34e976ea9ce2d2c336b">
-<!ENTITY vkd3d-proton-dxil-spirv         "4e36bab794afdb7d78f56b866971009ca894fe9c">
+<!ENTITY vkd3d-proton-version            "3.0.1">
+<!ENTITY vkd3d-proton-spirv              "f88a2d766840fc825af1fc065977953ba1fa4a91">
+<!ENTITY vkd3d-proton-vulkan             "8864cdc896bbc2a9b6eb36b3218fc9ef57908d77">
+<!ENTITY vkd3d-proton-dxil-spirv         "31ecc70656cbfb30f5fb6ea1a6b67a0e89424346">
 <!ENTITY vkd3d-proton-spirv-cross        "4b7bcb7e5cf71015b3299088d22004bfe4e13a5e">
-<!-- <!ENTITY vkd3d-proton-dxil-spirv-headers "3b9447dc98371e96b59a6225bd062a9867e1d203"> -->
-<!ENTITY vkd3d-proton-spirv-tools        "e9a8ceeddbf7e3aaadac2ab6f8a6ab6437872e88">
-<!ENTITY vkd3d-proton-dxbc               "a38b5d78ed29f5fe44c2a2e157d5f7c2516df6e5">
+<!--<!ENTITY vkd3d-proton-dxil-spirv-headers "f88a2d766840fc825af1fc065977953ba1fa4a91">-->
+<!ENTITY vkd3d-proton-spirv-tools        "64f5770f59db933d46b9cad6edc42b4186409ef4">
+<!ENTITY vkd3d-proton-dxbc               "29c93aeecd55533a357fdd7c95be5587d1c1f506">
 <!ENTITY vkd3d-proton-dxbc-spirv         "c8ad050fcb29e42a2f57d9f59e97488f465c436d">
 
 

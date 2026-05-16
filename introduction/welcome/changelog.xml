@@ -44,6 +44,10 @@
       <para>15. mai 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - VKD3D-Proton: 3.0b -&gt; 3.0.1. Fikser
+          <ulink url="&glfs-issues;/445">#445</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - apng-patch: 1.6.57 -&gt; 1.6.58 (sikkerhet).
           Se BLFS billett
           <ulink url="&blfs-ticket-root;23307">#23307</ulink>.</para>
