@@ -84,6 +84,14 @@
       hver byggetype.
     </para>
 
+    <note><para>
+      Kompilering av denne pakken kan skrive ut escape sekvenser på grunn av 
+      parallellisme. Kjør <command>reset</command> kommandoen hvis du ikke kan 
+      se hva du skriver etterpå, eller du ser annen merkelig terminaloppførsel. 
+      Under kompilering har det i noen tilfeller blitt observert at utdatafonten 
+      kan endre seg, enten normal til kursiv eller gjennomstreket.
+    </para></note>
+
     <sect3>
       <title>WoW64</title>
 

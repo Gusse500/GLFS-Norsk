@@ -25,7 +25,8 @@
     <para>
       MinGW-w64s deklarasjoner er allerede installert, men ikke resten av 
       prosjektet, inkludert nyttige biblioteker. Denne byggeprosessen vil dekke 
-      resten av MinGW-w64 prosjektet.
+      resten av MinGW-w64 prosjektet. Deklarasjonene vil også bli installert på 
+      nytt, siden dette er hele MinGW-w64 pakkeinstallasjonen.
     </para>
 
     &long-build-time;
