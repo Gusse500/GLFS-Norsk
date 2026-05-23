@@ -20,9 +20,9 @@
 <!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.39">
 <!ENTITY nss-major                    "3">
-<!ENTITY nss-minor                    "123">
-<!ENTITY nss-dir                      "&nss-major;_&nss-minor;_1">
-<!ENTITY nss-version                  "&nss-major;.&nss-minor;.1">
+<!ENTITY nss-minor                    "124">
+<!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
+<!ENTITY nss-version                  "&nss-major;.&nss-minor;">
 <!ENTITY p11-kit-version              "0.26.2">
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.2">
@@ -50,7 +50,7 @@
 <!ENTITY polkit-version               "127">
 <!-- Tooling -->
 <!ENTITY cmake-major-version          "4.3">
-<!ENTITY cmake-minor-version          "2">
+<!ENTITY cmake-minor-version          "3">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-minor-version;">
 <!ENTITY llvm-maj-version             "22">
 <!ENTITY llvm-min-version             "1">
@@ -125,7 +125,7 @@
 <!ENTITY libfontenc-version           "1.1.9">
 <!ENTITY libXfont2-version            "2.0.7">
 <!ENTITY libXft-version               "2.3.9">
-<!ENTITY libXi-version                "1.8.2">
+<!ENTITY libXi-version                "1.8.3">
 <!ENTITY libXinerama-version          "1.1.6">
 <!ENTITY libXrandr-version            "1.5.5">
 <!ENTITY libXres-version              "1.2.3">
@@ -152,7 +152,7 @@
 <!ENTITY pixman-version               "0.46.4">
 <!ENTITY mtdev-version                "1.1.7">
 <!ENTITY libevdev-version             "1.13.6">
-<!ENTITY libinput-version             "1.31.1">
+<!ENTITY libinput-version             "1.31.2">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.25.0">
 <!ENTITY wayland-protocols-version    "1.48">
@@ -180,7 +180,7 @@
 <!ENTITY egl-wayland2-version         "1.0.1">
 <!ENTITY egl-x11-version              "1.0.5">
 <!ENTITY nv-codec-headers-version     "13.0.19.0">
-<!ENTITY nvidia-vaapi-driver-version  "0.0.16">
+<!ENTITY nvidia-vaapi-driver-version  "0.0.17">
 <!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
 <!-- NVIDIA -->
 <!ENTITY nvidia-rev           "595">
@@ -212,7 +212,7 @@
 <!ENTITY xcursorgen-version           "1.0.9">
 <!ENTITY xdpyinfo-version             "1.4.0">
 <!ENTITY xdriinfo-version             "1.0.8">
-<!ENTITY xev-version                  "1.2.6">
+<!ENTITY xev-version                  "1.2.7">
 <!ENTITY xgamma-version               "1.0.8">
 <!ENTITY xhost-version                "1.0.10">
 <!ENTITY xinput-version               "1.6.4">
@@ -306,7 +306,7 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.8">
+<!ENTITY wine-version                 "&wine-major-version;.9">
 
 <!ENTITY dxvk-version                 "2.7.1">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
