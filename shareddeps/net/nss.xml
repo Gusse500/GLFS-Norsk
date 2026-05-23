@@ -133,46 +133,22 @@ make BUILD_OPT=1                        \
 
 <screen role="root"><userinput>cd ../dist &amp;&amp;
 
-&install-exec; Linux*/lib/*.so              -t /usr/lib/              &amp;&amp;
-&install-file; Linux*/lib/{*.chk,libcrmf.a} -t /usr/lib/              &amp;&amp;
+&install-exec; Linux*/lib/*.so  -t /usr/lib/        &amp;&amp;
+&install-file; Linux*/lib/*.chk -t /usr/lib/        &amp;&amp;
 
-&install-dir;                                 /usr/include/nss       &amp;&amp;
-cp -v -RL {public,private}/nss/*                /usr/include/nss       &amp;&amp;
+&install-dir;                     /usr/include/nss &amp;&amp;
+cp -v -RL {public,private}/nss/*    /usr/include/nss &amp;&amp;
 
-&install-exec; Linux*/bin/{certutil,nss-config,pk12util} -t /usr/bin/ &amp;&amp;
+&install-exec; \
+  Linux*/bin/{certutil,nss-config,pk12util} \
+                                 -t /usr/bin/        &amp;&amp;
 
 &install-file; Linux*/lib/pkgconfig/nss.pc -t /usr/lib/pkgconfig/</userinput></screen>
-
-<!--
-    <important>
-      <para>
-        Hvis du installerer <xref linkend="sqlite"/> etter å ha bygget denne 
-        pakken og ønsker å bygge <ulink
-        url="&blfs-svn;/xsoft/firefox.html">Firefox</ulink>, kompiler deretter 
-        denne pakken på nytt, ellers vil det oppstå en feil under kompileringen.
-      </para>
-    </important>
--->
 
   </sect2>
 
   <sect2 role="installation">
     <title>lib32 Installasjon av NSS</title>
-
-<!--
-    <important>
-      <para>
-        Hvis du gjenoppbygger NSS, kjør følgende kommando for å fjerne et 
-        problematisk bibliotek som &root; bruker:
-      </para>
-
-<screen role="root"><userinput remap="pre">sqlite3 - -version > /dev/null 2>&amp;1 || 
-if [ -f /usr/lib32/libsqlite3.so ]; then
-  rm -vf /usr/lib32/libsqlite3.*
-fi</userinput></screen>
-
-    </important>
--->
 
     <para>
       Installer lib32-NSS ved å kjøre følgende kommandoer:
@@ -196,10 +172,13 @@ make BUILD_OPT=1                        \
 
 <screen role="root"><userinput>cd ../dist &amp;&amp;
 
-&install-exec; Linux*/lib/*.so              -t /usr/lib32/           &amp;&amp;
-&install-file; Linux*/lib/{*.chk,libcrmf.a} -t /usr/lib32/           &amp;&amp;
-sed -i 's/lib/lib32/g' Linux*/lib/pkgconfig/nss.pc                    &amp;&amp;
-&install-file; Linux*/lib/pkgconfig/nss.pc  -t /usr/lib32/pkgconfig/ &amp;&amp;
+&install-exec; Linux*/lib/*.so  -t /usr/lib32/           &amp;&amp;
+&install-file; Linux*/lib/*.chk -t /usr/lib32/           &amp;&amp;
+sed -i 's/lib/lib32/g'                                     \
+                Linux*/lib/pkgconfig/nss.pc               &amp;&amp;
+&install-file;                                            \
+                Linux*/lib/pkgconfig/nss.pc                \
+                                 -t /usr/lib32/pkgconfig/ &amp;&amp;
 ldconfig</userinput></screen>
 
   </sect2>
@@ -269,11 +248,9 @@ ldconfig</userinput></screen>
           certutil, nss-config, og pk12util
         </seg>
         <seg>
-          libcrmf (static), libfreebl3, libfreeblpriv3,
-          libnss3, libnssckbi, libnssckbi-testlib,
-          libnssdbm3, libnsssysinit, libnssutil3,
-          libpkcs11testmodule, libsmime3, libsoftokn3,
-          og libssl3
+          libfreebl3, libfreeblpriv3, libnss3, libnssckbi, libnssckbi-testlib,
+          libnssdbm3, libnsssysinit, libnssutil3, libpkcs11testmodule,
+          libsmime3, libsoftokn3, og libssl3
         </seg>
         <seg>
           /usr/include/nss
