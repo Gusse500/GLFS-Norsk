@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>23. mai 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libaom: 3.13.3 -&gt; 3.14.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/447">#447</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>22. mai 2026</para>
       <itemizedlist>
         <listitem>
