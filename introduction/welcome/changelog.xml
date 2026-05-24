@@ -43,6 +43,9 @@
     <listitem>
       <para>23. mai 2026</para>
       <itemizedlist>
+        <listitem revision="openrc,sysv">
+          <para>[zeckma] - elogind: 255.22 -&gt; 257.14.</para>
+        </listitem>
         <listitem>
           <para>[zeckma] - libaom: 3.14.0 -&gt; 3.14.1 (sikkerhet).
           Se BLFS billett

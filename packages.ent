@@ -36,7 +36,7 @@
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY openrc-version               "0.63">
 <!ENTITY shadow-version               "4.19.4">
-<!ENTITY elogind-version              "255.22">
+<!ENTITY elogind-version              "257.14">
 <!ENTITY systemd-version              "260.1">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
