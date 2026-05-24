@@ -44,6 +44,11 @@
       <para>23. mai 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - libaom: 3.14.0 -&gt; 3.14.1 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23342">#23342</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - Ruby: 4.0.3 -&gt; 4.0.5 (sikkerhet).
           Se BLFS billett
           <ulink url="&blfs-ticket-root;23284">#23284</ulink>.</para>
