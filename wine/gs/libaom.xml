@@ -75,20 +75,22 @@
       Deretter, hindre libaom i å installere statiske biblioteker:
     </para>
 
-<screen><userinput remap="pre">sed -i 's/aom aom_static/aom/' build/cmake/aom_install.cmake</userinput></screen>
+<screen><userinput remap="pre">sed -i 's/aom aom_static/aom/' cmake/aom_install.cmake</userinput></screen>
 
     <para>
       Installer libaom ved å kjøre følgende 
       kommandoer:
     </para>
 
-<screen><userinput>mkdir aom-build &amp;&amp;
-cd    aom-build &amp;&amp;
+<screen><userinput>mkdir build &amp;&amp;
+cd    build &amp;&amp;
 
 cmake -D CMAKE_INSTALL_PREFIX=/usr \
       -D CMAKE_BUILD_TYPE=Release  \
-      -D BUILD_SHARED_LIBS=1       \
-      -D ENABLE_DOCS=no            \
+      -D BUILD_SHARED_LIBS=ON      \
+      -D ENABLE_EXAMPLES=OFF       \
+      -D ENABLE_TESTS=OFF          \
+      -D ENABLE_DOCS=OFF           \
       -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -115,8 +117,10 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 cmake -D CMAKE_INSTALL_PREFIX=/usr   \
       -D CMAKE_INSTALL_LIBDIR=lib32  \
       -D CMAKE_BUILD_TYPE=Release    \
-      -D BUILD_SHARED_LIBS=1         \
-      -D ENABLE_DOCS=no              \
+      -D BUILD_SHARED_LIBS=ON        \
+      -D ENABLE_EXAMPLES=OFF         \
+      -D ENABLE_TESTS=OFF            \
+      -D ENABLE_DOCS=OFF             \
       -G Ninja .. &amp;&amp;
 
 ninja</userinput></screen>
@@ -138,14 +142,23 @@ ldconfig</userinput></screen>
     &options-cmake;
 
     <para>
-      <parameter>-D BUILD_SHARED_LIBS=1</parameter>: Denne bryteren bygger 
+      <parameter>-D BUILD_SHARED_LIBS=ON</parameter>: Denne bryteren bygger 
       delte versjoner av bibliotekene.
     </para>
 
     <para>
-      <parameter>-D ENABLE_DOCS=no</parameter>: Denne bryteren 
-      deaktiverer bygging av dokumentasjonen fordi doxygen 
-      ikke er installert.
+      <parameter>-D ENABLE_EXAMPLES=OFF</parameter>: Denne bryteren deaktiverer 
+      bygging av eksempler, som kan ta litt tid å bygge.
+    </para>
+
+    <para>
+      <parameter>-D ENABLE_TESTS=OFF</parameter>: Denne bryteren deaktiverer 
+      bygging av testpakken, som kan ta litt tid å bygge.
+    </para>
+
+    <para>
+      <parameter>-D ENABLE_DOCS=OFF</parameter>: Denne bryteren deaktiverer 
+      bygging av dokumentasjonen fordi Doxygen kanskje ikke er installert ennå.
     </para>
 
   </sect2>
@@ -160,7 +173,7 @@ ldconfig</userinput></screen>
 
       <seglistitem>
         <seg>
-          aomdec og aomenc
+          Ingen
         </seg>
         <seg>
           libaom
@@ -176,6 +189,7 @@ ldconfig</userinput></screen>
       <?dbfo list-presentation="list"?>
       <?dbhtml list-presentation="table"?>
 
+<!--
       <varlistentry id="aomdec">
         <term><command>aomdec</command></term>
         <listitem>
@@ -201,6 +215,7 @@ ldconfig</userinput></screen>
           </indexterm>
         </listitem>
       </varlistentry>
+-->
 
       <varlistentry id="libaom-lib">
         <term><filename class="libraryfile">libaom</filename></term>
