@@ -69,10 +69,6 @@
 <!ENTITY cython-version               "3.2.4">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
-<!ENTITY ruby-minor-version           "4.0">
-<!ENTITY ruby-patch-version           "5">
-<!ENTITY ruby-version                 "&ruby-minor-version;.&ruby-patch-version;">
-<!ENTITY ruby-gemdir                  "/usr/lib/ruby/gems/&ruby-minor-version;.0">
 <!-- Audio -->
 <!ENTITY alsa-download-http           "https://www.alsa-project.org/files/pub">
 <!ENTITY alsa-download-ftp            "ftp://ftp.alsa-project.org/pub">
@@ -165,8 +161,7 @@
 <!ENTITY libdrm-version               "2.4.133">
 <!ENTITY libgbm-version               "1.0.7">
 <!ENTITY libva-version                "2.23.0">
-<!ENTITY ocl-headers-version          "2025.07.22">
-<!ENTITY ocl-icd-version              "2.3.4">
+<!ENTITY opencl-version               "2025.07.22">
 <!ENTITY libclc-version               "&llvm-version;">
 <!-- Graphics Drivers - Preliminaries -->
 <!ENTITY pciutils-version             "3.15.0">

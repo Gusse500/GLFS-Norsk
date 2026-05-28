@@ -23,6 +23,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="cython.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libyaml.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="pyyaml.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="ruby.xml"/>
 
 </chapter>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY kg-url "https://github.com/KhronosGroup/">
+]>
+
+<sect1 id="opencl-sdk" xreflabel="OpenCL-SDK-&opencl-version;">
+  <?dbhtml filename="opencl-sdk.html"?>
+
+  <title>OpenCL-SDK-&opencl-version;</title>
+
+  <indexterm zone="opencl-sdk">
+    <primary sortas="a-opencl-sdk">OpenCL-SDK</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til OpenCL-SDK</title>
+
+    <para>
+      Denne siden dekker installasjonen av OpenCL SDK, som består av C og C++ 
+      deklarasjonene, samt ICD lasteren.
+    </para>
+
+    <para>
+      ICD står for «Installable Client Driver», der ICD lasteren bare laster 
+      inn gitte drivere som er installert på systemet, gitt at en ICD fil er 
+      tilstede som erklærer at driveren finnes. Slik fungerer Vulkan ICD 
+      lasteren fra Vulkan SDK.
+    </para>
+
+    <para>
+      OpenCL drivere kommer ofte fra videodrivere, som Mesa og NVIDIA.
+    </para>
+
+    <bridgehead renderas="sect3">OpenCL-SDK Avhengigheter</bridgehead>
+
+    <para role="required">
+      <xref linkend="cmake"/>
+    </para>
+
+    <para role="optional">
+      <ulink url="&blfs-svn;/general/doxygen.html">Doxygen</ulink>,
+      <ulink url="&blfs-svn;/general/graphviz.html">Graphviz</ulink>, og
+      <ulink url="&blfs-svn;/general/ruby.html">Ruby</ulink>
+    </para>
+
+  </sect2>
+
+  <sect2>
+    <title>Laste ned OpenCL-SDK</title>
+
+    <para>
+      Først, opprett en liste over filer som skal lastes ned:
+    </para>
+
+<screen><userinput>cat &gt; opencl-sdk-list-&opencl-version; &lt;&lt; "EOF"
+<literal>OpenCL-Headers/archive/v&opencl-version;/OpenCL-Headers-&opencl-version;.tar.gz
+OpenCL-CLHPP/archive/v&opencl-version;/OpenCL-CLHPP-&opencl-version;.tar.gz
+OpenCL-ICD-Loader/archive/v&opencl-version;/OpenCL-ICD-Loader-&opencl-version;.tar.gz</literal>
+EOF</userinput></screen>
+
+    <para>
+      For å laste ned de nødvendige filene ved hjelp av <xref linkend='wget'/>,
+      bruk følgende kommandoer:
+    </para>
+
+<screen><userinput>mkdir opencl-sdk-&opencl-version; &amp;&amp;
+cd    opencl-sdk-&opencl-version; &amp;&amp;
+grep -v '^#' ../opencl-sdk-list-&opencl-version; | wget -i- -c \
+    -B &kg-url;</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av OpenCL-SDK</title>
+
+&as_root;
+
+    <para>
+      Først start et underskall som avsluttes ved feil:
+    </para>
+
+<screen><userinput>bash -e</userinput></screen>
+
+    <para>
+      Installer alle pakkene ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>for package in OpenCL-{Headers,CLHPP,ICD-Loader}
+do
+  longpackage=$package-&opencl-version;.tar.?z*
+  packagedir=${longpackage%.tar.?z*}
+  tar -xf $longpackage
+  pushd $packagedir
+    mkdir build
+    cd    build
+    cmake -D CMAKE_INSTALL_PREFIX=/usr \
+          -D CMAKE_BUILD_TYPE=Release  \
+          -D BUILD_TESTING=OFF         \
+          -D BUILD_EXAMPLES=OFF        \
+          -G Ninja ..
+    ninja
+    as_root ninja install
+  popd
+  rm -rf $packagedir
+done</userinput></screen>
+
+    <para>
+      Til slutt, avslutt skallet som ble startet tidligere:
+    </para>
+
+<screen><userinput>exit</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installert Program</segtitle>
+      <segtitle>Installert Bibliotek</segtitle>
+      <segtitle>Installerte Mapper</segtitle>
+
+      <seglistitem>
+        <seg>
+          cllayerinfo
+        </seg>
+        <seg>
+          libOpenCL
+        </seg>
+        <seg>
+          /usr/include/CL og
+          /usr/share/cmake/{OpenCLHeaders,OpenCLHeadersCpp,OpenCLICDLoader}
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="cllayerinfo">
+        <term><command>cllayerinfo</command></term>
+        <listitem>
+          <para>
+            viser informasjon om et OpenCL lag
+          </para>
+          <indexterm zone="opencl-sdk cllayerinfo">
+            <primary sortas="b-cllayerinfo">cllayerinfo</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libOpenCL">
+        <term><filename class="libraryfile">libOpenCL</filename></term>
+        <listitem>
+          <para>
+            er OpenCL ICD lasteren
+          </para>
+          <indexterm zone="opencl-sdk libOpenCL">
+            <primary sortas="c-libOpenCL">libOpenCL</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>
