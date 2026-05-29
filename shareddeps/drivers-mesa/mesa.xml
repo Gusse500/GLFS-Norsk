@@ -155,7 +155,7 @@
       <!-- for libsensors according to Meson -->
       <ulink url="&slfs-website;/general/mesa-demos.html">Mesa-Demos</ulink>
       (provides more than 300 demos to test Mesa),
-      <xref linkend="opencl-headers"/>,
+      <xref linkend="opencl-sdk"/>,
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
       Layer</ulink> (for mobile plattformer), og
