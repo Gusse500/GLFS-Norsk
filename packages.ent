@@ -66,7 +66,7 @@
 <!ENTITY cbindgen-version             "0.29.2">
 <!ENTITY rust-bindgen-version         "0.72.1">
 <!ENTITY mako-version                 "1.3.12">
-<!ENTITY cython-version               "3.2.4">
+<!ENTITY cython-version               "3.2.5">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
 <!-- Audio -->
@@ -94,7 +94,7 @@
 <!ENTITY libXdmcp-version             "1.1.5">
 <!ENTITY xcb-proto-version            "1.17.0">
 <!ENTITY libxcb-version               "1.17.0">
-<!ENTITY which-version                "2.23">
+<!ENTITY which-version                "2.25">
 <!ENTITY libpng-version               "1.6.58">
 <!ENTITY apng-version                 "1.6.58">
 <!ENTITY freetype2-version            "2.14.3">
@@ -216,7 +216,7 @@
 <!ENTITY xkbutils-version             "1.0.6">
 <!ENTITY xkill-version                "1.0.7">
 <!ENTITY xlsatoms-version             "1.1.4">
-<!ENTITY xlsclients-version           "1.1.5">
+<!ENTITY xlsclients-version           "1.1.6">
 <!ENTITY xmessage-version             "1.0.7">
 <!ENTITY xmodmap-version              "1.0.11">
 <!ENTITY xpr-version                  "1.2.0">
@@ -301,7 +301,7 @@
 <!ENTITY gst10-libav-version          "&gstreamer10-version;">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.9">
+<!ENTITY wine-version                 "&wine-major-version;.10">
 
 <!ENTITY dxvk-version                 "2.7.1">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">

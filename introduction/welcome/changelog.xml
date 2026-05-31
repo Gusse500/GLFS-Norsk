@@ -41,6 +41,26 @@
     -->
 
     <listitem>
+      <para>30. mai 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - xlsclients: 1.1.5 -&gt; 1.1.6.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 11.9 -&gt; 11.10.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Which: 2.23 -&gt; 2.25. Fikser
+          <ulink url="&glfs-issues;/454">#454</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.2.4 -&gt; 3.2.5. Fikser
+          <ulink url="&glfs-issues;/455">#455</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>27. mai 2026</para>
       <itemizedlist>
         <listitem>
