@@ -109,6 +109,33 @@ do
 done</userinput></screen>
 
     <para>
+      For multilib:
+    </para>
+
+<screen><userinput>package="OpenCL-ICD-Loader"
+longpackage=$package-&opencl-version;.tar.?z*
+packagedir=${longpackage%.tar.?z*}
+tar -xf $longpackage
+pushd $packagedir
+  mkdir build
+  cd    build
+  CC="gcc -m32" CXX="g++ -m32"         \
+  PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
+  cmake -D CMAKE_INSTALL_PREFIX=/usr   \
+        -D CMAKE_INSTALL_LIBDIR=lib32  \
+        -D CMAKE_BUILD_TYPE=Release    \
+        -D BUILD_TESTING=OFF           \
+        -D BUILD_EXAMPLES=OFF          \
+        -G Ninja ..
+  ninja
+  DESTDIR=$PWD/DESTDIR ninja install
+  as_root cp -vR DESTDIR/usr/lib32/* /usr/lib32
+  as_root ldconfig
+  rm -rf DESTDIR
+popd
+rm -rf $packagedir</userinput></screen>
+
+    <para>
       Til slutt, avslutt skallet som ble startet tidligere:
     </para>
 

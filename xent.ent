@@ -206,11 +206,6 @@ rc-update --user add">
     </listitem>
     <listitem>
       <para>
-        <xref linkend='nvidia-egl'/> (for EGL driver støtte)
-      </para>
-    </listitem>
-    <listitem>
-      <para>
         <xref linkend='opencl-sdk'/> (for bruk av OpenCL drivere)
       </para>
     </listitem>
@@ -249,57 +244,78 @@ støtte i kjernen og kompiler på nytt om nødvendig.
   riktig måte.
 </para></important>">
 
-<!ENTITY nvidia-common-build-modules "<note><para>
-Hvis den nåværende kjernen som kjører er en annen versjon enn den du sikter mot, 
-sannsynligvis som et resultat av at du er i en chroot eller ikke har startet på 
-nytt etter en kjerneoppgradering ennå, vil bygging av kjernemodulene føre til en
-byggefeil eller installere moduler for en kjerne som ikke er
-målet. Standardvariabelen som kjernebyggesystemet bruker for å sjekke
-kjerneversjonen vil bruke <command>uname -r</command>, som igjen rapporterer 
-kjerneversjonen av den for øyeblikket kjørende vertskjernen og
-ikke målet. Dette kan omgås ved å spesifise
-<envar>KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></envar>
-som vil overstyre kjerneversjonen som skal bygges mot og installeres til.
-Målkjerneversjonen må allerede være bygget for at dette skal fungere.
-Hvis kjerneversjonen ikke har et tredje siffer, som 6.16 i stedet for 6.16.1, 
-legg til et <envar>.0</envar> på slutten, som
-<envar>6.16.0</envar>. Den skal samsvare med versjonen som finnes i <filename
-class='directory'>/usr/lib/modules</filename>.
+<!ENTITY nvidia-runfile-common "-z \
+  -j $(nproc)   \
+  -k <replaceable>`uname -r`</replaceable> \
+  --no-peermem  \
+  --override-file-type-destination=OPENCL_WRAPPER_LIB:/tmp/nvidia \
+  --override-file-type-destination=OPENCL_WRAPPER_SYMLINK:/tmp/nvidia">
+
+<!ENTITY nvidia-runfile-explanation "<bridgehead renderas='sect3'
+role='commands'>Parameterforklaringer</bridgehead>
+<para>
+  <parameter>-z</parameter>: Denne parameteren deaktiverer kontroll for å se om
+  <literal>nouveau</literal> kjernedriveren er lastet inn, noe som kan være hvis
+  <literal>nouveau</literal> ikke er svartelistet av <command>modprobe</command>
+  ennå. Ellers vil driveren klage.
 </para>
 <para>
-  Hvis tilfellet ovenfor gjelder deg, enten du er i en chroot eller ikke har 
-  startet på nytt etter en kjerneoppgradering, spesifiser kjernemålet ved å 
-  eksportere variabelen nå på forhånd for å unngå å måtte spesifisere den for 
-  hver kommando:
+  <parameter>-j $(nproc)</parameter>: Dette fungerer slik
+  <envar>MAKEFLAGS</envar> er satt opp. Samtidigheten er begrenset med mindre 
+  denne parameteren brukes.
 </para>
-<screen><userinput>export KERNEL_UNAME=<replaceable>&lt;x.x.x&gt;</replaceable></userinput></screen>
-</note>
+<para>
+  <parameter>-k <replaceable>`uname -r`</replaceable></parameter>: Denne 
+  parameteren angir kjerneversjonen/navnet som NVIDIA driveren skal bygge mot. 
+  <literal><replaceable>`uname -r`</replaceable></literal> er brukt, som 
+  etterligner oppførselen til driveren og de fleste tredjeparts 
+  kjernemodulbyggesystemer. Dette er nødvendig hvis kjerneversjonen/navnet du 
+  vil at NVIDIA skal bygge mot er forskjellig fra det <command>uname -r</command> 
+  rapporter. Hvis du for eksempel vil bygge mot <literal>7.0.11</literal> men
+  <command>uname -r</command> rapporter <literal>6.19.12</literal>, må du
+  bruke <parameter>-k 7.0.11</parameter>. <command>uname -r</command> rapporter
+  hvilken vertskjerne som brukes, noe som kan skape problemer i en chroot.
+  <parameter>`command`</parameter> brukes til å returnere resultatet av en 
+  kommando, så hvis <literal>7.0.11</literal> er gitt, bør du fjerne backticks 
+  siden den strengen ikke er en kommando. Hvis du vil bygge mot noe som 
+  <literal>7.1</literal>, der det er en ny mindre eller større versjon, men ikke 
+  en feilrettingsutgivelsease, <literal>.0</literal> må ha suffiks slik at det 
+  ser ut som <literal>7.1.0</literal>. For å se hvilke kjernenavn/versjoner som 
+  er tilgjengelige å bygge mot, se i <filename
+  class='directory'>/usr/lib/modules</filename> mappen.
+</para>
+<para>
+  <parameter>--no-peermem</parameter>: Denne parameteren deaktiverer bygging av
+  <literal>peermem</literal> (eller NVIDIA Peer Memory) kjernemodul. Den brukes 
+  for datasentre. Bruk av <option>-A</option> vil på egenhånd vise deg hvilke 
+  nøyaktige enheter Peer Memory kjernemodulen dekker. Hvis du trenger det, 
+  fjern denne parameteren.
+</para>
+<para>
+  <parameter>--override...=OPENCL_WRAPPER...:/tmp/nvidia</parameter>:
+  Disse parameterne deaktiverer installasjon av NVIDIA OpenCL ICD lasteren til 
+  fordel for <xref linkend='opencl-sdk'/>, som er mer generisk og støtter NVIDIA 
+  OpenCL driverne. Hvis 32-biters kompatibilitetsbiblioteker installeres, vil 
+  driveren advare flere ganger om at <filename
+  class='libraryfile'>libOpenCL</filename> biblioteket finnes. Fortsett å godta 
+  for å fortsette installasjonen.
+</para>
+<para>
+  <option>--print-recommended-kernel-module-type</option>: Når den brukes, vil 
+  driveren fortelle deg hvilken kjernemodultype som anbefales, og deretter 
+  avslutte. Det anbefales å bruke denne hvis du ikke er kjent med å installere 
+  NVIDIA driveren via runfilen. Deretter installerer du driveren normalt, og 
+  deretter velger du den anbefalte kjernemodultypen når du blir bedt om det.
+</para>
+<para>
+  <option>-A</option>: Dette alternativet brukes til å gi alle alternativene du 
+  kan bruke til å justere hvordan installasjonen av driveren skal håndteres.
+</para>
 
 <para>
-  Det vil bli bygget 5 eller 6 kjernemoduler. Avhengig av brukstilfellet ditt, 
-  kan du hoppe over å bygge en eller to moduler. UVM-modulen (Unified Virtual 
-  Memory) modulen er til bruk med CUDA. Hvis du ikke vil bruke den, eller ikke 
-  ønsker å bruke dens funksjoner, kan du hoppe over å bygge UVM 
-  kjernemodulen. Det finnes også PeerMem modulen som er for datasentre. For 
-  spilling kan den trygt deaktiveres.
+  Driveren kan stille deg flere spørsmål, gi diverse advarsler og generelt si 
+  mye. Bare gå gjennom instruksjonene.
 </para>
-<para>
-  For UVM heter modulen <computeroutput>nvidia-uvm</computeroutput>.
-  For PeerMem vil den bli kalt
-  <computeroutput>nvidia-peermem</computeroutput>. For å hoppe over disse, legg 
-  til modulnavnene til <envar>NV_EXCLUDE_KERNEL_MODULES</envar> for 
-  <command>make</command> kommandoen. Variabelen skal skilles, slik 
-  som:
-  <computeroutput>NV_EXCLUDE_KERNEL_MODULES=&quot;nvidia-uvm nvidia-peermem&quot;</computeroutput>.
-  <command>make</command> kommandoen vil ha variabelen satt til ingenting. Legg 
-  til noe i den etter eget ønske.
-</para>
-
-<para>
-  Bygg nå kjernemodulene ved å kjøre følgende kommando:
-</para>
-
-<screen><userinput>make NV_EXCLUDE_KERNEL_MODULES=</userinput></screen>
 
 <note><para>
   Kildekoden du bygde kjernen fra må være på samme sted som du bygde kjernen 
@@ -308,8 +324,8 @@ class='directory'>/usr/lib/modules</filename>.
   værende der og må ikke slettes før tredjeparts modulene er bygget. Noen 
   Linux distribusjoner omgår dette ved å installere utviklingsfiler 
   i <filename
-  class='directory'>/usr/src</filename>, men det er utenfor rammen av denne 
-  boken.
+  class='directory'>/usr/src</filename> eller bruke DKMS, men det er utenfor 
+  omfanget av denne boken.
 </para></note>
 <note><para>
   Du kan støte på diverse byggefeil. Dette skjer vanligvis fordi 
@@ -327,7 +343,6 @@ class='directory'>/usr/lib/modules</filename>.
     Når du gjenoppbygger/oppgraderer kjernen, må du også installere 
     NVIDIA kjernemodulene på nytt.
   </para>
-
   <para>
     Kjernemoduler installeres i en versjonert mappe som, når de bygges mot en 
     annen kjerneversjon, ikke lenger vil samsvare med den oppstartede 
@@ -338,26 +353,11 @@ class='directory'>/usr/lib/modules</filename>.
     oppstår problemer for førstepartsmoduler. Tredjepartsmoduler blir 
     imidlertid ikke det, og må oppdateres/gjenoppbygges.
   </para>
-
   <para>
-    WNår du gjenoppbygger/oppgraderer kjernen mot samme NVIDIA driverversjon, 
-    trenger du bare å installere kjernemodulene på nytt. Du må også installere 
-    driverprogramvaren på nytt hvis du oppgraderer fra en tidligere 
-    driverversjon.
+    Hvis du oppdaterte eller endret kjernen (via forskjellige alternativer) der 
+    NVIDIA driveren ble bygget mot den, må du installere driveren på nytt.
   </para>
-</important>
-<para>
-  Nå som &root; bruker:
-</para>
-
-<screen role='root'><userinput>make modules_install &amp;&amp;
-cd ..</userinput></screen>
-
-<para>
-  Hvis du satte <envar>KERNEL_UNAME</envar> variabelen, fjern den nå:
-</para>
-
-<screen><userinput>unset KERNEL_UNAME</userinput></screen>">
+</important>">
 
 <!ENTITY nvidia-issue-list "<sect3>
   <title>Liste over pakker med problemer</title>
