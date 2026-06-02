@@ -17,7 +17,6 @@
   </para>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-rev.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-egl.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nv-codec-headers.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="nvidia-vaapi-driver.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="current.xml"/>
