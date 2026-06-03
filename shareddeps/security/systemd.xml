@@ -181,6 +181,9 @@ meson setup --prefix=/usr            \
             -D mode=release          \
             -D pam=enabled           \
             -D pamconfdir=/etc/pam.d \
+            -D nobody-group=nogroup  \
+            -D sysupdate=disabled    \
+            -D ukify=disabled        \
             .. &amp;&amp;
 
 LANG=en_US.UTF-8 ninja</userinput></screen>
@@ -221,9 +224,8 @@ rm -rf DESTDIR</userinput></screen>
       <parameter>-D ukify=disabled</parameter>: Fjerner et skript for å 
       kombinere en kjerne, en initramfs og en kjernekommandolinje osv. inn i et 
       UEFI program som kan lastes inn av UEFI fastvaren for å starte den 
-      innebygde Linuxkjernen. Det er ikke nødvendig hvis du fulgte 
-      instruksjonene i<ulink url="&blfs-svn;/postlfs/grub-setup.html">BLFS' 
-      Grub UEFI Oppsett</ulink>.
+      innebygde Linuxkjernen. Det krever en Python modul som ikke finnes i 
+      noen av LFS bøkene.
     </para>
 
   </sect2>
