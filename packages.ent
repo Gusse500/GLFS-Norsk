@@ -158,7 +158,7 @@
 <!ENTITY vulkan-sdk-version           "1.4.350.0">
 <!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.2">
 <!ENTITY libatomic_ops-version        "7.10.0">
-<!ENTITY libdrm-version               "2.4.133">
+<!ENTITY libdrm-version               "2.4.134">
 <!ENTITY libgbm-version               "1.0.7">
 <!ENTITY libva-version                "2.23.0">
 <!ENTITY opencl-version               "2025.07.22">
