@@ -278,8 +278,8 @@ openssl-sys = { path = "../../../rust-openssl-&rustc-openssl;/openssl-sys" }</li
 EOF
 
 sed -ri src/tools/cargo/Cargo.lock \
-    -e '/name = "openssl-sys"/,/^$/{/source|checksum/d;s/0.9.111/&rustc-openssl-sys-nice;/}' \
-    -e '/name = "openssl"/,/^$/{/source|checksum/d;s/0.10.75/&rustc-openssl-nice;/}'     \
+    -e '/name = "openssl-sys"/,/^$/{/source|checksum/d;s/0.9.112/&rustc-openssl-sys-nice;/}' \
+    -e '/name = "openssl"/,/^$/{/source|checksum/d;s/0.10.76/&rustc-openssl-nice;/}'     \
     -e '/name = "openssl-macros"/,/^$/{/source|checksum/d}'</userinput></screen>
 
 <!--

@@ -41,6 +41,67 @@
     -->
 
     <listitem>
+      <para>3. juni 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Systemd: 260.1 -&gt; 260.2. Fikser
+          <ulink url="&glfs-issues;/459">#459</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.95.0 -&gt; 1.96.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/456">#456</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cbindgen: 0.29.2 -&gt; 0.29.3. Fikser
+          <ulink url="&glfs-issues;/470">#470</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - ALSA: 1.2.15.3 -&gt; 1.2.16. Fikser
+          <ulink url="&glfs-issues;/462">#462</ulink> og
+          <ulink url="&glfs-issues;/463">#463</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 14.2.0 -&gt; 14.2.1. Fikser
+          <ulink url="&glfs-issues;/464">#464</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Fontconfig: 2.17.1 -&gt; 2.18.1. Fikser
+          <ulink url="&glfs-issues;/465">#465</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xorg-Server: 21.1.22 -&gt; 21.1.23 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/457">#457</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Xwayland: 24.1.11 -&gt; 24.1.12 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/458">#458</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libxkbcommon: 1.13.1 (6f76d1) -&gt; 1.13.2 (d1442a).
+          Fikser <ulink url="&glfs-issues;/468">#468</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL3: 3.4.8 -&gt; 3.4.10. Fikser
+          <ulink url="&glfs-issues;/469">#469</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>2. juni 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[tox] - Libdrm: 2.4.133 -&gt; 2.4.134. Fikser
+          <ulink url="&glfs-issues;/466">#466</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - hwdata: 0.407 -&gt; 0.408. Fikser
+          <ulink url="&glfs-issues;/460">#460</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>1. juni 2026</para>
       <itemizedlist>
         <listitem>
