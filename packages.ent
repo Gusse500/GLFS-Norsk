@@ -37,7 +37,7 @@
 <!ENTITY openrc-version               "0.63">
 <!ENTITY shadow-version               "4.19.4">
 <!ENTITY elogind-version              "257.14">
-<!ENTITY systemd-version              "260.1">
+<!ENTITY systemd-version              "260.2">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "88">
@@ -56,14 +56,14 @@
 <!ENTITY llvm-min-version             "1">
 <!ENTITY llvm-point-version           "0">
 <!ENTITY llvm-version                 "&llvm-maj-version;.&llvm-min-version;.&llvm-point-version;">
-<!ENTITY rustc-version                "1.95.0">
+<!ENTITY rustc-version                "1.96.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
      at the very bottom: change_id. -->
-<!ENTITY rustc-change-id              "148671">
+<!ENTITY rustc-change-id              "154508">
 <!ENTITY rustc-openssl                "a6debf535674c9a073f455158743e6ba094cf1b4">
 <!ENTITY rustc-openssl-nice           "0.10.78">
 <!ENTITY rustc-openssl-sys-nice       "0.9.114">
-<!ENTITY cbindgen-version             "0.29.2">
+<!ENTITY cbindgen-version             "0.29.3">
 <!ENTITY rust-bindgen-version         "0.72.1">
 <!ENTITY mako-version                 "1.3.12">
 <!ENTITY cython-version               "3.2.5">
@@ -72,10 +72,10 @@
 <!-- Audio -->
 <!ENTITY alsa-download-http           "https://www.alsa-project.org/files/pub">
 <!ENTITY alsa-download-ftp            "ftp://ftp.alsa-project.org/pub">
-<!ENTITY alsa-version                 "1.2.15.3">
+<!ENTITY alsa-version                 "1.2.16">
 <!ENTITY alsa-lib-version             "&alsa-version;">
 <!ENTITY alsa-plugins-version         "1.2.12">
-<!ENTITY alsa-utils-version           "1.2.15.2">
+<!ENTITY alsa-utils-version           "&alsa-version;">
 <!ENTITY libogg-version               "1.3.6">
 <!ENTITY libvorbis-version            "1.3.7">
 <!ENTITY flac-version                 "1.5.0">
@@ -98,8 +98,8 @@
 <!ENTITY libpng-version               "1.6.58">
 <!ENTITY apng-version                 "1.6.58">
 <!ENTITY freetype2-version            "2.14.3">
-<!ENTITY harfbuzz-version             "14.2.0">
-<!ENTITY fontconfig-version           "2.17.1">
+<!ENTITY harfbuzz-version             "14.2.1">
+<!ENTITY fontconfig-version           "2.18.1">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
 <!ENTITY xtrans-version               "1.6.0">
@@ -248,8 +248,8 @@
 <!ENTITY xkeyboard-config-version     "2.47">
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
-<!ENTITY xorg-server-version          "21.1.22">
-<!ENTITY xwayland-version             "24.1.11">
+<!ENTITY xorg-server-version          "21.1.23">
+<!ENTITY xwayland-version             "24.1.12">
 <!-- BEGIN X7DRIVER -->
 <!ENTITY xorg-evdev-driver-version    "2.11.0">
 <!ENTITY xorg-libinput-driver-version "1.5.0">
@@ -279,10 +279,10 @@
      tarballs and/or extracted directories. BLFS solved this by using a mirror.
      We're solving this by using the git hash to get around the naming issue
      entirely. -->
-<!ENTITY libxkbcommon-minor           "6f76d1">
-<!ENTITY libxkbcommon-version         "6f76d19db72b5d450e927b41e1e96cbe3252aba8">
-<!ENTITY libxkbcommon-real            "1.13.1">
-<!ENTITY sdl3-version                 "3.4.8">
+<!ENTITY libxkbcommon-minor           "d1442a">
+<!ENTITY libxkbcommon-version         "d1442aaa6b635551182e83c3b55037f4c118c962">
+<!ENTITY libxkbcommon-real            "1.13.2">
+<!ENTITY sdl3-version                 "3.4.10">
 <!ENTITY sdl2-version                 "2.32.68">
 
 <!ENTITY nasm-version                 "3.01">
