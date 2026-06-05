@@ -148,7 +148,7 @@
 <!ENTITY pixman-version               "0.46.4">
 <!ENTITY mtdev-version                "1.1.7">
 <!ENTITY libevdev-version             "1.13.6">
-<!ENTITY libinput-version             "1.31.2">
+<!ENTITY libinput-version             "1.31.3">
 <!-- Wayland -->
 <!ENTITY wayland-version              "1.25.0">
 <!ENTITY wayland-protocols-version    "1.48">
