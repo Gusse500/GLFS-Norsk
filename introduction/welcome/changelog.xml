@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>4. juni 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[tox] - libinput: 1.31.2 -&gt; 1.31.3 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/471">#471</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>3. juni 2026</para>
       <itemizedlist>
         <listitem>
