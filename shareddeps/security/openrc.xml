@@ -34,6 +34,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/openrc-&openrc-version;-lock-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">OpenRC Avhengigheter</bridgehead>
 
     <para role="recommended">
@@ -44,6 +54,13 @@
 
   <sect2 role="installation">
     <title>Installasjon av OpenRC</title>
+
+    <para>
+      Bruk en oppdatering for å lage gruppen som administrerer <filename
+      class="directory">/run/lock</filename> konfigurerbar:
+    </para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../openrc-&openrc-version;-lock-1.patch</userinput></screen>
 
     <para>
       Fix a script to allow a normal installation:
@@ -60,6 +77,7 @@ cd    build &amp;&amp;
 
 meson setup --prefix=/usr       \
             --buildtype=release \
+            -D uucp_group=root  \
             .. &amp;&amp;
 ninja</userinput></screen>
 
