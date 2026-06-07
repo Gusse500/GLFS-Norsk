@@ -34,6 +34,16 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/openrc/openrc-&openrc-version;-lock-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">OpenRC Avhengigheter</bridgehead>
 
     <para role="recommended">
@@ -44,6 +54,13 @@
 
   <sect2 role="installation">
     <title>Installasjon av OpenRC</title>
+
+    <para>
+      Bruk en oppdatering for å lage gruppen som administrerer <filename
+      class="directory">/run/lock</filename> konfigurerbar:
+    </para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../openrc-&openrc-version;-lock-1.patch</userinput></screen>
 
     <para>
       Fix a script to allow a normal installation:
@@ -60,6 +77,7 @@ cd    build &amp;&amp;
 
 meson setup --prefix=/usr       \
             --buildtype=release \
+            -D uucp_group=root  \
             .. &amp;&amp;
 ninja</userinput></screen>
 
@@ -67,23 +85,11 @@ ninja</userinput></screen>
       Nå, som &root; bruker:
     </para>
 
-<screen role="root"><userinput>DESTDIR=$PWD/DESTDIR ninja install &amp;&amp;
-
-mv -v DESTDIR/{s,}bin/rc-update                  &amp;&amp;
-mv -v DESTDIR/{s,}bin DESTDIR/usr                &amp;&amp;
-install -vDm755 DESTDIR/usr/bin/*  -t /usr/bin/  &amp;&amp;
-install -vDm755 DESTDIR/usr/sbin/* -t /usr/sbin/ &amp;&amp;
-rm -rf DESTDIR/usr/{s,}bin                       &amp;&amp;
-
-for conf in DESTDIR/etc/conf.d/*; do
-  if [ ! -e /etc/conf.d/$(basename $conf) ]; then
-    install -vDm644 $conf -t /etc/conf.d/
-  fi
-  rm -f $conf
-done &amp;&amp;
-
-cp -vR DESTDIR/* / &amp;&amp;
-rm -rf DESTDIR</userinput></screen>
+<screen role="root"><userinput>mv -v  /etc/conf.d{,.tmp}            &amp;&amp;
+ninja install                        &amp;&amp;
+cp -vR /etc/conf.d.tmp/* /etc/conf.d &amp;&amp;
+rm -rf /etc/conf.d.tmp               &amp;&amp;
+mv -v  /usr/{s,}bin/rc-update</userinput></screen>
 
     <para>
       Brukertjenester kan aktiveres i OpenRC med litt oppsett. Noen operasjoner 
