@@ -23,11 +23,10 @@
     <title>Introduksjon til ICU</title>
 
     <para>
-      Pakken International Components for Unicode (ICU) er et modent, mye 
-      brukt sett med C/C++ biblioteker som gir Unicode og 
-      globaliseringsstøtte for programvare. ICU er allment 
-      portabel og gir applikasjoner de samme resultatene på 
-      alle plattformer.
+      Pakken International Components for Unicode (ICU) er et modent, mye brukt 
+      sett med C/C++ biblioteker som gir Unicode og globaliseringsstøtte for 
+      programvare. ICU er allment portabel og gir applikasjoner de samme 
+      resultatene på alle plattformer.
     </para>
 
     <warning>
@@ -37,8 +36,8 @@
         Hvis noen pakker som bruker bibliotekene bygget av
         icu4c-&icu-major; gjenoppbygges, vil de bruke de nye bibliotekene, mens 
         nåværende pakker vil bruke de tidligere bibliotekene. Hvis Linux 
-        applikasjonslasteren
-        (<filename class='libraryfile'>/usr/lib/ld-linux-x86-64.so.2</filename>)
+        applikasjonslasteren (<filename
+        class='libraryfile'>/usr/lib/ld-linux-x86-64.so.2</filename>)
         bestemmer at både det gamle og det nye biblioteket er nødvendig, og et 
         symbol (navn på data eller funksjon) finnes i begge versjoner av 
         biblioteket, vil alle referanser til symbolet bli løst til versjonen som 
@@ -58,7 +57,7 @@
 <screen role='nodump'><userinput>ldd &lt;application or library&gt; </userinput></screen>
 
       <para>
-        eller for å bare se programmer og biblioteker som bruker et bibliotek direkte:
+        For å se bare programmer og biblioteker som bruker et bibliotek direkte, kjør:
       </para>
 
 <screen role='nodump'><userinput>readelf -d  &lt;application or library&gt; | grep NEEDED</userinput></screen>

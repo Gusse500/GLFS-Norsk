@@ -22,8 +22,8 @@
     <title>Introduksjon til libxml2</title>
 
     <para>
-      libxml2 pakken inneholder biblioteker og 
-      verktøy som brukes til å analysere XML filer.
+      libxml2 pakken inneholder biblioteker og verktøy som brukes til å 
+      analysere XML filer.
     </para>
 
     &abi-break;
@@ -79,8 +79,7 @@
   remap="pre"><userinput>sed -i "/'git'/,+3d" meson.build</userinput></screen>
 
     <para>
-      Installer libxml2 ved å kjøre følgende 
-      kommandoer:
+      Installer libxml2 ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -105,8 +104,7 @@ sed 's/--static/--shared/' -i /usr/bin/xml2-config</userinput></screen>
     <title>lib32 Installasjon av libxml2</title>
 
     <para>
-      Installer lib32-libxml2 ved å kjøre følgende 
-      kommandoer:
+      Installer lib32-libxml2 ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;

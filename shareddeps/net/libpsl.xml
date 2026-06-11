@@ -21,9 +21,9 @@
     <title>Introduksjon til libpsl</title>
 
     <para>
-      libpsl pakken inneholder et bibliotek for 
-      tilgang til og løsning av informasjon fra Public Suffix List (PSL). 
-      PSL er et sett med domenenavn utover standardsuffiksene, som .com.
+      libpsl pakken inneholder et bibliotek for tilgang til og løsning av 
+      informasjon fra Public Suffix List (PSL). PSL er et sett med domenenavn 
+      utover standardsuffiksene, som <literal>.com</literal>.
     </para>
 
     &meson-cross;
@@ -53,8 +53,7 @@
     <title>Installasjon av libpsl</title>
 
     <para>
-      Installer libpsl ved å kjøre følgende 
-      kommandoer:
+      Installer libpsl ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;
@@ -75,8 +74,7 @@ ninja</userinput></screen>
     <title>lib32 Installasjon av libpsl</title>
 
     <para>
-      Installer lib32-libpsl
-      ved å kjøre følgende kommandoer:
+      Installer lib32-libpsl ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;

@@ -21,13 +21,13 @@
     <title>Introduksjon til NSS</title>
 
     <para>
-      Network Security Services (NSS) pakken er et 
-      sett med biblioteker som er utviklet for å støtte utvikling på tvers av 
-      plattformer av sikkerhetsaktiverte klient og serverapplikasjoner. 
-      Applikasjoner bygget med NSS kan støtte SSL v2 og v3, TLS, PKCS #5, 
-      PKCS #7, PKCS #11, PKCS #12, S/MIME, X.509 v3 sertifikater og andre 
-      sikkerhetsstandarder. Dette er nyttig for å implementere SSL og S/MIME 
-      eller andre internettsikkerhetsstandarder i et program.
+      Network Security Services (NSS) pakken er et sett med biblioteker som er 
+      utviklet for å støtte utvikling på tvers av plattformer av 
+      sikkerhetsaktiverte klient og serverapplikasjoner. Applikasjoner bygget 
+      med NSS kan støtte SSL v2 og v3, TLS, PKCS #5, PKCS #7, PKCS #11, 
+      PKCS #12, S/MIME, X.509 v3 sertifikater og andre sikkerhetsstandarder. 
+      Dette er nyttig for å implementere SSL og S/MIME eller andre 
+      internettsikkerhetsstandarder i et program.
     </para>
 
     &long-build-time;
@@ -77,39 +77,6 @@
 
   <sect2 role="installation">
     <title>Installasjon av NSS</title>
-
-<!--
-    <note>
-      <para>
-        Noen eldre generasjons prosessorer mangler en assemblerinstruksjon som 
-        genereres ubetinget av NSS-3.90. Dette fører til en feil med «ulovlig 
-        instruksjon» når Firefox kjøres. Tilgjengeligheten av denne 
-        instruksjonen bekreftes av <quote>adx</quote> flagget
-        i <filename>/proc/cpuinfo</filename>. Hvis dette flagget ikke er angitt, 
-        installer følgende oppdatering:
-      </para>
-    </note>
-
-<screen><userinput>grep -q adx /proc/cpuinfo || \
-patch -Np1 -i ../nss-&nss-version;-illegal_instruction-1.patch</userinput></screen>
-
--->
-
-<!--
-    <important>
-      <para>
-        Hvis du gjenoppbygger NSS og ikke har installert <xref
-        linkend="sqlite"/>, kjør følgende kommando for å fjerne et problematisk 
-        bibliotek som &root; bruker:
-      </para>
-
-<screen role="root"><userinput remap="pre">sqlite3 - -version > /dev/null 2>&amp;1 || 
-if [ -f /usr/lib/libsqlite3.so ]; then
-  rm -vf /usr/lib/libsqlite3.*
-fi</userinput></screen>
-
-    </important>
--->
 
     <para>
       Installer NSS ved å kjøre følgende kommandoer:
@@ -167,7 +134,7 @@ make BUILD_OPT=1                        \
      NSS_USE_SYSTEM_SQLITE=1</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>cd ../dist &amp;&amp;
@@ -206,10 +173,9 @@ ldconfig</userinput></screen>
 
     <para>
       <parameter>USE_SYSTEM_ZLIB=1</parameter>: Dette alternativet sendes til
-      <command>make</command> for å sikre at
-      <filename class="libraryfile">libssl3.so</filename> biblioteket er koblet 
-      til systemets installerte zlib i stedet for 
-      versjonen i treet.
+      <command>make</command> for å sikre at <filename 
+      class="libraryfile">libssl3.so</filename> biblioteket er koblet til 
+      systemets installerte zlib i stedet for versjonen i treet.
     </para>
 
     <para>
