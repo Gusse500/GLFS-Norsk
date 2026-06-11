@@ -77,27 +77,27 @@
     <title>Installasjon av make-ca og Generering av CA-sertifikat lager</title>
 
     <para>
-      make-ca skriptet vil laste ned og behandle 
-      sertifikatene som er inkludert i <filename>certdata.txt</filename> filen
-      til bruk som tillitsankere for <xref linkend="p11-kit"/> tillitsmodulen.
-      I tillegg vil den generere systemsertifikatlagre som brukes av BLFS 
-      applikasjoner (hvis de anbefalte og valgfrie applikasjonene finnes på 
-      systemet). Eventuelle lokale sertifikater lagret i
-      <filename>/etc/ssl/local</filename> vil bli importert til både 
-      tillitsankrene og de genererte sertifikatlagrene (og overstyre Mozillas 
-      tillit). I tillegg vil eventuelle endrede tillitsverdier bli kopiert fra 
-      tillitsankrene til <filename>/etc/ssl/local</filename> før noen 
-      oppdateringer, som bevarer tilpassede tillitsverdier som avviker fra 
-      Mozilla når du bruker <command>trust</command> verktøyet fra
-      p11-kit for å operere på tillitslagret.
+      make-ca skriptet vil laste ned og behandle sertifikatene som er inkludert 
+      i <filename>certdata.txt</filename> filen til bruk som tillitsankere for 
+      <xref linkend="p11-kit"/> tillitsmodulen. I tillegg vil den generere 
+      systemsertifikatlagre som brukes av BLFS applikasjoner (hvis de anbefalte 
+      og valgfrie applikasjonene finnes på systemet). Eventuelle lokale 
+      sertifikater lagret i <filename>/etc/ssl/local</filename> vil bli 
+      importert til både tillitsankrene og de genererte sertifikatlagrene (og 
+      overstyre Mozillas tillit). I tillegg vil eventuelle endrede 
+      tillitsverdier bli kopiert fra tillitsankrene til 
+      <filename>/etc/ssl/local</filename> før noen oppdateringer, som bevarer 
+      tilpassede tillitsverdier som avviker fra Mozilla når du bruker 
+      <command>trust</command> verktøyet frap11-kit for å operere på 
+      tillitslagret.
     </para>
 
     <para>
       Før du installerer pakken, bør du legge til en ekstra instruksjon til 
-      make-ca skript som lager en 
-      kompatibilitetssymbolsk lenke som brukes av Debian Linux pakker og er 
-      påkrevd av <xref linkend="steam"/> ettersom hovedutviklingen skjer på 
-      Debian Linux. Legg til instruksjonen i skriptet nå:
+      make-ca skript som lager en kompatibilitetssymbolsk lenke som brukes av 
+      Debian Linux pakker og er påkrevd av <xref linkend="steam"/> ettersom 
+      hovedutviklingen skjer på Debian Linux. Legg til instruksjonen i skriptet 
+      nå:
     </para>
 
 <screen><userinput>cat &gt;&gt; make-ca &lt;&lt; "EOF"
@@ -113,8 +113,8 @@
     <screen><userinput>sed '/mktemp/s/-t //' -i make-ca</userinput></screen>
 
     <para>
-      Nå for å installere make-ca skriptet, må det 
-      installeres på riktig sted som &root; bruker:
+      Nå for å installere make-ca skriptet, må det installeres på riktig sted 
+      som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -123,31 +123,28 @@
    <note>
      <para>
        Teknisk sett er denne pakken allerede installert på dette tidspunktet. 
-       Men de fleste pakkene som lister make-ca som 
-       en avhengighet krever faktisk at systemsertifikatlageret er satt opp av 
-       denne pakken, i stedet for <command>make-ca</command>
-       programmet i seg selv. Så instruksjonene for å bruke
-       <command>make-ca</command> for å sette opp systemsertifikatets lagre er 
-       inkludert i denne delen.
+       Men de fleste pakkene som lister make-ca som en avhengighet krever 
+       faktisk at systemsertifikatlageret er satt opp av denne pakken, i stedet 
+       for <command>make-ca</command> programmet i seg selv. Så instruksjonene 
+       for å bruke <command>make-ca</command> for å sette opp 
+       systemsertifikatets lagre er inkludert i denne delen.
      </para>
    </note>
 
    <para>
-     Som <systemitem class="username">root</systemitem> bruker,
-     last ned sertifikatkilden og klargjør for 
-     systembruk med følgende kommando:
+     Som &root; bruker, last ned sertifikatkilden og klargjør for systembruk 
+     med følgende kommando:
    </para>
 
     <note>
       <para>
         Hvis du kjører skriptet en gang til med samme versjon av
         <filename>certdata.txt</filename>, for eksempel å oppdatere lagret 
-        når make-ca oppgraderes, eller å legge til 
-        flere butikker etter hvert som nødvendig programvare installeres, 
-        erstatt <parameter>-g</parameter> bryteren med
-        <parameter>-r</parameter> bryteren i kommandolinjen. Hvis du pakker, 
-        kjør <command>make-ca --help</command> for å se alle tilgjengelige 
-        kommandolinjealternativer.
+        når make-ca oppgraderes, eller å legge til flere butikker etter hvert 
+        som nødvendig programvare installeres, erstatt <parameter>-g</parameter> 
+        bryteren med <parameter>-r</parameter> bryteren i kommandolinjen. Hvis 
+        du pakker, kjør <command>make-ca --help</command> for å se alle 
+        tilgjengelige kommandolinjealternativer.
       </para>
     </note>
 
@@ -169,8 +166,7 @@
       versjonen som er inkludert i <xref linkend="nss"/>. Ytterligere oppstrøms 
       nedlastinger er tilgjengelige på lenkene som er inkludert i
       <filename>/etc/make-ca/make-ca.conf.dist</filename>. Bare kopier 
-      filen til
-      <filename>/etc/make-ca.conf</filename> og rediger etter behov.
+      filen til <filename>/etc/make-ca.conf</filename> og rediger etter behov.
     </para>
 
     <indexterm zone="make-ca make-ca-config">
@@ -180,25 +176,21 @@
     <bridgehead renderas="sect3">Om tillitsargumenter</bridgehead>
 
     <para>
-      Det finnes tre typer tillit som er anerkjent av
-      make-ca skriptet, SSL/TLS, S/Mime, og 
-      codeSigning. For OpenSSL, disse er
+      Det finnes tre typer tillit som er anerkjent av make-ca skriptet, SSL/TLS, 
+      S/Mime, og codeSigning. For OpenSSL, disse er
       <parameter>serverAuth</parameter>,
       <parameter>emailProtection</parameter>, og
       <parameter>codeSigning</parameter> henholdsvis. Hvis ett av de tre 
       tillitsargumentene utelates, er sertifikatet verken klarert eller avvist 
-      for den rollen. Klienter som bruker
-      OpenSSL eller NSS
+      for den rollen. Klienter som bruker OpenSSL eller NSS
       som støter på dette sertifikatet, vil gi en advarsel. 
-      Klienter som bruker
-      GnuTLS uten
-      p11-kit støtten er ikke klar over pålitelige 
-      sertifikater. For å inkludere denne CA-en i
+      Klienter som bruker GnuTLS uten p11-kit støtten er ikke klar over 
+      pålitelige sertifikater. For å inkludere denne CA-en i
       <filename>ca-bundle.crt</filename>,
       <filename>email-ca-bundle.crt</filename>, eller
       <filename>objsign-ca-bundle.crt</filename> filene
-      (GnuTLS legacy pakker), må den ha 
-      hensiktsmessige tillitsargumenter.
+      (GnuTLS legacy pakker), må den ha hensiktsmessige 
+      tillitsargumenter.
     </para>
 
     <bridgehead renderas="sect3">Legge til flere CA sertifikater</bridgehead>
@@ -209,21 +201,21 @@
       tillitslager. Denne mappen brukes også til å lagre sertifikater som ble 
       lagt til eller endret i systemets tillitslager av <xref linkend="p11-kit"/> 
       slik at tillitsverdier opprettholdes på tvers av oppgraderinger. Filer i 
-      denne mappen må være i OpenSSL klarert 
-      sertifikatformat. Sertifikater importert ved hjelp av <command>trust</command> 
-      verktøyet fra <xref linkend="p11-kit"/> vil bruke x509 Extended Key Usage 
-      verdiene til å tilordne standard tillitsverdier for systemankrene.
+      denne mappen må være i OpenSSL klarert sertifikatformat. Sertifikater 
+      importert ved hjelp av <command>trust</command> verktøyet fra 
+      <xref linkend="p11-kit"/> vil bruke x509 Extended Key Usage verdiene til 
+      å tilordne standard tillitsverdier for systemankrene.
     </para>
 
-    <para>Hvis du trenger å overstyre tillitsverdier, eller på annen måte 
-      trenger å opprette en OpenSSL klarert sertifikat 
-      manuelt fra en vanlig PEM kodet fil, må du legge til tillitsargumenter til
-      <command>openssl</command> kommandoen, og opprett et nytt sertifikat. For 
-      eksempel, ved å bruke <ulink url="http://www.cacert.org/">CAcert</ulink>
-      roots, hvis du vil stole på begge for alle tre rollene, vil følgende 
-      kommandoer opprette passende OpenSSL klarerte sertifikater (kjør som
-      <systemitem class="username">root</systemitem> bruker etter at <!-- xref
-      linkend="wget"/ --> er installert):
+    <para>
+      Hvis du trenger å overstyre tillitsverdier, eller på annen måte trenger å 
+      opprette en OpenSSL klarert sertifikat manuelt fra en vanlig PEM kodet 
+      fil, må du legge til tillitsargumenter til <command>openssl</command> 
+      kommandoen, og opprett et nytt sertifikat. For eksempel, ved å bruke 
+      <ulink url="http://www.cacert.org/">CAcert</ulink> røtter, hvis du vil 
+      stole på begge for alle tre rollene, vil følgende kommandoer opprette 
+      passende OpenSSL klarerte sertifikater (kjør som &root; bruker etter at 
+      xref linkend="wget"/  er installert):
     </para>
 
 <screen role="nodump"><userinput>wget http://www.cacert.org/certs/root.crt &amp;&amp;
@@ -263,37 +255,34 @@ openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
   </sect2>
 
   <sect2 role="configuration" id="make-ca-python">
-    <title>Bruke make-ca med Python3</title>
+    <title>Bruke make-ca med Python</title>
 
     <para>
-      Når Python3 ble installert i LFS/MLFS, den 
-      inkluderte pip3 modulen med 
-      leverandørsertifikater fra Certifi modulen. Det 
-      var nødvendig, det betyr at når <command>pip3</command> brukes kan det 
-      referere til disse sertifikatene, hovedsakelig når man oppretter et 
-      virtuelt miljø eller når man installerer en modul med alle wheel 
-      avhengigheter på én gang.
+      Når Python3 ble installert i LFS/MLFS, den inkluderte pip3 modulen med 
+      leverandørsertifikater fra Certifi modulen. Det var nødvendig, det betyr 
+      at når <command>pip3</command> brukes kan det referere til disse 
+      sertifikatene, hovedsakelig når man oppretter et virtuelt miljø eller når 
+      man installerer en modul med alle wheel avhengigheter på én gang.
     </para>
 
     <para>
       Det er generelt ansett at systemadministratoren bør ha ansvaret for 
       hvilke sertifikater som er tilgjengelige. Nå som <xref
       linkend="make-ca"/> og <xref linkend="p11-kit"/> har blitt installert og
-      make-ca har blitt konfigurert, er det mulig å 
-      gjøre sånn at <command>pip3</command> bruker systemsertifikatene.
+      make-ca har blitt konfigurert, er det mulig å gjøre sånn at 
+      <command>pip3</command> bruker systemsertifikatene.
     </para>
 
     <para>
       De leverandørsertifikatene som er installert i LFS er et øyeblikksbilde 
-      fra da den innhentede versjonen når Certifi ble 
-      opprettet. Hvis du regelmessig oppdaterer systemsertifikatene, vil 
-      leverandørversjonen bli utdatert.
+      fra da den innhentede versjonen når Certifi ble opprettet. Hvis du regelmessig 
+      oppdaterer systemsertifikatene, vil leverandørversjonen bli utdatert.
     </para>
 
     <para>
-      For å bruke systemsertifikatene i Python3, bør 
-      du sette <envar>_PIP_STANDALONE_CERT</envar> å peke på dem, f.eks. for 
-      bash skallet:
+      For å bruke systemsertifikatene i Python, bør du sette 
+      <envar>_PIP_STANDALONE_CERT</envar> å peke på dem, f.eks. for 
+      Bash skallet:
     </para>
 
 <screen><userinput>export _PIP_STANDALONE_CERT=/etc/pki/tls/certs/ca-bundle.crt</userinput></screen>
@@ -301,8 +290,8 @@ openssl x509 -in class3.crt -text -fingerprint -setalias "CAcert Class 3 root" \
     <warning>
       <para>
         Hvis du har laget virtuelle miljøer, for eksempel når du testet moduler, 
-        og disse inkluderer Requests og
-        Certifi moduler i <filename
+        og disse inkluderer Requests og Certifi moduler i 
+        <filename
         class="directory">~/.local/lib/python&python3-majorver;/</filename>
         da vil disse lokale modulene bli brukt i stedet for systemsertifikatene 
         med mindre du fjerner de lokale modulene.

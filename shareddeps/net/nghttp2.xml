@@ -20,9 +20,9 @@
     <title>Introduksjon til nghttp2</title>
 
     <para>
-      nghttp2 er en implementering av HTTP/2 og dens 
-      deklarasjons komprimeringsalgoritme, HPACK. Pakker bruker dette til å 
-      støtte HTTP/2, som begynner å bli mer vanlig brukt på Internett.
+      nghttp2 er en implementering av HTTP/2 og dens deklarasjons 
+      komprimeringsalgoritme, HPACK. Pakker bruker dette til å støtte HTTP/2, 
+      som begynner å bli mer vanlig brukt på Internett.
     </para>
 
     <itemizedlist spacing="compact">
@@ -45,8 +45,7 @@
     <title>Installasjon av nghttp2</title>
 
     <para>
-      Installer nghttp2 ved å kjøre følgende 
-      kommandoer:
+      Installer nghttp2 ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr     \

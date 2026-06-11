@@ -21,9 +21,9 @@
     <title>Introduksjon til libunistring</title>
 
     <para>
-      libunistring er et bibliotek som tilbyr 
-      funksjoner for å manipulere Unicode strenger og for å manipulere 
-      C strenger i henhold til Unicode standarden.
+      libunistring er et bibliotek som tilbyr funksjoner for å manipulere 
+      Unicode strenger og for å manipulere C strenger i henhold til Unicode 
+      standarden.
 </para>
 
     &long-build-time;
@@ -44,8 +44,7 @@
 <!--    &gnulib;  -->
 
     <para>
-      Installer libunistring ved å kjøre følgende 
-      kommandoer:
+      Installer libunistring ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr    \
@@ -55,7 +54,7 @@
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -66,8 +65,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av lib32-libunistring</title>
 
     <para>
-      Installer lib32-libunistring
-      ved å kjøre følgende kommandoer:
+      Installer lib32-libunistring ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -81,7 +79,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Nå som <systemitem class="username">root</systemitem> bruker:
+      Nå som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;

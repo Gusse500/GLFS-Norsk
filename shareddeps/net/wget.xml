@@ -74,7 +74,7 @@ unset NEW_LINE</userinput></screen>
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install</userinput></screen>
@@ -116,16 +116,6 @@ make</userinput></screen>
       <indexterm zone="wget wget-config">
         <primary sortas="e-etc-wgetrc">/etc/wgetrc</primary>
       </indexterm>
-
-<!--
-      <para>
-        Hvis du har installert <xref linkend="make-ca"/> og du vil
-        Wget å bruke dem, som
-        <systemitem class="username">root</systemitem> bruker:
-      </para>
-
-<screen role="root"><userinput>echo ca-directory=/etc/ssl/certs >> /etc/wgetrc</userinput></screen>
--->
 
     </sect3>
 

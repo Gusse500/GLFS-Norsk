@@ -20,13 +20,12 @@
     <title>Introduksjon til cURL</title>
 
     <para>
-      cURL pakken inneholder et verktøy
-      og et bibliotek som brukes til å overføre filer med URL-syntaks til hvilken som helst av
-      følgende protokoller: DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP,
-      HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTSP, SMB, SMBS,
-      SMTP, SMPTS, TELNET, and TFTP. Evnen til å både laste ned
-      og laste opp filer kan integreres i andre programmer for å støtte
-      funksjoner som strømming av media.
+      cURL pakken inneholder et verktøy og et bibliotek som brukes til å overføre 
+      filer med URL-syntaks til hvilken som helst av følgende protokoller: DICT, 
+      FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, 
+      MQTT, POP3, POP3S, RTSP, SMB, SMBS, SMTP, SMPTS, TELNET, og TFTP. Evnen 
+      til å både laste ned og laste opp filer kan integreres i andre programmer 
+      for å støtte funksjoner som strømmetjenester.
     </para>
 
     <itemizedlist spacing="compact">
@@ -97,8 +96,7 @@ cd    build &amp;&amp;
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem>
-      bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -128,8 +126,7 @@ cp -v -R docs -T /usr/share/doc/curl-&curl-version;</userinput></screen>
     <title>lib32 Installasjon av cURL</title>
     
     <para>
-      Installer lib32-cURL
-      ved å kjøre følgende kommandoer:
+      Installer lib32-cURL ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>rm -rf * &amp;&amp;
@@ -146,7 +143,7 @@ PKGCONFIG=i686-pc-linux-gnu-pkg-config \
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;

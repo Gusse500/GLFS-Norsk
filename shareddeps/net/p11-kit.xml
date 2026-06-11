@@ -22,8 +22,8 @@
     <title>Introduksjon til p11-kit</title>
 
     <para>
-      p11-kit pakken gir en måte å laste inn og 
-      liste PKCS #11 moduler (en standard for kryptografisk tokengrensesnitt).
+      p11-kit pakken gir en måte å laste inn og liste PKCS #11 moduler (en 
+      standard for kryptografisk tokengrensesnitt).
     </para>
 
     &long-build-time;
@@ -62,8 +62,7 @@ cat &gt;&gt; trust/trust-extract-compat &lt;&lt; "EOF"
 EOF</userinput></screen>
 
     <para>
-      Installer p11-kit ved å kjøre følgende 
-      kommandoer:
+      Installer p11-kit ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir p11-build &amp;&amp;
@@ -127,8 +126,7 @@ ldconfig</userinput></screen>
 
     <para>
       <option>-D hash_impl=freebl</option>: Bruk denne bryteren hvis du vil 
-      bruke Freebl biblioteket fra NSS for SHA1 og
-      MD5 hashing.
+      bruke Freebl biblioteket fra NSS for SHA1 og MD5 hashing.
     </para>
 
   </sect2>
@@ -139,7 +137,7 @@ ldconfig</userinput></screen>
     <para>
       Gjør systemets CA-er tilgjengelige transparent for NSS bevisste 
       applikasjoner ved å kjøre følgende kommandoer som
-      <systemitem class="username">root</systemitem> bruker:
+      &root; bruker:
     </para>
 
 <screen role="root"><userinput>for lib in lib{,32}; do
