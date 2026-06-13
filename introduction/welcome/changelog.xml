@@ -41,6 +41,54 @@
     -->
 
     <listitem>
+      <para>13. juni 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSS: 3.124 -&gt; 3.125.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cbindgen: 0.29.3 -&gt; 0.29.4. Fikser
+          <ulink url="&glfs-issues;/474">#474</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wayland-Protocols: 1.48 -&gt; 1.49. Fikser
+          <ulink url="&glfs-issues;/475">#475</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - OpenCL-SDK: 2025.07.22 -&gt; 2026.05.29. Fikser
+          <ulink url="&glfs-issues;/476">#476</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 595.71.05 -&gt; 610.43.02. Fikser
+          <ulink url="&glfs-issues;/477">#477</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CUDA: 13.2.1 -&gt; 13.3.0. Fikser
+          <ulink url="&glfs-issues;/473">#473</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA-r580: 580.159.03 -&gt; 580.159.04.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - sdl2-compat: 2.32.68 -&gt; 2.32.70. Fikser
+          <ulink url="&glfs-issues;/478">#478</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GStreamer-Suite: 1.28.3 -&gt; 1.28.4 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23444">#23444</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 11.10 -&gt; 11.11.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libglvnd: Legg til en oppdatering for å annonsere 
+          alle EGL enhetsutvidelser.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>4. juni 2026</para>
       <itemizedlist>
         <listitem>

@@ -404,29 +404,5 @@ ninja</userinput></screen>
         FPS kan falle til 60 FPS.
       </para>
     </listitem>
-    <listitem>
-      <para>
-        EGL_EXT Enhetsforespørsel og Enumeration: libglvnd setter opp viktige 
-        utvidelser som er en del av EGL spesifikasjonen og leveres via 
-        deklarasjonsfiler. Disse deklarasjonsfilene tilbyr også 
-        funksjonsdeklarasjoner, slik at adressene deres kan hentes. NVIDIAs 
-        biblioteker tilbyr ikke to utvidelser: <literal>EGL_EXT_device_query</literal> og
-        <literal>EGL_EXT_device_enumeration</literal>. Driveren gir imidlertid 
-        funksjonsdefinisjoner for å spørre enheter via EGL. Dette betyr at når 
-        en pakke eksplisitt sjekker etter utvidelsene, hvis <xref
-        linkend='mesa'/> ikke er installert, vil pakken håndtere tilfellet for 
-        manglende utvidelser, uansett om funksjonene som håndterer 
-        enhetsspørringer faktisk finnes eller ikke.
-      </para>
-      <para>
-        De fleste pakker gjør ikke dette. Men hvis du støter på en slik 
-        situasjon, må du sørge for at pakken ikke sjekker etter disse 
-        utvidelsene for å forhindre potensielle feil. Niri, som bruker smithay, 
-        lider av dette. Dette blir forsøkt løst oppstrøms med smithay. Ideelt 
-        sett bør NVIDIA eksportere disse utvidelsene. Den gjør ikke det på noen 
-        måte, den tilbyr bare funksjonene som gjør enhetsspørring 
-        mulig.
-      </para>
-    </listitem>
   </itemizedlist>
 </sect3>">
