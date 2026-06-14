@@ -68,7 +68,7 @@ done</userinput></screen>
     deretter ned filene på hver side i den revisjonsdelen.
   </para><para>
     Filer for en pakkebunt som <xref linkend="vulkan-sdk"/> og <xref
-    linkend="gstreamer-suite"/> vil heller ikke bli lastet ned av instruksjonene 
+    linkend="gstreamer"/> vil heller ikke bli lastet ned av instruksjonene 
     ovenfor. De blir i stedet lastet ned når du kommer til disse pakkene 
     buntene, der verktøyene for å laste dem ned skal bli tilgjengelige.
   </para></important>

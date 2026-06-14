@@ -5,37 +5,36 @@
   %general-entities;
 ]>
 
-<sect1 id="gstreamer-suite" xreflabel="GStreamer-Pakken-&gstreamer10-version;">
-  <?dbhtml filename="gstreamer-suite.html"?>
+<sect1 id="gstreamer" xreflabel="GStreamer-&gstreamer-version;">
+  <?dbhtml filename="gstreamer.html"?>
 
-  <title>GStreamer Pakken &gstreamer10-version;</title>
+  <title>GStreamer-&gstreamer-version;</title>
 
-  <indexterm zone="gstreamer-suite">
-    <primary sortas="a-gstreamer-suite">GStreamer Pakken</primary>
+  <indexterm zone="gstreamer">
+    <primary sortas="a-gstreamer">GStreamer</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduksjon til GStreamer Pakken</title>
+    <title>Introduksjon til GStreamer</title>
 
     <para>
-      GStreamer er et rammeverk for strømming av medier som lar 
-      applikasjoner dele et felles sett med programtillegg for oppgaver 
-      som videokoding og dekoding, lydkoding og dekoding, lyd og videofiltre, 
-      lydvisualisering, nettstrømming og alt annet som strømmer i sanntid 
-      eller på annen måte. Denne siden inneholder mesteparten av 
-      pakkesettet for enkel installasjon, ettersom de stort sett har de 
-      samme instruksjonene.
+      GStreamer er et multimediarammeverk som lar applikasjoner dele et felles 
+      sett med programtillegg for oppgaver som videokoding og dekoding, 
+      lydkoding og dekoding, lyd- og videofiltre, lydvisualisering, 
+      nettstrømming og alt annet som strømmer i sanntid eller på annen måte. 
+      Denne siden inneholder mesteparten av pakkesettet for enkel installasjon, 
+      ettersom de stort sett har de samme instruksjonene.
     </para>
 
     &long-build-time;
 
     &meson-cross;
 
-    <bridgehead renderas="sect3">GStreamer Pakken Avhengigheter</bridgehead>
+    <bridgehead renderas="sect3">GStreamer Avhengigheter</bridgehead>
 
     <para role="required">
-      <xref linkend="ffmpeg"/> (for libav støtte) og
-      <xref linkend="glib2"/> (GObject Introspection påkrevd for GNOME)
+      <xref linkend="ffmpeg"/> og
+      <xref linkend="glib2"/>
     </para>
 
     <para role="recommended">
@@ -155,19 +154,19 @@
   </sect2>
 
   <sect2>
-    <title>Laste ned GStreamer Pakken</title>
+    <title>Laste ned GStreamer</title>
 
     <para>
       Først opprett en liste over filer som skal lastes ned:
     </para>
 
-<screen><userinput>cat &gt; gstreamer-suite-&gstreamer10-version;-list &lt;&lt; EOF
-<literal>gstreamer/gstreamer-&gstreamer10-version;.tar.xz
-gst-plugins-base/gst-plugins-base-&gst10-plugins-base-version;.tar.xz
-gst-plugins-good/gst-plugins-good-&gst10-plugins-good-version;.tar.xz
-gst-plugins-bad/gst-plugins-bad-&gst10-plugins-bad-version;.tar.xz
-gst-plugins-ugly/gst-plugins-ugly-&gst10-plugins-ugly-version;.tar.xz
-gst-libav/gst-libav-&gst10-libav-version;.tar.xz</literal>
+<screen><userinput>cat &gt; gstreamer-&gstreamer-version;-list &lt;&lt; EOF
+<literal>gstreamer/gstreamer-&gstreamer-version;.tar.xz
+gst-plugins-base/gst-plugins-base-&gstreamer-version;.tar.xz
+gst-plugins-good/gst-plugins-good-&gstreamer-version;.tar.xz
+gst-plugins-bad/gst-plugins-bad-&gstreamer-version;.tar.xz
+gst-plugins-ugly/gst-plugins-ugly-&gstreamer-version;.tar.xz
+gst-libav/gst-libav-&gstreamer-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
@@ -175,21 +174,21 @@ EOF</userinput></screen>
       bruk følgende kommandoer: 
     </para>
 
-<screen><userinput>mkdir gstreamer-suite &amp;&amp;
-cd    gstreamer-suite &amp;&amp;
-grep -v '^#' ../gstreamer-suite-&gstreamer10-version;-list | wget -i- -c \
+<screen><userinput>mkdir gstreamer &amp;&amp;
+cd    gstreamer &amp;&amp;
+grep -v '^#' ../gstreamer-&gstreamer-version;-list | wget -i- -c \
     -B &gstreamer-dl;/</userinput></screen>
 
   </sect2>
 
   <sect2 role="installation">
-    <title>Installasjon av GStreamer Pakken</title>
+    <title>Installasjon av GStreamer</title>
 
     &as_root;
 
     <para>
-      Først må du teste om pakken er installert, og hvis den er det, fjern den 
-      forrige installasjonen
+      Først må du teste om GStreamer er installert, og hvis den er det, fjern 
+      den forrige installasjonen
       <footnote><para>
         Fjerning av tidligere installasjon er nødvendig, ellers kan prosesser henge 
         seg opp eller ikke fungere som de skal på grunn av at blandede versjoner er installert.
@@ -211,7 +210,7 @@ fi</userinput></screen>
       Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in $(grep -v '^#' ../gstreamer-suite-&gstreamer10-version;-list)
+<screen><userinput>for package in $(grep -v '^#' ../gstreamer-&gstreamer-version;-list)
 do
   package=$(basename "$package")
   packagedir=${package%.tar.?z*}
@@ -258,11 +257,11 @@ done</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installasjon av GStreamer Pakken</title>
+    <title>lib32 Installasjon av GStreamer</title>
 
     <para>
-      Først må du teste om pakken er installert, og hvis den er det, fjern den 
-      forrige installasjonen:
+      Først må du teste om GStreamer er installert, og hvis den er det, fjern 
+      den forrige installasjonen:
     </para>
 
 <screen><userinput>i686-pc-linux-gnu-pkg-config gstreamer-1.0
@@ -280,7 +279,7 @@ fi</userinput></screen>
       Installer alle pakkene ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>for package in $(grep -v '^#' ../gstreamer-suite-&gstreamer10-version;-list)
+<screen><userinput>for package in $(grep -v '^#' ../gstreamer-&gstreamer-version;-list)
 do
   package=$(basename "$package")
   packagedir=${package%.tar.?z*}
@@ -459,7 +458,7 @@ done</userinput></screen>
             er et kommandolinjeverktøy som kan brukes til å teste 
             GStreamers enhetsovervåkingsfunksjonalitet
           </para>
-          <indexterm zone="gstreamer-suite gst-device-monitor-1.0">
+          <indexterm zone="gstreamer gst-device-monitor-1.0">
             <primary sortas="b-gst-device-monitor-1.0">gst-device-monitor-1.0</primary>
           </indexterm>
         </listitem>
@@ -472,7 +471,7 @@ done</userinput></screen>
             er et verktøy som kan brukes til å skrive ut grunnleggende 
             metadata og strømme informasjon om en mediefil
           </para>
-          <indexterm zone="gstreamer-suite gst-discoverer-1.0">
+          <indexterm zone="gstreamer gst-discoverer-1.0">
             <primary sortas="b-gst-discoverer-1.0">gst-discoverer-1.0</primary>
           </indexterm>
         </listitem>
@@ -487,7 +486,7 @@ done</userinput></screen>
             informasjon om et bestemt programtillegg, eller informasjon om 
             et bestemt element
           </para>
-          <indexterm zone="gstreamer-suite gst-inspect-1.0">
+          <indexterm zone="gstreamer gst-inspect-1.0">
             <primary sortas="b-gst-inspect-1.0">gst-inspect-1.0</primary>
           </indexterm>
         </listitem>
@@ -500,7 +499,7 @@ done</userinput></screen>
             er et verktøy som bygger og kjører grunnleggende 
             GStreamer pipeliner
           </para>
-          <indexterm zone="gstreamer-suite gst-launch-1.0">
+          <indexterm zone="gstreamer gst-launch-1.0">
             <primary sortas="b-gst-launch-1.0">gst-launch-1.0</primary>
           </indexterm>
         </listitem>
@@ -513,7 +512,7 @@ done</userinput></screen>
             er et kommandolinjeverktøy som kan brukes til å teste grunnleggende 
             avspilling ved hjelp av playbin elementet
           </para>
-          <indexterm zone="gstreamer-suite gst-play-1.0">
+          <indexterm zone="gstreamer gst-play-1.0">
             <primary sortas="b-gst-play-1.0">gst-play-1.0</primary>
           </indexterm>
         </listitem>
@@ -526,7 +525,7 @@ done</userinput></screen>
             er et verktøy som brukes til å samle inn statistikk om 
             GStreamer operasjoner
           </para>
-          <indexterm zone="gstreamer-suite gst-stats-1.0">
+          <indexterm zone="gstreamer gst-stats-1.0">
             <primary sortas="b-gst-stats-1.0">gst-stats-1.0</primary>
           </indexterm>
         </listitem>
@@ -539,7 +538,7 @@ done</userinput></screen>
             kjører en testplan i TAP kompatibelt format samtidig som den 
             integreres med meson testselen
           </para>
-          <indexterm zone="gstreamer-suite gst-tester-1.0">
+          <indexterm zone="gstreamer gst-tester-1.0">
             <primary sortas="b-gst-tester-1.0">gst-tester-1.0</primary>
           </indexterm>
         </listitem>
@@ -551,7 +550,7 @@ done</userinput></screen>
           <para>
             brukes til å transkode en strøm til et annet format
           </para>
-          <indexterm zone="gstreamer-suite gst-transcoder-1.0">
+          <indexterm zone="gstreamer gst-transcoder-1.0">
             <primary sortas="b-gst-transcoder-1.0">gst-transcoder-1.0</primary>
           </indexterm>
         </listitem>
@@ -565,7 +564,7 @@ done</userinput></screen>
             GStreamer programtilleggmodulen for å analysere eller dekode filer, 
             og den tilhørende MIME typen
           </para>
-          <indexterm zone="gstreamer-suite gst-typefind-1.0">
+          <indexterm zone="gstreamer gst-typefind-1.0">
             <primary sortas="b-gst-typefind-1.0">gst-typefind-1.0</primary>
           </indexterm>
         </listitem>
@@ -578,7 +577,7 @@ done</userinput></screen>
             er et eksempelprogram som brukes til å spille av en liste med 
             lyd og videofiler sekvensielt
           </para>
-          <indexterm zone="gstreamer-suite playout">
+          <indexterm zone="gstreamer playout">
             <primary sortas="b-playout">playout</primary>
           </indexterm>
         </listitem>
@@ -591,7 +590,7 @@ done</userinput></screen>
             gir noen basisklasser som kan utvides med elementer og 
             verktøyklasser som er mest nyttige for programtillutviklere
           </para>
-          <indexterm zone="gstreamer-suite libgstbase-1.0">
+          <indexterm zone="gstreamer libgstbase-1.0">
             <primary sortas="c-libgstbase-1.0">libgstbase-1.0</primary>
           </indexterm>
         </listitem>
@@ -604,7 +603,7 @@ done</userinput></screen>
             tilbyr funksjonalitet for å skrive enhetstester som bruker 
             check rammeverket
           </para>
-          <indexterm zone="gstreamer-suite libgstcheck-1.0">
+          <indexterm zone="gstreamer libgstcheck-1.0">
             <primary sortas="c-libgstcheck-1.0">libgstcheck-1.0</primary>
           </indexterm>
         </listitem>
@@ -616,7 +615,7 @@ done</userinput></screen>
           <para>
             gir funksjonalitet for å animere elementegenskaper over tid
           </para>
-          <indexterm zone="gstreamer-suite libgstcontroller-1.0">
+          <indexterm zone="gstreamer libgstcontroller-1.0">
             <primary sortas="c-libgstcontroller-1.0">libgstcontroller-1.0</primary>
           </indexterm>
         </listitem>
@@ -628,7 +627,7 @@ done</userinput></screen>
           <para>
             tilbyr nettverkselementer og objekter
           </para>
-          <indexterm zone="gstreamer-suite libgstnet-1.0">
+          <indexterm zone="gstreamer libgstnet-1.0">
             <primary sortas="c-libgstnet-1.0">libgstnet-1.0</primary>
           </indexterm>
         </listitem>
@@ -643,7 +642,7 @@ done</userinput></screen>
             definerer elementer og bins, sammen med noen mer spesialiserte 
             elementer
           </para>
-          <indexterm zone="gstreamer-suite libgstreamer-1.0">
+          <indexterm zone="gstreamer libgstreamer-1.0">
             <primary sortas="c-libgstreamer-1.0">libgstreamer-1.0</primary>
           </indexterm>
         </listitem>
