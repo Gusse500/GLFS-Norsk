@@ -123,14 +123,14 @@ gjennom hele boken. Oppdater eller legg til etter behov.
 
 ### 3.1.2. Bokens filer og mapper
 Nå som de interne detaljene er dekket, er det på tide å dekke filene som har en
-sterkere innvirkning på det endelige gjengitte produktet. Her er følgende filer og
-mapper i roten av kildekoden:
+sterkere innvirkning på det endelige gjengitte produktet. Her er følgende filer 
+og mapper i roten av kildekoden:
 
 - `appendices/`
 - `book/`
+- `core/`
 - `introduction/`
 - `qol/`
-- `shareddeps/`
 - `steam/`
 - `wine/`
 - `changelog.xml` (lenke til `introduction/welcome/changelog.xml`)
@@ -147,16 +147,16 @@ Trenger sjelden å oppdateres.
 #### 3.1.2.2. `book/`
 Denne mappen inneholder XML filer som er gjengitt i begynnelsen av boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.2.3. `introduction/`
+#### 3.1.2.3. `core/`
+Denne mappen inneholder XML filer gjengitt for kjernekomponentdelen av boken. 
+Inneholder pakker.
+#### 3.1.2.4. `introduction/`
 Denne mappen inneholder XML filer gjengitt for introduksjonsdelen av 
 boken. Inneholder `welcome/changelog.xml` som må oppdateres ofte. 
 Resten av XML filene gjør det vanligvis ikke.
-#### 3.1.2.4. `qol/`
-Denne mappen inneholder XML filer gjengitt for QOL-delen av boken. 
+#### 3.1.2.5. `qol/`
+Denne mappen inneholder XML filer gjengitt for QOL delen av boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.2.5. `shareddeps/`
-Denne mappen inneholder XML filer gjengitt for delen Delte avhengigheter 
-i boken. Inneholder pakker.
 #### 3.1.2.6. `steam/`
 Denne mappen inneholder XML filer gjengitt for Steam-delen av boken. 
 Inneholder pakker.

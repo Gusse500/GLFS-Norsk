@@ -7,7 +7,7 @@
 <!ENTITY python3-lib-suffix           "cpython-&python3-major;&python3-minor;-&lt;arch&gt;-linux-gnu">
 <!ENTITY python3-site                 "/usr/lib/python&python3-majorver;/site-packages">
 
-<!-- SHARED DEPENDENCIES -->
+<!-- CORE COMPONENTS -->
 
 <!-- Networking -->
 <!ENTITY icu-major                    "78">

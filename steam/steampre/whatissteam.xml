@@ -27,7 +27,7 @@
 
   <para>
     Vennligst sjekk <xref linkend="steamdeps"/> å finne det du trenger før du 
-    fortsetter, selv om mesteparten av <xref linkend="shareddeps"/>
+    fortsetter, selv om mesteparten av <xref linkend="core"/>
     er rett frem. Er det noen valgmuligheter involvert, som å velge om du vil 
     ha ALSA eller PulseAudio, X11 eller Wayland, osv.
   </para>

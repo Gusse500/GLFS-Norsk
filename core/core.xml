@@ -5,10 +5,10 @@
   %general-entities;
 ]>
 
-<part id="shareddeps" xreflabel="Delte Avhengigheter">
-  <?dbhtml filename="shareddeps.html" dir="shareddeps"?>
+<part id="core" xreflabel="Kjernekomponenter">
+  <?dbhtml filename="core.html" dir="core"?>
 
-  <title>Delte Avhengigheter</title>
+  <title>Kjernekomponenter</title>
 
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="net/net.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="security/security.xml"/>
