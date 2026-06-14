@@ -44,6 +44,12 @@
       <para>13. juni 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - Shared Dependencies -&gt; Core Components.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GS: GStreamer-Suite -&gt; GStreamer.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - NSS: 3.124 -&gt; 3.125.</para>
         </listitem>
         <listitem>

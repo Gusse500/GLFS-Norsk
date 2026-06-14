@@ -51,7 +51,7 @@
     </para>
 
     <para role="recommended">
-      <xref linkend="gstreamer-suite"/> (Kreves for VP9 kodekstøtte, 
+      <xref linkend="gstreamer"/> (Kreves for VP9 kodekstøtte, 
       ofte brukt for strømmesider som YouTube og Twitch)
     </para>
 

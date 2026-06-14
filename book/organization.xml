@@ -8,7 +8,6 @@
 <sect1 id="organization" xreflabel="Organisering">
   <?dbhtml filename="organization.html"?>
 
-
   <title>Organisering</title>
 
   <para>
@@ -22,15 +21,14 @@
     forstå resten av boken.
   </para>
 
-  <bridgehead renderas="sect2">Del II - Delte avhengigheter</bridgehead>
+  <bridgehead renderas="sect2">Part II - Kjernekomponenter</bridgehead>
 
   <para>
-    Denne delen er dedikert til å dekke avhengigheter som deles 
-    mellom Steam og Wine.
-     Det viser seg at det er ganske mange 
-    avhengigheter de begge er avhengige av. Noe spesifikt for 
-    Steam eller Wine er dekket 
-    i sine respektive kapitler.
+    Denne delen er dedikert til å dekke kjernekomponenter som sikkerhet, lyd og 
+    grafikk. Steam, Wine og andre pakker vil velge ganske mye fra denne delen. 
+    Du har noen valgmuligheter når det gjelder hva du skal installere, avhengig 
+    av brukstilfellet ditt. Denne delen er lagt opp lineært, som alle de andre 
+    delene.
   </para>
 
   <bridgehead renderas="sect2">Del III - Steam</bridgehead>

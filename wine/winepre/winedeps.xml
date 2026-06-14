@@ -80,7 +80,7 @@
   <para role="recommended"><itemizedlist spacing="compact">
     <listitem>
       <para>
-        <xref linkend="gstreamer-suite"/>: Tillater konsumering og arbeid med 
+        <xref linkend="gstreamer"/>: Tillater konsumering og arbeid med 
         multimedia som musikk og videoer. De fleste spill og noe programvare 
         fungerer uten det, selv om noen vil trenge det for WMA dekoding.
       </para>

@@ -33,7 +33,7 @@
   </para>
 
   <para>
-    Følgende seksjon er Delte avhengigheter. Enhver bruker 
+    Følgende seksjon er Kjernekomponenter. Enhver bruker 
     som ønsker Steam og/eller Wine vil lese dette kapittelet 
     siden begge prosjektene bruker pakkene. Mesteparten av dette kapittelet er 
     nødvendig. Det anbefales imidlertid å sjekke avhengighetslistene 
