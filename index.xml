@@ -10,7 +10,6 @@ $Date$
 
   <!-- Front Matter -->
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="book/bookinfo.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="book/dedication.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="book/preface.xml"/>
 
   <!-- Parts -->
