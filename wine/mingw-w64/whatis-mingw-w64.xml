@@ -79,7 +79,7 @@
     redaktører/bidragsytere har siden den gang bestemt seg for å skrote den ideen.
     <footnote><para>
       Se dette
-      <ulink url="https://github.com/Zeckmathederg/glfs/issues/9">issue</ulink>
+      <ulink url="https://github.com/zeckma-tech/glfs/issues/9">issue</ulink>
       for begrunnelsen bak oppstart av MinGW-w64 verktøykjeden. Problemet 
       stammer fra det gamle Github depotet som GLFS prosjektet en gang var 
       vert for.
