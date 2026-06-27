@@ -52,7 +52,7 @@
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-point-version;">
 <!ENTITY llvm-maj-version             "22">
 <!ENTITY llvm-min-version             "1">
-<!ENTITY llvm-point-version           "0">
+<!ENTITY llvm-point-version           "8">
 <!ENTITY llvm-version                 "&llvm-maj-version;.&llvm-min-version;.&llvm-point-version;">
 <!ENTITY rustc-version                "1.96.0">
 <!-- rustc-change-id can be found in src/bootstrap/src/utils/change_tracker.rs
