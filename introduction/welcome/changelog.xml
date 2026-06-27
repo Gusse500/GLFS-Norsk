@@ -44,6 +44,10 @@
       <para>24. juni 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - Cython: 3.2.5 -&gt; 3.2.6. Fikser
+          <ulink url="&glfs-issues;/482">#482</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - cURL: 8.20.0 -&gt; 8.21.0. Fikser
           <ulink url="&glfs-issues;/479">#479</ulink>.</para>
         </listitem>
