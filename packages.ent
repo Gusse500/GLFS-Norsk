@@ -247,7 +247,7 @@
 <!ENTITY font-util-version            "1.4.2">
 <!ENTITY font-xfree86-type1-version   "1.0.5">
 <!-- END X7FONTS -->
-<!ENTITY xkeyboard-config-version     "2.47">
+<!ENTITY xkeyboard-config-version     "2.48">
 <!ENTITY libepoxy-minor               "1.5">
 <!ENTITY libepoxy-version             "&libepoxy-minor;.10">
 <!ENTITY xorg-server-version          "21.1.23">
