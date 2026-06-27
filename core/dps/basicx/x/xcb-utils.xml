@@ -66,7 +66,8 @@ xcb-util-image-&xcb-util-image-version;.tar.xz
 xcb-util-keysyms-&xcb-util-keysyms-version;.tar.xz
 xcb-util-renderutil-&xcb-util-renderutil-version;.tar.xz
 xcb-util-wm-&xcb-util-wm-version;.tar.xz
-xcb-util-cursor-&xcb-util-cursor-version;.tar.xz</literal>
+xcb-util-cursor-&xcb-util-cursor-version;.tar.xz
+xcb-util-errors-&xcb-util-errors-version;.tar.xz</literal>
 EOF</userinput></screen>
 
     <para>
@@ -129,8 +130,8 @@ done</userinput></screen>
         <seg>Ingen</seg>
         <seg>
           libxcb-util, libxcb-image, libxcb-keysyms,
-          libxcb-render-util, libxcb-ewmh, libxcb-icccm, og
-          libxcb-cursor
+          libxcb-render-util, libxcb-ewmh, libxcb-icccm,
+          libxcb-cursor, og libxcb-errors
         </seg>
         <seg>Ingen</seg>
       </seglistitem>
@@ -222,6 +223,18 @@ done</userinput></screen>
           </para>
           <indexterm zone="xcb-utils libxcb-cursor">
             <primary sortas="c-libxcb-cursor">libxcb-cursor</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libxcb-errors">
+        <term><filename class="libraryfile">libxcb-errors</filename></term>
+        <listitem>
+          <para>
+            gir menneskelig lesbare feil og koder
+          </para>
+          <indexterm zone="xcb-utils libxcb-errors">
+            <primary sortas="c-libxcb-errors">libxcb-errors</primary>
           </indexterm>
         </listitem>
       </varlistentry>

@@ -140,6 +140,7 @@
 <!ENTITY xcb-util-renderutil-version  "0.3.10">
 <!ENTITY xcb-util-wm-version          "0.4.2">
 <!ENTITY xcb-util-cursor-version      "0.1.6">
+<!ENTITY xcb-util-errors-version      "1.0.1">
 <!ENTITY libunwind-version            "1.8.3">
 <!ENTITY nettle-version               "4.0">
 <!ENTITY gnutls-version               "3.8.13">
