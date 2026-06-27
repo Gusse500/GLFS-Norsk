@@ -44,6 +44,10 @@
       <para>24. juni 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - Vulkan-SDK: 1.4.350.0 -&gt; 1.4.350.1. Fikser
+          <ulink url="&glfs-issues;/488">#488</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - XKeyboard-Config: 2.47 -&gt; 2.48. Fikser
           <ulink url="&glfs-issues;/483">#483</ulink>.</para>
         </listitem>
