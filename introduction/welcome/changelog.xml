@@ -44,6 +44,10 @@
       <para>24. juni 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - cURL: 8.20.0 -&gt; 8.21.0. Fikser
+          <ulink url="&glfs-issues;/479">#479</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - libpsl: 0.21.5 -&gt; 0.22.0. Fikser
           <ulink url="&glfs-issues;/480">#480</ulink>.</para>
         </listitem>

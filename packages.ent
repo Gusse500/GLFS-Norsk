@@ -26,7 +26,7 @@
 <!ENTITY libunistring-version         "1.4.2">
 <!ENTITY libidn2-version              "2.3.8">
 <!ENTITY libpsl-version               "0.22.0">
-<!ENTITY curl-version                 "8.20.0">
+<!ENTITY curl-version                 "8.21.0">
 <!ENTITY wget-version                 "1.25.0">
 <!-- Security -->
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
