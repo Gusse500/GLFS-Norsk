@@ -41,6 +41,47 @@
     -->
 
     <listitem>
+      <para>28. juni 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - DXVK: 2.7.1 -&gt; 3.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>24. juni 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - XCB-Utils: Lagt til xcb-util-errors.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM: 22.1.0 -&gt; 22.1.8.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - Vulkan-SDK: 1.4.350.0 -&gt; 1.4.350.1. Fikser
+          <ulink url="&glfs-issues;/488">#488</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - XKeyboard-Config: 2.47 -&gt; 2.48. Fikser
+          <ulink url="&glfs-issues;/483">#483</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - Cython: 3.2.5 -&gt; 3.2.6. Fikser
+          <ulink url="&glfs-issues;/482">#482</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - libpsl: 0.21.5 -&gt; 0.22.0. Fikser
+          <ulink url="&glfs-issues;/480">#480</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - cURL: 8.20.0 -&gt; 8.21.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/479">#479</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>21. juni 2026</para>
       <itemizedlist>
         <listitem>
