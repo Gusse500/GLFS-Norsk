@@ -41,6 +41,47 @@
     -->
 
     <listitem>
+      <para>6. juli 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - elogind: 257.14 -&gt; 257.16.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Systemd: 260.2 -&gt; 261.1. Fikser
+          <ulink url="&glfs-issues;/481">#481</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLib: 2.88.1 -&gt; 2.88.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Shared-Mime-Info: 2.4 -&gt; 2.5.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.2.6 -&gt; 3.2.8.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libva: 2.23.0 -&gt; 2.24.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.408 -&gt; 0.409.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 26.0.1 -&gt; 26.1.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL3: 3.4.10 -&gt; 3.4.12.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NASM: 3.01 -&gt; 3.02.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 11.11 -&gt; 11.12. Fikser
+          <ulink url="&glfs-issues;/490">#490</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>28. juni 2026</para>
       <itemizedlist>
         <listitem>

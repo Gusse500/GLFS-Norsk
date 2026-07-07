@@ -7,7 +7,6 @@
   <!ENTITY smi-root "https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive">
   <!ENTITY shared-mime-info-download
     "&smi-root;/&shared-mime-info-version;/shared-mime-info-&shared-mime-info-version;.tar.gz">
-  <!ENTITY xdgmime-download-http "&sources-anduin-http;/xdgmime/xdgmime.tar.xz">
 ]>
 
 <sect1 id="shared-mime-info"
@@ -57,7 +56,11 @@ xreflabel="shared-mime-info-&shared-mime-info-version;">
 <screen><userinput>mkdir build &amp;&amp;
 cd    build &amp;&amp;
 
-meson setup --prefix=/usr --buildtype=release -D update-mimedb=true .. &amp;&amp;
+meson setup --prefix=/usr         \
+            --buildtype=release   \
+            -D update-mimedb=true \
+            -D build-tests=false  \
+            .. &amp;&amp;
 ninja</userinput></screen>
 
     <para>
