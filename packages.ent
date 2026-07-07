@@ -34,16 +34,16 @@
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY openrc-version               "0.63">
 <!ENTITY shadow-version               "4.19.4">
-<!ENTITY elogind-version              "257.14">
-<!ENTITY systemd-version              "260.2">
+<!ENTITY elogind-version              "257.16">
+<!ENTITY systemd-version              "261.1">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "88">
-<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.1">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.2">
 <!ENTITY gi-major                      "1">
 <!ENTITY gi-minor                      "&gi-major;.86">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
-<!ENTITY shared-mime-info-version     "2.4">
+<!ENTITY shared-mime-info-version     "2.5.1">
 <!ENTITY desktop-file-utils-version   "0.28">
 <!ENTITY polkit-version               "127">
 <!-- Tooling -->
@@ -64,7 +64,7 @@
 <!ENTITY cbindgen-version             "0.29.4">
 <!ENTITY rust-bindgen-version         "0.72.1">
 <!ENTITY mako-version                 "1.3.12">
-<!ENTITY cython-version               "3.2.6">
+<!ENTITY cython-version               "3.2.8">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
 <!-- Audio -->
@@ -159,15 +159,15 @@
 <!ENTITY libatomic_ops-version        "7.10.0">
 <!ENTITY libdrm-version               "2.4.134">
 <!ENTITY libgbm-version               "1.0.7">
-<!ENTITY libva-version                "2.23.0">
+<!ENTITY libva-version                "2.24.0">
 <!ENTITY opencl-version               "2026.05.29">
 <!ENTITY libclc-version               "&llvm-version;">
 <!-- Graphics Drivers - Preliminaries -->
 <!ENTITY pciutils-version             "3.15.0">
-<!ENTITY hwdata-version               "0.408">
+<!ENTITY hwdata-version               "0.409">
 <!-- Graphics Drivers - NVIDIA -->
-<!ENTITY mesa-major-minor             "26.0">
-<!ENTITY mesa-version                 "&mesa-major-minor;.1">
+<!ENTITY mesa-major-minor             "26.1">
+<!ENTITY mesa-version                 "&mesa-major-minor;.3">
 <!--
 <!ENTITY eglexternalplatform-version  "1.2.1">
 <!ENTITY egl-gbm-version              "1.1.3">
@@ -285,10 +285,10 @@
 <!ENTITY libxkbcommon-minor           "d1442a">
 <!ENTITY libxkbcommon-version         "d1442aaa6b635551182e83c3b55037f4c118c962">
 <!ENTITY libxkbcommon-real            "1.13.2">
-<!ENTITY sdl3-version                 "3.4.10">
+<!ENTITY sdl3-version                 "3.4.12">
 <!ENTITY sdl2-version                 "2.32.70">
 
-<!ENTITY nasm-version                 "3.01">
+<!ENTITY nasm-version                 "3.02">
 <!ENTITY svt-av1-version              "4.1.0">
 <!ENTITY dav1d-version                "1.5.3">
 <!ENTITY libaom-version               "3.14.1">
@@ -301,7 +301,7 @@
 <!ENTITY gstreamer-version            "1.28.4">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.11">
+<!ENTITY wine-version                 "&wine-major-version;.12">
 
 <!ENTITY dxvk-version                 "3.0">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
