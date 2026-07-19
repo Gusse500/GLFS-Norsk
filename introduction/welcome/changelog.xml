@@ -41,6 +41,19 @@
     -->
 
     <listitem>
+      <para>18. juli 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-Binutils: 2.46.0 -&gt; 2.46.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - MinGW-w64: Installer en oppdatering for å fikse 
+          funksjonsoppførsel.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>6. juli 2026</para>
       <itemizedlist>
         <listitem>
