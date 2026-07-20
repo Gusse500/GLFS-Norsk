@@ -52,6 +52,11 @@
   <sect2 role="installation">
     <title>Installasjon av MinGW-w64</title>
 
+    <para>
+      Hvis du bygger fra et nytt MinGW-w64-kildetre, må du sørge for å 
+      installere oppdateringen fra <xref linkend="mingw-w64-headers"/>.
+    </para>
+
   <sect3>
     <title>x86_64 MinGW-w64</title>
     
