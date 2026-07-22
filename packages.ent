@@ -181,7 +181,7 @@
 <!-- NVIDIA -->
 <!ENTITY nvidia-rev           "610">
 <!ENTITY nvidia-linux-version "6.17.x - 7.0.x">
-<!ENTITY nvidia-version       "&nvidia-rev;.43.02">
+<!ENTITY nvidia-version       "&nvidia-rev;.43.03">
 <!ENTITY nvidia-full-name     "&nvidia-version;<!-- &nvidia-beta;-->">
 <!--
 <!ENTITY nv-manifest-version  "2">
@@ -191,7 +191,7 @@
 <!ENTITY cuda-nvidia-version  "610.43.02">
 <!-- NVIDIA r580 -->
 <!ENTITY nvidia-r580-linux-version "6.15.x - 7.0.x">
-<!ENTITY nvidia-r580-version       "580.159.04">
+<!ENTITY nvidia-r580-version       "580.173.02">
 <!ENTITY nvidia-r580-full-name     "&nvidia-r580-version;">
 <!--
 <!ENTITY nv-r580-manifest-version  "1">
