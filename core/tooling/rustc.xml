@@ -104,16 +104,6 @@
       </listitem>
     </itemizedlist>
 
-    <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
-    <itemizedlist spacing="compact">
-      <listitem>
-        <para>
-          Påkrevd crate:
-          <ulink url="https://github.com/rust-openssl/rust-openssl/archive/&rustc-openssl;/rust-openssl-&rustc-openssl;.tar.gz"/>
-        </para>
-      </listitem>
-    </itemizedlist>
-
     <bridgehead renderas="sect3">Rustc Avhengigheter</bridgehead>
 
     <para role="required">
@@ -263,24 +253,6 @@ fi</userinput></screen>
         om noen få kontroller består/feiler. Dette ble gjort for å unngå forvirring.
       </para>
     </note>
-
-    <para>
-      Få Rustc til å bruke en oppdatert versjon av OpenSSL crate for både 
-      OpenSSL-4 støtte og for å fikse flere sikkerhetsproblemer:
-    </para>
-
-<screen remap="pre"><userinput>tar -xf ../rust-openssl-&rustc-openssl;.tar.gz &amp;&amp;
-
-cat &gt;&gt; src/tools/cargo/Cargo.toml &lt;&lt; EOF &amp;&amp;
-<literal>[patch.crates-io]
-openssl = { path = "../../../rust-openssl-&rustc-openssl;/openssl" }
-openssl-sys = { path = "../../../rust-openssl-&rustc-openssl;/openssl-sys" }</literal>
-EOF
-
-sed -ri src/tools/cargo/Cargo.lock \
-    -e '/name = "openssl-sys"/,/^$/{/source|checksum/d;s/0.9.112/&rustc-openssl-sys-nice;/}' \
-    -e '/name = "openssl"/,/^$/{/source|checksum/d;s/0.10.76/&rustc-openssl-nice;/}'     \
-    -e '/name = "openssl-macros"/,/^$/{/source|checksum/d}'</userinput></screen>
 
 <!--
     <para>
