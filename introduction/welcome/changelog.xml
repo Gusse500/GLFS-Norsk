@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>27. juli 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Steam: installer Udev regelsett. Fikser
+          <ulink url="&glfs-issues;/494">#494</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>23. juli 2026</para>
       <itemizedlist>
         <listitem>
