@@ -22,8 +22,8 @@
     <title>Introduksjon til Steam</title>
 
     <para>
-      Steam pakken tilbyr et digitalt programvareleveringssystem, 
-      en butikk og lansering gjennom VALVEs proprietære kjøretid.
+      Steam pakken tilbyr et digitalt programvareleveringssystem, en butikk og 
+      lansering gjennom VALVEs proprietære kjøretid.
     </para>
 
     <itemizedlist spacing="compact">
@@ -66,6 +66,15 @@
 
 <screen role="root"><userinput>make install &amp;&amp;
 mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
+
+    <para>
+      Steam og Steam VR krever at det finnes noen Udev regler for enkelte 
+      enheter slik at de kan håndteres riktig. Installer Udev regelsettene som
+      &root; bruker:
+    </para>
+
+<screen role="root"><userinput>&install-file; subprojects/steam-devices/*.rules \
+  -t /usr/lib/udev/rules.d/</userinput></screen>
 
   </sect2>
 
