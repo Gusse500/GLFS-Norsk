@@ -44,6 +44,10 @@
       <para>1. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - hwdata: 0.409 -&gt; 0.410. Fikser
+          <ulink url="&glfs-issues;/504">#504</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - xwininfo: 1.1.6 -&gt; 1.1.7. Fikser
           <ulink url="&glfs-issues;/508">#508</ulink>.</para>
         </listitem>
