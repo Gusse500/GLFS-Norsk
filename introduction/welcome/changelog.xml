@@ -44,6 +44,10 @@
       <para>1. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - nghttp2: 1.69.0 -&gt; 1.70.0. Fikser
+          <ulink url="&glfs-issues;/495">#495</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - Cython: 3.2.8 -&gt; 3.2.9. Fikser
           <ulink url="&glfs-issues;/501">#501</ulink>.</para>
         </listitem>

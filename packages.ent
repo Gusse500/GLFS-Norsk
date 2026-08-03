@@ -14,7 +14,7 @@
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.15">
 <!ENTITY libxml2-version              "&libxml2-minor;.3">
-<!ENTITY nghttp2-version              "1.69.0">
+<!ENTITY nghttp2-version              "1.70.0">
 <!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.39">
 <!ENTITY nss-major                    "3">
