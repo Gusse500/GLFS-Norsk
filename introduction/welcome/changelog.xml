@@ -44,6 +44,10 @@
       <para>1. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - Cython: 3.2.8 -&gt; 3.2.9. Fikser
+          <ulink url="&glfs-issues;/501">#501</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - libpsl: 0.23.0 -&gt; 0.23.1. Fikser
           <ulink url="&glfs-issues;/496">#496</ulink>.</para>
         </listitem>
