@@ -69,7 +69,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr \
       -D SDL_TEST_LIBRARY=OFF      \
       -D SDL_STATIC=OFF            \
       -D SDL_RPATH=OFF             \
-      -W no-dev -G Ninja ..       &amp;&amp;
+      -W no-author -G Ninja ..    &amp;&amp;
 
 ninja</userinput></screen>
 
@@ -97,7 +97,7 @@ cmake -D CMAKE_INSTALL_PREFIX=/usr   \
       -D SDL_TEST_LIBRARY=OFF        \
       -D SDL_STATIC=OFF              \
       -D SDL_RPATH=OFF               \
-      -W no-dev -G Ninja ..         &amp;&amp;
+      -W no-author -G Ninja ..      &amp;&amp;
 
 ninja</userinput></screen>
 
