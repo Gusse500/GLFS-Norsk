@@ -61,7 +61,7 @@
       <xref linkend="libpng"/>,
       <xref linkend="libvorbis"/>,
       <xref linkend="libvpx"/>,
-      <ulink url="&blfs-svn;/multimedia/mpg123.html">mpg123</ulink>,
+      <xref linkend="mpg123"/>,
       <xref linkend="nasm"/>,
       &opengl;,
       <ulink url="&blfs-svn;/x/pango.html">Pango</ulink>,

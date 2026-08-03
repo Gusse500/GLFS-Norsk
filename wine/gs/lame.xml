@@ -10,7 +10,6 @@
 <sect1 id="lame" xreflabel="LAME-&lame-version;">
   <?dbhtml filename="lame.html"?>
 
-
   <title>LAME-&lame-version;</title>
 
   <indexterm zone="lame">
@@ -34,7 +33,21 @@
       </listitem>
     </itemizedlist>
 
+    <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Påkrevd oppdatering:
+          <ulink url="&dl-root;/lame/lame-&lame-version;-upstream_fixes-1.patch"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
     <bridgehead renderas="sect3">LAME Avhengigheter</bridgehead>
+
+    <para role="recommended">
+      <xref linkend="mpg123"/>
+    </para>
 
     <para role="optional">
       <ulink url="https://dmalloc.com/">Dmalloc</ulink>,
@@ -48,17 +61,22 @@
   <sect2 role="installation">
     <title>Installasjon av LAME</title>
 
+    <para>
+      Bruk en oppdatering for å fikse flere byggefeil og innstillinger:
+    </para>
+
+<screen><userinput remap="pre">patch -Np1 -i ../lame-&lame-version;-upstream_fixes-1.patch</userinput></screen>
+
     <!-- Taken from Fedora -->
     <para>
       Forhindre at kildekodemappen feilaktig blir hardkodet som en søkesti for 
       delt bibliotek i de installerte programmene:
     </para>
 
-<screen><userinput>sed -i -e 's/^\(\s*hardcode_libdir_flag_spec\s*=\).*/\1/' configure</userinput></screen>
+<screen><userinput remap="pre">sed -i -e 's/^\(\s*hardcode_libdir_flag_spec\s*=\).*/\1/' configure</userinput></screen>
 
     <para>
-      Installer LAME ved å kjøre følgende 
-      kommandoer:
+      Installer LAME ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>./configure --prefix=/usr   \
@@ -68,7 +86,7 @@
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make pkghtmldir=/usr/share/doc/lame-&lame-version; install</userinput></screen>
@@ -79,8 +97,7 @@ make</userinput></screen>
     <title>lib32 Installasjon av LAME</title>
 
     <para>
-      Installer lib32-LAME ved å kjøre følgende 
-      kommandoer:
+      Installer lib32-LAME ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
@@ -96,7 +113,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig \
 make</userinput></screen>
 
     <para>
-      Nå, som <systemitem class="username">root</systemitem> bruker:
+      Nå, som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
@@ -122,6 +139,11 @@ ldconfig</userinput></screen>
       <parameter>--enable-nasm</parameter>: Dette alternativet aktiverer bruk av
       <xref linkend="nasm"/> for å kompilere optimaliserte assemblerrutiner for 
       32-bit. Dette er ikke aktivert for x86_64 da det ikke har noen effekt.
+    </para>
+
+    <para>
+      <option>--disable-decoder</option>: Bruk dette alternativet hvis du ikke 
+      har installert <xref linkend="mpg123"/>.
     </para>
 
   </sect2>

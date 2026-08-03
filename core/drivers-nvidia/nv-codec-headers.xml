@@ -43,14 +43,7 @@
       kommandoer som &root; bruker:
     </para>
 
-<screen role="root"><userinput>make PREFIX=/usr install</userinput></screen>
-
-    <para>
-      Hvis du bruker multilib, lag en symlink for pkgconfig 
-      filen som &root; bruker:
-    </para>
-
-<screen role="root"><userinput>ln -sfv /usr/lib{,32}/pkgconfig/ffnvcodec.pc</userinput></screen>
+<screen role="root"><userinput>make PREFIX=/usr LIBDIR=share install</userinput></screen>
 
   </sect2>
 

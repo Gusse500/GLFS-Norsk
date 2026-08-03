@@ -21,6 +21,7 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="dav1d.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libaom.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="fdk-aac.xml"/>
+  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="mpg123.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="lame.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libvpx.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="x264.xml"/>

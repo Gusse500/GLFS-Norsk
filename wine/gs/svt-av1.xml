@@ -116,6 +116,11 @@ ldconfig</userinput></screen>
       delte versjoner av bibliotekene.
     </para>
 
+    <para>
+      <option>-D NATIVE=OFF</option>: Bruk dette alternativet hvis du ikke vil 
+      produsere innebygde binærfiler, noe som gjør det enklere å bytte system.
+    </para>
+
   </sect2>
 
   <sect2 role="content">
