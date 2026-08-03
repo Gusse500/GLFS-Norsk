@@ -44,6 +44,10 @@
       <para>1. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[tox] - xwininfo: 1.1.6 -&gt; 1.1.7. Fikser
+          <ulink url="&glfs-issues;/508">#508</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[tox] - xmodmap: 1.0.11 -&gt; 1.0.12. Fikser
           <ulink url="&glfs-issues;/507">#507</ulink>.</para>
         </listitem>

@@ -230,7 +230,7 @@
 <!ENTITY xsetroot-version             "1.1.4">
 <!ENTITY xvinfo-version               "1.1.6">
 <!ENTITY xwd-version                  "1.0.10">
-<!ENTITY xwininfo-version             "1.1.6">
+<!ENTITY xwininfo-version             "1.1.7">
 <!ENTITY xwud-version                 "1.0.8">
 <!-- END X7APP -->
 <!ENTITY xcursor-themes-version       "1.0.7">
