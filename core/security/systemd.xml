@@ -105,15 +105,15 @@
 
     <warning>
       <para>
-        Hvis en tidligere versjon av systemd er installert, fjern en tjeneste 
-        som &root; bruker som vil generere feil ved følgende oppstarter:
+        Hvis den nåværende installerte Systemd tjenesten er eldre enn versjon 
+        v260, fjern en tjeneste som vil generere feil ved påfølgende 
+        oppstarter, som &root; bruker:
       </para>
 <screen role="root"><userinput remap="pre">rm -v /usr/lib/systemd/system/systemd-update-utmp-runlevel.service</userinput></screen>
     </warning>
 
     <para>
-      Gjenoppbygg Systemd ved å kjøre 
-      følgende kommandoer:
+      Gjenoppbygg Systemd ved å kjøre følgende kommandoer:
     </para>
 
 <screen><userinput>mkdir build &amp;&amp;

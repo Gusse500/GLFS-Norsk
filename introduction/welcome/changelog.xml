@@ -41,6 +41,97 @@
     -->
 
     <listitem>
+      <para>2. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - Shadow: 4.19.4 -&gt; 4.20.0. Fikser
+          <ulink url="&glfs-issues;/497">#497</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Systemd: 261.1 -&gt; 261.2. Fikser
+          <ulink url="&glfs-issues;/498">#498</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GLib: 2.88.2 -&gt; 2.88.3. Fikser
+          <ulink url="&glfs-issues;/499">#499</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.4.0 -&gt; 4.4.2. Fikser
+          <ulink url="&glfs-issues;/500">#500</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 14.2.1 -&gt; 14.3.0. Fikser
+          <ulink url="&glfs-issues;/502">#502</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Vulkan-SDK: 1.4.350.1 -&gt; 1.4.357.0. Fikser
+          <ulink url="&glfs-issues;/503">#503</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 22.1.2 -&gt; 22.1.5.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - nv-codec-headers (ffnvcodec):
+          13.0.19.0 -&gt; 13.1.15.0. Fikser
+          <ulink url="&glfs-issues;/505">#505</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CUDA: 13.3.0 -&gt; 13.3.1. Fikser
+          <ulink url="&glfs-issues;/506">#506</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SVT-AV1: 4.1.0 -&gt; 4.2.0. Fikser
+          <ulink url="&glfs-issues;/509">#509</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LAME: 3.100 -&gt; 4.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/510">#510</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Wine: 11.12 -&gt; 11.14. Fikser
+          <ulink url="&glfs-issues;/511">#511</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - DXVK: 3.0 -&gt; 3.0.2. Fikser
+          <ulink url="&glfs-issues;/512">#512</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - mpg123: Lagt til.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>1. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[tox] - nghttp2: 1.69.0 -&gt; 1.70.0. Fikser
+          <ulink url="&glfs-issues;/495">#495</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - Cython: 3.2.8 -&gt; 3.2.9. Fikser
+          <ulink url="&glfs-issues;/501">#501</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - libpsl: 0.23.0 -&gt; 0.23.1. Fikser
+          <ulink url="&glfs-issues;/496">#496</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - hwdata: 0.409 -&gt; 0.410. Fikser
+          <ulink url="&glfs-issues;/504">#504</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - xwininfo: 1.1.6 -&gt; 1.1.7. Fikser
+          <ulink url="&glfs-issues;/508">#508</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[tox] - xmodmap: 1.0.11 -&gt; 1.0.12. Fikser
+          <ulink url="&glfs-issues;/507">#507</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>27. juli 2026</para>
       <itemizedlist>
         <listitem>

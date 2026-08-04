@@ -14,7 +14,7 @@
 <!ENTITY icu-version                  "&icu-major;.&icu-minor;">
 <!ENTITY libxml2-minor                "2.15">
 <!ENTITY libxml2-version              "&libxml2-minor;.3">
-<!ENTITY nghttp2-version              "1.69.0">
+<!ENTITY nghttp2-version              "1.70.0">
 <!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.39">
 <!ENTITY nss-major                    "3">
@@ -25,7 +25,7 @@
 <!ENTITY make-ca-version              "1.16.1">
 <!ENTITY libunistring-version         "1.4.2">
 <!ENTITY libidn2-version              "2.3.8">
-<!ENTITY libpsl-version               "0.23.0">
+<!ENTITY libpsl-version               "0.23.1">
 <!ENTITY curl-version                 "8.21.0">
 <!ENTITY wget-version                 "1.25.0">
 <!-- Security -->
@@ -33,13 +33,13 @@
 <!ENTITY linux-pam-version            "1.7.2">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
 <!ENTITY openrc-version               "0.63">
-<!ENTITY shadow-version               "4.19.4">
+<!ENTITY shadow-version               "4.20.0">
 <!ENTITY elogind-version              "257.16">
-<!ENTITY systemd-version              "261.1">
+<!ENTITY systemd-version              "261.2">
 <!ENTITY duktape-version              "2.7.0">
 <!ENTITY glib2-major                   "2">
 <!ENTITY glib2-minor                   "88">
-<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.2">
+<!ENTITY glib2-version                 "&glib2-major;.&glib2-minor;.3">
 <!ENTITY gi-major                      "1">
 <!ENTITY gi-minor                      "&gi-major;.86">
 <!ENTITY gobject-introspection-version "&gi-minor;.0">
@@ -48,7 +48,7 @@
 <!ENTITY polkit-version               "127">
 <!-- Tooling -->
 <!ENTITY cmake-major-version          "4.4">
-<!ENTITY cmake-point-version          "0">
+<!ENTITY cmake-point-version          "2">
 <!ENTITY cmake-version                "&cmake-major-version;.&cmake-point-version;">
 <!ENTITY llvm-maj-version             "22">
 <!ENTITY llvm-min-version             "1">
@@ -61,7 +61,7 @@
 <!ENTITY cbindgen-version             "0.29.4">
 <!ENTITY rust-bindgen-version         "0.72.1">
 <!ENTITY mako-version                 "1.3.12">
-<!ENTITY cython-version               "3.2.8">
+<!ENTITY cython-version               "3.2.9">
 <!ENTITY yaml-version                 "0.2.5">
 <!ENTITY pyyaml-version               "6.0.3">
 <!-- Audio -->
@@ -93,7 +93,7 @@
 <!ENTITY libpng-version               "1.6.58">
 <!ENTITY apng-version                 "1.6.58">
 <!ENTITY freetype2-version            "2.14.3">
-<!ENTITY harfbuzz-version             "14.2.1">
+<!ENTITY harfbuzz-version             "14.3.0">
 <!ENTITY fontconfig-version           "2.18.2">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
@@ -151,8 +151,8 @@
 <!-- Graphics APIs -->
 <!ENTITY libglvnd-version             "1.7.0">
 <!ENTITY glu-version                  "9.0.3">
-<!ENTITY vulkan-sdk-version           "1.4.350.1">
-<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.2">
+<!ENTITY vulkan-sdk-version           "1.4.357.0">
+<!ENTITY spirv-llvm-translator-version "&llvm-maj-version;.&llvm-min-version;.5">
 <!ENTITY libatomic_ops-version        "7.10.0">
 <!ENTITY libdrm-version               "2.4.134">
 <!ENTITY libgbm-version               "1.0.7">
@@ -161,7 +161,7 @@
 <!ENTITY libclc-version               "&llvm-version;">
 <!-- Graphics Drivers - Preliminaries -->
 <!ENTITY pciutils-version             "3.15.0">
-<!ENTITY hwdata-version               "0.409">
+<!ENTITY hwdata-version               "0.410">
 <!-- Graphics Drivers - NVIDIA -->
 <!ENTITY mesa-major-minor             "26.1">
 <!ENTITY mesa-version                 "&mesa-major-minor;.3">
@@ -172,7 +172,7 @@
 <!ENTITY egl-wayland2-version         "1.0.1">
 <!ENTITY egl-x11-version              "1.0.5">
 -->
-<!ENTITY nv-codec-headers-version     "13.0.19.0">
+<!ENTITY nv-codec-headers-version     "13.1.15.0">
 <!ENTITY nvidia-vaapi-driver-version  "0.0.17">
 <!ENTITY nvidia-beta                  "<superscript>BETA</superscript>">
 <!-- NVIDIA -->
@@ -184,7 +184,7 @@
 <!ENTITY nv-manifest-version  "2">
 <!ENTITY nv-sysv-bs           "2">
 -->
-<!ENTITY cuda-version         "13.3.0">
+<!ENTITY cuda-version         "13.3.1">
 <!ENTITY cuda-nvidia-version  "610.43.02">
 <!-- NVIDIA r580 -->
 <!ENTITY nvidia-r580-linux-version "6.15.x - 7.0.x">
@@ -220,7 +220,7 @@
 <!ENTITY xlsatoms-version             "1.1.5">
 <!ENTITY xlsclients-version           "1.1.6">
 <!ENTITY xmessage-version             "1.0.7">
-<!ENTITY xmodmap-version              "1.0.11">
+<!ENTITY xmodmap-version              "1.0.12">
 <!ENTITY xpr-version                  "1.2.0">
 <!ENTITY xprop-version                "1.2.8">
 <!ENTITY xrandr-version               "1.5.4">
@@ -230,7 +230,7 @@
 <!ENTITY xsetroot-version             "1.1.4">
 <!ENTITY xvinfo-version               "1.1.6">
 <!ENTITY xwd-version                  "1.0.10">
-<!ENTITY xwininfo-version             "1.1.6">
+<!ENTITY xwininfo-version             "1.1.7">
 <!ENTITY xwud-version                 "1.0.8">
 <!-- END X7APP -->
 <!ENTITY xcursor-themes-version       "1.0.7">
@@ -286,11 +286,12 @@
 <!ENTITY sdl2-version                 "2.32.70">
 
 <!ENTITY nasm-version                 "3.02">
-<!ENTITY svt-av1-version              "4.1.0">
+<!ENTITY svt-av1-version              "4.2.0">
 <!ENTITY dav1d-version                "1.5.4">
 <!ENTITY libaom-version               "3.14.1">
 <!ENTITY fdk-aac-version              "2.0.3">
-<!ENTITY lame-version                 "3.100">
+<!ENTITY mpg123-version               "1.33.6">
+<!ENTITY lame-version                 "4.0">
 <!ENTITY libvpx-version               "1.16.0">
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.2">
@@ -298,9 +299,9 @@
 <!ENTITY gstreamer-version            "1.28.5">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.12">
+<!ENTITY wine-version                 "&wine-major-version;.14">
 
-<!ENTITY dxvk-version                 "3.0">
+<!ENTITY dxvk-version                 "3.0.2">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
 <!ENTITY dxvk-spirv                   "04f10f650d514df88b76d25e83db360142c7b174">
 <!ENTITY dxvk-vulkan                  "8864cdc896bbc2a9b6eb36b3218fc9ef57908d77">

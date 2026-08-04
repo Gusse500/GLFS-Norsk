@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sect1 PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN"
+   "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd" [
+  <!ENTITY % general-entities SYSTEM "../../general.ent">
+  %general-entities;
+
+  <!ENTITY mpg123-download
+    "&sourceforge-dl;/mpg123/mpg123-&mpg123-version;.tar.bz2">
+]>
+
+<sect1 id="mpg123" xreflabel="mpg123-&mpg123-version;">
+  <?dbhtml filename="mpg123.html"?>
+
+  <title>mpg123-&mpg123-version;</title>
+
+  <indexterm zone="mpg123">
+    <primary sortas="a-mpg123">mpg123</primary>
+  </indexterm>
+
+  <sect2 role="package">
+    <title>Introduksjon til mpg123</title>
+
+    <para>
+      Pakken mpg123 inneholder en konsollbasert MP3 spiller. Den hevder å være 
+      den raskeste MP3 dekoderen for Unix.
+    </para>
+
+    <itemizedlist spacing="compact">
+      <listitem>
+        <para>
+          Nedlasting: <ulink url="&mpg123-download;"/>
+        </para>
+      </listitem>
+    </itemizedlist>
+
+    <bridgehead renderas="sect3">mpg123 Avhengigheter</bridgehead>
+
+    <para role="recommended">
+      <xref linkend="alsa-lib"/>
+    </para>
+
+    <para role="optional">
+      <xref linkend="pulseaudio"/>,
+      <xref linkend="sdl2"/>,
+      <ulink url="https://jackaudio.org">JACK</ulink>,
+      <ulink url="https://openal.org/">OpenAL</ulink> og
+      <ulink url="http://www.portaudio.com/">PortAudio</ulink>
+    </para>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av mpg123</title>
+
+    <para>
+      Installer mpg123 ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>./configure --prefix=/usr &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make install</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="installation">
+    <title>Installasjon av lib32-mpg123</title>
+
+    <para>
+      Installer lib32-mpg123 ved å kjøre følgende kommandoer:
+    </para>
+
+<screen><userinput>make distclean &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"          \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
+./configure --prefix=/usr             \
+            --libdir=/usr/lib32       \
+            --host=i686-pc-linux-gnu &amp;&amp;
+make</userinput></screen>
+
+    <para>
+      Nå, som &root; bruker:
+    </para>
+
+<screen role="root"><userinput>make DESTDIR=$PWD/DESTDIR install     &amp;&amp;
+cp -vr DESTDIR/usr/lib32/* /usr/lib32 &amp;&amp;
+rm -rf DESTDIR                        &amp;&amp;
+ldconfig</userinput></screen>
+
+  </sect2>
+
+  <sect2 role="commands">
+    <title>Parameterforklaringer</title>
+
+    &options-configure;
+
+  </sect2>
+
+  <sect2 role="content">
+    <title>Innhold</title>
+
+    <segmentedlist>
+      <segtitle>Installerte Programmer</segtitle>
+      <segtitle>Installerte Biblioteker</segtitle>
+      <segtitle>Installert Mappe</segtitle>
+
+      <seglistitem>
+        <seg>
+          mpg123, mpg123-id3dump, mpg123-strip, og out123
+        </seg>
+        <seg>
+          libmpg123, libout123, and libsyn123
+        </seg>
+        <seg>
+          /usr/lib/mpg123
+        </seg>
+      </seglistitem>
+    </segmentedlist>
+
+    <variablelist>
+      <bridgehead renderas="sect3">Korte Beskrivelser</bridgehead>
+      <?dbfo list-presentation="list"?>
+      <?dbhtml list-presentation="table"?>
+
+      <varlistentry id="mpg123-prog">
+        <term><command>mpg123</command></term>
+        <listitem>
+          <para>
+            brukes til å spille av MP3 filer via konsollen
+          </para>
+          <indexterm zone="mpg123 mpg123-prog">
+            <primary sortas="b-mpg123">mpg123</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mpg123-id3dump">
+        <term><command>mpg123-id3dump</command></term>
+        <listitem>
+          <para>
+            er et verktøy for å dumpe ID3 metadata fra MPEG lydfiler ved hjelp 
+            av libmpg123
+          </para>
+          <indexterm zone="mpg123 mpg123-id3dump">
+            <primary sortas="b-mpg123">mpg123-id3dump</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="mpg123-strip">
+        <term><command>mpg123-strip</command></term>
+        <listitem>
+          <para>
+            trekker bare ut MPEG rammer fra en strøm ved hjelp av libmpg123 
+            (stdin til stdout)
+          </para>
+          <indexterm zone="mpg123 mpg123-strip">
+            <primary sortas="b-mpg123">mpg123-strip</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="out123">
+        <term><command>out123</command></term>
+        <listitem>
+          <para>
+            spiller av rå PCM lyd til en utgangsenhet
+          </para>
+          <indexterm zone="mpg123 out123">
+            <primary sortas="b-mpg123">out123</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libmpg123">
+        <term><filename class="libraryfile">libmpg123</filename></term>
+        <listitem>
+          <para>
+            inneholder <application>mpg123</application> API funksjoner
+          </para>
+          <indexterm zone="mpg123 libmpg123">
+            <primary sortas="c-libmpg123">libmpg123</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libout123">
+        <term><filename class="libraryfile">libout123</filename></term>
+        <listitem>
+          <para>
+            inneholder <application>out123</application> API funksjoner
+          </para>
+          <indexterm zone="mpg123 libout123">
+            <primary sortas="c-libout123">libout123</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+      <varlistentry id="libsyn123">
+        <term><filename class="libraryfile">libsyn123</filename></term>
+        <listitem>
+          <para>
+            inneholder noen funksjoner for syntese av lydsignaler og 
+            formatkonvertering
+          </para>
+          <indexterm zone="mpg123 libsyn123">
+            <primary sortas="c-libsyn123">libsyn123</primary>
+          </indexterm>
+        </listitem>
+      </varlistentry>
+
+    </variablelist>
+
+  </sect2>
+
+</sect1>

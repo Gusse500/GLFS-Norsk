@@ -72,7 +72,7 @@ cd    bld &amp;&amp;
 
 cmake -D CMAKE_INSTALL_PREFIX=/usr        \
       -D GIT_ARCHETYPE=1                  \
-      -W no-dev ../source &amp;&amp;
+      -W no-author ../source             &amp;&amp;
 make</userinput></screen>
 
 
@@ -125,7 +125,7 @@ PKG_CONFIG_PATH=/usr/lib32/pkgconfig      \
 cmake -D CMAKE_INSTALL_PREFIX=/usr        \
       -D LIB_INSTALL_DIR=lib32            \
       -D GIT_ARCHETYPE=1                  \
-      -W no-dev ../source &amp;&amp;
+      -W no-author ../source             &amp;&amp;
 
 make</userinput></screen>
 
@@ -159,8 +159,8 @@ ldconfig</userinput></screen>
     </para>
 
     <para>
-      <parameter>-W no-dev</parameter>: Denne bryteren brukes til å undertrykke 
-      advarsler beregnet på pakkeutviklerne.
+      <parameter>-W no-author</parameter>: Denne bryteren brukes til å 
+      undertrykke advarsler beregnet på pakkeutviklerne.
     </para>
 
     <para>

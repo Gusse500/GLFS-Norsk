@@ -80,8 +80,9 @@
 
     <para>
       Først, deaktiver installasjonen av noen manualsider,
-      bruk <emphasis>YESCRYPT</emphasis>, endre postboksplasseringer og fjern 
-      symbollenkede mapper fra <envar>PATH</envar>:
+      bruk <emphasis>YESCRYPT</emphasis>, endre postboksplasseringer, fjern 
+      symbollenkede mapper fra <envar>PATH</envar>, og inkludere riktige 
+      deklarasjoner i noen C filer:
     </para>
 
 <screen><userinput remap="pre">find man -name Makefile.in                \
@@ -92,7 +93,10 @@
 sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' \
     -e 's@/var/spool/mail@/var/mail@'                   \
     -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
-    -i etc/login.defs</userinput></screen>
+    -i etc/login.defs &amp;&amp;
+
+sed -e '/stdio.h/i #include &lt;stdint.h&gt;' \
+    -i lib/find_new_sub_*ids.c</userinput></screen>
 
     <para>
       Installer Shadow på nytt ved å kjøre følgende 
