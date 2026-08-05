@@ -36,11 +36,11 @@
     <bridgehead renderas="sect3">mpg123 Avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="alsa-lib"/>
+      <xref linkend="alsa-lib"/> og
+      <xref linkend="pulseaudio"/>
     </para>
 
     <para role="optional">
-      <xref linkend="pulseaudio"/>,
       <xref linkend="sdl2"/>,
       <ulink url="https://jackaudio.org">JACK</ulink>,
       <ulink url="https://openal.org/">OpenAL</ulink> og
@@ -56,7 +56,7 @@
       Installer mpg123 ved å kjøre følgende kommandoer:
     </para>
 
-<screen><userinput>./configure --prefix=/usr &amp;&amp;
+<screen><userinput>./configure --prefix=/usr --with-audio="alsa oss pulse" &amp;&amp;
 make</userinput></screen>
 
     <para>
@@ -75,11 +75,12 @@ make</userinput></screen>
     </para>
 
 <screen><userinput>make distclean &amp;&amp;
-CC="gcc -m32" CXX="g++ -m32"          \
-PKG_CONFIG_PATH=/usr/lib32/pkgconfig  \
-./configure --prefix=/usr             \
-            --libdir=/usr/lib32       \
-            --host=i686-pc-linux-gnu &amp;&amp;
+CC="gcc -m32" CXX="g++ -m32"               \
+PKG_CONFIG_PATH=/usr/lib32/pkgconfig       \
+./configure --prefix=/usr                  \
+            --libdir=/usr/lib32            \
+            --host=i686-pc-linux-gnu       \
+            --with-audio="alsa oss pulse" &amp;&amp;
 make</userinput></screen>
 
     <para>
