@@ -290,7 +290,7 @@
 <!ENTITY dav1d-version                "1.5.4">
 <!ENTITY libaom-version               "3.14.1">
 <!ENTITY fdk-aac-version              "2.0.3">
-<!ENTITY mpg123-version               "1.33.6">
+<!ENTITY mpg123-version               "1.33.7">
 <!ENTITY lame-version                 "4.0">
 <!ENTITY libvpx-version               "1.16.0">
 <!ENTITY x264-version                 "20250815">

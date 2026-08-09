@@ -44,6 +44,11 @@
       <para>8. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[Sicarine] - mpg123: 1.33.6 -&gt; 1.33.7 (sikkerhet). Fikser
+            <ulink url="&glfs-issues;/528">#528</ulink>. Se BLFS billett
+            <ulink url="&blfs-ticket-root;23686">#23686</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[Sicarine] - GStreamer: 1.28.5 -&gt; 1.28.6 (sikkerhet). Fikser
             <ulink url="&glfs-issues;/526">#526</ulink>. Se BLFS billett
             <ulink url="&blfs-ticket-root;23706">#23706</ulink>.</para>
