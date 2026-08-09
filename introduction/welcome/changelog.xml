@@ -44,6 +44,10 @@
       <para>8. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[Sicarine] - Fontconfig: 2.18.2 -&gt; 2.18.3. Fikser
+            <ulink url="&glfs-issues;/529">#529</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[Sicarine] - libXfont2 (Xorg library): 2.0.8 -&gt; 2.0.9 (sikkerhet). Fikser
             <ulink url="&glfs-issues;/527">#527</ulink>. Se BLFS billett
             <ulink url="&blfs-ticket-root;23697">#23697</ulink>.</para>

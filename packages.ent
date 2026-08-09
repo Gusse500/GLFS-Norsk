@@ -94,7 +94,7 @@
 <!ENTITY apng-version                 "1.6.58">
 <!ENTITY freetype2-version            "2.14.3">
 <!ENTITY harfbuzz-version             "14.3.0">
-<!ENTITY fontconfig-version           "2.18.2">
+<!ENTITY fontconfig-version           "2.18.3">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
 <!ENTITY xtrans-version               "1.6.0">
