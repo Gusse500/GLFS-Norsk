@@ -41,6 +41,17 @@
     -->
 
     <listitem>
+      <para>8. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Sicarine] - GStreamer: 1.28.5 -&gt; 1.28.6 (sikkerhet). Fikser
+            <ulink url="&glfs-issues;/526">#526</ulink>. Se BLFS billett
+            <ulink url="&blfs-ticket-root;23706">#23706</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2. august 2026</para>
       <itemizedlist>
         <listitem>

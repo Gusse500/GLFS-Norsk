@@ -296,7 +296,7 @@
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.2">
 <!ENTITY ffmpeg-version               "8.1.2">
-<!ENTITY gstreamer-version            "1.28.5">
+<!ENTITY gstreamer-version            "1.28.6">
 
 <!ENTITY wine-major-version           "11">
 <!ENTITY wine-version                 "&wine-major-version;.14">
