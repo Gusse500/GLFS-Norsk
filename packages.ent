@@ -94,7 +94,7 @@
 <!ENTITY apng-version                 "1.6.58">
 <!ENTITY freetype2-version            "2.14.3">
 <!ENTITY harfbuzz-version             "14.3.0">
-<!ENTITY fontconfig-version           "2.18.2">
+<!ENTITY fontconfig-version           "2.18.3">
 <!-- stable lt .90 micro version -->
 <!-- BEGIN X7LIB -->
 <!ENTITY xtrans-version               "1.6.0">
@@ -114,7 +114,7 @@
 <!ENTITY libXcursor-version           "1.2.3">
 <!ENTITY libXdamage-version           "1.1.7">
 <!ENTITY libfontenc-version           "1.1.9">
-<!ENTITY libXfont2-version            "2.0.8">
+<!ENTITY libXfont2-version            "2.0.9">
 <!ENTITY libXft-version               "2.3.9">
 <!ENTITY libXi-version                "1.8.3">
 <!ENTITY libXinerama-version          "1.1.6">
@@ -290,16 +290,16 @@
 <!ENTITY dav1d-version                "1.5.4">
 <!ENTITY libaom-version               "3.14.1">
 <!ENTITY fdk-aac-version              "2.0.3">
-<!ENTITY mpg123-version               "1.33.6">
+<!ENTITY mpg123-version               "1.33.7">
 <!ENTITY lame-version                 "4.0">
 <!ENTITY libvpx-version               "1.16.0">
 <!ENTITY x264-version                 "20250815">
 <!ENTITY x265-version                 "4.2">
 <!ENTITY ffmpeg-version               "8.1.2">
-<!ENTITY gstreamer-version            "1.28.5">
+<!ENTITY gstreamer-version            "1.28.6">
 
 <!ENTITY wine-major-version           "11">
-<!ENTITY wine-version                 "&wine-major-version;.14">
+<!ENTITY wine-version                 "&wine-major-version;.15">
 
 <!ENTITY dxvk-version                 "3.0.2">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">

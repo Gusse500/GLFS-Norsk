@@ -41,6 +41,34 @@
     -->
 
     <listitem>
+      <para>8. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[Sicarine] - Wine: 11.14 -&gt; 11.15.</para>
+        </listitem>
+        <listitem>
+          <para>[Sicarine] - Fontconfig: 2.18.2 -&gt; 2.18.3. Fikser
+            <ulink url="&glfs-issues;/529">#529</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[Sicarine] - libXfont2 (Xorg library): 2.0.8 -&gt; 2.0.9 (sikkerhet). Fikser
+            <ulink url="&glfs-issues;/527">#527</ulink>. Se BLFS billett
+            <ulink url="&blfs-ticket-root;23697">#23697</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[Sicarine] - mpg123: 1.33.6 -&gt; 1.33.7 (sikkerhet). Fikser
+            <ulink url="&glfs-issues;/528">#528</ulink>. Se BLFS billett
+            <ulink url="&blfs-ticket-root;23686">#23686</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[Sicarine] - GStreamer: 1.28.5 -&gt; 1.28.6 (sikkerhet). Fikser
+            <ulink url="&glfs-issues;/526">#526</ulink>. Se BLFS billett
+            <ulink url="&blfs-ticket-root;23706">#23706</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>2. august 2026</para>
       <itemizedlist>
         <listitem>
