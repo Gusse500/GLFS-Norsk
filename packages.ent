@@ -114,7 +114,7 @@
 <!ENTITY libXcursor-version           "1.2.3">
 <!ENTITY libXdamage-version           "1.1.7">
 <!ENTITY libfontenc-version           "1.1.9">
-<!ENTITY libXfont2-version            "2.0.8">
+<!ENTITY libXfont2-version            "2.0.9">
 <!ENTITY libXft-version               "2.3.9">
 <!ENTITY libXi-version                "1.8.3">
 <!ENTITY libXinerama-version          "1.1.6">
