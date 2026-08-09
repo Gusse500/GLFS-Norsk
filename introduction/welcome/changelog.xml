@@ -44,6 +44,9 @@
       <para>8. august 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[Sicarine] - Wine: 11.14 -&gt; 11.15.</para>
+        </listitem>
+        <listitem>
           <para>[Sicarine] - Fontconfig: 2.18.2 -&gt; 2.18.3. Fikser
             <ulink url="&glfs-issues;/529">#529</ulink>.</para>
         </listitem>
