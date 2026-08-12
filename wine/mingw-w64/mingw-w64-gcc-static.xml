@@ -21,8 +21,7 @@
     <title>Introduksjon til Statisk MinGW-w64-GCC</title>
 
     <para>
-      MinGW-w64-GCC gir
-      GCC kompilatorer for MinGW-w64, som lar 
+      MinGW-w64-GCC gir GCC kompilatorer for MinGW-w64, som lar 
       brukere og applikasjoner kompilere kode målrettet Windows. Dette vil 
       bli gjort i trinn for å unngå behovet for allerede eksisterende 
       binærfiler. Dette er den statiske byggingen, som vil ha begrenset 
@@ -40,6 +39,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -49,6 +49,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">Statisk MinGW-w64-GCC Avhengigheter</bridgehead>
 
@@ -62,12 +63,14 @@
   <sect2 role="installation">
     <title>Installasjon av Statisk MinGW-w64-GCC</title>
 
+<!--
     <para>
       Forhindre byggefeil når C kode kompileres til Intel syntakssamling:
     </para>
 
 <screen><userinput
   remap="pre">patch -Np1 -i ../gcc-&gcc-version;-mingw_fixes-1.patch</userinput></screen>
+-->
 
     <sect3>
       <title>x86_64 Installasjon av Statisk MinGW-w64-GCC</title>
