@@ -54,10 +54,12 @@
       fullstendig hvis den er bygget feil.
     </para></note>
 
+<!--
     <para>
       Hvis du bygger fra et nytt GCC kildetre, må du sørge for å installere 
 	  oppdateringen fra <xref linkend="mingw-w64-gcc-static"/>.
     </para>
+-->
 
   <sect3>
     <title>x86_64 Installasjon av MinGW-w64-GCC</title>

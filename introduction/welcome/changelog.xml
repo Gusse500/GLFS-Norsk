@@ -41,6 +41,18 @@
     -->
 
     <listitem>
+      <para>11. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-w64-Binutils: 2.46.1 -&gt; 2.47.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - MinGW-w64-w64-GCC: 16.1.0 -&gt; 16.2.0.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>8. august 2026</para>
       <itemizedlist>
         <listitem>
