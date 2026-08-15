@@ -52,9 +52,8 @@
     <bridgehead renderas="sect3">FreeType2 avhengigheter</bridgehead>
 
     <para role="recommended">
-      <xref linkend="harfbuzz"/> (kjøretid),
-      <xref linkend="libpng"/>, og
-      <xref linkend="which"/>
+      <xref linkend="harfbuzz"/> (kjøretid) og
+      <xref linkend="libpng"/>
     </para>
 
     <para role="optional">
