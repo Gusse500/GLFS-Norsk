@@ -41,6 +41,58 @@
     -->
 
     <listitem>
+      <para>14. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NSPR: 4.39 -&gt; 4.40.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.126 -&gt; 3.127.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - p11-kit: 0.26.4 -&gt; 0.26.5 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/533">#533</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libpsl: 0.23.1 -&gt; 0.23.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Shadow: 4.20.0 -&gt; 4.20.2.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mako: 1.3.12 -&gt; 1.4.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 14.3.0 -&gt; 14.3.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libgbm: 1.0.7 -&gt; 1.0.8. Fikser
+          <ulink url="&glfs-issues;/531">#531</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 610.43.03 -&gt; 610.57.04. Fikser
+          <ulink url="&glfs-issues;/525">#525</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA-r580: 580.173.02 -&gt; 580.178.04. Fikser
+          <ulink url="&glfs-issues;/524">#524</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Mesa: 26.1.3 -&gt; 26.1.7. Fikser
+          <ulink url="&glfs-issues;/520">#520</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL3: 3.4.12 -&gt; 3.4.14. Fikser
+          <ulink url="&glfs-issues;/523">#523</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - FFmpeg: 8.1.2 -&gt; 9.0.1. Fikser
+          <ulink url="&glfs-issues;/522">#522</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>11. august 2026</para>
       <itemizedlist>
         <listitem>
