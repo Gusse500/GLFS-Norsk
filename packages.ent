@@ -18,7 +18,7 @@
 <!ENTITY libtasn1-version             "4.21.0">
 <!ENTITY nspr-version                 "4.40">
 <!ENTITY nss-major                    "3">
-<!ENTITY nss-minor                    "127">
+<!ENTITY nss-minor                    "126">
 <!ENTITY nss-dir                      "&nss-major;_&nss-minor;">
 <!ENTITY nss-version                  "&nss-major;.&nss-minor;">
 <!ENTITY p11-kit-version              "0.26.5">
