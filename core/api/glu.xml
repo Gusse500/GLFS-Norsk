@@ -56,7 +56,7 @@ cd    build &amp;&amp;
 
 meson setup --prefix=$XORG_PREFIX                       \
             --buildtype=release                         \
-            --default_library=shared                    \
+            --default-library=shared                    \
             $(pkgconf opengl || echo -D gl_provider=gl) \
             .. &amp;&amp;
 ninja</userinput></screen>
