@@ -10,19 +10,19 @@
 <sect1 id="libdrm" xreflabel="libdrm-&libdrm-version;">
   <?dbhtml filename="libdrm.html"?>
 
-  <title>Libdrm-&libdrm-version;</title>
+  <title>libdrm-&libdrm-version;</title>
 
   <indexterm zone="libdrm">
     <primary sortas="a-libdrm">libdrm</primary>
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduksjon til Libdrm</title>
+    <title>Introduksjon til libdrm</title>
 
     <para>
-      Libdrm tilbyr et brukerrombibliotek for tilgang 
+      libdrm tilbyr et brukerrombibliotek for tilgang 
       til Direct Rendering Manager (DRM) på operativsystemer som støtter ioctl 
-      grensesnittet. Libdrm er et lavnivåbibliotek, vanligvis brukt av 
+      grensesnittet. libdrm er et lavnivåbibliotek, vanligvis brukt av 
       grafikkdrivere som Mesa DRI driverne, X driverne, libva og lignende 
       prosjekter.
     </para>
@@ -48,7 +48,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installasjon av Libdrm</title>
+    <title>Installasjon av libdrm</title>
 
 <!--
     <para>
@@ -84,7 +84,7 @@ ninja</userinput></screen>
   </sect2>
 
   <sect2 role="installation">
-    <title>lib32 Installasjon av Libdrm</title>
+    <title>lib32 Installasjon av libdrm</title>
 
     <para>
       Installer lib32-libdrm ved å kjøre følgende 

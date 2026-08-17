@@ -23,7 +23,7 @@
   </indexterm>
 
   <sect2 role="package">
-    <title>Introduksjon til Libinput</title>
+    <title>Introduksjon til libinput</title>
 
     <para>
       libinput er et bibliotek som håndterer inndataenheter for skjermservere og 
@@ -49,7 +49,7 @@
   </sect2>
 
   <sect2 role="installation">
-    <title>Installasjon av Libinput</title>
+    <title>Installasjon av libinput</title>
 
     <para>
       Installer libinput ved å kjøre følgende 
