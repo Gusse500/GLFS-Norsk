@@ -35,9 +35,8 @@
 
     <para>
       For å se etter pakker som har fått en CVE rettet, gå til
-      <ulink url="&lfs-website;/glfs/advisories.html">GLFS Advisories</ulink>
-      siden. Den dekker både ødelagte endringer og sikkerhetsinformasjon for hver 
-      utgivelse.
+      <ulink url="&advisories;">GLFS Advisories</ulink> side. Den dekker både 
+      ødelagte endringer og sikkerhetsinformasjon for hver utgivelse.
     </para>
 
     <para>

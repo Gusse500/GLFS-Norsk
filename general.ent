@@ -76,6 +76,7 @@
 <!ENTITY sources-anduin-http  "https://anduin.linuxfromscratch.org/BLFS">
 <!ENTITY sources-anduin-ftp   "ftp://anduin.linuxfromscratch.org/BLFS">
 
+<!ENTITY advisories           "https://linuxfromscratch.org/glfs/advisories.html">
 <!ENTITY hints-root           "https://www.linuxfromscratch.org/hints/">
 <!ENTITY patch-downloads      "https://www.linuxfromscratch.org/patches/downloads">
 <!ENTITY dl-root              "&glfs-website;/download">
