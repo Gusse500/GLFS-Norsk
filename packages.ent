@@ -32,7 +32,7 @@
 <!ENTITY dbus-version                 "1.16.2">   <!-- Even minors only -->
 <!ENTITY linux-pam-version            "1.7.2">
 <!ENTITY linux-pam-docs-version       "&linux-pam-version;">
-<!ENTITY openrc-version               "0.63">
+<!ENTITY openrc-version               "0.63.3">
 <!ENTITY shadow-version               "4.20.2">
 <!ENTITY elogind-version              "257.16">
 <!ENTITY systemd-version              "261.2">
