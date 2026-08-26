@@ -40,6 +40,15 @@
     </listitem>
     -->
 
+    <listitem revision="openrc">
+      <para>25. august 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - OpenRC: 0.63 -&gt; 0.63.3.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
     <listitem>
       <para>14. august 2026</para>
       <itemizedlist>
