@@ -25,6 +25,5 @@
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libgbm.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libva.xml"/>
   <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="opencl-sdk.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="libclc.xml"/>
 
 </chapter>

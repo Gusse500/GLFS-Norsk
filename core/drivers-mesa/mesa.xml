@@ -97,9 +97,8 @@
         </listitem>
         <listitem>
           <para>
-            <xref linkend="libclc"/> (med <xref
-            linkend="spirv-llvm-translator"/>;
-            påkrevd for Iris Gallium3D og Nouveau Vulkan)
+            <xref linkend="spirv-llvm-translator"/> (påkrevd for Iris
+            Gallium3D og Nouveau Vulkan)
           </para>
         </listitem>
         <listitem>
@@ -158,7 +157,10 @@
       <xref linkend="opencl-sdk"/>,
       <ulink url="&blfs-svn;/general/valgrind.html">valgrind</ulink>,
       <ulink url="https://omxilurceforge.net/">Bellagio OpenMAX Integration
-      Layer</ulink> (for mobile plattformer), og
+      Layer</ulink> (for mobile plattformer),
+      <ulink
+      url="https://gitlab.freedesktop.org/karolherbst/mesa-libclc">
+      mesa-libclc</ulink>, og
       <ulink url="https://github.com/tizonia/tizonia-openmax-il/wiki/Tizonia-OpenMAX-IL/">
       libtizonia</ulink>
     </para>
@@ -447,7 +449,9 @@ ldconfig</userinput></screen>
       hvilke drivere som får den støtten. Alternativet for det er
       <option>-D gallium-rusticl-enable-drivers</option>, som du kan sette til
       <literal>auto</literal> for enkelhets skyld. Forstå at Rusticl fortsatt 
-      har mange problemer.
+      har mange problemer. Dette krever <ulink
+      url="https://gitlab.freedesktop.org/karolherbst/mesa-libclc">
+      mesa-libclc</ulink>.
     </para>
 
     <para>
