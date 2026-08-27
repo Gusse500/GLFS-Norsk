@@ -449,7 +449,9 @@ ldconfig</userinput></screen>
       hvilke drivere som får den støtten. Alternativet for det er
       <option>-D gallium-rusticl-enable-drivers</option>, som du kan sette til
       <literal>auto</literal> for enkelhets skyld. Forstå at Rusticl fortsatt 
-      har mange problemer.
+      har mange problemer. Dette krever <ulink
+      url="https://gitlab.freedesktop.org/karolherbst/mesa-libclc">
+      mesa-libclc</ulink>.
     </para>
 
     <para>
