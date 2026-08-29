@@ -89,10 +89,10 @@
                    -e 's/passwd\.5 / /'   \
                    -i {} \; &amp;&amp;
 
-sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' \
-    -e 's@/var/spool/mail@/var/mail@'                   \
-    -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                  \
-    -i etc/login.defs<!-- &amp;&amp;
+sed -e 's@#ENCRYPT_METHOD SHA512@ENCRYPT_METHOD YESCRYPT@' \
+    -e 's@/var/spool/mail@/var/mail@'                      \
+    -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'                     \
+    -i etc/login.defs</userinput></screen>
 
 sed -e '/stdio.h/i #include &lt;stdint.h&gt;' \
     -i lib/find_new_sub_*ids.c--></userinput></screen>
@@ -128,36 +128,6 @@ make</userinput></screen>
     <title>Parameterforklaringer</title>
 
     &options-configure;
-
-    <para>
-      <command>sed -i 's/groups$(EXEEXT) //' src/Makefile.in</command>: Denne 
-      sed brukes til å undertrykke installasjonen av <command>groups</command>
-      siden programversjonen fra Coreutils pakken som ble 
-      installert under LFS er å foretrekke.
-    </para>
-
-    <para>
-      <command>find man -name Makefile.in -exec ... {} \;</command>: Den første 
-      kommandoen brukes til å undertrykke installasjonen av
-      <command>groups</command> manualsider slik at de eksisterende som er 
-      installert fra Coreutils pakken ikke erstattes. De to andre kommandoene 
-      forhindrer installasjon av manualsider som allerede er installert av 
-      i LFS.
-    </para>
-
-    <para>
-      <command>sed -e 's@#ENCRYPT_METHOD DES@ENCRYPT_METHOD YESCRYPT@' -e
-        's@/var/spool/mail@/var/mail@' -e '/PATH=/{s@/sbin:@@;s@/bin:@@}'
-        -i etc/login.defs</command>: I stedet for å bruke standardmetoden «DES» 
-      endrer denne kommandoen installasjonen til å bruke den mye sikrere 
-      «YESCRYPT» metoden for hashing av passord, som også tillater passord 
-      som er lengre enn åtte tegn. Kommandoen endrer også den foreldede 
-      <filename class="directory">/var/spool/mail</filename> location
-      for brukerpostbokser som Shadow bruker som standard til 
-      <filename class="directory">/var/mail</filename>
-      plassering. Den endrer også standardbanen slik at den er i samsvar med 
-      den som er angitt i LFS.
-    </para>
 
     <para>
       <parameter>--without-libbsd</parameter>: Hindrer å lete etter
