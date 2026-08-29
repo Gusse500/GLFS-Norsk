@@ -84,7 +84,7 @@
       symbollenkede mapper fra <envar>PATH</envar>:
     </para>
 
-<screen><userinput remap="pre">find man -name Makefile.in                \
+<screen><userinput> remap="pre">find man -name Makefile.in                \
          -exec sed -e 's/getspnam\.3 / /' \
                    -e 's/passwd\.5 / /'   \
                    -i {} \; &amp;&amp;
