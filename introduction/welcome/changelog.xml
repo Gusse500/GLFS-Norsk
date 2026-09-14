@@ -41,6 +41,16 @@
     -->
 
     <listitem>
+      <para>3. september 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[tox] - CMake: 4.4.2 -&gt; 4.4.3. Fikser
+          <ulink url="&glfs-issues;/542">#542</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>31. august 2026</para>
       <itemizedlist>
         <listitem>
