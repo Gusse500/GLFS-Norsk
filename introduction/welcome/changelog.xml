@@ -41,7 +41,17 @@
     -->
 
     <listitem>
-      <para>September 18th, 2026</para>
+      <para>19. september 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - NVIDIA: 610.57.04 -&gt; 615.71.09 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/549">#549</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
+      <para>18. september 2026</para>
       <itemizedlist>
         <listitem>
           <para>[Sicarine] - Wine: 11.15 -&gt; 11.18. Fikser
