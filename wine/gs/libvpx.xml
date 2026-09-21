@@ -35,6 +35,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere Nedlastinger</bridgehead>
     <itemizedlist spacing="compact">
       <listitem>
@@ -44,6 +45,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">libvpx Avhengigheter</bridgehead>
 
@@ -67,12 +69,14 @@
 
     <screen><userinput>find -type f | xargs touch</userinput></screen>
 
+<!--
     <para>
-      Deretter, fiks et sikkerhetsproblem:
+      Fiks et sikkerhetsproblem:
     </para>
 
 <screen><userinput
   remap="pre">patch -Np1 -i ../libvpx-&libvpx-version;-security_fix-1.patch</userinput></screen>
+-->
 
     <para>
       Installer libvpx ved å kjøre følgende kommandoer:
