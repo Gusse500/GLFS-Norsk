@@ -41,6 +41,82 @@
     -->
 
     <listitem>
+      <para>September 18th, 2026</para>
+      <itemizedlist>
+        <listitem>
+          <para>[zeckma] - libxml2: 2.15.3 -&gt; 2.15.4 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/550">#550</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NSS: 3.126 -&gt; 3.129. Fikser
+          <ulink url="&glfs-issues;/545">#545</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - cURL: 8.21.0 -&gt; 8.22.0 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23850">#23850</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Systemd: 261.2 -&gt; 261.3.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - CMake: 4.4.3 -&gt; 4.4.5.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - LLVM: 22.1.8 -&gt; 23.1.0.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Rustc: 1.97.1 -&gt; 1.98.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - Cython: 3.2.9 -&gt; 3.3.0. Fikser
+          <ulink url="&glfs-issues;/537">#537</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - HarfBuzz: 14.3.1 -&gt; 14.4.0. Fikser
+          <ulink url="&glfs-issues;/538">#538</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libevdev: 1.13.6 -&gt; 1.13.7. Fikser
+          <ulink url="&glfs-issues;/546">#546</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SPIRV-LLVM-Translator: 22.1.5 -&gt; 23.1.1.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - hwdata: 0.410 -&gt; 0.411.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - NVIDIA-VA-API-Driver: 0.0.17 -&gt; 0.0.18. Fikser
+          <ulink url="&glfs-issues;/541">#541</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - xpr: 1.2.0 -&gt; 1.2.1. Fikser
+          <ulink url="&glfs-issues;/547">#547</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - SDL3: 3.4.14 -&gt; 3.4.16.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - sdl2-compat: 2.32.70 -&gt; 2.32.72.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libaom: 3.14.1 -&gt; 3.15.0 (sikkerhet). Fikser
+          <ulink url="&glfs-issues;/539">#539</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - libvpx: 1.16.0 -&gt; 1.17.0. Fikser
+          <ulink url="&glfs-issues;/540">#540</ulink>.</para>
+        </listitem>
+        <listitem>
+          <para>[zeckma] - GStreamer: 1.28.6 -&gt; 1.28.7 (sikkerhet).
+          Se BLFS billett
+          <ulink url="&blfs-ticket-root;23878">#23878</ulink>.</para>
+        </listitem>
+      </itemizedlist>
+    </listitem>
+
+    <listitem>
       <para>3. september 2026</para>
       <itemizedlist>
         <listitem>

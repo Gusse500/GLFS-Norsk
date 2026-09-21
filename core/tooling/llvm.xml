@@ -68,6 +68,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing='compact'>
       <listitem>
@@ -77,6 +78,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">LLVM Avhengigheter</bridgehead>
 
@@ -89,11 +91,13 @@
   <sect2 role="installation">
     <title>Installasjon av LLVM</title>
 
+<!--
     <para>
       Installer en oppdatering for å fikse feil kodegenerering:
     </para>
 
 <screen><userinput remap="pre">patch -Np1 -i ../llvm-project-&llvm-version;-upstream_fix-1.patch</userinput></screen>
+-->
 
     <para>
      Det er mange Python skript i denne pakken som bruker

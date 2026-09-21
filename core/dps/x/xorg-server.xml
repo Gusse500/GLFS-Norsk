@@ -53,7 +53,7 @@
         </para>
         <para>
           Valgfri oppdatering:
-          <ulink url="&dl-root;/xorg-server/xorg-server-tearfree_backport-4.patch"/>
+          <ulink url="&dl-root;/xorg-server/xorg-server-tearfree_backport-5.patch"/>
         </para>
       </listitem>
     </itemizedlist>
@@ -172,7 +172,8 @@
       bruk oppdateringen:
     </para>
 
-<screen><userinput remap="pre">patch -Np1 -i ../xorg-server-tearfree_backport-4.patch</userinput></screen>
+<screen><userinput
+  remap="pre">patch -Np1 -i ../xorg-server-tearfree_backport-5.patch</userinput></screen>
 
 <!--
     &x-nettle;
