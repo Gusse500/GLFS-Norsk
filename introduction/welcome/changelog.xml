@@ -44,6 +44,10 @@
       <para>September 18th, 2026</para>
       <itemizedlist>
         <listitem>
+          <para>[zeckma] - DXVK: 3.0.2 -&gt; 3.1.1. Fikser
+          <ulink url="&glfs-issues;/544">#544</ulink>.</para>
+        </listitem>
+        <listitem>
           <para>[zeckma] - libxml2: 2.15.3 -&gt; 2.15.4 (sikkerhet). Fikser
           <ulink url="&glfs-issues;/550">#550</ulink>.</para>
         </listitem>

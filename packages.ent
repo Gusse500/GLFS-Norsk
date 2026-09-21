@@ -300,11 +300,11 @@
 <!ENTITY wine-major-version           "11">
 <!ENTITY wine-version                 "&wine-major-version;.15">
 
-<!ENTITY dxvk-version                 "3.0.2">
+<!ENTITY dxvk-version                 "3.1.1">
 <!ENTITY dxvk-libdisplay-info         "275e6459c7ab1ddd4b125f28d0440716e4888078">
 <!ENTITY dxvk-spirv                   "04f10f650d514df88b76d25e83db360142c7b174">
 <!ENTITY dxvk-vulkan                  "8864cdc896bbc2a9b6eb36b3218fc9ef57908d77">
-<!ENTITY dxvk-dxbc-spirv              "29ed92269d6c9ac5471ca8084e4e5668c964610c">
+<!ENTITY dxvk-dxbc-spirv              "bf14419e5fa7eacb817b7b632f03cb61d61bbad7">
 
 <!ENTITY vkd3d-proton-version            "3.0.1">
 <!ENTITY vkd3d-proton-spirv              "f88a2d766840fc825af1fc065977953ba1fa4a91">
