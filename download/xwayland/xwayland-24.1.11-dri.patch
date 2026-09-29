@@ -3964,7 +3964,7 @@ diff '--color=auto' -Naurp xwayland-24.1.11.orig/glx/meson.build xwayland-24.1.1
 +    srcs_glx += 'glx_dri/glxdriswrast.c'
 +    srcs_glx += 'glx_dri/glxdricommon.c'
 +
-+    if build_dri2 or build_dri3
++    if build_dri3
 +        srcs_glxdri2 = files('glx_dri/glxdri2.c')
 +    endif
 +endif
