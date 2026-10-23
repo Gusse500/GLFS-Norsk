@@ -3,7 +3,19 @@ Først, vennligst les
 [Linux From Scratch Editor's Manual](https://www.linuxfromscratch.org/lfs/LFS-EDITORS-GUIDE.html)
 siden den inneholder noe god informasjon. Noe informasjon mangler, og noe er spesifikt for LFS.
 
-# 2. Grunnleggende
+# 2. No AI/LLM Usage
+Dette prosjektet er sterkt imot bruk av AI og LLM. Arbeidet som bygget og hjalp 
+dette prosjektet med å holde seg i live er takket være innsatsen til mennesker 
+og menneskeskapte verktøy alene. Slik bør og bør det forbli. Hvis det blir 
+oppdaget at AI/LLM-er har blitt brukt til problemer, pull-forespørsler eller 
+commits, kan det være grunnlag for umiddelbar avvisning av saken/PR og 
+tilbakestilling av alle gjeldende forpliktelser som lander i Git-treet. Videre 
+utestengelse fra hele organisasjonen vil bli vurdert. 
+
+For de som ikke har engelsk som morsmål, vennligst bruk Google Translate 
+eller et alternativ, eller snakk på morsmålet ditt, i stedet for å bruke AI/LLM.
+
+# 3. Grunnleggende
 Dette prosjektet er hovedsakelig skrevet i Docbook XML. De fleste problemene og oppdateringene 
 gjelder XML-en som legges inn i den endelige teksten i den gjengitte boken. Hvis 
 du ønsker å bidra på en eller annen måte, men ikke kjenner XML og/eller ikke ønsker å skrive 
@@ -14,12 +26,12 @@ Hvis du føler deg mer kyndig, bør du gjøre deg kjent med boken, hvordan den e
 skrevet, hvor viktige filer finnes, deretter foreta en oppdatering etter behov,
 og legge til en PR. Denne delen krever en mer grundig forklaring og hvor den
 virkelig avviker fra LFS Editor's Manual. Hvis du er en BLFS redaktør, vil redigeringen
-av denne boken ikke være så annerledes. Les avsnitt 3.1.2, 3.2 og 3.3 for GLFS 
+av denne boken ikke være så annerledes. Les avsnitt 4.1.2, 4.2, and 4.3 for GLFS 
 spesifikk informasjon.
 
-# 3. For de kyndige
-## 3.1. Hvor tingene befinner seg
-### 3.1.1. Interne filer og mapper
+# 4. For de kyndige
+## 4.1. Hvor tingene befinner seg
+### 4.1.1. Interne filer og mapper
 Før vi begynner med hoveddelen av boken og hva folk skal lese, 
 må vi dekke filene og mappene for kilden til boken som er 
 mer interne, men likevel essensielle.
@@ -45,83 +57,83 @@ I roten av kildekoden finner du disse filene og mappene:
 - `tidy.conf`
 - `xent.ent`
 
-#### 3.1.1.1. `.github/workflows/`
+#### 4.1.1.1. `.github/workflows/`
 Denne mappen inneholder YAML filer som brukes av Github CI-er til å gjengi
 boken og legge den ut på GLFS nettstedet som ligger på Github. Den trenger sjelden
 oppdatering.
-#### 3.1.1.2. `archive/`
+#### 4.1.1.2. `archive/`
 Denne mappen inneholder XML filer som ikke lenger anses som nødvendige 
 eller nyttige å inkludere i boken, men som flyttes dit i tilfelle 
 de må hentes tilbake eller for studiets skyld. Filer som ikke samsvarer med nye 
 standarder trenger ikke å oppdateres med mindre de bringes tilbake til 
 boken.
-#### 3.1.1.3. `download/`
+#### 4.1.1.3. `download/`
 Denne mappen inneholder nedlastinger som kan være nødvendige for andre pakker, 
 for eksempel oppdateringer eller skript.
-#### 3.1.1.4. `images/`
+#### 4.1.1.4. `images/`
 Denne mappen inneholder bilder som brukes av boken, f.eks. for merknader, viktig informasjon, 
 advarsel og tips-bokser, samt for favorittikonet og bildet som vises øverst 
 på hjemmesiden. Trenger sjelden å oppdateres.
-#### 3.1.1.5. `kernel-config/`
+#### 4.1.1.5. `kernel-config/`
 Denne mappen inneholder filene som trengs for å generere kjernekonfigurasjonsblokker 
 som du finner på sider som krever at du endrer konfigurasjonen i 
 kjernen din. Oppdater etter behov.
-#### 3.1.1.6. `stylesheets/`
+#### 4.1.1.6. `stylesheets/`
 Denne mappen inneholder Docbook XML XSLT-stilarkene som trengs for å generere 
 HTML fra XML kilden. Den inneholder også CSS filene som trengs for å gjøre 
 boken penere. Trenger svært sjelden oppdatering.
-#### 3.1.1.7. `template/`
+#### 4.1.1.7. `template/`
 Denne mappen inneholder maler som de fleste sidene i denne boken er basert på, 
 hovedsakelig pakker. Den har dokumentasjon som kan hjelpe deg med å finne ut 
 hva du vil og ikke vil. Den må kanskje oppdateres hvis standardene endres.
-#### 3.1.1.8. `.gitattributes`
+#### 4.1.1.8. `.gitattributes`
 Denne filen er en standard git fil som gir attributter til samsvarende filer. 
 Trenger sjelden å oppdateres.
-#### 3.1.1.9. `.gitignore`
+#### 4.1.1.9. `.gitignore`
 Denne filen er en standard git fil som ignorerer samsvarende filer fra å komme inn i
 git historikken og treet. For eksempel ignoreres `conditional.ent` og `version.ent`
 generert av `git-version.sh`, men kan finnes lokalt hvis du gjengir
 boken. Trenger svært sjelden å oppdateres.
-#### 3.1.1.10. `INSTALL.md`
+#### 4.1.1.10. `INSTALL.md`
 Denne filen beskriver hvilke pakker du trenger for å kunne gjengi boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.1.11. `Makefile`
+#### 4.1.1.11. `Makefile`
 Denne filen er Makefile som brukes av **make** for å gjengi boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.1.12. `expand_date`
+#### 4.1.1.12. `expand_date`
 Denne filen er et Python skript som utvider datovariabelen i XML-filer,
 selv om denne oppførselen har falt i unåde i GLFS, men fortsatt er sterk i
 BLFS. Trenger sjelden å oppdateres.
-#### 3.1.1.13. `general.ent`
+#### 4.1.1.13. `general.ent`
 Denne filen er en XML entitetsfil som inneholder viktige variabler som brukes av 
 bokens XML, og inkluderer også forskjellige entitetsfiler. Denne filen må 
 oppdateres ved hver stabile utgivelse.
-#### 3.1.1.14. `git-version.sh`
+#### 4.1.1.14. `git-version.sh`
 Denne filen er et skallskript som genererer versjonen og revisjonen boken 
 skal gjengis for, og sender ut teksten i henhold til `conditional.ent` og 
 `version.ent`. Trenger sjelden å oppdateres.
-#### 3.1.1.15. `gnome.ent`
+#### 4.1.1.15. `gnome.ent`
 Denne filen er en XML entitetsfil som inneholder GNOME spesifikke enheter som brukes 
 av et lite utvalg XML filer. Trenger sjelden å oppdateres.
-#### 3.1.1.16. `obfuscate.sh`
+#### 4.1.1.16. `obfuscate.sh`
 Denne filen er et skallskript som tilslører e-postadresser i XML og HTML 
 filer. Trenger sjelden å oppdateres.
-#### 3.1.1.17. `packages.ent`
+#### 4.1.1.17. `packages.ent`
 Denne filen er en XML-enhetsfil som inneholder versjonsvariabler. Enkelte 
 versjonsvariabler brukes av bestemte pakker, men vanligvis vil det bare 
 være én variabel som brukes av en gitt pakke. For eksempel brukes &pulseaudio-version;
 av Pulseaudio. Disse variablene bestemmer pakkens versjon.
 Når en pakke trenger en oppdatering, må denne filen redigeres.
-#### 3.1.1.18. `tidy.conf`
+#### 4.1.1.18. `tidy.conf`
 Denne filen er en konfigurasjonsfil som brukes av **tidy**. Trenger sjelden å 
 bli oppdatert.
-#### 3.1.1.19. `xent.ent`
+#### 4.1.1.19. `xent.ent`
 Denne filen er en XML enhetsfil som inneholder innhold som gjentas 
 gjennom hele boken. Oppdater eller legg til etter behov.
 
 ***
 
-### 3.1.2. Bokens filer og mapper
+### 4.1.2. Bokens filer og mapper
 Nå som de interne detaljene er dekket, er det på tide å dekke filene som har en
 sterkere innvirkning på det endelige gjengitte produktet. Her er følgende filer 
 og mapper i roten av kildekoden:
@@ -141,29 +153,29 @@ oppdateres. I motsetning til BLFS bruker ikke GLFS md5sums, SBU-er eller større
 imidlertid lenker og pakkeversjoner. Lenkene må være korrekte, i likhet 
 med instruksjonene.
 
-#### 3.1.2.1. `appendices/`
+#### 4.1.2.1. `appendices/`
 Denne mappen inneholder XML filer som gjengis på slutten av boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.2.2. `book/`
+#### 4.1.2.2. `book/`
 Denne mappen inneholder XML filer som er gjengitt i begynnelsen av boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.2.3. `core/`
+#### 4.1.2.3. `core/`
 Denne mappen inneholder XML filer gjengitt for kjernekomponentdelen av boken. 
 Inneholder pakker.
-#### 3.1.2.4. `introduction/`
+#### 4.1.2.4. `introduction/`
 Denne mappen inneholder XML filer gjengitt for introduksjonsdelen av 
 boken. Inneholder `welcome/changelog.xml` som må oppdateres ofte. 
 Resten av XML filene gjør det vanligvis ikke.
-#### 3.1.2.5. `qol/`
+#### 4.1.2.5. `qol/`
 Denne mappen inneholder XML filer gjengitt for QOL delen av boken. 
 Trenger sjelden å oppdateres.
-#### 3.1.2.6. `steam/`
+#### 4.1.2.6. `steam/`
 Denne mappen inneholder XML filer gjengitt for Steam-delen av boken. 
 Inneholder pakker.
-#### 3.1.2.7. `wine/`
+#### 4.1.2.7. `wine/`
 Denne mappen inneholder XML filer gjengitt for Wine-delen av boken. 
 Inneholder pakker.
-#### 3.1.2.8. `changelog.xml`
+#### 4.1.2.8. `changelog.xml`
 Denne symbolske lenken peker til `introduction/welcome/changelog.xml`, en XML fil som
 beskriver endringer gjort i boken siden forrige utgivelse. Alle endringer bør
 noteres her, og meldingen bør være lik eller nøyaktig som git commit meldingen
@@ -174,14 +186,14 @@ bruker for LFS/BLFS. Endringer som ikke skal ha en endringsloggoppføring er enk
 skrivefeil, grammatikkendringer, retting av gjengivelsesfeil, ordlyd osv. (små
 endringer) og interne endringer (ikke medregnet endringer i `packages.ent`, disse
 teller som oppdateringer som må ha en endringsloggoppføring).
-#### 3.1.2.9. `index.xml`
+#### 4.1.2.9. `index.xml`
 Denne filen er en XML fil som bestemmer hvilke XML hovedfiler som skal inkluderes 
 for gjengivelse. Tenk på den som hoved XML filen, eller din `int main()`, men for 
 XML. Trenger sjelden å endres med mindre en ny seksjon legges til.
 
 ***
 
-### 3.1.3. Standarder
+### 4.1.3. Standarder
 I tillegg til å vite hvor filene er, teller også teksten i disse filene, og 
 det finnes standarder å huske på.
 
@@ -196,7 +208,7 @@ tegngrensen.
 (subjekt1, subjekt2 og subjekt3).
 4. Rediger `changelog.xml` etter behov. Se avsnitt 3.1.2.8.
 
-## 3.2. Gjør en oppdatering
+## 4.2. Gjør en oppdatering
 Først trenger du
 [Git](https://linuxfromscratch.org/blfs/view/stable/general/git.html) for å 
 klone, trekke og pushe. Når du har installert det, må du forke dette
@@ -227,7 +239,7 @@ Nå gjør:
 git push origin <branch_name>
 ```
 
-## 3.3. Making a PR
+## 4.3. Making a PR
 Now over on Github on your repo, make a Pull/Merge Request that merges into
 `glfs-book:trunk`. Hvis det er en konflikt, gjenta avsnitt 3.2 for å fikse disse 
 konfliktene før du foretar PR/MR. Hvis alt ser bra ut, send det inn.
