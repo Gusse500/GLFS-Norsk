@@ -105,11 +105,29 @@
 
     <warning>
       <para>
-        Hvis den nåværende installerte Systemd tjenesten er eldre enn versjon 
-        v260, fjern en tjeneste som vil generere feil ved påfølgende 
-        oppstarter, som &root; bruker:
+        Hvis den nåværende installerte Systemd-versjonen er under visse versjoner,
+        oppgradering av Systemd kan forårsake visse problemer.
       </para>
-<screen role="root"><userinput remap="pre">rm -v /usr/lib/systemd/system/systemd-update-utmp-runlevel.service</userinput></screen>
+      <itemizedlist>
+        <listitem>
+          <para>
+            <emphasis role="bold">v261 eller under</emphasis>:
+            Fjern en socket-fil som hindrer installasjonen i å fullføre,
+            som &root; bruker:
+          </para>
+          <screen role="root"><userinput
+              remap="pre">rm -v /usr/lib/systemd/system/systemd-udevd-control.socket</userinput></screen>
+          </listitem>
+          <listitem>
+            <para>
+              <emphasis role="bold">v259 eller under</emphasis>:
+              Fjern en tjeneste som vil generere feil ved følgende oppstarter,
+              som &root; bruker:
+            </para>
+            <screen role="root"><userinput
+                remap="pre">rm -v /usr/lib/systemd/system/systemd-update-utmp-runlevel.service</userinput></screen>
+            </listitem>
+          </itemizedlist>
     </warning>
 
     <para>

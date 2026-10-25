@@ -104,6 +104,7 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <bridgehead renderas="sect3">Ytterligere nedlastinger</bridgehead>
     <itemizedlist spacing='compact'>
       <listitem>
@@ -113,6 +114,7 @@
         </para>
       </listitem>
     </itemizedlist>
+-->
 
     <bridgehead renderas="sect3">Rustc Avhengigheter</bridgehead>
 
@@ -264,11 +266,13 @@ fi</userinput></screen>
       </para>
     </note>
 
+<!--
     <para>
       Bruk nå en oppdatering for å fikse bygging med <xref linkend="llvm"/>:
     </para>
 
 <screen><userinput>patch -Np1 -i ../rustc-&rustc-version;-llvm_23-1.patch</userinput></screen>
+-->
 
 <!--
     <note>
@@ -287,8 +291,7 @@ fi</userinput></screen>
 -->
 
     <para>
-      Kompiler Rust ved å kjøre følgende 
-      kommandoer:
+      Kompiler Rust ved å kjøre følgende kommandoer:
     </para>
 
 <!-- fixed in 1.58.0, retain as a reminder that fixed crates can be used
