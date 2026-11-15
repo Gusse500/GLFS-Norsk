@@ -12,24 +12,32 @@
   <title>Oppnå Multilib</title>
 
   <para>
-    På mange distribusjoner er det veldig enkelt å få multilib-støtte. For LFS 
-	finnes det en versjon som gir multilib støtte, fra normal binær utførelse 
-	til kompilering av 32-bit programvare fra den medfølgende verktøykjeden. 
-	Veiledningen kalles Multilib LFS, eller MLFS. Den kan leses <ulink 
-	url="&mlfs-root;/">her</ulink>. Hvis du ikke allerede har bygget LFS med 
-	MLFS eller bygd inn multilib støtte, må du starte på nytt.
+    Etter LFS prinsippet vil det meste av programvaren bli kompilert fra kilden.
+    For å kunne kompilere 32-bits biblioteker på 64-bit, må en bestemt prosess
+    utføres. Denne prosessen armerer et 64-bits LFS system med en kompilator som
+    kan kompilere 32-bit programvare, men vil også armere systemet med
+    grunnleggende 32-bit biblioteker som mye programvare vil kreve.
   </para>
 
   <para>
-    De samme prinsippene for kompilering for 32-bit i den boken vil også gjelde 
-	for denne boken. Hvis du ikke allerede har gjort det, les
-    <xref linkend="important"/> for å sjekke hvilke grunnleggende prinsipper som 
-	fortsatt gjelder i denne boken når man sikter seg inn på 32-bit.
+    Denne prosessen er detaljert i Multilib LFS, også referert til som MLFS.
+    Boken, en versjon av LFS, kan leses på <ulink
+    url="&mlfs-root;/">here</ulink>. Det er viktig å huske på at det er det en
+    versjon av LFS, ikke tilleggsmateriale. Den armerer ikke en allerede
+    eksisterende 64-bit LFS system med en kompilator som kan målrette 32-bit
+    programvare. Det skaper i stedet et nytt 64-bits LFS system som oppfyller
+    målet av multilib. Det er planlagt en tilleggsversjon av MLFS som til slutt
+    gjøre at brukerne ikke trenger å starte fra bunnen av i den forbindelse, men
+    for nå må du opprette et nytt LFS system ved å bruke MLFS. Hvis du allerede
+    har et 64-biters LFS-system, må du starte på nytt.
   </para>
 
   <para>
-    Les videre på <xref linkend="which-instructions"/> for å finne ut hvilke 
-	instruksjoner du skal følge.
+    De samme prinsippene for målretting mot 32-bit i den boken vil også gjelde
+    for denne boken. Hvis du ikke allerede har gjort det, les <xref
+    linkend="important"/> for å sjekke hvilke grunnleggende prinsipper som
+    fortsatt gjelder i denne boken når du målretter mot 32-bit. Les videre <xref
+    linkend="which-instructions"/> for å finne ut hvilke instruksjoner du skal følge.
   </para>
 
 </sect1>
