@@ -59,9 +59,7 @@
 <screen><userinput>ln -sf /usr/bin/true steamdeps</userinput></screen>
 
     <para>
-      Installer deretter Steam ved å kjøre 
-      følgende kommando som <systemitem class="username">root
-      </systemitem> bruker:
+      Installer deretter Steam ved å kjøre følgende kommando som &root; bruker:
     </para>
 
 <screen role="root"><userinput>make install &amp;&amp;
@@ -85,8 +83,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
       <command>ln -sf /usr/bin/true steamdeps</command>: Denne kommandoen 
       gjør at <filename>steamdeps</filename> Python
       skriptet alltid avsluttes med kode 0 siden det bruker APT og 
-      Python modulen, som ikke er installert i LFS og 
-      ikke skal være det.
+      Python modulen, som ikke er installert i LFS og ikke skal være det.
     </para>
 
     <para>
@@ -131,8 +128,7 @@ mv -v /usr/share/doc/steam{,-&steam-version;}</userinput></screen>
       Sørg for at du har opprettet den symbolske lenken i
       <xref linkend="make-ca"/> ellers vil du ikke klare å komme forbi dette 
       punktet. Da skal alt fungere som normalt, og du kan fortsette og tillate 
-      Proton som du vanligvis ville gjort på en hvilken som helst 
-      Linux distribusjon.
+      Proton som du vanligvis ville gjort på en hvilken som helst Linux distribusjon.
     </para>
 
     <para>

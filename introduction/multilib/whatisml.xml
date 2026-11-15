@@ -11,32 +11,46 @@
   <title>Hva er Multilib?</title>
 
   <para>
-    Multilib er i hovedsak muligheten til i det minste å kjøre programvare 
-    som ble bygget for en annen arkitektur enn din egen. 
-    For eksempel, og det vanligste: brukeren har en x86_64 CPU som 
-    ønsker å kjøre programvare bygget for å kjøre på en x86 CPU. For å bedre 
-    etablere begreper, er x86_64 64-bit og amd64, mens x86 er 
-    32-bit og ix86 hvor <option>x</option> kan variere fra 3 til 6.
+    Multilib er muligheten til å kjøre programvare som ble bygget for en annen
+    arkitektur som er forskjellig fra systemets. Det vanligste eksemplet er
+    brukeren med en x86_64 CPU som ønsker å kjøre programvare bygget for å kjøre
+    på en 32-bits CPU. For bedre å etablere termer, x86_64 er 64-bit og AMD64,
+    og 32-bit refererer til ix86
+    <footnote><para>
+        <option>x</option> kan variere fra 3 til 6. <option>x</option> kan
+        også skrives som <option>?</option> eller <option>*</option>.
+    </para></footnote>
+    arkitektur og IA-32. x86 refererer generelt til arkitekturfamilien,
+    der 32-bit/IA-32 og 64-bit/AMD64 lever.
   </para>
+
+  <note>
+    <para>
+      Denne boken dekker kun x86 familien, spesielt kjøreinstruksjoner
+      på x86_64/AMD64/64-bit, og dekker ikke multilib på arkitekturer med
+      lignende funksjoner som ARM.
+    </para>
+  </note>
 
   <sect2>
     <title>Hvordan fungerer det?</title>  
 
     <para>
-      Multilib kan oppnås først ved å ha maskinvaren 
-      i stand til x86-emulering, deretter ha biblioteker bygget for x86. 
-      Vi vil komme inn på hvordan man kompilerer x86-biblioteker og programvare og 
-      hvordan de kjøres senere, men den generelle prosessen for LFS 
-      og BLFS er å nesten alltid kompilere programvare, og det er det 
-      vi skal gjøre.
+      På barebones nivå kan multilib oppnås ved å ha maskinvaren
+      i stand til 32-bit x86-emulering. Imidlertid har 32-biters programvare ofte
+      avhengigheter, og disse avhengighetene må være i samme arkitektur
+      som programvaren. Dermed blir multilib mer kompleks.
     </para>
 
     <note>
       <para>
-        Det er verdt å merke seg at når begrepet multilib brukes gjennom 
-        denne boken, refererer det til å kjøre i686-instruksjoner på en x86_64 
-        vert. Dette dekker ikke kjøring av andre 32-bits arkitekturer på deres 
-        64-bits utvidelser, som armhf på arm64
+        Distroer tar ofte denne avhengigheten ved å laste ned 32-bit
+        biblioteker, som noen ganger kreves for aktivering av en profil eller
+        database. Dette løser problemer automatisk. Prinsippet til LFS familien,
+        er å kompilere nesten alt fra kilden med maksimal kontroll.
+        Problemet begynner deretter å bli "hvordan kan vi kompilere 32-bit
+        biblioteker på AMD64?" som selve spørsmålet blir komplisert, men
+        svaret er enkelt.
       </para>
     </note>
 

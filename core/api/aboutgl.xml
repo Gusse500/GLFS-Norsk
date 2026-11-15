@@ -67,17 +67,18 @@
     <title>Hvorfor installerer GLFS libglvnd</title>
 
     <para>
-      Hovedgrunnen til at GLFS forventer at brukere skal installere libglvnd er 
-      at NVIDIA og flere pakker og AppImages krever libglvnd 
-      enten direkte eller indirekte. For NVIDIA krever libglvnd direkte, mens 
-      AppImages lider av problemet nevnt tidligere i denne delen: forskjeller i 
-      soname-er, samt et manglende bibliotek. <filename
-      class="libraryfile">libGL</filename> har et soname som er forskjellig fra 
-      Mesa og <filename class="libraryfile">libGLX</filename> er ikke inkludert 
-      fra Mesa. Dette ødelegger de fleste AppImages. Som med andre pakker, kan 
-      byggesystemene deres føre til at konfigurasjonen feiler uten libglvnd som
-      <filename class="libraryfile">libOpenGL</filename> finnes ikke, og 
-      byggesystemene vil ikke kombinere <filename
+      Den primære grunnen til at GLFS forventer at brukere skal installere
+      libglvnd er at NVIDIA og flere pakker og AppImages krever libglvnd
+      enten direkte eller indirekte. For NVIDIA og Steam krever de
+      libglvnd direkte, mens AppImages lider av det nevnte problemet
+      tidligere i denne delen: forskjeller i sonames, samt en manglende
+      bibliotek. <filename class="libraryfile">libGL</filename> har et soname
+      som er forskjellig fra Mesa og
+      <filename class="libraryfile">libGLX</filename> er ikke inkludert fra
+      Mesa. Dette bryter de fleste AppImages. Når det gjelder andre pakker,
+      byggesystemene deres kan føre til at konfigurasjonen mislykkes uten
+      libglvnd siden <filename class="libraryfile">libOpenGL</filename> ikke
+      eksisterer, og byggesystemet ønsker ikke å kombinere <filename
       class="libraryfile">libGL</filename> med <filename
       class="libraryfile">libEGL</filename>.
     </para>
