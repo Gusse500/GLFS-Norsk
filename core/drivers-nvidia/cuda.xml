@@ -5,8 +5,8 @@
   %general-entities;
 
   <!ENTITY cuda-download
-    "https://developer.download.nvidia.com/compute/cuda/&cuda-version;/local_installers/cuda_&cuda-version;_&cuda-nvidia-version;_linux.run">
-]>
+  "https://developer.download.nvidia.com/compute/cuda/&cuda-version;/local_installers/cuda_&cuda-version;_linux.run">
+  ]>
 
 <sect1 id="cuda" xreflabel="CUDA-&cuda-version;">
   <?dbhtml filename="cuda.html"?>
@@ -34,10 +34,12 @@
       </listitem>
     </itemizedlist>
 
+<!--
     <important><para>
       NVIDIA driverversjonen som er oppført i kjørefilnavnet er minimumskravet 
       for NVIDIA driverversjon.
     </para></important>
+-->
 
     <note><para>
       Nedlastingsstørrelsen er rundt 4G, så du bør vurdere om 
@@ -87,7 +89,6 @@
 <screen role="root"><userinput>mkdir -pv /opt/cuda-&cuda-version; &amp;&amp;
 ln -sfvn cuda-&cuda-version; /opt/cuda</userinput></screen>
 
-
     &as_root;
 
     <para>
@@ -101,10 +102,10 @@ ln -sfvn cuda-&cuda-version; /opt/cuda</userinput></screen>
       kommandoer:
     </para>
 
-<screen role="root"><userinput>sh cuda_&cuda-version;_&cuda-nvidia-version;_linux.run     \
-  --target cuda_&cuda-version;_&cuda-nvidia-version;_linux \
+<screen role="root"><userinput>sh cuda_&cuda-version;_linux.run     \
+  --target cuda_&cuda-version;_linux \
   --noexec
-pushd cuda_&cuda-version;_&cuda-nvidia-version;_linux/builds
+pushd cuda_&cuda-version;_linux/builds
   rm -rf cuda_nsight cuda_sanitizer_api nsight_{compute,systems}
   rm -rvf bin integration NVIDIA*.run
   as_root cp version.json /opt/cuda-&cuda-version;
@@ -120,7 +121,7 @@ pushd cuda_&cuda-version;_&cuda-nvidia-version;_linux/builds
     as_root sed -i "s|/usr/local/cuda|/opt/cuda-&cuda-version;|g" "$mf"
   done
 popd
-rm -rf cuda_&cuda-version;_&cuda-nvidia-version;_linux</userinput></screen>
+rm -rf cuda_&cuda-version;_linux</userinput></screen>
 
     <para>
       Avslutt nå underskall prosessen:
